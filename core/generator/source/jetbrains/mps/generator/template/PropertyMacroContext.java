@@ -24,6 +24,11 @@ import org.jetbrains.annotations.NotNull;
 public class PropertyMacroContext extends TemplateQueryContextWithMacro {
   private String myTemplateValue;
 
+  /**
+   * @deprecated use {@link #PropertyMacroContext(jetbrains.mps.generator.runtime.TemplateContext, String, org.jetbrains.mps.openapi.model.SNodeReference, ITemplateGenerator)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public PropertyMacroContext(SNode node, String templateValue, SNode macroNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myTemplateValue = templateValue;

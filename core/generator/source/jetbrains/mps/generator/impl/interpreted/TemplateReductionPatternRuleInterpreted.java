@@ -70,12 +70,12 @@ public class TemplateReductionPatternRuleInterpreted extends ReductionRuleBase i
 
   @Override
   @NotNull
-  protected Collection<SNode> doApply(@NotNull TemplateContext templateContext, @NotNull TemplateExecutionEnvironment environment) throws GenerationException {
+  protected Collection<SNode> doApply(@NotNull TemplateContext templateContext) throws GenerationException {
     if (myRuleConsequence == null) {
       throw new TemplateProcessingFailureException(myRuleNode, "no rule consequence", GeneratorUtil.describeInput(templateContext));
     }
 
-    RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
+    RuleConsequenceProcessor rcp = new RuleConsequenceProcessor();
     templateContext = templateContext.subContext(myRuleMappingName);
     rcp.prepare(myRuleConsequence, templateContext);
     return rcp.processRuleConsequence();

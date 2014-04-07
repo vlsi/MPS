@@ -25,22 +25,26 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Default resolver implementation to use with ReferenceMacro nodes
+ *
+ * XXX With GeneratedQueryProvider, seems reasonable to return ReferenceResolver right from GQP,
+ * so that this MacroResolver would become an implementation in ReflectiveQueryProvider. Not sure yet
+ * if ReferenceResolver API is what should be there, or a dedicated Query shall be introduced
+ *
  * @author Artem Tikhomirov
  */
 public class MacroResolver implements ReferenceResolver {
-  private final QueryExecutionContext myExecContext;
   private final SNode myReferenceMacro;
   private final SNode myTemplateTargetNode;
 
-  public MacroResolver(@NotNull QueryExecutionContext ctx, @NotNull SNode macro, @Nullable SNode templateTargetNode) {
-    myExecContext = ctx;
+  public MacroResolver(@NotNull SNode macro, @Nullable SNode templateTargetNode) {
     myReferenceMacro = macro;
     myTemplateTargetNode = templateTargetNode;
   }
 
   @Override
   public Object resolve(SNode outputNode, TemplateContext context) {
-    return myExecContext.getReferentTarget(context.getInput(), outputNode, myReferenceMacro, context);
+    final QueryExecutionContext queryExecutor = context.getEnvironment().getQueryExecutor();
+    return queryExecutor.getReferentTarget(context.getInput(), outputNode, myReferenceMacro, context);
   }
 
   @Override

@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.query;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Represents an API of QueriesGenerated using *Condition objects, source of the queries
@@ -48,4 +49,11 @@ public interface GeneratorQueryProvider {
   SourceNodesQuery getSourceNodesQuery(@NotNull SNode query);
   @NotNull
   PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro);
+  @NotNull
+  IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro);
+
+  interface Source {
+    @NotNull
+    GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNodeRef);
+  }
 }

@@ -16,10 +16,10 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
@@ -33,6 +33,7 @@ import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
@@ -45,12 +46,12 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.util.QueryMethodGenerated.QueryMethod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -187,7 +188,18 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
     SNode templateNode = propertyMacro.getParent();
     final Object templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);
-    return new Macros(propertyMacro.getReference(), methodName, propertyName, templateValue);
+    return new PropMacro(propertyMacro.getReference(), methodName, propertyName, templateValue);
+  }
+
+  @NotNull
+  @Override
+  public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
+    SNode function = RuleUtil.getIfMacro_ConditionFunction(ifMacro);
+    if (function == null) {
+      return super.getIfMacroCondition(ifMacro);
+    }
+    String methodName = TemplateFunctionMethodName.ifMacro_Condition(function);
+    return new Impl(ifMacro.getReference(), methodName, false);
   }
 
   private String getBaseRuleConditionMethod(SNode rule) {
@@ -196,13 +208,12 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
   }
 
   private static final class Impl implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
-      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition {
+      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, IfMacroCondition {
 
-    @NotNull
     private final String myMethodName;
     private final boolean myDefValue;
-    @NotNull
     private final SNodeReference myTemplateNode;
+    private QueryMethod<Boolean> myMethod;
 
     Impl(@NotNull SNodeReference templateNode, @NotNull String methodName) {
       this(templateNode, methodName, false);
@@ -214,30 +225,41 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       myDefValue = defValue;
     }
 
-    private boolean invokeBoolean(TemplateQueryContext ctx) {
-      try {
-        return QueryMethodGenerated.<Boolean>invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
-      } catch (ClassNotFoundException e) {
-        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
-      } catch (NoSuchMethodException e) {
-        ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
+    private QueryMethod<Boolean> getMethod(TemplateQueryContext ctx) {
+      if (myMethod == null) {
+        QueryMethod<Boolean> m = null;
+        try {
+          m = QueryMethodGenerated.getQueryMethod(myTemplateNode.getModelReference(), myMethodName);
+        } catch (ClassNotFoundException e) {
+          ctx.showWarningMessage(null,
+              String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
+        } catch (NoSuchMethodException e) {
+          ctx.showWarningMessage(null,
+              String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
+        }
+        myMethod = m != null ? m : new QueryMethod<Boolean>() {
+          @Override
+          public Boolean invoke(IOperationContext context, Object contextObject) {
+            return myDefValue;
+          }
+        };
       }
-      return myDefValue;
+      return myMethod;
     }
 
     @Override
     public boolean check(@NotNull CreateRootRuleContext ctx) {
-      return invokeBoolean(ctx);
+      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
     }
 
     @Override
     public boolean check(@NotNull DropRootRuleContext ctx) {
-      return invokeBoolean(ctx);
+      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
     }
 
     @Override
     public boolean check(@NotNull MapRootRuleContext ctx) {
-      return invokeBoolean(ctx);
+      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
     }
 
     @Override
@@ -254,12 +276,12 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     @Override
     public boolean check(@NotNull ReductionRuleQueryContext ctx) {
-      return invokeBoolean(ctx);
+      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
     }
 
     @Override
     public boolean check(@NotNull WeavingMappingRuleContext ctx) {
-      return invokeBoolean(ctx);
+      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
     }
 
     @Override
@@ -287,7 +309,12 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     @Override
     public boolean check(@NotNull TemplateQueryContext ctx) {
-      return invokeBoolean(ctx);
+      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+    }
+
+    @Override
+    public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
+      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
     }
   }
 
@@ -330,21 +357,27 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     }
   }
 
-  private static final class Macros extends PropertyValueQuery.Base {
-    private final SNodeReference myMacro;
+  private static final class PropMacro extends PropertyValueQuery.Base {
     private final String myMethodName;
+    private QueryMethod<Object> myMethod;
 
-    public Macros(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull String propertyName, Object templateValue) {
-      super(propertyName, templateValue);
-      myMacro = macro;
+    public PropMacro(@NotNull SNodeReference macro, @NotNull String methodName, @NotNull String propertyName, Object templateValue) {
+      super(macro, propertyName, templateValue);
       myMethodName = methodName;
     }
 
     @Nullable
     @Override
     public Object evaluate(@NotNull PropertyMacroContext context) throws GenerationFailureException {
+      if (myMethod == null) {
+        myMethod = getMethod(context);
+      }
+      return myMethod.invoke(context.getInvocationContext(), context);
+    }
+
+    private QueryMethod<Object> getMethod(PropertyMacroContext context) throws GenerationFailureException{
       try {
-        return QueryMethodGenerated.invoke(myMethodName, context.getInvocationContext(), context, myMacro.getModelReference(), true);
+        return QueryMethodGenerated.getQueryMethod(getMacro().getModelReference(), myMethodName);
       } catch (NoSuchMethodException e) {
         final String m = String.format("cannot find method '%s' for property macro", myMethodName);
         context.showErrorMessage(null, m);

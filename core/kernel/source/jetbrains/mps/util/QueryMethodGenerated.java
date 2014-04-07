@@ -194,4 +194,42 @@ public class QueryMethodGenerated implements CoreComponent {
     // highly unlikely for another thread (if any) do get different result, ignore race condition chance
     return result;
   }
+
+  /**
+   * EXPERIMENTAL CODE. DO NOT USE
+   */
+  public static <T> QueryMethod<T> getQueryMethod(SModelReference sourceModel, String methodName) throws NoSuchMethodException, ClassNotFoundException {
+    final Method method = getQueryMethod(sourceModel, methodName, true);
+    final boolean needOpContext = needsOpContext(method.getDeclaringClass());
+    return new QueryMethod<T>() {
+      @Override
+      @SuppressWarnings("unchecked")
+      public T invoke(IOperationContext context, Object contextObject) {
+        try {
+          if (needOpContext) {
+            return (T) method.invoke(null, context, contextObject);
+          } else {
+            return (T) method.invoke(null, contextObject);
+          }
+        } catch (IllegalArgumentException e) {
+          throw new RuntimeException("error invocation method: \"" + method.getName() + "\" in " + method.getDeclaringClass().getName(), e);
+        } catch (IllegalAccessException e) {
+          throw new RuntimeException("error invocation method: \"" + method.getName() + "\" in " + method.getDeclaringClass().getName(), e);
+        } catch (InvocationTargetException e) {
+          if (e.getCause() instanceof IllegalModelChangeError) {
+            throw (IllegalModelChangeError) e.getCause();
+          }
+          String message = "error invocation method: \"" + method.getName() + "\" in " + method.getDeclaringClass().getName();
+          LOG.error(message, e.getCause());
+          throw new RuntimeException(message, e.getCause());
+        }
+      }
+    };
+  }
+  /**
+   * EXPERIMENTAL CODE. DO NOT USE
+   */
+  public interface QueryMethod<T> {
+    T invoke(IOperationContext context, Object contextObject);
+  }
 }

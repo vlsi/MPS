@@ -19,12 +19,24 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.interpreted.TemplateCreateRootRuleInterpreted;
 import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpreted;
-import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.PostProcessor;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -95,24 +107,23 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
 
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
   }
 
-  @NotNull
+  @Nullable
   @Override
-  public PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro) {
-    final PropertyMacro delegate = wrapped.getPropertyMacro(propertyMacro);
-    return new PropertyMacro() {
-      @Override
-      public void expand(@NotNull TemplateContext context, @NotNull SNode outputNode) throws GenerationFailureException {
-        try {
-          NodeReadEventsCaster.setNodesReadListener(listener);
-          delegate.expand(context, outputNode);
-        } finally {
-          NodeReadEventsCaster.removeNodesReadListener();
-        }
-      }
-    };
+  public Object evaluate(@NotNull PropertyValueQuery query, @NotNull TemplateContext context) throws GenerationFailureException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.evaluate(query, context);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
   }
 
   @Override
@@ -233,9 +244,14 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
 
   @Override
   public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return isApplicable(rule, context);
+  }
+
+  @Override
+  public boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.isApplicable(rule, environment, context);
+      return wrapped.isApplicable(rule, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

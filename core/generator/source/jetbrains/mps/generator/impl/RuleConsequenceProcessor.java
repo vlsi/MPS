@@ -19,7 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GeneratorUtilEx.ConsequenceDispatch;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -32,12 +32,10 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public class RuleConsequenceProcessor {
-  private final TemplateExecutionEnvironment myEnvironment;
   private TemplateContainer myTemplateContainer;
   private TemplateContext myConsequenceContext;
 
-  public RuleConsequenceProcessor(TemplateExecutionEnvironment env) {
-    myEnvironment = env;
+  public RuleConsequenceProcessor() {
   }
 
   // XXX GenerationFailureException is thrown from QueryExecutionContext.checkCondition to check query in inline switch cases - perhaps,
@@ -45,7 +43,7 @@ public class RuleConsequenceProcessor {
   public void prepare(@NotNull SNode ruleConsequence, @NotNull TemplateContext templateContext)
       throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
     // the reason why the method is left here is described in TemplateContainer#initialize()
-    ConsequenceHandler h = new ConsequenceHandler(myEnvironment, templateContext);
+    ConsequenceHandler h = new ConsequenceHandler(templateContext);
     h.dispatch(ruleConsequence);
     h.checkExceptions();
     myConsequenceContext = h.getUltimateContext();
@@ -64,7 +62,6 @@ public class RuleConsequenceProcessor {
   }
 
   private static class ConsequenceHandler implements ConsequenceDispatch {
-    private final TemplateExecutionEnvironment myEnv;
     private TemplateContainer myTemplateContainer;
     private AbandonRuleInputException myAbandonRuleException;
     private DismissTopMappingRuleException myDismissRuleException;
@@ -72,8 +69,7 @@ public class RuleConsequenceProcessor {
     private TemplateContext myTemplateContext;
     private SNode myRuleConsequenceInUse;
 
-    public ConsequenceHandler(@NotNull TemplateExecutionEnvironment env, @NotNull TemplateContext ctx) {
-      myEnv = env;
+    public ConsequenceHandler(@NotNull TemplateContext ctx) {
       myTemplateContext = ctx;
     }
 
@@ -99,7 +95,7 @@ public class RuleConsequenceProcessor {
       try {
         for (SNode switchCase : RuleUtil.getInlineSwitch_case(ruleConsequence)) {
           SNode condition = RuleUtil.getInlineSwitch_caseCondition(switchCase);
-          if (myEnv.getQueryExecutor().checkCondition(condition, true, myTemplateContext, switchCase)) {
+          if (getQueryExecutor().checkCondition(condition, true, myTemplateContext, switchCase)) {
             SNode caseConsequence = RuleUtil.getInlineSwitch_caseConsequence(switchCase);
             dispatch(caseConsequence);
             return;
@@ -125,7 +121,7 @@ public class RuleConsequenceProcessor {
     public void inlineTemplate(SNode ruleConsequence) {
       SNode templateNode = RuleUtil.getInlineTemplate_templateNode(ruleConsequence);
       if (templateNode != null) {
-        myTemplateContainer = new TemplateContainer(myEnv, new Pair<SNode, String>(templateNode, null));
+        myTemplateContainer = new TemplateContainer(new Pair<SNode, String>(templateNode, null));
       } else {
         showErrorMessage(ruleConsequence, "no template node");
       }
@@ -134,7 +130,7 @@ public class RuleConsequenceProcessor {
     @Override
     public void templateDeclarationReference(SNode ruleConsequence) {
       // XXX for unknown reason we don't use TemplateDeclarationInterpreted here.
-      myTemplateContext = GeneratorUtil.createConsequenceContext(myTemplateContext, myEnv, ruleConsequence);
+      myTemplateContext = GeneratorUtil.createConsequenceContext(myTemplateContext, ruleConsequence);
       processTemplateContainer(ruleConsequence, RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence));
     }
 
@@ -143,7 +139,7 @@ public class RuleConsequenceProcessor {
         showErrorMessage(ruleConsequence, "error processing template consequence: no 'template'");
         return;
       }
-      myTemplateContainer = new TemplateContainer(myEnv, templateContainer);
+      myTemplateContainer = new TemplateContainer(templateContainer);
     }
 
     @Override
@@ -190,7 +186,10 @@ public class RuleConsequenceProcessor {
     }
 
     private IGeneratorLogger getLog() {
-      return myEnv.getLogger();
+      return myTemplateContext.getEnvironment().getLogger();
+    }
+    private QueryExecutionContext getQueryExecutor() {
+      return myTemplateContext.getEnvironment().getQueryExecutor();
     }
   }
 }

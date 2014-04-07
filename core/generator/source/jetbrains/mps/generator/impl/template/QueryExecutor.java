@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.runtime.PropertyMacro;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -34,6 +34,6 @@ public interface QueryExecutor {
   Collection<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
   @Nullable
   SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
-  @NotNull
-  PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro);
+  @Nullable
+  Object evaluate(@NotNull PropertyValueQuery query, @NotNull TemplateContext context) throws GenerationFailureException;
 }

@@ -58,23 +58,15 @@ import java.util.List;
  */
 public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnvironment {
   private final TemplateGenerator generator;
-  private final ReductionContext reductionContext;
+  private final ReductionTrack myReductionTrack;
   private final QueryExecutionContext myExecutionContext;
   private final ITemplateProcessor myTemplateProcessor;
 
-  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext) {
-    this.generator = generator;
-    this.reductionContext = new ReductionContext();
-    this.myExecutionContext = executionContext;
-    this.myTemplateProcessor = new TemplateProcessor(this);
-  }
-
-  private TemplateExecutionEnvironmentImpl(@NotNull TemplateExecutionEnvironmentImpl origin, @NotNull ReductionContext reductionContext) {
-    this.generator = origin.generator;
-    this.reductionContext = reductionContext;
-    myExecutionContext = origin.myExecutionContext;
-    myTemplateProcessor = new TemplateProcessor(this); // At the moment, TemplateProcessor needs correct ReductionContext, and we can't effectively reuse
-    // cached TemplateNodes and MacroNodes
+  public TemplateExecutionEnvironmentImpl(@NotNull TemplateProcessor templateProcessor, @NotNull QueryExecutionContext executionContext) {
+    this.generator = templateProcessor.getGenerator();
+    myExecutionContext = executionContext;
+    myTemplateProcessor = templateProcessor;
+    myReductionTrack = new ReductionTrack(generator.getBlockedReductionsData(), this);
   }
 
   @Override
@@ -122,7 +114,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @NotNull
   @Override
   public ReductionContext getReductionContext() {
-    return reductionContext;
+    return myReductionTrack.actual();
   }
 
   @NotNull
@@ -145,7 +137,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule) {
-    return new TemplateExecutionEnvironmentImpl(this, new ReductionContext(reductionContext, inputNode, rule));
+    return this;
   }
 
   @Override
@@ -161,7 +153,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @NotNull
   public List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateId,
       @NotNull TemplateContext ctx) throws GenerationCanceledException, GenerationFailureException {
-    List<SNode> outputNodes = generator.copyNodes(inputNodes, ctx.getInputName(), templateId, this);
+    List<SNode> outputNodes = generator.copyNodes(inputNodes, ctx.getInputName(), templateId, myReductionTrack);
     if (!outputNodes.isEmpty()) {
       new ChildAdopter(generator).checkIsExpectedLanguage(outputNodes, templateNode, ctx);
     }
@@ -183,20 +175,22 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Nullable
   @Override
   public Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException {
-    Collection<SNode> collection = generator.tryToReduce(_switch, context, this);
-    if (collection != null) {
-      return collection;
+    FastRuleFinder rf = generator.getRuleManager().getRuleFinder(_switch);
+    Collection<SNode> outputNodes = generator.tryToReduce(rf, context, myReductionTrack);
+    if (outputNodes != null) {
+      if (outputNodes.size() == 1 && context.getInputName() != null) {
+        SNode reducedNode = outputNodes.iterator().next();
+        // register copied node
+        generator.registerMappingLabel(context.getInput(), context.getInputName(), reducedNode);
+      }
+      return outputNodes;
     }
 
     // try the default case
     TemplateSwitchMapping current = generator.getSwitch(_switch);
     if (current != null) {
-      collection = current.applyDefault(this, _switch, context.getInputName(), context); // FIXME TSM.applyDefault without explicit mappingLabel
-      if (collection != null) {
-        return collection;
-      }
+      return current.applyDefault(this, _switch, context.getInputName(), context); // FIXME TSM.applyDefault without explicit mappingLabel
     }
-
     // no switch-case found for the inputNode - continue with templateNode under the $switch$
     return null;
   }
@@ -325,5 +319,10 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         contextParentNode.addChild(childRole, outputNodeToWeave);
       }
     }
+  }
+
+  // this method is not part of TemplateExecutionEnvironment API, but an implementation-specific aspect
+  /*package*/ReductionTrack getReductionTrack() {
+    return myReductionTrack;
   }
 }

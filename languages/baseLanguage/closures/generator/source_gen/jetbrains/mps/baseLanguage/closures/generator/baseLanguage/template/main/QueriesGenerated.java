@@ -68,6 +68,9 @@ import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.Collection;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -4821,101 +4824,102 @@ public class QueriesGenerated extends QueryProviderBase {
 
   {
     int i = 0;
-    pvqMethods.put("1201095804026", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201390868589", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201390896231", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201204858048", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1201093988342", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1232364347825", new QueriesGenerated.PVQ(i++, "name", "foo"));
-    pvqMethods.put("6995834834764135576", new QueriesGenerated.PVQ(i++, "value", "label"));
-    pvqMethods.put("1203245282593", new QueriesGenerated.PVQ(i++, "name", "invoke"));
-    pvqMethods.put("1203245357431", new QueriesGenerated.PVQ(i++, "name", "invoke"));
-    pvqMethods.put("1201019320623", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1201359405038", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1228830321714", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1201023446585", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201093772963", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1201023446648", new QueriesGenerated.PVQ(i++, "value", "3"));
-    pvqMethods.put("1201023446681", new QueriesGenerated.PVQ(i++, "value", "4"));
-    pvqMethods.put("1201094822854", new QueriesGenerated.PVQ(i++, "value", "2"));
-    pvqMethods.put("1201023446712", new QueriesGenerated.PVQ(i++, "value", "1"));
-    pvqMethods.put("1201023446742", new QueriesGenerated.PVQ(i++, "value", "3"));
-    pvqMethods.put("1201024123511", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201025995316", new QueriesGenerated.PVQ(i++, "value", "1"));
-    pvqMethods.put("1201191004477", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201190969332", new QueriesGenerated.PVQ(i++, "value", "1"));
-    pvqMethods.put("1201275380389", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201275443500", new QueriesGenerated.PVQ(i++, "value", "1"));
-    pvqMethods.put("1209330086336", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201275469013", new QueriesGenerated.PVQ(i++, "value", "23"));
-    pvqMethods.put("1201291955077", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201291955109", new QueriesGenerated.PVQ(i++, "value", "2"));
-    pvqMethods.put("1201291955140", new QueriesGenerated.PVQ(i++, "value", "3"));
-    pvqMethods.put("1201292912730", new QueriesGenerated.PVQ(i++, "value", "1"));
-    pvqMethods.put("1201292912753", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201292912792", new QueriesGenerated.PVQ(i++, "value", "2"));
-    pvqMethods.put("1201358206155", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201358877324", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1201358206209", new QueriesGenerated.PVQ(i++, "value", "1"));
-    pvqMethods.put("1201359082834", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1201358206241", new QueriesGenerated.PVQ(i++, "value", "3"));
-    pvqMethods.put("1201359122202", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1201359158799", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1201358206272", new QueriesGenerated.PVQ(i++, "value", "2"));
-    pvqMethods.put("1201382488348", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201382561129", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1201382704159", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1202817907517", new QueriesGenerated.PVQ(i++, "name", "invoke"));
-    pvqMethods.put("1228820677248", new QueriesGenerated.PVQ(i++, "value", "0"));
-    pvqMethods.put("1228820677286", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1228820677311", new QueriesGenerated.PVQ(i++, "value", "1"));
-    pvqMethods.put("1228822442184", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1228820677367", new QueriesGenerated.PVQ(i++, "value", "3"));
-    pvqMethods.put("1228828011714", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1228827778373", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("1228820677445", new QueriesGenerated.PVQ(i++, "value", "2"));
-    pvqMethods.put("6995834834764138415", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("6995834834764138195", new QueriesGenerated.PVQ(i++, "value", "label"));
-    pvqMethods.put("6995834834764138673", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("6995834834764138699", new QueriesGenerated.PVQ(i++, "value", "label"));
-    pvqMethods.put("7246115176735005574", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("7246115176735005600", new QueriesGenerated.PVQ(i++, "value", "label"));
-    pvqMethods.put("7246115176735007684", new QueriesGenerated.PVQ(i++, "label", "label"));
-    pvqMethods.put("7246115176735007710", new QueriesGenerated.PVQ(i++, "value", "label"));
-    pvqMethods.put("8424084437048109688", new QueriesGenerated.PVQ(i++, "name", "foo"));
-    pvqMethods.put("8424084437048109929", new QueriesGenerated.PVQ(i++, "name", "P"));
-    pvqMethods.put("8424084437048109311", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("4314010248456483473", new QueriesGenerated.PVQ(i++, "name", "param"));
-    pvqMethods.put("4314010248456483561", new QueriesGenerated.PVQ(i++, "name", "param"));
-    pvqMethods.put("8424084437048109641", new QueriesGenerated.PVQ(i++, "methodName", "invoke"));
-    pvqMethods.put("8424084437048109669", new QueriesGenerated.PVQ(i++, "name", "invoke"));
-    pvqMethods.put("608109309169759695", new QueriesGenerated.PVQ(i++, "name", "_yield"));
-    pvqMethods.put("7001216437968768003", new QueriesGenerated.PVQ(i++, "fieldName", null));
-    pvqMethods.put("7001216437968776046", new QueriesGenerated.PVQ(i++, "methodName", "op"));
-    pvqMethods.put("2857237956452593639", new QueriesGenerated.PVQ(i++, "name", "invoke"));
-    pvqMethods.put("349397194808798475", new QueriesGenerated.PVQ(i++, "name", "invoke"));
-    pvqMethods.put("3381384562914378183", new QueriesGenerated.PVQ(i++, "name", "invoke"));
-    pvqMethods.put("1229880447993", new QueriesGenerated.PVQ(i++, "name", "P"));
-    pvqMethods.put("1229880448003", new QueriesGenerated.PVQ(i++, "name", "E"));
-    pvqMethods.put("1229880448062", new QueriesGenerated.PVQ(i++, "name", "_void_void"));
-    pvqMethods.put("1229880697849", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1230041818706", new QueriesGenerated.PVQ(i++, "name", "p"));
-    pvqMethods.put("1232028919309", new QueriesGenerated.PVQ(i++, "name", "P"));
-    pvqMethods.put("1232028919319", new QueriesGenerated.PVQ(i++, "name", "E"));
-    pvqMethods.put("1232028919378", new QueriesGenerated.PVQ(i++, "name", "_return_void"));
-    pvqMethods.put("1232028919160", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1232028918518", new QueriesGenerated.PVQ(i++, "name", "p"));
-    pvqMethods.put("1232028933161", new QueriesGenerated.PVQ(i++, "name", "P"));
-    pvqMethods.put("1232028933171", new QueriesGenerated.PVQ(i++, "name", "E"));
-    pvqMethods.put("1232028933230", new QueriesGenerated.PVQ(i++, "name", "_void_terminate"));
-    pvqMethods.put("1232028933011", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1232028932370", new QueriesGenerated.PVQ(i++, "name", "p"));
-    pvqMethods.put("1232028944479", new QueriesGenerated.PVQ(i++, "name", "P"));
-    pvqMethods.put("1232028944489", new QueriesGenerated.PVQ(i++, "name", "E"));
-    pvqMethods.put("1232028944548", new QueriesGenerated.PVQ(i++, "name", "_return_terminate"));
-    pvqMethods.put("1232028944330", new QueriesGenerated.PVQ(i++, "name", null));
-    pvqMethods.put("1232028943688", new QueriesGenerated.PVQ(i++, "name", "p"));
-    pvqMethods.put("1336567499629120993", new QueriesGenerated.PVQ(i++, "name", "a"));
+    final String modelId = "r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)";
+    pvqMethods.put("1201095804026", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201095804026"), "value", "0"));
+    pvqMethods.put("1201390868589", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201390868589"), "value", "0"));
+    pvqMethods.put("1201390896231", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201390896231"), "value", "0"));
+    pvqMethods.put("1201204858048", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201204858048"), "fieldName", null));
+    pvqMethods.put("1201093988342", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201093988342"), "fieldName", null));
+    pvqMethods.put("1232364347825", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232364347825"), "name", "foo"));
+    pvqMethods.put("6995834834764135576", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "6995834834764135576"), "value", "label"));
+    pvqMethods.put("1203245282593", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1203245282593"), "name", "invoke"));
+    pvqMethods.put("1203245357431", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1203245357431"), "name", "invoke"));
+    pvqMethods.put("1201019320623", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201019320623"), "name", null));
+    pvqMethods.put("1201359405038", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201359405038"), "name", null));
+    pvqMethods.put("1228830321714", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1228830321714"), "name", null));
+    pvqMethods.put("1201023446585", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201023446585"), "value", "0"));
+    pvqMethods.put("1201093772963", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201093772963"), "fieldName", null));
+    pvqMethods.put("1201023446648", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201023446648"), "value", "3"));
+    pvqMethods.put("1201023446681", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201023446681"), "value", "4"));
+    pvqMethods.put("1201094822854", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201094822854"), "value", "2"));
+    pvqMethods.put("1201023446712", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201023446712"), "value", "1"));
+    pvqMethods.put("1201023446742", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201023446742"), "value", "3"));
+    pvqMethods.put("1201024123511", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201024123511"), "value", "0"));
+    pvqMethods.put("1201025995316", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201025995316"), "value", "1"));
+    pvqMethods.put("1201191004477", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201191004477"), "value", "0"));
+    pvqMethods.put("1201190969332", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201190969332"), "value", "1"));
+    pvqMethods.put("1201275380389", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201275380389"), "value", "0"));
+    pvqMethods.put("1201275443500", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201275443500"), "value", "1"));
+    pvqMethods.put("1209330086336", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1209330086336"), "value", "0"));
+    pvqMethods.put("1201275469013", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201275469013"), "value", "23"));
+    pvqMethods.put("1201291955077", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201291955077"), "value", "0"));
+    pvqMethods.put("1201291955109", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201291955109"), "value", "2"));
+    pvqMethods.put("1201291955140", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201291955140"), "value", "3"));
+    pvqMethods.put("1201292912730", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201292912730"), "value", "1"));
+    pvqMethods.put("1201292912753", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201292912753"), "value", "0"));
+    pvqMethods.put("1201292912792", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201292912792"), "value", "2"));
+    pvqMethods.put("1201358206155", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201358206155"), "value", "0"));
+    pvqMethods.put("1201358877324", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201358877324"), "fieldName", null));
+    pvqMethods.put("1201358206209", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201358206209"), "value", "1"));
+    pvqMethods.put("1201359082834", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201359082834"), "fieldName", null));
+    pvqMethods.put("1201358206241", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201358206241"), "value", "3"));
+    pvqMethods.put("1201359122202", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201359122202"), "fieldName", null));
+    pvqMethods.put("1201359158799", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201359158799"), "fieldName", null));
+    pvqMethods.put("1201358206272", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201358206272"), "value", "2"));
+    pvqMethods.put("1201382488348", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201382488348"), "value", "0"));
+    pvqMethods.put("1201382561129", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201382561129"), "value", "0"));
+    pvqMethods.put("1201382704159", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1201382704159"), "value", "0"));
+    pvqMethods.put("1202817907517", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1202817907517"), "name", "invoke"));
+    pvqMethods.put("1228820677248", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1228820677248"), "value", "0"));
+    pvqMethods.put("1228820677286", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1228820677286"), "fieldName", null));
+    pvqMethods.put("1228820677311", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1228820677311"), "value", "1"));
+    pvqMethods.put("1228822442184", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1228822442184"), "fieldName", null));
+    pvqMethods.put("1228820677367", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1228820677367"), "value", "3"));
+    pvqMethods.put("1228828011714", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1228828011714"), "fieldName", null));
+    pvqMethods.put("1228827778373", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1228827778373"), "fieldName", null));
+    pvqMethods.put("1228820677445", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1228820677445"), "value", "2"));
+    pvqMethods.put("6995834834764138415", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "6995834834764138415"), "label", "label"));
+    pvqMethods.put("6995834834764138195", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "6995834834764138195"), "value", "label"));
+    pvqMethods.put("6995834834764138673", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "6995834834764138673"), "label", "label"));
+    pvqMethods.put("6995834834764138699", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "6995834834764138699"), "value", "label"));
+    pvqMethods.put("7246115176735005574", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "7246115176735005574"), "label", "label"));
+    pvqMethods.put("7246115176735005600", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "7246115176735005600"), "value", "label"));
+    pvqMethods.put("7246115176735007684", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "7246115176735007684"), "label", "label"));
+    pvqMethods.put("7246115176735007710", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "7246115176735007710"), "value", "label"));
+    pvqMethods.put("8424084437048109688", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "8424084437048109688"), "name", "foo"));
+    pvqMethods.put("8424084437048109929", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "8424084437048109929"), "name", "P"));
+    pvqMethods.put("8424084437048109311", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "8424084437048109311"), "name", null));
+    pvqMethods.put("4314010248456483473", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "4314010248456483473"), "name", "param"));
+    pvqMethods.put("4314010248456483561", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "4314010248456483561"), "name", "param"));
+    pvqMethods.put("8424084437048109641", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "8424084437048109641"), "methodName", "invoke"));
+    pvqMethods.put("8424084437048109669", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "8424084437048109669"), "name", "invoke"));
+    pvqMethods.put("608109309169759695", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "608109309169759695"), "name", "_yield"));
+    pvqMethods.put("7001216437968768003", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "7001216437968768003"), "fieldName", null));
+    pvqMethods.put("7001216437968776046", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "7001216437968776046"), "methodName", "op"));
+    pvqMethods.put("2857237956452593639", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "2857237956452593639"), "name", "invoke"));
+    pvqMethods.put("349397194808798475", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "349397194808798475"), "name", "invoke"));
+    pvqMethods.put("3381384562914378183", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "3381384562914378183"), "name", "invoke"));
+    pvqMethods.put("1229880447993", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1229880447993"), "name", "P"));
+    pvqMethods.put("1229880448003", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1229880448003"), "name", "E"));
+    pvqMethods.put("1229880448062", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1229880448062"), "name", "_void_void"));
+    pvqMethods.put("1229880697849", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1229880697849"), "name", null));
+    pvqMethods.put("1230041818706", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1230041818706"), "name", "p"));
+    pvqMethods.put("1232028919309", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028919309"), "name", "P"));
+    pvqMethods.put("1232028919319", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028919319"), "name", "E"));
+    pvqMethods.put("1232028919378", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028919378"), "name", "_return_void"));
+    pvqMethods.put("1232028919160", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028919160"), "name", null));
+    pvqMethods.put("1232028918518", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028918518"), "name", "p"));
+    pvqMethods.put("1232028933161", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028933161"), "name", "P"));
+    pvqMethods.put("1232028933171", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028933171"), "name", "E"));
+    pvqMethods.put("1232028933230", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028933230"), "name", "_void_terminate"));
+    pvqMethods.put("1232028933011", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028933011"), "name", null));
+    pvqMethods.put("1232028932370", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028932370"), "name", "p"));
+    pvqMethods.put("1232028944479", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028944479"), "name", "P"));
+    pvqMethods.put("1232028944489", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028944489"), "name", "E"));
+    pvqMethods.put("1232028944548", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028944548"), "name", "_return_terminate"));
+    pvqMethods.put("1232028944330", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028944330"), "name", null));
+    pvqMethods.put("1232028943688", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1232028943688"), "name", "p"));
+    pvqMethods.put("1336567499629120993", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "1336567499629120993"), "name", "a"));
   }
 
   @NotNull
@@ -4931,8 +4935,8 @@ public class QueriesGenerated extends QueryProviderBase {
   private static class PVQ extends PropertyValueQuery.Base {
     private final int methodKey;
 
-    /*package*/ PVQ(int methodKey, String propertyName, String templateValue) {
-      super(propertyName, templateValue);
+    /*package*/ PVQ(int methodKey, SNodeReference macroRef, String propertyName, String templateValue) {
+      super(macroRef, propertyName, templateValue);
       this.methodKey = methodKey;
     }
 
@@ -5131,6 +5135,248 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetPropertyValue_1336567499629120994(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
+  }
+
+  private final Map<String, IfMacroCondition> imcMethods = new HashMap<String, IfMacroCondition>();
+
+  {
+    int i = 0;
+    imcMethods.put("8662331813146364235", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1215446294704", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1203249920932", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1203249946365", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1203250562735", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1215429172223", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1203268194222", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1215457391281", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1215457429073", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1203250727102", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1203250730219", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1203250761730", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1203267949367", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1203251514450", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1201359373030", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1228830321694", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1201421585182", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1201421812047", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1201276700611", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1201378781868", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1201378849019", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1201382524701", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1232140975414", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1232141024320", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1232141409461", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1232141456166", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1232624140223", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776863469", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776863534", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776863646", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776863711", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776864032", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776864120", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776864150", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049777027946", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776865339", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776865422", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776865561", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776865651", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776865970", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776866076", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("8665905049776866106", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("6995834834764138782", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735005220", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735005713", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735005741", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735005347", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735005380", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735005389", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735005404", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735007563", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735007636", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735007664", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735007792", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735007825", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735007834", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7246115176735007849", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("4314010248456452404", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("4314010248456269584", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("4523732754034692464", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("5008999823682208464", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("5008999823682208576", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("5008999823682210147", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("608109309169759688", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("2857237956452627652", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("349397194808798692", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1229880447866", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1232028919179", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1232028933030", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("1232028944349", new QueriesGenerated.IfMC(i++));
+  }
+
+  @NotNull
+  @Override
+  public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
+    final String id = ifMacro.getNodeId().toString();
+    if (!(imcMethods.containsKey(id))) {
+      return super.getIfMacroCondition(ifMacro);
+    }
+    return imcMethods.get(id);
+  }
+
+  private static class IfMC implements IfMacroCondition {
+    private final int methodKey;
+
+    public IfMC(int methodKey) {
+      this.methodKey = methodKey;
+    }
+
+    @Override
+    public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.ifMacro_Condition_8662331813146364239(ctx);
+        case 1:
+          return QueriesGenerated.ifMacro_Condition_1215446294705(ctx);
+        case 2:
+          return QueriesGenerated.ifMacro_Condition_1203249920933(ctx);
+        case 3:
+          return QueriesGenerated.ifMacro_Condition_1203249962201(ctx);
+        case 4:
+          return QueriesGenerated.ifMacro_Condition_1203250587999(ctx);
+        case 5:
+          return QueriesGenerated.ifMacro_Condition_1215429196709(ctx);
+        case 6:
+          return QueriesGenerated.ifMacro_Condition_1203268216179(ctx);
+        case 7:
+          return QueriesGenerated.ifMacro_Condition_1215457391282(ctx);
+        case 8:
+          return QueriesGenerated.ifMacro_Condition_1215457429074(ctx);
+        case 9:
+          return QueriesGenerated.ifMacro_Condition_1203250752443(ctx);
+        case 10:
+          return QueriesGenerated.ifMacro_Condition_1203250743336(ctx);
+        case 11:
+          return QueriesGenerated.ifMacro_Condition_1203250784283(ctx);
+        case 12:
+          return QueriesGenerated.ifMacro_Condition_1203267949368(ctx);
+        case 13:
+          return QueriesGenerated.ifMacro_Condition_1203251514451(ctx);
+        case 14:
+          return QueriesGenerated.ifMacro_Condition_1201359373031(ctx);
+        case 15:
+          return QueriesGenerated.ifMacro_Condition_1228830321695(ctx);
+        case 16:
+          return QueriesGenerated.ifMacro_Condition_1201421585183(ctx);
+        case 17:
+          return QueriesGenerated.ifMacro_Condition_1201421814921(ctx);
+        case 18:
+          return QueriesGenerated.ifMacro_Condition_1201276700612(ctx);
+        case 19:
+          return QueriesGenerated.ifMacro_Condition_1201378781869(ctx);
+        case 20:
+          return QueriesGenerated.ifMacro_Condition_1201378852034(ctx);
+        case 21:
+          return QueriesGenerated.ifMacro_Condition_1201382524702(ctx);
+        case 22:
+          return QueriesGenerated.ifMacro_Condition_1232140975415(ctx);
+        case 23:
+          return QueriesGenerated.ifMacro_Condition_1232141024321(ctx);
+        case 24:
+          return QueriesGenerated.ifMacro_Condition_1232141409462(ctx);
+        case 25:
+          return QueriesGenerated.ifMacro_Condition_1232141456167(ctx);
+        case 26:
+          return QueriesGenerated.ifMacro_Condition_1232624140224(ctx);
+        case 27:
+          return QueriesGenerated.ifMacro_Condition_8665905049776863470(ctx);
+        case 28:
+          return QueriesGenerated.ifMacro_Condition_8665905049776863535(ctx);
+        case 29:
+          return QueriesGenerated.ifMacro_Condition_8665905049776863647(ctx);
+        case 30:
+          return QueriesGenerated.ifMacro_Condition_8665905049776863712(ctx);
+        case 31:
+          return QueriesGenerated.ifMacro_Condition_8665905049776864033(ctx);
+        case 32:
+          return QueriesGenerated.ifMacro_Condition_8665905049776864121(ctx);
+        case 33:
+          return QueriesGenerated.ifMacro_Condition_8665905049776864151(ctx);
+        case 34:
+          return QueriesGenerated.ifMacro_Condition_8665905049777027947(ctx);
+        case 35:
+          return QueriesGenerated.ifMacro_Condition_8665905049776865340(ctx);
+        case 36:
+          return QueriesGenerated.ifMacro_Condition_8665905049776865423(ctx);
+        case 37:
+          return QueriesGenerated.ifMacro_Condition_8665905049776865562(ctx);
+        case 38:
+          return QueriesGenerated.ifMacro_Condition_8665905049776865652(ctx);
+        case 39:
+          return QueriesGenerated.ifMacro_Condition_8665905049776865971(ctx);
+        case 40:
+          return QueriesGenerated.ifMacro_Condition_8665905049776866077(ctx);
+        case 41:
+          return QueriesGenerated.ifMacro_Condition_8665905049776866107(ctx);
+        case 42:
+          return QueriesGenerated.ifMacro_Condition_6995834834764138783(ctx);
+        case 43:
+          return QueriesGenerated.ifMacro_Condition_7246115176735005221(ctx);
+        case 44:
+          return QueriesGenerated.ifMacro_Condition_7246115176735005714(ctx);
+        case 45:
+          return QueriesGenerated.ifMacro_Condition_7246115176735005742(ctx);
+        case 46:
+          return QueriesGenerated.ifMacro_Condition_7246115176735005348(ctx);
+        case 47:
+          return QueriesGenerated.ifMacro_Condition_7246115176735005381(ctx);
+        case 48:
+          return QueriesGenerated.ifMacro_Condition_7246115176735005390(ctx);
+        case 49:
+          return QueriesGenerated.ifMacro_Condition_7246115176735005405(ctx);
+        case 50:
+          return QueriesGenerated.ifMacro_Condition_7246115176735007564(ctx);
+        case 51:
+          return QueriesGenerated.ifMacro_Condition_7246115176735007637(ctx);
+        case 52:
+          return QueriesGenerated.ifMacro_Condition_7246115176735007665(ctx);
+        case 53:
+          return QueriesGenerated.ifMacro_Condition_7246115176735007793(ctx);
+        case 54:
+          return QueriesGenerated.ifMacro_Condition_7246115176735007826(ctx);
+        case 55:
+          return QueriesGenerated.ifMacro_Condition_7246115176735007835(ctx);
+        case 56:
+          return QueriesGenerated.ifMacro_Condition_7246115176735007850(ctx);
+        case 57:
+          return QueriesGenerated.ifMacro_Condition_4314010248456452405(ctx);
+        case 58:
+          return QueriesGenerated.ifMacro_Condition_4314010248456269585(ctx);
+        case 59:
+          return QueriesGenerated.ifMacro_Condition_4523732754034692465(ctx);
+        case 60:
+          return QueriesGenerated.ifMacro_Condition_5008999823682208465(ctx);
+        case 61:
+          return QueriesGenerated.ifMacro_Condition_5008999823682208577(ctx);
+        case 62:
+          return QueriesGenerated.ifMacro_Condition_5008999823682210148(ctx);
+        case 63:
+          return QueriesGenerated.ifMacro_Condition_608109309169759689(ctx);
+        case 64:
+          return QueriesGenerated.ifMacro_Condition_2857237956452627653(ctx);
+        case 65:
+          return QueriesGenerated.ifMacro_Condition_349397194808798693(ctx);
+        case 66:
+          return QueriesGenerated.ifMacro_Condition_1229880447867(ctx);
+        case 67:
+          return QueriesGenerated.ifMacro_Condition_1232028919180(ctx);
+        case 68:
+          return QueriesGenerated.ifMacro_Condition_1232028933031(ctx);
+        case 69:
+          return QueriesGenerated.ifMacro_Condition_1232028944350(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateNode(), methodKey));
       }
     }
   }

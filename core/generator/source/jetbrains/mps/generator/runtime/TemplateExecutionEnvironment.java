@@ -77,6 +77,11 @@ public interface TemplateExecutionEnvironment {
   @NotNull
   ITemplateProcessor getTemplateProcessor();
 
+  /**
+   * @deprecated this is a no-op operation now
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
 
   // FIXME remove mappingName parameter where TemlateContext is available

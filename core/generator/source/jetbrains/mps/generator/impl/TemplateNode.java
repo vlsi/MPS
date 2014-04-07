@@ -16,14 +16,14 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.reference.MacroResolver;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
-import jetbrains.mps.generator.runtime.PropertyMacro;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -82,17 +83,24 @@ class TemplateNode {
   /**
    * configure new output node according to template
    */
-  public void apply(TemplateExecutionEnvironment env, TemplateContext context, SNode outputNode) throws GenerationFailureException {
+  public void apply(TemplateContext context, SNode outputNode) throws GenerationFailureException {
+    final TemplateExecutionEnvironment env = context.getEnvironment();
     if (myMold == null) {
-      myMold = new Mold(myNode, env.getQueryExecutor(), env.getLogger());
+      synchronized (this) {
+        if (myMold == null) {
+          myMold = new Mold(myNode, env.getGenerator().getGeneratorSessionContext(), env.getLogger());
+        }
+      }
     }
     final TemplateGenerator generator = env.getGenerator();
     // jetbrains.mps.util.SNodeOperations.copyProperties(myTemplateNode, outputNode);
     for (int i = 0; i < myMold.myTemplateProperties.length;) {
       outputNode.setProperty(myMold.myTemplateProperties[i++], myMold.myTemplateProperties[i++]);
     }
-    for (PropertyMacro pm : myMold.myMacroProperties) {
-      pm.expand(context, outputNode);
+    for (PropertyValueQuery pvq : myMold.myMacroProperties) {
+      Object macroValue = env.getQueryExecutor().evaluate(pvq, context);
+      String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
+      SNodeAccessUtil.setProperty(outputNode, pvq.getPropertyName(), propertyValue);
     }
     for (Map.Entry<String,MacroResolver> e : myMold.myMacroRefs.entrySet()) {
       final String refMacroRole = e.getKey();
@@ -160,16 +168,16 @@ class TemplateNode {
   private static class Mold {
     public final List<SNode> myChildTemplates;
     public final String[] myTemplateProperties; // (name, value) sequence
-    public final PropertyMacro[] myMacroProperties;
+    public final PropertyValueQuery[] myMacroProperties;
     public final Map<String, MacroResolver> myMacroRefs; // map isn't nice, don't need once MacroResolver (or replacement thereof) has role name
     public final RefInfo[] myStaticRefs;
     public final RefInfo[] myInnerRefs;
     public final RefInfo[] myOtherRefs;
 
-    private Mold(@NotNull SNode templateNode, @NotNull QueryExecutionContext queryExecutor, @NotNull IGeneratorLogger log) {
+    private Mold(SNode templateNode, GeneratorQueryProvider.Source gqps, IGeneratorLogger log) {
       final ArrayList<String> propsHandledWithMacro = new ArrayList<String>();
       final ArrayList<SNode> templateChildNodes = new ArrayList<SNode>();
-      final ArrayList<PropertyMacro> propertyMacros = new ArrayList<PropertyMacro>();
+      final ArrayList<PropertyValueQuery> propertyMacros = new ArrayList<PropertyValueQuery>();
       final HashMap<String, MacroResolver> refMacros = new HashMap<String, MacroResolver>();
 
       // process property and reference macros
@@ -179,11 +187,10 @@ class TemplateNode {
           if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
             final String propertyName = AttributeOperations.getPropertyName(templateChildNode);
             propsHandledWithMacro.add(propertyName);
-            final PropertyMacro pm = queryExecutor.getPropertyMacro(templateChildNode);
-            propertyMacros.add(pm);
+            propertyMacros.add(gqps.getQueryProvider(templateChildNode.getReference()).getPropertyValueQuery(templateChildNode));
           } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
             final String refMacroRole = AttributeOperations.getLinkRole(templateChildNode);
-            MacroResolver mr = new MacroResolver(queryExecutor, templateChildNode, templateNode.getReferenceTarget(refMacroRole));
+            MacroResolver mr = new MacroResolver(templateChildNode, templateNode.getReferenceTarget(refMacroRole));
             refMacros.put(refMacroRole, mr);
           }
         } else {
@@ -192,7 +199,7 @@ class TemplateNode {
       }
       myChildTemplates = templateChildNodes.isEmpty() ? Collections.<SNode>emptyList() : Arrays.asList(templateChildNodes.toArray(new SNode[templateChildNodes.size()]));
       myMacroRefs = refMacros.isEmpty() ? Collections.<String,MacroResolver>emptyMap() : refMacros;
-      myMacroProperties = propertyMacros.toArray(new PropertyMacro[propertyMacros.size()]);
+      myMacroProperties = propertyMacros.toArray(new PropertyValueQuery[propertyMacros.size()]);
       final ArrayList<String> templateProps = new ArrayList<String>();
       for (String name : templateNode.getPropertyNames()) {
         if (propsHandledWithMacro.contains(name)) {

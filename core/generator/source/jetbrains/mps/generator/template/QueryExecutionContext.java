@@ -39,8 +39,10 @@ import java.util.List;
 /**
  * XXX this is not a context, rather QueryExecutionFacility/QueryExecutor, utility to provide extra indirection
  * when invoking conditions/rules. It doesn't keep any 'context' information.
- * Note, this facility is relevant to interpreted templates only, generated templates invoke corresponding generated query methods directly
- * FIXME get rid of inputNode where templateContext is available
+ * Note, this facility is relevant to interpreted templates only, generated templates invoke corresponding generated query methods directly.
+ * This interface is in API (TemplateExecutionEnvironment gives access to it), although it's not expected clients will use it (there's no need to), and
+ * with this in mind, the API is deemed internal and subject to change without any notice and deprecation phase.
+ * FIXME get rid of inputNode and TEE where templateContext is available
  * Evgeny Gryaznov, Feb 24, 2010
  */
 public interface QueryExecutionContext extends QueryExecutor {
@@ -68,8 +70,8 @@ public interface QueryExecutionContext extends QueryExecutor {
   void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
   /**
-   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#getPropertyMacro(org.jetbrains.mps.openapi.model.SNode)} or
-   * {@link jetbrains.mps.generator.impl.interpreted.PropertyMacroInterpreted} instead
+   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.PropertyValueQuery, jetbrains.mps.generator.runtime.TemplateContext)}
+   * instead
    */
   @Deprecated
   @ToRemove(version = 3.1)
@@ -106,7 +108,14 @@ public interface QueryExecutionContext extends QueryExecutor {
 
   Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 
+  /**
+   * @deprecated use {@link #isApplicable(jetbrains.mps.generator.runtime.TemplateRuleWithCondition, jetbrains.mps.generator.runtime.TemplateContext)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+
+  boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException;
 
   Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 
