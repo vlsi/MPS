@@ -292,10 +292,12 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
     private EditorCell createConstant_y68cfu_a1h0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_y68cfu_a1h0");
+      editorCell.setCellId("Empty_Enum_Constants");
       Style style = new StyleImpl();
       style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
+      editorCell.addKeyMap(new EnumConstants());
       editorCell.setDefaultText("<<enum constants>>");
       return editorCell;
     }
