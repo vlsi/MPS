@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
 import com.intellij.icons.AllIcons.General;
 import com.intellij.ui.LayeredIcon;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.IconNodeUpdate;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
@@ -24,16 +25,21 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.*;
 
-public class ProjectPaneModifiedMarker extends TreeUpdateVisitor {
+public class ModifiedMarker extends TreeUpdateVisitor {
   @Override
-  protected void visitModelNode(final SModelTreeNode node) {
-    SModel md = node.getModel();
-    if (!(md.isLoaded())) return;
-    if (!(md instanceof EditableSModel)) return;
+  public void visitModelNode(@NotNull final SModelTreeNode node) {
+    scheduleModelRead(node, new Runnable() {
+      @Override
+      public void run() {
+        SModel md = node.getModel();
+        if (!(md.isLoaded())) return;
+        if (!(md instanceof EditableSModel)) return;
 
-    boolean changed = ((EditableSModel) md).isChanged();
+        boolean changed = ((EditableSModel) md).isChanged();
 
-    final Icon icon = changed ? new LayeredIcon(node.getDefaultIcon(), General.Modified) : node.getDefaultIcon();
-    addUpdate(node, new IconNodeUpdate(icon));
+        final Icon icon = changed ? new LayeredIcon(node.getDefaultIcon(), General.Modified) : node.getDefaultIcon();
+        addUpdate(node, new IconNodeUpdate(icon));
+      }
+    });
   }
 }

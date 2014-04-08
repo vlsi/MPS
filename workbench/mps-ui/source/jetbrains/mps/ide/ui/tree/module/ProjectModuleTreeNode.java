@@ -16,13 +16,16 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TreeElement;
+import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 
-public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSModuleTreeNode {
+public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSModuleTreeNode, TreeElement {
   public static ProjectModuleTreeNode createFor(Project project, SModule module) {
     return createFor(project, module, false);
   }
@@ -53,5 +56,10 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode implements MPSMo
   @Override
   protected final boolean canBeOpened() {
     return false;
+  }
+
+  @Override
+  public void accept(@NotNull TreeNodeVisitor visitor) {
+    visitor.visitModuleNode(this);
   }
 }

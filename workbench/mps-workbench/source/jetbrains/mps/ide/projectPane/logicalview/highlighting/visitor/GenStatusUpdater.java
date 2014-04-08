@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -38,7 +39,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.tree.TreeNode;
 
-public class ProjectPaneTreeGenStatusUpdater extends TreeUpdateVisitor {
+public class GenStatusUpdater extends TreeUpdateVisitor {
 
   private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {
     do {
@@ -48,53 +49,64 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeUpdateVisitor {
     return (ProjectModuleTreeNode) node;
   }
 
-  @Override
-  protected void visitModelNode(final SModelTreeNode modelNode) {
-    if (!ProjectPane.isShowGenStatus()) return;
-    if (IMakeService.INSTANCE.isSessionActive()) return;
+  private boolean isTimeToRelax() {
+    if (!ProjectPane.isShowGenStatus()) return true;
+    if (IMakeService.INSTANCE.isSessionActive()) return true;
 
     Application application = ApplicationManager.getApplication();
-    if (application.isDisposed() || application.isDisposeInProgress()) return;
+    return (application.isDisposed() || application.isDisposeInProgress());
+  }
 
-    SModel md = modelNode.getModel();
-    if (!(md instanceof EditableSModel)) return;
-    if (!(md instanceof GeneratableSModel) || !(((GeneratableSModel) md).isGeneratable())) return;
-    if (md.getModule() == null) return;
-
-    final ProjectModuleTreeNode moduleNode = getContainingModuleNode(modelNode);
-
-    boolean wasChanged = ((EditableSModel) md).isChanged();
-
-    if (moduleNode.getModule().isReadOnly()) {
-      addUpdate(modelNode, new AdditionalTextNodeUpdate(GenerationStatus.READONLY.getMessage()));
-      addUpdate(moduleNode, new AdditionalTextNodeUpdate(GenerationStatus.READONLY.getMessage()));
-      return;
-    }
-
-    if (wasChanged) {
-      addUpdate(modelNode, new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
-      addUpdate(moduleNode, new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
-      if (moduleNode.getModule() instanceof Generator) {
-        addUpdate(getContainingModuleNode(moduleNode), new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
-      }
-      return;
-    }
-
-    GenerationStatus modelStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
+  @Override
+  public void visitModelNode(@NotNull final SModelTreeNode modelNode) {
+    schedule(modelNode, new Runnable() {
       @Override
-      public GenerationStatus compute() {
-        // extra check before read action
-        if (modelNode.getModel().getModule() == null) {
-          return GenerationStatus.NOT_REQUIRED;
+      public void run() {
+        if (isTimeToRelax()) {
+          return;
         }
-        return getGenerationStatus(modelNode);
+
+        SModel md = modelNode.getModel();
+        if (!(md instanceof EditableSModel)) return;
+        if (!(md instanceof GeneratableSModel) || !(((GeneratableSModel) md).isGeneratable())) return;
+        if (md.getModule() == null) return;
+
+        final ProjectModuleTreeNode moduleNode = getContainingModuleNode(modelNode);
+
+        boolean wasChanged = ((EditableSModel) md).isChanged();
+
+        if (moduleNode.getModule().isReadOnly()) {
+          addUpdate(modelNode, new AdditionalTextNodeUpdate(GenerationStatus.READONLY.getMessage()));
+          addUpdate(moduleNode, new AdditionalTextNodeUpdate(GenerationStatus.READONLY.getMessage()));
+          return;
+        }
+
+        if (wasChanged) {
+          addUpdate(modelNode, new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+          addUpdate(moduleNode, new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+          if (moduleNode.getModule() instanceof Generator) {
+            addUpdate(getContainingModuleNode(moduleNode), new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+          }
+          return;
+        }
+
+        GenerationStatus modelStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
+          @Override
+          public GenerationStatus compute() {
+            // extra check before read action
+            if (modelNode.getModel().getModule() == null) {
+              return GenerationStatus.NOT_REQUIRED;
+            }
+            return getGenerationStatus(modelNode);
+          }
+        });
+        updateModuleStatus(moduleNode);
+        if (moduleNode.getModule() instanceof Generator) {
+          updateModuleStatus(getContainingModuleNode(moduleNode));
+        }
+        addUpdate(modelNode, new AdditionalTextNodeUpdate(modelStatus.getMessage()));
       }
     });
-    updateModuleStatus(moduleNode);
-    if (moduleNode.getModule() instanceof Generator) {
-      updateModuleStatus(getContainingModuleNode(moduleNode));
-    }
-    addUpdate(modelNode, new AdditionalTextNodeUpdate(modelStatus.getMessage()));
   }
 
   private void updateModuleStatus(final ProjectModuleTreeNode moduleNode) {
