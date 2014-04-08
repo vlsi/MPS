@@ -24,6 +24,7 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -98,10 +99,8 @@ class TemplateNode {
     for (int i = 0; i < myMold.myTemplateProperties.length;) {
       outputNode.setProperty(myMold.myTemplateProperties[i++], myMold.myTemplateProperties[i++]);
     }
-    for (PropertyValueQuery pvq : myMold.myMacroProperties) {
-      Object macroValue = env.getQueryExecutor().evaluate(pvq, context);
-      String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
-      SNodeAccessUtil.setProperty(outputNode, pvq.getPropertyName(), propertyValue);
+    for (PropertyMacro pm : myMold.myMacroProperties) {
+      pm.expand(context, outputNode);
     }
     for (Map.Entry<String,MacroResolver> e : myMold.myMacroRefs.entrySet()) {
       final String refMacroRole = e.getKey();
@@ -169,7 +168,7 @@ class TemplateNode {
   private static class Mold {
     public final List<SNode> myChildTemplates;
     public final String[] myTemplateProperties; // (name, value) sequence
-    public final PropertyValueQuery[] myMacroProperties;
+    public final PropertyMacro[] myMacroProperties;
     public final Map<String, MacroResolver> myMacroRefs; // map isn't nice, don't need once MacroResolver (or replacement thereof) has role name
     public final RefInfo[] myStaticRefs;
     public final RefInfo[] myInnerRefs;
@@ -178,7 +177,7 @@ class TemplateNode {
     private Mold(SNode templateNode, GeneratorQueryProvider.Source gqps, IGeneratorLogger log) {
       final ArrayList<String> propsHandledWithMacro = new ArrayList<String>();
       final ArrayList<SNode> templateChildNodes = new ArrayList<SNode>();
-      final ArrayList<PropertyValueQuery> propertyMacros = new ArrayList<PropertyValueQuery>();
+      final ArrayList<PropertyMacro> propertyMacros = new ArrayList<PropertyMacro>();
       final HashMap<String, MacroResolver> refMacros = new HashMap<String, MacroResolver>();
 
       // process property and reference macros
@@ -188,7 +187,8 @@ class TemplateNode {
           if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
             final String propertyName = AttributeOperations.getPropertyName(templateChildNode);
             propsHandledWithMacro.add(propertyName);
-            propertyMacros.add(gqps.getQueryProvider(templateChildNode.getReference()).getPropertyValueQuery(templateChildNode));
+            final PropertyValueQuery q = gqps.getQueryProvider(templateChildNode.getReference()).getPropertyValueQuery(templateChildNode);
+            propertyMacros.add(new PropertyMacro(q, templateChildNode.getReference()));
           } else if (templateChildNodeConcept.equals(RuleUtil.concept_ReferenceMacro)) {
             final String refMacroRole = AttributeOperations.getLinkRole(templateChildNode);
             MacroResolver mr = new MacroResolver(templateChildNode, templateNode.getReferenceTarget(refMacroRole));
@@ -200,7 +200,7 @@ class TemplateNode {
       }
       myChildTemplates = templateChildNodes.isEmpty() ? Collections.<SNode>emptyList() : Arrays.asList(templateChildNodes.toArray(new SNode[templateChildNodes.size()]));
       myMacroRefs = refMacros.isEmpty() ? Collections.<String,MacroResolver>emptyMap() : refMacros;
-      myMacroProperties = propertyMacros.toArray(new PropertyValueQuery[propertyMacros.size()]);
+      myMacroProperties = propertyMacros.toArray(new PropertyMacro[propertyMacros.size()]);
       final ArrayList<String> templateProps = new ArrayList<String>();
       for (String name : templateNode.getPropertyNames()) {
         if (propsHandledWithMacro.contains(name)) {
@@ -277,6 +277,24 @@ class TemplateNode {
       this.targetNode = null;
       this.targetModel = targetModel;
       this.targetId = targetId;
+    }
+  }
+
+  private static class PropertyMacro {
+    private final PropertyValueQuery myQuery;
+    private final SNodeReference myMacro;
+    private final String myTemplateValue;
+    public PropertyMacro(PropertyValueQuery query, SNodeReference macro) {
+      myQuery = query;
+      myMacro = macro;
+      final Object tv = query.getTemplateValue();
+      myTemplateValue = tv == null ? null : String.valueOf(tv);
+    }
+    public void expand(TemplateContext context, SNode outputNode) throws GenerationFailureException {
+      PropertyMacroContext pmc = new PropertyMacroContext(context, myTemplateValue, myMacro);
+      Object macroValue = context.getEnvironment().getQueryExecutor().evaluate(myQuery, pmc);
+      String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
+      SNodeAccessUtil.setProperty(outputNode, myQuery.getPropertyName(), propertyValue);
     }
   }
 }

@@ -42,14 +42,14 @@ import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.Collection;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class QueriesGenerated extends QueryProviderBase {
@@ -3695,18 +3695,17 @@ public class QueriesGenerated extends QueryProviderBase {
 
   {
     int i = 0;
-    final String modelId = "r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)";
-    pvqMethods.put("4100552184032705875", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "4100552184032705875"), "label", "label"));
-    pvqMethods.put("4100552184032705897", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "4100552184032705897"), "label", "label"));
-    pvqMethods.put("6651873253983907048", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "6651873253983907048"), "value", "false"));
-    pvqMethods.put("6651873253983907102", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "6651873253983907102"), "value", "false"));
-    pvqMethods.put("8293956702610522454", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "8293956702610522454"), "name", "it"));
-    pvqMethods.put("8293956702610522738", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "8293956702610522738"), "name", "var"));
-    pvqMethods.put("5187796033875769912", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "5187796033875769912"), "fqClassName", "Sequence"));
-    pvqMethods.put("5187796033877735984", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "5187796033877735984"), "fqClassName", "MapSequence"));
-    pvqMethods.put("5187796033878715842", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "5187796033878715842"), "fqClassName", "SortedMapSequence"));
-    pvqMethods.put("5187796033879074558", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "5187796033879074558"), "fqClassName", "MapSequence"));
-    pvqMethods.put("5187796033879438914", new QueriesGenerated.PVQ(i++, new SNodePointer(modelId, "5187796033879438914"), "fqClassName", "MapSequence"));
+    pvqMethods.put("4100552184032705875", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("4100552184032705897", new QueriesGenerated.PVQ(i++, "label", "label"));
+    pvqMethods.put("6651873253983907048", new QueriesGenerated.PVQ(i++, "value", "false"));
+    pvqMethods.put("6651873253983907102", new QueriesGenerated.PVQ(i++, "value", "false"));
+    pvqMethods.put("8293956702610522454", new QueriesGenerated.PVQ(i++, "name", "it"));
+    pvqMethods.put("8293956702610522738", new QueriesGenerated.PVQ(i++, "name", "var"));
+    pvqMethods.put("5187796033875769912", new QueriesGenerated.PVQ(i++, "fqClassName", "Sequence"));
+    pvqMethods.put("5187796033877735984", new QueriesGenerated.PVQ(i++, "fqClassName", "MapSequence"));
+    pvqMethods.put("5187796033878715842", new QueriesGenerated.PVQ(i++, "fqClassName", "SortedMapSequence"));
+    pvqMethods.put("5187796033879074558", new QueriesGenerated.PVQ(i++, "fqClassName", "MapSequence"));
+    pvqMethods.put("5187796033879438914", new QueriesGenerated.PVQ(i++, "fqClassName", "MapSequence"));
   }
 
   @NotNull
@@ -3722,8 +3721,8 @@ public class QueriesGenerated extends QueryProviderBase {
   private static class PVQ extends PropertyValueQuery.Base {
     private final int methodKey;
 
-    /*package*/ PVQ(int methodKey, SNodeReference macroRef, String propertyName, String templateValue) {
-      super(macroRef, propertyName, templateValue);
+    /*package*/ PVQ(int methodKey, String propertyName, String templateValue) {
+      super(propertyName, templateValue);
       this.methodKey = methodKey;
     }
 

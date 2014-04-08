@@ -22,6 +22,7 @@ import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import org.jetbrains.annotations.NotNull;
@@ -41,6 +42,6 @@ public interface QueryExecutor {
   @Nullable
   SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException;
   @Nullable
-  Object evaluate(@NotNull PropertyValueQuery query, @NotNull TemplateContext context) throws GenerationFailureException;
+  Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException;
   boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException;
 }
