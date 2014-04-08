@@ -38,7 +38,7 @@ public class DiagramElementsCreation_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_a41aw1_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "containment link:");
     editorCell.setCellId("Constant_a41aw1_a0");
     editorCell.setDefaultText("");
     return editorCell;

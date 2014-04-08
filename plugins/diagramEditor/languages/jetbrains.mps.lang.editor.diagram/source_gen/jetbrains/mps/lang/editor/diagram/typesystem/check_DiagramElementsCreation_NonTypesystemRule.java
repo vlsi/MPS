@@ -12,6 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_DiagramElementsCreation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -22,7 +25,16 @@ public class check_DiagramElementsCreation_NonTypesystemRule extends AbstractNon
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(diagramElementsCreation, "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(diagramElementsCreation, "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(diagramElementsCreation, "query", true), "you should specify link for container", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "8570854907291359968", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(diagramElementsCreation, "query", true), "Use DotExpression to point to the containment LinkDeclaration", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "8570854907291359968", null, errorTarget);
+      }
+    } else {
+      SNode containmentLink = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(diagramElementsCreation, "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false);
+      if (SLinkOperations.getTarget(diagramElementsCreation, "concept", false) != null && SLinkOperations.getTarget(containmentLink, "target", false) != null && !(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(diagramElementsCreation, "concept", false), NameUtil.nodeFQName(SLinkOperations.getTarget(containmentLink, "target", false))))) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          errorTarget = new ReferenceMessageTarget("concept");
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(diagramElementsCreation, "Only subconcept of containment link target contept (" + SLinkOperations.getTarget(containmentLink, "target", false) + ") can be used here.", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "1301388602725875172", null, errorTarget);
+        }
       }
     }
   }
