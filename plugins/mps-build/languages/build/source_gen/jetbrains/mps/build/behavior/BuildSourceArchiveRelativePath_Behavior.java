@@ -11,7 +11,7 @@ import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -51,7 +51,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
   public static String call_getUnpackPath_8563603456895534343(SNode thisNode, Context context) {
     TemplateQueryContext generationContext = context.getGenerationContext();
     if (generationContext == null) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Can not calculate ant path for " + thisNode + " outside of a generator.");
       }
       return null;

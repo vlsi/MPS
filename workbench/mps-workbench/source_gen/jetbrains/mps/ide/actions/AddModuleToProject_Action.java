@@ -11,7 +11,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.StandaloneMPSProject;
 import org.apache.log4j.Logger;
@@ -47,7 +47,7 @@ public class AddModuleToProject_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "AddModuleToProject", t);
       }
       this.disable(event.getPresentation());
@@ -78,7 +78,7 @@ public class AddModuleToProject_Action extends BaseAction {
         ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).update();
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "AddModuleToProject", t);
       }
     }

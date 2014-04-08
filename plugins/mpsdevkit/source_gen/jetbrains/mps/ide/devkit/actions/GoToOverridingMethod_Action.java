@@ -10,7 +10,7 @@ import jetbrains.mps.ide.editor.util.GoToHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -46,7 +46,7 @@ public class GoToOverridingMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridingMethod", t);
       }
       this.disable(event.getPresentation());
@@ -85,7 +85,7 @@ public class GoToOverridingMethod_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
       GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((Project) MapSequence.fromMap(_params).get("project")), GoToOverridingMethod_Action.this.getFinderName(_params), GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()));
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
       }
     }

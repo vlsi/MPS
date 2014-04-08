@@ -8,7 +8,7 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,7 +49,7 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ShowConceptInHierarchy", t);
       }
       this.disable(event.getPresentation());
@@ -90,7 +90,7 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
       tool.showItemInHierarchy(ShowConceptInHierarchy_Action.this.getConceptNode(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       tool.openToolLater(true);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowConceptInHierarchy", t);
       }
     }

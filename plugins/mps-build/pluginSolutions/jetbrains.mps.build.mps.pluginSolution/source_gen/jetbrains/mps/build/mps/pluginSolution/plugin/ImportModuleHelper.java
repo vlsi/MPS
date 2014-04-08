@@ -12,7 +12,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.VisibleModules;
@@ -54,7 +54,7 @@ public class ImportModuleHelper {
       ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).addElement(created);
     } catch (PathConverter.PathConvertException ex) {
       // ignore 
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error(ex.getMessage());
       }
     }
@@ -75,7 +75,7 @@ public class ImportModuleHelper {
     try {
       ModuleLoader.createModuleChecker(created, visible, converter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
     } catch (ModuleLoaderException ex) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error(ex.getMessage());
       }
     }

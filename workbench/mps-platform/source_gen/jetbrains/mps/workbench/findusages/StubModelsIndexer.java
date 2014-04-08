@@ -11,7 +11,7 @@ import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileContent;
 import java.util.Collections;
 import org.jetbrains.asm4.ClassReader;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.util.NameUtil;
@@ -54,7 +54,7 @@ public class StubModelsIndexer implements ApplicationComponent {
       try {
         reader = new ClassReader(bytes);
       } catch (Throwable t) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("bytes length: " + bytes.length, t);
         }
         return Collections.emptyMap();

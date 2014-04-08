@@ -21,7 +21,7 @@ import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -130,7 +130,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       final PropertySupport ps = PropertySupport.getPropertySupport(p);
       final String propertyName = SPropertyOperations.getString(p, "name");
       if (propertyName == null) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getReference().getModelName());
         }
         continue;

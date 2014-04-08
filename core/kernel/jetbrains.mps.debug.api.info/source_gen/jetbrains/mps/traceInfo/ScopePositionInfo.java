@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
 import org.jetbrains.annotations.Nls;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.apache.log4j.Logger;
@@ -59,7 +59,7 @@ public class ScopePositionInfo extends PositionInfo {
       MapSequence.fromMap(myTempNodeToVarMap).put(node, varInfo);
       SortedMapSequence.fromMap(myNamesToVars).put(varInfo.getVarName(), varInfo);
     } else {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("variable name is null for node " + node.getNodeId().toString());
       }
     }

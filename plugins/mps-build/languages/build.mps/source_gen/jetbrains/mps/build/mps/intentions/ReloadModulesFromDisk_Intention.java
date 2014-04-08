@@ -19,7 +19,7 @@ import java.util.Iterator;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoaderException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -105,7 +105,7 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
           try {
             ModuleLoader.createModuleChecker(module_var, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
           } catch (ModuleLoaderException ex) {
-            if (LOG.isEnabledFor(Priority.ERROR)) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error(ex.getMessage(), ex);
             }
             // TODO report? 

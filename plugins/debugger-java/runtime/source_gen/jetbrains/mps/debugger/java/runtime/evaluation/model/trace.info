@@ -64,7 +64,7 @@
     <nodeInfo nodeId="317191294095138042" fileName="EvaluationWithContextContainer.java" startLine="176" startPosition="137" endLine="177" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="317191294095138044" fileName="EvaluationWithContextContainer.java" startLine="177" startPosition="23" endLine="178" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="317191294095138055" fileName="EvaluationWithContextContainer.java" startLine="179" startPosition="7" endLine="180" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="317191294095138061" fileName="EvaluationWithContextContainer.java" startLine="182" startPosition="44" endLine="183" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="317191294095138061" fileName="EvaluationWithContextContainer.java" startLine="182" startPosition="41" endLine="183" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="317191294095138064" fileName="EvaluationWithContextContainer.java" startLine="185" startPosition="5" endLine="186" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="317191294095138075" fileName="EvaluationWithContextContainer.java" startLine="192" startPosition="29" endLine="193" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2034046503373003235" fileName="EvaluationWithContextContainer.java" startLine="196" startPosition="27" endLine="197" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -181,7 +181,7 @@
     <scopeInfo nodeId="317191294095137896" fileName="EvaluationWithContextContainer.java" startLine="137" startPosition="42" endLine="138" endPosition="44" />
     <scopeInfo nodeId="317191294095137926" fileName="EvaluationWithContextContainer.java" startLine="144" startPosition="112" endLine="145" endPosition="108" />
     <scopeInfo nodeId="317191294095138013" fileName="EvaluationWithContextContainer.java" startLine="169" startPosition="37" endLine="170" endPosition="109" />
-    <scopeInfo nodeId="317191294095138061" fileName="EvaluationWithContextContainer.java" startLine="182" startPosition="44" endLine="183" endPosition="50" />
+    <scopeInfo nodeId="317191294095138061" fileName="EvaluationWithContextContainer.java" startLine="182" startPosition="41" endLine="183" endPosition="50" />
     <scopeInfo nodeId="2034046503373003234" fileName="EvaluationWithContextContainer.java" startLine="196" startPosition="27" endLine="197" endPosition="23" />
     <scopeInfo nodeId="317191294095138141" fileName="EvaluationWithContextContainer.java" startLine="206" startPosition="23" endLine="207" endPosition="18" />
     <scopeInfo nodeId="7786877359704533967" fileName="EvaluationWithContextContainer.java" startLine="221" startPosition="41" endLine="222" endPosition="253" />
@@ -563,16 +563,16 @@
     <nodeInfo nodeId="3518105840231397099" fileName="StackFrameContext.java" startLine="96" startPosition="41" endLine="97" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3518105840231397106" fileName="StackFrameContext.java" startLine="98" startPosition="13" endLine="99" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2416198621220205855" fileName="StackFrameContext.java" startLine="99" startPosition="55" endLine="100" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8736635924683038532" fileName="StackFrameContext.java" startLine="102" startPosition="50" endLine="103" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8736635924683038532" fileName="StackFrameContext.java" startLine="102" startPosition="47" endLine="103" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5600437724825490459" fileName="StackFrameContext.java" startLine="105" startPosition="18" endLine="106" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5600437724825490468" fileName="StackFrameContext.java" startLine="106" startPosition="90" endLine="107" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5600437724825490474" fileName="StackFrameContext.java" startLine="107" startPosition="63" endLine="108" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3518105840231414127" fileName="StackFrameContext.java" startLine="111" startPosition="32" endLine="112" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8736635924683038535" fileName="StackFrameContext.java" startLine="114" startPosition="52" endLine="115" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8736635924683038535" fileName="StackFrameContext.java" startLine="114" startPosition="49" endLine="115" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5600437724825490484" fileName="StackFrameContext.java" startLine="117" startPosition="20" endLine="118" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5600437724825490491" fileName="StackFrameContext.java" startLine="118" startPosition="102" endLine="119" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5600437724825490495" fileName="StackFrameContext.java" startLine="119" startPosition="65" endLine="120" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8736635924683038539" fileName="StackFrameContext.java" startLine="123" startPosition="50" endLine="124" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8736635924683038539" fileName="StackFrameContext.java" startLine="123" startPosition="47" endLine="124" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2416198621220205901" fileName="StackFrameContext.java" startLine="127" startPosition="9" endLine="128" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2416198621220205836" fileName="StackFrameContext.java" startLine="130" startPosition="7" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7757449281563190962" fileName="StackFrameContext.java" startLine="131" startPosition="0" endLine="132" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -580,7 +580,7 @@
     <nodeInfo nodeId="6180978056098784333" fileName="StackFrameContext.java" startLine="137" startPosition="33" endLine="138" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4449395999193555498" fileName="StackFrameContext.java" startLine="139" startPosition="11" endLine="140" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5600437724825456415" fileName="StackFrameContext.java" startLine="141" startPosition="29" endLine="142" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4449395999193555399" fileName="StackFrameContext.java" startLine="145" startPosition="46" endLine="146" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4449395999193555399" fileName="StackFrameContext.java" startLine="145" startPosition="43" endLine="146" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2416198621220205707" fileName="StackFrameContext.java" startLine="152" startPosition="115" endLine="153" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9093774239583840888" fileName="StackFrameContext.java" startLine="154" startPosition="33" endLine="155" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2416198621220205835" fileName="StackFrameContext.java" startLine="157" startPosition="38" endLine="158" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -622,7 +622,7 @@
     <nodeInfo nodeId="2416198621220213790" fileName="StackFrameContext.java" startLine="259" startPosition="15" endLine="260" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2416198621220213836" fileName="StackFrameContext.java" startLine="261" startPosition="117" endLine="262" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2416198621220213815" fileName="StackFrameContext.java" startLine="262" startPosition="35" endLine="263" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8736635924683038559" fileName="StackFrameContext.java" startLine="266" startPosition="50" endLine="267" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8736635924683038559" fileName="StackFrameContext.java" startLine="266" startPosition="47" endLine="267" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2416198621220213820" fileName="StackFrameContext.java" startLine="270" startPosition="9" endLine="271" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2416198621220213057" fileName="StackFrameContext.java" startLine="273" startPosition="7" endLine="274" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2416198621220213843" fileName="StackFrameContext.java" startLine="278" startPosition="50" endLine="279" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -786,11 +786,11 @@
     <scopeInfo nodeId="7757449281563190835" fileName="StackFrameContext.java" startLine="57" startPosition="49" endLine="58" endPosition="19" />
     <scopeInfo nodeId="6180978056098791628" fileName="StackFrameContext.java" startLine="67" startPosition="29" endLine="68" endPosition="115" />
     <scopeInfo nodeId="7063083761593342697" fileName="StackFrameContext.java" startLine="78" startPosition="33" endLine="79" endPosition="34" />
-    <scopeInfo nodeId="8736635924683038532" fileName="StackFrameContext.java" startLine="102" startPosition="50" endLine="103" endPosition="71" />
-    <scopeInfo nodeId="8736635924683038535" fileName="StackFrameContext.java" startLine="114" startPosition="52" endLine="115" endPosition="73" />
-    <scopeInfo nodeId="8736635924683038539" fileName="StackFrameContext.java" startLine="123" startPosition="50" endLine="124" endPosition="72" />
+    <scopeInfo nodeId="8736635924683038532" fileName="StackFrameContext.java" startLine="102" startPosition="47" endLine="103" endPosition="71" />
+    <scopeInfo nodeId="8736635924683038535" fileName="StackFrameContext.java" startLine="114" startPosition="49" endLine="115" endPosition="73" />
+    <scopeInfo nodeId="8736635924683038539" fileName="StackFrameContext.java" startLine="123" startPosition="47" endLine="124" endPosition="72" />
     <scopeInfo nodeId="4449395999193555513" fileName="StackFrameContext.java" startLine="141" startPosition="29" endLine="142" endPosition="45" />
-    <scopeInfo nodeId="4449395999193555399" fileName="StackFrameContext.java" startLine="145" startPosition="46" endLine="146" endPosition="52" />
+    <scopeInfo nodeId="4449395999193555399" fileName="StackFrameContext.java" startLine="145" startPosition="43" endLine="146" endPosition="52" />
     <scopeInfo nodeId="2416198621220205830" fileName="StackFrameContext.java" startLine="157" startPosition="38" endLine="158" endPosition="17" />
     <scopeInfo nodeId="2416198621220213977" fileName="StackFrameContext.java" startLine="168" startPosition="27" endLine="169" endPosition="18" />
     <scopeInfo nodeId="4544608336420740045" fileName="StackFrameContext.java" startLine="174" startPosition="132" endLine="175" endPosition="336" />
@@ -808,7 +808,7 @@
     <scopeInfo nodeId="7757449281563191128" fileName="StackFrameContext.java" startLine="241" startPosition="38" endLine="242" endPosition="56" />
     <scopeInfo nodeId="7757449281563191136" fileName="StackFrameContext.java" startLine="244" startPosition="37" endLine="245" endPosition="56" />
     <scopeInfo nodeId="7757449281563191147" fileName="StackFrameContext.java" startLine="247" startPosition="43" endLine="248" endPosition="131" />
-    <scopeInfo nodeId="8736635924683038559" fileName="StackFrameContext.java" startLine="266" startPosition="50" endLine="267" endPosition="75" />
+    <scopeInfo nodeId="8736635924683038559" fileName="StackFrameContext.java" startLine="266" startPosition="47" endLine="267" endPosition="75" />
     <scopeInfo nodeId="2416198621220213850" fileName="StackFrameContext.java" startLine="280" startPosition="29" endLine="281" endPosition="19" />
     <scopeInfo nodeId="2416198621220215538" fileName="StackFrameContext.java" startLine="288" startPosition="116" endLine="289" endPosition="19" />
     <scopeInfo nodeId="2416198621220213997" fileName="StackFrameContext.java" startLine="292" startPosition="81" endLine="293" endPosition="19" />

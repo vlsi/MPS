@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
@@ -33,7 +33,7 @@ public class CopyStackTraceToClipboard_Action extends BaseAction {
     try {
       event.getPresentation().setVisible(MPSCommonDataKeys.EXCEPTION.getData(event.getDataContext()) != null);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "CopyStackTraceToClipboard", t);
       }
       this.disable(event.getPresentation());
@@ -59,7 +59,7 @@ public class CopyStackTraceToClipboard_Action extends BaseAction {
       trowable.printStackTrace(new PrintWriter(writer));
       CopyPasteUtil.copyTextToClipboard(writer.toString());
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CopyStackTraceToClipboard", t);
       }
     }

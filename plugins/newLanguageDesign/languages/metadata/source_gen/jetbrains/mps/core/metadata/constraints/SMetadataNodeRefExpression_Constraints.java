@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.core.metadata.behavior.SConceptAnnotationArgument_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.core.structure.behavior.SAbstractConcept_Behavior;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import org.apache.log4j.Logger;
@@ -90,7 +90,7 @@ public class SMetadataNodeRefExpression_Constraints extends BaseConstraintsDescr
                 SNode type = SLinkOperations.getTarget(SNodeOperations.cast(parameter, "jetbrains.mps.core.metadata.structure.SConceptAnnotationNodeRef"), "target", false);
                 if (type != null) {
 
-                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                  if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("ok: for " + SAbstractConcept_Behavior.call_getQualifiedName_7891765471710491510(type));
                   }
 

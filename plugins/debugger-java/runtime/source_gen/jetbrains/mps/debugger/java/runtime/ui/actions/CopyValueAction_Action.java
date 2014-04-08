@@ -11,7 +11,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import com.sun.jdi.ThreadReference;
@@ -44,7 +44,7 @@ public class CopyValueAction_Action extends BaseAction {
         event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "CopyValueAction", t);
       }
       this.disable(event.getPresentation());
@@ -85,7 +85,7 @@ public class CopyValueAction_Action extends BaseAction {
         CopyPasteUtil.copyTextToClipboard(result);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CopyValueAction", t);
       }
     }

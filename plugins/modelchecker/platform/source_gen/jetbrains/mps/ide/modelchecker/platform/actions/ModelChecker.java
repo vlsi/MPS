@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.project.ModuleContext;
@@ -51,12 +51,12 @@ public class ModelChecker {
           Project project = myOperationContext.getProject();
 
           if (module == null) {
-            if (LOG.isEnabledFor(Priority.WARN)) {
+            if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Module is null for " + model.getModelName() + " model");
             }
           }
           if (project == null) {
-            if (LOG.isEnabledFor(Priority.WARN)) {
+            if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Project is null for IOperationContext in " + model.getModelName() + " model");
             }
           }
@@ -69,7 +69,7 @@ public class ModelChecker {
                 List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT), operationContext);
                 myResults.getSearchResults().addAll(specificCheckerResults);
               } catch (Throwable t) {
-                if (LOG.isEnabledFor(Priority.ERROR)) {
+                if (LOG.isEnabledFor(Level.ERROR)) {
                   LOG.error("Error while " + model.getModelName() + " model checking", t);
                 }
               }
@@ -104,7 +104,7 @@ public class ModelChecker {
 
     @Override
     public Project getProject() {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Using getProject() from IOperationContext strictly prohibited");
       }
       return super.getProject();

@@ -7,7 +7,7 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.lang.reflect.Method;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -70,7 +70,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     try {
       return task.execute(PlatformDataKeys.PROJECT.getData(context), env);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Error during executing provider " + (myAlias + "(" + this.getClass().getName() + ")"), t);
       }
     }
@@ -92,15 +92,15 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
       return (Boolean) configureMethod.invoke(task, parameters);
     } catch (NoSuchMethodException e) {
     } catch (InvocationTargetException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);
       }
     } catch (IllegalAccessException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);
       }
     } catch (ClassCastException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);
       }
     }

@@ -14,7 +14,7 @@ import jetbrains.mps.execution.lib.ClonableList;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.execution.lib.PointerUtils;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -59,7 +59,7 @@ public class DeployPluginsSettings_Configuration implements IPersistentConfigura
       clone.myState = (DeployPluginsSettings_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
       }
     }

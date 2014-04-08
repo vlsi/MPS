@@ -21,7 +21,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.ui.content.Content;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.execution.ui.layout.PlaceInGrid;
@@ -85,7 +85,7 @@ public class DebuggerToolContentBuilder implements Disposable {
     ui.getOptions().setMoveToGridActionEnabled(true).setMinimizeActionEnabled(true);
     AbstractDebugSession debugSession = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(myExecutionResult.getProcessHandler());
     if (debugSession == null) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("No debug session found for process handler " + myExecutionResult.getProcessHandler());
       }
     } else {

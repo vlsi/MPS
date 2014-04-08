@@ -11,7 +11,7 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import com.intellij.openapi.ui.Messages;
@@ -45,7 +45,7 @@ public class RenameFavoritesList_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "RenameFavoritesList", t);
       }
       this.disable(event.getPresentation());
@@ -80,7 +80,7 @@ public class RenameFavoritesList_Action extends BaseAction {
       favoritesManager.addRoots(newName, objects);
       favoritesManager.removeFavoritesList(oldName);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RenameFavoritesList", t);
       }
     }

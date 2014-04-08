@@ -13,7 +13,7 @@ import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.actions.DependenciesUtil;
@@ -60,7 +60,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "SafeDeleteModuleDependency", t);
       }
       this.disable(event.getPresentation());
@@ -102,7 +102,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
       }
       SafeDeleteModuleDependency_Action.this.removeDependency(from, to, _params);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "SafeDeleteModuleDependency", t);
       }
     }

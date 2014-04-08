@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -135,7 +135,7 @@ public class LanguageConverter {
       } else if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
         ListSequence.fromList(structureElements).addElement(convertEnumeration((SNode) root));
       } else {
-        if (LOG.isEnabledFor(Priority.WARN)) {
+        if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("Strange root in structure model with concept " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(root), "virtual_getFqName_1213877404258", new Object[]{}));
         }
       }

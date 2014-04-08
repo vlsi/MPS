@@ -17,7 +17,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.Solution;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.project.MPSExtentions;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -81,7 +81,7 @@ public class NewLanguageDialog extends DialogWrapper {
           }
         } catch (IOException e) {
           // todo: ! 
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Cannot create runtime / sandbox module", e);
           }
         }

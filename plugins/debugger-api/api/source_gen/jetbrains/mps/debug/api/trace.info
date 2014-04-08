@@ -384,7 +384,7 @@
     <nodeInfo nodeId="6204890546057488023" fileName="AbstractUiState.java" startLine="96" startPosition="29" endLine="97" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6204890546057488026" fileName="AbstractUiState.java" startLine="98" startPosition="5" endLine="99" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="654837219998587970" fileName="AbstractUiState.java" startLine="114" startPosition="13" endLine="115" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="117" startPosition="49" endLine="118" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="117" startPosition="46" endLine="118" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214082913514" fileName="AbstractUiState.java" startLine="125" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4474271214082914426" fileName="AbstractUiState.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThread#()Ljetbrains/mps/debug/api/programState/IThread;" />
     <nodeInfo nodeId="4474271214082914431" fileName="AbstractUiState.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThreads#()Ljava/util/List;" />
@@ -428,7 +428,7 @@
     <scopeInfo nodeId="4474271214082914654" fileName="AbstractUiState.java" startLine="87" startPosition="33" endLine="88" endPosition="18" />
     <scopeInfo nodeId="4474271214082914698" fileName="AbstractUiState.java" startLine="96" startPosition="29" endLine="97" endPosition="47" />
     <scopeInfo nodeId="654837219998587824" fileName="AbstractUiState.java" startLine="114" startPosition="13" endLine="115" endPosition="27" />
-    <scopeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="117" startPosition="49" endLine="118" endPosition="29" />
+    <scopeInfo nodeId="654837219998587894" fileName="AbstractUiState.java" startLine="117" startPosition="46" endLine="118" endPosition="29" />
     <scopeInfo nodeId="4474271214082914426" fileName="AbstractUiState.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4474271214082914431" fileName="AbstractUiState.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="4474271214082914437" fileName="AbstractUiState.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
@@ -932,7 +932,7 @@
     <nodeInfo nodeId="4474271214082914996" fileName="BreakpointCreatorsManager.java" startLine="73" startPosition="23" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8149197049716796791" fileName="BreakpointCreatorsManager.java" startLine="77" startPosition="200" endLine="78" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8149197049716796613" fileName="BreakpointCreatorsManager.java" startLine="85" startPosition="41" endLine="86" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8149197049716796663" fileName="BreakpointCreatorsManager.java" startLine="88" startPosition="48" endLine="89" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8149197049716796663" fileName="BreakpointCreatorsManager.java" startLine="88" startPosition="45" endLine="89" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8149197049716796669" fileName="BreakpointCreatorsManager.java" startLine="90" startPosition="11" endLine="91" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8149197049716796475" fileName="BreakpointCreatorsManager.java" startLine="92" startPosition="9" endLine="93" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8149197049716796686" fileName="BreakpointCreatorsManager.java" startLine="95" startPosition="5" endLine="96" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -987,7 +987,7 @@
     <scopeInfo nodeId="8751745335399632053" fileName="BreakpointCreatorsManager.java" startLine="68" startPosition="215" endLine="69" endPosition="59" />
     <scopeInfo nodeId="4474271214082914995" fileName="BreakpointCreatorsManager.java" startLine="73" startPosition="23" endLine="74" endPosition="19" />
     <scopeInfo nodeId="8149197049716796788" fileName="BreakpointCreatorsManager.java" startLine="77" startPosition="200" endLine="78" endPosition="75" />
-    <scopeInfo nodeId="8149197049716796663" fileName="BreakpointCreatorsManager.java" startLine="88" startPosition="48" endLine="89" endPosition="69" />
+    <scopeInfo nodeId="8149197049716796663" fileName="BreakpointCreatorsManager.java" startLine="88" startPosition="45" endLine="89" endPosition="69" />
     <scopeInfo nodeId="8149197049716796713" fileName="BreakpointCreatorsManager.java" startLine="102" startPosition="29" endLine="103" endPosition="24" />
     <scopeInfo nodeId="8149197049716796534" fileName="BreakpointCreatorsManager.java" startLine="111" startPosition="36" endLine="112" endPosition="22" />
     <scopeInfo nodeId="4474271214082914943" fileName="BreakpointCreatorsManager.java" startLine="131" startPosition="57" endLine="132" endPosition="93" />

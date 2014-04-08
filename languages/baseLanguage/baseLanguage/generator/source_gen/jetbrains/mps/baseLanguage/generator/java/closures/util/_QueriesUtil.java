@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
 import org.jetbrains.mps.util.Condition;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.apache.log4j.Logger;
@@ -97,7 +97,7 @@ public class _QueriesUtil {
     SNode enclosingClosureOrContextOwner = ((SNode) jetbrains.mps.util.SNodeOperations.findParent(nodeInsideClosure, new Condition<SNode>() {
       public boolean met(SNode object) {
         if (!(object instanceof SNode)) {
-          if (LOG.isEnabledFor(Priority.WARN)) {
+          if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("method create_closureContextObject(node<>, ITemplateGenerator) in " + _QueriesUtil.class.toString() + " operates only with the instances of SNode class");
           }
           return false;

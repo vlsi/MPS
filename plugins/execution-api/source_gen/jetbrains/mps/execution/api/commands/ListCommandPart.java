@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.ArrayList;
 import java.io.File;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -57,7 +57,7 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
       }
       return result;
     } else {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Unknown type of command part " + item);
       }
     }
