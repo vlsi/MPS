@@ -227,8 +227,14 @@ public class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         for (String code : keyStrokes) {
           KeyStroke stroke = KeyStroke.getKeyStroke(code);
-          editorComponent.processKeyPressed(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
-          editorComponent.processKeyReleased(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
+          int keyCode = stroke.getKeyCode();
+          char keyChar = stroke.getKeyChar();
+          if (keyChar == KeyEvent.CHAR_UNDEFINED && keyCode != KeyEvent.VK_UNDEFINED && keyCode >= 48 && keyCode <= 90 && (keyCode <= 57 || keyCode >= 65)) {
+            keyChar = (char) keyCode;
+          }
+
+          editorComponent.processKeyPressed(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), keyCode, keyChar));
+          editorComponent.processKeyReleased(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), keyCode, keyChar));
         }
       }
     });
