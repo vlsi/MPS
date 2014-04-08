@@ -16,7 +16,10 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.SourceNodeQuery;
+import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
@@ -28,7 +31,10 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -36,8 +42,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -96,6 +102,16 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
+  public boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("check if condition", context.getTemplateNode()), true);
+      return wrapped.evaluate(condition, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
   public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("map-src node macro", mapSrcNodeOrListMacro), true);
@@ -138,14 +154,20 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
-    return getSourceNode(macroNode, query, context.subContext(inputNode));
-  }
-
-  @Override
-  public SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("evaluate source node", query), true);
-      return wrapped.getSourceNode(templateNode, query, context);
+      return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Nullable
+  @Override
+  public SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("evaluate source node", context.getTemplateNode()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
@@ -153,15 +175,20 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
       GenerationFailureException {
-    return new ArrayList<SNode>(getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode)));
+    try {
+      tracer.push(taskName("evaluate source nodes", query), true);
+      return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
+    } finally {
+      tracer.pop();
+    }
   }
 
   @NotNull
   @Override
-  public Collection<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
+  public Collection<SNode> evaluate(@NotNull SourceNodesQuery query, @NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate source nodes", query), true);
-      return wrapped.getSourceNodes(templateNode, query, context);
+      tracer.push(taskName("evaluate source nodes", context.getTemplateNode()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }

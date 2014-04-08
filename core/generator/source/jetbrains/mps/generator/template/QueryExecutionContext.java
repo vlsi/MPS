@@ -63,6 +63,11 @@ public interface QueryExecutionContext extends QueryExecutor {
   // FIXME inlineSwitch is the only place where we use this, rather drop?
   boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException;
 
+  /**
+   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.IfMacroCondition, IfMacroContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException;
 
   SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException;
@@ -78,7 +83,7 @@ public interface QueryExecutionContext extends QueryExecutor {
   void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
   /**
-   * @deprecated replaced with QueryExecutor#getSourceNode() methods
+   * @deprecated replaced with {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.SourceNodeQuery, SourceSubstituteMacroNodeContext)}  method
    */
   @Deprecated
   @ToRemove(version=3.1)
@@ -89,7 +94,7 @@ public interface QueryExecutionContext extends QueryExecutor {
   Object evaluateVariableQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
 
   /**
-   * @deprecated replaced with QueryExecutor#getSourceNodes() methods
+   * @deprecated replaced with {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.SourceNodesQuery, SourceSubstituteMacroNodesContext)} method
    */
   @Deprecated
   @ToRemove(version=3.1)
