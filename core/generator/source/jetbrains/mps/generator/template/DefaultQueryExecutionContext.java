@@ -61,9 +61,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   private final ITemplateGenerator myGenerator;
   private final GeneratorQueryProvider.Source myQuerySource;
   private final boolean myIsMultithread;
-  private final Map<SNodeReference,SourceNodeQuery> myNodeQueries = new ConcurrentHashMap<SNodeReference, SourceNodeQuery>();
-  private final Map<SNodeReference,SourceNodesQuery> myNodesQueries = new ConcurrentHashMap<SNodeReference, SourceNodesQuery>();
-  private final Map<SNodeReference,IfMacroCondition> myIfMacroConditions = new ConcurrentHashMap<SNodeReference, IfMacroCondition>();
 
   public DefaultQueryExecutionContext(@NotNull ITemplateGenerator generator, @NotNull GeneratorQueryProvider.Source qps) {
     this(generator, qps, true);
@@ -72,7 +69,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   public DefaultQueryExecutionContext(@NotNull ITemplateGenerator generator, @NotNull GeneratorQueryProvider.Source qps, boolean isMultithread) {
     this.myGenerator = generator;
     myIsMultithread = isMultithread;
-    // XXX can utilize isMultithread to initialize queries map with HashMap, not ConcurrentHashMap if false
     myQuerySource = qps;
   }
 
@@ -114,12 +110,13 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @Override
   public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     final SNodeReference qr = ifMacro.getReference();
-    IfMacroCondition cond = myIfMacroConditions.get(qr);
-    if (cond == null) {
-      cond = myQuerySource.getQueryProvider(qr).getIfMacroCondition(ifMacro);
-      myIfMacroConditions.put(qr, cond);
-    }
+    IfMacroCondition cond = myQuerySource.getQueryProvider(qr).getIfMacroCondition(ifMacro);
     return cond.check(new IfMacroContext(context.subContext(inputNode), qr));
+  }
+
+  @Override
+  public boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException {
+    return condition.check(context);
   }
 
   @Override
@@ -191,19 +188,10 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
-    return getSourceNode(macroNode, query, context.subContext(inputNode));
-  }
-
-  @Override
-  public SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       final SNodeReference qr = query.getReference();
-      SourceNodeQuery q = myNodeQueries.get(qr);
-      if (q == null) {
-        q = myQuerySource.getQueryProvider(qr).getSourceNodeQuery(query);
-        myNodeQueries.put(qr, q);
-      }
-      return q.evaluate(new SourceSubstituteMacroNodeContext(context, templateNode.getReference()));
+      SourceNodeQuery q = myQuerySource.getQueryProvider(qr).getSourceNodeQuery(query);
+      return q.evaluate(new SourceSubstituteMacroNodeContext(context.subContext(inputNode), macroNode.getReference()));
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable th) {
@@ -211,6 +199,12 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
       return null;
     }
+  }
+
+  @Nullable
+  @Override
+  public SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
+    return query.evaluate(context);
   }
 
   @Override
@@ -255,28 +249,17 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
    * used to evaluate 'sourceNodesQuery' in macros and in rules
    */
   @Override
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
-      GenerationFailureException {
-    Collection<SNode> result = getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode));
-    @SuppressWarnings("unchecked")
-    List<SNode> resultList = (result instanceof List) ? (List<SNode>) result : new ArrayList<SNode>(result);
-    return resultList;
-  }
-
-  @NotNull
-  @Override
-  public Collection<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context)
+      throws GenerationFailureException {
     try {
       final SNodeReference qr = query.getReference();
-      SourceNodesQuery q = myNodesQueries.get(qr);
-      if (q == null) {
-        q = myQuerySource.getQueryProvider(qr).getSourceNodesQuery(query);
-        myNodesQueries.put(qr, q);
-      }
-      final Collection<SNode> result = q.evaluate(new SourceSubstituteMacroNodesContext(context, templateNode.getReference()));
+      SourceNodesQuery q = myQuerySource.getQueryProvider(qr).getSourceNodesQuery(query);
+      final Collection<SNode> result = q.evaluate(new SourceSubstituteMacroNodesContext(context, macroNode.getReference()));
 
       CollectionUtil.checkForNulls(result, "null values in source nodes");
-      return result;
+      @SuppressWarnings("unchecked")
+      List<SNode> resultList = (result instanceof List) ? (List<SNode>) result : new ArrayList<SNode>(result);
+      return resultList;
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable e) {
@@ -284,6 +267,12 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       getLog().error(query.getReference(), "cannot evaluate query, exception was thrown", GeneratorUtil.describeInput(context));
       return Collections.emptyList();
     }
+  }
+
+  @NotNull
+  @Override
+  public Collection<SNode> evaluate(@NotNull SourceNodesQuery query, @NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
+    return query.evaluate(context);
   }
 
   @Override

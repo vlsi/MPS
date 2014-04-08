@@ -23,12 +23,14 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.WeaveTemplateContainer;
+import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -219,7 +221,8 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
         environment.getLogger().error(getRuleNode(), "weaving rule: cannot create list of source nodes", GeneratorUtil.describeInput(context));
         return false;
       }
-      Collection<SNode> queryNodes = environment.getQueryExecutor().getSourceNodes(myRuleNode, query, context);
+      final SourceNodesQuery snq = environment.getQueryProvider(getRuleNode()).getSourceNodesQuery(query);
+      Collection<SNode> queryNodes = environment.getQueryExecutor().evaluate(snq, new SourceSubstituteMacroNodesContext(context, query.getReference()));
       if (queryNodes.isEmpty()) {
         return false;
       }
