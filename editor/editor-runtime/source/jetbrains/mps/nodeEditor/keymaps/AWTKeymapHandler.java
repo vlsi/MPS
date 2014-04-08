@@ -150,7 +150,12 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
 
     char keyChar = event.getKeyChar();
     if (keyChar == KeyEvent.CHAR_UNDEFINED) {
-      return keyCodes;
+      if(keyCode==KeyEvent.VK_UNDEFINED || keyCode < 48 || keyCode > 90 || (keyCode > 57 && keyCode < 65)) {
+        return keyCodes;
+      } else {
+        //todo a bit brutal way to cope with the unreliable "keychar" testing in the "key pressed" event mentioned above, applied only to ascii chars and numbers
+        keyChar = (char) keyCode;
+      }
     }
 
     keyCodes.add("" + keyChar);
