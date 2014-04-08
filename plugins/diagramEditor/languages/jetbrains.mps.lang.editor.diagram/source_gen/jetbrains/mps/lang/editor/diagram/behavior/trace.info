@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="AbstractArgument_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractArgument_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractDiagramCreation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_BehaviorDescriptor" />
   <unitInfo fileName="AbstractFigureReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" />
   <unitInfo fileName="AttributedFigureReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_BehaviorDescriptor" />
   <unitInfo fileName="BLQueryArgument_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.BLQueryArgument_BehaviorDescriptor" />
@@ -13,11 +14,11 @@
   <unitInfo fileName="ConnectionEnd_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEnd_BehaviorDescriptor" />
   <unitInfo fileName="DiagramConnectorCanCreateHandler_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_BehaviorDescriptor" />
   <unitInfo fileName="DiagramConnectorCreationHandler_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreationHandler_BehaviorDescriptor" />
-  <unitInfo fileName="DiagramConnectorCreation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreation_BehaviorDescriptor" />
+  <unitInfo fileName="DiagramConnectorCreation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreation_BehaviorDescriptor" />
   <unitInfo fileName="DiagramElementBLQuery_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementBLQuery_BehaviorDescriptor" />
   <unitInfo fileName="DiagramElementCreationHandler_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementCreationHandler_BehaviorDescriptor" />
   <unitInfo fileName="DiagramElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElement_BehaviorDescriptor" />
-  <unitInfo fileName="DiagramElementsCreation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementsCreation_BehaviorDescriptor" />
+  <unitInfo fileName="DiagramElementsCreation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementsCreation_BehaviorDescriptor" />
   <unitInfo fileName="ExternalFigureReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" />
   <unitInfo fileName="FigureParameterMapping_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_BehaviorDescriptor" />
   <unitInfo fileName="FromIdFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FromIdFunctionParameter_BehaviorDescriptor" />
@@ -30,6 +31,38 @@
   <unitInfo fileName="ToNodeFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ToNodeFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="XFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.XFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="YFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.YFunctionParameter_BehaviorDescriptor" />
+  <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/2154068179222282126">
+    <nodeInfo nodeId="2154068179222316124" fileName="AbstractDiagramCreation_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="432" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2154068179222429738" fileName="AbstractDiagramCreation_Behavior.java" startLine="17" startPosition="94" endLine="18" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2154068179222433771" fileName="AbstractDiagramCreation_Behavior.java" startLine="21" startPosition="87" endLine="22" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2154068179222324834" fileName="AbstractDiagramCreation_Behavior.java" startLine="25" startPosition="86" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getConceptForCreation_2154068179222282129#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainmentLinkDeclaration_2154068179222419430#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainerExpression_2154068179222420454#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getQueryDotExpression_2154068179222323285#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="2154068179222282128" fileName="AbstractDiagramCreation_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="2154068179222282132" fileName="AbstractDiagramCreation_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="432" />
+    <scopeInfo nodeId="2154068179222419433" fileName="AbstractDiagramCreation_Behavior.java" startLine="17" startPosition="94" endLine="18" endPosition="264" />
+    <scopeInfo nodeId="2154068179222420457" fileName="AbstractDiagramCreation_Behavior.java" startLine="21" startPosition="87" endLine="22" endPosition="145" />
+    <scopeInfo nodeId="2154068179222323288" fileName="AbstractDiagramCreation_Behavior.java" startLine="25" startPosition="86" endLine="26" endPosition="136" />
+    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="2154068179222282126" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="2154068179222282126" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="2154068179222282126" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="2154068179222282126" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="2154068179222282126" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_Behavior" />
+  </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/3748979635599119476">
     <nodeInfo nodeId="7140846024011929329" fileName="CellModel_DiagramNode_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7140846024011931601" fileName="CellModel_DiagramNode_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

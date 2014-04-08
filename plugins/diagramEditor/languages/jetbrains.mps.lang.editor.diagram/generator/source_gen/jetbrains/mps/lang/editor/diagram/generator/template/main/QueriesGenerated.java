@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_Behavior;
+import jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -161,27 +162,27 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5204867329700246779(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "concept", false) != null) ? SLinkOperations.getTarget(_context.getNode(), "concept", false) : SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false), "target", false));
+    return AbstractDiagramCreation_Behavior.call_getConceptForCreation_2154068179222282129(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_5204867329700246804(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(SNodeOperations.getContainingRoot(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+    return SNodeOperations.cast(SNodeOperations.getContainingRoot(AbstractDiagramCreation_Behavior.call_getContainmentLinkDeclaration_2154068179222419430(_context.getNode())), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_5204867329700246820(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false);
+    return AbstractDiagramCreation_Behavior.call_getContainmentLinkDeclaration_2154068179222419430(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_5204867329700309684(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "concept", false) != null) ? SLinkOperations.getTarget(_context.getNode(), "concept", false) : SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false), "target", false));
+    return AbstractDiagramCreation_Behavior.call_getConceptForCreation_2154068179222282129(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_5204867329700309709(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(SNodeOperations.getContainingRoot(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+    return SNodeOperations.cast(SNodeOperations.getContainingRoot(AbstractDiagramCreation_Behavior.call_getContainmentLinkDeclaration_2154068179222419430(_context.getNode())), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_5204867329700309725(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false);
+    return AbstractDiagramCreation_Behavior.call_getContainmentLinkDeclaration_2154068179222419430(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_2732397419129685761(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -441,7 +442,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5204867329700246768(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+    return AbstractDiagramCreation_Behavior.call_getContainerExpression_2154068179222420454(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_5204867329700246841(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -449,7 +450,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5204867329700309673(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+    return AbstractDiagramCreation_Behavior.call_getContainerExpression_2154068179222420454(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_5204867329700309748(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

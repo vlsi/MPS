@@ -21,9 +21,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -118,11 +118,10 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
       super(editorContext, node);
       setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
-          SNode a = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Block");
-          SNodeFactoryOperations.addNewChild(a, "inputPorts", "jetbrains.mps.testHybridEditor.structure.InputPort");
-          SNodeFactoryOperations.addNewChild(a, "outputPorts", "jetbrains.mps.testHybridEditor.structure.OutputPort");
-          SPropertyOperations.set(a, "x", "" + (x));
-          SPropertyOperations.set(a, "y", "" + (y));
+          SNodeFactoryOperations.addNewChild(node, "inputPorts", "jetbrains.mps.testHybridEditor.structure.InputPort");
+          SNodeFactoryOperations.addNewChild(node, "outputPorts", "jetbrains.mps.testHybridEditor.structure.OutputPort");
+          SPropertyOperations.set(node, "x", "" + (x));
+          SPropertyOperations.set(node, "y", "" + (y));
         }
       }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Connector"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "connectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
@@ -130,9 +129,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         }
       }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
         public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
-          SNode connector = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Connector");
-          SLinkOperations.setTarget(connector, "outputPort", SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.OutputPort"), false);
-          SLinkOperations.setTarget(connector, "inputPort", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.InputPort"), false);
+          SLinkOperations.setTarget(node, "outputPort", SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.OutputPort"), false);
+          SLinkOperations.setTarget(node, "inputPort", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.InputPort"), false);
         }
       })}));
       synchronize();
@@ -143,11 +141,10 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
       return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.Block"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
-          SNode a = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Block");
-          SNodeFactoryOperations.addNewChild(a, "inputPorts", "jetbrains.mps.testHybridEditor.structure.InputPort");
-          SNodeFactoryOperations.addNewChild(a, "outputPorts", "jetbrains.mps.testHybridEditor.structure.OutputPort");
-          SPropertyOperations.set(a, "x", "" + (x));
-          SPropertyOperations.set(a, "y", "" + (y));
+          SNodeFactoryOperations.addNewChild(node, "inputPorts", "jetbrains.mps.testHybridEditor.structure.InputPort");
+          SNodeFactoryOperations.addNewChild(node, "outputPorts", "jetbrains.mps.testHybridEditor.structure.OutputPort");
+          SPropertyOperations.set(node, "x", "" + (x));
+          SPropertyOperations.set(node, "y", "" + (y));
         }
       })};
     }
@@ -159,9 +156,8 @@ public class Diagram_diagramGenerated_Editor extends DefaultNodeEditor {
         }
       }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
         public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
-          SNode connector = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.Connector");
-          SLinkOperations.setTarget(connector, "outputPort", SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.OutputPort"), false);
-          SLinkOperations.setTarget(connector, "inputPort", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.InputPort"), false);
+          SLinkOperations.setTarget(node, "outputPort", SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.OutputPort"), false);
+          SLinkOperations.setTarget(node, "inputPort", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.InputPort"), false);
         }
       })};
     }
