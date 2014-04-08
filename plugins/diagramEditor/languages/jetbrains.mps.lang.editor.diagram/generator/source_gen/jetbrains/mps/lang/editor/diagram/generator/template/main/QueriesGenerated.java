@@ -14,6 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_Behavior;
+import jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeField_Behavior;
+import jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeViewProperty_Behavior;
+import jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeMethod_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -102,19 +105,19 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5422656561935045783(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterMember_5422656561931910498", new Object[]{}), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    return FigureParameterAttributeField_Behavior.call_getFieldDeclaration_7911346875269141454(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_7319867929568698613(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(SNodeOperations.getParent(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterMember_5422656561931910498", new Object[]{})), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.cast(SNodeOperations.getParent(FigureParameterAttributeViewProperty_Behavior.call_getStaticFieldDeclaration_7911346875269169672(_context.getNode())), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Object referenceMacro_GetReferent_7319867929568699096(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterMember_5422656561931910498", new Object[]{}), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    return FigureParameterAttributeViewProperty_Behavior.call_getStaticFieldDeclaration_7911346875269169672(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_2084788800270566276(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getParameterMember_5422656561931910498", new Object[]{}), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    return FigureParameterAttributeMethod_Behavior.call_getMethodDeclaration_7911346875269168300(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_615329258659404451(final IOperationContext operationContext, final ReferenceMacroContext _context) {

@@ -16,23 +16,25 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").references("classifier").children(new String[]{"fields"}, new boolean[]{true}).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("fieldDeclaration").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.editor.figures.structure.FigureParameter").references("fieldDeclaration").create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.Figure").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.FigureAttribute").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").alias("@Figure", "").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.FigureParameter").interface_().create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField").super_("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").parents("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameter").abstract_().create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod").super_("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").parents("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField").super_("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").parents("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").create();
       case 7:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod").super_("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").parents("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").create();
+      case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty").super_("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").parents("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter", "jetbrains.mps.lang.editor.figures.structure.Figure", "jetbrains.mps.lang.editor.figures.structure.FigureAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter", "jetbrains.mps.lang.editor.figures.structure.Figure", "jetbrains.mps.lang.editor.figures.structure.FigureAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameter", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty"};
 }

@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.typesystem.TypesystemDescriptor" />
+  <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/342110547581236440">
+    <nodeInfo nodeId="342110547581237055" fileName="typeof_FigureParameter_InferenceRule.java" startLine="18" startPosition="128" endLine="19" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="342110547581237064" fileName="typeof_FigureParameter_InferenceRule.java" startLine="21" startPosition="7" endLine="22" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="342110547581237064" fileName="typeof_FigureParameter_InferenceRule.java" startLine="22" startPosition="59" endLine="23" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="342110547581237064" fileName="typeof_FigureParameter_InferenceRule.java" startLine="23" startPosition="211" endLine="24" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="35" startPosition="130" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_FigureParameter_InferenceRule#()V" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="342110547581237064" fileName="typeof_FigureParameter_InferenceRule.java" startLine="20" startPosition="23" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="342110547581237062" fileName="typeof_FigureParameter_InferenceRule.java" startLine="19" startPosition="205" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="18" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="15" startPosition="49" endLine="15" endPosition="49" />
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="73" />
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
+      <varInfo nodeId="342110547581236440" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="342110547581237064" fileName="typeof_FigureParameter_InferenceRule.java" startLine="21" startPosition="7" endLine="24" endPosition="256">
+      <varInfo nodeId="342110547581237064" varName="_info_12389875345" />
+      <varInfo nodeId="342110547581237064" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="342110547581237063" fileName="typeof_FigureParameter_InferenceRule.java" startLine="20" startPosition="23" endLine="25" endPosition="7" />
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="342110547581236440" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="342110547581236441" fileName="typeof_FigureParameter_InferenceRule.java" startLine="18" startPosition="128" endLine="26" endPosition="5">
+      <varInfo nodeId="342110547581237056" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="18" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="342110547581236440" varName="figureParameter" />
+      <varInfo nodeId="342110547581236440" varName="status" />
+      <varInfo nodeId="342110547581236440" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="342110547581236440" fileName="typeof_FigureParameter_InferenceRule.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.typesystem.typeof_FigureParameter_InferenceRule" />
+  </root>
+  <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/6568183682644034418">
+    <nodeInfo nodeId="6568183682644076223" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6568183682644076223" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="317" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="30" startPosition="46" endLine="31" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="36" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="36" startPosition="130" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_FigureParameterAttributeField_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="6568183682644076223" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="22" startPosition="378" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="342110547580243992" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="21" startPosition="127" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="18" startPosition="66" endLine="18" endPosition="66" />
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="30" startPosition="46" endLine="31" endPosition="87" />
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" />
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="6568183682644076223" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="25" endPosition="317">
+      <varInfo nodeId="6568183682644076223" varName="_reporter_2309309498" />
+      <varInfo nodeId="6568183682644076223" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="37" endPosition="45">
+      <varInfo nodeId="6568183682644034418" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="342110547580243995" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="22" startPosition="378" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="6568183682644034419" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="21" startPosition="127" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="6568183682644034418" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="6568183682644034418" varName="fieldAttribute" />
+      <varInfo nodeId="6568183682644034418" varName="status" />
+      <varInfo nodeId="6568183682644034418" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="6568183682644034418" fileName="check_FigureParameterAttributeField_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.typesystem.check_FigureParameterAttributeField_NonTypesystemRule" />
+  </root>
   <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/9026300686792780079">
     <nodeInfo nodeId="9026300686792786362" fileName="check_FigureParameterAttribute_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9026300686792786362" fileName="check_FigureParameterAttribute_NonTypesystemRule.java" startLine="25" startPosition="60" endLine="26" endPosition="427" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -41,6 +127,148 @@
       <varInfo nodeId="9026300686792780079" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="9026300686792780079" fileName="check_FigureParameterAttribute_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.typesystem.check_FigureParameterAttribute_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/9176911587995977871">
+    <nodeInfo nodeId="9176911587996078226" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9176911587996078226" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="30" startPosition="46" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="36" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="36" startPosition="130" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_FigureParameterAttributeMethod_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="9176911587996078226" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="22" startPosition="379" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="342110547580254793" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="18" startPosition="67" endLine="18" endPosition="67" />
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="30" startPosition="46" endLine="31" endPosition="88" />
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" />
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="9176911587996078226" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="25" endPosition="326">
+      <varInfo nodeId="9176911587996078226" varName="_reporter_2309309498" />
+      <varInfo nodeId="9176911587996078226" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="37" endPosition="45">
+      <varInfo nodeId="9176911587995977871" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="342110547580254796" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="22" startPosition="379" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="9176911587995977872" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="21" startPosition="128" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="9176911587995977871" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="9176911587995977871" varName="methodAttribute" />
+      <varInfo nodeId="9176911587995977871" varName="status" />
+      <varInfo nodeId="9176911587995977871" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="9176911587995977871" fileName="check_FigureParameterAttributeMethod_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.typesystem.check_FigureParameterAttributeMethod_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/9176911587996519805">
+    <nodeInfo nodeId="9176911587996551958" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9176911587996551958" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="351" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="30" startPosition="46" endLine="31" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="36" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="36" startPosition="130" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_FigureParameterAttributeViewProperty_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="9176911587996551958" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="22" startPosition="408" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="342110547580263097" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="21" startPosition="143" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="18" startPosition="73" endLine="18" endPosition="73" />
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="30" startPosition="46" endLine="31" endPosition="94" />
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" />
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="9176911587996551958" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="25" endPosition="351">
+      <varInfo nodeId="9176911587996551958" varName="_reporter_2309309498" />
+      <varInfo nodeId="9176911587996551958" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="37" endPosition="45">
+      <varInfo nodeId="9176911587996519805" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="342110547580263100" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="22" startPosition="408" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="9176911587996519806" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="21" startPosition="143" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="9176911587996519805" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="9176911587996519805" varName="status" />
+      <varInfo nodeId="9176911587996519805" varName="typeCheckingContext" />
+      <varInfo nodeId="9176911587996519805" varName="viewPropSpecificationAttribute" />
+    </scopeInfo>
+    <unitInfo nodeId="9176911587996519805" fileName="check_FigureParameterAttributeViewProperty_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.typesystem.check_FigureParameterAttributeViewProperty_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/9176911587997145402">
+    <nodeInfo nodeId="9176911587997158714" fileName="Utils.java" startLine="13" startPosition="207" endLine="14" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587997178988" fileName="Utils.java" startLine="15" startPosition="5" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="342110547580222013" fileName="Utils.java" startLine="19" startPosition="100" endLine="20" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587997151415" fileName="Utils.java" startLine="12" startPosition="79" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="342110547580229025" fileName="Utils.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSupportedParameterType#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="9176911587997145756" fileName="Utils.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFirstGenericParameterType#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="9176911587997151416" fileName="Utils.java" startLine="13" startPosition="207" endLine="14" endPosition="106" />
+    <scopeInfo nodeId="342110547580205028" fileName="Utils.java" startLine="19" startPosition="100" endLine="20" endPosition="293" />
+    <scopeInfo nodeId="342110547580229025" fileName="Utils.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="342110547580215212" varName="classifierType" />
+      <varInfo nodeId="342110547580215551" varName="superClassifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587997145760" fileName="Utils.java" startLine="12" startPosition="79" endLine="16" endPosition="16" />
+    <scopeInfo nodeId="9176911587997145756" fileName="Utils.java" startLine="12" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="9176911587997147868" varName="classifierType" />
+    </scopeInfo>
+    <unitInfo nodeId="9176911587997145402" fileName="Utils.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.typesystem.Utils" />
+  </root>
+  <root nodeRef="r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)/9176911587997288581">
+    <nodeInfo nodeId="9176911587997288594" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9176911587997288594" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="30" startPosition="46" endLine="31" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="36" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="36" startPosition="130" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_ExternalViewFigureParameter_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="9176911587997288594" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="22" startPosition="391" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="342110547580227293" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="21" startPosition="140" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="18" startPosition="64" endLine="18" endPosition="64" />
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="30" startPosition="46" endLine="31" endPosition="85" />
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" />
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="9176911587997288594" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="25" endPosition="347">
+      <varInfo nodeId="9176911587997288594" varName="_reporter_2309309498" />
+      <varInfo nodeId="9176911587997288594" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="35" startPosition="5" endLine="37" endPosition="45">
+      <varInfo nodeId="9176911587997288581" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="342110547580227296" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="22" startPosition="391" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="9176911587997288582" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="21" startPosition="140" endLine="27" endPosition="5" />
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="9176911587997288581" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="9176911587997288581" varName="externalViewFigureParameter" />
+      <varInfo nodeId="9176911587997288581" varName="status" />
+      <varInfo nodeId="9176911587997288581" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="9176911587997288581" fileName="check_ExternalViewFigureParameter_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.typesystem.check_ExternalViewFigureParameter_NonTypesystemRule" />
   </root>
 </debugInfo>
 

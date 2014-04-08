@@ -5,7 +5,7 @@
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="ny2" modelUID="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)" version="-1" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="35" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="gbdf" modelUID="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" version="0" implicit="yes" />
@@ -43,10 +43,12 @@
     <property name="name" nameId="tpck.1169194664001" value="AbstractFigureReference" />
     <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="figureRefs" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1094405431463663051" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="ExternalFigureReference" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="figureRefs" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1094405431463455190" resolveInfo="AbstractFigureReference" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1094405431463663379" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -121,6 +123,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5422656561926747342" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="AttributedFigureReference" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="figureRefs" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1094405431463455190" resolveInfo="AbstractFigureReference" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5422656561931890753" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />

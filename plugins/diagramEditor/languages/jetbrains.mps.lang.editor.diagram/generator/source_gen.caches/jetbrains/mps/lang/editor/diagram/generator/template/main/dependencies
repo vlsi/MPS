@@ -24,6 +24,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeField_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeMethod_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeViewProperty_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1na9ync4xy1ldvh0dhdc2eyht48o7gu">
+<dependencies version="2" modelHash="cw5nqof0mp3mmzdgt9jq0f4ww8d0r1p">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-4rx58hn7d36o76rq4hrv5y57i75qdbg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5ltxe3l1xoyos2nn156ma6fyky147o3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-7hpmrwjimsa7c7rzbkyz2ehryyj1c7y" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6uvjnnh5pg3m2y3yxg3fkezz903fdo8" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
-  <common hash="-7vsjgkr5gcfc7udmvb423v497z87sn6" dependsOnNodes="true">
+  <common hash="-3f0xa0kriyfifxsm82cvp9ai8twk58w" dependsOnNodes="true">
     <dep root="1094405431463454433" />
     <dep root="1094405431463455190" />
     <dep root="1094405431463663051" />
@@ -40,17 +42,19 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="1094405431463454433" name="CellModel_DiagramNode" hash="-4de8vo41c510cf9tskgjmxwtl9mk7de" />
-  <source id="1094405431463455190" name="AbstractFigureReference" hash="-6eecu2vhunva2ez05g42zt598xfpqsx" />
-  <source id="1094405431463663051" name="ExternalFigureReference" hash="-15jge7fjsaayroipsv092h0j981u5oq" />
+  <source id="1094405431463455190" name="AbstractFigureReference" hash="17fkcoyzbp1xibp1g8iej59nqbg4r34" />
+  <source id="1094405431463663051" name="ExternalFigureReference" hash="-d9cduboyj6gip04n385my6xf7gktsc1" />
   <source id="1094405431463761863" name="FigureParameterMapping" hash="awu81u38gw5cq40pifmdcwbt6cg49c4" />
   <source id="6306886970791033847" name="CellModel_Diagram" hash="63xbd5hacnftmz6ds4jvfrmsfo6up35" />
   <source id="6382742553261733065" name="CellModel_DiagramConnector" hash="pz8g6iw9zkkuc4rni9roxt0cd232vd" />
-  <source id="5422656561926747342" name="AttributedFigureReference" hash="-ev7w954cu4avvpgslqxq86e5124tx67" />
+  <source id="5422656561926747342" name="AttributedFigureReference" hash="14ld1mavl1h55u76zglng1s7nt8bqxm" />
   <source id="3229274890673749551" name="ThisEditorNodeExpression" hash="-icf5x80xsvz2q12vq9c6jjd6hnkfw5" />
   <source id="1220375669566347117" name="ConnectionEndBLQuery" hash="4oumoeo7pizq7rnjil70bxan0eo0ck3" />
   <source id="2721249134706026944" name="ConnectionEnd" hash="-469vek3fxfedttycabals9adlpejgbj" />

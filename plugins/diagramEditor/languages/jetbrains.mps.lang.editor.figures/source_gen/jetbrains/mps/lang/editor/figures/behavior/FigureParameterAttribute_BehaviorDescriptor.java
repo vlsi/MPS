@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.figures.behavior;
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class FigureParameterAttribute_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
+public abstract class FigureParameterAttribute_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements FigureParameter_BehaviorDescriptor {
   public FigureParameterAttribute_BehaviorDescriptor() {
   }
 
