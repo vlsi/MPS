@@ -24,8 +24,8 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.model.property.ReadableProperty;
 
-public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
-  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
+public class InputPort_diagram_Editor extends DefaultNodeEditor {
+  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagram"});
 
   @Override
   public Collection<String> getContextHints() {
@@ -33,18 +33,18 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createDiagramPort_16y7ix_a(editorContext, node);
+    return this.createDiagramPort_gtlhx2_a(editorContext, node);
   }
 
-  private EditorCell createDiagramPort_16y7ix_a(final EditorContext editorContext, final SNode node) {
-    final EditorCell editorCell = new OutputPort_diagramGenerated_Editor.PortCellImpl_16y7ix_a(editorContext, node);
-    editorCell.setCellId("DiagramPort_16y7ix_a");
+  private EditorCell createDiagramPort_gtlhx2_a(final EditorContext editorContext, final SNode node) {
+    final EditorCell editorCell = new InputPort_diagram_Editor.PortCellImpl_gtlhx2_a(editorContext, node);
+    editorCell.setCellId("DiagramPort_gtlhx2_a");
     editorCell.setBig(true);
     return editorCell;
   }
 
-  private class PortCellImpl_16y7ix_a extends PortCell {
-    private PortCellImpl_16y7ix_a(EditorContext editorContext, SNode node) {
+  private class PortCellImpl_gtlhx2_a extends PortCell {
+    private PortCellImpl_gtlhx2_a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       synchronize();
     }
@@ -54,9 +54,8 @@ public class OutputPort_diagramGenerated_Editor extends DefaultNodeEditor {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
-          getTarget().background().set(Color.GRAY);
+          getTarget().background().set(Color.LIGHT_GRAY);
           getTarget().dimension().set(new Vector(10, 10));
-          getTarget().prop(JetpadUtils.CONNECTION_SOURCE).set(Boolean.TRUE);
           getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
           configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
             public void run() {

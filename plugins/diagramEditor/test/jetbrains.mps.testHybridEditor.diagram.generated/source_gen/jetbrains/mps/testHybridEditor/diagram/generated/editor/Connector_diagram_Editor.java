@@ -26,8 +26,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
-public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
-  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
+public class Connector_diagram_Editor extends DefaultNodeEditor {
+  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagram"});
 
   @Override
   public Collection<String> getContextHints() {
@@ -35,21 +35,21 @@ public class Connector_diagramGenerated_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createDiagramConnector_9iys9b_a(editorContext, node);
+    return this.createDiagramConnector_a4xffp_a(editorContext, node);
   }
 
-  private EditorCell createDiagramConnector_9iys9b_a(final EditorContext editorContext, final SNode node) {
-    final ConnectorCell editorCell = new Connector_diagramGenerated_Editor.ConnectorCellImpl_9iys9b_a(editorContext, node);
-    editorCell.setCellId("DiagramConnector_9iys9b_a");
+  private EditorCell createDiagramConnector_a4xffp_a(final EditorContext editorContext, final SNode node) {
+    final ConnectorCell editorCell = new Connector_diagram_Editor.ConnectorCellImpl_a4xffp_a(editorContext, node);
+    editorCell.setCellId("DiagramConnector_a4xffp_a");
     editorCell.setBig(true);
     return editorCell;
   }
 
-  public class ConnectorCellImpl_9iys9b_a extends ConnectorCell {
+  public class ConnectorCellImpl_a4xffp_a extends ConnectorCell {
     protected Property<Tuples._1<SNode>> myInputPort = new ValueProperty<Tuples._1<SNode>>();
     protected Property<Tuples._1<SNode>> myOutputPort = new ValueProperty<Tuples._1<SNode>>();
 
-    private ConnectorCellImpl_9iys9b_a(EditorContext editorContext, SNode node) {
+    private ConnectorCellImpl_a4xffp_a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       synchronize();
     }

@@ -15,18 +15,18 @@
     </node>
     <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="7060406825703063996" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="block" />
-      <property name="x" nameId="adck.2353136177974084745" value="30" />
-      <property name="y" nameId="adck.2353136177974084746" value="52" />
+      <property name="x" nameId="adck.2353136177974084745" value="91" />
+      <property name="y" nameId="adck.2353136177974084746" value="38" />
       <property name="width" nameId="adck.3175567003993184638" value="109" />
       <property name="height" nameId="adck.3175567003993184686" value="79" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="3229274890675234713" resolveInfo="Producer" />
     </node>
     <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="7060406825703064002" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="block" />
-      <property name="x" nameId="adck.2353136177974084745" value="305" />
-      <property name="y" nameId="adck.2353136177974084746" value="130" />
+      <property name="x" nameId="adck.2353136177974084745" value="338" />
+      <property name="y" nameId="adck.2353136177974084746" value="91" />
       <property name="width" nameId="adck.3175567003993184638" value="79" />
-      <property name="height" nameId="adck.3175567003993184686" value="43" />
+      <property name="height" nameId="adck.3175567003993184686" value="60" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
     </node>
     <node role="newConnectors" roleId="adck.2353136177974093280" type="adck.ConnectorInstance" typeId="adck.2353136177974088982" id="7060406825703064009" nodeInfo="ng">

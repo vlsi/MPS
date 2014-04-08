@@ -27,8 +27,8 @@ import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
-public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor {
-  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagramGenerated"});
+public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
+  private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagram"});
 
   @Override
   public Collection<String> getContextHints() {
@@ -36,22 +36,22 @@ public class ConnectorInstance_diagramGenerated_Editor extends DefaultNodeEditor
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createDiagramConnector_5733l5_a(editorContext, node);
+    return this.createDiagramConnector_z1vupn_a(editorContext, node);
   }
 
-  private EditorCell createDiagramConnector_5733l5_a(final EditorContext editorContext, final SNode node) {
-    final ConnectorCell editorCell = new ConnectorInstance_diagramGenerated_Editor.ConnectorCellImpl_5733l5_a(editorContext, node);
-    editorCell.setCellId("DiagramConnector_5733l5_a");
+  private EditorCell createDiagramConnector_z1vupn_a(final EditorContext editorContext, final SNode node) {
+    final ConnectorCell editorCell = new ConnectorInstance_diagram_Editor.ConnectorCellImpl_z1vupn_a(editorContext, node);
+    editorCell.setCellId("DiagramConnector_z1vupn_a");
     editorCell.setBig(true);
     ConnectorActionMap.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 
-  public class ConnectorCellImpl_5733l5_a extends ConnectorCell {
+  public class ConnectorCellImpl_z1vupn_a extends ConnectorCell {
     protected Property<Tuples._2<SNode, SNode>> myInputPort = new ValueProperty<Tuples._2<SNode, SNode>>();
     protected Property<Tuples._2<SNode, SNode>> myOutputPort = new ValueProperty<Tuples._2<SNode, SNode>>();
 
-    private ConnectorCellImpl_5733l5_a(EditorContext editorContext, SNode node) {
+    private ConnectorCellImpl_z1vupn_a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       synchronize();
     }
