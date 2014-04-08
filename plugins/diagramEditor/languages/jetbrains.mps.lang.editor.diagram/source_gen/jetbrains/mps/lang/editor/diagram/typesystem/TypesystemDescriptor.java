@@ -13,7 +13,15 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_CellModel_DiagramNode_portQueries_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_CellModel_DiagramNode_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConnectionEndBLQuery_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_DiagramElementBLQuery_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
