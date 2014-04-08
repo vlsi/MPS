@@ -4,5 +4,4 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi;
 
 
 public interface PaletteSimpleAction extends PaletteAction {
-  public void onClick();
 }

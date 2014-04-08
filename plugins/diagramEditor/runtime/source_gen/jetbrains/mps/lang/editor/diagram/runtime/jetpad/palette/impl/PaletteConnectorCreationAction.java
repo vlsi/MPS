@@ -8,9 +8,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.jetpad.projectional.view.ViewTrait;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -29,11 +31,37 @@ public class PaletteConnectorCreationAction implements PaletteToggleAction {
   private _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> mySetConnectorCallBack;
   private Icon myIcon;
   private String myPresentation;
+  private DiagramCell myDiagramCell;
+  private ViewTrait myTrait;
 
 
 
-  public PaletteConnectorCreationAction(SubstituteAction action, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback, EditorContext editorContext) {
-    mySubstituteAction = action;
+
+  public PaletteConnectorCreationAction(DiagramCell diagramCell, SubstituteAction action, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback, EditorContext editorContext) {
+    myDiagramCell = diagramCell;
+    mySubstituteAction = new NodeSubstituteActionWrapper(action) {
+
+
+      @Override
+      public SNode substitute(@Nullable EditorContext context, String string) {
+        SNode result = super.substitute(context, string);
+        DiagramCell.ConnectionInfo connectionInfo = myDiagramCell.getConnectionInfo();
+        mySetConnectorCallBack.invoke(result, connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
+        return result;
+
+      }
+
+
+
+      @Override
+      public boolean canSubstitute(String string) {
+        if (!(super.canSubstitute(string))) {
+          return false;
+        }
+        DiagramCell.ConnectionInfo connectionInfo = myDiagramCell.getConnectionInfo();
+        return connectionInfo.isValid() && myCanCreateConnectorCallback.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
+      }
+    };
     myCanCreateConnectorCallback = canCreateConnector;
     mySetConnectorCallBack = setConnectorCallback;
     myEditorContext = editorContext;
@@ -50,52 +78,48 @@ public class PaletteConnectorCreationAction implements PaletteToggleAction {
     return mySubstituteAction;
   }
 
-  public ViewTrait getTrait(final DiagramCell diagramCell) {
-    return new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
-      @Override
-      public void handle(View view, MouseEvent event) {
-        if (!(diagramCell.hasConnectionDragFeedback())) {
-          View sourceView = view.viewAt(event.location());
-          if (sourceView == null || !(check_y3ke3n_a0a1a0a0a0b0a0a0a01(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
+  private ViewTrait getTrait() {
+    if (myTrait == null) {
+      myTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
+        @Override
+        public void handle(View view, MouseEvent event) {
+          if (!(myDiagramCell.hasConnectionDragFeedback())) {
+            View sourceView = view.viewAt(event.location());
+            if (sourceView == null || !(check_y3ke3n_a0a1a0a0a0b0a0a0a0a0n(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
+              return;
+            }
+            myDiagramCell.showConnectionDragFeedback(sourceView);
+          }
+          myDiagramCell.updateConnectionDragFeedback(event.location());
+        }
+      }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
+        @Override
+        public void handle(View view, MouseEvent event) {
+          if (!(myDiagramCell.hasConnectionDragFeedback())) {
             return;
           }
-          diagramCell.showConnectionDragFeedback(sourceView);
-        }
-        diagramCell.updateConnectionDragFeedback(event.location());
-      }
-    }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
-      @Override
-      public void handle(View view, MouseEvent event) {
-        if (!(diagramCell.hasConnectionDragFeedback())) {
-          return;
-        }
-        diagramCell.hideConnectionDragFeedback();
+          myDiagramCell.hideConnectionDragFeedback();
 
-        final boolean[] result = new boolean[]{false};
-        myEditorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            result[0] = mySubstituteAction.canSubstitute("");
-            DiagramCell.ConnectionInfo connectionInfo = diagramCell.getConnectionInfo();
-            result[0] &= (connectionInfo.isValid() && myCanCreateConnectorCallback.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId()));
+          final boolean[] result = new boolean[]{false};
+          myEditorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              result[0] = mySubstituteAction.canSubstitute("");
+            }
+          });
+          if (!(result[0])) {
+            return;
           }
-        });
-        if (!(result[0])) {
-          return;
+          ModelAccess.instance().executeCommand(new Runnable() {
+            public void run() {
+              mySubstituteAction.substitute(myEditorContext, "");
+            }
+          }, myEditorContext.getOperationContext().getProject());
+          event.consume();
+
         }
-
-
-        ModelAccess.instance().executeCommand(new Runnable() {
-          public void run() {
-            SNode result = mySubstituteAction.substitute(myEditorContext, "");
-            DiagramCell.ConnectionInfo connectionInfo = diagramCell.getConnectionInfo();
-            mySetConnectorCallBack.invoke(result, connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
-
-          }
-        }, myEditorContext.getOperationContext().getProject());
-        event.consume();
-
-      }
-    }).build();
+      }).build();
+    }
+    return myTrait;
   }
 
 
@@ -120,7 +144,15 @@ public class PaletteConnectorCreationAction implements PaletteToggleAction {
     return myPresentation;
   }
 
-  private static boolean check_y3ke3n_a0a1a0a0a0b0a0a0a01(Boolean checkedDotOperand) {
+
+
+  public void onClick() {
+    myDiagramCell.setExternalTrait(getTrait());
+  }
+
+
+
+  private static boolean check_y3ke3n_a0a1a0a0a0b0a0a0a0a0n(Boolean checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.booleanValue();
     }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a8q5a8no2kmju3od6ix9mx73pel1757">
+<dependencies version="2" modelHash="7x2iirfuhiyfst2eowzndupvwgh6unu">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-4rx58hn7d36o76rq4hrv5y57i75qdbg" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="69bccegrxostpexpy6d34x7at3ezmg6" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6uvjnnh5pg3m2y3yxg3fkezz903fdo8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
-  <common hash="-7vsjgkr5gcfc7udmvb423v497z87sn6" dependsOnNodes="true">
+  <common hash="6n2dbeigygopdql9ikoxrax0wgqgwft" dependsOnNodes="true">
     <dep root="1094405431463454433" />
     <dep root="1094405431463455190" />
     <dep root="1094405431463663051" />
@@ -88,7 +88,7 @@
   <source id="939897302409170275" name="FromIdFunctionParameter" hash="bt7kjat3a76obfst9vjx9kp136b2lgd" />
   <source id="939897302409170280" name="ToIdFunctionParameter" hash="1q6em3kc54ydgleqto7dd8pldp4nre5" />
   <source id="526297864816328066" name="ActionReference" hash="5f9kmn4nh5cw6lmp3b26m3hqpi5pqee" />
-  <source id="526297864816328067" name="ActionGroup" hash="3c2124bdo8sow2xbybkg090xw7msd8f" />
+  <source id="526297864816328067" name="ActionGroup" hash="1bsiaprqe9mfqmmpq4y8774xzs0ga13" />
   <source id="526297864816328068" name="Palette" hash="-84cuc0dltcf3pqpf4ia1v5nj7lympws" />
   <source id="526297864816328069" name="PaletteElement" hash="-bosdzw3b12gc72nxra69xl591kx38pi" />
   <source id="526297864816328070" name="Separator" hash="95gn3yw5l5iy19r2zv1quo5uqdpug0m" />

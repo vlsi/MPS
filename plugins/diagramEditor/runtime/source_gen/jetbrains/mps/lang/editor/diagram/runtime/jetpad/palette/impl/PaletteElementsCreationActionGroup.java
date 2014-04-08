@@ -7,6 +7,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -25,17 +26,22 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
   private SubstituteInfo mySubstituteInfo;
   private EditorContext myEditorContext;
   private _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> myCallback;
+  private DiagramCell myDiagramCell;
 
-  public PaletteElementsCreationActionGroup(SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback, EditorContext editorContext, SNode node) {
-    myEditorContext = editorContext;
+
+  public PaletteElementsCreationActionGroup(DiagramCell diagramCell, SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
+    myDiagramCell = diagramCell;
+    myEditorContext = diagramCell.getContext();
     myCallback = setNodePositionCallback;
-    mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(container, childNodeConcept, containingLink, setNodePositionCallback)});
+
+    mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(container, childNodeConcept, containingLink)});
   }
 
   public PaletteElement[] getElements() {
+    mySubstituteInfo.invalidateActions();
     return ListSequence.fromList(((List<SubstituteAction>) mySubstituteInfo.getMatchingActions("", false))).select(new ISelector<SubstituteAction, PaletteElementsCreationAction>() {
       public PaletteElementsCreationAction select(SubstituteAction it) {
-        return new PaletteElementsCreationAction(it, myCallback, myEditorContext);
+        return new PaletteElementsCreationAction(myDiagramCell, it, myCallback, myEditorContext);
       }
     }).toGenericArray(PaletteElementsCreationAction.class);
   }
@@ -52,7 +58,7 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
     return null;
   }
 
-  public SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
+  private SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SNode childNodeConcept, final SNode containingLink) {
     return new SubstituteInfoPartExt() {
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
         List<SubstituteAction> result = new ArrayList<SubstituteAction>();

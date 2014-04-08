@@ -15,19 +15,15 @@
     <unitInfo nodeId="121824560294376355" fileName="PaletteActionGroup.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
   </root>
   <root nodeRef="r:fc9c4864-4036-4c2e-9220-1fcd2b04815c(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi)/121824560294376372">
-    <unitInfo nodeId="121824560294376372" fileName="PaletteAction.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteAction" />
+    <nodeInfo nodeId="5142486769434332505" fileName="PaletteAction.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onClick#()V" />
+    <scopeInfo nodeId="5142486769434332505" fileName="PaletteAction.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
+    <unitInfo nodeId="121824560294376372" fileName="PaletteAction.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteAction" />
   </root>
   <root nodeRef="r:fc9c4864-4036-4c2e-9220-1fcd2b04815c(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi)/121824560294376375">
-    <nodeInfo nodeId="121824560294376376" fileName="PaletteSimpleAction.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onClick#()V" />
-    <scopeInfo nodeId="121824560294376376" fileName="PaletteSimpleAction.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
-    <unitInfo nodeId="121824560294376375" fileName="PaletteSimpleAction.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSimpleAction" />
+    <unitInfo nodeId="121824560294376375" fileName="PaletteSimpleAction.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSimpleAction" />
   </root>
   <root nodeRef="r:fc9c4864-4036-4c2e-9220-1fcd2b04815c(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi)/121824560294376382">
-    <nodeInfo nodeId="121824560294376383" fileName="PaletteToggleAction.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTrait#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;)Ljetbrains/jetpad/projectional/view/ViewTrait;" />
-    <scopeInfo nodeId="121824560294376383" fileName="PaletteToggleAction.java" startLine="9" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="4394877045818208479" varName="diagramCell" />
-    </scopeInfo>
-    <unitInfo nodeId="121824560294376382" fileName="PaletteToggleAction.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteToggleAction" />
+    <unitInfo nodeId="121824560294376382" fileName="PaletteToggleAction.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteToggleAction" />
   </root>
   <root nodeRef="r:fc9c4864-4036-4c2e-9220-1fcd2b04815c(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi)/4394877045815025858">
     <unitInfo nodeId="4394877045815025858" fileName="PaletteSeparator.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSeparator" />

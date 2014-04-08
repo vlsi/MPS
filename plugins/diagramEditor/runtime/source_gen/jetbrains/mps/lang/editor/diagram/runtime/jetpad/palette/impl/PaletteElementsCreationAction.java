@@ -6,13 +6,13 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteT
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.Icon;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.jetpad.projectional.view.ViewTrait;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
@@ -30,10 +30,12 @@ public class PaletteElementsCreationAction implements PaletteToggleAction {
   private int myY;
   private Icon myIcon;
   private String myPresentation;
+  private DiagramCell myDiagramCell;
+  private ViewTrait myTrait;
 
 
 
-  public PaletteElementsCreationAction(SubstituteAction action, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback, EditorContext editorContext) {
+  public PaletteElementsCreationAction(DiagramCell diagramCell, SubstituteAction action, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback, EditorContext editorContext) {
     mySubstituteAction = new NodeSubstituteActionWrapper(action) {
       @Override
       public SNode substitute(@Nullable EditorContext context, String string) {
@@ -42,6 +44,7 @@ public class PaletteElementsCreationAction implements PaletteToggleAction {
         return result;
       }
     };
+    myDiagramCell = diagramCell;
     myEditorContext = editorContext;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -56,35 +59,38 @@ public class PaletteElementsCreationAction implements PaletteToggleAction {
     return mySubstituteAction;
   }
 
-  public ViewTrait getTrait(DiagramCell diagramCell) {
-    return new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
-      public void handle(View view, MouseEvent event) {
-        if (view.viewAt(event.location()) != view) {
-          return;
-        }
-        if (!(view.focused().get())) {
-          view.container().focusedView().set(view);
-        }
-        myX = event.x();
-        myY = event.y();
-        final boolean[] result = new boolean[]{false};
-        myEditorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            result[0] = mySubstituteAction.canSubstitute("");
+  private ViewTrait getTrait() {
+    if (myTrait == null) {
+      myTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
+        public void handle(View view, MouseEvent event) {
+          if (view.viewAt(event.location()) != view) {
+            return;
           }
-        });
-        if (!(result[0])) {
-          return;
-        }
-        ModelAccess.instance().executeCommand(new Runnable() {
-          public void run() {
-            mySubstituteAction.substitute(myEditorContext, "");
+          if (!(view.focused().get())) {
+            view.container().focusedView().set(view);
           }
-        }, myEditorContext.getOperationContext().getProject());
+          myX = event.x();
+          myY = event.y();
+          final boolean[] result = new boolean[]{false};
+          myEditorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              result[0] = mySubstituteAction.canSubstitute("");
+            }
+          });
+          if (!(result[0])) {
+            return;
+          }
+          ModelAccess.instance().executeCommand(new Runnable() {
+            public void run() {
+              mySubstituteAction.substitute(myEditorContext, "");
+            }
+          }, myEditorContext.getOperationContext().getProject());
 
-        event.consume();
-      }
-    }).build();
+          event.consume();
+        }
+      }).build();
+    }
+    return myTrait;
   }
 
 
@@ -107,5 +113,11 @@ public class PaletteElementsCreationAction implements PaletteToggleAction {
 
   public String getText() {
     return myPresentation;
+  }
+
+
+
+  public void onClick() {
+    myDiagramCell.setExternalTrait(getTrait());
   }
 }

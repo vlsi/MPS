@@ -116,15 +116,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4394877045816023601(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SModule module = SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule();
-    if (!(module instanceof AbstractModule)) {
-      return "";
-    }
-    String s = MacrosFactory.forModule(((AbstractModule) module)).expandPath(((String) _context.getVariable("iconPath")));
-    if (s == null) {
-      return "";
-    }
-    return s;
+    return ((String) _context.getVariable("iconPath"));
   }
 
   public static Object propertyMacro_GetPropertyValue_6619018968338095633(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -299,10 +291,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false);
   }
 
-  public static Object referenceMacro_GetReferent_4394877045818027327(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "concept", false) != null) ? SLinkOperations.getTarget(_context.getNode(), "concept", false) : SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false), "target", false));
-  }
-
   public static Object referenceMacro_GetReferent_2809327089715324359(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ((SLinkOperations.getTarget(_context.getNode(), "concept", false) != null) ? SLinkOperations.getTarget(_context.getNode(), "concept", false) : SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false), "target", false));
   }
@@ -317,6 +305,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_4394877045817506559(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ((SLinkOperations.getTarget(_context.getNode(), "concept", false) != null) ? SLinkOperations.getTarget(_context.getNode(), "concept", false) : SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false), "target", false));
+  }
+
+  public static Object referenceMacro_GetReferent_5142486769434538749(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "customElement", false);
   }
 
   public static boolean ifMacro_Condition_6619018968337974556(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -411,7 +403,7 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "pointID", true) != null);
   }
 
-  public static boolean ifMacro_Condition_4394877045818027314(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_7882925886020496217(final IOperationContext operationContext, final IfMacroContext _context) {
     return ((String) _context.getVariable("iconPath")) != null;
   }
 
@@ -682,12 +674,12 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "input");
   }
 
-  public static Object templateArgumentQuery_4394877045816043154(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("iconPath"));
-  }
-
   public static Object templateArgumentQuery_4394877045816057615(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "iconPath");
+    SModule module = SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).getModule();
+    if (!(module instanceof AbstractModule)) {
+      return null;
+    }
+    return MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(_context.getNode(), "iconPath"));
   }
 
   public static Iterable sourceNodesQuery_1042547819306886949(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

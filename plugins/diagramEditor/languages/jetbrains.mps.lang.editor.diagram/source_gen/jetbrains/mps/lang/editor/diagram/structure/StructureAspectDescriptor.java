@@ -24,7 +24,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionDeclarationReference").super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").references("declaration").create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionGroup").super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").children(new String[]{"childElements"}, new boolean[]{true}).alias("group", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionGroup").super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").children(new String[]{"elements"}, new boolean[]{true}).alias("group", "").create();
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionReference").super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").abstract_().create();
       case 7:

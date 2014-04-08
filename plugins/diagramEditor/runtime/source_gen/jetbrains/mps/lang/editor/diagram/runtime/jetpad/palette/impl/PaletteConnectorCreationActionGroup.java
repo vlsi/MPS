@@ -7,15 +7,18 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import javax.swing.Icon;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import javax.swing.Icon;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -29,20 +32,23 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
   private EditorContext myEditorContext;
   private _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> myCanCreateConnectorCallback;
   private _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> mySetConnectorCallBack;
+  private DiagramCell myDiagramCell;
+  private Icon myIcon;
 
-
-  public PaletteConnectorCreationActionGroup(SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback, EditorContext editorContext, SNode node) {
-    myEditorContext = editorContext;
+  public PaletteConnectorCreationActionGroup(DiagramCell diagramCell, SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
+    myDiagramCell = diagramCell;
+    myEditorContext = diagramCell.getContext();
     myCanCreateConnectorCallback = canCreateConnector;
     mySetConnectorCallBack = setConnectorCallback;
-
-    mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(container, childNodeConcept, containingLink, canCreateConnector, setConnectorCallback)});
+    mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(container, childNodeConcept, containingLink, canCreateConnector, setConnectorCallback)});
+    myIcon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(childNodeConcept));
   }
 
   public PaletteElement[] getElements() {
+    mySubstituteInfo.invalidateActions();
     return ListSequence.fromList(((List<SubstituteAction>) mySubstituteInfo.getMatchingActions("", false))).select(new ISelector<SubstituteAction, PaletteConnectorCreationAction>() {
       public PaletteConnectorCreationAction select(SubstituteAction it) {
-        return new PaletteConnectorCreationAction(it, myCanCreateConnectorCallback, mySetConnectorCallBack, myEditorContext);
+        return new PaletteConnectorCreationAction(myDiagramCell, it, myCanCreateConnectorCallback, mySetConnectorCallBack, myEditorContext);
       }
     }).toGenericArray(PaletteConnectorCreationAction.class);
   }
@@ -52,7 +58,7 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
   }
 
   public Icon getIcon() {
-    return null;
+    return myIcon;
   }
 
   public String getText() {

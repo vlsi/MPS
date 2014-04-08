@@ -54,19 +54,20 @@ public class ActionGroup_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_9p5zz5_c0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ActionGroup_Editor.childElementsListHandler_9p5zz5_c0(node, "childElements", editorContext);
+    AbstractCellListHandler handler = new ActionGroup_Editor.elementsListHandler_9p5zz5_c0(node, "elements", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_childElements");
+    editorCell.setCellId("refNodeList_elements");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class childElementsListHandler_9p5zz5_c0 extends RefNodeListHandler {
-    public childElementsListHandler_9p5zz5_c0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class elementsListHandler_9p5zz5_c0 extends RefNodeListHandler {
+    public elementsListHandler_9p5zz5_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

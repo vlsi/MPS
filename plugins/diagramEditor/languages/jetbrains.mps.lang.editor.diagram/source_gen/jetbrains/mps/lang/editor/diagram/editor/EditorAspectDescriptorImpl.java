@@ -64,6 +64,14 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new IconSelectorComponent());
+        }
+        break;
+      default:
+    }
     return Collections.emptyList();
   }
 
@@ -75,4 +83,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.ActionDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.ActionGroup", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.CustomActionGroupReference", "jetbrains.mps.lang.editor.diagram.structure.CustomActionReference", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.Palette", "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.Separator", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.CreationActionReference"};
 }

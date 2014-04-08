@@ -11,12 +11,12 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteElementFactory;
-import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.openapi.actionSystem.ActionToolbar;
-import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import javax.swing.SwingConstants;
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.keymap.ex.KeymapManagerEx;
 import javax.swing.JComponent;
 
 public class DiagramPalette extends JPanel {
@@ -63,14 +63,12 @@ public class DiagramPalette extends JPanel {
 
   protected void addPaletteElement(PaletteElement element) {
     myMainActionGroup.add(PaletteElementFactory.createPaletteElementAdapter(this, element));
-    myMainActionGroup.add(new Separator("hello"));
   }
 
   protected void createPalette() {
     GridConstraints gridConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
-    ActionToolbar elementsToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myMainActionGroup, true);
-    elementsToolbar.setOrientation(SwingConstants.VERTICAL);
-    JComponent actionPanel = elementsToolbar.getComponent();
+    ActionToolbar myToolbar = new DiagramPaletteActionToolbar(ActionPlaces.UNKNOWN, myMainActionGroup, false, DataManager.getInstance(), ActionManagerEx.getInstanceEx(), KeymapManagerEx.getInstanceEx());
+    JComponent actionPanel = myToolbar.getComponent();
     add(actionPanel, gridConstraints);
   }
 
