@@ -45,11 +45,11 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
     children().add(space);
     myMetaText.bold().set(true);
     children().add(myMetaText);
+    initPoints();
     new Mapper<PolygonContentView, PolygonContentView>(this, this) {
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
         super.registerSynchronizers(configuration);
-        initPoints();
         configuration.add(Synchronizers.forProperty(contentWidth, new Runnable() {
           public void run() {
             adjustPoints(contentWidth.get(), contentHeight.get());
