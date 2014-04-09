@@ -39,23 +39,33 @@ public class Diagram_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xrgyfg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCanBeSynchronized(true);
-    editorCell.setCellId("Collection_xr¡gyfg_a");
+    editorCell.setCellId("Collection_xrgyfg_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createDiagram_xrgyfg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_xrgyfg_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createDiagram_xrgyfg_a0(EditorContext editorContext, SNode node) {
-    DiagramCell editorCell = new Diagram_Editor.DiagramCellImpl_xrgyfg_a0(editorContext, node);
-    editorCell.setCellId("Diagram_xrgyfg_a0");
+  private EditorCell createCollection_xrgyfg_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_xrgyfg_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createDiagram_xrgyfg_a0a(editorContext, node));
     return editorCell;
   }
 
-  private class DiagramCellImpl_xrgyfg_a0 extends DiagramCell {
-    private DiagramCellImpl_xrgyfg_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createDiagram_xrgyfg_a0a(EditorContext editorContext, SNode node) {
+    DiagramCell editorCell = new Diagram_Editor.DiagramCellImpl_xrgyfg_a0a(editorContext, node);
+    editorCell.setCellId("Diagram_xrgyfg_a0a");
+    return editorCell;
+  }
+
+  private class DiagramCellImpl_xrgyfg_a0a extends DiagramCell {
+    private DiagramCellImpl_xrgyfg_a0a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{}));
       synchronize();
