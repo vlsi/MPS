@@ -1098,15 +1098,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("queries"))).indexOf(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_2478140981785090655(final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getReference().toString();
-  }
-
   public static Object propertyMacro_GetPropertyValue_3188250212959938105(final PropertyMacroContext _context) {
-    return _context.getNode().getNodeId().toString();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_2478140981785212801(final PropertyMacroContext _context) {
     return _context.getNode().getNodeId().toString();
   }
 
@@ -1801,7 +1793,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IfMacroContext _context) {
-    return eq_x583g4_a0a0dp(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0bp(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IfMacroContext _context) {
@@ -4328,7 +4320,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_x583g4_a0a0dp(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0bp(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

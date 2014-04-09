@@ -50,8 +50,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Evgeny Gryaznov, Feb 10, 2010
@@ -181,9 +179,8 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Nullable
   @Override
-  public Object evaluate(@NotNull PropertyValueQuery query, @NotNull TemplateContext context) throws GenerationFailureException {
-    final Object tv = query.getTemplateValue();
-    return query.evaluate(new PropertyMacroContext(context, tv == null ? null : String.valueOf(tv), query.getMacro()));
+  public Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException {
+    return query.evaluate(context);
   }
 
   @Override

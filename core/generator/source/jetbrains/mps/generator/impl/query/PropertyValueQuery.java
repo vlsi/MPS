@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -44,6 +43,12 @@ public interface PropertyValueQuery extends Query {
       myPropertyName = propertyName;
       myTemplateValue = templateValue;
     }
+    protected Base(@NotNull String propertyName, Object templateValue) {
+      myMacro = null;
+      myPropertyName = propertyName;
+      myTemplateValue = templateValue;
+    }
+
     @NotNull
     public String getPropertyName() {
       return myPropertyName;
