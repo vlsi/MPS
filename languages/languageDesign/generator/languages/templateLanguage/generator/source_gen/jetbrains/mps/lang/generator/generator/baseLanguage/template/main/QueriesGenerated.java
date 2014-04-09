@@ -3122,10 +3122,6 @@ public class QueriesGenerated {
     return methName;
   }
 
-  public static Object templateArgumentQuery_3818613486877139978(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object templateArgumentQuery_6304885153124996475(final TemplateQueryContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "labelDeclaration", false) != null)) {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
@@ -3168,40 +3164,8 @@ public class QueriesGenerated {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).indexOf(_context.getNode());
   }
 
-  public static Object templateArgumentQuery_1368513600865760236(final TemplateQueryContext _context) {
-    return ((Iterable<SNode>) _context.getVariable("fragments"));
-  }
-
   public static Object templateArgumentQuery_99767819676237552(final TemplateQueryContext _context) {
     return "context" + ((int[]) _context.getVariable("varindex"))[0];
-  }
-
-  public static Object templateArgumentQuery_99767819676237563(final TemplateQueryContext _context) {
-    return ((int[]) _context.getVariable("varindex"));
-  }
-
-  public static Object templateArgumentQuery_99767819676237570(final TemplateQueryContext _context) {
-    return ((Integer) _context.getVariable("macrosToSkip"));
-  }
-
-  public static Object templateArgumentQuery_4155486055398183467(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_6497389703574368989(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_4155486055398184052(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_4155486055398184129(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_99767819676501836(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
   }
 
   public static Object templateArgumentQuery_1520710884206584289(final TemplateQueryContext _context) {
@@ -3247,38 +3211,10 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("contextVar"));
   }
 
-  public static Object templateArgumentQuery_99767819676502854(final TemplateQueryContext _context) {
-    return ((int[]) _context.getVariable("varindex"));
-  }
-
-  public static Object templateArgumentQuery_99767819676502861(final TemplateQueryContext _context) {
-    return ((Integer) _context.getVariable("macrosToSkip"));
-  }
-
-  public static Object templateArgumentQuery_99767819676502934(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object templateArgumentQuery_99767819676503024(final TemplateQueryContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
       return (String) _context.getTransientObject(MultiTuple.<String,SNode>from("contextvar", _context.getNode()));
     }
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_99767819676503153(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_99767819676503277(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_99767819676503373(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_99767819676503426(final TemplateQueryContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
 
@@ -3288,14 +3224,6 @@ public class QueriesGenerated {
 
   public static Object templateArgumentQuery_99767819676503470(final TemplateQueryContext _context) {
     return "tlist" + ((int[]) _context.getVariable("varindex"))[0];
-  }
-
-  public static Object templateArgumentQuery_99767819676503481(final TemplateQueryContext _context) {
-    return ((int[]) _context.getVariable("varindex"));
-  }
-
-  public static Object templateArgumentQuery_99767819676503488(final TemplateQueryContext _context) {
-    return ((Integer) _context.getVariable("macrosToSkip"));
   }
 
   public static Object templateArgumentQuery_99767819676503532(final TemplateQueryContext _context) {
@@ -3334,14 +3262,6 @@ public class QueriesGenerated {
     return "context" + ((int[]) _context.getVariable("varindex"))[0];
   }
 
-  public static Object templateArgumentQuery_1147906725605332286(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_1147906725605332300(final TemplateQueryContext _context) {
-    return ((int[]) _context.getVariable("varindex"));
-  }
-
   public static Object templateArgumentQuery_1147906725605070288(final TemplateQueryContext _context) {
     List<SNode> fragments = SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "contentNode", true), "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{});
 
@@ -3374,10 +3294,6 @@ public class QueriesGenerated {
 
   public static Object templateArgumentQuery_621922975518109131(final TemplateQueryContext _context) {
     return (String) _context.getTransientObject(SLinkOperations.getTarget(_context.getNode(), "ruleConsequence", true));
-  }
-
-  public static Object templateArgumentQuery_8371596541809530183(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
   }
 
   public static Object templateArgumentQuery_1520710884206584397(final TemplateQueryContext _context) {
@@ -3431,34 +3347,10 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("contextVar"));
   }
 
-  public static Object templateArgumentQuery_2760176984813719430(final TemplateQueryContext _context) {
-    return ((int[]) _context.getVariable("varindex"));
-  }
-
-  public static Object templateArgumentQuery_2760176984813719437(final TemplateQueryContext _context) {
-    return ((Integer) _context.getVariable("macrosToSkip"));
-  }
-
-  public static Object templateArgumentQuery_2760176984813719510(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object templateArgumentQuery_3462145372628093935(final TemplateQueryContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
     }
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_3462145372628093965(final TemplateQueryContext _context) {
-    return ((int[]) _context.getVariable("varindex"));
-  }
-
-  public static Object templateArgumentQuery_3462145372628093972(final TemplateQueryContext _context) {
-    return ((Integer) _context.getVariable("macrosToSkip"));
-  }
-
-  public static Object templateArgumentQuery_3462145372628094045(final TemplateQueryContext _context) {
     return ((String) _context.getVariable("contextVar"));
   }
 
@@ -3482,87 +3374,11 @@ public class QueriesGenerated {
     return "context" + ((int[]) _context.getVariable("varindex"))[0];
   }
 
-  public static Object templateArgumentQuery_5015072279636784240(final TemplateQueryContext _context) {
-    return ((int[]) _context.getVariable("varindex"));
-  }
-
-  public static Object templateArgumentQuery_5015072279636784247(final TemplateQueryContext _context) {
-    return ((Integer) _context.getVariable("macrosToSkip"));
-  }
-
-  public static Object templateArgumentQuery_5015072279636784320(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
   public static Object templateArgumentQuery_8431202617644808451(final TemplateQueryContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "mappingLabel", false), "name"))) {
       return "context" + ((int[]) _context.getVariable("varindex"))[0];
     }
     return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_8431202617644808481(final TemplateQueryContext _context) {
-    return ((int[]) _context.getVariable("varindex"));
-  }
-
-  public static Object templateArgumentQuery_8431202617644808488(final TemplateQueryContext _context) {
-    return ((Integer) _context.getVariable("macrosToSkip"));
-  }
-
-  public static Object templateArgumentQuery_2038100691500430318(final TemplateQueryContext _context) {
-    return ((String) _context.getVariable("contextVar"));
-  }
-
-  public static Object templateArgumentQuery_5777101398026812055(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:rulesWithCondition"));
-  }
-
-  public static Object templateArgumentQuery_5777101398029352080(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:rulesWithCondition"));
-  }
-
-  public static Object templateArgumentQuery_5777101398029280671(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:rulesWithCondition"));
-  }
-
-  public static Object templateArgumentQuery_5777101398027561891(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:rulesWithCondition"));
-  }
-
-  public static Object templateArgumentQuery_5777101398028251538(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:patternRules"));
-  }
-
-  public static Object templateArgumentQuery_5777101398030068147(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:weaveRules"));
-  }
-
-  public static Object templateArgumentQuery_5777101398026031219(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:scriptsWithCode"));
-  }
-
-  public static Object templateArgumentQuery_5777101398024050773(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:mcWithCondition"));
-  }
-
-  public static Object templateArgumentQuery_722645242529620955(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:queries"));
-  }
-
-  public static Object templateArgumentQuery_722645242529844734(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:queries"));
-  }
-
-  public static Object templateArgumentQuery_3188250212960691904(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:macros"));
-  }
-
-  public static Object templateArgumentQuery_9056552524812639917(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:macros"));
-  }
-
-  public static Object templateArgumentQuery_5499025294902883459(final TemplateQueryContext _context) {
-    return ((List<SNode>) _context.getVariable("var:switchCaseNodes"));
   }
 
   public static Iterable<SNode> sourceNodesQuery_6220262973299791769(final SourceSubstituteMacroNodesContext _context) {
