@@ -23,6 +23,7 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.AdditionalTextNodeUpdate;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.make.IMakeService;
@@ -76,51 +77,86 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
         boolean wasChanged = ((EditableSModel) md).isChanged();
 
         if (moduleNode.getModule().isReadOnly()) {
-          addUpdate(modelNode, new AdditionalTextNodeUpdate(GenerationStatus.READONLY.getMessage()));
-          addUpdate(moduleNode, new AdditionalTextNodeUpdate(GenerationStatus.READONLY.getMessage()));
+          new StatusUpdate(modelNode).update(GenerationStatus.READONLY);
+          new StatusUpdate(moduleNode).update(GenerationStatus.READONLY);
           return;
         }
 
         if (wasChanged) {
-          addUpdate(modelNode, new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
-          addUpdate(moduleNode, new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+          new StatusUpdate(modelNode).update(GenerationStatus.REQUIRED);
+          new StatusUpdate(moduleNode).update(GenerationStatus.REQUIRED);
           if (moduleNode.getModule() instanceof Generator) {
-            addUpdate(getContainingModuleNode(moduleNode), new AdditionalTextNodeUpdate(GenerationStatus.REQUIRED.getMessage()));
+            new StatusUpdate(getContainingModuleNode(moduleNode)).update(GenerationStatus.REQUIRED);
           }
+          propagateStatusToNamespaceNodes(moduleNode, GenerationStatus.REQUIRED);
           return;
         }
 
-        GenerationStatus modelStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
-          @Override
-          public GenerationStatus compute() {
-            // extra check before read action
-            if (modelNode.getModel().getModule() == null) {
-              return GenerationStatus.NOT_REQUIRED;
-            }
-            return getGenerationStatus(modelNode);
-          }
-        });
-        updateModuleStatus(moduleNode);
+        new StatusUpdate(modelNode).update();
+        GenerationStatus s = new StatusUpdate(moduleNode).update();
         if (moduleNode.getModule() instanceof Generator) {
-          updateModuleStatus(getContainingModuleNode(moduleNode));
+          new StatusUpdate(getContainingModuleNode(moduleNode)).update();
         }
-        addUpdate(modelNode, new AdditionalTextNodeUpdate(modelStatus.getMessage()));
+        propagateStatusToNamespaceNodes(moduleNode, s);
       }
     });
   }
 
-  private void updateModuleStatus(final ProjectModuleTreeNode moduleNode) {
-    if (moduleNode == null) return;
-    GenerationStatus moduleStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
-      @Override
-      public GenerationStatus compute() {
-        return generationRequired(moduleNode);
+  private  void propagateStatusToNamespaceNodes(ProjectModuleTreeNode node, GenerationStatus status) {
+    final AdditionalTextNodeUpdate r = new AdditionalTextNodeUpdate(status.getMessage());
+    for (TreeNode n = node; n != null; n = n.getParent()) {
+      if (n instanceof NamespaceTextNode) {
+        addUpdate((NamespaceTextNode) n, r);
       }
-    });
-    addUpdate(moduleNode, new AdditionalTextNodeUpdate(moduleStatus.getMessage()));
+    }
   }
 
-  private boolean generationRequired(SModule module) {
+  private class StatusUpdate implements Computable<GenerationStatus> {
+    private final SModelTreeNode myModelNode;
+    private final ProjectModuleTreeNode myModuleNode;
+
+    StatusUpdate(ProjectModuleTreeNode moduleNode) {
+      myModuleNode = moduleNode;
+      myModelNode = null;
+    }
+    StatusUpdate(SModelTreeNode modelNode) {
+      myModuleNode = null;
+      myModelNode = modelNode;
+    }
+    public GenerationStatus update() {
+      if (myModuleNode == null && myModelNode == null) {
+        return null;
+      }
+      GenerationStatus status = ModelAccess.instance().runReadAction(this);
+      update(status);
+      return status;
+    }
+    public void update(GenerationStatus status) {
+      if (myModelNode != null) {
+        addUpdate(myModelNode, new AdditionalTextNodeUpdate(status.getMessage()));
+      }
+      if (myModuleNode != null) {
+        addUpdate(myModuleNode, new AdditionalTextNodeUpdate(status.getMessage()));
+      }
+    }
+
+    @Override
+    public GenerationStatus compute() {
+      if (myModelNode != null) {
+        // extra check before read action
+        if (myModelNode.getModel().getModule() == null) {
+          return GenerationStatus.NOT_REQUIRED;
+        }
+        return getGenerationStatus(myModelNode);
+      }
+      if (myModuleNode != null) {
+        return getGenerationStatus(myModuleNode);
+      }
+      throw new IllegalStateException();
+    }
+  }
+
+  private static boolean generationRequired(SModule module) {
     if (!(module instanceof AbstractModule)) return false;
     for (SModel md : ((AbstractModule) module).getModels()) {
       boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md);
@@ -129,7 +165,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     return false;
   }
 
-  private GenerationStatus generationRequired(ProjectModuleTreeNode node) {
+  static GenerationStatus getGenerationStatus(ProjectModuleTreeNode node) {
     SModule module = node.getModule();
     if (generationRequired(module)) return GenerationStatus.REQUIRED;
     if (module instanceof Language) {
@@ -140,7 +176,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     return GenerationStatus.NOT_REQUIRED;
   }
 
-  private GenerationStatus getGenerationStatus(SModelTreeNode node) {
+  static GenerationStatus getGenerationStatus(SModelTreeNode node) {
     if (node.getModel() == null) return GenerationStatus.NOT_REQUIRED;
     if (isPackaged(node)) return GenerationStatus.READONLY;
     if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
@@ -152,13 +188,13 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
   }
 
-  private boolean isPackaged(SModelTreeNode node) {
+  private static boolean isPackaged(SModelTreeNode node) {
     SModel md = node.getModel();
     if (!(md instanceof EditableSModel)) return false;
     return md.isReadOnly();
   }
 
-  private boolean isDoNotGenerate(SModelTreeNode node) {
+  private static boolean isDoNotGenerate(SModelTreeNode node) {
     SModel md = node.getModel();
     if (!(md instanceof GeneratableSModel)) return false;
     return ((GeneratableSModel) md).isDoNotGenerate();
