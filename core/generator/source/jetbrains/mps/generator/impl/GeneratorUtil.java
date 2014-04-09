@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
@@ -104,17 +105,18 @@ public class GeneratorUtil {
           // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
           value = outerContext.getPatternVariable(patternVar);
         }
-      } else {
-        if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
+      } else if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
           SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(exprNode);
           value = outerContext.getEnvironment().getQueryExecutor().evaluateArgumentQuery(outerContext.getInput(), query, outerContext);
-        } else {
-          try {
-            value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
-          } catch(IllegalArgumentException ex) {
-            log.error(templateCall.getReference(), String.format("cannot evaluate template argument #%d: %s", i + 1, ex.toString()),
-                GeneratorUtil.describeInput(outerContext));
-          }
+      } else if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentVarRefExpression))) {
+        SNode varmacro = RuleUtil.getTemplateArgumentVarRef_VarMacro(exprNode);
+        value = outerContext.getVariable(RuleUtil.getVarMacro_Name(varmacro));
+      } else {
+        try {
+          value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
+        } catch(IllegalArgumentException ex) {
+          log.error(templateCall.getReference(), String.format("cannot evaluate template argument #%d: %s", i + 1, ex.toString()),
+              GeneratorUtil.describeInput(outerContext));
         }
       }
 

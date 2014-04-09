@@ -1130,6 +1130,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("switchCaseNodes"))).indexOf(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_4426797670062877386(final PropertyMacroContext _context) {
+    return VarMacro_Behavior.call_getName_2721957369897649366(SLinkOperations.getTarget(_context.getNode(), "varmacro", false));
+  }
+
   public static Object referenceMacro_GetReferent_1071051212912102696(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "conditionFunction", true));
   }
@@ -1801,7 +1805,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IfMacroContext _context) {
-    return eq_x583g4_a0a0dp(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0ep(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IfMacroContext _context) {
@@ -3096,6 +3100,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true);
   }
 
+  public static SNode sourceNodeQuery_4426797670062877357(final SourceSubstituteMacroNodeContext _context) {
+    SNode classifierType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "varmacro", false), "type", true));
+    return ((classifierType != null) ? classifierType : SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "varmacro", false), "type", true));
+  }
+
   public static Object templateArgumentQuery_5070605274413823453(final TemplateQueryContext _context) {
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{});
   }
@@ -3552,7 +3561,7 @@ public class QueriesGenerated {
     return ((List<SNode>) _context.getVariable("var:macros"));
   }
 
-  public static Object templateArgumentQuery_8530069850499835024(final TemplateQueryContext _context) {
+  public static Object templateArgumentQuery_5499025294902883459(final TemplateQueryContext _context) {
     return ((List<SNode>) _context.getVariable("var:switchCaseNodes"));
   }
 
@@ -4352,7 +4361,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_x583g4_a0a0dp(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0ep(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
