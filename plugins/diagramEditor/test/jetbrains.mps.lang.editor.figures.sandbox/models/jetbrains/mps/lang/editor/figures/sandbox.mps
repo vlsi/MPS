@@ -53,9 +53,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <root type="ny2.ExternalViewFigure" typeId="ny2.2178507174411801538" id="6306886970785058603" nodeInfo="ng">
-    <link role="classifier" roleId="ny2.2178507174411801591" targetNodeId="4to1.~RectView" resolveInfo="RectView" />
-  </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2084788800269979458" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BlockContentView" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="2084788800270123500" nodeInfo="igu">

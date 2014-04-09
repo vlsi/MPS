@@ -442,6 +442,10 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/runtime/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.tests/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/source_gen" isTestSource="false" />
@@ -453,6 +457,10 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/runtime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.tests/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/generator/classes_gen" />
