@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1lqqnhce8k98m8kgsafzn999fh9mjsd">
+<dependencies version="2" modelHash="-1b8csfay1rbnh28nstzxu7lsnyov0w0">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -145,10 +145,10 @@
   <source id="1457236892455988410" name="template_CreatePortDecorationMapper" hash="-4ki7hxz69dm234462ohe5039bzi21fp" />
   <source id="5745978280768467343" name="preprocessing" hash="ae861kkh3il9d8guwgkktir362hpj0d" />
   <source id="2809327089715299368" name="CreateActionSwitch" hash="3sc1s48yv6t4lgowx4kqwd16zcsq3q1" />
-  <source id="4394877045818008997" name="case_DiagramConnectorCreation" hash="-ao2yvitxam9qr8x387adi0d550unhu7" />
+  <source id="4394877045818008997" name="case_DiagramConnectorCreation" hash="2sxjnx4v61imdivdtwly3bxjhlw0klw" />
   <source id="2981172682494100618" name="reduce_Separator" hash="-3q7xp3g79kdqnfijrnng8xvznrm64yz" />
   <source id="6619018968337210716" name="palette_mapping" hash="-9u8pcpgep9kl9att3m8tnsnahv0h9hl" />
-  <source id="6619018968338475342" name="case_CreationElementActionReference" hash="6spv2zcfpfm82wn0x5nezwoy0ty6mhk" />
+  <source id="6619018968338475342" name="case_CreationElementActionReference" hash="-eov9tmejiaam7qkrmy2bog21gigppn2" />
   <source id="6619018968337529320" name="reduce_Palette" hash="-b6zd3v5f8ky11wboz1gq058ws2eqcsw" />
   <source id="4115105161242658182" name="ResizableContentViewAdapter" hash="hs64j6vt8vb005zn4aiicivsjbgsur">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />

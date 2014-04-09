@@ -8,15 +8,17 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import javax.swing.Icon;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import javax.swing.Icon;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -27,7 +29,7 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
   private EditorContext myEditorContext;
   private _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> myCallback;
   private DiagramCell myDiagramCell;
-
+  private Icon myIcon;
 
   public PaletteElementsCreationActionGroup(DiagramCell diagramCell, SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
     myDiagramCell = diagramCell;
@@ -35,6 +37,7 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
     myCallback = setNodePositionCallback;
 
     mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(container, childNodeConcept, containingLink)});
+    myIcon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(childNodeConcept));
   }
 
   public PaletteElement[] getElements() {
@@ -51,7 +54,7 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
   }
 
   public Icon getIcon() {
-    return null;
+    return myIcon;
   }
 
   public String getText() {
