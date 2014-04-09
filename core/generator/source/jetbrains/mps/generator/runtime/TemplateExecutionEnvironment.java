@@ -39,7 +39,7 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, 10/22/10
  */
-public interface TemplateExecutionEnvironment {
+public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Source {
 
   IOperationContext getOperationContext();
 
@@ -62,8 +62,6 @@ public interface TemplateExecutionEnvironment {
 
   IGeneratorLogger getLogger();
 
-  @NotNull
-  GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode);
   @NotNull
   QueryExecutionContext getQueryExecutor();
 

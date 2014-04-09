@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
@@ -32,6 +33,7 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -87,6 +89,16 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     try {
       tracer.push(taskName("check condition(with context)", ruleNode), true);
       return wrapped.checkCondition(condition, required, templateContext, ruleNode);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("check condition(with context)", context.getTemplateNode()), true);
+      return wrapped.evaluate(condition, context);
     } finally {
       tracer.pop();
     }

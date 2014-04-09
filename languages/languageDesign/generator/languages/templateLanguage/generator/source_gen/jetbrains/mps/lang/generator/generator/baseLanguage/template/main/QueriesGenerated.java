@@ -1122,6 +1122,14 @@ public class QueriesGenerated {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("macros"))).indexOf(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_8530069850499411464(final PropertyMacroContext _context) {
+    return _context.getNode().getNodeId().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8530069850499411561(final PropertyMacroContext _context) {
+    return ListSequence.fromList(((List<SNode>) _context.getVariable("switchCaseNodes"))).indexOf(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_1071051212912102696(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "conditionFunction", true));
   }
@@ -1793,7 +1801,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IfMacroContext _context) {
-    return eq_x583g4_a0a0bp(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0dp(_context.getNode().getProperty("kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IfMacroContext _context) {
@@ -2728,6 +2736,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("var:macros"))).isNotEmpty();
   }
 
+  public static boolean ifMacro_Condition_8530069850499835014(final IfMacroContext _context) {
+    return ListSequence.fromList(((List<SNode>) _context.getVariable("var:switchCaseNodes"))).isNotEmpty();
+  }
+
   public static boolean ifMacro_Condition_1229548601006644768(final IfMacroContext _context) {
     SNode generator = SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Generator");
     return (generator == null) || SPropertyOperations.getBoolean(generator, "needOperationContext");
@@ -3077,6 +3089,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5777101398031019093(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true);
+  }
+
+  public static SNode sourceNodeQuery_8530069850499932443(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "conditionFunction", true);
   }
 
@@ -3534,6 +3550,10 @@ public class QueriesGenerated {
 
   public static Object templateArgumentQuery_9056552524812639917(final TemplateQueryContext _context) {
     return ((List<SNode>) _context.getVariable("var:macros"));
+  }
+
+  public static Object templateArgumentQuery_8530069850499835024(final TemplateQueryContext _context) {
+    return ((List<SNode>) _context.getVariable("var:switchCaseNodes"));
   }
 
   public static Iterable<SNode> sourceNodesQuery_6220262973299791769(final SourceSubstituteMacroNodesContext _context) {
@@ -4025,6 +4045,14 @@ public class QueriesGenerated {
     return ((List<SNode>) _context.getVariable("macros"));
   }
 
+  public static Iterable<SNode> sourceNodesQuery_8530069850499411478(final SourceSubstituteMacroNodesContext _context) {
+    return ((List<SNode>) _context.getVariable("switchCaseNodes"));
+  }
+
+  public static Iterable<SNode> sourceNodesQuery_8530069850499411553(final SourceSubstituteMacroNodesContext _context) {
+    return ((List<SNode>) _context.getVariable("switchCaseNodes"));
+  }
+
   public static void mapSrcMacro_post_mapper_5070605274413823725(final MapSrcMacroPostProcContext _context) {
     String name = (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
     if (name.startsWith("tnode")) {
@@ -4312,6 +4340,10 @@ public class QueriesGenerated {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.IfMacro");
   }
 
+  public static Object insertMacro_varValue_8530069850499835004(final TemplateQueryContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.InlineSwitch_Case");
+  }
+
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
@@ -4320,7 +4352,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_x583g4_a0a0bp(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0dp(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

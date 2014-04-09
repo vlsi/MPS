@@ -51,6 +51,8 @@ public interface GeneratorQueryProvider {
   PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro);
   @NotNull
   IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro);
+  @NotNull
+  InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode);
 
   interface Source {
     @NotNull

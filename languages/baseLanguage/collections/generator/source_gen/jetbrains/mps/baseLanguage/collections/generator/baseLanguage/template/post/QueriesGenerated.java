@@ -23,6 +23,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -394,6 +396,50 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetPropertyValue_1269198486696305020(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
+  }
+
+  private final Map<String, InlineSwitchCaseCondition> isccMethods = new HashMap<String, InlineSwitchCaseCondition>();
+
+  {
+    int i = 0;
+    isccMethods.put("1269198486696304770", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1269198486696304832", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("2021770776238986579", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1269198486696304916", new QueriesGenerated.ISCC(i++));
+  }
+
+  @NotNull
+  @Override
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
+    final String id = caseNode.getNodeId().toString();
+    if (!(isccMethods.containsKey(id))) {
+      return super.getInlineSwitchCaseCondition(caseNode);
+    }
+    return isccMethods.get(id);
+  }
+
+  private static class ISCC implements InlineSwitchCaseCondition {
+    private final int methodKey;
+
+    public ISCC(int methodKey) {
+      this.methodKey = methodKey;
+    }
+
+    @Override
+    public boolean check(@NotNull InlineSwitchCaseContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.baseMappingRule_Condition_1269198486696304771(ctx);
+        case 1:
+          return QueriesGenerated.baseMappingRule_Condition_1269198486696304833(ctx);
+        case 2:
+          return QueriesGenerated.baseMappingRule_Condition_2021770776238986580(ctx);
+        case 3:
+          return QueriesGenerated.baseMappingRule_Condition_1269198486696304917(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for inline switch's case %s (key: #%d)", ctx.getTemplateNode(), methodKey));
       }
     }
   }

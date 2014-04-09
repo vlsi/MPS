@@ -18,12 +18,17 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GeneratorUtilEx.ConsequenceDispatch;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.template.QueryExecutor;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,6 +55,7 @@ public abstract class RuleConsequenceProcessor {
   private static class InlineSwitch extends RuleConsequenceProcessor {
     @NotNull
     private final SNode mySwitchNode;
+    private volatile CaseRuntime[] myCases;
 
     InlineSwitch(@NotNull SNode inlineSwitchNode) {
       mySwitchNode = inlineSwitchNode;
@@ -59,13 +65,10 @@ public abstract class RuleConsequenceProcessor {
     @Override
     public List<SNode> processRuleConsequence(@NotNull TemplateContext context)
         throws GenerationFailureException, GenerationCanceledException, DismissTopMappingRuleException, AbandonRuleInputException {
-      for (SNode switchCase : RuleUtil.getInlineSwitch_case(mySwitchNode)) {
-        SNode condition = RuleUtil.getInlineSwitch_caseCondition(switchCase);
-        final QueryExecutionContext queryExecutor = context.getEnvironment().getQueryExecutor();
-        if (queryExecutor.checkCondition(condition, true, context, switchCase)) {
-          SNode caseConsequence = RuleUtil.getInlineSwitch_caseConsequence(switchCase);
-          RuleConsequenceProcessor rcp = RuleConsequenceProcessor.prepare(caseConsequence);
-          return rcp.processRuleConsequence(context);
+      final QueryExecutor queryExecutor = context.getEnvironment().getQueryExecutor();
+      for (CaseRuntime switchCase : getCases(context.getEnvironment())) {
+        if (queryExecutor.evaluate(switchCase.condition, new InlineSwitchCaseContext(context, switchCase.nodeReference))) {
+          return switchCase.consequence.processRuleConsequence(context);
         }
       }
       SNode defaultConsequence = RuleUtil.getInlineSwitch_defaultConsequence(mySwitchNode);
@@ -76,6 +79,36 @@ public abstract class RuleConsequenceProcessor {
       } else {
         RuleConsequenceProcessor rcp = RuleConsequenceProcessor.prepare(defaultConsequence);
         return rcp.processRuleConsequence(context);
+      }
+    }
+
+    private CaseRuntime[] getCases(GeneratorQueryProvider.Source qps) {
+      CaseRuntime[] rv = myCases;
+      if (rv == null) {
+        ArrayList<CaseRuntime> l = new ArrayList<CaseRuntime>();
+        for (SNode switchCase : RuleUtil.getInlineSwitch_case(mySwitchNode)) {
+          final InlineSwitchCaseCondition condition = qps.getQueryProvider(mySwitchNode.getReference()).getInlineSwitchCaseCondition(switchCase);
+          SNode caseConsequence = RuleUtil.getInlineSwitch_caseConsequence(switchCase);
+          RuleConsequenceProcessor rcp = RuleConsequenceProcessor.prepare(caseConsequence);
+          l.add(new CaseRuntime(condition, rcp, switchCase.getReference()));
+        }
+        if (myCases == null) {
+          myCases = rv = l.toArray(new CaseRuntime[l.size()]);
+        } else {
+          rv = myCases;
+        }
+      }
+      return rv;
+    }
+
+    private static class CaseRuntime {
+      public final SNodeReference nodeReference;
+      public final RuleConsequenceProcessor consequence;
+      public final InlineSwitchCaseCondition condition;
+      public CaseRuntime(InlineSwitchCaseCondition condition, RuleConsequenceProcessor rcp, SNodeReference nodeRef) {
+        this.condition = condition;
+        this.consequence = rcp;
+        this.nodeReference = nodeRef;
       }
     }
   }

@@ -60,7 +60,11 @@ public interface QueryExecutionContext extends QueryExecutor {
   @ToRemove(version=3.1)
   boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
 
-  // FIXME inlineSwitch is the only place where we use this, rather drop?
+  /**
+   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition, InlineSwitchCaseContext)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException;
 
   /**
@@ -75,7 +79,7 @@ public interface QueryExecutionContext extends QueryExecutor {
   void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
   /**
-   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.PropertyValueQuery, jetbrains.mps.generator.runtime.TemplateContext)}
+   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.PropertyValueQuery, jetbrains.mps.generator.template.PropertyMacroContext)}
    * instead
    */
   @Deprecated

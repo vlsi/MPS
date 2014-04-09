@@ -22,6 +22,7 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
@@ -77,32 +78,14 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException {
-    if (condition == null) {
-      if (required) {
-        getLog().error(ruleNode.getReference(), "rule condition required", GeneratorUtil.describeInput(templateContext));
-        return false;
-      }
-      return true;
-    }
+    final SNodeReference qr = ruleNode.getReference();
+    InlineSwitchCaseCondition cond = myQuerySource.getQueryProvider(qr).getInlineSwitchCaseCondition(ruleNode);
+    return cond.check(new InlineSwitchCaseContext(templateContext, qr));
+  }
 
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
-    try {
-      return QueryMethodGenerated.<Boolean>invoke(
-          methodName,
-          myGenerator.getGeneratorSessionContext(),
-          new ReductionRuleQueryContext(templateContext, ruleNode.getReference()),
-          ruleNode.getModel(),
-          true);
-    } catch (ClassNotFoundException e) {
-      getLog().warning(condition.getReference(), String.format("cannot find condition method '%s' : evaluate to FALSE", methodName));
-    } catch (NoSuchMethodException e) {
-      getLog().warning(condition.getReference(), String.format("cannot find condition method '%s' : evaluate to FALSE", methodName));
-    } catch (Throwable t) {
-      getLog().handleException(t);
-      getLog().error(condition.getReference(), String.format("error executing condition '%s', exception was thrown", methodName));
-      throw new GenerationFailureException(t);
-    }
-    return false;
+  @Override
+  public boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
+    return condition.check(context);
   }
 
   @Override
