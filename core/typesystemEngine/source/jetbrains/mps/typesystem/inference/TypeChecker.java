@@ -227,7 +227,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   @Nullable
   public SNode getTypeOf(final SNode node) {
-    if (node == null) return null;
+    if (node == null || node.getModel() == null) return null;
     fireNodeTypeAccessed(node);
     return TypeContextManager.getInstance().getTypeOf(node);
   }
