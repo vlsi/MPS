@@ -381,11 +381,13 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6619018968335599080" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Palette" />
-    <property name="name" nameId="tpck.1169194664001" value="CustomActionReference" />
+    <property name="name" nameId="tpck.1169194664001" value="CustomElementReference" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="custom" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="526297864816328066" resolveInfo="ActionReference" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6619018968336102384" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6619018968336102302" resolveInfo="CustomElementReference" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6619018968336102382" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="customElement" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6619018968335599081" nodeInfo="ig">
@@ -404,43 +406,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="6619018968336109499" resolveInfo="DiagramCreationBlock" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6619018968336102219" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Palette" />
-    <property name="name" nameId="tpck.1169194664001" value="ActionDeclaration" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6619018968336115536" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6619018968336102220" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Palette" />
-    <property name="name" nameId="tpck.1169194664001" value="SimpleActionDeclaration" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="6619018968336102219" resolveInfo="ActionDeclaration" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6619018968336102221" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Palette" />
-    <property name="name" nameId="tpck.1169194664001" value="ToggleActionDeclaration" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="6619018968336102219" resolveInfo="ActionDeclaration" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6619018968336102298" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Palette" />
-    <property name="name" nameId="tpck.1169194664001" value="CustomActionGroupReference" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="custom group" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="526297864816328069" resolveInfo="PaletteElement" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6619018968336102386" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6619018968336102302" resolveInfo="CustomElementReference" />
-    </node>
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6619018968336102302" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Palette" />
-    <property name="name" nameId="tpck.1169194664001" value="CustomElementReference" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6619018968336102382" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="customElement" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
-    </node>
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6619018968336109499" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     <property name="name" nameId="tpck.1169194664001" value="DiagramCreationBlock" />
@@ -448,17 +413,6 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6619018968336115640" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6619018968336110654" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Palette" />
-    <property name="name" nameId="tpck.1169194664001" value="ActionDeclarationReference" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="526297864816328069" resolveInfo="PaletteElement" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6619018968336110739" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="declaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6619018968336102219" resolveInfo="ActionDeclaration" />
     </node>
   </root>
 </model>

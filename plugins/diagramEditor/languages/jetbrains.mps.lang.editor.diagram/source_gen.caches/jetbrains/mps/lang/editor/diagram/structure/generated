@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7x2iirfuhiyfst2eowzndupvwgh6unu">
+<dependencies version="2" modelHash="-a9em4bpbg0n8kkr332set02l1bhn4hg">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-4rx58hn7d36o76rq4hrv5y57i75qdbg" />
@@ -31,13 +31,7 @@
     <dep root="6382742553261733065" />
     <dep root="6619018968335599080" />
     <dep root="6619018968335599081" />
-    <dep root="6619018968336102219" />
-    <dep root="6619018968336102220" />
-    <dep root="6619018968336102221" />
-    <dep root="6619018968336102298" />
-    <dep root="6619018968336102302" />
     <dep root="6619018968336109499" />
-    <dep root="6619018968336110654" />
     <dep root="8570854907290423690" />
     <dep root="8570854907290527479" />
     <dep root="8570854907290717911" />
@@ -92,14 +86,8 @@
   <source id="526297864816328068" name="Palette" hash="-84cuc0dltcf3pqpf4ia1v5nj7lympws" />
   <source id="526297864816328069" name="PaletteElement" hash="-bosdzw3b12gc72nxra69xl591kx38pi" />
   <source id="526297864816328070" name="Separator" hash="95gn3yw5l5iy19r2zv1quo5uqdpug0m" />
-  <source id="6619018968335599080" name="CustomActionReference" hash="-b31hht4x4qt4objwdnbe2c6nymab0wi" />
+  <source id="6619018968335599080" name="CustomElementReference" hash="49ruqw9jyyupllqxdi4i1s9dkixwgmp" />
   <source id="6619018968335599081" name="CreationActionReference" hash="-1o9490ymcpfas8jccg2iupqairqmonz" />
-  <source id="6619018968336102219" name="ActionDeclaration" hash="56ui6torx8s2j5o8lnlv4k4h25m1slp" />
-  <source id="6619018968336102220" name="SimpleActionDeclaration" hash="cvqchnhf3zbugsq1m54guzev4fyl7c5" />
-  <source id="6619018968336102221" name="ToggleActionDeclaration" hash="47c4vrdty2dcayoytb06bnn0pvduto9" />
-  <source id="6619018968336102298" name="CustomActionGroupReference" hash="-8961uym7jrqaqcooa3sf1yxv0089ht7" />
-  <source id="6619018968336102302" name="CustomElementReference" hash="40d4kulazm8w7l99h492og959krywyn" />
   <source id="6619018968336109499" name="DiagramCreationBlock" hash="-2cizrekxnk2xrottwsonyc3ppoaq180" />
-  <source id="6619018968336110654" name="ActionDeclarationReference" hash="-8xq0odidm917nlq1lrxcc6r0ozlj0vy" />
 </dependencies>
 

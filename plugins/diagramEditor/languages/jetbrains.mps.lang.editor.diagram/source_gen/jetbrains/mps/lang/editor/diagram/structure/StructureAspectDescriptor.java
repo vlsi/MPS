@@ -20,89 +20,77 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").abstract_().create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
-      case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionDeclarationReference").super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").references("declaration").create();
-      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionGroup").super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").children(new String[]{"elements"}, new boolean[]{true}).alias("group", "").create();
-      case 6:
+      case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ActionReference").super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").abstract_().create();
-      case 7:
+      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").references("figureAttribute").create();
-      case 8:
+      case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.Synchronizeable").children(new String[]{"diagramElements", "elementsCreation", "connectorCreation", "paletteDeclaration"}, new boolean[]{true, true, true, false}).alias("diagram", "").create();
-      case 9:
+      case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.Synchronizeable").children(new String[]{"input", "output"}, new boolean[]{false, false}).alias("diagram connector", "").create();
-      case 10:
+      case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.Synchronizeable").children(new String[]{"figure", "parameter", "inputPort", "outputPort", "x", "y"}, new boolean[]{false, true, false, false, false, false}).alias("diagram node", "").create();
-      case 11:
+      case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.Synchronizeable").properties("input").alias("diagram port", "").create();
-      case 12:
+      case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
-      case 13:
+      case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery").super_("jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd").parents("jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd").children(new String[]{"pointID", "targetNode"}, new boolean[]{false, false}).create();
-      case 14:
+      case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CreationActionReference").super_("jetbrains.mps.lang.editor.diagram.structure.ActionReference").parents("jetbrains.mps.lang.editor.diagram.structure.ActionReference").properties("iconPath").references("elementsCreation").alias("creation", "").create();
-      case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CustomActionGroupReference").super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement", "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference").alias("custom group", "").create();
-      case 16:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CustomActionReference").super_("jetbrains.mps.lang.editor.diagram.structure.ActionReference").parents("jetbrains.mps.lang.editor.diagram.structure.ActionReference", "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference").alias("custom", "").create();
-      case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CustomElementReference").interface_().references("customElement").create();
-      case 18:
+      case 13:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.CustomElementReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("customElement").alias("custom", "").create();
+      case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
-      case 19:
+      case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation").super_("jetbrains.mps.lang.editor.diagram.structure.DiagramCreationBlock").parents("jetbrains.mps.lang.editor.diagram.structure.DiagramCreationBlock").references("concept").children(new String[]{"query", "canCreate", "handler"}, new boolean[]{false, false, false}).create();
-      case 20:
+      case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
-      case 21:
+      case 17:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramCreationBlock").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").abstract_().create();
-      case 22:
+      case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElement").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
-      case 23:
+      case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery").super_("jetbrains.mps.lang.editor.diagram.structure.DiagramElement").parents("jetbrains.mps.lang.editor.diagram.structure.DiagramElement").children(new String[]{"query"}, new boolean[]{false}).create();
-      case 24:
+      case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").create();
-      case 25:
+      case 21:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation").super_("jetbrains.mps.lang.editor.diagram.structure.DiagramCreationBlock").parents("jetbrains.mps.lang.editor.diagram.structure.DiagramCreationBlock").references("concept").children(new String[]{"query", "handler"}, new boolean[]{false, false}).create();
-      case 26:
+      case 22:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference").references("figure").create();
-      case 27:
+      case 23:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("fromId", "").create();
-      case 28:
+      case 24:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("from", "").create();
-      case 29:
+      case 25:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("node", "").create();
-      case 30:
+      case 26:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.Palette").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"elements"}, new boolean[]{true}).create();
-      case 31:
+      case 27:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
-      case 32:
+      case 28:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").children(new String[]{"query"}, new boolean[]{false}).create();
-      case 33:
+      case 29:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ParameterLink").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").references("link").create();
-      case 34:
+      case 30:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ParameterProperty").super_("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").parents("jetbrains.mps.lang.editor.diagram.structure.AbstractParameter").references("property").create();
-      case 35:
+      case 31:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.Separator").super_("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").parents("jetbrains.mps.lang.editor.diagram.structure.PaletteElement").properties("text").alias("separator", "").create();
-      case 36:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.SimpleActionDeclaration").super_("jetbrains.mps.lang.editor.diagram.structure.ActionDeclaration").parents("jetbrains.mps.lang.editor.diagram.structure.ActionDeclaration").create();
-      case 37:
+      case 32:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("this", "").create();
-      case 38:
+      case 33:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("toId", "").create();
-      case 39:
+      case 34:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("to", "").create();
-      case 40:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.ToggleActionDeclaration").super_("jetbrains.mps.lang.editor.diagram.structure.ActionDeclaration").parents("jetbrains.mps.lang.editor.diagram.structure.ActionDeclaration").create();
-      case 41:
+      case 35:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("x", "").create();
-      case 42:
+      case 36:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("y", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter", "jetbrains.mps.lang.editor.diagram.structure.ActionDeclaration", "jetbrains.mps.lang.editor.diagram.structure.ActionDeclarationReference", "jetbrains.mps.lang.editor.diagram.structure.ActionGroup", "jetbrains.mps.lang.editor.diagram.structure.ActionReference", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.CustomActionGroupReference", "jetbrains.mps.lang.editor.diagram.structure.CustomActionReference", "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramCreationBlock", "jetbrains.mps.lang.editor.diagram.structure.DiagramElement", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.Palette", "jetbrains.mps.lang.editor.diagram.structure.PaletteElement", "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.Separator", "jetbrains.mps.lang.editor.diagram.structure.SimpleActionDeclaration", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression", "jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ToggleActionDeclaration", "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractFigureParameter", "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference", "jetbrains.mps.lang.editor.diagram.structure.AbstractParameter", "jetbrains.mps.lang.editor.diagram.structure.ActionGroup", "jetbrains.mps.lang.editor.diagram.structure.ActionReference", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramCreationBlock", "jetbrains.mps.lang.editor.diagram.structure.DiagramElement", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.Palette", "jetbrains.mps.lang.editor.diagram.structure.PaletteElement", "jetbrains.mps.lang.editor.diagram.structure.ParameterBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ParameterLink", "jetbrains.mps.lang.editor.diagram.structure.ParameterProperty", "jetbrains.mps.lang.editor.diagram.structure.Separator", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression", "jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"};
 }
