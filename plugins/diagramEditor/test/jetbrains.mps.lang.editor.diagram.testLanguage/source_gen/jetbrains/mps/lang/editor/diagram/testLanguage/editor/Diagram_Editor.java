@@ -14,6 +14,9 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -27,7 +30,6 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorVi
 import java.util.Set;
 import java.util.HashSet;
 import java.util.ListIterator;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
 
@@ -67,14 +69,20 @@ public class Diagram_Editor extends DefaultNodeEditor {
   private class DiagramCellImpl_xrgyfg_a0a extends DiagramCell {
     private DiagramCellImpl_xrgyfg_a0a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
-      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{}));
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram", "rectangles"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+        public void invoke(SNode node, Integer x, Integer y) {
+        }
+      })}));
       synchronize();
     }
 
 
 
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{};
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram", "rectangles"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+        public void invoke(SNode node, Integer x, Integer y) {
+        }
+      })};
     }
 
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
