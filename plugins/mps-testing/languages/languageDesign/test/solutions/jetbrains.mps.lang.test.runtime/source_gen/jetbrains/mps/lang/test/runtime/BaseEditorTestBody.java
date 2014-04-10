@@ -41,6 +41,15 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import java.util.Queue;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.awt.Component;
+import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
+import java.awt.event.MouseEvent;
 
 public class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
@@ -270,5 +279,49 @@ public class BaseEditorTestBody extends BaseTestBody {
       }
     });
     ModelAccess.instance().flushEventQueue();
+  }
+
+  public static void processMousePressed(final EditorComponent editorComponent, int x, int y) throws InterruptedException, InvocationTargetException {
+    assert editorComponent.getRootCell() != null;
+
+    Queue<EditorCell> cellCandidates = QueueSequence.fromQueue(new LinkedList<EditorCell>());
+    QueueSequence.fromQueue(cellCandidates).addLastElement(editorComponent.getRootCell());
+    EditorCell eventTargetCell = null;
+    while (QueueSequence.fromQueue(cellCandidates).isNotEmpty()) {
+      EditorCell nextCell = QueueSequence.fromQueue(cellCandidates).removeFirstElement();
+      if (nextCell.getX() <= x && nextCell.getY() <= y && nextCell.getX() + nextCell.getWidth() > x && nextCell.getY() + nextCell.getHeight() > y) {
+        eventTargetCell = nextCell;
+        if (nextCell instanceof EditorCell_Collection) {
+          QueueSequence.fromQueue(cellCandidates).addSequence(Sequence.fromIterable((EditorCell_Collection) nextCell));
+        }
+      }
+    }
+    assert eventTargetCell != null;
+
+    final Wrappers._T<Component> targetComponent = new Wrappers._T<Component>(null);
+    while (eventTargetCell != null && targetComponent.value == null) {
+      if (eventTargetCell instanceof EditorCell_WithComponent) {
+        targetComponent.value = ((EditorCell_WithComponent) eventTargetCell).getComponent();
+      } else {
+        eventTargetCell = eventTargetCell.getParent();
+      }
+    }
+    if (targetComponent.value == null) {
+      targetComponent.value = editorComponent;
+    }
+
+    targetComponent.value = targetComponent.value.getComponentAt(x, y);
+    assert targetComponent.value != null;
+
+    int actualX = x;
+    int actualY = y;
+    int absoluteX = x;
+    int absoluteY = y;
+    final MouseEvent e = new MouseEvent(targetComponent.value, MouseEvent.MOUSE_PRESSED, System.currentTimeMillis(), 0, actualX, actualY, absoluteX, absoluteY, 1, false, MouseEvent.BUTTON1);
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        targetComponent.value.dispatchEvent(e);
+      }
+    });
   }
 }

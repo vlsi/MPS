@@ -54,6 +54,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "keys");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4633202057942994512(final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger(_context.getNode(), "x");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4633202057943021746(final PropertyMacroContext _context) {
+    return SPropertyOperations.getInteger(_context.getNode(), "y");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1230128844194(final PropertyMacroContext _context) {
     return KeyMapKeystroke_Behavior.call_getKeyStroke_1213877278942(_context.getNode());
   }

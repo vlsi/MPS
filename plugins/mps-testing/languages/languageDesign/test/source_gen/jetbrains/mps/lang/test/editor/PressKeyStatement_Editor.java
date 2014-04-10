@@ -7,7 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -19,6 +18,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
@@ -31,19 +31,17 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pkvqak_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_pkvqak_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_pkvqak_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_pkvqak_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pkvqak_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_pkvqak_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press keys");
-    editorCell.setCellId("Constant_pkvqak_a0");
+  private EditorCell createComponent_pkvqak_a0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
