@@ -37,7 +37,7 @@ import java.util.List;
 public class GeneratorUtil {
 
   @NotNull
-  public static TemplateContext createConsequenceContext(@NotNull TemplateContext outerContext, @NotNull SNode consequence) {
+  public static TemplateContext createConsequenceContext(@NotNull TemplateContext outerContext, @NotNull SNode consequence) throws GenerationFailureException {
     if (consequence.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_ITemplateCall))) {
       return new TemplateCall(consequence).prepareCallContext(outerContext);
     }

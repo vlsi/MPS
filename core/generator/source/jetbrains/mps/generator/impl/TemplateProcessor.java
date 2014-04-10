@@ -34,7 +34,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.TracingUtil;
@@ -643,7 +642,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     protected SNode getTemplateSwitch() {
       return RuleUtil.getSwitchMacro_TemplateSwitch(macro);
     }
-    protected TemplateContext prepareContext(TemplateContext templateContext) {
+    protected TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException {
       return templateContext;
     }
     @NotNull
@@ -712,7 +711,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(TemplateContext templateContext) {
+    protected TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException {
       TemplateCall tc = myCallProcessor;
       if (tc == null) {
         tc = new TemplateCall(macro);
@@ -736,7 +735,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       super(macro, templateNode, next, templateProcessor);
       myName = macroName;
     }
-    protected abstract TemplateContext prepareContext(TemplateContext templateContext);
+    protected abstract TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException;
 
     private TemplateContainer getTemplates() {
       TemplateContainer rv = myTemplates;
@@ -801,7 +800,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(TemplateContext templateContext) {
+    protected TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException {
       final String[] parameterNames = RuleUtil.getTemplateDeclarationParameterNames(myInvokedTemplate);
       if (parameterNames == null) {
         getLogger().error(getMacroNodeRef(), "error processing $INCLUDE$: target template is broken", GeneratorUtil.describeInput(templateContext));
@@ -828,7 +827,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(TemplateContext templateContext) {
+    protected TemplateContext prepareContext(TemplateContext templateContext) throws GenerationFailureException {
       TemplateCall tc = myCallProcessor;
       if (tc == null) {
         tc = new TemplateCall(macro);

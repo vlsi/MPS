@@ -15,17 +15,17 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,74 +38,154 @@ import java.util.Map;
  * @author Artem Tikhomirov
  */
 public class TemplateCall {
-  private final SNode myTemplateCall;
-  private final SNode[] myArguments;
+  private final ArgumentExpression[] myArguments;
   private final String[] myParameters;
   // true to indicate no-op context, either no args/params, or their count doesn't match
   private final boolean myNoArgs;
 
   public TemplateCall(@NotNull SNode templateCall) {
-    myTemplateCall = templateCall;
     final List<SNode> args = RuleUtil.getTemplateCall_Arguments(templateCall);
-    myArguments = args == null ? null : args.toArray(new SNode[args.size()]);
+    myArguments = toExpressionRuntime(args);
     final SNode template = RuleUtil.getTemplateCall_Template(templateCall);
-    myParameters = RuleUtil.getTemplateDeclarationParameterNames(template);
-    myNoArgs = myArguments == null || myParameters == null || myArguments.length != myParameters.length;
+    String[] paramNames = RuleUtil.getTemplateDeclarationParameterNames(template);
+    myParameters = paramNames == null ? new String[0] : paramNames;
+    myNoArgs = myArguments.length == 0 || myArguments.length != myParameters.length;
   }
 
   /**
    * @return <code>true</code> iff there are arguments or parameters, but their count doesn't match
    */
   public boolean argumentsMismatch() {
-    return myNoArgs && !(myArguments == null && myParameters == null);
+    return myArguments.length != myParameters.length;
   }
 
   @NotNull
-  public TemplateContext prepareCallContext(@NotNull TemplateContext outerContext) {
+  public TemplateContext prepareCallContext(@NotNull TemplateContext outerContext) throws GenerationFailureException{
     if (myNoArgs) {
       return outerContext;
     }
-    IGeneratorLogger log = outerContext.getEnvironment().getLogger();
     final Map<String, Object> vars = new HashMap<String, Object>(myArguments.length * 2);
     for (int i = 0; i < myArguments.length; i++) {
-      SNode exprNode = myArguments[i];
-      Object value = null;
-
-      if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression))) {
-        SNode parameter = RuleUtil.getTemplateArgumentParameterExpression_Parameter(exprNode);
-        if (parameter == null) {
-          log.error(exprNode.getReference(), "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference",
-              GeneratorUtil.describeInput(outerContext));
-        } else {
-          value = outerContext.getVariable(parameter.getName());
-        }
-      } else if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef))) {
-        String patternVar = GeneratorUtilEx.getPatternVariableName(exprNode);
-        if (patternVar == null) {
-          log.error(exprNode.getReference(), "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference",
-              GeneratorUtil.describeInput(outerContext));
-        } else {
-          // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
-          value = outerContext.getPatternVariable(patternVar);
-        }
-      } else if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
-        SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(exprNode);
-        value = outerContext.getEnvironment().getQueryExecutor().evaluateArgumentQuery(outerContext.getInput(), query, outerContext);
-      } else if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentVarRefExpression))) {
-        SNode varmacro = RuleUtil.getTemplateArgumentVarRef_VarMacro(exprNode);
-        value = outerContext.getVariable(RuleUtil.getVarMacro_Name(varmacro));
-      } else {
-        try {
-          value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
-        } catch(IllegalArgumentException ex) {
-          log.error(myTemplateCall.getReference(), String.format("cannot evaluate template argument #%d: %s", i + 1, ex.toString()),
-              GeneratorUtil.describeInput(outerContext));
-        }
-      }
-
+      Object value = myArguments[i].evaluate(outerContext);
       vars.put(myParameters[i], value);
     }
     // variables drop mapping label, hence need to reinstall it
     return outerContext.subContext(vars).subContext(outerContext.getInputName());
+  }
+
+  private static ArgumentExpression[] toExpressionRuntime(List<SNode> args) {
+    final ArrayList<ArgumentExpression> ae = new ArrayList<ArgumentExpression>(args.size());
+    int i = 1;
+    for (SNode argExpr : args) {
+      final SConcept argConcept = argExpr.getConcept();
+      if (argConcept.isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression))) {
+        ae.add(new TemplateParameterExpr(argExpr, i));
+      } else if (argConcept.isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef))) {
+        ae.add(new PatternRefExpr(argExpr, i));
+      } else if (argConcept.isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
+        ae.add(new QueryExpr(argExpr));
+      } else if (argConcept.isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentVarRefExpression))) {
+        ae.add(new VarRefExpr(argExpr));
+      } else {
+        ae.add(new OtherExpr(argExpr, i));
+      }
+      i++;
+    }
+    return ae.toArray(new ArgumentExpression[ae.size()]);
+  }
+
+  interface ArgumentExpression {
+    public Object evaluate(TemplateContext context) throws GenerationFailureException;
+  }
+
+  private static class TemplateParameterExpr implements ArgumentExpression {
+    private final String myParameterName;
+    private final SNode myParameterExpr;
+    private final int myArgIndex;
+
+    public TemplateParameterExpr(SNode parameterExpr, int index) {
+      myParameterExpr = parameterExpr;
+      myArgIndex = index;
+      SNode parameter = RuleUtil.getTemplateArgumentParameterExpression_Parameter(parameterExpr);
+      myParameterName = parameter == null ? null : parameter.getName();
+    }
+    @Override
+    public Object evaluate(TemplateContext context) throws GenerationFailureException {
+      if (myParameterName == null) {
+        context.getEnvironment().getLogger().error(myParameterExpr.getReference(),
+            "cannot evaluate template argument #" + (myArgIndex) + ": invalid parameter reference",
+            GeneratorUtil.describeInput(context));
+        return null;
+      }
+      return context.getVariable(myParameterName);
+    }
+  }
+
+  private static class PatternRefExpr implements ArgumentExpression {
+    private final SNode myPatternExpr;
+    private final int myArgIndex;
+    private final String myPatternVar;
+
+    public PatternRefExpr(SNode patternExpr, int index) {
+      myPatternExpr = patternExpr;
+      myArgIndex = index;
+      myPatternVar = GeneratorUtilEx.getPatternVariableName(patternExpr);
+    }
+
+    @Override
+    public Object evaluate(TemplateContext context) throws GenerationFailureException {
+      if (myPatternVar == null) {
+        context.getEnvironment().getLogger().error(myPatternExpr.getReference(),
+            "cannot evaluate template argument #" + (myArgIndex) + ": invalid pattern reference",
+            GeneratorUtil.describeInput(context));
+        return null;
+      } else {
+        // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
+        return context.getPatternVariable(myPatternVar);
+      }
+    }
+  }
+
+  private static class QueryExpr implements ArgumentExpression {
+    private final SNode myQuery;
+    public QueryExpr(SNode queryExpr) {
+      myQuery = RuleUtil.getTemplateArgumentQueryExpression_Query(queryExpr);
+    }
+    @Override
+    public Object evaluate(TemplateContext context) throws GenerationFailureException {
+      return context.getEnvironment().getQueryExecutor().evaluateArgumentQuery(context.getInput(), myQuery, context);
+    }
+  }
+
+  private static class VarRefExpr implements ArgumentExpression {
+    private final String myMacroVarName;
+    public VarRefExpr(SNode varRefExpression) {
+      SNode varmacro = RuleUtil.getTemplateArgumentVarRef_VarMacro(varRefExpression);
+      myMacroVarName = RuleUtil.getVarMacro_Name(varmacro);
+    }
+    @Override
+    public Object evaluate(TemplateContext context) throws GenerationFailureException {
+      return context.getVariable(myMacroVarName);
+    }
+  }
+  private static class OtherExpr implements ArgumentExpression {
+    private final SNode myExpression;
+    private final int myArgIndex;
+
+    public OtherExpr(SNode expression, int index) {
+      myExpression = expression;
+      myArgIndex = index;
+    }
+    @Override
+    public Object evaluate(TemplateContext context) throws GenerationFailureException {
+      try {
+        return RuleUtil.evaluateBaseLanguageExpression(myExpression);
+      } catch(IllegalArgumentException ex) {
+        context.getEnvironment().getLogger().error(myExpression.getReference(),
+            String.format("cannot evaluate template argument #%d: %s", myArgIndex, ex.toString()),
+            GeneratorUtil.describeInput(context));
+      }
+      return null;
+    }
   }
 }
