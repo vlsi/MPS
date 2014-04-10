@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.figures.sandbox.BlockContentView" file="BlockContentView.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -9,6 +10,7 @@
     <classNode dependClassName="jetbrains.jetpad.cell.text.TextEditing" />
     <classNode dependClassName="jetbrains.jetpad.cell.view.CellView" />
     <classNode dependClassName="jetbrains.jetpad.event.MouseEvent" />
+    <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
@@ -20,7 +22,8 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEvents" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
-    <classNode extendsClassName="jetbrains.mps.diagram.layoutView.CenterVerticalLayoutView" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode extendsClassName="jetbrains.jetpad.projectional.view.GroupView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView" file="PolygonContentView.java">
