@@ -93,13 +93,12 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     if (myPanel == null) {
       int columnCount = (myPalettePanel == null ? 1 : 2);
       myPanel = new JPanel(new GridLayoutManager(1, columnCount));
-      GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
       if (myPalettePanel != null) {
-        myPanel.add(myPalettePanel, constraints);
-        constraints.setColumn(1);
+        GridConstraints paletteConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+        myPanel.add(myPalettePanel, paletteConstraints);
       }
-      constraints.setVSizePolicy(GridConstraints.SIZEPOLICY_CAN_GROW);
-      constraints.setHSizePolicy(GridConstraints.SIZEPOLICY_CAN_GROW);
+      GridConstraints constraints = new GridConstraints(0, columnCount - 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null);
+
       myPanel.add(getContainerComponent(), constraints);
 
     }
