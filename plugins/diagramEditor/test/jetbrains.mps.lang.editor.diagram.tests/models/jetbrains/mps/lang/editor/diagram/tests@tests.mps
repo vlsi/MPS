@@ -12,9 +12,11 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="604142159147796275" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="CreateDiagramNode" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Creating new diagram node by clicking on digram." />
-    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram" typeId="g85x.511002117671747962" id="4633202057941654436" nodeInfo="ng" />
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram" typeId="g85x.511002117671747962" id="4633202057941654436" nodeInfo="ng">
+      <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="834109970984458418" nodeInfo="ng" />
+    </node>
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram" typeId="g85x.511002117671747962" id="4633202057943822985" nodeInfo="ng">
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4633202057944160441" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="834109970984522118" nodeInfo="ng">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
         <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_xrgyfg_a0a" />
       </node>
