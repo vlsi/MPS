@@ -273,7 +273,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
           SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "metaPort", (SNode) toId, false);
         }
       })}));
-      setPalette(new Diagram_diagramGenerated_Editor.DiagramCellImpl_tb7paq_e0.DiagramPaletteImpl_tb7paq_a4a(this));
+      setPalette(new Diagram_diagram_Editor.DiagramCellImpl_32adaa_e0.DiagramPaletteImpl_32adaa_a4a(this));
       synchronize();
     }
 
@@ -374,8 +374,8 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
       return diagramView;
     }
 
-    private class DiagramPaletteImpl_tb7paq_a4a extends DiagramPalette {
-      private DiagramPaletteImpl_tb7paq_a4a(DiagramCell diagramCell) {
+    private class DiagramPaletteImpl_32adaa_a4a extends DiagramPalette {
+      private DiagramPaletteImpl_32adaa_a4a(DiagramCell diagramCell) {
         super(diagramCell);
         addPaletteElement(new PaletteElementsCreationActionGroup(diagramCell, getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.BlockInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
           public void invoke(SNode node, Integer x, Integer y) {
@@ -400,7 +400,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
         });
         addPaletteElement(new PaletteConnectorCreationActionGroup(diagramCell, getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.ConnectorInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
           public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
-            return SNodeOperations.isInstanceOf(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && fromId instanceof SNode && SNodeOperations.isInstanceOf(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && toId instanceof SNode && eq_tb7paq_a0a0a0a0e0a0a3a0i21(SNodeOperations.getContainingLinkDeclaration(((SNode) toId)), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.MetaBlock", "inMetaPorts"));
+            return SNodeOperations.isInstanceOf(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && fromId instanceof SNode && SNodeOperations.isInstanceOf(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && toId instanceof SNode && eq_32adaa_a0a0a0a0e0a0a3a0i21(SNodeOperations.getContainingLinkDeclaration(((SNode) toId)), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.MetaBlock", "inMetaPorts"));
           }
         }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
           public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
@@ -409,7 +409,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
             final SNode port = ((SNode) fromId);
             SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "source", true), "metaPort", ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "metaBlock", false), "outMetaPorts", true)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_tb7paq_a0a0a0a0a2a3a0a0f0a0a3a0i21(it, port);
+                return eq_32adaa_a0a0a0a0a2a3a0a0f0a0a3a0i21(it, port);
               }
             }), false);
             SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "block", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
@@ -437,11 +437,11 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_tb7paq_a0a0a0a0e0a0a3a0i21(Object a, Object b) {
+  private static boolean eq_32adaa_a0a0a0a0e0a0a3a0i21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_tb7paq_a0a0a0a0a2a3a0a0f0a0a3a0i21(Object a, Object b) {
+  private static boolean eq_32adaa_a0a0a0a0a2a3a0a0f0a0a3a0i21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

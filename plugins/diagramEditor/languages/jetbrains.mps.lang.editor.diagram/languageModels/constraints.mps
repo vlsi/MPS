@@ -17,7 +17,7 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="as9p" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" implicit="yes" />
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3748979635598869842" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.285670992217672837" resolveInfo="ParameterProperty" />
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.285670992217672837" resolveInfo="PropertyArgument" />
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="3748979635598870160" nodeInfo="ng">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.285670992217689748" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="3748979635598885857" nodeInfo="ng">
@@ -26,7 +26,7 @@
     </node>
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3748979635598885879" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.285670992213637559" resolveInfo="ParameterLink" />
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.285670992213637559" resolveInfo="LinkArgument" />
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="3748979635598885880" nodeInfo="ng">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="gbdf.285670992217679783" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="3748979635598885882" nodeInfo="ng">
@@ -35,7 +35,7 @@
     </node>
   </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1491555030355943098" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.1094405431463761863" resolveInfo="AbstractFigureParameter" />
+    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="gbdf.1094405431463761863" resolveInfo="FigureParameterMapping" />
     <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="1491555030355943121" nodeInfo="nn">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1491555030355943122" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1491555030355951253" nodeInfo="nn">
@@ -73,7 +73,7 @@
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorsOperation" typeId="tp25.1173122760281" id="1220375669567144634" nodeInfo="nn">
                 <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_ConceptList" typeId="tp25.1154546920561" id="1220375669567171901" nodeInfo="ng">
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="285670992219058197" nodeInfo="ng">
-                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.285670992213637367" resolveInfo="ParameterBLQuery" />
+                    <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.285670992213637367" resolveInfo="BLQueryArgument" />
                   </node>
                   <node role="concept" roleId="tp25.1154546920563" type="tp25.ConceptReference" typeId="tp25.1154546950173" id="1220375669567182121" nodeInfo="ng">
                     <link role="concept" roleId="tp25.1154546997487" targetNodeId="gbdf.1220375669566347117" resolveInfo="ConnectionEndBLQuery" />
@@ -114,15 +114,15 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="6194248980634051104" nodeInfo="nn">
                 <node role="argument" roleId="tp2q.1160666822012" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6194248980634028695" nodeInfo="nn">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="6194248980634031072" nodeInfo="nn">
+                    <link role="link" roleId="tp25.1138056546658" targetNodeId="gbdf.8570854907290721333" />
+                  </node>
                   <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="6194248980634027602" nodeInfo="nn">
                     <link role="concept" roleId="tp25.1140138128738" targetNodeId="gbdf.6306886970791033847" resolveInfo="CellModel_Diagram" />
                     <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6194248980634026034" nodeInfo="nn">
                       <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConceptParameter_ReferentSearchScope_enclosingNode" typeId="tp1t.1148934636683" id="6194248980634025264" nodeInfo="nn" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="6194248980634026767" nodeInfo="nn" />
                     </node>
-                  </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="6194248980634031072" nodeInfo="nn">
-                    <link role="link" roleId="tp25.1138056546658" targetNodeId="gbdf.8570854907290721333" />
                   </node>
                 </node>
               </node>

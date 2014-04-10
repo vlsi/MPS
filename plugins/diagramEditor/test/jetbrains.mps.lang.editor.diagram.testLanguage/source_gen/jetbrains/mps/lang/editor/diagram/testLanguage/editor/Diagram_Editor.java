@@ -39,7 +39,7 @@ public class Diagram_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xrgyfg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCanBeSynchronized(true);
-    editorCell.setCellId("Collection_xr¡gyfg_a");
+    editorCell.setCellId("Collection_xrgyfg_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
