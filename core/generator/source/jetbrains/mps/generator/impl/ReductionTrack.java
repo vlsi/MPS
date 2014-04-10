@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,12 +32,10 @@ import java.util.Deque;
  * @author Artem Tikhomirov
  */
 final class ReductionTrack {
-  private final TemplateExecutionEnvironment myEnv;
   private final BlockedReductionsData myReductionsData;
   private final Deque<ReductionContext> myReductionStack;
 
-  public ReductionTrack(@NotNull BlockedReductionsData reductionsData, @NotNull TemplateExecutionEnvironment environment) {
-    myEnv = environment;
+  public ReductionTrack(@NotNull BlockedReductionsData reductionsData) {
     myReductionsData = reductionsData;
     myReductionStack = new ArrayDeque<ReductionContext>(20);
     myReductionStack.push(new ReductionContext());
@@ -51,6 +48,9 @@ final class ReductionTrack {
     myReductionsData.blockReductionsForCopiedNode(inputNode, outputNode, actual());
   }
 
+  public boolean isReductionBlocked(SNode node, TemplateReductionRule rule) {
+    return myReductionsData.isReductionBlocked(node, rule) || actual().isBlocked(node, rule);
+  }
 
   public ReductionContext actual() {
     return myReductionStack.peek();
@@ -62,9 +62,5 @@ final class ReductionTrack {
 
   public void leave() {
     myReductionStack.pop();
-  }
-
-  public TemplateExecutionEnvironment getEnvironment() {
-    return myEnv;
   }
 }

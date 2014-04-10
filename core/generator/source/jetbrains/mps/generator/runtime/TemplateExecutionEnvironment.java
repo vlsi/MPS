@@ -67,8 +67,10 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   /**
    * ReductionContext is implementation aspect, shall be accessible from TemplateExecutionEnvironmentImpl only
+   * @deprecated clients are not expected to care about this method
    */
   @Deprecated
+  @ToRemove(version = 3.1)
   @NotNull
   ReductionContext getReductionContext();
 

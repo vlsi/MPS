@@ -115,12 +115,7 @@ public class FastRuleFinder {
       return (BlockedReductionsData) blockedReductions;
     }
 
-    public boolean isReductionBlocked(SNode node, TemplateReductionRule rule, ReductionContext reductionContext) {
-      return isReductionBlocked(node, rule)
-        || reductionContext != null && reductionContext.isBlocked(node, rule);
-    }
-
-    private boolean isReductionBlocked(SNode node, TemplateReductionRule rule) {
+    public boolean isReductionBlocked(SNode node, TemplateReductionRule rule) {
       Object o = myCurrentReductionData.get(node);
       if (o == null) return false;
       if (o == rule) return true;
