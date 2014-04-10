@@ -21,6 +21,7 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
+import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
@@ -642,8 +643,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
     protected SNode getTemplateSwitch() {
       return RuleUtil.getSwitchMacro_TemplateSwitch(macro);
     }
-    protected TemplateContext prepareContext(TemplateContext templateContext, SNode newInputNode) {
-      return templateContext.subContext(newInputNode);
+    protected TemplateContext prepareContext(TemplateContext templateContext) {
+      return templateContext;
     }
     @NotNull
     @Override
@@ -670,7 +671,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
       myTracer.pushSwitch(new jetbrains.mps.smodel.SNodePointer(templateSwitch));
       try {
-        final TemplateContext switchContext = prepareContext(templateContext, newInputNode);
+        final TemplateContext switchContext = prepareContext(templateContext).subContext(newInputNode);
 
         Collection<SNode> collection = null;
         try {
@@ -700,6 +701,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   // new $SWITCH$, with args
   private static class SwitchWithArgMacro extends SwitchMacro {
+    private volatile TemplateCall myCallProcessor;
     protected SwitchWithArgMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
     }
@@ -710,8 +712,17 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(TemplateContext templateContext, SNode newInputNode) {
-      return GeneratorUtil.createTemplateCallContext(templateContext, macro, newInputNode);
+    protected TemplateContext prepareContext(TemplateContext templateContext) {
+      TemplateCall tc = myCallProcessor;
+      if (tc == null) {
+        tc = new TemplateCall(macro);
+        if (tc.argumentsMismatch()) {
+          getLogger().error(getMacroNodeRef(), "number of arguments doesn't match template", GeneratorUtil.describeInput(templateContext));
+          // fall-through
+        }
+        myCallProcessor = tc;
+      }
+      return tc.prepareCallContext(templateContext);
     }
   }
 
@@ -725,7 +736,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       super(macro, templateNode, next, templateProcessor);
       myName = macroName;
     }
-    protected abstract TemplateContext prepareContext(TemplateContext templateContext, SNode newInputNode);
+    protected abstract TemplateContext prepareContext(TemplateContext templateContext);
 
     private TemplateContainer getTemplates() {
       TemplateContainer rv = myTemplates;
@@ -755,7 +766,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         throw new TemplateProcessingFailureException(macro, String.format("error processing %s : no template to invoke", myName));
       }
 
-      TemplateContext newcontext = prepareContext(templateContext, newInputNode);
+      TemplateContext newcontext = prepareContext(templateContext).subContext(newInputNode);
       if (newcontext == null) {
         throw new TemplateProcessingFailureException(macro, String.format("error processing %s : failed to prepare new context", myName),
             GeneratorUtil.describe(invokedTemplate, "invoked template"));
@@ -790,25 +801,26 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(TemplateContext templateContext, SNode newInputNode) {
+    protected TemplateContext prepareContext(TemplateContext templateContext) {
       final String[] parameterNames = RuleUtil.getTemplateDeclarationParameterNames(myInvokedTemplate);
       if (parameterNames == null) {
-        getLogger().error(macro.getReference(), "error processing $INCLUDE$: target template is broken", GeneratorUtil.describe(newInputNode, "input node"));
+        getLogger().error(getMacroNodeRef(), "error processing $INCLUDE$: target template is broken", GeneratorUtil.describeInput(templateContext));
         return null;
       }
 
       for (String name : parameterNames) {
         if (!templateContext.hasVariable(name)) {
-          getLogger().error(macro.getReference(), String.format("error processing $INCLUDE$: parameter '%s' is missing", name),
-              GeneratorUtil.describe(newInputNode, "input node"));
+          getLogger().error(getMacroNodeRef(), String.format("error processing $INCLUDE$: parameter '%s' is missing", name),
+              GeneratorUtil.describeInput(templateContext));
         }
       }
-      return templateContext.subContext(newInputNode);
+      return templateContext;
     }
   }
 
   // $CALL$
   private static class CallMacro extends InvokeTemplateMacro {
+    private volatile TemplateCall myCallProcessor;
 
     protected CallMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor, "$CALL$");
@@ -816,8 +828,17 @@ public final class TemplateProcessor implements ITemplateProcessor {
     }
 
     @Override
-    protected TemplateContext prepareContext(TemplateContext templateContext, SNode newInputNode) {
-      return GeneratorUtil.createTemplateCallContext(templateContext, macro, newInputNode);
+    protected TemplateContext prepareContext(TemplateContext templateContext) {
+      TemplateCall tc = myCallProcessor;
+      if (tc == null) {
+        tc = new TemplateCall(macro);
+        if (tc.argumentsMismatch()) {
+          getLogger().error(getMacroNodeRef(), "number of arguments doesn't match template", GeneratorUtil.describeInput(templateContext));
+          // fall-through
+        }
+        myCallProcessor = tc;
+      }
+      return tc.prepareCallContext(templateContext);
     }
   }
 
