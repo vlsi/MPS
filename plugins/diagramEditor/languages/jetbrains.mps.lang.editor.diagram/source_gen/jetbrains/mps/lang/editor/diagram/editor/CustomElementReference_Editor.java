@@ -30,7 +30,7 @@ public class CustomElementReference_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xh1xgm_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom action");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom");
     editorCell.setCellId("Constant_xh1xgm_a0");
     editorCell.setDefaultText("");
     return editorCell;
