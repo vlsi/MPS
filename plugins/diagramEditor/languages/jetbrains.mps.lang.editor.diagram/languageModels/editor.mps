@@ -1308,7 +1308,7 @@
         <property name="text" nameId="tpc2.1073389577007" value="group" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6619018968336115556" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="[" />
+        <property name="text" nameId="tpc2.1073389577007" value="{" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="6619018968336115566" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -1327,7 +1327,7 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6619018968336115601" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="]" />
+        <property name="text" nameId="tpc2.1073389577007" value="}" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6619018968336115546" nodeInfo="nn" />
     </node>

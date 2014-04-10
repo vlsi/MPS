@@ -44,7 +44,7 @@ public class ActionGroup_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9p5zz5_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_9p5zz5_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -103,7 +103,7 @@ public class ActionGroup_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_9p5zz5_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_9p5zz5_d0");
     editorCell.setDefaultText("");
     return editorCell;

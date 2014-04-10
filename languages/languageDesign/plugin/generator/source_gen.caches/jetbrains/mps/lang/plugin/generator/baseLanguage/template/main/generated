@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c3j5jkn9tl45prhtg3qwj5ghphprnli">
+<dependencies version="2" modelHash="-9mbnbrs95x2s7kwcnr7ysfhpy0pl6po">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
@@ -127,7 +127,7 @@
   <source id="1203086899006" name="GeneratedAction_Template" hash="877s7lrzugfh486vgzm2rak78ne5e01">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1203094364055" name="MainGeneratedGroup" hash="4zj4qu68ir8dd4qkt9btom2i4mbuagt">
+  <source id="1203094364055" name="MainGeneratedGroup" hash="-bcf4s1hlmvnt9eu9kyvzazvzwwc1wo3">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
   <source id="1204470347293" name="Tool" hash="-e6es5gh0b8fjymkfflrtjysg84pfg8j" />
