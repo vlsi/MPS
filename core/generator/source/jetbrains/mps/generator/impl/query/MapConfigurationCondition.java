@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.generator.impl.query;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * @author Artem Tikhomiroc
+ * @author Artem Tikhomirov
  */
 public interface MapConfigurationCondition extends Query {
-  boolean check(@NotNull TemplateQueryContext ctx);
+  boolean check(@NotNull TemplateQueryContext ctx) throws GenerationFailureException;
 }

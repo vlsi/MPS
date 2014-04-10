@@ -346,7 +346,7 @@
     <unitInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="29" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/3893401255414086886">
-    <nodeInfo nodeId="3893401255414100160" fileName="QueriesGenerated.java" startLine="32" startPosition="113" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3893401255414100160" fileName="QueriesGenerated.java" startLine="32" startPosition="120" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="25" startPosition="43" endLine="26" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="29" startPosition="158" endLine="30" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="31" startPosition="9" endLine="32" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -374,7 +374,7 @@
     <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="36" startPosition="0" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="30" startPosition="123" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="29" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="3893401255414086895" fileName="QueriesGenerated.java" startLine="32" startPosition="113" endLine="33" endPosition="59" />
+    <scopeInfo nodeId="3893401255414086895" fileName="QueriesGenerated.java" startLine="32" startPosition="120" endLine="33" endPosition="59" />
     <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="22" startPosition="31" endLine="22" endPosition="31" />
     <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="25" startPosition="43" endLine="26" endPosition="32" />
     <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="43" startPosition="19" endLine="44" endPosition="83" />
@@ -402,7 +402,7 @@
     <unitInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateOutputRoot" />
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/3893401255414100167">
-    <nodeInfo nodeId="3893401255414163870" fileName="QueriesGenerated.java" startLine="36" startPosition="113" endLine="37" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3893401255414163870" fileName="QueriesGenerated.java" startLine="36" startPosition="120" endLine="37" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="27" startPosition="43" endLine="28" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="31" startPosition="166" endLine="32" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="33" startPosition="9" endLine="34" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -505,7 +505,7 @@
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="102" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart3#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="32" startPosition="54" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="31" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="3893401255414161784" fileName="QueriesGenerated.java" startLine="36" startPosition="113" endLine="37" endPosition="105" />
+    <scopeInfo nodeId="3893401255414161784" fileName="QueriesGenerated.java" startLine="36" startPosition="120" endLine="37" endPosition="105" />
     <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="24" startPosition="41" endLine="24" endPosition="41" />
     <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="27" startPosition="43" endLine="28" endPosition="199" />
     <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="37" startPosition="30" endLine="38" endPosition="19" />
@@ -619,7 +619,7 @@
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="41" startPosition="199" endLine="42" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="42" startPosition="70" endLine="43" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="43" startPosition="55" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="52" startPosition="29" endLine="53" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="57" startPosition="131" endLine="58" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="62" startPosition="147" endLine="63" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -641,7 +641,7 @@
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="29" startPosition="41" endLine="30" endPosition="199" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="33" startPosition="45" endLine="34" endPosition="199" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="37" startPosition="62" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="90" />
+    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="71" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="52" startPosition="29" endLine="53" endPosition="277" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="57" startPosition="131" endLine="58" endPosition="151" />
     <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />

@@ -200,12 +200,12 @@
     <nodeInfo nodeId="5582028874769201332" fileName="QueriesGenerated.java" startLine="66" startPosition="109" endLine="67" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5582028874769201342" fileName="QueriesGenerated.java" startLine="70" startPosition="109" endLine="71" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5582028874769201353" fileName="QueriesGenerated.java" startLine="110" startPosition="108" endLine="111" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5582028874769201360" fileName="QueriesGenerated.java" startLine="146" startPosition="113" endLine="147" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5582028874769201360" fileName="QueriesGenerated.java" startLine="146" startPosition="120" endLine="147" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="5582028874769201312" fileName="QueriesGenerated.java" startLine="62" startPosition="109" endLine="63" endPosition="74" />
     <scopeInfo nodeId="5582028874769201331" fileName="QueriesGenerated.java" startLine="66" startPosition="109" endLine="67" endPosition="274" />
     <scopeInfo nodeId="5582028874769201341" fileName="QueriesGenerated.java" startLine="70" startPosition="109" endLine="71" endPosition="174" />
     <scopeInfo nodeId="5582028874769201352" fileName="QueriesGenerated.java" startLine="110" startPosition="108" endLine="111" endPosition="72" />
-    <scopeInfo nodeId="5582028874769201359" fileName="QueriesGenerated.java" startLine="146" startPosition="113" endLine="147" endPosition="77" />
+    <scopeInfo nodeId="5582028874769201359" fileName="QueriesGenerated.java" startLine="146" startPosition="120" endLine="147" endPosition="77" />
   </root>
   <root nodeRef="r:ad044ded-b26d-4454-89a4-9fd4566328df(jetbrains.mps.console.ideCommands.generator.template.main@generator)/5582028874769203950">
     <nodeInfo nodeId="5582028874769203962" fileName="QueriesGenerated.java" startLine="114" startPosition="108" endLine="115" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

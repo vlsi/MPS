@@ -106,11 +106,11 @@ public class QueriesGenerated {
     return SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true));
   }
 
-  public static Iterable sourceNodesQuery_633195941006921760(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_633195941006921760(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_5337045848190669725(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5337045848190669725(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(_context.getNode(), "body", true), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException");

@@ -200,6 +200,9 @@
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/jetbrains.mps.lang.editor.diagram.mpl" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/jetbrains.mps.lang.editor.figures.mpl" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/runtime/jetbrains.mps.lang.editor.diagram.runtime.msd" folder="core.aspects.editor.diagram" />
+      <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/jetbrains.mps.lang.editor.figures.library.msd" folder="core.aspects.editor.diagram" />
+      <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/jetbrains.mps.lang.editor.diagram.testLanguage.mpl" folder="core.aspects.editor.diagram" />
+      <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.tests/jetbrains.mps.lang.editor.diagram.tests.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/jetbrains.mps.lang.editor.figures.sandbox.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/jetbrains.mps.testHybridEditor.diagram.generated.mpl" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.sandbox/jetbrains.mps.testHybridEditor.sandbox.msd" folder="core.aspects.editor.diagram" />

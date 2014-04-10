@@ -1636,15 +1636,15 @@ public class QueriesGenerated {
     return MathUtil.operConstant(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_6217769856310494661(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6217769856310494661(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "components", true);
   }
 
-  public static Iterable sourceNodesQuery_1331994661796617564(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1331994661796617564(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "components", true);
   }
 
-  public static Iterable sourceNodesQuery_6217769856310494781(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6217769856310494781(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "components", true);
   }
 

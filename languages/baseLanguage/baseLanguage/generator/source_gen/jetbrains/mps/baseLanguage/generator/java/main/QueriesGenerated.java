@@ -312,19 +312,19 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
   }
 
-  public static Iterable sourceNodesQuery_1224072736293(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1224072736293(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "resource", true);
   }
 
-  public static Iterable sourceNodesQuery_1224072736321(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1224072736321(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "resource", true);
   }
 
-  public static Iterable sourceNodesQuery_1201570443454(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1201570443454(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(Property_Behavior.call_getCustomPropertyImplementation_1213877383154(_context.getNode()), "getAccessor", true), "statementList", true), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_1202009237531(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1202009237531(final SourceSubstituteMacroNodesContext _context) {
     return Property_Behavior.call_getCustomSetterStatements_2622108313339491118(_context.getNode());
   }
 

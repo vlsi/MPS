@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.figures.library.MPSRectView" file="MPSRectView.java">
+    <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
+    <classNode dependClassName="jetbrains.jetpad.values.Color" />
+    <classNode extendsClassName="jetbrains.jetpad.projectional.view.RectView" />
+  </dependency>
+</dependenciesRoot>
+

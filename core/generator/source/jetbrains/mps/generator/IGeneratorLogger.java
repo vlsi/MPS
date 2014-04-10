@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
@@ -30,7 +31,11 @@ public interface IGeneratorLogger {
 
   boolean needsWarnings();
 
+  /**
+   * @deprecated use {@link #info(org.jetbrains.mps.openapi.model.SNodeReference, String)}
+   */
   @Deprecated
+  @ToRemove(version = 3.1)
   void info(SNode node, String message);
   void info(@Nullable SNodeReference node, @NotNull String message);
 
@@ -38,13 +43,21 @@ public interface IGeneratorLogger {
 
   void warning(String message);
 
+  /**
+   * @deprecated use {@link #warning(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}
+   */
   @Deprecated
+  @ToRemove(version = 3.1)
   void warning(SNode node, String message, ProblemDescription... descriptions);
   void warning(@Nullable SNodeReference node, @NotNull String message, @Nullable ProblemDescription... descriptions);
 
   void error(String message);
 
+  /**
+   * @deprecated use {@link #error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}
+   */
   @Deprecated
+  @ToRemove(version = 3.1)
   void error(SNode node, String message, ProblemDescription... descriptions);
   void error(@Nullable SNodeReference node, @NotNull String message, @Nullable ProblemDescription... descriptions);
 
@@ -63,6 +76,7 @@ public interface IGeneratorLogger {
      * @deprecated Use {@link #ProblemDescription(org.jetbrains.mps.openapi.model.SNodeReference, String)} instead
      */
     @Deprecated
+    @ToRemove(version = 3.1)
     public ProblemDescription(SNode node, String message) {
       this(node == null ? null : node.getReference(), message);
     }

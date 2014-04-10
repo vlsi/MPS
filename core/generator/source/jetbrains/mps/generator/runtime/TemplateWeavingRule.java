@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -26,7 +27,7 @@ public interface TemplateWeavingRule extends TemplateRuleWithCondition {
 
   boolean applyToInheritors();
 
-  SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context);
+  SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException;
 
   boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException;
 }

@@ -28,8 +28,8 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
   private PolyLineView myPolyLine = new PolyLineView();
   private TextCell myCell = new TextCell();
   private TextView myMetaText = new TextView();
-  private Property<Integer> myWidth = new ValueProperty<Integer>(WIDTH);
-  private Property<Integer> myHeight = new ValueProperty<Integer>(HEIGHT);
+  public Property<Integer> contentWidth = new ValueProperty<Integer>(WIDTH);
+  public Property<Integer> contentHeight = new ValueProperty<Integer>(HEIGHT);
 
   public PolygonContentView() {
     color().set(Color.LIGHT_BLUE);
@@ -45,26 +45,27 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
     children().add(space);
     myMetaText.bold().set(true);
     children().add(myMetaText);
+    initPoints();
     new Mapper<PolygonContentView, PolygonContentView>(this, this) {
       @Override
       protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
         super.registerSynchronizers(configuration);
-        configuration.add(Synchronizers.forProperty(myWidth, new Runnable() {
+        configuration.add(Synchronizers.forProperty(contentWidth, new Runnable() {
           public void run() {
-            adjustPoints(myWidth.get(), myHeight.get());
+            adjustPoints(contentWidth.get(), contentHeight.get());
           }
         }));
-        configuration.add(Synchronizers.forProperty(myWidth, new WritableProperty<Integer>() {
+        configuration.add(Synchronizers.forProperty(contentWidth, new WritableProperty<Integer>() {
           public void set(Integer value) {
             setPreferredSize(value, null);
           }
         }));
-        configuration.add(Synchronizers.forProperty(myHeight, new Runnable() {
+        configuration.add(Synchronizers.forProperty(contentHeight, new Runnable() {
           public void run() {
-            adjustPoints(myWidth.get(), myHeight.get());
+            adjustPoints(contentWidth.get(), contentHeight.get());
           }
         }));
-        configuration.add(Synchronizers.forProperty(myHeight, new WritableProperty<Integer>() {
+        configuration.add(Synchronizers.forProperty(contentHeight, new WritableProperty<Integer>() {
           public void set(Integer value) {
             setPreferredSize(null, value);
           }
@@ -100,8 +101,8 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
       nextChild.moveTo(new Vector(xOrigin + (width - childBounds.dimension.x) / 2, yOffset));
       yOffset += childBounds.dimension.y;
     }
-    myWidth.set(width);
-    myHeight.set(height);
+    contentWidth.set(width);
+    contentHeight.set(height);
     if (!(myPolyLine.valid().get())) {
       // Calling super.doValidate() once again because myPolyLine can be invalidated as a result of setting 
       // myPreferredSize property 
@@ -109,21 +110,30 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
     }
   }
 
-  private void adjustPoints(int width, int height) {
-    points.clear();
+  private void initPoints() {
     points.add(new Vector(FOLDING_SIZE, 0));
-    points.add(new Vector(width, 0));
-    points.add(new Vector(width, height));
-    points.add(new Vector(0, height));
+    points.add(new Vector(WIDTH, 0));
+    points.add(new Vector(WIDTH, HEIGHT));
+    points.add(new Vector(0, HEIGHT));
     points.add(new Vector(0, FOLDING_SIZE));
     points.add(new Vector(FOLDING_SIZE, 0));
-    myPolyLine.points.clear();
+
     myPolyLine.points.add(new Vector(FOLDING_SIZE, 0));
-    myPolyLine.points.add(new Vector(width, 0));
-    myPolyLine.points.add(new Vector(width, height));
-    myPolyLine.points.add(new Vector(0, height));
+    myPolyLine.points.add(new Vector(WIDTH, 0));
+    myPolyLine.points.add(new Vector(WIDTH, HEIGHT));
+    myPolyLine.points.add(new Vector(0, HEIGHT));
     myPolyLine.points.add(new Vector(0, FOLDING_SIZE));
     myPolyLine.points.add(new Vector(FOLDING_SIZE, 0));
+  }
+
+  private void adjustPoints(int width, int height) {
+    points.set(1, new Vector(width, 0).add(getBounds().origin));
+    points.set(2, new Vector(width, height).add(getBounds().origin));
+    points.set(3, new Vector(0, height).add(getBounds().origin));
+
+    myPolyLine.points.set(1, new Vector(width, 0).add(myPolyLine.getBounds().origin));
+    myPolyLine.points.set(2, new Vector(width, height).add(myPolyLine.getBounds().origin));
+    myPolyLine.points.set(3, new Vector(0, height).add(myPolyLine.getBounds().origin));
   }
 
   public Property<String> text() {
@@ -132,14 +142,6 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
 
   public Property<String> metaText() {
     return myMetaText.text();
-  }
-
-  public Property<Integer> contentWidth() {
-    return myWidth;
-  }
-
-  public Property<Integer> contentHeight() {
-    return myHeight;
   }
 
   private void setPreferredSize(Integer width, Integer height) {

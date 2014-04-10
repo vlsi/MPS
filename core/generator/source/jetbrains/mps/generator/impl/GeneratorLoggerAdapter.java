@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,9 +29,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Translates IGeneratorLogger calls into IMessageHandler's
@@ -241,34 +238,6 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     public Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node) {
       if (node != null) {
         record(kind, node.getModelReference());
-      }
-      return myDelegate.prepare(kind, text, node);
-    }
-  }
-
-  /**
-   * Rewrite model reference part of hint node based on supplied map
-   */
-  static class ModelRefRewriteFactory implements MessageFactory {
-    private final MessageFactory myDelegate;
-    private Map<SModelReference,SModelReference> myModels2Update = Collections.emptyMap();
-    public ModelRefRewriteFactory(@NotNull MessageFactory delegate) {
-      myDelegate = delegate;
-    }
-
-    public void rewriteWith(@NotNull Map<SModelReference,SModelReference> models2Update) {
-      myModels2Update = models2Update;
-    }
-
-    @Override
-    public Message prepare(@NotNull MessageKind kind, @NotNull String text, @Nullable SNodeReference node) {
-      if (node != null && /*there's no way at the moment to obtain NodeId other than cast*/node instanceof SNodePointer) {
-        final SModelReference originalModelRef = node.getModelReference();
-        final SModelReference replacementModelRef = myModels2Update.get(originalModelRef);
-        if (replacementModelRef != null) {
-          node = new SNodePointer(replacementModelRef, ((SNodePointer) node).getNodeId());
-        }
-        // fall-through
       }
       return myDelegate.prepare(kind, text, node);
     }

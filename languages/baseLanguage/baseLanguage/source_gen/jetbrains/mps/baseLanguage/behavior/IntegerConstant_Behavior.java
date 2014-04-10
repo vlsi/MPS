@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IntegerConstant_Behavior {
   public static void init(SNode thisNode) {
@@ -13,9 +12,5 @@ public class IntegerConstant_Behavior {
 
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return SPropertyOperations.getInteger(thisNode, "value");
-  }
-
-  public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
-    return true;
   }
 }

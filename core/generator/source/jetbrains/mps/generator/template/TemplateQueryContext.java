@@ -224,11 +224,11 @@ public class TemplateQueryContext {
   }
 
   public void showInformationMessage(SNode node, String message) {
-    myGenerator.getLogger().info(node, message);
+    myGenerator.getLogger().info(node == null ? getTemplateNodeRef() : node.getReference(), message);
   }
 
   public void showWarningMessage(SNode node, String message) {
-    myGenerator.getLogger().warning(node, message);
+    myGenerator.getLogger().warning(node == null ? getTemplateNodeRef() : node.getReference(), message);
   }
 
   public void showErrorMessage(SNode node, String message) {

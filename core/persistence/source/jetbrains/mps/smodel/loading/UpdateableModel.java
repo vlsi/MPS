@@ -55,9 +55,9 @@ public abstract class UpdateableModel {
   public final LazySModel getModel(@Nullable ModelLoadingState state) {
     if (state == null) return myModel;
     if (!ModelAccess.instance().canWrite()) {
-      if (state.ordinal() > myState.ordinal()) {
-        synchronized (this) {
-          ensureLoadedTo(state);
+      synchronized (this) {
+        if (state.ordinal() > myState.ordinal()) {
+            ensureLoadedTo(state);
         }
       }
     } else {

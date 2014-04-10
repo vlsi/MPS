@@ -12,6 +12,10 @@ public class FigureParameterAttributeMethod_BehaviorDescriptor extends FigurePar
     return FigureParameterAttributeMethod_Behavior.virtual_getParameterMember_5422656561931910498(thisNode);
   }
 
+  public SNode virtual_getParameterType_342110547581236128(SNode thisNode) {
+    return FigureParameterAttributeMethod_Behavior.virtual_getParameterType_342110547581236128(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod";

@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode extendsClassName="jetbrains.mps.diagram.layoutView.CenterVerticalLayoutView" />
+    <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView" file="PolygonContentView.java">
     <classNode dependClassName="java.lang.Integer" />

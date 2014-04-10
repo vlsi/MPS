@@ -161,9 +161,11 @@ public class DiffEditor implements EditorMessageOwner {
         return new EditorCell_Constant(editorContext, getEditedNode(), "");
       }
       pushCellContext();
-      EditorCell rootCell = getEditorContext().createRootCell(getEditedNode(), events);
-      popCellContext();
-      return rootCell;
+      try {
+        return getEditorContext().createRootCell(getEditedNode(), events);
+      } finally {
+        popCellContext();
+      }
     }
 
     @Override

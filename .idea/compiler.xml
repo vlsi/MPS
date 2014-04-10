@@ -287,6 +287,12 @@
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/runtime/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.tests/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.tests/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.diagram.generated/generator/source_gen" includeSubdirectories="true" />
