@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a0e2izqca9x8s3npmnltz2skuo2q67r">
+<dependencies version="2" modelHash="-5kpza4xmyfi4kw5nww3wrrl0q1vxbej">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-7hpmrwjimsa7c7rzbkyz2ehryyj1c7y" />
   <dep model="r:41f2377e-eabf-4dea-87cd-bc375d26b546(jetbrains.mps.testHybridEditor.diagram.generated.typesystem)" hash="b8vp5yt3yekyfsmxbo6jezyh6px3cz0" />
-  <dep model="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)" hash="-6owkgbo836ozeuvhpfvk0ms3ktkq6ru" />
+  <dep model="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)" hash="7utld1ahu97lw8uino7u4hkh8boj8hw" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
   <common dependsOnNodes="true">

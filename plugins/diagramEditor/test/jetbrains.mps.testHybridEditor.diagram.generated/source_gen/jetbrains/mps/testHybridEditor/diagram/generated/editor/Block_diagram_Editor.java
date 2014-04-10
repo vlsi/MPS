@@ -16,14 +16,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.HashSet;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
-import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
 import jetbrains.mps.lang.editor.figures.sandbox.BlockContentView;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView;
 import jetbrains.jetpad.model.property.WritableProperty;
@@ -31,7 +27,6 @@ import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 
 public class Block_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagram"});
@@ -115,8 +110,8 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
       myPropertyCell_pj4dhh_a1a.synchronize();
       myPropertyCell_pj4dhh_a2a.synchronize();
       myPropertyCell_pj4dhh_a3a.synchronize();
-      syncPortNodes(SLinkOperations.getTargets(getSNode(), "inputPorts", true), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
-      syncPortNodes(SLinkOperations.getTargets(getSNode(), "outputPorts", true), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
+
+
     }
 
     public Mapper<SNode, DiagramNodeView> createMapper() {
@@ -124,16 +119,8 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
-          configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputs.children(), new MapperFactory<SNode, View>() {
-            public Mapper<? extends SNode, ? extends View> createMapper(SNode portNode) {
-              return ((PortCell) getDirectChildCell(portNode)).createMapper();
-            }
-          }));
-          configuration.add(Synchronizers.forObservableRole(this, myOutputPorts, getTarget().outputs.children(), new MapperFactory<SNode, View>() {
-            public Mapper<? extends SNode, ? extends View> createMapper(SNode portNode) {
-              return ((PortCell) getDirectChildCell(portNode)).createMapper();
-            }
-          }));
+          configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputs.children(), null));
+          configuration.add(Synchronizers.forObservableRole(this, myOutputPorts, getTarget().outputs.children(), null));
           final DiagramNodeView diagramNodeView = getTarget();
           configuration.add(Synchronizers.forConstantRole(this, getContentViewMapperSource(), getTarget().contentView.children(), new MapperFactory<String, BlockContentView>() {
             public Mapper<? extends String, ? extends BlockContentView> createMapper(String block) {
@@ -206,16 +193,8 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
           configuration.add(Synchronizers.forProperty(blockMapper.getTarget().focused(), getTarget().isSelected));
           BlockContentView contentView = (BlockContentView) getContentView();
           configuration.add(Synchronizers.forProperty(contentView.bounds(), getTarget().bounds));
-          configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
-            public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(SNode portNode) {
-              return ((PortCell) getDirectChildCell(portNode)).createDecorationMapper();
-            }
-          }));
-          configuration.add(Synchronizers.forObservableRole(this, myOutputPorts, getTarget().outputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
-            public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(SNode portNode) {
-              return ((PortCell) getDirectChildCell(portNode)).createDecorationMapper();
-            }
-          }));
+          configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), null));
+          configuration.add(Synchronizers.forObservableRole(this, myOutputPorts, getTarget().outputPortDecotatorView.children(), null));
 
         }
       };

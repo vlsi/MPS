@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/1301388602724839210">
     <nodeInfo nodeId="1301388602724841088" fileName="typeof_ConnectionEndBLQuery_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1301388602724841088" fileName="typeof_ConnectionEndBLQuery_InferenceRule.java" startLine="21" startPosition="109" endLine="22" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -511,6 +511,45 @@
       <varInfo nodeId="4088443785018266987" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="4088443785018266987" fileName="check_CellModel_DiagramNode_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.check_CellModel_DiagramNode_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/6194248980637216119">
+    <nodeInfo nodeId="6194248980637216508" fileName="check_Palette_NonTypesystemRule.java" startLine="20" startPosition="5" endLine="21" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6194248980637216508" fileName="check_Palette_NonTypesystemRule.java" startLine="21" startPosition="58" endLine="22" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="26" startPosition="46" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_Palette_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="6194248980637216508" fileName="check_Palette_NonTypesystemRule.java" startLine="19" startPosition="120" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <nodeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="16" startPosition="44" endLine="16" endPosition="44" />
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="26" startPosition="46" endLine="27" endPosition="65" />
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="6194248980637216508" fileName="check_Palette_NonTypesystemRule.java" startLine="20" startPosition="5" endLine="22" endPosition="288">
+      <varInfo nodeId="6194248980637216508" varName="_reporter_2309309498" />
+      <varInfo nodeId="6194248980637216508" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="6194248980637216119" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="6194248980637216120" fileName="check_Palette_NonTypesystemRule.java" startLine="19" startPosition="120" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="6194248980637216119" varName="palette" />
+      <varInfo nodeId="6194248980637216119" varName="status" />
+      <varInfo nodeId="6194248980637216119" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="6194248980637216119" varName="argument" />
+    </scopeInfo>
+    <unitInfo nodeId="6194248980637216119" fileName="check_Palette_NonTypesystemRule.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.typesystem.check_Palette_NonTypesystemRule" />
   </root>
   <root nodeRef="r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)/7200199917722151577">
     <nodeInfo nodeId="6663698541542215777" fileName="check_CellModel_Diagram_NonTypesystemRule.java" startLine="23" startPosition="120" endLine="24" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

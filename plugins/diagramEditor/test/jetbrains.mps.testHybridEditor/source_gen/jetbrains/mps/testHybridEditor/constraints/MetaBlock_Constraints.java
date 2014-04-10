@@ -4,6 +4,10 @@ package jetbrains.mps.testHybridEditor.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MetaBlock_Constraints extends BaseConstraintsDescriptor {
@@ -12,6 +16,10 @@ public class MetaBlock_Constraints extends BaseConstraintsDescriptor {
   }
 
   public String getAlternativeIcon(SNode node) {
-    return SPropertyOperations.getString(node, "iconPath");
+    SModule module = SNodeOperations.getModel(node).getModule();
+    if (!(module instanceof AbstractModule)) {
+      return null;
+    }
+    return MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(node, "iconPath"));
   }
 }

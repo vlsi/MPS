@@ -17,6 +17,10 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_Behavior" file="AbstractFigureReference_Behavior.java">
@@ -36,6 +40,18 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.ActionGroup_BehaviorDescriptor" file="ActionGroup_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.PaletteElement_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.ActionReference_BehaviorDescriptor" file="ActionReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.PaletteElement_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_Behavior" file="AttributedFigureReference_Behavior.java">
@@ -71,6 +87,7 @@
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ActionGroup_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.BLQueryArgument_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
@@ -78,6 +95,8 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEndBLQuery_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CreationActionReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.CustomElementReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreationHandler_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreation_BehaviorDescriptor" />
@@ -90,7 +109,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.FromNodeFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.LinkArgument_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.NodeFunctionParameter_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.Palette_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.PropertyArgument_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.Separator_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ThisEditorNodeExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ToIdFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ToNodeFunctionParameter_BehaviorDescriptor" />
@@ -165,6 +186,18 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.CreationActionReference_BehaviorDescriptor" file="CreationActionReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.ActionReference_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.CustomElementReference_BehaviorDescriptor" file="CustomElementReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.PaletteElement_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_Behavior" file="DiagramConnectorCanCreateHandler_Behavior.java">
@@ -309,10 +342,28 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.PaletteElement_BehaviorDescriptor" file="PaletteElement_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.Palette_BehaviorDescriptor" file="Palette_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.PropertyArgument_BehaviorDescriptor" file="PropertyArgument_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.AbstractArgument_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.behavior.Separator_BehaviorDescriptor" file="Separator_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.behavior.PaletteElement_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.ThisEditorNodeExpression_BehaviorDescriptor" file="ThisEditorNodeExpression_BehaviorDescriptor.java">

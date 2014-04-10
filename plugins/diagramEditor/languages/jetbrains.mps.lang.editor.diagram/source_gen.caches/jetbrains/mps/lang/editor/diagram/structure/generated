@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="189kslxciy9ipwr8aimgrfyx26j8vj6">
+<dependencies version="2" modelHash="-c3xetiw0t6unsexgm15mrfxzcc9aata">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-4rx58hn7d36o76rq4hrv5y57i75qdbg" />
@@ -8,7 +8,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-6uvjnnh5pg3m2y3yxg3fkezz903fdo8" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
-  <common hash="-3f0xa0kriyfifxsm82cvp9ai8twk58w" dependsOnNodes="true">
+  <common hash="-gax8vpywk8vmkpdy5wtsa96jtv7nb8" dependsOnNodes="true">
     <dep root="1094405431463454433" />
     <dep root="1094405431463455190" />
     <dep root="1094405431463663051" />
@@ -22,11 +22,18 @@
     <dep root="285670992213637559" />
     <dep root="285670992217672837" />
     <dep root="3229274890673749551" />
+    <dep root="526297864816328066" />
+    <dep root="526297864816328067" />
+    <dep root="526297864816328068" />
+    <dep root="526297864816328069" />
+    <dep root="526297864816328070" />
     <dep root="5355858557208538577" />
     <dep root="5355858557208817201" />
     <dep root="5422656561926747342" />
     <dep root="6306886970791033847" />
     <dep root="6382742553261733065" />
+    <dep root="6619018968335599080" />
+    <dep root="6619018968335599081" />
     <dep root="8570854907290423690" />
     <dep root="8570854907290527479" />
     <dep root="8570854907290717911" />
@@ -53,7 +60,7 @@
   <source id="1094405431463455190" name="AbstractFigureReference" hash="17fkcoyzbp1xibp1g8iej59nqbg4r34" />
   <source id="1094405431463663051" name="ExternalFigureReference" hash="-d9cduboyj6gip04n385my6xf7gktsc1" />
   <source id="1094405431463761863" name="FigureParameterMapping" hash="awu81u38gw5cq40pifmdcwbt6cg49c4" />
-  <source id="6306886970791033847" name="CellModel_Diagram" hash="63xbd5hacnftmz6ds4jvfrmsfo6up35" />
+  <source id="6306886970791033847" name="CellModel_Diagram" hash="3bzu5cq84e8gfgskewyiamcf4k6xnci" />
   <source id="6382742553261733065" name="CellModel_DiagramConnector" hash="pz8g6iw9zkkuc4rni9roxt0cd232vd" />
   <source id="5422656561926747342" name="AttributedFigureReference" hash="14ld1mavl1h55u76zglng1s7nt8bqxm" />
   <source id="3229274890673749551" name="ThisEditorNodeExpression" hash="-icf5x80xsvz2q12vq9c6jjd6hnkfw5" />
@@ -78,6 +85,13 @@
   <source id="939897302409170270" name="ToNodeFunctionParameter" hash="c5fd5lwiftpplg4ihno274u7wjyg51j" />
   <source id="939897302409170275" name="FromIdFunctionParameter" hash="1lxzdea6dsvsfexft1i0hw4ig54eb5q" />
   <source id="939897302409170280" name="ToIdFunctionParameter" hash="-okdx7ddcia4v6f9o5ljg8pyws9lro8" />
-  <source id="1301388602725986966" name="AbstractDiagramCreation" hash="-1u0lzgh3s3p6br9ee1bj5e9mmhic2zy" />
+  <source id="6619018968335599081" name="CreationActionReference" hash="d8usk1m9pbq99vyjr92kjje580wmqz7" />
+  <source id="6619018968335599080" name="CustomElementReference" hash="-3nfc427b9mk3qn6omp8bymuyyueeihz" />
+  <source id="526297864816328066" name="ActionReference" hash="5f9kmn4nh5cw6lmp3b26m3hqpi5pqee" />
+  <source id="1301388602725986966" name="AbstractDiagramCreation" hash="-8yyspk82dpd8oqa1bif0ufqhniyia2i" />
+  <source id="526297864816328067" name="ActionGroup" hash="1bsiaprqe9mfqmmpq4y8774xzs0ga13" />
+  <source id="526297864816328068" name="Palette" hash="-84cuc0dltcf3pqpf4ia1v5nj7lympws" />
+  <source id="526297864816328069" name="PaletteElement" hash="-bosdzw3b12gc72nxra69xl591kx38pi" />
+  <source id="526297864816328070" name="Separator" hash="95gn3yw5l5iy19r2zv1quo5uqdpug0m" />
 </dependencies>
 

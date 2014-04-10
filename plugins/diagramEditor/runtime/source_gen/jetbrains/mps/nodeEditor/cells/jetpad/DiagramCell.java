@@ -15,6 +15,7 @@ import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.projectional.view.ViewTrait;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
 import javax.swing.JPanel;
 import jetbrains.jetpad.model.event.Registration;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -46,7 +47,6 @@ import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import java.awt.Window;
 import java.awt.Point;
@@ -91,12 +91,14 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
   public JComponent getComponent() {
     if (myPanel == null) {
-      myPanel = new JPanel(new GridLayoutManager(1, 2));
-      GridConstraints constraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
-      myPanel.add(getPalette(), constraints);
-      constraints.setColumn(1);
-      constraints.setVSizePolicy(GridConstraints.SIZEPOLICY_CAN_GROW);
-      constraints.setHSizePolicy(GridConstraints.SIZEPOLICY_CAN_GROW);
+      int columnCount = (myPalettePanel == null ? 1 : 2);
+      myPanel = new JPanel(new GridLayoutManager(1, columnCount));
+      if (myPalettePanel != null) {
+        GridConstraints paletteConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+        myPanel.add(myPalettePanel, paletteConstraints);
+      }
+      GridConstraints constraints = new GridConstraints(0, columnCount - 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null);
+
       myPanel.add(getContainerComponent(), constraints);
 
     }
@@ -127,7 +129,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   @Override
   protected void relayoutImpl() {
     super.relayoutImpl();
-    getPalette().doLayout();
+    check_xnhqai_a1a81(getPalette(), this);
     getContainerComponent().doLayout();
     getComponent().doLayout();
     Dimension preferredSize = getComponent().getPreferredSize();
@@ -174,7 +176,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     myPatternEditorY = y;
   }
 
-  /*package*/ void setExternalTrait(ViewTrait trait) {
+  public void setExternalTrait(ViewTrait trait) {
     check_xnhqai_a0a62(myRegistration);
     if (trait == null) {
       myRegistration = getRootMapper().getTarget().root().addTrait(getEventHandlingTrait());
@@ -189,10 +191,11 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
   private DiagramPalette getPalette() {
-    if (myPalettePanel == null) {
-      myPalettePanel = new DiagramPalette(this, createPaletteBlockSubstituteInfoPartExts(), createPaletteConnectorSubstituteInfoPartExts());
-    }
     return myPalettePanel;
+  }
+
+  public void setPalette(DiagramPalette palette) {
+    myPalettePanel = palette;
   }
 
   protected abstract SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts();
@@ -239,7 +242,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         public void handle(View view, MouseEvent event) {
           if (!(hasConnectionDragFeedback())) {
             View sourceView = view.viewAt(event.location());
-            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0fb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
+            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
               return;
             }
             showConnectionDragFeedback(sourceView);
@@ -358,18 +361,8 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  /*package*/ DiagramCell.ConnectionInfo getConnectionInfo() {
+  public DiagramCell.ConnectionInfo getConnectionInfo() {
     return new DiagramCell.ConnectionInfo();
-  }
-
-
-
-  @Override
-  public SubstituteInfo getSubstituteInfo() {
-    if (getPalette().getSubstituteInfo() != null) {
-      return getPalette().getSubstituteInfo();
-    }
-    return super.getSubstituteInfo();
   }
 
 
@@ -526,7 +519,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     myDragConnection.toLocation().set(toLocation);
   }
 
-  private void hideConnectionDragFeedback() {
+  public void hideConnectionDragFeedback() {
     myIsShowingDragFeedBack.set(false);
   }
 
@@ -560,7 +553,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  /*package*/ class ConnectionInfo {
+  public class ConnectionInfo {
 
 
     public ConnectionInfo() {
@@ -628,6 +621,13 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
+  private static void check_xnhqai_a1a81(DiagramPalette checkedDotOperand, DiagramCell checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.doLayout();
+    }
+
+  }
+
   private static void check_xnhqai_a0a62(Registration checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.remove();
@@ -635,7 +635,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
   }
 
-  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0fb(Boolean checkedDotOperand) {
+  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(Boolean checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.booleanValue();
     }
