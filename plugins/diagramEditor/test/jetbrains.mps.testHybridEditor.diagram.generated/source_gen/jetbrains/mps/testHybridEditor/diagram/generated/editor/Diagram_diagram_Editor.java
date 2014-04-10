@@ -386,7 +386,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
         }) {
           @Override
           public Icon getIcon() {
-            return IconManager.loadIcon("/Users/simon/work/mps/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/icons/block.png", false);
+            return IconManager.loadIcon("/Users/shatalin/Desktop/sources/mps/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/icons/block.png", false);
           }
         });
         addPaletteElement(new PaletteSeparator() {

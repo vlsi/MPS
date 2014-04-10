@@ -51,11 +51,11 @@
       <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="285670992219838127" nodeInfo="ng">
         <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k80i.2084788800270272702" />
       </node>
-      <node role="inputPort" roleId="gbdf.2084788800269090635" type=".jetbrains.mps.lang.editor.diagram.structure.ParameterLink" id="285670992221056585" nodeInfo="ng">
-        <link role="link" targetNodeId="adck.725186580883451902" />
+      <node role="inputPort" roleId="gbdf.2084788800269090635" type="gbdf.LinkArgument" typeId="gbdf.285670992213637559" id="834109970983771378" nodeInfo="ng">
+        <link role="link" roleId="gbdf.285670992217679783" targetNodeId="adck.725186580883451902" />
       </node>
-      <node role="outputPort" roleId="gbdf.2084788800269090678" type=".jetbrains.mps.lang.editor.diagram.structure.ParameterLink" id="285670992221056597" nodeInfo="ng">
-        <link role="link" targetNodeId="adck.725186580883451904" />
+      <node role="outputPort" roleId="gbdf.2084788800269090678" type="gbdf.LinkArgument" typeId="gbdf.285670992213637559" id="834109970983774738" nodeInfo="ng">
+        <link role="link" roleId="gbdf.285670992217679783" targetNodeId="adck.725186580883451904" />
       </node>
     </node>
     <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="1793245865110344842" nodeInfo="ig">
