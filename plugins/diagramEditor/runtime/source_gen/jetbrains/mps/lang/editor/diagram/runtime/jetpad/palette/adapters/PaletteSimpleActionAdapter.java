@@ -6,8 +6,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSimpleAction;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import java.awt.event.InputEvent;
-import java.awt.event.MouseEvent;
 
 public class PaletteSimpleActionAdapter extends AnAction {
   private PaletteSimpleAction myAction;
@@ -24,10 +22,7 @@ public class PaletteSimpleActionAdapter extends AnAction {
 
 
   public void actionPerformed(AnActionEvent event) {
-    InputEvent inputEvent = event.getInputEvent();
-    if (inputEvent instanceof MouseEvent && inputEvent.getID() == MouseEvent.MOUSE_CLICKED) {
-      myAction.onClick();
-    }
+    myAction.onClick();
     myPalette.unselectActionWhichWasSelected();
   }
 }

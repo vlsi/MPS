@@ -29,8 +29,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.adapters.PaletteSimpleActionAdapter" file="PaletteSimpleActionAdapter.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="java.awt.event.InputEvent" />
-    <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSimpleAction" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.AnAction" />
