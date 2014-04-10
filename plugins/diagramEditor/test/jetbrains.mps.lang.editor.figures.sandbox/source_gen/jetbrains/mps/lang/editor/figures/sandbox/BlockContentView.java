@@ -71,8 +71,6 @@ public class BlockContentView extends GroupView implements MovableContentView {
     }.attachRoot();
   }
 
-
-
   @Override
   protected void doValidate(View.ValidationContext context) {
     super.doValidate(context);
