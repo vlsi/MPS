@@ -31,5 +31,30 @@
   <root type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="604142159147853968" nodeInfo="ng">
     <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
   </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="834109970984588248" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="SelectDiagramNode" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Selecting diagram node by clicking on it" />
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram" typeId="g85x.511002117671747962" id="834109970984588281" nodeInfo="ng">
+      <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="834109970984588285" nodeInfo="ng">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="834109970984600378" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_t2nwzx_a" />
+        </node>
+      </node>
+    </node>
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram" typeId="g85x.511002117671747962" id="834109970984600336" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="834109970984600338" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_xrgyfg_a0a" />
+      </node>
+      <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="834109970984600342" nodeInfo="ng" />
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="834109970984601172" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.MousePress" typeId="tp5g.4633202057941640741" id="834109970984601171" nodeInfo="ng">
+        <property name="x" nameId="tp5g.4633202057941654444" value="40" />
+        <property name="y" nameId="tp5g.4633202057941654446" value="30" />
+      </node>
+    </node>
+  </root>
 </model>
 
