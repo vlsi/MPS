@@ -9,16 +9,16 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateArgumentVariableRefExpression_Constraints extends BaseConstraintsDescriptor {
@@ -38,42 +38,28 @@ public class TemplateArgumentVariableRefExpression_Constraints extends BaseConst
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode contextNode = (_context.getReferenceNode() == null ? _context.getEnclosingNode() : _context.getReferenceNode());
-            List<SNode> vars = new ArrayList<SNode>();
-            while ((contextNode != null)) {
-              SNode nextNode = null;
-              if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.generator.structure.VarMacro")) {
-                ListSequence.fromList(vars).addElement(SNodeOperations.cast(contextNode, "jetbrains.mps.lang.generator.structure.VarMacro"));
-                nextNode = SNodeOperations.getPrevSibling(contextNode);
-              }
-              if (nextNode == null && "smodelAttribute".equals(SNodeOperations.getContainingLinkRole(contextNode))) {
-                nextNode = SNodeOperations.getPrevSibling(contextNode);
-                if (nextNode == null) {
-                  contextNode = SNodeOperations.getParent(contextNode);
-                }
-              }
-              if (nextNode == null) {
-                SNode parentWithAttrs = SNodeOperations.getParent(contextNode);
-                while (parentWithAttrs != null) {
-                  SNode lastAttr = ListSequence.fromList(SLinkOperations.getTargets(parentWithAttrs, "smodelAttribute", true)).last();
-                  if (lastAttr != null) {
-                    nextNode = lastAttr;
-                    break;
-                  }
-                  parentWithAttrs = SNodeOperations.getParent(parentWithAttrs);
-                }
-              }
-              contextNode = nextNode;
-            }
-            return vars;
+          public boolean hasPresentation() {
+            return true;
+          }
+
+          @Override
+          public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
+            return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
 
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_k799s7_a0a1a0a0a1a0b0a1a1;
+            return breakingNode_k799s7_a0a2a0a0a1a0b0a1a1;
+          }
+
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.VarMacro"));
+              return (scope == null ? new EmptyScope() : scope);
+            }
           }
         };
       }
@@ -81,5 +67,5 @@ public class TemplateArgumentVariableRefExpression_Constraints extends BaseConst
     return references;
   }
 
-  private static SNodePointer breakingNode_k799s7_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4941415056452019252");
+  private static SNodePointer breakingNode_k799s7_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "8247364127001806534");
 }

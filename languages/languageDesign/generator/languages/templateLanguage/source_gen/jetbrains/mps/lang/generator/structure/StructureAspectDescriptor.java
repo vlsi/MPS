@@ -169,7 +169,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 76:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.TraceMacro").super_("jetbrains.mps.lang.generator.structure.NodeMacro").parents("jetbrains.mps.lang.generator.structure.NodeMacro").children(new String[]{"sourceNodeQuery"}, new boolean[]{false}).alias("$TRACE$", "specify input for the attributed node for tracing purposes").staticScope(StaticScope.NONE).create();
       case 77:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.VarMacro").super_("jetbrains.mps.lang.generator.structure.NodeMacro").parents("jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type", "value"}, new boolean[]{false, false}).alias("$VAR$", "compute and store value in variable").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.VarMacro").super_("jetbrains.mps.lang.generator.structure.NodeMacro").parents("jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"type", "value"}, new boolean[]{false, false}).alias("$VAR$", "compute and store value in variable").create();
       case 78:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.structure.VarMacro_ValueQuery").super_("jetbrains.mps.lang.generator.structure.TemplateQueryBase").parents("jetbrains.mps.lang.generator.structure.TemplateQueryBase").alias("query", "").staticScope(StaticScope.NONE).create();
       case 79:
