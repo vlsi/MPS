@@ -44,6 +44,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationActionGroup;
 import javax.swing.Icon;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSeparator;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationActionGroup;
@@ -386,7 +391,13 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
         }) {
           @Override
           public Icon getIcon() {
-            return IconManager.loadIcon("/Users/shatalin/Desktop/sources/mps/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/icons/block.png", false);
+            SModule module = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+            if (!(module instanceof AbstractModule)) {
+              return null;
+            }
+            String path = MacrosFactory.forModule(((AbstractModule) module)).expandPath("${mps_home}/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/icons/block.png");
+            return IconManager.loadIcon(path, false);
+
           }
         });
         addPaletteElement(new PaletteSeparator() {
