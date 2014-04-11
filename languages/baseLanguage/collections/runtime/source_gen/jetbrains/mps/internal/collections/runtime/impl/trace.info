@@ -1794,21 +1794,21 @@
     <unitInfo nodeId="6543581031674030214" fileName="AbstractChainedSequence.java" startLine="7" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.AbstractChainedSequence" />
   </root>
   <root nodeRef="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)/6543581031674030252">
-    <nodeInfo nodeId="6543581031674030259" fileName="BasicSequence.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="input" />
-    <nodeInfo nodeId="6543581031674030275" fileName="BasicSequence.java" startLine="12" startPosition="24" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674030278" fileName="BasicSequence.java" startLine="14" startPosition="5" endLine="15" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674030289" fileName="BasicSequence.java" startLine="19" startPosition="33" endLine="20" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674030270" fileName="BasicSequence.java" startLine="11" startPosition="43" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674030284" fileName="BasicSequence.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="6543581031674030263" fileName="BasicSequence.java" startLine="11" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BasicSequence#(Ljava/lang/Iterable;)V" />
-    <scopeInfo nodeId="6543581031674030274" fileName="BasicSequence.java" startLine="12" startPosition="24" endLine="13" endPosition="39" />
-    <scopeInfo nodeId="6543581031674030288" fileName="BasicSequence.java" startLine="19" startPosition="33" endLine="20" endPosition="28" />
-    <scopeInfo nodeId="6543581031674030269" fileName="BasicSequence.java" startLine="11" startPosition="43" endLine="15" endPosition="23" />
-    <scopeInfo nodeId="6543581031674030284" fileName="BasicSequence.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="6543581031674030263" fileName="BasicSequence.java" startLine="11" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="6543581031674030259" fileName="BasicSequence.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="input" />
+    <nodeInfo nodeId="6543581031674030275" fileName="BasicSequence.java" startLine="13" startPosition="24" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674030278" fileName="BasicSequence.java" startLine="15" startPosition="5" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674030289" fileName="BasicSequence.java" startLine="20" startPosition="33" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674030270" fileName="BasicSequence.java" startLine="12" startPosition="43" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674030284" fileName="BasicSequence.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="6543581031674030263" fileName="BasicSequence.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BasicSequence#(Ljava/lang/Iterable;)V" />
+    <scopeInfo nodeId="6543581031674030274" fileName="BasicSequence.java" startLine="13" startPosition="24" endLine="14" endPosition="39" />
+    <scopeInfo nodeId="6543581031674030288" fileName="BasicSequence.java" startLine="20" startPosition="33" endLine="21" endPosition="28" />
+    <scopeInfo nodeId="6543581031674030269" fileName="BasicSequence.java" startLine="12" startPosition="43" endLine="16" endPosition="23" />
+    <scopeInfo nodeId="6543581031674030284" fileName="BasicSequence.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="6543581031674030263" fileName="BasicSequence.java" startLine="12" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6543581031674030266" varName="input" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674030252" fileName="BasicSequence.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.BasicSequence" />
+    <unitInfo nodeId="6543581031674030252" fileName="BasicSequence.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.BasicSequence" />
   </root>
   <root nodeRef="r:242df33e-bb74-49e9-9cfb-0712ffc0ed0e(jetbrains.mps.internal.collections.runtime.impl)/6543581031674034089">
     <nodeInfo nodeId="6543581031674034130" fileName="SelectingSequence.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="selector" />
