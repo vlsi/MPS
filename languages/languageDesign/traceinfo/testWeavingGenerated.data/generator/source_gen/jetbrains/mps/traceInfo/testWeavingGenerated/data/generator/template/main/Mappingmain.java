@@ -158,13 +158,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008490339(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008490339(new WeavingMappingRuleContext(context, getRuleNode()));
     }
 
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a1a6t);
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008490342(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6t, environment.getGenerator()));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008490342(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6t));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;
@@ -211,13 +211,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008522529(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008522529(new WeavingMappingRuleContext(context, getRuleNode()));
     }
 
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a1a6u);
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008522532(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6u, environment.getGenerator()));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008522532(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6u));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;
@@ -264,13 +264,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008533384(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008533384(new WeavingMappingRuleContext(context, getRuleNode()));
     }
 
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a1a6v);
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008533377(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6v, environment.getGenerator()));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008533377(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6v));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;
@@ -317,13 +317,13 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
 
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
-      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008533368(new WeavingMappingRuleContext(context, getRuleNode(), environment.getGenerator()));
+      return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008533368(new WeavingMappingRuleContext(context, getRuleNode()));
     }
 
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
       environment.getTracer().pushRuleConsequence(weavingConseq_417xrn_a0a1a6w);
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008533362(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6w, environment.getGenerator()));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008533362(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_a0a1a6w));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;

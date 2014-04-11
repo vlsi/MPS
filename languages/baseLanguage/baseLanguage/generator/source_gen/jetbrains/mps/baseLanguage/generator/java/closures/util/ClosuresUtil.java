@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.generator.java.closures.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.util.Condition;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.util.List;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -43,7 +43,7 @@ public class ClosuresUtil {
     return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(node, new Condition<SNode>() {
       public boolean met(SNode n) {
         if (!(n instanceof SNode)) {
-          if (LOG.isEnabledFor(Priority.WARN)) {
+          if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("method findEnclosingClosureContextOwner in " + ClosuresUtil.class.toString() + " operates only with the instances of SNode class");
           }
           return false;

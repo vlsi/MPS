@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -53,7 +53,7 @@ public class CommentStatements_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "CommentStatements", t);
       }
       this.disable(event.getPresentation());
@@ -96,7 +96,7 @@ public class CommentStatements_Action extends BaseAction {
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       ListSequence.fromList(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true)).addSequence(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))));
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CommentStatements", t);
       }
     }

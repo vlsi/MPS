@@ -30,7 +30,7 @@ import jetbrains.mps.baseLanguage.javastub.asm.ASMClassType;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMPrimitiveType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMEnumValue;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMArrayType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMVarArgType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMParameterizedType;
@@ -543,7 +543,7 @@ public class ClassifierUpdater {
       addClassifierReference(res, "classifier", (ASMClassType) value);
       return res;
     }
-    if (LOG.isEnabledFor(Priority.ERROR)) {
+    if (LOG.isEnabledFor(Level.ERROR)) {
       LOG.error("couldn't create annotation value from " + ((value == null ? "" : value.getClass().getName())) + " : " + value);
     }
     return null;
@@ -623,7 +623,7 @@ public class ClassifierUpdater {
     if (type instanceof ASMUnboundedType) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null);
     }
-    if (LOG.isEnabledFor(Priority.ERROR)) {
+    if (LOG.isEnabledFor(Level.ERROR)) {
       LOG.error("Can't convert type " + type + " class : ");
     }
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);

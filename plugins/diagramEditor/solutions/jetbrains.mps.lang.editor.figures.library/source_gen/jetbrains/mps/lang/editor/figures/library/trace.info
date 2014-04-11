@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeRef="r:257a7f19-40a4-4037-a93b-ce1b638af281(jetbrains.mps.lang.editor.figures.library)/604142159147854337">
-    <nodeInfo nodeId="604142159147908191" fileName="MPSRectView.java" startLine="10" startPosition="24" endLine="11" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="604142159147950419" fileName="MPSRectView.java" startLine="11" startPosition="35" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="604142159147854385" fileName="MPSRectView.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSRectView#()V" />
-    <scopeInfo nodeId="604142159147854389" fileName="MPSRectView.java" startLine="10" startPosition="24" endLine="12" endPosition="40" />
-    <scopeInfo nodeId="604142159147854385" fileName="MPSRectView.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="604142159147854337" fileName="MPSRectView.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.library.MPSRectView" />
-  </root>
-</debugInfo>
+<debugInfo />
 

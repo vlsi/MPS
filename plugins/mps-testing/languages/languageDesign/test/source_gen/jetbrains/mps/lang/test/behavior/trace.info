@@ -7,7 +7,7 @@
   <unitInfo fileName="ActionReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ActionReference_BehaviorDescriptor" />
   <unitInfo fileName="AnonymousCellAnnotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="AssertMatch_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AssertMatch_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BootstrapActionReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.BootstrapActionReference_BehaviorDescriptor" />
   <unitInfo fileName="CheckDataFlowOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_BehaviorDescriptor" />
   <unitInfo fileName="CheckNodeDataflow_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.CheckNodeDataflow_BehaviorDescriptor" />
@@ -27,6 +27,7 @@
   <unitInfo fileName="MPSActionReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.MPSActionReference_BehaviorDescriptor" />
   <unitInfo fileName="MockAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.MockAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="ModelExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ModelExpression_BehaviorDescriptor" />
+  <unitInfo fileName="MousePress_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.MousePress_BehaviorDescriptor" />
   <unitInfo fileName="NodeCheckOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeCheckOperationsContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeCheckOperationsContainer_BehaviorDescriptor" />
   <unitInfo fileName="NodeConstraintsErrorCheckOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeConstraintsErrorCheckOperation_BehaviorDescriptor" />

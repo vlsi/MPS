@@ -100,7 +100,7 @@
     <nodeInfo nodeId="1176953486634189780" fileName="NewLanguageDialog.java" startLine="78" startPosition="61" endLine="79" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1176953486634284618" fileName="NewLanguageDialog.java" startLine="79" startPosition="151" endLine="80" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4152098816593719214" fileName="NewLanguageDialog.java" startLine="82" startPosition="33" endLine="83" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="84" startPosition="49" endLine="85" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="84" startPosition="46" endLine="85" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8412685000767453763" fileName="NewLanguageDialog.java" startLine="87" startPosition="9" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8412685000767415887" fileName="NewLanguageDialog.java" startLine="88" startPosition="0" endLine="89" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8412685000766920533" fileName="NewLanguageDialog.java" startLine="96" startPosition="52" endLine="97" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -128,7 +128,7 @@
     <nodeInfo nodeId="8412685000766913496" fileName="NewLanguageDialog.java" startLine="60" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
     <scopeInfo nodeId="5729690357938538174" fileName="NewLanguageDialog.java" startLine="52" startPosition="31" endLine="53" endPosition="41" />
     <scopeInfo nodeId="8412685000766942559" fileName="NewLanguageDialog.java" startLine="62" startPosition="21" endLine="63" endPosition="13" />
-    <scopeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="84" startPosition="49" endLine="85" endPosition="67" />
+    <scopeInfo nodeId="4152098816593725236" fileName="NewLanguageDialog.java" startLine="84" startPosition="46" endLine="85" endPosition="67" />
     <scopeInfo nodeId="8412685000766920530" fileName="NewLanguageDialog.java" startLine="96" startPosition="52" endLine="97" endPosition="61" />
     <scopeInfo nodeId="3678080938080528279" fileName="NewLanguageDialog.java" startLine="102" startPosition="33" endLine="103" endPosition="20" />
     <scopeInfo nodeId="5154621356648615844" fileName="NewLanguageDialog.java" startLine="74" startPosition="61" endLine="76" endPosition="94">

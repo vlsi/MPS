@@ -22,6 +22,7 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.ReductionRuleBase;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
@@ -31,60 +32,36 @@ import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
-public class TemplateReductionRuleInterpreted implements TemplateReductionRule, TemplateRuleWithCondition {
+public class TemplateReductionRuleInterpreted extends ReductionRuleBase implements TemplateReductionRule, TemplateRuleWithCondition {
 
   private final SNode myRuleNode;
-  private final String myApplicableConcept;
   private final String myMappingName;
-  private final SNode myRuleConsequence;
-  private final boolean myApplyToInheritors;
-  private final SNodePointer myNodePointer;
+  private final RuleConsequenceProcessor myRuleConsequence;
   private ReductionRuleCondition myCondition;
 
   public TemplateReductionRuleInterpreted(SNode ruleNode) {
+    super(new SNodePointer(ruleNode), GeneratorUtil.getConceptQualifiedName(RuleUtil.getBaseRuleApplicableConcept(ruleNode)), RuleUtil.getBaseRuleApplyToConceptInheritors(ruleNode));
     myRuleNode = ruleNode;
-    myApplicableConcept = GeneratorUtil.getConceptQualifiedName(RuleUtil.getBaseRuleApplicableConcept(ruleNode));
     myMappingName = RuleUtil.getBaseRuleLabel(ruleNode);
-    myRuleConsequence = RuleUtil.getReductionRuleConsequence(ruleNode);
-    myApplyToInheritors = RuleUtil.getBaseRuleApplyToConceptInheritors(ruleNode);
-    myNodePointer = new SNodePointer(ruleNode);
-  }
-
-  @Override
-  public SNodeReference getRuleNode() {
-    return myNodePointer;
-  }
-
-  @Override
-  public String getApplicableConcept() {
-    return this.myApplicableConcept;
-  }
-
-  @Override
-  public boolean applyToInheritors() {
-    return myApplyToInheritors;
+    final SNode rc = RuleUtil.getReductionRuleConsequence(ruleNode);
+    myRuleConsequence = rc == null ? null : RuleConsequenceProcessor.prepare(rc);
   }
 
   @Override
   public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    environment.getTracer().pushRule(myNodePointer);
     try {
       if (environment.getGenerator().isIncremental()) {
-        // turn off tracing
-        NodeReadEventsCaster.setNodesReadListener(null);
+        NodeReadEventsCaster.setNodesReadListener(null); // turn tracing off
       }
 
-      return apply(context, environment.getEnvironment(context.getInput(), this));
+      return super.tryToApply(environment, context);
     } finally {
       if (environment.getGenerator().isIncremental()) {
-        // restore tracing
-        NodeReadEventsCaster.removeNodesReadListener();
+        NodeReadEventsCaster.removeNodesReadListener(); // restore tracing
       }
-      environment.getTracer().closeRule(myNodePointer);
     }
   }
 
@@ -93,18 +70,16 @@ public class TemplateReductionRuleInterpreted implements TemplateReductionRule, 
     if (myCondition == null) {
       myCondition = env.getQueryProvider(getRuleNode()).getReductionRuleCondition(myRuleNode);
     }
-    return myCondition.check(new ReductionRuleQueryContext(context, getRuleNode(), env.getGenerator()));
+    return myCondition.check(new ReductionRuleQueryContext(context, getRuleNode()));
   }
 
+  @Override
   @NotNull
-  private Collection<SNode> apply(TemplateContext context, @NotNull TemplateExecutionEnvironment environment) throws GenerationException {
+  protected Collection<SNode> doApply(@NotNull TemplateContext context) throws GenerationException {
     if (myRuleConsequence == null) {
-      throw new TemplateProcessingFailureException(myRuleNode, "no rule consequence", GeneratorUtil.describe(context.getInput(), "input"));
+      throw new TemplateProcessingFailureException(myRuleNode, "no rule consequence", GeneratorUtil.describeInput(context));
     }
 
-    RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
-    context = context.subContext(myMappingName);
-    rcp.prepare(myRuleConsequence, context);
-    return rcp.processRuleConsequence();
+    return myRuleConsequence.processRuleConsequence(context.subContext(myMappingName));
   }
 }

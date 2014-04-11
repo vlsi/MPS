@@ -33,7 +33,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -173,14 +173,14 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     if (sNode == null) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("edited node is null");
       }
       return result;
 
     }
     if (sNodePointer == null) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("edited NodePointer is null");
       }
       return result;

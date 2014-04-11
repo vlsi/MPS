@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 public class IfMacroContext extends TemplateQueryContextWithMacro {
 
   /**
-   * @deprecated use {@link #IfMacroContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead.  This constructor
+   * @deprecated use {@link #IfMacroContext(TemplateContext, SNodeReference)} instead.  This constructor
    * will be removed after 3.1
    */
   @Deprecated
@@ -37,7 +37,7 @@ public class IfMacroContext extends TemplateQueryContextWithMacro {
   }
 
   /**
-   * @deprecated use {@link #IfMacroContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead.  This constructor
+   * @deprecated use {@link #IfMacroContext(TemplateContext, SNodeReference)} instead.  This constructor
    * will be removed after 3.1
    */
   @Deprecated
@@ -49,7 +49,7 @@ public class IfMacroContext extends TemplateQueryContextWithMacro {
   /**
    * @since 3.1
    */
-  public IfMacroContext(@NotNull TemplateContext context, @NotNull SNodeReference ifMacro, @NotNull ITemplateGenerator generator) {
-    super(context, ifMacro, generator);
+  public IfMacroContext(@NotNull TemplateContext context, @NotNull SNodeReference ifMacro) {
+    super(context, ifMacro);
   }
 }

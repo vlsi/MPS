@@ -31,7 +31,7 @@ public class Templatemap__RootConcept implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_56x90y_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490321");
-      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008490331(new PropertyMacroContext(context, "map_RootConcept", propertyMacro_56x90y_c0a0c0c0b0c, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008490331(new PropertyMacroContext(context, "map_RootConcept", propertyMacro_56x90y_c0a0c0c0b0c))));
 
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");

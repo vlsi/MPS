@@ -11,7 +11,7 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
-import jetbrains.mps.lang.editor.figures.library.MPSRectView;
+import jetbrains.mps.lang.editor.figures.sandbox.MPSRectView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
@@ -27,6 +27,7 @@ public class RectangleNode_Editor extends DefaultNodeEditor {
     BlockCell editorCell = new RectangleNode_Editor.BlockCellImpl_t2nwzx_a(editorContext, node);
     editorCell.setCellId("DiagramNode_t2nwzx_a");
     editorCell.setBig(true);
+    DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 

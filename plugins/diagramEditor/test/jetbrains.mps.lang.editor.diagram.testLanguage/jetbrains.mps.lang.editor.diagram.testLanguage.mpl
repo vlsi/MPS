@@ -28,6 +28,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">9fc6ac35-295d-4fb8-8210-ba026790e4a0(jetbrains.mps.lang.editor.figures.library)</dependency>
+    <dependency reexport="false">961e4f4d-48cb-4bb7-8176-73dd2ac5c8a5(jetbrains.mps.lang.editor.figures.sandbox)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>6106f611-7a74-42d1-80de-edc5c602bfd1(jetbrains.mps.lang.editor.diagram)</usedLanguage>

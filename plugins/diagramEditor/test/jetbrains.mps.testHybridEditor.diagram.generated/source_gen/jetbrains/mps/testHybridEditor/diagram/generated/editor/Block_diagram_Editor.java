@@ -49,6 +49,7 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
     BlockCell editorCell = new Block_diagram_Editor.BlockCellImpl_pj4dhh_a(editorContext, node);
     editorCell.setCellId("DiagramNode_pj4dhh_a");
     editorCell.setBig(true);
+    DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 

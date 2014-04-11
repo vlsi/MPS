@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.diff.DiffProvider;
@@ -41,7 +41,7 @@ public class BaseVersionUtil {
   @Nullable
   public static Object getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
     if (ModelAccess.instance().canRead()) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
       }
     }
@@ -67,7 +67,7 @@ public class BaseVersionUtil {
       }
       return revision.getContent();
     } catch (VcsException ex) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("VcsException during getting base version content: ", ex);
       }
       return null;
@@ -91,7 +91,7 @@ public class BaseVersionUtil {
       if (content == null) {
         FileStatus status = FileStatusManager.getInstance(project).getStatus(vFile);
         if (status != FileStatus.NOT_CHANGED) {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Base version content is null while file status is " + status);
           }
         }

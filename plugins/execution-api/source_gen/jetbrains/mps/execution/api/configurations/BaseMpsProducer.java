@@ -21,7 +21,7 @@ import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -109,7 +109,7 @@ public abstract class BaseMpsProducer<T> extends RuntimeConfigurationProducer {
         return factory;
       }
     }
-    if (LOG.isEnabledFor(Priority.WARN)) {
+    if (LOG.isEnabledFor(Level.WARN)) {
       LOG.warn("Cound not find configuration factory for " + configurationFactoryClassName + " in type " + configurationType.getDisplayName() + ".");
     }
     return configurationType.getConfigurationFactories()[0];

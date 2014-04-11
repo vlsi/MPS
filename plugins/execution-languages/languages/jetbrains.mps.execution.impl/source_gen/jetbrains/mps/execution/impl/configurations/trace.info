@@ -16,20 +16,20 @@
     <nodeInfo nodeId="8565799187151772384" fileName="RunConfigurationsStateManager.java" startLine="81" startPosition="104" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8565799187151772402" fileName="RunConfigurationsStateManager.java" startLine="84" startPosition="11" endLine="85" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8565799187151772417" fileName="RunConfigurationsStateManager.java" startLine="85" startPosition="31" endLine="86" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8565799187151772433" fileName="RunConfigurationsStateManager.java" startLine="88" startPosition="47" endLine="89" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8565799187151772433" fileName="RunConfigurationsStateManager.java" startLine="88" startPosition="44" endLine="89" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5145867626676112835" fileName="RunConfigurationsStateManager.java" startLine="95" startPosition="42" endLine="96" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4426601056068794088" fileName="RunConfigurationsStateManager.java" startLine="96" startPosition="37" endLine="97" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4426601056068794086" fileName="RunConfigurationsStateManager.java" startLine="97" startPosition="81" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4426601056068794182" fileName="RunConfigurationsStateManager.java" startLine="102" startPosition="9" endLine="103" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4426601056068794182" fileName="RunConfigurationsStateManager.java" startLine="103" startPosition="94" endLine="104" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4426601056068794182" fileName="RunConfigurationsStateManager.java" startLine="105" startPosition="34" endLine="106" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7037083547575987531" fileName="RunConfigurationsStateManager.java" startLine="108" startPosition="52" endLine="109" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7037083547575987540" fileName="RunConfigurationsStateManager.java" startLine="113" startPosition="52" endLine="114" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7037083547575987531" fileName="RunConfigurationsStateManager.java" startLine="108" startPosition="49" endLine="109" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7037083547575987540" fileName="RunConfigurationsStateManager.java" startLine="113" startPosition="49" endLine="114" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5145867626676112878" fileName="RunConfigurationsStateManager.java" startLine="116" startPosition="20" endLine="117" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8565799187151772459" fileName="RunConfigurationsStateManager.java" startLine="122" startPosition="32" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8565799187151772437" fileName="RunConfigurationsStateManager.java" startLine="125" startPosition="11" endLine="126" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5145867626676112937" fileName="RunConfigurationsStateManager.java" startLine="126" startPosition="60" endLine="127" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8565799187151772462" fileName="RunConfigurationsStateManager.java" startLine="129" startPosition="47" endLine="130" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8565799187151772462" fileName="RunConfigurationsStateManager.java" startLine="129" startPosition="44" endLine="130" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4426601056068794205" fileName="RunConfigurationsStateManager.java" startLine="136" startPosition="68" endLine="137" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4426601056068794211" fileName="RunConfigurationsStateManager.java" startLine="137" startPosition="87" endLine="138" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4426601056068794218" fileName="RunConfigurationsStateManager.java" startLine="138" startPosition="110" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -121,11 +121,11 @@
     <scopeInfo nodeId="1667993328519775396" fileName="RunConfigurationsStateManager.java" startLine="47" startPosition="62" endLine="48" endPosition="15" />
     <scopeInfo nodeId="1667993328519775405" fileName="RunConfigurationsStateManager.java" startLine="55" startPosition="62" endLine="56" endPosition="15" />
     <scopeInfo nodeId="5145867626676112781" fileName="RunConfigurationsStateManager.java" startLine="77" startPosition="33" endLine="78" endPosition="13" />
-    <scopeInfo nodeId="8565799187151772433" fileName="RunConfigurationsStateManager.java" startLine="88" startPosition="47" endLine="89" endPosition="69" />
-    <scopeInfo nodeId="7037083547575987531" fileName="RunConfigurationsStateManager.java" startLine="108" startPosition="52" endLine="109" endPosition="99" />
-    <scopeInfo nodeId="7037083547575987540" fileName="RunConfigurationsStateManager.java" startLine="113" startPosition="52" endLine="114" endPosition="110" />
+    <scopeInfo nodeId="8565799187151772433" fileName="RunConfigurationsStateManager.java" startLine="88" startPosition="44" endLine="89" endPosition="69" />
+    <scopeInfo nodeId="7037083547575987531" fileName="RunConfigurationsStateManager.java" startLine="108" startPosition="49" endLine="109" endPosition="99" />
+    <scopeInfo nodeId="7037083547575987540" fileName="RunConfigurationsStateManager.java" startLine="113" startPosition="49" endLine="114" endPosition="110" />
     <scopeInfo nodeId="5145867626676112877" fileName="RunConfigurationsStateManager.java" startLine="116" startPosition="20" endLine="117" endPosition="78" />
-    <scopeInfo nodeId="8565799187151772462" fileName="RunConfigurationsStateManager.java" startLine="129" startPosition="47" endLine="130" endPosition="63" />
+    <scopeInfo nodeId="8565799187151772462" fileName="RunConfigurationsStateManager.java" startLine="129" startPosition="44" endLine="130" endPosition="63" />
     <scopeInfo nodeId="4426601056068794230" fileName="RunConfigurationsStateManager.java" startLine="141" startPosition="50" endLine="142" endPosition="75" />
     <scopeInfo nodeId="4426601056068794242" fileName="RunConfigurationsStateManager.java" startLine="145" startPosition="49" endLine="146" endPosition="28" />
     <scopeInfo nodeId="4426601056068794264" fileName="RunConfigurationsStateManager.java" startLine="155" startPosition="99" endLine="156" endPosition="63" />

@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -39,7 +39,7 @@ public class RevertMemoryChanges_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "RevertMemoryChanges", t);
       }
       this.disable(event.getPresentation());
@@ -64,7 +64,7 @@ public class RevertMemoryChanges_Action extends BaseAction {
     try {
       ((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).reloadFromSource();
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);
       }
     }

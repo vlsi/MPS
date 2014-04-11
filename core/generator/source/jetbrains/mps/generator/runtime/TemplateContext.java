@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.annotation.ImmutableObject;
 
@@ -26,9 +27,15 @@ import java.util.Map;
  * Analogous to stack frames that keep method parameters; hierarchical with implicit
  * access to outer scope ({@link #getVariable(String)} looks up variable in super contexts) and
  * explicit access to history of input nodes ({@link #getInputHistory()})
+ *
+ * <code>TemplateContext</code> represents the lowest-level context of generation, with Generator at the top, supervising model transformation,
+ * and <code>TemplateExecutionEnvironment</code> in the middle, responsible for thread/root generation and providing interaction with generation facilities.
  */
 @ImmutableObject
 public interface TemplateContext {
+
+  @NotNull
+  TemplateExecutionEnvironment getEnvironment();
 
   SNode getInput();
 

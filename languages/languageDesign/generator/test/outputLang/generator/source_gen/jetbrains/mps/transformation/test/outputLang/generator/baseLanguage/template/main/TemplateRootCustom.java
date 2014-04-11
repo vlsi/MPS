@@ -149,7 +149,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
                     Collection<SNode> tlist11 = null;
                     try {
                       environment.getTracer().pushMacro(varMacroRef_kyghau_a0a0a1a3a1a3a1a5a1a6a1a2);
-                      final Object varValue11 = QueriesGenerated.insertMacro_varValue_5015072279636761109(new TemplateVarContext(context, varMacroRef_kyghau_a0a0a1a3a1a3a1a5a1a6a1a2, environment.getGenerator()));
+                      final Object varValue11 = QueriesGenerated.insertMacro_varValue_5015072279636761109(new TemplateVarContext(context, varMacroRef_kyghau_a0a0a1a3a1a3a1a5a1a6a1a2));
                       TemplateContext context11 = context.subContext(Collections.<String,Object>singletonMap("var:var1", varValue11));
                       final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
                       try {
@@ -177,7 +177,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a4a1a3a1a3a1a5a1a6a1a2);
                             environment.nodeCopied(context11, tnode14, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761106");
-                            SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2721957369897795324(new PropertyMacroContext(context11, "0", propertyMacro_kyghau_c0a0c0c0b0f0e0b0d0b0d0b0f0b0g0b0c, environment.getGenerator()))));
+                            SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2721957369897795324(new PropertyMacroContext(context11, "0", propertyMacro_kyghau_c0a0c0c0b0f0e0b0d0b0d0b0f0b0g0b0c))));
 
                           } finally {
                             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode14));
@@ -331,8 +331,8 @@ public class TemplateRootCustom implements TemplateDeclaration {
             Collection<SNode> tlist23 = null;
             try {
               environment.getTracer().pushMacro(copySrcMacro_kyghau_a0a0a1a6a1a7a1a2);
-              final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_4146564171992412788(new SourceSubstituteMacroNodeContext(context, copySrcMacro_kyghau_a0a0a1a6a1a7a1a2, environment.getGenerator()));
-              tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_kyghau_a0a0a1a6a1a7a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412785", null, context);
+              final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_4146564171992412788(new SourceSubstituteMacroNodeContext(context, copySrcMacro_kyghau_a0a0a1a6a1a7a1a2));
+              tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_kyghau_a0a0a1a6a1a7a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412785", context);
             } finally {
               environment.getTracer().closeMacro(copySrcMacro_kyghau_a0a0a1a6a1a7a1a2);
             }

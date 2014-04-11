@@ -11,7 +11,7 @@ import java.util.Map;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
@@ -40,7 +40,7 @@ public class GoToBreakpointSourceAction_Action extends BaseAction {
         event.getPresentation().setEnabled(breakpoint != null && breakpoint instanceof ILocationBreakpoint);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "GoToBreakpointSourceAction", t);
       }
       this.disable(event.getPresentation());
@@ -70,7 +70,7 @@ public class GoToBreakpointSourceAction_Action extends BaseAction {
       }
       BreakpointsUtil.openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), (ILocationBreakpoint) breakpoint, true, true);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "GoToBreakpointSourceAction", t);
       }
     }

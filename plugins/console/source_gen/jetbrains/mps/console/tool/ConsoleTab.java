@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.MPSExtentions;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -227,7 +227,7 @@ public class ConsoleTab extends BaseConsoleTab {
           try {
             loadedModel = PersistenceUtil.loadModel(state, MPSExtentions.MODEL);
           } catch (Exception e) {
-            if (LOG.isEnabledFor(Priority.ERROR)) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error("Error on loading console history", e);
             }
           }

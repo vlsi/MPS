@@ -16,8 +16,17 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.runtime.PropertyMacro;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.SourceNodeQuery;
+import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
+import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,9 +40,11 @@ import java.util.Collection;
  */
 public interface QueryExecutor {
   @NotNull
-  Collection<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
+  Collection<SNode> evaluate(@NotNull SourceNodesQuery query, @NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException;
   @Nullable
-  SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
-  @NotNull
-  PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro);
+  SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException;
+  @Nullable
+  Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException;
+  boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException;
+  boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException;
 }

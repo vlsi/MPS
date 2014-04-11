@@ -24,13 +24,14 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ModuleNodeListeners;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.SModelNodeListeners;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneModifiedMarker;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeErrorChecker;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ProjectPaneTreeGenStatusUpdater;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ErrorChecker;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.GenStatusUpdater;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ModifiedMarker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.TreeNodeUpdater;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
+import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import org.jetbrains.annotations.NotNull;
@@ -40,9 +41,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class ProjectPaneTreeHighlighter {
-  private final ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
-  private final ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
-  private final ProjectPaneModifiedMarker myModifiedMarker = new ProjectPaneModifiedMarker();
+  private final GenStatusUpdater myGenStatusVisitor = new GenStatusUpdater();
+  private final ErrorChecker myErrorVisitor = new ErrorChecker();
+  private final ModifiedMarker myModifiedMarker = new ModifiedMarker();
   private final TreeNodeUpdater myUpdater = new TreeNodeUpdater();
   private final ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 3, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
 
@@ -119,7 +120,7 @@ public class ProjectPaneTreeHighlighter {
     @Override
     public void enteredDumbMode() {
       if (!ProjectPane.isShowGenStatus()) return;
-      myGenStatusVisitor.dispatchForHierarchy(myTree.getRootNode());
+      dispatchForHierarchy(myTree.getRootNode());
     }
 
     @Override
@@ -129,8 +130,18 @@ public class ProjectPaneTreeHighlighter {
       Project p = myTree.getProject();
       if (p.isDisposed()) return;
 
-      myGenStatusVisitor.dispatchForHierarchy(myTree.getRootNode());
+      dispatchForHierarchy(myTree.getRootNode());
     }
+
+    public void dispatchForHierarchy(MPSTreeNode treeNode) {
+      if (treeNode instanceof TreeElement) {
+        ((TreeElement) treeNode).accept(myGenStatusVisitor);
+      }
+      for (MPSTreeNode node : treeNode) {
+        dispatchForHierarchy(node);
+      }
+    }
+
   }
 
   private class MyMPSTreeNodeListener implements MPSTreeNodeListener {

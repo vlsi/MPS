@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
@@ -50,7 +50,7 @@ public class TestMergeAction_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "TestMergeAction", t);
       }
       this.disable(event.getPresentation());
@@ -107,7 +107,7 @@ public class TestMergeAction_Action extends BaseAction {
                 try {
                   ModelPersistence.saveModel(as_81bq2k_a0a0a0c0a0a0a0a0j0a0a0a4a0a5(result, SModelBase.class).getSModelInternal(), new FileDataSource(iFile));
                 } catch (IOException e) {
-                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                  if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("Cannot save model.", e);
                   }
                 }
@@ -118,7 +118,7 @@ public class TestMergeAction_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "TestMergeAction", t);
       }
     }

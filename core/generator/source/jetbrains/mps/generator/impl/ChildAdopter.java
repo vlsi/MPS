@@ -58,7 +58,7 @@ public class ChildAdopter {
           lang.getModuleName(), myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName());
       myGenerator.getLogger().error(templateNode,
           String.format("language of output node is '%s' - this language did not show up when computing generation steps!", lang.getModuleName()),
-          GeneratorUtil.describe(templateContext.getInput(), "input"),
+          GeneratorUtil.describeInput(templateContext),
           GeneratorUtil.describe(langToReport.get(lang), "output"),
           new ProblemDescription(hint));
     }

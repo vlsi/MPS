@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -45,7 +45,7 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
   public boolean isInScope(SNode node) {
     // speed up IVisible nodes with context 
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IVisible"))) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("isInScope(" + node + ") - not instance of IVisible");
       }
       return super.isInScope(node);

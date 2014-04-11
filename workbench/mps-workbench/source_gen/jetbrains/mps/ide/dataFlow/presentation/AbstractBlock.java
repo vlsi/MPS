@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Set;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.awt.event.MouseEvent;
 import java.awt.Component;
 import java.awt.Font;
@@ -41,7 +41,7 @@ public abstract class AbstractBlock implements IBlock {
       try {
         this.myRuleNodeReference = PersistenceFacade.getInstance().createNodeReference(ruleNodeReference);
       } catch (IllegalArgumentException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't find node: " + ruleNodeReference, e);
         }
         this.myRuleNodeReference = null;

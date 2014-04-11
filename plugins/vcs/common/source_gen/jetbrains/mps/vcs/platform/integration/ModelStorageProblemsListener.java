@@ -45,7 +45,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import javax.swing.SwingUtilities;
@@ -267,7 +267,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
       FileUtil.delete(tmp);
       return zipfile;
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Cannot create backup during resolving disk-memory conflict for " + SNodeOperations.getModelLongName(inMemory), e);
       }
       throw new RuntimeException(e);

@@ -42,6 +42,7 @@ public class Connector_diagram_Editor extends DefaultNodeEditor {
     final ConnectorCell editorCell = new Connector_diagram_Editor.ConnectorCellImpl_a4xffp_a(editorContext, node);
     editorCell.setCellId("DiagramConnector_a4xffp_a");
     editorCell.setBig(true);
+    DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 

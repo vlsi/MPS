@@ -16,16 +16,37 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.SourceNodeQuery;
+import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.PostProcessor;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -74,10 +95,30 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
+  public boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("check condition(with context)", context.getTemplateNode()), true);
+      return wrapped.evaluate(condition, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
   public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("check if condition", ifMacro), true);
       return wrapped.checkConditionForIfMacro(inputNode, ifMacro, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("check if condition", context.getTemplateNode()), true);
+      return wrapped.evaluate(condition, context);
     } finally {
       tracer.pop();
     }
@@ -105,37 +146,41 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
+    try {
+      tracer.push(taskName(String.format("property macro(on %s)", templateNode.getConcept().getName()), templateNode), true);
+      wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
+    } finally {
+      tracer.pop();
+    }
   }
 
-  @NotNull
+  @Nullable
   @Override
-  public PropertyMacro getPropertyMacro(@NotNull SNode propertyMacro) {
-    final SNode templateNode = propertyMacro.getParent();
-    final PropertyMacro delegate = wrapped.getPropertyMacro(propertyMacro);
-    return new PropertyMacro() {
-      @Override
-      public void expand(@NotNull TemplateContext context, @NotNull SNode outputNode) throws GenerationFailureException {
-        try {
-          tracer.push(taskName(String.format("property macro(on %s)", templateNode.getConcept().getName()), templateNode), true);
-          delegate.expand(context, outputNode);
-        } finally {
-          tracer.pop();
-        }
-      }
-    };
+  public Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName(String.format("property macro(name: %s)", query.getPropertyName()), null), true);
+      return wrapped.evaluate(query, context);
+    } finally {
+      tracer.pop();
+    }
   }
 
   @Override
   public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
-    return getSourceNode(macroNode, query, context.subContext(inputNode));
-  }
-
-  @Override
-  public SNode getSourceNode(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("evaluate source node", query), true);
-      return wrapped.getSourceNode(templateNode, query, context);
+      return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Nullable
+  @Override
+  public SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("evaluate source node", context.getTemplateNode()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
@@ -143,15 +188,20 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
       GenerationFailureException {
-    return new ArrayList<SNode>(getSourceNodes(ruleNode == null ? macroNode : ruleNode, query, context.subContext(inputNode)));
+    try {
+      tracer.push(taskName("evaluate source nodes", query), true);
+      return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
+    } finally {
+      tracer.pop();
+    }
   }
 
   @NotNull
   @Override
-  public Collection<SNode> getSourceNodes(@NotNull SNode templateNode, @NotNull SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
+  public Collection<SNode> evaluate(@NotNull SourceNodesQuery query, @NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate source nodes", query), true);
-      return wrapped.getSourceNodes(templateNode, query, context);
+      tracer.push(taskName("evaluate source nodes", context.getTemplateNode()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
@@ -241,9 +291,14 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return isApplicable(rule, context);
+  }
+
+  @Override
+  public boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("check condition", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
-      return wrapped.isApplicable(rule, environment, context);
+      return wrapped.isApplicable(rule, context);
     } finally {
       tracer.pop();
     }

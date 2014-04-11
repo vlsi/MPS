@@ -17,7 +17,7 @@ import jetbrains.mps.debug.api.BreakpointCreatorsManager;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.DebuggerNotPresentException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -48,7 +48,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
           try {
             return Debuggers.getInstance().getDebuggerByNameSafe("Java").createBreakpoint(debuggableNode, "JAVA_LINE_BREAKPOINT", project);
           } catch (DebuggerNotPresentException e) {
-            if (LOG.isEnabledFor(Priority.WARN)) {
+            if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Exception while creating breakpoint for node" + debuggableNode, e);
             }
             return null;
@@ -64,7 +64,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
           try {
             return Debuggers.getInstance().getDebuggerByNameSafe("Java").createBreakpoint(debuggableNode, "JAVA_FIELD_BREAKPOINT", project);
           } catch (DebuggerNotPresentException e) {
-            if (LOG.isEnabledFor(Priority.WARN)) {
+            if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Exception while creating breakpoint for node" + debuggableNode, e);
             }
             return null;

@@ -14,7 +14,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -126,7 +126,7 @@ public class DevkitDescriptorPersistence {
       OutputStream os = file.openOutputStream();
       JDOMUtil.writeDocument(new Document(root), os);
     } catch (Exception e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);
       }
     }

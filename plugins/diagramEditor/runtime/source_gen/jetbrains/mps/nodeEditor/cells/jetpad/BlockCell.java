@@ -148,4 +148,13 @@ public abstract class BlockCell extends AbstractJetpadCell {
     Vector delta = nodeView.bounds().get().origin.sub(nodeView.rect.bounds().get().origin);
     nodeView.moveTo(new Vector(x, y).add(delta));
   }
+
+  @Override
+  public void setSelected(boolean selected) {
+    super.setSelected(selected);
+    DiagramNodeView diagramNodeView = getBlockMapper().getTarget();
+    if (selected && diagramNodeView != null) {
+      diagramNodeView.container().focusedView().set(diagramNodeView);
+    }
+  }
 }

@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -44,7 +44,7 @@ public class DeleteReferenceAction_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "DeleteReferenceAction", t);
       }
       this.disable(event.getPresentation());
@@ -69,7 +69,7 @@ public class DeleteReferenceAction_Action extends BaseAction {
       ReferenceTreeNode refNode = (ReferenceTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
       refsNode.getSNode().setReference(refNode.getRef().getRole(), null);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "DeleteReferenceAction", t);
       }
     }

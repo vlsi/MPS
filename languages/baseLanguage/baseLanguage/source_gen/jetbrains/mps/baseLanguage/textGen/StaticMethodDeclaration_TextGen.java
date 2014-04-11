@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.util.List;
 import java.util.ArrayList;
 import org.apache.log4j.Logger;
@@ -86,7 +86,7 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
         try {
           traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
         } catch (Throwable t) {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate traceable prorerty for a node " + node + ".", t);
           }
         }
@@ -97,7 +97,7 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
         try {
           scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
         } catch (Throwable t) {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can't calculate scope variables for a node " + node + ".", t);
           }
         }

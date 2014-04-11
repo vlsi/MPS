@@ -14,7 +14,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.util.io.ZipUtil;
 import com.intellij.openapi.application.PathManager;
 import java.io.FilenameFilter;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.util.ModelVersion;
 import jetbrains.mps.util.UnzipUtil;
@@ -68,7 +68,7 @@ public class MergeBackupUtil {
       FileUtil.zip(tmp, file);
       FileUtil.delete(tmp);
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);
       }
     }
@@ -96,7 +96,7 @@ public class MergeBackupUtil {
         }
       });
       if (files == null || files.length != 1) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Wrong zip contents");
         }
       }

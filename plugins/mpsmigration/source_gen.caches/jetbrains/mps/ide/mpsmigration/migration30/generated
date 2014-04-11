@@ -8,7 +8,6 @@
   </common>
   <source id="6856864117646528335" name="Migration30Actions" hash="-5wywqg7mi88d11fhaxca7tabiwrvhl0">
     <dep root="8418469470841235721" />
-    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
     <file name="Migration30Actions.xml" />
   </source>

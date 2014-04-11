@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -192,14 +192,14 @@ public class Java_Command {
     }
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
       }
       return null;
     } else {
       Iterable<String> unitNames = (Iterable<String>) TraceDown.unitNames(node);
       if (Sequence.fromIterable(unitNames).isEmpty()) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
         }
         return null;

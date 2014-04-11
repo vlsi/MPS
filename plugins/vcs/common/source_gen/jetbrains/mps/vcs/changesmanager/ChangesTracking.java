@@ -27,7 +27,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -185,7 +185,7 @@ public class ChangesTracking {
         for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) baseVersionModel.value.getProblems())) {
           sb.append((p.isError() ? "error: " : "warn: ")).append(p.getText()).append("\n");
         }
-        if (LOG.isEnabledFor(Priority.WARN)) {
+        if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn(sb.toString());
         }
         return;

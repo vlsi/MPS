@@ -26,7 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import org.apache.log4j.Logger;
@@ -134,7 +134,7 @@ public class QuotationConverter {
 
       SNode link = SNodeOperations.as(SModelSearchUtil.findMostSpecificLinkDeclaration(SLinkOperations.getTarget(result, "concept", false), SNodeOperations.getContainingLinkRole(child)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
       if ((link == null)) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("cannot find link `" + SNodeOperations.getContainingLinkRole(child) + "' in " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(result, "concept", false), "virtual_getFqName_1213877404258", new Object[]{}));
         }
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,19 +27,19 @@ import org.jetbrains.annotations.NotNull;
 public class TemplateArgumentContext extends TemplateQueryContext {
 
   /**
-   * @deprecated use {@link #TemplateArgumentContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #TemplateArgumentContext(TemplateContext, SNodeReference)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
   @ToRemove(version=3.1)
   public TemplateArgumentContext(SNode inputNode, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
-    super(inputNode, templateNode, context, generator);
+    super(templateNode, context.subContext(inputNode), generator);
   }
 
   /**
    * @since 3.1
    */
-  public TemplateArgumentContext(@NotNull TemplateContext context, @NotNull SNodeReference templateNode, @NotNull ITemplateGenerator generator) {
-    super(templateNode, context, generator);
+  public TemplateArgumentContext(@NotNull TemplateContext context, @NotNull SNodeReference templateNode) {
+    super(templateNode, context);
   }
 }

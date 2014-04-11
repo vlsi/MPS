@@ -22,7 +22,7 @@
     <nodeInfo nodeId="5764521365758204178" fileName="CustomViewersManagerImpl.java" startLine="94" startPosition="171" endLine="95" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="5764521365758297573" fileName="CustomViewersManagerImpl.java" startLine="96" startPosition="11" endLine="97" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5764521365758297579" fileName="CustomViewersManagerImpl.java" startLine="97" startPosition="34" endLine="98" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="101" startPosition="47" endLine="102" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="101" startPosition="44" endLine="102" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6108369403999483091" fileName="CustomViewersManagerImpl.java" startLine="105" startPosition="5" endLine="106" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7340583568183847486" fileName="CustomViewersManagerImpl.java" startLine="110" startPosition="43" endLine="111" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7340583568183827345" fileName="CustomViewersManagerImpl.java" startLine="112" startPosition="5" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -107,7 +107,7 @@
     <scopeInfo nodeId="3432969378036017184" fileName="CustomViewersManagerImpl.java" startLine="70" startPosition="67" endLine="71" endPosition="77" />
     <scopeInfo nodeId="3432969378036017215" fileName="CustomViewersManagerImpl.java" startLine="77" startPosition="48" endLine="78" endPosition="56" />
     <scopeInfo nodeId="5764521365758178656" fileName="CustomViewersManagerImpl.java" startLine="94" startPosition="171" endLine="95" endPosition="21" />
-    <scopeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="101" startPosition="47" endLine="102" endPosition="105" />
+    <scopeInfo nodeId="6108369403999526296" fileName="CustomViewersManagerImpl.java" startLine="101" startPosition="44" endLine="102" endPosition="105" />
     <scopeInfo nodeId="7340583568183843735" fileName="CustomViewersManagerImpl.java" startLine="110" startPosition="43" endLine="111" endPosition="131" />
     <scopeInfo nodeId="4054603036795003801" fileName="CustomViewersManagerImpl.java" startLine="125" startPosition="58" endLine="126" endPosition="66" />
     <scopeInfo nodeId="3432969378036017242" fileName="CustomViewersManagerImpl.java" startLine="132" startPosition="32" endLine="133" endPosition="20" />

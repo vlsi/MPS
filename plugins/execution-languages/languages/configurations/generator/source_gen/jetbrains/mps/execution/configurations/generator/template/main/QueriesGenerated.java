@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -669,7 +669,7 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_2535050848643235299(final MappingScriptContext _context) {
     for (SNode runConfiguration : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.configurations.structure.RunConfiguration"))) {
       if ((RunConfiguration_Behavior.call_getExecutor_3754890006475713427(runConfiguration) == null)) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Configuration " + SPropertyOperations.getString(runConfiguration, "name") + " does not have any executors.");
         }
       }

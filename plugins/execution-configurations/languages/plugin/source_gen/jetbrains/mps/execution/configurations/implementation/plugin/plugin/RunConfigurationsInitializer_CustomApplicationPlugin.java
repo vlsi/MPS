@@ -11,7 +11,7 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.util.containers.ContainerUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -53,7 +53,7 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
         try {
           return (Class<ConfigurationType>) getClass().getClassLoader().loadClass(className);
         } catch (ClassNotFoundException cl) {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Can not find configuration type " + className + ". Check languages dependency.", cl);
           }
           return (Class<ConfigurationType>) null;

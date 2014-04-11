@@ -28,7 +28,7 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.vfs.VfsUtil;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -145,7 +145,7 @@ public class NewGeneratorDialog extends DialogWrapper {
           newGenerator.value = createNewGenerator(mySourceLanguage, templateModelsPath, name);
           adjustTemplateModel(mySourceLanguage, newGenerator.value);
         } catch (IOException e) {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("", e);
           }
           newGenerator.value = null;

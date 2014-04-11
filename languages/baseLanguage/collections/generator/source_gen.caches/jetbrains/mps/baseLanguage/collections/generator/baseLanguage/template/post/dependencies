@@ -11,6 +11,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.InlineSwitchCaseContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
@@ -27,6 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.Base" />
+    <classNode extendsClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
   </dependency>

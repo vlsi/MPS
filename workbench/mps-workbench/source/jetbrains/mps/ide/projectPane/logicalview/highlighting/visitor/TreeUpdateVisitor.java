@@ -21,20 +21,49 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.NodeUpdate;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.TreeNodeUpdater;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.Executor;
 
 /**
  * Visitor that updates tree elements
  */
-public abstract class TreeUpdateVisitor extends TreeNodeVisitor {
+public abstract class TreeUpdateVisitor implements TreeNodeVisitor {
   private TreeNodeUpdater myUpdater;
   private Executor myExecutor;
 
   @Override
-  protected void doDispatch(final MPSTreeNode node) {
+  public void visitNamespaceNode(@NotNull NamespaceTextNode node) {
+  }
+
+  @Override
+  public void visitModuleNode(@NotNull ProjectModuleTreeNode node) {
+  }
+
+  @Override
+  public void visitProjectNode(@NotNull ProjectTreeNode node) {
+  }
+
+  @Override
+  public void visitModelNode(@NotNull SModelTreeNode node) {
+  }
+
+  protected final void scheduleModelRead(final MPSTreeNode node, final Runnable readAction) {
+    schedule(node, new Runnable() {
+      @Override
+      public void run() {
+        ModelAccess.instance().runReadAction(readAction);
+      }
+    });
+  }
+  protected final void schedule(final MPSTreeNode node, final Runnable runnable) {
     final Executor ex = myExecutor;
     if (ex == null) {
       return;
@@ -54,28 +83,9 @@ public abstract class TreeUpdateVisitor extends TreeNodeVisitor {
         if (project != null) {
           DumbService.getInstance(project).waitForSmartMode();
         }
-
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            TreeUpdateVisitor.super.doDispatch(node);
-          }
-        });
+        runnable.run();
       }
     });
-  }
-
-
-  public void dispatchAll(Iterable<? extends MPSTreeNode> nodes) {
-    for(MPSTreeNode n : nodes) {
-      dispatch(n);
-    }
-  }
-  public void dispatchForHierarchy(MPSTreeNode treeNode) {
-    dispatch(treeNode);
-    for (MPSTreeNode node : treeNode) {
-      dispatchForHierarchy(node);
-    }
   }
 
   protected void addUpdate(MPSTreeNode node, NodeUpdate r) {

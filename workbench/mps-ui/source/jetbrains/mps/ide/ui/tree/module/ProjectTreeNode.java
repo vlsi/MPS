@@ -18,12 +18,15 @@ package jetbrains.mps.ide.ui.tree.module;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.TreeElement;
+import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Font;
 
-public class ProjectTreeNode extends TextTreeNode {
+public class ProjectTreeNode extends TextTreeNode implements TreeElement {
   private MPSProject myProject;
 
   public ProjectTreeNode(MPSProject project) {
@@ -48,5 +51,10 @@ public class ProjectTreeNode extends TextTreeNode {
 
   public MPSProject getProject() {
     return myProject;
+  }
+
+  @Override
+  public void accept(@NotNull TreeNodeVisitor visitor) {
+    visitor.visitProjectNode(this);
   }
 }

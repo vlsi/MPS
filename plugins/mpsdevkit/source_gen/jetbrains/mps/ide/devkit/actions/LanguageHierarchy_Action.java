@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.languagesFs.MPSLanguageVirtualFile;
@@ -47,7 +47,7 @@ public class LanguageHierarchy_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "LanguageHierarchy", t);
       }
       this.disable(event.getPresentation());
@@ -78,7 +78,7 @@ public class LanguageHierarchy_Action extends BaseAction {
       MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
       languageEditor.getComponent().requestFocus();
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "LanguageHierarchy", t);
       }
     }

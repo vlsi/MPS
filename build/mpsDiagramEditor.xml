@@ -101,6 +101,7 @@
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetbrains.jetpad)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
@@ -161,6 +162,30 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-languages-jetbrains.mps.lang.editor.figures-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-languages-jetbrains.mps.lang.editor.figures-languageModels" prefix="module/languageModels" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.figures.library.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.figures.library.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.editor.figures.library.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.editor.figures.library" type="solution" uuid="9fc6ac35-295d-4fb8-8210-ba026790e4a0">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetbrains.jetpad)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.lang.editor.figures.library-src.jar" descriptor="jetbrains.mps.lang.editor.figures.library.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/diagramEditor/languages/jetbrains.mps.lang.editor.figures.library.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.library" />
+      <fileset dir="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.figures.library.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-solutions-jetbrains.mps.lang.editor.figures.library-models">
+      <fileset dir="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/diagramEditor/languages/jetbrains.mps.lang.editor.figures.library-src.jar">
+      <fileset dir="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/source_gen" includes="**/*.java" />
+      <zipfileset file="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/jetbrains.mps.lang.editor.figures.library.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-solutions-jetbrains.mps.lang.editor.figures.library-models" prefix="module/models" />
+    </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
@@ -179,7 +204,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.editor.diagram.runtime, java.compile.jetbrains.mps.lang.editor.diagram, java.compile.jetbrains.mps.lang.editor.diagram#1094405431463447766, java.compile.jetbrains.mps.lang.editor.figures, java.compile.jetbrains.mps.lang.editor.figures#785823818609016954" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.editor.diagram.runtime, java.compile.jetbrains.mps.lang.editor.figures.library, java.compile.jetbrains.mps.lang.editor.diagram, java.compile.jetbrains.mps.lang.editor.diagram#1094405431463447766, java.compile.jetbrains.mps.lang.editor.figures, java.compile.jetbrains.mps.lang.editor.figures#785823818609016954" />
   
   <target name="processResources" />
   
@@ -224,7 +249,6 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.pattern.jar" />
@@ -258,6 +282,7 @@
       <chunk>
         <module file="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/jetbrains.mps.lang.editor.diagram.mpl" />
         <module file="${mps_home}/plugins/diagramEditor/runtime/jetbrains.mps.lang.editor.diagram.runtime.msd" />
+        <module file="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/jetbrains.mps.lang.editor.figures.library.msd" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -326,9 +351,9 @@
         <fileset file="${artifacts.jetpad}/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/projectional-1.0-SNAPSHOT.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/hybrid-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
@@ -357,6 +382,45 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime">
       <fileset dir="${mps_home}/plugins/diagramEditor/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.lang.editor.figures.library" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.library" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.library" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/cell-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/completion-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/projectional-1.0-SNAPSHOT.jar" />
+        <fileset file="${artifacts.jetpad}/jetpad/lib/hybrid-1.0-SNAPSHOT.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures.library">
+      <fileset dir="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -653,5 +717,6 @@
     <delete dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram/generator/source_gen" />
     <delete dir="${mps_home}/plugins/diagramEditor/runtime/source_gen" />
     <delete dir="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/diagramEditor/solutions/jetbrains.mps.lang.editor.figures.library/source_gen" />
   </target>
 </project>

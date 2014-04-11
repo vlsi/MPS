@@ -33,6 +33,10 @@ import jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_Behavio
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
@@ -41,6 +45,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
@@ -732,6 +737,44 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "elements", true);
   }
 
+  public static void mappingScript_CodeBlock_5003005296041706504(final IOperationContext operationContext, final MappingScriptContext _context) {
+    if (ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "actionMap", false) == null;
+      }
+    }).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "actionMap", false) == null;
+      }
+    }).isNotEmpty()) {
+      SNode de = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.baseLanguage.structure.DotExpression");
+      SLinkOperations.setTarget(de, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", null), true);
+      SLinkOperations.setTarget(de, "operation", SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_DeleteOperation", null), true);
+      final SNode defaultActionMap = _quotation_createNode_x583g4_a0d0a0bg(de, _context.createUniqueName("DefaultDiagramElementActionMap", null));
+      SModelOperations.addRootNode(_context.getModel(), defaultActionMap);
+      ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode")).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.getTarget(it, "actionMap", false) == null;
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          SLinkOperations.setTarget(it, "actionMap", defaultActionMap, false);
+        }
+      });
+      ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector")).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.getTarget(it, "actionMap", false) == null;
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          SLinkOperations.setTarget(it, "actionMap", defaultActionMap, false);
+        }
+      });
+    }
+  }
+
+  public static class Pattern_x583g4_a0a0a0a031 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_x583g4_a0a0a0a031() {
   public static class Pattern_x583g4_a0a0a0a231 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_x583g4_a0a0a0a231() {
     }
@@ -786,6 +829,32 @@ public class QueriesGenerated {
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)"), facade.createNodeId("8327142480058313300")));
     quotedNode_1.addChild("type", quotedNode_2);
     return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_x583g4_a0d0a0bg(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    SNode quotedNode_7 = null;
+    SNode quotedNode_8 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_2);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapItem", null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_4, "actionId", "delete_action_id");
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", null, null, false);
+    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
+    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, false);
+    quotedNode_8 = (SNode) parameter_1;
+    if (quotedNode_8 != null) {
+      quotedNode_7.addChild("expression", HUtil.copyIfNecessary(quotedNode_8));
+    }
+    quotedNode_6.addChild("statement", quotedNode_7);
+    quotedNode_5.addChild("body", quotedNode_6);
+    quotedNode_4.addChild("executeFunction", quotedNode_5);
+    quotedNode_3.addChild("item", quotedNode_4);
+    return quotedNode_3;
   }
 
   private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0a0a0a0cf = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
