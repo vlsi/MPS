@@ -48,7 +48,6 @@ public class InspectorEditorComponent extends EditorComponent {
     if (myNode == node) {
       return;
     }
-    myContainingRoot = node == null ? null : node.getContainingRoot();
     super.editNode(node);
   }
 
@@ -63,6 +62,13 @@ public class InspectorEditorComponent extends EditorComponent {
       return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
     }
     return getEditorContext().createInspectedCell(getEditedNode(), events);
+  }
+
+  protected boolean updateContainingRoot(SNode node) {
+    final SNode newroot = node == null ? null : node.getContainingRoot();
+    if (myContainingRoot == newroot) return false;
+    myContainingRoot = newroot;
+    return true;
   }
 
   @Override

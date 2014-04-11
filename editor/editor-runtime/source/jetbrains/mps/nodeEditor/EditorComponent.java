@@ -1036,7 +1036,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           notifyDisposal();
         }
 
-        final boolean needNewTypecheckingContext = getNodeForTypechecking(node) != getNodeForTypechecking(myNode);
+        final boolean needNewTypecheckingContext = updateContainingRoot(node);
         if (needNewTypecheckingContext) {
           releaseTypeCheckingContext();
         }
@@ -2466,6 +2466,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         TypeContextManager.getInstance().releaseTypecheckingContext(EditorComponent.this);
       }
     });
+  }
+
+  /**
+   * Returns false iff the containing root has been changed as a result of this method call.
+   */
+  protected boolean updateContainingRoot(SNode node) {
+    return myNode != node;
   }
 
   protected SNode getNodeForTypechecking(SNode editedNode) {
