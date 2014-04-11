@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
@@ -113,8 +114,8 @@ public class ModuleGenerationHolder {
         IScript scr = ModuleGenerationHolder.defaultScriptBuilder().toScript();
         try {
           final MakeSession session = new MakeSession(context, myMessageHandler, true);
-
-          IScriptController ctl = new IScriptController.Stub() {
+          final AbstractMakeService.DefaultMonitor monitor = new AbstractMakeService.DefaultMonitor(session);
+          IScriptController ctl = new IScriptController.Stub(monitor, monitor) {
             @Override
             public void setup(IPropertiesPool ppool) {
               // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
