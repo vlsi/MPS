@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-el8ekfrs5i8pjjn9mo11sal0v8rapxb">
+<dependencies version="2" modelHash="-741cpriepquyyggwuiz6pib9fqhc7nk">
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="6l4d56nir2sg8l2f7lfm0wggdohh1hj" />
   <dep model="r:707b7eb5-6dae-4291-ab4d-8d1bac7cbc86(jetbrains.mps.build.mps.tests.generator.template.main@generator)" hash="-4nrwqwfyc6vfbg3cbtf9q9vrnsy4dmh" />
   <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" hash="-15ae1rxo4yk6iw9chynv6oniyvle2xs" />
@@ -79,7 +79,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsActions.xml" />
   </source>
-  <source id="5003005296035786909" name="mpsEditorDiagram" hash="56539t7uf04s6aoj8unmu4heikk8w7o">
+  <source id="5003005296035786909" name="mpsEditorDiagram" hash="-5pa3tdccv7ckp2915wtgu5bmzbz7ekf">
     <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
     <dep model="r:707b7eb5-6dae-4291-ab4d-8d1bac7cbc86(jetbrains.mps.build.mps.tests.generator.template.main@generator)" />
     <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
