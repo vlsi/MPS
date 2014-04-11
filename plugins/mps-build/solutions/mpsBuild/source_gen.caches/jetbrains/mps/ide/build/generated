@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9aaehk5j737ebskp90ifwowktwxr3zh">
+<dependencies version="2" modelHash="-15ae1rxo4yk6iw9chynv6oniyvle2xs">
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-b7uc8zn9s21moznq6gl69vj86eo9fz" />
   <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" hash="b3levz77xf5i5ay54ipz1d9fnhdtp28" />
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="6l4d56nir2sg8l2f7lfm0wggdohh1hj" />
@@ -320,7 +320,7 @@
   <source id="1731640411968857441" name="installer.nsi" hash="-9lb6tqn1uw5q1ki3bb5vo88lh3z7ros">
     <file name="installer.nsi" />
   </source>
-  <source id="4305752832749937830" name="mpsDiagramEditor" hash="7geq1jup4mi8mqzx34l2q7e2tp1xcun">
+  <source id="4305752832749937830" name="mpsDiagramEditor" hash="49z0tou7v07jdsayai9rnw0bmnenutq">
     <dep root="2405506926871158265" />
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
