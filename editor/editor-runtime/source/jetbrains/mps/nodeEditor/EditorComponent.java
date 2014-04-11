@@ -1292,7 +1292,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void selectComponentCell(Component component) {
     EditorCell_WithComponent cell = findCellForComponent(component, myRootCell);
-    if (cell == null) return;
+    if (cell == null || CellTraversalUtil.isAncestor(cell, mySelectionManager.getSelection().getSelectedCells().get(0))) return;
     changeSelection(cell);
   }
 
