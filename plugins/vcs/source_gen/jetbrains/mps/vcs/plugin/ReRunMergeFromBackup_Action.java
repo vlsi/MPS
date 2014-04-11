@@ -15,7 +15,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -73,7 +73,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ReRunMergeFromBackup", t);
       }
       this.disable(event.getPresentation());
@@ -121,7 +121,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           DiffManager.getInstance().getDiffTool().show(mergeRequest);
           return;
         } catch (IOException e) {
-          if (LOG.isEnabledFor(Priority.WARN)) {
+          if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("", e);
           }
           // Skip this backup 
@@ -130,7 +130,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
       }
       Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getModelName() + "was not found.", "No Backup Files Found");
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
       }
     }

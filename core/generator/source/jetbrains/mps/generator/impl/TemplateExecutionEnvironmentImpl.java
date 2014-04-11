@@ -37,10 +37,12 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -49,23 +51,20 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, 11/10/10
  */
 public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnvironment {
   private final TemplateGenerator generator;
-  private final ReductionContext reductionContext;
   private final QueryExecutionContext myExecutionContext;
+  private final ITemplateProcessor myTemplateProcessor;
 
-  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext) {
-    this(generator, executionContext, new ReductionContext());
-  }
-
-  private TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext, @NotNull ReductionContext reductionContext) {
-    this.generator = generator;
-    this.reductionContext = reductionContext;
+  public TemplateExecutionEnvironmentImpl(@NotNull TemplateProcessor templateProcessor, @NotNull QueryExecutionContext executionContext) {
+    this.generator = templateProcessor.getGenerator();
     myExecutionContext = executionContext;
+    myTemplateProcessor = templateProcessor;
   }
 
   @Override
@@ -113,13 +112,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @NotNull
   @Override
   public ReductionContext getReductionContext() {
-    return reductionContext;
+    // this method is not used
+    return new ReductionContext();
   }
 
   @NotNull
   @Override
   public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
-    return generator.getGeneratorSessionContext().getQueryProvider(ruleNode);
+    return generator.getQuerySource().getQueryProvider(ruleNode);
   }
 
   @NotNull
@@ -128,9 +128,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return myExecutionContext;
   }
 
+  @NotNull
+  @Override
+  public ITemplateProcessor getTemplateProcessor() {
+    return myTemplateProcessor;
+  }
+
   @Override
   public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule) {
-    return new TemplateExecutionEnvironmentImpl(generator, myExecutionContext, new ReductionContext(reductionContext, inputNode, rule));
+    return this;
   }
 
   @Override
@@ -139,7 +145,18 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     // earlier approach to mappingName here used to hide mappingName from the context (null down to generator.copySrc => no mapping label
     // however, interpreted templates keep context mappingName (common approach for all node macros - ctx.subContext(newNameOrNullIfNone))
     // hence here's the same code to ensure mappingName propagation is the same either for interpreted or generated.
-    return generator.copyNodes(inputNodes, templateContext.subContext(mappingName), templateNode, templateId, this);
+    return copyNodes(inputNodes, templateNode, templateId, templateContext.subContext(mappingName));
+  }
+
+  @Override
+  @NotNull
+  public List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateId,
+      @NotNull TemplateContext ctx) throws GenerationCanceledException, GenerationFailureException {
+    List<SNode> outputNodes = generator.copyNodes(inputNodes, ctx, templateId);
+    if (!outputNodes.isEmpty()) {
+      new ChildAdopter(generator).checkIsExpectedLanguage(outputNodes, templateNode, ctx);
+    }
+    return outputNodes;
   }
 
   @Override
@@ -151,20 +168,28 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public Collection<SNode> trySwitch(SNodeReference switch_, String mappingName, TemplateContext context) throws GenerationException {
-    Collection<SNode> collection = generator.tryToReduce(switch_, context, mappingName, this);
-    if (collection != null) {
-      return collection;
+    return trySwitch(switch_, context.subContext(mappingName));
+  }
+
+  @Nullable
+  @Override
+  public Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException {
+    FastRuleFinder rf = generator.getRuleManager().getRuleFinder(_switch);
+    Collection<SNode> outputNodes = generator.tryToReduce(rf, context);
+    if (outputNodes != null) {
+      if (outputNodes.size() == 1 && context.getInputName() != null) {
+        SNode reducedNode = outputNodes.iterator().next();
+        // register copied node
+        generator.registerMappingLabel(context.getInput(), context.getInputName(), reducedNode);
+      }
+      return outputNodes;
     }
 
     // try the default case
-    TemplateSwitchMapping current = generator.getSwitch(switch_);
+    TemplateSwitchMapping current = generator.getSwitch(_switch);
     if (current != null) {
-      collection = current.applyDefault(this, switch_, mappingName, context);
-      if (collection != null) {
-        return collection;
-      }
+      return current.applyDefault(this, _switch, context.getInputName(), context); // FIXME TSM.applyDefault without explicit mappingLabel
     }
-
     // no switch-case found for the inputNode - continue with templateNode under the $switch$
     return null;
   }

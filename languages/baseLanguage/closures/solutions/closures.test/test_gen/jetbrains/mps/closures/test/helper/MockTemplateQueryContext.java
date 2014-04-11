@@ -5,14 +5,13 @@ package jetbrains.mps.closures.test.helper;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Map;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class MockTemplateQueryContext extends TemplateQueryContext {
   public Map sessionObjects = new HashMap();
 
   public MockTemplateQueryContext() {
-    super(null, (SNodeReference) null, null, null);
+    super(null, null, null, null);
   }
 
   @Override

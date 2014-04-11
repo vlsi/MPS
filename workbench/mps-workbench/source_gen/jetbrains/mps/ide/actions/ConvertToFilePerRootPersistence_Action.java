@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -69,7 +69,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ConvertToFilePerRootPersistence", t);
       }
       this.disable(event.getPresentation());
@@ -118,7 +118,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
 
             SModel newModel = PersistenceUtil.loadModel(oldFile);
             if (newModel == null) {
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("cannot read " + smodel);
               }
               continue;
@@ -130,7 +130,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
               }
             });
             if (Sequence.fromIterable(problems).isNotEmpty()) {
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("cannot read " + smodel + ": " + Sequence.fromIterable(problems).first().getText());
               }
               continue;
@@ -146,12 +146,12 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
               oldFile.delete();
               ((AbstractModule) module).updateModelsSet();
             } catch (IOException ex) {
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("cannot write " + smodel, ex);
               }
             } catch (ModelSaveException ex) {
               // shouldn't happen 
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("cannot write " + smodel, ex);
               }
             }
@@ -159,7 +159,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ConvertToFilePerRootPersistence", t);
       }
     }

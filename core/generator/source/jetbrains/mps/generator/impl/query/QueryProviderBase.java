@@ -16,9 +16,11 @@
 package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.GeneratorUtil;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
+import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
@@ -32,6 +34,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -112,7 +115,19 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro) {
-    return new PropertyQuery();
+    return new PropertyQuery(propertyMacro.getReference());
+  }
+
+  @NotNull
+  @Override
+  public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
+    return new Defaults();
+  }
+
+  @NotNull
+  @Override
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
+    return new Defaults();
   }
 
   /**
@@ -121,7 +136,8 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
    * another set of defaults for cases when condition failed to evaluate ({@link jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider.Impl}.
    */
   public static class Defaults implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
-      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery {
+      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery,
+      IfMacroCondition, InlineSwitchCaseCondition {
 
     @Override
     public boolean check(@NotNull CreateRootRuleContext ctx) {
@@ -178,9 +194,28 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
       return Collections.emptyList();
     }
+
+    @Override
+    public boolean check(@NotNull IfMacroContext context) throws GenerationFailureException {
+      context.showErrorMessage(null, "cannot evaluate if-macro condition");
+      throw new GenerationFailureException("cannot evaluate if-macro condition");
+    }
+
+    @Override
+    public boolean check(@NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
+      // here comes the logic that used to live in DefaultQueryExecutionContext
+      context.showErrorMessage(null, "condition required for case in inline switch");
+      return false;
+    }
   }
 
   private static class PropertyQuery implements PropertyValueQuery {
+    private final SNodeReference myMacro;
+
+    PropertyQuery(@NotNull SNodeReference macro) {
+      myMacro = macro;
+    }
+
     @NotNull
     @Override
     public String getPropertyName() {
@@ -190,6 +225,12 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     @Override
     public Object getTemplateValue() {
       return null;
+    }
+
+    @NotNull
+    @Override
+    public SNodeReference getMacro() {
+      return myMacro;
     }
 
     @Nullable

@@ -19,6 +19,8 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.SortUtil;
+import jetbrains.mps.ide.ui.tree.TreeElement;
+import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.smodel.DependencyRecorder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
@@ -46,7 +48,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class SModelTreeNode extends MPSTreeNodeEx {
+public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
 
   private SModel myModelDescriptor;
   private List<SModelTreeNode> myChildModelTreeNodes = new ArrayList<SModelTreeNode>();
@@ -469,5 +471,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       }
       treeModel.insertNodeInto(nodeToInsert, targetNode, index);
     }
+  }
+
+  @Override
+  public void accept(@NotNull TreeNodeVisitor visitor) {
+    visitor.visitModelNode(this);
   }
 }

@@ -33,7 +33,7 @@ import java.util.Set;
  *
  * @author Artem Tikhomirov
  */
-public class QueryProviderCache {
+public class QueryProviderCache implements GeneratorQueryProvider.Source {
   private final Set<SModelReference> myReflectionQueries = new HashSet<SModelReference>();
   private final Map<SModelReference, GeneratorQueryProvider> myDirectQueries = new HashMap<SModelReference, GeneratorQueryProvider>();
   private final IGeneratorLogger myLog;
@@ -42,6 +42,7 @@ public class QueryProviderCache {
     myLog = log;
   }
 
+  @Override
   public synchronized GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNode) {
     final SModelReference mr = templateNode.getModelReference();
     if (myReflectionQueries.contains(mr)) {

@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.Nullable;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -129,7 +129,7 @@ public class FeatureForestMap<V> {
         if (t instanceof InterruptedException || check_tcy57o_a0a0a0a0a0p(t) instanceof InterruptedException) {
           // ignore 
         } else {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Exception on firing featureStateChanged event", t);
           }
         }
@@ -143,7 +143,7 @@ public class FeatureForestMap<V> {
 
   private static void log(String msg) {
     if (ourLoggingEnabled) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error(msg);
       }
     }

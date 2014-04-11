@@ -20,7 +20,7 @@ import jetbrains.mps.workbench.MPSApplicationInfo;
 import jetbrains.mps.MPSCore;
 import java.net.URL;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.io.InputStream;
 import java.io.OutputStream;
 import jetbrains.mps.util.ReadUtil;
@@ -138,7 +138,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     try {
       copyIcon(sourceUrl.openStream(), targetDir, targetName);
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Can't copy icon into " + targetDir + " as " + targetName + ".", e);
       }
     }
@@ -156,7 +156,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       out.write(ReadUtil.read(sourceStream));
       out.close();
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Can't copy icon into " + targetDir + " as " + targetName + ".", e);
       }
     } finally {
@@ -223,7 +223,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetModelDescriptor).makeRelative(getBasePath());
       SPropertyOperations.set(buildProject, "internalBaseDirectory", relativeToModuleProjectPath);
     } catch (RelativePathHelper.PathException e) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Can't calculate project path relative to module " + targetModelDescriptor.getModule(), e);
       }
     }
@@ -304,7 +304,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       try {
         ModuleLoader.createModuleChecker(module, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
       } catch (ModuleLoaderException ex) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error(ex.getMessage());
         }
       }
@@ -385,7 +385,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     try {
       path = createPathFromFullPath(((AbstractModule) module).getDescriptorFile().getPath());
     } catch (RelativePathHelper.PathException e) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Can't make relative path from build model base directory to module " + module, e);
       }
       return null;

@@ -38,7 +38,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -406,7 +406,7 @@ __switch__:
     if (currentNodeIndex == nodeIndex - 1) {
       return null;
     }
-    if (LOG.isEnabledFor(Priority.WARN)) {
+    if (LOG.isEnabledFor(Level.WARN)) {
       LOG.warn("Could not find child cell index for deleted child: currentNodeIndex=" + currentNodeIndex + ", total cells=" + collectionCell.getCellsCount() + ", requested nodeIndex=" + nodeIndex);
     }
     return null;

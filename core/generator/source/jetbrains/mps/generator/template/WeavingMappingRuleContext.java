@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ public class WeavingMappingRuleContext extends BaseMappingRuleContext {
   /**
    * @since 3.1
    */
-  public WeavingMappingRuleContext(@NotNull TemplateContext ctx, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
-    super(ctx, ruleNode, generator);
+  public WeavingMappingRuleContext(@NotNull TemplateContext ctx, @NotNull SNodeReference ruleNode) {
+    super(ctx, ruleNode);
   }
 }

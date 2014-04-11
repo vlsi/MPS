@@ -23,7 +23,7 @@ import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.ant.execution.Ant_Command;
 import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import com.intellij.execution.ExecutionException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.execution.Executor;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -105,7 +105,7 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
       try {
         process.value = OutputRedirector.redirect(new Ant_Command().setTargetName_String("buildDependents assemble").createProcess(deployScriptLocation), new ConsoleProcessListener(console));
       } catch (ExecutionException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can not deploy plugins", e);
         }
         script.value.dispose();

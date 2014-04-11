@@ -428,7 +428,7 @@
     <nodeInfo nodeId="4581757697144504360" fileName="SAbstractConceptAdapter.java" startLine="161" startPosition="77" endLine="162" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4581757697144504367" fileName="SAbstractConceptAdapter.java" startLine="163" startPosition="51" endLine="164" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581757697144504373" fileName="SAbstractConceptAdapter.java" startLine="165" startPosition="5" endLine="166" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581757697144504380" fileName="SAbstractConceptAdapter.java" startLine="167" startPosition="42" endLine="168" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4581757697144504380" fileName="SAbstractConceptAdapter.java" startLine="167" startPosition="39" endLine="168" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5691494193750495380" fileName="SAbstractConceptAdapter.java" startLine="172" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5691494193750495382" fileName="SAbstractConceptAdapter.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SAbstractConceptAdapter#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="9029962061610637649" fileName="SAbstractConceptAdapter.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/language/SAbstractLink;" />
@@ -472,7 +472,7 @@
     <scopeInfo nodeId="4050058392234376879" fileName="SAbstractConceptAdapter.java" startLine="145" startPosition="25" endLine="146" endPosition="36" />
     <scopeInfo nodeId="4050058392234415113" fileName="SAbstractConceptAdapter.java" startLine="151" startPosition="50" endLine="152" endPosition="19" />
     <scopeInfo nodeId="4581757697144504366" fileName="SAbstractConceptAdapter.java" startLine="163" startPosition="51" endLine="164" endPosition="13" />
-    <scopeInfo nodeId="4581757697144504380" fileName="SAbstractConceptAdapter.java" startLine="167" startPosition="42" endLine="168" endPosition="154" />
+    <scopeInfo nodeId="4581757697144504380" fileName="SAbstractConceptAdapter.java" startLine="167" startPosition="39" endLine="168" endPosition="154" />
     <scopeInfo nodeId="9029962061610168266" fileName="SAbstractConceptAdapter.java" startLine="51" startPosition="48" endLine="53" endPosition="18" />
     <scopeInfo nodeId="9029962061610214970" fileName="SAbstractConceptAdapter.java" startLine="69" startPosition="48" endLine="71" endPosition="37" />
     <scopeInfo nodeId="9029962061610673303" fileName="SAbstractConceptAdapter.java" startLine="91" startPosition="48" endLine="93" endPosition="18" />

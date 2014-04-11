@@ -25,7 +25,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -86,7 +86,7 @@ public class VcsActionsUtil {
       String[] titles = {revisionNumber.asString() + " (Read-Only)", "Your Version"};
       ModelDifferenceDialog.showRootDifference(project, oldModel, newModel.value, id.value, titles[0], titles[1], bounds, null);
     } catch (VcsException e) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("", e);
       }
       Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");

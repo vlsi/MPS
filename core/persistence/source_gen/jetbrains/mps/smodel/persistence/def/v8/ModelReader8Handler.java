@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.InterfaceSNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -554,7 +554,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       Pair<Boolean, SNodeReference> pptr = fieldhelper.readLink_internal(child[1]);
       SNodeReference ptr = pptr.o2;
       if (ptr == null || ptr.getModelReference() == null) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("couldn't create reference '" + child[0] + "' from " + child[1]);
         }
         return;

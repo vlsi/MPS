@@ -21,6 +21,8 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 
 @Generated
 public class QueriesGenerated extends QueryProviderBase {
@@ -212,6 +214,44 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.sourceNodeQuery_5233164016162061064(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
+  }
+
+  private final Map<String, InlineSwitchCaseCondition> isccMethods = new HashMap<String, InlineSwitchCaseCondition>();
+
+  {
+    int i = 0;
+    isccMethods.put("5233164016162060881", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5233164016162061000", new QueriesGenerated.ISCC(i++));
+  }
+
+  @NotNull
+  @Override
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
+    final String id = caseNode.getNodeId().toString();
+    if (!(isccMethods.containsKey(id))) {
+      return super.getInlineSwitchCaseCondition(caseNode);
+    }
+    return isccMethods.get(id);
+  }
+
+  private static class ISCC implements InlineSwitchCaseCondition {
+    private final int methodKey;
+
+    public ISCC(int methodKey) {
+      this.methodKey = methodKey;
+    }
+
+    @Override
+    public boolean check(@NotNull InlineSwitchCaseContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.baseMappingRule_Condition_5233164016162060882(ctx);
+        case 1:
+          return QueriesGenerated.baseMappingRule_Condition_5233164016162061001(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for inline switch's case %s (key: #%d)", ctx.getTemplateNode(), methodKey));
       }
     }
   }

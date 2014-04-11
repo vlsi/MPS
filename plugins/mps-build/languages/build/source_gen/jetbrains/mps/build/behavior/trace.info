@@ -675,7 +675,7 @@
     <nodeInfo nodeId="715289236985579997" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="45" startPosition="59" endLine="46" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="715289236985580002" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="47" startPosition="5" endLine="48" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8563603456895534352" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="51" startPosition="96" endLine="52" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8563603456895534360" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="54" startPosition="45" endLine="55" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8563603456895534360" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="54" startPosition="42" endLine="55" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8563603456895534397" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="56" startPosition="7" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8563603456895534374" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="58" startPosition="5" endLine="59" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8563603456895534385" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="59" startPosition="173" endLine="60" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -783,7 +783,7 @@
     <scopeInfo nodeId="2539347366864764593" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="30" startPosition="97" endLine="31" endPosition="189" />
     <scopeInfo nodeId="715289236985533555" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="39" startPosition="84" endLine="40" endPosition="309" />
     <scopeInfo nodeId="715289236985579938" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="45" startPosition="59" endLine="46" endPosition="133" />
-    <scopeInfo nodeId="8563603456895534360" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="54" startPosition="45" endLine="55" endPosition="93" />
+    <scopeInfo nodeId="8563603456895534360" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="54" startPosition="42" endLine="55" endPosition="93" />
     <scopeInfo nodeId="8990969321156036736" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="76" startPosition="39" endLine="77" endPosition="62" />
     <scopeInfo nodeId="8990969321156036957" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="78" startPosition="46" endLine="79" endPosition="62" />
     <scopeInfo nodeId="8990969321156037195" fileName="BuildSourceArchiveRelativePath_Behavior.java" startLine="82" startPosition="40" endLine="83" endPosition="145" />

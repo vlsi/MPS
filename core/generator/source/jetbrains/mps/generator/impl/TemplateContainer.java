@@ -19,6 +19,8 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -34,27 +36,23 @@ import java.util.List;
  * <p>For weave rule/macro there's {@link jetbrains.mps.generator.impl.WeaveTemplateContainer} counterpart.
  * @author Artem Tikhomirov
  */
-public class TemplateContainer {
-  private final TemplateProcessor myTemplateProcessor;
+public class TemplateContainer extends RuleConsequenceProcessor {
   private final SNode myTemplateNode;
   private List<Pair<SNode, String>> myNodeAndMappingNamePairs;
 
-  public TemplateContainer(@NotNull TemplateProcessor templateProcessor, @NotNull SNode templateContainer) {
-    myTemplateProcessor = templateProcessor;
+  public TemplateContainer(@NotNull SNode templateContainer) {
     myTemplateNode = templateContainer;
   }
 
-  public TemplateContainer(@NotNull TemplateProcessor templateProcessor, @NotNull Pair<SNode, String> fragment) {
-    myTemplateProcessor = templateProcessor;
+  public TemplateContainer(@NotNull Pair<SNode, String> fragment) {
     myTemplateNode = null;
     myNodeAndMappingNamePairs = Collections.singletonList(fragment);
   }
 
   /*
-   * Although the method is easy to merge into apply now, I left it looking forward
-   * to container initialization done once for a template, while applied multiple times.
+   * Initialize container once for a template, then apply multiple times.
    */
-  public void initialize() throws TemplateProcessingFailureException {
+  private void initialize() throws TemplateProcessingFailureException {
     if (myNodeAndMappingNamePairs != null) {
       return;
     }
@@ -67,14 +65,18 @@ public class TemplateContainer {
   }
 
   @NotNull
-  public List<SNode> apply(@NotNull TemplateContext ctx)
-      throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
+  @Override
+  public List<SNode> processRuleConsequence(@NotNull TemplateContext ctx)
+      throws GenerationFailureException, DismissTopMappingRuleException, GenerationCanceledException {
+    initialize();
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
-    final GenerationTrace tracer = myTemplateProcessor.getEnvironment().getTrace();
+    final TemplateExecutionEnvironment environment = ctx.getEnvironment();
+    final GenerationTrace tracer = environment.getTrace();
+    ITemplateProcessor templateProcessor = environment.getTemplateProcessor();
     for (Pair<SNode, String> nodeAndMappingNamePair : myNodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String innerMappingName = nodeAndMappingNamePair.o2;
-      List<SNode> _outputNodes = myTemplateProcessor.applyTemplate(templateNode, ctx.subContext(innerMappingName), null);
+      List<SNode> _outputNodes = templateProcessor.apply(templateNode, ctx.subContext(innerMappingName));
       SNode input = ctx.getInput();
       tracer.trace(input == null ? null : input.getNodeId(), GenerationTracerUtil.translateOutput(_outputNodes), templateNode.getReference());
       outputNodes.addAll(_outputNodes);

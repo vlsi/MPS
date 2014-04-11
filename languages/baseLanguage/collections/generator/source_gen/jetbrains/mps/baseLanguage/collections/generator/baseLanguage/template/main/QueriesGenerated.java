@@ -42,6 +42,9 @@ import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.Collection;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
@@ -3752,6 +3755,277 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetPropertyValue_5187796033879438915(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
+  }
+
+  private final Map<String, IfMacroCondition> imcMethods = new HashMap<String, IfMacroCondition>();
+
+  {
+    int i = 0;
+    imcMethods.put("7392128331043440266", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("7880518146485543904", new QueriesGenerated.IfMC(i++));
+  }
+
+  @NotNull
+  @Override
+  public IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro) {
+    final String id = ifMacro.getNodeId().toString();
+    if (!(imcMethods.containsKey(id))) {
+      return super.getIfMacroCondition(ifMacro);
+    }
+    return imcMethods.get(id);
+  }
+
+  private static class IfMC implements IfMacroCondition {
+    private final int methodKey;
+
+    public IfMC(int methodKey) {
+      this.methodKey = methodKey;
+    }
+
+    @Override
+    public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.ifMacro_Condition_7392128331043440267(ctx);
+        case 1:
+          return QueriesGenerated.ifMacro_Condition_7880518146485543905(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateNode(), methodKey));
+      }
+    }
+  }
+
+  private final Map<String, InlineSwitchCaseCondition> isccMethods = new HashMap<String, InlineSwitchCaseCondition>();
+
+  {
+    int i = 0;
+    isccMethods.put("1224452522544", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1224452629032", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("8293956702610561145", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("759302969717704756", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3358009230509288747", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3358009230509288835", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434173386513", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434173386588", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1227368650765", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1227368840235", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1227368862990", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1227368876148", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1227368888547", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1227368901986", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1227368916441", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("1227368937785", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("169948565229766158", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3358009230509160009", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3358009230509159942", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("6034304739317664903", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3358009230509160031", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3358009230509159979", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174665269", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174666806", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174667107", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174665351", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174666869", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174667176", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3002214349487692165", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3002214349487692201", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3002214349487692237", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3002214349487694757", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3002214349487694793", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3002214349487694829", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3002214349487694872", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3002214349487694908", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3002214349487694944", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174665389", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174666925", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174667245", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174665490", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174666980", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("3444116434174667314", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("6034304739317700812", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("6034304739317700848", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("6034304739317700884", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("8420919522916183113", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("8420919522916183149", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("8420919522916183178", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("8420919522916183207", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("8420919522916183236", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("8420919522916183265", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("8420919522916183294", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("8420919522916183323", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033875360931", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033875361001", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033877735846", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033877735877", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033877735899", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033878715735", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033878715757", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033879074428", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033879074459", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033879074473", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033879438776", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("5187796033879438829", new QueriesGenerated.ISCC(i++));
+    isccMethods.put("7880518146486287790", new QueriesGenerated.ISCC(i++));
+  }
+
+  @NotNull
+  @Override
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
+    final String id = caseNode.getNodeId().toString();
+    if (!(isccMethods.containsKey(id))) {
+      return super.getInlineSwitchCaseCondition(caseNode);
+    }
+    return isccMethods.get(id);
+  }
+
+  private static class ISCC implements InlineSwitchCaseCondition {
+    private final int methodKey;
+
+    public ISCC(int methodKey) {
+      this.methodKey = methodKey;
+    }
+
+    @Override
+    public boolean check(@NotNull InlineSwitchCaseContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.baseMappingRule_Condition_1224452522545(ctx);
+        case 1:
+          return QueriesGenerated.baseMappingRule_Condition_1224452629033(ctx);
+        case 2:
+          return QueriesGenerated.baseMappingRule_Condition_8293956702610561146(ctx);
+        case 3:
+          return QueriesGenerated.baseMappingRule_Condition_759302969717704757(ctx);
+        case 4:
+          return QueriesGenerated.baseMappingRule_Condition_3358009230509288748(ctx);
+        case 5:
+          return QueriesGenerated.baseMappingRule_Condition_3358009230509288836(ctx);
+        case 6:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434173386514(ctx);
+        case 7:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434173386589(ctx);
+        case 8:
+          return QueriesGenerated.baseMappingRule_Condition_1227368650766(ctx);
+        case 9:
+          return QueriesGenerated.baseMappingRule_Condition_1227368840236(ctx);
+        case 10:
+          return QueriesGenerated.baseMappingRule_Condition_1227368862991(ctx);
+        case 11:
+          return QueriesGenerated.baseMappingRule_Condition_1227368876149(ctx);
+        case 12:
+          return QueriesGenerated.baseMappingRule_Condition_1227368888548(ctx);
+        case 13:
+          return QueriesGenerated.baseMappingRule_Condition_1227368901987(ctx);
+        case 14:
+          return QueriesGenerated.baseMappingRule_Condition_1227368916442(ctx);
+        case 15:
+          return QueriesGenerated.baseMappingRule_Condition_1227368937786(ctx);
+        case 16:
+          return QueriesGenerated.baseMappingRule_Condition_169948565229766159(ctx);
+        case 17:
+          return QueriesGenerated.baseMappingRule_Condition_3358009230509160010(ctx);
+        case 18:
+          return QueriesGenerated.baseMappingRule_Condition_3358009230509159943(ctx);
+        case 19:
+          return QueriesGenerated.baseMappingRule_Condition_6034304739317664904(ctx);
+        case 20:
+          return QueriesGenerated.baseMappingRule_Condition_3358009230509160032(ctx);
+        case 21:
+          return QueriesGenerated.baseMappingRule_Condition_3358009230509159980(ctx);
+        case 22:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174665270(ctx);
+        case 23:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174666807(ctx);
+        case 24:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174667108(ctx);
+        case 25:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174665352(ctx);
+        case 26:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174666870(ctx);
+        case 27:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174667177(ctx);
+        case 28:
+          return QueriesGenerated.baseMappingRule_Condition_3002214349487692166(ctx);
+        case 29:
+          return QueriesGenerated.baseMappingRule_Condition_3002214349487692202(ctx);
+        case 30:
+          return QueriesGenerated.baseMappingRule_Condition_3002214349487692238(ctx);
+        case 31:
+          return QueriesGenerated.baseMappingRule_Condition_3002214349487694758(ctx);
+        case 32:
+          return QueriesGenerated.baseMappingRule_Condition_3002214349487694794(ctx);
+        case 33:
+          return QueriesGenerated.baseMappingRule_Condition_3002214349487694830(ctx);
+        case 34:
+          return QueriesGenerated.baseMappingRule_Condition_3002214349487694873(ctx);
+        case 35:
+          return QueriesGenerated.baseMappingRule_Condition_3002214349487694909(ctx);
+        case 36:
+          return QueriesGenerated.baseMappingRule_Condition_3002214349487694945(ctx);
+        case 37:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174665390(ctx);
+        case 38:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174666926(ctx);
+        case 39:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174667246(ctx);
+        case 40:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174665491(ctx);
+        case 41:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174666981(ctx);
+        case 42:
+          return QueriesGenerated.baseMappingRule_Condition_3444116434174667315(ctx);
+        case 43:
+          return QueriesGenerated.baseMappingRule_Condition_6034304739317700813(ctx);
+        case 44:
+          return QueriesGenerated.baseMappingRule_Condition_6034304739317700849(ctx);
+        case 45:
+          return QueriesGenerated.baseMappingRule_Condition_6034304739317700885(ctx);
+        case 46:
+          return QueriesGenerated.baseMappingRule_Condition_8420919522916183114(ctx);
+        case 47:
+          return QueriesGenerated.baseMappingRule_Condition_8420919522916183150(ctx);
+        case 48:
+          return QueriesGenerated.baseMappingRule_Condition_8420919522916183179(ctx);
+        case 49:
+          return QueriesGenerated.baseMappingRule_Condition_8420919522916183208(ctx);
+        case 50:
+          return QueriesGenerated.baseMappingRule_Condition_8420919522916183237(ctx);
+        case 51:
+          return QueriesGenerated.baseMappingRule_Condition_8420919522916183266(ctx);
+        case 52:
+          return QueriesGenerated.baseMappingRule_Condition_8420919522916183295(ctx);
+        case 53:
+          return QueriesGenerated.baseMappingRule_Condition_8420919522916183324(ctx);
+        case 54:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033875360932(ctx);
+        case 55:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033875361002(ctx);
+        case 56:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033877735847(ctx);
+        case 57:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033877735878(ctx);
+        case 58:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033877735900(ctx);
+        case 59:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033878715736(ctx);
+        case 60:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033878715758(ctx);
+        case 61:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033879074429(ctx);
+        case 62:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033879074460(ctx);
+        case 63:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033879074474(ctx);
+        case 64:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033879438777(ctx);
+        case 65:
+          return QueriesGenerated.baseMappingRule_Condition_5187796033879438830(ctx);
+        case 66:
+          return QueriesGenerated.baseMappingRule_Condition_7880518146486287791(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for inline switch's case %s (key: #%d)", ctx.getTemplateNode(), methodKey));
       }
     }
   }

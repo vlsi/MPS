@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -41,7 +41,7 @@ public class ShowHelpForNode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ShowHelpForNode", t);
       }
       this.disable(event.getPresentation());
@@ -70,7 +70,7 @@ public class ShowHelpForNode_Action extends BaseAction {
     try {
       HelpHelper.showHelpForNode(((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowHelpForNode", t);
       }
     }

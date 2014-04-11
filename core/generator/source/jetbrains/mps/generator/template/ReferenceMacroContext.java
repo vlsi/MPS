@@ -32,6 +32,11 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   private SNode myOutputNode;
   private String myRole;
 
+  /**
+   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public ReferenceMacroContext(SNode node, SNode outputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myOutputNode = outputNode;
@@ -39,7 +44,7 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   }
 
   /**
-   * @deprecated use {@link #ReferenceMacroContext(TemplateContext, SNode, SNodeReference, String, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #ReferenceMacroContext(TemplateContext, SNode, SNodeReference, String)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
@@ -53,8 +58,8 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   /**
    * @since 3.1
    */
-  public ReferenceMacroContext(@NotNull TemplateContext context, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull String role, @NotNull ITemplateGenerator generator) {
-    super(context, macroNode, generator);
+  public ReferenceMacroContext(@NotNull TemplateContext context, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull String role) {
+    super(context, macroNode);
     myOutputNode = outputNode;
     myRole = role;
   }

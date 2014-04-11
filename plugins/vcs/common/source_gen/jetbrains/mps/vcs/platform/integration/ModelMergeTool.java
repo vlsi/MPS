@@ -13,7 +13,7 @@ import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -46,7 +46,7 @@ public class ModelMergeTool extends MergeTool {
     try {
       final Wrappers._T<VirtualFile> file = new Wrappers._T<VirtualFile>(getFileFromMergeRequest(mrequest));
       if (file.value == null) {
-        if (LOG_705910402.isEnabledFor(Priority.ERROR)) {
+        if (LOG_705910402.isEnabledFor(Level.ERROR)) {
           LOG_705910402.error("No file");
         }
         file.value = LocalFileSystem.getInstance().findFileByPath("/");
@@ -63,7 +63,7 @@ public class ModelMergeTool extends MergeTool {
       SModel mineModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), ext.value);
       SModel newModel = PersistenceUtil.loadModel(new String(contents[MergeConstants.LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), ext.value);
       if (baseModel == null || mineModel == null || newModel == null) {
-        if (LOG_705910402.isEnabledFor(Priority.WARN)) {
+        if (LOG_705910402.isEnabledFor(Level.WARN)) {
           LOG_705910402.warn("Couldn't read model, invoking text merge");
         }
         super.show(request);
@@ -126,7 +126,7 @@ public class ModelMergeTool extends MergeTool {
         try {
           modelFile.setBinaryContent(result.getBytes(FileUtil.DEFAULT_CHARSET));
         } catch (IOException e) {
-          if (LOG_705910402.isEnabledFor(Priority.ERROR)) {
+          if (LOG_705910402.isEnabledFor(Level.ERROR)) {
             LOG_705910402.error("", e);
           }
         }

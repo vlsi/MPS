@@ -759,21 +759,21 @@
     <nodeInfo nodeId="3719390199793466553" fileName="ModelChecker.java" startLine="49" startPosition="27" endLine="50" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3719390199793466559" fileName="ModelChecker.java" startLine="50" startPosition="45" endLine="51" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3719390199793466565" fileName="ModelChecker.java" startLine="51" startPosition="60" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3719390199793466568" fileName="ModelChecker.java" startLine="54" startPosition="50" endLine="55" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3719390199793466580" fileName="ModelChecker.java" startLine="59" startPosition="50" endLine="60" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793466568" fileName="ModelChecker.java" startLine="54" startPosition="47" endLine="55" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793466580" fileName="ModelChecker.java" startLine="59" startPosition="47" endLine="60" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199793466590" fileName="ModelChecker.java" startLine="62" startPosition="11" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3719390199793466600" fileName="ModelChecker.java" startLine="64" startPosition="50" endLine="65" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3719390199793466611" fileName="ModelChecker.java" startLine="65" startPosition="112" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3719390199793466617" fileName="ModelChecker.java" startLine="68" startPosition="19" endLine="69" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3719390199793466631" fileName="ModelChecker.java" startLine="69" startPosition="179" endLine="70" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3719390199793466640" fileName="ModelChecker.java" startLine="72" startPosition="55" endLine="73" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793466640" fileName="ModelChecker.java" startLine="72" startPosition="52" endLine="73" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199793466656" fileName="ModelChecker.java" startLine="76" startPosition="41" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3719390199793466659" fileName="ModelChecker.java" startLine="83" startPosition="15" endLine="84" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199793466667" fileName="ModelChecker.java" startLine="88" startPosition="62" endLine="89" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3719390199793466673" fileName="ModelChecker.java" startLine="92" startPosition="50" endLine="93" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3719390199793466679" fileName="ModelChecker.java" startLine="96" startPosition="75" endLine="97" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199793466697" fileName="ModelChecker.java" startLine="101" startPosition="92" endLine="102" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3719390199793466706" fileName="ModelChecker.java" startLine="107" startPosition="44" endLine="108" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793466706" fileName="ModelChecker.java" startLine="107" startPosition="41" endLine="108" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199793466708" fileName="ModelChecker.java" startLine="109" startPosition="7" endLine="110" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3719390199793466458" fileName="ModelChecker.java" startLine="114" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3719390199793466482" fileName="ModelChecker.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelChecker#(Ljetbrains/mps/smodel/IOperationContext;)V" />
@@ -804,16 +804,16 @@
     <nodeInfo nodeId="3719390199793466510" fileName="ModelChecker.java" startLine="40" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
     <scopeInfo nodeId="3719390199793466484" fileName="ModelChecker.java" startLine="31" startPosition="59" endLine="32" endPosition="67" />
     <scopeInfo nodeId="3719390199793466526" fileName="ModelChecker.java" startLine="42" startPosition="41" endLine="43" endPosition="88" />
-    <scopeInfo nodeId="3719390199793466568" fileName="ModelChecker.java" startLine="54" startPosition="50" endLine="55" endPosition="80" />
-    <scopeInfo nodeId="3719390199793466580" fileName="ModelChecker.java" startLine="59" startPosition="50" endLine="60" endPosition="102" />
-    <scopeInfo nodeId="3719390199793466640" fileName="ModelChecker.java" startLine="72" startPosition="55" endLine="73" endPosition="90" />
+    <scopeInfo nodeId="3719390199793466568" fileName="ModelChecker.java" startLine="54" startPosition="47" endLine="55" endPosition="80" />
+    <scopeInfo nodeId="3719390199793466580" fileName="ModelChecker.java" startLine="59" startPosition="47" endLine="60" endPosition="102" />
+    <scopeInfo nodeId="3719390199793466640" fileName="ModelChecker.java" startLine="72" startPosition="52" endLine="73" endPosition="90" />
     <scopeInfo nodeId="3719390199793466655" fileName="ModelChecker.java" startLine="76" startPosition="41" endLine="77" endPosition="22" />
     <scopeInfo nodeId="3719390199793466658" fileName="ModelChecker.java" startLine="83" startPosition="15" endLine="84" endPosition="21" />
     <scopeInfo nodeId="3719390199793466666" fileName="ModelChecker.java" startLine="88" startPosition="62" endLine="89" endPosition="21" />
     <scopeInfo nodeId="3719390199793466672" fileName="ModelChecker.java" startLine="92" startPosition="50" endLine="93" endPosition="30" />
     <scopeInfo nodeId="3719390199793466678" fileName="ModelChecker.java" startLine="96" startPosition="75" endLine="97" endPosition="42" />
     <scopeInfo nodeId="3719390199793466696" fileName="ModelChecker.java" startLine="101" startPosition="92" endLine="102" endPosition="29" />
-    <scopeInfo nodeId="3719390199793466706" fileName="ModelChecker.java" startLine="107" startPosition="44" endLine="108" endPosition="82" />
+    <scopeInfo nodeId="3719390199793466706" fileName="ModelChecker.java" startLine="107" startPosition="41" endLine="108" endPosition="82" />
     <scopeInfo nodeId="3719390199793466500" fileName="ModelChecker.java" startLine="35" startPosition="101" endLine="37" endPosition="42" />
     <scopeInfo nodeId="3719390199793466616" fileName="ModelChecker.java" startLine="68" startPosition="19" endLine="70" endPosition="76">
       <varInfo nodeId="3719390199793466618" varName="specificCheckerResults" />
@@ -1557,7 +1557,7 @@
   </root>
   <root nodeRef="r:5754bb7d-f802-4a0f-bd3d-0764f0d71413(jetbrains.mps.ide.modelchecker.platform.actions)/3719390199795290578">
     <nodeInfo nodeId="3719390199795290583" fileName="SpecificChecker.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="3719390199795290609" fileName="SpecificChecker.java" startLine="30" startPosition="47" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199795290609" fileName="SpecificChecker.java" startLine="30" startPosition="44" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199795290613" fileName="SpecificChecker.java" startLine="33" startPosition="7" endLine="34" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199795290652" fileName="SpecificChecker.java" startLine="40" startPosition="17" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3719390199795290656" fileName="SpecificChecker.java" startLine="42" startPosition="19" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1586,7 +1586,7 @@
       <varInfo nodeId="3719390199795290593" varName="operationContext" />
       <varInfo nodeId="3719390199795290591" varName="progressContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3719390199795290609" fileName="SpecificChecker.java" startLine="30" startPosition="47" endLine="31" endPosition="81" />
+    <scopeInfo nodeId="3719390199795290609" fileName="SpecificChecker.java" startLine="30" startPosition="44" endLine="31" endPosition="81" />
     <scopeInfo nodeId="3719390199795290651" fileName="SpecificChecker.java" startLine="40" startPosition="17" endLine="41" endPosition="43" />
     <scopeInfo nodeId="3719390199795290655" fileName="SpecificChecker.java" startLine="42" startPosition="19" endLine="43" endPosition="45" />
     <scopeInfo nodeId="3719390199795290660" fileName="SpecificChecker.java" startLine="44" startPosition="14" endLine="45" endPosition="42" />
@@ -1935,7 +1935,7 @@
     <nodeInfo nodeId="8625453562034776580" fileName="ModuleChecker.java" startLine="26" startPosition="174" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3512285793933582738" fileName="ModuleChecker.java" startLine="29" startPosition="50" endLine="30" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3512285793933582770" fileName="ModuleChecker.java" startLine="30" startPosition="176" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3719390199795829434" fileName="ModuleChecker.java" startLine="34" startPosition="45" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199795829434" fileName="ModuleChecker.java" startLine="34" startPosition="42" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199795829347" fileName="ModuleChecker.java" startLine="37" startPosition="15" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199795829452" fileName="ModuleChecker.java" startLine="42" startPosition="62" endLine="43" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3719390199795829319" fileName="ModuleChecker.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1948,7 +1948,7 @@
     <nodeInfo nodeId="3719390199795829345" fileName="ModuleChecker.java" startLine="22" startPosition="73" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="3719390199795829331" fileName="ModuleChecker.java" startLine="20" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModule#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
     <scopeInfo nodeId="3719390199795829330" fileName="ModuleChecker.java" startLine="17" startPosition="26" endLine="17" endPosition="26" />
-    <scopeInfo nodeId="3719390199795829434" fileName="ModuleChecker.java" startLine="34" startPosition="45" endLine="35" endPosition="71" />
+    <scopeInfo nodeId="3719390199795829434" fileName="ModuleChecker.java" startLine="34" startPosition="42" endLine="35" endPosition="71" />
     <scopeInfo nodeId="3719390199795829346" fileName="ModuleChecker.java" startLine="37" startPosition="15" endLine="38" endPosition="21" />
     <scopeInfo nodeId="3719390199795829451" fileName="ModuleChecker.java" startLine="42" startPosition="62" endLine="43" endPosition="21" />
     <scopeInfo nodeId="3719390199795829327" fileName="ModuleChecker.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />

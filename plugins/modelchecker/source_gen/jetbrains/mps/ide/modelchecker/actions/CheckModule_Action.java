@@ -12,7 +12,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
@@ -62,7 +62,7 @@ public class CheckModule_Action extends BaseAction {
 
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "CheckModule", t);
       }
       this.disable(event.getPresentation());
@@ -106,7 +106,7 @@ public class CheckModule_Action extends BaseAction {
         ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModule(modulesToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CheckModule", t);
       }
     }

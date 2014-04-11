@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -62,7 +62,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ConvertToBinaryPersistence", t);
       }
       this.disable(event.getPresentation());
@@ -106,7 +106,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
             IFile oldFile = ((FileDataSource) smodel.getSource()).getFile();
             SModel newModel = PersistenceUtil.loadModel(oldFile);
             if (newModel == null) {
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("cannot read " + smodel);
               }
               continue;
@@ -118,7 +118,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
               }
             });
             if (Sequence.fromIterable(problems).isNotEmpty()) {
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("cannot read " + smodel + ": " + Sequence.fromIterable(problems).first().getText());
               }
               continue;
@@ -134,12 +134,12 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
               oldFile.delete();
               ((AbstractModule) module).updateModelsSet();
             } catch (IOException ex) {
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("cannot write " + smodel, ex);
               }
             } catch (ModelSaveException ex) {
               // shouldn't happen 
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("cannot write " + smodel, ex);
               }
             }
@@ -147,7 +147,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ConvertToBinaryPersistence", t);
       }
     }

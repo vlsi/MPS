@@ -28,13 +28,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * It extends BaseMappingRuleContext (not TemplateQueryContextWithRule directly) because a lot of code
  * (QueriesGenerated class) expects BaseMappingRuleContext in their baseMappingRule_xxx_checkCondition()
  * @author Artem Tikhomirov
+ * @since 3.1
  */
 public class ReductionRuleQueryContext extends BaseMappingRuleContext {
-  public ReductionRuleQueryContext(@NotNull TemplateContext templateContext, @NotNull SNode ruleNode, @NotNull ITemplateGenerator generator) {
-    super(templateContext, ruleNode.getReference(), generator);
-  }
-
-  public ReductionRuleQueryContext(@NotNull TemplateContext templateContext, @NotNull SNodeReference ruleNodeRef, @NotNull ITemplateGenerator generator) {
-    super(templateContext, ruleNodeRef, generator);
+  public ReductionRuleQueryContext(@NotNull TemplateContext templateContext, @NotNull SNodeReference ruleNodeRef) {
+    super(templateContext, ruleNodeRef);
   }
 }

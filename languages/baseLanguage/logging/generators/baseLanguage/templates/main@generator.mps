@@ -9,7 +9,7 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <import index="tpjx" modelUID="r:00000000-0000-4000-0000-011c89590581(jetbrains.mps.baseLanguage.logging.util)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
@@ -286,8 +286,8 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1207737142033" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fagr.~Category%disDebugEnabled()%cboolean" resolveInfo="isDebugEnabled" />
-                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1210168908728" nodeInfo="nn">
-                      <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1210168677734" resolveInfo="switch_IsEnabled" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateSwitchMacro" typeId="tpf8.982871510068000147" id="3565042316596700004" nodeInfo="ng">
+                      <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210168677734" resolveInfo="switch_IsEnabled" />
                     </node>
                   </node>
                 </node>
@@ -751,8 +751,8 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fagr.~Category%disEnabledFor(org%dapache%dlog4j%dPriority)%cboolean" resolveInfo="isEnabledFor" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2423165640493160323" nodeInfo="ng" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5548342346323400294" nodeInfo="nn">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Priority" resolveInfo="Priority" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Priority%dFATAL" resolveInfo="FATAL" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Level" resolveInfo="Level" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Level%dFATAL" resolveInfo="FATAL" />
                       </node>
                     </node>
                   </node>
@@ -802,8 +802,8 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fagr.~Category%disEnabledFor(org%dapache%dlog4j%dPriority)%cboolean" resolveInfo="isEnabledFor" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2423165640493160311" nodeInfo="ng" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5548342346323394874" nodeInfo="nn">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Priority" resolveInfo="Priority" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Priority%dERROR" resolveInfo="ERROR" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Level" resolveInfo="Level" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Level%dERROR" resolveInfo="ERROR" />
                       </node>
                     </node>
                   </node>
@@ -853,8 +853,8 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fagr.~Category%disEnabledFor(org%dapache%dlog4j%dPriority)%cboolean" resolveInfo="isEnabledFor" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2423165640493160299" nodeInfo="ng" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5548342346323372066" nodeInfo="nn">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Priority" resolveInfo="Priority" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Priority%dWARN" resolveInfo="WARN" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Level" resolveInfo="Level" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Level%dWARN" resolveInfo="WARN" />
                       </node>
                     </node>
                   </node>

@@ -23,7 +23,7 @@ import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import com.intellij.util.io.IOUtil;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -296,7 +296,7 @@ public class TestOutputComponent implements TestView {
         stream.flush();
         ListSequence.fromList(myChildren).clear();
       } catch (IOException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Cant write messages for " + myMethod, e);
         }
       } finally {
@@ -334,7 +334,7 @@ public class TestOutputComponent implements TestView {
             }
 
           } catch (IOException e) {
-            if (LOG.isEnabledFor(Priority.ERROR)) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error("Cant read messages for test " + myMethod, e);
             }
           } finally {

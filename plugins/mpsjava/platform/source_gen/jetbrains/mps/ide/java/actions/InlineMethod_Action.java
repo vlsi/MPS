@@ -17,7 +17,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -63,7 +63,7 @@ public class InlineMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "InlineMethod", t);
       }
       this.disable(event.getPresentation());
@@ -113,7 +113,7 @@ public class InlineMethod_Action extends BaseAction {
       dialog.tryToShow(((Frame) MapSequence.fromMap(_params).get("frame")));
       dialog.pack();
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "InlineMethod", t);
       }
     }

@@ -21,7 +21,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -108,7 +108,7 @@ public class CommandUtil {
     try {
       ProjectHelper.toIdeaProject(p).getComponent(UsagesViewTool.class).show(results, "No results to show");
     } catch (Exception e) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Exception in showing custom console result", e);
       }
     }

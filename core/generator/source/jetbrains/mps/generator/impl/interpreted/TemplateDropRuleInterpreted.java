@@ -52,6 +52,6 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
     if (myCondition == null) {
       myCondition = environment.getQueryProvider(getRuleNode()).getDropRuleCondition(myRuleNode);
     }
-    return myCondition.check(new DropRootRuleContext(context.getInput(), myRuleNode, environment.getGenerator()));
+    return myCondition.check(new DropRootRuleContext(context, getRuleNode()));
   }
 }

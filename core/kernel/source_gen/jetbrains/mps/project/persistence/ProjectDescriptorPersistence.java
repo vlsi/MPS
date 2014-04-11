@@ -14,7 +14,7 @@ import jetbrains.mps.util.xml.XmlUtil;
 import java.io.OutputStream;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ public class ProjectDescriptorPersistence {
       Document doc = new Document(projectElement);
       JDOMUtil.writeDocument(doc, os);
     } catch (Exception e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);
       }
     }

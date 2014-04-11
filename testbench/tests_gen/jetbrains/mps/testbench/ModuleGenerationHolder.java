@@ -90,7 +90,7 @@ public class ModuleGenerationHolder {
 
 
 
-  public void build() {
+  public void build() throws Exception {
     if (!(needsGeneration(module))) {
       isSucessful = true;
       return;
@@ -106,6 +106,7 @@ public class ModuleGenerationHolder {
 
     final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
     ModelAccess.instance().flushEventQueue();
+    final Exception[] exceptions = new Exception[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         IOperationContext context = new ProjectOperationContext(project);
@@ -129,12 +130,17 @@ public class ModuleGenerationHolder {
           };
 
           result.value = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
-        } catch (InterruptedException ignore) {
-        } catch (ExecutionException ignore) {
+        } catch (InterruptedException ex) {
+          exceptions[0] = ex;
+        } catch (ExecutionException ex) {
+          exceptions[0] = ex;
         }
       }
     });
     ModelAccess.instance().flushEventQueue();
+    if (exceptions[0] != null) {
+      throw exceptions[0];
+    }
     isSucessful = result.value.isSucessful();
   }
 

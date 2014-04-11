@@ -24,13 +24,18 @@ import org.jetbrains.annotations.NotNull;
 public class PropertyMacroContext extends TemplateQueryContextWithMacro {
   private String myTemplateValue;
 
+  /**
+   * @deprecated use {@link #PropertyMacroContext(jetbrains.mps.generator.runtime.TemplateContext, String, org.jetbrains.mps.openapi.model.SNodeReference)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public PropertyMacroContext(SNode node, String templateValue, SNode macroNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myTemplateValue = templateValue;
   }
 
   /**
-   * @deprecated use {@link #PropertyMacroContext(TemplateContext, String, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #PropertyMacroContext(TemplateContext, String, SNodeReference)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
@@ -43,8 +48,8 @@ public class PropertyMacroContext extends TemplateQueryContextWithMacro {
   /**
    * @since 3.1
    */
-  public PropertyMacroContext(@NotNull TemplateContext context, String templateValue, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
-    super(context, macroNode, generator);
+  public PropertyMacroContext(@NotNull TemplateContext context, String templateValue, @NotNull SNodeReference macroNode) {
+    super(context, macroNode);
     myTemplateValue = templateValue;
   }
 

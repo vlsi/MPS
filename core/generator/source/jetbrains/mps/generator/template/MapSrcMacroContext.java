@@ -24,13 +24,18 @@ import org.jetbrains.annotations.NotNull;
 public class MapSrcMacroContext extends TemplateQueryContextWithMacro {
   private SNode myParentOutputNode;
 
+  /**
+   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public MapSrcMacroContext(SNode node, SNode macroNode, SNode parentOutputNode, TemplateContext context, ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myParentOutputNode = parentOutputNode;
   }
 
   /**
-   * @deprecated use {@link #MapSrcMacroContext(TemplateContext, SNode, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #MapSrcMacroContext(TemplateContext, SNode, SNodeReference)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
@@ -43,8 +48,8 @@ public class MapSrcMacroContext extends TemplateQueryContextWithMacro {
   /**
    * @since 3.1
    */
-  public MapSrcMacroContext(@NotNull TemplateContext context, SNode parentOutputNode, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
-    super(context, macroNode, generator);
+  public MapSrcMacroContext(@NotNull TemplateContext context, SNode parentOutputNode, @NotNull SNodeReference macroNode) {
+    super(context, macroNode);
     myParentOutputNode = parentOutputNode;
   }
 

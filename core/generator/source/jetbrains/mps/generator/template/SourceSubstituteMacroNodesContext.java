@@ -31,13 +31,18 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithMacro {
   private final SNodeReference myRulePointer;
 
+  /**
+   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public SourceSubstituteMacroNodesContext(SNode node, SNode ruleNode, SNode macroNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myRulePointer = ruleNode == null ? null : ruleNode.getReference();
   }
 
   /**
-   * @deprecated use {@link #SourceSubstituteMacroNodesContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #SourceSubstituteMacroNodesContext(TemplateContext, SNodeReference)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
@@ -50,8 +55,8 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithM
   /**
    * @since 3.1
    */
-  public SourceSubstituteMacroNodesContext(@NotNull TemplateContext context, @NotNull SNodeReference templateNode, @NotNull ITemplateGenerator generator) {
-    super(context, templateNode, generator);
+  public SourceSubstituteMacroNodesContext(@NotNull TemplateContext context, @NotNull SNodeReference templateNode) {
+    super(context, templateNode);
     myRulePointer = null;
   }
 

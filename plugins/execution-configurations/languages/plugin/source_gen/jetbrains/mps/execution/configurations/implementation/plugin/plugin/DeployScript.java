@@ -27,7 +27,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.smodel.ModelAccess;
@@ -80,7 +80,7 @@ public class DeployScript {
       } catch (ExecutionException ignore) {
       }
       if (result == null || !(result.isSucessful())) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can not generate deploy script");
         }
         return null;

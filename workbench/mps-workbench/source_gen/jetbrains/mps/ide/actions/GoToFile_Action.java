@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -33,7 +33,7 @@ public class GoToFile_Action extends BaseAction {
     try {
       GoToFile_Action.this.action.update(event);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "GoToFile", t);
       }
       this.disable(event.getPresentation());
@@ -52,7 +52,7 @@ public class GoToFile_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.file");
       GoToFile_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "GoToFile", t);
       }
     }

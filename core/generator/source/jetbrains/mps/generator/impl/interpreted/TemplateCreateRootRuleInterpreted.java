@@ -20,10 +20,7 @@ import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
-import jetbrains.mps.generator.impl.TemplateProcessingFailureException;
-import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
-import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -57,10 +54,10 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
   }
 
   @Override
-  public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationCanceledException, TemplateProcessingFailureException, GenerationFailureException, DismissTopMappingRuleException {
+  public Collection<SNode> apply(TemplateExecutionEnvironment environment) throws GenerationCanceledException, GenerationFailureException, DismissTopMappingRuleException {
     SNode templateNode = RuleUtil.getCreateRootRuleTemplateNode(myRuleNode);
     if (templateNode != null) {
-      return new TemplateProcessor(environment).apply(templateNode, new DefaultTemplateContext(myMappingName, null));
+      return environment.getTemplateProcessor().apply(templateNode, new DefaultTemplateContext(environment, null, myMappingName));
     } else {
       environment.getLogger().error(getRuleNode(), "'create root' rule has no template");
       return null;

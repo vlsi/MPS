@@ -50,7 +50,7 @@ import java.util.Iterator;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.cleanup.CleanupManager;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -283,7 +283,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   ListSequence.fromList(currentInput).clear();
                 }
               } catch (Exception e) {
-                if (LOG.isEnabledFor(Priority.ERROR)) {
+                if (LOG.isEnabledFor(Level.ERROR)) {
                   LOG.error("Exception while textGen", e);
                 }
                 throw new RuntimeException(e);

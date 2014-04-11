@@ -20,6 +20,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.template.ITemplateProcessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -44,10 +45,11 @@ public class WeaveTemplateContainer {
     myFragments = extractTemplateFragmentsForWeaving(log);
   }
 
-  public void apply(SNode outputContextNode, @NotNull TemplateContext context, @NotNull TemplateExecutionEnvironment env)
+  public void apply(SNode outputContextNode, @NotNull TemplateContext context)
       throws GenerationFailureException, GenerationCanceledException {
     // for each template fragment create output nodes
-    TemplateProcessor templateProcessor = new TemplateProcessor(env);
+    TemplateExecutionEnvironment env = context.getEnvironment();
+    ITemplateProcessor templateProcessor = env.getTemplateProcessor();
     for (SNode templateFragment : myFragments) {
       SNode templateFragmentNode = templateFragment.getParent();
       SNode contextParentNode = null;

@@ -11,7 +11,7 @@ import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.util.FileUtil;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -56,7 +56,7 @@ import org.apache.log4j.LogManager;
     SModel localModel = PersistenceUtil.loadModel(new String(localContent.getData(), FileUtil.DEFAULT_CHARSET), ext);
     SModel latestModel = PersistenceUtil.loadModel(new String(latestContent.getData(), FileUtil.DEFAULT_CHARSET), ext);
     if (baseModel == null || localModel == null || latestModel == null) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Error while reading models");
       }
       return backup(baseContent, localContent, latestContent);
@@ -69,13 +69,13 @@ import org.apache.log4j.LogManager;
     if (baseP >= 7 && localP >= 7 && latestP >= 7 || baseP < 7 && localP < 7 && latestP < 7) {
       // ok, can merge 
     } else {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error(String.format("%s: Conflicting model persistence versions", myModelName));
       }
       return backup(baseContent, localContent, latestContent);
     }
     if (!(persistenceEnv.isConsistent())) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error(String.format("%s: Inconsistent structure ids or import versions", myModelName));
       }
       return backup(baseContent, localContent, latestContent);
@@ -113,7 +113,7 @@ import org.apache.log4j.LogManager;
             resultString = PersistenceUtil.saveModel(mergeSession.getResultModel(), ext);
           }
           if (resultString == null) {
-            if (LOG.isEnabledFor(Priority.ERROR)) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error("Error while saving result model");
             }
             return backup(baseContent, localContent, latestContent);
@@ -130,7 +130,7 @@ import org.apache.log4j.LogManager;
         }
       }
     } catch (Throwable e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Exception while merging", e);
       }
       return backup(baseContent, localContent, latestContent);
@@ -148,7 +148,7 @@ import org.apache.log4j.LogManager;
         }
       }
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error(String.format("%s: exception while backuping", myModelName), e);
       }
     }

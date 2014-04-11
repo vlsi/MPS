@@ -11,7 +11,7 @@ import java.util.Collections;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -114,7 +114,7 @@ public abstract class AbstractUiState {
         try {
           command.invoke();
         } catch (Throwable t) {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("", t);
           }
         }

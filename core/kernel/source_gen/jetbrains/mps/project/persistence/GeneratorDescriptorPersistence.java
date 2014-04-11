@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -82,7 +82,7 @@ public class GeneratorDescriptorPersistence {
             final RuleType result_wk2vdq_a0a1a0a32a0a0a0b = RuleType.parse(ruleElement.getAttributeValue("kind"));
             result_wk2vdq_a0a32a0a0a0b.setType(result_wk2vdq_a0a1a0a32a0a0a0b);
           } catch (IllegalArgumentException e) {
-            if (LOG.isEnabledFor(Priority.ERROR)) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
               LOG.error(e.getMessage() + " Rule type for generator " + genUID + " is set to EQUALS. You can change this in Generator Properties dialog.", e);
             }
             final RuleType result_wk2vdq_a1a0b0a0x0a0a0a1 = RuleType.STRICTLY_TOGETHER;
