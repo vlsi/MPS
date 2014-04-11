@@ -27,6 +27,7 @@ public class RectangleNode_Editor extends DefaultNodeEditor {
     BlockCell editorCell = new RectangleNode_Editor.BlockCellImpl_t2nwzx_a(editorContext, node);
     editorCell.setCellId("DiagramNode_t2nwzx_a");
     editorCell.setBig(true);
+    DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 
