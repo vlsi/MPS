@@ -51,8 +51,8 @@
     <nodeInfo nodeId="4868576097550570778" fileName="MPSModulesClosure.java" startLine="178" startPosition="62" endLine="179" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1500819558096511942" fileName="MPSModulesClosure.java" startLine="184" startPosition="39" endLine="185" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1500819558096512017" fileName="MPSModulesClosure.java" startLine="188" startPosition="37" endLine="189" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="199" startPosition="43" endLine="200" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="203" startPosition="41" endLine="204" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="199" startPosition="43" endLine="200" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="203" startPosition="41" endLine="204" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1500819558096520290" fileName="MPSModulesClosure.java" startLine="216" startPosition="43" endLine="217" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1500819558096520353" fileName="MPSModulesClosure.java" startLine="220" startPosition="41" endLine="221" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1509505007519856879" fileName="MPSModulesClosure.java" startLine="228" startPosition="100" endLine="229" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -149,8 +149,8 @@
     <nodeInfo nodeId="4267986820121125117" fileName="MPSModulesClosure.java" startLine="171" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1500819558096511938" fileName="MPSModulesClosure.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1500819558096512013" fileName="MPSModulesClosure.java" startLine="188" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="199" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="203" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="199" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="203" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1500819558096520286" fileName="MPSModulesClosure.java" startLine="216" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1500819558096520349" fileName="MPSModulesClosure.java" startLine="220" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1509505007519856888" fileName="MPSModulesClosure.java" startLine="231" startPosition="59" endLine="234" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -258,8 +258,8 @@
     <scopeInfo nodeId="4267986820121125118" fileName="MPSModulesClosure.java" startLine="171" startPosition="42" endLine="172" endPosition="158" />
     <scopeInfo nodeId="1500819558096511939" fileName="MPSModulesClosure.java" startLine="184" startPosition="39" endLine="185" endPosition="119" />
     <scopeInfo nodeId="1500819558096512014" fileName="MPSModulesClosure.java" startLine="188" startPosition="37" endLine="189" endPosition="155" />
-    <scopeInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="199" startPosition="43" endLine="200" endPosition="76" />
-    <scopeInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="203" startPosition="41" endLine="204" endPosition="66" />
+    <scopeInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="199" startPosition="43" endLine="200" endPosition="76" />
+    <scopeInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="203" startPosition="41" endLine="204" endPosition="66" />
     <scopeInfo nodeId="1500819558096520287" fileName="MPSModulesClosure.java" startLine="216" startPosition="43" endLine="217" endPosition="129" />
     <scopeInfo nodeId="1500819558096520350" fileName="MPSModulesClosure.java" startLine="220" startPosition="41" endLine="221" endPosition="167" />
     <scopeInfo nodeId="1509505007519856894" fileName="MPSModulesClosure.java" startLine="232" startPosition="35" endLine="233" endPosition="68" />
@@ -349,11 +349,11 @@
     <scopeInfo nodeId="1500819558096512013" fileName="MPSModulesClosure.java" startLine="188" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="1500819558096512013" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="199" startPosition="0" endLine="202" endPosition="0">
-      <varInfo nodeId="1500819558096520531" varName="it" />
+    <scopeInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="199" startPosition="0" endLine="202" endPosition="0">
+      <varInfo nodeId="1500819558096520559" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="203" startPosition="0" endLine="206" endPosition="0">
-      <varInfo nodeId="1500819558096520531" varName="it" />
+    <scopeInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="203" startPosition="0" endLine="206" endPosition="0">
+      <varInfo nodeId="1500819558096520559" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1500819558096520286" fileName="MPSModulesClosure.java" startLine="216" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="1500819558096520286" varName="it" />
@@ -565,8 +565,8 @@
     <unitInfo nodeId="4267986820121125117" fileName="MPSModulesClosure.java" startLine="170" startPosition="22" endLine="174" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$16" />
     <unitInfo nodeId="1500819558096511938" fileName="MPSModulesClosure.java" startLine="183" startPosition="65" endLine="187" endPosition="5" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$16" />
     <unitInfo nodeId="1500819558096512013" fileName="MPSModulesClosure.java" startLine="187" startPosition="18" endLine="191" endPosition="5" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$17" />
-    <unitInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="198" startPosition="98" endLine="202" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$19" />
-    <unitInfo nodeId="1500819558096520531" fileName="MPSModulesClosure.java" startLine="202" startPosition="22" endLine="206" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$19" />
+    <unitInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="198" startPosition="98" endLine="202" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$19" />
+    <unitInfo nodeId="1500819558096520559" fileName="MPSModulesClosure.java" startLine="202" startPosition="22" endLine="206" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$19" />
     <unitInfo nodeId="1500819558096520286" fileName="MPSModulesClosure.java" startLine="215" startPosition="67" endLine="219" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$20" />
     <unitInfo nodeId="1500819558096520349" fileName="MPSModulesClosure.java" startLine="219" startPosition="22" endLine="223" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$20" />
     <unitInfo nodeId="7525356604724002265" fileName="MPSModulesClosure.java" startLine="337" startPosition="102" endLine="341" endPosition="9" unitName="jetbrains.mps.build.mps.util.MPSModulesClosure$21" />
