@@ -189,10 +189,9 @@ public class PerformanceTracer implements IPerformanceTracer {
         for (int i = 0; i < indent; i++) {
           sb.append("  ");
         }
-        if (tasks.isEmpty()) {
-          sb.append("- ");
-        }
         sb.append(name);
+        sb.append(':');
+        sb.append(invocationCount);
         sb.append(": ");
         sb.append(executionTime / 1000000.);
         sb.append(" ms");
