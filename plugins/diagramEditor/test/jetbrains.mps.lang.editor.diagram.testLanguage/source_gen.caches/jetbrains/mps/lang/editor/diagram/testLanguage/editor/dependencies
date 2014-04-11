@@ -101,7 +101,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramNodeView" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.figures.library.MPSRectView" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.figures.sandbox.MPSRectView" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
