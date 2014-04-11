@@ -19,13 +19,11 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
-import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -35,14 +33,6 @@ import java.util.List;
 
 
 public class GeneratorUtil {
-
-  @NotNull
-  public static TemplateContext createConsequenceContext(@NotNull TemplateContext outerContext, @NotNull SNode consequence) throws GenerationFailureException {
-    if (consequence.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_ITemplateCall))) {
-      return new TemplateCall(consequence).prepareCallContext(outerContext);
-    }
-    return outerContext;
-  }
 
   /**
    * XXX this is merely a single location for future refactoring of the approach to get concept name

@@ -31,9 +31,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *  FIXME decide and document whether only ITemplateCall is handled here
- *  FIXME handle argument expressions in an effective and oop-looking manner.
-
  * Runtime presentation of a template invocation. Handles arguments, prepares template context for a call.
  * @author Artem Tikhomirov
  */
@@ -43,6 +40,13 @@ public class TemplateCall {
   // true to indicate no-op context, either no args/params, or their count doesn't match
   private final boolean myNoArgs;
 
+  /**
+   * At the moment, we handle ITemplateCall only, the reference to TemplateDeclaration with accompanying arguments.
+   * Elements with references to TemplateDeclaration without arguments (like WeaveEach) shall not get here (although it's not a big deal
+   * to handle it here, just keep myArguments empty, and return outerContext unchanged). The reason it's not done here as this knowledge
+   * (which consequence is ITemplateCall) is static, and I don't want runtime checks for static knowledge
+   * @param templateCall ITemplateCall node
+   */
   public TemplateCall(@NotNull SNode templateCall) {
     final List<SNode> args = RuleUtil.getTemplateCall_Arguments(templateCall);
     myArguments = toExpressionRuntime(args);

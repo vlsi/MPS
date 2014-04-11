@@ -196,13 +196,15 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
   }
 
   private class TemplateDeclarationConsequence implements Consequence {
+    private final TemplateCall myTemplateCall;
     public TemplateDeclarationConsequence() {
+      myTemplateCall = new TemplateCall(myConsequenceNode);
     }
 
     @Override
     public boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException {
       mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
-      weaveTemplateDeclaration(outputContextNode, GeneratorUtil.createConsequenceContext(context, myConsequenceNode));
+      weaveTemplateDeclaration(outputContextNode, myTemplateCall.prepareCallContext(context));
       return true;
     }
   }
@@ -228,7 +230,8 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       }
       mapWeaveContentNodeToTemplateDeclarationContentNode(environment, outputContextNode, context.getInput());
       for (SNode queryNode : queryNodes) {
-        weaveTemplateDeclaration(outputContextNode, GeneratorUtil.createConsequenceContext(new DefaultTemplateContext(environment, queryNode, null), myConsequenceNode));
+        // myConsequenceNode is not an ITemplateCall, no way to specify arguments => no reason to ask TemplateCall for updated context
+        weaveTemplateDeclaration(outputContextNode, new DefaultTemplateContext(environment, queryNode, null));
       }
 
       return true;
