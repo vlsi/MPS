@@ -2397,7 +2397,7 @@ public class QueriesGenerated extends QueryProviderBase {
       if ((lastStmt != null)) {
         cstmt = StatementListUtil.nextSibling(lastStmt);
       } else {
-        List<SNode> allstmts = (List<SNode>) SLinkOperations.getTargets(_context.getNode(), "statement", true);
+        List<SNode> allstmts = SLinkOperations.getTargets(_context.getNode(), "statement", true);
         cstmt = (ListSequence.fromList(allstmts).isNotEmpty() ? ListSequence.fromList(allstmts).getElement(0) : null);
       }
       stmts = null;
