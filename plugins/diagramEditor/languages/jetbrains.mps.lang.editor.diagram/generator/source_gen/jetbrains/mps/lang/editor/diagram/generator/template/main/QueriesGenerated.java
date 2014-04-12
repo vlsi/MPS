@@ -750,7 +750,7 @@ public class QueriesGenerated {
       SNode de = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.baseLanguage.structure.DotExpression");
       SLinkOperations.setTarget(de, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", null), true);
       SLinkOperations.setTarget(de, "operation", SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_DeleteOperation", null), true);
-      final SNode defaultActionMap = _quotation_createNode_x583g4_a0d0a0bg(de, _context.createUniqueName("DefaultDiagramElementActionMap", null));
+      final SNode defaultActionMap = _quotation_createNode_x583g4_a0d0a0dg(de, _context.createUniqueName("DefaultDiagramElementActionMap", null));
       SModelOperations.addRootNode(_context.getModel(), defaultActionMap);
       ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode")).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -773,8 +773,6 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_x583g4_a0a0a0a031 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_x583g4_a0a0a0a031() {
   public static class Pattern_x583g4_a0a0a0a231 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_x583g4_a0a0a0a231() {
     }
@@ -831,7 +829,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_a0d0a0bg(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_x583g4_a0d0a0dg(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

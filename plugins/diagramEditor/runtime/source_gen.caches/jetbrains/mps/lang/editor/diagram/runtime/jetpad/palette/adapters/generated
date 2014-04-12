@@ -45,25 +45,20 @@
     <file name="PopupPaletteActionGroupAdapter.java" />
   </source>
   <source id="121824560294371282" name="PaletteToggleActionAdapter" hash="69llkwq7mpu0k61f6cp68yz11g2dm5f">
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="PaletteToggleActionAdapter.java" />
   </source>
   <source id="121824560294371325" name="PaletteSimpleActionAdapter" hash="dak09vmtpj6kzey42bbpwjq79xmcxo1">
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="PaletteSimpleActionAdapter.java" />
   </source>
   <source id="121824560294371394" name="PaletteActionGroupAdapter" hash="6fkmbbvj6bxteapdtfep5grl4o91jmb">
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
     <dep model="r:fc9c4864-4036-4c2e-9220-1fcd2b04815c(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi)" />
     <file name="PaletteActionGroupAdapter.java" />
   </source>
   <source id="121824560294371418" name="PaletteElementFactory" hash="-ddwggm8t85l491261l36iwpzkdcjiqa">
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="PaletteElementFactory.java" />
   </source>
   <source id="121824560294450217" name="DiagramPaletteToggleAction" hash="-232zteb5q4z2jff2wytozpwchc6i7qn">
-    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <file name="DiagramPaletteToggleAction.java" />
   </source>
 </dependencies>
