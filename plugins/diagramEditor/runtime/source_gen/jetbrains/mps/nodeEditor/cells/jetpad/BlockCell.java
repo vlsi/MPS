@@ -13,7 +13,7 @@ import java.util.ListIterator;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.diagram.dataflow.view.BlockView;
+import jetbrains.jetpad.projectional.diagram.view.block.BlockView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.projectional.diagram.view.MoveHandler;

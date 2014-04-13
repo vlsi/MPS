@@ -7,8 +7,8 @@
   <root type="adck.Diagram" typeId="adck.725186580883451585" id="725186580883618058" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="myDiagram" />
     <node role="blocks" roleId="adck.725186580883451864" type="adck.BlockExt" typeId="adck.320213057867540364" id="7060406825703063959" nodeInfo="ng">
-      <property name="x" nameId="adck.6279035160242221415" value="166" />
-      <property name="y" nameId="adck.6279035160242221911" value="162" />
+      <property name="x" nameId="adck.6279035160242221415" value="146" />
+      <property name="y" nameId="adck.6279035160242221911" value="164" />
       <property name="name" nameId="tpck.1169194664001" value="sdfgsf" />
       <property name="myBooleanProperty" nameId="adck.4950140401485715589" value="false" />
       <link role="mb" roleId="adck.320213057867544063" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
@@ -42,8 +42,8 @@
       </node>
     </node>
     <node role="blocks" roleId="adck.725186580883451864" type="adck.BlockExt" typeId="adck.320213057867540364" id="7060406825703151556" nodeInfo="ng">
-      <property name="x" nameId="adck.6279035160242221415" value="269" />
-      <property name="y" nameId="adck.6279035160242221911" value="66" />
+      <property name="x" nameId="adck.6279035160242221415" value="277" />
+      <property name="y" nameId="adck.6279035160242221911" value="41" />
       <property name="myBooleanProperty" nameId="adck.4950140401485715589" value="false" />
       <link role="mb" roleId="adck.320213057867544063" targetNodeId="7882925886022044419" resolveInfo="Producer" />
       <node role="inputPorts" roleId="adck.725186580883451902" type="adck.InputPort" typeId="adck.725186580883451828" id="7060406825703151557" nodeInfo="ng" />

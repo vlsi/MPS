@@ -17,7 +17,7 @@ import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
 import javax.swing.JPanel;
-import jetbrains.jetpad.model.event.Registration;
+import jetbrains.jetpad.base.Registration;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JComponent;
 import com.intellij.uiDesigner.core.GridLayoutManager;

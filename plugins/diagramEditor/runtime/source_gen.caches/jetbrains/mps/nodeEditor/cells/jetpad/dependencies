@@ -57,13 +57,13 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramNodeView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.MoveHandler" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.RootTrait" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.block.BlockView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEventHandler" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEvents" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.diagram.dataflow.view.BlockView" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" />
@@ -109,6 +109,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="jetbrains.jetpad.base.Registration" />
     <classNode dependClassName="jetbrains.jetpad.event.Key" />
     <classNode dependClassName="jetbrains.jetpad.event.KeyEvent" />
     <classNode dependClassName="jetbrains.jetpad.event.ModifierKey" />
@@ -119,7 +120,6 @@
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableArrayList" />
     <classNode dependClassName="jetbrains.jetpad.model.collections.list.ObservableList" />
     <classNode dependClassName="jetbrains.jetpad.model.event.EventHandler" />
-    <classNode dependClassName="jetbrains.jetpad.model.event.Registration" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
     <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />

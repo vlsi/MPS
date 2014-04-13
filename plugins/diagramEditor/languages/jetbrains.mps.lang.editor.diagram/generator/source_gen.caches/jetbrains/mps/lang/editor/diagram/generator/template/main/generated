@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a80yy8n4lyeq18a7lghayujpqes41ax">
+<dependencies version="2" modelHash="-980697l9g6o383i4rpaxnb7go42l9wo">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -36,7 +36,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-d9u6qtqn8byb7xpic4iy13w48uff524" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="902273atmrd8nhnqts5ootv5bmwc50j" />
   <dep model="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)" hash="6aajdhx7frmwyqwi6nexsw093opt5jl" />
-  <dep model="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)" hash="10g9v7cprolfush05pry3zcvqg2bxcx" />
+  <dep model="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)" hash="-2lesaw4drz5uszs0y92o5o7yztxa5ws" />
   <dep model="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)" hash="6c9qmb5pv9a9alx4vwrf673f9nim9d0" />
   <dep model="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)" hash="68jw86vgblod0pb05ti8kztl2oe35hr" />
   <dep model="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" hash="-c3xetiw0t6unsexgm15mrfxzcc9aata" />
@@ -45,7 +45,7 @@
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2t346zimpb9pgz6suemh13r33bppt1x" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
-  <common hash="66h6v590nzi3cbkl4rqmor1xetys020" dependsOnNodes="true">
+  <common hash="-9db2eum6tyjt2r00t9wh2v7123ktcue" dependsOnNodes="true">
     <dep root="1094405431463447767" />
     <dep root="2201645942109536141" />
     <dep root="2732397419124502392" />
@@ -122,60 +122,58 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="5422656561933061909" name="PlaceholderView" hash="euyhe1vd8nyz7konc7ktm5hzw6gvscy">
+  <source id="5422656561933061909" name="PlaceholderView" hash="-8h141aze22bp2hmefsilg13quzkk88d">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5422656561934728908" name="ViewFactoryMethod" hash="-5ht3seoqfia32mq1ew0zswwdc5rbxw5" />
-  <source id="5422656561934854579" name="ViewParameterAccessor" hash="-bzx7m3dr0rqgpp56cclktfaxuet19di" />
-  <source id="1094405431463447767" name="main" hash="ej1lgzi962kr2ybw5j44sbqda1snpyt">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
-  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="-501lhe6j5g25wjyj6b761aq9u6pi1sm" />
-  <source id="6382742553261752705" name="reduce_CellModel_DiagramConnector" hash="8942i9o5g9y6olp62gmdl3hisswijre" />
-  <source id="298790604438333184" name="reduce_CellModel_DiagramNode" hash="-36f9ej936cowyodcqxebsooon7g7unx" />
-  <source id="2201645942109536141" name="reduce_DiagramElementBLQuery" hash="-c5clilj89cpoiez0yn5ttaufcu1kjop" />
-  <source id="5170495790389304146" name="template_cellSetupBlock" hash="5siufn8yb0tf0noknh8y8cmzq4qoya3" />
+  <source id="5422656561934728908" name="ViewFactoryMethod" hash="3zd9uqg4lcuxljcdcrdazaq53pj0gi3" />
+  <source id="5422656561934854579" name="ViewParameterAccessor" hash="-bdqa91a3fy457faf43u7w8t0zg3ue5z" />
+  <source id="1094405431463447767" name="main" hash="-5iq2gcctpaqmbbxvq77gikat4y58a42" />
+  <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="-8tt2lc788lu01h34rbb83ydmlvo6483" />
+  <source id="6382742553261752705" name="reduce_CellModel_DiagramConnector" hash="enn9l6clu7ccvlqbetq53w0btf142qf" />
+  <source id="298790604438333184" name="reduce_CellModel_DiagramNode" hash="-7t17skvifrlzf15lmxii1xsfxrd8u9f" />
+  <source id="2201645942109536141" name="reduce_DiagramElementBLQuery" hash="-bnyu341zya8hx3xpu4jr57ql5i7d203" />
+  <source id="5170495790389304146" name="template_cellSetupBlock" hash="-7umifbrz803xsv6haw7e3woh638va3z" />
   <source id="285670992205237838" name="FigureConstructor" hash="-9sx12kdbf66ig15tr4y0z4efb5uswie" />
-  <source id="285670992206060904" name="reduce_CellModel_DiagramPort" hash="-z86x0k10m4ayljgaqngonqpcsregau" />
-  <source id="7171441290057803824" name="template_CreatePortMapper" hash="6dguvq4z01sfzaskglzqud9bsrlqlmy" />
-  <source id="8570854907291873537" name="reduce_DiagramElementsCreation" hash="eefo18ndsag4b1pyzlpmhu528f11wtz" />
-  <source id="939897302412891640" name="reduce_DiagramConnectorCreation" hash="-3tdlijfdwnrcyfhf64i6b7uqs9r9pm4" />
-  <source id="2732397419124488366" name="BlockCellAdapter" hash="-8lv6grynjh7edyukdvec0pglqpycgzj">
+  <source id="285670992206060904" name="reduce_CellModel_DiagramPort" hash="26dvuu1tstg1wsihjl6zwkuor99sd3n" />
+  <source id="7171441290057803824" name="template_CreatePortMapper" hash="5wg2vl46of1pcxirngs3pv2llc3zydj" />
+  <source id="8570854907291873537" name="reduce_DiagramElementsCreation" hash="-16wezy216j1lmcg1yxlevbi05i6c8kv" />
+  <source id="939897302412891640" name="reduce_DiagramConnectorCreation" hash="-ce5i2yf368dobp8zpguailkhxj14ocs" />
+  <source id="2732397419124488366" name="BlockCellAdapter" hash="5nhzwcyjho86fu4g1m9ksd70h41rha">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
   <source id="2732397419124502392" name="BlockArgumentField" hash="b1jhspw2mel01fjsyf1did515sq6pm" />
-  <source id="2732397419127377131" name="BlockArgumentInitializer" hash="bufaet96t3uphahaol6afsk3yy7qxoj" />
-  <source id="7755191110378225555" name="BlockPortInitializer" hash="9ylv5fyhgr6533rbm3bt12treximlpj" />
-  <source id="7755191110383186057" name="BlockPortFieldType" hash="dwdvwffs2drranrodvlncocd26oc3gq" />
-  <source id="7755191110395269246" name="BlockPortMapperFactory" hash="9y66gftt0x67oo2dyfao50x3y0kz9mj" />
-  <source id="7755191110397886411" name="BlockArgumentRegisterSynchronizers" hash="cgtn71krwbnol46gy7guj620wtktwy0" />
-  <source id="9028489334867564747" name="DiagramCellAdapter" hash="8vod2nxp1ytx67z0rt2h75eq8jy2e6q">
+  <source id="2732397419127377131" name="BlockArgumentInitializer" hash="-dbbw7mpiqxlmmo3ajci899nuvcbh6a2" />
+  <source id="7755191110378225555" name="BlockPortInitializer" hash="du5hnkizhixa7xcg825xn8y94ggrvtl" />
+  <source id="7755191110383186057" name="BlockPortFieldType" hash="8t34e71g6ghm6o3tw5sbcxl1n23juuh" />
+  <source id="7755191110395269246" name="BlockPortMapperFactory" hash="-7va08achwm1qrswnngws7fhgdmtxzcw" />
+  <source id="7755191110397886411" name="BlockArgumentRegisterSynchronizers" hash="-c2ec9g7m4xjfqur3yt39kaiyt9iefwd" />
+  <source id="9028489334867564747" name="DiagramCellAdapter" hash="-fvkwpy9sbc4hep7rv3rnv3xukdbhcn">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
   <source id="9028489334869686197" name="ConnectionEndInitializer" hash="dz228v4jvyxp1wmfy7lka5vjdgbpftv" />
-  <source id="9028489334872426262" name="ConnectionSynchronizer" hash="-cdree5sfrl9p2ogr76ij95sx80pqjmi" />
+  <source id="9028489334872426262" name="ConnectionSynchronizer" hash="-74zqbde91b2z996qgni4xf6e4ag2hbz" />
   <source id="9028489334872670708" name="ConnectionEndType" hash="fnuvgthu2rcwkp6g8zt5t4k4k76iaj" />
-  <source id="9028489334874334453" name="ConnectorCellAdapter" hash="-dbi5jdzhebu2vll6hhmx9ww3v0sj7ku">
+  <source id="9028489334874334453" name="ConnectorCellAdapter" hash="-bkmwobga79ykb6hp8c9flffzzbx0hll">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1457236892455821713" name="BlockPortDecoratorMapperFactory" hash="5o0sk3xiz8pqflz8hbgbupwc5jg8ila" />
-  <source id="1457236892455988410" name="template_CreatePortDecorationMapper" hash="2f55adfceybv34e0xtcacfbwk1d6vrs" />
+  <source id="1457236892455821713" name="BlockPortDecoratorMapperFactory" hash="20na6hhcukaued5zoouffcfu3i37lcf" />
+  <source id="1457236892455988410" name="template_CreatePortDecorationMapper" hash="-4ki7hxz69dm234462ohe5039bzi21fp" />
   <source id="5745978280768467343" name="preprocessing" hash="-6w060v57i78olrz28xiu96k54teiyjw" />
-  <source id="4115105161242658182" name="ResizableContentViewAdapter" hash="ey8deen2ry8eox0mye4mmiqjaofbmom">
+  <source id="4115105161242658182" name="ResizableContentViewAdapter" hash="hs64j6vt8vb005zn4aiicivsjbgsur">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="5142486769434321658" name="PaletteActionAdapter" hash="9rybingb9q3s72mgv73zlq7oeca5g60">
+  <source id="5142486769434321658" name="PaletteActionAdapter" hash="8f6spqftaje8ldrg9n2do4lue4jzxel">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
   <source id="2809327089715299368" name="CreateActionSwitch" hash="3sc1s48yv6t4lgowx4kqwd16zcsq3q1" />
   <source id="5142486769434149776" name="reduce_CustomActionReference" hash="-7pnun8kocpby1csctlc1qhvcw762lhs" />
-  <source id="2981172682494100618" name="reduce_Separator" hash="-aynqlvwerrbgv7owjb26zvl7dodekyu" />
-  <source id="4394877045818008997" name="case_DiagramConnectorCreation" hash="-bxbjlxq849cy6v4cvqrgeuh8jth3z33" />
+  <source id="2981172682494100618" name="reduce_Separator" hash="-3q7xp3g79kdqnfijrnng8xvznrm64yz" />
+  <source id="4394877045818008997" name="case_DiagramConnectorCreation" hash="eplnbahuaencngovg0d727fm1yfj0qw" />
   <source id="6619018968337210716" name="palette_mapping" hash="5xrq9dpwe6ibt9rv7mt60ttf76mbnxy" />
-  <source id="6619018968338475342" name="case_CreationElementActionReference" hash="-2fv206jcorvpp1hqpyfljhsqf2gy249" />
+  <source id="6619018968338475342" name="case_CreationElementActionReference" hash="-cintjvsey7fn1cscdx3gnjximnu3qm5" />
   <source id="6619018968337529320" name="reduce_Palette" hash="-b6zd3v5f8ky11wboz1gq058ws2eqcsw" />
   <source id="5003005296041706503" name="setDefaultActionMap" hash="-yb5abbylkjszqdqns0fihmxdogoeoa" />
-  <source id="40426410294734137" name="template_mapperSetupBlock" hash="-12qmyma09umib6sd90qwubo34eblxx9" />
+  <source id="40426410294734137" name="template_mapperSetupBlock" hash="-6gdf2fdynqr2g6ge6ka7iow2abnt8pj" />
 </dependencies>
 
