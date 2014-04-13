@@ -178,11 +178,21 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
               setHeight(rect.dimension.y);
             }
           }));
-
-          configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
-            public void run() {
-              if (getTarget().focused().get()) {
+          configuration.add(Synchronizers.forProperty(getTarget().focused(), new WritableProperty<Boolean>() {
+            public void set(Boolean isFocused) {
+              if (isFocused && !(isSelected())) {
                 SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              } else if (!(isFocused) && isSelected()) {
+                getEditorComponent().getSelectionManager().clearSelection();
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
+            public void set(Boolean isSelected) {
+              if (isSelected && !(getTarget().focused().get())) {
+                getTarget().container().focusedView().set(getTarget());
+              } else if (!(isSelected) && getTarget().focused().get()) {
+                getTarget().container().focusedView().set(null);
               }
             }
           }));

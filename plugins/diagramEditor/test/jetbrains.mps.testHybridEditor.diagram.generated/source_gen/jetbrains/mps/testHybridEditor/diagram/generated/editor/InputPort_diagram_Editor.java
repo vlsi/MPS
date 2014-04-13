@@ -15,8 +15,8 @@ import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.mapper.Synchronizers;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -57,10 +57,21 @@ public class InputPort_diagram_Editor extends DefaultNodeEditor {
           getTarget().background().set(Color.LIGHT_GRAY);
           getTarget().dimension().set(new Vector(10, 10));
           getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
-          configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
-            public void run() {
-              if (getTarget().focused().get()) {
+          configuration.add(Synchronizers.forProperty(getTarget().focused(), new WritableProperty<Boolean>() {
+            public void set(Boolean isFocused) {
+              if (isFocused && !(isSelected())) {
                 SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              } else if (!(isFocused) && isSelected()) {
+                getEditorComponent().getSelectionManager().clearSelection();
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
+            public void set(Boolean isSelected) {
+              if (isSelected && !(getTarget().focused().get())) {
+                getTarget().container().focusedView().set(getTarget());
+              } else if (!(isSelected) && getTarget().focused().get()) {
+                getTarget().container().focusedView().set(null);
               }
             }
           }));

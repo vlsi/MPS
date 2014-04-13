@@ -36,6 +36,7 @@ import jetbrains.jetpad.event.ModifierKey;
 public abstract class AbstractJetpadCell extends EditorCell_Collection implements SynchronizeableEditorCell {
   private List<ReadableModelProperty> myModelProperties;
   protected Property<Boolean> myErrorItem = new ValueProperty<Boolean>(true);
+  protected Property<Boolean> mySelectedItem = new ValueProperty<Boolean>(false);
 
   public AbstractJetpadCell(EditorContext editorContext, SNode node) {
     super(editorContext, node, new EmptyCellLayout(), null);
@@ -62,7 +63,7 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     List<EditorMessage> messages = getMessages(EditorMessage.class);
     for (EditorMessage message : messages) {
       if (message != null) {
-        if (eq_815jvj_a0a0a0c0f(message.getStatus(), MessageStatus.ERROR)) {
+        if (eq_815jvj_a0a0a0c0g(message.getStatus(), MessageStatus.ERROR)) {
           myErrorItem.set(true);
           return;
         }
@@ -162,7 +163,15 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     }).build());
   }
 
-  private static boolean eq_815jvj_a0a0a0c0f(Object a, Object b) {
+
+
+  @Override
+  public void setSelected(boolean isSelected) {
+    super.setSelected(isSelected);
+    mySelectedItem.set(isSelected);
+  }
+
+  private static boolean eq_815jvj_a0a0a0c0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

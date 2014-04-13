@@ -101,179 +101,187 @@
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/5374841768509702453">
     <nodeInfo nodeId="5374841768510608683" fileName="AbstractJetpadCell.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelProperties" />
     <nodeInfo nodeId="4883868441291153940" fileName="AbstractJetpadCell.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myErrorItem" />
-    <nodeInfo nodeId="5374841768509720258" fileName="AbstractJetpadCell.java" startLine="40" startPosition="70" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6721598535435447375" fileName="AbstractJetpadCell.java" startLine="45" startPosition="44" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1755573558918258226" fileName="AbstractJetpadCell.java" startLine="51" startPosition="91" endLine="52" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2333520786824485842" fileName="AbstractJetpadCell.java" startLine="59" startPosition="58" endLine="60" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2333520786824485851" fileName="AbstractJetpadCell.java" startLine="61" startPosition="5" endLine="62" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4883868441291348706" fileName="AbstractJetpadCell.java" startLine="65" startPosition="76" endLine="66" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4883868441291373443" fileName="AbstractJetpadCell.java" startLine="66" startPosition="32" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4883868441291380796" fileName="AbstractJetpadCell.java" startLine="70" startPosition="5" endLine="71" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5374841768512767349" fileName="AbstractJetpadCell.java" startLine="75" startPosition="36" endLine="76" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5374841768510757457" fileName="AbstractJetpadCell.java" startLine="77" startPosition="5" endLine="78" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8991226552770734255" fileName="AbstractJetpadCell.java" startLine="82" startPosition="26" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7188991739980782709" fileName="AbstractJetpadCell.java" startLine="88" startPosition="38" endLine="89" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5374841768510660556" fileName="AbstractJetpadCell.java" startLine="95" startPosition="73" endLine="96" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5374841768510722062" fileName="AbstractJetpadCell.java" startLine="97" startPosition="7" endLine="98" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="615329258668318293" fileName="AbstractJetpadCell.java" startLine="102" startPosition="63" endLine="103" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="615329258668318329" fileName="AbstractJetpadCell.java" startLine="105" startPosition="40" endLine="106" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="615329258668318319" fileName="AbstractJetpadCell.java" startLine="108" startPosition="5" endLine="109" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1853186767788038694" fileName="AbstractJetpadCell.java" startLine="114" startPosition="39" endLine="115" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1853186767788038702" fileName="AbstractJetpadCell.java" startLine="116" startPosition="31" endLine="117" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1853186767788038706" fileName="AbstractJetpadCell.java" startLine="118" startPosition="9" endLine="119" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1853186767788038710" fileName="AbstractJetpadCell.java" startLine="119" startPosition="31" endLine="120" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1853186767788038715" fileName="AbstractJetpadCell.java" startLine="120" startPosition="39" endLine="121" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1853186767788038723" fileName="AbstractJetpadCell.java" startLine="122" startPosition="7" endLine="123" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1853186767785716095" fileName="AbstractJetpadCell.java" startLine="124" startPosition="12" endLine="125" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1853186767785716098" fileName="AbstractJetpadCell.java" startLine="125" startPosition="26" endLine="126" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1853186767785716103" fileName="AbstractJetpadCell.java" startLine="126" startPosition="30" endLine="127" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="615329258671625498" fileName="AbstractJetpadCell.java" startLine="132" startPosition="36" endLine="133" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="615329258671625504" fileName="AbstractJetpadCell.java" startLine="133" startPosition="47" endLine="134" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="615329258671625508" fileName="AbstractJetpadCell.java" startLine="134" startPosition="28" endLine="135" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068507431584" fileName="AbstractJetpadCell.java" startLine="139" startPosition="114" endLine="140" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7319867929565733264" fileName="AbstractJetpadCell.java" startLine="142" startPosition="34" endLine="143" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5827780068508092985" fileName="AbstractJetpadCell.java" startLine="143" startPosition="56" endLine="144" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929565406320" fileName="AbstractJetpadCell.java" startLine="147" startPosition="28" endLine="148" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="884514646193271657" fileName="AbstractJetpadCell.java" startLine="154" startPosition="38" endLine="155" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884514646192591447" fileName="AbstractJetpadCell.java" startLine="156" startPosition="9" endLine="157" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7319867929565422143" fileName="AbstractJetpadCell.java" startLine="158" startPosition="48" endLine="159" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2333520786828797167" fileName="AbstractJetpadCell.java" startLine="165" startPosition="66" endLine="166" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5374841768509718747" fileName="AbstractJetpadCell.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractJetpadCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1755573558918258224" fileName="AbstractJetpadCell.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Z" />
-    <nodeInfo nodeId="2333520786824485838" fileName="AbstractJetpadCell.java" startLine="58" startPosition="65" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5374841768512755007" fileName="AbstractJetpadCell.java" startLine="74" startPosition="72" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7188991739980772290" fileName="AbstractJetpadCell.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeSynchronized#()Z" />
-    <nodeInfo nodeId="5374841768510645647" fileName="AbstractJetpadCell.java" startLine="94" startPosition="36" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="615329258668318307" fileName="AbstractJetpadCell.java" startLine="104" startPosition="74" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1853186767788038700" fileName="AbstractJetpadCell.java" startLine="115" startPosition="46" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1798834667989551323" fileName="AbstractJetpadCell.java" startLine="147" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delete#()V" />
-    <nodeInfo nodeId="884514646193230868" fileName="AbstractJetpadCell.java" startLine="153" startPosition="49" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="884514646184985540" fileName="AbstractJetpadCell.java" startLine="157" startPosition="54" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2333520786828797167" fileName="AbstractJetpadCell.java" startLine="165" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_815jvj_a0a0a0c0f#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6721598535435446684" fileName="AbstractJetpadCell.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTransparentCollection#()Z" />
-    <nodeInfo nodeId="2333520786828763280" fileName="AbstractJetpadCell.java" startLine="64" startPosition="28" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8991226552770719771" fileName="AbstractJetpadCell.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAscent#()I" />
-    <nodeInfo nodeId="1853186767785716093" fileName="AbstractJetpadCell.java" startLine="124" startPosition="10" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1798834667989551317" fileName="AbstractJetpadCell.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canDelete#()Z" />
-    <nodeInfo nodeId="6981942132924376240" fileName="AbstractJetpadCell.java" startLine="49" startPosition="42" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="615329258668318315" fileName="AbstractJetpadCell.java" startLine="103" startPosition="65" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="615329258671625496" fileName="AbstractJetpadCell.java" startLine="131" startPosition="67" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2333520786828832806" fileName="AbstractJetpadCell.java" startLine="63" startPosition="44" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5374841768510749804" fileName="AbstractJetpadCell.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModelProperty#(Ljetbrains/mps/nodeEditor/cells/jetpad/ReadableModelProperty;)V" />
-    <nodeInfo nodeId="5374841768510636285" fileName="AbstractJetpadCell.java" startLine="93" startPosition="42" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6981942132924315038" fileName="AbstractJetpadCell.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDiagramCell#()Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;" />
-    <nodeInfo nodeId="615329258671625494" fileName="AbstractJetpadCell.java" startLine="131" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="purgeTailNodes#(Ljava/util/ListIterator;)V" />
-    <nodeInfo nodeId="2333520786824485857" fileName="AbstractJetpadCell.java" startLine="62" startPosition="68" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5374841768510633276" fileName="AbstractJetpadCell.java" startLine="92" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronizeViewWithModel#()V" />
-    <nodeInfo nodeId="615329258668318305" fileName="AbstractJetpadCell.java" startLine="102" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDirectChildCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/jetpad/AbstractJetpadCell;" />
-    <nodeInfo nodeId="1853186767788038692" fileName="AbstractJetpadCell.java" startLine="113" startPosition="39" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1798834667989551306" fileName="AbstractJetpadCell.java" startLine="140" startPosition="31" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3857586639340364742" fileName="AbstractJetpadCell.java" startLine="152" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/jetpad/event/KeyEvent;)V" />
-    <nodeInfo nodeId="3857586639340364729" fileName="AbstractJetpadCell.java" startLine="150" startPosition="7" endLine="162" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2333520786824485830" fileName="AbstractJetpadCell.java" startLine="57" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
-    <nodeInfo nodeId="1853186767785716082" fileName="AbstractJetpadCell.java" startLine="112" startPosition="123" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1853186767785716070" fileName="AbstractJetpadCell.java" startLine="112" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="syncToNextNode#(Ljava/util/ListIterator;Ljava/util/Set;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="7319867929565375243" fileName="AbstractJetpadCell.java" startLine="139" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="configureView#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)V" />
-    <scopeInfo nodeId="5374841768509718751" fileName="AbstractJetpadCell.java" startLine="40" startPosition="70" endLine="41" endPosition="60" />
-    <scopeInfo nodeId="6721598535435446688" fileName="AbstractJetpadCell.java" startLine="45" startPosition="44" endLine="46" endPosition="17" />
-    <scopeInfo nodeId="1755573558918258225" fileName="AbstractJetpadCell.java" startLine="51" startPosition="91" endLine="52" endPosition="45" />
-    <scopeInfo nodeId="2333520786824485841" fileName="AbstractJetpadCell.java" startLine="59" startPosition="58" endLine="60" endPosition="84" />
-    <scopeInfo nodeId="5374841768512755010" fileName="AbstractJetpadCell.java" startLine="75" startPosition="36" endLine="76" endPosition="66" />
-    <scopeInfo nodeId="8991226552770719775" fileName="AbstractJetpadCell.java" startLine="82" startPosition="26" endLine="83" endPosition="23" />
-    <scopeInfo nodeId="7188991739980772296" fileName="AbstractJetpadCell.java" startLine="88" startPosition="38" endLine="89" endPosition="16" />
-    <scopeInfo nodeId="5374841768510645648" fileName="AbstractJetpadCell.java" startLine="95" startPosition="73" endLine="96" endPosition="53" />
-    <scopeInfo nodeId="615329258668318313" fileName="AbstractJetpadCell.java" startLine="105" startPosition="40" endLine="106" endPosition="45" />
-    <scopeInfo nodeId="1853186767788038701" fileName="AbstractJetpadCell.java" startLine="116" startPosition="31" endLine="117" endPosition="17" />
-    <scopeInfo nodeId="1798834667989551326" fileName="AbstractJetpadCell.java" startLine="147" startPosition="28" endLine="148" endPosition="103" />
-    <scopeInfo nodeId="884514646193230871" fileName="AbstractJetpadCell.java" startLine="154" startPosition="38" endLine="155" endPosition="17" />
-    <scopeInfo nodeId="884514646184985543" fileName="AbstractJetpadCell.java" startLine="158" startPosition="48" endLine="159" endPosition="111" />
-    <scopeInfo nodeId="2333520786828797167" fileName="AbstractJetpadCell.java" startLine="165" startPosition="66" endLine="166" endPosition="46" />
-    <scopeInfo nodeId="2333520786828763283" fileName="AbstractJetpadCell.java" startLine="65" startPosition="76" endLine="67" endPosition="17" />
-    <scopeInfo nodeId="1798834667989551320" fileName="AbstractJetpadCell.java" startLine="142" startPosition="34" endLine="144" endPosition="34" />
-    <scopeInfo nodeId="5374841768509718747" fileName="AbstractJetpadCell.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+    <nodeInfo nodeId="40426410295996703" fileName="AbstractJetpadCell.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySelectedItem" />
+    <nodeInfo nodeId="5374841768509720258" fileName="AbstractJetpadCell.java" startLine="41" startPosition="70" endLine="42" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6721598535435447375" fileName="AbstractJetpadCell.java" startLine="46" startPosition="44" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1755573558918258226" fileName="AbstractJetpadCell.java" startLine="52" startPosition="91" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2333520786824485842" fileName="AbstractJetpadCell.java" startLine="60" startPosition="58" endLine="61" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2333520786824485851" fileName="AbstractJetpadCell.java" startLine="62" startPosition="5" endLine="63" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4883868441291348706" fileName="AbstractJetpadCell.java" startLine="66" startPosition="76" endLine="67" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4883868441291373443" fileName="AbstractJetpadCell.java" startLine="67" startPosition="32" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4883868441291380796" fileName="AbstractJetpadCell.java" startLine="71" startPosition="5" endLine="72" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768512767349" fileName="AbstractJetpadCell.java" startLine="76" startPosition="36" endLine="77" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768510757457" fileName="AbstractJetpadCell.java" startLine="78" startPosition="5" endLine="79" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8991226552770734255" fileName="AbstractJetpadCell.java" startLine="83" startPosition="26" endLine="84" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7188991739980782709" fileName="AbstractJetpadCell.java" startLine="89" startPosition="38" endLine="90" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5374841768510660556" fileName="AbstractJetpadCell.java" startLine="96" startPosition="73" endLine="97" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768510722062" fileName="AbstractJetpadCell.java" startLine="98" startPosition="7" endLine="99" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="615329258668318293" fileName="AbstractJetpadCell.java" startLine="103" startPosition="63" endLine="104" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="615329258668318329" fileName="AbstractJetpadCell.java" startLine="106" startPosition="40" endLine="107" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="615329258668318319" fileName="AbstractJetpadCell.java" startLine="109" startPosition="5" endLine="110" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1853186767788038694" fileName="AbstractJetpadCell.java" startLine="115" startPosition="39" endLine="116" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1853186767788038702" fileName="AbstractJetpadCell.java" startLine="117" startPosition="31" endLine="118" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1853186767788038706" fileName="AbstractJetpadCell.java" startLine="119" startPosition="9" endLine="120" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1853186767788038710" fileName="AbstractJetpadCell.java" startLine="120" startPosition="31" endLine="121" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1853186767788038715" fileName="AbstractJetpadCell.java" startLine="121" startPosition="39" endLine="122" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1853186767788038723" fileName="AbstractJetpadCell.java" startLine="123" startPosition="7" endLine="124" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1853186767785716095" fileName="AbstractJetpadCell.java" startLine="125" startPosition="12" endLine="126" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1853186767785716098" fileName="AbstractJetpadCell.java" startLine="126" startPosition="26" endLine="127" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1853186767785716103" fileName="AbstractJetpadCell.java" startLine="127" startPosition="30" endLine="128" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="615329258671625498" fileName="AbstractJetpadCell.java" startLine="133" startPosition="36" endLine="134" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="615329258671625504" fileName="AbstractJetpadCell.java" startLine="134" startPosition="47" endLine="135" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="615329258671625508" fileName="AbstractJetpadCell.java" startLine="135" startPosition="28" endLine="136" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068507431584" fileName="AbstractJetpadCell.java" startLine="140" startPosition="114" endLine="141" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7319867929565733264" fileName="AbstractJetpadCell.java" startLine="143" startPosition="34" endLine="144" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5827780068508092985" fileName="AbstractJetpadCell.java" startLine="144" startPosition="56" endLine="145" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7319867929565406320" fileName="AbstractJetpadCell.java" startLine="148" startPosition="28" endLine="149" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="884514646193271657" fileName="AbstractJetpadCell.java" startLine="155" startPosition="38" endLine="156" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="884514646192591447" fileName="AbstractJetpadCell.java" startLine="157" startPosition="9" endLine="158" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7319867929565422143" fileName="AbstractJetpadCell.java" startLine="159" startPosition="48" endLine="160" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="40426410296020315" fileName="AbstractJetpadCell.java" startLine="169" startPosition="47" endLine="170" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="40426410296053884" fileName="AbstractJetpadCell.java" startLine="170" startPosition="34" endLine="171" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2333520786828797167" fileName="AbstractJetpadCell.java" startLine="174" startPosition="66" endLine="175" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5374841768509718747" fileName="AbstractJetpadCell.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractJetpadCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1755573558918258224" fileName="AbstractJetpadCell.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/openapi/editor/cells/EditorCell_Collection;)Z" />
+    <nodeInfo nodeId="2333520786824485838" fileName="AbstractJetpadCell.java" startLine="59" startPosition="65" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5374841768512755007" fileName="AbstractJetpadCell.java" startLine="75" startPosition="72" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7188991739980772290" fileName="AbstractJetpadCell.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeSynchronized#()Z" />
+    <nodeInfo nodeId="5374841768510645647" fileName="AbstractJetpadCell.java" startLine="95" startPosition="36" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="615329258668318307" fileName="AbstractJetpadCell.java" startLine="105" startPosition="74" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1853186767788038700" fileName="AbstractJetpadCell.java" startLine="116" startPosition="46" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1798834667989551323" fileName="AbstractJetpadCell.java" startLine="148" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delete#()V" />
+    <nodeInfo nodeId="884514646193230868" fileName="AbstractJetpadCell.java" startLine="154" startPosition="49" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="884514646184985540" fileName="AbstractJetpadCell.java" startLine="158" startPosition="54" endLine="161" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2333520786828797167" fileName="AbstractJetpadCell.java" startLine="174" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_815jvj_a0a0a0c0g#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6721598535435446684" fileName="AbstractJetpadCell.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTransparentCollection#()Z" />
+    <nodeInfo nodeId="2333520786828763280" fileName="AbstractJetpadCell.java" startLine="65" startPosition="28" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8991226552770719771" fileName="AbstractJetpadCell.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAscent#()I" />
+    <nodeInfo nodeId="1853186767785716093" fileName="AbstractJetpadCell.java" startLine="125" startPosition="10" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1798834667989551317" fileName="AbstractJetpadCell.java" startLine="143" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canDelete#()Z" />
+    <nodeInfo nodeId="6981942132924376240" fileName="AbstractJetpadCell.java" startLine="50" startPosition="42" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="615329258668318315" fileName="AbstractJetpadCell.java" startLine="104" startPosition="65" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="615329258671625496" fileName="AbstractJetpadCell.java" startLine="132" startPosition="67" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="40426410296020301" fileName="AbstractJetpadCell.java" startLine="168" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" />
+    <nodeInfo nodeId="2333520786828832806" fileName="AbstractJetpadCell.java" startLine="64" startPosition="44" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5374841768510749804" fileName="AbstractJetpadCell.java" startLine="75" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModelProperty#(Ljetbrains/mps/nodeEditor/cells/jetpad/ReadableModelProperty;)V" />
+    <nodeInfo nodeId="5374841768510636285" fileName="AbstractJetpadCell.java" startLine="94" startPosition="42" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6981942132924315038" fileName="AbstractJetpadCell.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDiagramCell#()Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;" />
+    <nodeInfo nodeId="615329258671625494" fileName="AbstractJetpadCell.java" startLine="132" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="purgeTailNodes#(Ljava/util/ListIterator;)V" />
+    <nodeInfo nodeId="2333520786824485857" fileName="AbstractJetpadCell.java" startLine="63" startPosition="68" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5374841768510633276" fileName="AbstractJetpadCell.java" startLine="93" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="synchronizeViewWithModel#()V" />
+    <nodeInfo nodeId="615329258668318305" fileName="AbstractJetpadCell.java" startLine="103" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDirectChildCell#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/jetpad/AbstractJetpadCell;" />
+    <nodeInfo nodeId="1853186767788038692" fileName="AbstractJetpadCell.java" startLine="114" startPosition="39" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1798834667989551306" fileName="AbstractJetpadCell.java" startLine="141" startPosition="31" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3857586639340364742" fileName="AbstractJetpadCell.java" startLine="153" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/jetpad/event/KeyEvent;)V" />
+    <nodeInfo nodeId="3857586639340364729" fileName="AbstractJetpadCell.java" startLine="151" startPosition="7" endLine="163" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2333520786824485830" fileName="AbstractJetpadCell.java" startLine="58" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
+    <nodeInfo nodeId="1853186767785716082" fileName="AbstractJetpadCell.java" startLine="113" startPosition="123" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1853186767785716070" fileName="AbstractJetpadCell.java" startLine="113" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="syncToNextNode#(Ljava/util/ListIterator;Ljava/util/Set;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="7319867929565375243" fileName="AbstractJetpadCell.java" startLine="140" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="configureView#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)V" />
+    <scopeInfo nodeId="5374841768509718751" fileName="AbstractJetpadCell.java" startLine="41" startPosition="70" endLine="42" endPosition="60" />
+    <scopeInfo nodeId="6721598535435446688" fileName="AbstractJetpadCell.java" startLine="46" startPosition="44" endLine="47" endPosition="17" />
+    <scopeInfo nodeId="1755573558918258225" fileName="AbstractJetpadCell.java" startLine="52" startPosition="91" endLine="53" endPosition="45" />
+    <scopeInfo nodeId="2333520786824485841" fileName="AbstractJetpadCell.java" startLine="60" startPosition="58" endLine="61" endPosition="84" />
+    <scopeInfo nodeId="5374841768512755010" fileName="AbstractJetpadCell.java" startLine="76" startPosition="36" endLine="77" endPosition="66" />
+    <scopeInfo nodeId="8991226552770719775" fileName="AbstractJetpadCell.java" startLine="83" startPosition="26" endLine="84" endPosition="23" />
+    <scopeInfo nodeId="7188991739980772296" fileName="AbstractJetpadCell.java" startLine="89" startPosition="38" endLine="90" endPosition="16" />
+    <scopeInfo nodeId="5374841768510645648" fileName="AbstractJetpadCell.java" startLine="96" startPosition="73" endLine="97" endPosition="53" />
+    <scopeInfo nodeId="615329258668318313" fileName="AbstractJetpadCell.java" startLine="106" startPosition="40" endLine="107" endPosition="45" />
+    <scopeInfo nodeId="1853186767788038701" fileName="AbstractJetpadCell.java" startLine="117" startPosition="31" endLine="118" endPosition="17" />
+    <scopeInfo nodeId="1798834667989551326" fileName="AbstractJetpadCell.java" startLine="148" startPosition="28" endLine="149" endPosition="103" />
+    <scopeInfo nodeId="884514646193230871" fileName="AbstractJetpadCell.java" startLine="155" startPosition="38" endLine="156" endPosition="17" />
+    <scopeInfo nodeId="884514646184985543" fileName="AbstractJetpadCell.java" startLine="159" startPosition="48" endLine="160" endPosition="111" />
+    <scopeInfo nodeId="2333520786828797167" fileName="AbstractJetpadCell.java" startLine="174" startPosition="66" endLine="175" endPosition="46" />
+    <scopeInfo nodeId="2333520786828763283" fileName="AbstractJetpadCell.java" startLine="66" startPosition="76" endLine="68" endPosition="17" />
+    <scopeInfo nodeId="1798834667989551320" fileName="AbstractJetpadCell.java" startLine="143" startPosition="34" endLine="145" endPosition="34" />
+    <scopeInfo nodeId="40426410296020311" fileName="AbstractJetpadCell.java" startLine="169" startPosition="47" endLine="171" endPosition="35" />
+    <scopeInfo nodeId="5374841768509718747" fileName="AbstractJetpadCell.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="5374841768509720233" varName="editorContext" />
       <varInfo nodeId="5374841768509720235" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1755573558918258224" fileName="AbstractJetpadCell.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="1755573558918258224" fileName="AbstractJetpadCell.java" startLine="52" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1755573558918258224" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="2333520786824485838" fileName="AbstractJetpadCell.java" startLine="58" startPosition="65" endLine="61" endPosition="5">
+    <scopeInfo nodeId="2333520786824485838" fileName="AbstractJetpadCell.java" startLine="59" startPosition="65" endLine="62" endPosition="5">
       <varInfo nodeId="2333520786824485839" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="7188991739980772290" fileName="AbstractJetpadCell.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="5374841768510645647" fileName="AbstractJetpadCell.java" startLine="94" startPosition="36" endLine="97" endPosition="7">
+    <scopeInfo nodeId="7188991739980772290" fileName="AbstractJetpadCell.java" startLine="89" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="5374841768510645647" fileName="AbstractJetpadCell.java" startLine="95" startPosition="36" endLine="98" endPosition="7">
       <varInfo nodeId="5374841768510645649" varName="nextModelProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="615329258668318325" fileName="AbstractJetpadCell.java" startLine="104" startPosition="74" endLine="107" endPosition="7" />
-    <scopeInfo nodeId="1853186767785716094" fileName="AbstractJetpadCell.java" startLine="124" startPosition="12" endLine="127" endPosition="30" />
-    <scopeInfo nodeId="615329258671625497" fileName="AbstractJetpadCell.java" startLine="132" startPosition="36" endLine="135" endPosition="53">
+    <scopeInfo nodeId="615329258668318325" fileName="AbstractJetpadCell.java" startLine="105" startPosition="74" endLine="108" endPosition="7" />
+    <scopeInfo nodeId="1853186767785716094" fileName="AbstractJetpadCell.java" startLine="125" startPosition="12" endLine="128" endPosition="30" />
+    <scopeInfo nodeId="615329258671625497" fileName="AbstractJetpadCell.java" startLine="133" startPosition="36" endLine="136" endPosition="53">
       <varInfo nodeId="615329258671625499" varName="nextFromList" />
     </scopeInfo>
-    <scopeInfo nodeId="1798834667989551323" fileName="AbstractJetpadCell.java" startLine="147" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="2333520786828797167" fileName="AbstractJetpadCell.java" startLine="165" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="1798834667989551323" fileName="AbstractJetpadCell.java" startLine="148" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="2333520786828797167" fileName="AbstractJetpadCell.java" startLine="174" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="2333520786828797167" varName="a" />
       <varInfo nodeId="2333520786828797167" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6721598535435446684" fileName="AbstractJetpadCell.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="2333520786828832809" fileName="AbstractJetpadCell.java" startLine="64" startPosition="28" endLine="68" endPosition="9" />
-    <scopeInfo nodeId="5374841768510749807" fileName="AbstractJetpadCell.java" startLine="74" startPosition="72" endLine="78" endPosition="41" />
-    <scopeInfo nodeId="8991226552770719771" fileName="AbstractJetpadCell.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="5374841768510636286" fileName="AbstractJetpadCell.java" startLine="94" startPosition="36" endLine="98" endPosition="24" />
-    <scopeInfo nodeId="1798834667989551317" fileName="AbstractJetpadCell.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="6981942132924315041" fileName="AbstractJetpadCell.java" startLine="49" startPosition="42" endLine="54" endPosition="7" />
-    <scopeInfo nodeId="615329258668318315" fileName="AbstractJetpadCell.java" startLine="103" startPosition="65" endLine="108" endPosition="5">
+    <scopeInfo nodeId="6721598535435446684" fileName="AbstractJetpadCell.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="2333520786828832809" fileName="AbstractJetpadCell.java" startLine="65" startPosition="28" endLine="69" endPosition="9" />
+    <scopeInfo nodeId="5374841768510749807" fileName="AbstractJetpadCell.java" startLine="75" startPosition="72" endLine="79" endPosition="41" />
+    <scopeInfo nodeId="8991226552770719771" fileName="AbstractJetpadCell.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="5374841768510636286" fileName="AbstractJetpadCell.java" startLine="95" startPosition="36" endLine="99" endPosition="24" />
+    <scopeInfo nodeId="1798834667989551317" fileName="AbstractJetpadCell.java" startLine="143" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="6981942132924315041" fileName="AbstractJetpadCell.java" startLine="50" startPosition="42" endLine="55" endPosition="7" />
+    <scopeInfo nodeId="615329258668318315" fileName="AbstractJetpadCell.java" startLine="104" startPosition="65" endLine="109" endPosition="5">
       <varInfo nodeId="615329258668318299" varName="nextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="615329258671625495" fileName="AbstractJetpadCell.java" startLine="131" startPosition="67" endLine="136" endPosition="5" />
-    <scopeInfo nodeId="2333520786824485861" fileName="AbstractJetpadCell.java" startLine="63" startPosition="44" endLine="69" endPosition="7" />
-    <scopeInfo nodeId="5374841768510749804" fileName="AbstractJetpadCell.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="615329258671625495" fileName="AbstractJetpadCell.java" startLine="132" startPosition="67" endLine="137" endPosition="5" />
+    <scopeInfo nodeId="40426410296020301" fileName="AbstractJetpadCell.java" startLine="168" startPosition="0" endLine="173" endPosition="0">
+      <varInfo nodeId="40426410296020305" varName="isSelected" />
+    </scopeInfo>
+    <scopeInfo nodeId="2333520786824485861" fileName="AbstractJetpadCell.java" startLine="64" startPosition="44" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="5374841768510749804" fileName="AbstractJetpadCell.java" startLine="75" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="5374841768510753689" varName="modelProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="5374841768510633280" fileName="AbstractJetpadCell.java" startLine="93" startPosition="42" endLine="99" endPosition="5" />
-    <scopeInfo nodeId="6981942132924315038" fileName="AbstractJetpadCell.java" startLine="49" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="615329258668318301" fileName="AbstractJetpadCell.java" startLine="102" startPosition="63" endLine="109" endPosition="16" />
-    <scopeInfo nodeId="1853186767788038693" fileName="AbstractJetpadCell.java" startLine="114" startPosition="39" endLine="121" endPosition="51">
+    <scopeInfo nodeId="5374841768510633280" fileName="AbstractJetpadCell.java" startLine="94" startPosition="42" endLine="100" endPosition="5" />
+    <scopeInfo nodeId="6981942132924315038" fileName="AbstractJetpadCell.java" startLine="50" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="615329258668318301" fileName="AbstractJetpadCell.java" startLine="103" startPosition="63" endLine="110" endPosition="16" />
+    <scopeInfo nodeId="1853186767788038693" fileName="AbstractJetpadCell.java" startLine="115" startPosition="39" endLine="122" endPosition="51">
       <varInfo nodeId="1853186767788038695" varName="nextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="615329258671625494" fileName="AbstractJetpadCell.java" startLine="131" startPosition="0" endLine="138" endPosition="0">
+    <scopeInfo nodeId="615329258671625494" fileName="AbstractJetpadCell.java" startLine="132" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="615329258671625520" varName="listIterator" />
     </scopeInfo>
-    <scopeInfo nodeId="3857586639340364748" fileName="AbstractJetpadCell.java" startLine="153" startPosition="49" endLine="160" endPosition="9" />
-    <scopeInfo nodeId="2333520786824485857" fileName="AbstractJetpadCell.java" startLine="62" startPosition="68" endLine="70" endPosition="5">
+    <scopeInfo nodeId="3857586639340364748" fileName="AbstractJetpadCell.java" startLine="154" startPosition="49" endLine="161" endPosition="9" />
+    <scopeInfo nodeId="2333520786824485857" fileName="AbstractJetpadCell.java" startLine="63" startPosition="68" endLine="71" endPosition="5">
       <varInfo nodeId="2333520786824485859" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="5374841768510633276" fileName="AbstractJetpadCell.java" startLine="92" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="615329258668318305" fileName="AbstractJetpadCell.java" startLine="102" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="5374841768510633276" fileName="AbstractJetpadCell.java" startLine="93" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="615329258668318305" fileName="AbstractJetpadCell.java" startLine="103" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="615329258668318317" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1853186767785716083" fileName="AbstractJetpadCell.java" startLine="113" startPosition="39" endLine="123" endPosition="73" />
-    <scopeInfo nodeId="3857586639340364742" fileName="AbstractJetpadCell.java" startLine="152" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="1853186767785716083" fileName="AbstractJetpadCell.java" startLine="114" startPosition="39" endLine="124" endPosition="73" />
+    <scopeInfo nodeId="3857586639340364742" fileName="AbstractJetpadCell.java" startLine="153" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="3857586639340364746" varName="e" />
       <varInfo nodeId="3857586639340364744" varName="view" />
     </scopeInfo>
-    <scopeInfo nodeId="2333520786824485837" fileName="AbstractJetpadCell.java" startLine="58" startPosition="65" endLine="71" endPosition="27">
+    <scopeInfo nodeId="2333520786824485837" fileName="AbstractJetpadCell.java" startLine="59" startPosition="65" endLine="72" endPosition="27">
       <varInfo nodeId="2333520786824485852" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="2333520786824485830" fileName="AbstractJetpadCell.java" startLine="57" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="2333520786824485830" fileName="AbstractJetpadCell.java" startLine="58" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="2333520786824485833" varName="graphics" />
       <varInfo nodeId="2333520786824485835" varName="settings" />
     </scopeInfo>
-    <scopeInfo nodeId="1853186767785716081" fileName="AbstractJetpadCell.java" startLine="112" startPosition="123" endLine="128" endPosition="5" />
-    <scopeInfo nodeId="1853186767785716070" fileName="AbstractJetpadCell.java" startLine="112" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="1853186767785716081" fileName="AbstractJetpadCell.java" startLine="113" startPosition="123" endLine="129" endPosition="5" />
+    <scopeInfo nodeId="1853186767785716070" fileName="AbstractJetpadCell.java" startLine="113" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="1853186767785716079" varName="cell" />
       <varInfo nodeId="1853186767785716074" varName="existingNodes" />
       <varInfo nodeId="1853186767785716077" varName="node" />
       <varInfo nodeId="1853186767785716071" varName="nodesIterator" />
     </scopeInfo>
-    <scopeInfo nodeId="5827780068508007633" fileName="AbstractJetpadCell.java" startLine="139" startPosition="114" endLine="162" endPosition="16" />
-    <scopeInfo nodeId="7319867929565375243" fileName="AbstractJetpadCell.java" startLine="139" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="5827780068508007633" fileName="AbstractJetpadCell.java" startLine="140" startPosition="114" endLine="163" endPosition="16" />
+    <scopeInfo nodeId="7319867929565375243" fileName="AbstractJetpadCell.java" startLine="140" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="5827780068508070291" varName="canDelete" />
       <varInfo nodeId="5827780068508014860" varName="view" />
     </scopeInfo>
-    <unitInfo nodeId="1755573558918258224" fileName="AbstractJetpadCell.java" startLine="50" startPosition="61" endLine="54" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell$1" />
-    <unitInfo nodeId="1798834667989551315" fileName="AbstractJetpadCell.java" startLine="141" startPosition="48" endLine="150" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell$2" />
-    <unitInfo nodeId="3857586639340364740" fileName="AbstractJetpadCell.java" startLine="151" startPosition="72" endLine="162" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell$3" />
-    <unitInfo nodeId="5374841768509702453" fileName="AbstractJetpadCell.java" startLine="36" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
+    <unitInfo nodeId="1755573558918258224" fileName="AbstractJetpadCell.java" startLine="51" startPosition="61" endLine="55" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell$1" />
+    <unitInfo nodeId="1798834667989551315" fileName="AbstractJetpadCell.java" startLine="142" startPosition="48" endLine="151" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell$2" />
+    <unitInfo nodeId="3857586639340364740" fileName="AbstractJetpadCell.java" startLine="152" startPosition="72" endLine="163" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell$3" />
+    <unitInfo nodeId="5374841768509702453" fileName="AbstractJetpadCell.java" startLine="36" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/5374841768510233685">
     <nodeInfo nodeId="5374841768510407270" fileName="WritableModelProperty.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandId" />
@@ -1108,9 +1116,6 @@
     <nodeInfo nodeId="7319867929570213502" fileName="BlockCell.java" startLine="146" startPosition="48" endLine="147" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8406611181820852017" fileName="BlockCell.java" startLine="147" startPosition="48" endLine="148" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7319867929570218935" fileName="BlockCell.java" startLine="148" startPosition="91" endLine="149" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5003005296039565950" fileName="BlockCell.java" startLine="153" startPosition="45" endLine="154" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5003005296039584945" fileName="BlockCell.java" startLine="154" startPosition="32" endLine="155" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5003005296039580868" fileName="BlockCell.java" startLine="156" startPosition="46" endLine="157" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9070483889460809836" fileName="BlockCell.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1755573558918326124" fileName="BlockCell.java" startLine="40" startPosition="40" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4046741574145286177" fileName="BlockCell.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContentViewMapperSource#()Ljava/lang/String;" />
@@ -1121,7 +1126,6 @@
     <nodeInfo nodeId="615329258671706629" fileName="BlockCell.java" startLine="96" startPosition="48" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5827780068508407670" fileName="BlockCell.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Boolean;" />
     <nodeInfo nodeId="3857586639341935503" fileName="BlockCell.java" startLine="129" startPosition="49" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5003005296039573132" fileName="BlockCell.java" startLine="155" startPosition="67" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="615329258671865490" fileName="BlockCell.java" startLine="87" startPosition="5" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1755573558918326142" fileName="BlockCell.java" startLine="44" startPosition="101" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7755191110389120048" fileName="BlockCell.java" startLine="113" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="move#(Ljetbrains/jetpad/geometry/Vector;)V" />
@@ -1134,7 +1138,6 @@
     <nodeInfo nodeId="7755191110386294812" fileName="BlockCell.java" startLine="79" startPosition="100" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="615329258671706621" fileName="BlockCell.java" startLine="94" startPosition="90" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="7319867929569826032" fileName="BlockCell.java" startLine="143" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updatePositionsFromModel#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/jetpad/projectional/diagram/view/DiagramNodeView;)V" />
-    <nodeInfo nodeId="5003005296039565934" fileName="BlockCell.java" startLine="152" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Z)V" />
     <nodeInfo nodeId="1853186767786796274" fileName="BlockCell.java" startLine="68" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="syncPortNodes#(Ljava/lang/Iterable;Ljava/util/ListIterator;Ljava/util/Set;)V" />
     <nodeInfo nodeId="615329258671706610" fileName="BlockCell.java" startLine="94" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="syncToNextObject#(Ljava/util/ListIterator;Ljava/util/Set;Ljava/lang/Object;)V" />
     <nodeInfo nodeId="2737326777796548367" fileName="BlockCell.java" startLine="128" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/jetpad/projectional/view/View;Ljetbrains/jetpad/event/KeyEvent;)V" />
@@ -1156,7 +1159,6 @@
     <scopeInfo nodeId="3857586639341935506" fileName="BlockCell.java" startLine="130" startPosition="43" endLine="131" endPosition="17" />
     <scopeInfo nodeId="3857586639340364759" fileName="BlockCell.java" startLine="133" startPosition="26" endLine="134" endPosition="85" />
     <scopeInfo nodeId="3857586639342320027" fileName="BlockCell.java" startLine="135" startPosition="52" endLine="136" endPosition="92" />
-    <scopeInfo nodeId="5003005296039573135" fileName="BlockCell.java" startLine="156" startPosition="46" endLine="157" endPosition="69" />
     <scopeInfo nodeId="615329258672919631" fileName="BlockCell.java" startLine="83" startPosition="14" endLine="85" endPosition="32" />
     <scopeInfo nodeId="615329258671865491" fileName="BlockCell.java" startLine="88" startPosition="37" endLine="90" endPosition="29" />
     <scopeInfo nodeId="9070483889460809836" fileName="BlockCell.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
@@ -1176,9 +1178,6 @@
     </scopeInfo>
     <scopeInfo nodeId="7755191110389120048" fileName="BlockCell.java" startLine="113" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="7755191110389120051" varName="delta" />
-    </scopeInfo>
-    <scopeInfo nodeId="5003005296039565946" fileName="BlockCell.java" startLine="153" startPosition="45" endLine="158" endPosition="5">
-      <varInfo nodeId="5003005296039584946" varName="diagramNodeView" />
     </scopeInfo>
     <scopeInfo nodeId="7755191110386294814" fileName="BlockCell.java" startLine="80" startPosition="54" endLine="86" endPosition="7" />
     <scopeInfo nodeId="615329258671706622" fileName="BlockCell.java" startLine="95" startPosition="36" endLine="101" endPosition="39">
@@ -1203,9 +1202,6 @@
     <scopeInfo nodeId="7319867929569826032" fileName="BlockCell.java" startLine="143" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="7319867929570764403" varName="contentView" />
       <varInfo nodeId="7319867929570770852" varName="nodeView" />
-    </scopeInfo>
-    <scopeInfo nodeId="5003005296039565934" fileName="BlockCell.java" startLine="152" startPosition="0" endLine="160" endPosition="0">
-      <varInfo nodeId="5003005296039565938" varName="selected" />
     </scopeInfo>
     <scopeInfo nodeId="615329258671706620" fileName="BlockCell.java" startLine="94" startPosition="90" endLine="103" endPosition="71" />
     <scopeInfo nodeId="1853186767786796274" fileName="BlockCell.java" startLine="68" startPosition="0" endLine="78" endPosition="0">
@@ -1243,7 +1239,7 @@
     <unitInfo nodeId="5827780068508407670" fileName="BlockCell.java" startLine="119" startPosition="33" endLine="123" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell$2" />
     <unitInfo nodeId="7755191110389120046" fileName="BlockCell.java" startLine="112" startPosition="63" endLine="118" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell$1" />
     <unitInfo nodeId="2737326777796548365" fileName="BlockCell.java" startLine="127" startPosition="77" endLine="139" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell$3" />
-    <unitInfo nodeId="9070483889460776526" fileName="BlockCell.java" startLine="29" startPosition="0" endLine="161" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
+    <unitInfo nodeId="9070483889460776526" fileName="BlockCell.java" startLine="29" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
   </root>
 </debugInfo>
 
