@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ecn5so22z28a4p8h03b8gr9odtjc2ft">
+<dependencies version="2" modelHash="3n42p8npdsgduhvl9aghth1twfxy5qp">
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-b7uc8zn9s21moznq6gl69vj86eo9fz" />
   <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" hash="b3levz77xf5i5ay54ipz1d9fnhdtp28" />
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="6l4d56nir2sg8l2f7lfm0wggdohh1hj" />
@@ -332,7 +332,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="jetpad.xml" />
   </source>
-  <source id="4305752832749937830" name="mpsDiagramEditor" hash="49z0tou7v07jdsayai9rnw0bmnenutq">
+  <source id="4305752832749937830" name="mpsDiagramEditor" hash="8vtqp89kchtziqw7p7tpk8v7229v2my">
     <dep root="2405506926871158265" />
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
