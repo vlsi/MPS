@@ -16,11 +16,17 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"rectangles"}, new boolean[]{true}).create();
       case 1:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"mainNodes"}, new boolean[]{true}).create();
+      case 2:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y").create();
+      case 3:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize").super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").parents("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").properties("width", "height").create();
+      case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
 }

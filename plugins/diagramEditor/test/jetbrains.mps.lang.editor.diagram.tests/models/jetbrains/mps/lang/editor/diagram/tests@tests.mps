@@ -33,6 +33,56 @@
   <root type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="604142159147853968" nodeInfo="ng">
     <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
   </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5003005296038308967" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="DeleteDiagramNode" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Deleting diagram node by ressing Del" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="5003005296038309041" nodeInfo="ng">
+      <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="5003005296038309063" nodeInfo="ng">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5003005296038309110" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_t2nwzx_a" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="5003005296038309154" nodeInfo="ng" />
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5003005296038309180" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="5003005296038309178" nodeInfo="nn">
+        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="5003005296038309179" nodeInfo="ng">
+          <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8794120090375557118" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="CreateDiagramNodeWithPosition" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Creating new diagram node at specified position by clicking on digram and using basic complete menu" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8794120090375902403" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8794120090376062135" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0a" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8794120090375978070" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.Node" typeId="g85x.8794120090374233605" id="8794120090375983278" nodeInfo="ng">
+        <property name="x" nameId="g85x.8794120090374242972" value="150" />
+        <property name="y" nameId="g85x.8794120090374242974" value="150" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8794120090375978477" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.MousePress" typeId="tp5g.4633202057941640741" id="8794120090375978476" nodeInfo="ng">
+        <property name="x" nameId="tp5g.4633202057941654444" value="150" />
+        <property name="y" nameId="tp5g.4633202057941654446" value="150" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="8794120090375978919" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value="Node" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="8794120090375979679" nodeInfo="nn">
+        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8794120090375979681" nodeInfo="ng">
+          <property name="keycode" nameId="tp4k.1207318242774" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="834109970984588248" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="SelectDiagramNode" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Selecting diagram node by clicking on it" />
@@ -58,23 +108,63 @@
       </node>
     </node>
   </root>
-  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5003005296038308967" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="DeleteDiagramNode" />
-    <property name="description" nameId="tp5g.1883175908513350760" value="Deleting diagram node by ressing Del" />
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="5003005296038309041" nodeInfo="ng">
-      <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="5003005296038309063" nodeInfo="ng">
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5003005296038309110" nodeInfo="ng">
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8794120090376139994" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="UnSelectDiagramNode" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Selecting diagram node by clicking on it" />
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="8794120090376139995" nodeInfo="ng">
+      <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="8794120090376139996" nodeInfo="ng" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8794120090376140802" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_yfdxtz_a0a" />
+      </node>
+    </node>
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="8794120090376139998" nodeInfo="ng">
+      <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="8794120090376140657" nodeInfo="ng">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8794120090376140658" nodeInfo="ng">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
           <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_t2nwzx_a" />
         </node>
       </node>
     </node>
-    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="5003005296038309154" nodeInfo="ng" />
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5003005296038309180" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="5003005296038309178" nodeInfo="nn">
-        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="5003005296038309179" nodeInfo="ng">
-          <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8794120090376140001" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="8794120090376178275" nodeInfo="nn">
+        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8794120090376178276" nodeInfo="ng">
+          <property name="keycode" nameId="tp4k.1207318242774" value="VK_ESCAPE" />
         </node>
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8794120090377706340" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="ResizeNodeUp" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Resizing node, up direction //TODO: make it working! Not it's not testing anything." />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8794120090377793373" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="8794120090377807915" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="x" nameId="g85x.8794120090374242972" value="10" />
+        <property name="y" nameId="g85x.8794120090374242974" value="10" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8794120090382404175" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8794120090382404275" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="8794120090382404327" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="x" nameId="g85x.8794120090374242972" value="10" />
+        <property name="y" nameId="g85x.8794120090374242974" value="10" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8794120090382404864" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8794120090382404808" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.MousePress" typeId="tp5g.4633202057941640741" id="8794120090382404807" nodeInfo="ng">
+        <property name="y" nameId="tp5g.4633202057941654446" value="10" />
+        <property name="x" nameId="tp5g.4633202057941654444" value="50" />
       </node>
     </node>
   </root>

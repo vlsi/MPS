@@ -72,5 +72,79 @@
     <unitInfo nodeId="834109970984588248" fileName="SelectDiagramNode_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramNode_Test$TestBody" />
     <unitInfo nodeId="834109970984588248" fileName="SelectDiagramNode_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramNode_Test" />
   </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/8794120090375557118">
+    <nodeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="20" startPosition="69" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090375978476" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="33" startPosition="93" endLine="34" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090375978919" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="34" startPosition="72" endLine="35" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090375979679" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="35" startPosition="61" endLine="36" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateDiagramNodeWithPosition_Test#()V" />
+    <nodeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_CreateDiagramNodeWithPosition#()V" />
+    <nodeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="16" startPosition="47" endLine="16" endPosition="47" />
+    <scopeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="20" startPosition="69" endLine="22" endPosition="125" />
+    <scopeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="31" startPosition="51" endLine="36" endPosition="118">
+      <varInfo nodeId="8794120090375557118" varName="editor" />
+      <varInfo nodeId="8794120090375557118" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="25" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNodeWithPosition_Test$TestBody" />
+    <unitInfo nodeId="8794120090375557118" fileName="CreateDiagramNodeWithPosition_Test.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNodeWithPosition_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/8794120090376139994">
+    <nodeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="20" startPosition="59" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090376178275" fileName="UnSelectDiagramNode_Test.java" startLine="33" startPosition="93" endLine="34" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnSelectDiagramNode_Test#()V" />
+    <nodeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_UnSelectDiagramNode#()V" />
+    <nodeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="16" startPosition="37" endLine="16" endPosition="37" />
+    <scopeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="20" startPosition="59" endLine="22" endPosition="115" />
+    <scopeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="31" startPosition="51" endLine="34" endPosition="119">
+      <varInfo nodeId="8794120090376139994" varName="editor" />
+      <varInfo nodeId="8794120090376139994" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="30" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.UnSelectDiagramNode_Test$TestBody" />
+    <unitInfo nodeId="8794120090376139994" fileName="UnSelectDiagramNode_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.UnSelectDiagramNode_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/8794120090377706340">
+    <nodeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="18" startPosition="52" endLine="19" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="19" startPosition="122" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090382404807" fileName="ResizeNodeUp_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResizeNodeUp_Test#()V" />
+    <nodeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ResizeNodeUp#()V" />
+    <nodeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="14" startPosition="30" endLine="14" endPosition="30" />
+    <scopeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="18" startPosition="52" endLine="20" endPosition="108" />
+    <scopeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="70">
+      <varInfo nodeId="8794120090377706340" varName="editor" />
+      <varInfo nodeId="8794120090377706340" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNodeUp_Test$TestBody" />
+    <unitInfo nodeId="8794120090377706340" fileName="ResizeNodeUp_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNodeUp_Test" />
+  </root>
 </debugInfo>
 
