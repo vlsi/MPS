@@ -20,13 +20,21 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * evgeny, 10/1/12
+ * @author evgeny, 10/1/12
  */
 public class StringUtil {
 
   private final static char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
   private StringUtil() {
+  }
+
+  public static boolean startsWithChar(@Nullable CharSequence s, char prefix) {
+    return s != null && s.length() != 0 && s.charAt(0) == prefix;
+  }
+
+  public static boolean endsWithChar(@Nullable CharSequence s, char suffix) {
+    return s != null && s.length() != 0 && s.charAt(s.length() - 1) == suffix;
   }
 
   public static int compare(String left, String right) {

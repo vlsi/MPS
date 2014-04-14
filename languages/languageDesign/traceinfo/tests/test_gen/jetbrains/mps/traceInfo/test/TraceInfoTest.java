@@ -158,7 +158,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
-        ActiveEnvironment.get().disposeProject(p);
+        ActiveEnvironment.getInstance().disposeProject(p.getProjectFile());
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }

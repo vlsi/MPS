@@ -160,10 +160,10 @@ public class RefactoringTest extends WorkbenchMpsTest {
   }
 
   private static void closeAllProjects() {
-    final Environment currentEnvironment = ActiveEnvironment.get();
-    for (Project p : currentEnvironment.openedProjects()) {
-      currentEnvironment.disposeProject(p);
-    }
+    final Environment currentEnvironment = ActiveEnvironment.getInstance();
+//    for (Project p : currentEnvironment.openedProjects()) {
+//      currentEnvironment.disposeProject(p.getProjectFile());
+//    }
   }
 }
 

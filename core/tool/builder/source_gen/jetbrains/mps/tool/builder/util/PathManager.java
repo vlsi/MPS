@@ -5,12 +5,13 @@ package jetbrains.mps.tool.builder.util;
 import org.jetbrains.annotations.NonNls;
 import java.io.FilenameFilter;
 import java.io.File;
+import jetbrains.mps.util.PathUtil;
 import jetbrains.mps.tool.common.util.SystemInfo;
 import java.io.IOException;
 import jetbrains.mps.tool.common.util.FileUtil;
-import jetbrains.mps.tool.common.util.StringUtil;
 import org.jetbrains.annotations.Nullable;
 import java.net.URL;
+import jetbrains.mps.tool.common.util.StringUtil;
 import jetbrains.mps.tool.common.util.URLUtil;
 import java.io.InputStream;
 import java.io.BufferedInputStream;
@@ -96,7 +97,7 @@ public class PathManager {
       return ourHomePath;
     }
     if (System.getProperty(PROPERTY_HOME_PATH) != null) {
-      ourHomePath = PathManager.getAbsolutePath(System.getProperty(PROPERTY_HOME_PATH));
+      ourHomePath = PathUtil.getAbsolutePath(System.getProperty(PROPERTY_HOME_PATH));
     } else {
       final Class aClass = PathManager.class;
       String rootPath = PathManager.getResourceRoot(aClass, "/" + aClass.getName().replace('.', '/') + ".class");
@@ -136,22 +137,12 @@ public class PathManager {
     return PathManager.getHomePath() + File.separator + LIB_FOLDER;
   }
 
-  private static String trimPathQuotes(String path) {
-    if (!((path != null && !((path.length() < 3))))) {
-      return path;
-    }
-    if (StringUtil.startsWithChar(path, '\"') && StringUtil.endsWithChar(path, '\"')) {
-      return path.substring(1, path.length() - 1);
-    }
-    return path;
-  }
-
   public static String getSystemPath() {
     if (ourSystemPath != null) {
       return ourSystemPath;
     }
     if (System.getProperty(PROPERTY_SYSTEM_PATH) != null) {
-      ourSystemPath = PathManager.getAbsolutePath(PathManager.trimPathQuotes(System.getProperty(PROPERTY_SYSTEM_PATH)));
+      ourSystemPath = PathUtil.getAbsolutePath(PathUtil.trimPathQuotes(System.getProperty(PROPERTY_SYSTEM_PATH)));
     } else {
       ourSystemPath = PathManager.getHomePath() + File.separator + "system";
     }
@@ -188,7 +179,7 @@ public class PathManager {
       return ourConfigPath;
     }
     if (System.getProperty(PROPERTY_CONFIG_PATH) != null) {
-      ourConfigPath = PathManager.getAbsolutePath(PathManager.trimPathQuotes(System.getProperty(PROPERTY_CONFIG_PATH)));
+      ourConfigPath = PathUtil.getAbsolutePath(PathUtil.trimPathQuotes(System.getProperty(PROPERTY_CONFIG_PATH)));
     } else {
       ourConfigPath = PathManager.getHomePath() + File.separator + "config";
     }
@@ -224,7 +215,7 @@ public class PathManager {
   public static String getPluginsPath() {
     if (ourPluginsPath == null) {
       if (System.getProperty(PROPERTY_PLUGINS_PATH) != null) {
-        ourPluginsPath = PathManager.getAbsolutePath(PathManager.trimPathQuotes(System.getProperty(PROPERTY_PLUGINS_PATH)));
+        ourPluginsPath = PathUtil.getAbsolutePath(PathUtil.trimPathQuotes(System.getProperty(PROPERTY_PLUGINS_PATH)));
       } else {
         ourPluginsPath = PathManager.getConfigPath() + File.separatorChar + PLUGINS_DIRECTORY;
       }
@@ -235,19 +226,12 @@ public class PathManager {
   public static String getLogPath() {
     if (ourLogPath == null) {
       if (System.getProperty(PROPERTY_LOG_PATH) != null) {
-        ourLogPath = PathManager.getAbsolutePath(PathManager.trimPathQuotes(System.getProperty(PROPERTY_LOG_PATH)));
+        ourLogPath = PathUtil.getAbsolutePath(PathUtil.trimPathQuotes(System.getProperty(PROPERTY_LOG_PATH)));
       } else {
         ourLogPath = PathManager.getSystemPath() + File.separatorChar + LOG_DIRECTORY;
       }
     }
     return ourLogPath;
-  }
-
-  private static String getAbsolutePath(String path) {
-    if (path.startsWith("~/") || path.startsWith("~\\")) {
-      path = System.getProperty("user.home") + path.substring(1);
-    }
-    return new File(path).getAbsolutePath();
   }
 
   @NonNls
@@ -325,7 +309,7 @@ public class PathManager {
         final Enumeration keys = bundle.getKeys();
         String home = (String) bundle.handleGetObject("idea.home");
         if (home != null && ourHomePath == null) {
-          ourHomePath = PathManager.getAbsolutePath(PathManager.substitueVars(home));
+          ourHomePath = PathUtil.getAbsolutePath(PathManager.substitueVars(home));
         }
         final Properties sysProperties = System.getProperties();
         while (keys.hasMoreElements()) {

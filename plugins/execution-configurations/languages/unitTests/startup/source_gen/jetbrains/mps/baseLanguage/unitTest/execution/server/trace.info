@@ -32,7 +32,7 @@
     <scopeInfo nodeId="3310779261129642904" fileName="TransformationTestExecutor.java" startLine="23" startPosition="9" endLine="29" endPosition="9" />
     <scopeInfo nodeId="3310779261129642874" fileName="TransformationTestExecutor.java" startLine="14" startPosition="42" endLine="34" endPosition="19" />
     <scopeInfo nodeId="3310779261129642871" fileName="TransformationTestExecutor.java" startLine="14" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="3310779261129642936" varName="argv" />
+      <varInfo nodeId="3310779261129642936" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="3310779261129642909" fileName="TransformationTestExecutor.java" startLine="24" startPosition="39" endLine="29" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestExecutor$1" />
     <unitInfo nodeId="3310779261129642822" fileName="TransformationTestExecutor.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestExecutor" />

@@ -29,26 +29,19 @@ public class CachesUtil {
     // we need to check that caches dirs are writable
     // idea does not have the necessary api, so, alas, doing checks by ourselves
     // see PathManager class
-//    System.setProperty(PROPERTY_CONFIG_PATH, "/home/alexeyka/.MPSSRC31/mpstmp_pel/config");
-//    System.setProperty(PROPERTY_SYSTEM_PATH, "/home/alexeyka/.MPSSRC31/mpstmp_pel/system");
     useTemporalFolderIfNotSet(PROPERTY_CONFIG_PATH);
     useTemporalFolderIfNotSet(PROPERTY_SYSTEM_PATH);
+  }
+
+  private static void setTestCachesPath() {
   }
 
   private static void useTemporalFolderIfNotSet(String propertyName) {
     String path = System.getProperty(propertyName);
     if (path != null) {
-      if (path.length() >= 3 && path.startsWith("\"") && path.endsWith("\"")) {
-        path = path.substring(1, path.length() - 1);
-      }
-      if (path.startsWith("~/") || path.startsWith("~\\")) {
-        path = System.getProperty("user.home") + path.substring(1);
-      }
-      path = new File(path).getAbsolutePath();
-
-      if (FileUtil.canWrite(new File(path))) {
-        return;
-      }
+      path = PathUtil.trimPathQuotes(path);
+      path = PathUtil.getAbsolutePath(path);
+      if (FileUtil.canWrite(new File(path))) return;
     }
 
     setTmpCacheFolder(propertyName);

@@ -1593,7 +1593,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3310779261129642883" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690168266" resolveInfo="executeTestsFromArguments" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150330113" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3310779261129642936" resolveInfo="argv" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3310779261129642936" resolveInfo="args" />
                   </node>
                 </node>
               </node>
@@ -1727,7 +1727,7 @@
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3310779261129642936" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="argv" />
+        <property name="name" nameId="tpck.1169194664001" value="args" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="3310779261129642937" nodeInfo="in">
           <node role="componentType" roleId="tpee.1070534760952" type="tpee.StringType" typeId="tpee.1225271177708" id="3310779261129642938" nodeInfo="in" />
         </node>

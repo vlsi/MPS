@@ -310,7 +310,7 @@ public class GenerationTestBase {
   }
 
   protected static Project loadProject(File projectFile) {
-    return ActiveEnvironment.get().openProject(projectFile);
+    return ActiveEnvironment.getInstance().openProject(projectFile);
   }
 
   protected static void cleanup(final Project p) {

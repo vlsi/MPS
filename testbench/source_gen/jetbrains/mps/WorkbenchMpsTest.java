@@ -33,20 +33,20 @@ public class WorkbenchMpsTest {
 
 
   private static void checkEnvironmentExists() {
-    assert ActiveEnvironment.get() != null;
+    assert ActiveEnvironment.getInstance() != null;
   }
 
 
 
   public static Project openProject(File projectFile) {
     checkEnvironmentExists();
-    return ActiveEnvironment.get().openProject(projectFile);
+    return ActiveEnvironment.getInstance().openProject(projectFile);
   }
 
 
 
   public static void disposeProject(Project project) {
     checkEnvironmentExists();
-    ActiveEnvironment.get().disposeProject(project);
+    ActiveEnvironment.getInstance().disposeProject(project.getProjectFile());
   }
 }

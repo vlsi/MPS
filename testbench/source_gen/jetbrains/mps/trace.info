@@ -27,11 +27,11 @@
     <nodeInfo nodeId="694564436393193897" fileName="WorkbenchMpsTest.java" startLine="20" startPosition="30" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7276643694149347923" fileName="WorkbenchMpsTest.java" startLine="28" startPosition="32" endLine="29" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7276643694149347720" fileName="WorkbenchMpsTest.java" startLine="29" startPosition="114" endLine="30" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4831291550463517861" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="48" endLine="36" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4831291550463517861" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="48" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4831291550463557879" fileName="WorkbenchMpsTest.java" startLine="41" startPosition="55" endLine="42" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4831291550463516211" fileName="WorkbenchMpsTest.java" startLine="42" startPosition="29" endLine="43" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4831291550463516211" fileName="WorkbenchMpsTest.java" startLine="42" startPosition="29" endLine="43" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4831291550463558135" fileName="WorkbenchMpsTest.java" startLine="48" startPosition="54" endLine="49" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="694564436393193932" fileName="WorkbenchMpsTest.java" startLine="49" startPosition="29" endLine="50" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="694564436393193932" fileName="WorkbenchMpsTest.java" startLine="49" startPosition="29" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="694564436393193891" fileName="WorkbenchMpsTest.java" startLine="19" startPosition="48" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4831291550463557725" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkEnvironmentExists#()V" />
     <nodeInfo nodeId="694564436393193916" fileName="WorkbenchMpsTest.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
@@ -39,10 +39,10 @@
     <nodeInfo nodeId="694564436393193902" fileName="WorkbenchMpsTest.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="cleanup#()V" />
     <nodeInfo nodeId="694564436393193882" fileName="WorkbenchMpsTest.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setUpEnvironment#()V" />
     <scopeInfo nodeId="694564436393193896" fileName="WorkbenchMpsTest.java" startLine="20" startPosition="30" endLine="21" endPosition="52" />
-    <scopeInfo nodeId="4831291550463517388" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="48" endLine="36" endPosition="43" />
+    <scopeInfo nodeId="4831291550463517388" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="48" endLine="36" endPosition="51" />
     <scopeInfo nodeId="694564436393193904" fileName="WorkbenchMpsTest.java" startLine="28" startPosition="32" endLine="30" endPosition="14" />
-    <scopeInfo nodeId="694564436393193919" fileName="WorkbenchMpsTest.java" startLine="41" startPosition="55" endLine="43" endPosition="60" />
-    <scopeInfo nodeId="694564436393193931" fileName="WorkbenchMpsTest.java" startLine="48" startPosition="54" endLine="50" endPosition="52" />
+    <scopeInfo nodeId="694564436393193919" fileName="WorkbenchMpsTest.java" startLine="41" startPosition="55" endLine="43" endPosition="68" />
+    <scopeInfo nodeId="694564436393193931" fileName="WorkbenchMpsTest.java" startLine="48" startPosition="54" endLine="50" endPosition="77" />
     <scopeInfo nodeId="4831291550463557725" fileName="WorkbenchMpsTest.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="694564436393193884" fileName="WorkbenchMpsTest.java" startLine="18" startPosition="41" endLine="22" endPosition="5" />
     <scopeInfo nodeId="694564436393193916" fileName="WorkbenchMpsTest.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
@@ -54,126 +54,6 @@
     <scopeInfo nodeId="694564436393193902" fileName="WorkbenchMpsTest.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="694564436393193882" fileName="WorkbenchMpsTest.java" startLine="17" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="694564436393193873" fileName="WorkbenchMpsTest.java" startLine="13" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.WorkbenchMpsTest" />
-  </root>
-  <root nodeRef="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)/752184498304305149">
-    <nodeInfo nodeId="2654128911719199710" fileName="ProjectContainer.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjects" />
-    <nodeInfo nodeId="2654128911719297634" fileName="ProjectContainer.java" startLine="21" startPosition="29" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="752184498305362885" fileName="ProjectContainer.java" startLine="27" startPosition="25" endLine="28" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2654128911719847388" fileName="ProjectContainer.java" startLine="35" startPosition="48" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2654128911719847409" fileName="ProjectContainer.java" startLine="38" startPosition="29" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="752184498304305167" fileName="ProjectContainer.java" startLine="43" startPosition="27" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2654128911719457047" fileName="ProjectContainer.java" startLine="45" startPosition="5" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2654128911719969732" fileName="ProjectContainer.java" startLine="51" startPosition="37" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8171859610424318553" fileName="ProjectContainer.java" startLine="57" startPosition="54" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="8171859610424501332" fileName="ProjectContainer.java" startLine="60" startPosition="49" endLine="61" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8171859610424600717" fileName="ProjectContainer.java" startLine="63" startPosition="5" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1729512929058717325" fileName="ProjectContainer.java" startLine="64" startPosition="48" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1729512929058742960" fileName="ProjectContainer.java" startLine="70" startPosition="52" endLine="71" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1729512929058749221" fileName="ProjectContainer.java" startLine="71" startPosition="64" endLine="72" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2654128911719807954" fileName="ProjectContainer.java" startLine="77" startPosition="56" endLine="78" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2654128911719852613" fileName="ProjectContainer.java" startLine="78" startPosition="61" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2654128911719819137" fileName="ProjectContainer.java" startLine="79" startPosition="59" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2654128911719291495" fileName="ProjectContainer.java" startLine="85" startPosition="22" endLine="86" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2654128911719400053" fileName="ProjectContainer.java" startLine="91" startPosition="59" endLine="92" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="8171859610424491435" fileName="ProjectContainer.java" startLine="94" startPosition="49" endLine="95" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="752184498305324911" fileName="ProjectContainer.java" startLine="97" startPosition="5" endLine="98" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="752184498305241754" fileName="ProjectContainer.java" startLine="103" startPosition="62" endLine="104" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8171859610424463277" fileName="ProjectContainer.java" startLine="105" startPosition="30" endLine="106" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="752184498304997742" fileName="ProjectContainer.java" startLine="108" startPosition="9" endLine="109" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="752184498305002642" fileName="ProjectContainer.java" startLine="109" startPosition="60" endLine="110" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="752184498304985120" fileName="ProjectContainer.java" startLine="110" startPosition="54" endLine="111" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="752184498305207929" fileName="ProjectContainer.java" startLine="113" startPosition="45" endLine="114" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8171859610424403839" fileName="ProjectContainer.java" startLine="116" startPosition="5" endLine="117" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="752184498304305149" fileName="ProjectContainer.java" startLine="120" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1729512929058783093" fileName="ProjectContainer.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectContainer#()V" />
-    <nodeInfo nodeId="752184498304305162" fileName="ProjectContainer.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="2654128911719847407" fileName="ProjectContainer.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2654128911719962834" fileName="ProjectContainer.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProjects#()Ljava/util/Set;" />
-    <nodeInfo nodeId="8171859610424499608" fileName="ProjectContainer.java" startLine="59" startPosition="61" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2654128911719288207" fileName="ProjectContainer.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#()V" />
-    <nodeInfo nodeId="8171859610424464763" fileName="ProjectContainer.java" startLine="93" startPosition="61" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2017907759317611482" fileName="ProjectContainer.java" startLine="104" startPosition="48" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="752184498305207929" fileName="ProjectContainer.java" startLine="112" startPosition="29" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="752184498305207929" fileName="ProjectContainer.java" startLine="112" startPosition="29" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1729512929058732570" fileName="ProjectContainer.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProject#(Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="2654128911719847401" fileName="ProjectContainer.java" startLine="36" startPosition="91" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8171859610424333924" fileName="ProjectContainer.java" startLine="58" startPosition="47" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2654128911719798477" fileName="ProjectContainer.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeProject#(Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="2654128911719409168" fileName="ProjectContainer.java" startLine="92" startPosition="30" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2654128911719840392" fileName="ProjectContainer.java" startLine="34" startPosition="9" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="752184498304305287" fileName="ProjectContainer.java" startLine="91" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="containsProject#(Ljava/io/File;)Z" />
-    <nodeInfo nodeId="752184498305195838" fileName="ProjectContainer.java" startLine="107" startPosition="5" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="752184498304305212" fileName="ProjectContainer.java" startLine="57" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
-    <nodeInfo nodeId="752184498304305164" fileName="ProjectContainer.java" startLine="33" startPosition="24" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="752184498305358622" fileName="ProjectContainer.java" startLine="33" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="8171859610424369199" fileName="ProjectContainer.java" startLine="103" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasPath#(Ljetbrains/mps/project/Project;Ljava/io/File;)Z" />
-    <scopeInfo nodeId="1729512929058783096" fileName="ProjectContainer.java" startLine="21" startPosition="29" endLine="22" endPosition="61" />
-    <scopeInfo nodeId="752184498304305163" fileName="ProjectContainer.java" startLine="27" startPosition="25" endLine="28" endPosition="12" />
-    <scopeInfo nodeId="2654128911719847408" fileName="ProjectContainer.java" startLine="38" startPosition="29" endLine="39" endPosition="30" />
-    <scopeInfo nodeId="752184498304305165" fileName="ProjectContainer.java" startLine="43" startPosition="0" endLine="44" endPosition="26">
-      <varInfo nodeId="752184498304305171" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="752184498304305166" fileName="ProjectContainer.java" startLine="43" startPosition="27" endLine="44" endPosition="26" />
-    <scopeInfo nodeId="2654128911719962837" fileName="ProjectContainer.java" startLine="51" startPosition="37" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="8171859610424499609" fileName="ProjectContainer.java" startLine="60" startPosition="49" endLine="61" endPosition="23" />
-    <scopeInfo nodeId="2654128911719288210" fileName="ProjectContainer.java" startLine="85" startPosition="22" endLine="86" endPosition="44" />
-    <scopeInfo nodeId="8171859610424464764" fileName="ProjectContainer.java" startLine="94" startPosition="49" endLine="95" endPosition="20" />
-    <scopeInfo nodeId="8171859610424462941" fileName="ProjectContainer.java" startLine="105" startPosition="30" endLine="106" endPosition="19" />
-    <scopeInfo nodeId="752184498305207929" fileName="ProjectContainer.java" startLine="113" startPosition="45" endLine="114" endPosition="68" />
-    <scopeInfo nodeId="1729512929058732573" fileName="ProjectContainer.java" startLine="70" startPosition="52" endLine="72" endPosition="61" />
-    <scopeInfo nodeId="1729512929058783093" fileName="ProjectContainer.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="752184498304305162" fileName="ProjectContainer.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="2654128911719847407" fileName="ProjectContainer.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="2654128911719962834" fileName="ProjectContainer.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="8171859610424333930" fileName="ProjectContainer.java" startLine="59" startPosition="61" endLine="62" endPosition="7" />
-    <scopeInfo nodeId="2654128911719798480" fileName="ProjectContainer.java" startLine="77" startPosition="56" endLine="80" endPosition="22" />
-    <scopeInfo nodeId="2654128911719288207" fileName="ProjectContainer.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="2654128911719409174" fileName="ProjectContainer.java" startLine="93" startPosition="61" endLine="96" endPosition="7" />
-    <scopeInfo nodeId="752184498305195839" fileName="ProjectContainer.java" startLine="108" startPosition="9" endLine="111" endPosition="50">
-      <varInfo nodeId="752184498304997743" varName="myProjectPath" />
-      <varInfo nodeId="752184498305002643" varName="newProjectPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="752184498305195834" fileName="ProjectContainer.java" startLine="112" startPosition="0" endLine="115" endPosition="7">
-      <varInfo nodeId="752184498305195836" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="752184498305195835" fileName="ProjectContainer.java" startLine="112" startPosition="29" endLine="115" endPosition="7" />
-    <scopeInfo nodeId="752184498305207929" fileName="ProjectContainer.java" startLine="112" startPosition="29" endLine="115" endPosition="7" />
-    <scopeInfo nodeId="1729512929058732570" fileName="ProjectContainer.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
-      <varInfo nodeId="1729512929058742022" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="8171859610424333924" fileName="ProjectContainer.java" startLine="58" startPosition="47" endLine="63" endPosition="5">
-      <varInfo nodeId="8171859610424333926" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="2654128911719798477" fileName="ProjectContainer.java" startLine="77" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="2654128911719803027" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="2654128911719409168" fileName="ProjectContainer.java" startLine="92" startPosition="30" endLine="97" endPosition="5">
-      <varInfo nodeId="2654128911719409170" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="2654128911719840395" fileName="ProjectContainer.java" startLine="35" startPosition="48" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="752184498304305292" fileName="ProjectContainer.java" startLine="91" startPosition="59" endLine="98" endPosition="17" />
-    <scopeInfo nodeId="2654128911719840392" fileName="ProjectContainer.java" startLine="34" startPosition="9" endLine="42" endPosition="7">
-      <varInfo nodeId="2654128911719840398" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="752184498304305173" fileName="ProjectContainer.java" startLine="34" startPosition="9" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="752184498304305215" fileName="ProjectContainer.java" startLine="57" startPosition="54" endLine="65" endPosition="16" />
-    <scopeInfo nodeId="752184498304305287" fileName="ProjectContainer.java" startLine="91" startPosition="0" endLine="100" endPosition="0">
-      <varInfo nodeId="752184498305213271" varName="anotherProjectFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="752184498304305212" fileName="ProjectContainer.java" startLine="57" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="8171859610424303784" varName="anotherProjectFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="752184498305358625" fileName="ProjectContainer.java" startLine="33" startPosition="24" endLine="46" endPosition="44" />
-    <scopeInfo nodeId="8171859610424369202" fileName="ProjectContainer.java" startLine="103" startPosition="62" endLine="117" endPosition="17">
-      <varInfo nodeId="752184498305241755" varName="projectFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="752184498305358622" fileName="ProjectContainer.java" startLine="33" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="8171859610424369199" fileName="ProjectContainer.java" startLine="103" startPosition="0" endLine="119" endPosition="0">
-      <varInfo nodeId="8171859610424380282" varName="path" />
-      <varInfo nodeId="8171859610424380253" varName="project" />
-    </scopeInfo>
-    <unitInfo nodeId="2654128911719847405" fileName="ProjectContainer.java" startLine="37" startPosition="41" endLine="41" endPosition="9" unitName="jetbrains.mps.ProjectContainer$1" />
-    <unitInfo nodeId="752184498304305149" fileName="ProjectContainer.java" startLine="17" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.ProjectContainer" />
   </root>
 </debugInfo>
 

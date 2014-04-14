@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nullable;
 import java.io.File;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import java.util.List;
 import jetbrains.mps.library.ModulesMiner;
@@ -77,9 +78,15 @@ public class ContextProjectSupport {
 
   @NotNull
   private static Project loadProjectFromProjectPath(String projectPath) {
+    Environment environment = ActiveEnvironment.getInstance();
     File projectFile = new File(projectPath);
-    final Project openedProject = ActiveEnvironment.get().openProject(projectFile);
-    return makeOnFirstTimeOpened(openedProject);
+    boolean needNotToMake = environment.isProjectOpened(projectFile);
+    final Project openedProject = ActiveEnvironment.getInstance().openProject(projectFile);
+    if (needNotToMake) {
+      return openedProject;
+    } else {
+      return makeOnFirstTimeOpened(openedProject);
+    }
   }
 
 
@@ -130,7 +137,7 @@ public class ContextProjectSupport {
   @NotNull
   private static Project loadProjectFromModuleHandles(final Iterable<ModulesMiner.ModuleHandle> moduleHandles) {
     // todo: check currently opened projects 
-    final Project project = ActiveEnvironment.get().createDummyProject();
+    final Project project = ActiveEnvironment.getInstance().createDummyProject();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         for (ModulesMiner.ModuleHandle moduleHandle : Sequence.fromIterable(moduleHandles)) {

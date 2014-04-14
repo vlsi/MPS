@@ -93,7 +93,7 @@ public class ProjectTestsSupport {
       }
     }
     File projectFile = ((projectName != null && projectName.length() > 0) ? new File(destinationDir, projectName) : destinationDir);
-    return ActiveEnvironment.get().openProject(projectFile);
+    return ActiveEnvironment.getInstance().openProject(projectFile);
   }
 
   /**
@@ -101,13 +101,13 @@ public class ProjectTestsSupport {
    */
   public static void finishTestOnProjectCopy(final Project project, final File destinationDir) {
     waitUntilAllEventsFlushed();
-    ActiveEnvironment.get().disposeProject(project);
+    ActiveEnvironment.getInstance().disposeProject(project.getProjectFile());
     FileUtil.delete(destinationDir);
   }
 
   private static void waitUntilAllEventsFlushed() {
     // todo 
-    if (ActiveEnvironment.get().hasIdeaInstance()) {
+    if (ActiveEnvironment.getInstance().hasIdeaInstance()) {
       // Wait until last invokeLater() is executed 
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {

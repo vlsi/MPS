@@ -85,6 +85,7 @@
     <classNode dependClassName="jetbrains.mps.tool.common.util.SystemInfo" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.URLUtil" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
+    <classNode dependClassName="jetbrains.mps.util.PathUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

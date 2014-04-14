@@ -45,7 +45,7 @@ public class MpsTestsSuite extends Suite {
     // todo: dispose env at the end 
     initIdeaEnvironment();
     contextProject = ContextProjectSupport.loadContextProject();
-    ContextProjectSupport.setContextProjectPath(contextProject.getProjectFile());
+    // <node> 
     children = createChildRunners(builder);
   }
 

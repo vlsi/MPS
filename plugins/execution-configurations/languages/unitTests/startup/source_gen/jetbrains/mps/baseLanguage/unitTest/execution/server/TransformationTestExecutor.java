@@ -11,10 +11,10 @@ public class TransformationTestExecutor extends TestExecutor {
   public TransformationTestExecutor() {
   }
 
-  public static void main(String[] argv) {
+  public static void main(String[] args) {
     try {
       CachesUtil.setupCaches();
-      new TransformationTestExecutor().executeTestsFromArguments(argv);
+      new TransformationTestExecutor().executeTestsFromArguments(args);
     } catch (Throwable t) {
       t.printStackTrace(System.err);
       CachesUtil.cleanupCaches();

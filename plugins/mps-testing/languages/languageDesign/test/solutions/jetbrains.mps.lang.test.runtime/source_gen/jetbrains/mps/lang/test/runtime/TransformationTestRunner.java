@@ -9,7 +9,7 @@ import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import java.lang.reflect.InvocationTargetException;
-import javax.swing.SwingUtilities;
+import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -17,11 +17,12 @@ import junit.framework.Assert;
 import java.util.Arrays;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
+import java.io.File;
 import org.apache.log4j.Priority;
 import jetbrains.mps.util.MacrosFactory;
-import java.io.File;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import javax.swing.SwingUtilities;
 import java.awt.GraphicsEnvironment;
 import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
@@ -68,16 +69,22 @@ public class TransformationTestRunner {
 
   private void doInitTest(final TransformationTest test, final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
     test.setProject(testProject);
-    SwingUtilities.invokeAndWait(new Runnable() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            SModel modelDescriptor = findModel(modelName);
-            test.setModelDescriptor(modelDescriptor);
-            test.init();
+            initialize(test, modelName);
           }
         }, testProject);
+      }
+
+
+
+      private void initialize(final TransformationTest test, final String modelName) {
+        SModel modelDescriptor = findModel(modelName);
+        test.setModelDescriptor(modelDescriptor);
+        test.init();
       }
 
 
@@ -99,19 +106,7 @@ public class TransformationTestRunner {
     // <node> 
     // <node> 
     if (reopenProject) {
-      for (final Project project : ActiveEnvironment.get().openedProjects()) {
-        try {
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
-              project.dispose();
-            }
-          });
-        } catch (Exception e) {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
-            LOG.error("", e);
-          }
-        }
-      }
+      ActiveEnvironment.getInstance().disposeProject(new File(projectPathName));
     }
     if ((projectPathName == null || projectPathName.length() == 0)) {
       if (LOG.isEnabledFor(Priority.WARN)) {
@@ -122,7 +117,7 @@ public class TransformationTestRunner {
       String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPathName);
       File projectPath = new File(expandedProjectPath);
 
-      Project project = ActiveEnvironment.get().openProject(projectPath);
+      Project project = ActiveEnvironment.getInstance().openProject(projectPath);
       return project;
     }
   }
@@ -131,7 +126,7 @@ public class TransformationTestRunner {
 
   private Project anyOpenedProject() {
     for (Project project : ProjectManager.getInstance().getOpenProjects()) {
-      if (project != null) {
+      if (project != null && !(project.isDisposed())) {
         return project;
       }
     }

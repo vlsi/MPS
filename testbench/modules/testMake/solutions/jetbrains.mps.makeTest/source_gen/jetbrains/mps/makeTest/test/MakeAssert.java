@@ -85,7 +85,7 @@ public class MakeAssert extends WorkbenchMpsTest {
   }
 
   private static Project launchProject() {
-    jetbrains.mps.project.Project mpsProject = ActiveEnvironment.get().openProject(new File(PROJECT_FILE));
+    jetbrains.mps.project.Project mpsProject = ActiveEnvironment.getInstance().openProject(new File(PROJECT_FILE));
     return ((MPSProject) mpsProject).getProject();
   }
 

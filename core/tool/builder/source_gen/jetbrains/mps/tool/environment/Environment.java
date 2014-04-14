@@ -15,10 +15,8 @@ interface Environment {
    * Opened project should be compiled and classloaded
    */
   public Project openProject(File projectFile);
+  public boolean isProjectOpened(File projectFile);
+  public void disposeProject(File projectFile);
   public Project createDummyProject();
-
-  public Iterable<Project> openedProjects();
-
-  public void disposeProject(Project project);
   public void dispose();
 }

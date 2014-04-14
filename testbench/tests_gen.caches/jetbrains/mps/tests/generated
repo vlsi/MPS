@@ -34,7 +34,7 @@
   <dep model="r:67b81510-37ee-448c-9923-c51275863bef(jetbrains.mps.lang.editor.table.hierarchycalTable.test@tests)" hash="-esh2p7vn63q9h6oegnqtvfrmsihyonz" />
   <dep model="r:710bb5ca-133c-4e34-80eb-4be42af51339(tests)" hash="-5cb7bqw7rvkj3ry8ap4eei8noyk6xm4" />
   <dep model="r:76e159e6-4560-4446-8a14-1eeae92b1a00(jetbrains.mps.baseLanguage.tuples.test)" hash="-6wet2fchncpdvmsbb862bmkq8278u09" />
-  <dep model="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" hash="-51qov55pc1qsg1zwdq7wq8sa6kd7fgz" />
+  <dep model="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" hash="-bqpcbahmb8fvmfn603pdnz3kgycc2tb" />
   <dep model="r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection@tests)" hash="-dkid0jfa9uwaagy1pp79orbmm3bc760" />
   <dep model="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test@tests)" hash="-c546c9x6diw5ggobndjh9x9ql34egnq" />
   <dep model="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" hash="-8t2oydag2x4jrtdwbmzxqygrbpi28vo" />
@@ -57,7 +57,7 @@
   <dep model="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)" hash="-qua0ylowqvv9htq9rlbhrg5ncx1e2j" />
   <dep model="r:f6e06022-fdf6-40b6-a1b7-4030512b05b9(jetbrains.mps.make.unittest)" hash="4sbooomy8y9q54hhid62tdo45il2270" />
   <dep model="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)" hash="-14nv91ej8yt9u75r4a1acok3vbvxigu" />
-  <dep model="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)" hash="29e0kxfjovm3khas0exw3tacy6mc9w7" />
+  <dep model="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)" hash="-3n8m71rthuuyhb27os77s37qssf05gk" />
   <common hash="2cc7vh97fw9p988d1p4gi0o9lnusl99" dependsOnNodes="true" />
   <source id="2712670354707832463" name="closures.test" hash="8v8adu6q5v8c3mracaszpqldyu2md69">
     <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />

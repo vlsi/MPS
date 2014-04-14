@@ -75,7 +75,7 @@ public class MpsTestsSupport {
     if (IdeMain.getTestMode() == IdeMain.TestMode.NO_TEST) {
       IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     }
-    Environment currentEnv = ActiveEnvironment.get();
+    Environment currentEnv = ActiveEnvironment.getInstance();
     if (currentEnv == null) {
       currentEnv = (withIdea ? new IdeaEnvironment(config) : new MpsEnvironment(config));
     }
@@ -97,7 +97,7 @@ public class MpsTestsSupport {
     if (LOG.isInfoEnabled()) {
       LOG.info("Making modules within environment");
     }
-    assert ActiveEnvironment.get() != null;
+    assert ActiveEnvironment.getInstance() != null;
     return ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
         return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
@@ -108,7 +108,7 @@ public class MpsTestsSupport {
 
 
   public static MPSCompilationResult makeAllWithoutEnvironment() {
-    assert ActiveEnvironment.get() == null;
+    assert ActiveEnvironment.getInstance() == null;
     Environment createdEnv = MpsTestsSupport.initEnv(false);
     MpsTestsSupport.loadAllModulesIntoRepository();
     MPSCompilationResult result = MpsTestsSupport.makeAllInCreatedEnvironment();
@@ -148,7 +148,7 @@ public class MpsTestsSupport {
       }
     });
 
-    if (ActiveEnvironment.get().hasIdeaInstance()) {
+    if (ActiveEnvironment.getInstance().hasIdeaInstance()) {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
         public void run() {

@@ -35,7 +35,7 @@ public class ClassesReloadTest extends WorkbenchMpsTest {
   public static boolean testProjectReloadForLeaks(final File projectFile, int leakThreshold) {
     return testActionForLeaks(new Runnable() {
       public void run() {
-        Project project = ActiveEnvironment.get().openProject(projectFile);
+        Project project = ActiveEnvironment.getInstance().openProject(projectFile);
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         project.dispose();
       }

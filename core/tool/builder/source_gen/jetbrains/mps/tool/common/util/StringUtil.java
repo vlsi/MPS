@@ -17,11 +17,11 @@ public class StringUtil {
   }
 
   public static boolean startsWithChar(@Nullable CharSequence s, char prefix) {
-    return s != null && s.length() != 0 && s.charAt(0) == prefix;
+    return jetbrains.mps.util.StringUtil.startsWithChar(s, prefix);
   }
 
   public static boolean endsWithChar(@Nullable CharSequence s, char suffix) {
-    return s != null && s.length() != 0 && s.charAt(s.length() - 1) == suffix;
+    return jetbrains.mps.util.StringUtil.endsWithChar(s, suffix);
   }
 
   public static boolean startsWithConcatenationOf(String testee, String firstPrefix, String secondPrefix) {

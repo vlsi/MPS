@@ -104,7 +104,7 @@ public abstract class MpsWorker {
   public abstract void work();
 
   protected Project createDummyProject() {
-    return ActiveEnvironment.get().createDummyProject();
+    return ActiveEnvironment.getInstance().createDummyProject();
   }
 
   protected void dispose() {
@@ -114,7 +114,7 @@ public abstract class MpsWorker {
   }
 
   protected void setupEnvironment() {
-    if (ActiveEnvironment.get() == null) {
+    if (ActiveEnvironment.getInstance() == null) {
       myEnvironment = createDefaultEnvironment();
     }
     make();

@@ -25,7 +25,7 @@ public class ActiveEnvironment {
 
 
 
-  public static Environment get() {
+  public static Environment getInstance() {
     return ActiveEnvironment.INSTANCE;
   }
 }
