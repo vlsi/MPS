@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
@@ -90,7 +91,7 @@ public class ModuleGenerationHolder {
 
 
 
-  public void build() {
+  public void build() throws Exception {
     if (!(needsGeneration(module))) {
       isSucessful = true;
       return;
@@ -106,14 +107,15 @@ public class ModuleGenerationHolder {
 
     final Wrappers._T<IResult> result = new Wrappers._T<IResult>();
     ModelAccess.instance().flushEventQueue();
+    final Exception[] exceptions = new Exception[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         IOperationContext context = new ProjectOperationContext(project);
         IScript scr = ModuleGenerationHolder.defaultScriptBuilder().toScript();
         try {
           final MakeSession session = new MakeSession(context, myMessageHandler, true);
-
-          IScriptController ctl = new IScriptController.Stub() {
+          final AbstractMakeService.DefaultMonitor monitor = new AbstractMakeService.DefaultMonitor(session);
+          IScriptController ctl = new IScriptController.Stub(monitor, monitor) {
             @Override
             public void setup(IPropertiesPool ppool) {
               // trace.info is useless for tests, however we do keep these files in repo, and diffModule test 
@@ -129,12 +131,17 @@ public class ModuleGenerationHolder {
           };
 
           result.value = new TestMakeService().make(session, ModuleGenerationHolder.collectResources(context, module), scr, ctl, new EmptyProgressMonitor()).get();
-        } catch (InterruptedException ignore) {
-        } catch (ExecutionException ignore) {
+        } catch (InterruptedException ex) {
+          exceptions[0] = ex;
+        } catch (ExecutionException ex) {
+          exceptions[0] = ex;
         }
       }
     });
     ModelAccess.instance().flushEventQueue();
+    if (exceptions[0] != null) {
+      throw exceptions[0];
+    }
     isSucessful = result.value.isSucessful();
   }
 

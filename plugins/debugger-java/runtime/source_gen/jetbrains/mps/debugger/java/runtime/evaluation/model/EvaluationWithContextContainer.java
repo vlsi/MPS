@@ -38,7 +38,7 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
@@ -179,7 +179,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
       // todo highlight when this type or static context type are invalid 
     } catch (InvalidStackFrameException e) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("InvalidStackFrameException", e);
       }
     }

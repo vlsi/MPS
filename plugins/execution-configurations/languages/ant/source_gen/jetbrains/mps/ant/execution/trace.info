@@ -16,7 +16,7 @@
     <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="65" startPosition="9" endLine="66" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="66" startPosition="36" endLine="67" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="67" startPosition="74" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="70" startPosition="45" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="70" startPosition="42" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="73" startPosition="5" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="352677614185351101" fileName="AntSettings_Configuration.java" startLine="78" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUseOtherAntLocation" />
     <nodeInfo nodeId="352677614185351103" fileName="AntSettings_Configuration.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOtherAntLocation" />
@@ -96,7 +96,7 @@
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="50" startPosition="53" endLine="51" endPosition="42" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="54" startPosition="49" endLine="55" endPosition="39" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="58" startPosition="43" endLine="59" endPosition="33" />
-    <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="70" startPosition="45" endLine="71" endPosition="26" />
+    <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="70" startPosition="42" endLine="71" endPosition="26" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="100" startPosition="58" endLine="101" endPosition="43" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="104" startPosition="55" endLine="105" endPosition="50" />
     <scopeInfo nodeId="352677614185351100" fileName="AntSettings_Configuration.java" startLine="109" startPosition="29" endLine="110" endPosition="31" />

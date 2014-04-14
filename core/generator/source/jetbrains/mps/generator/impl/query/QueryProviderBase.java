@@ -16,9 +16,11 @@
 package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
@@ -122,13 +124,20 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     return new Defaults();
   }
 
+  @NotNull
+  @Override
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
+    return new Defaults();
+  }
+
   /**
    * Reasonable default values for all conditions and queries.
    * Note, these default values represent the case when no condition/query was specified. There's
    * another set of defaults for cases when condition failed to evaluate ({@link jetbrains.mps.generator.impl.interpreted.ReflectiveQueryProvider.Impl}.
    */
   public static class Defaults implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
-      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery, IfMacroCondition {
+      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery,
+      IfMacroCondition, InlineSwitchCaseCondition {
 
     @Override
     public boolean check(@NotNull CreateRootRuleContext ctx) {
@@ -190,6 +199,13 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
     public boolean check(@NotNull IfMacroContext context) throws GenerationFailureException {
       context.showErrorMessage(null, "cannot evaluate if-macro condition");
       throw new GenerationFailureException("cannot evaluate if-macro condition");
+    }
+
+    @Override
+    public boolean check(@NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
+      // here comes the logic that used to live in DefaultQueryExecutionContext
+      context.showErrorMessage(null, "condition required for case in inline switch");
+      return false;
     }
   }
 

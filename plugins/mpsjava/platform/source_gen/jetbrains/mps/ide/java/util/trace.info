@@ -339,7 +339,7 @@
     <nodeInfo nodeId="6770603745029714855" fileName="StubResolver.java" startLine="146" startPosition="9" endLine="147" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2742102018362199415" fileName="StubResolver.java" startLine="148" startPosition="45" endLine="149" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="2742102018362199429" fileName="StubResolver.java" startLine="154" startPosition="46" endLine="155" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="161" startPosition="49" endLine="162" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="161" startPosition="46" endLine="162" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742102018362199469" fileName="StubResolver.java" startLine="165" startPosition="59" endLine="166" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742102018362199480" fileName="StubResolver.java" startLine="166" startPosition="122" endLine="167" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742102018362199485" fileName="StubResolver.java" startLine="167" startPosition="62" endLine="168" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -403,7 +403,7 @@
     <scopeInfo nodeId="2742102018362199400" fileName="StubResolver.java" startLine="144" startPosition="54" endLine="145" endPosition="19" />
     <scopeInfo nodeId="2742102018362199414" fileName="StubResolver.java" startLine="148" startPosition="45" endLine="149" endPosition="19" />
     <scopeInfo nodeId="6770603745029716121" fileName="StubResolver.java" startLine="154" startPosition="46" endLine="155" endPosition="159" />
-    <scopeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="161" startPosition="49" endLine="162" endPosition="177" />
+    <scopeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="161" startPosition="46" endLine="162" endPosition="177" />
     <scopeInfo nodeId="9073603541474867746" fileName="StubResolver.java" startLine="179" startPosition="36" endLine="180" endPosition="46" />
     <scopeInfo nodeId="5778265495851109961" fileName="StubResolver.java" startLine="50" startPosition="25" endLine="52" endPosition="24" />
     <scopeInfo nodeId="9073603541474867759" fileName="StubResolver.java" startLine="78" startPosition="91" endLine="80" endPosition="56" />

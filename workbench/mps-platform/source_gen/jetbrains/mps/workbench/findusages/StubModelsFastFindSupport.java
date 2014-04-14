@@ -33,7 +33,7 @@ import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import gnu.trove.THashSet;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFileVisitor;
 import com.intellij.util.indexing.FileBasedIndex;
@@ -159,7 +159,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       for (IFile path : files) {
         final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
         if (vf == null) {
-          if (LOG.isEnabledFor(Priority.WARN)) {
+          if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("File " + path + ", which belows to model source of model " + sm.getReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
           }
           continue;

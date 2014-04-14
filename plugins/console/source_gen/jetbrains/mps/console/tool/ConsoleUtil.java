@@ -5,7 +5,7 @@ package jetbrains.mps.console.tool;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.SwingUtilities;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -39,7 +39,7 @@ public class ConsoleUtil {
 
   public static boolean make(final Project project, final SModel model) {
     if (SwingUtilities.isEventDispatchThread()) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Must be called not from EDT");
       }
       return false;
@@ -64,11 +64,11 @@ public class ConsoleUtil {
       try {
         return future.get().isSucessful();
       } catch (InterruptedException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Error on making temporary model", e);
         }
       } catch (ExecutionException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Error on making temporary model", e);
         }
       }

@@ -5,7 +5,7 @@
   <description>Provides java debugger implementation for MPS</description>
   <version>3.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="129.1" until-build="134.1"/>
+  <idea-version since-build="129.1" until-build="136.1"/>
 
   <depends>jetbrains.mps.debugger.api</depends>
   <depends>jetbrains.mps.core</depends>

@@ -58,7 +58,6 @@ import java.util.List;
  */
 public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnvironment {
   private final TemplateGenerator generator;
-  private final ReductionTrack myReductionTrack;
   private final QueryExecutionContext myExecutionContext;
   private final ITemplateProcessor myTemplateProcessor;
 
@@ -66,7 +65,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     this.generator = templateProcessor.getGenerator();
     myExecutionContext = executionContext;
     myTemplateProcessor = templateProcessor;
-    myReductionTrack = new ReductionTrack(generator.getBlockedReductionsData(), this);
   }
 
   @Override
@@ -114,7 +112,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @NotNull
   @Override
   public ReductionContext getReductionContext() {
-    return myReductionTrack.actual();
+    // this method is not used
+    return new ReductionContext();
   }
 
   @NotNull
@@ -153,7 +152,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @NotNull
   public List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateId,
       @NotNull TemplateContext ctx) throws GenerationCanceledException, GenerationFailureException {
-    List<SNode> outputNodes = generator.copyNodes(inputNodes, ctx.getInputName(), templateId, myReductionTrack);
+    List<SNode> outputNodes = generator.copyNodes(inputNodes, ctx, templateId);
     if (!outputNodes.isEmpty()) {
       new ChildAdopter(generator).checkIsExpectedLanguage(outputNodes, templateNode, ctx);
     }
@@ -176,7 +175,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException {
     FastRuleFinder rf = generator.getRuleManager().getRuleFinder(_switch);
-    Collection<SNode> outputNodes = generator.tryToReduce(rf, context, myReductionTrack);
+    Collection<SNode> outputNodes = generator.tryToReduce(rf, context);
     if (outputNodes != null) {
       if (outputNodes.size() == 1 && context.getInputName() != null) {
         SNode reducedNode = outputNodes.iterator().next();
@@ -319,10 +318,5 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         contextParentNode.addChild(childRole, outputNodeToWeave);
       }
     }
-  }
-
-  // this method is not part of TemplateExecutionEnvironment API, but an implementation-specific aspect
-  /*package*/ReductionTrack getReductionTrack() {
-    return myReductionTrack;
   }
 }

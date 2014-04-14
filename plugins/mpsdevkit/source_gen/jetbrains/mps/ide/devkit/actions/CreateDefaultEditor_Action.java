@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -71,7 +71,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "CreateDefaultEditor", t);
       }
       this.disable(event.getPresentation());
@@ -112,7 +112,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
       BehaviorReflection.invokeNonVirtual(Void.class, editorDeclaration, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "call_createDefaultEditor_2970389781192937380", new Object[]{false});
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().update();
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CreateDefaultEditor", t);
       }
     }

@@ -331,7 +331,7 @@
     <nodeInfo nodeId="5780287594867972891" fileName="ReloadRequired_QuickFix.java" startLine="42" startPosition="9" endLine="43" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5780287594867972902" fileName="ReloadRequired_QuickFix.java" startLine="43" startPosition="65" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7444640161798361674" fileName="ReloadRequired_QuickFix.java" startLine="44" startPosition="24" endLine="45" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5780287594867850303" fileName="ReloadRequired_QuickFix.java" startLine="47" startPosition="45" endLine="48" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5780287594867850303" fileName="ReloadRequired_QuickFix.java" startLine="47" startPosition="42" endLine="48" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5780287594867850300" fileName="ReloadRequired_QuickFix.java" startLine="49" startPosition="7" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2531699772406320928" fileName="ReloadRequired_QuickFix.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2531699772406320928" fileName="ReloadRequired_QuickFix.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadRequired_QuickFix#()V" />
@@ -348,7 +348,7 @@
     <scopeInfo nodeId="2531699772406321038" fileName="ReloadRequired_QuickFix.java" startLine="27" startPosition="25" endLine="28" endPosition="13" />
     <scopeInfo nodeId="4278635856200790151" fileName="ReloadRequired_QuickFix.java" startLine="32" startPosition="28" endLine="33" endPosition="13" />
     <scopeInfo nodeId="9200313594506257071" fileName="ReloadRequired_QuickFix.java" startLine="36" startPosition="103" endLine="37" endPosition="13" />
-    <scopeInfo nodeId="5780287594867850303" fileName="ReloadRequired_QuickFix.java" startLine="47" startPosition="45" endLine="48" endPosition="39" />
+    <scopeInfo nodeId="5780287594867850303" fileName="ReloadRequired_QuickFix.java" startLine="47" startPosition="42" endLine="48" endPosition="39" />
     <scopeInfo nodeId="2531699772406320928" fileName="ReloadRequired_QuickFix.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="2531699772406320928" fileName="ReloadRequired_QuickFix.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="2531699772406320928" varName="node" />

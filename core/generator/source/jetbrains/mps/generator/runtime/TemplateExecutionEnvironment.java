@@ -39,7 +39,7 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, 10/22/10
  */
-public interface TemplateExecutionEnvironment {
+public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Source {
 
   IOperationContext getOperationContext();
 
@@ -63,14 +63,14 @@ public interface TemplateExecutionEnvironment {
   IGeneratorLogger getLogger();
 
   @NotNull
-  GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode);
-  @NotNull
   QueryExecutionContext getQueryExecutor();
 
   /**
    * ReductionContext is implementation aspect, shall be accessible from TemplateExecutionEnvironmentImpl only
+   * @deprecated clients are not expected to care about this method
    */
   @Deprecated
+  @ToRemove(version = 3.1)
   @NotNull
   ReductionContext getReductionContext();
 

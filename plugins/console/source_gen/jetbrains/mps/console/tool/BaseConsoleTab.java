@@ -31,7 +31,7 @@ import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.PasteProvider;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -186,7 +186,7 @@ public abstract class BaseConsoleTab extends JPanel {
   protected void createConsoleModel() {
     this.myModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModuleWithSourceAndClassesGen());
     if (myModel == null) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Error: could not create console model");
       }
       return;
@@ -288,7 +288,7 @@ public abstract class BaseConsoleTab extends JPanel {
         try {
           result.value = (myModel == null ? null : PersistenceUtil.saveModel(myModel, MPSExtentions.MODEL));
         } catch (Exception e) {
-          if (LOG.isEnabledFor(Priority.WARN)) {
+          if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Error on console model saving", e);
           }
         }

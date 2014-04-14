@@ -180,7 +180,7 @@
     <nodeInfo nodeId="4282822416100097183" fileName="AbstractBlock.java" startLine="37" startPosition="27" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1351674898213478565" fileName="AbstractBlock.java" startLine="38" startPosition="35" endLine="39" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="802679297406379451" fileName="AbstractBlock.java" startLine="41" startPosition="11" endLine="42" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="802679297407032594" fileName="AbstractBlock.java" startLine="44" startPosition="47" endLine="45" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="802679297407032594" fileName="AbstractBlock.java" startLine="44" startPosition="44" endLine="45" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="802679297407315914" fileName="AbstractBlock.java" startLine="46" startPosition="9" endLine="47" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4282822416100097193" fileName="AbstractBlock.java" startLine="53" startPosition="41" endLine="54" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2593126716999777342" fileName="AbstractBlock.java" startLine="59" startPosition="48" endLine="60" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -245,7 +245,7 @@
     <nodeInfo nodeId="4282822416100097257" fileName="AbstractBlock.java" startLine="105" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processMousePressed#(Ljava/awt/event/MouseEvent;)Z" />
     <nodeInfo nodeId="4282822416100097146" fileName="AbstractBlock.java" startLine="33" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractBlock#(IIIILorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljava/lang/String;)V" />
     <scopeInfo nodeId="802679297406332899" fileName="AbstractBlock.java" startLine="41" startPosition="11" endLine="42" endPosition="106" />
-    <scopeInfo nodeId="802679297407032594" fileName="AbstractBlock.java" startLine="44" startPosition="47" endLine="45" endPosition="64" />
+    <scopeInfo nodeId="802679297407032594" fileName="AbstractBlock.java" startLine="44" startPosition="44" endLine="45" endPosition="64" />
     <scopeInfo nodeId="4282822416100097192" fileName="AbstractBlock.java" startLine="53" startPosition="41" endLine="54" endPosition="29" />
     <scopeInfo nodeId="2593126716998233727" fileName="AbstractBlock.java" startLine="59" startPosition="48" endLine="60" endPosition="36" />
     <scopeInfo nodeId="4282822416100097200" fileName="AbstractBlock.java" startLine="66" startPosition="21" endLine="67" endPosition="20" />

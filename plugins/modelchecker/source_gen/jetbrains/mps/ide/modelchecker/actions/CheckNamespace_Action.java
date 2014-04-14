@@ -15,7 +15,7 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
@@ -56,7 +56,7 @@ public class CheckNamespace_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "CheckNamespace", t);
       }
       this.disable(event.getPresentation());
@@ -90,7 +90,7 @@ public class CheckNamespace_Action extends BaseAction {
       }
       ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModules(modules, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CheckNamespace", t);
       }
     }

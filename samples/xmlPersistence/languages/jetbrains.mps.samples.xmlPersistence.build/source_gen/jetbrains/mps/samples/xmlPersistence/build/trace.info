@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:e21135fb-2b5c-4d73-ac93-7950a105e058(jetbrains.mps.samples.xmlPersistence.build)/9212378209272343143">
-    <unitInfo nodeId="9212378209272343143" fileName="xmlPersistencePlugin.xml" startLine="1" startPosition="0" endLine="280" endPosition="10" unitName="jetbrains.mps.samples.xmlPersistence.build.xmlPersistencePlugin" />
+    <unitInfo nodeId="9212378209272343143" fileName="xmlPersistencePlugin.xml" startLine="1" startPosition="0" endLine="279" endPosition="10" unitName="jetbrains.mps.samples.xmlPersistence.build.xmlPersistencePlugin" />
   </root>
 </debugInfo>
 

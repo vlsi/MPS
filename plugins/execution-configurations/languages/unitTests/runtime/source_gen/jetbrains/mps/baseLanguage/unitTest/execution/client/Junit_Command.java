@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -144,7 +144,7 @@ public class Junit_Command {
       }
     });
     if (isNotEmptyString(skipped.value)) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("All tests could not be executed together. Skipped " + skipped.value);
       }
     }

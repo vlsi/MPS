@@ -8,7 +8,7 @@ import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapperFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -61,7 +61,7 @@ public class CustomViewersInitializer_CustomApplicationPlugin extends BaseCustom
         manager.removeFactory(factory);
       }
     } else if (ListSequence.fromList(CustomViewersInitializer_CustomApplicationPlugin.this.myFactories).isNotEmpty()) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Cant find custom viewers manager while myFactories nonempty: " + CustomViewersInitializer_CustomApplicationPlugin.this.myFactories);
       }
     }

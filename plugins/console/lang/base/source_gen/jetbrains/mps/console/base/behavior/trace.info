@@ -37,9 +37,9 @@
     <nodeInfo nodeId="2034046503373010562" fileName="GeneratedCommand_Behavior.java" startLine="43" startPosition="43" endLine="44" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3321948346082003251" fileName="GeneratedCommand_Behavior.java" startLine="44" startPosition="74" endLine="45" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4972839799272058556" fileName="GeneratedCommand_Behavior.java" startLine="45" startPosition="42" endLine="46" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503373010576" fileName="GeneratedCommand_Behavior.java" startLine="50" startPosition="57" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503373010583" fileName="GeneratedCommand_Behavior.java" startLine="54" startPosition="57" endLine="55" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503373010592" fileName="GeneratedCommand_Behavior.java" startLine="58" startPosition="57" endLine="59" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503373010576" fileName="GeneratedCommand_Behavior.java" startLine="50" startPosition="54" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503373010583" fileName="GeneratedCommand_Behavior.java" startLine="54" startPosition="54" endLine="55" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2034046503373010592" fileName="GeneratedCommand_Behavior.java" startLine="58" startPosition="54" endLine="59" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1769790395579662700" fileName="GeneratedCommand_Behavior.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1769790395579662700" fileName="GeneratedCommand_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2921639075324783254" fileName="GeneratedCommand_Behavior.java" startLine="28" startPosition="71" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -61,9 +61,9 @@
     <nodeInfo nodeId="1769790395579662700" fileName="GeneratedCommand_Behavior.java" startLine="24" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_6854397602732226506#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;Ljava/lang/Runnable;)V" />
     <scopeInfo nodeId="1769790395579662862" fileName="GeneratedCommand_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
     <scopeInfo nodeId="2921639075324783257" fileName="GeneratedCommand_Behavior.java" startLine="29" startPosition="24" endLine="30" endPosition="17" />
-    <scopeInfo nodeId="2034046503373010576" fileName="GeneratedCommand_Behavior.java" startLine="50" startPosition="57" endLine="51" endPosition="68" />
-    <scopeInfo nodeId="2034046503373010583" fileName="GeneratedCommand_Behavior.java" startLine="54" startPosition="57" endLine="55" endPosition="68" />
-    <scopeInfo nodeId="2034046503373010592" fileName="GeneratedCommand_Behavior.java" startLine="58" startPosition="57" endLine="59" endPosition="68" />
+    <scopeInfo nodeId="2034046503373010576" fileName="GeneratedCommand_Behavior.java" startLine="50" startPosition="54" endLine="51" endPosition="68" />
+    <scopeInfo nodeId="2034046503373010583" fileName="GeneratedCommand_Behavior.java" startLine="54" startPosition="54" endLine="55" endPosition="68" />
+    <scopeInfo nodeId="2034046503373010592" fileName="GeneratedCommand_Behavior.java" startLine="58" startPosition="54" endLine="59" endPosition="68" />
     <scopeInfo nodeId="1769790395579662700" fileName="GeneratedCommand_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1769790395579662700" varName="thisNode" />
     </scopeInfo>
@@ -294,7 +294,7 @@
     <nodeInfo nodeId="7185170375690453459" fileName="HelpCommand_Behavior.java" startLine="53" startPosition="282" endLine="54" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7185170375690496282" fileName="HelpCommand_Behavior.java" startLine="55" startPosition="9" endLine="56" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7006261637497467664" fileName="HelpCommand_Behavior.java" startLine="60" startPosition="15" endLine="61" endPosition="624" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="473081947986262001" fileName="HelpCommand_Behavior.java" startLine="63" startPosition="50" endLine="64" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="473081947986262001" fileName="HelpCommand_Behavior.java" startLine="63" startPosition="47" endLine="64" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7006261637498557561" fileName="HelpCommand_Behavior.java" startLine="66" startPosition="17" endLine="67" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6928665434436626873" fileName="HelpCommand_Behavior.java" startLine="68" startPosition="43" endLine="69" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7006261637499677206" fileName="HelpCommand_Behavior.java" startLine="73" startPosition="10" endLine="74" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -370,7 +370,7 @@
     <scopeInfo nodeId="6928665434441908596" fileName="HelpCommand_Behavior.java" startLine="47" startPosition="40" endLine="48" endPosition="195" />
     <scopeInfo nodeId="7185170375690376000" fileName="HelpCommand_Behavior.java" startLine="53" startPosition="282" endLine="54" endPosition="83" />
     <scopeInfo nodeId="473081947986135950" fileName="HelpCommand_Behavior.java" startLine="60" startPosition="15" endLine="61" endPosition="624" />
-    <scopeInfo nodeId="473081947986262001" fileName="HelpCommand_Behavior.java" startLine="63" startPosition="50" endLine="64" endPosition="218" />
+    <scopeInfo nodeId="473081947986262001" fileName="HelpCommand_Behavior.java" startLine="63" startPosition="47" endLine="64" endPosition="218" />
     <scopeInfo nodeId="748410583118390908" fileName="HelpCommand_Behavior.java" startLine="66" startPosition="17" endLine="67" endPosition="272" />
     <scopeInfo nodeId="748410583118390909" fileName="HelpCommand_Behavior.java" startLine="68" startPosition="0" endLine="69" endPosition="127">
       <varInfo nodeId="748410583118390911" varName="e1" />

@@ -10,7 +10,7 @@ import java.util.Map;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.icons.AllIcons;
 import com.intellij.util.ui.EmptyIcon;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -40,7 +40,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "CheckModelsBeforeGeneration", t);
       }
       this.disable(event.getPresentation());
@@ -59,7 +59,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
       IModifiableGenerationSettings settings = GenerationSettings.getInstance();
       settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CheckModelsBeforeGeneration", t);
       }
     }

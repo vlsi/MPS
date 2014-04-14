@@ -32,7 +32,7 @@ import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.project.PathMacrosProvider;
 import java.util.Set;
 import java.util.Collections;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.lang.reflect.InvocationTargetException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -171,7 +171,7 @@ public class TransformationTestRunner {
 
       @Override
       public void report(String macro, String message) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Undefined macro: " + macro + ". " + message);
         }
       }

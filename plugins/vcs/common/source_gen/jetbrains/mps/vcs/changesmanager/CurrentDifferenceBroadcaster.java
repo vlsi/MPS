@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -46,7 +46,7 @@ import org.apache.log4j.LogManager;
         task.invoke(listener);
       } catch (Throwable t) {
         myCommandQueue.setHadExceptions(true);
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Exception on firing " + name + " event", t);
         }
       }

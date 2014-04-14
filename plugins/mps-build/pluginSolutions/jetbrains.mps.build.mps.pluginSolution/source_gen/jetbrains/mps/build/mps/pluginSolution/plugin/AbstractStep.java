@@ -22,7 +22,7 @@ import javax.swing.ImageIcon;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Font;
@@ -131,7 +131,7 @@ public abstract class AbstractStep extends StepAdapter {
     try {
       bim = ImageIO.read(imageUrl);
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Can't read image", e);
       }
     }

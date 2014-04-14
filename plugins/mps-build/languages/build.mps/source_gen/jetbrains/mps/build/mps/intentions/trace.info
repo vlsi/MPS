@@ -27,7 +27,7 @@
     <nodeInfo nodeId="1753793013241722104" fileName="ReloadModulesFromDisk_Intention.java" startLine="100" startPosition="37" endLine="101" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9200313594506273587" fileName="ReloadModulesFromDisk_Intention.java" startLine="102" startPosition="113" endLine="103" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="7444640161798407880" fileName="ReloadModulesFromDisk_Intention.java" startLine="105" startPosition="15" endLine="106" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="108" startPosition="51" endLine="109" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="108" startPosition="48" endLine="109" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5780287594867850300" fileName="ReloadModulesFromDisk_Intention.java" startLine="110" startPosition="13" endLine="111" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="117" startPosition="48" endLine="118" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="122" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -71,7 +71,7 @@
     <scopeInfo nodeId="1753793013241722027" fileName="ReloadModulesFromDisk_Intention.java" startLine="87" startPosition="87" endLine="88" endPosition="40" />
     <scopeInfo nodeId="9200313594506257071" fileName="ReloadModulesFromDisk_Intention.java" startLine="102" startPosition="113" endLine="103" endPosition="21" />
     <scopeInfo nodeId="5780287594867796920" fileName="ReloadModulesFromDisk_Intention.java" startLine="105" startPosition="15" endLine="106" endPosition="132" />
-    <scopeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="108" startPosition="51" endLine="109" endPosition="45" />
+    <scopeInfo nodeId="5780287594867850303" fileName="ReloadModulesFromDisk_Intention.java" startLine="108" startPosition="48" endLine="109" endPosition="45" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="117" startPosition="48" endLine="118" endPosition="50" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1753793013241722025" fileName="ReloadModulesFromDisk_Intention.java" startLine="84" startPosition="0" endLine="86" endPosition="0" />

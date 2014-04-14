@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.platform.util.PluginUtil;
 import git4idea.config.GitConfigUtil;
 import com.intellij.openapi.vcs.VcsException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.ui.Messages;
 import git4idea.commands.GitSimpleHandler;
 import git4idea.commands.GitCommand;
@@ -35,7 +35,7 @@ import org.apache.log4j.LogManager;
       }
     } catch (VcsException e) {
       if (!(dryRun)) {
-        if (LOG.isEnabledFor(Priority.WARN)) {
+        if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("Can't get value", e);
         }
       }
@@ -50,7 +50,7 @@ import org.apache.log4j.LogManager;
       setGlobalProperty(myProject, CORE_AUTOCRLF, getCoreAutocrlfValue());
       return AbstractInstaller.State.INSTALLED;
     } catch (VcsException e) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Can't set value", e);
       }
       Messages.showErrorDialog(myProject, "Can't set Git global property: " + e.getMessage(), "Git Global property");

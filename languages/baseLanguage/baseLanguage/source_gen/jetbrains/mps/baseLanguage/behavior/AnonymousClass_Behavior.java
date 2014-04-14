@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -118,7 +118,7 @@ public class AnonymousClass_Behavior {
       }
       IClassifierType_Behavior.call_populateMembers_7405920559687241253(superClass, context, classifierType);
     } else {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Superclass of Anonymous class is not ClassConcept or Interface");
       }
     }

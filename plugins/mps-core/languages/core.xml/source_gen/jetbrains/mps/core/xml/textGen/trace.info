@@ -524,7 +524,7 @@
     <nodeInfo nodeId="3080189811177517681" fileName="XmlFile_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="22" startPosition="7" endLine="23" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="24" startPosition="13" endLine="25" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="27" startPosition="49" endLine="28" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="27" startPosition="46" endLine="28" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="30" startPosition="9" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3080189811177517668" fileName="XmlFile_TextGen.java" startLine="36" startPosition="42" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -539,7 +539,7 @@
     <scopeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="17" startPosition="44" endLine="18" endPosition="57" />
     <scopeInfo nodeId="3080189811177517681" fileName="XmlFile_TextGen.java" startLine="19" startPosition="5" endLine="20" endPosition="66" />
     <scopeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="24" startPosition="13" endLine="25" endPosition="209" />
-    <scopeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="27" startPosition="49" endLine="28" endPosition="79" />
+    <scopeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="27" startPosition="46" endLine="28" endPosition="79" />
     <scopeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="36" startPosition="42" endLine="37" endPosition="17" />
     <scopeInfo nodeId="3080189811177517661" fileName="XmlFile_TextGen.java" startLine="26" startPosition="0" endLine="29" endPosition="11">
       <varInfo nodeId="3080189811177517661" varName="t" />

@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.impl.query.PatternRuleQuery;
@@ -31,9 +32,11 @@ import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.PatternRuleContext;
@@ -202,18 +205,30 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     return new Impl(ifMacro.getReference(), methodName, false);
   }
 
+  @NotNull
+  @Override
+  public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
+    SNode condition = RuleUtil.getInlineSwitch_caseCondition(caseNode);
+    if (condition == null) {
+      return super.getInlineSwitchCaseCondition(caseNode);
+    }
+    final String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition);
+    return new Impl(caseNode.getReference(), methodName, false);
+  }
+
   private String getBaseRuleConditionMethod(SNode rule) {
     SNode condition = RuleUtil.getBaseRuleCondition(rule);
     return condition == null ? null : TemplateFunctionMethodName.baseMappingRule_Condition(condition);
   }
 
   private static final class Impl implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
-      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, IfMacroCondition {
+      DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, IfMacroCondition,
+      InlineSwitchCaseCondition {
 
     private final String myMethodName;
     private final boolean myDefValue;
     private final SNodeReference myTemplateNode;
-    private QueryMethod<Boolean> myMethod;
+    private volatile QueryMethod<Boolean> myMethod;
 
     Impl(@NotNull SNodeReference templateNode, @NotNull String methodName) {
       this(templateNode, methodName, false);
@@ -226,8 +241,10 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     }
 
     private QueryMethod<Boolean> getMethod(TemplateQueryContext ctx) {
-      if (myMethod == null) {
-        QueryMethod<Boolean> m = null;
+      // I don't care to synchronize method evaluation as there's no difference for me which QM instance I use,
+      // provided initialization of any is complete (that's why field is volatile)
+      QueryMethod<Boolean> m = myMethod;
+      if (m == null) {
         try {
           m = QueryMethodGenerated.getQueryMethod(myTemplateNode.getModelReference(), myMethodName);
         } catch (ClassNotFoundException e) {
@@ -237,14 +254,17 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
           ctx.showWarningMessage(null,
               String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
         }
-        myMethod = m != null ? m : new QueryMethod<Boolean>() {
-          @Override
-          public Boolean invoke(IOperationContext context, Object contextObject) {
-            return myDefValue;
-          }
-        };
+        if (m == null) {
+          m = new QueryMethod<Boolean>() {
+            @Override
+            public Boolean invoke(IOperationContext context, Object contextObject) {
+              return myDefValue;
+            }
+          };
+        }
+        myMethod = m;
       }
-      return myMethod;
+      return m;
     }
 
     @Override
@@ -314,6 +334,11 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     @Override
     public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
+      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+    }
+
+    @Override
+    public boolean check(@NotNull InlineSwitchCaseContext ctx) throws GenerationFailureException {
       return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
     }
   }

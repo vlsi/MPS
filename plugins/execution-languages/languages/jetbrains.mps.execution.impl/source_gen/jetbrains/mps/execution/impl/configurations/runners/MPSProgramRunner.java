@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -26,7 +26,7 @@ public class MPSProgramRunner extends DefaultProgramRunner {
     try {
       return executorId.equals(DefaultRunExecutor.EXECUTOR_ID) && (!((profile instanceof BaseMpsRunConfiguration)) || ((BaseMpsRunConfiguration) profile).canExecute(executorId));
     } catch (Throwable throwable) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Run configuration " + profile + " is broken.", throwable);
       }
       return false;

@@ -17,7 +17,7 @@ import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.io.FileNotFoundException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -130,7 +130,7 @@ import org.apache.log4j.LogManager;
       showSuccessfullInfoMessage();
       return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Writing gitconfig file failed", e);
       }
       String msg = e.getMessage() + ".";

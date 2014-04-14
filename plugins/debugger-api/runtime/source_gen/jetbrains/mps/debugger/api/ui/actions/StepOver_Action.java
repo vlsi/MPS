@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -35,7 +35,7 @@ public class StepOver_Action extends BaseAction {
         event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "StepOver", t);
       }
       this.disable(event.getPresentation());
@@ -53,7 +53,7 @@ public class StepOver_Action extends BaseAction {
     try {
       DebugActionsUtil.getDebugSession(event).stepOver();
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "StepOver", t);
       }
     }
