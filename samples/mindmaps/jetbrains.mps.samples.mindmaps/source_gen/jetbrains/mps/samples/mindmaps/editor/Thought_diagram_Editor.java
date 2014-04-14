@@ -10,38 +10,24 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
-import jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
-import jetbrains.mps.samples.mindmaps.figures.model.MindMapThoughtView;
+import jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
-import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.model.property.Properties;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.geometry.Vector;
-import jetbrains.mps.diagram.dataflow.view.BlockView;
-import jetbrains.jetpad.values.Color;
-import jetbrains.jetpad.projectional.diagram.view.RootTrait;
-import jetbrains.jetpad.projectional.diagram.view.MoveHandler;
-import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
-import jetbrains.jetpad.projectional.view.ViewEvents;
-import jetbrains.jetpad.projectional.view.ViewEventHandler;
-import jetbrains.jetpad.event.KeyEvent;
-import jetbrains.jetpad.event.Key;
-import jetbrains.jetpad.event.ModifierKey;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView;
 
 public class Thought_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"});
@@ -64,56 +50,33 @@ public class Thought_diagram_Editor extends DefaultNodeEditor {
   }
 
   private class BlockCellImpl_a6gtrz_a extends BlockCell {
-    private final PropertyMapperCell<String> myPropertyCell_a6gtrz_a0a;
-    private final PropertyMapperCell<Boolean> myPropertyCell_a6gtrz_a1a;
-    private final ReadableModelProperty<Integer> myXProperty;
-    private final ReadableModelProperty<Integer> myYProperty;
+    private final PropertyMapperCell<Integer> myPropertyCell_a6gtrz_a0a;
+    private final PropertyMapperCell<Integer> myPropertyCell_a6gtrz_a1a;
 
     private BlockCellImpl_a6gtrz_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
-      myPropertyCell_a6gtrz_a0a = new PropertyMapperCell<String>(editorContext, node) {
-        protected String getModelPropertyValueImpl() {
-          return SPropertyOperations.getString(node, "name");
-        }
-
-        protected void setModelPropertyValueImpl(String value) {
-          SPropertyOperations.set(node, "name", value);
-        }
-      };
-      addEditorCell(myPropertyCell_a6gtrz_a0a);
-      myPropertyCell_a6gtrz_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_a6gtrz_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
-      myPropertyCell_a6gtrz_a1a = new PropertyMapperCell<Boolean>(editorContext, node) {
-        protected Boolean getModelPropertyValueImpl() {
-          return SPropertyOperations.getBoolean(node, "myIsClicked");
-        }
-
-        protected void setModelPropertyValueImpl(Boolean value) {
-          SPropertyOperations.set(node, "myIsClicked", "" + (value));
-        }
-      };
-      addEditorCell(myPropertyCell_a6gtrz_a1a);
-      myPropertyCell_a6gtrz_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_a6gtrz_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "myIsClicked"));
-      myXProperty = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
-        protected Integer getModelPropertyValue() {
+      myPropertyCell_a6gtrz_a0a = new PropertyMapperCell<Integer>(editorContext, node) {
+        protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
         }
 
-        protected void setModelPropertyValue(Integer value) {
+        protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "x", "" + (value));
         }
       };
-      getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
-      myYProperty = new WritableModelProperty<Integer>(getCellId() + "_" + node.getNodeId().toString(), getContext().getOperationContext().getProject()) {
-        protected Integer getModelPropertyValue() {
+      addEditorCell(myPropertyCell_a6gtrz_a0a);
+      myPropertyCell_a6gtrz_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_a6gtrz_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+      myPropertyCell_a6gtrz_a1a = new PropertyMapperCell<Integer>(editorContext, node) {
+        protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
         }
 
-        protected void setModelPropertyValue(Integer value) {
+        protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "y", "" + (value));
         }
       };
-      getEditor().addCellDependentOnNodeProperty(this, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
-      registerPositionProperties(myXProperty, myYProperty);
+      addEditorCell(myPropertyCell_a6gtrz_a1a);
+      myPropertyCell_a6gtrz_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_a6gtrz_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       synchronize();
     }
 
@@ -128,15 +91,31 @@ public class Thought_diagram_Editor extends DefaultNodeEditor {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
-
-          configuration.add(Synchronizers.forConstantRole(this, getContentViewMapperSource(), getTarget().contentView.children(), new MapperFactory<String, MindMapThoughtView>() {
-            public Mapper<? extends String, ? extends MindMapThoughtView> createMapper(String block) {
-              return new Mapper<String, MindMapThoughtView>(block, new MindMapThoughtView()) {
+          final DiagramNodeView diagramNodeView = getTarget();
+          configuration.add(Synchronizers.forConstantRole(this, getContentViewMapperSource(), getTarget().contentView.children(), new MapperFactory<String, PolygonContentView>() {
+            public Mapper<? extends String, ? extends PolygonContentView> createMapper(String block) {
+              return new Mapper<String, PolygonContentView>(block, new PolygonContentView()) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                   super.registerSynchronizers(configuration);
-                  myPropertyCell_a6gtrz_a0a.registerSynchronizers(configuration, getTarget().text());
-                  myPropertyCell_a6gtrz_a1a.registerSynchronizers(configuration, getTarget().isClicked);
+                  configuration.add(Synchronizers.forProperty(getTarget().prop(MovableContentView.POSITION_X), new Runnable() {
+                    public void run() {
+                      updatePositionsFromModel(getTarget(), diagramNodeView);
+                    }
+                  }));
+                  configuration.add(Synchronizers.forProperty(getTarget().prop(MovableContentView.POSITION_Y), new Runnable() {
+                    public void run() {
+                      updatePositionsFromModel(getTarget(), diagramNodeView);
+                    }
+                  }));
+                  configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
+                    public void set(Rectangle bounds) {
+                      getTarget().prop(MovableContentView.POSITION_X).set(bounds.origin.x);
+                      getTarget().prop(MovableContentView.POSITION_Y).set(bounds.origin.y);
+                    }
+                  }));
+                  myPropertyCell_a6gtrz_a0a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_X));
+                  myPropertyCell_a6gtrz_a1a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_Y));
                 }
               };
             }
@@ -153,11 +132,21 @@ public class Thought_diagram_Editor extends DefaultNodeEditor {
               setHeight(rect.dimension.y);
             }
           }));
-
-          configuration.add(Synchronizers.forProperty(getTarget().focused(), new Runnable() {
-            public void run() {
-              if (getTarget().focused().get()) {
+          configuration.add(Synchronizers.forProperty(getTarget().focused(), new WritableProperty<Boolean>() {
+            public void set(Boolean isFocused) {
+              if (isFocused && !(isSelected())) {
                 SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              } else if (!(isFocused) && isSelected()) {
+                getEditorComponent().getSelectionManager().clearSelection();
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
+            public void set(Boolean isSelected) {
+              if (isSelected && !(getTarget().focused().get())) {
+                getTarget().container().focusedView().set(getTarget());
+              } else if (!(isSelected) && getTarget().focused().get()) {
+                getTarget().container().focusedView().set(null);
               }
             }
           }));
@@ -174,66 +163,29 @@ public class Thought_diagram_Editor extends DefaultNodeEditor {
           if (diagramCell == null) {
             return;
           }
-          Mapper<SNode, DiagramNodeView> blockMapper = getBlockMapper();
+          final Mapper<SNode, DiagramNodeView> blockMapper = getBlockMapper();
           if (blockMapper == null) {
             return;
           }
           configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
           configuration.add(Synchronizers.forProperty(blockMapper.getTarget().focused(), getTarget().isSelected));
-          final View contentView = getContentView();
+          final PolygonContentView contentView = (PolygonContentView) getContentView();
           configuration.add(Synchronizers.forProperty(contentView.bounds(), getTarget().bounds));
-          configuration.add(Synchronizers.forProperty(Properties.notNull(contentView.prop(JetpadUtils.PREFERRED_SIZE)), getTarget().resizable));
+          configuration.add(Synchronizers.forProperty(Properties.constant(Boolean.TRUE), getTarget().resizable));
           configuration.add(Synchronizers.forProperty(getTarget().boundsDelta, new WritableProperty<Rectangle>() {
             public void set(Rectangle delta) {
-              Vector prefSize = contentView.prop(JetpadUtils.PREFERRED_SIZE).get();
               if (delta == null) {
                 return;
               }
               Vector positionDelta = delta.origin;
               Vector sizeDelta = delta.dimension;
-              contentView.prop(JetpadUtils.PREFERRED_SIZE).set(prefSize.add(sizeDelta).add(positionDelta));
+              blockMapper.getTarget().move(positionDelta);
+              contentView.prop(ResizableContentView.PREFERRED_SIZE).set(contentView.prop(ResizableContentView.PREFERRED_SIZE).get().add(sizeDelta));
             }
           }));
 
         }
       };
-    }
-
-    private DiagramNodeView createDiagramNodeView() {
-      final BlockView blockView = new BlockView();
-      blockView.minimalSize().set(new Vector(10, 10));
-      blockView.rect.background().set(Color.TRANSPARENT);
-      blockView.padding().set(0);
-
-      blockView.moveTo(new Vector(myXProperty.get(), myYProperty.get()));
-      blockView.contentView.prop(RootTrait.MOVE_HANDLER).set(new MoveHandler() {
-        public void move(Vector delta) {
-          myXProperty.set(myXProperty.get() + delta.x);
-          myYProperty.set(myYProperty.get() + delta.y);
-        }
-      });
-      AbstractJetpadCell.configureView(blockView, BlockCellImpl_a6gtrz_a.this, new _FunctionTypes._return_P0_E0<Boolean>() {
-        public Boolean invoke() {
-          return true;
-        }
-      });
-
-      blockView.prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
-      blockView.rect.prop(JetpadUtils.SOURCE).set(getSNode());
-      blockView.addTrait(new ViewTraitBuilder().on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
-        @Override
-        public void handle(View view, KeyEvent e) {
-          if (!(blockView.focused().get())) {
-            return;
-          }
-          if (e.is(Key.T)) {
-            blockView.setPortsDirection(blockView.getPortsDirection().turnClockwise());
-          } else if (e.is(Key.T, ModifierKey.SHIFT)) {
-            blockView.setPortsDirection(blockView.getPortsDirection().turnCounterclockwise());
-          }
-        }
-      }).build());
-      return blockView;
     }
   }
 }

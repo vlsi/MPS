@@ -8,9 +8,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.jetpad.event.Key" />
-    <classNode dependClassName="jetbrains.jetpad.event.KeyEvent" />
-    <classNode dependClassName="jetbrains.jetpad.event.ModifierKey" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
@@ -19,33 +16,31 @@
     <classNode dependClassName="jetbrains.jetpad.model.property.Properties" />
     <classNode dependClassName="jetbrains.jetpad.model.property.WritableProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramNodeView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.MoveHandler" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.RootTrait" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEventHandler" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEvents" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
-    <classNode dependClassName="jetbrains.jetpad.values.Color" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.diagram.dataflow.view.BlockView" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.samples.mindmaps.figures.model.MindMapCentralThoughtView" />
+    <classNode dependClassName="jetbrains.mps.samples.mindmaps.editor.DefaultDiagramElementActionMap_0" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.mindmaps.editor.DefaultDiagramElementActionMap_0" file="DefaultDiagramElementActionMap_0.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.editor.DeleteRelationship" file="DeleteRelationship.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -135,7 +130,6 @@
   <dependency className="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor" file="Relationship_diagram_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -154,7 +148,6 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -166,7 +159,6 @@
   <dependency className="jetbrains.mps.samples.mindmaps.editor.Specializes_diagram_Editor" file="Specializes_diagram_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -185,7 +177,6 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -202,9 +193,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.jetpad.event.Key" />
-    <classNode dependClassName="jetbrains.jetpad.event.KeyEvent" />
-    <classNode dependClassName="jetbrains.jetpad.event.ModifierKey" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
@@ -213,28 +201,17 @@
     <classNode dependClassName="jetbrains.jetpad.model.property.Properties" />
     <classNode dependClassName="jetbrains.jetpad.model.property.WritableProperty" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramNodeView" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.MoveHandler" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.RootTrait" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEventHandler" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewEvents" />
-    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewTraitBuilder" />
-    <classNode dependClassName="jetbrains.jetpad.values.Color" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.diagram.dataflow.view.BlockView" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.mindmaps.editor.DeleteThought" />
-    <classNode dependClassName="jetbrains.mps.samples.mindmaps.figures.model.MindMapThoughtView" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

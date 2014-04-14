@@ -10,7 +10,7 @@
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="35" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="gbdf" modelUID="r:5181c66d-005f-421e-88f2-2c6d80a7738d(jetbrains.mps.lang.editor.diagram.structure)" version="0" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -41,8 +41,8 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="gbdf.CellModel_Diagram" typeId="gbdf.6306886970791033847" id="79242395703911248" nodeInfo="ng">
         <node role="connectorCreation" roleId="gbdf.939897302409114961" type="gbdf.DiagramConnectorCreation" typeId="gbdf.939897302409084996" id="5871420002487614336" nodeInfo="ng">
-          <link role="concept" roleId="gbdf.939897302409084997" targetNodeId="3g6l.79242395703884499" resolveInfo="Relationship" />
-          <node role="query" roleId="gbdf.939897302409084998" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5871420002487615146" nodeInfo="nn">
+          <link role="concept" roleId="gbdf.1301388602726005553" targetNodeId="3g6l.79242395703884499" resolveInfo="Relationship" />
+          <node role="query" roleId="gbdf.1301388602726005547" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5871420002487615146" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="5871420002487615024" nodeInfo="ng" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="5871420002487616744" nodeInfo="nn">
               <link role="link" roleId="tp25.1138056546658" targetNodeId="3g6l.79242395703887323" />
@@ -116,8 +116,8 @@
           </node>
         </node>
         <node role="elementsCreation" roleId="gbdf.8570854907290721333" type="gbdf.DiagramElementsCreation" typeId="gbdf.8570854907290423690" id="5871420002487602664" nodeInfo="ng">
-          <link role="concept" roleId="gbdf.5040807685003301644" targetNodeId="3g6l.79242395703884488" resolveInfo="Thought" />
-          <node role="query" roleId="gbdf.8570854907290423741" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5871420002487609099" nodeInfo="nn">
+          <link role="concept" roleId="gbdf.1301388602726005553" targetNodeId="3g6l.79242395703884488" resolveInfo="Thought" />
+          <node role="query" roleId="gbdf.1301388602726005547" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5871420002487609099" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="5871420002487608977" nodeInfo="ng" />
             <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="5871420002487610438" nodeInfo="nn">
               <link role="link" roleId="tp25.1138056546658" targetNodeId="3g6l.79242395703887318" />
@@ -182,26 +182,20 @@
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3g6l.79242395703884488" resolveInfo="Thought" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramNode" typeId="gbdf.1094405431463454433" id="79242395703954211" nodeInfo="ng">
       <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="5871420002487709759" resolveInfo="DeleteThought" />
-      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="5871420002487301559" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="text" />
-        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="5871420002488059918" nodeInfo="ng">
-          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="955834388676349296" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="POSITION_X" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="955834388676349350" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953959" resolveInfo="x" />
         </node>
       </node>
-      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="5871420002487301566" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="isClicked" />
-        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="5871420002487302182" nodeInfo="ng">
-          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.5871420002487302178" resolveInfo="myIsClicked" />
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="955834388676349402" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="POSITION_Y" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="955834388676349507" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953961" resolveInfo="y" />
         </node>
       </node>
-      <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="5058522826400765932" nodeInfo="ng">
-        <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k35l.5058522826400326808" />
-      </node>
-      <node role="x" roleId="gbdf.285670992220009949" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="5871420002487302185" nodeInfo="ng">
-        <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953959" resolveInfo="x" />
-      </node>
-      <node role="y" roleId="gbdf.285670992220009955" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="5871420002487302188" nodeInfo="ng">
-        <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953961" resolveInfo="y" />
+      <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="955834388676349254" nodeInfo="ng">
+        <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k80i.5667822611623716384" />
       </node>
     </node>
     <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="79242395703954209" nodeInfo="ig">
@@ -382,26 +376,20 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5058522826399342677" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3g6l.5058522826399342676" resolveInfo="CoreThrought" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramNode" typeId="gbdf.1094405431463454433" id="5058522826399342681" nodeInfo="ng">
-      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="5058522826399342695" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="text" />
-        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="5058522826399342701" nodeInfo="ng">
-          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="955834388676349828" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="POSITION_X" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="955834388676349882" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953959" resolveInfo="x" />
         </node>
       </node>
-      <node role="parameter" roleId="gbdf.1094405431463761842" type="gbdf.AbstractFigureParameter" typeId="gbdf.1094405431463761863" id="5058522826399342704" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="isClicked" />
-        <node role="parameter" roleId="gbdf.285670992218957021" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="5058522826399342710" nodeInfo="ng">
-          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.5871420002487302178" resolveInfo="myIsClicked" />
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="955834388676349934" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="POSITION_Y" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="955834388676350039" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953961" resolveInfo="y" />
         </node>
       </node>
-      <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="5058522826399934764" nodeInfo="ng">
-        <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k35l.5058522826399869666" />
-      </node>
-      <node role="x" roleId="gbdf.285670992220009949" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="5058522826399342713" nodeInfo="ng">
-        <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953959" resolveInfo="x" />
-      </node>
-      <node role="y" roleId="gbdf.285670992220009955" type="gbdf.ParameterProperty" typeId="gbdf.285670992217672837" id="5058522826399342716" nodeInfo="ng">
-        <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953961" resolveInfo="y" />
+      <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="955834388676343032" nodeInfo="ng">
+        <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k80i.5667822611623716384" />
       </node>
     </node>
     <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="5058522826399342679" nodeInfo="ig">
