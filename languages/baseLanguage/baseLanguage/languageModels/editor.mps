@@ -20602,7 +20602,6 @@
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
         <property name="text" nameId="tpc2.1073389577007" value="" />
         <property name="nullText" nameId="tpc2.1082639509531" value="&lt;no name&gt;" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="3334298915664227771" resolveInfo="PruneRightTransforms" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="8233876857984156215" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -23074,23 +23073,6 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp2q.IsEmptyOperation" typeId="tp2q.1165530316231" id="7658400288496817699" nodeInfo="nn" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root type="tpc2.CellActionMapDeclaration" typeId="tpc2.1139535219966" id="3334298915664227771" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
-    <property name="name" nameId="tpck.1169194664001" value="PruneRightTransforms" />
-    <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tpee.3609453419506221441" resolveInfo="IncompleteMemberDeclaration" />
-    <node role="item" roleId="tpc2.1139535219969" type="tpc2.CellActionMapItem" typeId="tpc2.1139535280617" id="3334298915664230701" nodeInfo="ng">
-      <property name="actionId" nameId="tpc2.1139535298778" value="right_transform_action_id" />
-      <node role="executeFunction" roleId="tpc2.1139535280620" type="tpc2.CellActionMap_ExecuteFunction" typeId="tpc2.1139535439104" id="3334298915664230702" nodeInfo="nn">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3334298915664230703" nodeInfo="sn">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3334298915707734975" nodeInfo="nn">
-            <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3334298915707734977" nodeInfo="nn">
-              <property name="text" nameId="tpee.6329021646629104958" value="Do nothing but stop the right transform for moving cursor after space" />
             </node>
           </node>
         </node>
