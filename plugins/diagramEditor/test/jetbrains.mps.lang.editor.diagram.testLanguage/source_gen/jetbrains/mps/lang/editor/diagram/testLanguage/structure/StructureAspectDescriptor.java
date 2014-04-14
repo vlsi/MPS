@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"rectangles"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"rectangles"}, new boolean[]{true}).create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
       default:
@@ -22,5 +22,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
 }

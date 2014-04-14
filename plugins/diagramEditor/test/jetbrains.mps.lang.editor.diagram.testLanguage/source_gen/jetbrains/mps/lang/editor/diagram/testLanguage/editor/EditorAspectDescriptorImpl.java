@@ -18,7 +18,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Arrays.asList(new ConceptEditor[]{new Diagram_DiagramTestTextual_Editor(), new Diagram_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new Diagram1_DiagramTestTextual_Editor(), new Diagram1_Editor()});
       case 1:
         return Arrays.asList(new ConceptEditor[]{new RectangleNode_DiagramTestTextual_Editor(), new RectangleNode_Editor()});
       default:
@@ -37,5 +37,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
 }

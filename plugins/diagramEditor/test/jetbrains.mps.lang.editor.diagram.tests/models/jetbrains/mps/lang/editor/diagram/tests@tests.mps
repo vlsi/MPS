@@ -14,13 +14,13 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="604142159147796275" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="CreateDiagramNode" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Creating new diagram node by clicking on digram." />
-    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram" typeId="g85x.511002117671747962" id="4633202057941654436" nodeInfo="ng">
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="4633202057941654436" nodeInfo="ng">
       <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="834109970984458418" nodeInfo="ng" />
     </node>
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram" typeId="g85x.511002117671747962" id="4633202057943822985" nodeInfo="ng">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="4633202057943822985" nodeInfo="ng">
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="834109970984522118" nodeInfo="ng">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_xrgyfg_a0a" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_yfdxtz_a0a" />
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="4633202057943967651" nodeInfo="sn">
@@ -36,7 +36,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="834109970984588248" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="SelectDiagramNode" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Selecting diagram node by clicking on it" />
-    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram" typeId="g85x.511002117671747962" id="834109970984588281" nodeInfo="ng">
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="834109970984588281" nodeInfo="ng">
       <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="834109970984588285" nodeInfo="ng">
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="834109970984600378" nodeInfo="ng">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
@@ -44,10 +44,10 @@
         </node>
       </node>
     </node>
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram" typeId="g85x.511002117671747962" id="834109970984600336" nodeInfo="ng">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="834109970984600336" nodeInfo="ng">
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="834109970984600338" nodeInfo="ng">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_xrgyfg_a0a" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_yfdxtz_a0a" />
       </node>
       <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="834109970984600342" nodeInfo="ng" />
     </node>
@@ -61,7 +61,7 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5003005296038308967" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="DeleteDiagramNode" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Deleting diagram node by ressing Del" />
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram" typeId="g85x.511002117671747962" id="5003005296038309041" nodeInfo="ng">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="5003005296038309041" nodeInfo="ng">
       <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="5003005296038309063" nodeInfo="ng">
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5003005296038309110" nodeInfo="ng">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
@@ -69,7 +69,7 @@
         </node>
       </node>
     </node>
-    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram" typeId="g85x.511002117671747962" id="5003005296038309154" nodeInfo="ng" />
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="5003005296038309154" nodeInfo="ng" />
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5003005296038309180" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="5003005296038309178" nodeInfo="nn">
         <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="5003005296038309179" nodeInfo="ng">

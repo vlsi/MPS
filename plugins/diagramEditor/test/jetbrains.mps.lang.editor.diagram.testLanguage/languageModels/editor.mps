@@ -13,7 +13,7 @@
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="511002117671748040" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="g85x.511002117671747962" resolveInfo="Diagram" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="g85x.511002117671747962" resolveInfo="Diagram1" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_Diagram" typeId="gbdf.6306886970791033847" id="511002117671748278" nodeInfo="ng">
       <node role="diagramElements" roleId="gbdf.5355858557208539148" type="gbdf.DiagramElementBLQuery" typeId="gbdf.5355858557208817201" id="511002117671748287" nodeInfo="ng">
         <node role="query" roleId="gbdf.5355858557208817241" type="tpee.DotExpression" typeId="tpee.1197027756228" id="511002117671748456" nodeInfo="nn">
@@ -56,7 +56,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="604142159147841026" nodeInfo="ng">
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="g85x.511002117671747962" resolveInfo="Diagram" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="g85x.511002117671747962" resolveInfo="Diagram1" />
     <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="604142159147841582" nodeInfo="ig">
       <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="604142159147832934" resolveInfo="DiagramTestTextual" />
     </node>

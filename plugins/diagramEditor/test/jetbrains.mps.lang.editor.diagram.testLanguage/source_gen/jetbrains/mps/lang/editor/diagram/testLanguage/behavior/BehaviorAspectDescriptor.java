@@ -13,7 +13,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
-        return new Diagram_BehaviorDescriptor();
+        return new Diagram1_BehaviorDescriptor();
       case 1:
         return new RectangleNode_BehaviorDescriptor();
       default:
@@ -21,5 +21,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
 }

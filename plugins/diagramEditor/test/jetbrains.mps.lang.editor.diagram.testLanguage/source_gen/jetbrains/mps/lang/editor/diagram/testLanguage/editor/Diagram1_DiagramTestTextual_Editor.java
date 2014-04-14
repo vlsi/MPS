@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class Diagram_DiagramTestTextual_Editor extends DefaultNodeEditor {
+public class Diagram1_DiagramTestTextual_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"});
 
   @Override
@@ -31,30 +31,30 @@ public class Diagram_DiagramTestTextual_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_ab920p_a(editorContext, node);
+    return this.createCollection_35xpgu_a(editorContext, node);
   }
 
-  private EditorCell createCollection_ab920p_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_35xpgu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ab920p_a");
+    editorCell.setCellId("Collection_35xpgu_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_ab920p_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ab920p_b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_ab920p_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ab920p_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_35xpgu_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_35xpgu_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_35xpgu_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_35xpgu_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_ab920p_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_35xpgu_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "diagram");
-    editorCell.setCellId("Constant_ab920p_a0");
+    editorCell.setCellId("Constant_35xpgu_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_ab920p_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_35xpgu_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_ab920p_b0");
+    editorCell.setCellId("Constant_35xpgu_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -63,28 +63,28 @@ public class Diagram_DiagramTestTextual_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_ab920p_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_35xpgu_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ab920p_c0");
+    editorCell.setCellId("Collection_35xpgu_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_ab920p_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ab920p_b2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ab920p_c2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_35xpgu_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_35xpgu_b2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_35xpgu_c2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_ab920p_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_35xpgu_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rectangles");
-    editorCell.setCellId("Constant_ab920p_a2a");
+    editorCell.setCellId("Constant_35xpgu_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_ab920p_b2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_35xpgu_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_ab920p_b2a");
+    editorCell.setCellId("Constant_35xpgu_b2a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -93,8 +93,8 @@ public class Diagram_DiagramTestTextual_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_ab920p_c2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Diagram_DiagramTestTextual_Editor.rectanglesListHandler_ab920p_c2a(node, "rectangles", editorContext);
+  private EditorCell createRefNodeList_35xpgu_c2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Diagram1_DiagramTestTextual_Editor.rectanglesListHandler_35xpgu_c2a(node, "rectangles", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_rectangles");
     Style style = new StyleImpl();
@@ -106,8 +106,8 @@ public class Diagram_DiagramTestTextual_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class rectanglesListHandler_ab920p_c2a extends RefNodeListHandler {
-    public rectanglesListHandler_ab920p_c2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class rectanglesListHandler_35xpgu_c2a extends RefNodeListHandler {
+    public rectanglesListHandler_35xpgu_c2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -142,9 +142,9 @@ public class Diagram_DiagramTestTextual_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createConstant_ab920p_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_35xpgu_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_ab920p_d0");
+    editorCell.setCellId("Constant_35xpgu_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);

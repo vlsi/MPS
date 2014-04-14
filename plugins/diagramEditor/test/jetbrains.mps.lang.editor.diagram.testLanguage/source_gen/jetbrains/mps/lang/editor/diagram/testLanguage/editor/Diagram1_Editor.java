@@ -33,43 +33,43 @@ import java.util.ListIterator;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
 
-public class Diagram_Editor extends DefaultNodeEditor {
+public class Diagram1_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_xrgyfg_a(editorContext, node);
+    return this.createCollection_yfdxtz_a(editorContext, node);
   }
 
-  private EditorCell createCollection_xrgyfg_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yfdxtz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCanBeSynchronized(true);
-    editorCell.setCellId("Collection_xrgyfg_a");
+    editorCell.setCellId("Collection_yfdxtz_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createCollection_xrgyfg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_yfdxtz_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_xrgyfg_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yfdxtz_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_xrgyfg_a0");
+    editorCell.setCellId("Collection_yfdxtz_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createDiagram_xrgyfg_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createDiagram_yfdxtz_a0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createDiagram_xrgyfg_a0a(EditorContext editorContext, SNode node) {
-    DiagramCell editorCell = new Diagram_Editor.DiagramCellImpl_xrgyfg_a0a(editorContext, node);
-    editorCell.setCellId("Diagram_xrgyfg_a0a");
+  private EditorCell createDiagram_yfdxtz_a0a(EditorContext editorContext, SNode node) {
+    DiagramCell editorCell = new Diagram1_Editor.DiagramCellImpl_yfdxtz_a0a(editorContext, node);
+    editorCell.setCellId("Diagram_yfdxtz_a0a");
     return editorCell;
   }
 
-  private class DiagramCellImpl_xrgyfg_a0a extends DiagramCell {
-    private DiagramCellImpl_xrgyfg_a0a(EditorContext editorContext, SNode node) {
+  private class DiagramCellImpl_yfdxtz_a0a extends DiagramCell {
+    private DiagramCellImpl_yfdxtz_a0a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
-      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram", "rectangles"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "rectangles"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
         }
       })}));
@@ -79,7 +79,7 @@ public class Diagram_Editor extends DefaultNodeEditor {
 
 
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram", "rectangles"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "rectangles"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
         }
       })};
