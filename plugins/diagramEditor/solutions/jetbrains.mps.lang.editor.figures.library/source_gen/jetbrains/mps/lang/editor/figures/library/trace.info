@@ -1,3 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <root nodeRef="r:257a7f19-40a4-4037-a93b-ce1b638af281(jetbrains.mps.lang.editor.figures.library)/8794120090375424916">
+    <nodeInfo nodeId="8794120090376997458" fileName="BoxFigure.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_WIDTH" />
+    <nodeInfo nodeId="8794120090377020543" fileName="BoxFigure.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_HEIGHT" />
+    <nodeInfo nodeId="8794120090376419062" fileName="BoxFigure.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="figureWidth" />
+    <nodeInfo nodeId="8794120090376422800" fileName="BoxFigure.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="figureHeight" />
+    <nodeInfo nodeId="8794120090379343244" fileName="BoxFigure.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="lineWidth" />
+    <nodeInfo nodeId="8794120090376799410" fileName="BoxFigure.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPolyLine" />
+    <nodeInfo nodeId="8794120090378113223" fileName="BoxFigure.java" startLine="27" startPosition="22" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090378377615" fileName="BoxFigure.java" startLine="28" startPosition="34" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8794120090377503404" fileName="BoxFigure.java" startLine="29" startPosition="0" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377083845" fileName="BoxFigure.java" startLine="30" startPosition="39" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376729348" fileName="BoxFigure.java" startLine="31" startPosition="31" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8794120090376429634" fileName="BoxFigure.java" startLine="35" startPosition="93" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377360471" fileName="BoxFigure.java" startLine="38" startPosition="29" endLine="39" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376619524" fileName="BoxFigure.java" startLine="43" startPosition="29" endLine="44" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376644014" fileName="BoxFigure.java" startLine="48" startPosition="29" endLine="49" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377308283" fileName="BoxFigure.java" startLine="53" startPosition="29" endLine="54" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090382305512" fileName="BoxFigure.java" startLine="58" startPosition="29" endLine="59" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090382217638" fileName="BoxFigure.java" startLine="61" startPosition="12" endLine="62" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="978373763414913157" fileName="BoxFigure.java" startLine="68" startPosition="61" endLine="69" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090376661067" fileName="BoxFigure.java" startLine="69" startPosition="49" endLine="70" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376669191" fileName="BoxFigure.java" startLine="70" startPosition="32" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376205125" fileName="BoxFigure.java" startLine="71" startPosition="33" endLine="72" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090381928252" fileName="BoxFigure.java" startLine="72" startPosition="30" endLine="73" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090381950583" fileName="BoxFigure.java" startLine="74" startPosition="52" endLine="75" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376258974" fileName="BoxFigure.java" startLine="75" startPosition="36" endLine="76" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090380787796" fileName="BoxFigure.java" startLine="80" startPosition="39" endLine="81" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090380795842" fileName="BoxFigure.java" startLine="81" startPosition="34" endLine="82" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090380822013" fileName="BoxFigure.java" startLine="82" startPosition="36" endLine="83" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090381273580" fileName="BoxFigure.java" startLine="83" startPosition="29" endLine="84" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090380848379" fileName="BoxFigure.java" startLine="84" startPosition="21" endLine="85" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8794120090382380820" fileName="BoxFigure.java" startLine="85" startPosition="42" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8794120090380869334" fileName="BoxFigure.java" startLine="86" startPosition="0" endLine="87" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090380892182" fileName="BoxFigure.java" startLine="87" startPosition="30" endLine="88" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090380910484" fileName="BoxFigure.java" startLine="88" startPosition="60" endLine="89" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090380915313" fileName="BoxFigure.java" startLine="89" startPosition="67" endLine="90" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090380920700" fileName="BoxFigure.java" startLine="90" startPosition="75" endLine="91" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090380926639" fileName="BoxFigure.java" startLine="91" startPosition="68" endLine="92" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377285399" fileName="BoxFigure.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8794120090376560770" fileName="BoxFigure.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8794120090376565639" fileName="BoxFigure.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8794120090377308281" fileName="BoxFigure.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8794120090382305510" fileName="BoxFigure.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8794120090379156099" fileName="BoxFigure.java" startLine="73" startPosition="62" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8794120090377285393" fileName="BoxFigure.java" startLine="36" startPosition="51" endLine="41" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376554259" fileName="BoxFigure.java" startLine="41" startPosition="12" endLine="46" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376565633" fileName="BoxFigure.java" startLine="46" startPosition="12" endLine="51" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377308275" fileName="BoxFigure.java" startLine="51" startPosition="12" endLine="56" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090382269685" fileName="BoxFigure.java" startLine="56" startPosition="12" endLine="61" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090376205115" fileName="BoxFigure.java" startLine="67" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doValidate#(Ljetbrains/jetpad/projectional/view/View/ValidationContext;)V" />
+    <nodeInfo nodeId="5667822611620059834" fileName="BoxFigure.java" startLine="80" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustPolyLinePoints#()V" />
+    <nodeInfo nodeId="8794120090376429621" fileName="BoxFigure.java" startLine="34" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
+    <nodeInfo nodeId="8794120090376426063" fileName="BoxFigure.java" startLine="32" startPosition="0" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090375426024" fileName="BoxFigure.java" startLine="27" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BoxFigure#()V" />
+    <scopeInfo nodeId="8794120090377285400" fileName="BoxFigure.java" startLine="38" startPosition="29" endLine="39" endPosition="35" />
+    <scopeInfo nodeId="8794120090376560771" fileName="BoxFigure.java" startLine="43" startPosition="29" endLine="44" endPosition="88" />
+    <scopeInfo nodeId="8794120090376565640" fileName="BoxFigure.java" startLine="48" startPosition="29" endLine="49" endPosition="35" />
+    <scopeInfo nodeId="8794120090377308282" fileName="BoxFigure.java" startLine="53" startPosition="29" endLine="54" endPosition="88" />
+    <scopeInfo nodeId="8794120090382305511" fileName="BoxFigure.java" startLine="58" startPosition="29" endLine="59" endPosition="35" />
+    <scopeInfo nodeId="8794120090379156102" fileName="BoxFigure.java" startLine="74" startPosition="52" endLine="76" endPosition="23" />
+    <scopeInfo nodeId="8794120090377285399" fileName="BoxFigure.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="8794120090376560770" fileName="BoxFigure.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="8794120090376565639" fileName="BoxFigure.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8794120090377308281" fileName="BoxFigure.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8794120090382305510" fileName="BoxFigure.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="8794120090376205121" fileName="BoxFigure.java" startLine="68" startPosition="61" endLine="77" endPosition="5">
+      <varInfo nodeId="8794120090381928253" varName="newDimension" />
+      <varInfo nodeId="978373763414913158" varName="prefSize" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794120090376205115" fileName="BoxFigure.java" startLine="67" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="8794120090376205119" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="5667822611620059839" fileName="BoxFigure.java" startLine="80" startPosition="39" endLine="92" endPosition="60">
+      <varInfo nodeId="8794120090380795843" varName="height" />
+      <varInfo nodeId="8794120090380822014" varName="lw" />
+      <varInfo nodeId="8794120090381273581" varName="lw2" />
+      <varInfo nodeId="8794120090380848380" varName="origin" />
+      <varInfo nodeId="8794120090380787797" varName="width" />
+    </scopeInfo>
+    <scopeInfo nodeId="5667822611620059834" fileName="BoxFigure.java" startLine="80" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="8794120090376429630" fileName="BoxFigure.java" startLine="35" startPosition="93" endLine="62" endPosition="84" />
+    <scopeInfo nodeId="8794120090376429621" fileName="BoxFigure.java" startLine="34" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="8794120090376429625" varName="configuration" />
+    </scopeInfo>
+    <scopeInfo nodeId="8794120090375426028" fileName="BoxFigure.java" startLine="27" startPosition="22" endLine="64" endPosition="19" />
+    <scopeInfo nodeId="8794120090375426024" fileName="BoxFigure.java" startLine="27" startPosition="0" endLine="66" endPosition="0" />
+    <unitInfo nodeId="8794120090377285399" fileName="BoxFigure.java" startLine="37" startPosition="69" endLine="41" endPosition="9" unitName="jetbrains.mps.lang.editor.figures.library.BoxFigure$2" />
+    <unitInfo nodeId="8794120090376560770" fileName="BoxFigure.java" startLine="42" startPosition="69" endLine="46" endPosition="9" unitName="jetbrains.mps.lang.editor.figures.library.BoxFigure$2" />
+    <unitInfo nodeId="8794120090376565639" fileName="BoxFigure.java" startLine="47" startPosition="70" endLine="51" endPosition="9" unitName="jetbrains.mps.lang.editor.figures.library.BoxFigure$2" />
+    <unitInfo nodeId="8794120090377308281" fileName="BoxFigure.java" startLine="52" startPosition="70" endLine="56" endPosition="9" unitName="jetbrains.mps.lang.editor.figures.library.BoxFigure$2" />
+    <unitInfo nodeId="8794120090382305510" fileName="BoxFigure.java" startLine="57" startPosition="67" endLine="61" endPosition="9" unitName="jetbrains.mps.lang.editor.figures.library.BoxFigure$2" />
+    <unitInfo nodeId="8794120090376428240" fileName="BoxFigure.java" startLine="33" startPosition="8" endLine="64" endPosition="5" unitName="jetbrains.mps.lang.editor.figures.library.BoxFigure$1" />
+    <unitInfo nodeId="8794120090375424916" fileName="BoxFigure.java" startLine="16" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.library.BoxFigure" />
+  </root>
+</debugInfo>
 
