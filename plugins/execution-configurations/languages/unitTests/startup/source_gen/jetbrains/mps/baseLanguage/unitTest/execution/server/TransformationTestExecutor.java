@@ -30,7 +30,6 @@ public class TransformationTestExecutor extends TestExecutor {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    CachesUtil.cleanupCaches();
     System.exit(0);
   }
 }

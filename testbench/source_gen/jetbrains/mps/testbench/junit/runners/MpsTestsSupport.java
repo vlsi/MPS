@@ -47,7 +47,6 @@ public class MpsTestsSupport {
 
   private static void initLoggingSystem() {
     Logger.setFactory(LoggerFactory.class);
-    assert Logger.isInitialized();
     Logger.getInstance("");
   }
 

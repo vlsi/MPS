@@ -19,32 +19,58 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO: refactor this
 public class CachesUtil {
+  private static final String MPS_TEST_DIR = "mps_test_dir";
   private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
   private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
   private static final List<File> TO_REMOVE = new ArrayList<File>();
 
-
+  // we need to check that caches dirs are writable
+  // idea does not have the necessary api, @see our PathManager class
   public static void setupCaches() {
-    // we need to check that caches dirs are writable
-    // idea does not have the necessary api, so, alas, doing checks by ourselves
-    // see PathManager class
-    useTemporalFolderIfNotSet(PROPERTY_CONFIG_PATH);
-    useTemporalFolderIfNotSet(PROPERTY_SYSTEM_PATH);
+    boolean success = trySetTestCachesFromOptions();
+    if (!success)
+      success = trySetTestCachesPath(MPS_TEST_DIR);
+    if (!success)
+      setTestCachesInTempDir();
   }
 
-  private static void setTestCachesPath() {
+  private static boolean trySetTestCachesPath(String testDirName) {
+    File tmpDir = FileUtil.getTempDir();
+    File testDirPath = new File(tmpDir.getAbsolutePath(), testDirName);
+    File testConfigPath = new File(testDirPath, "config");
+    File testSystemPath = new File(testDirPath, "system");
+    if (FileUtil.canWrite(testConfigPath) && FileUtil.canWrite(testSystemPath)) {
+      testConfigPath.mkdirs();
+      testSystemPath.mkdir();
+      TO_REMOVE.add(testDirPath);
+      System.setProperty(PROPERTY_CONFIG_PATH, testConfigPath.getAbsolutePath());
+      System.setProperty(PROPERTY_SYSTEM_PATH, testSystemPath.getAbsolutePath());
+      return true;
+    }
+    return false;
   }
 
-  private static void useTemporalFolderIfNotSet(String propertyName) {
+  private static boolean trySetTestCachesFromOptions() {
+    boolean result = useTemporalFolderIfNotSet(PROPERTY_CONFIG_PATH);
+    result &= useTemporalFolderIfNotSet(PROPERTY_SYSTEM_PATH);
+    return result;
+  }
+
+  private static boolean useTemporalFolderIfNotSet(String propertyName) {
     String path = System.getProperty(propertyName);
     if (path != null) {
       path = PathUtil.trimPathQuotes(path);
       path = PathUtil.getAbsolutePath(path);
-      if (FileUtil.canWrite(new File(path))) return;
+      return FileUtil.canWrite(new File(path));
     }
+    return false;
+  }
 
-    setTmpCacheFolder(propertyName);
+  private static void setTestCachesInTempDir() {
+    setTmpCacheFolder(PROPERTY_CONFIG_PATH);
+    setTmpCacheFolder(PROPERTY_SYSTEM_PATH);
   }
 
   private static void setTmpCacheFolder(String propertyName) {
