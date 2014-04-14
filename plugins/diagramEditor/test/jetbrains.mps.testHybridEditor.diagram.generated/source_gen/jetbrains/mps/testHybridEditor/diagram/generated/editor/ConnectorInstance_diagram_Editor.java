@@ -16,10 +16,10 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.projectional.view.View;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView;
@@ -61,25 +61,6 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
         @Override
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
-          configuration.add(Synchronizers.forProperty(getTarget().view().focused(), new WritableProperty<Boolean>() {
-            public void set(Boolean isFocused) {
-              if (isFocused && !(isSelected())) {
-                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
-              } else if (!(isFocused) && isSelected()) {
-                getEditorComponent().getSelectionManager().clearSelection();
-              }
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
-            public void set(Boolean isSelected) {
-              if (isSelected && !(getTarget().view().focused().get())) {
-                getTarget().view().container().focusedView().set(getTarget().view());
-              } else if (!(isSelected) && getTarget().view().focused().get()) {
-                getTarget().view().container().focusedView().set(null);
-              }
-            }
-          }));
-
 
           configuration.add(Synchronizers.forProperty(myInputPort, new WritableProperty<Tuples._2<SNode, SNode>>() {
             public void set(Tuples._2<SNode, SNode> port) {
@@ -119,7 +100,24 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
               return (View) descendantMapper.getTarget();
             }
           }));
-          configuration.add(Synchronizers.forProperty(getTarget().view().bounds(), new WritableProperty<Rectangle>() {
+          final View targetView = this.getTarget().view();
+          configuration.add(Synchronizers.forProperty(targetView.focused(), new WritableProperty<Boolean>() {
+            public void set(Boolean isFocused) {
+              if (isFocused && !(isSelected())) {
+                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
+            public void set(Boolean isSelected) {
+              if (isSelected && !(targetView.focused().get())) {
+                targetView.container().focusedView().set(targetView);
+              } else if (!(isSelected) && targetView.focused().get()) {
+                targetView.container().focusedView().set(null);
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(targetView.bounds(), new WritableProperty<Rectangle>() {
             public void set(Rectangle rect) {
               DiagramCell diagramCell = getDiagramCell();
               if (diagramCell == null) {
@@ -131,6 +129,7 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
               setHeight(rect.dimension.y);
             }
           }));
+
 
         }
       };
