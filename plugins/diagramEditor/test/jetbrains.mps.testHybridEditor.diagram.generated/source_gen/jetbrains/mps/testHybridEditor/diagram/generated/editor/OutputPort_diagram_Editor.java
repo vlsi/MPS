@@ -18,6 +18,7 @@ import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -68,7 +69,12 @@ public class OutputPort_diagram_Editor extends DefaultNodeEditor {
           }));
           configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
             public void set(Boolean isSelected) {
-              if (isSelected && !(targetView.focused().get())) {
+              if (isSelected) {
+                for (View view : Sequence.fromIterable(JetpadUtils.getAllChildren(targetView))) {
+                  if (view.focused().get()) {
+                    return;
+                  }
+                }
                 targetView.container().focusedView().set(targetView);
               } else if (!(isSelected) && targetView.focused().get()) {
                 targetView.container().focusedView().set(null);
