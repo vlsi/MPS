@@ -83,6 +83,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
@@ -1635,7 +1636,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         int caretPosition = labelCell.getCaretPosition();
         //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
         if (caretPosition == text.length()) {
-          return jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM;
+          if (caretPosition == 0 && labelCell instanceof EditorCell_Constant) {
+            //empty unbound constant cells should ignore the space key when empty
+            return jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_END;
+          } else {
+            return jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM;
+          }
         }
 
         if (caretPosition == 0) {
