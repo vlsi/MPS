@@ -27,7 +27,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "rootElement", true);
   }
 
-  public static Iterable sourceNodesQuery_1228518035217(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1228518035217(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document");
   }
 }

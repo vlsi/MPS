@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * fyodor, 4/11/11
  */
@@ -48,4 +50,40 @@ public interface IGenerationSettings {
   boolean isSaveTransientModels();
 
   boolean useInplaceTransofrmations();
+
+  /**
+   * Presentation options of the new generation tracer. At the moment, they affect the way trace is represented, not collected, and as such
+   * might not fit IGenerationSettings, but (a) trace functionality is inherently generator-related; (b) I don't want to introduce another location for settings
+   */
+  @NotNull
+  GenTraceSettings getTraceSettings();
+
+  public static class GenTraceSettings {
+    private boolean myGroupSteps = true;
+    private boolean myCompactTemplates = false;
+    private boolean myShowEmptySteps = false;
+
+    public boolean isGroupByStep() {
+      return myGroupSteps;
+    }
+    public void setGroupByStep(boolean groupSteps) {
+      myGroupSteps = groupSteps;
+    }
+
+    public boolean isCompactTemplates() {
+      return myCompactTemplates;
+    }
+
+    public void setCompactTemplates(boolean compactTemplates) {
+      myCompactTemplates = compactTemplates;
+    }
+
+    public boolean isShowEmptySteps() {
+      return myShowEmptySteps;
+    }
+
+    public void setShowEmptySteps(boolean showEmptySteps) {
+      myShowEmptySteps = showEmptySteps;
+    }
+  }
 }

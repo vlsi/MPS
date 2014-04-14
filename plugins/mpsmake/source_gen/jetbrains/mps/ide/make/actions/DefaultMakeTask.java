@@ -13,13 +13,11 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.messages.IMessage;
 
 public class DefaultMakeTask extends Task.Modal {
   private boolean needClean;
@@ -40,7 +38,8 @@ public class DefaultMakeTask extends Task.Modal {
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ModuleMaker maker = new ModuleMaker(new DefaultMakeTask.MessageHandler(), MessageKind.ERROR);
+          MessagesViewTool mvt = getProject().getComponent(MessagesViewTool.class);
+          ModuleMaker maker = new ModuleMaker(mvt.newHandler(), MessageKind.ERROR);
           if (needClean) {
             maker.clean(modules, monitor.subTask(1));
           }
@@ -57,24 +56,6 @@ public class DefaultMakeTask extends Task.Modal {
       }
     } finally {
       monitor.done();
-    }
-  }
-
-  private class MessageHandler implements IMessageHandler {
-    private MessagesViewTool mvt;
-
-    public MessageHandler() {
-      this.mvt = getProject().getComponent(MessagesViewTool.class);
-    }
-
-    @Override
-    public void clear() {
-      this.mvt.clear();
-    }
-
-    @Override
-    public void handle(IMessage message) {
-      this.mvt.add(message);
     }
   }
 }

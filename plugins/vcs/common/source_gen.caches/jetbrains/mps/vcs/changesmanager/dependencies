@@ -24,9 +24,9 @@
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -101,9 +101,9 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.ConflictsUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
@@ -149,9 +149,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
   </dependency>
@@ -283,9 +283,9 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.Queue" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="java.lang.Thread" />
   </dependency>

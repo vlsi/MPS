@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -60,7 +60,7 @@ public class HelpCommand_Behavior {
           try {
             return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getKind_7006261637493126084", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
           } catch (RuntimeException e) {
-            if (LOG.isEnabledFor(Priority.WARN)) {
+            if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Concept " + BehaviorReflection.invokeVirtual(String.class, it, "virtual_getFqName_1213877404258", new Object[]{}) + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
             }
             try {

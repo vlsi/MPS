@@ -12,7 +12,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.debugger.java.runtime.state.customViewers.CustomViewersManagerImpl;
@@ -44,7 +44,7 @@ public class ViewAs_Action extends BaseAction {
         event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ViewAs", t);
       }
       this.disable(event.getPresentation());
@@ -70,7 +70,7 @@ public class ViewAs_Action extends BaseAction {
       }
       CustomViewersManagerImpl.getInstanceImpl().setValueWrapper(((JavaValue) value).getValue(), ViewAs_Action.this.factory, (DebugSession) DebugActionsUtil.getDebugSession(event));
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ViewAs", t);
       }
     }

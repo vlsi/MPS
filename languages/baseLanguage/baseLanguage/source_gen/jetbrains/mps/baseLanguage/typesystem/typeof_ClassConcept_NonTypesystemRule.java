@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
+import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -42,9 +43,20 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
       typeCheckingContext.addDependencyForCurrent(m);
     }
     if (!(SPropertyOperations.getBoolean(cls, "abstractClass") || (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).isNotEmpty())) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cls, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty()) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cls, "Class has unimplemented methods (press Ctrl/Cmd+I to see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637871546", null, errorTarget);
+      if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cls, "Enum has unimplemented methods (press Ctrl/Cmd+I to see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4271705194754485664", null, errorTarget);
+        }
+      } else {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cls, "Class has unimplemented methods (press Ctrl/Cmd+I to see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221637871546", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.MakeClassAbstract_QuickFix", false);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
+        }
       }
     }
   }

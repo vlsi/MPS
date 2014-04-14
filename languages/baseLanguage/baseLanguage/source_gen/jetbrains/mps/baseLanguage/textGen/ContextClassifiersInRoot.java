@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.HashMap;
@@ -42,7 +42,7 @@ public class ContextClassifiersInRoot {
       contextNode = SNodeOperations.getParent(contextNode);
     }
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("contextNode is classifier in getContextClassifiers: " + contextNode);
       }
       return Collections.emptyMap();
@@ -77,7 +77,7 @@ public class ContextClassifiersInRoot {
         } else if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           processNestedClassifiers = !("superclass".equals(sourceChildRole) || "implementedInterface".equals(sourceChildRole));
         } else {
-          if (LOG.isEnabledFor(Priority.WARN)) {
+          if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Illegal classifier node in bl textgen: " + current);
           }
         }

@@ -90,10 +90,8 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
     }
 
     try {
-      RuleConsequenceProcessor rcp = new RuleConsequenceProcessor(environment);
-      context = context.subContext(mappingName);
-      rcp.prepare(defaultConsequence, context);
-      return rcp.processRuleConsequence();
+      RuleConsequenceProcessor rcp = RuleConsequenceProcessor.prepare(defaultConsequence);
+      return rcp.processRuleConsequence(context.subContext(mappingName));
     } catch (AbandonRuleInputException ex) {
       // it's ok. just ignore
       return Collections.emptyList();
@@ -102,7 +100,6 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
   @Override
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
-
     SNode message = RuleUtil.getSwitch_NullInputMessage(mySwitch);
     if (message != null) {
       DismissTopMappingRuleException.MessageType messageType = GeneratorUtilEx.getGeneratorMessage_kind(message);

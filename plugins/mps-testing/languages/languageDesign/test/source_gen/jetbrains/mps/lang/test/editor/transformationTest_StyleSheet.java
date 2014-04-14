@@ -8,6 +8,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 
 public class transformationTest_StyleSheet {
   public static void apply_AssertStyle(Style style, EditorCell editorCell) {
@@ -32,6 +33,56 @@ public class transformationTest_StyleSheet {
 
   public static void apply_EditorOperation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+  }
+
+  public static void apply_AnyBracket(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+  }
+
+  public static void apply_Parenthesis(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      transformationTest_StyleSheet.apply_AnyBracket(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    {
+      Style styleToPut;
+      styleToPut = StyleRegistry.getInstance().getStyle("PARENTH");
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.MATCHING_LABEL, 0, "parenthesis");
+  }
+
+  public static void apply_LeftParen(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      transformationTest_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+  }
+
+  public static void apply_RightParen(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      transformationTest_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+  }
+
+  public static void apply_LeftParenAfterName(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      transformationTest_StyleSheet.apply_LeftParen(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
 
 

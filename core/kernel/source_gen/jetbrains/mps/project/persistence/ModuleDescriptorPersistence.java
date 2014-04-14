@@ -37,7 +37,7 @@ import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -326,7 +326,7 @@ public class ModuleDescriptorPersistence {
         }
       }
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);
       }
     } finally {

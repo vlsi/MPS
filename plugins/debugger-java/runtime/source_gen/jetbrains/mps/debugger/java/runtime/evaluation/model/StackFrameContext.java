@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.debugger.java.api.state.watchables.JavaLocalVariable;
 import com.sun.jdi.Type;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -99,7 +99,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           jdiType = variable.getLocalVariable().type();
           SNode type = getMpsTypeFromJdiType(jdiType, createClassifierType);
           if (type == null) {
-            if (LOG.isEnabledFor(Priority.WARN)) {
+            if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Could not deduce type for a variable " + name);
             }
           } else {
@@ -111,7 +111,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           if (jdiType == null) {
             SNode classifierType = createClassifierType.invoke(variable.getLocalVariable().typeName());
             if (classifierType == null) {
-              if (LOG.isEnabledFor(Priority.WARN)) {
+              if (LOG.isEnabledFor(Level.WARN)) {
                 LOG.warn("Could not deduce type for a variable " + name);
               }
             } else {
@@ -120,7 +120,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
               MapSequence.fromMap(result).put(name, variableDescription);
             }
           } else {
-            if (LOG.isEnabledFor(Priority.WARN)) {
+            if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Exception when creating variable " + name, cne);
             }
           }
@@ -142,7 +142,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           description.setHighLevelNode(node);
         }
       } catch (InvalidStackFrameException e) {
-        if (LOG.isEnabledFor(Priority.WARN)) {
+        if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("InvalidStackFrameException", e);
         }
       }
@@ -263,7 +263,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
               return true;
             }
           } catch (ClassNotLoadedException ex) {
-            if (LOG.isEnabledFor(Priority.WARN)) {
+            if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Exception when checking variable " + variable, ex);
             }
           }

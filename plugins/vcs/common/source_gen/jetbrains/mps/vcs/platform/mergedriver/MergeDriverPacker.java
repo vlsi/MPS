@@ -16,7 +16,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
@@ -99,7 +99,7 @@ public abstract class MergeDriverPacker {
           FileUtil.copyFile(file, tmpDir);
         }
       } else {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("couldn't find class path: " + classpathDir);
         }
       }

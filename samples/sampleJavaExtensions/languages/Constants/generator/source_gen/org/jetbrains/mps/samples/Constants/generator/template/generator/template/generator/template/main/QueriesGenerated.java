@@ -40,7 +40,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "initializer", true);
   }
 
-  public static Iterable sourceNodesQuery_1494751830319065513(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1494751830319065513(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "constants", true);
   }
 }

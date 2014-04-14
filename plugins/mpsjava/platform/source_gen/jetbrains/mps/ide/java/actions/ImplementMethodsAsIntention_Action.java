@@ -6,19 +6,21 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -37,7 +39,15 @@ public class ImplementMethodsAsIntention_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept") && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty();
+    SNode classConcept = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
+    if (SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+      SNode enumConstant = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", true, false);
+      if ((enumConstant != null)) {
+        return !(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).isInspector()) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), enumConstant, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty();
+      }
+    }
+    return !(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).isInspector()) && (classConcept != null) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classConcept, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty();
+
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -47,7 +57,7 @@ public class ImplementMethodsAsIntention_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ImplementMethodsAsIntention", t);
       }
       this.disable(event.getPresentation());
@@ -81,9 +91,19 @@ public class ImplementMethodsAsIntention_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
-      new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false).run();
+      final boolean isInEnumConstant = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", true, false) != null);
+        }
+      });
+      if (isInEnumConstant) {
+        new OverrideImplementMethodInEnumConstantAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false).run();
+      } else {
+        new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false).run();
+      }
+
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ImplementMethodsAsIntention", t);
       }
     }

@@ -71,6 +71,10 @@
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DragHandler" file="DragHandler.java">
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" file="MovableContentView.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewPropertySpec" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" file="NodeDecoratorView.java">
     <classNode dependClassName="jetbrains.jetpad.projectional.view.GroupView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.RectDecoratorView" />
@@ -107,6 +111,12 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.AbstractDecoratorView" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" file="ResizableContentView.java">
+    <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewPropertyKind" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewPropertySpec" />
+    <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableSelectionFrameView" file="ResizableSelectionFrameView.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
@@ -133,11 +143,11 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="jetbrains.jetpad.base.Registration" />
     <classNode dependClassName="jetbrains.jetpad.event.MouseEvent" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
-    <classNode dependClassName="jetbrains.jetpad.model.event.Registration" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
     <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
     <classNode dependClassName="jetbrains.jetpad.model.property.WritableProperty" />

@@ -42,6 +42,10 @@ public class ExternalViewFigureParameter_Behavior {
     return (SPropertyOperations.getString(thisNode, "name").startsWith(prefix) ? SPropertyOperations.getString(thisNode, "name").substring(prefix.length()) : SPropertyOperations.getString(thisNode, "name"));
   }
 
+  public static SNode virtual_getParameterType_342110547581236128(SNode thisNode) {
+    return SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+  }
+
   private static boolean eq_g8zu1a_a0a0a0a0a0b0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -485,7 +485,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       SNode result = (SNode) resultObject;
       String[] child = (String[]) value;
       if (child[2] == null) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("couldn't create reference '" + child[0] + "' : traget node id is null");
         }
         return;

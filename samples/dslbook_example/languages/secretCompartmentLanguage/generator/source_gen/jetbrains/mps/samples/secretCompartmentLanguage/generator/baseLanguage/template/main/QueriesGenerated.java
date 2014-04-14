@@ -83,24 +83,24 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "startState", false);
   }
 
-  public static Iterable sourceNodesQuery_1197225142618(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1197225142618(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "event", true);
   }
 
-  public static Iterable sourceNodesQuery_1197225498374(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1197225498374(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "state", true);
   }
 
-  public static Iterable sourceNodesQuery_1197241595255(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1197241595255(final SourceSubstituteMacroNodesContext _context) {
     SLinkOperations.getTargets(_context.getNode(), "state", true);
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition", false, new String[]{});
   }
 
-  public static Iterable sourceNodesQuery_199058371937525658(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_199058371937525658(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "testMethod", true);
   }
 
-  public static Iterable sourceNodesQuery_199058371937526736(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_199058371937526736(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "handleEvent", true);
   }
 }

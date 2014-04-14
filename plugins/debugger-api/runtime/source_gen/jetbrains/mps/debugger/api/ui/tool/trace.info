@@ -36,7 +36,7 @@
     <nodeInfo nodeId="4474271214083120442" fileName="DebuggerToolContentBuilder.java" startLine="80" startPosition="125" endLine="81" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083120460" fileName="DebuggerToolContentBuilder.java" startLine="84" startPosition="69" endLine="85" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6225536200579577605" fileName="DebuggerToolContentBuilder.java" startLine="85" startPosition="84" endLine="86" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6225536200579577638" fileName="DebuggerToolContentBuilder.java" startLine="88" startPosition="45" endLine="89" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6225536200579577638" fileName="DebuggerToolContentBuilder.java" startLine="88" startPosition="42" endLine="89" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083120470" fileName="DebuggerToolContentBuilder.java" startLine="91" startPosition="12" endLine="92" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083120478" fileName="DebuggerToolContentBuilder.java" startLine="93" startPosition="5" endLine="94" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083120494" fileName="DebuggerToolContentBuilder.java" startLine="94" startPosition="182" endLine="95" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -88,7 +88,7 @@
     <scopeInfo nodeId="4474271214083120349" fileName="DebuggerToolContentBuilder.java" startLine="60" startPosition="50" endLine="61" endPosition="27" />
     <scopeInfo nodeId="4474271214083120407" fileName="DebuggerToolContentBuilder.java" startLine="70" startPosition="63" endLine="71" endPosition="51" />
     <scopeInfo nodeId="4474271214083120441" fileName="DebuggerToolContentBuilder.java" startLine="80" startPosition="125" endLine="81" endPosition="137" />
-    <scopeInfo nodeId="6225536200579577638" fileName="DebuggerToolContentBuilder.java" startLine="88" startPosition="45" endLine="89" endPosition="105" />
+    <scopeInfo nodeId="6225536200579577638" fileName="DebuggerToolContentBuilder.java" startLine="88" startPosition="42" endLine="89" endPosition="105" />
     <scopeInfo nodeId="6225536200579577664" fileName="DebuggerToolContentBuilder.java" startLine="91" startPosition="12" endLine="92" endPosition="57" />
     <scopeInfo nodeId="4474271214083120615" fileName="DebuggerToolContentBuilder.java" startLine="121" startPosition="31" endLine="122" endPosition="71" />
     <scopeInfo nodeId="4474271214083120652" fileName="DebuggerToolContentBuilder.java" startLine="138" startPosition="47" endLine="139" endPosition="31" />

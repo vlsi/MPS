@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
 
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -35,12 +36,11 @@ import java.util.regex.Pattern;
 public class ReferenceConceptUtil {
   private static final Logger LOG = LogManager.getLogger(ReferenceConceptUtil.class);
 
-  private static final Pattern SMART_ALIAS = Pattern.compile(".*<\\{.+\\}>.*");
-  private static final Pattern SMART_ALIAS_SEPARATOR = Pattern.compile("<\\{|\\}>");
+  private static final Pattern SMART_ALIAS = Pattern.compile("(.*)<\\{(.+)\\}>(.*)");
 
   /**
-   * Puprose of some concepts is only to hold refrence on something else.
-   * In such a concepts, the most importent thing is that reference, which is called 'characteristic reference'.
+   * Purpose of some concepts is only to hold reference on something else.
+   * In such a concepts, the most important thing is that reference, which is called 'characteristic reference'.
    * <p/>
    * Concept is considered 'pure reference' if
    * - it has alias which matches the pattern 'xxx <{_referent_role_}> yyy' (and declares reference link with this role)
@@ -58,12 +58,12 @@ public class ReferenceConceptUtil {
         String alias = SPropertyOperations.getString(concept, "conceptAlias");
         if (alias != null) {
           // handle pattern 'xxx <{_referent_role_}> yyy'
-          if (!alias.matches(".*<\\{.+\\}>.*")) {
+          final Matcher matcher = SMART_ALIAS.matcher(alias);
+          if (!matcher.matches()) {
             // trick (why?): has an alias but it doesn't match pattern - no characteristic reference
             return null;
           }
-          String[] matches = alias.split("<\\{|\\}>");
-          expectedReferentRole = matches[1];
+          expectedReferentRole = matcher.group(2);
         }
 
         List<SNode> links = SModelSearchUtil.getReferenceLinkDeclarations(concept);
@@ -97,13 +97,11 @@ public class ReferenceConceptUtil {
   public static String getPresentationFromSmartAlias(SNode concept, String referentPresentation) {
     String conceptAlias = SPropertyOperations.getString(concept, "conceptAlias");
     // handle pattern 'xxx <{_referent_role_}> yyy'
-    String[] matches = SMART_ALIAS_SEPARATOR.split(conceptAlias, 0);
-    matches[1] = referentPresentation;
-    StringBuilder sb = new StringBuilder();
-    for (String segment : matches) {
-      sb.append(segment);
+    final Matcher matcher = SMART_ALIAS.matcher(conceptAlias);
+    if (!matcher.matches()) {
+      return referentPresentation;
     }
-    return sb.toString();
+    return matcher.group(1) + referentPresentation + matcher.group(3);
   }
 
   public static String getPresentation(SNode node) {
@@ -116,9 +114,11 @@ public class ReferenceConceptUtil {
       return ((DynamicReference) reference).getResolveInfo();
     }
     SNode referentNode = node.getReferenceTarget(genuineRole);
-    String referentPresentation = "<no " + SModelUtil.getLinkDeclarationRole(characteristicReference) + ">";
+    final String referentPresentation;
     if (referentNode != null) {
       referentPresentation = referentNode.toString();
+    } else {
+      referentPresentation = "<no " + SModelUtil.getLinkDeclarationRole(characteristicReference) + ">";
     }
     if (hasSmartAlias(nodeConcept)) {
       return getPresentationFromSmartAlias(nodeConcept, referentPresentation);

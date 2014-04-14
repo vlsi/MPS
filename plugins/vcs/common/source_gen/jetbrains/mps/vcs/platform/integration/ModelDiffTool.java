@@ -23,7 +23,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.diff.DocumentContent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -118,7 +118,7 @@ public class ModelDiffTool implements DiffTool {
       }
       return PersistenceUtil.loadModel(new String(bytes, FileUtil.DEFAULT_CHARSET), ext);
     } catch (IOException ioe) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Couldn't read content: " + ioe.getMessage(), ioe);
       }
     }
@@ -168,7 +168,7 @@ public class ModelDiffTool implements DiffTool {
     // get rootId from file 
     SModel diskModel = PersistenceUtil.loadModel(file, MPSExtentions.MODEL);
     if (diskModel == null) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Error reading MPS file " + file.getPath());
       }
       return null;

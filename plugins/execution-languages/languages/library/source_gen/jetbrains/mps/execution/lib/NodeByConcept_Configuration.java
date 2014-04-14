@@ -16,7 +16,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
@@ -105,7 +105,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       clone.myState = (NodeByConcept_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
       }
     }

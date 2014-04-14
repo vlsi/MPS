@@ -6,25 +6,27 @@ import jetbrains.mps.reloading.ClassBytesProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.reloading.AbstractClassPathItem;
-import org.jetbrains.asm4.ClassReader;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
+import org.jetbrains.asm4.ClassReader;
 import org.jetbrains.asm4.tree.InnerClassNode;
 import org.jetbrains.asm4.Opcodes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class ClassifierLoader {
-  private ClassBytesProvider myCpItem;
-  private ClassifierUpdater myUpdater;
+  private final ClassBytesProvider myCpItem;
+  private final SReferenceHandler myReferenceFactory;
+  private final boolean mySkipPrivate;
 
-  public ClassifierLoader(ClassBytesProvider cpItem, ClassifierUpdater updater) {
+  public ClassifierLoader(ClassBytesProvider cpItem, SReferenceHandler refFactory, boolean skipPrivate) {
     myCpItem = cpItem;
-    myUpdater = updater;
+    myReferenceFactory = refFactory;
+    mySkipPrivate = skipPrivate;
   }
 
   public void getClassifier(String pack, String name, _FunctionTypes._void_P1_E0<? super SNode> adder) {
@@ -32,17 +34,17 @@ public class ClassifierLoader {
       return;
     }
 
-    String cp = ((pack.length() == 0) ? "" : pack + ".");
-    byte[] code = myCpItem.getClass(cp + name);
+    final String fqName = ((pack.length() == 0) ? name : pack + '.' + name);
+    byte[] code = myCpItem.getClass(fqName);
     if (code == null) {
       return;
     }
-    ClassReader reader = new ClassReader(code);
-    ASMClass ac = new ASMClass(reader);
-    SNode res = createClassifierForClass(name, reader);
-    adder.invoke(res);
-    myUpdater.updateClassifier(res, ac);
-    updateInnerClassifiers(pack, ac, res);
+    ASMClass ac = new ASMClass(new ClassReader(code));
+    SNode res = new ClassifierUpdater(ac, mySkipPrivate, myReferenceFactory).create(name);
+    if (res != null) {
+      adder.invoke(res);
+      updateInnerClassifiers(pack, ac, res);
+    }
   }
 
   private void updateInnerClassifiers(String pack, ASMClass ac, final SNode cls) {
@@ -52,7 +54,7 @@ public class ClassifierLoader {
       }
 
       boolean isPrivate = (cn.access & Opcodes.ACC_PRIVATE) != 0;
-      if (isPrivate && myUpdater.isSkipPrivate()) {
+      if (isPrivate && mySkipPrivate) {
         continue;
       }
 
@@ -60,11 +62,11 @@ public class ClassifierLoader {
       if (name == null) {
         continue;
       }
-      if (!(name.startsWith(ac.getName() + "$"))) {
+      if (!(name.startsWith(ac.getName() + '$'))) {
         continue;
       }
 
-      int index = name.lastIndexOf("/");
+      int index = name.lastIndexOf('/');
       if (index != -1) {
         name = name.substring(index + 1);
       }
@@ -72,32 +74,33 @@ public class ClassifierLoader {
       final boolean isStatic = (cn.access & Opcodes.ACC_STATIC) != 0;
       getClassifier(pack, name, new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode n) {
-          SPropertyOperations.set(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "nonStatic", "" + (!(isStatic)));
+          SPropertyOperations.set(n, "nonStatic", "" + (!(isStatic)));
           ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(n);
         }
       });
     }
   }
 
-  private SNode createClassifierForClass(String fqName, ClassReader reader) {
+  private SNode createClassifierForClass(String fqName, ASMClass reader) {
     SNode result = null;
-    ClassifierKind kind = ClassifierKind.getClassifierKind(reader);
+    ClassifierKind kind = reader.getClassifierKind();
     if (kind == null) {
       return null;
     }
-    if (kind == ClassifierKind.CLASS) {
-      result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
-    } else if (kind == ClassifierKind.INTERFACE) {
-      result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Interface", null);
-    } else if (kind == ClassifierKind.ANNOTATIONS) {
-      result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Annotation", null);
-    } else if (kind == ClassifierKind.ENUM) {
-      result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumClass", null);
-    } else if (kind == ClassifierKind.UNKNOWN) {
-      return null;
+    SNodeId nodeId = ASMNodeId.createId(fqName);
+    SModel fakeModel = null;
+    switch (kind) {
+      case CLASS:
+        SNode n = SModelOperations.createNewNode(fakeModel, nodeId, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        return n;
+      case INTERFACE:
+        return SModelOperations.createNewNode(fakeModel, nodeId, "jetbrains.mps.baseLanguage.structure.Interface");
+      case ENUM:
+        return SModelOperations.createNewNode(fakeModel, nodeId, "jetbrains.mps.baseLanguage.structure.EnumClass");
+      case ANNOTATIONS:
+        return SModelOperations.createNewNode(fakeModel, nodeId, "jetbrains.mps.baseLanguage.structure.Annotation");
+      default:
+        return null;
     }
-    SPropertyOperations.set(result, "name", NameUtil.shortNameFromLongName(fqName.replace('$', '.')));
-    ((jetbrains.mps.smodel.SNode) result).setId(ASMNodeId.createId(fqName));
-    return result;
   }
 }

@@ -98,9 +98,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
   </dependency>

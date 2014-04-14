@@ -60,7 +60,7 @@ public final class ModuleNodeListeners {
     } finally {
       myListAccess.release();
     }
-    myChecker.dispatch(node);
+    node.accept(myChecker);
   }
 
   public void detach(@NotNull ProjectModuleTreeNode node) {
@@ -80,7 +80,9 @@ public final class ModuleNodeListeners {
     } finally {
       myListAccess.release();
     }
-    myChecker.dispatchAll(a);
+    for (ProjectModuleTreeNode n : a) {
+      n.accept(myChecker);
+    }
   }
 
   private class MyReloadAdapter extends MPSClassesListenerAdapter {

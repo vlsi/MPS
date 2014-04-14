@@ -11,7 +11,7 @@ import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import jetbrains.mps.vfs.IFile;
@@ -57,7 +57,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "MigrateSourcesToMPS", t);
       }
       this.disable(event.getPresentation());
@@ -120,7 +120,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
 
       // <node> 
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MigrateSourcesToMPS", t);
       }
     }

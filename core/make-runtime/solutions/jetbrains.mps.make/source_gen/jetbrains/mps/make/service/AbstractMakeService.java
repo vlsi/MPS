@@ -10,6 +10,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.make.dependencies.MakeSequence;
@@ -48,6 +49,7 @@ public abstract class AbstractMakeService implements IMakeService {
 
 
   @Deprecated
+  @ToRemove(version = 3.1)
   protected abstract class AbstractInputProcessor {
     @Deprecated
     protected AbstractInputProcessor() {
@@ -103,7 +105,7 @@ public abstract class AbstractMakeService implements IMakeService {
   /**
    * Reasonable defaults when no IScriptController is supplied by client
    */
-  protected static class DefaultMonitor extends IConfigMonitor.Stub {
+  public static class DefaultMonitor extends IConfigMonitor.Stub {
     private MessageFeedbackStrategy myFeedback;
 
     public DefaultMonitor(MakeSession makeSession) {

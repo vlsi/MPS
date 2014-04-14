@@ -205,15 +205,15 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "monitor", true);
   }
 
-  public static Iterable sourceNodesQuery_4192433084863763935(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4192433084863763935(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "finder", true);
   }
 
-  public static Iterable sourceNodesQuery_6366407517031517860(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6366407517031517860(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "finder", true);
   }
 
-  public static Iterable sourceNodesQuery_7991477654791670241(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7991477654791670241(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");

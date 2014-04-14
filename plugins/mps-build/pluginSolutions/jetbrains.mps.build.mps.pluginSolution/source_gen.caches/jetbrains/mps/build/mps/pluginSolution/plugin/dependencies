@@ -41,9 +41,9 @@
     <classNode dependClassName="javax.swing.border.EtchedBorder" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSApplicationInfo" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.ide.wizard.StepAdapter" />
   </dependency>
@@ -110,9 +110,9 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSApplicationInfo" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -224,9 +224,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -277,9 +277,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
@@ -302,9 +302,9 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.IntentionsEx_ActionGroup" file="IntentionsEx_ActionGroup.java">

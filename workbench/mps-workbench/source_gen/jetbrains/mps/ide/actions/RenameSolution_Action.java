@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.refactoring.RenameSolutionDialog;
 import jetbrains.mps.project.MPSProject;
 import org.apache.log4j.Logger;
@@ -41,7 +41,7 @@ public class RenameSolution_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "RenameSolution", t);
       }
       this.disable(event.getPresentation());
@@ -71,7 +71,7 @@ public class RenameSolution_Action extends BaseAction {
     try {
       new RenameSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((Solution) ((SModule) MapSequence.fromMap(_params).get("module")))).show();
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "RenameSolution", t);
       }
     }

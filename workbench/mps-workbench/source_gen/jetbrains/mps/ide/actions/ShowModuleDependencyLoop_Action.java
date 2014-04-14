@@ -10,7 +10,7 @@ import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -46,7 +46,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ShowModuleDependencyLoop", t);
       }
       this.disable(event.getPresentation());
@@ -72,7 +72,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowLoops(as_hir9am_a0a0a0a0g(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class));
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowModuleDependencyLoop", t);
       }
     }

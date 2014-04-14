@@ -13,7 +13,7 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.util.xml.XmlUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.io.OutputStream;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -96,7 +96,7 @@ public class SolutionDescriptorPersistence {
 
   public static void saveSolutionDescriptor(IFile file, SolutionDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Can't save " + file.getPath());
       }
       return;
@@ -146,7 +146,7 @@ public class SolutionDescriptorPersistence {
       OutputStream os = file.openOutputStream();
       JDOMUtil.writeDocument(new Document(result), os);
     } catch (Exception e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);
       }
     }

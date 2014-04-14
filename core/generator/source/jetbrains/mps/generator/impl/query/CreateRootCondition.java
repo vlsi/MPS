@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.query;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,5 +23,5 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  */
 public interface CreateRootCondition extends Query {
-  boolean check(@NotNull CreateRootRuleContext ctx);
+  boolean check(@NotNull CreateRootRuleContext ctx) throws GenerationFailureException;
 }

@@ -14,7 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -68,7 +68,7 @@ public class SModelUtil {
         }
       }
     }
-    if (LOG.isEnabledFor(Priority.WARN)) {
+    if (LOG.isEnabledFor(Level.WARN)) {
       LOG.warn("couldn't find node by fqname: " + nodeFQName);
     }
     return null;

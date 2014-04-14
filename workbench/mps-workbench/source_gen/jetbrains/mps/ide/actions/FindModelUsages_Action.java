@@ -8,7 +8,7 @@ import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -42,7 +42,7 @@ public class FindModelUsages_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "FindModelUsages", t);
       }
       this.disable(event.getPresentation());
@@ -83,7 +83,7 @@ public class FindModelUsages_Action extends BaseAction {
       });
       ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Model has no usages");
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
       }
     }

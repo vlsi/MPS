@@ -448,7 +448,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "presentation", true);
   }
 
-  public static Iterable sourceNodesQuery_3749568622064121229(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3749568622064121229(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "property", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "propertyGetter", true) != null) || (SLinkOperations.getTarget(it, "propertySetter", true) != null) || (SLinkOperations.getTarget(it, "propertyValidator", true) != null);
@@ -456,11 +456,11 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_3749568622064121542(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3749568622064121542(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "referent", true);
   }
 
-  public static Iterable sourceNodesQuery_7093837644838476730(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7093837644838476730(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.constraints.structure.ConceptConstraints");

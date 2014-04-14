@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.ui.tree.SortUtil;
@@ -51,7 +51,7 @@ public class CompareTransientModels_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "CompareTransientModels", t);
       }
       this.disable(event.getPresentation());
@@ -87,7 +87,7 @@ public class CompareTransientModels_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CompareTransientModels", t);
       }
     }

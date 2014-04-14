@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.net.URL;
 import jetbrains.mps.vfs.IFile;
 import java.io.InputStream;
@@ -98,7 +98,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Override
   protected DebugInfo readCache(SModel sm) {
-    if (LOG.isEnabledFor(Priority.WARN)) {
+    if (LOG.isEnabledFor(Level.WARN)) {
       LOG.warn("Should not use readCache method since it may cause a deadlock.\nSee MPS-13899", new RuntimeException());
     }
     return readCache(sm, sm.getModule());
@@ -141,7 +141,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
           stream.close();
         }
       } catch (IOException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("", e);
         }
       }

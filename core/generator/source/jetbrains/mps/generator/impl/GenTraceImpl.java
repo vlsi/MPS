@@ -55,19 +55,20 @@ public class GenTraceImpl implements GenerationTrace {
       return;
     }
     ArrayList<SNodeId> nodes = new ArrayList<SNodeId>();
-    nodes.add(inputNode.getNodeId());
+    final SNodeId startNodeId = inputNode.getNodeId();
+    nodes.add(startNodeId);
     for (; ph != null && !nodes.isEmpty(); ph = ph.next) {
       Collection<Element> changes = ph.getChangesWithInput(nodes);
-      if (changes.isEmpty()) {
-        continue;
-      }
       dispatch(v, ph, changes);
-      LinkedHashSet<SNodeId> nextInputs = new LinkedHashSet<SNodeId>();
-      for (Element e : changes) {
-        nextInputs.add(e.output);
+      if (!changes.isEmpty()) {
+        LinkedHashSet<SNodeId> nextInputs = new LinkedHashSet<SNodeId>();
+        for (Element e : changes) {
+          nextInputs.add(e.output);
+        }
+        nextInputs.add(startNodeId);
+        nodes.clear();
+        nodes.addAll(nextInputs);
       }
-      nodes.clear();
-      nodes.addAll(nextInputs);
     }
   }
 
@@ -80,19 +81,20 @@ public class GenTraceImpl implements GenerationTrace {
     }
 
     ArrayList<SNodeId> nodes = new ArrayList<SNodeId>();
-    nodes.add(node.getNodeId());
+    final SNodeId startNodeId = node.getNodeId();
+    nodes.add(startNodeId);
     for (; ph != null && !nodes.isEmpty(); ph = ph.prev) {
       Collection<Element> changes = ph.getChangesWithOutput(nodes);
-      if (changes.isEmpty()) {
-        continue;
-      }
       dispatch(v, ph, changes);
-      LinkedHashSet<SNodeId> prevOutputs = new LinkedHashSet<SNodeId>();
-      for (Element e : changes) {
-        prevOutputs.add(e.input);
+      if (!changes.isEmpty()) {
+        LinkedHashSet<SNodeId> prevOutputs = new LinkedHashSet<SNodeId>();
+        for (Element e : changes) {
+          prevOutputs.add(e.input);
+        }
+        prevOutputs.add(startNodeId);
+        nodes.clear();
+        nodes.addAll(prevOutputs);
       }
-      nodes.clear();
-      nodes.addAll(prevOutputs);
     }
   }
 
@@ -144,11 +146,11 @@ public class GenTraceImpl implements GenerationTrace {
   }
 
   static void dispatch(Visitor v, Phase ph, Collection<Element> changes) {
-    v.step(ph.input, ph.output);
+    v.beginStep(ph.input, ph.output);
     for (Element e : changes) {
       v.change(new SNodePointer(ph.input, e.input), new SNodePointer(ph.output, e.output), e.template);
     }
-    // might be handy to dispatch v.stepDone() here
+    v.endStep(ph.input, ph.output);
   }
 
   /*package*/ static final class Element {

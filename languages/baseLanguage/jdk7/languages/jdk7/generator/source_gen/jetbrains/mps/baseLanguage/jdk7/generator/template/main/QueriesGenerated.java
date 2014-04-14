@@ -37,11 +37,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
-  public static Iterable sourceNodesQuery_400642802550422240(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_400642802550422240(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "case", true);
   }
 
-  public static Iterable sourceNodesQuery_3708576844065083881(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3708576844065083881(final SourceSubstituteMacroNodesContext _context) {
     return SwitchGenUtil.getNodes(_context.getNode());
   }
 

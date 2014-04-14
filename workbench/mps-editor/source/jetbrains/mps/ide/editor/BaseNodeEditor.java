@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
@@ -87,22 +88,32 @@ public abstract class BaseNodeEditor implements Editor {
     return myCurrentlyEditedNode;
   }
 
-  protected void editNode(final SNodeReference nodeReference, final IOperationContext context, final boolean select) {
+  /**
+   * @deprecated use $editNode(SNodeReference, SNodeReference) instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
+  protected void editNode(final SNodeReference nodeReference, IOperationContext context, boolean select) {
+    editNode(nodeReference, select ? nodeReference : null);
+  }
+
+  protected void editNode(@NotNull final SNodeReference nodeToEdit, @Nullable final SNodeReference nodeToSelect) {
     assert myEditorComponent != null;
     executeInEDT(new PrioritizedTask(TaskType.EDIT_NODE, myType2TaskMap) {
       @Override
       public void performTask() {
-        SNode node = nodeReference.resolve(MPSModuleRepository.getInstance());
+        SNode node = nodeToEdit.resolve(MPSModuleRepository.getInstance());
         if (node == null) {
           return;
         }
         myEditorComponent.editNode(node);
-        if (select) {
-          myEditorComponent.selectNode(node);
+        SNode toSelect = nodeToSelect == null ? null : nodeToSelect.resolve(MPSModuleRepository.getInstance());
+        if (toSelect != null) {
+          myEditorComponent.selectNode(toSelect); // XXX findNodeCell(, true)? to reveal even folded?
         }
       }
     });
-    myCurrentlyEditedNode = nodeReference;
+    myCurrentlyEditedNode = nodeToEdit;
   }
 
   protected void executeInEDT(PrioritizedTask task) {

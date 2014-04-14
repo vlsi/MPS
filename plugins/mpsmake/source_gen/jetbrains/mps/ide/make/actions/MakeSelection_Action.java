@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -57,7 +57,7 @@ public class MakeSelection_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "MakeSelection", t);
       }
       this.disable(event.getPresentation());
@@ -85,7 +85,7 @@ public class MakeSelection_Action extends BaseAction {
       List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) ((List<SModel>) MapSequence.fromMap(_params).get("models")));
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ((SModel) MapSequence.fromMap(_params).get("cmodel")), modules, ((SModule) MapSequence.fromMap(_params).get("cmodule"))), MakeSelection_Action.this.cleanMake).executeAction();
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MakeSelection", t);
       }
     }

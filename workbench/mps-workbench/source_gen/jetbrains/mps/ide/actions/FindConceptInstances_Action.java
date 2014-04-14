@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer;
@@ -53,7 +53,7 @@ public class FindConceptInstances_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "FindConceptInstances", t);
       }
       this.disable(event.getPresentation());
@@ -112,7 +112,7 @@ public class FindConceptInstances_Action extends BaseAction {
         }
       }.invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModel) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindConceptInstances", t);
       }
     }

@@ -10,7 +10,7 @@ import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
-import jetbrains.jetpad.model.event.Registration;
+import jetbrains.jetpad.base.Registration;
 import jetbrains.jetpad.projectional.view.ViewTrait;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;

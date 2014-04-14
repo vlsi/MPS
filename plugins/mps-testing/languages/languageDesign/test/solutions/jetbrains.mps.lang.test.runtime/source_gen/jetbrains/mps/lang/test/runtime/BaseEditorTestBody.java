@@ -35,12 +35,23 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.event.KeyEvent;
+import java.awt.Component;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import javax.swing.JComponent;
 import javax.swing.KeyStroke;
+import java.lang.reflect.Method;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.awt.event.MouseEvent;
+import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 
 public class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
@@ -222,16 +233,63 @@ public class BaseEditorTestBody extends BaseTestBody {
 
 
   public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
+    final Component eventTargetComponent;
+    EditorCell selectedCell = editorComponent.getSelectedCell();
+    if (selectedCell != null) {
+      Component eventTarget = getEventTargetComponent(selectedCell, editorComponent);
+      if (eventTarget == editorComponent) {
+        eventTargetComponent = null;
+      } else {
+        while ((eventTarget instanceof JComponent) && ((JComponent) eventTarget).getComponentCount() > 0) {
+          eventTarget = ((JComponent) eventTarget).getComponent(((JComponent) eventTarget).getComponentCount() - 1);
+        }
+        eventTargetComponent = eventTarget;
+      }
+    } else {
+      // TODO: assign editorComponent here 
+      eventTargetComponent = null;
+    }
+
+    final boolean[] eventWasPassed = new boolean[]{true};
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
         for (String code : keyStrokes) {
           KeyStroke stroke = KeyStroke.getKeyStroke(code);
-          editorComponent.processKeyPressed(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
-          editorComponent.processKeyReleased(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
+          KeyEvent keyPressedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar());
+          KeyEvent keyReleasedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar());
+          if (eventTargetComponent == null) {
+            // TODO: remove this branch and always dispatch events using .dispatchEvent method() ? 
+            editorComponent.processKeyPressed(keyPressedEvent);
+            editorComponent.processKeyReleased(keyReleasedEvent);
+          } else {
+            Class<?> clazz = eventTargetComponent.getClass();
+            Method theMethod = null;
+            while (theMethod == null && clazz != null) {
+              try {
+                theMethod = clazz.getDeclaredMethod("processKeyEvent", KeyEvent.class);
+                theMethod.setAccessible(true);
+              } catch (NoSuchMethodException e) {
+              }
+              clazz = clazz.getSuperclass();
+            }
+            if (theMethod != null) {
+              try {
+                theMethod.invoke(eventTargetComponent, keyPressedEvent);
+                theMethod.invoke(eventTargetComponent, keyReleasedEvent);
+              } catch (IllegalAccessException e) {
+                eventWasPassed[0] = false;
+              } catch (InvocationTargetException e) {
+                eventWasPassed[0] = false;
+              }
+            } else {
+              eventWasPassed[0] = false;
+            }
+          }
         }
       }
     });
+    Assert.assertTrue("Keyboard event was not passed to corresponding component", eventWasPassed[0]);
   }
 
   public static void invokeAction(Editor editor, String actionId) throws InvocationTargetException, InterruptedException {
@@ -270,5 +328,48 @@ public class BaseEditorTestBody extends BaseTestBody {
       }
     });
     ModelAccess.instance().flushEventQueue();
+  }
+
+  public static void processMousePressed(final EditorComponent editorComponent, int x, int y) throws InterruptedException, InvocationTargetException {
+    assert editorComponent.getRootCell() != null;
+
+    Queue<EditorCell> cellCandidates = QueueSequence.fromQueue(new LinkedList<EditorCell>());
+    QueueSequence.fromQueue(cellCandidates).addLastElement(editorComponent.getRootCell());
+    EditorCell eventTargetCell = null;
+    while (QueueSequence.fromQueue(cellCandidates).isNotEmpty()) {
+      EditorCell nextCell = QueueSequence.fromQueue(cellCandidates).removeFirstElement();
+      if (nextCell.getX() <= x && nextCell.getY() <= y && nextCell.getX() + nextCell.getWidth() > x && nextCell.getY() + nextCell.getHeight() > y) {
+        eventTargetCell = nextCell;
+        if (nextCell instanceof EditorCell_Collection) {
+          QueueSequence.fromQueue(cellCandidates).addSequence(Sequence.fromIterable((EditorCell_Collection) nextCell));
+        }
+      }
+    }
+    assert eventTargetCell != null;
+
+    final Wrappers._T<Component> targetComponent = new Wrappers._T<Component>(getEventTargetComponent(eventTargetCell, editorComponent));
+    targetComponent.value = targetComponent.value.getComponentAt(x, y);
+    assert targetComponent.value != null;
+
+    int actualX = x;
+    int actualY = y;
+    int absoluteX = x;
+    int absoluteY = y;
+    final MouseEvent e = new MouseEvent(targetComponent.value, MouseEvent.MOUSE_PRESSED, System.currentTimeMillis(), 0, actualX, actualY, absoluteX, absoluteY, 1, false, MouseEvent.BUTTON1);
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        targetComponent.value.dispatchEvent(e);
+      }
+    });
+  }
+
+  private static JComponent getEventTargetComponent(EditorCell currentCell, EditorComponent editorComponent) {
+    while (currentCell != null) {
+      if (currentCell instanceof EditorCell_WithComponent) {
+        return ((EditorCell_WithComponent) currentCell).getComponent();
+      }
+      currentCell = currentCell.getParent();
+    }
+    return editorComponent;
   }
 }

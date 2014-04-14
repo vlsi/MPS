@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -34,7 +34,7 @@ public class PrintDFAResult_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "PrintDFAResult", t);
       }
       this.disable(event.getPresentation());
@@ -62,7 +62,7 @@ public class PrintDFAResult_Action extends BaseAction {
       Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
       System.out.println(program.toString(true));
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "PrintDFAResult", t);
       }
     }

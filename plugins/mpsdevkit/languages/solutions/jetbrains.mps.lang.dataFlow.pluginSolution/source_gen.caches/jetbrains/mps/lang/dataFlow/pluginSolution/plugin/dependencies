@@ -38,9 +38,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -61,9 +61,9 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.VarSet" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnalyzer" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -85,9 +85,9 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingDefinitionsAnalyzer" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -115,9 +115,9 @@
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />

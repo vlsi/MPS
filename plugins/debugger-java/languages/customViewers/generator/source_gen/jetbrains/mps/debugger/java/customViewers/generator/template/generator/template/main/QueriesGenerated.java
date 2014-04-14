@@ -160,11 +160,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "value", true);
   }
 
-  public static Iterable sourceNodesQuery_4089989733346843285(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4089989733346843285(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "watchable", true);
   }
 
-  public static Iterable sourceNodesQuery_5726067590290743628(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5726067590290743628(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer");
   }
 

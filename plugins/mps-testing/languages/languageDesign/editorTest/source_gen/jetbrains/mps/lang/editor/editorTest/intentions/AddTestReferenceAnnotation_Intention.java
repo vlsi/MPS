@@ -82,7 +82,7 @@ public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Test Refernce Annotation";
+      return "Add Test Reference Annotation";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {

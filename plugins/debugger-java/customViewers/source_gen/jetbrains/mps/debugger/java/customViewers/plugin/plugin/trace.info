@@ -12,12 +12,12 @@
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="40" startPosition="90" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2244048449136669034" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="48" startPosition="15" endLine="49" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="51" startPosition="50" endLine="52" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="51" startPosition="47" endLine="52" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="53" startPosition="13" endLine="54" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="55" startPosition="11" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="58" startPosition="8" endLine="59" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2244048449136669044" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="64" startPosition="15" endLine="65" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="67" startPosition="50" endLine="68" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="67" startPosition="47" endLine="68" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="69" startPosition="13" endLine="70" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="71" startPosition="11" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="74" startPosition="8" endLine="75" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -58,9 +58,9 @@
     <scopeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="32" startPosition="33" endLine="33" endPosition="13" />
     <scopeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="36" startPosition="26" endLine="37" endPosition="13" />
     <scopeInfo nodeId="2244048449136669033" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="48" startPosition="15" endLine="49" endPosition="139" />
-    <scopeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="51" startPosition="50" endLine="52" endPosition="91" />
+    <scopeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="51" startPosition="47" endLine="52" endPosition="91" />
     <scopeInfo nodeId="2244048449136669043" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="64" startPosition="15" endLine="65" endPosition="140" />
-    <scopeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="67" startPosition="50" endLine="68" endPosition="91" />
+    <scopeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="67" startPosition="47" endLine="68" endPosition="91" />
     <scopeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="82" startPosition="33" endLine="83" endPosition="13" />
     <scopeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="86" startPosition="26" endLine="87" endPosition="13" />
     <scopeInfo nodeId="2244048449136669030" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="92" startPosition="267" endLine="93" endPosition="47" />

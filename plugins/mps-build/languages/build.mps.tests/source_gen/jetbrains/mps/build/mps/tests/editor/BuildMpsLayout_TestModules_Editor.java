@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -158,7 +159,7 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_aky039_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_aky039_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_aky039_b0a(editorContext, node));
     return editorCell;
   }
 
@@ -172,16 +173,15 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_aky039_b0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+  private EditorCell createRefNode_aky039_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("haltonfailure");
-    provider.setNoTargetText("false");
+    provider.setNoTargetText("<no haltonfailure>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_haltonfailure");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("haltonfailure");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

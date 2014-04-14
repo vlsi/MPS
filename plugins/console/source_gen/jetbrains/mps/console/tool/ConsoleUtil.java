@@ -5,7 +5,7 @@ package jetbrains.mps.console.tool;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.SwingUtilities;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
@@ -19,8 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
@@ -41,7 +39,7 @@ public class ConsoleUtil {
 
   public static boolean make(final Project project, final SModel model) {
     if (SwingUtilities.isEventDispatchThread()) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Must be called not from EDT");
       }
       return false;
@@ -60,25 +58,17 @@ public class ConsoleUtil {
     final String messagesListName = "Console Make";
     mvt.getAvailableList(messagesListName, true).setWarningsEnabled(false);
     mvt.getAvailableList(messagesListName, true).setInfoEnabled(false);
-    MakeSession session = new MakeSession(projectOperationContext, new IMessageHandler() {
-      public void handle(IMessage message) {
-        mvt.add(message, messagesListName);
-      }
-
-      public void clear() {
-        mvt.clear(messagesListName);
-      }
-    }, true);
+    MakeSession session = new MakeSession(projectOperationContext, mvt.newHandler(messagesListName), true);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
       Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(projectOperationContext, Sequence.<SModel>singleton(model)).resources(false), scr, ctl);
       try {
         return future.get().isSucessful();
       } catch (InterruptedException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Error on making temporary model", e);
         }
       } catch (ExecutionException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Error on making temporary model", e);
         }
       }

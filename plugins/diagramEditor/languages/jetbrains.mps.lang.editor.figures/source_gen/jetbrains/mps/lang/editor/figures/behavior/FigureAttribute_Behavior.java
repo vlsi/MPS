@@ -4,7 +4,9 @@ package jetbrains.mps.lang.editor.figures.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FigureAttribute_Behavior {
@@ -15,8 +17,12 @@ public class FigureAttribute_Behavior {
     return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
-  public static List<SNode> call_getPrameterAttributes_5422656561931892777(SNode thisNode) {
-    return SNodeOperations.getDescendants(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(thisNode), "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute", false, new String[]{});
+  public static Iterable<SNode> call_getPrameterAttributes_5422656561931892777(SNode thisNode) {
+    return ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(thisNode))).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SNodeOperations.getDescendants(it, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute", false, new String[]{});
+      }
+    });
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {

@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -28,29 +29,29 @@ import java.util.Map;
 @ImmutableObject
 public class DefaultTemplateContext implements TemplateContext {
 
+  private final TemplateExecutionEnvironment myEnv;
   private final DefaultTemplateContext myParent;
   private final SNode myInputNode;
   private final String myInputName;
 
-  private final GeneratedMatchingPattern pattern;
-  private final Map<String, Object> variables;
+  private final GeneratedMatchingPattern myPattern;
+  private final Map<String, Object> myVars;
 
   /**
    * Only context node.
    */
-  public DefaultTemplateContext(SNode inputNode) {
+  @Deprecated
+  public DefaultTemplateContext(@Nullable SNode inputNode) {
     this(null, null, inputNode, null, null);
   }
 
-  public DefaultTemplateContext(@Nullable String inputName, SNode inputNode) {
-    this(null, inputName, inputNode, null, null);
-  }
-
-  /**
-   * Creates a new context for template declaration.
-   */
-  public DefaultTemplateContext(GeneratedMatchingPattern pattern, Map<String, Object> variables, SNode inputNode) {
-    this(null, null, inputNode, pattern, variables);
+  public DefaultTemplateContext(@NotNull TemplateExecutionEnvironment env, @Nullable SNode inputNode, @Nullable String inputName) {
+    myEnv = env;
+    myParent = null;
+    myInputName = inputName;
+    myInputNode = inputNode;
+    myPattern = null;
+    myVars = null;
   }
 
   /**
@@ -69,10 +70,17 @@ public class DefaultTemplateContext implements TemplateContext {
 
   private DefaultTemplateContext(DefaultTemplateContext parent, String inputName, SNode inputNode, GeneratedMatchingPattern pattern, Map<String,Object> vars) {
     myParent = parent;
+    myEnv = parent == null ? null : parent.myEnv;
     myInputName = inputName;
     myInputNode = inputNode;
-    this.pattern = pattern;
-    variables = vars;
+    myPattern = pattern;
+    myVars = vars;
+  }
+
+  @NotNull
+  @Override
+  public TemplateExecutionEnvironment getEnvironment() {
+    return myEnv;
   }
 
   public DefaultTemplateContext getParent() {
@@ -92,8 +100,8 @@ public class DefaultTemplateContext implements TemplateContext {
   @Override
   public Object getPatternVariable(String id) {
     for (DefaultTemplateContext current = this; current != null; current = current.myParent) {
-      if (current.pattern != null) {
-        return current.pattern.getFieldValue(id);
+      if (current.myPattern != null) {
+        return current.myPattern.getFieldValue(id);
       }
     }
     return null;
@@ -102,8 +110,8 @@ public class DefaultTemplateContext implements TemplateContext {
   @Override
   public Object getVariable(String name) {
     for (DefaultTemplateContext current = this; current != null; current = current.myParent) {
-      if (current.variables != null && current.variables.containsKey(name)) {
-        return current.variables.get(name);
+      if (current.myVars != null && current.myVars.containsKey(name)) {
+        return current.myVars.get(name);
       }
     }
     return null;
@@ -112,7 +120,7 @@ public class DefaultTemplateContext implements TemplateContext {
   @Override
   public boolean hasVariable(String name) {
     for (DefaultTemplateContext current = this; current != null; current = current.myParent) {
-      if (current.variables != null && current.variables.containsKey(name)) {
+      if (current.myVars != null && current.myVars.containsKey(name)) {
         return true;
       }
     }

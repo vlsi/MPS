@@ -34,7 +34,7 @@ public class TestContext extends Context {
     private SModel model;
 
     public TestGenContext(SModel model) {
-      super(null, (SNodeReference) null, null, null);
+      super(null, null, null, null);
       this.model = model;
     }
 

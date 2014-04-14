@@ -445,7 +445,7 @@
     <nodeInfo nodeId="3766037951090037583" fileName="WatchableNode.java" startLine="106" startPosition="41" endLine="107" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8608243852860311421" fileName="WatchableNode.java" startLine="107" startPosition="41" endLine="108" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1299344279960770597" fileName="WatchableNode.java" startLine="110" startPosition="27" endLine="111" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1299344279960772113" fileName="WatchableNode.java" startLine="113" startPosition="63" endLine="114" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1299344279960772113" fileName="WatchableNode.java" startLine="113" startPosition="60" endLine="114" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1299344279960772620" fileName="WatchableNode.java" startLine="117" startPosition="21" endLine="118" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5563300976506487054" fileName="WatchableNode.java" startLine="118" startPosition="63" endLine="119" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6728906170459951899" fileName="WatchableNode.java" startLine="120" startPosition="29" endLine="121" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -492,7 +492,7 @@
     <scopeInfo nodeId="8234781197225484418" fileName="WatchableNode.java" startLine="75" startPosition="34" endLine="76" endPosition="73" />
     <scopeInfo nodeId="3766037951090037574" fileName="WatchableNode.java" startLine="103" startPosition="99" endLine="104" endPosition="65" />
     <scopeInfo nodeId="1299344279960771635" fileName="WatchableNode.java" startLine="110" startPosition="27" endLine="111" endPosition="42" />
-    <scopeInfo nodeId="1299344279960772113" fileName="WatchableNode.java" startLine="113" startPosition="63" endLine="114" endPosition="43" />
+    <scopeInfo nodeId="1299344279960772113" fileName="WatchableNode.java" startLine="113" startPosition="60" endLine="114" endPosition="43" />
     <scopeInfo nodeId="6728906170459951533" fileName="WatchableNode.java" startLine="120" startPosition="29" endLine="121" endPosition="58" />
     <scopeInfo nodeId="6728906170459945759" fileName="WatchableNode.java" startLine="125" startPosition="0" endLine="126" endPosition="52">
       <varInfo nodeId="6728906170459945761" varName="t" />

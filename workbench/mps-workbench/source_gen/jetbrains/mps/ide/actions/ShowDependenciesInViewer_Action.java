@@ -10,7 +10,7 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.platform.actions.DependenciesUtil;
 import com.intellij.openapi.project.Project;
@@ -46,7 +46,7 @@ public class ShowDependenciesInViewer_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ShowDependenciesInViewer", t);
       }
       this.disable(event.getPresentation());
@@ -77,7 +77,7 @@ public class ShowDependenciesInViewer_Action extends BaseAction {
       ModuleDependencyNode treeNode = (ModuleDependencyNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
       DependenciesUtil.analyzeDependencies(treeNode.getFromNode().getModules(), treeNode.getModules(), ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.isUsedLanguage());
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowDependenciesInViewer", t);
       }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,109 +20,27 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 public class GeneratorUtil {
 
-  private static SNode[] getArguments(SNode templateCall) {
-    final List<SNode> args = RuleUtil.getTemplateCall_Arguments(templateCall);
-    if (args == null || args.size() == 0) {
-      return null;
-    }
-    return args.toArray(new SNode[args.size()]);
-  }
-
-  private static String[] getParameters(SNode templateCall, IGeneratorLogger log) {
-    final SNode template = RuleUtil.getTemplateCall_Template(templateCall);
-    if (template == null) {
-      return null;
-    }
-    String[] templateDeclarationParameterNames = RuleUtil.getTemplateDeclarationParameterNames(template);
-    if(templateDeclarationParameterNames == null) {
-      log.error(template.getReference(), "broken template");
-      return null;
-    }
-    return templateDeclarationParameterNames.length == 0 ? null : templateDeclarationParameterNames;
-  }
-
-  @NotNull
-  public static TemplateContext createConsequenceContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env,
-      @NotNull SNode consequence) {
-    if (consequence.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_ITemplateCall))) {
-      return createTemplateCallContext(outerContext, env, consequence, outerContext.getInput());
-    }
-    return outerContext;
-  }
-
-  @NotNull
-  static TemplateContext createTemplateCallContext(@NotNull TemplateContext outerContext, @NotNull TemplateExecutionEnvironment env, SNode templateCall, SNode newInputNode) {
-    final SNode[] arguments = getArguments(templateCall);
-    final IGeneratorLogger log = env.getLogger();
-    final String[] parameters = getParameters(templateCall, log);
-
-    if (arguments == null && parameters == null) {
-      return outerContext.subContext(newInputNode);
-    }
-    if (arguments == null || parameters == null || arguments.length != parameters.length) {
-      log.error(templateCall.getReference(), "number of arguments doesn't match template", GeneratorUtil.describeInput(outerContext));
-      return outerContext.subContext(newInputNode);
-    }
-
-    final Map<String, Object> vars = new HashMap<String, Object>(arguments.length);
-    for (int i = 0; i < arguments.length; i++) {
-      SNode exprNode = arguments[i];
-      String name = parameters[i];
-      Object value = null;
-
-      if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentParameterExpression))) {
-        SNode parameter = RuleUtil.getTemplateArgumentParameterExpression_Parameter(exprNode);
-        if (parameter == null) {
-          log.error(exprNode.getReference(), "cannot evaluate template argument #" + (i + 1) + ": invalid parameter reference",
-              GeneratorUtil.describeInput(outerContext));
-        } else {
-          value = outerContext.getVariable(parameter.getName());
-        }
-      } else if (exprNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_TemplateArgumentPatternRef))) {
-        String patternVar = GeneratorUtilEx.getPatternVariableName(exprNode);
-        if (patternVar == null) {
-          log.error(exprNode.getReference(), "cannot evaluate template argument #" + (i + 1) + ": invalid pattern reference",
-              GeneratorUtil.describeInput(outerContext));
-        } else {
-          // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
-          value = outerContext.getPatternVariable(patternVar);
-        }
-      } else {
-        if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
-          SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(exprNode);
-          value = env.getQueryExecutor().evaluateArgumentQuery(outerContext.getInput(), query, outerContext);
-        } else {
-          try {
-            value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
-          } catch(IllegalArgumentException ex) {
-            log.error(templateCall.getReference(), String.format("cannot evaluate template argument #%d: %s", i + 1, ex.toString()),
-                GeneratorUtil.describeInput(outerContext));
-          }
-        }
-      }
-
-      vars.put(name, value);
-    }
-    // variables drop mapping label, hence need to reinstall it
-    return outerContext.subContext(vars).subContext(outerContext.getInputName(), newInputNode);
+  /**
+   * XXX this is merely a single location for future refactoring of the approach to get concept name
+   * when we've got a concept node. I don't like present NameUtil.nodeFQName, but unaware of any better way
+   * to get concept fqn given the concept's node (not an instance of the concept, where node.getConcept().getQualifiedName is possible)
+   */
+  public static String getConceptQualifiedName(SNode applicableConceptOfRule) {
+    return NameUtil.nodeFQName(applicableConceptOfRule);
   }
 
 
@@ -213,5 +131,23 @@ public class GeneratorUtil {
 
   public static String getTemplateNodeId(SNode templateNode) {
     return "tpl/" + templateNode.getModel().getModelId() + "/" + templateNode.getNodeId();
+  }
+
+  public static String compactNamespace(String ns) {
+    final String[] parts = ns.split("\\.");
+    if (parts.length < 5) {
+      return ns;
+    }
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < 3; i++) {
+      sb.append(parts[i].charAt(0));
+      sb.append('.');
+    }
+    for (int i = 3; i < parts.length; i++) {
+      sb.append(parts[i]);
+      sb.append('.');
+    }
+    sb.setLength(sb.length() - 1);
+    return sb.toString();
   }
 }

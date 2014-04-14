@@ -14,7 +14,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -62,7 +62,7 @@ public class DeleteModules_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "DeleteModules", t);
       }
       this.disable(event.getPresentation());
@@ -120,7 +120,7 @@ public class DeleteModules_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "DeleteModules", t);
       }
     }

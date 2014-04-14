@@ -1292,7 +1292,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void selectComponentCell(Component component) {
     EditorCell_WithComponent cell = findCellForComponent(component, myRootCell);
-    if (cell == null) return;
+    Selection selection = mySelectionManager.getSelection();
+    if (cell == null || (selection != null && CellTraversalUtil.isAncestorOrEquals(cell, selection.getSelectedCells().get(0)))) return;
     changeSelection(cell);
   }
 
@@ -1314,7 +1315,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return createRootCell(null);
   }
 
-  protected final void pushCellContext() {
+  protected void pushCellContext() {
     if (myUseCustomHints) {
       getEditorContext().getCellFactory().pushCellContext();
       Object[] hints = myEnabledHints.toArray();
@@ -1330,7 +1331,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  protected final void popCellContext() {
+  protected void popCellContext() {
     getEditorContext().getCellFactory().popCellContext();
   }
   protected abstract EditorCell createRootCell(List<SModelEvent> events);
@@ -3317,22 +3318,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void modelsReplaced(Set<SModel> replacedModels) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
 
-      boolean needToRebuild = false;
+      boolean requiresRebuild = false;
       SModelReference currentModelReference = getCurrentModelReference();
       for (SModel model : replacedModels) {
-        needToRebuild = needToRebuild || mySModelsWithListener.contains(model);
+        requiresRebuild = requiresRebuild || mySModelsWithListener.contains(model);
 
         if (myNode != null && model.getReference().equals(currentModelReference)) {
           assertModelNotDisposed();
           SNode newNode = model.getNode(myNode.getNodeId());
-          if (newNode != null && newNode != myNode) {
+          if (newNode != myNode) {
             myNode = newNode;
-            needToRebuild = true;
+            requiresRebuild = true;
           }
         }
       }
 
-      if (needToRebuild) {
+      if (requiresRebuild) {
         releaseTypeCheckingContext();
         acquireTypeCheckingContext();
         rebuildEditorContent();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,15 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.BaseMPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
@@ -94,23 +100,14 @@ public class TransientModelsProvider {
   }
 
   public boolean canKeepOneMore() {
-    if (myModelsToKeepMax <= 0) {
-      return true;
-    }
-    synchronized (this) {
-      return myKeptModels++ < myModelsToKeepMax;
-    }
+    return myModelsToKeepMax <= 0 || myKeptModels < myModelsToKeepMax;
   }
 
   public void decreaseKeptModels() {
     if (myModelsToKeepMax <= 0) {
       return;
     }
-    synchronized (this) {
-      if (myKeptModels > 0) {
-        myKeptModels--;
-      }
-    }
+    myKeptModels++; // I know it's stupid and misguiding, but these two methods (canKeepOneMore and decreaseKeptModels) shall become history anyway
   }
 
   public TransientSwapOwner getTransientSwapOwner() {
@@ -150,6 +147,16 @@ public class TransientModelsProvider {
     }
 
     return result;
+  }
+
+  @Nullable
+  public GenerationTrace getTrace(@NotNull SModelReference model) {
+    // FIXME need a better way to find the trace. Use of SModelRepository is likely bad.
+    SModel m = SModelRepository.getInstance().getModelDescriptor(model);
+    if (m != null && (m.getModule() instanceof TransientModelsModule)) {
+      return ((TransientModelsModule) m.getModule()).getTrace(model);
+    }
+    return null;
   }
 
   public void startGeneration(int numberOfModelsToKeep) {

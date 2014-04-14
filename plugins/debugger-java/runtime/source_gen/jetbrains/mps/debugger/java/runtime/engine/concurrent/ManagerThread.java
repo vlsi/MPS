@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -100,7 +100,7 @@ public class ManagerThread {
             try {
               command.cancel();
             } catch (Throwable t) {
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("Command " + command + " threw an exception.", t);
               }
             }
@@ -122,7 +122,7 @@ public class ManagerThread {
           command.invoke();
         }
       } catch (Throwable t) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Command " + command + " threw an exception.", t);
         }
       }

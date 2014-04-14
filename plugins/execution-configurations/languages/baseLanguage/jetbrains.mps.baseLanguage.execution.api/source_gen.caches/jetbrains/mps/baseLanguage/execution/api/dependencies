@@ -35,9 +35,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.IPersistentConfiguration" />
@@ -101,9 +101,9 @@
     <classNode dependClassName="jetbrains.mps.traceInfo.TraceablePositionInfo" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

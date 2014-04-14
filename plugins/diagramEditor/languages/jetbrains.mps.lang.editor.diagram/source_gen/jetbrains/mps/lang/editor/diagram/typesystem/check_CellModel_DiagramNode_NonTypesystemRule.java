@@ -10,16 +10,16 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.List;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.errors.IErrorReporter;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_CellModel_DiagramNode_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -30,22 +30,28 @@ public class check_CellModel_DiagramNode_NonTypesystemRule extends AbstractNonTy
     if (SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "figure", true)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference")) {
       return;
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() != ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(node, "figure", true), "virtual_getFigureParameterNames_1491555030356445722", new Object[]{})).count()) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Wrong numbed of parameters specified", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "4088443785018405454", null, errorTarget);
-      }
-      return;
-    }
+
     Set<String> parameterNames = SetSequence.fromSet(new HashSet<String>());
-    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(node, "parameters", true))) {
       if (SetSequence.fromSet(parameterNames).contains(SPropertyOperations.getString(parameter, "name"))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "Parameter with this name was already specified", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "4088443785018451028", null, errorTarget);
         }
+      } else if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(node, "figure", true), "virtual_getFigureParameter_1491555030357120840", new Object[]{SPropertyOperations.getString(parameter, "name")}) == null) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "Parameter \'" + SPropertyOperations.getString(parameter, "name") + "\' not found in specified figure", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "4115105161237224614", null, errorTarget);
+        }
       } else {
         SetSequence.fromSet(parameterNames).addElement(SPropertyOperations.getString(parameter, "name"));
+      }
+    }
+
+    if (SetSequence.fromSet(parameterNames).count() < ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SLinkOperations.getTarget(node, "figure", true), "virtual_getFigureParameterNames_1491555030356445722", new Object[]{})).count()) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "Some figure parameters were not mapperd", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "4115105161237164068", null, errorTarget);
       }
     }
   }

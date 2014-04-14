@@ -124,7 +124,7 @@ public class ProjectTree extends MPSTree {
     return myProject;
   }
 
-  private class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
+  private static class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
     private StandaloneMPSProject myProject;
 
     protected ModulesNamespaceTreeBuilder(MPSProject project) {

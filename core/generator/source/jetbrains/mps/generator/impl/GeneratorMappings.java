@@ -140,9 +140,10 @@ public final class GeneratorMappings {
       List<SNode> list = (List<SNode>) o;
       ProblemDescription[] descr = new ProblemDescription[list.size()];
       for (int i = 0; i < list.size(); i++) {
-        descr[i] = new ProblemDescription(list.get(i), "output [" + i + "] : " + SNodeUtil.getDebugText(list.get(i)));
+        descr[i] = new ProblemDescription(list.get(i).getReference(), "output [" + i + "] : " + SNodeUtil.getDebugText(list.get(i)));
       }
-      myLog.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingName + "' and input " + SNodeUtil.getDebugText(inputNode), descr);
+      String msg = "%d  output nodes found for mapping label '%s' and input %s";
+      myLog.warning(inputNode.getReference(), String.format(msg, list.size(), mappingName, SNodeUtil.getDebugText(inputNode)), descr);
       return list.get(0);
     }
 

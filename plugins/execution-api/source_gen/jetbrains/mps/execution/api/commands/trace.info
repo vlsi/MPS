@@ -314,7 +314,7 @@
     <nodeInfo nodeId="20421432219326584" fileName="ListCommandPart.java" startLine="53" startPosition="42" endLine="54" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="20421432219326618" fileName="ListCommandPart.java" startLine="55" startPosition="41" endLine="56" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="20421432219326629" fileName="ListCommandPart.java" startLine="57" startPosition="7" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="60" startPosition="45" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="60" startPosition="42" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="20421432219326567" fileName="ListCommandPart.java" startLine="63" startPosition="5" endLine="64" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6868250101935612520" fileName="ListCommandPart.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="69" startPosition="55" endLine="70" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -344,7 +344,7 @@
     <scopeInfo nodeId="20421432219326535" fileName="ListCommandPart.java" startLine="48" startPosition="48" endLine="49" endPosition="48" />
     <scopeInfo nodeId="20421432219326548" fileName="ListCommandPart.java" startLine="51" startPosition="45" endLine="52" endPosition="51" />
     <scopeInfo nodeId="20421432219326600" fileName="ListCommandPart.java" startLine="55" startPosition="41" endLine="56" endPosition="98" />
-    <scopeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="60" startPosition="45" endLine="61" endPosition="58" />
+    <scopeInfo nodeId="20421432219326558" fileName="ListCommandPart.java" startLine="60" startPosition="42" endLine="61" endPosition="58" />
     <scopeInfo nodeId="20421432219326520" fileName="ListCommandPart.java" startLine="69" startPosition="55" endLine="70" endPosition="43" />
     <scopeInfo nodeId="6868250101935613580" fileName="ListCommandPart.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="6868250101935613584" varName="list" />

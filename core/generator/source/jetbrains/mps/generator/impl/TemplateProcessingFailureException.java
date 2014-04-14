@@ -24,9 +24,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * Describes an issue with a particular template. Unlike {@link GenerationFailureException},
  * doesn't necessarily mean that the whole generation process shall stop.
- * This exception is generally handled at the rule's level, and is not itself exposed to an end-user
+ * This exception is generally handled at the rule's level, and is not itself exposed to an end-user.
+ *
+ * FIXME now it's thrown to indicate structure issues with template models, which can (and shall) be checked statically, with model validation,
+ * hence there seems to be no reason to propagate this explicitly
  */
-public class TemplateProcessingFailureException extends GenerationException {
+public class TemplateProcessingFailureException extends GenerationFailureException {
   private final ProblemDescription[] myExtras;
 
   public TemplateProcessingFailureException(@NotNull SNode templateNode, @NotNull String message, @Nullable ProblemDescription... extras) {

@@ -38,7 +38,7 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -158,7 +158,7 @@ public class StubResolver {
           }
         });
         if (ListSequence.fromList(resolved).count() > 1) {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + SModelStereotype.withoutStereotype(modelRef.getModelName()));
           }
         }

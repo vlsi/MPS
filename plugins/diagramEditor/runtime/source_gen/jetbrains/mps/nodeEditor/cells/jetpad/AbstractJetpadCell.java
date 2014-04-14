@@ -36,6 +36,7 @@ import jetbrains.jetpad.event.ModifierKey;
 public abstract class AbstractJetpadCell extends EditorCell_Collection implements SynchronizeableEditorCell {
   private List<ReadableModelProperty> myModelProperties;
   protected Property<Boolean> myErrorItem = new ValueProperty<Boolean>(true);
+  protected Property<Boolean> mySelectedItem = new ValueProperty<Boolean>(false);
 
   public AbstractJetpadCell(EditorContext editorContext, SNode node) {
     super(editorContext, node, new EmptyCellLayout(), null);
@@ -62,7 +63,7 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     List<EditorMessage> messages = getMessages(EditorMessage.class);
     for (EditorMessage message : messages) {
       if (message != null) {
-        if (eq_815jvj_a0a0a0c0f(message.getStatus(), MessageStatus.ERROR)) {
+        if (eq_815jvj_a0a0a0c0g(message.getStatus(), MessageStatus.ERROR)) {
           myErrorItem.set(true);
           return;
         }
@@ -136,15 +137,16 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     }
   }
 
-  protected static void configureView(final View view, final AbstractJetpadCell editorCell, final _FunctionTypes._return_P0_E0<? extends Boolean> canDelete) {
+  protected void configureView(final View view, final _FunctionTypes._return_P0_E0<? extends Boolean> canDelete) {
     view.focusable().set(true);
     view.prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
       public boolean canDelete() {
+        // TODO: do we need it? it always return true.. 
         return canDelete.invoke();
       }
 
       public void delete() {
-        editorCell.getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.DELETE);
+        getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.DELETE);
       }
     });
     view.addTrait(new ViewTraitBuilder().on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
@@ -155,13 +157,21 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
         }
         MPSToolTipManager.getInstance().hideToolTip();
         if (e.is(Key.F1, ModifierKey.CONTROL)) {
-          editorCell.getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.SHOW_MESSAGE);
+          getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.SHOW_MESSAGE);
         }
       }
     }).build());
   }
 
-  private static boolean eq_815jvj_a0a0a0c0f(Object a, Object b) {
+
+
+  @Override
+  public void setSelected(boolean isSelected) {
+    super.setSelected(isSelected);
+    mySelectedItem.set(isSelected);
+  }
+
+  private static boolean eq_815jvj_a0a0a0c0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

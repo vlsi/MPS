@@ -33,7 +33,7 @@ import java.util.Set;
  *
  * @author Artem Tikhomirov
  */
-public class QueryProviderCache {
+public class QueryProviderCache implements GeneratorQueryProvider.Source {
   private final Set<SModelReference> myReflectionQueries = new HashSet<SModelReference>();
   private final Map<SModelReference, GeneratorQueryProvider> myDirectQueries = new HashMap<SModelReference, GeneratorQueryProvider>();
   private final IGeneratorLogger myLog;
@@ -42,12 +42,14 @@ public class QueryProviderCache {
     myLog = log;
   }
 
-  public synchronized GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
-    final SModelReference mr = ruleNode.getModelReference();
+  @Override
+  public synchronized GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNode) {
+    final SModelReference mr = templateNode.getModelReference();
     if (myReflectionQueries.contains(mr)) {
-      // there's no reason to cache RQP as they are unlikely to be used more than once -
-      // there's at most 1 condition per rule, and Condition objects are expected to be cached.
-      return new ReflectiveQueryProvider(ruleNode);
+      // At the moment, I don't see a reason to cache RQP as they are quite lightweight and stateless.
+      // However, once (and if) there's CachingQueryProvider that does all the caching so that clients don't need to care
+      // about caching themselves (e.g. clients like DefaultQueryExecutionContext), the need to preserve RQP instance may arise.
+      return new ReflectiveQueryProvider();
     }
     if (myDirectQueries.containsKey(mr)) {
       return myDirectQueries.get(mr);
@@ -62,17 +64,17 @@ public class QueryProviderCache {
         return p;
       }
     } catch (ClassNotFoundException e) {
-      myLog.error(ruleNode, e.getMessage());
+      myLog.error(templateNode, e.getMessage());
     } catch (InstantiationException e) {
       myLog.handleException(e);
-      myLog.error(ruleNode, e.toString());
+      myLog.error(templateNode, e.toString());
     } catch (IllegalAccessException e) {
       myLog.handleException(e);
-      myLog.error(ruleNode, e.toString());
+      myLog.error(templateNode, e.toString());
     }
     // fall-back to default
     myReflectionQueries.add(mr);
-    return new ReflectiveQueryProvider(ruleNode);
+    return new ReflectiveQueryProvider();
   }
 
   public synchronized void dispose() {

@@ -13,7 +13,7 @@ import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.List;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -111,7 +111,7 @@ public class LanguageDescriptorPersistence {
 
   public static void saveLanguageDescriptor(IFile file, LanguageDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Cant't save " + file.getPath());
       }
       return;
@@ -174,7 +174,7 @@ public class LanguageDescriptorPersistence {
       OutputStream os = file.openOutputStream();
       JDOMUtil.writeDocument(new Document(languageElement), os);
     } catch (Exception e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);
       }
     }

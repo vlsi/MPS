@@ -16,6 +16,8 @@
 package jetbrains.mps.generator.impl.query;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Represents an API of QueriesGenerated using *Condition objects, source of the queries
@@ -23,13 +25,37 @@ import org.jetbrains.annotations.NotNull;
  * @author Artem Tikhomirov
  */
 public interface GeneratorQueryProvider {
-  CreateRootCondition getCreateRootRuleCondition(@NotNull String methodName);
-  MapRootRuleCondition getMapRootRuleCondition(@NotNull String methodName);
-  ReductionRuleCondition getReductionRuleCondition(@NotNull String methodName);
-  PatternRuleQuery getPatternRuleCondition(@NotNull String methodName);
-  DropRuleCondition getDropRuleCondition(@NotNull String methodName);
-  WeaveRuleCondition getWeaveRuleCondition(@NotNull String methodName);
-  WeaveRuleQuery getWeaveRuleQuery(@NotNull String methodName);
-  ScriptCodeBlock getScriptCodeBlock(@NotNull String methodName);
-  MapConfigurationCondition getMapConfigurationCondition(@NotNull String methodName);
+  @NotNull
+  CreateRootCondition getCreateRootRuleCondition(@NotNull SNode rule);
+  @NotNull
+  MapRootRuleCondition getMapRootRuleCondition(@NotNull SNode rule);
+  @NotNull
+  ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule);
+  @NotNull
+  PatternRuleQuery getPatternRuleCondition(@NotNull SNode rule);
+  @NotNull
+  DropRuleCondition getDropRuleCondition(@NotNull SNode rule);
+  @NotNull
+  WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule);
+  @NotNull
+  WeaveRuleQuery getWeaveRuleQuery(@NotNull SNode rule);
+  @NotNull
+  ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script);
+  @NotNull
+  MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg);
+  @NotNull
+  SourceNodeQuery getSourceNodeQuery(@NotNull SNode query);
+  @NotNull
+  SourceNodesQuery getSourceNodesQuery(@NotNull SNode query);
+  @NotNull
+  PropertyValueQuery getPropertyValueQuery(@NotNull SNode propertyMacro);
+  @NotNull
+  IfMacroCondition getIfMacroCondition(@NotNull SNode ifMacro);
+  @NotNull
+  InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode);
+
+  interface Source {
+    @NotNull
+    GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference templateNodeRef);
+  }
 }

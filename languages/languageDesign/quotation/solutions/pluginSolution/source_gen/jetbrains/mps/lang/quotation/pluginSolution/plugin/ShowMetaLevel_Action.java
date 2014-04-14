@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -37,7 +37,7 @@ public class ShowMetaLevel_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ShowMetaLevel", t);
       }
       this.disable(event.getPresentation());
@@ -72,7 +72,7 @@ public class ShowMetaLevel_Action extends BaseAction {
       int metaLevel = BehaviorReflection.invokeVirtual(Integer.TYPE, ((SNode) MapSequence.fromMap(_params).get("currentNode")), "virtual_getMetaLevel_3981318653438234726", new Object[]{});
       JOptionPane.showMessageDialog(((Component) MapSequence.fromMap(_params).get("component")), metaLevel);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowMetaLevel", t);
       }
     }

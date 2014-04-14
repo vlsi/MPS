@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -40,7 +40,7 @@ public class EditGivenNode_Action extends BaseAction {
     try {
       event.getPresentation().setText(EditGivenNode_Action.this.text);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "EditGivenNode", t);
       }
       this.disable(event.getPresentation());
@@ -66,7 +66,7 @@ public class EditGivenNode_Action extends BaseAction {
     try {
       NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNodePointer) EditGivenNode_Action.this.targetNode).resolve(MPSModuleRepository.getInstance()), true, true);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "EditGivenNode", t);
       }
     }

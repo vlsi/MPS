@@ -21,7 +21,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
@@ -85,7 +85,7 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
       if (creator._0().invoke(concept)) {
         _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project> function = creator._1();
         if (function == null) {
-          if (LOG.isEnabledFor(Priority.WARN)) {
+          if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Could not create breakpoint for node " + node);
           }
           return null;

@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -43,7 +43,7 @@ public class ShowDefaultHelp_Action extends BaseAction {
         event.getPresentation().setText("Show Help for " + NameUtil.capitalize(defaultHelp.getName()));
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ShowDefaultHelp", t);
       }
       this.disable(event.getPresentation());
@@ -69,7 +69,7 @@ public class ShowDefaultHelp_Action extends BaseAction {
     try {
       HelpHelper.showHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
       }
     }

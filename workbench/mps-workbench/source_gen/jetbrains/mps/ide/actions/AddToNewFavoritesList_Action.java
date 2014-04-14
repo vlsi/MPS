@@ -11,7 +11,7 @@ import java.util.Map;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import com.intellij.openapi.ui.Messages;
@@ -42,7 +42,7 @@ public class AddToNewFavoritesList_Action extends BaseAction {
         event.getPresentation().setText("Send to New Favorites List");
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "AddToNewFavoritesList", t);
       }
       this.disable(event.getPresentation());
@@ -89,7 +89,7 @@ public class AddToNewFavoritesList_Action extends BaseAction {
       }
       favoritesManager.addRoots(name, toMove);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "AddToNewFavoritesList", t);
       }
     }

@@ -17,7 +17,7 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
@@ -60,7 +60,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
       }
       this.disable(event.getPresentation());
@@ -87,7 +87,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
       List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ListSequence.fromList(models).first(), null, null), MakeOrRebuildModelsFromChangeList_Action.this.rebuild).executeAction();
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
       }
     }

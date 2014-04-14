@@ -16,15 +16,35 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
+import jetbrains.mps.generator.impl.query.SourceNodeQuery;
+import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.PostProcessor;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateMappingScript;
+import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
+import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 import java.util.List;
@@ -53,6 +73,13 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     return name + ':' + getRulePackage(ruleNode); //name;
   }
 
+  private static String taskName(@NotNull String name, SNodeReference ruleNode) {
+    if (ruleNode == null) {
+      return name;
+    }
+    return name + ':' + JavaNameUtil.packageNameForModelUID(ruleNode.getModelReference());
+  }
+
   @Override
   public boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
     try {
@@ -74,10 +101,30 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
+  public boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("check condition(with context)", context.getTemplateNode()), true);
+      return wrapped.evaluate(condition, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
   public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("check if condition", ifMacro), true);
       return wrapped.checkConditionForIfMacro(inputNode, ifMacro, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("check if condition", context.getTemplateNode()), true);
+      return wrapped.evaluate(condition, context);
     } finally {
       tracer.pop();
     }
@@ -113,21 +160,54 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     }
   }
 
+  @Nullable
   @Override
-  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+  public Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("evaluate source node", macroNode), true);
-      return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
+      tracer.push(taskName(String.format("property macro(name: %s)", query.getPropertyName()), (SNodeReference) null), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
   }
 
   @Override
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) {
+  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("evaluate source node", query), true);
+      return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Nullable
+  @Override
+  public SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("evaluate source node", context.getTemplateNode()), true);
+      return wrapped.evaluate(query, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
+      GenerationFailureException {
     try {
       tracer.push(taskName("evaluate source nodes", query), true);
       return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @NotNull
+  @Override
+  public Collection<SNode> evaluate(@NotNull SourceNodesQuery query, @NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
+    try {
+      tracer.push(taskName("evaluate source nodes", context.getTemplateNode()), true);
+      return wrapped.evaluate(query, context);
     } finally {
       tracer.pop();
     }
@@ -206,8 +286,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     try {
-      SNode ruleNode = rule.getRuleNode().resolve(MPSModuleRepository.getInstance());
-      String taskName = taskName(String.format("trying to apply rule(%s)", rule.getApplicableConcept()), ruleNode);
+      String taskName = taskName(String.format("trying to apply rule(%s)", rule.getApplicableConcept()), rule.getRuleNode());
       tracer.push(taskName, true);
       return wrapped.tryToApply(rule, environment, context);
     } finally {
@@ -217,9 +296,14 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return isApplicable(rule, context);
+  }
+
+  @Override
+  public boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("check condition", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
-      return wrapped.isApplicable(rule, environment, context);
+      tracer.push(taskName("check condition", rule.getRuleNode()), true);
+      return wrapped.isApplicable(rule, context);
     } finally {
       tracer.pop();
     }
@@ -228,7 +312,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     try {
-      tracer.push(taskName(String.format("root mapping rule(%s)", rule.getApplicableConcept()), rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
+      tracer.push(taskName(String.format("root mapping rule(%s)", rule.getApplicableConcept()), rule.getRuleNode()), true);
       return wrapped.applyRule(rule, environment,context);
     } finally {
       tracer.pop();
@@ -238,7 +322,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   @Override
   public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
     try {
-      tracer.push(taskName("create root rule", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
+      tracer.push(taskName("create root rule", rule.getRuleNode()), true);
       return wrapped.applyRule(rule, environment);
     } finally {
       tracer.pop();
@@ -246,9 +330,9 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) {
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
     try {
-      tracer.push(taskName("context for weaving", rule.getRuleNode().resolve(MPSModuleRepository.getInstance())), true);
+      tracer.push(taskName("context for weaving", rule.getRuleNode()), true);
       return wrapped.getContextNode(rule, environment, context);
     } finally {
       tracer.pop();
@@ -256,9 +340,9 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public void executeScript(TemplateMappingScript mappingScript, SModel model) {
+  public void executeScript(TemplateMappingScript mappingScript, SModel model) throws GenerationFailureException {
     try {
-      tracer.push(taskName(String.format("mapping script (%s)", mappingScript.getLongName()), mappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance())), true);
+      tracer.push(taskName(String.format("mapping script (%s)", mappingScript.getLongName()), mappingScript.getScriptNode()), true);
       wrapped.executeScript(mappingScript, model);
     } finally {
       tracer.pop();

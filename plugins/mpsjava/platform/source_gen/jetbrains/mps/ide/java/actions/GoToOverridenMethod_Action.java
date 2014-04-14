@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -63,7 +63,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridenMethod", t);
       }
       this.disable(event.getPresentation());
@@ -128,7 +128,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
         }
       }).toListSequence(), GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))), methodName[0]);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
       }
     }

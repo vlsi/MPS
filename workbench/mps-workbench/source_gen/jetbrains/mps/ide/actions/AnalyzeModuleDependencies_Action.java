@@ -11,7 +11,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -43,7 +43,7 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeModuleDependencies", t);
       }
       this.disable(event.getPresentation());
@@ -71,7 +71,7 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
       tool.setModules(((List<SModule>) MapSequence.fromMap(_params).get("modules")));
       tool.openToolLater(true);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "AnalyzeModuleDependencies", t);
       }
     }

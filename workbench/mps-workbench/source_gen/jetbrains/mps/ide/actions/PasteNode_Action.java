@@ -14,7 +14,7 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.datatransfer.PasteNodeData;
@@ -60,7 +60,7 @@ public class PasteNode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "PasteNode", t);
       }
       this.disable(event.getPresentation());
@@ -139,7 +139,7 @@ public class PasteNode_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "PasteNode", t);
       }
     }

@@ -183,7 +183,6 @@
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/jetpad.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDiagramEditor.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsNewLanguageDesign.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mps.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

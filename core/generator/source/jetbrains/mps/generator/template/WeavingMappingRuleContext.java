@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,33 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
 
 public class WeavingMappingRuleContext extends BaseMappingRuleContext {
+  /**
+   * @deprecated Use the cons that takes TemplateContext
+   */
+  @Deprecated
+  @ToRemove(version=3.1)
   public WeavingMappingRuleContext(SNode node, SNode ruleNode, ITemplateGenerator generator) {
     super(node, ruleNode, generator);
   }
-
+  /**
+   * @deprecated Use the cons that takes TemplateContext
+   */
+  @Deprecated
+  @ToRemove(version=3.1)
   public WeavingMappingRuleContext(SNode node, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
     super(node, ruleNode, generator);
   }
-  public WeavingMappingRuleContext(@NotNull TemplateContext ctx, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
-    super(ctx, ruleNode, generator);
+
+  /**
+   * @since 3.1
+   */
+  public WeavingMappingRuleContext(@NotNull TemplateContext ctx, @NotNull SNodeReference ruleNode) {
+    super(ctx, ruleNode);
   }
 }

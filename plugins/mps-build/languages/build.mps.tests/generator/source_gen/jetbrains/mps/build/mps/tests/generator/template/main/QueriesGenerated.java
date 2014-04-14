@@ -8,9 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.build.util.MacroHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -46,8 +48,13 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "path");
   }
 
-  public static Object propertyMacro_GetPropertyValue_2978710270754140283(final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "haltonfailure") + "";
+  public static Object propertyMacro_GetPropertyValue_7206546315287713492(final PropertyMacroContext _context) {
+    SNode project = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.build.structure.BuildProject");
+    MacroHelper macros = new MacroHelper.MacroContext(project, _context).getMacros(_context.getNode());
+    if ((SLinkOperations.getTarget(_context.getNode(), "haltonfailure", true) == null)) {
+      return "false";
+    }
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "haltonfailure", true), macros);
   }
 
   public static Object propertyMacro_GetPropertyValue_185990153988622954(final PropertyMacroContext _context) {
@@ -97,11 +104,11 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "modules", true)).isNotEmpty();
   }
 
-  public static Iterable sourceNodesQuery_4608161086082595438(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4608161086082595438(final SourceSubstituteMacroNodesContext _context) {
     return ModuleFinder.findModules(((Iterable<SNode>) _context.getVariable("var:modules")), _context, _context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_3944198881066888502(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3944198881066888502(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
         return createGeneratorInternal_String_x583g4_a0a0a0a0q(it);
@@ -109,7 +116,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_4608161086085543486(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_4608161086085543486(final SourceSubstituteMacroNodesContext _context) {
     return ModuleFinder.findModules(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "modules", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), it, "virtual_getModules_4560297596904469651", new Object[]{});
@@ -117,7 +124,7 @@ public class QueriesGenerated {
     }), _context, _context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_7459197473276626316(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_7459197473276626316(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(Sequence.fromArray(((String[]) _context.getVariable("var:requiredPlugins")))).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
         return createGeneratorInternal_String_x583g4_a0a0a0a0s(it);
@@ -125,7 +132,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static Iterable sourceNodesQuery_149846544984029122(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_149846544984029122(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildProject"), "macros", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFolderMacro");

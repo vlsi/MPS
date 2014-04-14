@@ -21,7 +21,7 @@ import java.util.Arrays;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -120,7 +120,7 @@ public class NextPreviousTraverser {
         return b.getLeftComponent() == myLastEditor || b.getRightComponent() == myLastEditor;
       }
     }))) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("last editor is uknown: " + myLastEditor, new AssertionError());
       }
     }
@@ -225,7 +225,7 @@ public class NextPreviousTraverser {
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
     } else {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
           public String compute() {
             return check_mf966z_a0a0a2a0a0b0v(check_mf966z_a0a0a0c0a0a1a12(myLastEditor.getEditedNode()));

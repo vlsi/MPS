@@ -25,6 +25,7 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -55,7 +56,6 @@ public class CreateGroupsBuilder {
       if (!nodes.isEmpty() && d.isSingle()) continue;
 
       DefaultActionGroup group = getCreateGroup(baseNode, callback, d);
-      if (group == null) continue;
 
       if (tabs.indexOf(d) == 0) {
         group.setPopup(false);
@@ -66,6 +66,7 @@ public class CreateGroupsBuilder {
     return groups;
   }
 
+  @NotNull
   public static DefaultActionGroup getCreateGroup(SNodeReference baseNode, NodeChangeCallback callback, RelationDescriptor d) {
     List<SNode> concepts = d.getConcepts(baseNode.resolve(MPSModuleRepository.getInstance()));
     if (concepts.isEmpty()) return new DefaultActionGroup();

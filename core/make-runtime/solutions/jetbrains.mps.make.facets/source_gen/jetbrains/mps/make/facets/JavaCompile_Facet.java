@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
-import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.smodel.resources.TResource;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -33,12 +33,12 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
 import jetbrains.mps.project.Project;
 import java.util.Map;
-import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class JavaCompile_Facet extends IFacet.Stub {
@@ -75,9 +75,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
   }
 
   public static class Target_compile implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compile");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compile");
 
     public Target_compile() {
     }
@@ -90,11 +88,11 @@ public class JavaCompile_Facet extends IFacet.Stub {
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              if (Boolean.TRUE.equals(pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).skipCompilation())) {
+              if (Boolean.TRUE.equals(vars(pa.global()).skipCompilation())) {
                 _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(input));
                 return new IResult.SUCCESS(_output_wf1ya0_a0a);
               }
-              pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(false);
+              vars(pa.global()).compiledAnything(false);
               final Set<SModule> toCompile = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(input).select(new ISelector<TResource, SModule>() {
                 public SModule select(TResource it) {
                   return it.module();
@@ -114,7 +112,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 }
               });
               if (cr.value != null) {
-                pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything(pa.global().properties(Target_compile.this.getName(), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() || cr.value.isCompiledAnything());
+                vars(pa.global()).compiledAnything(vars(pa.global()).compiledAnything() || cr.value.isCompiledAnything());
                 for (IMessage msg : cr.value.getMessages()) {
                   monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                 }
@@ -184,7 +182,9 @@ public class JavaCompile_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(TResource.class);
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -205,6 +205,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public int workEstimate() {
       return 300;
+    }
+
+    public static JavaCompile_Facet.Target_compile.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, JavaCompile_Facet.Target_compile.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._2<Boolean, Boolean> {
@@ -240,9 +244,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
   }
 
   public static class Target_auxCompile implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
-    private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile");
 
     public Target_auxCompile() {
     }
@@ -255,11 +257,11 @@ public class JavaCompile_Facet extends IFacet.Stub {
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              if (Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).skipCompilation())) {
+              if (Boolean.TRUE.equals(JavaCompile_Facet.Target_compile.vars(pa.global()).skipCompilation())) {
                 _output_wf1ya0_a0b = Sequence.fromIterable(_output_wf1ya0_a0b).concat(Sequence.fromIterable(input));
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
-              if (pa.global().properties(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile() != null && pa.global().properties(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).skipAuxCompile()) {
+              if (vars(pa.global()).skipAuxCompile() != null && vars(pa.global()).skipAuxCompile()) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
               if (Sequence.fromIterable(input).any(new IWhereFilter<TResource>() {
@@ -285,7 +287,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
 
-              IdeaJavaCompiler compiler = pa.global().properties(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).project().getComponent(IdeaJavaCompiler.class);
+              IdeaJavaCompiler compiler = vars(pa.global()).project().getComponent(IdeaJavaCompiler.class);
               if (compiler == null || !(compiler.isValid())) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
@@ -364,7 +366,9 @@ public class JavaCompile_Facet extends IFacet.Stub {
     }
 
     public Iterable<Class<? extends IResource>> expectedInput() {
-      return Sequence.fromArray(EXPECTED_INPUT);
+      List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
+      ListSequence.fromList(rv).addElement(TResource.class);
+      return rv;
     }
 
     public Iterable<Class<? extends IResource>> expectedOutput() {
@@ -385,6 +389,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
 
     public int workEstimate() {
       return 100;
+    }
+
+    public static JavaCompile_Facet.Target_auxCompile.Parameters vars(IPropertiesPool ppool) {
+      return ppool.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
     }
 
     public static class Parameters extends MultiTuple._2<Project, Boolean> {

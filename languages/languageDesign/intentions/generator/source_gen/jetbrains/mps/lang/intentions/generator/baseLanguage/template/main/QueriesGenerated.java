@@ -178,7 +178,7 @@ public class QueriesGenerated {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "queryBlock", true), "paramType", true));
   }
 
-  public static Iterable sourceNodesQuery_647666612127306266(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_647666612127306266(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration")).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
@@ -186,7 +186,7 @@ public class QueriesGenerated {
     }, true);
   }
 
-  public static Iterable sourceNodesQuery_2230972008180086208(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2230972008180086208(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "queryBlock", true), "body", true), "statement", true);
   }
 }

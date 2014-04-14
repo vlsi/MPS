@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
@@ -23,16 +24,22 @@ import org.jetbrains.annotations.NotNull;
 public class MapSrcMacroPostProcContext extends TemplateQueryContextWithMacro {
   private SNode myOutputNode;
 
+  /**
+   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
+   */
+  @Deprecated
+  @ToRemove(version=3.1)
   public MapSrcMacroPostProcContext(SNode node, SNode macroNode, SNode outputNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myOutputNode = outputNode;
   }
 
   /**
-   * @deprecated use {@link #MapSrcMacroPostProcContext(TemplateContext, SNode, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #MapSrcMacroPostProcContext(TemplateContext, SNode, SNodeReference)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
+  @ToRemove(version=3.1)
   public MapSrcMacroPostProcContext(SNode node, @NotNull SNodeReference macroNode, SNode outputNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(node, macroNode, context, generator);
     myOutputNode = outputNode;
@@ -41,8 +48,8 @@ public class MapSrcMacroPostProcContext extends TemplateQueryContextWithMacro {
   /**
    * @since 3.1
    */
-  public MapSrcMacroPostProcContext(@NotNull TemplateContext context, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
-    super(context, macroNode, generator);
+  public MapSrcMacroPostProcContext(@NotNull TemplateContext context, SNode outputNode, @NotNull SNodeReference macroNode) {
+    super(context, macroNode);
     myOutputNode = outputNode;
   }
 

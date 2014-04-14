@@ -15,7 +15,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
@@ -105,7 +105,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       clone.myJavaRunParameters = (JavaRunParameters_Configuration) myJavaRunParameters.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
       }
     }

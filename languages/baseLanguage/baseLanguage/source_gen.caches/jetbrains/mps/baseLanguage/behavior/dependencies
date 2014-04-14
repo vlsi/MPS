@@ -217,9 +217,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
@@ -620,7 +620,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IfStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationInstanceValue_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IncompleteLeftParen_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IncompleteRightParen_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.InstanceInitializer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor" />
@@ -1012,9 +1014,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
@@ -2168,10 +2170,20 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_Behavior" file="HexIntegerLiteral_Behavior.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_BehaviorDescriptor" file="HexIntegerLiteral_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.HexIntegerLiteral_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IAnonymousClass_BehaviorDescriptor" file="IAnonymousClass_BehaviorDescriptor.java" />
@@ -2680,6 +2692,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationMethodKind_BehaviorDescriptor" file="ImplicitAnnotationMethodKind_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.baseLanguage.behavior.IncompleteLeftParen_BehaviorDescriptor" file="IncompleteLeftParen_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration_Behavior" file="IncompleteMemberDeclaration_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -2696,6 +2714,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.behavior.IncompleteRightParen_BehaviorDescriptor" file="IncompleteRightParen_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.InstanceInitializer_Behavior" file="InstanceInitializer_Behavior.java">
@@ -2823,7 +2847,6 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.IntegerConstant_Behavior" file="IntegerConstant_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
@@ -2834,16 +2857,21 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IntegerConstant_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_Behavior" file="IntegerLiteral_Behavior.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_BehaviorDescriptor" file="IntegerLiteral_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IntegerLiteral_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IntegerType_Behavior" file="IntegerType_Behavior.java">
@@ -2885,9 +2913,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.Interface_BehaviorDescriptor" file="Interface_BehaviorDescriptor.java">
@@ -3386,9 +3414,17 @@
   <dependency className="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil" file="ParenthesisUtil.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

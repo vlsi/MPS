@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.AbstractModule;
@@ -62,7 +62,7 @@ public class AddMissingDependency_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "AddMissingDependency", t);
       }
       this.disable(event.getPresentation());
@@ -110,7 +110,7 @@ public class AddMissingDependency_Action extends BaseAction {
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "AddMissingDependency", t);
       }
     }

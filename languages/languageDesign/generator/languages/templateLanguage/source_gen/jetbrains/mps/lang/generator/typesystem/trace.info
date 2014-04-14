@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/1178562976720">
     <nodeInfo nodeId="1206286434318" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="16" startPosition="123" endLine="17" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1178562976720" fileName="typeof_TemplateFunctionParameter_sourceNode_InferenceRule.java" startLine="20" startPosition="46" endLine="21" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1358,6 +1358,46 @@
       <varInfo nodeId="3381764287260998040" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="3381764287260998040" fileName="check_BaseMappingRule_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.check_BaseMappingRule_NonTypesystemRule" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/4426797670062846578">
+    <nodeInfo nodeId="4426797670062849455" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4426797670062849455" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="20" startPosition="45" endLine="21" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4426797670062849455" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="21" startPosition="205" endLine="22" endPosition="435" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_TemplateArgumentVariableRefExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4426797670062849455" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="18" startPosition="116" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="15" startPosition="71" endLine="15" endPosition="71" />
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="90" />
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
+      <varInfo nodeId="4426797670062846578" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="4426797670062849455" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="435">
+      <varInfo nodeId="4426797670062849455" varName="_info_12389875345" />
+      <varInfo nodeId="4426797670062849455" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="4426797670062846579" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="18" startPosition="116" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="4426797670062846578" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4426797670062846578" varName="arg" />
+      <varInfo nodeId="4426797670062846578" varName="status" />
+      <varInfo nodeId="4426797670062846578" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4426797670062846578" fileName="typeof_TemplateArgumentVariableRefExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.generator.typesystem.typeof_TemplateArgumentVariableRefExpression_InferenceRule" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/4665309944889434858">
     <nodeInfo nodeId="4665309944889434861" fileName="typeof_TemplateArgumentPatternVarRefExpression_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -148,7 +148,7 @@ public class SModelNodeListeners {
 
   void refreshTreeNodes(SModelTreeNode toRefresh) {
     for (TreeUpdateVisitor v : myUpdates) {
-      v.dispatch(toRefresh);
+      toRefresh.accept(v);
     }
   }
 
@@ -176,7 +176,7 @@ public class SModelNodeListeners {
     @Override
     public void generatedFilesChanged(SModel sm) {
       for (SModelTreeNode treeNode : findTreeNode(sm)) {
-        myGenStatusVisitor.dispatch(treeNode);
+        treeNode.accept(myGenStatusVisitor);
       }
     }
   }

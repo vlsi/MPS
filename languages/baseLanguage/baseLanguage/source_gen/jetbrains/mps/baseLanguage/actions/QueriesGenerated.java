@@ -65,6 +65,7 @@ import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
+import jetbrains.mps.baseLanguage.editor.EditorParenthesisUtil;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
@@ -2326,6 +2327,53 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(curr, "static");
   }
 
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1778214689153983414(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode parens = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+            String intent = pattern.substring(1);
+            if (!(intent.equals(")"))) {
+              SNode constant = SLinkOperations.setTarget(parens, "expression", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null), true);
+              int value;
+              try {
+                value = Integer.parseInt(intent);
+                SPropertyOperations.set(constant, "value", "" + (value));
+              } catch (NumberFormatException e) {
+              }
+            }
+            return parens;
+          }
+
+          public boolean hasSubstitute() {
+            return true;
+          }
+
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return pattern.startsWith("(") && pattern.length() == 2;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "(";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1778214689153983416(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression")) && eq_x583g4_a0a0a08(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"));
+  }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1138168906052(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -4328,11 +4376,14 @@ __switch__:
     return false;
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1235993905117(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_7251340091277279374(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return ParenthesisUtil.createParenthesis(_context.getSourceNode(), false);
+        ParenthesisUtil.createUnmatchedRightParenthesis(_context.getSourceNode());
+        SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpressionIgnoringParens(_context.getSourceNode(), true);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+        return rightMostNode;
       }
 
       public String getMatchingText(String pattern) {
@@ -4344,7 +4395,7 @@ __switch__:
       }
 
       public String getDescriptionText(String pattern) {
-        return "Surround with parenthesis";
+        return "Complete parens";
       }
 
       @Override
@@ -4358,11 +4409,16 @@ __switch__:
     return result;
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_341917192559579194(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+  }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1235991023656(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        return ParenthesisUtil.createParenthesis(_context.getSourceNode(), true);
+        ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
+        return _context.getSourceNode();
       }
 
       public String getMatchingText(String pattern) {
@@ -4374,7 +4430,7 @@ __switch__:
       }
 
       public String getDescriptionText(String pattern) {
-        return "Surrond with parenthesis";
+        return "Left paren";
       }
 
       @Override
@@ -4386,6 +4442,10 @@ __switch__:
       }
     });
     return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_341917192559597130(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1239714323555(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
@@ -5807,7 +5867,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a242(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a642(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
         SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
@@ -6188,7 +6248,11 @@ __switch__:
     return str == null || str.length() == 0;
   }
 
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a242(Object o, Class<T> type) {
+  private static boolean eq_x583g4_a0a0a08(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a642(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 

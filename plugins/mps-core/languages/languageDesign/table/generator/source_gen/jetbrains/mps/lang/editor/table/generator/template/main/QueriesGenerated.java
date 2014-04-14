@@ -9,6 +9,7 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 @Generated
@@ -47,7 +48,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "headerRowLinkDeclaration", false);
   }
 
-  public static Iterable sourceNodesQuery_8562016843455421178(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_8562016843455421178(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tableModel", true), "body", true), "statement", true);
   }
 }

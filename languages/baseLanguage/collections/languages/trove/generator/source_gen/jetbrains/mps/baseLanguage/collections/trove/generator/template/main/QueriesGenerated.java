@@ -150,7 +150,7 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
 
-  public static Iterable sourceNodesQuery_5499565529811382514(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_5499565529811382514(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_x583g4_a0a0a23(), _quotation_createNode_x583g4_b0a0a23(), _quotation_createNode_x583g4_c0a0a23(), _quotation_createNode_x583g4_d0a0a23(), _quotation_createNode_x583g4_e0a0a23(), _quotation_createNode_x583g4_f0a0a23());
   }
 

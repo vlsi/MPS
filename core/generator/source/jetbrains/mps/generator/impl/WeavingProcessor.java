@@ -63,21 +63,13 @@ public class WeavingProcessor {
         if (executionContext == null) {
           continue;
         }
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myGenerator, executionContext);
-        try {
-          DefaultTemplateContext context = new DefaultTemplateContext(applicableNode);
-          if (executionContext.isApplicable(rule, environment, context)) {
-            // if there are too many ArmedWeavingRule instances (i.e. a lot of applicable SNode),
-            // it's easy to refactor AWR to keep list of applicable nodes and to recreate TEE on demand
-            myReadyRules.add(new ArmedWeavingRule(rule, environment, applicableNode));
-            ruleBlocks.blockWeaving(applicableNode, rule);
-          }
-        } catch (GenerationCanceledException ex) {
-          throw ex;
-        } catch (GenerationFailureException ex) {
-          throw ex;
-        } catch (GenerationException ex) {
-          myGenerator.getLogger().error(rule.getRuleNode(), "internal error: " + ex.toString());
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(new TemplateProcessor(myGenerator), executionContext);
+        DefaultTemplateContext context = new DefaultTemplateContext(environment, applicableNode, null);
+        if (executionContext.isApplicable(rule, context)) {
+          // if there are too many ArmedWeavingRule instances (i.e. a lot of applicable SNode),
+          // it's easy to refactor AWR to keep list of applicable nodes and to recreate TEE on demand
+          myReadyRules.add(new ArmedWeavingRule(rule, environment, applicableNode));
+          ruleBlocks.blockWeaving(applicableNode, rule);
         }
       }
     }
@@ -112,7 +104,7 @@ public class WeavingProcessor {
     public boolean apply() throws GenerationFailureException, GenerationCanceledException {
       final IGenerationTracer tracer = myEnv.getTracer();
       try {
-        DefaultTemplateContext context = new DefaultTemplateContext(myApplicableNode);
+        DefaultTemplateContext context = new DefaultTemplateContext(myEnv, myApplicableNode, null);
         SNode outputContextNode = myEnv.getQueryExecutor().getContextNode(myRule, myEnv, context);
         if (!checkContext(outputContextNode)) {
           return false;

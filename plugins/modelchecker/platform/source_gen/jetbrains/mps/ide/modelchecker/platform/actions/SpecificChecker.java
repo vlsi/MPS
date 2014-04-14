@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -27,7 +27,7 @@ public abstract class SpecificChecker {
   protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, SNode node, String message, String severity, String issueType, IModelCheckerFix fix) {
     if (filterIssue(node)) {
       if (SNodeOperations.getContainingRoot(node) == null) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Node without containing root", new IllegalStateException());
         }
       }

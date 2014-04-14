@@ -9,7 +9,7 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.apache.log4j.Logger;
@@ -40,7 +40,7 @@ public class DeleteToWordEnd_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "DeleteToWordEnd", t);
       }
       this.disable(event.getPresentation());
@@ -62,7 +62,7 @@ public class DeleteToWordEnd_Action extends BaseAction {
     try {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.DELETE_TO_WORD_END);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "DeleteToWordEnd", t);
       }
     }

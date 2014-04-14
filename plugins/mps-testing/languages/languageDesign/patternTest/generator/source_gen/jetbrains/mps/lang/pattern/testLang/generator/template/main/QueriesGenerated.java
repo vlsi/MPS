@@ -75,19 +75,19 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "value", true);
   }
 
-  public static Iterable sourceNodesQuery_1563914226484903732(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1563914226484903732(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "variable", true);
   }
 
-  public static Iterable sourceNodesQuery_1563914226484925018(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1563914226484925018(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "property", true);
   }
 
-  public static Iterable sourceNodesQuery_1563914226484968076(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1563914226484968076(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "value", true);
   }
 
-  public static Iterable sourceNodesQuery_1563914226484968027(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1563914226484968027(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "list", true);
   }
 }

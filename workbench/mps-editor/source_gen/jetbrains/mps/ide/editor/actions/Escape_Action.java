@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -49,7 +49,7 @@ public class Escape_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "Escape", t);
       }
       this.disable(event.getPresentation());
@@ -90,7 +90,7 @@ public class Escape_Action extends BaseAction {
       }
 
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "Escape", t);
       }
     }

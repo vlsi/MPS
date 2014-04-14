@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
@@ -188,33 +187,15 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       ourErrorReportedRefs.add(this);
 
       Logger log = Logger.wrap(LogManager.getLogger(this.getClass()));
-      log.error("\ncouldn't resolve reference '" + getRole() + "' from " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSourceNode()),
-          validNode(getSourceNode().getReference()));
+      log.error(String.format("\ncouldn't resolve reference '%s' from %s", getRole(), org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSourceNode())),
+          getSourceNode().getReference());
       if (message != null) log.error(" -- " + message);
       if (problems != null) {
         for (ProblemDescription pd : problems) {
-          log.error(pd.getMessage(), validNode(pd.getNode()));
+          log.error(pd.getMessage(), pd.getNode());
         }
       }
     }
-  }
-
-  protected static SNodeReference validNode(SNodeReference node) {
-    if (node == null || node.getModelReference() == null) {
-      return null;
-    }
-
-    SModel model = SModelRepository.getInstance().getModelDescriptor(node.getModelReference());
-    if (model == null) {
-      return null;
-    }
-    if (model.getModule() instanceof  TransientModelsModule) {
-      if (((TransientModelsModule) model.getModule()).addModelToKeep(node.getModelReference(), false)) {
-        return node;
-      }
-      return null;
-    }
-    return node;
   }
 
   @Immutable

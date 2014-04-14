@@ -72,7 +72,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
         defAnchorCell = nodeMainCell;
       }
 
-      if (defAnchorCell == selectedCell || CellTraversalUtil.isAncestor(defAnchorCell, selectedCell)) {
+      if (CellTraversalUtil.isAncestorOrEquals(defAnchorCell, selectedCell)) {
         anchorCell = defAnchorCell;
       }
     }

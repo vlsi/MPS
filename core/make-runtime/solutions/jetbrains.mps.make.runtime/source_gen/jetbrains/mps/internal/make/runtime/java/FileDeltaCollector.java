@@ -59,6 +59,4 @@ public class FileDeltaCollector implements StreamHandler {
   private IFile getFile(String name) {
     return myOutputDir.getDescendant(name);
   }
-
-
 }

@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.util.List;
@@ -40,7 +40,7 @@ public class CloneRoot_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "CloneRoot", t);
       }
       this.disable(event.getPresentation());
@@ -90,7 +90,7 @@ public class CloneRoot_Action extends BaseAction {
         NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, false);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CloneRoot", t);
       }
     }

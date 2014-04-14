@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -115,7 +115,7 @@ lfind:
         }
       }
       // we have not found next data: loop detected! 
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Loop found in applicable refactorings for " + myModel + "");
       }
       break;
