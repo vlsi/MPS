@@ -2501,6 +2501,16 @@
                                   <property name="text" nameId="tpee.6329021646629104958" value="todo it may be worthwhile to also detect other unicode chars from keyCode and supply them into keyChar" />
                                 </node>
                               </node>
+                              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3642357208803463800" nodeInfo="nn">
+                                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3642357208803464763" nodeInfo="nn">
+                                  <property name="text" nameId="tpee.6329021646629104958" value="There is currently no good complete cross-platform code to char conversion utility, it seems" />
+                                </node>
+                              </node>
+                              <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3642357208803465773" nodeInfo="nn">
+                                <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3642357208803466738" nodeInfo="nn">
+                                  <property name="text" nameId="tpee.6329021646629104958" value="KEY_PRESSED events may or may not contain a concrete keyChar. Its presence is definitely not a problem" />
+                                </node>
+                              </node>
                               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9060623236034981377" nodeInfo="nn">
                                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="9060623236034984030" nodeInfo="nn">
                                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.CastExpression" typeId="tpee.1070534934090" id="9060623236034994512" nodeInfo="nn">
