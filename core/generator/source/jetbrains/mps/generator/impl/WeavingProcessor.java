@@ -63,7 +63,7 @@ public class WeavingProcessor {
         if (executionContext == null) {
           continue;
         }
-        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(new TemplateProcessor(myGenerator), executionContext);
+        TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(new TemplateProcessor(myGenerator), executionContext, new ReductionTrack(myGenerator.getBlockedReductionsData()));
         DefaultTemplateContext context = new DefaultTemplateContext(environment, applicableNode, null);
         if (executionContext.isApplicable(rule, context)) {
           // if there are too many ArmedWeavingRule instances (i.e. a lot of applicable SNode),
