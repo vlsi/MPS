@@ -194,6 +194,12 @@
           <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953961" resolveInfo="y" />
         </node>
       </node>
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="2138530310721189467" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="text" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="2138530310721189599" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
       <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="955834388676349254" nodeInfo="ng">
         <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k80i.5667822611623716384" />
       </node>
@@ -386,6 +392,12 @@
         <property name="name" nameId="tpck.1169194664001" value="POSITION_Y" />
         <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="955834388676350039" nodeInfo="ng">
           <link role="property" roleId="gbdf.285670992217689748" targetNodeId="3g6l.79242395703953961" resolveInfo="y" />
+        </node>
+      </node>
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="2138530310721153653" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="text" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="2138530310721189289" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="tpck.1169194664001" resolveInfo="name" />
         </node>
       </node>
       <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="955834388676343032" nodeInfo="ng">

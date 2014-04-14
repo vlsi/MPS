@@ -52,6 +52,7 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
   private class BlockCellImpl_pr685x_a extends BlockCell {
     private final PropertyMapperCell<Integer> myPropertyCell_pr685x_a0a;
     private final PropertyMapperCell<Integer> myPropertyCell_pr685x_a1a;
+    private final PropertyMapperCell<String> myPropertyCell_pr685x_a2a;
 
     private BlockCellImpl_pr685x_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
@@ -77,6 +78,17 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
       };
       addEditorCell(myPropertyCell_pr685x_a1a);
       myPropertyCell_pr685x_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_pr685x_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
+      myPropertyCell_pr685x_a2a = new PropertyMapperCell<String>(editorContext, node) {
+        protected String getModelPropertyValueImpl() {
+          return SPropertyOperations.getString(node, "name");
+        }
+
+        protected void setModelPropertyValueImpl(String value) {
+          SPropertyOperations.set(node, "name", value);
+        }
+      };
+      addEditorCell(myPropertyCell_pr685x_a2a);
+      myPropertyCell_pr685x_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_pr685x_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
       synchronize();
     }
 
@@ -84,6 +96,7 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
       super.synchronizeViewWithModel();
       myPropertyCell_pr685x_a0a.synchronize();
       myPropertyCell_pr685x_a1a.synchronize();
+      myPropertyCell_pr685x_a2a.synchronize();
     }
 
     public Mapper<SNode, DiagramNodeView> createMapper() {
@@ -115,7 +128,8 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
                     }
                   }));
                   myPropertyCell_pr685x_a0a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_X));
-                  myPropertyCell_pr685x_a1a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_Y));
+                  myPropertyCell_pr685x_a1a.registerSynchronizers(configuration, getTarget().focusable());
+                  myPropertyCell_pr685x_a2a.registerSynchronizers(configuration, getTarget().text());
                 }
               };
             }

@@ -42,32 +42,32 @@
     </node>
     <node role="thoughts" roleId="3g6l.79242395703887318" type="3g6l.Thought" typeId="3g6l.79242395703884488" id="5871420002487602288" nodeInfo="ng">
       <property name="x" nameId="3g6l.79242395703953959" value="532" />
-      <property name="y" nameId="3g6l.79242395703953961" value="18" />
+      <property name="y" nameId="3g6l.79242395703953961" value="11" />
       <property name="name" nameId="tpck.1169194664001" value="IntelliJ IDEA CE" />
       <property name="myIsClicked" nameId="3g6l.5871420002487302178" value="true" />
     </node>
     <node role="thoughts" roleId="3g6l.79242395703887318" type="3g6l.Thought" typeId="3g6l.79242395703884488" id="5058522826399342615" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="IntelliJ IDEA UE" />
       <property name="x" nameId="3g6l.79242395703953959" value="532" />
-      <property name="y" nameId="3g6l.79242395703953961" value="160" />
+      <property name="y" nameId="3g6l.79242395703953961" value="35" />
       <property name="myIsClicked" nameId="3g6l.5871420002487302178" value="true" />
     </node>
     <node role="thoughts" roleId="3g6l.79242395703887318" type="3g6l.Thought" typeId="3g6l.79242395703884488" id="5871420002487709750" nodeInfo="ng">
       <property name="myIsClicked" nameId="3g6l.5871420002487302178" value="true" />
       <property name="x" nameId="3g6l.79242395703953959" value="33" />
-      <property name="y" nameId="3g6l.79242395703953961" value="252" />
+      <property name="y" nameId="3g6l.79242395703953961" value="439" />
       <property name="name" nameId="tpck.1169194664001" value="Web Storm" />
     </node>
     <node role="thoughts" roleId="3g6l.79242395703887318" type="3g6l.Thought" typeId="3g6l.79242395703884488" id="5871420002487876142" nodeInfo="ng">
       <property name="myIsClicked" nameId="3g6l.5871420002487302178" value="true" />
       <property name="x" nameId="3g6l.79242395703953959" value="320" />
-      <property name="y" nameId="3g6l.79242395703953961" value="280" />
+      <property name="y" nameId="3g6l.79242395703953961" value="398" />
       <property name="name" nameId="tpck.1169194664001" value="ReSharper" />
     </node>
     <node role="thoughts" roleId="3g6l.79242395703887318" type="3g6l.Thought" typeId="3g6l.79242395703884488" id="5058522826399262748" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="PHP Storm" />
       <property name="x" nameId="3g6l.79242395703953959" value="35" />
-      <property name="y" nameId="3g6l.79242395703953961" value="7" />
+      <property name="y" nameId="3g6l.79242395703953961" value="104" />
       <property name="myIsClicked" nameId="3g6l.5871420002487302178" value="true" />
     </node>
   </root>

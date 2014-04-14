@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="96qa12d112v6tnkdvdw99ikl7m5rpzi">
+<dependencies version="2" modelHash="-dxb8xn5atv8yw48llblr50h9z0q6npi">
   <common hash="-1h4ff4xoyvhgow80vo55xd49f0rt9eo" />
-  <source id="5871420002487602285" name="JetBrains Products" hash="3e7psadff3i0bhs1y051k2bo6s7ubl9">
+  <source id="5871420002487602285" name="JetBrains Products" hash="1kw987vnmwxipw41tnhs1vev43q71kl">
     <file name="JetBrains Products" />
   </source>
 </dependencies>
