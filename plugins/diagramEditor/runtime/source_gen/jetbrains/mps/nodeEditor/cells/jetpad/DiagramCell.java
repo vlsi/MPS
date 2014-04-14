@@ -55,6 +55,7 @@ import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.geometry.Vector;
 import java.util.ListIterator;
@@ -225,7 +226,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             return;
           }
           if (event.key() == Key.ESCAPE) {
-            view.container().focusedView().set(null);
+            view.container().focusedView().set(getRootMapper().getTarget().root());
             event.consume();
           }
         }
@@ -485,6 +486,8 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       public void onEvent(PropertyChangeEvent<Boolean> focused) {
         if (!(focused.getNewValue())) {
           hidePatternEditor();
+        } else if (!(isSelected())) {
+          SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
         }
       }
     });
