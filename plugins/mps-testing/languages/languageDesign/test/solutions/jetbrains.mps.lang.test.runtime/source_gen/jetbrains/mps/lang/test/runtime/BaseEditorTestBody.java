@@ -229,7 +229,8 @@ public class BaseEditorTestBody extends BaseTestBody {
           KeyStroke stroke = KeyStroke.getKeyStroke(code);
           int keyCode = stroke.getKeyCode();
           char keyChar = stroke.getKeyChar();
-          if (keyChar == KeyEvent.CHAR_UNDEFINED && keyCode != KeyEvent.VK_UNDEFINED && keyCode >= 48 && keyCode <= 90 && (keyCode <= 57 || keyCode >= 65)) {
+          if (keyChar == KeyEvent.CHAR_UNDEFINED && keyCode != KeyEvent.VK_UNDEFINED && ((keyCode >= KeyEvent.VK_0 && keyCode <= KeyEvent.VK_9) || (keyCode >= KeyEvent.VK_A && keyCode <= KeyEvent.VK_Z))) {
+            // todo it may be worthwhile to also detect other unicode chars from keyCode and supply them into keyChar 
             keyChar = (char) keyCode;
           }
 
