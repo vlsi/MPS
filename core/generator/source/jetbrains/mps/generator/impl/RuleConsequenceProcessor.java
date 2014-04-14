@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GeneratorUtilEx.ConsequenceDispatch;
+import jetbrains.mps.generator.impl.interpreted.TemplateCall;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.template.QueryExecutor;
@@ -158,19 +159,19 @@ public abstract class RuleConsequenceProcessor {
   }
 
   private static class TemplateDeclarationReference extends RuleConsequenceProcessor {
-    private final SNode myRuleConsequence;
     private final RuleConsequenceProcessor myTemplateContainer;
+    private final TemplateCall myTemplateCall;
 
     public TemplateDeclarationReference(@NotNull SNode ruleConsequence, @NotNull RuleConsequenceProcessor templateContainer) {
-      myRuleConsequence = ruleConsequence;
       myTemplateContainer = templateContainer;
+      myTemplateCall = new TemplateCall(ruleConsequence);
     }
 
     @NotNull
     @Override
     public List<SNode> processRuleConsequence(@NotNull TemplateContext context)
         throws GenerationFailureException, GenerationCanceledException, DismissTopMappingRuleException, AbandonRuleInputException {
-      TemplateContext ctx = GeneratorUtil.createConsequenceContext(context, myRuleConsequence);
+      TemplateContext ctx = myTemplateCall.prepareCallContext(context);
       return myTemplateContainer.processRuleConsequence(ctx);
     }
   }

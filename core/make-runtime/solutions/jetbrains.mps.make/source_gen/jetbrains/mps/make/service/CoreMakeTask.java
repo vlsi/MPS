@@ -8,6 +8,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.dependencies.MakeSequence;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.resources.IResource;
@@ -49,6 +50,7 @@ public class CoreMakeTask {
   private final IMessageHandler myMessageHandler;
 
   @Deprecated
+  @ToRemove(version = 3.1)
   public CoreMakeTask(@NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh) {
     this(scrName, new MakeSequence(clInput, scripts) {}, ctl, mh);
   }

@@ -149,7 +149,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2084788800270123500" resolveInfo="myCell" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2084788800270148746" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="racs.~Cell%daddTrait(jetbrains%djetpad%dcell%dtrait%dCellTrait)%cjetbrains%djetpad%dmodel%devent%dRegistration" resolveInfo="addTrait" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="racr.~Cell%daddTrait(jetbrains%djetpad%dcell%dtrait%dCellTrait)%cjetbrains%djetpad%dbase%dRegistration" resolveInfo="addTrait" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3606070010581478864" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2ivl.~TextEditing%dtextEditing()%cjetbrains%djetpad%dcell%dtrait%dCellTrait" resolveInfo="textEditing" />
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="2ivl.~TextEditing" resolveInfo="TextEditing" />
@@ -253,7 +253,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6111547859873264701" resolveInfo="myRectView" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6111547859871838544" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4to1.~View%daddTrait(jetbrains%djetpad%dprojectional%dview%dViewTrait)%cjetbrains%djetpad%dmodel%devent%dRegistration" resolveInfo="addTrait" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4to0.~View%daddTrait(jetbrains%djetpad%dprojectional%dview%dViewTrait)%cjetbrains%djetpad%dbase%dRegistration" resolveInfo="addTrait" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6111547859871838545" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6111547859871838546" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6111547859871838585" nodeInfo="nn">
@@ -1136,7 +1136,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5667822611620059534" resolveInfo="myCell" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5667822611620059919" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="racr.~Cell%daddTrait(jetbrains%djetpad%dcell%dtrait%dCellTrait)%cjetbrains%djetpad%dmodel%devent%dRegistration" resolveInfo="addTrait" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="racr.~Cell%daddTrait(jetbrains%djetpad%dcell%dtrait%dCellTrait)%cjetbrains%djetpad%dbase%dRegistration" resolveInfo="addTrait" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5667822611620059921" nodeInfo="nn">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="2ivk.~TextEditing" resolveInfo="TextEditing" />
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2ivk.~TextEditing%dtextEditing()%cjetbrains%djetpad%dcell%dtrait%dCellTrait" resolveInfo="textEditing" />
