@@ -375,8 +375,6 @@
   <source id="1109279851642" name="GenericDeclaration" hash="-acei81qy9lz4p5sdos10qjrl4wl63my" />
   <source id="1109283449304" name="TypeVariableReference" hash="dta21wyhhzajkymh408aqlj121v6fva" />
   <source id="1113006251687" name="_FPNumber_String" hash="-d18gyr967828i21m7c0r6q15vgs7q57">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_FPNumber_String_PropertySupport.java" />
   </source>
   <source id="1116615150612" name="ClassifierClassExpression" hash="aabb26s397wephah2yftkpb7izqmwvn" />
@@ -434,7 +432,6 @@
   <source id="1197029447546" name="FieldReferenceOperation" hash="-dy50ds10dena6gibbyhfa9iqxqzn4dd" />
   <source id="1199653749349" name="IStatementListContainer" hash="4zlbfji2jvatn9r3rffmwsgfhz51a17" />
   <source id="1200397549879" name="_CharConstant_String" hash="-4zp5cmjj3gklz3mk5y512yh5vzz2pvs">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_CharConstant_String_PropertySupport.java" />
   </source>
   <source id="1201183863028" name="TypeDerivable" hash="2e64nx11b7nytlxgvnix9c81424fqsw" />
@@ -514,15 +511,12 @@
   <source id="1241450588333" name="BLBottomType" hash="7rfw2ldlxdy7lnrrkf3upih1h8eun69" />
   <source id="1241540912639" name="ConstructorInvocationStatement" hash="-816zxb2159jf8s6i0kxtx4utfwn0b1g" />
   <source id="4269842503726207818" name="_LongType_String" hash="b4d3v7hxcqgt51bfg6mb9eh3vygjlz2">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_LongType_String_PropertySupport.java" />
   </source>
   <source id="5279705229678483898" name="_FloatNumberValue" hash="bnhe8sj7ibnqiui9g2fi4t7zpifqwoe">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_FloatNumberValue_PropertySupport.java" />
   </source>
   <source id="6734604082923916973" name="_HexNumberValue" hash="55313jm0eigjlbteu8g7sstc0ocp7xj">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_HexNumberValue_PropertySupport.java" />
   </source>
   <source id="4972933694980447171" name="BaseVariableDeclaration" hash="-aajnhz183lu8yk5r8l8gqlnhfnezm7k" />
