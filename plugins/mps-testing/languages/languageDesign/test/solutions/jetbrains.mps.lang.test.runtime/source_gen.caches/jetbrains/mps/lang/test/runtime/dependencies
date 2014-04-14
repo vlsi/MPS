@@ -217,6 +217,7 @@
     <classNode dependClassName="jetbrains.mps.tool.builder.util.MapPathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.CanonicalPath" />
     <classNode dependClassName="jetbrains.mps.tool.environment.ActiveEnvironment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

@@ -128,6 +128,7 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" file="MpsTestsSupport.java">
     <classNode dependClassName="com.intellij.idea.LoggerFactory" />
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.diagnostic.Logger" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="java.io.File" />

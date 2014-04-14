@@ -27,6 +27,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -152,7 +153,7 @@ public class MpsTestsSupport {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
         public void run() {
-          ModelAccess.instance().runWriteAction(new Runnable() {
+          ApplicationManager.getApplication().runWriteAction(new Runnable() {
             @Override
             public void run() {
               LocalFileSystem.getInstance().refresh(false);

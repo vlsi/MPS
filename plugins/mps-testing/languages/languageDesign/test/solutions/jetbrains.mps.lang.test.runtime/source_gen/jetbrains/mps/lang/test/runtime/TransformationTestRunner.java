@@ -16,10 +16,11 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import junit.framework.Assert;
 import java.util.Arrays;
 import jetbrains.mps.project.ProjectManager;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
-import java.io.File;
-import org.apache.log4j.Priority;
 import jetbrains.mps.util.MacrosFactory;
+import java.io.File;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
+import org.apache.log4j.Priority;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import javax.swing.SwingUtilities;
@@ -105,20 +106,27 @@ public class TransformationTestRunner {
   private Project openTestProject(String projectPathName, boolean reopenProject) {
     // <node> 
     // <node> 
-    if (reopenProject) {
-      ActiveEnvironment.getInstance().disposeProject(new File(projectPathName));
-    }
+    String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPathName);
+    File projectPath = new File(expandedProjectPath);
+    Environment currentEnv = ActiveEnvironment.getInstance();
     if ((projectPathName == null || projectPathName.length() == 0)) {
       if (LOG.isEnabledFor(Priority.WARN)) {
         LOG.warn("Project path is empty");
       }
-      return anyOpenedProject();
-    } else {
-      String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPathName);
-      File projectPath = new File(expandedProjectPath);
-
-      Project project = ActiveEnvironment.getInstance().openProject(projectPath);
+      Project project = anyOpenedProject();
+      if (reopenProject) {
+        assert currentEnv.isProjectOpened(project.getProjectFile());
+        currentEnv.disposeProject(projectPath);
+        project = currentEnv.openProject(projectPath);
+      }
       return project;
+    } else {
+      if (reopenProject) {
+        if (currentEnv.isProjectOpened(projectPath)) {
+          currentEnv.disposeProject(projectPath);
+        }
+      }
+      return currentEnv.openProject(projectPath);
     }
   }
 
