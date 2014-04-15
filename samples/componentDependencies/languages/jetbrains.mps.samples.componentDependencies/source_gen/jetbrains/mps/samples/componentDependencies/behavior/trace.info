@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="ComponentSet_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_BehaviorDescriptor" />
+  <unitInfo fileName="Component_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.Component_BehaviorDescriptor" />
+  <unitInfo fileName="Dependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.Dependency_BehaviorDescriptor" />
+  <unitInfo fileName="InPort_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.InPort_BehaviorDescriptor" />
+  <unitInfo fileName="OutPort_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.OutPort_BehaviorDescriptor" />
+</debugInfo>
+
