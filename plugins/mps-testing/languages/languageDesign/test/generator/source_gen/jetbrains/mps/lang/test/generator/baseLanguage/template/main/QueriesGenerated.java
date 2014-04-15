@@ -55,14 +55,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "keys");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4633202057942994512(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "x");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4633202057943021746(final PropertyMacroContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "y");
-  }
-
   public static Object propertyMacro_GetPropertyValue_210559400607815451(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "x");
   }

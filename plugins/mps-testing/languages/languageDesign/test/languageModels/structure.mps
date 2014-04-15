@@ -828,20 +828,6 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4633202057941640741" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
-    <property name="name" nameId="tpck.1169194664001" value="ClickMouseStatement" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="click mouse" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4633202057941654444" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="x" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4633202057941654446" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="y" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    </node>
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="210559400605421433" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
     <property name="name" nameId="tpck.1169194664001" value="PressMouseStatement" />

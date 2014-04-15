@@ -371,45 +371,6 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  public static void processMouseClicked(final EditorComponent editorComponent, int x, int y) throws InterruptedException, InvocationTargetException {
-    assert editorComponent.getRootCell() != null;
-
-    Queue<EditorCell> cellCandidates = QueueSequence.fromQueue(new LinkedList<EditorCell>());
-    QueueSequence.fromQueue(cellCandidates).addLastElement(editorComponent.getRootCell());
-    int absoluteX = x + editorComponent.getRootCell().getX();
-    int absoluteY = y + editorComponent.getRootCell().getY();
-    EditorCell eventTargetCell = null;
-    while (QueueSequence.fromQueue(cellCandidates).isNotEmpty()) {
-      EditorCell nextCell = QueueSequence.fromQueue(cellCandidates).removeFirstElement();
-      if (nextCell.getX() <= absoluteX && nextCell.getY() <= absoluteY && nextCell.getX() + nextCell.getWidth() > absoluteX && nextCell.getY() + nextCell.getHeight() > absoluteY) {
-        eventTargetCell = nextCell;
-        if (nextCell instanceof EditorCell_Collection) {
-          QueueSequence.fromQueue(cellCandidates).addSequence(Sequence.fromIterable((EditorCell_Collection) nextCell));
-        }
-      }
-    }
-    assert eventTargetCell != null;
-
-    final Wrappers._T<Component> targetComponent = new Wrappers._T<Component>(getEventTargetComponent(eventTargetCell, editorComponent));
-    targetComponent.value = targetComponent.value.getComponentAt(x, y);
-    assert targetComponent.value != null;
-
-    int actualX = x;
-    int actualY = y;
-    // <node> 
-    // <node> 
-    final MouseEvent e1 = createMouseEvent(targetComponent.value, MouseEvent.MOUSE_PRESSED, actualX, actualY);
-    final MouseEvent e2 = createMouseEvent(targetComponent.value, MouseEvent.MOUSE_RELEASED, actualX, actualY);
-    final MouseEvent e3 = createMouseEvent(targetComponent.value, MouseEvent.MOUSE_CLICKED, actualX, actualY);
-    SwingUtilities.invokeAndWait(new Runnable() {
-      public void run() {
-        targetComponent.value.dispatchEvent(e1);
-        targetComponent.value.dispatchEvent(e2);
-        targetComponent.value.dispatchEvent(e3);
-      }
-    });
-  }
-
   private static JComponent getEventTargetComponent(EditorCell currentCell, EditorComponent editorComponent) {
     while (currentCell != null) {
       if (currentCell instanceof EditorCell_WithComponent) {
