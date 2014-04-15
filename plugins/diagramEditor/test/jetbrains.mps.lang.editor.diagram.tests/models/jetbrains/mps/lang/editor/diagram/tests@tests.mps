@@ -24,7 +24,7 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="4633202057943967651" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.MousePress" typeId="tp5g.4633202057941640741" id="4633202057943967650" nodeInfo="ng">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.ClickMouseStatement" typeId="tp5g.4633202057941640741" id="4633202057943967650" nodeInfo="ng">
         <property name="x" nameId="tp5g.4633202057941654444" value="100" />
         <property name="y" nameId="tp5g.4633202057941654446" value="100" />
       </node>
@@ -69,7 +69,7 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8794120090375978477" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.MousePress" typeId="tp5g.4633202057941640741" id="8794120090375978476" nodeInfo="ng">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.ClickMouseStatement" typeId="tp5g.4633202057941640741" id="8794120090375978476" nodeInfo="ng">
         <property name="x" nameId="tp5g.4633202057941654444" value="150" />
         <property name="y" nameId="tp5g.4633202057941654446" value="150" />
       </node>
@@ -102,7 +102,7 @@
       <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="834109970984600342" nodeInfo="ng" />
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="834109970984601172" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.MousePress" typeId="tp5g.4633202057941640741" id="834109970984601171" nodeInfo="ng">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.ClickMouseStatement" typeId="tp5g.4633202057941640741" id="834109970984601171" nodeInfo="ng">
         <property name="x" nameId="tp5g.4633202057941654444" value="40" />
         <property name="y" nameId="tp5g.4633202057941654446" value="30" />
       </node>
@@ -162,7 +162,7 @@
       </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="8794120090382404808" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.MousePress" typeId="tp5g.4633202057941640741" id="8794120090382404807" nodeInfo="ng">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.ClickMouseStatement" typeId="tp5g.4633202057941640741" id="8794120090382404807" nodeInfo="ng">
         <property name="y" nameId="tp5g.4633202057941654446" value="10" />
         <property name="x" nameId="tp5g.4633202057941654444" value="50" />
       </node>

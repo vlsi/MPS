@@ -29,7 +29,7 @@ public class SelectDiagramNode_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("834109970984600336", "834109970984588281");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.processMousePressed(editorComponent, 40, 30);
+      BaseEditorTestBody.processMouseClicked(editorComponent, 40, 30);
     }
   }
 }

@@ -330,7 +330,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     ModelAccess.instance().flushEventQueue();
   }
 
-  public static void processMousePressed(final EditorComponent editorComponent, int x, int y) throws InterruptedException, InvocationTargetException {
+  public static void processMouseClicked(final EditorComponent editorComponent, int x, int y) throws InterruptedException, InvocationTargetException {
     assert editorComponent.getRootCell() != null;
 
     Queue<EditorCell> cellCandidates = QueueSequence.fromQueue(new LinkedList<EditorCell>());
@@ -353,12 +353,16 @@ public class BaseEditorTestBody extends BaseTestBody {
 
     int actualX = x;
     int actualY = y;
-    int absoluteX = x;
-    int absoluteY = y;
-    final MouseEvent e = new MouseEvent(targetComponent.value, MouseEvent.MOUSE_PRESSED, System.currentTimeMillis(), 0, actualX, actualY, absoluteX, absoluteY, 1, false, MouseEvent.BUTTON1);
+    // <node> 
+    // <node> 
+    final MouseEvent e1 = createMouseEvent(targetComponent.value, MouseEvent.MOUSE_PRESSED, actualX, actualY);
+    final MouseEvent e2 = createMouseEvent(targetComponent.value, MouseEvent.MOUSE_RELEASED, actualX, actualY);
+    final MouseEvent e3 = createMouseEvent(targetComponent.value, MouseEvent.MOUSE_CLICKED, actualX, actualY);
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
-        targetComponent.value.dispatchEvent(e);
+        targetComponent.value.dispatchEvent(e1);
+        targetComponent.value.dispatchEvent(e2);
+        targetComponent.value.dispatchEvent(e3);
       }
     });
   }
@@ -371,5 +375,9 @@ public class BaseEditorTestBody extends BaseTestBody {
       currentCell = currentCell.getParent();
     }
     return editorComponent;
+  }
+
+  private static MouseEvent createMouseEvent(Component targetComponent, int id, int x, int y) {
+    return new MouseEvent(targetComponent, id, System.currentTimeMillis(), 0, x, y, x, y, 1, false, MouseEvent.BUTTON1);
   }
 }

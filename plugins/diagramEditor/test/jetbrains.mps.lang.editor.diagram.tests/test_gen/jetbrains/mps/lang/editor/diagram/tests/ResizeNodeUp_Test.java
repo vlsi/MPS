@@ -29,7 +29,7 @@ public class ResizeNodeUp_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8794120090377793373", "8794120090382404275");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.processMousePressed(editorComponent, 50, 10);
+      BaseEditorTestBody.processMouseClicked(editorComponent, 50, 10);
     }
   }
 }

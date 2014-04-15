@@ -31,7 +31,7 @@ public class CreateDiagramNodeWithPosition_Test extends BaseTransformationTest4 
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8794120090375902403", "8794120090375978070");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.processMousePressed(editorComponent, 150, 150);
+      BaseEditorTestBody.processMouseClicked(editorComponent, 150, 150);
       BaseEditorTestBody.typeString(editorComponent, "Node");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }

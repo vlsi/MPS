@@ -2157,7 +2157,7 @@
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="4633202057941672423" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.4633202057941640741" resolveInfo="MousePress" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp5g.4633202057941640741" resolveInfo="ClickMouseStatement" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4633202057941709983" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="4633202057941709990" nodeInfo="ng">
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />

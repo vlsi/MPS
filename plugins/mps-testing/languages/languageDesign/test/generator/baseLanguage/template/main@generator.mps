@@ -371,7 +371,7 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4633202057942390418" nodeInfo="ng">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp5g.4633202057941640741" resolveInfo="MouseClick" />
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp5g.4633202057941640741" resolveInfo="ClickMouseStatement" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4633202057942397313" nodeInfo="ng">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4633202057942990825" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4633202057942990884" nodeInfo="nn">

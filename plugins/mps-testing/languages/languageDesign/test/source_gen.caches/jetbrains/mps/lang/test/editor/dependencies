@@ -151,6 +151,24 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.editor.ClickMouseStatement_Editor" file="ClickMouseStatement_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.test.editor.transformationTest_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -163,6 +181,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.editor.CheckNodeDataflow_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.CheckNodeForErrorMessagesOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.CheckNodeForErrors_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.editor.ClickMouseStatement_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.EditorComponentExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.EditorExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.EditorTestCase_Editor" />
@@ -173,7 +192,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.editor.MPSActionReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.MockAnnotation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.ModelExpression_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.editor.MousePress_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeCheckOperationsContainer_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeConstraintsErrorCheckOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.test.editor.NodeConstraintsWarningCheckOperation_Editor" />
@@ -333,24 +351,6 @@
   <dependency className="jetbrains.mps.lang.test.editor.ModelExpression_Editor" file="ModelExpression_Editor.java">
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.test.editor.MousePress_Editor" file="MousePress_Editor.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.test.editor.transformationTest_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
