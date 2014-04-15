@@ -8,16 +8,18 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import java.awt.Component;
+import java.awt.event.MouseEvent;
 
 @MPSLaunch
-public class ResizeNodeUp_Test extends BaseTransformationTest4 {
-  public ResizeNodeUp_Test() {
+public class ResizeNode_top_centeral_Test extends BaseTransformationTest4 {
+  public ResizeNode_top_centeral_Test() {
   }
 
   @Test
-  public void test_ResizeNodeUp() throws Throwable {
+  public void test_ResizeNode_top_centeral() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNodeUp_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_centeral_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -29,7 +31,13 @@ public class ResizeNodeUp_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8794120090377793373", "8794120090382404275");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.processMouseClicked(editorComponent, 50, 10);
+      {
+        int x_a0_0 = 50;
+        int y_a0 = 10;
+        Component eventTargetComponent_a0_0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_a0_0, y_a0, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_0, x_a0_0 = 45, y_a0 = 5, MouseEvent.MOUSE_DRAGGED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_0, x_a0_0, y_a0, MouseEvent.MOUSE_RELEASED);
+      }
     }
   }
 }

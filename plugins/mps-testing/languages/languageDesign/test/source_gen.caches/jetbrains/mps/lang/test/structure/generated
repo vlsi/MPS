@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6tg260ejrje7qysxajzflt2q72kcz9">
+<dependencies version="2" modelHash="-al8eeh11vo5b702ygpdnl6rx2y76iah">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -45,6 +45,8 @@
     <dep root="1229187653856" />
     <dep root="1229194968594" />
     <dep root="1230224281548" />
+    <dep root="210559400605421433" />
+    <dep root="210559400608047267" />
     <dep root="2685915532175039858" />
     <dep root="2893471348147803052" />
     <dep root="3655334166513314291" />
@@ -147,5 +149,7 @@
   <source id="8333855927564208813" name="NodeConstraintsWarningCheckOperation" hash="9dt3f9m46f0ckj00m6nt1gbekj82lq4" />
   <source id="8333855927564286208" name="NodeUnknownWarningCheckOperation" hash="evnfe4s1l0xcmo1tdwuyh38piwwa8fr" />
   <source id="4633202057941640741" name="ClickMouseStatement" hash="3iuw15v215v58ly2j9fsmapn7t91pro" />
+  <source id="210559400605421433" name="PressMouseStatement" hash="5nudh0qaqxkvv5bkyeb5tc36ys3xpz5" />
+  <source id="210559400608047267" name="DragMouseStatement" hash="17sy50linfrjdf300vsf9qc8fbrk0h4" />
 </dependencies>
 

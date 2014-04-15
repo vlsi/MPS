@@ -330,6 +330,47 @@ public class BaseEditorTestBody extends BaseTestBody {
     ModelAccess.instance().flushEventQueue();
   }
 
+  public static Component processMouseEvent(final EditorComponent editorComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
+    assert editorComponent.getRootCell() != null;
+
+    Queue<EditorCell> cellCandidates = QueueSequence.fromQueue(new LinkedList<EditorCell>());
+    QueueSequence.fromQueue(cellCandidates).addLastElement(editorComponent.getRootCell());
+    int absoluteX = x + editorComponent.getRootCell().getX();
+    int absoluteY = y + editorComponent.getRootCell().getY();
+    EditorCell eventTargetCell = null;
+    while (QueueSequence.fromQueue(cellCandidates).isNotEmpty()) {
+      EditorCell nextCell = QueueSequence.fromQueue(cellCandidates).removeFirstElement();
+      if (nextCell.getX() <= absoluteX && nextCell.getY() <= absoluteY && nextCell.getX() + nextCell.getWidth() > absoluteX && nextCell.getY() + nextCell.getHeight() > absoluteY) {
+        eventTargetCell = nextCell;
+        if (nextCell instanceof EditorCell_Collection) {
+          QueueSequence.fromQueue(cellCandidates).addSequence(Sequence.fromIterable((EditorCell_Collection) nextCell));
+        }
+      }
+    }
+    assert eventTargetCell != null;
+
+    final Wrappers._T<Component> targetComponent = new Wrappers._T<Component>(getEventTargetComponent(eventTargetCell, editorComponent));
+    targetComponent.value = targetComponent.value.getComponentAt(x, y);
+    assert targetComponent.value != null;
+
+    final MouseEvent e = createMouseEvent(targetComponent.value, eventType, x, y);
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        targetComponent.value.dispatchEvent(e);
+      }
+    });
+    return targetComponent.value;
+  }
+
+  public static void processSecondaryMouseEvent(final Component targetComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
+    final MouseEvent e = createMouseEvent(targetComponent, eventType, x, y);
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        targetComponent.dispatchEvent(e);
+      }
+    });
+  }
+
   public static void processMouseClicked(final EditorComponent editorComponent, int x, int y) throws InterruptedException, InvocationTargetException {
     assert editorComponent.getRootCell() != null;
 
