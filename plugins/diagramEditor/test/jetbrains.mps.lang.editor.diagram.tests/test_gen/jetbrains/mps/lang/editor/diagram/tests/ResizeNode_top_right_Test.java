@@ -12,14 +12,14 @@ import java.awt.Component;
 import java.awt.event.MouseEvent;
 
 @MPSLaunch
-public class CreateDiagramNode_Test extends BaseTransformationTest4 {
-  public CreateDiagramNode_Test() {
+public class ResizeNode_top_right_Test extends BaseTransformationTest4 {
+  public ResizeNode_top_right_Test() {
   }
 
   @Test
-  public void test_CreateDiagramNode() throws Throwable {
+  public void test_ResizeNode_top_right() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.CreateDiagramNode_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_right_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -29,14 +29,14 @@ public class CreateDiagramNode_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("4633202057943822985", "4633202057941654436");
+      final Editor editor = TestBody.this.initEditor("3873095776497110118", "3873095776497110121");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       {
-        int x_a0_3 = 100;
-        int y_a0_4 = 100;
-        Component eventTargetComponent_a0_3 = BaseEditorTestBody.processMouseEvent(editorComponent, x_a0_3, y_a0_4, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_3, x_a0_3, y_a0_4, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_3, x_a0_3, y_a0_4, MouseEvent.MOUSE_CLICKED);
+        int x_a0 = 90;
+        int y_a0_3 = 10;
+        Component eventTargetComponent_a0_2 = BaseEditorTestBody.processMouseEvent(editorComponent, x_a0, y_a0_3, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_2, x_a0 = 80, y_a0_3 = 5, MouseEvent.MOUSE_DRAGGED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_2, x_a0, y_a0_3, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

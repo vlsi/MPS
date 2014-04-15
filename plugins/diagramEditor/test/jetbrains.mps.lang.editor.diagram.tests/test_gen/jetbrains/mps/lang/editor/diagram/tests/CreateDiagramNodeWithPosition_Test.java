@@ -34,11 +34,11 @@ public class CreateDiagramNodeWithPosition_Test extends BaseTransformationTest4 
       final Editor editor = TestBody.this.initEditor("8794120090375902403", "8794120090375978070");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       {
-        int x_a0_0 = 150;
-        int y_a0_1 = 150;
-        Component eventTargetComponent_a0_1 = BaseEditorTestBody.processMouseEvent(editorComponent, x_a0_0, y_a0_1, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_1, x_a0_0, y_a0_1, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_1, x_a0_0, y_a0_1, MouseEvent.MOUSE_CLICKED);
+        int x_a0_1 = 150;
+        int y_a0 = 150;
+        Component eventTargetComponent_a0_1 = BaseEditorTestBody.processMouseEvent(editorComponent, x_a0_1, y_a0, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_1, x_a0_1, y_a0, MouseEvent.MOUSE_RELEASED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_1, x_a0_1, y_a0, MouseEvent.MOUSE_CLICKED);
       }
       BaseEditorTestBody.typeString(editorComponent, "Node");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
