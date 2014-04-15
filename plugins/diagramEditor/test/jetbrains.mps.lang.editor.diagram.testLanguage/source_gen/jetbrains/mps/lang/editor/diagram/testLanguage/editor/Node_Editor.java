@@ -108,8 +108,8 @@ public class Node_Editor extends DefaultNodeEditor {
                       getTarget().prop(MovableContentView.POSITION_Y).set(bounds.origin.y);
                     }
                   }));
-                  myPropertyCell_aofvvp_a0a.registerSynchronizers(configuration, getTarget().focusable());
-                  myPropertyCell_aofvvp_a1a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_Y));
+                  myPropertyCell_aofvvp_a0a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_X));
+                  myPropertyCell_aofvvp_a1a.registerSynchronizers(configuration, getTarget().focusable());
                 }
               };
             }
