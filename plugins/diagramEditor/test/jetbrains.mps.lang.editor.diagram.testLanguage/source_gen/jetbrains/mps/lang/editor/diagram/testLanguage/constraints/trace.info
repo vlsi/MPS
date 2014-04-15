@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.constraints.ConstraintsAspectDescriptor" />
+  <root nodeRef="r:f56dfe8c-2b17-4ddf-bca2-8224945b3e91(jetbrains.mps.lang.editor.diagram.testLanguage.constraints)/8794120090377793827">
+    <nodeInfo nodeId="8794120090377793827" fileName="NodeWithSize_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8794120090377793827" fileName="NodeWithSize_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeWithSize_Constraints#()V" />
+    <scopeInfo nodeId="8794120090377793827" fileName="NodeWithSize_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="83" />
+    <scopeInfo nodeId="8794120090377793827" fileName="NodeWithSize_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
+    <unitInfo nodeId="8794120090377793827" fileName="NodeWithSize_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.constraints.NodeWithSize_Constraints" />
+  </root>
+</debugInfo>
 
