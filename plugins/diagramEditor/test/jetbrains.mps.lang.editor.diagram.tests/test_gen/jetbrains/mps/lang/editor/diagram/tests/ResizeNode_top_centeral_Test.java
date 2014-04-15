@@ -32,11 +32,11 @@ public class ResizeNode_top_centeral_Test extends BaseTransformationTest4 {
       final Editor editor = TestBody.this.initEditor("8794120090377793373", "8794120090382404275");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       {
-        int x_a0 = 50;
-        int y_a0_1 = 10;
-        Component eventTargetComponent_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_a0, y_a0_1, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0, x_a0 = 45, y_a0_1 = 5, MouseEvent.MOUSE_DRAGGED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0, x_a0, y_a0_1, MouseEvent.MOUSE_RELEASED);
+        int x_wk7361_a0 = 50;
+        int y_wk7361_a0 = 10;
+        Component eventTargetComponent_wk7361_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_wk7361_a0, y_wk7361_a0, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_wk7361_a0, x_wk7361_a0 = 45, y_wk7361_a0 = 5, MouseEvent.MOUSE_DRAGGED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_wk7361_a0, x_wk7361_a0, y_wk7361_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

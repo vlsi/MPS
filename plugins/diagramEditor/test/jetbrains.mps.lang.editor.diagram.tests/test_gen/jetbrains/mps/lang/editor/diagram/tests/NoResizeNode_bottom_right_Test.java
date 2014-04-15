@@ -32,11 +32,11 @@ public class NoResizeNode_bottom_right_Test extends BaseTransformationTest4 {
       final Editor editor = TestBody.this.initEditor("3873095776498193007", "3873095776498193010");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       {
-        int x_a0_4 = 90;
-        int y_a0_5 = 90;
-        Component eventTargetComponent_a0_5 = BaseEditorTestBody.processMouseEvent(editorComponent, x_a0_4, y_a0_5, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_5, x_a0_4, y_a0_5, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_5, x_a0_4, y_a0_5, MouseEvent.MOUSE_CLICKED);
+        int x_bfm920_a0 = 90;
+        int y_bfm920_a0 = 90;
+        Component eventTargetComponent_bfm920_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_bfm920_a0, y_bfm920_a0, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_bfm920_a0, x_bfm920_a0, y_bfm920_a0, MouseEvent.MOUSE_RELEASED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_bfm920_a0, x_bfm920_a0, y_bfm920_a0, MouseEvent.MOUSE_CLICKED);
       }
     }
   }

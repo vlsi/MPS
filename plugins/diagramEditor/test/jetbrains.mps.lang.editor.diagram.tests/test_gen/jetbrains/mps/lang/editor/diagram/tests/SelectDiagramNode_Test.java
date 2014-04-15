@@ -32,11 +32,11 @@ public class SelectDiagramNode_Test extends BaseTransformationTest4 {
       final Editor editor = TestBody.this.initEditor("834109970984600336", "834109970984588281");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       {
-        int x_a0_0 = 40;
-        int y_a0_2 = 30;
-        Component eventTargetComponent_a0_4 = BaseEditorTestBody.processMouseEvent(editorComponent, x_a0_0, y_a0_2, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_4, x_a0_0, y_a0_2, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_4, x_a0_0, y_a0_2, MouseEvent.MOUSE_CLICKED);
+        int x_tr19wc_a0 = 40;
+        int y_tr19wc_a0 = 30;
+        Component eventTargetComponent_tr19wc_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_tr19wc_a0, y_tr19wc_a0, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_tr19wc_a0, x_tr19wc_a0, y_tr19wc_a0, MouseEvent.MOUSE_RELEASED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_tr19wc_a0, x_tr19wc_a0, y_tr19wc_a0, MouseEvent.MOUSE_CLICKED);
       }
     }
   }

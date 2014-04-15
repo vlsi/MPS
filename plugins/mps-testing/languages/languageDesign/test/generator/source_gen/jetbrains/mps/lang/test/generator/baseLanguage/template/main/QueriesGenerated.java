@@ -60,7 +60,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4196004291147714872(final PropertyMacroContext _context) {
-    return _context.createUniqueName("x", null);
+    return _context.createUniqueName("x", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_210559400607821916(final PropertyMacroContext _context) {
@@ -68,11 +68,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4196004291147766251(final PropertyMacroContext _context) {
-    return _context.createUniqueName("y", null);
+    return _context.createUniqueName("y", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_7604889971551323912(final PropertyMacroContext _context) {
-    return _context.createUniqueName("eventTargetComponent", null);
+    return _context.createUniqueName("eventTargetComponent", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_4196004291147045688(final PropertyMacroContext _context) {

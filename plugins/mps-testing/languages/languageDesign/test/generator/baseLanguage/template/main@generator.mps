@@ -428,6 +428,7 @@
                             <node role="baseName" roleId="tpf3.1218047638032" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7604889971551280024" nodeInfo="nn">
                               <property name="value" nameId="tpee.1070475926801" value="x" />
                             </node>
+                            <node role="contextNode" roleId="tpf3.1218049772449" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3873095776498802814" nodeInfo="nn" />
                           </node>
                         </node>
                       </node>
@@ -472,6 +473,7 @@
                             <node role="baseName" roleId="tpf3.1218047638032" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7604889971551316199" nodeInfo="nn">
                               <property name="value" nameId="tpee.1070475926801" value="y" />
                             </node>
+                            <node role="contextNode" roleId="tpf3.1218049772449" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3873095776498816609" nodeInfo="nn" />
                           </node>
                         </node>
                       </node>
@@ -512,6 +514,7 @@
                             <node role="baseName" roleId="tpf3.1218047638032" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7604889971551340534" nodeInfo="nn">
                               <property name="value" nameId="tpee.1070475926801" value="eventTargetComponent" />
                             </node>
+                            <node role="contextNode" roleId="tpf3.1218049772449" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3873095776498834026" nodeInfo="nn" />
                           </node>
                         </node>
                       </node>
