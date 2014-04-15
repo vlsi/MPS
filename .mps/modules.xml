@@ -282,6 +282,8 @@
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/languages/complex/jetbrains.mps.samples.complex.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/jetbrains.mps.samples.complex.runtime.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/solutions/sandbox/jetbrains.mps.samples.complex.sandbox.msd" folder="samples" />
+      <modulePath path="$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/jetbrains.mps.samples.componentDependencies.mpl" folder="samples.componentDependencies" />
+      <modulePath path="$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/jetbrains.mps.samples.componentDependencies.sandbox.msd" folder="samples.componentDependencies" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/languages/secretCompartmentLanguage/jetbrains.mps.samples.secretCompartmentLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/solutions/runtime/jetbrains.mps.samples.secretCompartment.runtime.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/secretCompartmentLanguage.sandbox.msd" folder="samples" />
