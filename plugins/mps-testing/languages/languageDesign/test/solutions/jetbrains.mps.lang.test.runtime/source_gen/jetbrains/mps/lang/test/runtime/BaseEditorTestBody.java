@@ -376,10 +376,12 @@ public class BaseEditorTestBody extends BaseTestBody {
 
     Queue<EditorCell> cellCandidates = QueueSequence.fromQueue(new LinkedList<EditorCell>());
     QueueSequence.fromQueue(cellCandidates).addLastElement(editorComponent.getRootCell());
+    int absoluteX = x + editorComponent.getRootCell().getX();
+    int absoluteY = y + editorComponent.getRootCell().getY();
     EditorCell eventTargetCell = null;
     while (QueueSequence.fromQueue(cellCandidates).isNotEmpty()) {
       EditorCell nextCell = QueueSequence.fromQueue(cellCandidates).removeFirstElement();
-      if (nextCell.getX() <= x && nextCell.getY() <= y && nextCell.getX() + nextCell.getWidth() > x && nextCell.getY() + nextCell.getHeight() > y) {
+      if (nextCell.getX() <= absoluteX && nextCell.getY() <= absoluteY && nextCell.getX() + nextCell.getWidth() > absoluteX && nextCell.getY() + nextCell.getHeight() > absoluteY) {
         eventTargetCell = nextCell;
         if (nextCell instanceof EditorCell_Collection) {
           QueueSequence.fromQueue(cellCandidates).addSequence(Sequence.fromIterable((EditorCell_Collection) nextCell));
