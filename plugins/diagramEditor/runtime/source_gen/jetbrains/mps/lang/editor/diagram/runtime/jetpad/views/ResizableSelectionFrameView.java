@@ -179,6 +179,7 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
 
     private class DragHandlerImpl implements DragHandler {
       private Rectangle myOriginalBounds;
+      private Vector myDragStartposition;
       private ResizableSelectionFrameView.RectangleUpdater[] myUpdaters;
 
 
@@ -188,13 +189,15 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
 
       public void dragStarted(Vector position) {
         myOriginalBounds = internalsBounds.get();
+        myDragStartposition = position;
         updatePosition(position);
       }
 
       public void updatePosition(Vector position) {
-        Rectangle bounds = internalsBounds.get();
+        Rectangle bounds = myOriginalBounds;
+        Vector dragDelta = position.sub(myDragStartposition);
         for (ResizableSelectionFrameView.RectangleUpdater updater : myUpdaters) {
-          bounds = updater.updateRect(bounds, position);
+          bounds = updater.updateRect(bounds, dragDelta);
         }
         internalsBounds.set(bounds);
       }
@@ -205,6 +208,7 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
         Vector dimensionDelta = finalBounds.dimension.sub(myOriginalBounds.dimension);
         boundsDelta.set(new Rectangle(originDelta, dimensionDelta));
         myOriginalBounds = null;
+        myDragStartposition = null;
       }
     }
   }
@@ -219,15 +223,15 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       myX = x;
     }
 
-    public Rectangle updateRect(Rectangle rectangle, Vector position) {
+    public Rectangle updateRect(Rectangle rectangle, Vector moveDelta) {
       Vector origin = rectangle.origin;
       Vector dimension = rectangle.dimension;
+      Vector effectiveDelta = updateVector(Vector.ZERO, moveDelta);
       if (myOrigin) {
-        Vector dimensionDelta = origin.sub(position);
-        origin = updateVector(origin, position);
-        dimension = dimension.add(updateVector(Vector.ZERO, dimensionDelta));
+        origin = origin.add(effectiveDelta);
+        dimension = dimension.add(effectiveDelta.negate());
       } else {
-        dimension = updateVector(dimension, position.sub(origin));
+        dimension = dimension.add(effectiveDelta);
       }
       return new Rectangle(origin, dimension);
     }
