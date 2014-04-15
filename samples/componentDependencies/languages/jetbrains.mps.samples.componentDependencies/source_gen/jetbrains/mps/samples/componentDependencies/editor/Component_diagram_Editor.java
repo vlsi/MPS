@@ -16,20 +16,26 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.samples.componentDependencies.behavior.Component_Behavior;
 import java.util.HashSet;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
+import jetbrains.jetpad.projectional.view.RectView;
+import jetbrains.jetpad.values.Color;
+import jetbrains.jetpad.geometry.Vector;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
 import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView;
 import jetbrains.jetpad.geometry.Rectangle;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
+import java.util.Set;
+import jetbrains.jetpad.model.property.ReadableProperty;
 
 public class Component_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.diagram"});
@@ -53,6 +59,8 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
 
   private class BlockCellImpl_nwl53h_a extends BlockCell {
     private final PropertyMapperCell<String> myPropertyCell_nwl53h_a0a;
+    private final PropertyMapperCell<Integer> myPropertyCell_nwl53h_a1a;
+    private final PropertyMapperCell<Integer> myPropertyCell_nwl53h_a2a;
     private final ObservableList<SNode> myInputPorts = new ObservableArrayList<SNode>();
     private final ObservableList<SNode> myOutputPorts = new ObservableArrayList<SNode>();
 
@@ -69,14 +77,38 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
       };
       addEditorCell(myPropertyCell_nwl53h_a0a);
       myPropertyCell_nwl53h_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_nwl53h_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
+      myPropertyCell_nwl53h_a1a = new PropertyMapperCell<Integer>(editorContext, node) {
+        protected Integer getModelPropertyValueImpl() {
+          return SPropertyOperations.getInteger(node, "x");
+        }
+
+        protected void setModelPropertyValueImpl(Integer value) {
+          SPropertyOperations.set(node, "x", "" + (value));
+        }
+      };
+      addEditorCell(myPropertyCell_nwl53h_a1a);
+      myPropertyCell_nwl53h_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_nwl53h_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+      myPropertyCell_nwl53h_a2a = new PropertyMapperCell<Integer>(editorContext, node) {
+        protected Integer getModelPropertyValueImpl() {
+          return SPropertyOperations.getInteger(node, "y");
+        }
+
+        protected void setModelPropertyValueImpl(Integer value) {
+          SPropertyOperations.set(node, "y", "" + (value));
+        }
+      };
+      addEditorCell(myPropertyCell_nwl53h_a2a);
+      myPropertyCell_nwl53h_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_nwl53h_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       synchronize();
     }
 
     public void synchronize() {
       super.synchronizeViewWithModel();
       myPropertyCell_nwl53h_a0a.synchronize();
-      syncPortNodes(SLinkOperations.getTargets(getSNode(), "in", true), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
-      syncPortNodes(SLinkOperations.getTargets(getSNode(), "out", true), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
+      myPropertyCell_nwl53h_a1a.synchronize();
+      myPropertyCell_nwl53h_a2a.synchronize();
+      syncPortObjects(Component_Behavior.call_retrieveInPorts_9095678365530118263(getSNode()), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
+      syncPortObjects(Component_Behavior.call_retrieveOutPorts_9095678365530123411(getSNode()), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
     }
 
     public Mapper<SNode, DiagramNodeView> createMapper() {
@@ -85,13 +117,66 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputs.children(), new MapperFactory<SNode, View>() {
-            public Mapper<? extends SNode, ? extends View> createMapper(SNode portNode) {
-              return ((PortCell) getDirectChildCell(portNode)).createMapper();
+            public Mapper<? extends SNode, ? extends View> createMapper(SNode id) {
+              return new Mapper<SNode, RectView>(id, createPortView(id)) {
+                @Override
+                protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                  super.registerSynchronizers(configuration);
+                  getTarget().background().set(Color.LIGHT_GRAY);
+                  getTarget().dimension().set(new Vector(10, 10));
+                  getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
+                  configuration.add(Synchronizers.forProperty(getTarget().focused(), new WritableProperty<Boolean>() {
+                    public void set(Boolean isFocused) {
+                      if (isFocused && !(isSelected())) {
+                        SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+                      } else if (!(isFocused) && isSelected()) {
+                        getEditorComponent().getSelectionManager().clearSelection();
+                      }
+                    }
+                  }));
+
+                }
+              };
+            }
+
+            private RectView createPortView(SNode id) {
+              RectView view = new RectView();
+              view.prop(JetpadUtils.SOURCE).set(getSNode());
+              view.prop(JetpadUtils.ID).set(id);
+              view.focusable().set(true);
+              return view;
             }
           }));
           configuration.add(Synchronizers.forObservableRole(this, myOutputPorts, getTarget().outputs.children(), new MapperFactory<SNode, View>() {
-            public Mapper<? extends SNode, ? extends View> createMapper(SNode portNode) {
-              return ((PortCell) getDirectChildCell(portNode)).createMapper();
+            public Mapper<? extends SNode, ? extends View> createMapper(SNode id) {
+              return new Mapper<SNode, RectView>(id, createPortView(id)) {
+                @Override
+                protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                  super.registerSynchronizers(configuration);
+                  getTarget().background().set(Color.GRAY);
+                  getTarget().dimension().set(new Vector(10, 10));
+                  getTarget().prop(JetpadUtils.CONNECTION_SOURCE).set(Boolean.TRUE);
+                  getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
+                  configuration.add(Synchronizers.forProperty(getTarget().focused(), new WritableProperty<Boolean>() {
+                    public void set(Boolean isFocused) {
+                      if (isFocused && !(isSelected())) {
+                        SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+                      } else if (!(isFocused) && isSelected()) {
+                        getEditorComponent().getSelectionManager().clearSelection();
+                      }
+                    }
+                  }));
+
+                }
+              };
+            }
+
+            private RectView createPortView(SNode id) {
+              RectView view = new RectView();
+              view.prop(JetpadUtils.SOURCE).set(getSNode());
+              view.prop(JetpadUtils.ID).set(id);
+              view.focusable().set(true);
+              return view;
             }
           }));
           final DiagramNodeView diagramNodeView = getTarget();
@@ -101,7 +186,25 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                   super.registerSynchronizers(configuration);
+                  configuration.add(Synchronizers.forProperty(getTarget().prop(MovableContentView.POSITION_X), new Runnable() {
+                    public void run() {
+                      updatePositionsFromModel(getTarget(), diagramNodeView);
+                    }
+                  }));
+                  configuration.add(Synchronizers.forProperty(getTarget().prop(MovableContentView.POSITION_Y), new Runnable() {
+                    public void run() {
+                      updatePositionsFromModel(getTarget(), diagramNodeView);
+                    }
+                  }));
+                  configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
+                    public void set(Rectangle bounds) {
+                      getTarget().prop(MovableContentView.POSITION_X).set(bounds.origin.x);
+                      getTarget().prop(MovableContentView.POSITION_Y).set(bounds.origin.y);
+                    }
+                  }));
                   myPropertyCell_nwl53h_a0a.registerSynchronizers(configuration, getTarget().text());
+                  myPropertyCell_nwl53h_a1a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_X));
+                  myPropertyCell_nwl53h_a2a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_Y));
                 }
               };
             }
@@ -158,13 +261,55 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
           BlockView contentView = (BlockView) getContentView();
           configuration.add(Synchronizers.forProperty(contentView.bounds(), getTarget().bounds));
           configuration.add(Synchronizers.forObservableRole(this, myInputPorts, getTarget().inputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
-            public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(SNode portNode) {
-              return ((PortCell) getDirectChildCell(portNode)).createDecorationMapper();
+            public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(final SNode id) {
+              return new Mapper<SNode, PortDecoratorView>(id, new PortDecoratorView()) {
+                @Override
+                protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                  DiagramCell diagramCell = getDiagramCell();
+                  if (diagramCell == null) {
+                    return;
+                  }
+                  Mapper<? super SNode, ?> blockDescendantMapper = getDiagramCell().getRootMapper().getDescendantMapper(getSNode());
+                  if (blockDescendantMapper == null) {
+                    return;
+                  }
+                  Set<Mapper<? super SNode, ?>> mappers = blockDescendantMapper.getMappingContext().getMappers(blockDescendantMapper, id);
+                  if (mappers.isEmpty()) {
+                    return;
+                  }
+                  final Mapper<SNode, View> descendantMapper = ((Mapper<SNode, View>) mappers.iterator().next());
+                  configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
+                  ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
+                  configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
+
+                }
+              };
             }
           }));
           configuration.add(Synchronizers.forObservableRole(this, myOutputPorts, getTarget().outputPortDecotatorView.children(), new MapperFactory<SNode, PortDecoratorView>() {
-            public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(SNode portNode) {
-              return ((PortCell) getDirectChildCell(portNode)).createDecorationMapper();
+            public Mapper<? extends SNode, ? extends PortDecoratorView> createMapper(final SNode id) {
+              return new Mapper<SNode, PortDecoratorView>(id, new PortDecoratorView()) {
+                @Override
+                protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
+                  DiagramCell diagramCell = getDiagramCell();
+                  if (diagramCell == null) {
+                    return;
+                  }
+                  Mapper<? super SNode, ?> blockDescendantMapper = getDiagramCell().getRootMapper().getDescendantMapper(getSNode());
+                  if (blockDescendantMapper == null) {
+                    return;
+                  }
+                  Set<Mapper<? super SNode, ?>> mappers = blockDescendantMapper.getMappingContext().getMappers(blockDescendantMapper, id);
+                  if (mappers.isEmpty()) {
+                    return;
+                  }
+                  final Mapper<SNode, View> descendantMapper = ((Mapper<SNode, View>) mappers.iterator().next());
+                  configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
+                  ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
+                  configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
+
+                }
+              };
             }
           }));
 

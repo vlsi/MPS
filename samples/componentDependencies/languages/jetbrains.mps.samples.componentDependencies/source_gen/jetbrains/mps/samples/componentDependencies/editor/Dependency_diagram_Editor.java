@@ -170,7 +170,7 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
 
 
     public void synchronize() {
-      myInputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(SNodeOperations.getAncestor(getSNode(), "jetbrains.mps.samples.componentDependencies.structure.Component", false, false), "out", true)));
+      myInputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(getSNode()), "jetbrains.mps.samples.componentDependencies.structure.Component"), "out", true)));
       myOutputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "to", false), "in", true)));
     }
 

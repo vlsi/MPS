@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d1f113w8zp9hemh35geio1rgxfeh0fb">
+<dependencies version="2" modelHash="evflw777izng5uf57mke5kbd9pm2il1">
   <common hash="-e72493lj53n39s3pip0q74xtrlezmv9" />
-  <source id="8850410458964872229" name="MyAppComponents" hash="cwputk6cjb1tfrri05gtf00lj6qnnfd">
+  <source id="8850410458964872229" name="MyAppComponents" hash="aig4dmt7ovuli31w1ynncasissac9df">
     <file name="MyAppComponents" />
+  </source>
+  <source id="9095678365530280290" name="Bar" hash="-6emmy58paxopxfiimjb1z5evcrmd8pa">
+    <file name="Bar" />
   </source>
 </dependencies>
 

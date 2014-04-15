@@ -19,8 +19,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
@@ -82,23 +83,28 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
   private class DiagramCellImpl_amytw9_a0a extends DiagramCell {
     private DiagramCellImpl_amytw9_a0a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
-      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "util"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "component"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
-          ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "component", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.samples.componentDependencies.structure.Component"));
+          SPropertyOperations.set(node, "name", "New component");
+          SPropertyOperations.set(node, "x", "" + (100));
+          SPropertyOperations.set(node, "y", "" + (100));
         }
-      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Dependency"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "util"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Dependency"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "dependency"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
-          final SNode n = to;
-          return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(from, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false), "dep", true)).all(new IWhereFilter<SNode>() {
+          SNode sourceComponent = SNodeOperations.getAncestor(from, "jetbrains.mps.samples.componentDependencies.structure.Component", true, false);
+          final SNode targetComponent = SNodeOperations.getAncestor(to, "jetbrains.mps.samples.componentDependencies.structure.Component", true, false);
+          return sourceComponent != targetComponent && ListSequence.fromList(SLinkOperations.getTargets(sourceComponent, "dep", true)).all(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SLinkOperations.getTarget(it, "to", false) != SNodeOperations.getAncestor(n, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false);
+              return SNodeOperations.getAncestor(SLinkOperations.getTarget(it, "to", false), "jetbrains.mps.samples.componentDependencies.structure.Component", true, false) != targetComponent;
             }
           });
         }
       }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
         public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
-          ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(from, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false), "dep", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.samples.componentDependencies.structure.Dependency"));
-          SLinkOperations.setTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.componentDependencies.structure.Dependency"), "to", SNodeOperations.getAncestor(to, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false), false);
+          SNode sourceComponent = SNodeOperations.getAncestor(from, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false);
+          SNode targetComponent = SNodeOperations.getAncestor(to, "jetbrains.mps.samples.componentDependencies.structure.Component", true, false);
+          ListSequence.fromList(SLinkOperations.getTargets(sourceComponent, "dep", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.samples.componentDependencies.structure.Dependency"));
+          SLinkOperations.setTarget(node, "to", targetComponent, false);
         }
       })}));
       synchronize();
@@ -107,27 +113,32 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
 
 
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "util"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "component"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
-          ListSequence.fromList(SLinkOperations.getTargets(getSNode(), "component", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.samples.componentDependencies.structure.Component"));
+          SPropertyOperations.set(node, "name", "New component");
+          SPropertyOperations.set(node, "x", "" + (100));
+          SPropertyOperations.set(node, "y", "" + (100));
         }
       })};
     }
 
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Dependency"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "util"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Dependency"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "dependency"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
-          final SNode n = to;
-          return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(from, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false), "dep", true)).all(new IWhereFilter<SNode>() {
+          SNode sourceComponent = SNodeOperations.getAncestor(from, "jetbrains.mps.samples.componentDependencies.structure.Component", true, false);
+          final SNode targetComponent = SNodeOperations.getAncestor(to, "jetbrains.mps.samples.componentDependencies.structure.Component", true, false);
+          return sourceComponent != targetComponent && ListSequence.fromList(SLinkOperations.getTargets(sourceComponent, "dep", true)).all(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SLinkOperations.getTarget(it, "to", false) != SNodeOperations.getAncestor(n, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false);
+              return SNodeOperations.getAncestor(SLinkOperations.getTarget(it, "to", false), "jetbrains.mps.samples.componentDependencies.structure.Component", true, false) != targetComponent;
             }
           });
         }
       }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
         public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
-          ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(from, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false), "dep", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.samples.componentDependencies.structure.Dependency"));
-          SLinkOperations.setTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.componentDependencies.structure.Dependency"), "to", SNodeOperations.getAncestor(to, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false), false);
+          SNode sourceComponent = SNodeOperations.getAncestor(from, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false);
+          SNode targetComponent = SNodeOperations.getAncestor(to, "jetbrains.mps.samples.componentDependencies.structure.Component", true, false);
+          ListSequence.fromList(SLinkOperations.getTargets(sourceComponent, "dep", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.samples.componentDependencies.structure.Dependency"));
+          SLinkOperations.setTarget(node, "to", targetComponent, false);
         }
       })};
     }

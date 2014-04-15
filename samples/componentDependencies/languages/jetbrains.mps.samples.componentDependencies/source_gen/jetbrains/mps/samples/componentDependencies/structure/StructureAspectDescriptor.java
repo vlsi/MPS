@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.componentDependencies.structure.Component").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("x", "y").children(new String[]{"dep", "in", "out"}, new boolean[]{true, false, false}).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.componentDependencies.structure.ComponentSet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("query").children(new String[]{"component", "util"}, new boolean[]{true, true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.componentDependencies.structure.ComponentSet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("query").children(new String[]{"component", "dependency"}, new boolean[]{true, true}).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.componentDependencies.structure.Dependency").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("to").alias("depends on", "").create();
       case 3:

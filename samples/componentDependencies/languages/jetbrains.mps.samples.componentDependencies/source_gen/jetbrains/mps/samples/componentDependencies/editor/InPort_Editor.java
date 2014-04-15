@@ -6,125 +6,18 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.jetpad.PortCell;
-import jetbrains.jetpad.mapper.Mapper;
-import jetbrains.jetpad.projectional.view.RectView;
-import jetbrains.jetpad.values.Color;
-import jetbrains.jetpad.geometry.Vector;
-import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import jetbrains.jetpad.mapper.Synchronizers;
-import jetbrains.jetpad.model.property.WritableProperty;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.jetpad.geometry.Rectangle;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
-import jetbrains.jetpad.projectional.view.View;
-import jetbrains.jetpad.model.property.ReadableProperty;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class InPort_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createDiagramPort_yqjx37_a(editorContext, node);
+    return this.createConstant_yqjx37_a(editorContext, node);
   }
 
-  private EditorCell createDiagramPort_yqjx37_a(final EditorContext editorContext, final SNode node) {
-    final EditorCell editorCell = new InPort_Editor.PortCellImpl_yqjx37_a(editorContext, node);
-    editorCell.setCellId("DiagramPort_yqjx37_a");
+  private EditorCell createConstant_yqjx37_a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input port");
+    editorCell.setCellId("Constant_yqjx37_a");
     editorCell.setBig(true);
+    editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  private class PortCellImpl_yqjx37_a extends PortCell {
-    private PortCellImpl_yqjx37_a(EditorContext editorContext, SNode node) {
-      super(editorContext, node);
-      synchronize();
-    }
-
-    public Mapper<SNode, RectView> createMapper() {
-      return new Mapper<SNode, RectView>(getSNode(), createPortView()) {
-        @Override
-        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-          super.registerSynchronizers(configuration);
-          getTarget().background().set(Color.LIGHT_GRAY);
-          getTarget().dimension().set(new Vector(10, 10));
-          getTarget().prop(JetpadUtils.CONNECTABLE).set(Boolean.TRUE);
-          configuration.add(Synchronizers.forProperty(getTarget().focused(), new WritableProperty<Boolean>() {
-            public void set(Boolean isFocused) {
-              if (isFocused && !(isSelected())) {
-                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
-              } else if (!(isFocused) && isSelected()) {
-                getEditorComponent().getSelectionManager().clearSelection();
-              }
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
-            public void set(Boolean isSelected) {
-              if (isSelected && !(getTarget().focused().get())) {
-                getTarget().container().focusedView().set(getTarget());
-              } else if (!(isSelected) && getTarget().focused().get()) {
-                getTarget().container().focusedView().set(null);
-              }
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
-            public void set(Rectangle rect) {
-              DiagramCell diagramCell = getDiagramCell();
-              if (diagramCell == null) {
-                return;
-              }
-              setX(rect.origin.x + diagramCell.getX());
-              setY(rect.origin.y + diagramCell.getY());
-              setWidth(rect.dimension.x);
-              setHeight(rect.dimension.y);
-            }
-          }));
-
-        }
-      };
-    }
-
-    public void synchronize() {
-    }
-
-    private RectView createPortView() {
-      RectView portView = new RectView();
-      configureView(portView, new _FunctionTypes._return_P0_E0<Boolean>() {
-        public Boolean invoke() {
-          return true;
-        }
-      });
-      portView.prop(JetpadUtils.SOURCE).set(getSNode());
-      portView.focusable().set(true);
-      return portView;
-    }
-
-
-
-    public Mapper<SNode, PortDecoratorView> createDecorationMapper() {
-      return new Mapper<SNode, PortDecoratorView>(getSNode(), new PortDecoratorView()) {
-        @Override
-        protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
-          super.registerSynchronizers(configuration);
-          DiagramCell diagramCell = getDiagramCell();
-          if (diagramCell == null) {
-            return;
-          }
-          final Mapper<? super SNode, ?> descendantMapper = getDiagramCell().getRootMapper().getDescendantMapper(getSNode());
-          if (descendantMapper == null) {
-            return;
-          }
-          {
-            configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
-            configuration.add(Synchronizers.forProperty(((View) descendantMapper.getTarget()).focused(), getTarget().isSelected));
-            ReadableProperty<Rectangle> bounds = ((View) descendantMapper.getTarget()).bounds();
-            configuration.add(Synchronizers.forProperty(bounds, getTarget().bounds));
-
-
-          }
-        }
-      };
-    }
-
-
   }
 }
