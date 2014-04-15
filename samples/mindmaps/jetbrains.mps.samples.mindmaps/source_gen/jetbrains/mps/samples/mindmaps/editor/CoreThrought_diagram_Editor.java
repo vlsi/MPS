@@ -128,7 +128,7 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
                     }
                   }));
                   myPropertyCell_pr685x_a0a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_X));
-                  myPropertyCell_pr685x_a1a.registerSynchronizers(configuration, getTarget().focusable());
+                  myPropertyCell_pr685x_a1a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_Y));
                   myPropertyCell_pr685x_a2a.registerSynchronizers(configuration, getTarget().text());
                 }
               };
