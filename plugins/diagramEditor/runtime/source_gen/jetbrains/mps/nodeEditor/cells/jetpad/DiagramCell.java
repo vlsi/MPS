@@ -33,6 +33,7 @@ import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.jetpad.event.KeyEvent;
 import jetbrains.jetpad.event.Key;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.ModelAccess;
@@ -55,7 +56,6 @@ import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.jetpad.projectional.diagram.view.RootTrait;
 import jetbrains.jetpad.geometry.Vector;
 import java.util.ListIterator;
@@ -226,7 +226,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             return;
           }
           if (event.key() == Key.ESCAPE) {
-            view.container().focusedView().set(getRootMapper().getTarget().root());
+            SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
             event.consume();
           }
         }
