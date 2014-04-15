@@ -14,7 +14,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.samples.componentDependencies.structure.Component").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("x", "y").children(new String[]{"dep", "in", "out"}, new boolean[]{true, true, true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.samples.componentDependencies.structure.Component").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("x", "y").children(new String[]{"dep", "in", "out"}, new boolean[]{true, false, false}).create();
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.samples.componentDependencies.structure.ComponentSet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("query").children(new String[]{"component", "util"}, new boolean[]{true, true}).create();
       case 2:

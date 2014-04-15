@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7u0p8n3qzf9ga44moltmxz829yvlbs7">
+<dependencies version="2" modelHash="-7nz26bgffemw9hfqraqeo0y9gsdxa22">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -21,7 +21,7 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="6223439730610283563" name="ComponentSet" hash="chu1s6m85xeivykrlnuv6t8o3orbxry" />
-  <source id="6223439730610336068" name="Component" hash="-4rye1e9oh8a61smxnm4938bbjr9cwon" />
+  <source id="6223439730610336068" name="Component" hash="-64jwvrovayzol3qjltv7lp05pdhmo11" />
   <source id="6223439730610762144" name="Dependency" hash="-de7zac20s7jzz0m7drkdc60grk31ni3" />
   <source id="6223439730610790725" name="OutPort" hash="-42qhfcoh0dkhwppdqfv06agd93zc7px" />
   <source id="6223439730610790758" name="InPort" hash="cvs37qw6g7e6lmydrnab1g95kcq84d5" />
