@@ -403,6 +403,10 @@
       <directory url="file://$PROJECT_DIR$/samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/complexLanguage/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/complexLanguage/solutions/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/dslbook_example/languages/secretCompartmentLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/dslbook_example/languages/secretCompartmentLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/dslbook_example/solutions/runtime/source_gen" includeSubdirectories="true" />
