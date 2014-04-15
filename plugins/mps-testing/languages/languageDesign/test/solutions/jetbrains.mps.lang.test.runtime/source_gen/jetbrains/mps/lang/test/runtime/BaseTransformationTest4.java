@@ -10,13 +10,35 @@ import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
 
 public abstract class BaseTransformationTest4 implements TransformationTest {
-  private TransformationTestRunner myRunner = new TransformationTestRunner();
+  private TestRunner myRunner;
+  private static final String LIGHT_WEIGHT_FLAG = "mps.test.lightweight";
+
   private SModel myModel;
   private SModel myTransientModel;
   private Project myProject;
 
-  public BaseTransformationTest4() {
+
+  private void initTestRunner() {
+    if (isLightWeightOn()) {
+      myRunner = new LightWeightTransformationTestRunner();
+    } else {
+      myRunner = new TransformationTestRunner();
+    }
   }
+
+
+
+  private boolean isLightWeightOn() {
+    return System.getProperty(LIGHT_WEIGHT_FLAG).equals("true");
+  }
+
+
+
+  public BaseTransformationTest4() {
+    initTestRunner();
+  }
+
+
 
   public BaseTransformationTest4(Project project, SModel modelDescriptor) {
     this();
@@ -24,36 +46,46 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
     myModel = modelDescriptor;
   }
 
-  @Override
-  public void setTestRunner(TransformationTestRunner testRunner) {
-    this.myRunner = testRunner;
-  }
 
-  @Override
-  public TransformationTestRunner getTestRunner() {
-    return myRunner;
-  }
 
   public void initTest(@NotNull String projectName, final String model) throws Exception {
     initTest(projectName, model, false, false);
   }
 
+
+
   public void initTest(@NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
-    myRunner.initTest(this, projectName, model, uiTest, reOpenProject);
+    try {
+      myRunner.initTest(this, projectName, model, uiTest, reOpenProject);
+    } catch (InterruptedException exception) {
+      Thread.currentThread().interrupt();
+      throw exception;
+    }
   }
 
+
+
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
-    myRunner.runTest(this, className, methodName, runInCommand);
+    try {
+      myRunner.runTest(this, className, methodName, runInCommand);
+    } catch (InterruptedException exception) {
+      Thread.currentThread().interrupt();
+      throw exception;
+    }
   }
 
 
 
   @Override
   public void init() {
-    this.myTransientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
+    this.myTransientModel = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
+    // <node> 
     new CloneUtil(this.myModel, this.myTransientModel).cloneModelWithImports();
+
     TemporaryModels.getInstance().addMissingImports(myTransientModel);
   }
+
+
 
   @Override
   public void dispose() {

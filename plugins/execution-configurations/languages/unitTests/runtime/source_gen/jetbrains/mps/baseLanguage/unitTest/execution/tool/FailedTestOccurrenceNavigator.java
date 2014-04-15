@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 
-public class FailedTestOccurenceNavigator extends BaseTestOccurenceNavigator {
-  public FailedTestOccurenceNavigator(TestTree tree) {
+public class FailedTestOccurrenceNavigator extends BaseTestOccurenceNavigator {
+  public FailedTestOccurrenceNavigator(TestTree tree) {
     super(tree);
   }
 

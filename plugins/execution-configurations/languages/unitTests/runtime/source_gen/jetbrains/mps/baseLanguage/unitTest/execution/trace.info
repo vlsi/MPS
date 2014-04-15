@@ -19,7 +19,7 @@
     <nodeInfo nodeId="1796275887793108208" fileName="TestEvent.java" startLine="29" startPosition="51" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1796275887793108212" fileName="TestEvent.java" startLine="30" startPosition="43" endLine="31" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1796275887793108224" fileName="TestEvent.java" startLine="31" startPosition="65" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1796275887793108505" fileName="TestEvent.java" startLine="35" startPosition="108" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1796275887793108505" fileName="TestEvent.java" startLine="35" startPosition="107" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1796275887793108512" fileName="TestEvent.java" startLine="36" startPosition="20" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1796275887793108519" fileName="TestEvent.java" startLine="37" startPosition="34" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1796275887793108526" fileName="TestEvent.java" startLine="38" startPosition="38" endLine="39" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -96,7 +96,7 @@
     <scopeInfo nodeId="1796275887793108374" fileName="TestEvent.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1796275887793108434" fileName="TestEvent.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="1796275887793108029" fileName="TestEvent.java" startLine="92" startPosition="55" endLine="96" endPosition="7" />
-    <scopeInfo nodeId="1796275887793108233" fileName="TestEvent.java" startLine="35" startPosition="108" endLine="40" endPosition="18" />
+    <scopeInfo nodeId="1796275887793108233" fileName="TestEvent.java" startLine="35" startPosition="107" endLine="40" endPosition="18" />
     <scopeInfo nodeId="1796275887793108387" fileName="TestEvent.java" startLine="77" startPosition="36" endLine="82" endPosition="154">
       <varInfo nodeId="1796275887793108401" varName="event" />
     </scopeInfo>

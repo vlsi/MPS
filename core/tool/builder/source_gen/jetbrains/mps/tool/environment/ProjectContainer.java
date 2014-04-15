@@ -8,11 +8,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import javax.swing.SwingUtilities;
 import java.io.File;
+import jetbrains.mps.tool.common.util.ProjectUtil;
 import org.jetbrains.annotations.NotNull;
-import java.io.IOException;
-import org.apache.log4j.Priority;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ProjectContainer {
   private Set<Project> myProjects;
@@ -57,7 +54,7 @@ public class ProjectContainer {
   public Project getProject(File anotherProjectFile) {
     assert containsProject(anotherProjectFile);
     for (Project project : SetSequence.fromSet(myProjects)) {
-      if (hasPath(project, anotherProjectFile)) {
+      if (ProjectUtil.projectHasPath(project, anotherProjectFile)) {
         return project;
       }
     }
@@ -91,7 +88,7 @@ public class ProjectContainer {
   public boolean containsProject(File anotherProjectFile) {
     assert myProjects != null;
     for (Project project : SetSequence.fromSet(myProjects)) {
-      if (hasPath(project, anotherProjectFile)) {
+      if (ProjectUtil.projectHasPath(project, anotherProjectFile)) {
         return true;
       }
     }
@@ -99,23 +96,4 @@ public class ProjectContainer {
   }
 
 
-
-  private static boolean hasPath(Project project, File path) {
-    File projectFile = project.getProjectFile();
-    if (projectFile == null) {
-      return false;
-    }
-    try {
-      String myProjectPath = projectFile.getCanonicalPath();
-      String newProjectPath = path.getCanonicalPath();
-      return myProjectPath.equals(newProjectPath);
-    } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
-        LOG.error("Cannot access the project file in container", e);
-      }
-    }
-    return false;
-  }
-
-  protected static Logger LOG = LogManager.getLogger(ProjectContainer.class);
 }

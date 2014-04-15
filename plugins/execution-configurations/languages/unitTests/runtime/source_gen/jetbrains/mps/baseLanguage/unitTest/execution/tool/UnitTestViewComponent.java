@@ -55,7 +55,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final ProgressLine myProgressLineComponent;
   private final TestToolbarPanel myActionToolComponent;
   private final Project myProject;
-  private final FailedTestOccurenceNavigator myTestNavigator;
+  private final FailedTestOccurrenceNavigator myTestNavigator;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
   public UnitTestViewComponent(Project project, @NotNull IOperationContext context, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
@@ -64,7 +64,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     StatisticsTableModel statisticsModel = new StatisticsTableModel(myTestState);
 
     myTreeComponent = new TestTree(myTestState, context, this);
-    myTestNavigator = new FailedTestOccurenceNavigator(myTreeComponent);
+    myTestNavigator = new FailedTestOccurrenceNavigator(myTreeComponent);
     myActionToolComponent = new TestToolbarPanel(myTreeComponent, myTestNavigator);
 
     JComponent leftPanel = createTreeComponent(myActionToolComponent, myTreeComponent);

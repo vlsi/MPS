@@ -4,26 +4,23 @@ package jetbrains.mps.lang.test.runtime;
 
 import java.awt.datatransfer.StringSelection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import junit.framework.Assert;
 import java.util.Arrays;
 import jetbrains.mps.project.ProjectManager;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import org.apache.log4j.Priority;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import javax.swing.SwingUtilities;
 import java.awt.GraphicsEnvironment;
 import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
@@ -38,7 +35,7 @@ import jetbrains.mps.project.PathMacros;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class TransformationTestRunner {
+public class TransformationTestRunner implements TestRunner {
   private static final String PATH_MACRO_PREFIX = "path.macro.";
   private static final StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
 
@@ -48,36 +45,40 @@ public class TransformationTestRunner {
 
 
 
-  public void initTest(final TransformationTest test, @NotNull String projectName, final String model) throws Exception {
-    initTest(test, projectName, model, false, false);
+  public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName) throws Exception {
+    initTest(test, projectPath, modelName, false, false);
   }
 
 
 
-  public void initTest(final TransformationTest test, @NotNull String projectPath, final String modelName, boolean uiTest, boolean reopenProject) throws Exception {
-    IdeMain.setTestMode((uiTest ? IdeMain.TestMode.UI_TEST : IdeMain.TestMode.CORE_TEST));
-    MpsTestsSupport.initEnv(true);
+  public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean uiTest, boolean reopenProject) throws Exception {
+    // todo: create configuration pack for TransformationTest 
+    startMps(uiTest);
 
-    // <node> 
-    clearSystemClipboard();
-    readSystemMacro();
     final Project testProject = openTestProject(projectPath, reopenProject);
     doInitTest(test, testProject, modelName);
+    // todo: try removing this line 
     ModelAccess.instance().flushEventQueue();
   }
 
 
 
-  private void doInitTest(final TransformationTest test, final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
+  private void startMps(boolean uiTest) {
+    IdeMain.setTestMode((uiTest ? IdeMain.TestMode.UI_TEST : IdeMain.TestMode.CORE_TEST));
+    MpsTestsSupport.initEnv(true);
+    // <node> 
+    clearSystemClipboard();
+    readSystemMacro();
+  }
+
+
+
+  protected void doInitTest(@NotNull final TransformationTest test, final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
     test.setProject(testProject);
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+    final Runnable runnable = new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            initialize(test, modelName);
-          }
-        }, testProject);
+        initialize(test, modelName);
       }
 
 
@@ -86,6 +87,7 @@ public class TransformationTestRunner {
         SModel modelDescriptor = findModel(modelName);
         test.setModelDescriptor(modelDescriptor);
         test.init();
+        // <node> 
       }
 
 
@@ -98,12 +100,18 @@ public class TransformationTestRunner {
         }
         return modelDescriptor;
       }
+    };
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runWriteActionInCommand(runnable, testProject);
+      }
     });
+    // <node> 
   }
 
 
 
-  private Project openTestProject(String projectPathName, boolean reopenProject) {
+  protected Project openTestProject(String projectPathName, boolean reopenProject) {
     // <node> 
     // <node> 
     String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPathName);
@@ -144,45 +152,24 @@ public class TransformationTestRunner {
 
 
 
-  public void runTest(final TransformationTest projectTest, final String className, final String methodName, final boolean runInCommand) throws Throwable {
+  public void runTest(@NotNull final TransformationTest projectTest, final String className, final String methodName, boolean runInCommand) throws Throwable {
     if (LOG.isInfoEnabled()) {
       LOG.info("Running test " + className);
     }
-    final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        clazz.value = ClassLoaderManager.getInstance().getClass(projectTest.getModelDescriptor().getModule(), className);
-        String classloader = clazz.value.getClassLoader().toString();
-        String module = projectTest.getModelDescriptor().getModule().getModuleName();
-        assert classloader.contains(module) : "class: " + clazz.value + "; classloader: " + classloader + "; module: " + module;
-      }
-    });
-    final Object obj = clazz.value.newInstance();
-    clazz.value.getField("myModel").set(obj, projectTest.getTransientModelDescriptor());
-    clazz.value.getField("myProject").set(obj, projectTest.getProject());
-    final Throwable[] exception = new Throwable[1];
-    if (runInCommand) {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
-            }
-          }, projectTest.getProject());
-        }
-      });
-    } else {
-      exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
-    }
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    // <node> 
+    Thread.sleep(10000);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         projectTest.dispose();
       }
     });
-    if (exception[0] != null) {
-      throw exception[0];
-    }
+    // <node> 
   }
 
 

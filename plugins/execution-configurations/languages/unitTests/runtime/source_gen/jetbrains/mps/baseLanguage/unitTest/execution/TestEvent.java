@@ -32,7 +32,7 @@ public class TestEvent {
     myTime = System.currentTimeMillis();
   }
 
-  private TestEvent(String token, String testCaseName, String testMethodName, long memoryUsage, long time) {
+  public TestEvent(String token, String testCaseName, String testMethodName, long memoryUsage, long time) {
     myToken = token;
     myTestCaseName = testCaseName;
     myTestMethodName = testMethodName;

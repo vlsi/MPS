@@ -10,8 +10,6 @@ public interface TransformationTest {
   public Project getProject();
   public void setModelDescriptor(SModel descriptor);
   public SModel getModelDescriptor();
-  public void setTestRunner(TransformationTestRunner runner);
-  public TransformationTestRunner getTestRunner();
   public SModel getTransientModelDescriptor();
   public void init();
   public void dispose();

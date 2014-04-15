@@ -474,7 +474,7 @@
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432720360">
     <nodeInfo nodeId="3575782568432720361" fileName="TestToolbarPanel.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
     <nodeInfo nodeId="3575782568432720364" fileName="TestToolbarPanel.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNavigator" />
-    <nodeInfo nodeId="3575782568432720874" fileName="TestToolbarPanel.java" startLine="26" startPosition="82" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3575782568432720874" fileName="TestToolbarPanel.java" startLine="26" startPosition="83" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3575782568432720883" fileName="TestToolbarPanel.java" startLine="27" startPosition="30" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575782568432720889" fileName="TestToolbarPanel.java" startLine="28" startPosition="18" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575782568432720903" fileName="TestToolbarPanel.java" startLine="29" startPosition="28" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -526,7 +526,7 @@
     <nodeInfo nodeId="3575782568432720697" fileName="TestToolbarPanel.java" startLine="122" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
     <nodeInfo nodeId="3575782568432720745" fileName="TestToolbarPanel.java" startLine="137" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
     <nodeInfo nodeId="3575782568432720846" fileName="TestToolbarPanel.java" startLine="166" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="3575782568432720870" fileName="TestToolbarPanel.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestToolbarPanel#(Ljetbrains/mps/baseLanguage/unitTest/execution/tool/TestTree;Ljetbrains/mps/baseLanguage/unitTest/execution/tool/FailedTestOccurenceNavigator;)V" />
+    <nodeInfo nodeId="3575782568432720870" fileName="TestToolbarPanel.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestToolbarPanel#(Ljetbrains/mps/baseLanguage/unitTest/execution/tool/TestTree;Ljetbrains/mps/baseLanguage/unitTest/execution/tool/FailedTestOccurrenceNavigator;)V" />
     <nodeInfo nodeId="3575782568432720841" fileName="TestToolbarPanel.java" startLine="164" startPosition="50" endLine="172" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3575782568432720585" fileName="TestToolbarPanel.java" startLine="91" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
     <nodeInfo nodeId="3575782568432720651" fileName="TestToolbarPanel.java" startLine="103" startPosition="44" endLine="113" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -586,7 +586,7 @@
     <scopeInfo nodeId="3575782568432720825" fileName="TestToolbarPanel.java" startLine="157" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="3575782568432720828" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432720873" fileName="TestToolbarPanel.java" startLine="26" startPosition="82" endLine="31" endPosition="11" />
+    <scopeInfo nodeId="3575782568432720873" fileName="TestToolbarPanel.java" startLine="26" startPosition="83" endLine="31" endPosition="11" />
     <scopeInfo nodeId="3575782568432720472" fileName="TestToolbarPanel.java" startLine="54" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="3575782568432720475" varName="event" />
       <varInfo nodeId="3575782568432720477" varName="value" />
@@ -1465,42 +1465,42 @@
     <unitInfo nodeId="3575782568432723662" fileName="ProgressLine.java" startLine="21" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.ProgressLine" />
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432724070">
-    <nodeInfo nodeId="3575782568432724076" fileName="FailedTestOccurenceNavigator.java" startLine="9" startPosition="54" endLine="10" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3575782568432724084" fileName="FailedTestOccurenceNavigator.java" startLine="14" startPosition="54" endLine="15" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432724094" fileName="FailedTestOccurenceNavigator.java" startLine="16" startPosition="23" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3575782568432724102" fileName="FailedTestOccurenceNavigator.java" startLine="19" startPosition="18" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3575782568432724117" fileName="FailedTestOccurenceNavigator.java" startLine="21" startPosition="25" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3575782568432724124" fileName="FailedTestOccurenceNavigator.java" startLine="24" startPosition="36" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3575782568432724128" fileName="FailedTestOccurenceNavigator.java" startLine="26" startPosition="7" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432724140" fileName="FailedTestOccurenceNavigator.java" startLine="32" startPosition="43" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3575782568432724072" fileName="FailedTestOccurenceNavigator.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FailedTestOccurenceNavigator#(Ljetbrains/mps/baseLanguage/unitTest/execution/tool/TestTree;)V" />
-    <nodeInfo nodeId="3575782568432724092" fileName="FailedTestOccurenceNavigator.java" startLine="15" startPosition="62" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432724115" fileName="FailedTestOccurenceNavigator.java" startLine="20" startPosition="108" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432724122" fileName="FailedTestOccurenceNavigator.java" startLine="23" startPosition="7" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3575782568432724134" fileName="FailedTestOccurenceNavigator.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;)Z" />
-    <nodeInfo nodeId="3575782568432724099" fileName="FailedTestOccurenceNavigator.java" startLine="18" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3575782568432724080" fileName="FailedTestOccurenceNavigator.java" startLine="13" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAvailableOccurence#(Z)Z" />
-    <scopeInfo nodeId="3575782568432724075" fileName="FailedTestOccurenceNavigator.java" startLine="9" startPosition="54" endLine="10" endPosition="16" />
-    <scopeInfo nodeId="3575782568432724093" fileName="FailedTestOccurenceNavigator.java" startLine="16" startPosition="23" endLine="17" endPosition="19" />
-    <scopeInfo nodeId="3575782568432724116" fileName="FailedTestOccurenceNavigator.java" startLine="21" startPosition="25" endLine="22" endPosition="21" />
-    <scopeInfo nodeId="3575782568432724123" fileName="FailedTestOccurenceNavigator.java" startLine="24" startPosition="36" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="3575782568432724139" fileName="FailedTestOccurenceNavigator.java" startLine="32" startPosition="43" endLine="33" endPosition="35" />
-    <scopeInfo nodeId="3575782568432724072" fileName="FailedTestOccurenceNavigator.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
+    <nodeInfo nodeId="3575782568432724076" fileName="FailedTestOccurrenceNavigator.java" startLine="9" startPosition="55" endLine="10" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3575782568432724084" fileName="FailedTestOccurrenceNavigator.java" startLine="14" startPosition="54" endLine="15" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432724094" fileName="FailedTestOccurrenceNavigator.java" startLine="16" startPosition="23" endLine="17" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3575782568432724102" fileName="FailedTestOccurrenceNavigator.java" startLine="19" startPosition="18" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3575782568432724117" fileName="FailedTestOccurrenceNavigator.java" startLine="21" startPosition="25" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3575782568432724124" fileName="FailedTestOccurrenceNavigator.java" startLine="24" startPosition="36" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3575782568432724128" fileName="FailedTestOccurrenceNavigator.java" startLine="26" startPosition="7" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432724140" fileName="FailedTestOccurrenceNavigator.java" startLine="32" startPosition="43" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3575782568432724072" fileName="FailedTestOccurrenceNavigator.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FailedTestOccurrenceNavigator#(Ljetbrains/mps/baseLanguage/unitTest/execution/tool/TestTree;)V" />
+    <nodeInfo nodeId="3575782568432724092" fileName="FailedTestOccurrenceNavigator.java" startLine="15" startPosition="62" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432724115" fileName="FailedTestOccurrenceNavigator.java" startLine="20" startPosition="108" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432724122" fileName="FailedTestOccurrenceNavigator.java" startLine="23" startPosition="7" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3575782568432724134" fileName="FailedTestOccurrenceNavigator.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;)Z" />
+    <nodeInfo nodeId="3575782568432724099" fileName="FailedTestOccurrenceNavigator.java" startLine="18" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3575782568432724080" fileName="FailedTestOccurrenceNavigator.java" startLine="13" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAvailableOccurence#(Z)Z" />
+    <scopeInfo nodeId="3575782568432724075" fileName="FailedTestOccurrenceNavigator.java" startLine="9" startPosition="55" endLine="10" endPosition="16" />
+    <scopeInfo nodeId="3575782568432724093" fileName="FailedTestOccurrenceNavigator.java" startLine="16" startPosition="23" endLine="17" endPosition="19" />
+    <scopeInfo nodeId="3575782568432724116" fileName="FailedTestOccurrenceNavigator.java" startLine="21" startPosition="25" endLine="22" endPosition="21" />
+    <scopeInfo nodeId="3575782568432724123" fileName="FailedTestOccurrenceNavigator.java" startLine="24" startPosition="36" endLine="25" endPosition="20" />
+    <scopeInfo nodeId="3575782568432724139" fileName="FailedTestOccurrenceNavigator.java" startLine="32" startPosition="43" endLine="33" endPosition="35" />
+    <scopeInfo nodeId="3575782568432724072" fileName="FailedTestOccurrenceNavigator.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="3575782568432724078" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432724134" fileName="FailedTestOccurenceNavigator.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="3575782568432724134" fileName="FailedTestOccurrenceNavigator.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="3575782568432724137" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432724101" fileName="FailedTestOccurenceNavigator.java" startLine="19" startPosition="18" endLine="27" endPosition="18">
+    <scopeInfo nodeId="3575782568432724101" fileName="FailedTestOccurrenceNavigator.java" startLine="19" startPosition="18" endLine="27" endPosition="18">
       <varInfo nodeId="3575782568432724103" varName="leaf" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432724083" fileName="FailedTestOccurenceNavigator.java" startLine="14" startPosition="54" endLine="28" endPosition="5">
+    <scopeInfo nodeId="3575782568432724083" fileName="FailedTestOccurrenceNavigator.java" startLine="14" startPosition="54" endLine="28" endPosition="5">
       <varInfo nodeId="3575782568432724085" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3575782568432724080" fileName="FailedTestOccurenceNavigator.java" startLine="13" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="3575782568432724080" fileName="FailedTestOccurrenceNavigator.java" startLine="13" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="3575782568432724132" varName="next" />
     </scopeInfo>
-    <unitInfo nodeId="3575782568432724070" fileName="FailedTestOccurenceNavigator.java" startLine="8" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.FailedTestOccurenceNavigator" />
+    <unitInfo nodeId="3575782568432724070" fileName="FailedTestOccurrenceNavigator.java" startLine="8" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.FailedTestOccurrenceNavigator" />
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432724144">
     <nodeInfo nodeId="3575782568432724157" fileName="TestCaseTreeNode.java" startLine="20" startPosition="108" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -2584,8 +2584,8 @@
     <nodeInfo nodeId="8321286824326262367" fileName="UnitTestViewComponent.java" startLine="63" startPosition="31" endLine="64" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8321286824326262373" fileName="UnitTestViewComponent.java" startLine="64" startPosition="81" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8321286824326262374" fileName="UnitTestViewComponent.java" startLine="65" startPosition="0" endLine="66" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321286824326262382" fileName="UnitTestViewComponent.java" startLine="66" startPosition="63" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321286824326262388" fileName="UnitTestViewComponent.java" startLine="67" startPosition="72" endLine="68" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321286824326262382" fileName="UnitTestViewComponent.java" startLine="66" startPosition="63" endLine="67" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321286824326262388" fileName="UnitTestViewComponent.java" startLine="67" startPosition="73" endLine="68" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8321286824326262395" fileName="UnitTestViewComponent.java" startLine="68" startPosition="83" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8321286824326262396" fileName="UnitTestViewComponent.java" startLine="69" startPosition="0" endLine="70" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8321286824326262402" fileName="UnitTestViewComponent.java" startLine="70" startPosition="87" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

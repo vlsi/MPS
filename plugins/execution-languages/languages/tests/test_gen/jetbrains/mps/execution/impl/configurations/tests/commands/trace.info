@@ -90,7 +90,7 @@
       <varInfo nodeId="7120092006645143101" varName="eventsDispatcher" />
       <varInfo nodeId="7120092006645143115" varName="exitcode" />
       <varInfo nodeId="7120092006645143075" varName="process" />
-      <varInfo nodeId="7120092006645143081" varName="runState" />
+      <varInfo nodeId="7120092006645143081" varName="dispatcher" />
     </scopeInfo>
     <scopeInfo nodeId="8128243960970298224" fileName="JUnitCommand_Test.java" startLine="83" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="7120092006645138830" varName="names" />

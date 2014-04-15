@@ -2898,7 +2898,7 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3575782568432720365" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432720366" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3575782568432724070" resolveInfo="FailedTestOccurenceNavigator" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3575782568432724070" resolveInfo="FailedTestOccurrenceNavigator" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="3575782568432720870" nodeInfo="igu">
@@ -2958,7 +2958,7 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3575782568432720917" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="navigator" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432720918" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3575782568432724070" resolveInfo="FailedTestOccurenceNavigator" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3575782568432724070" resolveInfo="FailedTestOccurrenceNavigator" />
         </node>
       </node>
     </node>
@@ -9180,7 +9180,7 @@
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3575782568432724070" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="FailedTestOccurenceNavigator" />
+    <property name="name" nameId="tpck.1169194664001" value="FailedTestOccurrenceNavigator" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="view.navigator" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3575782568432724071" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432724143" nodeInfo="in">
@@ -15234,7 +15234,7 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8321286824326262344" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8321286824326262345" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3575782568432724070" resolveInfo="FailedTestOccurenceNavigator" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="3575782568432724070" resolveInfo="FailedTestOccurrenceNavigator" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8321286824326262346" nodeInfo="igu">
@@ -15318,7 +15318,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8321286824326262383" nodeInfo="nn">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8321286824326262384" nodeInfo="nn">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8321286824326262385" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432724072" resolveInfo="FailedTestOccurenceNavigator" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432724072" resolveInfo="FailedTestOccurrenceNavigator" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120197095" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8321286824326262331" resolveInfo="myTreeComponent" />
                 </node>
