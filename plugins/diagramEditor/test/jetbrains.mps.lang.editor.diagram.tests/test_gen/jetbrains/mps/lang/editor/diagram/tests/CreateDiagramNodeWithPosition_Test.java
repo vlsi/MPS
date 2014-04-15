@@ -8,6 +8,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import java.awt.Component;
+import java.awt.event.MouseEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -31,7 +33,13 @@ public class CreateDiagramNodeWithPosition_Test extends BaseTransformationTest4 
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8794120090375902403", "8794120090375978070");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.processMouseClicked(editorComponent, 150, 150);
+      {
+        int x_a0_0 = 150;
+        int y_a0_1 = 150;
+        Component eventTargetComponent_a0_1 = BaseEditorTestBody.processMouseEvent(editorComponent, x_a0_0, y_a0_1, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_1, x_a0_0, y_a0_1, MouseEvent.MOUSE_RELEASED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_a0_1, x_a0_0, y_a0_1, MouseEvent.MOUSE_CLICKED);
+      }
       BaseEditorTestBody.typeString(editorComponent, "Node");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
