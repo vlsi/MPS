@@ -256,6 +256,15 @@ public class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         for (String code : keyStrokes) {
           KeyStroke stroke = KeyStroke.getKeyStroke(code);
+          int keyCode = stroke.getKeyCode();
+          char keyChar = stroke.getKeyChar();
+          if (keyChar == KeyEvent.CHAR_UNDEFINED && keyCode != KeyEvent.VK_UNDEFINED && ((keyCode >= KeyEvent.VK_0 && keyCode <= KeyEvent.VK_9) || (keyCode >= KeyEvent.VK_A && keyCode <= KeyEvent.VK_Z))) {
+            // todo it may be worthwhile to also detect other unicode chars from keyCode and supply them into keyChar 
+            // There is currently no good complete cross-platform code to char conversion utility, it seems 
+            // KEY_PRESSED events may or may not contain a concrete keyChar. Its presence is definitely not a problem 
+            keyChar = (char) keyCode;
+          }
+
           KeyEvent keyPressedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar());
           KeyEvent keyReleasedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar());
           if (eventTargetComponent == null) {

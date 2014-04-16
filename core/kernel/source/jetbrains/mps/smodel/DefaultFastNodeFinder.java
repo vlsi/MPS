@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.impl.StructureAspectChangeTracker;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -27,23 +31,29 @@ import java.util.List;
 import java.util.Set;
 
 
-public class DefaultFastNodeFinder extends AbstractFastNodeFinder {
-  private final SModel myModelDescriptor;
+public class DefaultFastNodeFinder extends AbstractFastNodeFinder implements StructureAspectChangeTracker.ModuleListener {
   private final SModelAdapter myListener = new MySModelAdapter();
-  private final SModelRepositoryAdapter myRepositoryAdapter = new MySModelRepositoryAdapter();
+  private final StructureAspectChangeTracker myDependencyListener;
   private final NodeByIdComparator myComparator = new NodeByIdComparator();
+  private final ModelDependenciesManager myDepTracker;
+  private final SRepository myRepository;
 
   public DefaultFastNodeFinder(SModel model) {
     super(model);
-    myModelDescriptor = model;
-    SModelRepository.getInstance().addModelRepositoryListener(myRepositoryAdapter);
-    ((SModelInternal) myModelDescriptor).addModelListener(myListener);
+    ((SModelInternal) model).addModelListener(myListener);
+    myRepository = model.getRepository();
+    myDepTracker = new ModelDependenciesManager(model).trackModelChanges().trackRepositoryChanges(myRepository);
+    // Next code is superfluous in end-user environment with fixed languages (they don't change), but there's no way to tell
+    // this kind of environment.
+    myDependencyListener = new StructureAspectChangeTracker(null, this);
+    myDependencyListener.attachTo(myRepository);
   }
 
   @Override
   public void dispose() {
-    ((SModelInternal) myModelDescriptor).removeModelListener(myListener);
-    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryAdapter);
+    myDependencyListener.detachFrom(myRepository);
+    myDepTracker.dispose();
+    ((SModelInternal) myModel).removeModelListener(myListener);
     super.dispose();
   }
 
@@ -72,6 +82,16 @@ public class DefaultFastNodeFinder extends AbstractFastNodeFinder {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(b);
   }
 
+  @Override
+  public void structureAspectChanged(Set<SModuleReference> changedLanguages) {
+    for (SModuleReference importedLang : myDepTracker.getAllImportedLanguages()) {
+      if (changedLanguages.contains(importedLang)) {
+        reset();
+        return;
+      }
+    }
+  }
+
   private class MySModelAdapter extends SModelAdapter {
     public MySModelAdapter() {
       super(SModelListenerPriority.PLATFORM);
@@ -98,16 +118,6 @@ public class DefaultFastNodeFinder extends AbstractFastNodeFinder {
     }
   }
 
-
-  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
-
-    @Override
-    public void modelsReplaced(Set<SModel> replacedModels) {
-      if (replacedModels.contains(myModelDescriptor)) {
-        reset();
-      }
-    }
-  }
 
   public static class NodeByIdComparator implements Comparator<SNode> {
     @Override

@@ -6309,8 +6309,8 @@
     <nodeInfo nodeId="3366354716707825999" fileName="SuroundWithTryCatch_Intention.java" startLine="90" startPosition="139" endLine="91" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3366354716707825959" fileName="SuroundWithTryCatch_Intention.java" startLine="91" startPosition="67" endLine="92" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366354716707825970" fileName="SuroundWithTryCatch_Intention.java" startLine="93" startPosition="71" endLine="94" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="99" startPosition="45" endLine="100" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="103" startPosition="43" endLine="104" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="99" startPosition="45" endLine="100" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="103" startPosition="43" endLine="104" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="107" startPosition="45" endLine="108" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="111" startPosition="43" endLine="112" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1459141168120689203" fileName="SuroundWithTryCatch_Intention.java" startLine="117" startPosition="39" endLine="118" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6346,8 +6346,8 @@
     <nodeInfo nodeId="3366354716707825944" fileName="SuroundWithTryCatch_Intention.java" startLine="74" startPosition="99" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3366354716707825944" fileName="SuroundWithTryCatch_Intention.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="3366354716707825966" fileName="SuroundWithTryCatch_Intention.java" startLine="92" startPosition="70" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="111" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1459141168120638852" fileName="SuroundWithTryCatch_Intention.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -6378,8 +6378,8 @@
     <scopeInfo nodeId="3366354716707825944" fileName="SuroundWithTryCatch_Intention.java" startLine="75" startPosition="37" endLine="76" endPosition="135" />
     <scopeInfo nodeId="3366354716707825946" fileName="SuroundWithTryCatch_Intention.java" startLine="85" startPosition="87" endLine="86" endPosition="27" />
     <scopeInfo nodeId="3366354716707825969" fileName="SuroundWithTryCatch_Intention.java" startLine="93" startPosition="71" endLine="94" endPosition="254" />
-    <scopeInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="99" startPosition="45" endLine="100" endPosition="80" />
-    <scopeInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="103" startPosition="43" endLine="104" endPosition="70" />
+    <scopeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="99" startPosition="45" endLine="100" endPosition="80" />
+    <scopeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="103" startPosition="43" endLine="104" endPosition="70" />
     <scopeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="107" startPosition="45" endLine="108" endPosition="75" />
     <scopeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="111" startPosition="43" endLine="112" endPosition="65" />
     <scopeInfo nodeId="1459141168120638853" fileName="SuroundWithTryCatch_Intention.java" startLine="117" startPosition="39" endLine="118" endPosition="145" />
@@ -6408,11 +6408,11 @@
     <scopeInfo nodeId="3366354716707825966" fileName="SuroundWithTryCatch_Intention.java" startLine="92" startPosition="70" endLine="95" endPosition="7">
       <varInfo nodeId="3366354716707825967" varName="selectedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="99" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="1459141168117402922" varName="it" />
+    <scopeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="99" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="1459141168117402921" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="1459141168117402922" varName="it" />
+    <scopeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="1459141168117402921" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="1459141168117402921" varName="it" />
@@ -6456,8 +6456,8 @@
       <varInfo nodeId="3366354716707825944" varName="editorContext" />
       <varInfo nodeId="3366354716707825944" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="98" startPosition="195" endLine="102" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
-    <unitInfo nodeId="1459141168117402922" fileName="SuroundWithTryCatch_Intention.java" startLine="102" startPosition="24" endLine="106" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
+    <unitInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="98" startPosition="195" endLine="102" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
+    <unitInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="102" startPosition="24" endLine="106" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
     <unitInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="106" startPosition="23" endLine="110" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
     <unitInfo nodeId="1459141168117402921" fileName="SuroundWithTryCatch_Intention.java" startLine="110" startPosition="24" endLine="114" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
     <unitInfo nodeId="1459141168120638852" fileName="SuroundWithTryCatch_Intention.java" startLine="116" startPosition="20" endLine="120" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention$2" />
@@ -6576,8 +6576,8 @@
     <nodeInfo nodeId="3366354716707929779" fileName="TryCatchFinally_Intention.java" startLine="91" startPosition="67" endLine="92" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366354716707929790" fileName="TryCatchFinally_Intention.java" startLine="93" startPosition="71" endLine="94" endPosition="249" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1459141168122392615" fileName="TryCatchFinally_Intention.java" startLine="95" startPosition="7" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="100" startPosition="45" endLine="101" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="104" startPosition="43" endLine="105" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="100" startPosition="45" endLine="101" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="104" startPosition="43" endLine="105" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="108" startPosition="45" endLine="109" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="112" startPosition="43" endLine="113" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1459141168122400442" fileName="TryCatchFinally_Intention.java" startLine="118" startPosition="39" endLine="119" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6613,8 +6613,8 @@
     <nodeInfo nodeId="3366354716707929765" fileName="TryCatchFinally_Intention.java" startLine="74" startPosition="99" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3366354716707929765" fileName="TryCatchFinally_Intention.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="3366354716707929786" fileName="TryCatchFinally_Intention.java" startLine="92" startPosition="65" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="104" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="104" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1459141168122400440" fileName="TryCatchFinally_Intention.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -6645,8 +6645,8 @@
     <scopeInfo nodeId="3366354716707929765" fileName="TryCatchFinally_Intention.java" startLine="75" startPosition="37" endLine="76" endPosition="131" />
     <scopeInfo nodeId="3366354716707929767" fileName="TryCatchFinally_Intention.java" startLine="85" startPosition="87" endLine="86" endPosition="37" />
     <scopeInfo nodeId="3366354716707929789" fileName="TryCatchFinally_Intention.java" startLine="93" startPosition="71" endLine="94" endPosition="249" />
-    <scopeInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="100" startPosition="45" endLine="101" endPosition="80" />
-    <scopeInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="104" startPosition="43" endLine="105" endPosition="70" />
+    <scopeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="100" startPosition="45" endLine="101" endPosition="80" />
+    <scopeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="104" startPosition="43" endLine="105" endPosition="70" />
     <scopeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="108" startPosition="45" endLine="109" endPosition="75" />
     <scopeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="112" startPosition="43" endLine="113" endPosition="65" />
     <scopeInfo nodeId="1459141168122400441" fileName="TryCatchFinally_Intention.java" startLine="118" startPosition="39" endLine="119" endPosition="145" />
@@ -6675,11 +6675,11 @@
     <scopeInfo nodeId="3366354716707929786" fileName="TryCatchFinally_Intention.java" startLine="92" startPosition="65" endLine="95" endPosition="7">
       <varInfo nodeId="3366354716707929787" varName="selectedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="1459141168122400431" varName="it" />
+    <scopeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="1459141168122400430" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="104" startPosition="0" endLine="107" endPosition="0">
-      <varInfo nodeId="1459141168122400431" varName="it" />
+    <scopeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="104" startPosition="0" endLine="107" endPosition="0">
+      <varInfo nodeId="1459141168122400430" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="108" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="1459141168122400430" varName="it" />
@@ -6723,8 +6723,8 @@
       <varInfo nodeId="3366354716707929765" varName="editorContext" />
       <varInfo nodeId="3366354716707929765" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="99" startPosition="195" endLine="103" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
-    <unitInfo nodeId="1459141168122400431" fileName="TryCatchFinally_Intention.java" startLine="103" startPosition="24" endLine="107" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
+    <unitInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="99" startPosition="195" endLine="103" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
+    <unitInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="103" startPosition="24" endLine="107" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
     <unitInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="107" startPosition="23" endLine="111" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
     <unitInfo nodeId="1459141168122400430" fileName="TryCatchFinally_Intention.java" startLine="111" startPosition="24" endLine="115" endPosition="11" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />
     <unitInfo nodeId="1459141168122400440" fileName="TryCatchFinally_Intention.java" startLine="117" startPosition="20" endLine="121" endPosition="7" unitName="jetbrains.mps.baseLanguage.intentions.TryCatchFinally_Intention$2" />

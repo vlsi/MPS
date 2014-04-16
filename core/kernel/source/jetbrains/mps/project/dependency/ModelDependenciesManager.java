@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,6 +56,8 @@ import java.util.LinkedHashSet;
  *   process(mdm.getAllImportedModels());
  *   mdm.dispose();
  * </pre>
+ *
+ * FIXME perhaps, worth moving to subpackage of j.m.smodel, as it's pure model functionality, unrelated to project
  */
 public class ModelDependenciesManager {
   private SModel myModel;
@@ -69,6 +71,9 @@ public class ModelDependenciesManager {
     myModel = model;
   }
 
+  /**
+   * @return snapshot of model dependencies (up-to-date state depends on listeners installed)
+   */
   public Collection<SModuleReference> getAllImportedLanguages() {
     final SModel model = myModel;
     if (model == null) throw new IllegalStateException("access after disposal");
@@ -144,6 +149,10 @@ public class ModelDependenciesManager {
     }
   }
 
+  /**
+   * Attach a listener to the model to track dependencies added through SModelInternal
+   * @return <code>this</code> for convenience
+   */
   public ModelDependenciesManager trackModelChanges() {
     if (myModelWatcher == null) {
       myModelWatcher = new MySModelWatcher(this);
@@ -151,6 +160,10 @@ public class ModelDependenciesManager {
     return this;
   }
 
+  /**
+   * Attach a listener to given repository to reflect changes in model's dependencies
+   * @return <code>this</code> for convenience
+   */
   public ModelDependenciesManager trackRepositoryChanges(SRepository repository) {
     if (myModuleWatcher != null && myModuleWatcher.myRepository != repository) {
       myModuleWatcher.dispose();

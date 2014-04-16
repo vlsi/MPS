@@ -27,6 +27,7 @@
     <file name="ReferenceDifferense.java" />
   </source>
   <source id="8984393347190228418" name="ConceptDifference" hash="987ay4h2elssbkyljen5kf2rgcjild2">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="ConceptDifference.java" />
   </source>
   <source id="8984393347190228497" name="ChildrenCountDifference" hash="4b49fnxzdwfe7avy49ltzxp2lr0hslx">

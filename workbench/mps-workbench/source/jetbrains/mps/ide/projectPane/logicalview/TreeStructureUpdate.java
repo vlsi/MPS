@@ -68,7 +68,7 @@ class TreeStructureUpdate implements MPSTreeNodeListener {
   @Override
   public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
     if (treeNode instanceof SModelTreeNode) {
-      final ModelChangeListener l = myListeners.get(treeNode);
+      final ModelChangeListener l = myListeners.remove(treeNode);
       // might be SModelTreeNode for a !EditableSModel
       if (l != null) {
         myEventsListener.unregisterListener(l);
