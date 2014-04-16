@@ -35,7 +35,7 @@ public class ToZeroSize_ResizeNode_bottom_right_Test extends BaseTransformationT
         int x_v5h37f_a0 = 90;
         int y_v5h37f_a0 = 90;
         Component eventTargetComponent_v5h37f_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_v5h37f_a0, y_v5h37f_a0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_v5h37f_a0, x_v5h37f_a0 = 11, y_v5h37f_a0 = 11, MouseEvent.MOUSE_DRAGGED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_v5h37f_a0, x_v5h37f_a0 = 10, y_v5h37f_a0 = 10, MouseEvent.MOUSE_DRAGGED);
         BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_v5h37f_a0, x_v5h37f_a0, y_v5h37f_a0, MouseEvent.MOUSE_RELEASED);
       }
     }

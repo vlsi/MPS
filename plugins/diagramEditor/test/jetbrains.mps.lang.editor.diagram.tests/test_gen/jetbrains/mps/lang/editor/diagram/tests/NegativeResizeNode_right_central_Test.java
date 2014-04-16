@@ -12,14 +12,14 @@ import java.awt.Component;
 import java.awt.event.MouseEvent;
 
 @MPSLaunch
-public class IncorrectResizeNode_bottom_right_Test extends BaseTransformationTest4 {
-  public IncorrectResizeNode_bottom_right_Test() {
+public class NegativeResizeNode_right_central_Test extends BaseTransformationTest4 {
+  public NegativeResizeNode_right_central_Test() {
   }
 
   @Test
-  public void test_IncorrectResizeNode_bottom_right() throws Throwable {
+  public void test_NegativeResizeNode_right_central() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.IncorrectResizeNode_bottom_right_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_right_central_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -32,11 +32,11 @@ public class IncorrectResizeNode_bottom_right_Test extends BaseTransformationTes
       final Editor editor = TestBody.this.initEditor("1030067674862429075", "1030067674862429078");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       {
-        int x_kbtveu_a0 = 90;
-        int y_kbtveu_a0 = 90;
-        Component eventTargetComponent_kbtveu_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_kbtveu_a0, y_kbtveu_a0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_kbtveu_a0, x_kbtveu_a0 = 6, y_kbtveu_a0 = 20, MouseEvent.MOUSE_DRAGGED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_kbtveu_a0, x_kbtveu_a0, y_kbtveu_a0, MouseEvent.MOUSE_RELEASED);
+        int x_2mla1b_a0 = 90;
+        int y_2mla1b_a0 = 50;
+        Component eventTargetComponent_2mla1b_a0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_2mla1b_a0, y_2mla1b_a0, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_2mla1b_a0, x_2mla1b_a0 = -20, y_2mla1b_a0 = 50, MouseEvent.MOUSE_DRAGGED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_2mla1b_a0, x_2mla1b_a0, y_2mla1b_a0, MouseEvent.MOUSE_RELEASED);
       }
     }
   }

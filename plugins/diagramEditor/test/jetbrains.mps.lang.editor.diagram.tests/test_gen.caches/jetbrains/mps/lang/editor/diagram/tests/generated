@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9gcl9w0q4oykty8re595s9asjmzqebl">
+<dependencies version="2" modelHash="-5txpmc6oc6y4c6ccvmomqclzkitpk2t">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
@@ -12,7 +12,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-d9u6qtqn8byb7xpic4iy13w48uff524" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-9mbnbrs95x2s7kwcnr7ysfhpy0pl6po" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="65774lq3kgismuwkqu2kee1rj1gwavd" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="9u4j2busepwuglu7ki8c9nuc5h30fct" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-6azwacxn6kx7sbr8vdnag10v8c31nt" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="cynsqdr7qdgj70npj9cm8ml4he10u82" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-7a2zmkcp5ccf48jfyjin69be8kewauf" />
@@ -32,6 +32,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
     <dep root="8095638845859254308" />
@@ -44,7 +46,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
@@ -64,6 +65,8 @@
     <dep root="3873095776498193006" />
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -82,8 +85,8 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DeleteDiagramNode_Test.java" />
@@ -99,6 +102,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -115,9 +120,7 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
@@ -135,6 +138,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -162,6 +167,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -176,9 +183,11 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UnSelectDiagramNode_Test.java" />
   </source>
@@ -193,6 +202,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -207,6 +218,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ResizeNode_top_centeral_Test.java" />
   </source>
   <source id="7604889971551653125" name="ResizeNode_top_left" hash="bv4rvahobrxwveziy8soav6i6jbvdqz" dependsOnNodes="true">
@@ -220,6 +232,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="8095638845859254308" />
@@ -231,6 +245,7 @@
     <dep root="8794120090377706340" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ResizeNode_top_left_Test.java" />
@@ -245,6 +260,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -257,6 +274,8 @@
     <dep root="8794120090377706340" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ResizeNode_top_right_Test.java" />
   </source>
@@ -270,6 +289,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -294,6 +315,8 @@
     <dep root="3873095776498193006" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -319,6 +342,8 @@
     <dep root="3873095776498193006" />
     <dep root="3873095776498950263" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -345,6 +370,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -369,6 +396,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -393,6 +422,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -417,6 +448,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -442,6 +475,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -467,6 +502,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -482,7 +519,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ResizeNode_bottom_right_Test.java" />
   </source>
-  <source id="1030067674862429074" name="IncorrectResizeNode_bottom_right" hash="-2er2zlcrtvn0j9ome4w4mkc12fagphh" dependsOnNodes="true">
+  <source id="1030067674862429074" name="NegativeResizeNode_right_central" hash="-4on1sg66nzgv32nzyxygpvk8iwjy4uh" dependsOnNodes="true">
     <dep root="1030067674862347159" />
     <dep root="1030067674862347669" />
     <dep root="1030067674862347894" />
@@ -492,6 +529,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -505,9 +544,9 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
-    <file name="IncorrectResizeNode_bottom_right_Test.java" />
+    <file name="NegativeResizeNode_right_central_Test.java" />
   </source>
-  <source id="1030067674863337573" name="ToZeroSize_ResizeNode_bottom_right" hash="-34ox89p6lqwfdsasyi0cmhyxlb56am8" dependsOnNodes="true">
+  <source id="1030067674863337573" name="ToZeroSize_ResizeNode_bottom_right" hash="3hdv3sj62leqv19fj6jkhlm0jpu2x9p" dependsOnNodes="true">
     <dep root="1030067674862347159" />
     <dep root="1030067674862347669" />
     <dep root="1030067674862347894" />
@@ -517,6 +556,8 @@
     <dep root="3873095776498950263" />
     <dep root="3873095776499066417" />
     <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="5540569706412511201" />
     <dep root="604142159147796275" />
     <dep root="604142159147853968" />
     <dep root="7604889971551653125" />
@@ -531,6 +572,60 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ToZeroSize_ResizeNode_bottom_right_Test.java" />
+  </source>
+  <source id="5540569706412486831" name="NegativeResizeNode_bottom_central" hash="-dihytcutugm1sxbe8ontsufx3p8fz7" dependsOnNodes="true">
+    <dep root="1030067674862347159" />
+    <dep root="1030067674862347669" />
+    <dep root="1030067674862347894" />
+    <dep root="1030067674862429074" />
+    <dep root="1030067674863337573" />
+    <dep root="3873095776497110117" />
+    <dep root="3873095776498193006" />
+    <dep root="3873095776498950263" />
+    <dep root="3873095776499066417" />
+    <dep root="5003005296038308967" />
+    <dep root="5540569706412511201" />
+    <dep root="604142159147796275" />
+    <dep root="604142159147853968" />
+    <dep root="7604889971551653125" />
+    <dep root="8095638845859254308" />
+    <dep root="8095638845859348584" />
+    <dep root="8095638845859579504" />
+    <dep root="834109970984588248" />
+    <dep root="8794120090375557118" />
+    <dep root="8794120090376139994" />
+    <dep root="8794120090377706340" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="NegativeResizeNode_bottom_central_Test.java" />
+  </source>
+  <source id="5540569706412511201" name="NegativeResizeNode_bottom_right" hash="7hdyikvo9r2llhgdyoixxrbtxscizdt" dependsOnNodes="true">
+    <dep root="1030067674862347159" />
+    <dep root="1030067674862347669" />
+    <dep root="1030067674862347894" />
+    <dep root="1030067674862429074" />
+    <dep root="1030067674863337573" />
+    <dep root="3873095776497110117" />
+    <dep root="3873095776498193006" />
+    <dep root="3873095776498950263" />
+    <dep root="3873095776499066417" />
+    <dep root="5003005296038308967" />
+    <dep root="5540569706412486831" />
+    <dep root="604142159147796275" />
+    <dep root="604142159147853968" />
+    <dep root="7604889971551653125" />
+    <dep root="8095638845859254308" />
+    <dep root="8095638845859348584" />
+    <dep root="8095638845859579504" />
+    <dep root="834109970984588248" />
+    <dep root="8794120090375557118" />
+    <dep root="8794120090376139994" />
+    <dep root="8794120090377706340" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="NegativeResizeNode_bottom_right_Test.java" />
   </source>
 </dependencies>
 

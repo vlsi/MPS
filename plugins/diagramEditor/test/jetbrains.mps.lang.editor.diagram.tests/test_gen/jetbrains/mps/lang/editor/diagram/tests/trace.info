@@ -112,38 +112,38 @@
     <unitInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_right_Test" />
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1030067674862429074">
-    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="20" startPosition="72" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1030067674862430432" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="38" startPosition="147" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IncorrectResizeNode_bottom_right_Test#()V" />
-    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_IncorrectResizeNode_bottom_right#()V" />
-    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="16" startPosition="50" endLine="16" endPosition="50" />
-    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
-    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="20" startPosition="72" endLine="22" endPosition="128" />
-    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="139">
-      <varInfo nodeId="1030067674862429082" varName="eventTargetComponent_kbtveu_a0" />
-      <varInfo nodeId="1030067674862429082" varName="x_kbtveu_a0" />
-      <varInfo nodeId="1030067674862429082" varName="y_kbtveu_a0" />
+    <nodeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="20" startPosition="72" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862429082" fileName="NegativeResizeNode_right_central_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862429082" fileName="NegativeResizeNode_right_central_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862429082" fileName="NegativeResizeNode_right_central_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862430432" fileName="NegativeResizeNode_right_central_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862429082" fileName="NegativeResizeNode_right_central_Test.java" startLine="38" startPosition="149" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NegativeResizeNode_right_central_Test#()V" />
+    <nodeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NegativeResizeNode_right_central#()V" />
+    <nodeInfo nodeId="1030067674862429082" fileName="NegativeResizeNode_right_central_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="16" startPosition="50" endLine="16" endPosition="50" />
+    <scopeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="20" startPosition="72" endLine="22" endPosition="128" />
+    <scopeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1030067674862429082" fileName="NegativeResizeNode_right_central_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="139">
+      <varInfo nodeId="1030067674862429082" varName="eventTargetComponent_2mla1b_a0" />
+      <varInfo nodeId="1030067674862429082" varName="x_2mla1b_a0" />
+      <varInfo nodeId="1030067674862429082" varName="y_2mla1b_a0" />
     </scopeInfo>
-    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="40" endPosition="7">
+    <scopeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="31" startPosition="51" endLine="40" endPosition="7">
       <varInfo nodeId="1030067674862429074" varName="editor" />
       <varInfo nodeId="1030067674862429074" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.IncorrectResizeNode_bottom_right_Test$TestBody" />
-    <unitInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.IncorrectResizeNode_bottom_right_Test" />
+    <scopeInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_right_central_Test$TestBody" />
+    <unitInfo nodeId="1030067674862429074" fileName="NegativeResizeNode_right_central_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_right_central_Test" />
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1030067674863337573">
     <nodeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="20" startPosition="74" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -340,6 +340,74 @@
     <scopeInfo nodeId="5003005296038308967" fileName="DeleteDiagramNode_Test.java" startLine="30" startPosition="0" endLine="36" endPosition="0" />
     <unitInfo nodeId="5003005296038308967" fileName="DeleteDiagramNode_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.DeleteDiagramNode_Test$TestBody" />
     <unitInfo nodeId="5003005296038308967" fileName="DeleteDiagramNode_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.DeleteDiagramNode_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/5540569706412486831">
+    <nodeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="20" startPosition="73" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412486839" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412486839" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412486839" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412486841" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5540569706412486839" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="38" startPosition="149" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NegativeResizeNode_bottom_central_Test#()V" />
+    <nodeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NegativeResizeNode_bottom_central#()V" />
+    <nodeInfo nodeId="5540569706412486839" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="16" startPosition="51" endLine="16" endPosition="51" />
+    <scopeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="20" startPosition="73" endLine="22" endPosition="129" />
+    <scopeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="5540569706412486839" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="139">
+      <varInfo nodeId="5540569706412486839" varName="eventTargetComponent_dddoqy_a0" />
+      <varInfo nodeId="5540569706412486839" varName="x_dddoqy_a0" />
+      <varInfo nodeId="5540569706412486839" varName="y_dddoqy_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="31" startPosition="51" endLine="40" endPosition="7">
+      <varInfo nodeId="5540569706412486831" varName="editor" />
+      <varInfo nodeId="5540569706412486831" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_central_Test$TestBody" />
+    <unitInfo nodeId="5540569706412486831" fileName="NegativeResizeNode_bottom_central_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_central_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/5540569706412511201">
+    <nodeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="20" startPosition="71" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412511209" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412511209" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412511209" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5540569706412511211" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5540569706412511209" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="38" startPosition="150" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NegativeResizeNode_bottom_right_Test#()V" />
+    <nodeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NegativeResizeNode_bottom_right#()V" />
+    <nodeInfo nodeId="5540569706412511209" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="16" startPosition="49" endLine="16" endPosition="49" />
+    <scopeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="20" startPosition="71" endLine="22" endPosition="127" />
+    <scopeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="5540569706412511209" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="139">
+      <varInfo nodeId="5540569706412511209" varName="eventTargetComponent_d2ba3i_a0" />
+      <varInfo nodeId="5540569706412511209" varName="x_d2ba3i_a0" />
+      <varInfo nodeId="5540569706412511209" varName="y_d2ba3i_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="40" endPosition="7">
+      <varInfo nodeId="5540569706412511201" varName="editor" />
+      <varInfo nodeId="5540569706412511201" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_right_Test$TestBody" />
+    <unitInfo nodeId="5540569706412511201" fileName="NegativeResizeNode_bottom_right_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.NegativeResizeNode_bottom_right_Test" />
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/604142159147796275">
     <nodeInfo nodeId="604142159147796275" fileName="CreateDiagramNode_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
