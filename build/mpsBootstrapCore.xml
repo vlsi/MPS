@@ -37,7 +37,7 @@
   </path>
   
   <path id="path.java.library.core-libraries">
-    <fileset file="${artifacts.IDEA}/lib/ecj-4.2.1.jar" />
+    <fileset file="${artifacts.IDEA}/lib/ecj-4.3.2.jar" />
     <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
     <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
     <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
@@ -52,8 +52,8 @@
     <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
   </path>
   
-  <path id="path.java.library.junit-4.10">
-    <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
+  <path id="path.java.library.junit-4.11">
+    <fileset file="${artifacts.IDEA}/lib/junit-4.11.jar" />
   </path>
   
   <path id="path.java.library.tools">
@@ -2728,7 +2728,7 @@
         <library jar="jmock-junit3-2.5.1.jar" />
         <library jar="jmock-junit4-2.5.1.jar" />
         <library jar="objenesis-1.0.jar" />
-        <library jar="/lib/junit-4.10.jar" />
+        <library jar="/lib/junit-4.11.jar" />
         <sources jar="jetbrains.mps.baseLanguage.unitTest.libs-src.jar" descriptor="jetbrains.mps.baseLanguage.unitTest.libs.msd" />
       </module>
     </echoxml>
@@ -3331,7 +3331,7 @@
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-ant" />
-        <path refid="path.java.library.junit-4.10" />
+        <path refid="path.java.library.junit-4.11" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -8348,7 +8348,7 @@
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.5.1/objenesis-1.0.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
+        <fileset file="${artifacts.IDEA}/lib/junit-4.11.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />

@@ -84,7 +84,7 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
   @Override
   protected Set<BreakpointWithHighlighter> getBreakpointsForComponent(@NotNull final EditorComponent component) {
     final Set<BreakpointWithHighlighter> result = new HashSet<BreakpointWithHighlighter>();
-    final List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints();
+    final List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints(); //XDebuggerManager.getInstance(myProject).getBreakpointManager()
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
