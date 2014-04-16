@@ -1,5 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1030067674862347159">
+    <nodeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="20" startPosition="62" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347167" fileName="ResizeNode_bottom_left_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347167" fileName="ResizeNode_bottom_left_Test.java" startLine="35" startPosition="28" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347167" fileName="ResizeNode_bottom_left_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862348093" fileName="ResizeNode_bottom_left_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347169" fileName="ResizeNode_bottom_left_Test.java" startLine="38" startPosition="150" endLine="39" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347167" fileName="ResizeNode_bottom_left_Test.java" startLine="39" startPosition="148" endLine="40" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResizeNode_bottom_left_Test#()V" />
+    <nodeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ResizeNode_bottom_left#()V" />
+    <nodeInfo nodeId="1030067674862347167" fileName="ResizeNode_bottom_left_Test.java" startLine="33" startPosition="93" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="30" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="16" startPosition="40" endLine="16" endPosition="40" />
+    <scopeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="20" startPosition="62" endLine="22" endPosition="118" />
+    <scopeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1030067674862347167" fileName="ResizeNode_bottom_left_Test.java" startLine="34" startPosition="7" endLine="40" endPosition="139">
+      <varInfo nodeId="1030067674862347167" varName="eventTargetComponent_oy4n3d_a0" />
+      <varInfo nodeId="1030067674862347167" varName="x_oy4n3d_a0" />
+      <varInfo nodeId="1030067674862347167" varName="y_oy4n3d_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="31" startPosition="51" endLine="41" endPosition="7">
+      <varInfo nodeId="1030067674862347159" varName="editor" />
+      <varInfo nodeId="1030067674862347159" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="30" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="25" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_left_Test$TestBody" />
+    <unitInfo nodeId="1030067674862347159" fileName="ResizeNode_bottom_left_Test.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_left_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1030067674862347669">
+    <nodeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="20" startPosition="66" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347677" fileName="ResizeNode_bottom_centeral_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347677" fileName="ResizeNode_bottom_centeral_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347677" fileName="ResizeNode_bottom_centeral_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862367758" fileName="ResizeNode_bottom_centeral_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862367772" fileName="ResizeNode_bottom_centeral_Test.java" startLine="38" startPosition="150" endLine="39" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862367780" fileName="ResizeNode_bottom_centeral_Test.java" startLine="39" startPosition="148" endLine="40" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862367789" fileName="ResizeNode_bottom_centeral_Test.java" startLine="40" startPosition="149" endLine="41" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862367799" fileName="ResizeNode_bottom_centeral_Test.java" startLine="41" startPosition="150" endLine="42" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862367810" fileName="ResizeNode_bottom_centeral_Test.java" startLine="42" startPosition="148" endLine="43" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862367822" fileName="ResizeNode_bottom_centeral_Test.java" startLine="43" startPosition="148" endLine="44" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862367835" fileName="ResizeNode_bottom_centeral_Test.java" startLine="44" startPosition="150" endLine="45" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347679" fileName="ResizeNode_bottom_centeral_Test.java" startLine="45" startPosition="148" endLine="46" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347677" fileName="ResizeNode_bottom_centeral_Test.java" startLine="46" startPosition="149" endLine="47" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResizeNode_bottom_centeral_Test#()V" />
+    <nodeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ResizeNode_bottom_centeral#()V" />
+    <nodeInfo nodeId="1030067674862347677" fileName="ResizeNode_bottom_centeral_Test.java" startLine="33" startPosition="93" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="30" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="16" startPosition="44" endLine="16" endPosition="44" />
+    <scopeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="20" startPosition="66" endLine="22" endPosition="122" />
+    <scopeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1030067674862347677" fileName="ResizeNode_bottom_centeral_Test.java" startLine="34" startPosition="7" endLine="47" endPosition="139">
+      <varInfo nodeId="1030067674862347677" varName="eventTargetComponent_t0lgw5_a0" />
+      <varInfo nodeId="1030067674862347677" varName="x_t0lgw5_a0" />
+      <varInfo nodeId="1030067674862347677" varName="y_t0lgw5_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="31" startPosition="51" endLine="48" endPosition="7">
+      <varInfo nodeId="1030067674862347669" varName="editor" />
+      <varInfo nodeId="1030067674862347669" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="30" startPosition="0" endLine="50" endPosition="0" />
+    <unitInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="25" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_centeral_Test$TestBody" />
+    <unitInfo nodeId="1030067674862347669" fileName="ResizeNode_bottom_centeral_Test.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_centeral_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1030067674862347894">
+    <nodeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="20" startPosition="63" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347902" fileName="ResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347902" fileName="ResizeNode_bottom_right_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347902" fileName="ResizeNode_bottom_right_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862347904" fileName="ResizeNode_bottom_right_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347902" fileName="ResizeNode_bottom_right_Test.java" startLine="38" startPosition="149" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResizeNode_bottom_right_Test#()V" />
+    <nodeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ResizeNode_bottom_right#()V" />
+    <nodeInfo nodeId="1030067674862347902" fileName="ResizeNode_bottom_right_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="16" startPosition="41" endLine="16" endPosition="41" />
+    <scopeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="20" startPosition="63" endLine="22" endPosition="119" />
+    <scopeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1030067674862347902" fileName="ResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="139">
+      <varInfo nodeId="1030067674862347902" varName="eventTargetComponent_rlzz6g_a0" />
+      <varInfo nodeId="1030067674862347902" varName="x_rlzz6g_a0" />
+      <varInfo nodeId="1030067674862347902" varName="y_rlzz6g_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="40" endPosition="7">
+      <varInfo nodeId="1030067674862347894" varName="editor" />
+      <varInfo nodeId="1030067674862347894" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_right_Test$TestBody" />
+    <unitInfo nodeId="1030067674862347894" fileName="ResizeNode_bottom_right_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_bottom_right_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1030067674862429074">
+    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="20" startPosition="72" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674862430432" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="38" startPosition="147" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IncorrectResizeNode_bottom_right_Test#()V" />
+    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_IncorrectResizeNode_bottom_right#()V" />
+    <nodeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="16" startPosition="50" endLine="16" endPosition="50" />
+    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="20" startPosition="72" endLine="22" endPosition="128" />
+    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1030067674862429082" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="139">
+      <varInfo nodeId="1030067674862429082" varName="eventTargetComponent_kbtveu_a0" />
+      <varInfo nodeId="1030067674862429082" varName="x_kbtveu_a0" />
+      <varInfo nodeId="1030067674862429082" varName="y_kbtveu_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="40" endPosition="7">
+      <varInfo nodeId="1030067674862429074" varName="editor" />
+      <varInfo nodeId="1030067674862429074" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.IncorrectResizeNode_bottom_right_Test$TestBody" />
+    <unitInfo nodeId="1030067674862429074" fileName="IncorrectResizeNode_bottom_right_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.IncorrectResizeNode_bottom_right_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1030067674863337573">
+    <nodeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="20" startPosition="74" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674863337581" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674863337581" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674863337581" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1030067674863337583" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674863337581" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="38" startPosition="148" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ToZeroSize_ResizeNode_bottom_right_Test#()V" />
+    <nodeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ToZeroSize_ResizeNode_bottom_right#()V" />
+    <nodeInfo nodeId="1030067674863337581" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="16" startPosition="52" endLine="16" endPosition="52" />
+    <scopeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="20" startPosition="74" endLine="22" endPosition="130" />
+    <scopeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1030067674863337581" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="139">
+      <varInfo nodeId="1030067674863337581" varName="eventTargetComponent_v5h37f_a0" />
+      <varInfo nodeId="1030067674863337581" varName="x_v5h37f_a0" />
+      <varInfo nodeId="1030067674863337581" varName="y_v5h37f_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="31" startPosition="51" endLine="40" endPosition="7">
+      <varInfo nodeId="1030067674863337573" varName="editor" />
+      <varInfo nodeId="1030067674863337573" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ToZeroSize_ResizeNode_bottom_right_Test$TestBody" />
+    <unitInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ToZeroSize_ResizeNode_bottom_right_Test" />
+  </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/3873095776497110117">
     <nodeInfo nodeId="3873095776497110117" fileName="ResizeNode_top_right_Test.java" startLine="20" startPosition="60" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3873095776497110117" fileName="ResizeNode_top_right_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
