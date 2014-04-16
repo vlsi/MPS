@@ -434,17 +434,20 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8095638845859348584" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="SelectNodeOuter" />
-    <property name="description" nameId="tp5g.1883175908513350760" value="TODO: Seems like for now this test is similar to SelectDiagramNode one, but using different node" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Selection is outside the diagram, then select diagram block" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8095638845859348585" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4459951312286662281" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Constant_dbn5di_b0" />
+      </node>
       <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="8095638845859348586" nodeInfo="ng">
         <property name="width" nameId="g85x.8794120090377706498" value="40" />
         <property name="height" nameId="g85x.8794120090377706500" value="40" />
         <property name="x" nameId="g85x.8794120090374242972" value="0" />
         <property name="y" nameId="g85x.8794120090374242974" value="0" />
-      </node>
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1030067674862250363" nodeInfo="ng">
-        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0" />
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8095638845859348589" nodeInfo="ng">
@@ -747,47 +750,6 @@
       </node>
     </node>
   </root>
-  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5540569706412486831" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="NegativeResizeNode_bottom_central" />
-    <property name="description" nameId="tp5g.1883175908513350760" value="Clicking on bottom_central resize handle, resising node upward to the position before node y coordinate" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="resize" />
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706412486832" nodeInfo="ng">
-      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="5540569706412486833" nodeInfo="ng">
-        <property name="width" nameId="g85x.8794120090377706498" value="80" />
-        <property name="height" nameId="g85x.8794120090377706500" value="80" />
-        <property name="x" nameId="g85x.8794120090374242972" value="10" />
-        <property name="y" nameId="g85x.8794120090374242974" value="10" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706412486834" nodeInfo="ng">
-          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
-        </node>
-      </node>
-    </node>
-    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706412486835" nodeInfo="ng">
-      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="5540569706412486836" nodeInfo="ng">
-        <property name="width" nameId="g85x.8794120090377706498" value="80" />
-        <property name="height" nameId="g85x.8794120090377706500" value="40" />
-        <property name="x" nameId="g85x.8794120090374242972" value="10" />
-        <property name="y" nameId="g85x.8794120090374242974" value="-30" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706412486837" nodeInfo="ng">
-          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
-        </node>
-      </node>
-    </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706412486838" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="5540569706412486839" nodeInfo="ng">
-        <property name="x" nameId="tp5g.210559400606080743" value="50" />
-        <property name="y" nameId="tp5g.210559400606080744" value="90" />
-        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706412486840" nodeInfo="sn">
-          <node role="statement" roleId="tpee.1068581517665" type="tp5g.DragMouseStatement" typeId="tp5g.210559400608047267" id="5540569706412486841" nodeInfo="ng">
-            <property name="x" nameId="tp5g.210559400608047600" value="50" />
-            <property name="y" nameId="tp5g.210559400608047601" value="-30" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5540569706412511201" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="NegativeResizeNode_bottom_right" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Clicking on bottom_right resize handle, resising node to the left &amp; upward to the position before node x, y coordinates" />
@@ -824,6 +786,47 @@
           <node role="statement" roleId="tpee.1068581517665" type="tp5g.DragMouseStatement" typeId="tp5g.210559400608047267" id="5540569706412511211" nodeInfo="ng">
             <property name="x" nameId="tp5g.210559400608047600" value="-30" />
             <property name="y" nameId="tp5g.210559400608047601" value="-20" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5540569706412486831" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="NegativeResizeNode_bottom_central" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Clicking on bottom_central resize handle, resising node upward to the position before node y coordinate" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="resize" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706412486832" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="5540569706412486833" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="x" nameId="g85x.8794120090374242972" value="10" />
+        <property name="y" nameId="g85x.8794120090374242974" value="10" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706412486834" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706412486835" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="5540569706412486836" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="40" />
+        <property name="x" nameId="g85x.8794120090374242972" value="10" />
+        <property name="y" nameId="g85x.8794120090374242974" value="-30" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706412486837" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706412486838" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="5540569706412486839" nodeInfo="ng">
+        <property name="x" nameId="tp5g.210559400606080743" value="50" />
+        <property name="y" nameId="tp5g.210559400606080744" value="90" />
+        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706412486840" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="tp5g.DragMouseStatement" typeId="tp5g.210559400608047267" id="5540569706412486841" nodeInfo="ng">
+            <property name="x" nameId="tp5g.210559400608047600" value="50" />
+            <property name="y" nameId="tp5g.210559400608047601" value="-30" />
           </node>
         </node>
       </node>
