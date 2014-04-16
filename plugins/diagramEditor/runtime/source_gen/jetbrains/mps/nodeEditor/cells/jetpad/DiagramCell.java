@@ -53,6 +53,7 @@ import java.awt.Window;
 import java.awt.Point;
 import jetbrains.jetpad.event.ModifierKey;
 import jetbrains.jetpad.mapper.Synchronizers;
+import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
@@ -83,11 +84,13 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   private ViewTrait myHandlingTrait;
   private DiagramPalette myPalettePanel;
   private JPanel myPanel;
-  private Registration myRegistration;
+  protected Registration myRegistration;
+  protected Property<ViewTrait> myTraitProperty = new ValueProperty<ViewTrait>(null);
 
 
   public DiagramCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
+    myTraitProperty.set(getEventHandlingTrait());
   }
 
   public JComponent getComponent() {
@@ -130,7 +133,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   @Override
   protected void relayoutImpl() {
     super.relayoutImpl();
-    check_xnhqai_a1a81(getPalette(), this);
+    check_xnhqai_a1a91(getPalette(), this);
     getContainerComponent().doLayout();
     getComponent().doLayout();
     Dimension preferredSize = getComponent().getPreferredSize();
@@ -178,11 +181,11 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
 
   public void setExternalTrait(ViewTrait trait) {
-    check_xnhqai_a0a62(myRegistration);
+    check_xnhqai_a0a72(myRegistration);
     if (trait == null) {
-      myRegistration = getRootMapper().getTarget().root().addTrait(getEventHandlingTrait());
+      myTraitProperty.set(getEventHandlingTrait());
     } else {
-      myRegistration = getRootMapper().getTarget().root().addTrait(trait);
+      myTraitProperty.set(trait);
     }
   }
 
@@ -212,10 +215,10 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
           }
           if (!(view.focused().get())) {
             view.container().focusedView().set(view);
+          } else {
+            hidePatternEditor();
+            createNewDiagramElement(event.x(), event.y());
           }
-
-          hidePatternEditor();
-          createNewDiagramElement(event.x(), event.y());
           event.consume();
         }
       }).on(ViewEvents.KEY_PRESSED, new ViewEventHandler<KeyEvent>() {
@@ -243,7 +246,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         public void handle(View view, MouseEvent event) {
           if (!(hasConnectionDragFeedback())) {
             View sourceView = view.viewAt(event.location());
-            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
+            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0hb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
               return;
             }
             showConnectionDragFeedback(sourceView);
@@ -448,6 +451,12 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
           super.registerSynchronizers(configuration);
 
           configuration.add(Synchronizers.forConstantRole(this, getSource(), getTarget().contentRoot().children(), DiagramCell.this));
+          configuration.add(Synchronizers.forProperty(myTraitProperty, new WritableProperty<ViewTrait>() {
+            public void set(ViewTrait trait) {
+              myRegistration = getTarget().root().addTrait(trait);
+            }
+          }));
+
         }
       };
     }
@@ -492,7 +501,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       }
     });
     result.root().addTrait(RootTrait.ROOT_TRAIT);
-    myRegistration = result.root().addTrait(getEventHandlingTrait());
     return result;
   }
 
@@ -624,21 +632,21 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  private static void check_xnhqai_a1a81(DiagramPalette checkedDotOperand, DiagramCell checkedDotThisExpression) {
+  private static void check_xnhqai_a1a91(DiagramPalette checkedDotOperand, DiagramCell checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.doLayout();
     }
 
   }
 
-  private static void check_xnhqai_a0a62(Registration checkedDotOperand) {
+  private static void check_xnhqai_a0a72(Registration checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.remove();
     }
 
   }
 
-  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(Boolean checkedDotOperand) {
+  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0hb(Boolean checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.booleanValue();
     }

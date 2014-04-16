@@ -38,6 +38,13 @@ public class CreateDiagramNode_Test extends BaseTransformationTest4 {
         BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_n6e1jw_a0, x_n6e1jw_a0, y_n6e1jw_a0, MouseEvent.MOUSE_RELEASED);
         BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_n6e1jw_a0, x_n6e1jw_a0, y_n6e1jw_a0, MouseEvent.MOUSE_CLICKED);
       }
+      {
+        int x_n6e1jw_b0 = 100;
+        int y_n6e1jw_b0 = 100;
+        Component eventTargetComponent_n6e1jw_b0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_n6e1jw_b0, y_n6e1jw_b0, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_n6e1jw_b0, x_n6e1jw_b0, y_n6e1jw_b0, MouseEvent.MOUSE_RELEASED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_n6e1jw_b0, x_n6e1jw_b0, y_n6e1jw_b0, MouseEvent.MOUSE_CLICKED);
+      }
     }
   }
 }

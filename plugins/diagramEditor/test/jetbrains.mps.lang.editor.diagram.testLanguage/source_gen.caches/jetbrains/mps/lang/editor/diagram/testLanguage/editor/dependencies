@@ -47,6 +47,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewContainer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -105,6 +106,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewContainer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />

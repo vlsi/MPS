@@ -40,6 +40,13 @@ public class CreateDiagramNodeWithPosition_Test extends BaseTransformationTest4 
         BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rbsw50_a0, x_rbsw50_a0, y_rbsw50_a0, MouseEvent.MOUSE_RELEASED);
         BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rbsw50_a0, x_rbsw50_a0, y_rbsw50_a0, MouseEvent.MOUSE_CLICKED);
       }
+      {
+        int x_rbsw50_b0 = 150;
+        int y_rbsw50_b0 = 150;
+        Component eventTargetComponent_rbsw50_b0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_rbsw50_b0, y_rbsw50_b0, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rbsw50_b0, x_rbsw50_b0, y_rbsw50_b0, MouseEvent.MOUSE_RELEASED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rbsw50_b0, x_rbsw50_b0, y_rbsw50_b0, MouseEvent.MOUSE_CLICKED);
+      }
       BaseEditorTestBody.typeString(editorComponent, "Node");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }

@@ -225,7 +225,59 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramAndShowCompletion_Test" file="SelectDiagramAndShowCompletion_Test.java">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNodeAndShowCompletion_Test" file="SelectDiagramFromNodeAndShowCompletion_Test.java">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNode_Test" file="SelectDiagramFromNode_Test.java">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramNode_Test" file="SelectDiagramNode_Test.java">
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.tests.SelectDiagram_Test" file="SelectDiagram_Test.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Exception" />
