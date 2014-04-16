@@ -60,7 +60,7 @@
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8794120090375902403" nodeInfo="ng">
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8794120090376062135" nodeInfo="ng">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0a" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0" />
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8794120090375978070" nodeInfo="ng">
@@ -428,12 +428,17 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8095638845859348584" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="SelectNodeOuter" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="TODO: Seems like for now this test is similar to SelectDiagramNode one, but using different node" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8095638845859348585" nodeInfo="ng">
       <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="8095638845859348586" nodeInfo="ng">
         <property name="width" nameId="g85x.8794120090377706498" value="40" />
         <property name="height" nameId="g85x.8794120090377706500" value="40" />
         <property name="x" nameId="g85x.8794120090374242972" value="0" />
         <property name="y" nameId="g85x.8794120090374242974" value="0" />
+      </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1030067674862250363" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0" />
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8095638845859348589" nodeInfo="ng">
@@ -465,13 +470,17 @@
         <property name="x" nameId="g85x.8794120090374242972" value="0" />
         <property name="y" nameId="g85x.8794120090374242974" value="0" />
       </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1030067674862234596" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0" />
+      </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8095638845859579508" nodeInfo="ng">
       <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="8095638845859579509" nodeInfo="ng">
         <property name="width" nameId="g85x.8794120090377706498" value="40" />
         <property name="height" nameId="g85x.8794120090377706500" value="40" />
-        <property name="x" nameId="g85x.8794120090374242972" value="10" />
-        <property name="y" nameId="g85x.8794120090374242974" value="50" />
+        <property name="x" nameId="g85x.8794120090374242972" value="-10" />
+        <property name="y" nameId="g85x.8794120090374242974" value="30" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8095638845859579510" nodeInfo="ng">
           <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
           <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
