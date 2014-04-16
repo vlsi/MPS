@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9dn1h1i7wqwgqqvh3ikp4mxrkm6hxpq">
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="7yamzqwquwx60sbuszo4ubf17890o94" />
+<dependencies version="2" modelHash="-e5f60ush8yd43heya1jq9m15m8m69x2">
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="7rrq8uyeq6cgo84u23bo0qc957qgdbf" />
   <common hash="-cwehgc8d0v4lu66e0ihdbknjcg8yigg" />
-  <source id="2769948622284624385" name="myCore" hash="ewoip1wv7zxvhcnoatmn2kbdshmgtvb">
+  <source id="2769948622284624385" name="myCore" hash="-ar7omk0dhde7ik7hx0j84fx6no23gqc">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <file name="myCore.properties" />
     <file name="myCore.xml" />

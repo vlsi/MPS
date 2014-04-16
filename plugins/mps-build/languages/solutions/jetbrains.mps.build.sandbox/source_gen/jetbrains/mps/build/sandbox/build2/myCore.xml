@@ -131,7 +131,7 @@
   
   <target name="java.compile.module4" depends="java.compile.java.modules.cycle.2">
     <mkdir dir="build/temp/module4" />
-    <javac destdir="build/temp/module4" fork="true" includeantruntime="false">
+    <javac destdir="build/temp/module4" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="module4/source" />
       <classpath>
@@ -144,7 +144,7 @@
   
   <target name="java.compile.module5" depends="java.compile.module4">
     <mkdir dir="build/temp/module5" />
-    <javac destdir="build/temp/module5" fork="true" includeantruntime="false">
+    <javac destdir="build/temp/module5" fork="true" includeantruntime="false" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="module5/source" />
       <classpath path="build/temp/module4" />
