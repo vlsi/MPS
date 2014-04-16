@@ -204,6 +204,15 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
 
       public void dragStopped(Vector position) {
         Rectangle finalBounds = internalsBounds.get();
+
+        Vector min = null;
+        Vector max = null;
+        for (Vector nextPoint : finalBounds.getBoundPoints()) {
+          min = (min == null ? nextPoint : min.min(nextPoint));
+          max = (max == null ? nextPoint : max.max(nextPoint));
+        }
+        finalBounds = new Rectangle(min, max.sub(min));
+
         Vector originDelta = finalBounds.origin.sub(myOriginalBounds.origin);
         Vector dimensionDelta = finalBounds.dimension.sub(myOriginalBounds.dimension);
         boundsDelta.set(new Rectangle(originDelta, dimensionDelta));
