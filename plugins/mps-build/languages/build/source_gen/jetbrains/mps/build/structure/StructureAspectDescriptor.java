@@ -225,7 +225,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 104:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.structure.BuildSource_JavaModuleOptions").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("compileOptions").alias("apply compiler options", "").create();
       case 105:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.structure.BuildSource_JavaOptions").super_("jetbrains.mps.build.structure.BuildProjectPart").parents("jetbrains.mps.build.structure.BuildProjectPart").properties("optionsName", "generateDebugInfo", "copyResources", "heapSize", "noWarnings", "compiler").children(new String[]{"resourceSelectors"}, new boolean[]{true}).alias("java options", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.structure.BuildSource_JavaOptions").super_("jetbrains.mps.build.structure.BuildProjectPart").parents("jetbrains.mps.build.structure.BuildProjectPart").properties("optionsName", "generateDebugInfo", "copyResources", "heapSize", "noWarnings", "compiler", "javaLevel").children(new String[]{"resourceSelectors"}, new boolean[]{true}).alias("java options", "").create();
       case 106:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.structure.BuildSource_JavaResources").super_("jetbrains.mps.build.structure.BuildSource_JavaSources").parents("jetbrains.mps.build.structure.BuildSource_JavaSources", "jetbrains.mps.build.structure.BuildSourceSetContainer").children(new String[]{"fileset"}, new boolean[]{false}).alias("resources", "").create();
       case 107:

@@ -1,3 +1,328 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9e54rmttqx2dyuw163nnhxu6k0ck6ux" />
+<dependencies version="2" modelHash="-8nqcigyjwrlz2vje86smpm7wr61ms5t">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-7hpmrwjimsa7c7rzbkyz2ehryyj1c7y" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
+  <common hash="-abop7j9jlwhkkf0yh301yyvcbn3qcmt" dependsOnNodes="true">
+    <dep root="1117643560963351145" />
+    <dep root="1251221292903960366" />
+    <dep root="1251221292903960368" />
+    <dep root="1251221292904119675" />
+    <dep root="1258644073388922138" />
+    <dep root="1258644073389103449" />
+    <dep root="1330375798058820290" />
+    <dep root="1500819558096177282" />
+    <dep root="1659807394254261074" />
+    <dep root="1659807394254684269" />
+    <dep root="1979010778009209124" />
+    <dep root="202934866059043946" />
+    <dep root="202934866059043959" />
+    <dep root="2303926226081001727" />
+    <dep root="244868996532454372" />
+    <dep root="244868996532550359" />
+    <dep root="2539347366864541544" />
+    <dep root="2591537044435828004" />
+    <dep root="2591537044435828007" />
+    <dep root="2750015747481074431" />
+    <dep root="2754769020641429190" />
+    <dep root="2754769020641646199" />
+    <dep root="2754769020641646247" />
+    <dep root="2755237150521942442" />
+    <dep root="2755237150521975431" />
+    <dep root="2913098736709313156" />
+    <dep root="2913098736709465755" />
+    <dep root="342830306171203038" />
+    <dep root="3542413272732529456" />
+    <dep root="3542413272732750877" />
+    <dep root="3717132724152589376" />
+    <dep root="3717132724152837124" />
+    <dep root="3717132724152913083" />
+    <dep root="3717132724153083947" />
+    <dep root="3717132724153084007" />
+    <dep root="3767587139141066978" />
+    <dep root="3970102152660702410" />
+    <dep root="3970102152660876447" />
+    <dep root="4198392933254416812" />
+    <dep root="4198392933254416814" />
+    <dep root="4380385936562003279" />
+    <dep root="4701820937132281259" />
+    <dep root="4701820937132344003" />
+    <dep root="4903714810883702015" />
+    <dep root="4903714810883702017" />
+    <dep root="4903714810883702019" />
+    <dep root="4964617264469642264" />
+    <dep root="4964617264469642570" />
+    <dep root="4964617264469642724" />
+    <dep root="4964617264469642863" />
+    <dep root="4993211115183250894" />
+    <dep root="4993211115183325728" />
+    <dep root="5248329904287739114" />
+    <dep root="5248329904287739115" />
+    <dep root="5248329904287739116" />
+    <dep root="5248329904287794582" />
+    <dep root="5248329904287794596" />
+    <dep root="5248329904287794599" />
+    <dep root="5248329904287857081" />
+    <dep root="5248329904288051100" />
+    <dep root="5248329904288051111" />
+    <dep root="5248329904288166441" />
+    <dep root="5248329904288265463" />
+    <dep root="5248329904288265468" />
+    <dep root="5481553824944787378" />
+    <dep root="5610619299013057363" />
+    <dep root="5610619299013425874" />
+    <dep root="5610619299014309452" />
+    <dep root="5610619299014446503" />
+    <dep root="5610619299014531543" />
+    <dep root="5610619299014531647" />
+    <dep root="5610619299014531832" />
+    <dep root="5617550519002745363" />
+    <dep root="5617550519002745364" />
+    <dep root="5617550519002745375" />
+    <dep root="5617550519002745379" />
+    <dep root="5970181360961342215" />
+    <dep root="6057319140845467763" />
+    <dep root="6057319140845478688" />
+    <dep root="6083230236994833215" />
+    <dep root="6354776497066088012" />
+    <dep root="6647099934206689694" />
+    <dep root="6647099934206700647" />
+    <dep root="6667029362524340680" />
+    <dep root="6854204111265764357" />
+    <dep root="6859736767834557908" />
+    <dep root="6967233722066057020" />
+    <dep root="6977615362525721938" />
+    <dep root="6977615362525721939" />
+    <dep root="7128123785277710723" />
+    <dep root="7181125477683216329" />
+    <dep root="7181125477683218683" />
+    <dep root="7181125477683370806" />
+    <dep root="7181125477683417252" />
+    <dep root="7321017245476976379" />
+    <dep root="7389400916848004876" />
+    <dep root="7389400916848036984" />
+    <dep root="7389400916848036997" />
+    <dep root="7389400916848050060" />
+    <dep root="7389400916848050071" />
+    <dep root="7389400916848050074" />
+    <dep root="7389400916848073736" />
+    <dep root="7389400916848073784" />
+    <dep root="7389400916848073790" />
+    <dep root="7389400916848073810" />
+    <dep root="7389400916848136194" />
+    <dep root="7389400916848153117" />
+    <dep root="7655580649838832276" />
+    <dep root="7753544965996647426" />
+    <dep root="7753544965996647428" />
+    <dep root="7801138212747054656" />
+    <dep root="7801138212747054659" />
+    <dep root="7866279537988666687" />
+    <dep root="8056730377013322101" />
+    <dep root="841011766565753074" />
+    <dep root="841011766566059607" />
+    <dep root="841011766566205091" />
+    <dep root="8563603456895840654" />
+    <dep root="8577651205286814211" />
+    <dep root="8618885170173601777" />
+    <dep root="8618885170173708134" />
+    <dep root="8654221991637384182" />
+    <dep root="8654221991637384267" />
+    <dep root="9126048691954557131" />
+    <dep root="9126048691955220717" />
+    <dep root="9126048691955220772" />
+    <dep root="9184644532456495794" />
+    <dep root="9184644532456496017" />
+    <dep root="9184644532456508467" />
+    <dep root="9184644532456814147" />
+    <dep root="9184644532456814149" />
+    <dep root="9184644532456897460" />
+    <dep root="9184644532457106504" />
+    <dep root="9184644532457106613" />
+    <dep root="927724900262033858" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="5617550519002745363" name="BuildProject" hash="f188w5xyoqxckukd6om02lbjkev99p" />
+  <source id="5617550519002745364" name="BuildLayout" hash="-3mq184w28zj72qc99gcxz8r1vr16uma" />
+  <source id="5617550519002745375" name="BuildMacro" hash="-48wqgd422kz3txho48aga9c3c2imvp4" />
+  <source id="5617550519002745379" name="BuildDependency" hash="-5p8v0rqdo2zs41l050qfw5492ychfou" />
+  <source id="7389400916848004876" name="BuildLayout_AbstractContainer" hash="-81iv0beq74nncg2r58keq29h7gjunug" />
+  <source id="7389400916848036984" name="BuildLayout_Folder" hash="-3lbglhzmo9a5eki9ahzbjoctuopwvpz" />
+  <source id="7389400916848036997" name="BuildLayout_Node" hash="39w5owykqljrgbdmbyvunir3cod2j7d" />
+  <source id="7389400916848050060" name="BuildLayout_NamedContainer" hash="7fhr4u33ahpfkzmqb4zk3zshpr9db9x" />
+  <source id="7389400916848050071" name="BuildLayout_Zip" hash="qhkpnim9xmurncwetxjogg8v6n2f24" />
+  <source id="7389400916848050074" name="BuildLayout_Jar" hash="9lvbtfp6x5kwsdxov3b8r6tdytwp64k" />
+  <source id="7389400916848073736" name="BuildProjectPart" hash="cxt2iwm3v1xow05qrpkyg7111pod9ep" />
+  <source id="7389400916848073784" name="BuildSource_JavaModule" hash="-4zgj7jxmv5hsxetrdjldfqal4llythy" />
+  <source id="7389400916848073790" name="BuildSourcePath" hash="91hpah0g4jexfx7x6vo0ku03dok3exw" />
+  <source id="7389400916848073810" name="BuildSource_JavaContentRoot" hash="-2at8mvop30guamt713fsia6zy5popt1" />
+  <source id="7389400916848136194" name="BuildFolderMacro" hash="-c5u9c1o6kmi3z3f0np0vwugrew37wo5" />
+  <source id="7389400916848153117" name="BuildSourceMacroRelativePath" hash="d0r1izhl5ti75uum5vnd6z8ta9e0b36" />
+  <source id="2754769020641429190" name="BuildSource_JavaContentFolder" hash="-3tx3wlifih33ddt7rv41gxncmwgbzut" />
+  <source id="2754769020641646199" name="BuildSource_JavaDependency" hash="a4oa7cmb7dtvj3ff35gpia0ttbc66p7" />
+  <source id="2754769020641646247" name="BuildSource_JavaDependencyModule" hash="1b6bqrw9d4ge0cxfg925x9c3k4djtoi" />
+  <source id="6057319140845467763" name="BuildSource_JavaLibrary" hash="49jf1wer8wbrvfqctht6ur88x3nfpb9" />
+  <source id="6057319140845478688" name="BuildSource_JavaLibraryElement" hash="c28tn38msk6we7ed35vjcsqmmeyk7e1" />
+  <source id="4993211115183250894" name="BuildSource_JavaDependencyLibrary" hash="a7o6m5ixsbotgu380a9iaakf5u0n4x3" />
+  <source id="4993211115183325728" name="BuildProjectDependency" hash="-6z731pyy7v6v7dcsqb2gpk57fwq22it" />
+  <source id="3542413272732529456" name="BuildNamedLayout" hash="-99bplkp63cdt3ktdlz4rl710pqu82j9" />
+  <source id="3542413272732750877" name="BuildAspect" hash="965aoog2k6xtjeqeaefa7obmyzq64al" />
+  <source id="5481553824944787378" name="BuildSourceProjectRelativePath" hash="11i0rkscpfy2ff82njqxptjttbh5eyu" />
+  <source id="8618885170173601777" name="BuildCompositePath" hash="-6o1mwwwjvy23zwaegh8o67qwag792hu" />
+  <source id="7321017245476976379" name="BuildRelativePath" hash="d7628vbpcjis803pp62vmelk74eim1z" />
+  <source id="1117643560963351145" name="BuildLayout_FileSet" hash="-1n75jjieqskukj0pxw4gylwjiyfuo3p" />
+  <source id="6647099934206689694" name="BuildPlugin" hash="11vzq3z8n7v5pinryx1uc9udz70sx8w" />
+  <source id="6647099934206700647" name="BuildJavaPlugin" hash="bncmj9neoek0j3hammb5k0n25f3kc90" />
+  <source id="3767587139141066978" name="BuildVariableMacro" hash="-11hgcfc907b6dfc5ap8ry6tty7h51n3" />
+  <source id="5248329904288051100" name="BuildFileIncludeSelector" hash="-ded96sr7m27gzpx3yfwhq0rc08fyte4" />
+  <source id="5248329904287794599" name="BuildFileSelector" hash="dotcsg1rg2q1wt7w6txlonyiowho1a1" />
+  <source id="5248329904287794596" name="BuildInputFiles" hash="-c0v3mzq70dvedarvcxua0tmiiaz3f2t" />
+  <source id="4903714810883702017" name="BuildVarRefStringPart" hash="emky316knnav5gqi34hb2k87yfhn96l" />
+  <source id="4903714810883702019" name="BuildTextStringPart" hash="b44mmds9yb2d4ybvs9yt8km10hfuxqa" />
+  <source id="4903714810883702015" name="BuildStringPart" hash="e3hy4u6ts22zi6langan10a5mr0nmgk" />
+  <source id="5248329904288166441" name="BuildLayout_ContainerAcceptingFileSet" hash="-4v6bucvpkhfl2bngo3kbfnmxf3y9myq" />
+  <source id="5248329904287739114" name="BuildInputResourceSet" hash="egesj6xeyfon845seqh7coz8qxes7rh" />
+  <source id="5248329904287739115" name="BuildInputFileSet" hash="-5ylqe70iwymgn9mvs1kzs94phjlf5ci" />
+  <source id="5248329904287739116" name="BuildInputFolderSet" hash="1640gjp592ugsyfxc8zejgdd5qznlxa" />
+  <source id="5248329904288265463" name="BuildSource_JavaContentFolderKind" hash="-60k90qlsl3l6s5vowpwr6qsbw7qzh4v">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="BuildSource_JavaContentFolderKind.java" />
+    <file name="BuildSource_JavaContentFolderKind_PropertySupport.java" />
+  </source>
+  <source id="5248329904287857081" name="BuildLayout_Copy" hash="1rnnsdg78t69uz080x8y9kgc06yw52f" />
+  <source id="5248329904287794582" name="BuildInputSingleFile" hash="-9nn9iyazf7zm7f1pnpx6rau87b4ufi7" />
+  <source id="5248329904288265468" name="BuildSource_JavaSources" hash="5uxvtjcwkni757zw5p0ts4rmxeoubxv" />
+  <source id="5248329904288051111" name="BuildFileExcludeSelector" hash="3by04f14nj8rjbg71rixssxye313olw" />
+  <source id="4380385936562003279" name="BuildString" hash="8hziseloi564k4f84a60kim4glpd8yt" />
+  <source id="1258644073388922138" name="BuildSource_JavaJar" hash="-1dgrgy9jfagt7qstr1ewb9jnmz365c5" />
+  <source id="1258644073389103449" name="BuildSource_JavaClassFolder" hash="1n4clyp5c870n75kut82hf0bisfpx9o" />
+  <source id="841011766565753074" name="BuildLayout_Import" hash="-65a7jzw3oogn7bbjxof7hmiazih53nw" />
+  <source id="841011766566059607" name="BuildStringNotEmpty" hash="egcb9tpbdyo3x7x1yexmtmw8fz56rox" />
+  <source id="841011766566205091" name="BuildExternalDependency" hash="7mflzcdzji73ahxpimr4onh5pv2zior" />
+  <source id="4701820937132281259" name="BuildCustomWorkflow" hash="6a577i102m6xa7odkcg7zelyqbj08f3" />
+  <source id="4701820937132344003" name="BuildLayout_Container" hash="-9j3440sawydzitw15sxh0pw9nqpqmee" />
+  <source id="7128123785277710723" name="BuildLayout_PathElement" hash="delg7g60heuhod6jfkrz8maxttkkxbp" />
+  <source id="2913098736709313156" name="BuildLayout_TransparentContainer" hash="-881hsspn17x5ghsuyrpfbclpalkgvbx" />
+  <source id="2913098736709465755" name="BuildLayout_ExportAsJavaLibrary" hash="7s5635ilvkw2naw5woqhya5jhz4h18n" />
+  <source id="1500819558096177282" name="BuildSource_JavaFiles" hash="6zhxcku11fnxa023p3erikrcxz64k8o" />
+  <source id="3717132724152589376" name="BuildSource_JavaDependencyJar" hash="2x7lqs7awjt25cnk1xgfz9g9i4f7sbc" />
+  <source id="3717132724152837124" name="BuildSource_JavaCP" hash="6uumnqaxstuyuat6dx9jnags6m6xm0m" />
+  <source id="3717132724152913083" name="BuildSource_JavaLibraryCP" hash="1sazoy92gfomj5ht29hu2pztci9o8jt" />
+  <source id="3717132724153083947" name="BuildSourceSetContainer" hash="9rjeijy11qyhdagb2b82c3irwwn2dlm" />
+  <source id="3717132724153084007" name="BuildSource_JavaJars" hash="-7y8nfw9f1eq51nsvrbh1y1p1uaw3ki9" />
+  <source id="7866279537988666687" name="BuildInputFolders" hash="9v3x1kvt0jaj8vcuaw0xy7903yeqiy0" />
+  <source id="2303926226081001727" name="BuildInputSingleFolder" hash="-16j2yprba26gwzm9zxxyokajv567d5j" />
+  <source id="8654221991637384182" name="BuildFileIncludesSelector" hash="btkavwdhh2v0o7oxbgigpwmvzphd90q" />
+  <source id="8654221991637384267" name="BuildFileSelectorInAttribute" hash="4nghuol1em0qgxttsrtgvkifwaqybjx" />
+  <source id="2591537044435828004" name="BuildLayout_CompileOutputOf" hash="-ewiltkvc4em306f0cxuq02rnp2v3hfw" />
+  <source id="2591537044435828007" name="BuildSource_CompilablePart" hash="egcpof0ltud3aepief0kr1s4v5w52xo" />
+  <source id="6859736767834557908" name="BuildSource_JavaDependencyExternalJar" hash="9ojkrwus4qya0fmeantilhi48oo40pz" />
+  <source id="7181125477683216329" name="BuildExternalLayout" hash="-2dj6z8ia5jz8s7io8w1y0fq9td0thba" />
+  <source id="7181125477683218683" name="BuildLayout_PureNode" hash="bcd0a2qg7q1t2quy19rvb1154zh7rbj" />
+  <source id="7181125477683370806" name="BuildLayout_FileStub" hash="b8lkhg3w54u2f65ey36zu8i3kr2ul72" />
+  <source id="7181125477683417252" name="BuildExternalLayoutDependency" hash="-84mzcin4q92u6vajkwk2vw4870kelqv" />
+  <source id="5610619299013057363" name="BuildLayout_ImportContent" hash="c8epaqthh3j0masm7u4ozk6hcxqnuwl" />
+  <source id="5610619299013425874" name="BuildSource_SingleFile" hash="-1tb7g34zupxh1c60tlaehd48pgfpd1s" />
+  <source id="5610619299014309452" name="BuildSource_JavaExternalJarRef" hash="9ertw38kqk0m1k953h2v42sblr7e235" />
+  <source id="5610619299014446503" name="BuildSource_JavaLibraryExternalJar" hash="4t8c45alr04ve9q8hbf73a1r9kjbt3e" />
+  <source id="5610619299014531543" name="BuildSource_SingleFolder" hash="-c4cqdy1sbbjzfeqnfv3x5y839owvbeb" />
+  <source id="5610619299014531647" name="BuildSource_JavaExternalJarFolderRef" hash="45brfzj1asxtcgufo0jdq4nkowtjn3b" />
+  <source id="5610619299014531832" name="BuildSource_JavaLibraryExternalJarFolder" hash="3obr57tfbdaudqwqvrjyd3xg4tgnnsb" />
+  <source id="927724900262033858" name="BuildSource_JavaOptions" hash="-blm7kmma2l2u9wb9fj9n20zgyvp5ep3" />
+  <source id="1659807394254261074" name="BuildSource_JavaModuleOptions" hash="182d95fohblxttsplihyhuzexp1ir7m" />
+  <source id="1659807394254684269" name="BuildSource_JavaResources" hash="dmnuukjk2ijz1jv7hwyqxfi1d39z3nr" />
+  <source id="9184644532456495794" name="BuildLayout_CustomCopy" hash="-3vcs8dh210insack3l4nif6w8jsdjhq" />
+  <source id="9184644532456496017" name="BuildLayout_AbstractCopy" hash="dbpph0uyz5nj3aw9d8mz8kuwimuwig3" />
+  <source id="9184644532456508467" name="BuildLayout_CopyHandler" hash="81kox7f7w31w5w607ndqgd9kclzzdf2" />
+  <source id="9184644532456814147" name="BuildLayout_CopyFilter" hash="73vdasedeb16lm6atp6dqagybmx3on5" />
+  <source id="9184644532456814149" name="BuildLayout_CopyFilterReplaceTokens" hash="-2wo37424r0x55r84a3s4j160up0myjb" />
+  <source id="8618885170173708134" name="FileName" hash="c54t7m1idlfsqcn1pzwhvmcj873yvqf">
+    <file name="FileName_PropertySupport.java" />
+  </source>
+  <source id="9184644532456897460" name="BuildStringContainer" hash="-bf00afy1jha699d2izn98b062yiko77" />
+  <source id="9184644532457106504" name="BuildLayout_CopyFilterReplaceRegex" hash="b94d3j2g55dxkmvd0yos2qkk3rcfu5c" />
+  <source id="9184644532457106613" name="AntRegexFlags" hash="5eukvvd9rqyciyebxons1bfpzgmmgrw">
+    <file name="AntRegexFlags_PropertySupport.java" />
+  </source>
+  <source id="7655580649838832276" name="BuildLayout_EchoXml" hash="-8x2qgk1qsiyehp1uf5mbzrkkqaqcr5h" />
+  <source id="202934866059043946" name="BuildLayout_EchoProperties" hash="be4wvlmip0pkmxclyjr1htj937k5pso" />
+  <source id="202934866059043959" name="BuildLayout_EchoPropertyEntry" hash="-n7y1y504ccbb9klblkp4flxq4ggn02" />
+  <source id="8577651205286814211" name="BuildLayout_Tar" hash="1448hyhxol5qkq59gtw56synv7ql4su" />
+  <source id="4198392933254416812" name="BuildLayout_CopyFilterFixCRLF" hash="-35g37cx63c8yo42kfwtq12ts38xh0ly" />
+  <source id="4198392933254416814" name="BuildLayout_CopyFilterEolStyle" hash="-9r51hzvdld652p8u7ppwp2jrcnohntu">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="BuildLayout_CopyFilterEolStyle.java" />
+    <file name="BuildLayout_CopyFilterEolStyle_PropertySupport.java" />
+  </source>
+  <source id="7801138212747054656" name="BuildLayout_Filemode" hash="7tib1e9mynq4j0wp5qlnijohzf547ia" />
+  <source id="6977615362525721939" name="BuildLayout_CopyFlattenMapper" hash="-191oi1yhjlhbr163vd46knjgoymb7wy" />
+  <source id="7801138212747054659" name="BuildLayout_UnixFilemode" hash="3470fepiaq72lsw41r1avisdhrvy9h">
+    <file name="BuildLayout_UnixFilemode_PropertySupport.java" />
+  </source>
+  <source id="6977615362525721938" name="BuildLayout_CopyMapper" hash="yzsmwd26a778p6ojzjp4iz1p4wn5v4" />
+  <source id="1979010778009209124" name="BuildLayout_TarCompression" hash="-cfyub36zeh39zvspph95ygbsbovs6n2">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="BuildLayout_TarCompression.java" />
+    <file name="BuildLayout_TarCompression_PropertySupport.java" />
+  </source>
+  <source id="8056730377013322101" name="BuildSource_JavaDependencyFileset" hash="a1ep3isn01bklvyfy4avoo74ugjyg66" />
+  <source id="7753544965996647426" name="BuildSource_FilesetProjectPart" hash="6r7sj6shtmk82wpc6d29fl91fsvzhtf" />
+  <source id="7753544965996647428" name="BuildLayout_FilesOf" hash="468qw1v556zp19k0a65rm0z1soczzdx" />
+  <source id="3970102152660702410" name="BuildLayout_CopyGlobMapper" hash="-o8thm3c2cwr7pl343lsoqhnujriair" />
+  <source id="3970102152660876447" name="BuildLayout_CopyRegexMapper" hash="3qbhukbyn0onqpik5b6g1wjicbkv1ts" />
+  <source id="2755237150521942442" name="BuildVariableMacroInitValue" hash="-bkfjqk2s7636rjivuzlj5gurg8uyo67" />
+  <source id="2755237150521975431" name="BuildVariableMacroInitWithString" hash="955wr1yyclusurmrcoxh2t7i6mqsi6y" />
+  <source id="244868996532454372" name="BuildVariableMacroInitWithDate" hash="-a346r5s6k327sybbpqo9t8icg4c4kqy" />
+  <source id="244868996532550359" name="BuildVariableMacroInitWithValueFromFile" hash="azluzsj8bvsr2xptqcm6elnht8it3bo" />
+  <source id="9126048691954557131" name="BuildLayout_Comment" hash="-6gmj7lapdqmy0l8o80q44zqyde45wx8" />
+  <source id="9126048691955220717" name="BuildLayout_File" hash="-27zobr4ppllifw5x3x29yyqhz1kjgl7" />
+  <source id="9126048691955220772" name="BuildLayout_CopyParameter" hash="-1oy69znksocm5vmd5fp5jtddo4x6mhn" />
+  <source id="2750015747481074431" name="BuildLayout_Files" hash="-7diwe9t61i55buun2rnb93gf83wdan0" />
+  <source id="6967233722066057020" name="BuildLayout_War" hash="cl9vn8seieon3oxgb5ncxr3nn22e5rx" />
+  <source id="342830306171203038" name="BuildSource_JavaDependencyExternalJarInFolder" hash="4awpcko21yw22gpejc1r0h0mgv3m3g8" />
+  <source id="1251221292903960366" name="BuildLayout_JarManifest" hash="ycytksgnjlzmebtsh4mevrcku074m2" />
+  <source id="1251221292903960368" name="BuildLayout_JarManifest_Attribute" hash="cjhe0wu6mbnq3r0sawum5qr1q0yb3uy" />
+  <source id="1251221292904119675" name="BuildLayout_JarManifest_Section" hash="-acb5stdoccobrrhs5zrc8i1qpi95h40" />
+  <source id="2539347366864541544" name="BuildSourceArchiveRelativePath" hash="-7k4835hivfz1o2f8irpht95b0matggi" />
+  <source id="8563603456895840654" name="BuildLayout_JarManifest_Part" hash="b3wwdzfvbmuxixl2u3c7eirb8wggj8f" />
+  <source id="6083230236994833215" name="IWorkflowParticipant" hash="-d6f3ifece20f68jknt63wal3b2qbczm" />
+  <source id="6854204111265764357" name="GeneratorInternal_IWorkfowParticipants" hash="-843r0gqenurgn4sit9nefx13f58520m" />
+  <source id="6667029362524340680" name="GeneratorInternal_IWorkflowParticipantReference" hash="74ig0qjlcrmreokjo7zai23i04ohn4m" />
+  <source id="4964617264469642264" name="GeneratorInternal_BuildSource_JavaModule" hash="-4tbmo7b59a4v4g2np9iy3gg76ciz1z9" />
+  <source id="4964617264469642570" name="GeneratorInternal_BuildSource_SingleFile" hash="-7nl2sbx6hgygtbrnh8r6hs18pzs54s4" />
+  <source id="4964617264469642863" name="GeneratorInternal_BuildSource_JavaLibrary" hash="2g6zq0bn25xn5swlg17bzez4tpi6de5" />
+  <source id="4964617264469642724" name="GeneratorInternal_BuildSource_JavaJar" hash="alqte1r82fsowan3auw4p18vhlinax9" />
+  <source id="5970181360961342215" name="BuildLayout_InJarNode" hash="ajyi4nmbhfyh05vkaou2l85nd6wq3s3" />
+  <source id="1330375798058820290" name="BuildLayout_CopyProcessor" hash="-1gnobu08u4ho644ksuj1fsydg5n0ozg" />
+  <source id="6354776497066088012" name="GeneratorInternal_ProjectDependency" hash="bcqnkuabyvcpzb2rxnib5ynpkho2wyo" />
+</dependencies>
 
