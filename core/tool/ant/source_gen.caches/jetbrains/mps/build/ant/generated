@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6bb3ou0x7qobwgctfd7suni8pkd3ptf" />
+<dependencies version="2" modelHash="5qh921gqx57lcgkkv1mngkuchrj0140">
+  <common hash="31gkoyq2r4fwp883ltugb24chx4b0wo" dependsOnNodes="true" />
+  <source id="4003657351907886467" name="Arg" hash="9nr7m7eom8u6qbrsv91vwj2rt439uxl">
+    <file name="Arg.java" />
+  </source>
+  <source id="4003657351907889245" name="MyExecuteStreamHandler" hash="-4z614gwwz2cvo31577lt04gpsp95x3c">
+    <file name="MyExecuteStreamHandler.java" />
+  </source>
+  <source id="4003657351907889440" name="Macro" hash="-7ll4i24qeb4824pn59h31hianvjk0ie">
+    <file name="Macro.java" />
+  </source>
+  <source id="4003657351907890119" name="JvmArgs" hash="dtrl19lr9au4y7jhyvde4yyu2ies871">
+    <file name="JvmArgs.java" />
+  </source>
+  <source id="4003657351907890310" name="MpsLoadTask" hash="-dtaaekvalhpv52c6fpa65coij5h55j2">
+    <file name="MpsLoadTask.java" />
+  </source>
+  <source id="4003657351907893424" name="LibraryDataType" hash="-9q6l5kpxb8jpmr8ikcc76phojtbd2f6">
+    <file name="LibraryDataType.java" />
+  </source>
+  <source id="3983419922566758952" name="MPSClasspathUtil" hash="8hcdbmyg53cdpvi08ta4zgah5msh2sz">
+    <file name="MPSClasspathUtil.java" />
+  </source>
+  <source id="3449270742160220910" name="ExcludeNested" hash="53o3ycwplmc5zt6yy1aoziw334i7c6p">
+    <file name="ExcludeNested.java" />
+  </source>
+</dependencies>
 

@@ -7417,7 +7417,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9186796564629073680" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9186796564629073682" nodeInfo="nn">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9186796564629073686" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nrbm.~NotificationSettings%dsetDisplayType(com%dintellij%dnotification%dNotificationDisplayType)%cvoid" resolveInfo="setDisplayType" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nrbm.~NotificationSettings%dwithDisplayType(com%dintellij%dnotification%dNotificationDisplayType)%ccom%dintellij%dnotification%dimpl%dNotificationSettings" resolveInfo="withDisplayType" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="9186796564629073688" nodeInfo="nn">
                 <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="9186796564629073693" nodeInfo="nn">
                   <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="odpa.~NotificationDisplayType%dBALLOON" resolveInfo="BALLOON" />

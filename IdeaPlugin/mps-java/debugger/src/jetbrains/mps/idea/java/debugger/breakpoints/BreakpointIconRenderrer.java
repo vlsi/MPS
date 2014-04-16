@@ -16,18 +16,18 @@
 
 package jetbrains.mps.idea.java.debugger.breakpoints;
 
-import com.intellij.debugger.ui.breakpoints.BreakpointFactory;
-import com.intellij.debugger.ui.breakpoints.BreakpointPropertiesPanel;
+import com.intellij.debugger.DebuggerManagerEx;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.actionSystem.Constraints;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.ui.popup.Balloon;
-import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupAdapter;
 import com.intellij.openapi.ui.popup.LightweightWindowEvent;
 import com.intellij.openapi.wm.IdeFocusManager;
@@ -39,10 +39,10 @@ import jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx;
 import jetbrains.mps.idea.java.MpsJavaBundle;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JPopupMenu;
 import java.awt.Point;
 
@@ -68,6 +68,11 @@ import java.awt.Point;
 
   @Override
   public JPopupMenu getPopupMenu() {
+    final Editor editor = CommonDataKeys.EDITOR_EVEN_IF_INACTIVE.getData(((EditorComponent)myComponent));
+    ((DebuggerManagerEx)DebuggerManagerEx.getInstance(myBreakpoint.getProject())).getBreakpointManager().editBreakpoint(myBreakpoint, editor);
+    if (true) {
+      return null;
+    }
     DefaultActionGroup actions = (DefaultActionGroup) myBreakpoint.getHighlighter().getGutterIconRenderer().getPopupMenuActions();
     for (AnAction action : actions.getChildActionsOrStubs()) {
       if (action instanceof ContextAction) {
@@ -83,7 +88,7 @@ import java.awt.Point;
     return (EditorComponent) myComponent;
   }
 
-  @Nullable
+  /*@Nullable
   private static BreakpointFactory findFactory(BreakpointWithHighlighter breakpoint) {
     for (BreakpointFactory factory : ApplicationManager.getApplication().getExtensions(BreakpointFactory.EXTENSION_POINT_NAME)) {
       if (factory.getBreakpointCategory().equals(breakpoint.getCategory())) {
@@ -91,7 +96,7 @@ import java.awt.Point;
       }
     }
     return null;
-  }
+  }*/
 
   private class EditBreakpointAction extends AnAction {
 
@@ -101,25 +106,25 @@ import java.awt.Point;
 
     @Override
     public void update(AnActionEvent e) {
-      BreakpointFactory breakpointFactory = findFactory(myBreakpoint);
+      /*BreakpointFactory breakpointFactory = findFactory(myBreakpoint);
       if (breakpointFactory == null) {
         e.getPresentation().setEnabled(false);
       } else {
         e.getPresentation().setEnabled(true);
-      }
+      }*/
       super.update(e);
     }
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-      BreakpointFactory breakpointFactory = findFactory(myBreakpoint);
+      /*BreakpointFactory breakpointFactory = findFactory(myBreakpoint);
       if (breakpointFactory == null) {
         return;
       }
 
       final BreakpointPropertiesPanel propertiesPanel = breakpointFactory.createBreakpointPropertiesPanel(myBreakpoint.getProject(), true);
-      propertiesPanel.initFrom(myBreakpoint, false);
-      final JComponent mainPanel = propertiesPanel.getPanel();
+      propertiesPanel.initFrom(myBreakpoint, false);*/
+      final JComponent mainPanel = new JLabel("In progress");//propertiesPanel.getPanel();
 
       int y = getComponent().getLeftEditorHighlighter().getIconCoordinate(BreakpointIconRenderrer.this);
       int x = getComponent().getLeftEditorHighlighter().getIconRenderersOffset();
@@ -141,11 +146,11 @@ import java.awt.Point;
       balloon.addListener(new JBPopupAdapter() {
         @Override
         public void onClosed(LightweightWindowEvent event) {
-          propertiesPanel.saveTo(myBreakpoint, new Runnable() {
+          /*propertiesPanel.saveTo(myBreakpoint, new Runnable() {
             @Override
             public void run() {
             }
-          });
+          });*/
         }
       });
 
