@@ -109,7 +109,7 @@ public class Node_Editor extends DefaultNodeEditor {
                     }
                   }));
                   myPropertyCell_aofvvp_a0a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_X));
-                  myPropertyCell_aofvvp_a1a.registerSynchronizers(configuration, getTarget().focusable());
+                  myPropertyCell_aofvvp_a1a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_Y));
                 }
               };
             }

@@ -7,9 +7,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
@@ -33,6 +30,7 @@ import java.util.HashSet;
 import java.util.ListIterator;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class Diagram2_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -40,35 +38,23 @@ public class Diagram2_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_dbn5di_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_dbn5di_a");
     editorCell.setBig(true);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createCollection_dbn5di_a0(editorContext, node));
+    editorCell.addEditorCell(this.createDiagram_dbn5di_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dbn5di_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_dbn5di_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_dbn5di_a0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createDiagram_dbn5di_a0a(editorContext, node));
+  private EditorCell createDiagram_dbn5di_a0(EditorContext editorContext, SNode node) {
+    DiagramCell editorCell = new Diagram2_Editor.DiagramCellImpl_dbn5di_a0(editorContext, node);
+    editorCell.setCellId("Diagram_dbn5di_a0");
     return editorCell;
   }
 
-  private EditorCell createDiagram_dbn5di_a0a(EditorContext editorContext, SNode node) {
-    DiagramCell editorCell = new Diagram2_Editor.DiagramCellImpl_dbn5di_a0a(editorContext, node);
-    editorCell.setCellId("Diagram_dbn5di_a0a");
-    return editorCell;
-  }
-
-  private class DiagramCellImpl_dbn5di_a0a extends DiagramCell {
-    private DiagramCellImpl_dbn5di_a0a(EditorContext editorContext, SNode node) {
+  private class DiagramCellImpl_dbn5di_a0 extends DiagramCell {
+    private DiagramCellImpl_dbn5di_a0(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "mainNodes"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
@@ -156,5 +142,12 @@ public class Diagram2_Editor extends DefaultNodeEditor {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
     }
+  }
+
+  private EditorCell createConstant_dbn5di_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
+    editorCell.setCellId("Constant_dbn5di_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 }
