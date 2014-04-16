@@ -265,8 +265,8 @@ public class BaseEditorTestBody extends BaseTestBody {
             keyChar = (char) keyCode;
           }
 
-          KeyEvent keyPressedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar());
-          KeyEvent keyReleasedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar());
+          KeyEvent keyPressedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), keyCode, keyChar);
+          KeyEvent keyReleasedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), keyCode, keyChar);
           if (eventTargetComponent == null) {
             // TODO: remove this branch and always dispatch events using .dispatchEvent method() ? 
             editorComponent.processKeyPressed(keyPressedEvent);
