@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -62,6 +63,15 @@ public class Diagram2_Editor extends DefaultNodeEditor {
           SPropertyOperations.set(node, "x", "" + (x));
           SPropertyOperations.set(node, "y", "" + (y));
         }
+      }), createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "nodeConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+        public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
+          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort") && SNodeOperations.isInstanceOf(to, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort");
+        }
+      }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
+        public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
+          SLinkOperations.setTarget(node, "src", SNodeOperations.cast(from, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort"), false);
+          SLinkOperations.setTarget(node, "dst", SNodeOperations.cast(to, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort"), false);
+        }
       })}));
       synchronize();
     }
@@ -78,7 +88,16 @@ public class Diagram2_Editor extends DefaultNodeEditor {
     }
 
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{};
+      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "nodeConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+        public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
+          return SNodeOperations.isInstanceOf(from, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort") && SNodeOperations.isInstanceOf(to, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort");
+        }
+      }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
+        public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
+          SLinkOperations.setTarget(node, "src", SNodeOperations.cast(from, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort"), false);
+          SLinkOperations.setTarget(node, "dst", SNodeOperations.cast(to, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort"), false);
+        }
+      })};
     }
 
     public Mapper<SNode, DiagramView> createMapper(SNode node) {
@@ -147,6 +166,7 @@ public class Diagram2_Editor extends DefaultNodeEditor {
       Set<SNode> existingConnectors = new HashSet<SNode>(myConnectors);
       ListIterator<SNode> connectorsIterator = myConnectors.listIterator();
       syncDiagramElements(SLinkOperations.getTargets(getSNode(), "mainNodes", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
+      syncDiagramElements(SLinkOperations.getTargets(getSNode(), "nodeConnectors", true), blocksIterator, existingBlocks, connectorsIterator, existingConnectors);
       purgeTailNodes(blocksIterator);
       purgeTailNodes(connectorsIterator);
     }

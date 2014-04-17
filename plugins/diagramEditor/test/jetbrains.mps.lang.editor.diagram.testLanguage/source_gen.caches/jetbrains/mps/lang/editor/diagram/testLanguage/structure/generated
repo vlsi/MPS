@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="87bkz2g7jyo2yc9rghy042p6mr6p76j">
+<dependencies version="2" modelHash="-65at77uv9jsuw7yrupv8d21cavxuda9">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-7hpmrwjimsa7c7rzbkyz2ehryyj1c7y" />
@@ -8,9 +9,14 @@
   <common hash="-9anyhlabz0gcyk66e0whrk2anf1asfj" dependsOnNodes="true">
     <dep root="511002117671747962" />
     <dep root="511002117671748019" />
+    <dep root="5540569706413451931" />
+    <dep root="5540569706414436817" />
+    <dep root="5540569706414436850" />
+    <dep root="5540569706414436906" />
     <dep root="8794120090374233314" />
     <dep root="8794120090374233605" />
     <dep root="8794120090374242986" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -20,8 +26,12 @@
   </common>
   <source id="511002117671747962" name="Diagram1" hash="-59mrzu5ohpvlexbzc6zylc4v89syt9p" />
   <source id="511002117671748019" name="RectangleNode" hash="-5ooks2u6egux3g54jx0txzzcgjqmcpf" />
-  <source id="8794120090374233314" name="Diagram2" hash="1q0at9dirkzrd3g8r36kydcgi0460no" />
+  <source id="8794120090374233314" name="Diagram2" hash="1e8th48y032u7pwy5r48lwf4j09d39b" />
   <source id="8794120090374233605" name="Node" hash="-b69wleizya2u6uwymomqbnoeessf8py" />
   <source id="8794120090374242986" name="NodeWithSize" hash="1fv8mobdp5pq61njvu25ojx2pax6915" />
+  <source id="5540569706413451931" name="OutputToInputPortConnector" hash="-6v2mz75zpluhjc6ohjbwsq0zn6jrr9q" />
+  <source id="5540569706414436817" name="NodeWithPorts" hash="7sdiyq7gh2k06p4hrwb838tx922y3xv" />
+  <source id="5540569706414436850" name="InputPort" hash="-94vdssa200o3q6fjugkvqkk7kmfio1h" />
+  <source id="5540569706414436906" name="OutputPort" hash="-2jiazeam5rd2rzy5sk3znffozviv5d1" />
 </dependencies>
 

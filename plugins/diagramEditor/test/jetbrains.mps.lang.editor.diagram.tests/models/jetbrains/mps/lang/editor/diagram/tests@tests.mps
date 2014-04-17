@@ -6,29 +6,29 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)" />
-  <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" version="-1" />
-  <import index="jsgz" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
-  <import index="8jsd" modelUID="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)" version="0" />
-  <import index="nu8v" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" version="-1" />
-  <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
-  <import index="4to0" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)" version="-1" />
-  <import index="2qq2" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.mapper(jetbrains.jetpad/jetbrains.jetpad.mapper@java_stub)" version="-1" />
-  <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
-  <import index="ctj7" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetbrains.jetpad/jetbrains.jetpad.model.property@java_stub)" version="-1" />
-  <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
-  <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
+  <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
+  <import index="8jsd" modelUID="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)" version="-1" />
+  <import index="4to0" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)" version="-1" />
+  <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="jsgz" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
+  <import index="ctj7" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetbrains.jetpad/jetbrains.jetpad.model.property@java_stub)" version="-1" />
+  <import index="2qq2" modelUID="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.mapper(jetbrains.jetpad/jetbrains.jetpad.mapper@java_stub)" version="-1" />
+  <import index="nu8v" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" version="-1" />
+  <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" version="-1" />
+  <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="39" implicit="yes" />
   <import index="g85x" modelUID="r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <import index="4ky7" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" implicit="yes" />
-  <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
+  <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" implicit="yes" />
+  <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="604142159147796275" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="CreateDiagramNode" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Creating new diagram node by clicking on digram." />
@@ -468,18 +468,18 @@
     <property name="description" nameId="tp5g.1883175908513350760" value="Selection is outside the diagram, then select diagram block" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="select" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8095638845859348585" nodeInfo="ng">
-      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="8095638845859348586" nodeInfo="ng">
-        <property name="width" nameId="g85x.8794120090377706498" value="40" />
-        <property name="height" nameId="g85x.8794120090377706500" value="40" />
-        <property name="x" nameId="g85x.8794120090374242972" value="0" />
-        <property name="y" nameId="g85x.8794120090374242974" value="0" />
-      </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4459951312286662281" nodeInfo="ng">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
         <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
         <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
         <property name="cellId" nameId="tp5g.1229194968595" value="Constant_dbn5di_b0" />
+      </node>
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="8095638845859348586" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="40" />
+        <property name="height" nameId="g85x.8794120090377706500" value="40" />
+        <property name="x" nameId="g85x.8794120090374242972" value="0" />
+        <property name="y" nameId="g85x.8794120090374242974" value="0" />
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="8095638845859348589" nodeInfo="ng">
@@ -782,47 +782,6 @@
       </node>
     </node>
   </root>
-  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5540569706412511201" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="NegativeResizeNode_bottom_right" />
-    <property name="description" nameId="tp5g.1883175908513350760" value="Clicking on bottom_right resize handle, resising node to the left &amp; upward to the position before node x, y coordinates" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="resize" />
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706412511202" nodeInfo="ng">
-      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="5540569706412511203" nodeInfo="ng">
-        <property name="width" nameId="g85x.8794120090377706498" value="80" />
-        <property name="height" nameId="g85x.8794120090377706500" value="80" />
-        <property name="x" nameId="g85x.8794120090374242972" value="10" />
-        <property name="y" nameId="g85x.8794120090374242974" value="10" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706412511204" nodeInfo="ng">
-          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
-        </node>
-      </node>
-    </node>
-    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706412511205" nodeInfo="ng">
-      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="5540569706412511206" nodeInfo="ng">
-        <property name="width" nameId="g85x.8794120090377706498" value="40" />
-        <property name="height" nameId="g85x.8794120090377706500" value="30" />
-        <property name="x" nameId="g85x.8794120090374242972" value="-30" />
-        <property name="y" nameId="g85x.8794120090374242974" value="-20" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706412511207" nodeInfo="ng">
-          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
-        </node>
-      </node>
-    </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706412511208" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="5540569706412511209" nodeInfo="ng">
-        <property name="x" nameId="tp5g.210559400606080743" value="90" />
-        <property name="y" nameId="tp5g.210559400606080744" value="90" />
-        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706412511210" nodeInfo="sn">
-          <node role="statement" roleId="tpee.1068581517665" type="tp5g.DragMouseStatement" typeId="tp5g.210559400608047267" id="5540569706412511211" nodeInfo="ng">
-            <property name="x" nameId="tp5g.210559400608047600" value="-30" />
-            <property name="y" nameId="tp5g.210559400608047601" value="-20" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5540569706412486831" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="NegativeResizeNode_bottom_central" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Clicking on bottom_central resize handle, resising node upward to the position before node y coordinate" />
@@ -859,6 +818,47 @@
           <node role="statement" roleId="tpee.1068581517665" type="tp5g.DragMouseStatement" typeId="tp5g.210559400608047267" id="5540569706412486841" nodeInfo="ng">
             <property name="x" nameId="tp5g.210559400608047600" value="50" />
             <property name="y" nameId="tp5g.210559400608047601" value="-30" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5540569706412511201" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="NegativeResizeNode_bottom_right" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Clicking on bottom_right resize handle, resising node to the left &amp; upward to the position before node x, y coordinates" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="resize" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706412511202" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="5540569706412511203" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="x" nameId="g85x.8794120090374242972" value="10" />
+        <property name="y" nameId="g85x.8794120090374242974" value="10" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706412511204" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706412511205" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithSize" typeId="g85x.8794120090374242986" id="5540569706412511206" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="40" />
+        <property name="height" nameId="g85x.8794120090377706500" value="30" />
+        <property name="x" nameId="g85x.8794120090374242972" value="-30" />
+        <property name="y" nameId="g85x.8794120090374242974" value="-20" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706412511207" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_3q5o1_a" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706412511208" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="5540569706412511209" nodeInfo="ng">
+        <property name="x" nameId="tp5g.210559400606080743" value="90" />
+        <property name="y" nameId="tp5g.210559400606080744" value="90" />
+        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706412511210" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="tp5g.DragMouseStatement" typeId="tp5g.210559400608047267" id="5540569706412511211" nodeInfo="ng">
+            <property name="x" nameId="tp5g.210559400608047600" value="-30" />
+            <property name="y" nameId="tp5g.210559400608047601" value="-20" />
           </node>
         </node>
       </node>
@@ -970,50 +970,6 @@
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4459951312287602278" nodeInfo="ng">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
         <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0" />
-      </node>
-    </node>
-  </root>
-  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="4459951312287474208" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="select" />
-    <property name="name" nameId="tpck.1169194664001" value="SelectDiagramAndShowCompletion" />
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="4459951312287475117" nodeInfo="ng">
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4459951312287475119" nodeInfo="ng">
-        <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
-        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
-        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
-        <property name="cellId" nameId="tp5g.1229194968595" value="Constant_dbn5di_b0" />
-      </node>
-    </node>
-    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="4459951312287475131" nodeInfo="ng">
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4459951312287475357" nodeInfo="ng">
-        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0" />
-      </node>
-    </node>
-    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="4459951312287490663" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="4459951312287490661" nodeInfo="ng">
-        <property name="x" nameId="tp5g.210559400606080743" value="10" />
-        <property name="y" nameId="tp5g.210559400606080744" value="10" />
-        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="4459951312287490662" nodeInfo="sn" />
-      </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="4459951312287601562" nodeInfo="ng">
-        <property name="x" nameId="tp5g.210559400606080743" value="10" />
-        <property name="y" nameId="tp5g.210559400606080744" value="10" />
-        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="4459951312287601563" nodeInfo="sn" />
-      </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.AssertStatement" typeId="tpee.1160998861373" id="4459951312287491047" nodeInfo="nn">
-        <node role="condition" roleId="tpee.1160998896846" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4459951312287600456" nodeInfo="nn">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4459951312287600457" nodeInfo="nn">
-            <node role="operand" roleId="tpee.1197027771414" type="tp5g.EditorComponentExpression" typeId="tp5g.5773579205429866751" id="4459951312287600458" nodeInfo="nn" />
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4459951312287600459" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
-            </node>
-          </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4459951312287600460" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolveInfo="isVisible" />
-          </node>
-        </node>
       </node>
     </node>
   </root>
@@ -1272,6 +1228,138 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="8041297453110616827" nodeInfo="nn" />
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="4459951312287474208" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="select" />
+    <property name="name" nameId="tpck.1169194664001" value="SelectDiagramAndShowCompletion" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="4459951312287475117" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4459951312287475119" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Constant_dbn5di_b0" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="4459951312287475131" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="4459951312287475357" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="4459951312287490663" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="4459951312287490661" nodeInfo="ng">
+        <property name="x" nameId="tp5g.210559400606080743" value="10" />
+        <property name="y" nameId="tp5g.210559400606080744" value="10" />
+        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="4459951312287490662" nodeInfo="sn" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="4459951312287601562" nodeInfo="ng">
+        <property name="x" nameId="tp5g.210559400606080743" value="10" />
+        <property name="y" nameId="tp5g.210559400606080744" value="10" />
+        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="4459951312287601563" nodeInfo="sn" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.AssertStatement" typeId="tpee.1160998861373" id="4459951312287491047" nodeInfo="nn">
+        <node role="condition" roleId="tpee.1160998896846" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4459951312287600456" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4459951312287600457" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tp5g.EditorComponentExpression" typeId="tp5g.5773579205429866751" id="4459951312287600458" nodeInfo="nn" />
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4459951312287600459" nodeInfo="nn">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorComponent%dgetNodeSubstituteChooser()%cjetbrains%dmps%dnodeEditor%dcellMenu%dNodeSubstituteChooser" resolveInfo="getNodeSubstituteChooser" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4459951312287600460" nodeInfo="nn">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4ky7.~NodeSubstituteChooser%disVisible()%cboolean" resolveInfo="isVisible" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5540569706413448775" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="CreateLink" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Creating a link by draggin mouse from the output port to the input port of the block" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706414443798" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="5540569706414627470" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="lineWidth" nameId="g85x.5540569706414469728" value="1" />
+        <property name="x" nameId="g85x.8794120090374242972" value="20" />
+        <property name="y" nameId="g85x.8794120090374242974" value="20" />
+        <node role="outputs" roleId="g85x.5540569706414436946" type="g85x.OutputPort" typeId="g85x.5540569706414436906" id="5540569706414965198" nodeInfo="ng" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706414965193" nodeInfo="ng" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706414965195" nodeInfo="ng" />
+      </node>
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="5540569706415162437" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="lineWidth" nameId="g85x.5540569706414469728" value="3" />
+        <property name="x" nameId="g85x.8794120090374242972" value="200" />
+        <property name="y" nameId="g85x.8794120090374242974" value="200" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415162443" nodeInfo="ng" />
+      </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706415695226" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Diagram_dbn5di_a0" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706415591135" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="5540569706415591133" nodeInfo="ng">
+        <property name="x" nameId="tp5g.210559400606080743" value="105" />
+        <property name="y" nameId="tp5g.210559400606080744" value="60" />
+        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5540569706415591134" nodeInfo="sn">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5540569706415826628" nodeInfo="nn">
+            <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5540569706415826635" nodeInfo="nn">
+              <property name="text" nameId="tpee.6329021646629104958" value="This is a work-around for existing problem with connection creation:" />
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5540569706415826833" nodeInfo="nn">
+            <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5540569706415826842" nodeInfo="nn">
+              <property name="text" nameId="tpee.6329021646629104958" value="for now connection source will be selected on receiving first mouse drag event" />
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5540569706415827042" nodeInfo="nn">
+            <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5540569706415827053" nodeInfo="nn">
+              <property name="text" nameId="tpee.6329021646629104958" value="in general connection source should be selected on mouse-pressed event" />
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5540569706415826413" nodeInfo="nn">
+            <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="5540569706415826418" nodeInfo="nn">
+              <property name="text" nameId="tpee.6329021646629104958" value="TODO: remove first drag mouse statement." />
+            </node>
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tp5g.DragMouseStatement" typeId="tp5g.210559400608047267" id="5540569706415774170" nodeInfo="ng">
+            <property name="x" nameId="tp5g.210559400608047600" value="106" />
+            <property name="y" nameId="tp5g.210559400608047601" value="60" />
+          </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tp5g.DragMouseStatement" typeId="tp5g.210559400608047267" id="5540569706415591817" nodeInfo="ng">
+            <property name="x" nameId="tp5g.210559400608047600" value="195" />
+            <property name="y" nameId="tp5g.210559400608047601" value="240" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="5540569706415669333" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="5540569706415669334" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="lineWidth" nameId="g85x.5540569706414469728" value="1" />
+        <property name="x" nameId="g85x.8794120090374242972" value="20" />
+        <property name="y" nameId="g85x.8794120090374242974" value="20" />
+        <node role="outputs" roleId="g85x.5540569706414436946" type="g85x.OutputPort" typeId="g85x.5540569706414436906" id="5540569706415669335" nodeInfo="ng" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415669336" nodeInfo="ng" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415669337" nodeInfo="ng" />
+      </node>
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="5540569706415669338" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="lineWidth" nameId="g85x.5540569706414469728" value="3" />
+        <property name="x" nameId="g85x.8794120090374242972" value="200" />
+        <property name="y" nameId="g85x.8794120090374242974" value="200" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415669339" nodeInfo="ng" />
+      </node>
+      <node role="nodeConnectors" roleId="g85x.5540569706413713166" type="g85x.OutputToInputPortConnector" typeId="g85x.5540569706413451931" id="5540569706415800181" nodeInfo="ng">
+        <link role="src" roleId="g85x.5540569706413452892" targetNodeId="5540569706415669335" />
+        <link role="dst" roleId="g85x.5540569706413452907" targetNodeId="5540569706415669339" />
+      </node>
     </node>
   </root>
 </model>
