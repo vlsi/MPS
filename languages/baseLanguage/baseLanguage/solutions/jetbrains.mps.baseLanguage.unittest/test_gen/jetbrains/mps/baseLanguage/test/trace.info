@@ -113,38 +113,146 @@
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="28" startPosition="71" endLine="29" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="29" startPosition="114" endLine="30" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="35" startPosition="91" endLine="36" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="36" startPosition="146" endLine="37" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="40" startPosition="90" endLine="41" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="41" startPosition="146" endLine="42" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="45" startPosition="73" endLine="46" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="46" startPosition="140" endLine="47" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnusedVariableWarningCheck6923385624929494062#()V" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnreachableNodeErrorCheck6923385624927474426#()V" />
-    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck1216895632608#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="34" startPosition="88" endLine="35" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="35" startPosition="114" endLine="36" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="40" startPosition="77" endLine="41" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="41" startPosition="114" endLine="42" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="46" startPosition="77" endLine="47" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="47" startPosition="114" endLine="48" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="52" startPosition="77" endLine="53" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="53" startPosition="114" endLine="54" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="58" startPosition="88" endLine="59" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="59" startPosition="114" endLine="60" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="64" startPosition="77" endLine="65" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="65" startPosition="114" endLine="66" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="70" startPosition="88" endLine="71" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="71" startPosition="114" endLine="72" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="76" startPosition="77" endLine="77" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="77" startPosition="114" endLine="78" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="82" startPosition="77" endLine="83" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="83" startPosition="114" endLine="84" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="89" startPosition="91" endLine="90" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="90" startPosition="146" endLine="91" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="94" startPosition="90" endLine="95" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="95" startPosition="146" endLine="96" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="99" startPosition="73" endLine="100" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="100" startPosition="140" endLine="101" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="104" startPosition="90" endLine="105" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="105" startPosition="146" endLine="106" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="109" startPosition="79" endLine="110" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="110" startPosition="146" endLine="111" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="114" startPosition="79" endLine="115" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="115" startPosition="146" endLine="116" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="119" startPosition="79" endLine="120" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="120" startPosition="146" endLine="121" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="124" startPosition="90" endLine="125" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="125" startPosition="146" endLine="126" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="129" startPosition="79" endLine="130" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="130" startPosition="146" endLine="131" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="134" startPosition="90" endLine="135" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="135" startPosition="146" endLine="136" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="139" startPosition="79" endLine="140" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="140" startPosition="146" endLine="141" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="144" startPosition="79" endLine="145" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="145" startPosition="146" endLine="146" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnusedVariableWarningCheck6923385624929494062#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnreachableNodeErrorCheck6923385624927474426#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck1216895632608#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnreachableNodeErrorCheck8768955936813176762#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813173396#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813179061#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813180900#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnreachableNodeErrorCheck8768955936813195443#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813186030#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnreachableNodeErrorCheck8768955936813193514#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813197377#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813203327#()V" />
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnusedVariableWarningCheck6923385624929494062#()V" />
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnreachableNodeErrorCheck6923385624927474426#()V" />
     <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck1216895632608#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnreachableNodeErrorCheck8768955936813176762#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813173396#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813179061#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813180900#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnreachableNodeErrorCheck8768955936813195443#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813186030#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnreachableNodeErrorCheck8768955936813193514#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813197377#()V" />
+    <nodeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck8768955936813203327#()V" />
     <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="16" startPosition="89" endLine="18" endPosition="152" />
     <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="22" startPosition="88" endLine="24" endPosition="151" />
     <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="28" startPosition="71" endLine="30" endPosition="134" />
-    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="35" startPosition="91" endLine="37" endPosition="159">
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="34" startPosition="88" endLine="36" endPosition="151" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="40" startPosition="77" endLine="42" endPosition="140" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="46" startPosition="77" endLine="48" endPosition="140" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="52" startPosition="77" endLine="54" endPosition="140" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="58" startPosition="88" endLine="60" endPosition="151" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="64" startPosition="77" endLine="66" endPosition="140" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="70" startPosition="88" endLine="72" endPosition="151" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="76" startPosition="77" endLine="78" endPosition="140" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="82" startPosition="77" endLine="84" endPosition="140" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="89" startPosition="91" endLine="91" endPosition="159">
       <varInfo nodeId="1217271586138" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="40" startPosition="90" endLine="42" endPosition="159">
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="94" startPosition="90" endLine="96" endPosition="159">
       <varInfo nodeId="1217271586138" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="45" startPosition="73" endLine="47" endPosition="153">
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="99" startPosition="73" endLine="101" endPosition="153">
       <varInfo nodeId="1217271586138" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="104" startPosition="90" endLine="106" endPosition="159">
+      <varInfo nodeId="1217271586138" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="109" startPosition="79" endLine="111" endPosition="159">
+      <varInfo nodeId="1217271586138" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="114" startPosition="79" endLine="116" endPosition="159">
+      <varInfo nodeId="1217271586138" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="119" startPosition="79" endLine="121" endPosition="159">
+      <varInfo nodeId="1217271586138" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="124" startPosition="90" endLine="126" endPosition="159">
+      <varInfo nodeId="1217271586138" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="129" startPosition="79" endLine="131" endPosition="159">
+      <varInfo nodeId="1217271586138" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="134" startPosition="90" endLine="136" endPosition="159">
+      <varInfo nodeId="1217271586138" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="139" startPosition="79" endLine="141" endPosition="159">
+      <varInfo nodeId="1217271586138" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="144" startPosition="79" endLine="146" endPosition="159">
+      <varInfo nodeId="1217271586138" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="134" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="139" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
     <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="33" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody" />
-    <unitInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnreachableStatements_Test" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="57" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="63" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="81" startPosition="0" endLine="86" endPosition="0" />
+    <unitInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="87" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody" />
+    <unitInfo nodeId="1217271586138" fileName="UnreachableStatements_Test.java" startLine="13" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnreachableStatements_Test" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271586324">
     <nodeInfo nodeId="1217271586324" fileName="ReadAction_Test.java" startLine="16" startPosition="50" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

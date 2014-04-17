@@ -2,13 +2,13 @@
 <solution name="jetbrains.mps.baseLanguage.unitTest.libs" uuid="83f155ff-422c-4b5a-a2f2-b459302dd215" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}/lib" type="java_classes">
+      <sourceRoot location="jmock-2.5.1" />
       <excluded location="jmock-2.5.1/cglib-2.1_3-src.jar" />
       <excluded location="jmock-2.5.1/jmock-script-2.5.1.jar" />
       <excluded location="jmock-2.5.1/jmock-legacy-2.5.1.jar" />
-      <sourceRoot location="jmock-2.5.1" />
     </modelRoot>
     <modelRoot contentPath="${mps_home}/lib" type="java_classes">
-      <sourceRoot location="junit-4.10.jar" />
+      <sourceRoot location="junit-4.11.jar" />
     </modelRoot>
   </models>
   <facets>
@@ -23,7 +23,7 @@
     <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <stubModelEntry path="${module}/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <stubModelEntry path="${mps_home}/lib/junit-4.10.jar" />
+    <stubModelEntry path="${mps_home}/lib/junit-4.11.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
