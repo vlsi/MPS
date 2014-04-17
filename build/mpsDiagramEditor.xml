@@ -169,6 +169,7 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetbrains.jetpad)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.editor.figures.library-src.jar" descriptor="jetbrains.mps.lang.editor.figures.library.msd" />

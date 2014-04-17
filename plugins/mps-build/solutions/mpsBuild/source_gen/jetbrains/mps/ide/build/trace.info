@@ -22,7 +22,7 @@
     <unitInfo nodeId="4301118715654819483" fileName="mpsTroveCollections.xml" startLine="1" startPosition="0" endLine="361" endPosition="10" unitName="jetbrains.mps.ide.build.mpsTroveCollections" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4305752832749937830">
-    <unitInfo nodeId="4305752832749937830" fileName="mpsDiagramEditor.xml" startLine="1" startPosition="0" endLine="742" endPosition="10" unitName="jetbrains.mps.ide.build.mpsDiagramEditor" />
+    <unitInfo nodeId="4305752832749937830" fileName="mpsDiagramEditor.xml" startLine="1" startPosition="0" endLine="743" endPosition="10" unitName="jetbrains.mps.ide.build.mpsDiagramEditor" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/5148601452480491524">
     <unitInfo nodeId="5148601452480491524" fileName="mpsPlugin.xml" startLine="1" startPosition="0" endLine="636" endPosition="10" unitName="jetbrains.mps.ide.build.mpsPlugin" />

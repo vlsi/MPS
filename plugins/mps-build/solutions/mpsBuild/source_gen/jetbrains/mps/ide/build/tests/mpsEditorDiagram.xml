@@ -310,6 +310,7 @@
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram.runtime.jar" />
+        <fileset file="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures.library.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
