@@ -18,7 +18,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"mainNodes", "nodeConnectors"}, new boolean[]{true, true}).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y").create();
       case 4:
@@ -26,7 +26,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize").super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").parents("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").properties("width", "height").create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("src", "dst").create();
       case 8:

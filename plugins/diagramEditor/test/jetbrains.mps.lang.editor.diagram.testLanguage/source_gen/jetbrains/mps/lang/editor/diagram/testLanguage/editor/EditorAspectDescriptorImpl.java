@@ -32,7 +32,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 6:
         return Arrays.asList(new ConceptEditor[]{new OutputPort_DiagramTestTextual_Editor(), new OutputPort_Editor()});
       case 7:
-        return Collections.<ConceptEditor>singletonList(new OutputToInputPortConnector_Editor());
+        return Arrays.asList(new ConceptEditor[]{new OutputToInputPortConnector_DiagramTestTextual_Editor(), new OutputToInputPortConnector_Editor()});
       case 8:
         return Arrays.asList(new ConceptEditor[]{new RectangleNode_DiagramTestTextual_Editor(), new RectangleNode_Editor()});
       default:

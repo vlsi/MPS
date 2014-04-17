@@ -59,7 +59,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="5003005296038308967" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="DeleteDiagramNode" />
-    <property name="description" nameId="tp5g.1883175908513350760" value="Deleting diagram node by ressing Del" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Deleting diagram node by pressing Del" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram1" typeId="g85x.511002117671747962" id="5003005296038309041" nodeInfo="ng">
       <node role="rectangles" roleId="g85x.511002117671748022" type="g85x.RectangleNode" typeId="g85x.511002117671748019" id="5003005296038309063" nodeInfo="ng">
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5003005296038309110" nodeInfo="ng">
@@ -1284,9 +1284,15 @@
         <property name="lineWidth" nameId="g85x.5540569706414469728" value="1" />
         <property name="x" nameId="g85x.8794120090374242972" value="20" />
         <property name="y" nameId="g85x.8794120090374242974" value="20" />
-        <node role="outputs" roleId="g85x.5540569706414436946" type="g85x.OutputPort" typeId="g85x.5540569706414436906" id="5540569706414965198" nodeInfo="ng" />
-        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706414965193" nodeInfo="ng" />
-        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706414965195" nodeInfo="ng" />
+        <node role="outputs" roleId="g85x.5540569706414436946" type="g85x.OutputPort" typeId="g85x.5540569706414436906" id="5540569706414965198" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="out1" />
+        </node>
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706414965193" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="in1_1" />
+        </node>
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706414965195" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="in1_2" />
+        </node>
       </node>
       <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="5540569706415162437" nodeInfo="ng">
         <property name="width" nameId="g85x.8794120090377706498" value="80" />
@@ -1294,7 +1300,9 @@
         <property name="lineWidth" nameId="g85x.5540569706414469728" value="3" />
         <property name="x" nameId="g85x.8794120090374242972" value="200" />
         <property name="y" nameId="g85x.8794120090374242974" value="200" />
-        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415162443" nodeInfo="ng" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415162443" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="in2" />
+        </node>
       </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5540569706415695226" nodeInfo="ng">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
@@ -1344,9 +1352,15 @@
         <property name="lineWidth" nameId="g85x.5540569706414469728" value="1" />
         <property name="x" nameId="g85x.8794120090374242972" value="20" />
         <property name="y" nameId="g85x.8794120090374242974" value="20" />
-        <node role="outputs" roleId="g85x.5540569706414436946" type="g85x.OutputPort" typeId="g85x.5540569706414436906" id="5540569706415669335" nodeInfo="ng" />
-        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415669336" nodeInfo="ng" />
-        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415669337" nodeInfo="ng" />
+        <node role="outputs" roleId="g85x.5540569706414436946" type="g85x.OutputPort" typeId="g85x.5540569706414436906" id="5540569706415669335" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="out1" />
+        </node>
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415669336" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="in1_1" />
+        </node>
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415669337" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="in1_2" />
+        </node>
       </node>
       <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="5540569706415669338" nodeInfo="ng">
         <property name="width" nameId="g85x.8794120090377706498" value="80" />
@@ -1354,11 +1368,77 @@
         <property name="lineWidth" nameId="g85x.5540569706414469728" value="3" />
         <property name="x" nameId="g85x.8794120090374242972" value="200" />
         <property name="y" nameId="g85x.8794120090374242974" value="200" />
-        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415669339" nodeInfo="ng" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="5540569706415669339" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="in2" />
+        </node>
       </node>
       <node role="nodeConnectors" roleId="g85x.5540569706413713166" type="g85x.OutputToInputPortConnector" typeId="g85x.5540569706413451931" id="5540569706415800181" nodeInfo="ng">
-        <link role="src" roleId="g85x.5540569706413452892" targetNodeId="5540569706415669335" />
-        <link role="dst" roleId="g85x.5540569706413452907" targetNodeId="5540569706415669339" />
+        <link role="src" roleId="g85x.5540569706413452892" targetNodeId="5540569706415669335" resolveInfo="out1" />
+        <link role="dst" roleId="g85x.5540569706413452907" targetNodeId="5540569706415669339" resolveInfo="in2" />
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="822550549811942062" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
+    <property name="name" nameId="tpck.1169194664001" value="DeleteLink" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Deleting diagram link by pressing Del" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="822550549811943830" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="822550549811951514" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="lineWidth" nameId="g85x.5540569706414469728" value="3" />
+        <property name="x" nameId="g85x.8794120090374242972" value="20" />
+        <property name="y" nameId="g85x.8794120090374242974" value="20" />
+        <node role="outputs" roleId="g85x.5540569706414436946" type="g85x.OutputPort" typeId="g85x.5540569706414436906" id="822550549811954023" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="out" />
+        </node>
+      </node>
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="822550549811951516" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="lineWidth" nameId="g85x.5540569706414469728" value="3" />
+        <property name="x" nameId="g85x.8794120090374242972" value="200" />
+        <property name="y" nameId="g85x.8794120090374242974" value="200" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="822550549811954452" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="in" />
+        </node>
+      </node>
+      <node role="nodeConnectors" roleId="g85x.5540569706413713166" type="g85x.OutputToInputPortConnector" typeId="g85x.5540569706413451931" id="822550549811954882" nodeInfo="ng">
+        <link role="src" roleId="g85x.5540569706413452892" targetNodeId="822550549811954023" resolveInfo="out" />
+        <link role="dst" roleId="g85x.5540569706413452907" targetNodeId="822550549811954452" resolveInfo="in" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="822550549812521800" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramConnector_87pg9j_a" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="822550549811967939" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="822550549811967940" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="lineWidth" nameId="g85x.5540569706414469728" value="3" />
+        <property name="x" nameId="g85x.8794120090374242972" value="20" />
+        <property name="y" nameId="g85x.8794120090374242974" value="20" />
+        <node role="outputs" roleId="g85x.5540569706414436946" type="g85x.OutputPort" typeId="g85x.5540569706414436906" id="822550549811967941" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="out" />
+        </node>
+      </node>
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithPorts" typeId="g85x.5540569706414436817" id="822550549811967942" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="80" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="lineWidth" nameId="g85x.5540569706414469728" value="3" />
+        <property name="x" nameId="g85x.8794120090374242972" value="200" />
+        <property name="y" nameId="g85x.8794120090374242974" value="200" />
+        <node role="inputs" roleId="g85x.5540569706414436925" type="g85x.InputPort" typeId="g85x.5540569706414436850" id="822550549811967943" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="in" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="822550549812590933" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="822550549812590941" nodeInfo="nn">
+        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="822550549812590942" nodeInfo="ng">
+          <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
+        </node>
       </node>
     </node>
   </root>
