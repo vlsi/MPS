@@ -28,14 +28,16 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 4:
         return Arrays.asList(new ConceptEditor[]{new NodeWithName_DiagramTestTextual_Editor(), new NodeWithName_Editor()});
       case 5:
-        return Arrays.asList(new ConceptEditor[]{new NodeWithPorts_DiagramTestTextual_Editor(), new NodeWithPorts_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new NodeWithPortQueries_DiagramTestTextual_Editor(), new NodeWithPortQueries_Editor()});
       case 6:
-        return Arrays.asList(new ConceptEditor[]{new NodeWithSize_DiagramTestTextual_Editor(), new NodeWithSize_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new NodeWithPorts_DiagramTestTextual_Editor(), new NodeWithPorts_Editor()});
       case 7:
-        return Arrays.asList(new ConceptEditor[]{new OutputPort_DiagramTestTextual_Editor(), new OutputPort_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new NodeWithSize_DiagramTestTextual_Editor(), new NodeWithSize_Editor()});
       case 8:
-        return Arrays.asList(new ConceptEditor[]{new OutputToInputPortConnector_DiagramTestTextual_Editor(), new OutputToInputPortConnector_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new OutputPort_DiagramTestTextual_Editor(), new OutputPort_Editor()});
       case 9:
+        return Arrays.asList(new ConceptEditor[]{new OutputToInputPortConnector_DiagramTestTextual_Editor(), new OutputToInputPortConnector_Editor()});
+      case 10:
         return Arrays.asList(new ConceptEditor[]{new RectangleNode_DiagramTestTextual_Editor(), new RectangleNode_Editor()});
       default:
     }
@@ -53,5 +55,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPortQueries", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
 }

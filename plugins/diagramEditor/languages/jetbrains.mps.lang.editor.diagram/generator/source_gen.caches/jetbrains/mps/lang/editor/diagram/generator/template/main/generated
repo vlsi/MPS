@@ -130,9 +130,7 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5422656561934728908" name="ViewFactoryMethod" hash="3zd9uqg4lcuxljcdcrdazaq53pj0gi3">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="5422656561934728908" name="ViewFactoryMethod" hash="3zd9uqg4lcuxljcdcrdazaq53pj0gi3" />
   <source id="5422656561934854579" name="ViewParameterAccessor" hash="-bdqa91a3fy457faf43u7w8t0zg3ue5z" />
   <source id="1094405431463447767" name="main" hash="-5iq2gcctpaqmbbxvq77gikat4y58a42" />
   <source id="6306886970791130769" name="reduce_CellModel_Diagram" hash="6ypcs40vmtz5mv9ct86aloa4smbywsd" />

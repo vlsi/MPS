@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4dwtje52grbvqxawa39ywco16hxe7cp">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+<dependencies version="2" modelHash="7nnu8nce4w3xaci9xlki3os5450jj37">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-7hpmrwjimsa7c7rzbkyz2ehryyj1c7y" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
   <common hash="-9anyhlabz0gcyk66e0whrk2anf1asfj" dependsOnNodes="true">
+    <dep root="2278461409091562761" />
     <dep root="511002117671747962" />
     <dep root="511002117671748019" />
     <dep root="5540569706413451931" />
@@ -17,7 +17,6 @@
     <dep root="8794120090374233314" />
     <dep root="8794120090374233605" />
     <dep root="8794120090374242986" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -35,5 +34,6 @@
   <source id="5540569706414436850" name="InputPort" hash="-a7dzf9kueqqbvgq5y92xvvozi6w3qtx" />
   <source id="5540569706414436906" name="OutputPort" hash="1ojvy7ep8vjx3joiw1eclw2cyb9eo7k" />
   <source id="822550549814787038" name="NodeWithName" hash="jm9dnzpgt37vk39lb0p0sh13md21h" />
+  <source id="2278461409091562761" name="NodeWithPortQueries" hash="-2hh4j37en93rj8dno4n2zxfemohbcy5" />
 </dependencies>
 

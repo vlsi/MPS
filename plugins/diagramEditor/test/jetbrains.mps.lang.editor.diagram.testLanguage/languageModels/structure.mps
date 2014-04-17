@@ -121,5 +121,9 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2278461409091562761" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="NodeWithPortQueries" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="5540569706414436817" resolveInfo="NodeWithPorts" />
+  </root>
 </model>
 

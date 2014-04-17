@@ -179,6 +179,194 @@
     <unitInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ToZeroSize_ResizeNode_bottom_right_Test$TestBody" />
     <unitInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ToZeroSize_ResizeNode_bottom_right_Test" />
   </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409091538798">
+    <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="20" startPosition="50" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091538814" fileName="SelectPort_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091538814" fileName="SelectPort_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091538814" fileName="SelectPort_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091538814" fileName="SelectPort_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409091538814" fileName="SelectPort_Test.java" startLine="38" startPosition="139" endLine="39" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectPort_Test#()V" />
+    <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SelectPort#()V" />
+    <nodeInfo nodeId="2278461409091538814" fileName="SelectPort_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="16" startPosition="28" endLine="16" endPosition="28" />
+    <scopeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="20" startPosition="50" endLine="22" endPosition="106" />
+    <scopeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="2278461409091538814" fileName="SelectPort_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="138">
+      <varInfo nodeId="2278461409091538814" varName="eventTargetComponent_2sfs2m_a0" />
+      <varInfo nodeId="2278461409091538814" varName="x_2sfs2m_a0" />
+      <varInfo nodeId="2278461409091538814" varName="y_2sfs2m_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="31" startPosition="51" endLine="40" endPosition="7">
+      <varInfo nodeId="2278461409091538798" varName="editor" />
+      <varInfo nodeId="2278461409091538798" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="30" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectPort_Test$TestBody" />
+    <unitInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectPort_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409091838098">
+    <nodeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="30" startPosition="55" endLine="31" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="31" startPosition="122" endLine="32" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="41" startPosition="51" endLine="42" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="42" startPosition="99" endLine="43" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091838108" fileName="SelectPortQuery_Test.java" startLine="44" startPosition="7" endLine="45" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091838108" fileName="SelectPortQuery_Test.java" startLine="45" startPosition="29" endLine="46" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091838108" fileName="SelectPortQuery_Test.java" startLine="46" startPosition="29" endLine="47" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409091838108" fileName="SelectPortQuery_Test.java" startLine="47" startPosition="157" endLine="48" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409091838108" fileName="SelectPortQuery_Test.java" startLine="48" startPosition="139" endLine="49" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409092628331" fileName="SelectPortQuery_Test.java" startLine="50" startPosition="7" endLine="51" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409092628340" fileName="SelectPortQuery_Test.java" startLine="53" startPosition="27" endLine="54" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409092628346" fileName="SelectPortQuery_Test.java" startLine="54" startPosition="70" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409092628350" fileName="SelectPortQuery_Test.java" startLine="55" startPosition="50" endLine="56" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409092628359" fileName="SelectPortQuery_Test.java" startLine="56" startPosition="124" endLine="57" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409092628370" fileName="SelectPortQuery_Test.java" startLine="59" startPosition="9" endLine="60" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409092628380" fileName="SelectPortQuery_Test.java" startLine="60" startPosition="102" endLine="61" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409092626595" fileName="SelectPortQuery_Test.java" startLine="61" startPosition="85" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectPortQuery_Test#()V" />
+    <nodeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SelectPortQuery#()V" />
+    <nodeInfo nodeId="2278461409092628338" fileName="SelectPortQuery_Test.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2278461409091838108" fileName="SelectPortQuery_Test.java" startLine="43" startPosition="99" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2278461409092628337" fileName="SelectPortQuery_Test.java" startLine="51" startPosition="77" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="40" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="26" startPosition="33" endLine="26" endPosition="33" />
+    <scopeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="37" startPosition="23" endLine="37" endPosition="23" />
+    <scopeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="30" startPosition="55" endLine="32" endPosition="111" />
+    <scopeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="37" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="2278461409092628339" fileName="SelectPortQuery_Test.java" startLine="53" startPosition="27" endLine="57" endPosition="265">
+      <varInfo nodeId="2278461409092628351" varName="diagramCell" />
+      <varInfo nodeId="2278461409092628341" varName="selectedCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="2278461409091838108" fileName="SelectPortQuery_Test.java" startLine="44" startPosition="7" endLine="49" endPosition="138">
+      <varInfo nodeId="2278461409091838108" varName="eventTargetComponent_vw537p_a0" />
+      <varInfo nodeId="2278461409091838108" varName="x_vw537p_a0" />
+      <varInfo nodeId="2278461409091838108" varName="y_vw537p_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409092628338" fileName="SelectPortQuery_Test.java" startLine="53" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="41" startPosition="51" endLine="62" endPosition="0">
+      <varInfo nodeId="2278461409092628332" varName="descendantMapper" />
+      <varInfo nodeId="2278461409091838098" varName="editor" />
+      <varInfo nodeId="2278461409091838098" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="40" startPosition="0" endLine="64" endPosition="0" />
+    <unitInfo nodeId="2278461409092628338" fileName="SelectPortQuery_Test.java" startLine="52" startPosition="47" endLine="59" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$1" />
+    <unitInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="35" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$TestBody" />
+    <unitInfo nodeId="2278461409091838098" fileName="SelectPortQuery_Test.java" startLine="24" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409093334296">
+    <nodeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="20" startPosition="52" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409093422504" fileName="UnSelectPort_Test.java" startLine="33" startPosition="93" endLine="34" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnSelectPort_Test#()V" />
+    <nodeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_UnSelectPort#()V" />
+    <nodeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="16" startPosition="30" endLine="16" endPosition="30" />
+    <scopeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="20" startPosition="52" endLine="22" endPosition="108" />
+    <scopeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="31" startPosition="51" endLine="34" endPosition="119">
+      <varInfo nodeId="2278461409093334296" varName="editor" />
+      <varInfo nodeId="2278461409093334296" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="30" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.UnSelectPort_Test$TestBody" />
+    <unitInfo nodeId="2278461409093334296" fileName="UnSelectPort_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.UnSelectPort_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409093519741">
+    <nodeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="23" startPosition="50" endLine="24" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="24" startPosition="122" endLine="25" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="34" startPosition="51" endLine="35" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="35" startPosition="99" endLine="36" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409093724423" fileName="CreatePort_Test.java" startLine="38" startPosition="27" endLine="39" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409094006792" fileName="CreatePort_Test.java" startLine="42" startPosition="7" endLine="43" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409094006792" fileName="CreatePort_Test.java" startLine="43" startPosition="29" endLine="44" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409094006792" fileName="CreatePort_Test.java" startLine="44" startPosition="29" endLine="45" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409094006792" fileName="CreatePort_Test.java" startLine="45" startPosition="157" endLine="46" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409094006792" fileName="CreatePort_Test.java" startLine="46" startPosition="139" endLine="47" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409094006778" fileName="CreatePort_Test.java" startLine="48" startPosition="7" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreatePort_Test#()V" />
+    <nodeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2278461409094182556" fileName="CreatePort_Test.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_CreatePort#()V" />
+    <nodeInfo nodeId="2278461409094180954" fileName="CreatePort_Test.java" startLine="36" startPosition="93" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409094006792" fileName="CreatePort_Test.java" startLine="41" startPosition="61" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="33" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="19" startPosition="28" endLine="19" endPosition="28" />
+    <scopeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="30" startPosition="23" endLine="30" endPosition="23" />
+    <scopeInfo nodeId="2278461409094182557" fileName="CreatePort_Test.java" startLine="38" startPosition="27" endLine="39" endPosition="273" />
+    <scopeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="23" startPosition="50" endLine="25" endPosition="106" />
+    <scopeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="2278461409094182556" fileName="CreatePort_Test.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2278461409094006792" fileName="CreatePort_Test.java" startLine="42" startPosition="7" endLine="47" endPosition="138">
+      <varInfo nodeId="2278461409094006792" varName="eventTargetComponent_rszpwe_b0" />
+      <varInfo nodeId="2278461409094006792" varName="x_rszpwe_b0" />
+      <varInfo nodeId="2278461409094006792" varName="y_rszpwe_b0" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="34" startPosition="51" endLine="49" endPosition="0">
+      <varInfo nodeId="2278461409093519741" varName="editor" />
+      <varInfo nodeId="2278461409093519741" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="33" startPosition="0" endLine="51" endPosition="0" />
+    <unitInfo nodeId="2278461409094182556" fileName="CreatePort_Test.java" startLine="37" startPosition="49" endLine="41" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$1" />
+    <unitInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="28" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody" />
+    <unitInfo nodeId="2278461409093519741" fileName="CreatePort_Test.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409094282963">
+    <nodeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="22" startPosition="70" endLine="23" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="23" startPosition="122" endLine="24" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="33" startPosition="51" endLine="34" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="34" startPosition="99" endLine="35" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409094282969" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="36" startPosition="7" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409094282969" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="37" startPosition="29" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409094282969" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="38" startPosition="29" endLine="39" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2278461409094282969" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="39" startPosition="157" endLine="40" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409094282969" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="40" startPosition="139" endLine="41" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409094282971" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="42" startPosition="7" endLine="43" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2278461409094334231" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="43" startPosition="68" endLine="44" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2278461409094334403" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="44" startPosition="119" endLine="45" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2278461409094334321" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="45" startPosition="71" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StopShowCompletionOnTheDiagram_Test#()V" />
+    <nodeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_StopShowCompletionOnTheDiagram#()V" />
+    <nodeInfo nodeId="2278461409094282969" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="35" startPosition="93" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="32" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="18" startPosition="48" endLine="18" endPosition="48" />
+    <scopeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="29" startPosition="23" endLine="29" endPosition="23" />
+    <scopeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="22" startPosition="70" endLine="24" endPosition="126" />
+    <scopeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="2278461409094282969" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="36" startPosition="7" endLine="41" endPosition="138">
+      <varInfo nodeId="2278461409094282969" varName="eventTargetComponent_hpnf0e_a0" />
+      <varInfo nodeId="2278461409094282969" varName="x_hpnf0e_a0" />
+      <varInfo nodeId="2278461409094282969" varName="y_hpnf0e_a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="33" startPosition="51" endLine="46" endPosition="0">
+      <varInfo nodeId="2278461409094282963" varName="editor" />
+      <varInfo nodeId="2278461409094282963" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="32" startPosition="0" endLine="48" endPosition="0" />
+    <unitInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="27" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.StopShowCompletionOnTheDiagram_Test$TestBody" />
+    <unitInfo nodeId="2278461409094282963" fileName="StopShowCompletionOnTheDiagram_Test.java" startLine="16" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.StopShowCompletionOnTheDiagram_Test" />
+  </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/3873095776497110117">
     <nodeInfo nodeId="3873095776497110117" fileName="ResizeNode_top_right_Test.java" startLine="20" startPosition="60" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3873095776497110117" fileName="ResizeNode_top_right_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -318,50 +506,39 @@
     <unitInfo nodeId="3873095776499066417" fileName="ResizeNode_right_central_Test.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_right_central_Test" />
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/4459951312287474208">
-    <nodeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="20" startPosition="70" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287490661" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287490661" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287490661" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287490661" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287490661" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="38" startPosition="139" endLine="39" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287601562" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="41" startPosition="7" endLine="42" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287601562" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="42" startPosition="29" endLine="43" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287601562" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="43" startPosition="29" endLine="44" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287601562" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="44" startPosition="157" endLine="45" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287601562" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="45" startPosition="139" endLine="46" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287491047" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="47" startPosition="7" endLine="48" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectDiagramAndShowCompletion_Test#()V" />
-    <nodeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SelectDiagramAndShowCompletion#()V" />
-    <nodeInfo nodeId="4459951312287490661" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4459951312287601562" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="40" startPosition="7" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="30" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="16" startPosition="48" endLine="16" endPosition="48" />
-    <scopeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
-    <scopeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="20" startPosition="70" endLine="22" endPosition="126" />
-    <scopeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="4459951312287490661" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="138">
-      <varInfo nodeId="4459951312287490661" varName="eventTargetComponent_1d8yoc_a0" />
-      <varInfo nodeId="4459951312287490661" varName="x_1d8yoc_a0" />
-      <varInfo nodeId="4459951312287490661" varName="y_1d8yoc_a0" />
+    <nodeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="20" startPosition="66" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4459951312287601562" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="34" startPosition="7" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4459951312287601562" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4459951312287601562" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4459951312287601562" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="37" startPosition="157" endLine="38" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4459951312287601562" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="38" startPosition="139" endLine="39" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4459951312287491047" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="40" startPosition="7" endLine="41" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowCompletionOnTheDiagram_Test#()V" />
+    <nodeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ShowCompletionOnTheDiagram#()V" />
+    <nodeInfo nodeId="4459951312287601562" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="33" startPosition="93" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="30" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="16" startPosition="44" endLine="16" endPosition="44" />
+    <scopeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="20" startPosition="66" endLine="22" endPosition="122" />
+    <scopeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4459951312287601562" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="34" startPosition="7" endLine="39" endPosition="138">
+      <varInfo nodeId="4459951312287601562" varName="eventTargetComponent_2euokt_a0" />
+      <varInfo nodeId="4459951312287601562" varName="x_2euokt_a0" />
+      <varInfo nodeId="4459951312287601562" varName="y_2euokt_a0" />
     </scopeInfo>
-    <scopeInfo nodeId="4459951312287601562" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="41" startPosition="7" endLine="46" endPosition="138">
-      <varInfo nodeId="4459951312287601562" varName="eventTargetComponent_1d8yoc_b0" />
-      <varInfo nodeId="4459951312287601562" varName="x_1d8yoc_b0" />
-      <varInfo nodeId="4459951312287601562" varName="y_1d8yoc_b0" />
-    </scopeInfo>
-    <scopeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="31" startPosition="51" endLine="48" endPosition="68">
+    <scopeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="31" startPosition="51" endLine="41" endPosition="68">
       <varInfo nodeId="4459951312287474208" varName="editor" />
       <varInfo nodeId="4459951312287474208" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="30" startPosition="0" endLine="50" endPosition="0" />
-    <unitInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="25" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramAndShowCompletion_Test$TestBody" />
-    <unitInfo nodeId="4459951312287474208" fileName="SelectDiagramAndShowCompletion_Test.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramAndShowCompletion_Test" />
+    <scopeInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="30" startPosition="0" endLine="43" endPosition="0" />
+    <unitInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="25" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ShowCompletionOnTheDiagram_Test$TestBody" />
+    <unitInfo nodeId="4459951312287474208" fileName="ShowCompletionOnTheDiagram_Test.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ShowCompletionOnTheDiagram_Test" />
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/4459951312287600639">
     <nodeInfo nodeId="4459951312287600639" fileName="SelectDiagram_Test.java" startLine="20" startPosition="53" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -434,54 +611,6 @@
     <scopeInfo nodeId="4459951312287602047" fileName="SelectDiagramFromNode_Test.java" startLine="30" startPosition="0" endLine="45" endPosition="0" />
     <unitInfo nodeId="4459951312287602047" fileName="SelectDiagramFromNode_Test.java" startLine="25" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNode_Test$TestBody" />
     <unitInfo nodeId="4459951312287602047" fileName="SelectDiagramFromNode_Test.java" startLine="14" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNode_Test" />
-  </root>
-  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/4459951312287629635">
-    <nodeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="20" startPosition="78" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287629637" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="33" startPosition="93" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4459951312287629638" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="35" startPosition="7" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287629638" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287629638" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="37" startPosition="29" endLine="38" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287629638" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="38" startPosition="157" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287629638" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="39" startPosition="139" endLine="40" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287630498" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="42" startPosition="7" endLine="43" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287630498" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="43" startPosition="29" endLine="44" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287630498" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="44" startPosition="29" endLine="45" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4459951312287630498" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="45" startPosition="157" endLine="46" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287630498" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="46" startPosition="139" endLine="47" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4459951312287629640" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="48" startPosition="7" endLine="49" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4459951312287629647" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="49" startPosition="68" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectDiagramFromNodeAndShowCompletion_Test#()V" />
-    <nodeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SelectDiagramFromNodeAndShowCompletion#()V" />
-    <nodeInfo nodeId="4459951312287629638" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="34" startPosition="0" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4459951312287630498" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="41" startPosition="7" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="30" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="16" startPosition="56" endLine="16" endPosition="56" />
-    <scopeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
-    <scopeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="20" startPosition="78" endLine="22" endPosition="134" />
-    <scopeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="4459951312287629638" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="35" startPosition="7" endLine="40" endPosition="138">
-      <varInfo nodeId="4459951312287629638" varName="eventTargetComponent_g4cguu_b0" />
-      <varInfo nodeId="4459951312287629638" varName="x_g4cguu_b0" />
-      <varInfo nodeId="4459951312287629638" varName="y_g4cguu_b0" />
-    </scopeInfo>
-    <scopeInfo nodeId="4459951312287630498" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="42" startPosition="7" endLine="47" endPosition="138">
-      <varInfo nodeId="4459951312287630498" varName="eventTargetComponent_g4cguu_c0" />
-      <varInfo nodeId="4459951312287630498" varName="x_g4cguu_c0" />
-      <varInfo nodeId="4459951312287630498" varName="y_g4cguu_c0" />
-    </scopeInfo>
-    <scopeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="31" startPosition="51" endLine="50" endPosition="0">
-      <varInfo nodeId="4459951312287629635" varName="editor" />
-      <varInfo nodeId="4459951312287629635" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="30" startPosition="0" endLine="52" endPosition="0" />
-    <unitInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="25" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNodeAndShowCompletion_Test$TestBody" />
-    <unitInfo nodeId="4459951312287629635" fileName="SelectDiagramFromNodeAndShowCompletion_Test.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectDiagramFromNodeAndShowCompletion_Test" />
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/5003005296038308967">
     <nodeInfo nodeId="5003005296038308967" fileName="DeleteDiagramNode_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
