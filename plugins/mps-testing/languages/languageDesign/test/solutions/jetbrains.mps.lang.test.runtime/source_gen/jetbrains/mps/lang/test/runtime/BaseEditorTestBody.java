@@ -238,7 +238,13 @@ public class BaseEditorTestBody extends BaseTestBody {
         if (eventTargetComponent == null) {
           Sequence.fromIterable(events).visitAll(new IVisitor<KeyEvent>() {
             public void visit(KeyEvent it) {
-              editorComponent.processKeyPressed(it);
+              if (it.getID() == KeyEvent.KEY_TYPED) {
+                editorComponent.processKeyTyped(it);
+              } else if (it.getID() == KeyEvent.KEY_PRESSED) {
+                editorComponent.processKeyPressed(it);
+              } else {
+                editorComponent.processKeyReleased(it);
+              }
             }
           });
         } else {
