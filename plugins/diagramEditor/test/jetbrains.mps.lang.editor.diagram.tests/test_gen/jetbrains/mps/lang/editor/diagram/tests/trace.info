@@ -654,6 +654,57 @@
     <unitInfo nodeId="7604889971551653125" fileName="ResizeNode_top_left_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_left_Test$TestBody" />
     <unitInfo nodeId="7604889971551653125" fileName="ResizeNode_top_left_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ResizeNode_top_left_Test" />
   </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/8041297453110598744">
+    <nodeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="29" startPosition="65" endLine="30" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="30" startPosition="122" endLine="31" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="40" startPosition="51" endLine="41" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="41" startPosition="99" endLine="42" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8041297453111221943" fileName="SelectAnotherNodeFromCode_Test.java" startLine="46" startPosition="31" endLine="47" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453110553858" fileName="SelectAnotherNodeFromCode_Test.java" startLine="51" startPosition="9" endLine="52" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8041297453110483767" fileName="SelectAnotherNodeFromCode_Test.java" startLine="54" startPosition="27" endLine="55" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8041297453111265934" fileName="SelectAnotherNodeFromCode_Test.java" startLine="55" startPosition="70" endLine="56" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453110550049" fileName="SelectAnotherNodeFromCode_Test.java" startLine="56" startPosition="50" endLine="57" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8041297453110717196" fileName="SelectAnotherNodeFromCode_Test.java" startLine="57" startPosition="124" endLine="58" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453111054653" fileName="SelectAnotherNodeFromCode_Test.java" startLine="60" startPosition="9" endLine="61" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453111067265" fileName="SelectAnotherNodeFromCode_Test.java" startLine="61" startPosition="102" endLine="62" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453110616827" fileName="SelectAnotherNodeFromCode_Test.java" startLine="62" startPosition="85" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectAnotherNodeFromCode_Test#()V" />
+    <nodeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8041297453111307834" fileName="SelectAnotherNodeFromCode_Test.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SelectAnotherNodeFromCode#()V" />
+    <nodeInfo nodeId="8041297453111307832" fileName="SelectAnotherNodeFromCode_Test.java" startLine="44" startPosition="27" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453111247731" fileName="SelectAnotherNodeFromCode_Test.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8041297453111221043" fileName="SelectAnotherNodeFromCode_Test.java" startLine="44" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8041297453111247729" fileName="SelectAnotherNodeFromCode_Test.java" startLine="52" startPosition="113" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453111219303" fileName="SelectAnotherNodeFromCode_Test.java" startLine="42" startPosition="99" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="39" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="25" startPosition="43" endLine="25" endPosition="43" />
+    <scopeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="36" startPosition="23" endLine="36" endPosition="23" />
+    <scopeInfo nodeId="8041297453111307836" fileName="SelectAnotherNodeFromCode_Test.java" startLine="46" startPosition="31" endLine="47" endPosition="186" />
+    <scopeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="29" startPosition="65" endLine="31" endPosition="121" />
+    <scopeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="8041297453111307834" fileName="SelectAnotherNodeFromCode_Test.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8041297453111247733" fileName="SelectAnotherNodeFromCode_Test.java" startLine="54" startPosition="27" endLine="58" endPosition="108">
+      <varInfo nodeId="8041297453110550050" varName="diagramCell" />
+      <varInfo nodeId="8041297453110483768" varName="selectedCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="8041297453111221044" fileName="SelectAnotherNodeFromCode_Test.java" startLine="44" startPosition="27" endLine="49" endPosition="13" />
+    <scopeInfo nodeId="8041297453111247731" fileName="SelectAnotherNodeFromCode_Test.java" startLine="54" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="8041297453111221043" fileName="SelectAnotherNodeFromCode_Test.java" startLine="44" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="40" startPosition="51" endLine="63" endPosition="0">
+      <varInfo nodeId="8041297453110553859" varName="descendantMapper" />
+      <varInfo nodeId="8041297453110598744" varName="editor" />
+      <varInfo nodeId="8041297453110598744" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="39" startPosition="0" endLine="65" endPosition="0" />
+    <unitInfo nodeId="8041297453111307834" fileName="SelectAnotherNodeFromCode_Test.java" startLine="45" startPosition="51" endLine="49" endPosition="11" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$2" />
+    <unitInfo nodeId="8041297453111247731" fileName="SelectAnotherNodeFromCode_Test.java" startLine="53" startPosition="47" endLine="60" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$2" />
+    <unitInfo nodeId="8041297453111221043" fileName="SelectAnotherNodeFromCode_Test.java" startLine="43" startPosition="39" endLine="51" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$1" />
+    <unitInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="34" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test$TestBody" />
+    <unitInfo nodeId="8041297453110598744" fileName="SelectAnotherNodeFromCode_Test.java" startLine="23" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.SelectAnotherNodeFromCode_Test" />
+  </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/8095638845859254308">
     <nodeInfo nodeId="8095638845859254308" fileName="SelectAnotherNode_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8095638845859254308" fileName="SelectAnotherNode_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
