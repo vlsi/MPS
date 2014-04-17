@@ -110,5 +110,16 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="822550549814787038" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="NodeWithName" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="8794120090374242986" resolveInfo="NodeWithSize" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="822550549814829176" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="lineWidth" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="822550549814787109" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </root>
 </model>
 

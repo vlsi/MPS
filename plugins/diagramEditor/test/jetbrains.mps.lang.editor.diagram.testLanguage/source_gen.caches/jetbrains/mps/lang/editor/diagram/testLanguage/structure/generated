@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="lew99geuwax15ek6aizw9yy2ukpg28">
+<dependencies version="2" modelHash="4dwtje52grbvqxawa39ywco16hxe7cp">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -13,6 +13,7 @@
     <dep root="5540569706414436817" />
     <dep root="5540569706414436850" />
     <dep root="5540569706414436906" />
+    <dep root="822550549814787038" />
     <dep root="8794120090374233314" />
     <dep root="8794120090374233605" />
     <dep root="8794120090374242986" />
@@ -33,5 +34,6 @@
   <source id="5540569706414436817" name="NodeWithPorts" hash="7sdiyq7gh2k06p4hrwb838tx922y3xv" />
   <source id="5540569706414436850" name="InputPort" hash="-a7dzf9kueqqbvgq5y92xvvozi6w3qtx" />
   <source id="5540569706414436906" name="OutputPort" hash="1ojvy7ep8vjx3joiw1eclw2cyb9eo7k" />
+  <source id="822550549814787038" name="NodeWithName" hash="jm9dnzpgt37vk39lb0p0sh13md21h" />
 </dependencies>
 

@@ -615,8 +615,8 @@
           <link role="property" roleId="gbdf.285670992217689748" targetNodeId="g85x.5540569706414469728" resolveInfo="lineWidth" />
         </node>
       </node>
-      <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="5540569706414444485" nodeInfo="ng">
-        <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="8tro.8794120090375435445" />
+      <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="822550549815798137" nodeInfo="ng">
+        <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="k80i.822550549815795406" />
       </node>
       <node role="inputPort" roleId="gbdf.2084788800269090635" type="gbdf.LinkArgument" typeId="gbdf.285670992213637559" id="5540569706414444873" nodeInfo="ng">
         <link role="link" roleId="gbdf.285670992217679783" targetNodeId="g85x.5540569706414436925" />
@@ -880,6 +880,161 @@
         <property name="text" nameId="tpc2.1073389577007" value=";" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="822550549812186725" nodeInfo="nn">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="822550549814794755" nodeInfo="ng">
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="g85x.822550549814787038" resolveInfo="NodeWithName" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramNode" typeId="gbdf.1094405431463454433" id="822550549814825674" nodeInfo="ng">
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="822550549814825675" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="POSITION_X" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="822550549814825676" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="g85x.8794120090374242972" resolveInfo="x" />
+        </node>
+      </node>
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="822550549814825677" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="POSITION_Y" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="822550549814825678" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="g85x.8794120090374242974" resolveInfo="y" />
+        </node>
+      </node>
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="822550549814825679" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="figureWidth" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="822550549814825680" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="g85x.8794120090377706498" resolveInfo="width" />
+        </node>
+      </node>
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="822550549814825681" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="figureHeight" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="822550549814825682" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="g85x.8794120090377706500" resolveInfo="height" />
+        </node>
+      </node>
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="822550549814829841" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="lineWidth" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="822550549814830451" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="g85x.822550549814829176" resolveInfo="lineWidth" />
+        </node>
+      </node>
+      <node role="parameters" roleId="gbdf.1094405431463761842" type="gbdf.FigureParameterMapping" typeId="gbdf.1094405431463761863" id="2303280755028060863" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="nameText" />
+        <node role="argument" roleId="gbdf.285670992218957021" type="gbdf.PropertyArgument" typeId="gbdf.285670992217672837" id="2303280755028061100" nodeInfo="ng">
+          <link role="property" roleId="gbdf.285670992217689748" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
+      <node role="figure" roleId="gbdf.1094405431463455193" type="gbdf.AttributedFigureReference" typeId="gbdf.5422656561926747342" id="822550549815245656" nodeInfo="ng">
+        <link role="figureAttribute" roleId="gbdf.5422656561931890753" targetNodeId="8tro.822550549815231205" />
+      </node>
+    </node>
+  </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="822550549814795145" nodeInfo="ng">
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="g85x.822550549814787038" resolveInfo="NodeWithName" />
+    <node role="contextHints" roleId="tpc2.2597348684684069742" type="tpc2.ConceptEditorHintDeclarationReference" typeId="tpc2.6822301196700715228" id="822550549814795147" nodeInfo="ig">
+      <link role="hint" roleId="tpc2.5944657839026714445" targetNodeId="604142159147832934" resolveInfo="DiagramTestTextual" />
+    </node>
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="822550549814829216" nodeInfo="nn">
+      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="822550549814829217" nodeInfo="nn" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829218" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="node with name" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="822550549814829219" nodeInfo="ng">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829220" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="{" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.MatchingLabelStyleClassItem" typeId="tpc2.1236262245656" id="822550549814829221" nodeInfo="nn">
+          <property name="labelName" nameId="tpc2.1238091709220" value="body-brace" />
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="822550549814829222" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="822550549814829223" nodeInfo="nn">
+        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="822550549814829224" nodeInfo="nn" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="822550549814829225" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829226" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value="x" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829227" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value=":" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="822550549814829228" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="822550549814829229" nodeInfo="ng">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="g85x.8794120090374242972" resolveInfo="x" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="822550549814829230" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829231" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value="y" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829232" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value=":" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="822550549814829233" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="822550549814829234" nodeInfo="ng">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="g85x.8794120090374242974" resolveInfo="y" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="822550549814829235" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829236" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value="width" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829237" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value=":" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="822550549814829238" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="822550549814829239" nodeInfo="ng">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="g85x.8794120090377706498" resolveInfo="width" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="822550549814829240" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829241" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value="height" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829242" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value=":" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="822550549814829243" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="822550549814829244" nodeInfo="ng">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="g85x.8794120090377706500" resolveInfo="height" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="822550549814829245" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829246" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value="line width" />
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829247" nodeInfo="nn">
+          <property name="text" nameId="tpc2.1073389577007" value=":" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="822550549814829248" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="822550549814829249" nodeInfo="ng">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="g85x.822550549814829176" resolveInfo="lineWidth" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="822550549814829250" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="822550549814829251" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="}" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.MatchingLabelStyleClassItem" typeId="tpc2.1236262245656" id="822550549814829252" nodeInfo="nn">
+          <property name="labelName" nameId="tpc2.1238091709220" value="body-brace" />
         </node>
       </node>
     </node>

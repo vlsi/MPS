@@ -14,6 +14,7 @@
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetbrains.jetpad)</dependency>
     <dependency reexport="false">5a283d13-799d-4cf6-a6a7-5c3e11d79dcb(jetbrains.mps.lang.editor.diagram.runtime)</dependency>
+    <dependency reexport="false">9fc6ac35-295d-4fb8-8210-ba026790e4a0(jetbrains.mps.lang.editor.figures.library)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>

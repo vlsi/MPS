@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="Diagram1_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Diagram1_BehaviorDescriptor" />
   <unitInfo fileName="Diagram2_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Diagram2_BehaviorDescriptor" />
   <unitInfo fileName="InputPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.InputPort_BehaviorDescriptor" />
+  <unitInfo fileName="NodeWithName_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithName_BehaviorDescriptor" />
   <unitInfo fileName="NodeWithPorts_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPorts_BehaviorDescriptor" />
   <unitInfo fileName="NodeWithSize_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithSize_BehaviorDescriptor" />
   <unitInfo fileName="Node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Node_BehaviorDescriptor" />

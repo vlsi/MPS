@@ -1586,5 +1586,54 @@
       </node>
     </node>
   </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="822550549814784606" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="ChangeNodeName" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="Changing node name by clicking on it and typing" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="822550549814786508" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithName" typeId="g85x.822550549814787038" id="822550549814794271" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="120" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="x" nameId="g85x.8794120090374242972" value="20" />
+        <property name="y" nameId="g85x.8794120090374242974" value="20" />
+        <property name="lineWidth" nameId="g85x.822550549814829176" value="1" />
+        <property name="name" nameId="tpck.1169194664001" value="NodeName" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2303280755028675635" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="DiagramNode_x378ek_a" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2303280755028749481" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressMouseStatement" typeId="tp5g.210559400605421433" id="2303280755028749479" nodeInfo="ng">
+        <property name="x" nameId="tp5g.210559400606080743" value="60" />
+        <property name="y" nameId="tp5g.210559400606080744" value="25" />
+        <node role="statementList" roleId="tp5g.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="2303280755028749480" nodeInfo="sn" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="2303280755029054084" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value="abCd" />
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="2303280755028808278" nodeInfo="nn">
+        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="2303280755028808279" nodeInfo="ng">
+          <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.PressKeyStatement" typeId="tp5g.1228934484974" id="2303280755028808308" nodeInfo="nn">
+        <node role="keyStrokes" roleId="tp5g.1228934507814" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="2303280755028808309" nodeInfo="ng">
+          <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2303280755028808188" nodeInfo="nn" />
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="g85x.Diagram2" typeId="g85x.8794120090374233314" id="2303280755028869339" nodeInfo="ng">
+      <node role="mainNodes" roleId="g85x.8794120090374242825" type="g85x.NodeWithName" typeId="g85x.822550549814787038" id="2303280755028869340" nodeInfo="ng">
+        <property name="width" nameId="g85x.8794120090377706498" value="120" />
+        <property name="height" nameId="g85x.8794120090377706500" value="80" />
+        <property name="x" nameId="g85x.8794120090374242972" value="20" />
+        <property name="y" nameId="g85x.8794120090374242974" value="20" />
+        <property name="lineWidth" nameId="g85x.822550549814829176" value="1" />
+        <property name="name" nameId="tpck.1169194664001" value="NoabCdName" />
+      </node>
+    </node>
+  </root>
 </model>
 
