@@ -53,6 +53,9 @@ public class DynamicReference extends SReferenceBase {
     }
   };
 
+  private boolean myHasBeenResolve;
+  private SNode myCachedTargetNode;
+
   /*
    * create 'young' reference
    */
@@ -80,7 +83,11 @@ public class DynamicReference extends SReferenceBase {
   @Override
   protected SNode getTargetNode_internal() {
     // seems like getTargetNode() doesn't make sense if source node is detached
-    assert mySourceNode.getModel() != null : "Taking target node of dynamic reference whose source node is not in a model";
+    if (mySourceNode.getModel() == null) {
+      assert myHasBeenResolve : "Taking target node of dynamic reference whose source node is not in a model";
+      return myCachedTargetNode;
+    }
+
 
     final Set<DynamicReference> currentRefs = currentlyResolved.get();
     if (currentRefs.contains(this)) {
@@ -122,6 +129,8 @@ public class DynamicReference extends SReferenceBase {
         reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");
       }
 
+      myHasBeenResolve = true;
+      myCachedTargetNode = targetNode;
       return targetNode;
 
     } finally {
