@@ -790,6 +790,21 @@
             </node>
           </node>
         </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="1476884141930134653" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1476884141930135292" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="java compiler options" />
+        <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1476884141930135293" nodeInfo="ng">
+        <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
+        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no additional options&gt;" />
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="8xvf.1476884141930130693" resolveInfo="compilerOptions" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="1476884141930135307" nodeInfo="nn">
+          <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1659807394254658070" nodeInfo="nn" />
     </node>

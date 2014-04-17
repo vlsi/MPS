@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a3nserl3itjv6sw496942d1qkxss0hz">
+<dependencies version="2" modelHash="-9i0utctu4gh98t6104p2puj8upul9i2">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
@@ -53,7 +53,7 @@
   <source id="2769948622284605880" name="BwfSubTaskDependency" hash="-al088ep8b04m86x0ldynspo3incj4nb" />
   <source id="2769948622284605979" name="BwfStatement" hash="-4obdch5gn9o6ea76cpv5j33twm0vd2x" />
   <source id="2769948622284768359" name="BwfAntStatement" hash="dvajm0r2xkjp1qg6ynbwr78rxc0d89m" />
-  <source id="4755209551904389307" name="BwfJavaModule" hash="-c9dn1l37hmq73fy07ttlxjgoua1obw" />
+  <source id="4755209551904389307" name="BwfJavaModule" hash="-bsrel9ysorzk665et2vhnl2epghrnom" />
   <source id="4755209551904389316" name="BwfJavaModuleReference" hash="cqa9qedp0zpwobgln50zdqsv6zdf6bo" />
   <source id="3961775458390032824" name="BwfTaskPart" hash="-cyes9l2v93s7jtsnjxphv2z5963vs8m" />
   <source id="6896005762093571400" name="BwfMacro" hash="-b53y39j2s0fo0b8muhwq2szvdcb9snz" />

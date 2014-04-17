@@ -132,7 +132,7 @@
   <target name="java.compile.module4" depends="java.compile.java.modules.cycle.2">
     <mkdir dir="build/temp/module4" />
     <javac destdir="build/temp/module4" fork="true" includeantruntime="false" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
+      <compilerarg value="-Xmaxerrors 321 -Xmaxwarns 123 -g:none" />
       <src path="module4/source" />
       <classpath>
         <pathelement path="mo4.deps" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a1xpgq24pd7pz1miizwoc2s42xaqzcm">
+<dependencies version="2" modelHash="9n5cbz8ussoe17spbam0mdw7ri6hiw7">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -33,8 +33,8 @@
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="2t346zimpb9pgz6suemh13r33bppt1x" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-7a2zmkcp5ccf48jfyjin69be8kewauf" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6lqwy64mga622tpk5t288xgf49o6z88" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-8nqcigyjwrlz2vje86smpm7wr61ms5t" />
-  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="a3nserl3itjv6sw496942d1qkxss0hz" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="5x5nf8fz49cksj16nc66dhwecdc1nrs" />
+  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-9i0utctu4gh98t6104p2puj8upul9i2" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-9ul2n83hssy8wjb8faorbs0k0av9cuy" />
   <common hash="-f4ybosw98j60hzot4zr41m2jw12cq0" dependsOnNodes="true">
@@ -91,12 +91,10 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="3595702787188034883" name="main" hash="b5iue8q85t0cwjshim58i1kgg5gv1f3">
+  <source id="3595702787188034883" name="main" hash="2eactgafzzleu6g3amcppb6z7gg0psv">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3595702787188038546" name="build" hash="-6dpqmrwxj341h9vmtgy63q1g1yiyq30">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="3595702787188038546" name="build" hash="-6dpqmrwxj341h9vmtgy63q1g1yiyq30" />
   <source id="1117643560963351146" name="reduce_FileSet" hash="-4nnxyvez9hzt78aavjkbodivtuj4aa3" />
   <source id="6647099934206970606" name="reduce_PluginToImport" hash="6pn1q27sgp2afb4i0li9rhrrfvb2ukq" />
   <source id="809559803149973642" name="store_destdir" hash="dkoz4mhpdzxto9z1y1h2f72eix7x72n" />

@@ -8156,6 +8156,26 @@
               </node>
             </node>
           </node>
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1476884141930961395" nodeInfo="nn">
+            <property name="propertyName" nameId="tpck.1757699476691236117" value="compilerOptions" />
+            <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="1476884141930961396" nodeInfo="nn">
+              <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1476884141930961397" nodeInfo="sn">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1476884141930970992" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1476884141930975109" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1476884141930975110" nodeInfo="nn">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1476884141930975111" nodeInfo="nn" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_VarRef" typeId="tpf3.2721957369897614808" id="1476884141930975112" nodeInfo="nn">
+                        <link role="varmacro" roleId="tpf3.2721957369897614810" targetNodeId="1659807394254873140" resolveInfo="javaOpts" />
+                      </node>
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1476884141930976526" nodeInfo="nn">
+                      <link role="property" roleId="tp25.1138056395725" targetNodeId="3ior.1476884141929960215" resolveInfo="compilerOptions" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

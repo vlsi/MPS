@@ -531,6 +531,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(((SNode) _context.getVariable("var:javaOpts")), "javaLevel");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1476884141930961396(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(((SNode) _context.getVariable("var:javaOpts")), "compilerOptions");
+  }
+
   public static Object propertyMacro_GetPropertyValue_7926701909975671869(final PropertyMacroContext _context) {
     return BuildSource_JavaContentFolder_Behavior.call_getAntPath_2389279258816946193(_context.getNode(), Context.defaultContext(_context));
   }
@@ -2175,7 +2179,7 @@ public class QueriesGenerated {
     List<Tuples._2<SNode, String>> dependencies = new ProjectDependency(_context, _context.getNode()).collectDependencies().getDependencies();
     return ListSequence.fromList(dependencies).select(new ISelector<Tuples._2<SNode, String>, SNode>() {
       public SNode select(Tuples._2<SNode, String> it) {
-        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a893(it._1(), it._0());
+        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a993(it._1(), it._0());
       }
     }).toListSequence();
   }
@@ -2284,7 +2288,7 @@ public class QueriesGenerated {
     return MultiTuple.<String,String,Object>from(fsetExt, prefix, null);
   }
 
-  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a893(Object p0, Object p1) {
+  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a993(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency", null, false);
     n1.setProperty("path", String.valueOf(p0));
