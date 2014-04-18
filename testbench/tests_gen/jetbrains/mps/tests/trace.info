@@ -114,6 +114,12 @@
     <scopeInfo nodeId="2712670354707941345" fileName="TestModule_jetbrains_mps_baseLanguage_regexp_unittest.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="2712670354707941345" fileName="TestModule_jetbrains_mps_baseLanguage_regexp_unittest.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_baseLanguage_regexp_unittest" />
   </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/3005375224929183746">
+    <nodeInfo nodeId="3005375224929183746" fileName="TestModule_jetbrains_mps_lang_editor_diagram_tests.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_lang_editor_diagram_tests#()V" />
+    <scopeInfo nodeId="3005375224929183746" fileName="TestModule_jetbrains_mps_lang_editor_diagram_tests.java" startLine="12" startPosition="63" endLine="12" endPosition="63" />
+    <scopeInfo nodeId="3005375224929183746" fileName="TestModule_jetbrains_mps_lang_editor_diagram_tests.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <unitInfo nodeId="3005375224929183746" fileName="TestModule_jetbrains_mps_lang_editor_diagram_tests.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_diagram_tests" />
+  </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/3034322180552461514">
     <nodeInfo nodeId="3034322180552461514" fileName="TestModule_jetbrains_mps_baseLanguage_unitTest_sandbox.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_baseLanguage_unitTest_sandbox#()V" />
     <scopeInfo nodeId="3034322180552461514" fileName="TestModule_jetbrains_mps_baseLanguage_unitTest_sandbox.java" startLine="12" startPosition="67" endLine="12" endPosition="67" />
