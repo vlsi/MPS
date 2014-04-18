@@ -246,6 +246,9 @@
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763177" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="module4" />
       <property name="outputFolder" nameId="8xvf.7385586609667649463" value="build/temp/module4" />
+      <property name="javaLevelSource" nameId="8xvf.6998860900671418236" value="1.6" />
+      <property name="javaLevelTarget" nameId="8xvf.6998860900671530572" value="1.6" />
+      <property name="compilerOptions" nameId="8xvf.1476884141930130693" value="-Xmaxerrors 321 -Xmaxwarns 123 -g:none" />
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaClassPath" typeId="8xvf.6647099934206976119" id="7926701909975860114" nodeInfo="ng">
         <node role="classpath" roleId="8xvf.7926701909975791137" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7926701909975860115" nodeInfo="ng">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="pathelement" />
@@ -290,6 +293,7 @@
     <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfJavaModule" typeId="8xvf.4755209551904389307" id="7385586609667763185" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="module5" />
       <property name="outputFolder" nameId="8xvf.7385586609667649463" value="build/temp/module5" />
+      <property name="javaLevelTarget" nameId="8xvf.6998860900671530572" value="1.6" />
       <node role="dependencies" roleId="8xvf.4755209551904389320" type="8xvf.BwfJavaModuleReference" typeId="8xvf.4755209551904389316" id="7385586609667763186" nodeInfo="ng">
         <link role="target" roleId="8xvf.4755209551904389317" targetNodeId="7385586609667763177" resolveInfo="module4" />
       </node>

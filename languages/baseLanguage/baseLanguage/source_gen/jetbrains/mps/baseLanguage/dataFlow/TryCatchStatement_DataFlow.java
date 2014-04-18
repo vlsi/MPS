@@ -34,6 +34,11 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
     });
     for (SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
       _context.getBuilder().build((SNode) c);
+      _context.getBuilder().emitMayBeUnreachable(new Runnable() {
+        public void run() {
+          _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/8768955936812442517");
+        }
+      });
     }
   }
 }
