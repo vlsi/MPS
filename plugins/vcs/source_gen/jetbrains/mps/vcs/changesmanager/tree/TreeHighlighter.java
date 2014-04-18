@@ -202,6 +202,9 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
   private void rehighlightFeatureAndDescendants(@NotNull final Feature feature) {
+    if (myTree.isDisposed()) {
+      return;
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         synchronized (myFeaturesHolder) {

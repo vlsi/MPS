@@ -1979,6 +1979,8 @@ public class QueriesGenerated {
             while (name.endsWith("(") || name.endsWith(")") || name.endsWith(" ")) {
               name = name.substring(0, name.length() - 1);
             }
+            name = name.trim();
+
             SNode result;
             if (SPropertyOperations.getBoolean(current, "static")) {
               result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
@@ -2048,6 +2050,8 @@ public class QueriesGenerated {
             if (pattern.endsWith(";") || pattern.endsWith("=")) {
               name = name.substring(0, name.length() - 1).trim();
             }
+            name = name.trim();
+
             SNode result;
             if (SPropertyOperations.getBoolean(current, "static")) {
               SNode decl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null);

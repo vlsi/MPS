@@ -5,7 +5,7 @@
   <description>Languages and libraries for implementing execution configurations for MPS</description>
   <version>3.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="129.1" until-build="136.1"/>
+  <idea-version since-build="135.1" until-build="136.1"/>
   
   <depends>jetbrains.mps.debugger.java</depends>
   <depends>jetbrains.mps.debugger.api</depends>
@@ -30,6 +30,5 @@
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <programRunner id="defaultRunRunner"
                    implementation="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner"/>
-    <projectService serviceImplementation="com.intellij.openapi.updateSettings.impl.pluginsAdvertisement.UnknownFeaturesCollector"/>
   </extensions>
 </idea-plugin>

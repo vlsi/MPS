@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dxigo946oiylphknz09lapfijsie1n1">
+<dependencies version="2" modelHash="-1a3y50oc7vic1l74995lbp6hpkc7umr">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5ltxe3l1xoyos2nn156ma6fyky147o3" />
@@ -44,6 +45,8 @@
     <dep root="1229187653856" />
     <dep root="1229194968594" />
     <dep root="1230224281548" />
+    <dep root="210559400605421433" />
+    <dep root="210559400608047267" />
     <dep root="2685915532175039858" />
     <dep root="2893471348147803052" />
     <dep root="3655334166513314291" />
@@ -53,7 +56,6 @@
     <dep root="4395293866213195846" />
     <dep root="4531408400484511853" />
     <dep root="4531408400486526326" />
-    <dep root="4633202057941640741" />
     <dep root="5097124989038916362" />
     <dep root="511191073233700873" />
     <dep root="5348336190815082969" />
@@ -72,6 +74,7 @@
     <dep root="8578280453507219248" />
     <dep root="8578280453509464010" />
     <dep root="95706764259116183" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -144,6 +147,7 @@
   <source id="8333855927564181193" name="AbstractNodeWarningCheckOperation" hash="e9atsm1ul0pjdwgvrhoiaqq9f4aapys" />
   <source id="8333855927564208813" name="NodeConstraintsWarningCheckOperation" hash="9dt3f9m46f0ckj00m6nt1gbekj82lq4" />
   <source id="8333855927564286208" name="NodeUnknownWarningCheckOperation" hash="evnfe4s1l0xcmo1tdwuyh38piwwa8fr" />
-  <source id="4633202057941640741" name="MousePress" hash="14b85n82dnqrjcjqk8us5op24hpabsu" />
+  <source id="210559400605421433" name="PressMouseStatement" hash="5nudh0qaqxkvv5bkyeb5tc36ys3xpz5" />
+  <source id="210559400608047267" name="DragMouseStatement" hash="17sy50linfrjdf300vsf9qc8fbrk0h4" />
 </dependencies>
 

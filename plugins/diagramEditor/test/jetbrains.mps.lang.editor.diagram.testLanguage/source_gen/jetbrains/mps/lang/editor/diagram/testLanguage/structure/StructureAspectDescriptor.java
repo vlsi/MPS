@@ -16,17 +16,29 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"rectangles"}, new boolean[]{true}).create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"mainNodes"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"mainNodes", "nodeConnectors"}, new boolean[]{true, true}).create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize").super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").parents("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").properties("width", "height").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("x", "y").create();
       case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName").super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize").parents("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.core.structure.INamedConcept").properties("lineWidth").create();
+      case 5:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPortQueries").super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts").parents("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts").create();
+      case 6:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts").super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize").parents("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize").properties("lineWidth").children(new String[]{"inputs", "outputs"}, new boolean[]{true, true}).create();
+      case 7:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize").super_("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").parents("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node").properties("width", "height").create();
+      case 8:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
+      case 9:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("src", "dst").create();
+      case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPortQueries", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
 }

@@ -9,6 +9,7 @@
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Iterator" />
+    <classNode extendsClassName="java.io.Serializable" />
     <classNode extendsClassName="java.lang.Iterable" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>

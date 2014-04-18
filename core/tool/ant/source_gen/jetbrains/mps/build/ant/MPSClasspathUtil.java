@@ -19,7 +19,7 @@ public class MPSClasspathUtil {
   private static final String PROTOCOL_DELIMITER = ":";
 
   private static final String[] CLASSPATH = new String[]{"trove4j.jar", "mps-collections.jar", "mps-closures.jar", "mps-tuples.jar", "mps-openapi.jar", "mps-core.jar", "mps-tool.jar"};
-  private static final String[] FORK_CLASSPATH = new String[]{"jdom.jar", "log4j.jar", "ecj-4.2.1.jar", "xstream-1.4.3.jar", "asm4-all.jar", "diffutils-1.2.1.jar", "junit-4.10.jar"};
+  private static final String[] FORK_CLASSPATH = new String[]{"jdom.jar", "log4j.jar", "ecj-4.3.2.jar", "xstream-1.4.3.jar", "asm4-all.jar", "diffutils-1.2.1.jar", "junit-4.11.jar"};
 
 
 

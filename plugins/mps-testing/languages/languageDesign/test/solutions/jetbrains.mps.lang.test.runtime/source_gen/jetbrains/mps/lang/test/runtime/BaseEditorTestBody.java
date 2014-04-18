@@ -35,11 +35,18 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.event.KeyEvent;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.awt.Component;
+import java.lang.reflect.Method;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import javax.swing.JComponent;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import javax.swing.KeyStroke;
-import java.lang.reflect.Method;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -49,7 +56,6 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 
@@ -214,82 +220,149 @@ public class BaseEditorTestBody extends BaseTestBody {
 
 
   public static void typeString(final EditorComponent editorComponent, final String text) throws InterruptedException, InvocationTargetException {
-    SwingUtilities.invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        for (char ch : text.toCharArray()) {
-          editorComponent.processKeyTyped(new KeyEvent(editorComponent, KeyEvent.KEY_TYPED, 0, 0, 0, ch));
-        }
+    Iterable<KeyEvent> events = Sequence.fromIterable(ArrayUtils.fromCharacterArray(text.toCharArray())).select(new ISelector<Character, KeyEvent>() {
+      public KeyEvent select(Character it) {
+        return new KeyEvent(editorComponent, KeyEvent.KEY_TYPED, 0, 0, 0, it);
       }
     });
+    processKeyEvents(editorComponent, events);
   }
 
-
-
-  public static void pressKeys(Editor editor, List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
-    BaseEditorTestBody.pressKeys((EditorComponent) editor.getCurrentEditorComponent(), keyStrokes);
-  }
-
-
-
-  public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
-    final Component eventTargetComponent;
-    EditorCell selectedCell = editorComponent.getSelectedCell();
-    if (selectedCell != null) {
-      Component eventTarget = getEventTargetComponent(selectedCell, editorComponent);
-      if (eventTarget == editorComponent) {
-        eventTargetComponent = null;
-      } else {
-        while ((eventTarget instanceof JComponent) && ((JComponent) eventTarget).getComponentCount() > 0) {
-          eventTarget = ((JComponent) eventTarget).getComponent(((JComponent) eventTarget).getComponentCount() - 1);
-        }
-        eventTargetComponent = eventTarget;
-      }
-    } else {
-      // TODO: assign editorComponent here 
-      eventTargetComponent = null;
-    }
-
-    final boolean[] eventWasPassed = new boolean[]{true};
+  private static void processKeyEvents(final EditorComponent editorComponent, final Iterable<KeyEvent> events) throws InterruptedException, InvocationTargetException {
+    final Component eventTargetComponent = getKeyEventTargetComponent(editorComponent);
+    final Method processKeyEventMethod = getProcessKeyEventMethod(eventTargetComponent);
+    final boolean[] eventsWerePassed = new boolean[]{true};
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
-        for (String code : keyStrokes) {
-          KeyStroke stroke = KeyStroke.getKeyStroke(code);
-          KeyEvent keyPressedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar());
-          KeyEvent keyReleasedEvent = new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar());
-          if (eventTargetComponent == null) {
-            // TODO: remove this branch and always dispatch events using .dispatchEvent method() ? 
-            editorComponent.processKeyPressed(keyPressedEvent);
-            editorComponent.processKeyReleased(keyReleasedEvent);
-          } else {
-            Class<?> clazz = eventTargetComponent.getClass();
-            Method theMethod = null;
-            while (theMethod == null && clazz != null) {
-              try {
-                theMethod = clazz.getDeclaredMethod("processKeyEvent", KeyEvent.class);
-                theMethod.setAccessible(true);
-              } catch (NoSuchMethodException e) {
+        if (eventTargetComponent == null) {
+          Sequence.fromIterable(events).visitAll(new IVisitor<KeyEvent>() {
+            public void visit(KeyEvent it) {
+              if (it.getID() == KeyEvent.KEY_TYPED) {
+                editorComponent.processKeyTyped(it);
+              } else if (it.getID() == KeyEvent.KEY_PRESSED) {
+                editorComponent.processKeyPressed(it);
+              } else {
+                editorComponent.processKeyReleased(it);
               }
-              clazz = clazz.getSuperclass();
             }
-            if (theMethod != null) {
-              try {
-                theMethod.invoke(eventTargetComponent, keyPressedEvent);
-                theMethod.invoke(eventTargetComponent, keyReleasedEvent);
-              } catch (IllegalAccessException e) {
-                eventWasPassed[0] = false;
-              } catch (InvocationTargetException e) {
-                eventWasPassed[0] = false;
-              }
-            } else {
-              eventWasPassed[0] = false;
+          });
+        } else {
+          for (KeyEvent event : Sequence.fromIterable(events)) {
+            try {
+              processKeyEventMethod.invoke(eventTargetComponent, event);
+            } catch (InvocationTargetException e) {
+              eventsWerePassed[0] = false;
+            } catch (IllegalAccessException e) {
+              eventsWerePassed[0] = false;
             }
           }
         }
       }
     });
-    Assert.assertTrue("Keyboard event was not passed to corresponding component", eventWasPassed[0]);
+    Assert.assertTrue("Keyboard events were not passed to corresponding component", eventsWerePassed[0]);
+  }
+
+  private static Component getKeyEventTargetComponent(EditorComponent editorComponent) {
+    EditorCell selectedCell = editorComponent.getSelectedCell();
+    if (selectedCell == null) {
+      // TODO: return editorComponent here 
+      return null;
+    }
+    Component eventTarget = getEventTargetComponent(selectedCell, editorComponent);
+    if (eventTarget == editorComponent) {
+      // TODO: return editorComponent here 
+      return null;
+    }
+    while ((eventTarget instanceof JComponent) && ((JComponent) eventTarget).getComponentCount() > 0) {
+      eventTarget = ((JComponent) eventTarget).getComponent(((JComponent) eventTarget).getComponentCount() - 1);
+    }
+    return eventTarget;
+  }
+
+  private static Method getProcessKeyEventMethod(Component eventTargetComponent) {
+    if (eventTargetComponent == null) {
+      return null;
+    }
+    Class<?> clazz = eventTargetComponent.getClass();
+    Method theMethod = null;
+    while (theMethod == null && clazz != null) {
+      try {
+        theMethod = clazz.getDeclaredMethod("processKeyEvent", KeyEvent.class);
+        theMethod.setAccessible(true);
+        return theMethod;
+      } catch (NoSuchMethodException e) {
+      }
+      clazz = clazz.getSuperclass();
+    }
+    Assert.fail("Cannot find processKeyEvent method in " + eventTargetComponent.getClass() + "class");
+    return null;
+  }
+
+  public static void pressKeys(Editor editor, List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
+    BaseEditorTestBody.pressKeys((EditorComponent) editor.getCurrentEditorComponent(), keyStrokes);
+  }
+
+  public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
+    Iterable<KeyEvent> events = ListSequence.fromList(keyStrokes).translate(new ITranslator2<String, KeyEvent>() {
+      public Iterable<KeyEvent> translate(final String it) {
+        return new Iterable<KeyEvent>() {
+          public Iterator<KeyEvent> iterator() {
+            return new YieldingIterator<KeyEvent>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 6:
+                      if (_5_keyChar == KeyEvent.CHAR_UNDEFINED && _4_keyCode != KeyEvent.VK_UNDEFINED && ((_4_keyCode >= KeyEvent.VK_0 && _4_keyCode <= KeyEvent.VK_9) || (_4_keyCode >= KeyEvent.VK_A && _4_keyCode <= KeyEvent.VK_Z))) {
+                        this.__CP__ = 7;
+                        break;
+                      }
+                      this.__CP__ = 8;
+                      break;
+                    case 8:
+                      this.__CP__ = 10;
+                      this.yield(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, _3_stroke.getModifiers(), _4_keyCode, _5_keyChar));
+                      return true;
+                    case 10:
+                      this.__CP__ = 1;
+                      this.yield(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, _3_stroke.getModifiers(), _4_keyCode, _5_keyChar));
+                      return true;
+                    case 0:
+                      this._3_stroke = KeyStroke.getKeyStroke(it);
+                      this._4_keyCode = _3_stroke.getKeyCode();
+                      this._5_keyChar = _3_stroke.getKeyChar();
+                      this.__CP__ = 6;
+                      break;
+                    case 7:
+                      // todo it may be worthwhile to also detect other unicode chars from keyCode and supply them into keyChar 
+                      // There is currently no good complete cross-platform code to char conversion utility, it seems 
+                      // KEY_PRESSED events may or may not contain a concrete keyChar. Its presence is definitely not a problem 
+                      _5_keyChar = (char) _4_keyCode;
+                      this.__CP__ = 8;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+
+              private KeyStroke _3_stroke;
+              private int _4_keyCode;
+              private char _5_keyChar;
+            };
+          }
+        };
+      }
+    });
+    processKeyEvents(editorComponent, events);
   }
 
   public static void invokeAction(Editor editor, String actionId) throws InvocationTargetException, InterruptedException {
@@ -330,15 +403,17 @@ public class BaseEditorTestBody extends BaseTestBody {
     ModelAccess.instance().flushEventQueue();
   }
 
-  public static void processMousePressed(final EditorComponent editorComponent, int x, int y) throws InterruptedException, InvocationTargetException {
+  public static Component processMouseEvent(final EditorComponent editorComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
     assert editorComponent.getRootCell() != null;
 
     Queue<EditorCell> cellCandidates = QueueSequence.fromQueue(new LinkedList<EditorCell>());
     QueueSequence.fromQueue(cellCandidates).addLastElement(editorComponent.getRootCell());
+    int absoluteX = x + editorComponent.getRootCell().getX();
+    int absoluteY = y + editorComponent.getRootCell().getY();
     EditorCell eventTargetCell = null;
     while (QueueSequence.fromQueue(cellCandidates).isNotEmpty()) {
       EditorCell nextCell = QueueSequence.fromQueue(cellCandidates).removeFirstElement();
-      if (nextCell.getX() <= x && nextCell.getY() <= y && nextCell.getX() + nextCell.getWidth() > x && nextCell.getY() + nextCell.getHeight() > y) {
+      if (nextCell.getX() <= absoluteX && nextCell.getY() <= absoluteY && nextCell.getX() + nextCell.getWidth() > absoluteX && nextCell.getY() + nextCell.getHeight() > absoluteY) {
         eventTargetCell = nextCell;
         if (nextCell instanceof EditorCell_Collection) {
           QueueSequence.fromQueue(cellCandidates).addSequence(Sequence.fromIterable((EditorCell_Collection) nextCell));
@@ -351,14 +426,20 @@ public class BaseEditorTestBody extends BaseTestBody {
     targetComponent.value = targetComponent.value.getComponentAt(x, y);
     assert targetComponent.value != null;
 
-    int actualX = x;
-    int actualY = y;
-    int absoluteX = x;
-    int absoluteY = y;
-    final MouseEvent e = new MouseEvent(targetComponent.value, MouseEvent.MOUSE_PRESSED, System.currentTimeMillis(), 0, actualX, actualY, absoluteX, absoluteY, 1, false, MouseEvent.BUTTON1);
+    final MouseEvent e = createMouseEvent(targetComponent.value, eventType, x, y);
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         targetComponent.value.dispatchEvent(e);
+      }
+    });
+    return targetComponent.value;
+  }
+
+  public static void processSecondaryMouseEvent(final Component targetComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
+    final MouseEvent e = createMouseEvent(targetComponent, eventType, x, y);
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        targetComponent.dispatchEvent(e);
       }
     });
   }
@@ -371,5 +452,9 @@ public class BaseEditorTestBody extends BaseTestBody {
       currentCell = currentCell.getParent();
     }
     return editorComponent;
+  }
+
+  private static MouseEvent createMouseEvent(Component targetComponent, int id, int x, int y) {
+    return new MouseEvent(targetComponent, id, System.currentTimeMillis(), 0, x, y, x, y, 1, false, MouseEvent.BUTTON1);
   }
 }

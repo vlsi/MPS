@@ -19,7 +19,6 @@ import com.intellij.ide.RecentProjectsManagerBase;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -37,8 +36,8 @@ import org.jetbrains.annotations.Nullable;
     )}
 )
 public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
-  public RecentMPSProjectsManager(ProjectManager projectManager, MessageBus messageBus) {
-    super(projectManager, messageBus);
+  public RecentMPSProjectsManager(MessageBus messageBus) {
+    super(messageBus);
   }
 
   @Override

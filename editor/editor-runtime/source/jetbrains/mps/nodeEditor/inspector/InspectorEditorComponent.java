@@ -48,13 +48,7 @@ public class InspectorEditorComponent extends EditorComponent {
     if (myNode == node) {
       return;
     }
-    getRepository().getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myContainingRoot = node == null ? null : node.getContainingRoot();
-        InspectorEditorComponent.super.editNode(node);
-      }
-    });
+    super.editNode(node);
   }
 
   @Override
@@ -71,6 +65,13 @@ public class InspectorEditorComponent extends EditorComponent {
     EditorCell inspectedCell = getEditorContext().createInspectedCell(getEditedNode(), events);
     popCellContext();
     return inspectedCell;
+  }
+
+  protected boolean updateContainingRoot(SNode node) {
+    final SNode newroot = node == null ? null : node.getContainingRoot();
+    if (myContainingRoot == newroot) return false;
+    myContainingRoot = newroot;
+    return true;
   }
 
   @Override

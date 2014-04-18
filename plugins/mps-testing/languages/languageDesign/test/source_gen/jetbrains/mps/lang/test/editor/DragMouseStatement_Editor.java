@@ -10,32 +10,35 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
-public class MousePress_Editor extends DefaultNodeEditor {
+public class DragMouseStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5z05jr_a(editorContext, node);
+    return this.createCollection_4it79z_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5z05jr_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4it79z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5z05jr_a");
+    editorCell.setCellId("Collection_4it79z_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createComponent_5z05jr_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5z05jr_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5z05jr_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5z05jr_d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5z05jr_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5z05jr_f0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_4it79z_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4it79z_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4it79z_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4it79z_d0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4it79z_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4it79z_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4it79z_g0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_5z05jr_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_4it79z_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
@@ -43,17 +46,17 @@ public class MousePress_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5z05jr_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4it79z_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_5z05jr_b0");
+    editorCell.setCellId("Constant_4it79z_b0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.apply_LeftParenAfterName(style, editorCell);
+    Styles_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_5z05jr_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4it79z_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("x");
     provider.setNoTargetText("<no x>");
@@ -71,9 +74,9 @@ public class MousePress_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5z05jr_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4it79z_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_5z05jr_d0");
+    editorCell.setCellId("Constant_4it79z_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -83,7 +86,7 @@ public class MousePress_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5z05jr_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4it79z_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("y");
     provider.setNoTargetText("<no y>");
@@ -101,11 +104,21 @@ public class MousePress_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5z05jr_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4it79z_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_5z05jr_f0");
+    editorCell.setCellId("Constant_4it79z_f0");
     Style style = new StyleImpl();
-    transformationTest_StyleSheet.apply_RightParen(style, editorCell);
+    Styles_StyleSheet.apply_RightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4it79z_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    editorCell.setCellId("Constant_4it79z_g0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

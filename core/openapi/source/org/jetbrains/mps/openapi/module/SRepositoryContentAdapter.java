@@ -93,6 +93,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   }
 
   protected void stopListening(SModule module) {
+    // it's not very nice to stop listening models of any module, even the one we didn't include this module in startListening(SModule), but who cares
     for (SModel model : module.getModels()) {
       stopListening(model);
     }

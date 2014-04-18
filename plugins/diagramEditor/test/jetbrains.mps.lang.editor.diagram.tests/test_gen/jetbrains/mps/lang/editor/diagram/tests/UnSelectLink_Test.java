@@ -8,16 +8,18 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 @MPSLaunch
-public class ResizeNodeUp_Test extends BaseTransformationTest4 {
-  public ResizeNodeUp_Test() {
+public class UnSelectLink_Test extends BaseTransformationTest4 {
+  public UnSelectLink_Test() {
   }
 
   @Test
-  public void test_ResizeNodeUp() throws Throwable {
+  public void test_UnSelectLink() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.ResizeNodeUp_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.diagram.tests.UnSelectLink_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -27,9 +29,9 @@ public class ResizeNodeUp_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("8794120090377793373", "8794120090382404275");
+      final Editor editor = TestBody.this.initEditor("822550549814665086", "822550549814668456");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.processMousePressed(editorComponent, 50, 10);
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ESCAPE"));
     }
   }
 }

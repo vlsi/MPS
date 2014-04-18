@@ -23,6 +23,9 @@
     <classNode extendsClassName="jetbrains.jetpad.projectional.diagram.view.layout.CenterVerticalLayoutView" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.figures.sandbox.BoxFigureExt" file="BoxFigureExt.java">
+    <classNode extendsClassName="jetbrains.mps.lang.editor.figures.library.BoxFigure" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.figures.sandbox.MPSRectView" file="MPSRectView.java">
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />

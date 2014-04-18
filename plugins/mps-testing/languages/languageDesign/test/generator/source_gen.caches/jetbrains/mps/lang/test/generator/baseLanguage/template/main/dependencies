@@ -25,6 +25,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.behavior.DragMouseStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.TestInfo_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil" />

@@ -79,11 +79,9 @@ import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
-import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
@@ -91,11 +89,14 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.SelectionInternal;
 import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
+import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -1034,7 +1035,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           notifyDisposal();
         }
 
-        final boolean needNewTypecheckingContext = getNodeForTypechecking(node) != getNodeForTypechecking(myNode);
+        final boolean needNewTypecheckingContext = updateContainingRoot(node);
         if (needNewTypecheckingContext) {
           releaseTypeCheckingContext();
         }
@@ -1654,7 +1655,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         int caretPosition = labelCell.getCaretPosition();
         //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
         if (caretPosition == text.length()) {
-          return jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM;
+          if (caretPosition == 0 && labelCell instanceof EditorCell_Constant) {
+            //empty unbound constant cells should ignore the space key when empty
+            return jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_END;
+          } else {
+            return jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM;
+          }
         }
 
         if (caretPosition == 0) {
@@ -2470,6 +2476,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         TypeContextManager.getInstance().releaseTypecheckingContext(EditorComponent.this);
       }
     });
+  }
+
+  /**
+   * Returns false iff the containing root has been changed as a result of this method call.
+   */
+  protected boolean updateContainingRoot(SNode node) {
+    return myNode != node;
   }
 
   protected SNode getNodeForTypechecking(SNode editedNode) {

@@ -5,6 +5,13 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 import jetbrains.jetpad.projectional.view.ViewPropertySpec;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Color;
+import jetbrains.jetpad.projectional.view.View;
+import org.jetbrains.annotations.NotNull;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
 
 /**
  * User: shatalin
@@ -19,5 +26,22 @@ public class JetpadUtils {
 
   public static Color toAwtColor(jetbrains.jetpad.values.Color color) {
     return new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
+  }
+
+  public static Iterable<View> getAllChildren(@NotNull View view) {
+    List<View> result = ListSequence.fromList(new LinkedList<View>());
+    Queue<View> viewQueue = QueueSequence.fromQueue(new LinkedList<View>());
+    QueueSequence.fromQueue(viewQueue).addLastElement(view);
+    while (QueueSequence.fromQueue(viewQueue).isNotEmpty()) {
+      View currentView = QueueSequence.fromQueue(viewQueue).removeFirstElement();
+      if (currentView == null) {
+        continue;
+      }
+      ListSequence.fromList(result).addElement(currentView);
+      QueueSequence.fromQueue(viewQueue).addSequence(ListSequence.fromList(currentView.children()));
+    }
+    return result;
+
+
   }
 }
