@@ -45,6 +45,15 @@ public final class PriorityConflicts {
     myConflictingRules.get(kind).addAll(conflictingRules);
   }
 
+  void register(Kind kind, Group... groups) {
+    // FIXME better error message based on grouping
+    HashSet<TemplateMappingPriorityRule> r = new HashSet<TemplateMappingPriorityRule>();
+    for (Group g : groups) {
+      r.addAll(g.getRules());
+    }
+    myConflictingRules.get(kind).addAll(r);
+  }
+
   public boolean hasConflicts() {
     for (Kind k : Kind.values()) {
       if (!myConflictingRules.get(k).isEmpty()) {

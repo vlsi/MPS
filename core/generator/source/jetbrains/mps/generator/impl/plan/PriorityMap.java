@@ -39,8 +39,13 @@ public final class PriorityMap {
    *   it (PriorityData.isStrict means only after).
    */
   private final Map<TemplateMappingConfiguration, PriorityDataMap> myPriorityMap;
+  /*
+   *   result: Contains rules which caused conflicts.
+   */
+  private final PriorityConflicts myConflicts;
 
-  PriorityMap() {
+  PriorityMap(PriorityConflicts conflicts) {
+    myConflicts = conflicts;
     myPriorityMap = new HashMap<TemplateMappingConfiguration, PriorityDataMap>();
   }
 
@@ -119,8 +124,23 @@ public final class PriorityMap {
     }
     return false;
   }
+  void checkSelfLocking() {
+    for (TemplateMappingConfiguration mapping : myPriorityMap.keySet()) {
+      checkSelfLocking(mapping);
+    }
+  }
 
-  void removeSelfLock(TemplateMappingConfiguration mapping) {
+  void checkSelfLocking(TemplateMappingConfiguration mapping) {
+    PriorityData priorityData = priorityData(mapping, mapping);
+    if (priorityData != null) {
+      if (priorityData.isStrict()) {
+        myConflicts.register(Kind.SelfLock, priorityData.myCauseRules);
+      }
+      removeSelfLock(mapping);
+    }
+  }
+
+  private void removeSelfLock(TemplateMappingConfiguration mapping) {
     myPriorityMap.get(mapping).forget(mapping);
   }
 
@@ -161,7 +181,7 @@ public final class PriorityMap {
     }
   }
 
-  void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings, PriorityConflicts conflicts) {
+  void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings) {
     for (CoherentSetData coherentSetData : coherentMappings) {
       Set<TemplateMappingConfiguration> coherentMappingSet = coherentSetData.myMappings;
       // collect
@@ -174,7 +194,7 @@ public final class PriorityMap {
           if (coherentMappingSet.contains(lockMapping)) {
             if (priorityData.isStrict()) {
               // error
-              conflicts.register(Kind.CoherentWithStrict, CollectionUtil.union(priorityData.myCauseRules, coherentSetData.myCauseRules));
+              myConflicts.register(Kind.CoherentWithStrict, CollectionUtil.union(priorityData.myCauseRules, coherentSetData.myCauseRules));
             }
             continue;
           }
@@ -190,7 +210,8 @@ public final class PriorityMap {
     }
   }
 
-  void checkTopPriMappingsAreNotLockedByNonTopPri(PriorityConflicts conflicts) {
+
+  void checkTopPriMappingsAreNotLockedByNonTopPri() {
     for (TemplateMappingConfiguration locked : myPriorityMap.keySet()) {
       if (!locked.isTopPriority()) {
         continue;
@@ -198,10 +219,21 @@ public final class PriorityMap {
       PriorityDataMap pdm = myPriorityMap.get(locked);
       for (TemplateMappingConfiguration lock : pdm.keys()) {
         if (!lock.isTopPriority()) {
-          conflicts.register(Kind.LoPriLocksHiPri, pdm.priorityData(lock).myCauseRules);
+          myConflicts.register(Kind.LoPriLocksHiPri, pdm.priorityData(lock).myCauseRules);
         }
       }
     }
+  }
+
+  void reportLeftovers() {
+    // if the priority map is still not empty, then there are some conflicting rules
+    for (PriorityData priorityData : priorityData()) {
+      myConflicts.register(Kind.PastTopPri, priorityData.myCauseRules);
+    }
+  }
+
+  public PriorityConflicts getConflicts() {
+    return myConflicts;
   }
 
   private static class PriorityDataMap {

@@ -50,6 +50,37 @@ class PriorityMapUtil {
     }
   }
 
+  /**
+   * Process groups of 'run together' to join intersecting into a single group
+   */
+  public static List<Group> joinSameStepMappings(Collection<Group> coherentMappings) {
+    ArrayList<Group> rv = new ArrayList<Group>(coherentMappings.size());
+    ArrayList<Group> toMerge = new ArrayList<Group>();
+    LinkedList<Group> queue = new LinkedList<Group>(coherentMappings);
+    while (!queue.isEmpty()) {
+      Group head = queue.removeFirst();
+      for (Iterator<Group> it = queue.iterator(); it.hasNext(); ) {
+        Group g = it.next();
+        if (head.hasCommonMappings(g)) {
+          toMerge.add(g);
+          it.remove();
+        }
+      }
+      if (toMerge.isEmpty()) {
+        // no groups with common mappings, add current group as is
+        rv.add(head);
+      } else {
+        // get a new group that combines all mappings and rules of the same step
+        toMerge.add(head);
+        // there are chances there are more groups, that didn't intersect with head, but
+        // intersect with one of merged, and we need to check for these again
+        queue.add(new Group(toMerge));
+        toMerge.clear();
+      }
+    }
+    return rv;
+  }
+
   static List<TemplateMappingConfiguration> getStrictLockedMappingsForLockMapping(TemplateMappingConfiguration lockMapping, Map<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> priorityMap) {
     List<TemplateMappingConfiguration> result = new ArrayList<TemplateMappingConfiguration>();
     for (Map.Entry<TemplateMappingConfiguration, Map<TemplateMappingConfiguration, PriorityData>> entry : priorityMap.entrySet()) {
