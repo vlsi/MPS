@@ -25,6 +25,12 @@ public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTe
   }
 
   @Test
+  public void test_NodeMethodsReturnTypeIsIncompatibleCheck5450156852673963011() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_NodeMethodsReturnTypeIsIncompatibleCheck5450156852673963011", true);
+  }
+
+  @Test
   public void test_ErrorMessagesCheck8187342170694475514() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
     this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInAnonymousClassCreators_Test$TestBody", "test_ErrorMessagesCheck8187342170694475514", true);
@@ -46,6 +52,11 @@ public class WildCardsInAnonymousClassCreators_Test extends BaseTransformationTe
     public void test_NodeSupertypeMayNotSpecifyCheck6923385624928216045() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928216045"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228371")});
+    }
+
+    public void test_NodeMethodsReturnTypeIsIncompatibleCheck5450156852673963011() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("5450156852673963011"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("8187342170694477581")});
     }
 
     public void test_ErrorMessagesCheck8187342170694475514() throws Exception {
