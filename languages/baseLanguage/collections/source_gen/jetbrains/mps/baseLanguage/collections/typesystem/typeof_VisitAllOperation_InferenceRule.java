@@ -76,7 +76,7 @@ public class typeof_VisitAllOperation_InferenceRule extends AbstractInferenceRul
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode_3));
     }
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     quotedNode_2.addChild("resultType", quotedNode_4);
     return quotedNode_2;
   }
