@@ -159,7 +159,7 @@
         <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpc5.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2084788800269090706" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="inputPort:" />
+        <property name="text" nameId="tpc2.1073389577007" value="inputPorts:" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2084788800269091795" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="gbdf.2084788800269090635" />
@@ -791,13 +791,13 @@
         <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpc5.1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6382742553261745554" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="input:" />
+        <property name="text" nameId="tpc2.1073389577007" value="source" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1220375669566530499" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="gbdf.1220375669566529919" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6382742553261745558" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="output:" />
+        <property name="text" nameId="tpc2.1073389577007" value="target:" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1220375669566531053" nodeInfo="ng">
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="gbdf.1220375669566529925" />

@@ -162,7 +162,7 @@ public class CellModel_DiagramNode_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5xszyv_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inputPort:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inputPorts:");
     editorCell.setCellId("Constant_5xszyv_f0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -408,6 +408,12 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_y27sly_f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y27sly_g0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y27sly_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y27sly_i0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_y27sly_j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y27sly_k0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_y27sly_l0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y27sly_m0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_y27sly_n0(editorContext, node));
     return editorCell;
   }
 
@@ -523,6 +529,9 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_compiler");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BwfJavaModule_Editor.BwfJavaModule_compiler_cellMenu_y27sly_a0h0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -541,5 +550,119 @@ public class BwfJavaModule_Editor extends DefaultNodeEditor {
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return Arrays.asList(new String[]{"modern", "IntelliJ", "jikes", "gcj"});
     }
+  }
+
+  private EditorCell createConstant_y27sly_i0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java compliance source");
+    editorCell.setCellId("Constant_y27sly_i0");
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_y27sly_j0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("javaLevelSource");
+    provider.setNoTargetText("<default>");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_javaLevelSource");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BwfJavaModule_Editor.BwfJavaModule_javaLevelSource_cellMenu_y27sly_a0j0()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  public static class BwfJavaModule_javaLevelSource_cellMenu_y27sly_a0j0 extends AbstractCellMenuPart_PropertyValues {
+    public BwfJavaModule_javaLevelSource_cellMenu_y27sly_a0j0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+      return Arrays.asList(new String[]{"1.5", "1.6", "1.7", "1.8"});
+    }
+  }
+
+  private EditorCell createConstant_y27sly_k0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java compliance target");
+    editorCell.setCellId("Constant_y27sly_k0");
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_y27sly_l0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("javaLevelTarget");
+    provider.setNoTargetText("<default>");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_javaLevelTarget");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BwfJavaModule_Editor.BwfJavaModule_javaLevelTarget_cellMenu_y27sly_a0l0()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  public static class BwfJavaModule_javaLevelTarget_cellMenu_y27sly_a0l0 extends AbstractCellMenuPart_PropertyValues {
+    public BwfJavaModule_javaLevelTarget_cellMenu_y27sly_a0l0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+      return Arrays.asList(new String[]{"1.5", "1.6", "1.7", "1.8"});
+    }
+  }
+
+  private EditorCell createConstant_y27sly_m0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java compiler options");
+    editorCell.setCellId("Constant_y27sly_m0");
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_y27sly_n0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("compilerOptions");
+    provider.setNoTargetText("<no additional options>");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_compilerOptions");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
   }
 }

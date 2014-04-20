@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="bd69txc6j9t9256n0p5ybu3lt7wwjd1">
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="6l4d56nir2sg8l2f7lfm0wggdohh1hj" />
   <dep model="r:707b7eb5-6dae-4291-ab4d-8d1bac7cbc86(jetbrains.mps.build.mps.tests.generator.template.main@generator)" hash="-4nrwqwfyc6vfbg3cbtf9q9vrnsy4dmh" />
-  <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" hash="-deo7wh1r7mged58vdjymr7whk5i4wui" />
+  <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" hash="-4dob6nqdo33y5vaxo8l39dzp4473qt6" />
   <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="7yamzqwquwx60sbuszo4ubf17890o94" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-djj6r3naag4wj86y0ogelt4k13g5l4a" />
   <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-5oub3kj42xo97b9rrdf1ejiulps9l0q" />
@@ -34,6 +34,7 @@
   </source>
   <source id="3197190366568000187" name="mpsBuild" hash="-asjmy6lt7nzj5ul9wwtay2olpb1ma4s">
     <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
+    <dep model="r:707b7eb5-6dae-4291-ab4d-8d1bac7cbc86(jetbrains.mps.build.mps.tests.generator.template.main@generator)" />
     <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
@@ -66,6 +67,7 @@
   </source>
   <source id="6238501899265293051" name="mpsActions" hash="-5iv3leb3ws0lny9vugr7kqafp3bhvm9">
     <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
+    <dep model="r:707b7eb5-6dae-4291-ab4d-8d1bac7cbc86(jetbrains.mps.build.mps.tests.generator.template.main@generator)" />
     <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />

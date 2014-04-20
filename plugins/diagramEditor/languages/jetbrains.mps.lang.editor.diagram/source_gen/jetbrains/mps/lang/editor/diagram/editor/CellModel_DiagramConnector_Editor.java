@@ -79,7 +79,7 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rubh59_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source");
     editorCell.setCellId("Constant_rubh59_d0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -106,7 +106,7 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_rubh59_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target:");
     editorCell.setCellId("Constant_rubh59_f0");
     editorCell.setDefaultText("");
     return editorCell;
