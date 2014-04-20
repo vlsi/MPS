@@ -4478,6 +4478,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.typeOf_FloatingPointConstant_InferenceRule" file="typeOf_FloatingPointConstant_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />

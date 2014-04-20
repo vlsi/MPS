@@ -12,6 +12,6 @@ public class _FPNumber_String_PropertySupport extends PropertySupport {
     } else {
       testValue = value;
     }
-    return testValue.matches("-?[0-9]+\\.[0-9]*");
+    return testValue.matches("-?[0-9]+\\.[0-9]*([Ee][\\+\\-]?[0-9]+)?[fFdD]?");
   }
 }
