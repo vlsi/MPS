@@ -1003,6 +1003,46 @@
     <unitInfo nodeId="2702384151996661689" fileName="SimpleUnreachable_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.SimpleUnreachable_Test$TestBody" />
     <unitInfo nodeId="2702384151996661689" fileName="SimpleUnreachable_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.SimpleUnreachable_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/290469496750208032">
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="16" startPosition="76" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="22" startPosition="72" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="28" startPosition="76" endLine="29" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="29" startPosition="114" endLine="30" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="35" startPosition="78" endLine="36" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="36" startPosition="145" endLine="37" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="40" startPosition="74" endLine="41" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="41" startPosition="145" endLine="42" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="45" startPosition="78" endLine="46" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="46" startPosition="145" endLine="47" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck290469496750263895#()V" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck290469496750368664#()V" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck290469496750333115#()V" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck290469496750263895#()V" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck290469496750368664#()V" />
+    <nodeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck290469496750333115#()V" />
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="16" startPosition="76" endLine="18" endPosition="130" />
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="22" startPosition="72" endLine="24" endPosition="126" />
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="28" startPosition="76" endLine="30" endPosition="130" />
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="35" startPosition="78" endLine="37" endPosition="158">
+      <varInfo nodeId="290469496750208032" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="40" startPosition="74" endLine="42" endPosition="158">
+      <varInfo nodeId="290469496750208032" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="45" startPosition="78" endLine="47" endPosition="158">
+      <varInfo nodeId="290469496750208032" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="33" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FloatLiteral_Test$TestBody" />
+    <unitInfo nodeId="290469496750208032" fileName="FloatLiteral_Test.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.FloatLiteral_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/2970924421778354240">
     <nodeInfo nodeId="2970924421778354240" fileName="typeParameterDuplicationAndMisorder_Test.java" startLine="16" startPosition="91" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2970924421778354240" fileName="typeParameterDuplicationAndMisorder_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
