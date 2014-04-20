@@ -16903,7 +16903,7 @@
               <property name="name" nameId="tpck.1169194664001" value="j" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750361316" nodeInfo="in" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750333084" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.23E-4d" />
+                <property name="value" nameId="tpee.1113006610751" value="-1.23E-4F" />
               </node>
             </node>
           </node>
