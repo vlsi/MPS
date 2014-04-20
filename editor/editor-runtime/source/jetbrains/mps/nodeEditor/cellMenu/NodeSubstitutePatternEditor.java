@@ -22,7 +22,13 @@ import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 
 import javax.swing.JWindow;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.Window;
 import java.awt.event.KeyEvent;
 
 /**
@@ -142,6 +148,16 @@ public class NodeSubstitutePatternEditor {
 
   public void setLocation(Point point) {
     myEditorWindow.setLocation(point);
+  }
+
+  public Point getLeftBottomPosition() {
+    Point location = myEditorWindow.getLocation();
+    location.translate(0, myEditorWindow.getSize().height);
+    return location;
+  }
+
+  public int getHeight() {
+    return myEditorWindow.getSize().height;
   }
 
   public void done() {

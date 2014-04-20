@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.build.Info.plist" file="Info.plist.xml" />
   <dependency className="jetbrains.mps.ide.build.installer.nsi" file="installer.nsi" />
+  <dependency className="jetbrains.mps.ide.build.jetpad" file="jetpad.xml" />
   <dependency className="jetbrains.mps.ide.build.mps.bat" file="mps.bat" />
   <dependency className="jetbrains.mps.ide.build.mps.sh" file="mps.sh" />
   <dependency className="jetbrains.mps.ide.build.mps.vmoptions" file="mps.vmoptions" />
@@ -13,6 +14,7 @@
   <dependency className="jetbrains.mps.ide.build.mpsCore" file="mpsCore.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsDebuggerPlugin" file="mpsDebuggerPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsDevKit" file="mpsDevKit.xml" />
+  <dependency className="jetbrains.mps.ide.build.mpsDiagramEditor" file="mpsDiagramEditor.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsDistribution" file="mpsDistribution.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsExecutionPlugin" file="mpsExecutionPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsJava" file="mpsJava.xml" />

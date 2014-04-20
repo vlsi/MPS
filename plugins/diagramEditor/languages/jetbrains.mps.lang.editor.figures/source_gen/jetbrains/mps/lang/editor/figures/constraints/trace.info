@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.constraints.ConstraintsAspectDescriptor" />
+  <root nodeRef="r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)/1094405431463463167">
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="25" startPosition="43" endLine="26" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="30" startPosition="82" endLine="31" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="34" startPosition="37" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="39" startPosition="42" endLine="40" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="40" startPosition="37" endLine="41" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1094405431463464071" fileName="ExternalViewFigure_Constraints.java" startLine="40" startPosition="37" endLine="41" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="43" startPosition="7" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="48" startPosition="83" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="52" startPosition="44" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="61" startPosition="63" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="66" startPosition="122" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5422656561917972604" fileName="ExternalViewFigure_Constraints.java" startLine="66" startPosition="122" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="71" startPosition="7" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_8qo5s5_a0a0a0a0a1a0b0a1a2" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExternalViewFigure_Constraints#()V" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="58" startPosition="56" endLine="69" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="31" startPosition="74" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="56" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="29" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="49" startPosition="75" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="47" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="25" startPosition="43" endLine="26" endPosition="76" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="34" startPosition="37" endLine="35" endPosition="20" />
+    <scopeInfo nodeId="1094405431463463224" fileName="ExternalViewFigure_Constraints.java" startLine="40" startPosition="37" endLine="41" endPosition="107" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="52" startPosition="44" endLine="53" endPosition="20" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="61" startPosition="63" endLine="62" endPosition="58" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="66" startPosition="122" endLine="67" endPosition="72" />
+    <scopeInfo nodeId="5422656561917972553" fileName="ExternalViewFigure_Constraints.java" startLine="66" startPosition="122" endLine="67" endPosition="72" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="39" startPosition="42" endLine="41" endPosition="107">
+      <varInfo nodeId="1094405431463463167" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1094405431463463167" varName="_context" />
+      <varInfo nodeId="1094405431463463167" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="38" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="1094405431463463167" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="58" startPosition="56" endLine="69" endPosition="10" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="30" startPosition="82" endLine="44" endPosition="22">
+      <varInfo nodeId="1094405431463463167" varName="properties" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="56" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="29" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="48" startPosition="83" endLine="72" endPosition="22">
+      <varInfo nodeId="1094405431463463167" varName="references" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="47" startPosition="0" endLine="74" endPosition="0" />
+    <unitInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="59" startPosition="19" endLine="69" endPosition="9" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigure_Constraints$3" />
+    <unitInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="32" startPosition="31" endLine="43" endPosition="5" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigure_Constraints$1" />
+    <unitInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="50" startPosition="37" endLine="71" endPosition="5" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigure_Constraints$2" />
+    <unitInfo nodeId="1094405431463463167" fileName="ExternalViewFigure_Constraints.java" startLine="24" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigure_Constraints" />
+  </root>
+  <root nodeRef="r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)/1094405431463513183">
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="27" startPosition="52" endLine="28" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="32" startPosition="82" endLine="33" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="36" startPosition="37" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="41" startPosition="42" endLine="42" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="42" startPosition="37" endLine="43" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1094405431463520255" fileName="ExternalViewFigureParameter_Constraints.java" startLine="42" startPosition="37" endLine="43" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="45" startPosition="7" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="50" startPosition="83" endLine="51" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="54" startPosition="44" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="63" startPosition="63" endLine="64" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="69" startPosition="13" endLine="70" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="70" startPosition="229" endLine="71" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="76" startPosition="7" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="80" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_87ttue_a0a0a0a0a1a0b0a1a2" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExternalViewFigureParameter_Constraints#()V" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="68" startPosition="122" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="67" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="33" startPosition="74" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="60" startPosition="56" endLine="74" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="31" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="58" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="51" startPosition="75" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="49" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="27" startPosition="52" endLine="28" endPosition="85" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="36" startPosition="37" endLine="37" endPosition="20" />
+    <scopeInfo nodeId="1094405431463513187" fileName="ExternalViewFigureParameter_Constraints.java" startLine="42" startPosition="37" endLine="43" endPosition="113" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="54" startPosition="44" endLine="55" endPosition="20" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="63" startPosition="63" endLine="64" endPosition="58" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="41" startPosition="42" endLine="43" endPosition="113">
+      <varInfo nodeId="1094405431463513183" varName="propertyName" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="69" startPosition="13" endLine="71" endPosition="64">
+      <varInfo nodeId="1094405431463513183" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="68" startPosition="122" endLine="72" endPosition="13" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1094405431463513183" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="67" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1094405431463513183" varName="_context" />
+      <varInfo nodeId="1094405431463513183" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="32" startPosition="82" endLine="46" endPosition="22">
+      <varInfo nodeId="1094405431463513183" varName="properties" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="60" startPosition="56" endLine="74" endPosition="10" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="31" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="58" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="50" startPosition="83" endLine="77" endPosition="22">
+      <varInfo nodeId="1094405431463513183" varName="references" />
+    </scopeInfo>
+    <scopeInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="49" startPosition="0" endLine="79" endPosition="0" />
+    <unitInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="34" startPosition="31" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigureParameter_Constraints$1" />
+    <unitInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="61" startPosition="19" endLine="74" endPosition="9" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigureParameter_Constraints$3" />
+    <unitInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="52" startPosition="43" endLine="76" endPosition="5" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigureParameter_Constraints$2" />
+    <unitInfo nodeId="1094405431463513183" fileName="ExternalViewFigureParameter_Constraints.java" startLine="26" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewFigureParameter_Constraints" />
+  </root>
+  <root nodeRef="r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)/5422656561916216335">
+    <nodeInfo nodeId="5422656561916393494" fileName="ExternalViewClassifierScope.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="5422656561916293964" fileName="ExternalViewClassifierScope.java" startLine="19" startPosition="52" endLine="20" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5422656561916394478" fileName="ExternalViewClassifierScope.java" startLine="20" startPosition="105" endLine="21" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561916379083" fileName="ExternalViewClassifierScope.java" startLine="25" startPosition="41" endLine="26" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5422656561916551127" fileName="ExternalViewClassifierScope.java" startLine="27" startPosition="158" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5422656561916623210" fileName="ExternalViewClassifierScope.java" startLine="30" startPosition="213" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5422656561917461440" fileName="ExternalViewClassifierScope.java" startLine="33" startPosition="199" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5422656561917939131" fileName="ExternalViewClassifierScope.java" startLine="35" startPosition="5" endLine="36" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5422656561916513587" fileName="ExternalViewClassifierScope.java" startLine="26" startPosition="105" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5422656561916580637" fileName="ExternalViewClassifierScope.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5422656561916645435" fileName="ExternalViewClassifierScope.java" startLine="32" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5422656561916287817" fileName="ExternalViewClassifierScope.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExternalViewClassifierScope#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="5422656561916371319" fileName="ExternalViewClassifierScope.java" startLine="24" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="5422656561916513590" fileName="ExternalViewClassifierScope.java" startLine="27" startPosition="158" endLine="28" endPosition="18" />
+    <scopeInfo nodeId="5422656561916580640" fileName="ExternalViewClassifierScope.java" startLine="30" startPosition="213" endLine="31" endPosition="18" />
+    <scopeInfo nodeId="5422656561916645438" fileName="ExternalViewClassifierScope.java" startLine="33" startPosition="199" endLine="34" endPosition="18" />
+    <scopeInfo nodeId="5422656561916287819" fileName="ExternalViewClassifierScope.java" startLine="19" startPosition="52" endLine="21" endPosition="20" />
+    <scopeInfo nodeId="5422656561916287817" fileName="ExternalViewClassifierScope.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="229277139747455555" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561916371327" fileName="ExternalViewClassifierScope.java" startLine="25" startPosition="41" endLine="36" endPosition="314">
+      <varInfo nodeId="5422656561916379086" varName="classConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561916371319" fileName="ExternalViewClassifierScope.java" startLine="24" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="5422656561916371325" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5422656561916216335" fileName="ExternalViewClassifierScope.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.constraints.ExternalViewClassifierScope" />
+  </root>
+</debugInfo>
+

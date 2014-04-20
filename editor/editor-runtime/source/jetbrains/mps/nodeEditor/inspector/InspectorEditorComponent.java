@@ -61,7 +61,10 @@ public class InspectorEditorComponent extends EditorComponent {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
       return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
     }
-    return getEditorContext().createInspectedCell(getEditedNode(), events);
+    pushCellContext();
+    EditorCell inspectedCell = getEditorContext().createInspectedCell(getEditedNode(), events);
+    popCellContext();
+    return inspectedCell;
   }
 
   protected boolean updateContainingRoot(SNode node) {

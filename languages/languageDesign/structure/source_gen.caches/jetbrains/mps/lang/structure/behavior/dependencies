@@ -63,6 +63,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.ConceptLink_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.behavior.AggregationLinkDeclarationScopeKind_BehaviorDescriptor" file="AggregationLinkDeclarationScopeKind_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations" file="AttributeDesignTimeOperations.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -386,5 +387,6 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.behavior.ReferenceLinkDeclartionScopeKind_BehaviorDescriptor" file="ReferenceLinkDeclartionScopeKind_BehaviorDescriptor.java" />
 </dependenciesRoot>
 

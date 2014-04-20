@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.testHybridEditor.constraints.ConstraintsAspectDescriptor" />
+  <root nodeRef="r:90a861dc-3e8d-4722-8e7d-483ecda32980(jetbrains.mps.testHybridEditor.constraints)/9168054762590341487">
+    <nodeInfo nodeId="9168054762590341487" fileName="MetaBlock_Constraints.java" startLine="14" startPosition="34" endLine="15" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4394877045816805258" fileName="MetaBlock_Constraints.java" startLine="18" startPosition="48" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4394877045816813284" fileName="MetaBlock_Constraints.java" startLine="20" startPosition="46" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4394877045817416347" fileName="MetaBlock_Constraints.java" startLine="22" startPosition="5" endLine="23" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9168054762590341487" fileName="MetaBlock_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MetaBlock_Constraints#()V" />
+    <nodeInfo nodeId="4394877045816807010" fileName="MetaBlock_Constraints.java" startLine="19" startPosition="64" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9168054762590341487" fileName="MetaBlock_Constraints.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlternativeIcon#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="9168054762590341487" fileName="MetaBlock_Constraints.java" startLine="14" startPosition="34" endLine="15" endPosition="64" />
+    <scopeInfo nodeId="4394877045816807013" fileName="MetaBlock_Constraints.java" startLine="20" startPosition="46" endLine="21" endPosition="18" />
+    <scopeInfo nodeId="9168054762590341487" fileName="MetaBlock_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="9168054762590341540" fileName="MetaBlock_Constraints.java" startLine="18" startPosition="48" endLine="23" endPosition="122">
+      <varInfo nodeId="4394877045816805259" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="9168054762590341487" fileName="MetaBlock_Constraints.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="9168054762590341487" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="9168054762590341487" fileName="MetaBlock_Constraints.java" startLine="13" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.testHybridEditor.constraints.MetaBlock_Constraints" />
+  </root>
+</debugInfo>
+

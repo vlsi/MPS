@@ -533,5 +533,13 @@
       <link role="target" roleId="1071599976176" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
   </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="1169125989551" id="5717188120689018936" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ReferenceLinkDeclartionScopeKind" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="scope" />
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="1169125989551" id="5717188120689019441" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="scope" />
+    <property name="name" nameId="tpck.1169194664001" value="AggregationLinkDeclarationScopeKind" />
+  </root>
 </model>
 

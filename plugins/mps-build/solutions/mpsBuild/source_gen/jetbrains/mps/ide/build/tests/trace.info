@@ -9,6 +9,9 @@
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/4074183641147971049">
     <unitInfo nodeId="4074183641147971049" fileName="mpsSModel.xml" startLine="1" startPosition="0" endLine="512" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsSModel" />
   </root>
+  <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/5003005296035786909">
+    <unitInfo nodeId="5003005296035786909" fileName="mpsEditorDiagram.xml" startLine="1" startPosition="0" endLine="637" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsEditorDiagram" />
+  </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/5833628797344916224">
     <unitInfo nodeId="5833628797344916224" fileName="mpsEditor.xml" startLine="1" startPosition="0" endLine="1323" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsEditor" />
   </root>

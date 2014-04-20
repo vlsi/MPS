@@ -1,0 +1,49 @@
+<project name="Get JetPad" default="resolve" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <property name="ivy.jar.dir" value="${basedir}/../ivy" />
+  <property name="jetpad.version" value="250" />
+
+
+  <target name="install-ivy">
+    <property name="mps.ivy.home" value="${user.home}"/>
+    <path id="ivy.lib.path">
+      <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
+    </path>
+    <taskdef resource="org/apache/ivy/ant/antlib.xml"
+             uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+  </target>
+
+  <target name="checkIsUpToDate" depends="readFile">
+    <condition property="needsUpdate" value="true" else="false">
+      <not>
+        <and>
+          <equals arg1="${buildTxtExist}" arg2="true" />
+          <equals arg1="${jetpad.version}" arg2="${currentVersion}" />
+        </and>
+      </not>
+    </condition>
+  </target>
+
+  <target name="checkFileExist">
+    <condition property="buildTxtExist" value="true" else="false">
+      <available file="../../plugins/jetpad/lib/jetpadBuildNumber.txt"/>
+    </condition>
+  </target>
+
+  <target name="readFile" depends="checkFileExist" if="${buildTxtExist}">
+    <loadfile property="currentVersion" srcfile="../../plugins/jetpad/lib/jetpadBuildNumber.txt">
+      <filterchain>
+        <striplinebreaks/>
+      </filterchain>
+    </loadfile>
+  </target>
+
+  <target name="force-resolve" depends="install-ivy">
+    <ivy:retrieve pattern="../../plugins/jetpad/lib/[artifact].[ext]" overwritemode="different" />
+  </target>
+
+  <target name="resolve" depends="checkIsUpToDate" description="--> Retreive dependencies with ivy if changed" if="${needsUpdate}">
+    <antcall target="force-resolve"/>
+  </target>
+
+</project>

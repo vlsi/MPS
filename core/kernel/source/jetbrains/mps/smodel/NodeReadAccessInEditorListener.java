@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNode;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -94,7 +93,7 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
 
   @Override
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-     addRefTargetToDependOn(new jetbrains.mps.smodel.SNodePointer(referent));
+    addRefTargetToDependOn(new jetbrains.mps.smodel.SNodePointer(referent));
   }
 
   public void addRefTargetToDependOn(SNodeReference target) {
@@ -114,7 +113,7 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
 
   @Override
   public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
-    nodeUnclassifiedReadAccess(node);
+    assert false : "should be never called";
   }
 
   @Override

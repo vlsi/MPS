@@ -54,7 +54,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
 
   public static boolean createRootRule_Condition_4547882846713899480(final CreateRootRuleContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_7533883740977705598(final BaseMappingRuleContext _context) {
@@ -1170,6 +1170,11 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1168384460946(final IfMacroContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "inspectedCellModel", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_4033442785759270479(final IfMacroContext _context) {
+    // setting canBeSynchronized flag for root collection cells only 
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.EditorCellModel")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_shellBeSynchronized_4500758155551546553", new Object[]{}) && BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_canBeSynchronized_4052492221165595783", new Object[]{});
   }
 
   public static boolean ifMacro_Condition_6577030305815218822(final IfMacroContext _context) {

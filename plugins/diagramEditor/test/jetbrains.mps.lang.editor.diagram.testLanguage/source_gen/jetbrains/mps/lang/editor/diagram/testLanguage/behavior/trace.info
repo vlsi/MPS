@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="Diagram1_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Diagram1_BehaviorDescriptor" />
+  <unitInfo fileName="Diagram2_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Diagram2_BehaviorDescriptor" />
+  <unitInfo fileName="InputPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.InputPort_BehaviorDescriptor" />
+  <unitInfo fileName="NodeWithName_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithName_BehaviorDescriptor" />
+  <unitInfo fileName="NodeWithPortQueries_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPortQueries_BehaviorDescriptor" />
+  <unitInfo fileName="NodeWithPorts_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPorts_BehaviorDescriptor" />
+  <unitInfo fileName="NodeWithSize_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithSize_BehaviorDescriptor" />
+  <unitInfo fileName="Node_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.Node_BehaviorDescriptor" />
+  <unitInfo fileName="OutputPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.OutputPort_BehaviorDescriptor" />
+  <unitInfo fileName="OutputToInputPortConnector_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.OutputToInputPortConnector_BehaviorDescriptor" />
+  <unitInfo fileName="RectangleNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.RectangleNode_BehaviorDescriptor" />
+  <root nodeRef="r:61786908-a89e-44a3-a862-34d80dedbd5a(jetbrains.mps.lang.editor.diagram.testLanguage.behavior)/5540569706414469751">
+    <nodeInfo nodeId="5540569706414469824" fileName="NodeWithPorts_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5540569706414469751" fileName="NodeWithPorts_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="5540569706414469753" fileName="NodeWithPorts_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="61" />
+    <scopeInfo nodeId="5540569706414469751" fileName="NodeWithPorts_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="5540569706414469751" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5540569706414469751" fileName="NodeWithPorts_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithPorts_Behavior" />
+  </root>
+  <root nodeRef="r:61786908-a89e-44a3-a862-34d80dedbd5a(jetbrains.mps.lang.editor.diagram.testLanguage.behavior)/8794120090377793952">
+    <nodeInfo nodeId="8794120090377794010" fileName="NodeWithSize_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377798782" fileName="NodeWithSize_Behavior.java" startLine="10" startPosition="58" endLine="11" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8794120090377793952" fileName="NodeWithSize_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="8794120090377793954" fileName="NodeWithSize_Behavior.java" startLine="9" startPosition="43" endLine="11" endPosition="59" />
+    <scopeInfo nodeId="8794120090377793952" fileName="NodeWithSize_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="8794120090377793952" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="8794120090377793952" fileName="NodeWithSize_Behavior.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.testLanguage.behavior.NodeWithSize_Behavior" />
+  </root>
+</debugInfo>
+

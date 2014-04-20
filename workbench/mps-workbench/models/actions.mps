@@ -15340,9 +15340,6 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7054831363147695918" nodeInfo="nn">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7054831363147695919" nodeInfo="nr">
                 <property name="name" nameId="tpck.1169194664001" value="generatorTreeNode" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2594719566410564082" nodeInfo="in">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mlq1.~MPSTreeNode" resolveInfo="MPSTreeNode" />
-                </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="1976641393520590786" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1976641393520557130" resolveInfo="newTreeNode" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1976641393520591446" nodeInfo="nn">
@@ -15373,6 +15370,9 @@
                       <property name="value" nameId="tpee.1070475926801" value="generator/" />
                     </node>
                   </node>
+                </node>
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2594719566410564082" nodeInfo="in">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mlq1.~MPSTreeNode" resolveInfo="MPSTreeNode" />
                 </node>
               </node>
             </node>
@@ -15408,9 +15408,6 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7054831363147695988" nodeInfo="nn">
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7054831363147695989" nodeInfo="nr">
                     <property name="name" nameId="tpck.1169194664001" value="modelTreeNode" />
-                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1957466449921399892" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mlq1.~MPSTreeNode" resolveInfo="MPSTreeNode" />
-                    </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="1976641393520619484" nodeInfo="nn">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1976641393520557130" resolveInfo="newTreeNode" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1976641393520620278" nodeInfo="nn">
@@ -15452,6 +15449,9 @@
                           </node>
                         </node>
                       </node>
+                    </node>
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1957466449921399892" nodeInfo="in">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mlq1.~MPSTreeNode" resolveInfo="MPSTreeNode" />
                     </node>
                   </node>
                 </node>

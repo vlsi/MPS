@@ -195,6 +195,7 @@
     <group id="EditorPopup_ActionGrouprefactoring" />
     <group id="EditorPopup_ActionGroupvcs" />
     <group id="EditorPopup_ActionGrouphints" />
+    <group id="EditorPopup_ActionGroupdiagram" />
     <group id="GoToEditorPopupAddition_ActionGroupother" />
     <group id="GoToEditorPopupAddition_ActionGrouprefs" />
     <group id="IDE_Edit_ActionGrouptoplevel" />
@@ -271,6 +272,7 @@
       <separator />
       <reference ref="EditorPopup_ActionGrouphints" />
       <separator />
+      <reference ref="EditorPopup_ActionGroupdiagram" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.EditorLeftPanelMenu_ActionGroup"></group>
     <group id="jetbrains.mps.ide.editor.actions.Folding_ActionGroup" text="Folding" popup="true">

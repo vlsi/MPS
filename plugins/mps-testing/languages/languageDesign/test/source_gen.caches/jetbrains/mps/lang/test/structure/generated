@@ -1,3 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="v992z8dcpyv4pfkzatvlve7tu55u8w" />
+<dependencies version="2" modelHash="-1a3y50oc7vic1l74995lbp6hpkc7umr">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-18rci04s2u92vopawqedkce2noitsf3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5ltxe3l1xoyos2nn156ma6fyky147o3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-7hpmrwjimsa7c7rzbkyz2ehryyj1c7y" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="-5kctb7b7jnlp1h0duovrvgm0c42ily4" />
+  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="13kqsy3d6o6790lacsl9jkbzj30hut9" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
+  <common hash="-2qnrvy6rckkf2uzctxbsvqv34ml6xox" dependsOnNodes="true">
+    <dep root="1101347953350122484" />
+    <dep root="1101347953350122758" />
+    <dep root="1210673684636" />
+    <dep root="1210674524691" />
+    <dep root="1211979288880" />
+    <dep root="1214846310980" />
+    <dep root="1215075719096" />
+    <dep root="1215507532627" />
+    <dep root="1215507671101" />
+    <dep root="1215511704609" />
+    <dep root="1215525678776" />
+    <dep root="1215526290564" />
+    <dep root="1215601147424" />
+    <dep root="1215603922101" />
+    <dep root="1215607067978" />
+    <dep root="1215611834554" />
+    <dep root="1215612918969" />
+    <dep root="1215614394933" />
+    <dep root="1215616993394" />
+    <dep root="1216913645126" />
+    <dep root="1216913689992" />
+    <dep root="1216989428737" />
+    <dep root="1217425837708" />
+    <dep root="1225467090849" />
+    <dep root="1225469856668" />
+    <dep root="1225978065297" />
+    <dep root="1225983109083" />
+    <dep root="1225989773458" />
+    <dep root="1227003183644" />
+    <dep root="1227182079811" />
+    <dep root="1228584180295" />
+    <dep root="1228934484974" />
+    <dep root="1229187653856" />
+    <dep root="1229194968594" />
+    <dep root="1230224281548" />
+    <dep root="210559400605421433" />
+    <dep root="210559400608047267" />
+    <dep root="2685915532175039858" />
+    <dep root="2893471348147803052" />
+    <dep root="3655334166513314291" />
+    <dep root="4239542196496927193" />
+    <dep root="428590876651279930" />
+    <dep root="4307182653741890820" />
+    <dep root="4395293866213195846" />
+    <dep root="4531408400484511853" />
+    <dep root="4531408400486526326" />
+    <dep root="5097124989038916362" />
+    <dep root="511191073233700873" />
+    <dep root="5348336190815082969" />
+    <dep root="5773579205429617809" />
+    <dep root="5773579205429866751" />
+    <dep root="7011073693661765739" />
+    <dep root="7691029917083831655" />
+    <dep root="7691029917083872157" />
+    <dep root="7835233914436786109" />
+    <dep root="7835233914436803226" />
+    <dep root="7835233914439520906" />
+    <dep root="8333855927540283103" />
+    <dep root="8333855927564181193" />
+    <dep root="8333855927564208813" />
+    <dep root="8333855927564286208" />
+    <dep root="8578280453507219248" />
+    <dep root="8578280453509464010" />
+    <dep root="95706764259116183" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1210673684636" name="TestNodeAnnotation" hash="-7g6o2fc3aoyr9djvp9lnvnfg6sudpxh" />
+  <source id="1210674524691" name="TestNodeReference" hash="98i0067ad2se0yhn3ime0cob2choe0f" />
+  <source id="1211979288880" name="AssertMatch" hash="8dapivr4bhuhmnlfunyikh3905cc38c" />
+  <source id="1214846310980" name="AbstractNodeAssert" hash="2jnhylo1w15uew5j7ubj0xg0o8eptw3" />
+  <source id="1215075719096" name="CheckNodeForErrors" hash="-5omux3vpv5hm8v1gst6709bmaap23r0" />
+  <source id="1215507532627" name="NodeCheckOperationsContainer" hash="-7fn19vnpe4njox4d5dyphplkvwx87vv" />
+  <source id="1215507671101" name="NodeErrorCheckOperation" hash="3gxe5yheaos34xah3u49cv0pwsdzz91" />
+  <source id="1215511704609" name="NodeWarningCheckOperation" hash="-29xw6042kthqvn7wdg6wvl489gzs3gu" />
+  <source id="1215525678776" name="NodeReachable" hash="5347f2wdqsd6thvqbedrf7h2z0kvlz6" />
+  <source id="1215526290564" name="NodeTypeCheckOperation" hash="cafpppvegz2cz7ynsz7ldxzzbnspqs9" />
+  <source id="1215601147424" name="NodeCheckOperation" hash="8zzek4jr1vt1mvcq1xakjf0j9lyv9xk" />
+  <source id="1215603922101" name="NodeOperationsContainer" hash="-umomxkjw0cwrwe058ol5pldwxiiiua" />
+  <source id="1215607067978" name="CheckNodeForErrorMessagesOperation" hash="-9k0yv5bev5xszsailw8nlksfeulw34d" />
+  <source id="1215611834554" name="CheckDataFlowOperation" hash="-end46pagzqqxbfrxnv3jvwnfmgyf3eo" />
+  <source id="1215612918969" name="NodeUnreachable" hash="ahrfbzaon5e75i07arsxsstnvi6jvwo" />
+  <source id="1215614394933" name="VariableInitialized" hash="-6dg6uev573gwds3ubr1gjfn9l2iozcc" />
+  <source id="1215616993394" name="VariableAlive" hash="-1k2ft90j0pkkj3pn0fdi387dezb6315" />
+  <source id="1216913645126" name="NodesTestCase" hash="-9u70500ebgizbppb2alr30wj6etlp39" />
+  <source id="1216913689992" name="NodesTestMethod" hash="-23yu79nktdt9ltv7o5t3hvoswks7xe2" />
+  <source id="1216989428737" name="TestNode" hash="7xn7s70t8lbnf43610mmblensxh15a7" />
+  <source id="1217425837708" name="CheckNodeDataflow" hash="-75bk57wt264jb5ei8n411ow5nv2ylsj" />
+  <source id="1225467090849" name="ProjectExpression" hash="-d4lc9jbtphy6pk2xn5f5m0v7m40uuf9" />
+  <source id="1225469856668" name="ModelExpression" hash="cchiy75d7jh3pr5972poskqbrg6z1ae" />
+  <source id="1225978065297" name="SimpleNodeTest" hash="dkpwxur4ghw2suodvo1ut4ocro5kopt" />
+  <source id="1225983109083" name="EditorExpression" hash="-7gg2zaa7165d8izfans61kamws0ey36" />
+  <source id="1225989773458" name="InvokeIntentionStatement" hash="-cnzpng9ky7le81vj4gy97oyjqq0sbq4" />
+  <source id="1227003183644" name="EditorOperation" hash="9jjb1kjgm1axm6lo06i0xdr3qzdnaap" />
+  <source id="1228584180295" name="INodeAnnotation" hash="d51yyoi4me2jynx0oh1ctboa09uel3x" />
+  <source id="1227182079811" name="TypeKeyStatement" hash="-bpivaaa7ks0otbovmaggo4lu584sc7b" />
+  <source id="1228934484974" name="PressKeyStatement" hash="avv137usly7hoy950s3o0fx0q0kzttq" />
+  <source id="1229187653856" name="EditorTestCase" hash="-3fwv5uqgno2ke6dfh0uxye7897fh2z2" />
+  <source id="1229194968594" name="AnonymousCellAnnotation" hash="-eduowg70y7i3wgjaeyoecso4i2scbjl" />
+  <source id="1230224281548" name="MockAnnotation" hash="-10ukw8c5x4uhwzvebhigtxal3a1c39x" />
+  <source id="95706764259116183" name="NodeTypeSetCheckOperation" hash="7jsjou5nmstmitq57pgh50qy2z0xxf6" />
+  <source id="2685915532175039858" name="ExpressionContainer" hash="-anorsldzsdpc766cfeslo5atkxiew8b" />
+  <source id="5773579205429617809" name="SwitchToInspector" hash="8z5891ui6af73bjjpafhkqytbtab48q" />
+  <source id="5773579205429866751" name="EditorComponentExpression" hash="7t1vow25z61n8u9n1x169jw2yhylb9" />
+  <source id="5097124989038916362" name="TestInfo" hash="-81qrco0wd43db2qfjco206pf7ovkkn5" />
+  <source id="7011073693661765739" name="InvokeActionStatement" hash="6rjzrvq42ana8czdfz9y9tr09phydop" />
+  <source id="1101347953350122484" name="ActionReference" hash="-6no833eml06d8v5snko4aefqodp8ukt" />
+  <source id="1101347953350122758" name="BootstrapActionReference" hash="-ay0a61sf7kcvmbi79chg120q1vy5ul3" />
+  <source id="4239542196496927193" name="MPSActionReference" hash="abu7jbt6rfeforkc4uep3gx7gdkzkkf" />
+  <source id="4395293866213195846" name="NodeExpectedTypeCheckOperation" hash="-2sw41678i0w8pt7260ltj4ykjutg6ta" />
+  <source id="511191073233700873" name="ScopesTest" hash="-dklbfqj7k8xr6eavrxlvt7veql9rc15" />
+  <source id="3655334166513314291" name="ScopesExpectedNode" hash="8ynnf1k92us5xfyqiul988a1c1kbcdz" />
+  <source id="4307182653741890820" name="NodeRuleCheckOperation" hash="-77llbl864ac66tewmk1vf8xn59notau" />
+  <source id="4531408400484511853" name="ReportErrorStatementReference" hash="-b27za640skzw2bqnfkmgvmxqcppnmvl" />
+  <source id="4531408400486526326" name="WarningStatementReference" hash="-6u09shva3pcesnnw3kilgfy3y4gyk7f" />
+  <source id="428590876651279930" name="NodeTypeSystemErrorCheckOperation" hash="-evtzcrior8994s47pcu5injqwi6cesr" />
+  <source id="8578280453507219248" name="IChecksRules" hash="-a6dxnc60x603ey2khnrnbqo301z557y" />
+  <source id="8578280453509464010" name="NodeTypeSystemWarningCheckOperation" hash="-e662grzxzxeqpl2lw6k2gu20t9l2sz2" />
+  <source id="5348336190815082969" name="NodeTypeSystemRuleCheckOperation" hash="-8fzy1w6y5q4xqben11xhmarj4yzq5mz" />
+  <source id="2893471348147803052" name="IReferenceAttachable" hash="4m136fvcdvzq7ukgpxzxeak1tolqla6" />
+  <source id="7691029917083831655" name="UnknownRuleReference" hash="3cuxrbex7mb3mmptjnv6esa3c4jtvy8" />
+  <source id="7691029917083872157" name="IRuleReference" hash="ct67mp9ehenja0u26h70dldv5h292mx" />
+  <source id="7835233914436786109" name="NodeUnknownErrorCheckOperation" hash="-c4fdj1psrojmhnduo3n4zd4aizwwian" />
+  <source id="7835233914436803226" name="AbstractNodeErrorCheckOperation" hash="-ep7gpquhxki9n3ryommplt0vltabki4" />
+  <source id="7835233914439520906" name="AbstractNodeRuleCheckOperation" hash="9hfse7lrew5dahpk5ooi6icqdnx869t" />
+  <source id="8333855927540283103" name="NodeConstraintsErrorCheckOperation" hash="2qfgxg4kd340bwxfwozqg1benlxmonz" />
+  <source id="8333855927564181193" name="AbstractNodeWarningCheckOperation" hash="e9atsm1ul0pjdwgvrhoiaqq9f4aapys" />
+  <source id="8333855927564208813" name="NodeConstraintsWarningCheckOperation" hash="9dt3f9m46f0ckj00m6nt1gbekj82lq4" />
+  <source id="8333855927564286208" name="NodeUnknownWarningCheckOperation" hash="evnfe4s1l0xcmo1tdwuyh38piwwa8fr" />
+  <source id="210559400605421433" name="PressMouseStatement" hash="5nudh0qaqxkvv5bkyeb5tc36ys3xpz5" />
+  <source id="210559400608047267" name="DragMouseStatement" hash="17sy50linfrjdf300vsf9qc8fbrk0h4" />
+</dependencies>
 

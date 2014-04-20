@@ -73,11 +73,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
-    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(_context.getNode(), LanguageAspect.EDITOR, _context, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(_context.getNode(), LanguageAspect.EDITOR, _context, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")) || LanguageRuntimeGeneratorUtils.hasManualEditorAspectDescriptor(_context.getNode(), _context);
   }
 
   public static boolean baseMappingRule_Condition_4565427742314546853(final BaseMappingRuleContext _context) {
-    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(_context.getNode(), LanguageAspect.EDITOR, _context, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(_context.getNode(), LanguageAspect.EDITOR, _context, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")) || LanguageRuntimeGeneratorUtils.hasManualEditorAspectDescriptor(_context.getNode(), _context);
   }
 
   public static Object propertyMacro_GetPropertyValue_9020561928507315549(final PropertyMacroContext _context) {

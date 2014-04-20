@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SReference;
 
 public class any_type_subtypeOf_LowerBoundType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -22,7 +24,7 @@ public class any_type_subtypeOf_LowerBoundType_InequationReplacementRule extends
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return MatchingUtil.matchNodes(subtype, ((SNode) status.getPattern2().getFieldValue("patternVar_TYPE")));
+    return MatchingUtil.matchNodes(((SNode) status.getPattern2().getFieldValue("patternVar_TYPE")), _quotation_createNode_w2c88q_a0a0a2()) || MatchingUtil.matchNodes(subtype, ((SNode) status.getPattern2().getFieldValue("patternVar_TYPE")));
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
@@ -108,5 +110,13 @@ public class any_type_subtypeOf_LowerBoundType_InequationReplacementRule extends
 
     public void performActions(Object o) {
     }
+  }
+
+  private static SNode _quotation_createNode_w2c88q_a0a0a2() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    return quotedNode_1;
   }
 }

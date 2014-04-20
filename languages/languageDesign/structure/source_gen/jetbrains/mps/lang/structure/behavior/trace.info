@@ -3,6 +3,7 @@
   <unitInfo fileName="AbstractConceptDeclaration_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="AggregationConceptLinkDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AggregationConceptLinkDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="AggregationConceptLink_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AggregationConceptLink_BehaviorDescriptor" />
+  <unitInfo fileName="AggregationLinkDeclarationScopeKind_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AggregationLinkDeclarationScopeKind_BehaviorDescriptor" />
   <unitInfo fileName="AttributeInfo_AttributedConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AttributeInfo_AttributedConcept_BehaviorDescriptor" />
   <unitInfo fileName="AttributeInfo_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AttributeInfo_BehaviorDescriptor" />
   <unitInfo fileName="AttributeInfo_IsMultiple_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.AttributeInfo_IsMultiple_BehaviorDescriptor" />
@@ -22,6 +23,7 @@
   <unitInfo fileName="LinkDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PrimitiveDataTypeDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="PropertyDeclaration_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.PropertyDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="ReferenceLinkDeclartionScopeKind_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.ReferenceLinkDeclartionScopeKind_BehaviorDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/1213877216526">
     <nodeInfo nodeId="1222430706342" fileName="ConceptDeclaration_Behavior.java" startLine="22" startPosition="93" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222430784916" fileName="ConceptDeclaration_Behavior.java" startLine="23" startPosition="48" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

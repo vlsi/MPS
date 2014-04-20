@@ -6,17 +6,23 @@
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/1545517825663017278">
     <unitInfo nodeId="1545517825663017278" fileName="mpsVcs.xml" startLine="1" startPosition="0" endLine="371" endPosition="10" unitName="jetbrains.mps.ide.build.mpsVcs" />
   </root>
+  <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/2405506926871158265">
+    <unitInfo nodeId="2405506926871158265" fileName="jetpad.xml" startLine="1" startPosition="0" endLine="201" endPosition="10" unitName="jetbrains.mps.ide.build.jetpad" />
+  </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/2569834391839970845">
     <unitInfo nodeId="2569834391839970845" fileName="mpsWorkbench.xml" startLine="1" startPosition="0" endLine="720" endPosition="10" unitName="jetbrains.mps.ide.build.mpsWorkbench" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4301118715654192646">
-    <unitInfo nodeId="4301118715654192646" fileName="mps.xml" startLine="1" startPosition="0" endLine="189" endPosition="10" unitName="jetbrains.mps.ide.build.mps" />
+    <unitInfo nodeId="4301118715654192646" fileName="mps.xml" startLine="1" startPosition="0" endLine="199" endPosition="10" unitName="jetbrains.mps.ide.build.mps" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4301118715654497533">
-    <unitInfo nodeId="4301118715654497533" fileName="mpsDistribution.xml" startLine="1" startPosition="0" endLine="195" endPosition="10" unitName="jetbrains.mps.ide.build.mpsDistribution" />
+    <unitInfo nodeId="4301118715654497533" fileName="mpsDistribution.xml" startLine="1" startPosition="0" endLine="197" endPosition="10" unitName="jetbrains.mps.ide.build.mpsDistribution" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4301118715654819483">
     <unitInfo nodeId="4301118715654819483" fileName="mpsTroveCollections.xml" startLine="1" startPosition="0" endLine="361" endPosition="10" unitName="jetbrains.mps.ide.build.mpsTroveCollections" />
+  </root>
+  <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4305752832749937830">
+    <unitInfo nodeId="4305752832749937830" fileName="mpsDiagramEditor.xml" startLine="1" startPosition="0" endLine="743" endPosition="10" unitName="jetbrains.mps.ide.build.mpsDiagramEditor" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/5148601452480491524">
     <unitInfo nodeId="5148601452480491524" fileName="mpsPlugin.xml" startLine="1" startPosition="0" endLine="636" endPosition="10" unitName="jetbrains.mps.ide.build.mpsPlugin" />

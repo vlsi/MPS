@@ -19,16 +19,15 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.SideTransformTagUtils;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.SNodeEditorUtil;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.action.ModelActions;
-import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.Condition;
 
 public class CellAction_SideTransform extends AbstractCellAction {
   private CellSide mySide;
@@ -73,7 +72,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
         defAnchorCell = nodeMainCell;
       }
 
-      if (defAnchorCell == selectedCell || CellTraversalUtil.isAncestor(defAnchorCell, selectedCell)) {
+      if (CellTraversalUtil.isAncestorOrEquals(defAnchorCell, selectedCell)) {
         anchorCell = defAnchorCell;
       }
     }
@@ -94,29 +93,15 @@ public class CellAction_SideTransform extends AbstractCellAction {
     jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = context.getSelectedCell();
     SNode node = selectedCell.getSNode();
 
-    if (SNodeEditorUtil.hasRightTransformHint(node)) {
-      SNodeEditorUtil.removeRightTransformHint(node);
-    }
-    if (SNodeEditorUtil.hasLeftTransformHint(node)) {
-      SNodeEditorUtil.removeLeftTransformHint(node);
-    }
-
+    STHintUtil.removeTransformHints(node);
     jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell, mySide);
 
     String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
     if (mySide == CellSide.LEFT) {
-      SNodeEditorUtil.addLeftTransformHint(node);
+      STHintUtil.addLeftTransformHint(node, anchorCell.getCellId(), anchorTag);
     } else {
-      SNodeEditorUtil.addRightTransformHint(node);
+      STHintUtil.addRightTransformHint(node, anchorCell.getCellId(), anchorTag);
     }
-
-    node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, anchorCell.getCellId());
-    if (anchorTag != null) {
-      node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
-    } else {
-      node.putUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_TAG, null);
-    }
-
     context.flushEvents();
 
     EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();

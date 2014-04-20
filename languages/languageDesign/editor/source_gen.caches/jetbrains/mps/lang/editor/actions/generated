@@ -13,9 +13,9 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="1456l4f473hired2n1le0oup7kiwjxt" />
-  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="-7k6xeewie2h3o7i3qc6fsj5r0pqo5rv" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="e24f9xx2y6fbphi3bl5krvj8ehhit3a" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="71mhb0v5f0gb4vfw478iy5a4irvpfac" />
+  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="uun23dp0t9fe1nd24f3twuvnkv0dk9" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-4rx58hn7d36o76rq4hrv5y57i75qdbg" />
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-4byk9l07h3msrgceb0q8gf61k638q9y" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="-cvjfgy3hbmgprb35d4uvb1dqys9coz1" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="b76a16jljdk0t25f3o793ktss6o75n0" />
@@ -86,30 +86,20 @@
   <source id="1158947431096" name="EDTL_node_factories" hash="-c0pkvyk1axop2hwi4rpi15i8m0zx1pq">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177585757706" name="custom_actions" hash="cqp52x0wgw3b4expn6190obm8xsatp5">
-    <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1177585757706" name="custom_actions" hash="cqp52x0wgw3b4expn6190obm8xsatp5" />
   <source id="1185874421312" name="EDTL_Actions_node_substitute" hash="cepl1rj1gmblkhlwowcedoelgfiuce1" />
   <source id="1222177296905" name="StyleItem" hash="9shhjf1dyr1o9ablm6vxolosv6oclie" />
   <source id="226730285127010423" name="SubstituteAbstractStyledTextOperation" hash="3v6f3bm4tl0op7rmmv55z7cxhhwyxyu" />
-  <source id="6150987479536935717" name="ContextHintsSpecification" hash="-9i9nmodabt3bflodofvwramlm0aoa62" />
-  <source id="1948540814637841121" name="SelectInEditorOperationSideTransforms" hash="auo8bs9v4dvrei04ibm17e48zd1bpvy">
-    <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
+  <source id="6150987479536935717" name="ContextHintsSpecification" hash="-9i9nmodabt3bflodofvwramlm0aoa62">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2162403111526915072" name="CellSelectorSubstituteActions" hash="-8y0ronhba8s4rsycon6ynjf5psqb1dr">
-    <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
-  </source>
-  <source id="4323500428127332367" name="EditorCellIdSubstitutions" hash="a68y07pehbyzdb1vo1i6ep5dd7jmkgm">
-    <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
-  </source>
-  <source id="3383245079143155343" name="addExtendedClass" hash="-1awx1xveoihnqbl0ieazxtfutob1x4a">
-    <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1948540814637841121" name="SelectInEditorOperationSideTransforms" hash="auo8bs9v4dvrei04ibm17e48zd1bpvy" />
+  <source id="2162403111526915072" name="CellSelectorSubstituteActions" hash="-8y0ronhba8s4rsycon6ynjf5psqb1dr" />
+  <source id="4323500428127332367" name="EditorCellIdSubstitutions" hash="a68y07pehbyzdb1vo1i6ep5dd7jmkgm" />
+  <source id="3383245079143155343" name="addExtendedClass" hash="-1awx1xveoihnqbl0ieazxtfutob1x4a" />
   <source id="2491174914161947402" name="addOverlaps" hash="-8fnx4j7g3netkhalcgw8j5te4lvsrlx">
     <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
   </source>
-  <source id="2491174914176590339" name="addCondition" hash="-9uf2ax6e45utwu5oicbqnri2hfq3oqm">
-    <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="2491174914176590339" name="addCondition" hash="-9uf2ax6e45utwu5oicbqnri2hfq3oqm" />
 </dependencies>
 
