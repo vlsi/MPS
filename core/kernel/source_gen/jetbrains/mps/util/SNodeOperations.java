@@ -268,7 +268,7 @@ public class SNodeOperations {
   }
 
   public static boolean isModelDisposed(SModel model) {
-    return ((SModelInternal) model).isDisposed();
+    return !isRegistered(model);
   }
 
   public static FastNodeFinder getModelFastFinder(SModel model) {
@@ -280,7 +280,7 @@ public class SNodeOperations {
   }
 
   public static boolean isRegistered(SModel model) {
-    return !(model.getRepository() == null || ((SModelBase) model).isDisposed());
+    return model.getRepository() != null;
   }
 
   public static boolean isGeneratable(SModel model) {

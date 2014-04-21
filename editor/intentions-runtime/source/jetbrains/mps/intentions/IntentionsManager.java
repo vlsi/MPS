@@ -53,6 +53,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.lang.reflect.InvocationTargetException;
@@ -441,9 +442,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------visiting registered intentions---------------
 
   private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
-    SModelBase model = (SModelBase) node.getModel();
-    if (model == null || model.isDisposed()) return true;
-    Collection<SModuleReference> languages = model.getModelDepsManager().getAllImportedLanguages();
+    if (!SNodeUtil.isAccessible(node,MPSModuleRepository.getInstance())) return true;
+    Collection<SModuleReference> languages = ((SModelBase) node.getModel()).getModelDepsManager().getAllImportedLanguages();
     Set<String> langNames = new HashSet<String>();
     for (SModuleReference l : languages) {
       langNames.add(l.getModuleName());
