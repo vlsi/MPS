@@ -82,13 +82,14 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     if (myRepository == repo) return;
     synchronized (REPO_LOCK) {
       if (myRepository == repo) return;
-      //assert myModule != null && myModule.getRepository() != null;
+      if (myRepository != null) {
+        throw new IllegalStateException("trying to attach a node from a repository to some other repository");
+      }
       myRepository = repo;
     }
   }
 
-  @Override
-  public void dispose() {
+  public void detach() {
     ModelAccess.assertLegalWrite();
     synchronized (REPO_LOCK) {
       // TODO isLoaded is not enough

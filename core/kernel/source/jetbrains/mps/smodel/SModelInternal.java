@@ -39,8 +39,6 @@ public interface SModelInternal {
 
   boolean canFireEvent();
 
-  void dispose();
-
   //todo this is an external functionality. Should be implemented externally
   FastNodeFinder getFastNodeFinder();
 

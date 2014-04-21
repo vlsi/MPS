@@ -89,7 +89,7 @@ public abstract class SModuleBase implements SModule {
       assertCanChange();
 
       for (SModelBase m : myModels) {
-        m.dispose();
+        m.detach();
       }
       myModels.clear();
       myRepository = DisposedRepository.INSTANCE;
@@ -228,7 +228,7 @@ public abstract class SModuleBase implements SModule {
     synchronized (LOCK) {
       myIdToModelMap.remove(reference.getModelId());
       myModels.remove(model);
-      model.dispose();
+      model.detach();
 
     }
     fireModelRemoved(reference);
