@@ -100,7 +100,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       if (myRepository == null) return;
       myRepository.getModelAccess().checkWriteAccess();
       myRepository = null;
-      for (SNode c = firstChild(); c != null; c = c.next) {
+      for (SNode c = first; c != null; c = c.next) {
         c.detach();
       }
     }

@@ -92,12 +92,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public void detach() {
     ModelAccess.assertLegalWrite();
     synchronized (REPO_LOCK) {
-      // TODO isLoaded is not enough
-      if (isLoaded()) {
-        for (SNode node : getRootNodes()) {
-          ((SNodeBase) node).detach();
-        }
-      }
+      getSModelInternal().detachRoots();
       myRepository = DisposedRepository.INSTANCE;
     }
   }

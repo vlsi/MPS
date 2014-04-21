@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -849,6 +850,12 @@ public class SModel implements SModelData {
   //to use only from SNode
   protected SRepository getRepository() {
     return myModelDescriptor == null ? null : myModelDescriptor.getRepository();
+  }
+
+  public void detachRoots() {
+    for (SNode node : myRoots) {
+      node.detach();
+    }
   }
 
   public static class ImportElement {
