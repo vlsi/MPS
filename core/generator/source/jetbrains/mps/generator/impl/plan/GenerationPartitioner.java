@@ -98,7 +98,16 @@ public class GenerationPartitioner {
     final PartitioningSolver partitioningSolver = new PartitioningSolver(myPriorityMap, myPriorityGraph, myCoherentMappings);
 //    partitioningSolver.solveNew();
 //    return partitioningSolver.solve();
-    return partitioningSolver.solveNew();
+    final List<GenerationPhase> generationPhases = partitioningSolver.solveNew();
+    return phaseAsPlainList(generationPhases);
+  }
+
+  static List<List<TemplateMappingConfiguration>> phaseAsPlainList(List<GenerationPhase> phases) {
+    List<List<TemplateMappingConfiguration>> rv = new ArrayList<List<TemplateMappingConfiguration>>();
+    for (GenerationPhase gp : phases) {
+      rv.add(gp.getAllElements());
+    }
+    return rv;
   }
 
   private void loadRules() {

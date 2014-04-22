@@ -62,7 +62,7 @@ class PriorityGraph {
   }
 
   public void replaceWeakEdgesWithStrict() {
-    // inv: !entry.isStrict ** !entry.isTrivial
+    // inv: !entry.isStrict && !entry.isTrivial
     final ArrayDeque<Entry> weakEntries = new ArrayDeque<Entry>();
     for (Entry entry : myRulePriorityEntries) {
       if (!entry.isStrict() && !entry.isTrivial()) {
@@ -140,8 +140,11 @@ class PriorityGraph {
         final boolean soonerMatches = entry.sooner().hasCommonMappings(g);
         final boolean laterMatches = g.includes(entry.later());
         if (soonerMatches && laterMatches) {
-          // FIXME errors or fix - same TMC on both sides of the rule
-          myConflicts.register(Kind.CoherentWithStrict, g, entry.sooner(), entry.later());
+          if (entry.isStrict()) {
+            // FIXME errors or fix - same TMC on both sides of the rule
+            myConflicts.register(Kind.CoherentWithStrict, g, entry.sooner(), entry.later());
+            toRemove.add(entry);
+          }
           continue;
         }
         if (soonerMatches) {
