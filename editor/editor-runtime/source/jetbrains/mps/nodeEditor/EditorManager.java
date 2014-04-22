@@ -342,7 +342,8 @@ public class EditorManager {
         if (childContextToCellMap != null) {
           myContextToOldCellMap.push(childContextToCellMap);
         }
-        if (oldCell instanceof SynchronizeableEditorCell && ((SynchronizeableEditorCell) oldCell).canBeSynchronized()) {
+        if (oldCell instanceof SynchronizeableEditorCell && ((SynchronizeableEditorCell) oldCell).canBeSynchronized() &&
+            !AttributeOperations.hasPropertyAttributes(node) && !AttributeOperations.hasLinkAttributes(node)) {
           return syncEditorCell((SynchronizeableEditorCell) oldCell, context, refContext);
         }
         return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
