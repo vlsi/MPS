@@ -245,8 +245,10 @@
                            key="title.customizations" bundle="messages.IdeBundle"/>
 
   <!-- Web Browser -->
-  <applicationConfigurable instance="com.intellij.ide.BrowserSettings" id="reference.settings.ide.settings.web.browsers"
+  <applicationConfigurable instance="com.intellij.ide.browsers.BrowserSettings" id="reference.settings.ide.settings.web.browsers"
                            key="browsers.settings" bundle="messages.IdeBundle"/>
+  <applicationService serviceInterface="com.intellij.ide.browsers.WebBrowserManager"
+                      serviceImplementation="com.intellij.ide.browsers.WebBrowserManager"/>
 
   <!-- Notifications -->
   <applicationConfigurable instance="com.intellij.notification.impl.NotificationsConfigurable"/>
