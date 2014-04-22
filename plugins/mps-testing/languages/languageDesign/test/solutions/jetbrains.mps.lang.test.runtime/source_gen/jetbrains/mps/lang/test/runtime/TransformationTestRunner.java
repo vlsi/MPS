@@ -21,6 +21,10 @@ import java.io.File;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import org.apache.log4j.Priority;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.util.Computable;
 import java.awt.GraphicsEnvironment;
 import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
@@ -156,20 +160,40 @@ public class TransformationTestRunner implements TestRunner {
     if (LOG.isInfoEnabled()) {
       LOG.info("Running test " + className);
     }
-    // <node> 
-    // <node> 
-    // <node> 
-    // <node> 
-    // <node> 
-    // <node> 
-    // <node> 
-    Thread.sleep(10000);
+    final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        clazz.value = ClassLoaderManager.getInstance().getClass(projectTest.getModelDescriptor().getModule(), className);
+        String classLoader = clazz.value.getClassLoader().toString();
+        String module = projectTest.getModelDescriptor().getModule().getModuleName();
+        assert classLoader.contains(module) : "class: " + clazz.value + "; classLoader: " + classLoader + "; module: " + module;
+      }
+    });
+    final Object obj = clazz.value.newInstance();
+    clazz.value.getField("myModel").set(obj, projectTest.getTransientModelDescriptor());
+    clazz.value.getField("myProject").set(obj, projectTest.getProject());
+    final Throwable[] exception = new Throwable[1];
+    if (runInCommand) {
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          ModelAccess.instance().runWriteActionInCommand(new Computable<Throwable>() {
+            public Throwable compute() {
+              return exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
+            }
+          }, projectTest.getProject());
+        }
+      });
+    } else {
+      exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
+    }
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         projectTest.dispose();
       }
     });
-    // <node> 
+    if (exception[0] != null) {
+      throw exception[0];
+    }
   }
 
 

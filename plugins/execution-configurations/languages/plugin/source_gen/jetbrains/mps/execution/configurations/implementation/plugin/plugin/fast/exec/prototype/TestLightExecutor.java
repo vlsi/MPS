@@ -16,13 +16,13 @@
 package jetbrains.mps.execution.configurations.implementation.plugin.plugin.fast.exec.prototype;
 
 import com.intellij.execution.process.ProcessOutputTypes;
+import com.intellij.util.WaitFor;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
-import org.junit.runner.notification.StoppedByUserException;
 
 import java.util.List;
 
@@ -34,6 +34,7 @@ public class TestLightExecutor {
 
   private final TestEventsDispatcher myDispatcher;
   private final TestClassHolder myTestClassHolder = new TestClassHolder();
+  private boolean myProcessIsReady = false;
 
   public TestLightExecutor(TestEventsDispatcher dispatcher) {
     myDispatcher = dispatcher;
@@ -47,15 +48,33 @@ public class TestLightExecutor {
   public void execute(List<? extends ITestNodeWrapper> testNodes) {
     try {
       JUnitCore core = new JUnitCore();
-      listenTestRun(core);
 
       List<Request> requests = getRequests(testNodes);
-      for (Request request : requests) {
-        core.run(request);
-      }
+
+      MpsTestRunListener listener = new MpsTestRunListener(myDispatcher, requests.size());
+      listener.attach(core);
+
+      startWhenReady(core, requests);
     } catch (Throwable t) {
-      LOG.error("Exception in test framework", t);
+      LOG.error("Exception in the test framework", t);
     }
+  }
+
+  private void startWhenReady(JUnitCore core, List<Request> requests) throws Throwable {
+    waitWhileNotReady();
+
+    for (Request request : requests) {
+      core.run(request);
+    }
+  }
+
+  private void waitWhileNotReady() {
+    new WaitFor() {
+      @Override
+      protected boolean condition() {
+        return TestLightExecutor.this.myProcessIsReady;
+      }
+    };
   }
 
   private void stopRun() {
@@ -64,7 +83,7 @@ public class TestLightExecutor {
     myDispatcher.onProcessTerminated(message);
   }
 
-  private void listenTestRun(JUnitCore core) {
-    core.addListener(new MpsTestRunListener(myDispatcher, myTestClassHolder));
+  public void setStarted(boolean processIsReady) {
+   myProcessIsReady = processIsReady;
   }
 }

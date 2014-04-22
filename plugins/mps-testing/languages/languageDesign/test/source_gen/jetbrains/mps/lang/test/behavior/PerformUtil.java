@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.TestsErrorsChecker;
-import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
@@ -19,7 +18,7 @@ public class PerformUtil {
   public static void checkNodeHasError(SNode operation) {
     final SNode nodeToCheck = NodeCheckOperation_Behavior.call_getAnnotatedNode_2912288420882528229(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(nodeToCheck);
-    final List<IErrorReporter> errorReporters = checker.getErrorReportersSpecificType(MessageStatus.ERROR);
+    final Iterable<IErrorReporter> errorReporters = checker.getErrorReportersSpecificType(MessageStatus.ERROR);
 
     final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(nodeToCheck) + "> does not have expected error message";
 
@@ -32,7 +31,7 @@ public class PerformUtil {
   public static void checkNodeHasWarning(SNode operation) {
     final SNode nodeToCheck = NodeCheckOperation_Behavior.call_getAnnotatedNode_2912288420882528229(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(nodeToCheck);
-    final List<IErrorReporter> errorReporters = checker.getErrorReportersSpecificType(MessageStatus.WARNING);
+    final Iterable<IErrorReporter> errorReporters = checker.getErrorReportersSpecificType(MessageStatus.WARNING);
 
     final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(nodeToCheck) + "> does not have expected warning message";
 

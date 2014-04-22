@@ -12,6 +12,8 @@ import com.intellij.execution.configurations.RunProfileState;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.configurations.implementation.plugin.plugin.fast.exec.prototype.TestLightExecutor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.Executor;
@@ -24,6 +26,7 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Future;
 
@@ -63,7 +66,19 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    final List<ITestNodeWrapper> nodeWrappers = ListSequence.fromList(myRunConfiguration.getJUnitSettings().getTests(ProjectHelper.toMPSProject(project))).toListSequence();
+    final List<ITestNodeWrapper> nodeWrappers0 = ListSequence.fromList(myRunConfiguration.getJUnitSettings().getTests(ProjectHelper.toMPSProject(project))).toListSequence();
+
+    final List<ITestNodeWrapper> nodeWrappers = new ArrayList<ITestNodeWrapper>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (ITestNodeWrapper<?> wrapper : nodeWrappers0) {
+          if ((SNodeOperations.isInstanceOf(wrapper.getNode(), "jetbrains.mps.lang.test.structure.EditorTestCase")) ||
+              (SNodeOperations.isInstanceOf(wrapper.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase")))
+            nodeWrappers.add(wrapper);
+        }
+      }
+    });
 
 //    final ProcessHandler process = new Junit_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
     TestRunState runState = new TestRunState(nodeWrappers);
@@ -132,6 +147,12 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
     public NullProcessHandler(Future<?> future, TestLightExecutor testLightExecutor) {
       myFuture = future;
       myTestLightExecutor = testLightExecutor;
+    }
+
+    @Override
+    public void startNotify() {
+      super.startNotify();
+      myTestLightExecutor.setStarted(true);
     }
 
     public void terminate() {

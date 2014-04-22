@@ -55,6 +55,9 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
 
   public void initTest(@NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
+    if (Thread.currentThread().isInterrupted()) {
+      throw new InterruptedException();
+    }
     try {
       myRunner.initTest(this, projectName, model, uiTest, reOpenProject);
     } catch (InterruptedException exception) {
@@ -66,6 +69,9 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
 
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
+    if (Thread.currentThread().isInterrupted()) {
+      throw new InterruptedException();
+    }
     try {
       myRunner.runTest(this, className, methodName, runInCommand);
     } catch (InterruptedException exception) {
@@ -78,10 +84,8 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
   @Override
   public void init() {
-    this.myTransientModel = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
-    // <node> 
+    this.myTransientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
     new CloneUtil(this.myModel, this.myTransientModel).cloneModelWithImports();
-
     TemporaryModels.getInstance().addMissingImports(myTransientModel);
   }
 

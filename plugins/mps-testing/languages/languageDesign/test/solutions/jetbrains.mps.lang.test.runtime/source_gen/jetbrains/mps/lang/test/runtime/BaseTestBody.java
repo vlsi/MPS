@@ -30,7 +30,7 @@ public class BaseTestBody {
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SNode node = BaseTestBody.this.myModel.getNode(SNodeId.fromString(id));
-        SNode copy = CopyUtil.copy(node, ((Map<SNode, SNode>) BaseTestBody.this.myMap), true);
+        SNode copy = CopyUtil.copy(node, BaseTestBody.this.myMap, true);
         for (SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotation", false, new String[]{}))) {
           SNodeOperations.deleteNode(a);
         }

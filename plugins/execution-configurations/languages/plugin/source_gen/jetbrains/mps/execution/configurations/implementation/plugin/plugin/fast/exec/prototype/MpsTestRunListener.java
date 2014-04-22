@@ -21,10 +21,10 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.runner.Description;
+import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
-import org.junit.runner.notification.StoppedByUserException;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -32,13 +32,19 @@ import java.io.StringWriter;
 public class MpsTestRunListener extends RunListener {
   private final static Logger LOG = LogManager.getLogger(MpsTestRunListener.class);
   private final TestEventsDispatcher myDispatcher;
-  private final TestClassHolder myTestClassHolder;
+  private final int myRequestCount;
   private final TestEventFactory myFactory;
 
-  public MpsTestRunListener(TestEventsDispatcher dispatcher, TestClassHolder testClassHolder) {
+  private int currentRequest;
+
+  public MpsTestRunListener(TestEventsDispatcher dispatcher, int requestCount) {
     myDispatcher = dispatcher;
-    myTestClassHolder = testClassHolder;
+    myRequestCount = requestCount;
     myFactory = new TestEventFactory();
+  }
+
+  public void attach(JUnitCore core) {
+    core.addListener(this);
   }
 
   private String getStackTrace(Failure failure) {
@@ -58,9 +64,12 @@ public class MpsTestRunListener extends RunListener {
 
   @Override
   public void testRunFinished(Result result) throws Exception {
-    LOG.info("TESTS WERE SUCCESSFUL " + result.wasSuccessful());
-    int code = result.getFailureCount();
-    terminateRun(code);
+    if (++currentRequest == myRequestCount) {
+      LOG.info("TESTS WERE SUCCESSFUL " + result.wasSuccessful());
+      int code = result.getFailureCount();
+      terminateRun(code);
+    } else
+      LOG.info("Request #" + currentRequest + " is finished -- proceeding to the next request");
   }
 
   private void onTestErrorEvent(String startToken, String endToken, Failure failure) {

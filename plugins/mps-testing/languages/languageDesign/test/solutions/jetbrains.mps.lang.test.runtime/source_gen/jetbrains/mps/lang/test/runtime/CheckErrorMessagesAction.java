@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -31,7 +30,7 @@ public class CheckErrorMessagesAction implements Runnable {
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (!(hasErrorOrWarningCheckOperationTag(child))) {
         TestsErrorsChecker checker = new TestsErrorsChecker(child);
-        final List<IErrorReporter> reporters = checker.getErrorReporters();
+        final Iterable<IErrorReporter> reporters = checker.getErrorReporters();
         for (IErrorReporter reporter : reporters) {
           final String messageString = getErrorString(reporter, child);
           checkWarnings(reporter, messageString);
