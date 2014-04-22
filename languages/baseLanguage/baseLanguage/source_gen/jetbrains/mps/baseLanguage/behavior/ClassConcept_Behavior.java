@@ -183,7 +183,8 @@ public class ClassConcept_Behavior {
     if (Classifier_Behavior.call_isSame_4855996797771684010(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), thisNode)) {
       return null;
     }
-    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false) != null) ? SLinkOperations.getTarget(thisNode, "superclass", true) : _quotation_createNode_xjj00_a0b0j());
+    SNode classifier = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false);
+    return ((classifier != null) && SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") ? SLinkOperations.getTarget(thisNode, "superclass", true) : _quotation_createNode_xjj00_a0c0j());
   }
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
@@ -443,7 +444,7 @@ public class ClassConcept_Behavior {
 
   protected static Logger LOG = LogManager.getLogger(ClassConcept_Behavior.class);
 
-  private static SNode _quotation_createNode_xjj00_a0b0j() {
+  private static SNode _quotation_createNode_xjj00_a0c0j() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
