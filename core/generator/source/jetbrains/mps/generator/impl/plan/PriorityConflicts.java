@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
@@ -30,8 +29,8 @@ import java.util.Set;
 /**
  * @author Artem Tikhomirov
  */
-public final class PriorityConflicts {
-  public enum Kind { SelfLock, PastTopPri, LoPriLocksHiPri, CoherentWithStrict}
+final class PriorityConflicts {
+  public enum Kind { SelfLock, PastTopPri, LoPriLocksHiPri, CoherentWithStrict, CoherentPrioMix, }
   private final Map<Kind, Set<TemplateMappingPriorityRule>> myConflictingRules;
 
   PriorityConflicts() {
@@ -70,6 +69,7 @@ public final class PriorityConflicts {
     messageFormats.put(Kind.PastTopPri, "Rules left after all top-priority rules were consumed: %s");
     messageFormats.put(Kind.LoPriLocksHiPri, "Configuration with lower priority blocks high-priority configuration: %s");
     messageFormats.put(Kind.CoherentWithStrict, "Coherent configurations on both sides of strict rule: %s");
+    messageFormats.put(Kind.CoherentPrioMix, "Coherent configurations with different 'top priority' setting: %s");
     messageFormats.put(null, "%s");
     //
     List<Pair<TemplateMappingPriorityRule, String>> rv = new ArrayList<Pair<TemplateMappingPriorityRule, String>>();
@@ -85,5 +85,9 @@ public final class PriorityConflicts {
       }
     }
     return rv;
+  }
+
+  /*package*/ Collection<TemplateMappingPriorityRule> get(Kind kind) {
+    return myConflictingRules.get(kind);
   }
 }

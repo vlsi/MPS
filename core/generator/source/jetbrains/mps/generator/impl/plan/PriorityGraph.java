@@ -35,11 +35,9 @@ import java.util.Set;
 class PriorityGraph {
   // graph edges
   private final List<Entry> myRulePriorityEntries;
-  private final PriorityConflicts myConflicts;
   private final Set<TemplateMappingConfiguration> myNonTrivialEdges;
 
-  public PriorityGraph(PriorityConflicts conflicts) {
-    myConflicts = conflicts;
+  public PriorityGraph() {
     myRulePriorityEntries = new ArrayList<Entry>();
     myNonTrivialEdges = new HashSet<TemplateMappingConfiguration>();
   }
@@ -57,7 +55,7 @@ class PriorityGraph {
     HashSet<TemplateMappingConfiguration> trivialEdges = new HashSet<TemplateMappingConfiguration>(allMapConfigurations);
     trivialEdges.removeAll(myNonTrivialEdges);
     for (TemplateMappingConfiguration tmc : trivialEdges) {
-      myRulePriorityEntries.add(new Entry(new Group(tmc), new Group(), false));
+      myRulePriorityEntries.add(newTrivialEdge(new Group(tmc)));
     }
   }
 
@@ -128,7 +126,7 @@ class PriorityGraph {
     }
   }
 
-  public void updateWithCoherent(List<Group> coherentMappings) {
+  public void updateWithCoherent(List<Group> coherentMappings, PriorityConflicts conflicts) {
     // if any of 'coherent' mappings happens before another group, make this group dependant from all coherent mappings.
     // if there's no mapping that establish relation for coherent mapping (i.e. only 'trivial' mappings), replace these trivial mappings with single
     // one with the coherent group
@@ -141,8 +139,8 @@ class PriorityGraph {
         final boolean laterMatches = g.includes(entry.later());
         if (soonerMatches && laterMatches) {
           if (entry.isStrict()) {
-            // FIXME errors or fix - same TMC on both sides of the rule
-            myConflicts.register(Kind.CoherentWithStrict, g, entry.sooner(), entry.later());
+            // same TMC on both sides of the strict rule
+            conflicts.register(Kind.CoherentWithStrict, g, entry.sooner(), entry.later());
             toRemove.add(entry);
           }
           continue;
@@ -162,7 +160,7 @@ class PriorityGraph {
         }
       }
       if (!edgeWithNonEmptyDependency) {
-        toAdd.add(new Entry(g, new Group(), false));
+        toAdd.add(newTrivialEdge(g));
       }
     }
     myRulePriorityEntries.addAll(toAdd);
@@ -203,16 +201,30 @@ class PriorityGraph {
     }
   }
 
-  void checkSelfLocking() {
+  void checkSelfLocking(PriorityConflicts conflicts) {
     for (Entry edge : myRulePriorityEntries) {
       if (edge.sooner().hasCommonMappings(edge.later())) {
         if (edge.isStrict()) {
-          myConflicts.register(Kind.SelfLock, edge.sooner(), edge.later());
+          conflicts.register(Kind.SelfLock, edge.sooner(), edge.later());
         }
         // remove self-lock
         edge.subtractFromSooner(edge.later());
       }
     }
+  }
+
+  void checkLowPrioLocksTopPrio(PriorityConflicts conflicts) {
+    ArrayList<Entry> toDrop = new ArrayList<Entry>();
+    for (Entry edge : myRulePriorityEntries) {
+      if (edge.isTrivial()) {
+        continue;
+      }
+      if (edge.later().isTopPriority() && !edge.sooner().isTopPriority()) {
+        conflicts.register(Kind.LoPriLocksHiPri, edge.sooner(), edge.later());
+        toDrop.add(edge);
+      }
+    }
+    myRulePriorityEntries.removeAll(toDrop);
   }
 
   public boolean isEmpty() {
@@ -223,6 +235,10 @@ class PriorityGraph {
     for (Entry entry : myRulePriorityEntries) {
       System.out.println(entry);
     }
+  }
+
+  private static Entry newTrivialEdge(Group g) {
+    return new Entry(g, new Group(), false);
   }
 
   // Edge of dependency graph

@@ -26,7 +26,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -36,42 +35,26 @@ import java.util.Set;
 @Immutable
 final class Group {
   private final Set<TemplateMappingConfiguration> myMappings;
+  // rules these mappings originate from
   private final Set<MappingPriorityRule> myRules;
   private final boolean myIsTopPriority;
 
+  private Group(Set<TemplateMappingConfiguration> mappings, Set<MappingPriorityRule> rules, boolean topPri) {
+    myMappings = mappings;
+    myRules = rules;
+    myIsTopPriority = topPri;
+  }
+
   public Group() {
-    myMappings = Collections.emptySet();
-    myRules = Collections.emptySet();
-    myIsTopPriority = false;
+    this(Collections.<TemplateMappingConfiguration>emptySet(), Collections.<MappingPriorityRule>emptySet(), false);
   }
 
   public Group(@NotNull TemplateMappingConfiguration cfg) {
-    myMappings = Collections.singleton(cfg);
-    myRules = Collections.emptySet();
-    myIsTopPriority = cfg.isTopPriority();
+    this(Collections.singleton(cfg), Collections.<MappingPriorityRule>emptySet(), cfg.isTopPriority());
   }
 
   public Group(@NotNull TemplateMappingConfiguration cfg, @NotNull MappingPriorityRule rule) {
-    myMappings = Collections.singleton(cfg);
-    myRules = Collections.singleton(rule);
-    myIsTopPriority = cfg.isTopPriority();
-  }
-
-  public Group(Collection<TemplateMappingConfiguration> mappings, Collection<MappingPriorityRule> rules) {
-    myMappings = new HashSet<TemplateMappingConfiguration>(mappings);
-    myRules = new HashSet<MappingPriorityRule>(rules);
-    if (mappings.isEmpty()) {
-      myIsTopPriority = false;
-    } else {
-      final Iterator<TemplateMappingConfiguration> it = mappings.iterator();
-      final boolean topPri = it.next().isTopPriority();
-      while (it.hasNext()) {
-        if (topPri != it.next().isTopPriority()) {
-          throw new IllegalArgumentException(); // FIXME message
-        }
-      }
-      myIsTopPriority = topPri;
-    }
+    this(Collections.singleton(cfg), Collections.singleton(rule), cfg.isTopPriority());
   }
 
   public Group(Iterable<Group> other) {
@@ -84,7 +67,7 @@ final class Group {
       topPri.put(g.isTopPriority(), g);
     }
     if (topPri.size() != 1) {
-      throw new IllegalArgumentException(); // FIXME message
+      throw new IllegalArgumentException(String.format("Can't create a group from a set of groups with different 'top priority' setting: %s", other));
     }
     myMappings = mappings;
     myRules = rules;
@@ -96,8 +79,13 @@ final class Group {
   }
 
   public Group subtract(Group other) {
-    return new Group(CollectionUtil.subtract(myMappings, other.myMappings), CollectionUtil.subtract(myRules, other.myRules));
+    final HashSet<TemplateMappingConfiguration> mc = new HashSet<TemplateMappingConfiguration>(myMappings);
+    mc.removeAll(other.myMappings);
+    final HashSet<MappingPriorityRule> rules = new HashSet<MappingPriorityRule>(myRules);
+    rules.removeAll(other.myRules);
+    return new Group(mc, rules, myIsTopPriority);
   }
+
   public Group union(Group other) {
     return new Group(Arrays.asList(this, other));
   }

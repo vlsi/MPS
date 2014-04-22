@@ -17,8 +17,7 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.interpreted.TemplateMappingConfigurationInterpreted;
-import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
-import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
+import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -39,27 +38,23 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 /**
  * @author Artem Tikhomirov
  */
 public class GenPlanTest {
-  private PriorityMap pmap;
-  private PriorityGraph pgraph;
   private PriorityConflicts myConflicts;
-  private List<CoherentSetData> mySameStepConfigs;
+  private PartitioningSolver mySolver;
 
   @Before
   public void setup() {
     myConflicts = new PriorityConflicts();
-    pmap = new PriorityMap(myConflicts);
-    pgraph = new PriorityGraph(myConflicts);
-    mySameStepConfigs = new ArrayList<CoherentSetData>();
+    mySolver = new PartitioningSolver(myConflicts);
   }
 
 
@@ -75,23 +70,19 @@ public class GenPlanTest {
     TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
     TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
-    pmap.prepare(allConfigs);
+    mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
     addStrict(tmcB, tmcC);
-    pgraph.finalizeEdges(allConfigs);
+
     //
-    final PartitioningSolver partitioningSolver = new PartitioningSolver(pmap, pgraph, mySameStepConfigs);
-    final List<GenerationPhase> phases = partitioningSolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solveNew();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     List<Group> groupsPhase1 = phases.get(0).getGroups();
     List<Group> groupsPhase2 = phases.get(1).getGroups();
     assertEquals(2, groupsPhase1.size());
     assertEquals(1, groupsPhase2.size());
-    HashSet<Group> expectedPhase1 = new HashSet<Group>();
-    expectedPhase1.add(new Group(tmcA));
-    expectedPhase1.add(new Group(tmcB));
-    assertEquals(expectedPhase1, new HashSet<Group>(groupsPhase1));
+    assertEquals(asSet(tmcA, tmcB), new HashSet<Group>(groupsPhase1));
     assertEquals(new Group(tmcC), groupsPhase2.get(0));
   }
 
@@ -113,16 +104,14 @@ public class GenPlanTest {
     TemplateMappingConfiguration tmcX = new MockMapConfig("X", false);
     TemplateMappingConfiguration tmcY = new MockMapConfig("Y", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD, tmcX, tmcY);
-    pmap.prepare(allConfigs);
+    mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
     addStrict(tmcB, tmcC);
     addWeak(tmcB, tmcD);
     addStrict(tmcX, tmcA);
     addWeak(tmcY, tmcA);
-    pgraph.finalizeEdges(allConfigs);
     //
-    final PartitioningSolver partitioningSolver = new PartitioningSolver(pmap, pgraph, mySameStepConfigs);
-    final List<GenerationPhase> phases = partitioningSolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solveNew();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(3, phases.size());
     List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -133,16 +122,9 @@ public class GenPlanTest {
     assertEquals(2, groupsPhase3.size());
     assertEquals(new Group(tmcX), groupsPhase1.get(0));
     //
-    HashSet<Group> expectedPhase2 = new HashSet<Group>();
-    expectedPhase2.add(new Group(tmcA));
-    expectedPhase2.add(new Group(tmcB));
-    expectedPhase2.add(new Group(tmcY));
-    assertEquals(expectedPhase2, new HashSet<Group>(groupsPhase2));
+    assertEquals(asSet(tmcA, tmcB, tmcY), new HashSet<Group>(groupsPhase2));
     //
-    HashSet<Group> expectedPhase3 = new HashSet<Group>();
-    expectedPhase3.add(new Group(tmcC));
-    expectedPhase3.add(new Group(tmcD));
-    assertEquals(expectedPhase3, new HashSet<Group>(groupsPhase3));
+    assertEquals(asSet(tmcC, tmcD), new HashSet<Group>(groupsPhase3));
   }
 
   /**
@@ -163,26 +145,26 @@ public class GenPlanTest {
     TemplateMappingConfiguration tmcE = new MockMapConfig("E", false);
     TemplateMappingConfiguration tmcX = new MockMapConfig("X", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD, tmcE, tmcX);
-    pmap.prepare(allConfigs);
+    mySolver.prepare(allConfigs);
     addCoherentConfigs(tmcA, tmcB);
     addCoherentConfigs(tmcB, tmcC);
     addCoherentConfigs(tmcC, tmcD);
     addCoherentConfigs(tmcE, tmcD);
     addStrict(tmcB, tmcX);
-    pgraph.finalizeEdges(allConfigs);
     //
-    final PartitioningSolver partitioningSolver = new PartitioningSolver(pmap, pgraph, mySameStepConfigs);
-    final List<GenerationPhase> phases = partitioningSolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solveNew();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     List<Group> groupsPhase1 = phases.get(0).getGroups();
     List<Group> groupsPhase2 = phases.get(1).getGroups();
     assertEquals(1, groupsPhase1.size());
     assertEquals(1, groupsPhase2.size());
-    Group g1 = groupsPhase1.get(0);
-    Group g2 = groupsPhase2.get(0);
-    assertEquals(new Group(allConfigs, Collections.<MappingPriorityRule>emptyList()).subtract(new Group(tmcX)), g1);
-    assertEquals(new Group(tmcX), g2);
+    ArrayList<Group> allGroups = new ArrayList<Group>();
+    for (TemplateMappingConfiguration mc : allConfigs) {
+      allGroups.add(new Group(mc));
+    }
+    assertEquals(new Group(allGroups).subtract(new Group(tmcX)), groupsPhase1.get(0));
+    assertEquals(new Group(tmcX), groupsPhase2.get(0));
   }
 
   /**
@@ -197,13 +179,11 @@ public class GenPlanTest {
     TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
     TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
-    pmap.prepare(allConfigs);
+    mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
     addCoherentConfigs(tmcB, tmcC);
-    pgraph.finalizeEdges(allConfigs);
     //
-    final PartitioningSolver partitioningSolver = new PartitioningSolver(pmap, pgraph, mySameStepConfigs);
-    final List<GenerationPhase> phases = partitioningSolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solveNew();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(1, phases.size());
     final List<Group> groups = phases.get(0).getGroups();
@@ -224,14 +204,12 @@ public class GenPlanTest {
     TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
     TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
-    pmap.prepare(allConfigs);
+    mySolver.prepare(allConfigs);
     addStrict(tmcA, tmcB);
     addCoherentConfigs(tmcA, tmcC);
     addCoherentConfigs(tmcB, tmcC);
-    pgraph.finalizeEdges(allConfigs);
-    final PartitioningSolver partitioningSolver = new PartitioningSolver(pmap, pgraph, mySameStepConfigs);
     assertFalse("[sanity]", myConflicts.hasConflicts());
-    partitioningSolver.solveNew();
+    mySolver.solveNew();
     assertTrue(myConflicts.hasConflicts());
   }
 
@@ -250,15 +228,13 @@ public class GenPlanTest {
     TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
     TemplateMappingConfiguration tmcX = new MockMapConfig("X", false);
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcX);
-    pmap.prepare(allConfigs);
+    mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
     addStrict(tmcC, tmcX);
     addCoherentConfigs(tmcA, tmcC);
     addCoherentConfigs(tmcB, tmcC);
-    pgraph.finalizeEdges(allConfigs);
     //
-    final PartitioningSolver partitioningSolver = new PartitioningSolver(pmap, pgraph, mySameStepConfigs);
-    final List<GenerationPhase> phases = partitioningSolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solveNew();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     final List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -268,24 +244,120 @@ public class GenPlanTest {
     assertEquals(new Group(tmcX), groupsPhase2.get(0));
   }
 
+  /**
+   * A and B are topPri == true, A not in any relation
+   * B <= C
+   * C <= D
+   *
+   * Expected: {A, B} {C, D}
+   */
   @Test
   public void testTopPriorityComesFirst() {
-    fail("FIXME");
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", true);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", true);
+    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcD = new MockMapConfig("D", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD);
+    mySolver.prepare(allConfigs);
+    addWeak(tmcB, tmcC);
+    addWeak(tmcC, tmcD);
+    final List<GenerationPhase> phases = mySolver.solveNew();
+    assertFalse(myConflicts.hasConflicts());
+    assertEquals(2, phases.size());
+    final List<Group> groupsPhase1 = phases.get(0).getGroups();
+    final List<Group> groupsPhase2 = phases.get(1).getGroups();
+    assertEquals(2, groupsPhase1.size());
+    assertEquals(2, groupsPhase2.size());
+    assertEquals(asSet(tmcA, tmcB), new HashSet<Group>(groupsPhase1));
+    assertEquals(asSet(tmcC, tmcD), new HashSet<Group>(groupsPhase2));
   }
 
+  /**
+   * A < B(topPri)
+   *
+   * Expected: conflicts reported
+   */
   @Test
-  public void testTopPriorityDependsOnLowPriority() {
-    fail("FIXME");
+  public void testTopPriorityDependsOnLowPriorityStrict() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", true);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
+    mySolver.prepare(allConfigs);
+    addStrict(tmcA, tmcB);
+    mySolver.solveNew();
+    assertTrue(myConflicts.hasConflicts());
+    assertFalse(myConflicts.get(Kind.LoPriLocksHiPri).isEmpty());
+  }
+
+    /**
+     * A <= B(topPri)
+     * A < C
+     *
+     * Expected: conflicts reported
+     */
+  @Test
+  public void testTopPriorityDependsOnLowPriorityWeak() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", true);
+    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
+    mySolver.prepare(allConfigs);
+    addWeak(tmcA, tmcB);
+    addStrict(tmcA, tmcC);
+    mySolver.solveNew();
+    print(mySolver.solve());
+    assertTrue(myConflicts.hasConflicts());
+    assertFalse(myConflicts.get(Kind.LoPriLocksHiPri).isEmpty());
+  }
+
+  /**
+   * A (topPri) == B
+   *
+   * Expected: conflicts reported
+   */
+  @Test
+  public void testTopPriorityCoherentWithLowPriority() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", true);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
+    mySolver.prepare(allConfigs);
+    addCoherentConfigs(tmcA, tmcB);
+    mySolver.solveNew();
+    assertTrue(myConflicts.hasConflicts());
+    assertFalse(myConflicts.get(Kind.CoherentPrioMix).isEmpty());
   }
 
 
+  /**
+   * A <= B,
+   * A < B
+   *
+   * Expected: {A} {B}
+   */
+  @Test
+  public void testSameEdgeBothWeakAndStrict() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
+    mySolver.prepare(allConfigs);
+    addWeak(tmcA, tmcB);
+    addStrict(tmcA, tmcB);
+    final List<GenerationPhase> phases = mySolver.solveNew();
+    assertFalse(myConflicts.hasConflicts());
+    assertEquals(2, phases.size());
+    final List<Group> groupsPhase1 = phases.get(0).getGroups();
+    final List<Group> groupsPhase2 = phases.get(1).getGroups();
+    assertEquals(1, groupsPhase1.size());
+    assertEquals(1, groupsPhase2.size());
+    assertEquals(new Group(tmcA), groupsPhase1.get(0));
+    assertEquals(new Group(tmcB), groupsPhase2.get(0));
+  }
 
   private void go() {
-    final PartitioningSolver partitioningSolver = new PartitioningSolver(pmap, pgraph, mySameStepConfigs);
     System.out.println("New");
-    print(GenerationPartitioner.phaseAsPlainList(partitioningSolver.solveNew()));
+    print(GenerationPartitioner.phaseAsPlainList(mySolver.solveNew()));
     System.out.println("Legacy");
-    print(partitioningSolver.solve());
+    print(mySolver.solve());
     if (myConflicts.hasConflicts()) {
       System.out.println("CONFLICTS!");
       for (Pair<TemplateMappingPriorityRule, String> p : myConflicts.describe()) {
@@ -296,17 +368,15 @@ public class GenPlanTest {
   }
 
   private void addWeak(TemplateMappingConfiguration sooner, TemplateMappingConfiguration later) {
-    pmap.updateLock(later, sooner, getWeakPriorityData());
-    pgraph.addEdge(later, Collections.singleton(sooner), getWeakRule());
+    mySolver.establishDependency(Collections.singleton(sooner), Collections.singleton(later), getWeakRule());
   }
 
   private void addStrict(TemplateMappingConfiguration sooner, TemplateMappingConfiguration later) {
-    pmap.updateLock(later, sooner, getStrictPriorityData());
-    pgraph.addEdge(later, Collections.singleton(sooner), getStrictRule());
+    mySolver.establishDependency(Collections.singleton(sooner), Collections.singleton(later), getStrictRule());
   }
 
   private void addCoherentConfigs(TemplateMappingConfiguration... mc) {
-    mySameStepConfigs.add(new CoherentSetData(new HashSet<TemplateMappingConfiguration>(Arrays.asList(mc)), getWeakRule()));
+    mySolver.registerCoherent(Arrays.asList(mc), getStrictRule());
   }
 
   private static void print(List<List<TemplateMappingConfiguration>> r) {
@@ -320,14 +390,6 @@ public class GenPlanTest {
     }
   }
 
-  private static PriorityData getWeakPriorityData() {
-    return new PriorityData(false, Collections.<MappingPriorityRule>emptySet());
-  }
-
-  private static PriorityData getStrictPriorityData() {
-    return new PriorityData(true, Collections.<MappingPriorityRule>emptySet());
-  }
-
   private static MappingPriorityRule getWeakRule() {
     MappingPriorityRule weakRule = new MappingPriorityRule();
     weakRule.setType(RuleType.AFTER_OR_TOGETHER);
@@ -337,6 +399,15 @@ public class GenPlanTest {
     MappingPriorityRule strictRule = new MappingPriorityRule();
     strictRule.setType(RuleType.STRICTLY_AFTER);
     return strictRule;
+  }
+
+
+  private static Set<Group> asSet(TemplateMappingConfiguration... tmc) {
+    HashSet<Group> rv = new HashSet<Group>();
+    for (TemplateMappingConfiguration mc : tmc) {
+      rv.add(new Group(mc));
+    }
+    return rv;
   }
 
   private static class MockMapConfig extends TemplateMappingConfigurationInterpreted {
