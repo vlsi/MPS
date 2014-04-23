@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -30,27 +33,52 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 final class PriorityConflicts {
-  public enum Kind { SelfLock, PastTopPri, LoPriLocksHiPri, CoherentWithStrict, CoherentPrioMix, }
-  private final Map<Kind, Set<TemplateMappingPriorityRule>> myConflictingRules;
+  /*package*/enum Kind { SelfLock, PastTopPri, LoPriLocksHiPri, CoherentWithStrict, CoherentPrioMix, }
 
-  PriorityConflicts() {
-    myConflictingRules = new HashMap<Kind, Set<TemplateMappingPriorityRule>>();
+  private final Collection<TemplateModule> myGenerators;
+  private final Map<Kind, List<Conflict>> myConflictingRules;
+
+  PriorityConflicts(Collection<TemplateModule> generators) {
+    myGenerators = generators;
+    myConflictingRules = new HashMap<Kind, List<Conflict>>();
     for (Kind k : Kind.values()) {
-      myConflictingRules.put(k, new HashSet<TemplateMappingPriorityRule>());
+      myConflictingRules.put(k, new ArrayList<Conflict>());
     }
   }
 
-  void register(Kind kind, Collection<? extends TemplateMappingPriorityRule> conflictingRules) {
-    myConflictingRules.get(kind).addAll(conflictingRules);
+  void registerSelfLock(Group g1, Group g2, Collection<MappingPriorityRule> rules) {
+    SModuleReference origin = getOrigin(rules);
+    String msg = String.format("Self-locking rule: %s", describeCollection(rules));
+    register(Kind.SelfLock, new Conflict(origin, msg, rules));
   }
 
-  void register(Kind kind, Group... groups) {
-    // FIXME better error message based on grouping
-    HashSet<TemplateMappingPriorityRule> r = new HashSet<TemplateMappingPriorityRule>();
-    for (Group g : groups) {
-      r.addAll(g.getRules());
-    }
-    myConflictingRules.get(kind).addAll(r);
+  void registerCoherentPriorityMix(Group g1, Group g2, MappingPriorityRule rule) {
+    final Set<MappingPriorityRule> rules = Collections.singleton(rule);
+    SModuleReference origin = getOrigin(rules);
+    String msg = String.format("Coherent configurations with different 'top priority' setting: %s", String.valueOf(rule));
+    register(Kind.CoherentPrioMix, new Conflict(origin, msg, rules));
+  }
+
+  void registerCoherentWithStrict(Group coherent, Group g, Collection<MappingPriorityRule> rules) {
+    SModuleReference origin = getOrigin(rules);
+    String msg = String.format("Coherent configurations on both sides of strict rule: %s", describeCollection(rules));
+    register(Kind.CoherentWithStrict, new Conflict(origin, msg, rules));
+  }
+
+  void registerLoPriLocksHiPri(Group g1, Group g2, Collection<MappingPriorityRule> rules) {
+    SModuleReference origin = getOrigin(rules);
+    String msg = String.format("Configuration with lower priority blocks high-priority configuration: %s", describeCollection(rules));
+    register(Kind.LoPriLocksHiPri, new Conflict(origin, msg, rules));
+  }
+
+  void registerLeftovers(Group group, Collection<MappingPriorityRule> rules) {
+    SModuleReference origin = getOrigin(rules);
+    String msg = String.format("Rules left after all top-priority rules were consumed: %s", describeCollection(rules));
+    register(Kind.PastTopPri, new Conflict(null, msg, rules));
+  }
+
+  private void register(Kind kind, Conflict conflict) {
+    myConflictingRules.get(kind).add(conflict);
   }
 
   public boolean hasConflicts() {
@@ -62,32 +90,52 @@ final class PriorityConflicts {
     return false;
   }
 
-  public List<Pair<TemplateMappingPriorityRule, String>> describe() {
-    // no reason to keep this formatting as field, initialize right before use
-    Map<Kind, String> messageFormats = new HashMap<Kind, String>();
-    messageFormats.put(Kind.SelfLock, "Self-locking rule: %s");
-    messageFormats.put(Kind.PastTopPri, "Rules left after all top-priority rules were consumed: %s");
-    messageFormats.put(Kind.LoPriLocksHiPri, "Configuration with lower priority blocks high-priority configuration: %s");
-    messageFormats.put(Kind.CoherentWithStrict, "Coherent configurations on both sides of strict rule: %s");
-    messageFormats.put(Kind.CoherentPrioMix, "Coherent configurations with different 'top priority' setting: %s");
-    messageFormats.put(null, "%s");
-    //
-    List<Pair<TemplateMappingPriorityRule, String>> rv = new ArrayList<Pair<TemplateMappingPriorityRule, String>>();
+  public List<Conflict> getConflicts() {
+    ArrayList<Conflict> rv = new ArrayList<Conflict>();
     for (Kind k : Kind.values()) {
-      Set<TemplateMappingPriorityRule> rules = myConflictingRules.get(k);
-      if (rules.isEmpty()) {
-        continue;
-      }
-      String fmt = messageFormats.get(messageFormats.containsKey(k) ? k : null);
-      for (TemplateMappingPriorityRule r : rules) {
-        String msg = String.format(fmt, r.toString());
-        rv.add(new Pair<TemplateMappingPriorityRule, String>(r, msg));
-      }
+      rv.addAll(myConflictingRules.get(k));
     }
     return rv;
   }
 
-  /*package*/ Collection<TemplateMappingPriorityRule> get(Kind kind) {
+  /*package*/ Collection<Conflict> get(Kind kind) {
     return myConflictingRules.get(kind);
   }
+
+  private static String describeCollection(Collection<? extends Object> coll) {
+    if (coll.isEmpty()) {
+      return "";
+    }
+    if (coll.size() == 1) {
+      return coll.iterator().next().toString();
+    }
+    StringBuilder sb = new StringBuilder();
+    sb.append('\n');
+    for (Object r : coll) {
+      sb.append('\t');
+      sb.append(r);
+      sb.append('\n');
+    }
+    return sb.toString();
+  }
+
+  private SModuleReference getOrigin(Collection<MappingPriorityRule> rules) {
+    for (MappingPriorityRule r : rules) {
+      for (TemplateModule tm : myGenerators) {
+        if (tm.getPriorities().contains(r)) {
+          return tm.getReference();
+        }
+      }
+    }
+    return null;
+  }
+
+  private static Collection<TemplateMappingConfiguration> unionMapConfigs(Group... groups) {
+    HashSet<TemplateMappingConfiguration> rv = new HashSet<TemplateMappingConfiguration>();
+    for (Group g : groups) {
+      rv.addAll(g.getElements());
+    }
+    return rv;
+  }
+
 }

@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
-import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
@@ -73,14 +72,14 @@ public class PartitioningSolver {
 
     ArrayList<Group> groups = new ArrayList<Group>(coherentMappings.size());
     for (TemplateMappingConfiguration m : coherentMappings) {
-      groups.add(new Group(m, rule));
+      groups.add(new Group(m));
     }
     boolean withConflicts = false;
     for (int i = 1, x = groups.size(); i < x; i++) {
       final Group prev = groups.get(i - 1);
       final Group curr = groups.get(i);
       if (prev.isTopPriority() != curr.isTopPriority()) {
-        myConflicts.register(Kind.CoherentPrioMix, prev, curr);
+        myConflicts.registerCoherentPriorityMix(prev, curr, rule);
         withConflicts = true;
       }
     }
@@ -200,8 +199,7 @@ public class PartitioningSolver {
       }
       if (step.isEmpty()) {
         if (topPriorityGroup) {
-          final Collection<Group> left = myPriorityGraph.getGroupsNotInDependency();
-          myConflicts.register(Kind.PastTopPri, left.toArray(new Group[left.size()]));
+          myPriorityGraph.reportEdgesLeft(myConflicts);
           break;
         }
         topPriorityGroup = true;
@@ -229,13 +227,10 @@ public class PartitioningSolver {
       for (Iterator<Group> it = queue.iterator(); it.hasNext(); ) {
         Group g = it.next();
         if (head.hasCommonMappings(g)) {
-          if (head.isTopPriority() == g.isTopPriority()) {
-            toMerge.add(g);
-          } else {
-            // in fact, can never happen, provided mySameStepGroups are checked for same topPri setting at construction
-            // but it doesn't hurt to check once again
-            myConflicts.register(Kind.CoherentPrioMix, head, g);
-          }
+          // the way mySameStepGroups are checked for same topPri setting at construction ensures single group is consistent
+          // and hence two intersecting groups can't fail this
+          assert head.isTopPriority() == g.isTopPriority();
+          toMerge.add(g);
           it.remove();
         }
       }

@@ -19,14 +19,13 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.interpreted.TemplateMappingConfigurationInterpreted;
 import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.junit.Assert;
@@ -53,7 +52,7 @@ public class GenPlanTest {
 
   @Before
   public void setup() {
-    myConflicts = new PriorityConflicts();
+    myConflicts = new PriorityConflicts(Collections.<TemplateModule>emptyList());
     mySolver = new PartitioningSolver(myConflicts);
   }
 
@@ -289,6 +288,36 @@ public class GenPlanTest {
     assertFalse(myConflicts.get(Kind.LoPriLocksHiPri).isEmpty());
   }
 
+  /**
+   * A and B both top priority mc
+   * A < B
+   * A < C
+   *
+   * Expected: {A} {B} {C}
+   */
+  @Test
+  public void testTopPrioDependsOnTopPrio() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", true);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", true);
+    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
+    mySolver.prepare(allConfigs);
+    addStrict(tmcA, tmcB);
+    addStrict(tmcA, tmcC);
+    final List<GenerationPhase> phases = mySolver.solveNew();
+    assertFalse(myConflicts.hasConflicts());
+    assertEquals(3, phases.size());
+    final List<Group> groupsPhase1 = phases.get(0).getGroups();
+    final List<Group> groupsPhase2 = phases.get(1).getGroups();
+    final List<Group> groupsPhase3 = phases.get(2).getGroups();
+    assertEquals(1, groupsPhase1.size());
+    assertEquals(1, groupsPhase2.size());
+    assertEquals(1, groupsPhase2.size());
+    assertEquals(new Group(tmcA), groupsPhase1.get(0));
+    assertEquals(new Group(tmcB), groupsPhase2.get(0));
+    assertEquals(new Group(tmcC), groupsPhase3.get(0));
+  }
+
     /**
      * A <= B(topPri)
      * A < C
@@ -360,8 +389,8 @@ public class GenPlanTest {
     print(mySolver.solve());
     if (myConflicts.hasConflicts()) {
       System.out.println("CONFLICTS!");
-      for (Pair<TemplateMappingPriorityRule, String> p : myConflicts.describe()) {
-        System.out.println(p.o2);
+      for (Conflict c : myConflicts.getConflicts()) {
+        System.out.println(c.getText());
       }
     }
     Assert.fail();

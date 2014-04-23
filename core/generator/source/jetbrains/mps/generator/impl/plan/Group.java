@@ -35,42 +35,32 @@ import java.util.Set;
 @Immutable
 final class Group {
   private final Set<TemplateMappingConfiguration> myMappings;
-  // rules these mappings originate from
-  private final Set<MappingPriorityRule> myRules;
   private final boolean myIsTopPriority;
 
-  private Group(Set<TemplateMappingConfiguration> mappings, Set<MappingPriorityRule> rules, boolean topPri) {
+  private Group(Set<TemplateMappingConfiguration> mappings, boolean topPri) {
     myMappings = mappings;
-    myRules = rules;
     myIsTopPriority = topPri;
   }
 
   public Group() {
-    this(Collections.<TemplateMappingConfiguration>emptySet(), Collections.<MappingPriorityRule>emptySet(), false);
+    this(Collections.<TemplateMappingConfiguration>emptySet(), false);
   }
 
   public Group(@NotNull TemplateMappingConfiguration cfg) {
-    this(Collections.singleton(cfg), Collections.<MappingPriorityRule>emptySet(), cfg.isTopPriority());
-  }
-
-  public Group(@NotNull TemplateMappingConfiguration cfg, @NotNull MappingPriorityRule rule) {
-    this(Collections.singleton(cfg), Collections.singleton(rule), cfg.isTopPriority());
+    this(Collections.singleton(cfg), cfg.isTopPriority());
   }
 
   public Group(Iterable<Group> other) {
     HashSet<TemplateMappingConfiguration> mappings = new HashSet<TemplateMappingConfiguration>();
-    HashSet<MappingPriorityRule> rules = new HashSet<MappingPriorityRule>();
     HashMap<Boolean, Group> topPri = new HashMap<Boolean, Group>();
     for (Group g : other) {
       mappings.addAll(g.myMappings);
-      rules.addAll(g.myRules);
       topPri.put(g.isTopPriority(), g);
     }
     if (topPri.size() != 1) {
       throw new IllegalArgumentException(String.format("Can't create a group from a set of groups with different 'top priority' setting: %s", other));
     }
     myMappings = mappings;
-    myRules = rules;
     myIsTopPriority = topPri.keySet().iterator().next();
   }
 
@@ -81,9 +71,7 @@ final class Group {
   public Group subtract(Group other) {
     final HashSet<TemplateMappingConfiguration> mc = new HashSet<TemplateMappingConfiguration>(myMappings);
     mc.removeAll(other.myMappings);
-    final HashSet<MappingPriorityRule> rules = new HashSet<MappingPriorityRule>(myRules);
-    rules.removeAll(other.myRules);
-    return new Group(mc, rules, myIsTopPriority);
+    return new Group(mc, myIsTopPriority);
   }
 
   public Group union(Group other) {
@@ -92,10 +80,6 @@ final class Group {
 
   public Collection<TemplateMappingConfiguration> getElements() {
     return myMappings;
-  }
-
-  public Collection<MappingPriorityRule> getRules() {
-    return myRules;
   }
 
   public boolean isEmpty() {
@@ -140,8 +124,7 @@ final class Group {
       sb.append(c.getName());
       sb.append(',');
     }
-    sb.append(myRules.size());
-    sb.append(" rules]");
+    sb.append(']');
     return sb.toString();
   }
 }

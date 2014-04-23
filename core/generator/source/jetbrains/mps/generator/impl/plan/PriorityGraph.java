@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
@@ -23,6 +22,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -44,9 +44,10 @@ class PriorityGraph {
 
   public void addEdge(TemplateMappingConfiguration tmc, Collection<TemplateMappingConfiguration> appliedSooner, MappingPriorityRule rule) {
     boolean isStrict = rule.getType() == RuleType.STRICTLY_BEFORE || rule.getType() == RuleType.STRICTLY_AFTER;
-    final Group lowPriorityGroup = new Group(tmc, rule);
+    final Group lowPriorityGroup = new Group(tmc);
+    final Set<MappingPriorityRule> ruleSet = Collections.singleton(rule);
     for (TemplateMappingConfiguration sooner : appliedSooner) {
-      myRulePriorityEntries.add(new Entry(lowPriorityGroup, new Group(sooner, rule), isStrict));
+      myRulePriorityEntries.add(new Entry(lowPriorityGroup, new Group(sooner), isStrict, ruleSet));
     }
     myNonTrivialEdges.add(tmc);
   }
@@ -89,13 +90,15 @@ class PriorityGraph {
         }
         weakGotUpdate = true;
         final Entry newEntry;
+        HashSet<MappingPriorityRule> mergedRules = new HashSet<MappingPriorityRule>(entry.getRules());
+        mergedRules.addAll(weak.getRules());
         if (substituteForSooner) {
           // A <= B; X < A, Y <= A   -->  add rules X < B, Y <= B
-          newEntry = new Entry(weak.later(), entry.sooner(), entry.isStrict());
+          newEntry = new Entry(weak.later(), entry.sooner(), entry.isStrict(), mergedRules);
         } else {
           assert dependsOnWeak;
           // A <= B; B < C, B <= D   --> add rules A < C, A <= D
-          newEntry = new Entry(entry.later(), weak.sooner(), entry.isStrict());
+          newEntry = new Entry(entry.later(), weak.sooner(), entry.isStrict(), mergedRules);
         }
         toAdd.add(newEntry);
         if (!newEntry.isStrict() && !newEntry.isTrivial()) {
@@ -104,7 +107,7 @@ class PriorityGraph {
       }
       if (!weakGotUpdate) {
         // neither lhs nor rhs of the weak edge is part of any other edge, it's safe to replace it with strict
-        toAdd.add(new Entry(weak.later(), weak.sooner(), true));
+        toAdd.add(new Entry(weak.later(), weak.sooner(), true, weak.getRules()));
         // Does A <= B without any dependant rules effectively means A and B are independent?
         // perhaps, shall replace with two edges, later -> empty and sooner -> empty instead?
       }
@@ -140,7 +143,7 @@ class PriorityGraph {
         if (soonerMatches && laterMatches) {
           if (entry.isStrict()) {
             // same TMC on both sides of the strict rule
-            conflicts.register(Kind.CoherentWithStrict, g, entry.sooner(), entry.later());
+            conflicts.registerCoherentWithStrict(g, entry.sooner(), entry.getRules());
             toRemove.add(entry);
           }
           continue;
@@ -201,11 +204,14 @@ class PriorityGraph {
     }
   }
 
+  // XXX next methods (including, but not limited to those with PriorityConflicts) cry for edge iterator
+  // (either external or internal), so that we can decouple graph and alg impl from error checking
+
   void checkSelfLocking(PriorityConflicts conflicts) {
     for (Entry edge : myRulePriorityEntries) {
       if (edge.sooner().hasCommonMappings(edge.later())) {
         if (edge.isStrict()) {
-          conflicts.register(Kind.SelfLock, edge.sooner(), edge.later());
+          conflicts.registerSelfLock(edge.sooner(), edge.later(), edge.getRules());
         }
         // remove self-lock
         edge.subtractFromSooner(edge.later());
@@ -220,11 +226,20 @@ class PriorityGraph {
         continue;
       }
       if (edge.later().isTopPriority() && !edge.sooner().isTopPriority()) {
-        conflicts.register(Kind.LoPriLocksHiPri, edge.sooner(), edge.later());
+        conflicts.registerLoPriLocksHiPri(edge.sooner(), edge.later(), edge.getRules());
         toDrop.add(edge);
       }
     }
     myRulePriorityEntries.removeAll(toDrop);
+  }
+
+  void reportEdgesLeft(PriorityConflicts conflicts) {
+    for (Entry edge : myRulePriorityEntries) {
+      if (edge.isTrivial()) {
+        continue;
+      }
+      conflicts.registerLeftovers(edge.later(), edge.getRules());
+    }
   }
 
   public boolean isEmpty() {
@@ -238,7 +253,7 @@ class PriorityGraph {
   }
 
   private static Entry newTrivialEdge(Group g) {
-    return new Entry(g, new Group(), false);
+    return new Entry(g, new Group(), false, Collections.<MappingPriorityRule>emptyList());
   }
 
   // Edge of dependency graph
@@ -246,11 +261,14 @@ class PriorityGraph {
     private Group myLaterGroup;
     private Group mySoonerGroup;
     private final boolean myStrict;
+    // rules this relation originates from
+    private final Set<MappingPriorityRule> myRules;
 
-    public Entry(Group lowPriorityGroup, Group highPriorityGroup, boolean strict) {
+    public Entry(Group lowPriorityGroup, Group highPriorityGroup, boolean strict, Collection<MappingPriorityRule> rules) {
       myLaterGroup = lowPriorityGroup;
       mySoonerGroup = highPriorityGroup;
       myStrict = strict;
+      myRules = new HashSet<MappingPriorityRule>(rules);
     }
 
     public Group later() {
@@ -261,10 +279,15 @@ class PriorityGraph {
       return mySoonerGroup;
     }
 
+    public Set<MappingPriorityRule> getRules() {
+      return myRules;
+    }
+
     public boolean isStrict() {
       return myStrict;
     }
 
+    // Trivial edge is auxiliary, merely a mechanism to complete graph and to report all the vertices during topological sorting
     public boolean isTrivial() {
       return mySoonerGroup.isEmpty();
     }

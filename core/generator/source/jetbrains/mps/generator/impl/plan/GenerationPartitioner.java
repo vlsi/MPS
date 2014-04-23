@@ -63,7 +63,7 @@ public class GenerationPartitioner {
 
   public GenerationPartitioner(Collection<TemplateModule> generators) {
     myGenerators = generators;
-    myConflicts = new PriorityConflicts();
+    myConflicts = new PriorityConflicts(generators);
     mySolver = new PartitioningSolver(myConflicts);
 
     myModulesMap = new HashMap<SModuleReference, TemplateModule>(myGenerators.size());
