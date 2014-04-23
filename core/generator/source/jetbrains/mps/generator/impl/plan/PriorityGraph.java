@@ -25,11 +25,26 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
 /**
  * Graph of Groups, where each group constitutes one or more map configurations.
+ *
+ * Invariant, once #finalizeEdges has been invoked:
+ *    foreach entry1 in myRulePriorityEntries {
+ *      Exists entry2 in myRulePriorityEntries : entry1.sooner == entry2.later
+ *    }
+ *    In other words, for rules A < C, B < C we don't keep single edge AB < C, but two distinct edges.
+ *    Groups are merged when there's 'strictly together' relation between them, and all rules including parts
+ *    of the merged group are updated to use this new merged node.
+ *    I.e. with A == B rule, AB < C (and, if no other rule present, 0 < AB) would replace both A < C and B < C rules.
+ *    Dependencies outside of 'strictly together' group are kept as separate edges, i.e. B = D would yield
+ *    A < C, BD < C (and, perhaps, 0 < BD) rules, not ABD < C or {A, BD} < C
+ *
+ *    As a most notable consequence, Group.includes and Group.hasCommonMappings() shall be used exclusively
+ *    when dealing with incomplete coherent groups.
  * @author Artem Tikhomirov
  */
 class PriorityGraph {
@@ -38,7 +53,7 @@ class PriorityGraph {
   private final Set<TemplateMappingConfiguration> myNonTrivialEdges;
 
   public PriorityGraph() {
-    myRulePriorityEntries = new ArrayList<Entry>();
+    myRulePriorityEntries = new LinkedList<Entry>();
     myNonTrivialEdges = new HashSet<TemplateMappingConfiguration>();
   }
 
@@ -82,9 +97,9 @@ class PriorityGraph {
       Collection<Entry> toAdd = new ArrayList<Entry>();
       for (Entry entry : myRulePriorityEntries) {
         // entry dependency may be substituted for weak dependency
-        final boolean substituteForSooner = entry.later().hasCommonMappings(weak.sooner());
+        final boolean substituteForSooner = entry.later().equals(weak.sooner());
         // entry depends on weak dependency
-        final boolean dependsOnWeak = entry.sooner().includes(weak.later());
+        final boolean dependsOnWeak = entry.sooner().equals(weak.later());
         if (!substituteForSooner && !dependsOnWeak) {
           continue;
         }
@@ -119,7 +134,7 @@ class PriorityGraph {
           continue;
         }
         for (Entry e : myRulePriorityEntries) {
-          if (e.later().includes(next.later())) {
+          if (e.later().equals(next.later())) {
             it.remove();
             break;
           }
@@ -129,64 +144,73 @@ class PriorityGraph {
     }
   }
 
+  // pre: groups in coherentMappings do not intersect
   public void updateWithCoherent(List<Group> coherentMappings, PriorityConflicts conflicts) {
     // if any of 'coherent' mappings happens before another group, make this group dependant from all coherent mappings.
     // if there's no mapping that establish relation for coherent mapping (i.e. only 'trivial' mappings), replace these trivial mappings with single
     // one with the coherent group
-    Collection<Entry> toRemove = new ArrayList<Entry>(5);
-    Collection<Entry> toAdd = new ArrayList<Entry>(5);
+    Collection<Entry> toRemove = new HashSet<Entry>();
+    Collection<Entry> toAdd = new HashSet<Entry>();
     for (Group g : coherentMappings) {
-      boolean edgeWithNonEmptyDependency = false;
+      boolean coherentGroupNeedsTrivialEdge = true;
       for (Entry entry : myRulePriorityEntries) {
-        final boolean soonerMatches = entry.sooner().hasCommonMappings(g);
+        final boolean soonerMatches = g.includes(entry.sooner());
         final boolean laterMatches = g.includes(entry.later());
+        if (!soonerMatches && !laterMatches) {
+          continue;
+        }
         if (soonerMatches && laterMatches) {
           if (entry.isStrict()) {
             // same TMC on both sides of the strict rule
             conflicts.registerCoherentWithStrict(g, entry.sooner(), entry.getRules());
-            toRemove.add(entry);
           }
+          toRemove.add(entry); // no reason to keep AB <= AB entry;
+          // if there would be no other edge with coherent group, coherentGroupNeedsTrivialEdge ensures coherent group doesn't get lost
           continue;
         }
+        toRemove.add(entry);
         if (soonerMatches) {
-          entry.updateSoonerWith(g);
+          // introduce a new edge, from entry's later to coherent group
+          toAdd.add(new Entry(entry.later(), g, entry.isStrict(), entry.getRules()));
         }
         if (laterMatches) {
-          if (entry.isTrivial()) {
-            // found 'element of coherent'->empty. There's little value keeping it, unless there are no other rules.
-            // I use edgeWithNonEmptyDependency to track if there's an entry 'coherent'->non-empty
-            toRemove.add(entry);
-          } else {
-            entry.replaceLaterWith(g);
-            edgeWithNonEmptyDependency = true;
+          // There's little value replacing 'element of coherent'->empty. with 'coherent group'->empty, unless there are no other rules.
+          // I use coherentGroupNeedsTrivialEdge to track if there's an entry 'coherent'->non-empty
+          if (!entry.isTrivial()) {
+            toAdd.add(new Entry(g, entry.sooner(), entry.isStrict(), entry.getRules()));
+            coherentGroupNeedsTrivialEdge = false;
           }
         }
       }
-      if (!edgeWithNonEmptyDependency) {
+      if (coherentGroupNeedsTrivialEdge) {
         toAdd.add(newTrivialEdge(g));
       }
+      myRulePriorityEntries.addAll(toAdd);
+      myRulePriorityEntries.removeAll(toRemove);
+      toAdd.clear();
+      toRemove.clear();
     }
-    myRulePriorityEntries.addAll(toAdd);
-    myRulePriorityEntries.removeAll(toRemove);
   }
+
 
   public Collection<Group> getGroupsNotInDependency() {
     HashSet<Group> rv = new HashSet<Group>();
+    // all groups that appear at 'sooner' side of rules
+    HashSet<Group> allSoonerGroups = new HashSet<Group>(myRulePriorityEntries.size() * 2);
+    // there might be multiple dependency edges from a single node, no need to check same node more than once
+    HashSet<Group> uniqueLaterGroups = new HashSet<Group>(myRulePriorityEntries.size() * 2);
     for (Entry e : myRulePriorityEntries) {
-      if (!locksAnybody(e.later())) {
-        rv.add(e.later());
+      if (!e.isTrivial()) {
+        allSoonerGroups.add(e.sooner());
+      }
+      uniqueLaterGroups.add(e.later());
+    }
+    for (Group candidate : uniqueLaterGroups) {
+      if (!allSoonerGroups.contains(candidate)) {
+        rv.add(candidate);
       }
     }
     return rv;
-  }
-
-  private boolean locksAnybody(Group g) {
-    for (Entry e : myRulePriorityEntries) {
-      if (e.sooner().hasCommonMappings(g)) {
-        return true;
-      }
-    }
-    return false;
   }
 
   public void dropEdgesOf(Collection<Group> groups) {
@@ -196,10 +220,8 @@ class PriorityGraph {
       }
     }
     for (Entry entry : myRulePriorityEntries) {
-      for (Group g : groups) {
-        if (entry.sooner().hasCommonMappings(g)) {
-          entry.subtractFromSooner(g);
-        }
+      if (groups.contains(entry.sooner())) {
+        entry.makeTrivial();
       }
     }
   }
@@ -209,12 +231,12 @@ class PriorityGraph {
 
   void checkSelfLocking(PriorityConflicts conflicts) {
     for (Entry edge : myRulePriorityEntries) {
-      if (edge.sooner().hasCommonMappings(edge.later())) {
+      if (edge.sooner().equals(edge.later())) {
         if (edge.isStrict()) {
           conflicts.registerSelfLock(edge.sooner(), edge.later(), edge.getRules());
         }
         // remove self-lock
-        edge.subtractFromSooner(edge.later());
+        edge.makeTrivial();
       }
     }
   }
@@ -292,20 +314,14 @@ class PriorityGraph {
       return mySoonerGroup.isEmpty();
     }
 
-    public void replaceLaterWith(Group g) {
-      myLaterGroup = g;
-    }
-
-    public void updateSoonerWith(Group g) {
-      mySoonerGroup = mySoonerGroup.union(g);
-    }
-    public void subtractFromSooner(Group g) {
-      mySoonerGroup = mySoonerGroup.subtract(g);
+    public void makeTrivial() {
+      mySoonerGroup = new Group();
     }
 
     @Override
     public String toString() {
       return String.format("%s %s %s", mySoonerGroup, isStrict() ? '<' : '\u2264', myLaterGroup);
     }
+
   }
 }

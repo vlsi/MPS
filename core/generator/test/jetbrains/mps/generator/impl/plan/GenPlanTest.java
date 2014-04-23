@@ -173,7 +173,7 @@ public class GenPlanTest {
    * Expected: {ABC} or {A} {BC} (two steps), but not {A,BC} (single steps with two unrelated groups)
    */
   @Test
-  public void testWeakWithCoherent() {
+  public void testWeakWithCoherent_1() {
     TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
     TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
     TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
@@ -186,10 +186,46 @@ public class GenPlanTest {
     assertFalse(myConflicts.hasConflicts());
     assertEquals(1, phases.size());
     final List<Group> groups = phases.get(0).getGroups();
+    /*
+    This is how it shall work to support steps grouped by generator. Present implementation is ok while
+    we try to stick as much as possible into a single step, {A, BC} is fine. However, once generator-grouped
+    steps come into play, there are chances {A, BC} get executed as {BC} {A}, violating A <= B constraint.
+
     assertEquals(groups.toString(), 1, groups.size());
     Group g = groups.get(0);
     assertEquals(allConfigs.size(), g.getElements().size());
     assertTrue(g.getElements().containsAll(allConfigs));
+     */
+    assertEquals(2, groups.size());
+    HashSet<Group> expected = new HashSet<Group>();
+    expected.add(new Group(tmcA));
+    expected.add(new Group(tmcB).union(new Group(tmcC)));
+    assertEquals(expected, new HashSet<Group>(groups));
+
+  }
+
+  /**
+   * Coherent mappings on both sides of weak rule
+   * A <= B
+   * A == B
+   *
+   * Expected: {AB}
+   */
+  @Test
+  public void testWeakWithCoherent_2() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
+    mySolver.prepare(allConfigs);
+    addWeak(tmcA, tmcB);
+    addCoherentConfigs(tmcA, tmcB);
+    //
+    final List<GenerationPhase> phases = mySolver.solveNew();
+    assertFalse(myConflicts.hasConflicts());
+    assertEquals(1, phases.size());
+    final List<Group> groups = phases.get(0).getGroups();
+    assertEquals(groups.toString(), 1, groups.size());
+    assertEquals(new Group(tmcA).union(new Group(tmcB)), groups.get(0));
   }
 
   /**
@@ -382,6 +418,100 @@ public class GenPlanTest {
     assertEquals(new Group(tmcB), groupsPhase2.get(0));
   }
 
+  /**
+   * A, B, C < D
+   * B == E
+   *
+   * Expected: {A, C, BE} {D}
+   */
+  @Test
+  public void testReplaceCoherent_1() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcD = new MockMapConfig("D", false);
+    TemplateMappingConfiguration tmcE = new MockMapConfig("E", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD, tmcE);
+    mySolver.prepare(allConfigs);
+    addStrict(tmcA, tmcD);
+    addStrict(tmcB, tmcD);
+    addStrict(tmcC, tmcD);
+    addCoherentConfigs(tmcB, tmcE);
+    final List<GenerationPhase> phases = mySolver.solveNew();
+    assertFalse(myConflicts.hasConflicts());
+    assertEquals(2, phases.size());
+    final List<Group> groupsPhase1 = phases.get(0).getGroups();
+    final List<Group> groupsPhase2 = phases.get(1).getGroups();
+    assertEquals(3, groupsPhase1.size());
+    assertEquals(1, groupsPhase2.size());
+    final Set<Group> expectedPhase1 = asSet(tmcA, tmcC);
+    expectedPhase1.add(new Group(tmcB).union(new Group(tmcE)));
+    assertEquals(expectedPhase1, new HashSet<Group>(groupsPhase1));
+    assertEquals(new Group(tmcD), groupsPhase2.get(0));
+  }
+
+  /**
+   * Check we replace coherent groups on both sides of a rule
+   * (first coherent group updates the edge, and second coherent group shall update the edge once again)
+   * A  < B
+   * A == C
+   * B == D
+   *
+   * Expected: {AC} {BD}
+   */
+  @Test
+  public void testReplaceCoherent_2() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    TemplateMappingConfiguration tmcD = new MockMapConfig("D", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC, tmcD);
+    mySolver.prepare(allConfigs);
+    addStrict(tmcA, tmcB);
+    addCoherentConfigs(tmcA, tmcC);
+    addCoherentConfigs(tmcB, tmcD);
+    final List<GenerationPhase> phases = mySolver.solveNew();
+    assertFalse(myConflicts.hasConflicts());
+    assertEquals(2, phases.size());
+    final List<Group> groupsPhase1 = phases.get(0).getGroups();
+    final List<Group> groupsPhase2 = phases.get(1).getGroups();
+    assertEquals(1, groupsPhase1.size());
+    assertEquals(1, groupsPhase2.size());
+    assertEquals(asSingleGroup(tmcA, tmcC), groupsPhase1.get(0));
+    assertEquals(asSingleGroup(tmcB, tmcD), groupsPhase2.get(0));
+  }
+
+  /**
+   * Check if replacement of coherent yields identical rules (and alg doesn't fail/hang)
+   * A  < C
+   * B  < C
+   * A == B
+   *
+   * Expected: {AB} {C}
+   */
+  @Test
+  public void testReplaceCoherent_3() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
+    mySolver.prepare(allConfigs);
+    addStrict(tmcA, tmcC);
+    addStrict(tmcB, tmcC);
+    addCoherentConfigs(tmcA, tmcB);
+    print(mySolver.solve());
+    final List<GenerationPhase> phases = mySolver.solveNew();
+    assertFalse(myConflicts.hasConflicts());
+    assertEquals(2, phases.size());
+    final List<Group> groupsPhase1 = phases.get(0).getGroups();
+    final List<Group> groupsPhase2 = phases.get(1).getGroups();
+    assertEquals(1, groupsPhase1.size());
+    assertEquals(1, groupsPhase2.size());
+    assertEquals(asSingleGroup(tmcA, tmcB), groupsPhase1.get(0));
+    assertEquals(new Group(tmcC), groupsPhase2.get(0));
+  }
+
+
   private void go() {
     System.out.println("New");
     print(GenerationPartitioner.phaseAsPlainList(mySolver.solveNew()));
@@ -435,6 +565,14 @@ public class GenPlanTest {
     HashSet<Group> rv = new HashSet<Group>();
     for (TemplateMappingConfiguration mc : tmc) {
       rv.add(new Group(mc));
+    }
+    return rv;
+  }
+
+  private static Group asSingleGroup(TemplateMappingConfiguration... tmc) {
+    Group rv = new Group(tmc[0]);
+    for (int i = 1, x = tmc.length; i < x; i++) {
+      rv = rv.union(new Group(tmc[i]));
     }
     return rv;
   }

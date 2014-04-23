@@ -36,10 +36,12 @@ import java.util.Set;
 final class Group {
   private final Set<TemplateMappingConfiguration> myMappings;
   private final boolean myIsTopPriority;
+  private final int myHash;
 
   private Group(Set<TemplateMappingConfiguration> mappings, boolean topPri) {
     myMappings = mappings;
     myIsTopPriority = topPri;
+    myHash = myMappings.hashCode();
   }
 
   public Group() {
@@ -62,10 +64,7 @@ final class Group {
     }
     myMappings = mappings;
     myIsTopPriority = topPri.keySet().iterator().next();
-  }
-
-  public boolean hasCommonMappings(Group other) {
-    return CollectionUtil.intersects(myMappings, other.myMappings);
+    myHash = myMappings.hashCode();
   }
 
   public Group subtract(Group other) {
@@ -92,7 +91,7 @@ final class Group {
 
   @Override
   public int hashCode() {
-    return myMappings.hashCode();
+    return myHash;
   }
 
   @Override
@@ -106,8 +105,18 @@ final class Group {
     return myMappings.equals(((Group) other).myMappings);
   }
 
+  public boolean hasCommonMappings(Group other) {
+    return CollectionUtil.intersects(myMappings, other.myMappings);
+  }
+
   public boolean includes(Group other) {
-    return other.isEmpty() ? isEmpty() : myMappings.containsAll(other.myMappings);
+    if (other.myMappings.size() > myMappings.size()) {
+      return false;
+    }
+    if (other.isEmpty()) {
+      return isEmpty();
+    }
+    return myMappings.containsAll(other.myMappings);
   }
 
   @Override
