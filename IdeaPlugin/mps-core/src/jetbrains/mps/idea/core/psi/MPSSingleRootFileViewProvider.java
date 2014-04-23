@@ -25,6 +25,7 @@ import com.intellij.testFramework.LightVirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.ModelAccess;
@@ -58,7 +59,7 @@ public abstract class MPSSingleRootFileViewProvider extends SingleRootFileViewPr
       return null;
     }
     PsiFile psiFile = getCachedPsi(MPSLanguage.INSTANCE);
-    if (psiFile == null) {
+    if (psiFile == null || (psiFile instanceof MPSPsiNodeBase && !psiFile.isValid())) {
       psiFile = createFile();
       forceCachedPsi(psiFile);
     }
