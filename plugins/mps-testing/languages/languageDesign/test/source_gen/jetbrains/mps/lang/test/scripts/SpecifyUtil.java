@@ -24,7 +24,7 @@ public class SpecifyUtil {
 
   public static Iterable<IErrorReporter> getErrorReporters(SNode node) {
     TestsErrorsChecker checker = new TestsErrorsChecker(node);
-    return checker.getErrorReporters();
+    return checker.getErrors();
   }
 
 

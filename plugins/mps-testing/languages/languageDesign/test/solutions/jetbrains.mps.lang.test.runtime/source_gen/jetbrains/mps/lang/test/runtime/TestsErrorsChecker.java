@@ -6,21 +6,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
-import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.checkers.LanguageChecker;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.errors.MessageStatus;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 
 public class TestsErrorsChecker {
   private SNode node;
-  private static TestsErrorsChecker.ErrorsHolder<IErrorReporter> errorsHolder = new TestsErrorsChecker.ErrorsHolder();
+  private static TestsErrorsChecker.ModelErrorsHolder<IErrorReporter> modelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder();
 
 
   public TestsErrorsChecker(SNode node) {
@@ -29,25 +28,22 @@ public class TestsErrorsChecker {
 
 
 
-  public Iterable<IErrorReporter> getTypeSystemErrorReporters() {
+  private Iterable<IErrorReporter> getTypeSystemErrors() {
     INodeChecker checker = new TypesystemChecker();
-    final Set<IErrorReporter> errors = checker.getErrors(SNodeOperations.getContainingRoot(node), null);
-    return filterReportersByNode(errors, node);
+    return checker.getErrors(SNodeOperations.getContainingRoot(node), null);
   }
 
 
 
-  public Iterable<IErrorReporter> getConstraintsErrorReporters() {
+  private Iterable<IErrorReporter> getConstraintsErrors() {
     INodeChecker checker = new LanguageChecker();
-    IOperationContext context = null;
-    final Set<IErrorReporter> errors = checker.getErrors(node, context);
-    return filterReportersByNode(errors, node);
+    return checker.getErrors(SNodeOperations.getContainingRoot(node), null);
   }
 
 
 
-  private Iterable<IErrorReporter> filterReportersByNode(final Set<IErrorReporter> errors, final SNode node) {
-    return SetSequence.fromSet(errors).where(new IWhereFilter<IErrorReporter>() {
+  private Iterable<IErrorReporter> filterReportersByNode(final Iterable<IErrorReporter> errors, final SNode node) {
+    return Sequence.fromIterable(errors).where(new IWhereFilter<IErrorReporter>() {
       public boolean accept(IErrorReporter it) {
         return it.getSNode().equals(node);
       }
@@ -56,23 +52,38 @@ public class TestsErrorsChecker {
 
 
 
-  public Iterable<IErrorReporter> getErrorReporters() {
-    Set<IErrorReporter> cachedErrors = errorsHolder.get(SNodeOperations.getModel(node));
+  public Iterable<IErrorReporter> getErrors() {
+    Iterable<IErrorReporter> result = getModelErrors();
+    return filterReportersByNode(result, node);
+  }
+
+
+
+  private Iterable<IErrorReporter> getModelErrors() {
+    Set<IErrorReporter> cachedErrors = modelErrorsHolder.get(SNodeOperations.getModel(node));
     if (cachedErrors != null) {
       return SetSequence.fromSet(cachedErrors).toListSequence();
     }
-    Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
-    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getTypeSystemErrorReporters()));
-    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getConstraintsErrorReporters()));
-    errorsHolder.set(SNodeOperations.getModel(node), result);
+
+    Set<IErrorReporter> result = collectModelErrors();
     return result;
   }
 
 
 
-  public Iterable<IErrorReporter> getErrorReportersSpecificType(final MessageStatus errorType) {
+  private Set<IErrorReporter> collectModelErrors() {
     Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
-    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getErrorReporters()).where(new IWhereFilter<IErrorReporter>() {
+    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getTypeSystemErrors()));
+    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getConstraintsErrors()));
+    modelErrorsHolder.set(SNodeOperations.getModel(node), result);
+    return result;
+  }
+
+
+
+  public Iterable<IErrorReporter> getErrorsSpecificType(final MessageStatus errorType) {
+    Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
+    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getErrors()).where(new IWhereFilter<IErrorReporter>() {
       public boolean accept(IErrorReporter it) {
         return it.getMessageStatus() == errorType;
       }
@@ -82,7 +93,7 @@ public class TestsErrorsChecker {
 
 
 
-  private static class ErrorsHolder<T> {
+  private static class ModelErrorsHolder<T> {
     private Set<T> cachedErrors;
     private SModel actualModel;
 

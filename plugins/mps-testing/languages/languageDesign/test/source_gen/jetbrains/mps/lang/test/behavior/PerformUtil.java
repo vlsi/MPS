@@ -18,7 +18,7 @@ public class PerformUtil {
   public static void checkNodeHasError(SNode operation) {
     final SNode nodeToCheck = NodeCheckOperation_Behavior.call_getAnnotatedNode_2912288420882528229(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(nodeToCheck);
-    final Iterable<IErrorReporter> errorReporters = checker.getErrorReportersSpecificType(MessageStatus.ERROR);
+    final Iterable<IErrorReporter> errorReporters = checker.getErrorsSpecificType(MessageStatus.ERROR);
 
     final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(nodeToCheck) + "> does not have expected error message";
 
@@ -31,7 +31,7 @@ public class PerformUtil {
   public static void checkNodeHasWarning(SNode operation) {
     final SNode nodeToCheck = NodeCheckOperation_Behavior.call_getAnnotatedNode_2912288420882528229(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(nodeToCheck);
-    final Iterable<IErrorReporter> errorReporters = checker.getErrorReportersSpecificType(MessageStatus.WARNING);
+    final Iterable<IErrorReporter> errorReporters = checker.getErrorsSpecificType(MessageStatus.WARNING);
 
     final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(nodeToCheck) + "> does not have expected warning message";
 

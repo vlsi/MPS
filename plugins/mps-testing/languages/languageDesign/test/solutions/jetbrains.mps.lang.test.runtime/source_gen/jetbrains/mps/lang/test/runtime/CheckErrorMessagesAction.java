@@ -30,7 +30,7 @@ public class CheckErrorMessagesAction implements Runnable {
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (!(hasErrorOrWarningCheckOperationTag(child))) {
         TestsErrorsChecker checker = new TestsErrorsChecker(child);
-        final Iterable<IErrorReporter> reporters = checker.getErrorReporters();
+        final Iterable<IErrorReporter> reporters = checker.getErrors();
         for (IErrorReporter reporter : reporters) {
           final String messageString = getErrorString(reporter, child);
           checkWarnings(reporter, messageString);

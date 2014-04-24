@@ -92,7 +92,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)/7796829026680935427">
     <nodeInfo nodeId="7796829026680936666" fileName="SpecifyUtil.java" startLine="19" startPosition="58" endLine="20" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1089663077933662464" fileName="SpecifyUtil.java" startLine="25" startPosition="72" endLine="26" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7796829026680947410" fileName="SpecifyUtil.java" startLine="26" startPosition="62" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7796829026680947410" fileName="SpecifyUtil.java" startLine="26" startPosition="62" endLine="27" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1334460907022745824" fileName="SpecifyUtil.java" startLine="32" startPosition="64" endLine="33" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7796829026681387172" fileName="SpecifyUtil.java" startLine="33" startPosition="73" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="5587533744543826748" fileName="SpecifyUtil.java" startLine="34" startPosition="41" endLine="35" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -112,7 +112,7 @@
     <nodeInfo nodeId="5587533744543837495" fileName="SpecifyUtil.java" startLine="36" startPosition="77" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7796829026681047861" fileName="SpecifyUtil.java" startLine="32" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fillContainerWithRuleMessages#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="7796829026680936655" fileName="SpecifyUtil.java" startLine="19" startPosition="58" endLine="20" endPosition="151" />
-    <scopeInfo nodeId="7796829026680945153" fileName="SpecifyUtil.java" startLine="25" startPosition="72" endLine="27" endPosition="39">
+    <scopeInfo nodeId="7796829026680945153" fileName="SpecifyUtil.java" startLine="25" startPosition="72" endLine="27" endPosition="31">
       <varInfo nodeId="1089663077933662465" varName="checker" />
     </scopeInfo>
     <scopeInfo nodeId="7796829026681259805" fileName="SpecifyUtil.java" startLine="47" startPosition="53" endLine="49" endPosition="155">

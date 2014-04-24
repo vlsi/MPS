@@ -73,8 +73,8 @@ public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfile
       @Override
       public void run() {
         for (ITestNodeWrapper<?> wrapper : nodeWrappers0) {
-          if ((SNodeOperations.isInstanceOf(wrapper.getNode(), "jetbrains.mps.lang.test.structure.EditorTestCase")) ||
-              (SNodeOperations.isInstanceOf(wrapper.getNode(), "jetbrains.mps.lang.test.structure.NodesTestCase")))
+          if ((SNodeOperations.isInstanceOf(wrapper.getNode().getContainingRoot(), "jetbrains.mps.lang.test.structure.EditorTestCase")) ||
+              (SNodeOperations.isInstanceOf(wrapper.getNode().getContainingRoot(), "jetbrains.mps.lang.test.structure.NodesTestCase")))
             nodeWrappers.add(wrapper);
         }
       }

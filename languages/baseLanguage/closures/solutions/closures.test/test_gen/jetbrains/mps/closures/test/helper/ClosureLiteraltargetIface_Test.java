@@ -21,13 +21,13 @@ import jetbrains.mps.smodel.SReference;
 public class ClosureLiteraltargetIface_Test extends BaseTransformationTest4 {
   @Test
   public void test_baz() throws Throwable {
-    this.initTest("${mps_home}/languages/baseLanguage/closures/solutions/closures.test/closures.test.mpr", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)");
+    this.initTest("${mps_home}", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)");
     this.runTest("jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody", "test_baz", true);
   }
 
   @Test
   public void test_baz2() throws Throwable {
-    this.initTest("${mps_home}/languages/baseLanguage/closures/solutions/closures.test/closures.test.mpr", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)");
+    this.initTest("${mps_home}", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)");
     this.runTest("jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody", "test_baz2", true);
   }
 
