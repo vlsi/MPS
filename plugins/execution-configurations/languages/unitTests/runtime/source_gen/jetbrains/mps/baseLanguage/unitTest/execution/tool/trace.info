@@ -1430,7 +1430,7 @@
       <varInfo nodeId="3575782568432723995" varName="progress" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432723741" fileName="ProgressLine.java" startLine="60" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="3575782568432723746" varName="complited" />
+      <varInfo nodeId="3575782568432723746" varName="completed" />
       <varInfo nodeId="3575782568432723742" varName="defected" />
       <varInfo nodeId="3575782568432723744" varName="total" />
     </scopeInfo>
@@ -1439,7 +1439,7 @@
       <varInfo nodeId="3575782568432724048" varName="testState" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432723666" fileName="ProgressLine.java" startLine="40" startPosition="24" endLine="53" endPosition="7">
-      <varInfo nodeId="3575782568432723703" varName="complitedTests" />
+      <varInfo nodeId="3575782568432723703" varName="completedTests" />
       <varInfo nodeId="3575782568432723687" varName="defectedTests" />
       <varInfo nodeId="3575782568432723711" varName="testName" />
       <varInfo nodeId="3575782568432723695" varName="totalTests" />
@@ -1453,7 +1453,7 @@
     <scopeInfo nodeId="3575782568432723910" fileName="ProgressLine.java" startLine="88" startPosition="47" endLine="103" endPosition="6" />
     <scopeInfo nodeId="3575782568432723663" fileName="ProgressLine.java" startLine="39" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="3575782568432723800" fileName="ProgressLine.java" startLine="71" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="3575782568432723805" varName="complited" />
+      <varInfo nodeId="3575782568432723805" varName="completed" />
       <varInfo nodeId="3575782568432723801" varName="defected" />
       <varInfo nodeId="3575782568432723807" varName="testName" />
       <varInfo nodeId="3575782568432723803" varName="total" />

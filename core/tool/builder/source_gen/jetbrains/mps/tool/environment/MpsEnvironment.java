@@ -69,7 +69,6 @@ public class MpsEnvironment implements Environment {
       LibraryInitializer.getInstance().addContributor(libContrib);
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
       public void run() {
         LibraryInitializer.getInstance().update();
       }

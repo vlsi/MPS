@@ -15,31 +15,31 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class TypeCheckingErrors_Test extends BaseTransformationTest4 {
   @Test
   public void test_mps18720() throws Throwable {
-    this.initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
+    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
     this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_mps18720", true);
   }
 
   @Test
   public void test_varar_raw() throws Throwable {
-    this.initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
+    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
     this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_varar_raw", true);
   }
 
   @Test
   public void test_lbt_subtypeof_param() throws Throwable {
-    this.initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
+    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
     this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_lbt_subtypeof_param", true);
   }
 
   @Test
   public void test_meet_with_variable_excluded_from_lcs() throws Throwable {
-    this.initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
+    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
     this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_meet_with_variable_excluded_from_lcs", true);
   }
 
   @Test
   public void test_NodeErrorCheck1089557578630058014() throws Throwable {
-    this.initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
+    this.initTest("${mps_home}", "r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)");
     this.runTest("jetbrains.mps.internalCollections.test.typechecking.TypeCheckingErrors_Test$TestBody", "test_NodeErrorCheck1089557578630058014", true);
   }
 

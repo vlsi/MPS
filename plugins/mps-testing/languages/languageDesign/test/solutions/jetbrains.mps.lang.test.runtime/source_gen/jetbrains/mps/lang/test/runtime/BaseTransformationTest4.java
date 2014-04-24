@@ -29,7 +29,11 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
 
   private boolean isLightWeightOn() {
-    return System.getProperty(LIGHT_WEIGHT_FLAG).equals("true");
+    String property = System.getProperty(LIGHT_WEIGHT_FLAG);
+    if (property == null) {
+      return false;
+    }
+    return property.equals("true");
   }
 
 

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:ea0833ca-e474-4ae3-b6d3-3f8d18af5a89(jetbrains.mps.internalCollections.test.typechecking@tests)/1301553664999174713">
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="17" startPosition="48" endLine="18" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="18" startPosition="204" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="23" startPosition="49" endLine="24" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="24" startPosition="204" endLine="25" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="29" startPosition="59" endLine="30" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="30" startPosition="204" endLine="31" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="35" startPosition="76" endLine="36" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="36" startPosition="204" endLine="37" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="41" startPosition="73" endLine="42" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="42" startPosition="204" endLine="43" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="17" startPosition="48" endLine="18" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="18" startPosition="134" endLine="19" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="23" startPosition="49" endLine="24" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="24" startPosition="134" endLine="25" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="29" startPosition="59" endLine="30" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="30" startPosition="134" endLine="31" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="35" startPosition="76" endLine="36" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="36" startPosition="134" endLine="37" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="41" startPosition="73" endLine="42" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1301553664999174713" fileName="TypeCheckingErrors_Test.java" startLine="42" startPosition="134" endLine="43" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2169032458071765481" fileName="TypeCheckingErrors_Test.java" startLine="48" startPosition="50" endLine="49" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2169032458071765481" fileName="TypeCheckingErrors_Test.java" startLine="49" startPosition="46" endLine="50" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2169032458071765481" fileName="TypeCheckingErrors_Test.java" startLine="50" startPosition="46" endLine="51" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -43,12 +43,12 @@ public class ProgressLine extends JPanel implements TestView {
     }
     final int defectedTests = myState.getDefectTests();
     final int totalTests = myState.getTotalTests();
-    final int complitedTests = myState.getCompletedTests();
+    final int completedTests = myState.getCompletedTests();
     final String testName = myState.getCurrentMethod();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        updateProgressBar(defectedTests, totalTests, complitedTests);
-        updateLabel(defectedTests, totalTests, complitedTests, testName);
+        updateProgressBar(defectedTests, totalTests, completedTests);
+        updateLabel(defectedTests, totalTests, completedTests, testName);
       }
     });
   }
@@ -57,30 +57,30 @@ public class ProgressLine extends JPanel implements TestView {
   public void init() {
   }
 
-  private void updateProgressBar(int defected, int total, int complited) {
+  private void updateProgressBar(int defected, int total, int completed) {
     if (defected > 0) {
       myProgressBar.setColor(ColorProgressBar.RED);
-    } else if (myState.isTerminated() && !(total == complited)) {
+    } else if (myState.isTerminated() && !(total == completed)) {
       myProgressBar.setColor(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
-      myProgressBar.setFraction((double) complited / (double) total);
+      myProgressBar.setFraction((double) completed / (double) total);
     }
   }
 
-  private void updateLabel(int defected, int total, int complited, String testName) {
+  private void updateLabel(int defected, int total, int completed, String testName) {
     StringBuilder sb = new StringBuilder();
-    if (total == complited || testName == null) {
-      sb.append(" Done: " + complited + " of " + total + " ");
+    if (total == completed || testName == null) {
+      sb.append(" Done: " + completed + " of " + total + " ");
       testName = "";
     } else if (myState.isTerminated()) {
-      sb.append(" Terminated: " + complited + " of " + total + " ");
+      sb.append(" Terminated: " + completed + " of " + total + " ");
       testName = "";
     }
     if (defected > 0) {
       sb.append(" Failed: " + defected);
     } else if (sb.length() == 0) {
-      sb.append(" Running: " + complited + " of " + total);
+      sb.append(" Running: " + completed + " of " + total);
     }
     myStateLabel.setText(sb + "  " + testName);
   }

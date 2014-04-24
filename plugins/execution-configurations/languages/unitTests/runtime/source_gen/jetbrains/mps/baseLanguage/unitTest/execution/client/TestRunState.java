@@ -154,6 +154,7 @@ public class TestRunState {
       return;
     }
     synchronized (lock) {
+      checkConsistency();
       this.myCurrentClass = className;
       this.myCurrentMethod = methodName;
       this.updateView();
@@ -190,9 +191,15 @@ public class TestRunState {
 
   public void terminate() {
     synchronized (lock) {
+      checkConsistency();
       this.myIsTerminated = true;
       this.updateView();
     }
+  }
+
+  private void checkConsistency() {
+    assert this.myCompletedTests <= this.myTotalTests;
+    assert this.myDefectTests <= this.myCompletedTests;
   }
 
   public void outputText(String text, @NotNull Key key) {
