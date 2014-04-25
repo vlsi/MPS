@@ -48,6 +48,8 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   public void addPath(@NotNull String path, ModelRoot modelRoot) {
     ModelAccess.assertLegalRead();
 
+    if(myPaths.containsKey(path)) return;
+
     if (modelRoot instanceof FileSystemListener) {
       myListenerDependencies.add((FileSystemListener) modelRoot);
     } else if (modelRoot != null && modelRoot.getModule() instanceof FileSystemListener) {
