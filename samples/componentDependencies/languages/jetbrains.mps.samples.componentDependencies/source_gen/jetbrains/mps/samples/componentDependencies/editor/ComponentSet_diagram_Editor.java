@@ -32,6 +32,7 @@ import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView;
 import java.util.Set;
 import java.util.HashSet;
@@ -164,6 +165,18 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
                 getTarget().connections.add(myDragConnection);
               } else {
                 getTarget().connections.remove(myDragConnection);
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
+            public void set(Boolean isSelected) {
+              ViewContainer viewContainer = getTarget().container();
+              if (viewContainer != null) {
+                if (isSelected && !(viewContainer.root().focused().get())) {
+                  viewContainer.focusedView().set(viewContainer.root());
+                } else if (!(isSelected) && viewContainer.root().focused().get()) {
+                  viewContainer.focusedView().set(null);
+                }
               }
             }
           }));

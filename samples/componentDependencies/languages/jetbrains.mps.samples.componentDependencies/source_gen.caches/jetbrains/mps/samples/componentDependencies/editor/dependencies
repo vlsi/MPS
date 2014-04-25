@@ -63,6 +63,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.diagram.view.DiagramView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
+    <classNode dependClassName="jetbrains.jetpad.projectional.view.ViewContainer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -160,6 +161,7 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView" />
@@ -228,10 +230,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.samples.componentDependencies.editor.delConnector" />

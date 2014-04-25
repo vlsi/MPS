@@ -31,6 +31,7 @@ import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView;
 import jetbrains.jetpad.geometry.Rectangle;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
@@ -129,8 +130,6 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
                     public void set(Boolean isFocused) {
                       if (isFocused && !(isSelected())) {
                         SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
-                      } else if (!(isFocused) && isSelected()) {
-                        getEditorComponent().getSelectionManager().clearSelection();
                       }
                     }
                   }));
@@ -161,8 +160,6 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
                     public void set(Boolean isFocused) {
                       if (isFocused && !(isSelected())) {
                         SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
-                      } else if (!(isFocused) && isSelected()) {
-                        getEditorComponent().getSelectionManager().clearSelection();
                       }
                     }
                   }));
@@ -209,7 +206,29 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
               };
             }
           }));
-          configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
+          final View targetView = this.getTarget();
+          configuration.add(Synchronizers.forProperty(targetView.focused(), new WritableProperty<Boolean>() {
+            public void set(Boolean isFocused) {
+              if (isFocused && !(isSelected())) {
+                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
+            public void set(Boolean isSelected) {
+              if (isSelected) {
+                for (View view : Sequence.fromIterable(JetpadUtils.getAllChildren(targetView))) {
+                  if (view.focused().get()) {
+                    return;
+                  }
+                }
+                targetView.container().focusedView().set(targetView);
+              } else if (!(isSelected) && targetView.focused().get()) {
+                targetView.container().focusedView().set(null);
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(targetView.bounds(), new WritableProperty<Rectangle>() {
             public void set(Rectangle rect) {
               DiagramCell diagramCell = getDiagramCell();
               if (diagramCell == null) {
@@ -219,24 +238,6 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
               setY(rect.origin.y + diagramCell.getY());
               setWidth(rect.dimension.x);
               setHeight(rect.dimension.y);
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(getTarget().focused(), new WritableProperty<Boolean>() {
-            public void set(Boolean isFocused) {
-              if (isFocused && !(isSelected())) {
-                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
-              } else if (!(isFocused) && isSelected()) {
-                getEditorComponent().getSelectionManager().clearSelection();
-              }
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
-            public void set(Boolean isSelected) {
-              if (isSelected && !(getTarget().focused().get())) {
-                getTarget().container().focusedView().set(getTarget());
-              } else if (!(isSelected) && getTarget().focused().get()) {
-                getTarget().container().focusedView().set(null);
-              }
             }
           }));
         }
