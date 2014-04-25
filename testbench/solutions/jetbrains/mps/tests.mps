@@ -961,6 +961,9 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164094848" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.4246614868164066709" resolveInfo="Generics" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3419811523764951574" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.290469496750208032" resolveInfo="FloatLiteral" />
+    </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7092489630493754343" nodeInfo="ng">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7092489630493754345" nodeInfo="ig">

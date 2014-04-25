@@ -32,7 +32,7 @@ import jetbrains.mps.project.MPSProjectVersion.MyState;
   }
 )
 public class MPSProjectVersion extends AbstractProjectComponent implements PersistentStateComponent<MyState>{
-  public static final Version CURRENT = Version.fromString("3.0");
+  public static final Version CURRENT = Version.fromString("3.1");
   private static final Version DEFAULT = Version.fromString("1.5");
   private Version myVersion = DEFAULT;
 

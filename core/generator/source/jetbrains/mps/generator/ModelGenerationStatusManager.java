@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,9 +80,6 @@ public class ModelGenerationStatusManager implements CoreComponent {
   }
 
   public boolean generationRequired(SModel md) {
-    if (md.isReadOnly()) {
-      return false;
-    }
     if (!(md instanceof GeneratableSModel)) return false;
     GeneratableSModel sm = (GeneratableSModel) md;
     if (!sm.isGeneratable()) return false;

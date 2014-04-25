@@ -1172,7 +1172,7 @@
   </root>
   <root type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="1113006251687" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="_FPNumber_String" />
-    <property name="constraint" nameId="tpce.1083066089218" value="-?[0-9]+\\.[0-9]*" />
+    <property name="constraint" nameId="tpce.1083066089218" value="-?[0-9]+\\.[0-9]*([Ee][\\+\\-]?[0-9]+)?[fFdD]?" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1116615150612" nodeInfo="ig">
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="class of node operation" />
