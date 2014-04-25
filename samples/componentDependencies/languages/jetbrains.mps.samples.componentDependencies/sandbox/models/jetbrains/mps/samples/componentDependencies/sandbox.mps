@@ -9,8 +9,8 @@
     <property name="name" nameId="tpck.1169194664001" value="My application" />
     <node role="component" roleId="ktbj.6223439730610302888" type="ktbj.Component" typeId="ktbj.6223439730610336068" id="650270285023051496" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Core" />
-      <property name="x" nameId="ktbj.6223439730610789197" value="183" />
-      <property name="y" nameId="ktbj.6223439730610789199" value="239" />
+      <property name="x" nameId="ktbj.6223439730610789197" value="239" />
+      <property name="y" nameId="ktbj.6223439730610789199" value="179" />
       <node role="dep" roleId="ktbj.6223439730610336071" type="ktbj.Dependency" typeId="ktbj.6223439730610762144" id="650270285023198130" nodeInfo="ng">
         <link role="to" roleId="ktbj.6223439730610763348" targetNodeId="650270285023198115" resolveInfo="DB" />
       </node>
@@ -19,8 +19,8 @@
     </node>
     <node role="component" roleId="ktbj.6223439730610302888" type="ktbj.Component" typeId="ktbj.6223439730610336068" id="650270285023051499" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="UI" />
-      <property name="x" nameId="ktbj.6223439730610789197" value="446" />
-      <property name="y" nameId="ktbj.6223439730610789199" value="140" />
+      <property name="x" nameId="ktbj.6223439730610789197" value="360" />
+      <property name="y" nameId="ktbj.6223439730610789199" value="20" />
       <node role="in" roleId="ktbj.6223439730610790722" type="ktbj.InPort" typeId="ktbj.6223439730610790758" id="650270285023051500" nodeInfo="ng" />
       <node role="out" roleId="ktbj.6223439730610790726" type="ktbj.OutPort" typeId="ktbj.6223439730610790725" id="650270285023051501" nodeInfo="ng" />
       <node role="dep" roleId="ktbj.6223439730610336071" type="ktbj.Dependency" typeId="ktbj.6223439730610762144" id="650270285023198132" nodeInfo="ng">
@@ -29,7 +29,8 @@
     </node>
     <node role="component" roleId="ktbj.6223439730610302888" type="ktbj.Component" typeId="ktbj.6223439730610336068" id="650270285023198103" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Tests" />
-      <property name="y" nameId="ktbj.6223439730610789199" value="-76" />
+      <property name="y" nameId="ktbj.6223439730610789199" value="24" />
+      <property name="x" nameId="ktbj.6223439730610789197" value="52" />
       <node role="in" roleId="ktbj.6223439730610790722" type="ktbj.InPort" typeId="ktbj.6223439730610790758" id="650270285023198104" nodeInfo="ng" />
       <node role="out" roleId="ktbj.6223439730610790726" type="ktbj.OutPort" typeId="ktbj.6223439730610790725" id="650270285023198105" nodeInfo="ng" />
       <node role="dep" roleId="ktbj.6223439730610336071" type="ktbj.Dependency" typeId="ktbj.6223439730610762144" id="650270285023198134" nodeInfo="ng">
@@ -41,7 +42,8 @@
     </node>
     <node role="component" roleId="ktbj.6223439730610302888" type="ktbj.Component" typeId="ktbj.6223439730610336068" id="650270285023198115" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="DB" />
-      <property name="y" nameId="ktbj.6223439730610789199" value="-152" />
+      <property name="y" nameId="ktbj.6223439730610789199" value="335" />
+      <property name="x" nameId="ktbj.6223439730610789197" value="157" />
       <node role="in" roleId="ktbj.6223439730610790722" type="ktbj.InPort" typeId="ktbj.6223439730610790758" id="650270285023198116" nodeInfo="ng" />
       <node role="out" roleId="ktbj.6223439730610790726" type="ktbj.OutPort" typeId="ktbj.6223439730610790725" id="650270285023198117" nodeInfo="ng" />
     </node>
