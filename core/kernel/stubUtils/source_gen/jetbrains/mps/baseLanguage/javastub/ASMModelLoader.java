@@ -49,11 +49,7 @@ public class ASMModelLoader {
         }
       }).where(new IWhereFilter<IFile>() {
         public boolean accept(IFile it) {
-          return !(it.isDirectory());
-        }
-      }).where(new IWhereFilter<IFile>() {
-        public boolean accept(IFile it) {
-          return !(AbstractClassPathItem.isAnonymous(it.getName()));
+          return !(it.isDirectory()) && it.getName().endsWith(".class") && !(AbstractClassPathItem.isAnonymous(ClassifierLoader.getClassName(it)));
         }
       });
 

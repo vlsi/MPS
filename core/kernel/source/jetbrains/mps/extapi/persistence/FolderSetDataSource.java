@@ -120,6 +120,14 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
       }
     }
     for (IFile path : paths) {
+      String fsPath = path.getPath();
+      //at least some programs don't change timestamp of a directory inside jar file after deleting a file in it
+      if (fsPath.contains("!/")){
+        IFile jarFile = FileSystem.getInstance().getFileByPath(fsPath.substring(0, fsPath.lastIndexOf("!/")));
+        if (jarFile!=null){
+          max = Math.max(max, jarFile.lastModified());
+        }
+      }
       long ts = getTimestampRecursive(path);
       max = Math.max(max, ts);
     }
