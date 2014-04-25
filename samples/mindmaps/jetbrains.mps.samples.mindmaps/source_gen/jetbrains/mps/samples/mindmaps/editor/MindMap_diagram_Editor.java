@@ -35,12 +35,15 @@ import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.jetpad.projectional.diagram.view.Connection;
 import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 import jetbrains.jetpad.model.property.WritableProperty;
+import jetbrains.jetpad.projectional.view.ViewContainer;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.ListIterator;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationActionGroup;
 
 public class MindMap_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"});
@@ -128,6 +131,7 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
           SLinkOperations.setTarget(SNodeOperations.cast(node, "jetbrains.mps.samples.mindmaps.structure.Relationship"), "target", to, false);
         }
       })}));
+      setPalette(new MindMap_diagram_Editor.DiagramCellImpl_e8klwn_d0.DiagramPaletteImpl_e8klwn_a3a(this));
       synchronize();
     }
 
@@ -179,6 +183,18 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
               }
             }
           }));
+          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
+            public void set(Boolean isSelected) {
+              ViewContainer viewContainer = getTarget().container();
+              if (viewContainer != null) {
+                if (isSelected && !(viewContainer.root().focused().get())) {
+                  viewContainer.focusedView().set(viewContainer.root());
+                } else if (!(isSelected) && viewContainer.root().focused().get()) {
+                  viewContainer.focusedView().set(null);
+                }
+              }
+            }
+          }));
 
         }
       };
@@ -217,6 +233,19 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
+    }
+
+    private class DiagramPaletteImpl_e8klwn_a3a extends DiagramPalette {
+      private DiagramPaletteImpl_e8klwn_a3a(DiagramCell diagramCell) {
+        super(diagramCell);
+        addPaletteElement(new PaletteElementsCreationActionGroup(diagramCell, getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.mindmaps.structure.MindMap", "thoughts"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+          public void invoke(SNode node, Integer x, Integer y) {
+            SNode thought = SNodeOperations.cast(node, "jetbrains.mps.samples.mindmaps.structure.Thought");
+            SPropertyOperations.set(thought, "name", "new thought");
+          }
+        }) {});
+        createPalette();
+      }
     }
   }
 

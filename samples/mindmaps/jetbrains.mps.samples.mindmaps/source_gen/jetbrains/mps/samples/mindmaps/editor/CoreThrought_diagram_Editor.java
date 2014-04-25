@@ -18,12 +18,15 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.mapper.MapperFactory;
-import jetbrains.mps.lang.editor.figures.sandbox.PolygonContentView;
+import jetbrains.mps.lang.editor.figures.library.NamedBoxFigure;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView;
 import jetbrains.jetpad.model.property.WritableProperty;
 import jetbrains.jetpad.geometry.Rectangle;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
 import jetbrains.jetpad.model.property.Properties;
 import jetbrains.jetpad.geometry.Vector;
@@ -105,9 +108,9 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
         protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
           super.registerSynchronizers(configuration);
           final DiagramNodeView diagramNodeView = getTarget();
-          configuration.add(Synchronizers.forConstantRole(this, getContentViewMapperSource(), getTarget().contentView.children(), new MapperFactory<String, PolygonContentView>() {
-            public Mapper<? extends String, ? extends PolygonContentView> createMapper(String block) {
-              return new Mapper<String, PolygonContentView>(block, new PolygonContentView()) {
+          configuration.add(Synchronizers.forConstantRole(this, getContentViewMapperSource(), getTarget().contentView.children(), new MapperFactory<String, NamedBoxFigure>() {
+            public Mapper<? extends String, ? extends NamedBoxFigure> createMapper(String block) {
+              return new Mapper<String, NamedBoxFigure>(block, new NamedBoxFigure()) {
                 @Override
                 protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
                   super.registerSynchronizers(configuration);
@@ -129,12 +132,34 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
                   }));
                   myPropertyCell_pr685x_a0a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_X));
                   myPropertyCell_pr685x_a1a.registerSynchronizers(configuration, getTarget().prop(MovableContentView.POSITION_Y));
-                  myPropertyCell_pr685x_a2a.registerSynchronizers(configuration, getTarget().text());
+                  myPropertyCell_pr685x_a2a.registerSynchronizers(configuration, getTarget().nameText());
                 }
               };
             }
           }));
-          configuration.add(Synchronizers.forProperty(getTarget().bounds(), new WritableProperty<Rectangle>() {
+          final View targetView = this.getTarget();
+          configuration.add(Synchronizers.forProperty(targetView.focused(), new WritableProperty<Boolean>() {
+            public void set(Boolean isFocused) {
+              if (isFocused && !(isSelected())) {
+                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
+            public void set(Boolean isSelected) {
+              if (isSelected) {
+                for (View view : Sequence.fromIterable(JetpadUtils.getAllChildren(targetView))) {
+                  if (view.focused().get()) {
+                    return;
+                  }
+                }
+                targetView.container().focusedView().set(targetView);
+              } else if (!(isSelected) && targetView.focused().get()) {
+                targetView.container().focusedView().set(null);
+              }
+            }
+          }));
+          configuration.add(Synchronizers.forProperty(targetView.bounds(), new WritableProperty<Rectangle>() {
             public void set(Rectangle rect) {
               DiagramCell diagramCell = getDiagramCell();
               if (diagramCell == null) {
@@ -144,24 +169,6 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
               setY(rect.origin.y + diagramCell.getY());
               setWidth(rect.dimension.x);
               setHeight(rect.dimension.y);
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(getTarget().focused(), new WritableProperty<Boolean>() {
-            public void set(Boolean isFocused) {
-              if (isFocused && !(isSelected())) {
-                SelectionUtil.selectCell(getContext(), getSNode(), getCellId());
-              } else if (!(isFocused) && isSelected()) {
-                getEditorComponent().getSelectionManager().clearSelection();
-              }
-            }
-          }));
-          configuration.add(Synchronizers.forProperty(mySelectedItem, new WritableProperty<Boolean>() {
-            public void set(Boolean isSelected) {
-              if (isSelected && !(getTarget().focused().get())) {
-                getTarget().container().focusedView().set(getTarget());
-              } else if (!(isSelected) && getTarget().focused().get()) {
-                getTarget().container().focusedView().set(null);
-              }
             }
           }));
         }
@@ -183,7 +190,7 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
           }
           configuration.add(Synchronizers.forProperty(myErrorItem, getTarget().hasError));
           configuration.add(Synchronizers.forProperty(blockMapper.getTarget().focused(), getTarget().isSelected));
-          final PolygonContentView contentView = (PolygonContentView) getContentView();
+          final NamedBoxFigure contentView = (NamedBoxFigure) getContentView();
           configuration.add(Synchronizers.forProperty(contentView.bounds(), getTarget().bounds));
           configuration.add(Synchronizers.forProperty(Properties.constant(Boolean.TRUE), getTarget().resizable));
           configuration.add(Synchronizers.forProperty(getTarget().boundsDelta, new WritableProperty<Rectangle>() {
