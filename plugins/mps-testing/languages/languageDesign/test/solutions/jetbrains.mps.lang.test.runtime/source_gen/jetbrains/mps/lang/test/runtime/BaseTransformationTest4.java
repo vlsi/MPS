@@ -20,7 +20,7 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
   private void initTestRunner() {
     if (isLightWeightOn()) {
-      myRunner = new LightWeightTransformationTestRunner();
+      myRunner = new LightTransformationTestRunner();
     } else {
       myRunner = new TransformationTestRunner();
     }

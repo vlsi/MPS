@@ -18,6 +18,7 @@ package jetbrains.mps.ide.editor;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.editor.ex.util.EmptyEditorHighlighter;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorProvider;
@@ -77,7 +78,7 @@ public class MPSEditorOpener {
         if (!org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
 
         ModuleContext context = new ModuleContext(node.getModel().getModule(), ProjectHelper.toMPSProject(myProject));
-        openNode(node, context, true, !(node.getModel() != null && node.getParent() == null));
+        openNode(node, context, true, !(node.getModel() != null && node.getParent() == null), true);
       }
     });
   }
@@ -87,23 +88,24 @@ public class MPSEditorOpener {
    */
   @Deprecated
   public Editor editNode(@NotNull final SNode node, final IOperationContext context) {
-    return openNode(node, context, true, !(node.getModel() != null && node.getParent() == null));
+    return openNode(node, context, true, !(node.getModel() != null && node.getParent() == null), true);
   }
 
   /*
    * Requires: model write, EDT.
    */
-  public Editor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
+  public Editor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select, boolean show) {
     ThreadUtils.assertEDT();
     ModelAccess.assertLegalWrite();
 
     final jetbrains.mps.project.Project mpsProject = context.getProject();
-    mpsProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
+    if (show)
+      mpsProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodeReference instead of SNode */
-    return doOpenNode(node, context, focus, select);
+    return doOpenNode(node, context, focus, select, show);
   }
 
-  private Editor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
+  private Editor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select, boolean show) {
     assert node.getModel() != null : "You can't edit unregistered node";
 
     if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return null;
@@ -122,7 +124,7 @@ public class MPSEditorOpener {
           (node.getModel() != null ? ", modelDisposed: " + jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getModel()) : "");
     }
     // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
-    final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false);
+    final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false, show);
 
     //restore inspector state for opened editor (if exists)
     if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {
@@ -156,7 +158,7 @@ public class MPSEditorOpener {
     return nodeCell != null && nodeCell != inspector.getRootCell();
   }
 
-  private Editor openEditor(final SNode root, IOperationContext context, boolean focus) {
+  private Editor openEditor(final SNode root, IOperationContext context, boolean focus, boolean show) {
     SNode baseNode = null;
 
     for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
@@ -180,25 +182,28 @@ public class MPSEditorOpener {
     assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodeReference: " +
         new jetbrains.mps.smodel.SNodePointer(baseNode).resolve(MPSModuleRepository.getInstance());
     // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
+    Editor nodeEditor = null;
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
     file.putUserData(FileEditorProvider.KEY, ApplicationManager.getApplication().getComponent(MPSFileNodeEditorProvider.class));
-    FileEditor fileEditor = editorManager.openFile(file, focus, true)[0];
 
-    MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
-
-    Editor nodeEditor = fileNodeEditor.getNodeEditor();
+    if (show) {
+      FileEditor fileEditor = editorManager.openFile(file, focus, true)[0];
+      MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
+      nodeEditor = fileNodeEditor.getNodeEditor();
+    } else {
+      nodeEditor = new MPSFileNodeEditor(myProject, file).getNodeEditor();
+    }
 
     if (nodeEditor != null && nodeEditor.isTabbed()) {
       nodeEditor.showNode(root, false);
     }
-
     return nodeEditor;
   }
 
   //----------util
 
 
-  private void focus(Editor nodeEditor, boolean cellInInspector) {
+  public void focus(Editor nodeEditor, boolean cellInInspector) {
     if (!cellInInspector) {
       final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
       manager.activateEditorComponent();

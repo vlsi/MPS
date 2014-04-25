@@ -191,6 +191,7 @@ public class TransformationTestRunner implements TestRunner {
         projectTest.dispose();
       }
     });
+    IdeMain.setTestMode(IdeMain.TestMode.NO_TEST);
     if (exception[0] != null) {
       throw exception[0];
     }

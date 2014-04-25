@@ -19,6 +19,8 @@ import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.util.WaitFor;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.runner.JUnitCore;

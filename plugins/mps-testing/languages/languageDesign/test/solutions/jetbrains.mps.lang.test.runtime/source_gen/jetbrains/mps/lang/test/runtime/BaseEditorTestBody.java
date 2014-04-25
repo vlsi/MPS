@@ -28,9 +28,9 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import com.intellij.openapi.fileEditor.FileEditorManager;
+import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -139,6 +139,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public void testMethod() throws Throwable {
     try {
+      flushEventQueueAfterAction();
       this.testMethodImpl();
       this.checkAssertion();
     } finally {
@@ -184,7 +185,14 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static Editor openEditor(Project project, SModel model, SNode node) {
     IOperationContext context = new ModuleContext(model.getModule(), project);
-    return NavigationSupport.getInstance().openNode(context, node, true, !(jetbrains.mps.util.SNodeOperations.isRoot(node)));
+    MPSEditorOpener opener = new MPSEditorOpener(ProjectHelper.toIdeaProject(project));
+    boolean focus = false;
+    boolean select = !(jetbrains.mps.util.SNodeOperations.isRoot(node));
+
+    return opener.openNode(node, context, false, select, false);
+
+    // <node> 
+    // <node> 
   }
 
 

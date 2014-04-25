@@ -25,6 +25,7 @@
     <classNode dependClassName="javax.swing.KeyStroke" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorOpener" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
@@ -35,7 +36,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.CellReference" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.Editor" />
-    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -78,7 +78,7 @@
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.generator.impl.CloneUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.LightWeightTransformationTestRunner" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.LightTransformationTestRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -129,12 +129,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Runnable" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.runtime.LightWeightTransformationTestRunner" file="LightWeightTransformationTestRunner.java">
+  <dependency className="jetbrains.mps.lang.test.runtime.LightTransformationTestRunner" file="LightTransformationTestRunner.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
