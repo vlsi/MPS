@@ -10,8 +10,12 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -36,14 +40,24 @@ public class Statement_Behavior {
     Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, thisNode);
   }
 
-  public static void call_collectUncaughtMethodThrowables_5412515780383112967(SAbstractConcept thisConcept, Set<SNode> throwables, SNode arg) {
-    for (SNode methodCall : SNodeOperations.getDescendants(arg, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})) {
-      for (SNode throwable : SLinkOperations.getTargets(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "throwsItem", true)) {
-        if (SNodeOperations.isInstanceOf(throwable, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-          SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(SNodeOperations.cast(throwable, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
-        }
+  public static void call_collectUncaughtMethodThrowables_5412515780383112967(SAbstractConcept thisConcept, final Set<SNode> throwables, SNode arg) {
+    ListSequence.fromList(SNodeOperations.getDescendants(arg, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "throwsItem", true);
       }
-    }
+    }).union(ListSequence.fromList(SNodeOperations.getDescendants(arg, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", false, new String[]{})).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(SLinkOperations.getTarget(it, "member", false), "throwsItem", true);
+      }
+    })).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode throwable) {
+        SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(SNodeOperations.cast(throwable, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
+      }
+    });
   }
 
   @Deprecated
