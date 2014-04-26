@@ -163,11 +163,11 @@ public class StyleImpl implements Style {
   public Iterable<StyleAttribute> getSpecifiedAttributes() {
     int maxSize = myAttributes.getSize();
     ArrayList<StyleAttribute> result = new ArrayList<StyleAttribute>(maxSize);
-    for (int i = 0; i < StyleAttributes.getAttributesCount(); i++) {
-      if (! isSpecified(StyleAttributes.getAttribute(i))) {
+    for (int i = 0; i < StyleAttributes.getInstance().getAttributesCount(); i++) {
+      if (! isSpecified(StyleAttributes.getInstance().getAttribute(i))) {
         continue;
       }
-      result.add(StyleAttributes.getAttribute(i));
+      result.add(StyleAttributes.getInstance().getAttribute(i));
     }
     return result;
   }
@@ -230,7 +230,7 @@ public class StyleImpl implements Style {
 
   private Set<StyleAttribute> getNonDefaultValuedAttributes() {
     Set<StyleAttribute> result = new StyleAttributeSet();
-    for (StyleAttribute attribute : StyleAttributes.getNotSimpleAttributes()) {
+    for (StyleAttribute attribute : StyleAttributes.getInstance().getNotSimpleAttributes()) {
       if (! TopLevelStyleMap.isEmpty(myCachedAttributes.search(attribute.getIndex()))) {
         result.add(attribute);
       }

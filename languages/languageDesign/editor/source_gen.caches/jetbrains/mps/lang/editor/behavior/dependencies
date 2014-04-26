@@ -102,6 +102,12 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassItem_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.AttributeStyleClassItem_BehaviorDescriptor" file="AttributeStyleClassItem_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassItem_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.AutoDeletableStyleClassItem_Behavior" file="AutoDeletableStyleClassItem_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -174,6 +180,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AppendTextOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ApplyStyleClassCondition_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ApplyStyleClass_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AttributeStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.AutoDeletableStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.BackgroundColorStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.BaseLineCell_BehaviorDescriptor" />
@@ -321,6 +328,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.PropertyExpressionCellSelector_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.PunctuationLeftStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.PunctuationRightStyleClassItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_AttributeStyleParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_Boolean_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_CellProvider_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_Color_BehaviorDescriptor" />
@@ -354,6 +362,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.SetBoldOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.SideTransformAnchorTagStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StrikeOutStyleSheet_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassReferenceList_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClass_BehaviorDescriptor" />
@@ -2340,6 +2349,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_AttributeStyleParameter_Behavior" file="QueryFunction_AttributeStyleParameter_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_AttributeStyleParameter_BehaviorDescriptor" file="QueryFunction_AttributeStyleParameter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_AttributeStyleParameter_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Boolean_Behavior" file="QueryFunction_Boolean_Behavior.java">
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -2948,6 +2970,21 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StrikeOutStyleSheet_Behavior" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration_Behavior" file="StyleAttributeDeclaration_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration_BehaviorDescriptor" file="StyleAttributeDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior" file="StyleClassItem_Behavior.java">

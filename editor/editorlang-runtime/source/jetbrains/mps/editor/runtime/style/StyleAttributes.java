@@ -15,46 +15,109 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistryListener;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * User: shatalin
  * Date: 1/14/13
  */
 public class StyleAttributes {
-  private static List<StyleAttribute> ourAttributes = new ArrayList<StyleAttribute>();
-  private static List<StyleAttribute> ourNotSimpleAttributes = new ArrayList<StyleAttribute>();
 
-  static int getAttributesCount() {
+  private static StyleAttributes ourInstance = new StyleAttributes();
+
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(StyleAttributes.class));
+
+  private StyleAttributes() {
+    LanguageRegistry.getInstance().addRegistryListener(new LanguageRegistryListener() {
+      @Override
+      public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
+      }
+
+      @Override
+      public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
+        for (LanguageRuntime language : languages) {
+          EditorAspectDescriptor descriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
+          if (descriptor != null) {
+            try {
+              for (StyleAttribute attribute : descriptor.getStyleAttributes().values()) {
+                attribute.unregister();
+              }
+            } catch (AbstractMethodError e) {
+              LOG.error("Error when unloading style attributes for language " + language + ". Try to rebuild language." ,e);
+            }
+          }
+        }
+      }
+    });
+  }
+
+  public static StyleAttributes getInstance() {
+    if (ourInstance == null) {
+      ourInstance = new StyleAttributes();
+    }
+    return ourInstance;
+  }
+
+  private List<StyleAttribute> ourAttributes = new ArrayList<StyleAttribute>();
+  private List<StyleAttribute> ourNotSimpleAttributes = new ArrayList<StyleAttribute>();
+  private Set<Integer> ourFreeIndices = new LinkedHashSet<Integer>();
+
+  int getAttributesCount() {
     return ourAttributes.size();
   }
 
-  static List<StyleAttribute> getAttributes() {
+  List<StyleAttribute> getAttributes() {
     return Collections.unmodifiableList(ourAttributes);
   }
 
-  static List<StyleAttribute> getNotSimpleAttributes() {
+  List<StyleAttribute> getNotSimpleAttributes() {
     return Collections.unmodifiableList(ourNotSimpleAttributes);
   }
 
-  static StyleAttribute getAttribute(int index) {
+  StyleAttribute getAttribute(int index) {
     return ourAttributes.get(index);
   }
 
-  static int register(StyleAttribute a) {
-    ourAttributes.add(a);
+  int register(StyleAttribute a) {
+    int index;
+    if (ourFreeIndices.isEmpty()) {
+      index = ourAttributes.size();
+      ourAttributes.add(a);
+    } else {
+      index = ourFreeIndices.iterator().next();
+      ourFreeIndices.remove(index);
+      ourAttributes.set(index, a);
+    }
+
     if (!isSimple(a)) {
       ourNotSimpleAttributes.add(a);
     }
-    return ourAttributes.size() - 1;
+    return index;
+  }
+
+  void unregister(StyleAttribute a) {
+    int index = ourAttributes.indexOf(a);
+    ourAttributes.set(index, null);
+    ourFreeIndices.add(index);
+    if (!isSimple(a)) {
+      ourNotSimpleAttributes.remove(a);
+    }
   }
 
   static boolean isSimple(StyleAttribute a) {
