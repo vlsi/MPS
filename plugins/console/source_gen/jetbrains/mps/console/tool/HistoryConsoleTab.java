@@ -5,9 +5,6 @@ package jetbrains.mps.console.tool;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.project.MPSExtentions;
-import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -19,8 +16,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.icons.AllIcons;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Map;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class HistoryConsoleTab extends BaseConsoleTab {
 
@@ -34,16 +29,7 @@ public class HistoryConsoleTab extends BaseConsoleTab {
   protected void loadHistory(final String state) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SModel loadedModel = null;
-        if (state != null) {
-          try {
-            loadedModel = PersistenceUtil.loadModel(state, MPSExtentions.MODEL);
-          } catch (Exception e) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Error on loading console history", e);
-            }
-          }
-        }
+        SModel loadedModel = loadHistoryModel(state);
         myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.OutputConsoleRoot", null);
         if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.OutputConsoleRoot")).isEmpty()) {
           SLinkOperations.setTarget(myRoot, "history", SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.History", null), true);
@@ -84,5 +70,4 @@ public class HistoryConsoleTab extends BaseConsoleTab {
   }
 
 
-  protected static Logger LOG = LogManager.getLogger(HistoryConsoleTab.class);
 }

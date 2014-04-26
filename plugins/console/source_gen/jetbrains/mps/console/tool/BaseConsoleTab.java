@@ -68,6 +68,11 @@ import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import com.intellij.openapi.wm.IdeFocusManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -452,6 +457,43 @@ public abstract class BaseConsoleTab extends JPanel {
       }
     });
     myTool.selectTab(this);
+  }
+
+
+
+  protected SModel loadHistoryModel(String state) {
+    if (state != null) {
+      try {
+        final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadModel(state, MPSExtentions.MODEL));
+        ListSequence.fromList(SModelOperations.getNodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return ConceptRegistry.getInstance().getConceptDescriptor(it.getConcept().getQualifiedName()) instanceof IllegalConceptDescriptor;
+          }
+        }).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            if ((SNodeOperations.getAncestor(it, "jetbrains.mps.console.base.structure.HistoryItem", false, false) != null)) {
+              SNodeOperations.deleteNode(SNodeOperations.getAncestor(it, "jetbrains.mps.console.base.structure.HistoryItem", false, false));
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error("Unknown concept on loading console history: removing enclosing history item");
+              }
+            } else {
+              loadedModel.value = null;
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error("Unknown concept on loading console history: not loading history");
+              }
+            }
+          }
+        });
+        return loadedModel.value;
+      } catch (Exception e) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("Error on loading console history", e);
+        }
+        return null;
+      }
+    } else {
+      return null;
+    }
   }
 
 
