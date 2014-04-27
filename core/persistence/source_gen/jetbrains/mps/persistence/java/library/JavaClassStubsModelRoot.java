@@ -13,19 +13,17 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.Set;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.reloading.ClassPathFactory;
+import java.io.IOException;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 
 public class JavaClassStubsModelRoot extends FileBasedModelRoot {
@@ -62,61 +60,73 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
 
   @Override
   public Iterable<SModel> loadModels() {
-    final List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
+    List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     final Collection<String> files = getFiles(FileBasedModelRoot.SOURCE_ROOTS);
     final Collection<String> excludedFiles = getFiles(FileBasedModelRoot.EXCLUDED);
-
-    Set<IFile> jarsToLoad = new HashSet<IFile>();
-    Set<IFile> cpRootsToLoad = new HashSet<IFile>();
-
-    for (IFile file : CollectionSequence.fromCollection(files).select(new ISelector<String, IFile>() {
-      public IFile select(String it) {
-        return FileSystem.getInstance().getFileByPath(it);
+    final HashSet<String> processedFiles = new HashSet<String>();
+    for (String file : files) {
+      // Find all jar (zip) files recursively 
+      Set<IFile> jarFiles = new HashSet<IFile>();
+      collectJarFiles(FileSystem.getInstance().getFileByPath(file), jarFiles);
+      for (IFile jarFile : jarFiles) {
+        String jarPath = jarFile.getPath();
+        if (processedFiles.contains(jarPath) || excludedFiles.contains(jarPath)) {
+          continue;
+        }
+        findAndAddModels(jarPath, result);
+        processedFiles.add(jarPath);
       }
-    })) {
-      collectJarFiles(file, excludedFiles, jarsToLoad);
 
-      // we suppose here that each path can be either a jar-file or a classes directory or a jar directory, 
-      // but does not contain both jar-fils and class-files 
-      if (SetSequence.fromSet(jarsToLoad).isNotEmpty()) {
+      /*
+        // Find all class files recursively 
+        Set<IFile> classFiles = new HashSet<IFile>();
+        collectClassFiles(FileSystem.getInstance().getFileByPath(file), classFiles);
+        for (IFile classFile : classFiles) {
+          findAndAddModels(classFile.getPath(), result, excludedFiles);
+        }
+      */
+
+      // TODO: use commended code above 
+      // Need to implement IClassPathItem for *.class files, that can get package from such files to create model ref 
+      // Add it to ClassPathFactory 
+      // PS this code only works if variable file contains FQ named package dir structure 
+      if (processedFiles.contains(file) || excludedFiles.contains(file)) {
         continue;
       }
-
-      SetSequence.fromSet(cpRootsToLoad).addElement(file);
+      findAndAddModels(file, result);
     }
-
-    SetSequence.fromSet(jarsToLoad).select(new ISelector<IFile, IFile>() {
-      public IFile select(IFile it) {
-        return FileSystem.getInstance().getFileByPath(it.getPath() + "!/");
-      }
-    }).visitAll(new IVisitor<IFile>() {
-      public void visit(IFile it) {
-        getModelDescriptors(result, it, "", LanguageID.JAVA, getModule());
-      }
-    });
-    SetSequence.fromSet(cpRootsToLoad).visitAll(new IVisitor<IFile>() {
-      public void visit(IFile it) {
-        getModelDescriptors(result, it, "", LanguageID.JAVA, getModule());
-      }
-    });
-
     return result;
   }
 
-  private void collectJarFiles(final IFile file, Collection<String> excluded, Set<IFile> files) {
-    if (CollectionSequence.fromCollection(excluded).contains(file.getPath())) {
-      return;
-    }
+  private void collectJarFiles(final IFile file, final Set<IFile> files) {
     if (file.getPath().endsWith(".jar") || file.getPath().endsWith(".zip")) {
-      SetSequence.fromSet(files).addElement(file);
+      files.add(file);
       return;
     }
     if (!(file.isDirectory())) {
       return;
     }
     for (IFile child : file.getChildren()) {
-      collectJarFiles(child, excluded, files);
+      collectJarFiles(child, files);
     }
+  }
+
+  private void collectClassFiles(final IFile file, final Set<IFile> files) {
+    if (file.getPath().endsWith(".class")) {
+      files.add(file);
+      return;
+    }
+    if (!(file.isDirectory())) {
+      return;
+    }
+    for (IFile child : file.getChildren()) {
+      collectClassFiles(child, files);
+    }
+  }
+
+  private void findAndAddModels(String file, final List<SModel> result) {
+    IClassPathItem cp = create(file);
+    getModelDescriptors(result, file, cp, "", LanguageID.JAVA, getModule());
   }
 
   @Override
@@ -134,24 +144,20 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     return null;
   }
 
-  public void getModelDescriptors(final List<SModel> result, IFile file, String prefix, String languageId, SModule module) {
-    List<IFile> children = file.getChildren();
-    for (IFile subdir : ListSequence.fromList(children).where(new IWhereFilter<IFile>() {
-      public boolean accept(IFile it) {
-        return it.isDirectory();
-      }
-    })) {
-      List<IFile> subchildren = subdir.getChildren();
-      Iterable<IFile> rootClasses = ListSequence.fromList(subchildren).where(new IWhereFilter<IFile>() {
-        public boolean accept(IFile it) {
-          return it.getName().endsWith(".class") && !(it.getName().contains("$"));
-        }
-      });
+  private IClassPathItem create(String path) {
+    try {
+      return ClassPathFactory.getInstance().createFromPathFS(path, "JavaStubs");
+    } catch (IOException e) {
+      e.printStackTrace();
+      // To change body of catch statement use File | Settings | File Templates. 
+    }
+    return null;
+  }
 
-      String pack = prefix + ((eq_jzcn2m_a0a0a0a3a1a9(prefix, "") ? "" : ".")) + subdir.getName();
-
-      if (Sequence.fromIterable(rootClasses).isNotEmpty() && neq_jzcn2m_a0a5a1a9(pack, "")) {
-        final SModelReference modelReference = StubHelper.uidForPackageInStubs(pack, languageId, module.getModuleReference());
+  public void getModelDescriptors(final List<SModel> result, String startPath, IClassPathItem cp, String prefix, String languageId, SModule module) {
+    for (String subpackage : cp.getSubpackages(prefix)) {
+      if (cp.getRootClasses(subpackage).iterator().hasNext()) {
+        final SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, module.getModuleReference());
         JavaClassStubModelDescriptor smd;
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModel descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
@@ -175,17 +181,17 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
           smd.setModelRoot(this);
           ListSequence.fromList(result).addElement(smd);
         }
-        smd.getSource().addPath(subdir.getPath(), this);
+        smd.getSource().addPath(child(startPath, subpackage), this);
       }
-      getModelDescriptors(result, subdir, pack, languageId, module);
+      getModelDescriptors(result, startPath, cp, subpackage, languageId, module);
     }
   }
 
-  private static boolean eq_jzcn2m_a0a0a0a3a1a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean neq_jzcn2m_a0a5a1a9(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+  private String child(String startPath, String prefix) {
+    IFile file = FileSystem.getInstance().getFileByPath((startPath.endsWith(".jar") ? startPath + "!/" : startPath));
+    for (String child : prefix.split("\\.")) {
+      file = file.getDescendant(child);
+    }
+    return file.getPath();
   }
 }

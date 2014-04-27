@@ -11,13 +11,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import java.util.Collection;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
@@ -39,27 +36,15 @@ public class ConceptsScope extends SimpleScope {
         SetSequence.fromSet(contextLanguages).addElement((Language) module);
       }
     }
-    Collection<Language> usedLanguages = new GlobalModuleDependenciesManager(contextModule).getUsedLanguages();
-
-    Iterable<SModel> strucModels = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
+    Iterable<SNode> concepts = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
       public SModel select(Language it) {
         return it.getStructureModelDescriptor();
       }
-    }).union(CollectionSequence.fromCollection(usedLanguages).translate(new ITranslator2<Language, SModel>() {
-      public Iterable<SModel> translate(Language it) {
-        return it.getAccessoryModels();
-      }
     }).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return LanguageAspect.STRUCTURE.is(it);
-      }
-    })).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return it != null;
       }
-    });
-
-    return Sequence.fromIterable(strucModels).translate(new ITranslator2<SModel, SNode>() {
+    }).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
         return (Iterable<SNode>) it.getRootNodes();
       }
@@ -72,6 +57,8 @@ public class ConceptsScope extends SimpleScope {
         return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
       }
     });
+
+    return concepts;
   }
 
   @Nullable
