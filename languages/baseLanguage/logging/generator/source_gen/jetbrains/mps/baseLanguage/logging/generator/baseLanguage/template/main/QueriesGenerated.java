@@ -14,6 +14,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -110,6 +112,10 @@ public class QueriesGenerated {
       _context.showErrorMessage(_context.getNode(), "Can't find copy of the class concept in the target model");
     }
     return outputNode;
+  }
+
+  public static boolean mappingConfiguration_Condition_6450631649356134114(final TemplateQueryContext _context) {
+    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement").isEmpty()) || !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.logging.structure.PrintStatement").isEmpty());
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a1a21() {
