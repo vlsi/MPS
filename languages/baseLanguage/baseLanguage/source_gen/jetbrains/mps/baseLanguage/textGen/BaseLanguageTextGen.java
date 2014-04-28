@@ -19,11 +19,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import org.apache.log4j.Level;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.apache.log4j.Level;
 import java.util.HashSet;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.InternUtil;
@@ -199,9 +199,6 @@ public abstract class BaseLanguageTextGen {
     }
     Tuples._2<String, String> packageAndShortName = BaseLanguageTextGen.getPackageAndShortName(classifierRef, textGen);
     if (packageAndShortName == null) {
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("null package and short name");
-      }
       return;
     }
     String longName = NameUtil.longNameFromNamespaceAndShortName(packageAndShortName._0(), packageAndShortName._1());
