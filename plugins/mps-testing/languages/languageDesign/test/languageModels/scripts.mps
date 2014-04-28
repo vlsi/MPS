@@ -10,7 +10,7 @@
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="51te" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(MPS.Core/jetbrains.mps.extapi.model@java_stub)" version="-1" />
   <import index="iwwu" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
-  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="39" />
+  <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="40" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
   <import index="tp5o" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
   <import index="tp6m" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="0" />
@@ -25,12 +25,12 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <root type="tp33.MigrationScript" typeId="tp33.1177457067821" id="6090235207264650098" nodeInfo="ng">
     <property name="type" nameId="tp33.5299416737274925395" value="migration" />
-    <property name="name" nameId="tpck.1169194664001" value="MigrateNodeCheckOperationsContainer" />
+    <property name="name" nameId="tpck.1169194664001" value="MigrateNodePropertiesContainer" />
     <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.1" />
-    <property name="title" nameId="tp33.1177457669450" value="Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer" />
+    <property name="title" nameId="tp33.1177457669450" value="Migrate Test-Related NodePropertiesContainer to NodeOperationsContainer" />
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="6090235207264821223" nodeInfo="ng">
-      <property name="description" nameId="tp33.1177457972041" value="Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer" />
-      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tp5g.1215507532627" resolveInfo="NodeCheckOperationsContainer" />
+      <property name="description" nameId="tp33.1177457972041" value="Migrate Test-Related NodePropertiesContainer to NodeOperationsContainer" />
+      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tp5g.1215507532627" resolveInfo="NodePropertiesContainer" />
       <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="6090235207264821224" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6090235207264821225" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1613202924905800343" nodeInfo="nn">
@@ -104,7 +104,7 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.AttributeAccess" typeId="tp25.6407023681583031218" id="6090235207265669465" nodeInfo="nn">
                   <node role="qualifier" roleId="tp25.6407023681583036852" type="tp25.NodeAttributeQualifier" typeId="tp25.6407023681583036853" id="6090235207265669466" nodeInfo="ng">
-                    <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tp5g.1215507532627" resolveInfo="NodeCheckOperationsContainer" />
+                    <link role="attributeConcept" roleId="tp25.6407023681583036854" targetNodeId="tp5g.1215507532627" resolveInfo="NodePropertiesContainer" />
                   </node>
                 </node>
               </node>

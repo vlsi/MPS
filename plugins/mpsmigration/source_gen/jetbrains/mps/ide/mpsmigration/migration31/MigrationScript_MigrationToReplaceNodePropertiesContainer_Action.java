@@ -23,11 +23,11 @@ import java.awt.Frame;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class MigrationScript_MigrationToReplaceNodeCheckOperationsContainer_Action extends BaseAction {
+public class MigrationScript_MigrationToReplaceNodePropertiesContainer_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public MigrationScript_MigrationToReplaceNodeCheckOperationsContainer_Action() {
-    super("Replace NodeCheckOperationsContainer with NodeOperationsContainer", "Find and replace NodeCheckOperationsContainer concept", ICON);
+  public MigrationScript_MigrationToReplaceNodePropertiesContainer_Action() {
+    super("Replace NodePropertiesContainer with NodeOperationsContainer", "Find and replace NodePropertiesContainer concept", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -42,7 +42,7 @@ public class MigrationScript_MigrationToReplaceNodeCheckOperationsContainer_Acti
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MigrationScript_MigrationToReplaceNodeCheckOperationsContainer", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "MigrationScript_MigrationToReplaceNodePropertiesContainer", t);
       }
       this.disable(event.getPresentation());
     }
@@ -68,7 +68,7 @@ public class MigrationScript_MigrationToReplaceNodeCheckOperationsContainer_Acti
     try {
       SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)", "6090235207264650098");
 
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "ReplaceNodeCheckOperationsContainer", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "ReplaceNodePropertiesContainer", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (ModelAccess.instance().canWrite()) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
@@ -76,10 +76,10 @@ public class MigrationScript_MigrationToReplaceNodeCheckOperationsContainer_Acti
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MigrationScript_MigrationToReplaceNodeCheckOperationsContainer", t);
+        LOG.error("User's action execute method failed. Action:" + "MigrationScript_MigrationToReplaceNodePropertiesContainer", t);
       }
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(MigrationScript_MigrationToReplaceNodeCheckOperationsContainer_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MigrationScript_MigrationToReplaceNodePropertiesContainer_Action.class);
 }

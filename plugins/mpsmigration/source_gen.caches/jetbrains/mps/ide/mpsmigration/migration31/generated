@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-apxqgxo01tktbjrt4321jq33fmm7oe4">
+<dependencies version="2" modelHash="897n7e482mdzu1768q7aspntdcsjmcq">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -13,7 +13,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-d9u6qtqn8byb7xpic4iy13w48uff524" />
   <dep model="r:00000000-0000-4000-0000-011c8959032d(jetbrains.mps.baseLanguage.collections.scripts)" hash="ttv9ojanyez9vlyqp2w59fwbp9t9gt" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-9mbnbrs95x2s7kwcnr7ysfhpy0pl6po" />
-  <dep model="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)" hash="-8e0ygqo53utvr9fp9snatd3rg05bp3p" />
+  <dep model="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)" hash="-91rbsark00fegj3rybr5zaggb12gux6" />
   <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-5fl94go1snugm2p6mv9qaji24ijrthg" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="cynsqdr7qdgj70npj9cm8ml4he10u82" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
@@ -28,7 +28,7 @@
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="Main.java" />
   </source>
-  <source id="9056562259284885831" name="Migrations31" hash="-o5mir9ai16cb34x5lewzkoib0sfel3">
+  <source id="9056562259284885831" name="Migrations31" hash="2k0b2byxszcvs3bnm50h24z2f1bci1o">
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="6856864117646528335" name="Migration31Actions" hash="4qluv97t1rxsxf0lryuqso5105gykal">
@@ -110,7 +110,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MigrationScript_MigrationUpdateCastExpressionParens_Action.java" />
   </source>
-  <source id="7920213901776142502" name="MigrationScript_MigrationToReplaceNodeCheckOperationsContainer" hash="6conborg2tufgpydr1uuieb74sz5884" dependsOnNodes="true">
+  <source id="7920213901776142502" name="MigrationScript_MigrationToReplaceNodePropertiesContainer" hash="-cimolnnhcgw4isfwo5ikz5hmgmai8vx" dependsOnNodes="true">
     <dep root="3591685579118356955" />
     <dep root="6507455152233534234" />
     <dep root="6507455152234272998" />
@@ -130,7 +130,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590387(jetbrains.mps.lang.test.scripts)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
-    <file name="MigrationScript_MigrationToReplaceNodeCheckOperationsContainer_Action.java" />
+    <file name="MigrationScript_MigrationToReplaceNodePropertiesContainer_Action.java" />
   </source>
 </dependencies>
 

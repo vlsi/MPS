@@ -170,7 +170,7 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6507455152234272998" resolveInfo="MigrationScript_MigrationUpdateCastExpressionParens" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="7920213901776235981" nodeInfo="ng">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7920213901776142502" resolveInfo="MigrationScript_MigrationToReplaceNodeCheckOperationsContainer" />
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="7920213901776142502" resolveInfo="MigrationScript_MigrationToReplaceNodePropertiesContainer" />
       </node>
     </node>
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="9056562259285025198" nodeInfo="ng">
@@ -548,9 +548,9 @@
   </root>
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7920213901776142502" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
-    <property name="name" nameId="tpck.1169194664001" value="MigrationScript_MigrationToReplaceNodeCheckOperationsContainer" />
-    <property name="caption" nameId="tp4k.1205250923097" value="Replace NodeCheckOperationsContainer with NodeOperationsContainer" />
-    <property name="description" nameId="tp4k.1213273179528" value="Find and replace NodeCheckOperationsContainer concept" />
+    <property name="name" nameId="tpck.1169194664001" value="MigrationScript_MigrationToReplaceNodePropertiesContainer" />
+    <property name="caption" nameId="tp4k.1205250923097" value="Replace NodePropertiesContainer with NodeOperationsContainer" />
+    <property name="description" nameId="tp4k.1213273179528" value="Find and replace NodePropertiesContainer concept" />
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="7920213901776142503" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="context" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
@@ -574,7 +574,7 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SNodeReference" resolveInfo="SNodeReference" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp25.NodePointerExpression" typeId="tp25.1828409047608048457" id="7920213901776142513" nodeInfo="nn">
-              <link role="referentNode" roleId="tp25.1828409047608048458" targetNodeId="tp5n.6090235207264650098" resolveInfo="MigrateNodeCheckOperationsContainer" />
+              <link role="referentNode" roleId="tp25.1828409047608048458" targetNodeId="tp5n.6090235207264650098" resolveInfo="MigrateNodePropertiesContainer" />
             </node>
           </node>
         </node>
@@ -592,7 +592,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7920213901776142511" resolveInfo="script" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7920213901776142521" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="ReplaceNodeCheckOperationsContainer" />
+                  <property name="value" nameId="tpee.1070475926801" value="ReplaceNodePropertiesContainer" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7920213901776142522" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7920213901776142523" nodeInfo="nn" />

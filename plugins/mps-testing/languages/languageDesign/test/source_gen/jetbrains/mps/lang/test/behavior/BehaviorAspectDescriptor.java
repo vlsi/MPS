@@ -20,9 +20,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new AssertMatch_BehaviorDescriptor();
       case 6:
         return new CheckNodeForErrors_BehaviorDescriptor();
-      case 18:
-        return new NodeCheckOperationsContainer_BehaviorDescriptor();
-      case 21:
+      case 23:
+        return new NodePropertiesContainer_BehaviorDescriptor();
+      case 20:
         return new NodeErrorCheckOperation_BehaviorDescriptor();
       case 32:
         return new NodeWarningCheckOperation_BehaviorDescriptor();
@@ -30,7 +30,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new NodeReachable_BehaviorDescriptor();
       case 25:
         return new NodeTypeCheckOperation_BehaviorDescriptor();
-      case 23:
+      case 22:
         return new NodeOperationsContainer_BehaviorDescriptor();
       case 5:
         return new CheckNodeForErrorMessagesOperation_BehaviorDescriptor();
@@ -86,7 +86,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BootstrapActionReference_BehaviorDescriptor();
       case 15:
         return new MPSActionReference_BehaviorDescriptor();
-      case 22:
+      case 21:
         return new NodeExpectedTypeCheckOperation_BehaviorDescriptor();
       case 39:
         return new ScopesTest_BehaviorDescriptor();
@@ -104,9 +104,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new UnknownRuleReference_BehaviorDescriptor();
       case 29:
         return new NodeUnknownErrorCheckOperation_BehaviorDescriptor();
-      case 19:
+      case 18:
         return new NodeConstraintsErrorCheckOperation_BehaviorDescriptor();
-      case 20:
+      case 19:
         return new NodeConstraintsWarningCheckOperation_BehaviorDescriptor();
       case 30:
         return new NodeUnknownWarningCheckOperation_BehaviorDescriptor();
@@ -119,5 +119,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.DragMouseStatement", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.INodeAnnotation", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer", "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeConstraintsWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnknownWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.PressMouseStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ReportErrorStatementReference", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.UnknownRuleReference", "jetbrains.mps.lang.test.structure.VariableAlive", "jetbrains.mps.lang.test.structure.VariableInitialized", "jetbrains.mps.lang.test.structure.WarningStatementReference"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "jetbrains.mps.lang.test.structure.AssertMatch", "jetbrains.mps.lang.test.structure.BootstrapActionReference", "jetbrains.mps.lang.test.structure.CheckDataFlowOperation", "jetbrains.mps.lang.test.structure.CheckNodeDataflow", "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation", "jetbrains.mps.lang.test.structure.CheckNodeForErrors", "jetbrains.mps.lang.test.structure.DragMouseStatement", "jetbrains.mps.lang.test.structure.EditorComponentExpression", "jetbrains.mps.lang.test.structure.EditorExpression", "jetbrains.mps.lang.test.structure.EditorTestCase", "jetbrains.mps.lang.test.structure.ExpressionContainer", "jetbrains.mps.lang.test.structure.INodeAnnotation", "jetbrains.mps.lang.test.structure.InvokeActionStatement", "jetbrains.mps.lang.test.structure.InvokeIntentionStatement", "jetbrains.mps.lang.test.structure.MPSActionReference", "jetbrains.mps.lang.test.structure.MockAnnotation", "jetbrains.mps.lang.test.structure.ModelExpression", "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeConstraintsWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeExpectedTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeOperationsContainer", "jetbrains.mps.lang.test.structure.NodePropertiesContainer", "jetbrains.mps.lang.test.structure.NodeReachable", "jetbrains.mps.lang.test.structure.NodeTypeCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSetCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnknownErrorCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnknownWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodeUnreachable", "jetbrains.mps.lang.test.structure.NodeWarningCheckOperation", "jetbrains.mps.lang.test.structure.NodesTestCase", "jetbrains.mps.lang.test.structure.PressKeyStatement", "jetbrains.mps.lang.test.structure.PressMouseStatement", "jetbrains.mps.lang.test.structure.ProjectExpression", "jetbrains.mps.lang.test.structure.ReportErrorStatementReference", "jetbrains.mps.lang.test.structure.ScopesExpectedNode", "jetbrains.mps.lang.test.structure.ScopesTest", "jetbrains.mps.lang.test.structure.SimpleNodeTest", "jetbrains.mps.lang.test.structure.SwitchToInspector", "jetbrains.mps.lang.test.structure.TestInfo", "jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.TestNodeAnnotation", "jetbrains.mps.lang.test.structure.TestNodeReference", "jetbrains.mps.lang.test.structure.TypeKeyStatement", "jetbrains.mps.lang.test.structure.UnknownRuleReference", "jetbrains.mps.lang.test.structure.VariableAlive", "jetbrains.mps.lang.test.structure.VariableInitialized", "jetbrains.mps.lang.test.structure.WarningStatementReference"};
 }

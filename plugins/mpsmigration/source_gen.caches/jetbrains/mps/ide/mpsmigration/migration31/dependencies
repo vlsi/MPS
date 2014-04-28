@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToReplaceNodeCheckOperationsContainer_Action" file="MigrationScript_MigrationToReplaceNodeCheckOperationsContainer_Action.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToReplaceNodePropertiesContainer_Action" file="MigrationScript_MigrationToReplaceNodePropertiesContainer_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
