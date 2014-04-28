@@ -56,7 +56,7 @@ import javax.swing.Icon;
  * User: fyodor
  * Date: 3/5/13
  */
-public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
+public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, MPSPsiRealNode {
 
   private final FileViewProvider myViewProvider;
   private final SNodeId myNodeId;
@@ -228,6 +228,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
     return myNodeId;
   }
 
+  @Override
   public SNodeReference getSNodeReference() {
     MPSPsiModel psiModel = getContainingModel();
     if (psiModel == null) return null;

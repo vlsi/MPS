@@ -83,8 +83,6 @@ public class TextGen {
     buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
     appendNodeText(buffer, node, null);
-    String topBufferText = buffer.getTopBufferText();
-    int topLength = topBufferText.isEmpty() ? 1 : topBufferText.split(buffer.getLineSeparator(), -1).length + 2;
 
     // position info
     Map<SNode, TraceablePositionInfo> positionInfo = null;
@@ -94,6 +92,8 @@ public class TextGen {
       positionInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.POSITION_INFO);
       scopeInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.SCOPE_INFO);
       unitInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.UNIT_INFO);
+      int topLength = buffer.getTopBufferLineCount();
+      topLength++; // human-friendly line numbers (not 0-based)
       adjustPositions(topLength, positionInfo);
       adjustPositions(topLength, scopeInfo);
       adjustPositions(topLength, unitInfo);

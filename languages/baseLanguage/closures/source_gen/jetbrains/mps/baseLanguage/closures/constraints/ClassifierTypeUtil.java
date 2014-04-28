@@ -187,6 +187,18 @@ with_meet:
           SNodeOperations.replaceWithAnother(pt, rt);
         }
       }
+    } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+      SNode bound = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true);
+      SNode rbound = resolveType(bound, actTypes, vars);
+      if (bound != rbound) {
+        SNodeOperations.replaceWithAnother(bound, rbound);
+      }
+    } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+      SNode bound = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true);
+      SNode rbound = resolveType(bound, actTypes, vars);
+      if (bound != rbound) {
+        SNodeOperations.replaceWithAnother(bound, rbound);
+      }
     }
     return type;
   }

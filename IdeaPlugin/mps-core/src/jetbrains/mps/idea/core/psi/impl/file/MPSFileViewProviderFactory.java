@@ -73,10 +73,10 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
 
     @Override
     protected PsiFile createFile() {
-      final VirtualFile virtualFile = getVirtualFile() instanceof LightVirtualFile ? ((LightVirtualFile)getVirtualFile()).getOriginalFile() : getVirtualFile();
+      final VirtualFile virtualFile = getVirtualFile() instanceof LightVirtualFile ? ((LightVirtualFile) getVirtualFile()).getOriginalFile() : getVirtualFile();
       if (virtualFile == null ||
         (virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE
-          && virtualFile.getFileType() != MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) ) {
+          && virtualFile.getFileType() != MPSFileTypeFactory.MPS_ROOT_FILE_TYPE)) {
         return null;
       }
       final IFile modelFile = virtualFile.getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE
@@ -87,15 +87,15 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
         @Override
         public PsiFile compute() {
           SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
-          if(descr != null) {
+          if (descr != null) {
             // force loading the model and updating the PSI tree at this time
             MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
             MPSPsiModel psiModel = mpsPsiProvider.getPsi(descr);
 
-            if(virtualFile.getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) {
+            if (virtualFile.getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) {
               for (PsiElement element : psiModel.getChildren()) {
-                if(((MPSPsiRootNode)element).getVirtualFile().equals(virtualFile) || ((MPSPsiRootNode)element).getVirtualFile().getName().equals(virtualFile.getNameWithoutExtension())) {
-                  return (MPSPsiRootNode)element;
+                if (((MPSPsiRootNode) element).getVirtualFile().equals(virtualFile) || ((MPSPsiRootNode) element).getVirtualFile().getName().equals(virtualFile.getNameWithoutExtension())) {
+                  return (MPSPsiRootNode) element;
                 }
               }
               return null;

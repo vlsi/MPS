@@ -20,6 +20,7 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -376,7 +377,8 @@ public class State {
           if (node != null) {
             SNode concept = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
             boolean isAbstract = SPropertyOperations.getBoolean(concept, SNodeUtil.property_AbstractConceptDeclaration_abstract);
-            if (!isAbstract) {
+            boolean isRuntime = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.typesystem.RuntimeTypeVariable");
+            if (!isAbstract && !isRuntime) {
               myTypeCheckingContext.reportWarning(node, "argument of WHEN CONCRETE block is never concrete",
                   wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());
             }

@@ -31,6 +31,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -58,6 +59,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
@@ -267,13 +270,18 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   private IFile getModelFile (AbstractTreeNode treeNode) {
     if (treeNode instanceof MPSPsiElementTreeNode) {
       return getModelFile(treeNode.getParent());
-    }
-    else if (treeNode instanceof MPSPsiModelTreeNode) {
+
+    } else if (treeNode instanceof MPSPsiModelTreeNode) {
       MPSPsiModelTreeNode fileNode = (MPSPsiModelTreeNode) treeNode;
       VirtualFile virtualFile = fileNode.getVirtualFile();
-      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE || virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE) return null;
-
+      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE && virtualFile.getFileType() != MPSFileTypeFactory.MPS_HEADER_FILE_TYPE) return null;
       return FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+
+    } else if (treeNode instanceof PsiDirectoryNode) {
+      IFile ifile = FileSystem.getInstance().getFileByPath(((PsiDirectoryNode)treeNode).getVirtualFile().getPath());
+      SModel model = SModelFileTracker.getInstance().findModel(ifile);
+      if (model != null) return ifile;
+
     }
     return null;
   }

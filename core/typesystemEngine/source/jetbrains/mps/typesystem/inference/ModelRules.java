@@ -82,7 +82,7 @@ public class ModelRules {
       try {
         typeSystemDescriptor = language.getTypesystem();
       } catch (Throwable t) {
-        LOG.error("Error while loading language: " + t);
+        LOG.error("Error while loading language: " + languageNamespace, t);
       }
       if (typeSystemDescriptor == null) return false;
       try {

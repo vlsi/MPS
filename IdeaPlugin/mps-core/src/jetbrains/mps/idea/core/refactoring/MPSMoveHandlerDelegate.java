@@ -10,6 +10,8 @@ import com.intellij.refactoring.move.MoveCallback;
 import com.intellij.refactoring.move.MoveHandlerDelegate;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRealNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -40,7 +42,7 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
     if (elements.length == 0) return false;
 
     for (int i=0; i<elements.length; i++) {
-      if (!(elements[i] instanceof MPSPsiNode)) {
+      if (!(elements[i] instanceof MPSPsiRealNode)) {
         return false;
       }
     }
@@ -60,7 +62,7 @@ public class MPSMoveHandlerDelegate extends MoveHandlerDelegate {
 
         List<SNode> nodes = new ArrayList<SNode>(elements.length);
         for (int i = 0; i< elements.length; i++) {
-          nodes.add(((MPSPsiNode) elements[i]).getSNodeReference().resolve(mpsProject.getRepository()));
+          nodes.add(((MPSPsiRealNode) elements[i]).getSNodeReference().resolve(mpsProject.getRepository()));
         }
 
         for (MoveRefactoringContributorEP ep : MoveRefactoringContributorEP.EP_NAME.getExtensions()) {

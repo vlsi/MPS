@@ -275,7 +275,19 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
+      final DependenciesReadListener l;
+      if (environment.getGenerator().isIncremental()) {
+        // this code used to be in TemplateReductionRuleInterpreted, added to address MPS-16916
+        // Moved here for next reasons: (a) generated rules shall behave the same as interpreted;
+        // (b) this class is the only place we install listeners via NodeReadEventsCaster, and there shall be no way to get into TRRI with a
+        // listener installed (for TRRI to uninstall one) other than through this method.
+        // However, I don't understand why there's difference in change tracking in incremental vs non-incremental mode,
+        // and why only reduction rules are considered.
+        l = null; // turn tracing off
+      } else {
+        l = listener;
+      }
+      NodeReadEventsCaster.setNodesReadListener(l);
       return wrapped.tryToApply(rule, environment, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
