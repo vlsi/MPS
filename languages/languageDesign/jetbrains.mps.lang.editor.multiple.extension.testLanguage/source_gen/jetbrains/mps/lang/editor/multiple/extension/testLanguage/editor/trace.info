@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:a554b43d-e081-43aa-820b-45da05206260(jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor)/1217012833662768584">
     <nodeInfo nodeId="1217012833662768584" fileName="MultipleEditorsTestEditorComponentChild_compactRich.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
     <nodeInfo nodeId="1217012833662768584" fileName="MultipleEditorsTestEditorComponentChild_compactRich.java" startLine="23" startPosition="47" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

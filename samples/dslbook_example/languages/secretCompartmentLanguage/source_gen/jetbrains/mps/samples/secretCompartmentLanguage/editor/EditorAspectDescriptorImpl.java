@@ -10,10 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new Event_Editor());
       case 1:
@@ -44,5 +49,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", "jetbrains.mps.samples.secretCompartmentLanguage.structure.State", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", "jetbrains.mps.samples.secretCompartmentLanguage.structure.State", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachine", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition"};
 }

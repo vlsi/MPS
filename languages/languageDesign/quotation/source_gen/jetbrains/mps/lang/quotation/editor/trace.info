@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.lang.quotation.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/1196350915486">
     <nodeInfo nodeId="1196350915486" fileName="AbstractAntiquotation_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196350915487" fileName="AbstractAntiquotation_Editor.java" startLine="16" startPosition="84" endLine="17" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -11,12 +11,16 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("DiagramTestTextual", "Textual presentation for diagram test language.", true, "jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"));
 
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
         return Arrays.asList(new ConceptEditor[]{new Diagram1_DiagramTestTextual_Editor(), new Diagram1_Editor()});
       case 1:
@@ -55,5 +59,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPortQueries", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPortQueries", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
 }

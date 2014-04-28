@@ -10,10 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new CommentMigrationScriptPart_Editor());
       case 1:
@@ -52,5 +57,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.DirectClassifierSpecification", "jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification", "jetbrains.mps.lang.script.structure.FQNameMethodSpecification", "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.PullUpMethod", "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.DirectClassifierSpecification", "jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification", "jetbrains.mps.lang.script.structure.FQNameMethodSpecification", "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.PullUpMethod", "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"};
 }

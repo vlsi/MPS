@@ -11,12 +11,16 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("ScenePreview", "With Scene Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ScenePreview"), new ConceptEditorHintImpl("ShapePreview", "With Shape Preview", true, "jetbrains.mps.samples.Shapes.editor.Shapes.ShapePreview"));
 
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
         return Arrays.asList(new ConceptEditor[]{new Canvas_Editor(), new Canvas_ScenePreview_Editor()});
       case 1:
@@ -31,7 +35,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0e, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.samples.Shapes.editor.ShapeColor".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new ShapeColor());
@@ -49,6 +53,16 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.Shapes.structure.Canvas", "jetbrains.mps.samples.Shapes.structure.Circle", "jetbrains.mps.samples.Shapes.structure.ColorReference", "jetbrains.mps.samples.Shapes.structure.Square"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.Shapes.structure.Shape"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.samples.Shapes.structure.Canvas", "jetbrains.mps.samples.Shapes.structure.Circle", "jetbrains.mps.samples.Shapes.structure.ColorReference", "jetbrains.mps.samples.Shapes.structure.Square"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0e = new String[]{"jetbrains.mps.samples.Shapes.structure.Shape"};
 }

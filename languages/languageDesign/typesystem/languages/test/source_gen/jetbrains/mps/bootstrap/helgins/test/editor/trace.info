@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895905c7(jetbrains.mps.bootstrap.helgins.test.editor)/1185806720454">
     <nodeInfo nodeId="1185806720454" fileName="AConcept_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1185806720454" fileName="AConcept_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

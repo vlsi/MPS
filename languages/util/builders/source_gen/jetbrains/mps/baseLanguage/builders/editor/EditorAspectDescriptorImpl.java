@@ -10,10 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AsBuilderStatement_Editor());
       case 1:
@@ -68,5 +73,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.ResultExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.ResultExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"};
 }

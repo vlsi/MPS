@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:08318e8b-b87d-4355-b53c-ed3d06786f3d(jetbrains.mps.lang.editor.tableTests.editor)/2361546520930481310">
     <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="12" startPosition="95" endLine="13" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />

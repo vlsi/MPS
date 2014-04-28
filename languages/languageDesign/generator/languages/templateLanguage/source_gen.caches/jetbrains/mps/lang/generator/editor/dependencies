@@ -185,6 +185,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.AbandonInput_RuleConsequence_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.BaseMappingRule_premise" />
     <classNode dependClassName="jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector" />
@@ -244,6 +245,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

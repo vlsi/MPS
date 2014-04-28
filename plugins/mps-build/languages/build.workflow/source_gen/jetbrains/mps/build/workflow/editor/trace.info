@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.build.workflow.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)/144710003695346442">
     <nodeInfo nodeId="144710003695346442" fileName="BwfJavaLibrary_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="144710003695346442" fileName="BwfJavaLibrary_Editor.java" startLine="32" startPosition="89" endLine="33" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

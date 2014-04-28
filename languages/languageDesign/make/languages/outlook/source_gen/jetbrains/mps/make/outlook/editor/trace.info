@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.make.outlook.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.make.outlook.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:6df9b1ec-2a82-4a17-9636-f155e1db2678(jetbrains.mps.make.outlook.editor)/5608160002100058532">
     <nodeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5608160002100058532" fileName="Outlook_Editor.java" startLine="33" startPosition="89" endLine="34" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

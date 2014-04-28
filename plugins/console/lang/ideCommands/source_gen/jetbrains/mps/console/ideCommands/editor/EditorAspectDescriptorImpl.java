@@ -10,10 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AbsractMake_Editor());
       case 1:
@@ -60,5 +65,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.ideCommands.structure.AbsractMake", "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.console.ideCommands.structure.AbsractMake", "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
 }

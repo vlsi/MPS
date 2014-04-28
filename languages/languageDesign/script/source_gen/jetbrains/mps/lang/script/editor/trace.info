@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.script.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.script.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959031f(jetbrains.mps.lang.script.editor)/1177460073219">
     <nodeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="32" startPosition="79" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1177460073219" fileName="MigrationScript_Editor.java" startLine="36" startPosition="89" endLine="37" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

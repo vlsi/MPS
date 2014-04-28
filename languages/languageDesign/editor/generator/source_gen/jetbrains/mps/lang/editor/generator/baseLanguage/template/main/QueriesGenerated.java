@@ -1578,6 +1578,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration")).isNotEmpty();
   }
 
+  public static boolean ifMacro_Condition_4137894728145727658(final IfMacroContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration")).isNotEmpty();
+  }
+
   public static boolean ifMacro_Condition_5950344441595673031(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "renderingCondition", true) != null;
   }

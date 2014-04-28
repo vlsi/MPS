@@ -10,10 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new CommandList_Editor());
       case 1:
@@ -82,5 +87,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.Kaja.structure.CommandList", "jetbrains.mps.samples.Kaja.structure.CommentLine", "jetbrains.mps.samples.Kaja.structure.Drop", "jetbrains.mps.samples.Kaja.structure.East", "jetbrains.mps.samples.Kaja.structure.EmptyLine", "jetbrains.mps.samples.Kaja.structure.Heading", "jetbrains.mps.samples.Kaja.structure.IfStatement", "jetbrains.mps.samples.Kaja.structure.IsFull", "jetbrains.mps.samples.Kaja.structure.IsMark", "jetbrains.mps.samples.Kaja.structure.IsWall", "jetbrains.mps.samples.Kaja.structure.LeftTurn", "jetbrains.mps.samples.Kaja.structure.Library", "jetbrains.mps.samples.Kaja.structure.Looking", "jetbrains.mps.samples.Kaja.structure.North", "jetbrains.mps.samples.Kaja.structure.Not", "jetbrains.mps.samples.Kaja.structure.Pick", "jetbrains.mps.samples.Kaja.structure.Repeat", "jetbrains.mps.samples.Kaja.structure.Require", "jetbrains.mps.samples.Kaja.structure.RoutineCall", "jetbrains.mps.samples.Kaja.structure.RoutineDefinition", "jetbrains.mps.samples.Kaja.structure.Script", "jetbrains.mps.samples.Kaja.structure.South", "jetbrains.mps.samples.Kaja.structure.Step", "jetbrains.mps.samples.Kaja.structure.TraceMessage", "jetbrains.mps.samples.Kaja.structure.West", "jetbrains.mps.samples.Kaja.structure.While"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.Kaja.structure.CommandList", "jetbrains.mps.samples.Kaja.structure.CommentLine", "jetbrains.mps.samples.Kaja.structure.Drop", "jetbrains.mps.samples.Kaja.structure.East", "jetbrains.mps.samples.Kaja.structure.EmptyLine", "jetbrains.mps.samples.Kaja.structure.Heading", "jetbrains.mps.samples.Kaja.structure.IfStatement", "jetbrains.mps.samples.Kaja.structure.IsFull", "jetbrains.mps.samples.Kaja.structure.IsMark", "jetbrains.mps.samples.Kaja.structure.IsWall", "jetbrains.mps.samples.Kaja.structure.LeftTurn", "jetbrains.mps.samples.Kaja.structure.Library", "jetbrains.mps.samples.Kaja.structure.Looking", "jetbrains.mps.samples.Kaja.structure.North", "jetbrains.mps.samples.Kaja.structure.Not", "jetbrains.mps.samples.Kaja.structure.Pick", "jetbrains.mps.samples.Kaja.structure.Repeat", "jetbrains.mps.samples.Kaja.structure.Require", "jetbrains.mps.samples.Kaja.structure.RoutineCall", "jetbrains.mps.samples.Kaja.structure.RoutineDefinition", "jetbrains.mps.samples.Kaja.structure.Script", "jetbrains.mps.samples.Kaja.structure.South", "jetbrains.mps.samples.Kaja.structure.Step", "jetbrains.mps.samples.Kaja.structure.TraceMessage", "jetbrains.mps.samples.Kaja.structure.West", "jetbrains.mps.samples.Kaja.structure.While"};
 }

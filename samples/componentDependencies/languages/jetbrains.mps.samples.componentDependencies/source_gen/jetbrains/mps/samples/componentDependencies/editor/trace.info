@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:7ef60438-f5cb-4ce3-b173-829ec8cb68a1(jetbrains.mps.samples.componentDependencies.editor)/1046366395970105219">
     <nodeInfo nodeId="1046366395970105219" fileName="Dependency_table_Editor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
     <nodeInfo nodeId="1046366395970105219" fileName="Dependency_table_Editor.java" startLine="17" startPosition="47" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
