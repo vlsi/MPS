@@ -58,7 +58,10 @@ public class FastRuleFinder {
       rules.add(rule);
 
       if (rule.applyToInheritors()) {
-        for (String conceptFqName : ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName)) {
+        final Set<String> allDescendantConcepts = ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName);
+        // don't duplicate the rule for the initial concept in inheritedRules - it already is in specificRules
+        allDescendantConcepts.remove(applicableConceptFqName);
+        for (String conceptFqName : allDescendantConcepts) {
           rules = inheritedRules.get(conceptFqName);
           if (rules == null) {
             rules = new LinkedList<TemplateReductionRule>();
