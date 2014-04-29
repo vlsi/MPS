@@ -1525,7 +1525,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8872173783417963905(final IfMacroContext _context) {
-    return (int) Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorDeclarations"))).count() == 1;
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:editorDeclarations"))).count() == 1;
   }
 
   public static boolean ifMacro_Condition_4618993321951053857(final IfMacroContext _context) {
@@ -1533,7 +1533,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3784190569164330626(final IfMacroContext _context) {
-    return (int) Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:mainEditorComponents"))).count() == 1;
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:mainEditorComponents"))).count() == 1;
   }
 
   public static boolean ifMacro_Condition_3784190569164248155(final IfMacroContext _context) {
@@ -1561,7 +1561,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2467262375112320830(final IfMacroContext _context) {
-    return (int) Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("editorComponents"))).count() == 1;
+    return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("editorComponents"))).count() == 1;
   }
 
   public static boolean ifMacro_Condition_6044426492099256976(final IfMacroContext _context) {

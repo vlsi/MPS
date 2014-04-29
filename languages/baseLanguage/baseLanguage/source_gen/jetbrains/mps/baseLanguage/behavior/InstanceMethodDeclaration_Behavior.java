@@ -60,7 +60,7 @@ public class InstanceMethodDeclaration_Behavior {
         return Classifier_Behavior.call_methods_5292274854859311639(it);
       }
     })) {
-      if (eq_4b3xw6_a0a0a0d0h(SPropertyOperations.getString(method, "name"), SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() && BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, thisNode)) {
+      if (eq_4b3xw6_a0a0a0d0h(SPropertyOperations.getString(method, "name"), SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() && BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, thisNode)) {
         return method;
       }
     }
@@ -77,7 +77,7 @@ public class InstanceMethodDeclaration_Behavior {
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(parent, IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> methodDeclarations = (List<SNode>) scope.getNodes(new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
     for (SNode methodCandidate : methodDeclarations) {
-      if (methodCandidate != thisNode && eq_4b3xw6_a0a0a0e0i(SPropertyOperations.getString(methodCandidate, "name"), SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
+      if (methodCandidate != thisNode && eq_4b3xw6_a0a0a0e0i(SPropertyOperations.getString(methodCandidate, "name"), SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(methodCandidate, thisNode)) {
           return methodCandidate;
         }

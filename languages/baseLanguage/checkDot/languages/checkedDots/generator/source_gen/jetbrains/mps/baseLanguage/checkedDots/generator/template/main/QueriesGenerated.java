@@ -18,6 +18,8 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -131,6 +133,10 @@ public class QueriesGenerated {
 
   public static Iterable<SNode> sourceNodesQuery_4741735385321357379(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
+  }
+
+  public static boolean mappingConfiguration_Condition_6450631649356367178(final TemplateQueryContext _context) {
+    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression").isEmpty());
   }
 
   private static SNode _quotation_createNode_x583g4_a0a91() {

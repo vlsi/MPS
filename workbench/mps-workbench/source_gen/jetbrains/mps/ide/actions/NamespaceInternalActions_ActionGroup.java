@@ -49,7 +49,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
           return;
         }
       }
-      if ((int) ListSequence.fromList(selectedNodes).count() == 1) {
+      if (ListSequence.fromList(selectedNodes).count() == 1) {
         NamespaceTextNode node = (NamespaceTextNode) ListSequence.fromList(selectedNodes).first();
         DefaultActionGroup newGroup = NamespaceInternalActionsUtil.createNewGroup(node);
         if (newGroup != null) {
@@ -58,7 +58,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
         }
       }
       NamespaceInternalActions_ActionGroup.this.add(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup")));
-      if ((int) ListSequence.fromList(selectedNodes).count() == 1) {
+      if (ListSequence.fromList(selectedNodes).count() == 1) {
         NamespaceInternalActions_ActionGroup.this.addSeparator();
         NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action");
       }

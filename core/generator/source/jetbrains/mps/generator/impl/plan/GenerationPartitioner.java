@@ -26,7 +26,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -90,16 +89,25 @@ public class GenerationPartitioner {
     loadRules();
 
     // solve
-//    partitioningSolver.solveNew();
-//    return partitioningSolver.solve();
     final List<GenerationPhase> generationPhases = mySolver.solveNew();
     return phaseAsPlainList(generationPhases);
+//    return phaseGroupedByGenerator(generationPhases);
   }
 
   static List<List<TemplateMappingConfiguration>> phaseAsPlainList(List<GenerationPhase> phases) {
     List<List<TemplateMappingConfiguration>> rv = new ArrayList<List<TemplateMappingConfiguration>>();
     for (GenerationPhase gp : phases) {
       rv.add(gp.getAllElements());
+    }
+    return rv;
+  }
+
+  static List<List<TemplateMappingConfiguration>> phaseGroupedByGenerator(List<GenerationPhase> phases) {
+    List<List<TemplateMappingConfiguration>> rv = new ArrayList<List<TemplateMappingConfiguration>>();
+    for (GenerationPhase gp : phases) {
+      for (Group g : gp.groupByGenerator()) {
+        rv.add(new ArrayList<TemplateMappingConfiguration>(g.getElements()));
+      }
     }
     return rv;
   }
@@ -123,13 +131,12 @@ public class GenerationPartitioner {
 
     Collection<TemplateMappingConfiguration> lhs = getMappingsFromRef(left, generator, generator.getAlias());
     Collection<TemplateMappingConfiguration> rhs = getMappingsFromRef(right, generator, generator.getAlias());
-    if (rule.getType() == RuleType.STRICTLY_TOGETHER) {
-      Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(rhs);
-      coherentMappings.addAll(lhs);
-      mySolver.registerCoherent(coherentMappings, rule);
-      return;
-    }
     switch (rule.getType()) {
+      case STRICTLY_TOGETHER:
+        Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(rhs);
+        coherentMappings.addAll(lhs);
+        mySolver.registerCoherent(coherentMappings, rule);
+        return;
       case STRICTLY_BEFORE:
       case BEFORE_OR_TOGETHER:
         mySolver.establishDependency(lhs, rhs, rule);

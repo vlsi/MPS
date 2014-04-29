@@ -29,6 +29,7 @@ import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 
 @Generated
 public class QueriesGenerated {
@@ -368,5 +369,21 @@ public class QueriesGenerated {
         return ProjectPluginDeclaration_Behavior.call_getGeneratedName_481983775135178936(it);
       }
     }, true);
+  }
+
+  public static boolean mappingConfiguration_Condition_6450631649357642562(final TemplateQueryContext _context) {
+    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration").isEmpty()) || !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration").isEmpty());
+  }
+
+  public static boolean mappingConfiguration_Condition_6450631649358411876(final TemplateQueryContext _context) {
+    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.BaseProjectOperation").isEmpty());
+  }
+
+  public static boolean mappingConfiguration_Condition_6450631649358360022(final TemplateQueryContext _context) {
+    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor").isEmpty());
+  }
+
+  public static boolean mappingConfiguration_Condition_6450631649358385723(final TemplateQueryContext _context) {
+    return !(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor").isEmpty());
   }
 }

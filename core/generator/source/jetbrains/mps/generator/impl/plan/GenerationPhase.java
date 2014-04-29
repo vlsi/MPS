@@ -49,12 +49,11 @@ class GenerationPhase {
   }
 
 
-  void groupByGenerator() {
+  List<Group> groupByGenerator() {
     HashMap<TemplateModule, Group> groupByModule = new HashMap<TemplateModule, Group>();
     HashMap<Group, Set<TemplateModule>> groupsWithFewModules = new HashMap<Group, Set<TemplateModule>>();
     ArrayList<Group> step = new ArrayList<Group>();
     for (Group g : myPhaseElements) {
-      System.out.println(g);
       final Set<TemplateModule> involvedGenerators = getInvolvedGenerators(g);
       if (involvedGenerators.size() == 1) {
         final TemplateModule generator = involvedGenerators.iterator().next();
@@ -64,7 +63,6 @@ class GenerationPhase {
         groupsWithFewModules.put(g, involvedGenerators);
       }
     }
-    System.out.println();
     // add groups with single generator to a group with MC from few generators,
     // so that g1 (GenA, GenB, GenC) includes g2(GenB), iow no distinct g1 and g2.
     for (Entry<Group, Set<TemplateModule>> e : groupsWithFewModules.entrySet()) {
@@ -77,6 +75,7 @@ class GenerationPhase {
       step.add(compositeGroup);
     }
     step.addAll(groupByModule.values()); // add those left not in use by any composite group
+    return step;
   }
 
   private static List<TemplateMappingConfiguration> asList(Collection<Group> groups) {
