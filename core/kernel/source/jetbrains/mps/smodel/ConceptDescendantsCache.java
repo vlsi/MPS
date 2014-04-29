@@ -100,6 +100,11 @@ public class ConceptDescendantsCache implements CoreComponent {
     return INSTANCE;
   }
 
+  /**
+   * Collect all descendant concepts
+   * @param conceptFqName concept to start from
+   * @return non-empty set of descendant concepts including the one supplied.
+   */
   public Set<String> getDescendants(String conceptFqName) {
     ModelAccess.assertLegalRead();
     Set<String> result = new LinkedHashSet<String>();

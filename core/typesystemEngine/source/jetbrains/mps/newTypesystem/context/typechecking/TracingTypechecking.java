@@ -31,6 +31,10 @@ public class TracingTypechecking extends BaseTypechecking<TargetState, TargetTyp
     super(node, state);
   }
 
+  @Override
+  protected TargetTypeheckingComponent createTypecheckingComponent() {
+    return new TargetTypeheckingComponent(getState(), this);
+  }
 
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     if (nodeWithError != null) {

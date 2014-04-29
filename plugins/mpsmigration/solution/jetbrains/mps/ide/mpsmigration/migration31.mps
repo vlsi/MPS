@@ -160,6 +160,9 @@
     <property name="caption" nameId="tp4k.1204991940915" value="Migration 3.1" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="9056562259285025195" nodeInfo="ng">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6845636132442145024" nodeInfo="ng">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="tprs.2533953941693774358" resolveInfo="ForcedSaveAll" />
+      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3591685579118790813" nodeInfo="ng">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="3591685579118356955" resolveInfo="MigrationScript_MigrationToUpdateAllConstants" />
       </node>

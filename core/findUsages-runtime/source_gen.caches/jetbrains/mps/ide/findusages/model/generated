@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="18wifysw5vy41lgjaifnuvdj6c4mvo1" />
+<dependencies version="2" modelHash="f8sgtdb8tmiej952pgh31dhnedf9w9">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-dbs41xni5131g9264jfmo0b1op1zu0u" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="847291649004062081" name="CategoryKind" hash="cgb9974q3ewdus0tei6woye2yec6gtu">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="CategoryKind.java" />
+  </source>
+  <source id="847291649004063466" name="IResultProvider" hash="-bv4443i2gheypzp9m18glpuj7krb1bb">
+    <file name="IResultProvider.java" />
+  </source>
+  <source id="847291649004063609" name="SearchResult" hash="-bk69angpfcjm6zral7w9o36o547buz8">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="SearchResult.java" />
+  </source>
+  <source id="847291649004065516" name="SearchResults" hash="-aa5h8qzge0nzmbsy7qrytx2btdmve0b">
+    <file name="SearchResults.java" />
+  </source>
+  <source id="847291649006544485" name="SearchQuery" hash="33bdkjvad7o3hhjpszg3exjd5ppv5jl">
+    <file name="SearchQuery.java" />
+  </source>
+</dependencies>
 

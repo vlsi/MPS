@@ -1,3 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3nq4q78u341okdhwlwgm9n0cjcbghwa" />
+<dependencies version="2" modelHash="-24i1cj0bg5myui9ytt6zyfiml6uhezd">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-a1p5gm2tk74jwijgkkw53yaon9dv2r7" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="byj123xnvs7sjr94bquwie45gmy1nbo" dependsOnNodes="true">
+    <dep root="2755216049126692157" />
+    <dep root="2822369470875160718" />
+    <dep root="3492877759608408142" />
+    <dep root="3492877759611762121" />
+    <dep root="4307205004131544317" />
+    <dep root="4307205004131544565" />
+    <dep root="4307205004132277753" />
+    <dep root="4307205004132412550" />
+    <dep root="4307205004132412719" />
+    <dep root="4307205004134636866" />
+    <dep root="4307205004134636875" />
+    <dep root="4307205004134636962" />
+    <dep root="5464054275389846505" />
+    <dep root="5510759644748856153" />
+    <dep root="6322385757202370749" />
+    <dep root="6558068108107691796" />
+    <dep root="6852607286009511388" />
+    <dep root="6864030874027862829" />
+    <dep root="6864030874028745314" />
+    <dep root="7006261637496548496" />
+    <dep root="752693057587755272" />
+    <dep root="7600370246417552247" />
+    <dep root="7600370246423000655" />
+    <dep root="7656298970878093785" />
+    <dep root="7738379549910147341" />
+    <dep root="7820875636626932768" />
+    <dep root="8365379837260459177" />
+    <dep root="8483375838963816171" />
+    <dep root="8483375838963816351" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="5464054275389846505" name="BLCommand" hash="-a6717z4xbacl8dywnzwd4k3rf13w1dh" />
+  <source id="6852607286009511388" name="PrintNodeReferenceExpression" hash="-epdoa5ulxzjslbspdxd0g0ill2ffmtl" />
+  <source id="8483375838963816171" name="UsagesExpression" hash="-21uaxj5x7he56g02h9pvjrz8bun6g8q" />
+  <source id="8483375838963816351" name="ShowExpression" hash="-c33k487igdygmgsdrt8ve4bkmecsxz1" />
+  <source id="7738379549910147341" name="InstancesExpression" hash="ahk1vnh30vdxjz9pdrvs6m8vuccc25x" />
+  <source id="752693057587755272" name="ProjectExpression" hash="pdq81ivqklr3k50tpoyus42x3bwbqe" />
+  <source id="8365379837260459177" name="PrintTextExpression" hash="-8xyojm3x87exih1bkenwaa59d7e6krp" />
+  <source id="5510759644748856153" name="PrintNodeExpression" hash="-d2jk5h0z8oinmtjqi0taq37uccczj4m" />
+  <source id="7820875636626932768" name="AbstractPrintExpression" hash="32k4cnytod1oag6gjsi2bp7p26jimvz" />
+  <source id="2822369470875160718" name="NodesExpression" hash="-b95ulqrl5s8p49ujd8iyxsh4lelvlv0" />
+  <source id="6322385757202370749" name="ReferencesExpression" hash="927dsxfh9qxmsklmqhs60s0iaxrmfbb" />
+  <source id="6864030874027862829" name="ModelsExpression" hash="pr5nk3uwr8y078verkx2smgqox0cqa" />
+  <source id="6864030874028745314" name="ModulesExpression" hash="23njvzfq6mrtlsyg4qmi5008vahjgad" />
+  <source id="6558068108107691796" name="ExceptionHolder" hash="dmf1t187xki53h092wwewmnc3yjk48v" />
+  <source id="4307205004131544317" name="QueryExpression" hash="9bbteyzqg06avkcsvc1vvwvnx1c5i3g" />
+  <source id="4307205004131544565" name="QueryParameter" hash="-8bpjgk0sykhy1hp8ushe81ehv5yeu0d" />
+  <source id="4307205004132277753" name="QueryParameterList" hash="29qst68lp2vsuk2klg9a8eblapherh7" />
+  <source id="4307205004132412550" name="QueryParameterIncludeReadOnly" hash="50bhd4027p1jsr3s0b0uqwjg68wa87t" />
+  <source id="4307205004132412719" name="QueryParameterScope" hash="-bzcwvw3u8w1atpau5fiexy06s7ccrl4" />
+  <source id="4307205004134636866" name="GlobalScope" hash="dr4mylkg2lay2w72fe4dphhcd2t535j" />
+  <source id="4307205004134636875" name="ScopeParameter" hash="-99vz2l3epafk0ctox2eyzyge0danbmq" />
+  <source id="4307205004134636962" name="ProjectScope" hash="-5lbr9anvvecaray94v9dinivi35ciw" />
+  <source id="7656298970878093785" name="BLExpression" hash="b8rvdz74unp0gztszu8myk7zypckzu9" />
+  <source id="7600370246417552247" name="PrintExpression" hash="cni1cfflbq13mw6kgc10944b6ccyrs6" />
+  <source id="7600370246423000655" name="PrintSequenceExpression" hash="-7rz9aa7734tjxs1zezu69qznm8z9z20" />
+  <source id="2755216049126692157" name="ModulesScope" hash="-3lnox6lztkrshwdvbk4kibciaevs76k" />
+  <source id="3492877759608408142" name="ModelScope" hash="5rwka6s8tqthadux3hmo0t9o6xsnrfw" />
+  <source id="3492877759611762121" name="CustomScope" hash="4d12bjp1m2ooimebhqrmoetadbe1mrr" />
+  <source id="7006261637496548496" name="ConsoleExpression" hash="-1jz1y7vkayhjjkiatnsg8m7h4tysfpe" />
+</dependencies>
 
