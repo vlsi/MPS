@@ -29,9 +29,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -162,9 +162,9 @@
     <classNode dependClassName="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Producer" />
     <classNode dependClassName="jetbrains.mps.execution.demo.pluginSolution.plugin.Demo_Kind" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode extendsClassName="jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.execution.demo.pluginSolution.plugin.plugin" file="plugin.xml" />

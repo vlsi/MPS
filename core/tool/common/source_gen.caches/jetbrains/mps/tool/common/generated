@@ -1,3 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-65p5dkqxzny50pn4wr37e4o8ql0xbuq" />
+<dependencies version="2" modelHash="4ylbdq5aaahql657qvvncwbek5hibh9">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="6u3zafrpfmavt2yi6339khkcrfm93xr" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="878521226297927156" name="Script" hash="-40926qgpuv2a4srmf8nr0hydew9tzhc">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="Script.java" />
+  </source>
+  <source id="878521226297928383" name="ScriptData" hash="-c930nnvkbiogjpt19k2zflnpqi3r6qs">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <file name="ScriptData.java" />
+  </source>
+  <source id="2546981710035421490" name="IMessageFormat" hash="-99ur413ox0t0i4zwrs5lqa73t2iryl8">
+    <file name="IMessageFormat.java" />
+  </source>
+  <source id="7910428321252775322" name="TeamCityMessageFormat" hash="-82sgm7yf767mf74lca0mymkq9ux7i54">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="TeamCityMessageFormat.java" />
+  </source>
+  <source id="7910428321252780319" name="ScriptProperties" hash="-2x7595kgzt9latumz67px9kxegbgqn8">
+    <file name="ScriptProperties.java" />
+  </source>
+  <source id="8797607015334522630" name="JDOMUtil" hash="8jxj82ek03ofiovqrj29x2qmyskuxie">
+    <file name="JDOMUtil.java" />
+  </source>
+  <source id="3415722583340914388" name="GeneratorProperties" hash="9n9c5i0nldpb6zuysg4ikc7y4j4uyjf">
+    <file name="GeneratorProperties.java" />
+  </source>
+</dependencies>
 

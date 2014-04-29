@@ -38,6 +38,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.internal.make.runtime.java.FileContent" />
   </dependency>
+  <dependency className="jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler" file="IdeaJavaCompiler.java">
+    <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+  </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.java.JavaStreamHandler" file="JavaStreamHandler.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />

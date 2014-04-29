@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9wnstioahkouc78a3wbg3nl8ly6czf" />
+<dependencies version="2" modelHash="-8fc0bptnnisvxanhfncz3ueihywyv5p">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="d7u0pppwae8h128iapuk5288n5057ex" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="8307544070813664740" name="MultiplyOperation" hash="dwqsdba6n2irlhwfxzv7ux320vlgqhl">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="MultiplyOperation.java" />
+  </source>
+  <source id="8307544070813664794" name="IfFunction" hash="ewto2bofct3cjlyhdztx01u37hezv9s">
+    <file name="IfFunction.java" />
+  </source>
+  <source id="8307544070813664858" name="Function" hash="-45u094gq5qvtrmcrdcef7delqom6cbz">
+    <file name="Function.java" />
+  </source>
+  <source id="8307544070813664867" name="DoubleConstant" hash="azy96qjx70fwshoii2yqx1z23fu72w1">
+    <file name="DoubleConstant.java" />
+  </source>
+</dependencies>
 

@@ -2,7 +2,7 @@
 <model modelUID="r:1d00dd1b-8d1d-4696-8986-1d57f71f4e8b(jetbrains.mps.testModels.interfaces2)" doNotGenerate="true">
   <persistence version="8" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <root type="tpee.Interface" typeId="tpee.1107796713796" id="1196985119947853670" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Int2" />
