@@ -26,6 +26,7 @@ import jetbrains.mps.lang.editor.behavior.IStyleSheetMember_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleClass_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
@@ -796,7 +797,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3982520150135288360(final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getModule().getModuleName();
+    if (SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "attribute", false)) == SNodeOperations.getModel(_context.getNode())) {
+      return _context.getOriginalInputModel().getModule().getModuleName();
+    } else {
+      return StyleAttributeDeclaration_Behavior.call_getModuleName_3982520150138520052(SLinkOperations.getTarget(_context.getNode(), "attribute", false));
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_3982520150145569105(final PropertyMacroContext _context) {

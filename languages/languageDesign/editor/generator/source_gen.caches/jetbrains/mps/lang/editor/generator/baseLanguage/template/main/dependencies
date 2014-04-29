@@ -34,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleSheetMember_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClass_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
