@@ -11,8 +11,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.IOperationContext;
@@ -22,8 +20,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.editor.runtime.style.FocusPolicy;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellMenuPart;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AttributeStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -49,7 +54,6 @@ public class AttributeStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_item(style, editorCell);
-    style.set(LanguageRegistry.getInstance().getLanguage("jetbrains.mps.lang.editor").getAspectDescriptor(EditorAspectDescriptor.class).getStyleAttribute("test-attribute"), AttributeStyleClassItem_Editor._StyleParameter_QueryFunction_vdf0h7_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new AttributeStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_vdf0h7_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -99,10 +103,6 @@ public class AttributeStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static int _StyleParameter_QueryFunction_vdf0h7_a0a0(EditorContext editorContext, SNode node) {
-    return 0;
-  }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_vdf0h7_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_vdf0h7_a0a0() {
     }
@@ -121,17 +121,17 @@ public class AttributeStyleClassItem_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_vdf0h7_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("query");
-    provider.setNoTargetText("<no query>");
+    provider.setRole("value");
+    provider.setNoTargetText("<no value>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setRole("query");
+      editorCell.setRole("value");
     }
-    if (true) {
-      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    Style style = new StyleImpl();
+    style.set(LanguageRegistry.getInstance().getLanguage("jetbrains.mps.lang.editor").getAspectDescriptor(EditorAspectDescriptor.class).getStyleAttribute("test-attribute"), false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new AttributeStyleClassItem_Editor.AttributeStyleClassItem_value_cellMenu_vdf0h7_a0c0(), new AttributeStyleClassItem_Editor.AttributeStyleClassItem_customReplace_cellMenu_vdf0h7_b0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -140,5 +140,31 @@ public class AttributeStyleClassItem_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  public static class AttributeStyleClassItem_value_cellMenu_vdf0h7_a0c0 extends PrimaryReplaceChildMenuCellMenuPart {
+    public AttributeStyleClassItem_value_cellMenu_vdf0h7_a0c0() {
+    }
+  }
+
+  public static class AttributeStyleClassItem_customReplace_cellMenu_vdf0h7_b0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public AttributeStyleClassItem_customReplace_cellMenu_vdf0h7_b0c0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "query");
+    }
+
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      return createReplacementNode_impl((String) parameterObject, node, model, operationContext, editorContext);
+    }
+
+    public SNode createReplacementNode_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      return SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.AttributeQueryStyleClassItem", node);
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
   }
 }

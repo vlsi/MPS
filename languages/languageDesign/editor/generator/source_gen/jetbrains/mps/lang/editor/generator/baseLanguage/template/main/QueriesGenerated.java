@@ -796,7 +796,7 @@ public class QueriesGenerated {
     return ConceptEditorHintDeclaration_Behavior.call_getQualifiedName_5944657839039104991(SLinkOperations.getTarget(_context.getNode(), "hint", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_3982520150135288360(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7677730757092022346(final PropertyMacroContext _context) {
     if (SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "attribute", false)) == SNodeOperations.getModel(_context.getNode())) {
       return _context.getOriginalInputModel().getModule().getModuleName();
     } else {
@@ -804,7 +804,7 @@ public class QueriesGenerated {
     }
   }
 
-  public static Object propertyMacro_GetPropertyValue_3982520150145569105(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7677730757092022381(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "attribute", false), "name");
   }
 
@@ -1859,8 +1859,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handlerFunction", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_3982520150123638675(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7677730757097297611(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "query", true);
+  }
+
+  public static SNode sourceNodeQuery_7677730757097305934(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "value", true);
   }
 
   public static SNode sourceNodeQuery_6697121896464661765(final SourceSubstituteMacroNodeContext _context) {
@@ -2039,6 +2043,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "focusPolicyApplicable", true);
   }
 
+  public static SNode sourceNodeQuery_3982520150129799937(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "query", true);
+  }
+
   public static SNode sourceNodeQuery_2548761562342108871(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "query", true);
   }
@@ -2068,10 +2076,6 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2548761562342802417(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "query", true);
-  }
-
-  public static SNode sourceNodeQuery_3982520150129799937(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "query", true);
   }
 

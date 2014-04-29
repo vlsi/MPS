@@ -11,8 +11,20 @@ public class StyleAttributeDeclaration_BehaviorDescriptor extends BaseConcept_Be
   public StyleAttributeDeclaration_BehaviorDescriptor() {
   }
 
+  public SNode virtual_getDefaultExplicutValue_7677730757102379439(SNode thisNode) {
+    return StyleAttributeDeclaration_Behavior.virtual_getDefaultExplicutValue_7677730757102379439(thisNode);
+  }
+
+  public SNode virtual_getDefaultValue_7677730757102472473(SNode thisNode) {
+    return StyleAttributeDeclaration_Behavior.virtual_getDefaultValue_7677730757102472473(thisNode);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public SNode virtual_getType_7677730757102475082(SNode thisNode) {
+    return StyleAttributeDeclaration_Behavior.virtual_getType_7677730757102475082(thisNode);
   }
 
   @Override

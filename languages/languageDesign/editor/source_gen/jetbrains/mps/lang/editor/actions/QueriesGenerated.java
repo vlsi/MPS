@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -103,6 +104,16 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.FloatStyleClassItem")) {
       SPropertyOperations.set(_context.getNewNode(), "value", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.FloatStyleClassItem"), "value"));
     }
+  }
+
+  public static void nodeFactory_NodeSetup_IAttributeStyleClassItem_1549178425991210030(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.IAttributeStyleClassItem")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "attribute", SLinkOperations.getTarget(SNodeOperations.as(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.IAttributeStyleClassItem"), "attribute", false), false);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_AttributeStyleClassItem_7677730757102356380(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SLinkOperations.setTarget(_context.getNewNode(), "value", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNewNode(), "attribute", false), "virtual_getDefaultExplicutValue_7677730757102379439", new Object[]{}), true);
   }
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellMenuPart_Abstract_1199894656684(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
