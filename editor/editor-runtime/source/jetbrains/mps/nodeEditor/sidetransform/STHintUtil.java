@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.sidetransform;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -35,13 +36,13 @@ public class STHintUtil {
   private static final String SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID = "st-hint-anchor-cell-id";
   private static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "st-hint-anchor-tag";
 
-  public static void addRightTransformHint(SNode node, String cellId, String anchorTag) {
+  public static void addRightTransformHint(@NotNull SNode node, @NotNull String cellId, String anchorTag) {
     SNodeAccessUtil.setProperty(node, RIGHT_TRANSFORM_HINT, "true");
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, cellId);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);
   }
 
-  public static void addLeftTransformHint(SNode node, String cellId, String anchorTag) {
+  public static void addLeftTransformHint(@NotNull SNode node, @NotNull String cellId, String anchorTag) {
     SNodeAccessUtil.setProperty(node, LEFT_TRANSFORM_HINT, "true");
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID, cellId);
     node.putUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG, anchorTag);

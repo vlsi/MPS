@@ -786,6 +786,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     EditorCell bigCell = getEditor().findNodeCell(node);
     String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
     if (anchorId == null) {
+      // TODO: should never be null!..
       if (bigCell != null && bigCell.getParent() != null) {
         for (jetbrains.mps.openapi.editor.cells.EditorCell child : bigCell.getParent()) {
           if (child instanceof EditorCell_STHint) {
