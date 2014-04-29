@@ -134,7 +134,7 @@ public class NonMigratableUsagesFinder {
 
         if (method == Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(it, "name").equals("add") && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1;
+            return SPropertyOperations.getString(it, "name").equals("add") && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1;
           }
         })) {
           return true;

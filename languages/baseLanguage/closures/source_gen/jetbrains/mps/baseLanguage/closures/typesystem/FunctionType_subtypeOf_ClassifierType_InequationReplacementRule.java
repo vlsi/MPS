@@ -48,7 +48,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
     if (it.hasNext()) {
       errorMsg = ": more than one abstract method";
     } else if (mtd != null) {
-      if ((int) ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count()) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count()) {
         SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mtd, "returnType", true), supertype);
         if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
@@ -110,7 +110,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
       if (it.hasNext()) {
         errorMsg = ": more than one abstract method";
       } else if (mtd != null) {
-        if ((int) ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count()) {
+        if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count()) {
           SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mtd, "returnType", true), supertype);
           if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
             if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {

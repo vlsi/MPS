@@ -55,7 +55,7 @@ public class StatementList_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() > 1) {
       return false;
     }
-    if ((int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() == 1) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() == 1) {
       SNode statement = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).first();
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
         return false;

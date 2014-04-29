@@ -25,7 +25,7 @@ public class AnnotationInstance_Behavior {
         return new NamedElementsScope(methods);
       }
       if (SConceptOperations.isSubConceptOf(concept_c0a, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationMethodKind")) {
-        return ((int) Sequence.fromIterable(methods).count() == 1 ? new NamedElementsScope(methods) : new EmptyScope());
+        return (Sequence.fromIterable(methods).count() == 1 ? new NamedElementsScope(methods) : new EmptyScope());
       }
     }
 

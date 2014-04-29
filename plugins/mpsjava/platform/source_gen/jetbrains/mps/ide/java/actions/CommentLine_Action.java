@@ -41,7 +41,7 @@ public class CommentLine_Action extends BaseAction {
     }
     SNode singleLineComment = CommentLine_Action.this.getSingleLineComment(_params);
     if (singleLineComment != null) {
-      return !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(singleLineComment))) && (int) ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+      return !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(singleLineComment))) && ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
     }
     SNode statement = CommentLine_Action.this.getStatement(_params);
     if (statement == null) {
