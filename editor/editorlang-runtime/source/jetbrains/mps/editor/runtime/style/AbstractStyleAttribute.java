@@ -25,13 +25,16 @@ public abstract class AbstractStyleAttribute<T> implements StyleAttribute<T> {
   private int myIndex;
   private String myName;
 
-  public AbstractStyleAttribute(String name, boolean register) {
+  /*package*/ AbstractStyleAttribute(String name, boolean register) {
     myName = name;
+    myIndex = -1;
     if (register) {
       this.register();
-    } else {
-      myIndex = -1;
     }
+  }
+
+  public AbstractStyleAttribute(String name) {
+    this(name, false);
   }
 
   @Override
@@ -51,11 +54,13 @@ public abstract class AbstractStyleAttribute<T> implements StyleAttribute<T> {
 
   @Override
   public void register() {
+    assert myIndex == -1;
     myIndex = StyleAttributes.getInstance().register(this);
   }
 
   @Override
   public void unregister() {
+    assert myIndex != -1;
     StyleAttributes.getInstance().unregister(this);
     myIndex = -1;
   }
