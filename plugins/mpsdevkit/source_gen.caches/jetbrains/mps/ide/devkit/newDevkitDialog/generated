@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6x0ejeia93ehhfpm8ej2zsvrkxt4x7b">
-  <common hash="-agotlzbv8j9hcf456mza2bfxq7661vl" dependsOnNodes="true" />
+<dependencies version="2" modelHash="euzq0ap2irxk29h0m62d451dh8amd3e">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="d1mkex3wfrskugrc8mls5v1cas12y9q" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
   <source id="6249396921771873248" name="NewDevKitDialog" hash="-2v0f1amtf3rthqql73t85lhimgpaiib">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NewDevKitDialog.java" />
   </source>
   <source id="6249396921771906419" name="NewDevKitDialogContentPane" hash="-690z9wa8m4vqsofs5zx56k27wll0puh">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="NewDevKitDialogContentPane.java" />
   </source>
 </dependencies>

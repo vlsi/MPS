@@ -1,3 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8qfqln9os1vmmfid322bjoybqzusxuw" />
+<dependencies version="2" modelHash="-3wy2h0lh65r3aqi752ct96eif6u7fsm">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="aelgsihqlkydejdy68izklgxf4r668d" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="1oqds6t3qz6v9le06tllf0ne4zfgofo" dependsOnNodes="true">
+    <dep root="1104094430779063683" />
+    <dep root="1104094430779068753" />
+    <dep root="1270798772176052876" />
+    <dep root="1270798772176052880" />
+    <dep root="2569394751387978473" />
+    <dep root="3157158168562217892" />
+    <dep root="3157158168562219319" />
+    <dep root="3157158168562219322" />
+    <dep root="5789575999242884574" />
+    <dep root="6720907903633266421" />
+    <dep root="6720907903633266914" />
+    <dep root="8751745335399632073" />
+    <dep root="8751745335399632077" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="3157158168562217892" name="BreakpointCreator" hash="-29ia3pf6ntu20f7sqexna2bpntj9o2s" />
+  <source id="3157158168562219319" name="BreakpointableNodeItem" hash="-h7uy43yx307qvycw3xv9qyzq77clqn" />
+  <source id="3157158168562219322" name="ConceptFunction_CreateBreakpoint" hash="-1awxc0qz6a73hxxrmspx0ltk3hhujh" />
+  <source id="1270798772176052876" name="ConceptFunctionParameter_Debug_Project" hash="-9kiqm5gbn6d5j2565g68jg8qrwfiijm" />
+  <source id="1270798772176052880" name="ConceptFunctionParameter_DebuggableNode" hash="5xb4netgrwu4e8645nr2pouuijxtbkn" />
+  <source id="5789575999242884574" name="ConceptDeclarationReference" hash="dw8d6kax3r8hacw6y3ubrb474ncc4y3" />
+  <source id="1104094430779063683" name="DebuggerType" hash="-ex85oinlxl25hm9npbhtyrlxbpsnkkz" />
+  <source id="1104094430779068753" name="DebuggerReference" hash="-1t3a1wwfsmnaenzmmhd6abxf387rjxa" />
+  <source id="2569394751387978473" name="CreateBreakpointOperation" hash="-ht6fmuhorqjfkbfz7w5toj3bei7k7b" />
+  <source id="6720907903633266914" name="GetDebuggerSettings_Function" hash="-4hq3q6copgyossj2xzn3x4u8fuy9z5w" />
+  <source id="6720907903633266421" name="DebuggerConfiguration" hash="-c1f32ny5ldfquwejv5123ryi28gahvk" />
+  <source id="8751745335399632073" name="ConceptFunction_IsApplicableToConcept" hash="6fs2pcdf1qp8sz6lawia42r1icu68cc" />
+  <source id="8751745335399632077" name="ConceptFunctionParameter_Concept" hash="-75q1tx6n2de0ks21x8sy1ktq2mofunw" />
+</dependencies>
 
