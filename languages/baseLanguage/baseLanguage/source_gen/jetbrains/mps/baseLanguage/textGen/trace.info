@@ -3821,26 +3821,31 @@
     <unitInfo nodeId="1235739850731" fileName="ContinueStatement_TextGen.java" startLine="16" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ContinueStatement_TextGen" />
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740038236">
+    <nodeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="11" startPosition="72" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="11" startPosition="72" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="12" startPosition="23" endLine="13" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="12" startPosition="23" endLine="13" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="13" startPosition="70" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4999908491046632643" fileName="DimensionExpression_TextGen.java" startLine="15" startPosition="12" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4999908491046632643" fileName="DimensionExpression_TextGen.java" startLine="15" startPosition="12" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4999908491046632641" fileName="DimensionExpression_TextGen.java" startLine="15" startPosition="10" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="11" startPosition="72" endLine="14" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4999908491046631386" fileName="DimensionExpression_TextGen.java" startLine="10" startPosition="42" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235740038236" fileName="DimensionExpression_TextGen.java" startLine="10" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="12" startPosition="23" endLine="13" endPosition="70" />
-    <scopeInfo nodeId="4999908491046632642" fileName="DimensionExpression_TextGen.java" startLine="15" startPosition="12" endLine="16" endPosition="24" />
-    <scopeInfo nodeId="4999908491046632643" fileName="DimensionExpression_TextGen.java" startLine="15" startPosition="12" endLine="16" endPosition="24" />
-    <scopeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="11" startPosition="72" endLine="14" endPosition="23" />
-    <scopeInfo nodeId="4999908491046631387" fileName="DimensionExpression_TextGen.java" startLine="11" startPosition="72" endLine="14" endPosition="23" />
-    <scopeInfo nodeId="1235740038236" fileName="DimensionExpression_TextGen.java" startLine="10" startPosition="42" endLine="17" endPosition="5" />
-    <scopeInfo nodeId="1235740038236" fileName="DimensionExpression_TextGen.java" startLine="10" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="1100850602755855229" fileName="DimensionExpression_TextGen.java" startLine="13" startPosition="72" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1100850602755855229" fileName="DimensionExpression_TextGen.java" startLine="13" startPosition="72" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1100850602755855229" fileName="DimensionExpression_TextGen.java" startLine="13" startPosition="72" endLine="14" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1100850602755855110" fileName="DimensionExpression_TextGen.java" startLine="15" startPosition="7" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1100850602755855110" fileName="DimensionExpression_TextGen.java" startLine="15" startPosition="7" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4999908491046632643" fileName="DimensionExpression_TextGen.java" startLine="17" startPosition="12" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4999908491046632643" fileName="DimensionExpression_TextGen.java" startLine="17" startPosition="12" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4999908491046632641" fileName="DimensionExpression_TextGen.java" startLine="17" startPosition="10" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1100850602755856193" fileName="DimensionExpression_TextGen.java" startLine="12" startPosition="23" endLine="15" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4999908491046631386" fileName="DimensionExpression_TextGen.java" startLine="10" startPosition="42" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235740038236" fileName="DimensionExpression_TextGen.java" startLine="10" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1237463992357" fileName="DimensionExpression_TextGen.java" startLine="11" startPosition="72" endLine="12" endPosition="23" />
+    <scopeInfo nodeId="1100850602755855229" fileName="DimensionExpression_TextGen.java" startLine="13" startPosition="72" endLine="14" endPosition="72" />
+    <scopeInfo nodeId="1100850602755856194" fileName="DimensionExpression_TextGen.java" startLine="13" startPosition="72" endLine="14" endPosition="72" />
+    <scopeInfo nodeId="1100850602755855110" fileName="DimensionExpression_TextGen.java" startLine="15" startPosition="7" endLine="16" endPosition="23" />
+    <scopeInfo nodeId="4999908491046632642" fileName="DimensionExpression_TextGen.java" startLine="17" startPosition="12" endLine="18" endPosition="24" />
+    <scopeInfo nodeId="4999908491046632643" fileName="DimensionExpression_TextGen.java" startLine="17" startPosition="12" endLine="18" endPosition="24" />
+    <scopeInfo nodeId="4999908491046631387" fileName="DimensionExpression_TextGen.java" startLine="11" startPosition="72" endLine="16" endPosition="23" />
+    <scopeInfo nodeId="1235740038236" fileName="DimensionExpression_TextGen.java" startLine="10" startPosition="42" endLine="19" endPosition="5" />
+    <scopeInfo nodeId="1235740038236" fileName="DimensionExpression_TextGen.java" startLine="10" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1235740038236" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1235740038236" fileName="DimensionExpression_TextGen.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.DimensionExpression_TextGen" />
+    <unitInfo nodeId="1235740038236" fileName="DimensionExpression_TextGen.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.DimensionExpression_TextGen" />
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1235740077306">
     <nodeInfo nodeId="1237463991942" fileName="DivExpression_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

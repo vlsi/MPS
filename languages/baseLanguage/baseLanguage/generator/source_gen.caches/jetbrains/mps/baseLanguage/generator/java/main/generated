@@ -6,7 +6,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="b76a16jljdk0t25f3o793ktss6o75n0" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="9efrqj3daxy4n2ssyrhyz3xpqs5eoiq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="4tmj3zixaqhl1oajtzxj0wek5mvwt8h" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="ck137l8uqtaode5ifiq4sdxhr6f8ju6" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-d9u6qtqn8byb7xpic4iy13w48uff524" />
@@ -48,9 +48,7 @@
   <source id="1201570124301" name="weave_Property" hash="80sz17w2wb72n12jyjl4hrztgi67qsb">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1202577940061" name="reduce_ValueParameter" hash="-cpduzdd3xdt04oe3u1vnh0jd2z4z0kd">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1202577940061" name="reduce_ValueParameter" hash="-cpduzdd3xdt04oe3u1vnh0jd2z4z0kd" />
   <source id="1206152999436" name="reduce_AssignmentExpression_propertySet" hash="-gj9cjekxrs17hvohiqznbiikn2tcov" />
   <source id="1206154637872" name="reduce_DotExpression_propertyGet" hash="am3r34xcd4dfuaveulxse7vjqgeb3fu" />
   <source id="1224072707336" name="reduce_AsExpression" hash="-80290soaphppkbr06qsy5wfhrpj23a" />
