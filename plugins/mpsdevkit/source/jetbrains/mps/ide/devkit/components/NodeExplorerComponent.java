@@ -103,17 +103,20 @@ public class NodeExplorerComponent {
     protected void doUpdatePresentation_internal() {
       super.doUpdatePresentation_internal();
       String string = getText();
-      String typeInfo = " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}";
-      setText(string + typeInfo);
+      final SNode typeOf = TypeChecker.getInstance().getTypeOf(getSNode());
+      if (typeOf != null) {
+        String typeInfo = " {" + PresentationManager.toString(typeOf) + "}";
+        setText(string + typeInfo);
+      }
     }
 
     @Override
     protected void doInit() {
       this.removeAllChildren();
+      if (getSNode() == null) return;
 
       add(new TextTreeNode("Concept = " + getSNode().getConcept().getQualifiedName()));
 
-      if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {
         add(new MySNodeTreeNode(childNode, childNode.getRoleInParent(), getOperationContext()));
       }
@@ -130,6 +133,11 @@ public class NodeExplorerComponent {
     public MyReferentsNode(SNode node, IOperationContext operationContext) {
       super("referents", operationContext);
       myNode = new jetbrains.mps.smodel.SNodePointer(node);
+    }
+
+    @Override
+    public boolean isLeaf() {
+      return false;
     }
 
     @Override
@@ -156,6 +164,11 @@ public class NodeExplorerComponent {
     public MyPropertiesNode(SNode node, IOperationContext operationContext) {
       super("properties", operationContext);
       myNode = new jetbrains.mps.smodel.SNodePointer(node);
+    }
+
+    @Override
+    public boolean isLeaf() {
+      return false;
     }
 
     @Override
