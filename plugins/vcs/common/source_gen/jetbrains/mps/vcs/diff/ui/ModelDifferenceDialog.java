@@ -386,7 +386,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
                 return rtn.getRootId();
               }
             });
-            if ((int) Sequence.fromIterable(roots).count() == 1) {
+            if (Sequence.fromIterable(roots).count() == 1) {
               return (Sequence.fromIterable(roots).first() == null ? "Properties" : "Root");
             } else if (Sequence.fromIterable(roots).any(new IWhereFilter<SNodeId>() {
               public boolean accept(SNodeId r) {

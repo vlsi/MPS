@@ -61,7 +61,7 @@ public class StructureModification {
     Map<SModelReference, Integer> aa = a.getDependencies();
     Map<SModelReference, Integer> bb = b.getDependencies();
 
-    boolean eq = (int) MapSequence.fromMap(aa).count() == (int) MapSequence.fromMap(bb).count();
+    boolean eq = MapSequence.fromMap(aa).count() == MapSequence.fromMap(bb).count();
     for (SModelReference k : SetSequence.fromSet(MapSequence.fromMap(aa).keySet())) {
       if (!(MapSequence.fromMap(bb).containsKey(k))) {
         eq = false;

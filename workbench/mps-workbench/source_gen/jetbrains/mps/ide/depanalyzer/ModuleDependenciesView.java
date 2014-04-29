@@ -161,7 +161,7 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     final MPSTree tree = node.getTree();
     // check if everything is already selected now 
     ModuleDependencyNode parent = node.getFromNode();
-    if (parent != null && (int) ListSequence.fromList(parent.getModules()).count() == 1 && ListSequence.fromList(parent.getModules()).first() == module) {
+    if (parent != null && ListSequence.fromList(parent.getModules()).count() == 1 && ListSequence.fromList(parent.getModules()).first() == module) {
       return;
     }
     // expand node and show dependencies on itself 

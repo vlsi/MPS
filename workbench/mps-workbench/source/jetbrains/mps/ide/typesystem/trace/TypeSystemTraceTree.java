@@ -165,22 +165,37 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
         return null;
       }
     }
+    final boolean hasAnError = hasAnErrorAsConsequence(operation);
     TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(operation, myOperationContext, myContextTracker.getCurrentState(), myEditorComponent) {
       @Override
       public void doUpdatePresentation() {
         super.doUpdatePresentation();
         if (!(showNode)) {
           setColor(JBColor.GRAY);
+        }else if (hasAnError) {
+          setColor(JBColor.RED);
         }
       }
     };
     for (TypeSystemTraceTreeNode node : children) {
       result.add(node);
     }
-    if (operation instanceof AddErrorOperation || operation instanceof TraceWarningOperation) {
+    if (hasAnError) {
       myErrorNodes.add(result);
     }
     return result;
+  }
+
+  private boolean hasAnErrorAsConsequence(AbstractOperation operation) {
+    if (operation instanceof AddErrorOperation || operation instanceof TraceWarningOperation) {
+      return true;
+    }
+    for (AbstractOperation consequence : operation.getConsequences()) {
+      if (hasAnErrorAsConsequence(consequence)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   @Override
