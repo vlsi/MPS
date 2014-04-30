@@ -28,8 +28,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -46,36 +48,17 @@ public class StyleAttributes {
     LanguageRegistry.getInstance().addRegistryListener(new LanguageRegistryListener() {
       @Override
       public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
-        for (LanguageRuntime language : languages) {
-          EditorAspectDescriptor descriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-          if (descriptor != null) {
-            try {
-              for (StyleAttribute attribute : descriptor.getStyleAttributes().values()) {
-                attribute.register();
-              }
-            } catch (AbstractMethodError e) {
-              LOG.error("Error when loading style attributes for language " + language + ". Try to rebuild language.", e);
-            } catch (Throwable e) {
-              LOG.error("Error when loading style attributes for language " + language, e);
-            }
-          }
-        }
       }
 
       @Override
       public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
         for (LanguageRuntime language : languages) {
-          EditorAspectDescriptor descriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-          if (descriptor != null) {
-            try {
-              for (StyleAttribute attribute : descriptor.getStyleAttributes().values()) {
-                attribute.unregister();
-              }
-            } catch (AbstractMethodError e) {
-              LOG.error("Error when unloading style attributes for language " + language + ". Try to rebuild language.", e);
-            } catch (Throwable e) {
-              LOG.error("Error when unloading style attributes for language " + language, e);
+          Map<String, StyleAttribute> attributeMap = ourLanguageAttributes.get(language);
+          if (attributeMap != null) {
+            for (StyleAttribute attribute : attributeMap.values()) {
+              attribute.unregister();
             }
+            ourLanguageAttributes.remove(language);
           }
         }
       }
@@ -91,6 +74,7 @@ public class StyleAttributes {
 
   private List<StyleAttribute> ourAttributes = new ArrayList<StyleAttribute>();
   private Set<Integer> ourFreeIndices = new LinkedHashSet<Integer>();
+  private Map<LanguageRuntime, Map<String, StyleAttribute>> ourLanguageAttributes = new HashMap<LanguageRuntime, Map<String, StyleAttribute>>();
 
   int getAttributesCount() {
     return ourAttributes.size();
@@ -110,7 +94,6 @@ public class StyleAttributes {
       ourFreeIndices.remove(index);
       ourAttributes.set(index, a);
     }
-
     return index;
   }
 
@@ -122,6 +105,31 @@ public class StyleAttributes {
 
   static boolean isSimple(StyleAttribute a) {
     return a instanceof SimpleStyleAttribute;
+  }
+
+  public StyleAttribute getAttribute(String languageName, String attributeName) {
+    LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(languageName);
+    if (language == null) {
+      throw new IllegalArgumentException("language not found: " + languageName);
+    }
+    if (!ourLanguageAttributes.containsKey(language)) {
+      ourLanguageAttributes.put(language, new HashMap<String, StyleAttribute>());
+    }
+    if (ourLanguageAttributes.get(language).containsKey(attributeName)) {
+      return ourLanguageAttributes.get(language).get(attributeName);
+    } else {
+      EditorAspectDescriptor editorAspectDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
+      if (editorAspectDescriptor == null) {
+        throw new IllegalArgumentException("language does not contain editor descriptor: " + languageName);
+      }
+      StyleAttribute attribute = editorAspectDescriptor.getStyleAttribute(attributeName);
+      if (attribute == null) {
+        throw new IllegalArgumentException("language " + languageName + "does not contain style attribute" + attributeName);
+      }
+      ourLanguageAttributes.get(language).put(attributeName, attribute);
+      attribute.register();
+      return attribute;
+    }
   }
 
   public static final StyleAttribute<Color> BACKGROUND_COLOR = new InheritableStyleAttribute<Color>("background-color", null, true);

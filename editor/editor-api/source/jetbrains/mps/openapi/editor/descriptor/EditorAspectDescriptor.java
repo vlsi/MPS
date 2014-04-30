@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
-import java.util.Map;
 
 /**
  * User: shatalin
@@ -33,5 +32,4 @@ public interface EditorAspectDescriptor extends LanguageAspectDescriptor {
   Collection<ConceptEditorHint> getHints();
   @Nullable
   StyleAttribute getStyleAttribute(String attributeName);
-  Map<String, StyleAttribute> getStyleAttributes();
 }
