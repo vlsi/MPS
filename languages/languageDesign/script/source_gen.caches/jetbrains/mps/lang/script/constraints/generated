@@ -37,7 +37,6 @@
   </common>
   <source id="6970965131508596231" name="MigrationScriptPart_Constraints" hash="cjfptdtkbcm4daxz7a0fhia45ekrbu0">
     <dep model="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MigrationScriptPart_Constraints.java" />
   </source>
   <source id="849077997121906173" name="PullUpMethod_Constraints" hash="cvyngw7xbuio3967sug5vhgud59q1bl">

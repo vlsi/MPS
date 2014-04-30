@@ -40,7 +40,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PrivateFieldReferenceOperation_Behavior.java" />
   </source>
   <source id="7488520339326239023" name="PrivateStaticFieldReference_Behavior" hash="-87s0ur02jn8xf7zppxl7l4w7k40xwjq">
@@ -58,7 +57,6 @@
   <source id="1262430001741718941" name="PrivateInstanceMethodCallOperation_Behavior" hash="gignam0xchqxjuzcdy6zickxxnz6ls">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PrivateInstanceMethodCallOperation_Behavior.java" />
   </source>
 </dependencies>
