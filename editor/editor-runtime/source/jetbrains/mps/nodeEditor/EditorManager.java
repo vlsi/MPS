@@ -494,7 +494,7 @@ public class EditorManager {
     cells.add(cell);
     while (!cells.isEmpty()) {
       EditorCell nextCell = cells.remove();
-      if (nextCell.getSNode() == node) {
+      if (nextCell.getSNode() == node && !(nextCell instanceof EditorCell_STHint)) {
         if (!nextCell.isBig()) {
           // trying to avoid calling cell.getSNode().toString() for each node...
           assert false :
