@@ -43,7 +43,7 @@
     <nodeInfo nodeId="1198157571305" fileName="MyVeryGoodConcept1_Editor.java" startLine="68" startPosition="57" endLine="69" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198157571305" fileName="MyVeryGoodConcept1_Editor.java" startLine="70" startPosition="35" endLine="71" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198157571305" fileName="MyVeryGoodConcept1_Editor.java" startLine="71" startPosition="72" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198157571305" fileName="MyVeryGoodConcept1_Editor.java" startLine="72" startPosition="78" endLine="73" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198157571305" fileName="MyVeryGoodConcept1_Editor.java" startLine="72" startPosition="78" endLine="73" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198157571305" fileName="MyVeryGoodConcept1_Editor.java" startLine="74" startPosition="10" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198591086989" fileName="MyVeryGoodConcept1_Editor.java" startLine="78" startPosition="89" endLine="79" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198591086989" fileName="MyVeryGoodConcept1_Editor.java" startLine="79" startPosition="94" endLine="80" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -60,7 +60,7 @@
     <nodeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="93" startPosition="57" endLine="94" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="95" startPosition="35" endLine="96" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="96" startPosition="72" endLine="97" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="97" startPosition="78" endLine="98" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="97" startPosition="78" endLine="98" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="99" startPosition="10" endLine="100" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198591099074" fileName="MyVeryGoodConcept1_Editor.java" startLine="104" startPosition="34" endLine="105" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1198591099074" fileName="MyVeryGoodConcept1_Editor.java" startLine="108" startPosition="69" endLine="109" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -79,7 +79,7 @@
     <nodeInfo nodeId="1198591101955" fileName="MyVeryGoodConcept1_Editor.java" startLine="129" startPosition="59" endLine="130" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198591101955" fileName="MyVeryGoodConcept1_Editor.java" startLine="131" startPosition="37" endLine="132" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198591101955" fileName="MyVeryGoodConcept1_Editor.java" startLine="132" startPosition="74" endLine="133" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198591101955" fileName="MyVeryGoodConcept1_Editor.java" startLine="133" startPosition="80" endLine="134" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198591101955" fileName="MyVeryGoodConcept1_Editor.java" startLine="133" startPosition="80" endLine="134" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198591101955" fileName="MyVeryGoodConcept1_Editor.java" startLine="135" startPosition="12" endLine="136" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198157576738" fileName="MyVeryGoodConcept1_Editor.java" startLine="140" startPosition="89" endLine="141" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198157576738" fileName="MyVeryGoodConcept1_Editor.java" startLine="141" startPosition="87" endLine="142" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -107,7 +107,7 @@
     <nodeInfo nodeId="1198765073046" fileName="MyVeryGoodConcept1_Editor.java" startLine="170" startPosition="57" endLine="171" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198765073046" fileName="MyVeryGoodConcept1_Editor.java" startLine="172" startPosition="35" endLine="173" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198765073046" fileName="MyVeryGoodConcept1_Editor.java" startLine="173" startPosition="72" endLine="174" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1198765073046" fileName="MyVeryGoodConcept1_Editor.java" startLine="174" startPosition="78" endLine="175" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1198765073046" fileName="MyVeryGoodConcept1_Editor.java" startLine="174" startPosition="78" endLine="175" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198765073046" fileName="MyVeryGoodConcept1_Editor.java" startLine="176" startPosition="10" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="180" startPosition="90" endLine="181" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="181" startPosition="99" endLine="182" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -202,11 +202,11 @@
       <varInfo nodeId="1198157535277" varName="editorContext" />
       <varInfo nodeId="1198157535277" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198157571305" fileName="MyVeryGoodConcept1_Editor.java" startLine="70" startPosition="35" endLine="73" endPosition="105">
+    <scopeInfo nodeId="1198157571305" fileName="MyVeryGoodConcept1_Editor.java" startLine="70" startPosition="35" endLine="73" endPosition="109">
       <varInfo nodeId="1198157571305" varName="manager" />
       <varInfo nodeId="1198157571305" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="95" startPosition="35" endLine="98" endPosition="105">
+    <scopeInfo nodeId="1198157535277" fileName="MyVeryGoodConcept1_Editor.java" startLine="95" startPosition="35" endLine="98" endPosition="109">
       <varInfo nodeId="1198157535277" varName="manager" />
       <varInfo nodeId="1198157535277" varName="opContext" />
     </scopeInfo>
@@ -218,11 +218,11 @@
       <varInfo nodeId="1198591099074" varName="editorContext" />
       <varInfo nodeId="1198591099074" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1198591101955" fileName="MyVeryGoodConcept1_Editor.java" startLine="131" startPosition="37" endLine="134" endPosition="107">
+    <scopeInfo nodeId="1198591101955" fileName="MyVeryGoodConcept1_Editor.java" startLine="131" startPosition="37" endLine="134" endPosition="111">
       <varInfo nodeId="1198591101955" varName="manager" />
       <varInfo nodeId="1198591101955" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1198765073046" fileName="MyVeryGoodConcept1_Editor.java" startLine="172" startPosition="35" endLine="175" endPosition="105">
+    <scopeInfo nodeId="1198765073046" fileName="MyVeryGoodConcept1_Editor.java" startLine="172" startPosition="35" endLine="175" endPosition="109">
       <varInfo nodeId="1198765073046" varName="manager" />
       <varInfo nodeId="1198765073046" varName="opContext" />
     </scopeInfo>
@@ -402,7 +402,7 @@
     <nodeInfo nodeId="1200588815978" fileName="YetAnotherGoodConcept_Editor.java" startLine="45" startPosition="57" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200588815978" fileName="YetAnotherGoodConcept_Editor.java" startLine="47" startPosition="35" endLine="48" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1200588815978" fileName="YetAnotherGoodConcept_Editor.java" startLine="48" startPosition="72" endLine="49" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200588815978" fileName="YetAnotherGoodConcept_Editor.java" startLine="49" startPosition="78" endLine="50" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200588815978" fileName="YetAnotherGoodConcept_Editor.java" startLine="49" startPosition="78" endLine="50" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1200588815978" fileName="YetAnotherGoodConcept_Editor.java" startLine="51" startPosition="10" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198522097224" fileName="YetAnotherGoodConcept_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1200588808710" fileName="YetAnotherGoodConcept_Editor.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_h02pym_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -416,7 +416,7 @@
       <varInfo nodeId="1198522097224" varName="editorContext" />
       <varInfo nodeId="1198522097224" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1200588815978" fileName="YetAnotherGoodConcept_Editor.java" startLine="47" startPosition="35" endLine="50" endPosition="105">
+    <scopeInfo nodeId="1200588815978" fileName="YetAnotherGoodConcept_Editor.java" startLine="47" startPosition="35" endLine="50" endPosition="109">
       <varInfo nodeId="1200588815978" varName="manager" />
       <varInfo nodeId="1200588815978" varName="opContext" />
     </scopeInfo>
