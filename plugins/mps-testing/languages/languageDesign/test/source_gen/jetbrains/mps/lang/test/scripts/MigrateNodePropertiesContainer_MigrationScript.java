@@ -13,20 +13,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
-public class MigrateNodeCheckOperationsContainer_MigrationScript extends BaseMigrationScript {
-  public MigrateNodeCheckOperationsContainer_MigrationScript(IOperationContext operationContext) {
-    super("Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer");
+public class MigrateNodePropertiesContainer_MigrationScript extends BaseMigrationScript {
+  public MigrateNodePropertiesContainer_MigrationScript(IOperationContext operationContext) {
+    super("Migrate Test-Related NodePropertiesContainer to NodeOperationsContainer");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer";
+        return "Migrate Test-Related NodePropertiesContainer to NodeOperationsContainer";
       }
 
       public String getAdditionalInfo() {
-        return "Migrate Test-Related NodeCheckOperationsContainer to NodeOperationsContainer";
+        return "Migrate Test-Related NodePropertiesContainer to NodeOperationsContainer";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer";
+        return "jetbrains.mps.lang.test.structure.NodePropertiesContainer";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
@@ -38,7 +38,7 @@ public class MigrateNodeCheckOperationsContainer_MigrationScript extends BaseMig
         SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeOperationsContainer", null);
         ListSequence.fromList(SLinkOperations.getTargets(newAnnotation, "nodeOperations", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "nodeCheckOperations", true)));
         AttributeOperations.setAttribute(parent, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnnotation);
-        AttributeOperations.setAttribute(parent, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeCheckOperationsContainer"), null);
+        AttributeOperations.setAttribute(parent, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer"), null);
       }
 
       public boolean isShowAsIntention() {
