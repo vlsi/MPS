@@ -167,36 +167,6 @@ public class EditorManager {
   /**
    * Should be removed after MPS 3.0
    *
-   * @deprecated use getCurrentAttributedCellWithRole() instead
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell getCurrentAttributedPropertyCell() {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCurrentAttributedCellWithRole(AttributeKind.Property.class);
-  }
-
-  /**
-   * Should be removed after MPS 3.0
-   *
-   * @deprecated use getCurrentAttributedCellWithRole() instead
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell getCurrentAttributedLinkCell() {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
-  }
-
-  /**
-   * Should be removed after MPS 3.0
-   *
-   * @deprecated use getCurrentAttributedCellWithRole() instead
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell getCurrentAttributedNodeCell() {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCurrentAttributedCellWithRole(AttributeKind.Node.class);
-  }
-
-  /**
-   * Should be removed after MPS 3.0
-   *
    * @deprecated use createNodeRoleAttributeCell() instead
    */
   @Deprecated
