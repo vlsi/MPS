@@ -110,7 +110,8 @@ public class EditorManager {
               }
               return myHashCode;
             }
-          }));
+          }
+      ));
     }
     return new ArrayList<Pair<SNode, SNodeReference>>(result);
   }
@@ -172,7 +173,6 @@ public class EditorManager {
    * @param attributeKind
    * @param cellWithRole
    * @return
-   *
    * @deprecated since MPS 3.1 use createNodeRoleAttributeCell()
    */
   @Deprecated
@@ -232,11 +232,29 @@ public class EditorManager {
       myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
     }
     stack.push(cellWithRole);
+
+    // For the compatibility with Attribute concept editor.
+    // If the editor for sub-concept of Attribute was not specified then default one will be used, so
+    // providing the possibility to always call getCurrentAttributedCellWithRole() with AttributeKind.Node.class
+    // specified as a parameter.
+    Stack<EditorCell> nodeAttributeStack = null;
+    if (attributeKind != AttributeKind.Node.class) {
+      nodeAttributeStack = myAttributedClassesToAttributedCellStacksMap.get(AttributeKind.Node.class);
+      if (nodeAttributeStack == null) {
+        nodeAttributeStack = new Stack<EditorCell>();
+        myAttributedClassesToAttributedCellStacksMap.put(AttributeKind.Node.class, nodeAttributeStack);
+      }
+      nodeAttributeStack.push(cellWithRole);
+    }
     myAttributedCells.addLast(cellWithRole);
     EditorCell result = createEditorCell(context, modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
     myAttributedCells.removeLast();
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
+    if (nodeAttributeStack != null) {
+      cellWithRolePopped = nodeAttributeStack.pop();
+      LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
+    }
     return result;
   }
 
@@ -247,7 +265,6 @@ public class EditorManager {
    * @param attribute
    * @param nodeCell
    * @return
-   *
    * @deprecated since MPS 3.1 use createNodeRoleAttributeCell(context, attribute, AttributeKind.Node.class, nodeCell)
    */
   @Deprecated
@@ -349,7 +366,7 @@ public class EditorManager {
    * Example of not working synchronization is: property macro upon IntegerConstant in generator template.
    * On adding/removing such macro synchronization logic cannot update editor properly and add/remove
    * corresponding "wrapping" attribute cell..
-   *
+   * <p/>
    * In future if proper way of handling such attributes is developed we can get rid of this method.
    */
   private boolean isSynchronizable(SNode node) {
@@ -394,12 +411,16 @@ public class EditorManager {
       } catch (Throwable e) {
         LOG.error("Failed to synchronize cell for node " + SNodeUtil.getDebugText(node), e);
         result = new EditorCell_Error(context, node, "!exception!:" + SNodeUtil.getDebugText(node));
+        result.setBig(true);
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         addNodeDependenciesToEditor(result, nodeAccessListener, context);
         if (!isAttributedCell(result)) {
           result.putUserObject(BIG_CELL_CONTEXT, refContext);
-          getEditorComponent(context).registerAsBigCell(getUnwrappedNodeBigCell(result, node), this);
+          EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(result, node);
+          if (unwrappedNodeBigCell != null) {
+            getEditorComponent(context).registerAsBigCell(unwrappedNodeBigCell, this);
+          }
         }
       }
       return result;
@@ -429,12 +450,16 @@ public class EditorManager {
       } catch (Throwable e) {
         LOG.error("Failed to create cell for node " + SNodeUtil.getDebugText(node), e);
         nodeCell = new EditorCell_Error(context, node, "!exception!:" + SNodeUtil.getDebugText(node));
+        nodeCell.setBig(true);
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
         assert nodeCell != null;
         if (!isAttributedCell(nodeCell)) {
           nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
-          editorComponent.registerAsBigCell(getUnwrappedNodeBigCell(nodeCell, node), this);
+          EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(nodeCell, node);
+          if (unwrappedNodeBigCell != null) {
+            editorComponent.registerAsBigCell(unwrappedNodeBigCell, this);
+          }
           addNodeDependenciesToEditor(nodeCell, nodeAccessListener, context);
         }
       }
@@ -484,8 +509,8 @@ public class EditorManager {
         }
       }
     }
-    // should never happen!
-    assert false : "Can't find unwrapped big cell for editor cell: id = " + cell.getCellId() + ", node = " + cell.getSNode() + ", main node: " + node;
+    LOG.error("Editor cell created for the node: " + node + " does not contain any cell associated with this node. Following node was used instead: " +
+        cell.getSNode(), cell.getSNode());
     return null;
   }
 
@@ -493,7 +518,7 @@ public class EditorManager {
    * Some node attribute editors may return attributed node cell directly. (e.g. if specified editor is like: [> attributed node <]).
    * For such editors we should skip all additional cell processing because additional cell processing was already performed for this
    * cell while constructing it for the original node.
-   *
+   * <p/>
    * This method is used to determine if the result of the generated attribute editor execution is equals to original cell of the
    * attributed node.
    */
