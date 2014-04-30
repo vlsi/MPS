@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import org.apache.log4j.Level;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -42,6 +41,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class CommandUtil {
 
@@ -106,7 +106,7 @@ public class CommandUtil {
 
   public static void show(Project p, SearchResults results) {
     try {
-      ProjectHelper.toIdeaProject(p).getComponent(UsagesViewTool.class).show(results, "No results to show");
+      check_1pinza_a0a0a0n(ProjectHelper.toIdeaProject(p)).show(results, "No results to show");
     } catch (Exception e) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Exception in showing custom console result", e);
@@ -239,6 +239,13 @@ public class CommandUtil {
 
 
   protected static Logger LOG = LogManager.getLogger(CommandUtil.class);
+
+  private static UsagesViewTool check_1pinza_a0a0a0n(com.intellij.openapi.project.Project checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent(UsagesViewTool.class);
+    }
+    return null;
+  }
 
   private static SNode check_1pinza_a0a0a0a0b0t(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {

@@ -135,12 +135,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     });
   }
 
-  public void show(SearchResults results) {
-    ThreadUtils.assertEDT();
-    showResults(null, null, results, true, true, false, "");
-  }
-
-  public void show(SearchResults results, final String notFoundMsg) {
+  public void show(SearchResults results, String notFoundMsg) {
     ThreadUtils.assertEDT();
     showResults(null, null, results, true, true, false, notFoundMsg);
   }
