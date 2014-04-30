@@ -20,7 +20,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellMenuPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
@@ -127,9 +126,6 @@ public class AttributeStyleClassItem_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("value");
     }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.getInstance().getAttribute("jetbrains.mps.lang.editor", "test-attribute"), false);
-    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new AttributeStyleClassItem_Editor.AttributeStyleClassItem_value_cellMenu_vdf0h7_a0c0(), new AttributeStyleClassItem_Editor.AttributeStyleClassItem_customReplace_cellMenu_vdf0h7_b0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

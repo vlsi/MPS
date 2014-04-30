@@ -101,6 +101,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_StyleAttributeReferenceExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_TransactionPropertyHandler_newValue_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }

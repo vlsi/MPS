@@ -111,8 +111,5 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
   public StyleAttribute getStyleAttribute(String attributeName) {
     return null;
   }
-  @Override
-  public Map<String, StyleAttribute> getStyleAttributes() {
-    return Collections.emptyMap();
-  }
+
 }

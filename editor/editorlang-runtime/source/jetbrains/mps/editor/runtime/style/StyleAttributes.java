@@ -107,7 +107,7 @@ public class StyleAttributes {
     return a instanceof SimpleStyleAttribute;
   }
 
-  public StyleAttribute getAttribute(String languageName, String attributeName) {
+  public <T> StyleAttribute<T> getAttribute(String languageName, String attributeName) {
     LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(languageName);
     if (language == null) {
       throw new IllegalArgumentException("language not found: " + languageName);
