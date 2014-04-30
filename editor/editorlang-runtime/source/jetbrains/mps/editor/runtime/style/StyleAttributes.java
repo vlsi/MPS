@@ -28,7 +28,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -91,19 +90,10 @@ public class StyleAttributes {
   }
 
   private List<StyleAttribute> ourAttributes = new ArrayList<StyleAttribute>();
-  private List<StyleAttribute> ourNotSimpleAttributes = new ArrayList<StyleAttribute>();
   private Set<Integer> ourFreeIndices = new LinkedHashSet<Integer>();
 
   int getAttributesCount() {
     return ourAttributes.size();
-  }
-
-  List<StyleAttribute> getAttributes() {
-    return Collections.unmodifiableList(ourAttributes);
-  }
-
-  List<StyleAttribute> getNotSimpleAttributes() {
-    return Collections.unmodifiableList(ourNotSimpleAttributes);
   }
 
   StyleAttribute getAttribute(int index) {
@@ -121,9 +111,6 @@ public class StyleAttributes {
       ourAttributes.set(index, a);
     }
 
-    if (!isSimple(a)) {
-      ourNotSimpleAttributes.add(a);
-    }
     return index;
   }
 
@@ -131,9 +118,6 @@ public class StyleAttributes {
     int index = ourAttributes.indexOf(a);
     ourAttributes.set(index, null);
     ourFreeIndices.add(index);
-    if (!isSimple(a)) {
-      ourNotSimpleAttributes.remove(a);
-    }
   }
 
   static boolean isSimple(StyleAttribute a) {
