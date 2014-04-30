@@ -10,7 +10,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="d4ycfa9iiapqerfih727hy8y879qbvr" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="97sgo1f3109p70k6s2o5xns53ms5ay" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="9efrqj3daxy4n2ssyrhyz3xpqs5eoiq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="c1hnhdpddphjo2fhgyvonweo0t1r37x" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
@@ -41,6 +41,7 @@
   </common>
   <source id="1239575860624" name="NamedTupleComponentDeclaration_Constraints" hash="7qzsio0t1ph8ch9771sr0c6zouktqpg">
     <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NamedTupleComponentDeclaration_Constraints.java" />
   </source>
   <source id="1239575916907" name="NamedTupleComponentReference_Constraints" hash="cmgtnaw97mfa9e4rijm64n9wn3ah7va">
