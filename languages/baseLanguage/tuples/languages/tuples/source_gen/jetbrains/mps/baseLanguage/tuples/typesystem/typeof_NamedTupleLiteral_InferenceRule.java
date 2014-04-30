@@ -32,7 +32,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
   }
 
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!((int) ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true)).count() == (int) ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(literal, "tupleDeclaration", false))).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(literal, "componentRef", true)).count() == (int) ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(literal, "tupleDeclaration", false))).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
       public Integer combine(Integer s, SNode ntd) {
         return s + ListSequence.fromList(SLinkOperations.getTargets(ntd, "component", true)).count();
       }

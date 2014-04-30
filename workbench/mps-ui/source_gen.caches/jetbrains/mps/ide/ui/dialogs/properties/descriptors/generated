@@ -1,3 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6d4ry8cyj9k96v8mv57amvadn932r3d" />
+<dependencies version="2" modelHash="e4s59ep7hv958f4h71ieomq2475qjze">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="4hvrxic2g1ev69y9ed9rp9x7krgekd2" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="3995997045458428838" name="ColumnDescriptor" hash="-bqhimp891aqnl7civ0zc1fnur0udl9b">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <file name="ColumnDescriptor.java" />
+  </source>
+  <source id="3995997045458428896" name="VoidColumnDescriptor" hash="55vs4sosof07m4bl52kxfp7816idzkb">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="VoidColumnDescriptor.java" />
+  </source>
+  <source id="3995997045458428924" name="RuleTypeDescriptor" hash="9zgfp9n9zjvknfxjmmzrmpiv8cetxkf">
+    <file name="RuleTypeDescriptor.java" />
+  </source>
+  <source id="3995997045458428954" name="PriorityRuleDescriptor" hash="6y9tfmkc3s82bl9fpenj0hsdf5wdvns">
+    <file name="PriorityRuleDescriptor.java" />
+  </source>
+</dependencies>
 

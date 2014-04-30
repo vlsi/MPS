@@ -15,6 +15,16 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.newTypesystem.context.typechecking.TargetTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.TracingTypechecking;
+import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
+import jetbrains.mps.newTypesystem.state.TargetState;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
@@ -22,10 +32,20 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * User: fyodor
  * Date: 11/7/12
  */
-public class TracingTypecheckingContext extends TargetTypecheckingContext {
+public class TracingTypecheckingContext extends SimpleTypecheckingContext<TargetState, TracingTypechecking>{
 
   public TracingTypecheckingContext(SNode node, TypeChecker typeChecker) {
     super(node, typeChecker);
+  }
+
+  @Override
+  protected TracingTypechecking createTypechecking() {
+    return new TracingTypechecking(getNode(), getState());
+  }
+
+  @Override
+  protected TargetState createState() {
+    return new TargetState(this);
   }
 
   @Override
@@ -37,4 +57,14 @@ public class TracingTypecheckingContext extends TargetTypecheckingContext {
   public boolean isSingleTypeComputation() {
     return false;
   }
+
+  @Override
+  public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
+    if (nodeWithError == null) {
+      getState().executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
+      return;//todo
+    }
+    getTypechecking().reportTypeError(nodeWithError, errorReporter);
+  }
+
 }

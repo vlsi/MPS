@@ -1670,7 +1670,7 @@
     <nodeInfo nodeId="2191995028863072676" fileName="InstallIDEAPlugin_Action.java" startLine="112" startPosition="61" endLine="113" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2191995028863072696" fileName="InstallIDEAPlugin_Action.java" startLine="117" startPosition="63" endLine="118" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2191995028863072704" fileName="InstallIDEAPlugin_Action.java" startLine="118" startPosition="185" endLine="119" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2191995028863072718" fileName="InstallIDEAPlugin_Action.java" startLine="120" startPosition="79" endLine="121" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2191995028863072718" fileName="InstallIDEAPlugin_Action.java" startLine="120" startPosition="73" endLine="121" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2191995028863072723" fileName="InstallIDEAPlugin_Action.java" startLine="122" startPosition="5" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2191995028863072747" fileName="InstallIDEAPlugin_Action.java" startLine="127" startPosition="46" endLine="128" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2191995028863072753" fileName="InstallIDEAPlugin_Action.java" startLine="129" startPosition="9" endLine="130" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1730,7 +1730,7 @@
     <scopeInfo nodeId="2191995028863072603" fileName="InstallIDEAPlugin_Action.java" startLine="94" startPosition="39" endLine="95" endPosition="18" />
     <scopeInfo nodeId="2191995028863072610" fileName="InstallIDEAPlugin_Action.java" startLine="97" startPosition="27" endLine="98" endPosition="34" />
     <scopeInfo nodeId="1206102099919032771" fileName="InstallIDEAPlugin_Action.java" startLine="112" startPosition="61" endLine="113" endPosition="71" />
-    <scopeInfo nodeId="2191995028863072717" fileName="InstallIDEAPlugin_Action.java" startLine="120" startPosition="79" endLine="121" endPosition="89" />
+    <scopeInfo nodeId="2191995028863072717" fileName="InstallIDEAPlugin_Action.java" startLine="120" startPosition="73" endLine="121" endPosition="89" />
     <scopeInfo nodeId="2191995028863072746" fileName="InstallIDEAPlugin_Action.java" startLine="127" startPosition="46" endLine="128" endPosition="23" />
     <scopeInfo nodeId="2191995028863072874" fileName="InstallIDEAPlugin_Action.java" startLine="79" startPosition="11" endLine="81" endPosition="156" />
     <scopeInfo nodeId="2191995028863072695" fileName="InstallIDEAPlugin_Action.java" startLine="117" startPosition="63" endLine="119" endPosition="18" />

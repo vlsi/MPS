@@ -257,7 +257,7 @@ __switch__:
 
   private SModule moduleToMake() {
     Iterable<SModule> modulesSeq = ((Iterable<SModule>) this.modules);
-    if ((int) Sequence.fromIterable(modulesSeq).count() == 1) {
+    if (Sequence.fromIterable(modulesSeq).count() == 1) {
       return Sequence.fromIterable(modulesSeq).first();
     } else if (Sequence.fromIterable(modulesSeq).count() > 1) {
       return null;
@@ -267,7 +267,7 @@ __switch__:
 
   private SModel modelToMake() {
     Iterable<SModel> modelsSeq = ((Iterable<SModel>) this.models);
-    if ((int) Sequence.fromIterable(modelsSeq).count() == 1) {
+    if (Sequence.fromIterable(modelsSeq).count() == 1) {
       return Sequence.fromIterable(modelsSeq).first();
     } else if (Sequence.fromIterable(modelsSeq).count() > 1) {
       return null;

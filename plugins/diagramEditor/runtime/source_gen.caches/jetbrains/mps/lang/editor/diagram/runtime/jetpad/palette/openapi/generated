@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-v6n263ouqrnk6lvqie8cfu4yjgty1">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
-  <common hash="-1p9512us1jjj8d443r8n3aum31tlct9" dependsOnNodes="true">
+<dependencies version="2" modelHash="1z2jb0cscol6duntem261umaeykch0f">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <common hash="evzbfc25gnt04py2hovcwj4gwf7uuxb" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="121824560294376345" name="PaletteElement" hash="-89hhue3gpw3eboh30m7i8zig6yoks3l">

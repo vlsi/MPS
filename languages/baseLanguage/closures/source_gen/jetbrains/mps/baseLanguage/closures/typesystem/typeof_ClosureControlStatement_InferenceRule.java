@@ -47,7 +47,7 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
       }
       List<SNode> params = SLinkOperations.getTargets(ccs, "actualParameter", true);
       List<SNode> fpts = cmuInfo.getFunctionParamTypes();
-      if (!((int) ListSequence.fromList(params).count() == (int) ListSequence.fromList(fpts).count())) {
+      if (!(ListSequence.fromList(params).count() == ListSequence.fromList(fpts).count())) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ccs, "Incorrect parameters number", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1232455288552", null, errorTarget);
       }

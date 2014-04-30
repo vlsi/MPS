@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dlt8f49a3wq5p1rcs05yyowu1buajxa" />
+<dependencies version="2" modelHash="-6unyffzzec8ah8g02nb75vpbaloiico">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <common hash="-3rm6pkldir9v52ts0wl91o3s8ae6j3t" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="1268765481875672245" name="IDelta" hash="-3xti2gwyt4ptzl3q6ls7l3jehv7si2l">
+    <file name="IDelta.java" />
+  </source>
+  <source id="5429064975945235670" name="IInternalDelta" hash="5a77rgijcnerwrogtli2qbxg5hntrjm">
+    <file name="IInternalDelta.java" />
+  </source>
+  <source id="6067326609049460296" name="IDeltaVisitor" hash="-81qddb4xehy3spoztqf9tke7pi3g42r">
+    <file name="IDeltaVisitor.java" />
+  </source>
+</dependencies>
 

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-51ife5mhletzr1jfx2a7xuy3vxsioh4">
-  <common hash="1n8ukx82e37tc09hpdgr4vwqr2nrii3" dependsOnNodes="true" />
+<dependencies version="2" modelHash="dy7sid3skaxebtl1szj41i9960xg5gz">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="ais3k5i6actgp4k9tby7eortp0tccjk" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
   <source id="4774692914340655529" name="PathManager" hash="-37nrsuuc6ewpx71bdl9zaswma2it6cf">
     <file name="PathManager.java" />
   </source>
@@ -8,9 +13,14 @@
     <file name="MapPathMacrosProvider.java" />
   </source>
   <source id="5900076103425675110" name="SetLibraryContributor" hash="6xyo8v8nhu2tijcj8v1w4k370rsyjh0">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SetLibraryContributor.java" />
   </source>
   <source id="878521226300613674" name="MpsPlatform" hash="blfxor6c4drhxg4h92rqss7xh77h40">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MpsPlatform.java" />
   </source>
   <source id="1365200781785613152" name="ClassloaderUtil" hash="-9hb547434v623eyxvusq3643zt6h75a">

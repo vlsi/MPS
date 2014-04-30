@@ -38,7 +38,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
   public ModuleDependencyNode(List<SModule> modules, IOperationContext context) {
     super(context);
     myModules = modules;
-    if ((int) ListSequence.fromList(modules).count() == 1) {
+    if (ListSequence.fromList(modules).count() == 1) {
       setIcon(IconManager.getIconFor(ListSequence.fromList(modules).first()));
     }
     String text = ListSequence.fromList(modules).first().getModuleName();
@@ -140,7 +140,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   @Override
   public void doubleClick() {
-    if ((int) ListSequence.fromList(myModules).count() == 1) {
+    if (ListSequence.fromList(myModules).count() == 1) {
       ProjectPane.getInstance(check_lba8jw_a0a0a0a41(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
     }
   }

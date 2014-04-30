@@ -112,7 +112,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
       SNode annotationInstance = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
       List<SNode> annotationMethodDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(annotationInstance, "annotation", false), "method", true);
-      if ((int) ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
+      if (ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
         SLinkOperations.setTarget(_context.getNewNode(), "key", ListSequence.fromList(annotationMethodDeclarations).first(), false);
       }
     }
@@ -1780,7 +1780,7 @@ public class QueriesGenerated {
             if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
               SNode annotationInstance = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               List<SNode> annotationMethodDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(annotationInstance, "annotation", false), "method", true);
-              if ((int) ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
+              if (ListSequence.fromList(annotationMethodDeclarations).count() == 1) {
                 SLinkOperations.setTarget(result, "key", ListSequence.fromList(annotationMethodDeclarations).first(), false);
               }
             }
@@ -4107,34 +4107,6 @@ __switch__:
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), _quotation_createNode_q3xziz_b0a0a0a());
   }
 
-  public static List<SubstituteAction> sideTransform_ActionsFactory_Statement_1232463815953(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode result = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.CommentedStatement");
-        SLinkOperations.setTarget(result, "statement", _context.getSourceNode(), true);
-        return result;
-      }
-
-      public String getMatchingText(String pattern) {
-        return "//";
-      }
-
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement"), null));
-      }
-    });
-    return result;
-  }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1232016045892(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -4613,8 +4585,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode statement = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Statement");
-        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
-        SNodeOperations.replaceWithAnother(statement, result);
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
         SNode part = SNodeFactoryOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
         SLinkOperations.setTarget(part, "commentedStatement", statement, true);
         return result;
@@ -4643,13 +4614,50 @@ __switch__:
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   }
 
+  public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1100850602736775323(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode statement = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
+        SNode part = SNodeFactoryOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+        SLinkOperations.setTarget(part, "commentedStatement", statement, true);
+        return result;
+      }
+
+      public String getMatchingText(String pattern) {
+        return "//";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment"), null));
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1100850602736775361(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) && (SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", false, false) != null) && ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Expression", false)).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.BinaryOperation") && ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).contains(_context.getSourceNode())) || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.DotExpression") && ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).contains(_context.getSourceNode())) || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression") && ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).contains(_context.getSourceNode()));
+      }
+    });
+  }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_Statement_213802071188468761(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode statement = _context.getSourceNode();
-        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
-        SNodeOperations.replaceWithAnother(statement, result);
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
         SNode part = SNodeFactoryOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
         SLinkOperations.setTarget(part, "commentedStatement", statement, true);
         return result;
@@ -4683,8 +4691,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode statement = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getSourceNode())), "jetbrains.mps.baseLanguage.structure.Statement");
-        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
-        SNodeOperations.replaceWithAnother(statement, result);
+        SNode result = SNodeFactoryOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
         SNode part = SNodeFactoryOperations.addNewChild(result, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
         SLinkOperations.setTarget(part, "commentedStatement", statement, true);
         return result;
@@ -5871,7 +5878,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a642(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a742(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
         SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
@@ -6256,7 +6263,7 @@ __switch__:
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a642(Object o, Class<T> type) {
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a742(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 
