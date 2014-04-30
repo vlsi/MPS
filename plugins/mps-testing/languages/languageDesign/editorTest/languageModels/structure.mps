@@ -227,5 +227,36 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3195708693940803614" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="SimplePropertyContainer" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="attributes" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3195708693940803805" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="property" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3195708693940868525" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="attributes" />
+    <property name="name" nameId="tpck.1169194664001" value="SimplePropertyAttribute" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049750" resolveInfo="PropertyAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="3195708693940868778" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="simplePropertyAttribute" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="3195708693940870092" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="3195708693940803614" resolveInfo="SimplePropertyContainer" />
+      </node>
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3447504547918837138" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="attributes" />
+    <property name="name" nameId="tpck.1169194664001" value="Composition" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3447504547918837407" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="children" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3195708693940803614" resolveInfo="SimplePropertyContainer" />
+    </node>
+  </root>
 </model>
 

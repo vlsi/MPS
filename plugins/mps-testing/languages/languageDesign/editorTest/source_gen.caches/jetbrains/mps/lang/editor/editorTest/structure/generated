@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3uiv7u5spqlfdpy7h5hx4xrl1mg3zlz">
+<dependencies version="2" modelHash="-3tc927gkvau4o9ccrj4vlp4qo0haaem">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
@@ -12,6 +12,9 @@
     <dep root="2613454275903805304" />
     <dep root="2613454275903819473" />
     <dep root="2613454275903920988" />
+    <dep root="3195708693940803614" />
+    <dep root="3195708693940868525" />
+    <dep root="3447504547918837138" />
     <dep root="3582597462265868788" />
     <dep root="3702466984434609595" />
     <dep root="3702466984434723496" />
@@ -53,5 +56,8 @@
   <source id="5633355289409839142" name="NonEmptyProperty" hash="alxzep0c8scp62k05e20fh2clwe3x2m" />
   <source id="4965160547087302660" name="NotEditableVaraileReference" hash="ar83s7dof2ffrkp5rf2w752vwsea9xh" />
   <source id="2399036385470202575" name="ClassReference" hash="-1as4ponrz94u77ckv9c1yqs3cfi3myg" />
+  <source id="3195708693940803614" name="SimplePropertyContainer" hash="-4j1310txosz6ht1zsh7sv66py75v9t6" />
+  <source id="3195708693940868525" name="SimplePropertyAttribute" hash="3jwcsrb5v8i7c30q2sfp0pfz1hphxnx" />
+  <source id="3447504547918837138" name="Composition" hash="2fd6gqfg46fzvwzsfafxm78fjdgejkw" />
 </dependencies>
 

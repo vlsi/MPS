@@ -13,6 +13,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
+    IntentionsManager.getInstance().registerIntentionFactory(new AddSimplePropertyAttribute_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddTestReferenceAnnotation_Intention());
   }
 }
