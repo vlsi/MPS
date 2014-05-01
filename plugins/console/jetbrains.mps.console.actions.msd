@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.console.actions" uuid="95b39faf-7eaf-4ae3-bd92-fbd3cc28bfab" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="jetbrains.mps.console.actions" uuid="95b39faf-7eaf-4ae3-bd92-fbd3cc28bfab" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="models" />
+      <sourceRoot location="actions" />
     </modelRoot>
   </models>
   <sourcePath />
