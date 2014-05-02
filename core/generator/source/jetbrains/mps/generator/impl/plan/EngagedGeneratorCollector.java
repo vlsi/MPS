@@ -63,7 +63,7 @@ final class EngagedGeneratorCollector {
    */
   public Collection<String> getDirectlyUsedLanguages() {
     if (myDirectLangUse == null) {
-      myDirectLangUse = ModelContentUtil.getUsedLanguageNamespaces(myModel, false);
+      myDirectLangUse = ModelContentUtil.getUsedLanguageNamespaces(myModel);
     }
     return myDirectLangUse;
   }

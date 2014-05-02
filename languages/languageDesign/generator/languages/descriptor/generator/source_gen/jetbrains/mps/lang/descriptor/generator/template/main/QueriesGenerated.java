@@ -357,7 +357,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(SNode it) {
         SModel m = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
-        return (m == null ? Collections.<String>emptyList() : ModelContentUtil.getUsedLanguageNamespaces(m, true));
+        return (m == null ? Collections.<String>emptyList() : ModelContentUtil.getUsedLanguageNamespacesInTemplateModel(m));
       }
     }).distinct().sort(new ISelector<String, String>() {
       public String select(String it) {
