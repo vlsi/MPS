@@ -150,8 +150,8 @@ public class MPSCore extends ComponentPlugin {
     return testMode;
   }
 
-  public void setTestMode() {
-    testMode = true;
+  public void setTestMode(boolean mode) {
+    testMode = mode;
   }
 
   public boolean isMergeDriverMode() {

@@ -8,6 +8,16 @@ import jetbrains.mps.openapi.editor.Editor;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.command.impl.UndoManagerImpl;
+import com.intellij.openapi.command.undo.UndoManager;
+import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.command.impl.CurrentEditorProvider;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.actionSystem.DataContext;
+import java.awt.Component;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import java.awt.KeyboardFocusManager;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,7 +39,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
-import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import java.lang.reflect.InvocationTargetException;
@@ -93,9 +102,36 @@ public class BaseEditorTestBody extends BaseTestBody {
           BaseEditorTestBody.this.myFinish = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(after));
         }
         BaseEditorTestBody.this.myEditor = BaseEditorTestBody.openEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myModel, BaseEditorTestBody.this.myBefore);
+        hackUndoManager(BaseEditorTestBody.this.myEditor);
         BaseEditorTestBody.this.myStart.setupSelection(BaseEditorTestBody.this.myEditor);
       }
     });
+  }
+
+
+
+  private void hackUndoManager(final Editor editor) {
+    UndoManagerImpl instance = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
+    instance.setEditorProvider(new CurrentEditorProvider() {
+      public FileEditor getCurrentEditor() {
+        DataContext context = DataManager.getInstance().getDataContext((Component) editor.getCurrentEditorComponent());
+        return MPSCommonDataKeys.FILE_EDITOR.getData(context);
+      }
+    });
+  }
+
+
+
+  private void unhackUndoManager() {
+    // the dirtiest hack : copy of the platform's FocusBasedCurrentEditorProvider 
+    UndoManagerImpl instance = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
+    instance.setEditorProvider(new CurrentEditorProvider() {
+      public FileEditor getCurrentEditor() {
+        final Component owner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+        return PlatformDataKeys.FILE_EDITOR.getData(DataManager.getInstance().getDataContext(owner));
+      }
+    });
+
   }
 
 
@@ -139,14 +175,13 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public void testMethod() throws Throwable {
     try {
-      flushEventQueueAfterAction();
       this.testMethodImpl();
       this.checkAssertion();
     } finally {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
         public void run() {
-          BaseEditorTestBody.closeEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myBefore);
+          BaseEditorTestBody.this.closeEditor();
         }
       });
     }
@@ -189,7 +224,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     boolean focus = false;
     boolean select = !(jetbrains.mps.util.SNodeOperations.isRoot(node));
 
-    return opener.openNode(node, context, false, select, false);
+    return opener.openNode(node, context, focus, select, false);
 
     // <node> 
     // <node> 
@@ -197,9 +232,10 @@ public class BaseEditorTestBody extends BaseTestBody {
 
 
 
-  public static void closeEditor(Project project, SNode node) {
-    FileEditorManager editorManager = FileEditorManager.getInstance(ProjectHelper.toIdeaProject(project));
-    editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
+  public void closeEditor() {
+    unhackUndoManager();
+    FileEditorManager editorManager = FileEditorManager.getInstance(ProjectHelper.toIdeaProject(myProject));
+    editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(myBefore));
   }
 
 

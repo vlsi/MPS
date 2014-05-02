@@ -203,7 +203,7 @@ public class MPSEditorOpener {
   //----------util
 
 
-  public void focus(Editor nodeEditor, boolean cellInInspector) {
+  private void focus(Editor nodeEditor, boolean cellInInspector) {
     if (!cellInInspector) {
       final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
       manager.activateEditorComponent();
