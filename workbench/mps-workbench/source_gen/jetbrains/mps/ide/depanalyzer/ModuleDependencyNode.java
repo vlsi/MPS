@@ -80,6 +80,11 @@ public class ModuleDependencyNode extends MPSTreeNode {
   }
 
   @Override
+  public boolean isLeaf() {
+    return false;
+  }
+
+  @Override
   protected void doInit() {
     Set<SModule> reqModules = SetSequence.fromSet(new HashSet<SModule>());
     Set<SModule> rtModules = SetSequence.fromSet(new HashSet<SModule>());
@@ -141,7 +146,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
   @Override
   public void doubleClick() {
     if (ListSequence.fromList(myModules).count() == 1) {
-      ProjectPane.getInstance(check_lba8jw_a0a0a0a41(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
+      ProjectPane.getInstance(check_lba8jw_a0a0a0a51(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
     }
   }
 
@@ -178,7 +183,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     }
   }
 
-  private static Project check_lba8jw_a0a0a0a41(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
+  private static Project check_lba8jw_a0a0a0a51(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();
     }
