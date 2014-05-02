@@ -15,21 +15,16 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.GenerationCacheContainer;
-import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-
-import java.util.Map;
 
 /**
  * Default implementation for incremental generation
  */
-public class DefaultIncrementalStrategy implements IncrementalGenerationStrategy {
+public class DefaultIncrementalStrategy extends DefaultNonIncrementalStrategy {
   private final GenerationCacheContainer myCache;
 
   public DefaultIncrementalStrategy(@Nullable GenerationCacheContainer cache) {
@@ -44,17 +39,6 @@ public class DefaultIncrementalStrategy implements IncrementalGenerationStrategy
   @Override
   public GenerationCacheContainer getContainer() {
     return myCache;
-  }
-
-  @Override
-  public Map<String, String> getModelHashes(SModel md, IOperationContext context) {
-    if (md instanceof GeneratableSModel) {
-      GeneratableSModel sm = (GeneratableSModel) md;
-      if (sm.isGeneratable()) {
-        return sm.getGenerationHashes();
-      }
-    }
-    return null;
   }
 
   @Override

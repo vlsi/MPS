@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 
-import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -30,7 +30,16 @@ import java.util.Map;
 public class DefaultNonIncrementalStrategy implements IncrementalGenerationStrategy {
   @Override
   public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {
-    return Collections.emptyMap();
+    // despite the fact this is non-incremental strategy, there's need presently to answer with
+    // actual model hash value even for non-incremental case - otherwise, 'generated' file for a model
+    // get overwritten with no hash value at all, and 'generation required' shows up constantly.
+    if (sm instanceof GeneratableSModel) {
+      GeneratableSModel m = (GeneratableSModel) sm;
+      if (m.isGeneratable()) {
+        return m.getGenerationHashes();
+      }
+    }
+    return null;
   }
 
   @Override
