@@ -54,11 +54,14 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
             errorMsg = ": no result type in function type";
           }
-          {
-            SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1858552893540392470", 0, null);
-            _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-            typeCheckingContext.createGreaterThanInequality((SNode) retType, (SNode) SLinkOperations.getTarget(subtype, "resultType", true), false, true, _info_12389875345);
+          // handle the specific case: {=> Object} <: Computable<?> 
+          if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
+            {
+              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1858552893540392470", 0, null);
+              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+              typeCheckingContext.createGreaterThanInequality((SNode) retType, (SNode) SLinkOperations.getTarget(subtype, "resultType", true), false, true, _info_12389875345);
+            }
           }
         }
         {
@@ -116,7 +119,10 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
             if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
               errorMsg = ": no result type in function type";
             }
-            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, true);
+            // handle the specific case: {=> Object} <: Computable<?> 
+            if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
+              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, true);
+            }
           }
           {
             Iterator<SNode> fpt_it = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
