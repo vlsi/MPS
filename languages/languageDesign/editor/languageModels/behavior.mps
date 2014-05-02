@@ -15707,6 +15707,7 @@
     </node>
   </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3982520150138519998" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpc2.3982520150113085419" resolveInfo="StyleAttributeDeclaration" />
     <node role="method" roleId="1i04.1225194240805" type="1i04.ConceptMethodDeclaration" typeId="1i04.1225194472830" id="3982520150138520052" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="getModuleName" />

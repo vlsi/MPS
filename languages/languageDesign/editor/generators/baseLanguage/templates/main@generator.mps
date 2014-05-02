@@ -6015,7 +6015,7 @@
   </root>
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1143051457456" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="MAPPING_queryFunction" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="2548761562306538528" nodeInfo="ng">
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.1221059528506" resolveInfo="QueryFunction_StyleParameter" />
@@ -11611,7 +11611,7 @@
   </root>
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1186404688558" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="StyleSheet" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="false" />
     <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="4666785434461001662" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="tpc2.4151393920374910722" resolveInfo="StyleKeyPack" />
@@ -11861,7 +11861,7 @@
   </root>
   <root type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="1186404942965" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="StyleAttributeValue" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7677730757097297607" nodeInfo="ng">
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.3982520150122341378" resolveInfo="AttributeQueryStyleClassItem" />
@@ -18596,7 +18596,7 @@
   </root>
   <root type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="6083395046987581465" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="StyleAttribute" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="7677730757092022337" nodeInfo="ng">
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.7677730757092052790" resolveInfo="IAttributeStyleClassItem" />
@@ -19802,7 +19802,7 @@
   </root>
   <root type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="2548761562342008913" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="StyleClassItemQueryMethods" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="styles" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="3982520150129799933" nodeInfo="ng">
       <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpc2.3982520150122341378" resolveInfo="AttributeQueryStyleClassItem" />
@@ -23655,6 +23655,7 @@
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6029276237634455622" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="reduce_StyleAttributeReferenceExpression" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.6029276237631252951" resolveInfo="StyleAttributeReferenceExpression" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6029276237634476677" nodeInfo="nn">
       <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6029276237634476678" nodeInfo="nn">
@@ -23778,6 +23779,7 @@
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6029276237642832162" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="reduce_StyleAttributeDeclaration" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpc2.3982520150113085419" resolveInfo="StyleAttributeDeclaration" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6029276237642845014" nodeInfo="nn">
       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6029276237642845015" nodeInfo="nn">

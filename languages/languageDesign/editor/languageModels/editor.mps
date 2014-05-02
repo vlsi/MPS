@@ -11939,6 +11939,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3982520150113119248" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.3982520150113085419" resolveInfo="StyleAttributeDeclaration" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3982520150113119310" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3982520150113124084" nodeInfo="nn">
@@ -11975,6 +11976,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3982520150122343952" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.3982520150122341378" resolveInfo="AttributeQueryStyleClassItem" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3982520150122344104" nodeInfo="nn">
       <property name="vertical" nameId="tpc2.1073389446425" value="false" />
@@ -12005,6 +12007,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1549178425982853845" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.1549178425982853146" resolveInfo="AttributeStyleClassItem" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1549178425982853883" nodeInfo="nn">
       <property name="vertical" nameId="tpc2.1073389446425" value="false" />
@@ -12101,6 +12104,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6029276237631253707" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.6029276237631252951" resolveInfo="StyleAttributeReferenceExpression" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1219353219749" nodeInfo="nn">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="6029276237633132125" nodeInfo="ng">

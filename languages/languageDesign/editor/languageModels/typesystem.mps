@@ -3043,6 +3043,7 @@
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="7677730757090486505" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_AttributeStyleClassItem" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7677730757090486506" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="7677730757090523384" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="7677730757090523417" nodeInfo="ng">
@@ -3081,6 +3082,7 @@
   </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6029276237634418877" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_StyleAttributeReferenceExpression" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="6029276237634418878" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="6029276237634420328" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="6029276237634420351" nodeInfo="ng">
