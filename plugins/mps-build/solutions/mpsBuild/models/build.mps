@@ -15937,18 +15937,15 @@
       <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.console.actions" />
       <property name="uuid" nameId="kdzh.322010710375892619" value="95b39faf-7eaf-4ae3-bd92-fbd3cc28bfab" />
-      <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+      <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="true" />
       <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="6141222758068920694" nodeInfo="ng">
         <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="6391307088354381128" resolveInfo="mps_home" />
         <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6141222758068921060" nodeInfo="nn">
           <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
-          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6141222758068922154" nodeInfo="nn">
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6141222758068922884" nodeInfo="nn">
             <property name="head" nameId="3ior.8618885170173601779" value="console" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6141222758068922884" nodeInfo="nn">
-              <property name="head" nameId="3ior.8618885170173601779" value="actions" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6141222758068923614" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.console.actions.msd" />
-              </node>
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6141222758068923614" nodeInfo="nn">
+              <property name="head" nameId="3ior.8618885170173601779" value="jetbrains.mps.console.actions.msd" />
             </node>
           </node>
         </node>
