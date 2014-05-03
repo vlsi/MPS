@@ -5944,6 +5944,49 @@
                       <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
                     </node>
                   </node>
+                  <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7973567224598643292" nodeInfo="igu">
+                    <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+                    <property name="name" nameId="tpck.1169194664001" value="getScrollableTracksViewportWidth" />
+                    <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+                    <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
+                    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7973567224598643293" nodeInfo="nn" />
+                    <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="7973567224598643295" nodeInfo="in" />
+                    <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7973567224598643297" nodeInfo="sn">
+                      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7973567224598667922" nodeInfo="nn">
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="7973567224598667923" nodeInfo="nn">
+                          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="7973567224598667924" nodeInfo="nn">
+                            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7973567224598667925" nodeInfo="nn">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="7973567224598667926" nodeInfo="nn">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7y.~Component%dgetParent()%cjava%dawt%dContainer" resolveInfo="getParent" />
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7973567224598667927" nodeInfo="nn">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7y.~Component%dgetWidth()%cint" resolveInfo="getWidth" />
+                              </node>
+                            </node>
+                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7973567224598667928" nodeInfo="nn">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="7973567224598667929" nodeInfo="nn">
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrg.~JComponent%dgetPreferredSize()%cjava%dawt%dDimension" resolveInfo="getPreferredSize" />
+                              </node>
+                              <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7973567224598706662" nodeInfo="nn">
+                                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="1t7y.~Dimension%dwidth" resolveInfo="width" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="7973567224598667931" nodeInfo="nn">
+                            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7973567224598667932" nodeInfo="in">
+                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrg.~JViewport" resolveInfo="JViewport" />
+                            </node>
+                            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="7973567224598667933" nodeInfo="nn">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1t7y.~Component%dgetParent()%cjava%dawt%dContainer" resolveInfo="getParent" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="7973567224598643298" nodeInfo="nn">
+                      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

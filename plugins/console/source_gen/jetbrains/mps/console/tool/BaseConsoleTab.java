@@ -414,6 +414,11 @@ public abstract class BaseConsoleTab extends JPanel {
       public boolean getScrollableTracksViewportHeight() {
         return getParent() instanceof JViewport && getPreferredSize().height < getParent().getHeight();
       }
+
+      @Override
+      public boolean getScrollableTracksViewportWidth() {
+        return getParent() instanceof JViewport && getPreferredSize().width < getParent().getWidth();
+      }
     };
     editorPanel.add(myEditor, BorderLayout.CENTER);
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(editorPanel);
