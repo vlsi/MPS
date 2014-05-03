@@ -63,6 +63,8 @@ import java.awt.event.MouseEvent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
+import javax.swing.JViewport;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -407,14 +409,18 @@ public abstract class BaseConsoleTab extends JPanel {
     toolbarComponent.add(toolbar.getComponent(), BorderLayout.CENTER);
 
     this.add(toolbarComponent, BorderLayout.WEST);
-    JPanel editorPanel = new JPanel(new BorderLayout());
-    editorPanel.add(myEditor);
+    JPanel editorPanel = new ScrollablePanel(new BorderLayout()) {
+      @Override
+      public boolean getScrollableTracksViewportHeight() {
+        return getParent() instanceof JViewport && getPreferredSize().height < getParent().getHeight();
+      }
+    };
+    editorPanel.add(myEditor, BorderLayout.CENTER);
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(editorPanel);
-    scrollPane.getVerticalScrollBar().setBlockIncrement(10);
     this.add(scrollPane, BorderLayout.CENTER);
     this.add(myEditor.getUpperPanel(), BorderLayout.NORTH);
 
-    myHighlighter = check_6q36mf_a0t0cc(myTool.getProject());
+    myHighlighter = check_6q36mf_a0s0cc(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
@@ -542,7 +548,7 @@ public abstract class BaseConsoleTab extends JPanel {
     return quotedNode_2;
   }
 
-  private static Highlighter check_6q36mf_a0t0cc(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static Highlighter check_6q36mf_a0s0cc(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }
