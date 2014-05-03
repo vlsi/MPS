@@ -29,6 +29,9 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.generator.IncrementalGenerationStrategy;
+import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
+import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.NullGenerationTracer;
@@ -248,7 +251,13 @@ public class Generate_Facet extends IFacet.Stub {
               }
               Iterable<GenerationCacheContainer> caches = ExtensionPoint.<GenerationCacheContainer>generify(new ExtensionPoint("jetbrains.mps.lang.core.GeneratorCache", GenerationCacheContainer.class)).getObjects();
               GenerationCacheContainer cacheContainer = (Sequence.fromIterable(caches).isEmpty() ? null : Sequence.fromIterable(caches).first());
-              vars(pa.global()).generationOptions().incremental(new MakeGenerationStrategy((settings.isIncremental() && settings.isIncrementalUseCache() ? cacheContainer : null), settings.isIncremental()));
+              final IncrementalGenerationStrategy incrementalStrategy;
+              if (settings.isIncremental()) {
+                incrementalStrategy = new DefaultIncrementalStrategy((settings.isIncrementalUseCache() ? cacheContainer : null));
+              } else {
+                incrementalStrategy = new DefaultNonIncrementalStrategy();
+              }
+              vars(pa.global()).generationOptions().incremental(incrementalStrategy);
               if (GenerationFacade.isLegacyGenTraceEnabled()) {
                 IGenerationTracer tracer = (vars(pa.global()).saveTransient() ? Generate_Facet.Target_checkParameters.vars(pa.global()).project().getComponent(IGenerationTracer.class) : new NullGenerationTracer());
                 vars(pa.global()).generationOptions().tracing(settings.getPerformanceTracingLevel(), tracer);

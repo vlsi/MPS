@@ -659,7 +659,7 @@ class GenerationSession {
   }
 
   private void printGenerationStepData(SModel inputModel) {
-    List<String> references = new ArrayList<String>(ModelContentUtil.getUsedLanguageNamespaces(inputModel, false));
+    List<String> references = new ArrayList<String>(ModelContentUtil.getUsedLanguageNamespaces(inputModel));
     Collections.sort(references);
     myLogger.info("languages used:");
     for (String reference : references) {

@@ -2157,12 +2157,9 @@
                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6987891284706393037" nodeInfo="nn">
                                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6987891284706393038" nodeInfo="nn">
                                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i6ta.~ModelContentUtil" resolveInfo="ModelContentUtil" />
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i6ta.~ModelContentUtil%dgetUsedLanguageNamespaces(org%djetbrains%dmps%dopenapi%dmodel%dSModel,boolean)%cjava%dutil%dCollection" resolveInfo="getUsedLanguageNamespaces" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i6ta.~ModelContentUtil%dgetUsedLanguageNamespaces(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cjava%dutil%dCollection" resolveInfo="getUsedLanguageNamespaces" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150339812" nodeInfo="nn">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6987891284706393043" resolveInfo="smd" />
-                                    </node>
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6987891284706393042" nodeInfo="nn">
-                                      <property name="value" nameId="tpee.1068580123138" value="false" />
                                     </node>
                                   </node>
                                 </node>

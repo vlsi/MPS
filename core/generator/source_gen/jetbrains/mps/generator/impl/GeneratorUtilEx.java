@@ -16,14 +16,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public final class GeneratorUtilEx {
-  public static final String link_BaseConcept_attrs = "smodelAttribute";
-
   private static final Set<String> TemplateLangElements = new HashSet<String>();
   static {
     TemplateLangElements.add(RuleUtil.concept_ReferenceMacro);
     TemplateLangElements.add(RuleUtil.concept_PropertyMacro);
-    TemplateLangElements.add("jetbrains.mps.lang.generator.structure.TemplateFragment");
-    TemplateLangElements.add("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
+    TemplateLangElements.add(RuleUtil.concept_TemplateFragment);
+    TemplateLangElements.add(RuleUtil.concept_RootTemplateAnnotation);
   }
 
   public static boolean isTemplateLanguageElement(SNode n) {

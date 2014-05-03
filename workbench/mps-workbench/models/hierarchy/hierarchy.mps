@@ -9232,10 +9232,10 @@
                     <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363075431" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049414278" resolveInfo="name" />
                     </node>
-                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5797068448049414303" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~TreeTextUtil%dtoHtml(java%dlang%dString)%cjava%dlang%dString" resolveInfo="toHtml" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="v38v.~TreeTextUtil" resolveInfo="TreeTextUtil" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363096764" nodeInfo="nn">
+                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1255698478596708029" nodeInfo="nn">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~StringUtil%descapeXml(java%dlang%dString)%cjava%dlang%dString" resolveInfo="escapeXml" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~StringUtil" resolveInfo="StringUtil" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1255698478596708030" nodeInfo="nn">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049414278" resolveInfo="name" />
                       </node>
                     </node>
@@ -10880,19 +10880,19 @@
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5797068448049415149" nodeInfo="nn">
                       <property name="value" nameId="tpee.1070475926801" value="&lt;html&gt;Hierarchy for &lt;font color=\&quot;#400090\&quot;&gt;&lt;b&gt;" />
                     </node>
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5797068448049415150" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="v38v.~TreeTextUtil%dtoHtml(java%dlang%dString)%cjava%dlang%dString" resolveInfo="toHtml" />
-                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="v38v.~TreeTextUtil" resolveInfo="TreeTextUtil" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5797068448049415151" nodeInfo="nn">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5797068448049415152" nodeInfo="nn">
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5797068448049415153" nodeInfo="nn">
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1255698478596659426" nodeInfo="nn">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~StringUtil%descapeXml(java%dlang%dString)%cjava%dlang%dString" resolveInfo="escapeXml" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~StringUtil" resolveInfo="StringUtil" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1255698478596659427" nodeInfo="nn">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1255698478596659428" nodeInfo="nn">
+                          <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="1255698478596659429" nodeInfo="nn">
                             <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="5797068448049410893" resolveInfo="myTreeNode" />
                           </node>
-                          <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120212142" nodeInfo="nn">
+                          <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1255698478596659430" nodeInfo="nn">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5797068448049414657" resolveInfo="myHierarchyView" />
                           </node>
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5797068448049415155" nodeInfo="nn">
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1255698478596659431" nodeInfo="nn">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5797068448049415924" resolveInfo="calculateNodeIdentifier" />
                         </node>
                       </node>

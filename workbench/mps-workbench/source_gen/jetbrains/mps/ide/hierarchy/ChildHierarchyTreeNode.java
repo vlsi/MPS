@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.ide.messages.Icons;
-import jetbrains.mps.ide.ui.TreeTextUtil;
+import jetbrains.mps.util.StringUtil;
 
 public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   private boolean myInitialized = false;
@@ -93,7 +93,7 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
     AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
     if (hierarchyView != null) {
       if (this == hierarchyView.myTreeNode) {
-        name = TreeTextUtil.toHtml(name);
+        name = StringUtil.escapeXml(name);
       }
     }
     return name;

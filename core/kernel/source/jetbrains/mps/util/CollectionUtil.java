@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.*;
@@ -176,10 +177,20 @@ public class CollectionUtil {
     return false;
   }
 
+  /**
+   * @deprecated Generic error reporting never gives a reasonable clue
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public static <T> void checkForNulls(Iterable<T> resultList) {
     checkForNulls(resultList, "");
   }
 
+  /**
+   * @deprecated Generic error reporting never gives a reasonable clue
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public static <T> void checkForNulls(Iterable<T> resultList, String message) {
     for (T node : resultList) {
       if (node == null) {

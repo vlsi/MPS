@@ -19,6 +19,7 @@ import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 
 import javax.swing.Icon;
@@ -29,6 +30,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * @deprecated  Nobody's using this class (except itself), drop to lighten our own luggage.
+ */
+@Deprecated
+@ToRemove(version = 3.1)
 public abstract class FileTreeNode extends MPSTreeNode {
   private boolean myInitialized;
 

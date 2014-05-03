@@ -70,7 +70,7 @@ class TemplateNode {
     //
     // need to build linked list of macro nodes; use stack to start from the tail
     final ArrayDeque<SNode> attachedMacros = new ArrayDeque<SNode>(5);
-    for (SNode attrNode : templateNode.getChildren(GeneratorUtilEx.link_BaseConcept_attrs)) {
+    for (SNode attrNode : templateNode.getChildren(RuleUtil.link_BaseConcept_attrs)) {
       if (RuleUtil.isNodeMacro(attrNode)) {
         attachedMacros.push(attrNode);
       }

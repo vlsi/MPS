@@ -50,6 +50,9 @@ class GenerationPhase {
 
 
   List<Group> groupByGenerator() {
+    // FIXME unpredicted order if there is more than one group with 1+ generators and some of these generators has sole group -
+    // depending on groupWithFewModules iteration order, sole group might get merged into one or another composite group.
+    // Need some ordering mechanism (e.g based on number of MC withing a group? or sort(MC).toString()?)
     HashMap<TemplateModule, Group> groupByModule = new HashMap<TemplateModule, Group>();
     HashMap<Group, Set<TemplateModule>> groupsWithFewModules = new HashMap<Group, Set<TemplateModule>>();
     ArrayList<Group> step = new ArrayList<Group>();

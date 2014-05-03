@@ -323,7 +323,19 @@ public final class TemplateProcessor implements ITemplateProcessor {
         throw new GenerationFailureException("couldn't get input nodes");
       }
       final QueryExecutor qe = context.getEnvironment().getQueryExecutor();
-      return qe.evaluate(q, new SourceSubstituteMacroNodesContext(context, getMacroNodeRef()));
+      final Collection<SNode> result = qe.evaluate(q, new SourceSubstituteMacroNodesContext(context, getMacroNodeRef()));
+      checkInputNodesForNulls(context, result);
+      return result;
+    }
+
+    private void checkInputNodesForNulls(TemplateContext context, Iterable<SNode> result) throws GenerationFailureException {
+      for (SNode n : result) {
+        if (n == null) {
+          final String msg = String.format("Unexpected null value among new input nodes in %s macro", macro.getPresentation());
+          context.getEnvironment().getLogger().error(getMacroNodeRef(), msg, GeneratorUtil.describeInput(context));
+          throw new GenerationFailureException(msg);
+        }
+      }
     }
 
     private SourceNodeQuery createNodeQuery() {

@@ -1375,6 +1375,11 @@
         </node>
       </node>
     </node>
+    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6558598926338648202" nodeInfo="ng">
+      <node role="templateNode" roleId="tpf8.1177093586806" type="tpck.BaseConcept" typeId="tpck.1133920641626" id="6558598926338648204" nodeInfo="ng">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6558598926338649501" nodeInfo="nn" />
+      </node>
+    </node>
   </root>
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1204989320848" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="legacy" />
@@ -16548,24 +16553,7 @@
         <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
       </node>
     </node>
-    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="7880518146484337812" nodeInfo="ng">
-      <node role="templateNode" roleId="tpf8.1177093586806" type="tpck.BaseConcept" typeId="tpck.1133920641626" id="7880518146484337813" nodeInfo="ng">
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="7880518146484337814" nodeInfo="nn">
-          <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="7880518146484337815" nodeInfo="nn">
-            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7880518146484337816" nodeInfo="sn">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7880518146484337817" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7880518146484337818" nodeInfo="nn">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="7880518146484337819" nodeInfo="nn" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_ParameterRef" typeId="tpf3.5190093307972723402" id="7880518146484825150" nodeInfo="nn">
-                    <link role="parameter" roleId="tpf3.5190093307972736266" targetNodeId="7880518146484120555" resolveInfo="dotExpr" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
+    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="6558598926338603958" nodeInfo="ng" />
   </root>
   <root type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="6481445890966574679" nodeInfo="ng">
     <property name="scriptKind" nameId="tpf8.1195595592106" value="pre_processing" />
