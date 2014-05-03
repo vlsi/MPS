@@ -27,7 +27,7 @@ public class LeftTransformForAttributedProperty_Test extends BaseTransformationT
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("3447504547919025693", "6263330836878339937");
+      final Editor editor = TestBody.this.initEditor("8783066269474051930", "8783066269474251216");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, " ");
       BaseEditorTestBody.typeString(editorComponent, ",");

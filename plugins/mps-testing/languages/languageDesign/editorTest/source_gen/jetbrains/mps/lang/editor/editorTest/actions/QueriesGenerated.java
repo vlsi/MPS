@@ -82,14 +82,13 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.Composition"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode replacement = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.editor.editorTest.structure.Composition");
-        ListSequence.fromList(SLinkOperations.getTargets(replacement, "children", true)).addElement(_context.getSourceNode());
-        SNode nextNode = SNodeFactoryOperations.addNewChild(replacement, "children", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer");
-        return nextNode;
+        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", null);
+        SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), result);
+        return result;
       }
 
       public String getMatchingText(String pattern) {
-        return ",";
+        return "d,";
       }
 
       public String getVisibleMatchingText(String pattern) {
@@ -111,10 +110,9 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.Composition"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode replacement = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.editor.editorTest.structure.Composition");
-        SNode nextNode = SNodeFactoryOperations.addNewChild(replacement, "children", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer");
-        ListSequence.fromList(SLinkOperations.getTargets(replacement, "children", true)).addElement(_context.getSourceNode());
-        return nextNode;
+        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", null);
+        SNodeOperations.insertPrevSiblingChild(_context.getSourceNode(), result);
+        return result;
       }
 
       public String getMatchingText(String pattern) {

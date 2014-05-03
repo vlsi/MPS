@@ -88,11 +88,11 @@
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="68nn.SimplePropertyAttribute" typeId="68nn.3195708693940868525" id="3447504547919025681" nodeInfo="ng">
           <property name="propertyName" nameId="tpck.1757699476691236117" value="property" />
         </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3447504547919025682" nodeInfo="ng">
-          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8783066269474255466" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
           <property name="cellId" nameId="tp5g.1229194968595" value="property_property" />
         </node>
       </node>
@@ -106,7 +106,7 @@
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="68nn.SimplePropertyAttribute" typeId="68nn.3195708693940868525" id="3447504547919025686" nodeInfo="ng">
           <property name="propertyName" nameId="tpck.1757699476691236117" value="property" />
         </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6263330836878428804" nodeInfo="ng">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8783066269474255470" nodeInfo="ng">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
@@ -129,24 +129,6 @@
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3447504547919025692" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="LeftTransformForAttributedProperty" />
     <property name="description" nameId="tp5g.1883175908513350760" value="Left-transforming property cell if node concept has editor representing only this property cell and property attribute is attached to the node" />
-    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="68nn.Composition" typeId="68nn.3447504547918837138" id="3447504547919025693" nodeInfo="ng">
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="68nn.SimplePropertyAttribute" typeId="68nn.3195708693940868525" id="3447504547919025694" nodeInfo="ng">
-        <property name="propertyName" nameId="tpck.1757699476691236117" value="property" />
-      </node>
-      <node role="children" roleId="68nn.3447504547918837407" type="68nn.SimplePropertyContainer" typeId="68nn.3195708693940803614" id="3447504547919025695" nodeInfo="ng">
-        <property name="property" nameId="68nn.3195708693940803805" value="10" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="68nn.SimplePropertyAttribute" typeId="68nn.3195708693940868525" id="3447504547919025696" nodeInfo="ng">
-          <property name="propertyName" nameId="tpck.1757699476691236117" value="property" />
-        </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3447504547919025697" nodeInfo="ng">
-          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_property" />
-        </node>
-      </node>
-    </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3447504547919025704" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3447504547919025705" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value=" " />
@@ -155,12 +137,24 @@
         <property name="keys" nameId="tp5g.1227184461946" value="," />
       </node>
     </node>
-    <node role="result" roleId="tp5g.1229187707859" type="68nn.Composition" typeId="68nn.3447504547918837138" id="6263330836878339937" nodeInfo="ng">
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="68nn.SimplePropertyAttribute" typeId="68nn.3195708693940868525" id="6263330836878339940" nodeInfo="ng">
-        <property name="propertyName" nameId="tpck.1757699476691236117" value="property" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="68nn.Composition" typeId="68nn.3447504547918837138" id="8783066269474051930" nodeInfo="ng">
+      <node role="children" roleId="68nn.3447504547918837407" type="68nn.SimplePropertyContainer" typeId="68nn.3195708693940803614" id="8783066269474051932" nodeInfo="ng">
+        <property name="property" nameId="68nn.3195708693940803805" value="10" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="68nn.SimplePropertyAttribute" typeId="68nn.3195708693940868525" id="8783066269474051934" nodeInfo="ng">
+          <property name="propertyName" nameId="tpck.1757699476691236117" value="property" />
+        </node>
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8783066269474251197" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_property" />
+        </node>
       </node>
-      <node role="children" roleId="68nn.3447504547918837407" type="68nn.SimplePropertyContainer" typeId="68nn.3195708693940803614" id="6263330836878339941" nodeInfo="ng">
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6263330836878339951" nodeInfo="ng">
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="68nn.Composition" typeId="68nn.3447504547918837138" id="8783066269474251216" nodeInfo="ng">
+      <node role="children" roleId="68nn.3447504547918837407" type="68nn.SimplePropertyContainer" typeId="68nn.3195708693940803614" id="8783066269474251225" nodeInfo="ng">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8783066269474251229" nodeInfo="ng">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
@@ -168,9 +162,9 @@
           <property name="cellId" nameId="tp5g.1229194968595" value="property_property" />
         </node>
       </node>
-      <node role="children" roleId="68nn.3447504547918837407" type="68nn.SimplePropertyContainer" typeId="68nn.3195708693940803614" id="3447504547919071585" nodeInfo="ng">
+      <node role="children" roleId="68nn.3447504547918837407" type="68nn.SimplePropertyContainer" typeId="68nn.3195708693940803614" id="8783066269474251217" nodeInfo="ng">
         <property name="property" nameId="68nn.3195708693940803805" value="10" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="68nn.SimplePropertyAttribute" typeId="68nn.3195708693940868525" id="3447504547919071586" nodeInfo="ng">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="68nn.SimplePropertyAttribute" typeId="68nn.3195708693940868525" id="8783066269474251218" nodeInfo="ng">
           <property name="propertyName" nameId="tpck.1757699476691236117" value="property" />
         </node>
       </node>
