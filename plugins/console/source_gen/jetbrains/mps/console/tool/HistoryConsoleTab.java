@@ -61,7 +61,7 @@ public class HistoryConsoleTab extends BaseConsoleTab {
 
   private class CloseAction extends BaseAction {
     public CloseAction() {
-      super("Close", "Close tab", IconContainer.ICON_c0a0h);
+      super("Close", "Close tab", AllIcons.Actions.Cancel);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
