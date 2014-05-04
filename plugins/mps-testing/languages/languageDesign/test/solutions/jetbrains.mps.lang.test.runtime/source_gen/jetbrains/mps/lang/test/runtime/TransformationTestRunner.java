@@ -6,7 +6,7 @@ import java.awt.datatransfer.StringSelection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -57,7 +57,7 @@ public class TransformationTestRunner implements TestRunner {
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean uiTest, boolean reopenProject) throws Exception {
     // todo: create configuration pack for TransformationTest 
-    startMps(uiTest);
+    startMps();
 
     final Project testProject = openTestProject(projectPath, reopenProject);
     doInitTest(test, testProject, modelName);
@@ -67,8 +67,8 @@ public class TransformationTestRunner implements TestRunner {
 
 
 
-  private void startMps(boolean uiTest) {
-    IdeMain.setTestMode((uiTest ? IdeMain.TestMode.UI_TEST : IdeMain.TestMode.CORE_TEST));
+  private void startMps() {
+    MPSCore.getInstance().setTestMode(true);
     MpsTestsSupport.initEnv(true);
     // <node> 
     clearSystemClipboard();
@@ -191,7 +191,7 @@ public class TransformationTestRunner implements TestRunner {
         projectTest.dispose();
       }
     });
-    IdeMain.setTestMode(IdeMain.TestMode.NO_TEST);
+    MPSCore.getInstance().setTestMode(false);
     if (exception[0] != null) {
       throw exception[0];
     }

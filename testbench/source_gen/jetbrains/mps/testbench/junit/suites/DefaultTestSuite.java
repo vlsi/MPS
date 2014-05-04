@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import jetbrains.mps.testbench.junit.runners.DynamicSuite;
 import org.junit.runners.model.InitializationError;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
@@ -46,7 +46,7 @@ public class DefaultTestSuite {
   public static Class<?>[] suiteClasses(org.junit.runners.model.TestClass testClass) throws InitializationError {
     String projectPath = getProjectPath(testClass.getJavaClass());
     MpsTestsSupport.initEnv(true);
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+    MPSCore.getInstance().setTestMode(true);
     initPathMacros();
     Project project = null;
     assert false;

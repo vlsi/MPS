@@ -53,13 +53,7 @@ public class PluginUtil {
 
     if (module instanceof Solution) {
       SolutionKind kind = ((Solution) module).getKind();
-      if (kind == SolutionKind.NONE) {
-        return false;
-      }
-      if (kind == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode() && IdeMain.getTestMode() != TestMode.UI_TEST) {
-        return false;
-      }
-      return true;
+      return kind != SolutionKind.NONE;
     }
 
     return false;

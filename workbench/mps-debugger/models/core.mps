@@ -1391,7 +1391,7 @@
                                                 </node>
                                               </node>
                                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9213475192996439468" nodeInfo="nn">
-                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1d7m.~MPSEditorOpener%dopenNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode,jetbrains%dmps%dsmodel%dIOperationContext,boolean,boolean)%cjetbrains%dmps%dopenapi%deditor%dEditor" resolveInfo="openNode" />
+                                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1d7m.~MPSEditorOpener%dopenNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode,jetbrains%dmps%dsmodel%dIOperationContext,boolean,boolean,boolean)%cjetbrains%dmps%dopenapi%deditor%dEditor" resolveInfo="openNode" />
                                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9213475192996449568" nodeInfo="nn">
                                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9213475192996449564" resolveInfo="node" />
                                                 </node>
@@ -1412,6 +1412,9 @@
                                                 </node>
                                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9213475192996439477" nodeInfo="nn">
                                                   <property name="value" nameId="tpee.1068580123138" value="false" />
+                                                </node>
+                                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="5824636632658760697" nodeInfo="nn">
+                                                  <property name="value" nameId="tpee.1068580123138" value="true" />
                                                 </node>
                                               </node>
                                             </node>

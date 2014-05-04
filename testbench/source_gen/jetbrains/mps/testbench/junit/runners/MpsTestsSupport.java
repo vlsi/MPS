@@ -11,7 +11,7 @@ import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.testbench.IdeaEnvironment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
@@ -47,6 +47,7 @@ public class MpsTestsSupport {
 
   private static void initLoggingSystem() {
     Logger.setFactory(LoggerFactory.class);
+    assert Logger.isInitialized();
     Logger.getInstance("");
   }
 
@@ -72,9 +73,7 @@ public class MpsTestsSupport {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing environment");
     }
-    if (IdeMain.getTestMode() == IdeMain.TestMode.NO_TEST) {
-      IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
-    }
+    MPSCore.getInstance().setTestMode(true);
     Environment currentEnv = ActiveEnvironment.getInstance();
     if (currentEnv == null) {
       currentEnv = (withIdea ? new IdeaEnvironment(config) : new MpsEnvironment(config));

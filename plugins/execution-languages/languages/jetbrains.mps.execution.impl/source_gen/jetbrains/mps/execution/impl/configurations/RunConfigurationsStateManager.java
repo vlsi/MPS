@@ -6,7 +6,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.plugins.PluginReloadingListener;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.MPSCore;
 import com.intellij.openapi.util.InvalidDataException;
 import org.apache.log4j.Priority;
 import java.util.List;
@@ -44,7 +44,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
   private final PluginReloadingListener myPluginReloadingListener = new PluginReloadingListener() {
     @Override
     public void afterPluginsLoaded() {
-      if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
+      if (MPSCore.getInstance().isTestMode()) {
         return;
       }
       initRunConfigurations();
@@ -52,7 +52,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
 
     @Override
     public void beforePluginsDisposed() {
-      if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
+      if (MPSCore.getInstance().isTestMode()) {
         return;
       }
       disposeRunConfigurations();

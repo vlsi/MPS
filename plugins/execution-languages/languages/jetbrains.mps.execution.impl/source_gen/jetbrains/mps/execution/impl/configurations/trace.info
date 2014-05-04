@@ -3,9 +3,9 @@
   <root nodeRef="r:c10c60c4-8193-4b28-a3f2-372a46125628(jetbrains.mps.execution.impl.configurations)/5145867626676099642">
     <nodeInfo nodeId="5145867626676112745" fileName="RunConfigurationsStateManager.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="1667993328519712712" fileName="RunConfigurationsStateManager.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPluginReloader" />
-    <nodeInfo nodeId="1667993328519775397" fileName="RunConfigurationsStateManager.java" startLine="47" startPosition="62" endLine="48" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1667993328519775397" fileName="RunConfigurationsStateManager.java" startLine="47" startPosition="47" endLine="48" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1667993328519775408" fileName="RunConfigurationsStateManager.java" startLine="49" startPosition="7" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1667993328519775406" fileName="RunConfigurationsStateManager.java" startLine="55" startPosition="62" endLine="56" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1667993328519775406" fileName="RunConfigurationsStateManager.java" startLine="55" startPosition="47" endLine="56" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1667993328519775411" fileName="RunConfigurationsStateManager.java" startLine="57" startPosition="7" endLine="58" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8565799187151772365" fileName="RunConfigurationsStateManager.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
     <nodeInfo nodeId="5145867626676112762" fileName="RunConfigurationsStateManager.java" startLine="63" startPosition="88" endLine="64" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -118,8 +118,8 @@
     <nodeInfo nodeId="5145867626676112832" fileName="RunConfigurationsStateManager.java" startLine="95" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeRunConfigurations#()V" />
     <scopeInfo nodeId="5145867626676112769" fileName="RunConfigurationsStateManager.java" startLine="69" startPosition="31" endLine="69" endPosition="31" />
     <scopeInfo nodeId="5145867626676112773" fileName="RunConfigurationsStateManager.java" startLine="73" startPosition="31" endLine="73" endPosition="31" />
-    <scopeInfo nodeId="1667993328519775396" fileName="RunConfigurationsStateManager.java" startLine="47" startPosition="62" endLine="48" endPosition="15" />
-    <scopeInfo nodeId="1667993328519775405" fileName="RunConfigurationsStateManager.java" startLine="55" startPosition="62" endLine="56" endPosition="15" />
+    <scopeInfo nodeId="1667993328519775396" fileName="RunConfigurationsStateManager.java" startLine="47" startPosition="47" endLine="48" endPosition="15" />
+    <scopeInfo nodeId="1667993328519775405" fileName="RunConfigurationsStateManager.java" startLine="55" startPosition="47" endLine="56" endPosition="15" />
     <scopeInfo nodeId="5145867626676112781" fileName="RunConfigurationsStateManager.java" startLine="77" startPosition="33" endLine="78" endPosition="13" />
     <scopeInfo nodeId="8565799187151772433" fileName="RunConfigurationsStateManager.java" startLine="88" startPosition="47" endLine="89" endPosition="69" />
     <scopeInfo nodeId="7037083547575987531" fileName="RunConfigurationsStateManager.java" startLine="108" startPosition="52" endLine="109" endPosition="99" />

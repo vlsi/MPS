@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.fileEditor.FileEditor;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -47,7 +48,7 @@ public class NodeEditorComponent extends EditorComponent {
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
           public void run() {
-            if (isShowing() || IdeMain.getTestMode() != TestMode.NO_TEST) {
+            if (isShowing() || MPSCore.getInstance().isTestMode()) {
               inspect(toSelect[0]);
             }
           }

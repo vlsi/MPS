@@ -23,8 +23,8 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleClassLoader" />
-    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

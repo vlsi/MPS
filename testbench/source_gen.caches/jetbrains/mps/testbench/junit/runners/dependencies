@@ -144,8 +144,8 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
     <classNode dependClassName="jetbrains.mps.make.MPSCompilationResult" />

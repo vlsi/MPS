@@ -106,7 +106,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
     @Override
     public void eventsHappenedInCommand(List<SModelEvent> events) {
-      if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
+      if (MPSCore.getInstance().isTestMode()) return;
       synchronized (EVENTS_LOCK) {
         myLastEvents.addAll(events);
       }
@@ -629,7 +629,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
     @Override
     public void run() {
-      if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
+      if (MPSCore.getInstance().isTestMode()) return;
       DumbService dumbService = DumbService.getInstance(myProject);
       CommandProcessor commandProcessor = CommandProcessor.getInstance();
       while (true) {

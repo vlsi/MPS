@@ -28,6 +28,7 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.MultiMap;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.IdeMain;
@@ -214,7 +215,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateAllWarnings(@Nullable VirtualFile vf) {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     for (FileEditor editor : myFileEditorManager.getAllEditors()) {
       if (editor instanceof MPSFileNodeEditor) {

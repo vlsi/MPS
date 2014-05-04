@@ -20,9 +20,9 @@
     <classNode dependClassName="java.lang.reflect.Field" />
     <classNode dependClassName="java.util.Scanner" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
-    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.ide.bookmark.BookmarkManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />

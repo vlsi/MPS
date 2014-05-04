@@ -21,6 +21,7 @@ import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.MPSMainImpl;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -52,7 +53,7 @@ public abstract class UITestsBase extends JFCTestCase {
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.platform.prefix", "MPS");
 
-    IdeMain.setTestMode(TestMode.UI_TEST);
+    MPSCore.getInstance().setTestMode(true);
 
     MPSMainImpl.start(new String[0]);
 

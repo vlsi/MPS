@@ -7,7 +7,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.LeftMarginMouseListener;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import java.util.Set;
@@ -47,7 +47,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   public void init() {
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
-    if (IdeMain.getTestMode() == IdeMain.TestMode.CORE_TEST) {
+    if (MPSCore.getInstance().isTestMode()) {
       return;
     }
     for (EditorComponent editor : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
@@ -94,7 +94,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
           break;
         }
       }
-      cell = (EditorCell) cell.getParent();
+      cell = cell.getParent();
     }
     return cell;
   }

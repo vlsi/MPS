@@ -10,7 +10,7 @@
     <nodeInfo nodeId="2706316667685006333" fileName="BreakpointsUiComponentEx.java" startLine="43" startPosition="24" endLine="44" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083123987" fileName="BreakpointsUiComponentEx.java" startLine="47" startPosition="22" endLine="48" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083123995" fileName="BreakpointsUiComponentEx.java" startLine="48" startPosition="65" endLine="49" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3871698434448002759" fileName="BreakpointsUiComponentEx.java" startLine="50" startPosition="62" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3871698434448002759" fileName="BreakpointsUiComponentEx.java" startLine="50" startPosition="45" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083124008" fileName="BreakpointsUiComponentEx.java" startLine="53" startPosition="106" endLine="54" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124016" fileName="BreakpointsUiComponentEx.java" startLine="58" startPosition="25" endLine="59" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2706316667685001066" fileName="BreakpointsUiComponentEx.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBreakpointsForComponent#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljava/util/Set;" />
@@ -27,7 +27,7 @@
     <nodeInfo nodeId="4474271214083124448" fileName="BreakpointsUiComponentEx.java" startLine="88" startPosition="0" endLine="89" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083124457" fileName="BreakpointsUiComponentEx.java" startLine="90" startPosition="26" endLine="91" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083124493" fileName="BreakpointsUiComponentEx.java" startLine="93" startPosition="53" endLine="94" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="4474271214083124494" fileName="BreakpointsUiComponentEx.java" startLine="96" startPosition="7" endLine="97" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4474271214083124494" fileName="BreakpointsUiComponentEx.java" startLine="96" startPosition="7" endLine="97" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124500" fileName="BreakpointsUiComponentEx.java" startLine="98" startPosition="5" endLine="99" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083125146" fileName="BreakpointsUiComponentEx.java" startLine="105" startPosition="76" endLine="106" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083125156" fileName="BreakpointsUiComponentEx.java" startLine="107" startPosition="48" endLine="108" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -114,7 +114,7 @@
     <scopeInfo nodeId="4474271214083124802" fileName="BreakpointsUiComponentEx.java" startLine="189" startPosition="77" endLine="189" endPosition="77" />
     <scopeInfo nodeId="4474271214083124804" fileName="BreakpointsUiComponentEx.java" startLine="193" startPosition="78" endLine="193" endPosition="78" />
     <scopeInfo nodeId="4474271214083124784" fileName="BreakpointsUiComponentEx.java" startLine="213" startPosition="47" endLine="213" endPosition="47" />
-    <scopeInfo nodeId="3871698434447890145" fileName="BreakpointsUiComponentEx.java" startLine="50" startPosition="62" endLine="51" endPosition="13" />
+    <scopeInfo nodeId="3871698434447890145" fileName="BreakpointsUiComponentEx.java" startLine="50" startPosition="45" endLine="51" endPosition="13" />
     <scopeInfo nodeId="4474271214083124007" fileName="BreakpointsUiComponentEx.java" startLine="53" startPosition="106" endLine="54" endPosition="37" />
     <scopeInfo nodeId="2706316667685006356" fileName="BreakpointsUiComponentEx.java" startLine="58" startPosition="25" endLine="59" endPosition="40" />
     <scopeInfo nodeId="2706316667685001066" fileName="BreakpointsUiComponentEx.java" startLine="62" startPosition="0" endLine="63" endPosition="0">
@@ -213,7 +213,7 @@
     <scopeInfo nodeId="4474271214083124741" fileName="BreakpointsUiComponentEx.java" startLine="163" startPosition="69" endLine="169" endPosition="5">
       <varInfo nodeId="4474271214083124743" varName="editorComponents" />
     </scopeInfo>
-    <scopeInfo nodeId="4474271214083124456" fileName="BreakpointsUiComponentEx.java" startLine="90" startPosition="26" endLine="97" endPosition="43">
+    <scopeInfo nodeId="4474271214083124456" fileName="BreakpointsUiComponentEx.java" startLine="90" startPosition="26" endLine="97" endPosition="30">
       <varInfo nodeId="4474271214083124458" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2228821930962906006" fileName="BreakpointsUiComponentEx.java" startLine="174" startPosition="0" endLine="181" endPosition="0" />
