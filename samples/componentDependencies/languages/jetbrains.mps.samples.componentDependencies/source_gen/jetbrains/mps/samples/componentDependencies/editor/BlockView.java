@@ -6,7 +6,7 @@ import jetbrains.jetpad.projectional.diagram.view.layout.CenterVerticalLayoutVie
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.MovableContentView;
 import jetbrains.jetpad.cell.TextCell;
 import jetbrains.jetpad.values.Color;
-import jetbrains.jetpad.cell.view.CellView;
+import jetbrains.jetpad.cell.toView.CellView;
 import jetbrains.jetpad.cell.text.TextEditing;
 import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.geometry.Vector;

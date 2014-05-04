@@ -7,7 +7,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.jetpad.cell.TextCell" />
     <classNode dependClassName="jetbrains.jetpad.cell.text.TextEditing" />
-    <classNode dependClassName="jetbrains.jetpad.cell.view.CellView" />
+    <classNode dependClassName="jetbrains.jetpad.cell.toView.CellView" />
     <classNode dependClassName="jetbrains.jetpad.event.MouseEvent" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
@@ -39,7 +39,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.jetpad.cell.TextCell" />
     <classNode dependClassName="jetbrains.jetpad.cell.text.TextEditing" />
-    <classNode dependClassName="jetbrains.jetpad.cell.view.CellView" />
+    <classNode dependClassName="jetbrains.jetpad.cell.toView.CellView" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Rectangle" />
     <classNode dependClassName="jetbrains.jetpad.geometry.Vector" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />

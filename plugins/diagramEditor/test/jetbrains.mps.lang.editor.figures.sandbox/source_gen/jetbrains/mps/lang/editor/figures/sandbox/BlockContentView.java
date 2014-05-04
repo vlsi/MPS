@@ -9,7 +9,7 @@ import jetbrains.jetpad.projectional.view.RectView;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.values.Color;
-import jetbrains.jetpad.cell.view.CellView;
+import jetbrains.jetpad.cell.toView.CellView;
 import jetbrains.jetpad.cell.text.TextEditing;
 import jetbrains.jetpad.geometry.Vector;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;

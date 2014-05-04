@@ -30,28 +30,23 @@
     <echoxml file="${build.tmp}/default/jetbrains.jetpad.jar/META-INF/module.xml">
       <module namespace="jetbrains.jetpad" type="solution" uuid="67b3c41d-58b3-4756-b971-30bf8a9d63e6">
         <dependencies />
-        <library jar="../../lib/geometry-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/model-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/diagram-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/view-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/mapper-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/base-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/values-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/grammar-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/domUtil-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/event-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/dataflow-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/otmodel-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/gwt-util-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/json-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/test-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/cell-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/completion-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/gwt-framework-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/websocket-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/persistence-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/projectional-1.0-SNAPSHOT.jar" />
-        <library jar="../../lib/hybrid-1.0-SNAPSHOT.jar" />
+        <library jar="../../lib/base-1.0.0-jvm6.jar" />
+        <library jar="../../lib/base-projectional-1.0.0-jvm6.jar" />
+        <library jar="../../lib/cell-1.0.0-jvm6.jar" />
+        <library jar="../../lib/completion-1.0.0-jvm6.jar" />
+        <library jar="../../lib/diagram-1.0.0-jvm6.jar" />
+        <library jar="../../lib/domUtil-1.0.0-jvm6.jar" />
+        <library jar="../../lib/event-1.0.0-jvm6.jar" />
+        <library jar="../../lib/geometry-1.0.0-jvm6.jar" />
+        <library jar="../../lib/grammar-1.0.0-jvm6.jar" />
+        <library jar="../../lib/gwt-util-1.0.0-jvm6.jar" />
+        <library jar="../../lib/json-1.0.0-jvm6.jar" />
+        <library jar="../../lib/mapper-1.0.0-jvm6.jar" />
+        <library jar="../../lib/model-1.0.0-jvm6.jar" />
+        <library jar="../../lib/projectional-1.0.0-jvm6.jar" />
+        <library jar="../../lib/test-1.0.0-jvm6.jar" />
+        <library jar="../../lib/values-1.0.0-jvm6.jar" />
+        <library jar="../../lib/view-1.0.0-jvm6.jar" />
         <sources jar="jetbrains.jetpad-src.jar" descriptor="jetbrains.jetpad.msd" />
       </module>
     </echoxml>
@@ -68,73 +63,7 @@
     </jar>
     <mkdir dir="${build.layout}/jetpad/lib" />
     <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/projectional-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar" />
-    </copy>
-    <copy todir="${build.layout}/jetpad/lib">
-      <fileset file="${mps_home}/plugins/jetpad/lib/jetpadBuildNumber.txt" />
+      <fileset dir="${mps_home}/plugins/jetpad/lib" />
     </copy>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>

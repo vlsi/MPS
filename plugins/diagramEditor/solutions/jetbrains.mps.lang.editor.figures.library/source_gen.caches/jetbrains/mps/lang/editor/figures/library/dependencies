@@ -40,7 +40,7 @@
     <classNode dependClassName="jetbrains.jetpad.base.Registration" />
     <classNode dependClassName="jetbrains.jetpad.cell.TextCell" />
     <classNode dependClassName="jetbrains.jetpad.cell.text.TextEditing" />
-    <classNode dependClassName="jetbrains.jetpad.cell.view.CellView" />
+    <classNode dependClassName="jetbrains.jetpad.cell.toView.CellView" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Mapper" />
     <classNode dependClassName="jetbrains.jetpad.mapper.Synchronizers" />
     <classNode dependClassName="jetbrains.jetpad.model.property.Property" />
