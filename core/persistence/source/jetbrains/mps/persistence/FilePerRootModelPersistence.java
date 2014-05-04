@@ -208,20 +208,24 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     }
 
     if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
-      sourceRoot = null;
+      String tmpSR = null;
       for (String sr : sourceRoots) {
         if (modelRoot instanceof DefaultModelRoot && ((DefaultModelRoot) modelRoot).isLanguageAspectsSourceRoot(sr)) {
           continue;
         }
-        sourceRoot = sr;
-        break;
+        if(FileUtil.isSubPath(sr, sourceRoot)) {
+          tmpSR = sourceRoot;
+          break;
+        }
+        tmpSR = tmpSR == null ? sr : tmpSR;
       }
-      if (sourceRoot == null) {
+      if (tmpSR == null) {
         throw new IOException("no suitable source root found");
       }
+      sourceRoot = sourceRoot.equals(tmpSR) ? sourceRoot : tmpSR;
     }
 
-    IFile folder = FileSystem.getInstance().getFileByPath(sourceRoot + File.separator + NameUtil.pathFromNamespace(modelName));
+    IFile folder = FileSystem.getInstance().getFileByPath(sourceRoot);
     if (folder.getDescendant(FilePerRootDataSource.HEADER_FILE).exists()) {
       throw new IOException("model already exists");
     }
