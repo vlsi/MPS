@@ -69,38 +69,21 @@
     </appender>
 
     <category name="jetbrains.mps.vcs" additivity="false">
-        <priority value="DEBUG"/>
+        <priority value="INFO"/>
         <appender-ref ref="FILE-VCS"/>
         <appender-ref ref="CONSOLE-WARN"/>
     </category>
 
-    <category name="jetbrains.mps.ide" additivity="true">
-        <priority value="DEBUG"/>
-    </category>
-
-    <category name="jetbrains.mps.testbench" additivity="true">
-        <priority value="DEBUG"/>
-    </category>
-
-    <category name="jetbrains.mps" additivity="true">
-        <priority value="INFO"/>
-    </category>
-
-    <category name="com.intellij" additivity="true">
-        <priority value="INFO"/>
-    </category>
-
     <category name="com.intellij.openapi.vcs" additivity="false">
-        <priority value="DEBUG"/>
+        <priority value="INFO"/>
         <appender-ref ref="FILE-VCS"/>
         <appender-ref ref="CONSOLE-WARN"/>
     </category>
 
     <root>
-        <priority value="WARN"/>
-        <appender-ref ref="DIALOG"/>
-        <appender-ref ref="FILE-LOCAL"/>
-        <appender-ref ref="FILE"/>
+        <priority value="INFO"/>
         <appender-ref ref="CONSOLE-ALL"/>
+        <appender-ref ref="DIALOG"/>
+        <appender-ref ref="FILE"/>
     </root>
 </log4j:configuration>
