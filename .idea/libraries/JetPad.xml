@@ -1,53 +1,13 @@
 <component name="libraryTable">
   <library name="JetPad">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/projectional-1.0-SNAPSHOT.jar!/" />
+      <root url="file://$PROJECT_DIR$/plugins/jetpad/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/base-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/diagram-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/domUtil-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/event-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/geometry-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/grammar-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/mapper-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/model-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/values-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/view-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/json-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-util-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/test-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/dataflow-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/otmodel-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/cell-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/completion-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/gwt-framework-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/persistence-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/websocket-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/hybrid-1.0-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/plugins/jetpad/lib/projectional-1.0-SNAPSHOT.jar!/" />
+      <root url="file://$PROJECT_DIR$/plugins/jetpad/lib" />
     </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/plugins/jetpad/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/plugins/jetpad/lib" recursive="false" type="SOURCES" />
   </library>
 </component>
