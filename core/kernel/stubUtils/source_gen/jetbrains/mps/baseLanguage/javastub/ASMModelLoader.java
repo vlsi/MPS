@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -49,7 +48,7 @@ public class ASMModelLoader {
         }
       }).where(new IWhereFilter<IFile>() {
         public boolean accept(IFile it) {
-          return !(it.isDirectory()) && it.getName().endsWith(".class") && !(AbstractClassPathItem.isAnonymous(ClassifierLoader.getClassName(it)));
+          return !(it.isDirectory()) && it.getName().endsWith(".class") && !(ClassifierLoader.getClassName(it).contains("$"));
         }
       });
 
