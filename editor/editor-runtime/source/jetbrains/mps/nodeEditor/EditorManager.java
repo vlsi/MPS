@@ -570,8 +570,16 @@ public class EditorManager {
     }
 
     String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
-    assert anchorId != null : "CellId was not specified";
-    EditorCell anchorCell = CellFinderUtil.findChildById(nodeCell, node, anchorId, true);
+  /*
+   * AnchorCellId is saved in UserObjects now. UserObjects are not updated on undo/redo in model, so sometimes
+   * it's possible that SNode got side-transform hint (as a result of undo action), but AnchorCellId & HintAnchorTag are not restored.
+   * To handle this situation we are checking anchorId for null below and process null value somehow.
+   *
+   * proper solution would be to save anchorId together with side=transform hint in model and undo/redo corresponding value properly.
+   * in this case we will be able to remove "anchorId == null ?" check below and un-comment ssertion.
+   */
+//    assert anchorId != null : "CellId was not specified";
+    EditorCell anchorCell = anchorId == null ? getUnwrappedNodeBigCell(nodeCell, node) : CellFinderUtil.findChildById(nodeCell, node, anchorId, true);
     if (anchorCell == null) {
       // anchor cell was not found. Possible reason: different node presentations in editor and inside inspector, so
       // side-transforms in the main editor should not affect inspector.
