@@ -449,11 +449,12 @@ public class JavaToMpsConverter {
 
 
   private void codeTransformPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
-    progress.start("Code transforms", Sequence.fromIterable(nodes).count() * 4 + 1);
+    progress.start("Code transforms", Sequence.fromIterable(nodes).count() * 5 + 1);
     final TypeChecker typeChecker = TypeChecker.getInstance();
 
     // all this can be replaced by one map old -> new 
     final List<SNode> toReplaceWithArrayLength = ListSequence.fromList(new ArrayList<SNode>());
+    final List<SNode> toReplaceWithArrayClone = ListSequence.fromList(new ArrayList<SNode>());
     final Map<SNode, SNode> enumConstRefs = MapSequence.fromMap(new HashMap<SNode, SNode>());
     final Map<SNode, SNode> staticMethodQualifiers = MapSequence.fromMap(new HashMap<SNode, SNode>());
     final Map<SNode, SNode> staticFieldQualifiers = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -483,6 +484,32 @@ public class JavaToMpsConverter {
             SNode operandType = typeChecker.getTypeOf(operand);
             if (SNodeOperations.isInstanceOf(operandType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
               ListSequence.fromList(toReplaceWithArrayLength).addElement(fieldRefOp);
+            }
+          }
+
+          progress.advance(1);
+
+          for (SNode imco : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false, new String[]{}))) {
+
+            SReference fieldRef = SNodeOperations.getReference(imco, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
+            if (!(fieldRef instanceof DynamicReference && "clone".equals((((DynamicReference) fieldRef).getResolveInfo())))) {
+              continue;
+            }
+
+            SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(imco), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+
+            Iterable<SReference> operandRefs = SNodeOperations.getReferences(operand);
+            if (Sequence.fromIterable(operandRefs).any(new IWhereFilter<SReference>() {
+              public boolean accept(SReference it) {
+                return it instanceof DynamicReference;
+              }
+            })) {
+              continue;
+            }
+
+            SNode operandType = typeChecker.getTypeOf(operand);
+            if (SNodeOperations.isInstanceOf(operandType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+              ListSequence.fromList(toReplaceWithArrayClone).addElement(imco);
             }
           }
 
@@ -537,6 +564,9 @@ public class JavaToMpsConverter {
       public void run() {
         for (SNode fieldRefOp : ListSequence.fromList(toReplaceWithArrayLength)) {
           SNodeOperations.replaceWithNewChild(fieldRefOp, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation");
+        }
+        for (SNode imco : ListSequence.fromList(toReplaceWithArrayClone)) {
+          SNodeOperations.replaceWithNewChild(imco, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation");
         }
         for (IMapping<SNode, SNode> pair : MapSequence.fromMap(enumConstRefs)) {
           SNodeOperations.replaceWithAnother(pair.key(), pair.value());

@@ -21,18 +21,18 @@ import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_ArrayLength_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_ArrayLength_NonTypesystemRule() {
+public class check_ArrayClone_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_ArrayClone_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode fieldRefOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // FIXME: almost duplicate code with MultipleFilesParser      
-    SReference fieldRef = SNodeOperations.getReference(fieldRefOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration"));
-    if (!(fieldRef instanceof DynamicReference && "length".equals((((DynamicReference) fieldRef).getResolveInfo())))) {
+  public void applyRule(final SNode instanceMethodCallOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    // FIXME: almost duplicate code with JavaToMpsConverter 
+    SReference methodRef = SNodeOperations.getReference(instanceMethodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
+    if (!(methodRef instanceof DynamicReference && "clone".equals((((DynamicReference) methodRef).getResolveInfo())))) {
       return;
     }
 
-    SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(fieldRefOperation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+    SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(instanceMethodCallOperation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     Iterable<SReference> operandRefs = SNodeOperations.getReferences(operand);
     if (Sequence.fromIterable(operandRefs).any(new IWhereFilter<SReference>() {
       public boolean accept(SReference it) {
@@ -46,10 +46,10 @@ public class check_ArrayLength_NonTypesystemRule extends AbstractNonTypesystemRu
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(operand), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(fieldRefOperation, "should be length operation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2364881513287750350", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(instanceMethodCallOperation, "should be clone operation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8824315269745705247", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
-          intentionProvider.putArgument("newNode", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", null));
+          intentionProvider.putArgument("newNode", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayCloneOperation", null));
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
@@ -58,7 +58,7 @@ public class check_ArrayLength_NonTypesystemRule extends AbstractNonTypesystemRu
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation";
+    return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {

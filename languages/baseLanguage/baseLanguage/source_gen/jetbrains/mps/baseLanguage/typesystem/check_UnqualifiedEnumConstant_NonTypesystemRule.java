@@ -98,7 +98,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(varRef, "Unqualified enum constant reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5230012391904188150", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
-          intentionProvider.putArgument("newNode;", result);
+          intentionProvider.putArgument("newNode", result);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
@@ -132,7 +132,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(varRef, "Unqualified enum constant reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3151797052697040971", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
-          intentionProvider.putArgument("newNode;", result);
+          intentionProvider.putArgument("newNode", result);
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
