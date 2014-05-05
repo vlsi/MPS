@@ -57,17 +57,16 @@
   </dependency>
   <dependency className="jetbrains.mps.util.SNodeOperations" file="SNodeOperations.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.extapi.model.GeneratableSModel" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
@@ -86,7 +85,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
@@ -98,8 +96,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="java.lang.Iterable" />
-    <classNode extendsClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.util.StringsIO" file="StringsIO.java">
     <classNode dependClassName="java.io.File" />
