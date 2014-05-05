@@ -1156,9 +1156,11 @@
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5881102044690183387" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="tests" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="5881102044690183388" nodeInfo="in">
-          <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5881102044690183389" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="5745550179873006735" nodeInfo="in">
+          <node role="elementType" roleId="tp2q.1151689745422" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="5745550179873636420" nodeInfo="in">
+            <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5745550179873637544" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+            </node>
           </node>
         </node>
       </node>
@@ -1168,16 +1170,20 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5881102044690182521" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="testCases" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="5881102044690182522" nodeInfo="in">
-          <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5881102044690182523" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+          <node role="elementType" roleId="tp2q.1151689745422" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="5745550179873638672" nodeInfo="in">
+            <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5745550179873643384" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+            </node>
           </node>
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5881102044690182524" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="testMethods" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="5881102044690182525" nodeInfo="in">
-          <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5881102044690182526" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+          <node role="elementType" roleId="tp2q.1151689745422" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="5745550179873797888" nodeInfo="in">
+            <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5745550179873802869" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+            </node>
           </node>
         </node>
       </node>
@@ -1331,8 +1337,10 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5881102044690182592" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="testCases" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="5881102044690182593" nodeInfo="in">
-          <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5881102044690182594" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+          <node role="elementType" roleId="tp2q.1151689745422" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="5745550179873948647" nodeInfo="in">
+            <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5745550179873953061" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+            </node>
           </node>
         </node>
       </node>
@@ -1408,8 +1416,10 @@
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5881102044690182625" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="testMethods" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="5881102044690182626" nodeInfo="in">
-          <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5881102044690182627" nodeInfo="in">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+          <node role="elementType" roleId="tp2q.1151689745422" type="tpee.UpperBoundType" typeId="tpee.1171903916106" id="5745550179873958234" nodeInfo="in">
+            <node role="bound" roleId="tpee.1171903916107" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5745550179873969014" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5881102044690179271" resolveInfo="ITestNodeWrapper" />
+            </node>
           </node>
         </node>
       </node>

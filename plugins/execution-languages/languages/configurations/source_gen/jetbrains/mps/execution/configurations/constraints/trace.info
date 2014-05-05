@@ -36,37 +36,38 @@
     <unitInfo nodeId="1048802521465134864" fileName="AbstractRunConfigurationExecutor_Constraints.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.AbstractRunConfigurationExecutor_Constraints" />
   </root>
   <root nodeRef="r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)/258639336594554644">
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="14" startPosition="53" endLine="15" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="24" startPosition="200" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="25" startPosition="96" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="258639336594554647" fileName="StartProcessHandlerStatement_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="13" startPosition="53" endLine="14" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="18" startPosition="43" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="23" startPosition="200" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="24" startPosition="96" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="26" startPosition="51" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="28" startPosition="5" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="29" startPosition="0" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="607988455143366351" fileName="StartProcessHandlerStatement_Constraints.java" startLine="33" startPosition="148" endLine="34" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="607988455143431587" fileName="StartProcessHandlerStatement_Constraints.java" startLine="34" startPosition="14" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StartProcessHandlerStatement_Constraints#()V" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="14" startPosition="53" endLine="15" endPosition="91" />
-    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="67" />
-    <scopeInfo nodeId="258639336594554646" fileName="StartProcessHandlerStatement_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="164" />
-    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StartProcessHandlerStatement_Constraints#()V" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="13" startPosition="53" endLine="14" endPosition="91" />
+    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="18" startPosition="43" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="26" startPosition="51" endLine="27" endPosition="67" />
+    <scopeInfo nodeId="258639336594554646" fileName="StartProcessHandlerStatement_Constraints.java" startLine="33" startPosition="148" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="258639336594554644" varName="childConcept" />
       <varInfo nodeId="258639336594554644" varName="link" />
       <varInfo nodeId="258639336594554644" varName="node" />
       <varInfo nodeId="258639336594554644" varName="operationContext" />
       <varInfo nodeId="258639336594554644" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="24" startPosition="200" endLine="31" endPosition="18">
+    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="23" startPosition="200" endLine="30" endPosition="18">
       <varInfo nodeId="258639336594554644" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="258639336594554644" varName="checkingNodeContext" />
       <varInfo nodeId="258639336594554644" varName="childConcept" />
       <varInfo nodeId="258639336594554644" varName="link" />
@@ -74,7 +75,7 @@
       <varInfo nodeId="258639336594554644" varName="operationContext" />
       <varInfo nodeId="258639336594554644" varName="parentNode" />
     </scopeInfo>
-    <unitInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.StartProcessHandlerStatement_Constraints" />
+    <unitInfo nodeId="258639336594554644" fileName="StartProcessHandlerStatement_Constraints.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.configurations.constraints.StartProcessHandlerStatement_Constraints" />
   </root>
   <root nodeRef="r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)/33324785353658439">
     <nodeInfo nodeId="33324785353658439" fileName="EnvironmentExpression_Constraints.java" startLine="14" startPosition="46" endLine="15" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.execution.configurations.implementation.plugin.plugin.fast.exec.prototype;
+package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.classloading.ClassLoaderManager;

@@ -13,14 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.execution.configurations.implementation.plugin.plugin.fast.exec.prototype;
+package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
-import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.util.WaitFor;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.runner.JUnitCore;
@@ -43,11 +40,11 @@ public class TestLightExecutor {
     System.setProperty("mps.test.lightweight", "true");
   }
 
-  private List<Request> getRequests(List<? extends ITestNodeWrapper> testNodes) throws Exception {
+  private List<Request> getRequests(Iterable<? extends ITestNodeWrapper> testNodes) throws Exception {
     return new TestExtractor(myTestClassHolder).extractTests(testNodes);
   }
 
-  public void execute(List<? extends ITestNodeWrapper> testNodes) {
+  public void execute(Iterable<? extends ITestNodeWrapper> testNodes) {
     try {
       JUnitCore core = new JUnitCore();
 
@@ -63,6 +60,7 @@ public class TestLightExecutor {
   }
 
   private void startWhenReady(JUnitCore core, List<Request> requests) throws Throwable {
+    // need process to start notifying at first
     waitWhileNotReady();
 
     for (Request request : requests) {
@@ -77,12 +75,6 @@ public class TestLightExecutor {
         return TestLightExecutor.this.myProcessIsReady;
       }
     };
-  }
-
-  private void stopRun() {
-    String message = "Process finished with exit code -1";
-    myDispatcher.onSimpleTextAvailable(message, ProcessOutputTypes.STDERR);
-    myDispatcher.onProcessTerminated(message);
   }
 
   public void setStarted(boolean processIsReady) {

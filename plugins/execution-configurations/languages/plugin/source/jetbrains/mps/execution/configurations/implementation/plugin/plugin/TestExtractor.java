@@ -13,11 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.execution.configurations.implementation.plugin.plugin.fast.exec.prototype;
+package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -39,7 +37,7 @@ public class TestExtractor {
     myTestClassHolder = testClassHolder;
   }
 
-  public List<Request> extractTests(final List<? extends ITestNodeWrapper> testNodes) throws Exception {
+  public List<Request> extractTests(final Iterable<? extends ITestNodeWrapper> testNodes) throws Exception {
     final Exception[] ex = new Exception[1];
     final List<Request> requestList = new ArrayList<Request>();
     ModelAccess.instance().runReadAction(new Runnable() {
