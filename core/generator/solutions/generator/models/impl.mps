@@ -1427,6 +1427,15 @@
         <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpf8.1168619357332" resolveInfo="RootTemplateAnnotation" />
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7155354241824248611" nodeInfo="igu">
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="concept_InlineTemplate_RuleConsequence" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7155354241824248612" nodeInfo="nn" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7155354241824248613" nodeInfo="in" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="7155354241824248614" nodeInfo="nn">
+        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="tpf8.1177093525992" resolveInfo="InlineTemplate_RuleConsequence" />
+      </node>
+    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="9047349009208178412" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="link_MappingConfiguration_preMappingScript" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -1457,8 +1466,6 @@
       </node>
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1255698478595696985" nodeInfo="in" />
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1255698478595692632" nodeInfo="ngu" />
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="2243074219382009952" nodeInfo="ngu" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="2243074219382037148" nodeInfo="ngu" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="6985017052018534026" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="NodeMacroConcepts" />

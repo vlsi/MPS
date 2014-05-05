@@ -19,16 +19,17 @@ import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.DescendantsTreeIterator;
+import org.jetbrains.mps.util.TreeFilterIterator;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -58,10 +59,17 @@ public final class ModelScanner {
 
   public ModelScanner scan(SModel model) {
     assert model instanceof SModelInternal;
-    assert SModelStereotype.isGeneratorModel(model);
+//    assert SModelStereotype.isGeneratorModel(model);
     FastNodeFinder fnf = ((SModelInternal) model).getFastNodeFinder();
     processTemplateNodeAttribute(fnf.getNodes(RuleUtil.concept_TemplateFragment, false));
     processTemplateNodeAttribute(fnf.getNodes(RuleUtil.concept_RootTemplateAnnotation, false));
+    final NodeScanner ns = new NodeScanner(new MacroFilter());
+    for (SNode rc : fnf.getNodes(RuleUtil.concept_InlineTemplate_RuleConsequence, false)) {
+      SNode templateNode = RuleUtil.getInlineTemplate_templateNode(rc);
+      ns.scan(templateNode);
+    }
+    myTargetLanguages.addAll(ns.getUsedLanguages());
+    // FIXME scripts: pre/readonly - to queries only, modify - both to queries and templateNodes if create
     processQueryNodes(fnf.getNodes(RuleUtil.concept_TemplateQueryBase, true));
     return this;
   }
@@ -106,7 +114,9 @@ public final class ModelScanner {
      */
     public NodeScanner scan(SNode node) {
       myLanguagesInUse = null;
-      for (SNode n : SNodeUtil.getDescendants(node, myCondition, true)) {
+      Iterator<SNode> it = myCondition == null ? new DescendantsTreeIterator(node) : new TreeFilterIterator<SNode>(new DescendantsTreeIterator(node), myCondition);
+      while(it.hasNext()) {
+        SNode n = it.next();
         myConceptsInUse.add(n.getConcept().getQualifiedName());
       }
       return this;

@@ -57,11 +57,10 @@ public final class RuleUtil {
   public static final String concept_TemplateQueryBase = "jetbrains.mps.lang.generator.structure.TemplateQueryBase";
   public static final String concept_TemplateFragment = "jetbrains.mps.lang.generator.structure.TemplateFragment";
   public static final String concept_RootTemplateAnnotation = "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation";
+  public static final String concept_InlineTemplate_RuleConsequence = "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence";
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
   public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
   public static final String link_BaseConcept_attrs = "smodelAttribute";
-
-
 
   /**
    * Alternative to isInstanceOf check in isNodeMacro: supported node macros are known at generation time,
