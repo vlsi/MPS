@@ -8,17 +8,17 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddOverridesClause_Intention implements IntentionFactory {
+public class AddDominance_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public AddOverridesClause_Intention() {
+  public AddDominance_Intention() {
   }
 
   public String getConcept() {
@@ -26,11 +26,11 @@ public class AddOverridesClause_Intention implements IntentionFactory {
   }
 
   public String getPresentation() {
-    return "AddOverridesClause";
+    return "AddDominance";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.editor.intentions.AddOverridesClause_Intention";
+    return "jetbrains.mps.lang.editor.intentions.AddDominance_Intention";
   }
 
   public String getLanguageFqName() {
@@ -46,7 +46,14 @@ public class AddOverridesClause_Intention implements IntentionFactory {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(isApplicableToNode(node, editorContext))) {
+      return false;
+    }
     return true;
+  }
+
+  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return SLinkOperations.getTarget(node, "dominates", true) == null;
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -59,7 +66,7 @@ public class AddOverridesClause_Intention implements IntentionFactory {
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddOverridesClause_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddDominance_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -69,7 +76,7 @@ public class AddOverridesClause_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Overrides Clause";
+      return "Add Dominance";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
@@ -77,7 +84,7 @@ public class AddOverridesClause_Intention implements IntentionFactory {
     }
 
     public IntentionDescriptor getDescriptor() {
-      return AddOverridesClause_Intention.this;
+      return AddDominance_Intention.this;
     }
   }
 }
