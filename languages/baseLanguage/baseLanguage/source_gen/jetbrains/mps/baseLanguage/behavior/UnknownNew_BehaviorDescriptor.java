@@ -24,7 +24,7 @@ public class UnknownNew_BehaviorDescriptor extends Expression_BehaviorDescriptor
   }
 
   public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    return IMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
+    return UnknownNew_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {

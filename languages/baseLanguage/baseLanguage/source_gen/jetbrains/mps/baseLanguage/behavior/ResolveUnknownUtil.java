@@ -12,10 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -134,9 +135,13 @@ public class ResolveUnknownUtil {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
         SNode creator;
 
-        SNode cons = ResolveUnknownUtil.findConstructor(SNodeOperations.cast(typ, "jetbrains.mps.baseLanguage.structure.ClassConcept"), SLinkOperations.getTargets(x, "actualArgument", true));
+        Tuples._2<SNode, Boolean> resolveResult = MethodResolveUtil.resolveMethod(x, "");
+        SNode ctor = (resolveResult == null ?
+          null :
+          SNodeOperations.as(resolveResult._0(), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")
+        );
 
-        if ((cons == null)) {
+        if ((ctor == null)) {
 
           // we can't use default constructor in this case 
           if (ListSequence.fromList(SLinkOperations.getTargets(x, "actualArgument", true)).isNotEmpty()) {
@@ -162,7 +167,7 @@ public class ResolveUnknownUtil {
             ListSequence.fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(arg);
           }
 
-          SLinkOperations.setTarget(classCreator, "baseMethodDeclaration", cons, false);
+          SLinkOperations.setTarget(classCreator, "baseMethodDeclaration", ctor, false);
           creator = classCreator;
         }
 
