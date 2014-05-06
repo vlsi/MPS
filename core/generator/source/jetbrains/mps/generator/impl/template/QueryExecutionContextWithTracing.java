@@ -285,10 +285,16 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    assert environment == context.getEnvironment();
+    return tryToApply(rule, context);
+  }
+
+  @Override
+  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       String taskName = taskName(String.format("trying to apply rule(%s)", rule.getApplicableConcept()), rule.getRuleNode());
       tracer.push(taskName, true);
-      return wrapped.tryToApply(rule, environment, context);
+      return wrapped.tryToApply(rule, context);
     } finally {
       tracer.pop();
     }

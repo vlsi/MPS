@@ -115,7 +115,14 @@ public interface QueryExecutionContext extends QueryExecutor {
 
   SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper);
 
+  /**
+   * @deprecated Use {@link #tryToApply(jetbrains.mps.generator.runtime.TemplateReductionRule, jetbrains.mps.generator.runtime.TemplateContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+
+  Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException;
 
   /**
    * @deprecated use {@link #isApplicable(jetbrains.mps.generator.runtime.TemplateRuleWithCondition, jetbrains.mps.generator.runtime.TemplateContext)}
