@@ -13,11 +13,11 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
+    IntentionsManager.getInstance().registerIntentionFactory(new AddDominance_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddExtendsClause_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddIndent_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddOnNewLine_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddOverridesClause_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveNewLineForChildren_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new BooleanQuery_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ChangeNonEmptyProperty_Intention());
