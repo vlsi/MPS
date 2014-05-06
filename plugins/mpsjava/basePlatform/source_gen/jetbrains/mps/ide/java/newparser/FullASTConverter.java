@@ -1212,17 +1212,24 @@ public class FullASTConverter extends ASTConverter {
 
 
   /*package*/ SNode convertExpression(ClassLiteralAccess x) throws JavaParseException {
-
     SNode argType = convertTypeReference(x.type);
-    if (!(SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
-      throw new JavaParseException("Type in class literal access is expected to be classifier");
+
+    if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
+      SReference sref = adjustClassReference(SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), result, "classifier");
+      result.setReference(sref.getRole(), sref);
+      return result;
+
+    } else if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
+      SLinkOperations.setTarget(result, "arrayType", argType, true);
+      // <node> 
+      // <node> 
+      return result;
+
+    } else {
+      throw new JavaParseException("Type in class literal access is expected to be classifier or array type");
     }
-
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
-
-    SReference sref = adjustClassReference(SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), result, "classifier");
-    result.setReference(sref.getRole(), sref);
-    return result;
   }
 
   /*package*/ SNode convertExpression(UnaryExpression x) throws JavaParseException {
