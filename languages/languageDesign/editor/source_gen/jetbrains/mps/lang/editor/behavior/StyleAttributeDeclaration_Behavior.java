@@ -7,11 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
 
 public class StyleAttributeDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -33,15 +30,6 @@ public class StyleAttributeDeclaration_Behavior {
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(StyleAttributeDeclaration_Behavior.call_getType_7677730757102475082(thisNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }
 
-  public static SNode virtual_getDefaultExplicutValue_7677730757102379439(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(StyleAttributeDeclaration_Behavior.call_getType_7677730757102475082(thisNode), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
-      if (SNodeOperations.isInstanceOf(StyleAttributeDeclaration_Behavior.call_getDefaultValue_7677730757102472473(thisNode), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
-        return createBooleanConstant_5g68td_a0a0a0a4(!(SPropertyOperations.getBoolean(SNodeOperations.as(StyleAttributeDeclaration_Behavior.call_getDefaultValue_7677730757102472473(thisNode), "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value")));
-      }
-    }
-    return _quotation_createNode_5g68td_a1a4();
-  }
-
   @Deprecated
   public static SNode call_getDefaultValue_7677730757102472473(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDefaultValue_7677730757102472473", new Object[]{});
@@ -60,29 +48,5 @@ public class StyleAttributeDeclaration_Behavior {
   @Deprecated
   public static SNode callSuper_getType_7677730757102475082(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), callerConceptFqName, "virtual_getType_7677730757102475082", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getDefaultExplicutValue_7677730757102379439(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDefaultExplicutValue_7677730757102379439", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getDefaultExplicutValue_7677730757102379439(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), callerConceptFqName, "virtual_getDefaultExplicutValue_7677730757102379439", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  private static SNode createBooleanConstant_5g68td_a0a0a0a4(Object p0) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, false);
-    n1.setProperty("value", String.valueOf(p0));
-    return n1;
-  }
-
-  private static SNode _quotation_createNode_5g68td_a1a4() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
-    return quotedNode_1;
   }
 }

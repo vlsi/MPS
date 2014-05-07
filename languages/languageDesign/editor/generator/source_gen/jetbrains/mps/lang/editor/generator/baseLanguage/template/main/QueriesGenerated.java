@@ -1626,7 +1626,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6029276237642845026(final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "defaultValue", true) != null);
+    return (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getDefaultValue_7677730757102472473", new Object[]{}) != null);
   }
 
   public static SNode sourceNodeQuery_996730828436923520(final SourceSubstituteMacroNodeContext _context) {
@@ -2198,7 +2198,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_6029276237642845035(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "defaultValue", true);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getDefaultValue_7677730757102472473", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_6029276237642845043(final SourceSubstituteMacroNodeContext _context) {

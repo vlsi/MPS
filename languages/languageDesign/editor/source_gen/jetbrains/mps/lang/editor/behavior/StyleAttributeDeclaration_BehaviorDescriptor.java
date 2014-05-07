@@ -7,12 +7,8 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class StyleAttributeDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public class StyleAttributeDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStyleSheetItem_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
   public StyleAttributeDeclaration_BehaviorDescriptor() {
-  }
-
-  public SNode virtual_getDefaultExplicutValue_7677730757102379439(SNode thisNode) {
-    return StyleAttributeDeclaration_Behavior.virtual_getDefaultExplicutValue_7677730757102379439(thisNode);
   }
 
   public SNode virtual_getDefaultValue_7677730757102472473(SNode thisNode) {
