@@ -3041,45 +3041,6 @@
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpc2.3383245079137382180" resolveInfo="StyleClass" />
     </node>
   </root>
-  <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="7677730757090486505" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="typeof_AttributeStyleClassItem" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="7677730757090486506" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="7677730757090523384" nodeInfo="nn">
-        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="7677730757090523417" nodeInfo="ng">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7677730757090525476" nodeInfo="nn">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7677730757090523530" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7677730757090523416" nodeInfo="nn">
-                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7677730757090486508" resolveInfo="attributeStyleClassItem" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6029276237631092390" nodeInfo="nn">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.3982520150122346707" />
-              </node>
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6029276237631094192" nodeInfo="nn">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.3982520150113092206" />
-            </node>
-          </node>
-        </node>
-        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="7677730757090523387" nodeInfo="ng">
-          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="7677730757090520512" nodeInfo="nn">
-            <node role="term" roleId="tpd4.1174657509053" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7677730757090521899" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="7677730757090521782" nodeInfo="nn">
-                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="7677730757090486508" resolveInfo="attributeStyleClassItem" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="7677730757090523095" nodeInfo="nn">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.1549178425982853902" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="7677730757090486508" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="attributeStyleClassItem" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpc2.1549178425982853146" resolveInfo="AttributeStyleClassItem" />
-    </node>
-  </root>
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="6029276237634418877" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="typeof_StyleAttributeReferenceExpression" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />

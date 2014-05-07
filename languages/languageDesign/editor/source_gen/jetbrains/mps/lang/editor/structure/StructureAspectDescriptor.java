@@ -29,463 +29,459 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition").super_("jetbrains.mps.lang.editor.structure.ApplyStyleClass").parents("jetbrains.mps.lang.editor.structure.ApplyStyleClass").children(new String[]{"query"}, new boolean[]{false}).alias("apply-if", "").create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.AttributeQueryStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem", "jetbrains.mps.lang.editor.structure.IAttributeStyleClassItem", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"query"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.AttributeQueryStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("attribute").children(new String[]{"query"}, new boolean[]{false}).create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.AttributeStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem", "jetbrains.mps.lang.editor.structure.IAttributeStyleClassItem").children(new String[]{"value"}, new boolean[]{false}).create();
-      case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("auto-deletable", "").staticScope(StaticScope.NONE).create();
-      case 10:
+      case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem").super_("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").parents("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").alias("background-color", "").staticScope(StaticScope.NONE).create();
-      case 11:
+      case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.BaseEditorComponent").super_("jetbrains.mps.lang.editor.structure.AbstractComponent").parents("jetbrains.mps.lang.editor.structure.AbstractComponent", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"cellModel"}, new boolean[]{false}).abstract_().create();
-      case 12:
+      case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.BaseLineCell").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("base-line-cell", "").staticScope(StaticScope.NONE).create();
-      case 13:
+      case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("flag").children(new String[]{"query"}, new boolean[]{false}).abstract_().staticScope(StaticScope.NONE).create();
-      case 14:
+      case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem").super_("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").parents("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").alias("bracket-color", "").staticScope(StaticScope.NONE).create();
-      case 15:
+      case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CaretPositionParameter").super_("jetbrains.mps.lang.editor.structure.SelectParameter").parents("jetbrains.mps.lang.editor.structure.SelectParameter").children(new String[]{"position"}, new boolean[]{false}).alias("caret position=", "").create();
-      case 16:
+      case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellActionMapDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.BaseConcept").references("applicableConcept").children(new String[]{"item"}, new boolean[]{true}).alias("Cell Action Map", "").create();
-      case 17:
+      case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellActionMapItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("description", "actionId").children(new String[]{"executeFunction"}, new boolean[]{false}).create();
-      case 18:
+      case 17:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("execute block", "").staticScope(StaticScope.NONE).create();
-      case 19:
+      case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("node", "selected node (action map function parameter)").staticScope(StaticScope.NONE).create();
-      case 20:
+      case 19:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellIdReferenceSelector").super_("jetbrains.mps.lang.editor.structure.AbstractCellSelector").parents("jetbrains.mps.lang.editor.structure.AbstractCellSelector").references("id").create();
-      case 21:
+      case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.core.structure.BaseConcept").properties("everyModel").references("applicableConcept").children(new String[]{"item"}, new boolean[]{true}).alias("Cell Keymap", "").create();
-      case 22:
+      case 21:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellKeyMapItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("description", "caretPolicy", "showInPopup", "menuAlwaysShown").children(new String[]{"keystroke", "isApplicableFunction", "executeFunction"}, new boolean[]{true, false, false}).create();
-      case 23:
+      case 22:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("modifiers", "keycode").create();
-      case 24:
+      case 23:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").abstract_().staticScope(StaticScope.NONE).create();
-      case 25:
+      case 24:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction").super_("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction").parents("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction").alias("execute block", "").staticScope(StaticScope.NONE).create();
-      case 26:
+      case 25:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("node", "keymap function parameter").staticScope(StaticScope.NONE).create();
-      case 27:
+      case 26:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("selectedNodes", "keymap function parameter").staticScope(StaticScope.NONE).create();
-      case 28:
+      case 27:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction").super_("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction").parents("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction").alias("is applicable block", "").staticScope(StaticScope.NONE).create();
-      case 29:
+      case 28:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellLayout").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().staticScope(StaticScope.NONE).create();
-      case 30:
+      case 29:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellLayout_Flow").super_("jetbrains.mps.lang.editor.structure.CellLayout").parents("jetbrains.mps.lang.editor.structure.CellLayout").alias("flow", "").staticScope(StaticScope.NONE).create();
-      case 31:
+      case 30:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal").super_("jetbrains.mps.lang.editor.structure.CellLayout").parents("jetbrains.mps.lang.editor.structure.CellLayout").alias("horizontal", "").staticScope(StaticScope.NONE).create();
-      case 32:
+      case 31:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellLayout_Indent").super_("jetbrains.mps.lang.editor.structure.CellLayout").parents("jetbrains.mps.lang.editor.structure.CellLayout").alias("indent", "").staticScope(StaticScope.NONE).create();
-      case 33:
+      case 32:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old").super_("jetbrains.mps.lang.editor.structure.CellLayout").parents("jetbrains.mps.lang.editor.structure.CellLayout").alias("indent_old", "").staticScope(StaticScope.NONE).create();
-      case 34:
+      case 33:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellLayout_Superscript").super_("jetbrains.mps.lang.editor.structure.CellLayout").parents("jetbrains.mps.lang.editor.structure.CellLayout").alias("superscript", "").staticScope(StaticScope.NONE).create();
-      case 35:
+      case 34:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellLayout_Table").super_("jetbrains.mps.lang.editor.structure.CellLayout").parents("jetbrains.mps.lang.editor.structure.CellLayout").alias("table", "").staticScope(StaticScope.NONE).create();
-      case 36:
+      case 35:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellLayout_Vertical").super_("jetbrains.mps.lang.editor.structure.CellLayout").parents("jetbrains.mps.lang.editor.structure.CellLayout").alias("vertical", "").staticScope(StaticScope.NONE).create();
-      case 37:
+      case 36:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid").super_("jetbrains.mps.lang.editor.structure.CellLayout_Vertical").parents("jetbrains.mps.lang.editor.structure.CellLayout_Vertical").alias("vertical grid", "").staticScope(StaticScope.NONE).create();
-      case 38:
+      case 37:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuComponent").super_("jetbrains.mps.lang.editor.structure.AbstractComponent").parents("jetbrains.mps.lang.editor.structure.AbstractComponent", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect").children(new String[]{"applicableFeature", "menuDescriptor"}, new boolean[]{false, false}).alias("Cell Menu Component", "").create();
-      case 39:
+      case 38:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("relationDeclaration").abstract_().create();
-      case 40:
+      case 39:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link").super_("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature").parents("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature").references("linkDeclaration").create();
-      case 41:
+      case 40:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property").super_("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature").parents("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature").references("propertyDeclaration").create();
-      case 42:
+      case 41:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"cellMenuPart"}, new boolean[]{true}).alias("cell menu", "").create();
-      case 43:
+      case 42:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
-      case 44:
+      case 43:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").properties("presentation").children(new String[]{"parameterObjectType", "matchingTextFunction", "descriptionTextFunction"}, new boolean[]{false, false, false}).abstract_().create();
-      case 45:
+      case 44:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("description text", "").staticScope(StaticScope.NONE).create();
-      case 46:
+      case 45:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("matching text", "").staticScope(StaticScope.NONE).create();
-      case 47:
+      case 46:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("get objects", "").staticScope(StaticScope.NONE).create();
-      case 48:
+      case 47:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("parameterObject", "").staticScope(StaticScope.NONE).create();
-      case 49:
+      case 48:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "").staticScope(StaticScope.NONE).create();
-      case 50:
+      case 49:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").properties("side").alias("apply side transforms", "").create();
-      case 51:
+      case 50:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").references("cellMenuComponent").alias("menu component", "").create();
-      case 52:
+      case 51:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup").children(new String[]{"parametersFunction", "handlerFunction"}, new boolean[]{false, false}).alias("generic group", "").create();
-      case 53:
+      case 52:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("generic handler", "").staticScope(StaticScope.NONE).create();
-      case 54:
+      case 53:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").properties("matchingText").children(new String[]{"handlerFunction"}, new boolean[]{false}).alias("generic item", "").create();
-      case 55:
+      case 54:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 56:
+      case 55:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"postfixesFunction"}, new boolean[]{false}).alias("property postfix hints", "").create();
-      case 57:
+      case 56:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("postfixes", "").staticScope(StaticScope.NONE).create();
-      case 58:
+      case 57:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"valuesFunction"}, new boolean[]{false}).alias("property values", "").create();
-      case 59:
+      case 58:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("property values", "").staticScope(StaticScope.NONE).create();
-      case 60:
+      case 59:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("primary choose referent menu", "").create();
-      case 61:
+      case 60:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("primary replace child menu", "").create();
-      case 62:
+      case 61:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"childConceptFunction"}, new boolean[]{false}).alias("replace child (custom child's concept)", "").create();
-      case 63:
+      case 62:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("get child concept", "").staticScope(StaticScope.NONE).create();
-      case 64:
+      case 63:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"parametersFunction", "createFunction"}, new boolean[]{false, false}).alias("replace child (group of custom actions)", "").create();
-      case 65:
+      case 64:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("create new child", "").staticScope(StaticScope.NONE).create();
-      case 66:
+      case 65:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("get objects", "").staticScope(StaticScope.NONE).create();
-      case 67:
+      case 66:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("matchingText", "descriptionText").children(new String[]{"createFunction"}, new boolean[]{false}).alias("replace child (custom action)", "").create();
-      case 68:
+      case 67:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 69:
+      case 68:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("currentChild", "").staticScope(StaticScope.NONE).create();
-      case 70:
+      case 69:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("defaultConceptOfChild", "").staticScope(StaticScope.NONE).create();
-      case 71:
+      case 70:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").references("replacementConcept").alias("replace node (custom node concept)", "").create();
-      case 72:
+      case 71:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup").children(new String[]{"parametersFunction", "createFunction"}, new boolean[]{false, false}).alias("replace node (group of custom actions)", "").create();
-      case 73:
+      case 72:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("create replacement node", "").staticScope(StaticScope.NONE).create();
-      case 74:
+      case 73:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").properties("defaultCaretPosition").abstract_().create();
-      case 75:
+      case 74:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Alternation").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").properties("vertical").children(new String[]{"alternationCondition", "ifTrueCellModel", "ifFalseCellModel"}, new boolean[]{false, false, false}).alias("alternation", "cell alternation").create();
-      case 76:
+      case 75:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").alias("attributed link", "cell for attributed link").create();
-      case 77:
+      case 76:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").alias("attributed node", "cell for attributed node").create();
-      case 78:
+      case 77:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").alias("attributed property", "cell for attributed property").create();
-      case 79:
+      case 78:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Block").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").properties("openBrace", "closeBrace").children(new String[]{"header", "body"}, new boolean[]{false, false}).alias("block", "").create();
-      case 80:
+      case 79:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_BlockEnd").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").properties("closeBrace").alias("block end", "").create();
-      case 81:
+      case 80:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_BlockStart").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").properties("openBrace").alias("block start", "").create();
-      case 82:
+      case 81:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Collection").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.Synchronizeable").properties("vertical", "gridLayout", "usesBraces", "usesFolding").children(new String[]{"childCellModel", "foldedCellModel", "cellLayout", "usesFoldingCondition", "addHints", "removeHints"}, new boolean[]{true, false, false, false, false, false}).alias("collection", "collection of cells").staticScope(StaticScope.NONE).create();
-      case 83:
+      case 82:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Component").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").references("editorComponent").alias("component", "reference to editor component").create();
-      case 84:
+      case 83:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Constant").super_("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").parents("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", "jetbrains.mps.lang.editor.structure.Synchronizeable").properties("text", "nullText").alias("constant", "text label").staticScope(StaticScope.NONE).create();
-      case 85:
+      case 84:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Custom").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"cellProvider"}, new boolean[]{false}).alias("custom", "reference to cell provider").create();
-      case 86:
+      case 85:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Empty").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").alias("empty", "").create();
-      case 87:
+      case 86:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Error").super_("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").parents("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").properties("text").alias("error", "red text label").create();
-      case 88:
+      case 87:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Image").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").properties("imageFile", "descent").children(new String[]{"imagePathProvider"}, new boolean[]{false}).alias("image", "cell for an image").create();
-      case 89:
+      case 88:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Indent").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").alias("--->", "indent").create();
-      case 90:
+      case 89:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_JComponent").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"componentProvider"}, new boolean[]{false}).alias("swing component", "").create();
-      case 91:
+      case 90:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole").super_("jetbrains.mps.lang.editor.structure.CellModel_WithRole").parents("jetbrains.mps.lang.editor.structure.CellModel_WithRole").properties("vertical", "gridLayout", "usesBraces", "usesFolding", "separatorText", "separatorLayoutConstraint").children(new String[]{"nodeFactory", "emptyCellModel", "foldedCellModel", "cellLayout", "separatorStyle", "separatorTextQuery", "usesFoldingCondition"}, new boolean[]{false, false, false, false, false, false, false}).abstract_().create();
-      case 92:
+      case 91:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_ModelAccess").super_("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").parents("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").properties("nullText").children(new String[]{"modelAcessor"}, new boolean[]{false}).alias("model access", "reference to accessor").create();
-      case 93:
+      case 92:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty").super_("jetbrains.mps.lang.editor.structure.CellModel_Property").parents("jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("{+<{propertyDeclaration}>+}", "not empty property").create();
-      case 94:
+      case 93:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_Property").super_("jetbrains.mps.lang.editor.structure.CellModel_WithRole").parents("jetbrains.mps.lang.editor.structure.CellModel_WithRole", "jetbrains.mps.lang.editor.structure.Synchronizeable").references("propertyDeclaration").alias("{<{propertyDeclaration}>}", "property").create();
-      case 95:
+      case 94:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor").super_("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").parents("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").children(new String[]{"modelAccessor"}, new boolean[]{false}).alias("read only model access", "reference to read only accessor").create();
-      case 96:
+      case 95:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_RefCell").super_("jetbrains.mps.lang.editor.structure.CellModel_WithRole").parents("jetbrains.mps.lang.editor.structure.CellModel_WithRole").references("linkDeclaration").children(new String[]{"editorComponent"}, new boolean[]{false}).alias("%<{linkDeclaration}>%->", "reference").create();
-      case 97:
+      case 96:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_RefNode").super_("jetbrains.mps.lang.editor.structure.CellModel_WithRole").parents("jetbrains.mps.lang.editor.structure.CellModel_WithRole").references("linkDeclaration").children(new String[]{"addHints", "removeHints"}, new boolean[]{false, false}).alias("%<{linkDeclaration}>%", "single aggregation").create();
-      case 98:
+      case 97:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList").super_("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole").parents("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole").properties("reverse").references("linkDeclaration", "elementActionMap").children(new String[]{"elementMenuDescriptor", "filter", "addHints", "removeHints"}, new boolean[]{false, false, false, false}).alias("%<{linkDeclaration}>%", "multiple aggregation").create();
-      case 99:
+      case 98:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").alias("ref. presentation", "").create();
-      case 100:
+      case 99:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty").super_("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").parents("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("runInCommand", "allowEmptyText").references("property").children(new String[]{"handlerBlock"}, new boolean[]{false}).alias("{T <{property}> T}", "").create();
-      case 101:
+      case 100:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_URL").super_("jetbrains.mps.lang.editor.structure.CellModel_WithRole").parents("jetbrains.mps.lang.editor.structure.CellModel_WithRole").references("propertyDeclaration").alias("URL", "URL property").create();
-      case 102:
+      case 101:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellModel_WithRole").super_("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").parents("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel").properties("noTargetText", "emptyNoTargetText", "readOnly", "allowEmptyText").references("relationDeclaration").abstract_().create();
-      case 103:
+      case 102:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("color").children(new String[]{"query"}, new boolean[]{false}).abstract_().staticScope(StaticScope.NONE).create();
-      case 104:
+      case 103:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptEditorContextHints").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart").children(new String[]{"hints"}, new boolean[]{true}).create();
-      case 105:
+      case 104:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration").super_("jetbrains.mps.lang.editor.structure.BaseEditorComponent").parents("jetbrains.mps.lang.editor.structure.BaseEditorComponent", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect").children(new String[]{"inspectedCellModel", "contextHints"}, new boolean[]{false, true}).alias("Concept Editor", "").create();
-      case 106:
+      case 105:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.InterfacePart").properties("presentation", "showInUI").create();
-      case 107:
+      case 106:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("hint").create();
-      case 108:
+      case 107:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("hint").alias("concept editor hint/<name>/", "").create();
-      case 109:
+      case 108:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("styledText", "").staticScope(StaticScope.NONE).create();
-      case 110:
+      case 109:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("childNode", "function parameter").staticScope(StaticScope.NONE).create();
-      case 111:
+      case 110:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("editorContext", "").staticScope(StaticScope.NONE).create();
-      case 112:
+      case 111:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("nextNode", "function parameter").staticScope(StaticScope.NONE).create();
-      case 113:
+      case 112:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "function parameter").staticScope(StaticScope.NONE).create();
-      case 114:
+      case 113:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("oldText", "function parameter").staticScope(StaticScope.NONE).create();
-      case 115:
+      case 114:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("parameterObject", "").staticScope(StaticScope.NONE).create();
-      case 116:
+      case 115:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("prevNode", "function parameter").staticScope(StaticScope.NONE).create();
-      case 117:
+      case 116:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "selected node").staticScope(StaticScope.NONE).create();
-      case 118:
+      case 117:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("text", "function parameter").staticScope(StaticScope.NONE).create();
-      case 119:
+      case 118:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ContextHintsSpecification").interface_().parents("jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").create();
-      case 120:
+      case 119:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.DefaultBaseLine").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("baseline").alias("default-baseline", "").staticScope(StaticScope.NONE).create();
-      case 121:
+      case 120:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("position").alias("default-caret-position", "").staticScope(StaticScope.NONE).create();
-      case 122:
+      case 121:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.DominatesRecord").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"dominatesStyleClassList"}, new boolean[]{false}).alias("dominates over", "").create();
-      case 123:
+      case 122:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("draw-border", "").staticScope(StaticScope.NONE).create();
-      case 124:
+      case 123:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("draw-brackets", "").staticScope(StaticScope.NONE).create();
-      case 125:
+      case 124:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.EditableStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("editable", "").staticScope(StaticScope.NONE).create();
-      case 126:
+      case 125:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.EditorCellId").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.INamedConcept").create();
-      case 127:
+      case 126:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.EditorCellModel").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.ICellStyle").properties("attractsFocus").references("actionMap", "keyMap").children(new String[]{"renderingCondition", "menuDescriptor", "focusPolicyApplicable", "id"}, new boolean[]{false, false, false, false}).abstract_().create();
-      case 128:
+      case 127:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration").super_("jetbrains.mps.lang.editor.structure.BaseEditorComponent").parents("jetbrains.mps.lang.editor.structure.BaseEditorComponent", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.lang.structure.structure.IConceptAspect").children(new String[]{"overridenEditorComponent", "contextHints"}, new boolean[]{false, true}).alias("Editor Component", "").create();
-      case 129:
+      case 128:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("editorComponent").create();
-      case 130:
+      case 129:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.ContextHintsSpecification").children(new String[]{"hints"}, new boolean[]{true}).create();
-      case 131:
+      case 130:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("first-position-allowed", "").staticScope(StaticScope.NONE).create();
-      case 132:
+      case 131:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.FloatStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("value").abstract_().staticScope(StaticScope.NONE).create();
-      case 133:
+      case 132:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("value").children(new String[]{"query"}, new boolean[]{false}).alias("font-size", "").staticScope(StaticScope.NONE).create();
-      case 134:
+      case 133:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("style").children(new String[]{"query"}, new boolean[]{false}).alias("font-style", "").staticScope(StaticScope.NONE).create();
-      case 135:
+      case 134:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem").super_("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").parents("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").alias("text-foreground-color", "").staticScope(StaticScope.NONE).create();
-      case 136:
+      case 135:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem").super_("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").parents("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").alias("text-foreground-null-color", "").staticScope(StaticScope.NONE).create();
-      case 137:
+      case 136:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.HorizontalAlign").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("align").alias("horizontal-align", "").staticScope(StaticScope.NONE).create();
-      case 138:
+      case 137:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem").super_("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").parents("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").alias("horizontal-gap", "").staticScope(StaticScope.NONE).create();
-      case 139:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IAttributeStyleClassItem").interface_().references("attribute").create();
-      case 140:
+      case 138:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ICellStyle").interface_().parents("jetbrains.mps.lang.editor.structure.IStyleContainer").references("parentStyleClass").create();
-      case 141:
+      case 139:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IQueryFunction_Color").interface_().create();
-      case 142:
+      case 140:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyle").interface_().create();
-      case 143:
+      case 141:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyleContainer").interface_().children(new String[]{"styleItem"}, new boolean[]{true}).create();
-      case 144:
+      case 142:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IStyleSheetMember").interface_().parents("jetbrains.mps.lang.editor.structure.IStyle", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").create();
-      case 145:
+      case 143:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IdSelector").super_("jetbrains.mps.lang.editor.structure.AbstractCellSelector").parents("jetbrains.mps.lang.editor.structure.AbstractCellSelector").properties("cellId").create();
-      case 146:
+      case 144:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("indent-layout-indent-anchor", "").staticScope(StaticScope.NONE).create();
-      case 147:
+      case 145:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("indent-layout-indent", "").staticScope(StaticScope.NONE).create();
-      case 148:
+      case 146:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("indent-layout-new-line-children", "").staticScope(StaticScope.NONE).create();
-      case 149:
+      case 147:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("indent-layout-new-line", "").staticScope(StaticScope.NONE).create();
-      case 150:
+      case 148:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("indent-layout-no-wrap", "").staticScope(StaticScope.NONE).create();
-      case 151:
+      case 149:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("indent-layout-on-new-line", "").staticScope(StaticScope.NONE).create();
-      case 152:
+      case 150:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("indent-layout-wrap-anchor", "").staticScope(StaticScope.NONE).create();
-      case 153:
+      case 151:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.InlineEditorComponent").super_("jetbrains.mps.lang.editor.structure.BaseEditorComponent").parents("jetbrains.mps.lang.editor.structure.BaseEditorComponent").alias("", "in-line editor component").create();
-      case 154:
+      case 152:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.ICellStyle").create();
-      case 155:
+      case 153:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("last-position-allowed", "").staticScope(StaticScope.NONE).create();
-      case 156:
+      case 154:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("layoutConstraint").alias("layout constraint", "").staticScope(StaticScope.NONE).create();
-      case 157:
+      case 155:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("labelName", "hasNoLabel").children(new String[]{"query"}, new boolean[]{false}).alias("matching-label", "").staticScope(StaticScope.NONE).create();
-      case 158:
+      case 156:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("value").children(new String[]{"query"}, new boolean[]{false}).alias("max-width", "").staticScope(StaticScope.NONE).create();
-      case 159:
+      case 157:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ModelAccessor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"getter", "setter", "validator"}, new boolean[]{false, false, false}).create();
-      case 160:
+      case 158:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").children(new String[]{"functionNode"}, new boolean[]{false}).alias("navigatable-node", "").staticScope(StaticScope.NONE).create();
-      case 161:
+      case 159:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").references("link").alias("navigatable-reference", "").staticScope(StaticScope.NONE).create();
-      case 162:
+      case 160:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem").super_("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").parents("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").alias("padding-bottom", "").staticScope(StaticScope.NONE).create();
-      case 163:
+      case 161:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem").super_("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").parents("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").alias("padding-left", "").staticScope(StaticScope.NONE).create();
-      case 164:
+      case 162:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem").super_("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").parents("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").alias("padding-right", "").staticScope(StaticScope.NONE).create();
-      case 165:
+      case 163:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem").super_("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").parents("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem").alias("padding-top", "").staticScope(StaticScope.NONE).create();
-      case 166:
+      case 164:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ParametersInformationQuery").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").references("applicableConcept").children(new String[]{"type", "methods", "presentation", "isMethodCurrent", "methodDeclaration"}, new boolean[]{false, false, false, false, true}).alias("Parameters Information Query", "").create();
-      case 167:
+      case 165:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").references("parametersInformation").alias("parameters-information", "").staticScope(StaticScope.NONE).create();
-      case 168:
+      case 166:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("position").alias("position-children", "").staticScope(StaticScope.NONE).create();
-      case 169:
+      case 167:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PositionStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("position").alias("position", "").staticScope(StaticScope.NONE).create();
-      case 170:
+      case 168:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").references("key").children(new String[]{"query"}, new boolean[]{false}).alias("pre-defined-style", "").staticScope(StaticScope.NONE).create();
-      case 171:
+      case 169:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PredefinedSelector").super_("jetbrains.mps.lang.editor.structure.AbstractCellSelector").parents("jetbrains.mps.lang.editor.structure.AbstractCellSelector").properties("cellId").create();
-      case 172:
+      case 170:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector").super_("jetbrains.mps.lang.editor.structure.AbstractCellSelector").parents("jetbrains.mps.lang.editor.structure.AbstractCellSelector").references("propertyDeclaration").create();
-      case 173:
+      case 171:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector").super_("jetbrains.mps.lang.editor.structure.AbstractCellSelector").parents("jetbrains.mps.lang.editor.structure.AbstractCellSelector").children(new String[]{"propertyDeclaration"}, new boolean[]{false}).create();
-      case 174:
+      case 172:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("punctuation-left", "").staticScope(StaticScope.NONE).create();
-      case 175:
+      case 173:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("punctuation-right", "").staticScope(StaticScope.NONE).create();
-      case 176:
+      case 174:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").create();
-      case 177:
+      case 175:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_Boolean").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").alias("boolean function", "").staticScope(StaticScope.NONE).create();
-      case 178:
+      case 176:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("cell provider", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 179:
+      case 177:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_Color").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter", "jetbrains.mps.lang.editor.structure.IQueryFunction_Color").alias("color function", "").staticScope(StaticScope.NONE).create();
-      case 180:
+      case 178:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").alias("font style function", "").staticScope(StaticScope.NONE).create();
-      case 181:
+      case 179:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("string", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 182:
+      case 180:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_Integer").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").alias("int function", "").staticScope(StaticScope.NONE).create();
-      case 183:
+      case 181:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 184:
+      case 182:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_JComponent").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("component", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 185:
+      case 183:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 186:
+      case 184:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("condition", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 187:
+      case 185:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("condition", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 188:
+      case 186:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("condition", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 189:
+      case 187:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("condition", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 190:
+      case 188:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("node factory", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 191:
+      case 189:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("node list provider", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 192:
+      case 190:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 193:
+      case 191:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_SNode").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").alias("snode function", "").staticScope(StaticScope.NONE).create();
-      case 194:
+      case 192:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("separator text", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 195:
+      case 193:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_String").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 196:
+      case 194:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_Style").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").staticScope(StaticScope.NONE).create();
-      case 197:
+      case 195:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").abstract_().alias("", "embedded block of code").staticScope(StaticScope.NONE).create();
-      case 198:
+      case 196:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryFunction_Underlined").super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").parents("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter").alias("underlined function", "").staticScope(StaticScope.NONE).create();
-      case 199:
+      case 197:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.QueryHintsSpecification").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.editor.structure.ContextHintsSpecification").alias("query", "").create();
-      case 200:
+      case 198:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.RGBColor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IQueryFunction_Color").properties("value").alias("#", "#RRGGBB").create();
-      case 201:
+      case 199:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"getter"}, new boolean[]{false}).create();
-      case 202:
+      case 200:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("read-only", "").create();
-      case 203:
+      case 201:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("tag").create();
-      case 204:
+      case 202:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.ScriptKindClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("script").alias("script-kind", "").staticScope(StaticScope.NONE).create();
-      case 205:
+      case 203:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SelectInEditorOperation").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"editorContext", "cellSelector", "selectionStart", "selectionEnd"}, new boolean[]{false, false, false, false}).alias("select", "select node in the editor").staticScope(StaticScope.NONE).create();
-      case 206:
+      case 204:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SelectParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
-      case 207:
+      case 205:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SelectPositionParameter").super_("jetbrains.mps.lang.editor.structure.SelectParameter").parents("jetbrains.mps.lang.editor.structure.SelectParameter").properties("position").alias("position=", "").create();
-      case 208:
+      case 206:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("selectable", "").staticScope(StaticScope.NONE).create();
-      case 209:
+      case 207:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SetBoldOperation").super_("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation").parents("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation").alias("setBold", "").staticScope(StaticScope.NONE).create();
-      case 210:
+      case 208:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("tag").children(new String[]{"tags"}, new boolean[]{true}).alias("side-transform-anchor-tag", "").staticScope(StaticScope.NONE).create();
-      case 211:
+      case 209:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet").super_("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").parents("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem").alias("strike-out", "").staticScope(StaticScope.NONE).create();
-      case 212:
+      case 210:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"valueType", "defaultValue"}, new boolean[]{false, false}).create();
-      case 213:
+      case 211:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("attributeDeclaration").alias("attribute", "").create();
-      case 214:
+      case 212:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleClass").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleSheetMember", "jetbrains.mps.lang.editor.structure.IStyle", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").children(new String[]{"dominates"}, new boolean[]{false}).alias("style", "").create();
-      case 215:
+      case 213:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleClassItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().staticScope(StaticScope.NONE).create();
-      case 216:
+      case 214:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleClassReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("styleClass").create();
-      case 217:
+      case 215:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleClassReferenceList").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"element"}, new boolean[]{true}).create();
-      case 218:
+      case 216:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleKey").super_("jetbrains.mps.baseLanguage.structure.StringLiteral").parents("jetbrains.mps.baseLanguage.structure.StringLiteral", "jetbrains.mps.lang.editor.structure.IStyle").create();
-      case 219:
+      case 217:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleKeyPack").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"styleKey"}, new boolean[]{true}).create();
-      case 220:
+      case 218:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("style").create();
-      case 221:
+      case 219:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"styleClass"}, new boolean[]{true}).alias("Stylesheet", "").create();
-      case 222:
+      case 220:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheetClass").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleSheetMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"extendedClass"}, new boolean[]{false}).alias("style", "").create();
-      case 223:
+      case 221:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheetClassReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("styleSheetClass").create();
-      case 224:
+      case 222:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyledTextType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("styled text", "").staticScope(StaticScope.NONE).create();
-      case 225:
+      case 223:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.Synchronizeable").interface_().create();
-      case 226:
+      case 224:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("tableComponent").alias("table-component", "").staticScope(StaticScope.NONE).create();
-      case 227:
+      case 225:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem").super_("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").parents("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").alias("text-background-color-selected", "").staticScope(StaticScope.NONE).create();
-      case 228:
+      case 226:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem").super_("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").parents("jetbrains.mps.lang.editor.structure.ColorStyleClassItem").alias("text-background-color", "").staticScope(StaticScope.NONE).create();
-      case 229:
+      case 227:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("newValue", "").staticScope(StaticScope.NONE).create();
-      case 230:
+      case 228:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("oldValue", "").staticScope(StaticScope.NONE).create();
-      case 231:
+      case 229:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
-      case 232:
+      case 230:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.UnapplyStyle").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").children(new String[]{"target"}, new boolean[]{false}).alias("unapply", "").create();
-      case 233:
+      case 231:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem").super_("jetbrains.mps.lang.editor.structure.StyleClassItem").parents("jetbrains.mps.lang.editor.structure.StyleClassItem").properties("underlined").children(new String[]{"query"}, new boolean[]{false}).alias("underlined", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.structure.AbstractCellSelector", "jetbrains.mps.lang.editor.structure.AbstractComponent", "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "jetbrains.mps.lang.editor.structure.AppendTextOperation", "jetbrains.mps.lang.editor.structure.ApplyStyleClass", "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition", "jetbrains.mps.lang.editor.structure.AttributeQueryStyleClassItem", "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem", "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.BaseEditorComponent", "jetbrains.mps.lang.editor.structure.BaseLineCell", "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes", "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction", "jetbrains.mps.lang.editor.structure.CellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", "jetbrains.mps.lang.editor.structure.CellLayout_Indent", "jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old", "jetbrains.mps.lang.editor.structure.CellLayout_Superscript", "jetbrains.mps.lang.editor.structure.CellLayout_Table", "jetbrains.mps.lang.editor.structure.CellLayout_Vertical", "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode", "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create", "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.CellModel_WithRole", "jetbrains.mps.lang.editor.structure.ColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text", "jetbrains.mps.lang.editor.structure.ContextHintsSpecification", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.DominatesRecord", "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem", "jetbrains.mps.lang.editor.structure.EditableStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorCellId", "jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference", "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.FloatStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", "jetbrains.mps.lang.editor.structure.IAttributeStyleClassItem", "jetbrains.mps.lang.editor.structure.ICellStyle", "jetbrains.mps.lang.editor.structure.IQueryFunction_Color", "jetbrains.mps.lang.editor.structure.IStyle", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.lang.editor.structure.IStyleSheetMember", "jetbrains.mps.lang.editor.structure.IdSelector", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem", "jetbrains.mps.lang.editor.structure.PredefinedSelector", "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector", "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector", "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider", "jetbrains.mps.lang.editor.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer", "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent", "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent", "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter", "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList", "jetbrains.mps.lang.editor.structure.QueryFunction_SNode", "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", "jetbrains.mps.lang.editor.structure.QueryFunction_String", "jetbrains.mps.lang.editor.structure.QueryFunction_Style", "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter", "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined", "jetbrains.mps.lang.editor.structure.QueryHintsSpecification", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectInEditorOperation", "jetbrains.mps.lang.editor.structure.SelectParameter", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", "jetbrains.mps.lang.editor.structure.SetBoldOperation", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet", "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration", "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression", "jetbrains.mps.lang.editor.structure.StyleClass", "jetbrains.mps.lang.editor.structure.StyleClassItem", "jetbrains.mps.lang.editor.structure.StyleClassReference", "jetbrains.mps.lang.editor.structure.StyleClassReferenceList", "jetbrains.mps.lang.editor.structure.StyleKey", "jetbrains.mps.lang.editor.structure.StyleKeyPack", "jetbrains.mps.lang.editor.structure.StyleReference", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.StyledTextType", "jetbrains.mps.lang.editor.structure.Synchronizeable", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue", "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler", "jetbrains.mps.lang.editor.structure.UnapplyStyle", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.editor.structure.AbstractCellSelector", "jetbrains.mps.lang.editor.structure.AbstractComponent", "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "jetbrains.mps.lang.editor.structure.AppendTextOperation", "jetbrains.mps.lang.editor.structure.ApplyStyleClass", "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition", "jetbrains.mps.lang.editor.structure.AttributeQueryStyleClassItem", "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.BaseEditorComponent", "jetbrains.mps.lang.editor.structure.BaseLineCell", "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", "jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem", "jetbrains.mps.lang.editor.structure.CaretPositionParameter", "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", "jetbrains.mps.lang.editor.structure.CellActionMapItem", "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector", "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", "jetbrains.mps.lang.editor.structure.CellKeyMapItem", "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode", "jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNodes", "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction", "jetbrains.mps.lang.editor.structure.CellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", "jetbrains.mps.lang.editor.structure.CellLayout_Indent", "jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old", "jetbrains.mps.lang.editor.structure.CellLayout_Superscript", "jetbrains.mps.lang.editor.structure.CellLayout_Table", "jetbrains.mps.lang.editor.structure.CellLayout_Vertical", "jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", "jetbrains.mps.lang.editor.structure.CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", "jetbrains.mps.lang.editor.structure.CellMenuDescriptor", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject", "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode", "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms", "jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create", "jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", "jetbrains.mps.lang.editor.structure.CellModel_Alternation", "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", "jetbrains.mps.lang.editor.structure.CellModel_Block", "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", "jetbrains.mps.lang.editor.structure.CellModel_BlockStart", "jetbrains.mps.lang.editor.structure.CellModel_Collection", "jetbrains.mps.lang.editor.structure.CellModel_Component", "jetbrains.mps.lang.editor.structure.CellModel_Constant", "jetbrains.mps.lang.editor.structure.CellModel_Custom", "jetbrains.mps.lang.editor.structure.CellModel_Empty", "jetbrains.mps.lang.editor.structure.CellModel_Error", "jetbrains.mps.lang.editor.structure.CellModel_Image", "jetbrains.mps.lang.editor.structure.CellModel_Indent", "jetbrains.mps.lang.editor.structure.CellModel_JComponent", "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", "jetbrains.mps.lang.editor.structure.CellModel_Property", "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.CellModel_RefCell", "jetbrains.mps.lang.editor.structure.CellModel_RefNode", "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", "jetbrains.mps.lang.editor.structure.CellModel_URL", "jetbrains.mps.lang.editor.structure.CellModel_WithRole", "jetbrains.mps.lang.editor.structure.ColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints", "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_selectedNode", "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text", "jetbrains.mps.lang.editor.structure.ContextHintsSpecification", "jetbrains.mps.lang.editor.structure.DefaultBaseLine", "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", "jetbrains.mps.lang.editor.structure.DominatesRecord", "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem", "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem", "jetbrains.mps.lang.editor.structure.EditableStyleClassItem", "jetbrains.mps.lang.editor.structure.EditorCellId", "jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", "jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference", "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.FloatStyleClassItem", "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem", "jetbrains.mps.lang.editor.structure.HorizontalAlign", "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", "jetbrains.mps.lang.editor.structure.ICellStyle", "jetbrains.mps.lang.editor.structure.IQueryFunction_Color", "jetbrains.mps.lang.editor.structure.IStyle", "jetbrains.mps.lang.editor.structure.IStyleContainer", "jetbrains.mps.lang.editor.structure.IStyleSheetMember", "jetbrains.mps.lang.editor.structure.IdSelector", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem", "jetbrains.mps.lang.editor.structure.InlineEditorComponent", "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem", "jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", "jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem", "jetbrains.mps.lang.editor.structure.ModelAccessor", "jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem", "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem", "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", "jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem", "jetbrains.mps.lang.editor.structure.PositionStyleClassItem", "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem", "jetbrains.mps.lang.editor.structure.PredefinedSelector", "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector", "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector", "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider", "jetbrains.mps.lang.editor.structure.QueryFunction_Color", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer", "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent", "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent", "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter", "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter", "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList", "jetbrains.mps.lang.editor.structure.QueryFunction_SNode", "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText", "jetbrains.mps.lang.editor.structure.QueryFunction_String", "jetbrains.mps.lang.editor.structure.QueryFunction_Style", "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter", "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined", "jetbrains.mps.lang.editor.structure.QueryHintsSpecification", "jetbrains.mps.lang.editor.structure.RGBColor", "jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem", "jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", "jetbrains.mps.lang.editor.structure.ScriptKindClassItem", "jetbrains.mps.lang.editor.structure.SelectInEditorOperation", "jetbrains.mps.lang.editor.structure.SelectParameter", "jetbrains.mps.lang.editor.structure.SelectPositionParameter", "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", "jetbrains.mps.lang.editor.structure.SetBoldOperation", "jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet", "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration", "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression", "jetbrains.mps.lang.editor.structure.StyleClass", "jetbrains.mps.lang.editor.structure.StyleClassItem", "jetbrains.mps.lang.editor.structure.StyleClassReference", "jetbrains.mps.lang.editor.structure.StyleClassReferenceList", "jetbrains.mps.lang.editor.structure.StyleKey", "jetbrains.mps.lang.editor.structure.StyleKeyPack", "jetbrains.mps.lang.editor.structure.StyleReference", "jetbrains.mps.lang.editor.structure.StyleSheet", "jetbrains.mps.lang.editor.structure.StyleSheetClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference", "jetbrains.mps.lang.editor.structure.StyledTextType", "jetbrains.mps.lang.editor.structure.Synchronizeable", "jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem", "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue", "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue", "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler", "jetbrains.mps.lang.editor.structure.UnapplyStyle", "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"};
 }
