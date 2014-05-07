@@ -96,6 +96,18 @@ public class MigrateOldIScopeParameter_Action extends BaseAction {
           SNodeOperations.deleteNode(SLinkOperations.getTarget(it, "scope", true));
         }
       });
+
+      SAbstractConcept concept3 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts");
+      Set<SNode> instances3 = FindUsagesManager.getInstance().findInstances(new ProjectScope(((MPSProject) MapSequence.fromMap(_params).get("project"))), Collections.singleton(concept3), false, new EmptyProgressMonitor());
+      Sequence.fromIterable(SNodeOperations.ofConcept(instances3, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts")).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(SNodeOperations.getModel(it).isReadOnly());
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, "scope", true));
+        }
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MigrateOldIScopeParameter", t);

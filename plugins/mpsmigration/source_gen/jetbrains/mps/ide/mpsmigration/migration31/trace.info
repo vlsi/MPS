@@ -233,8 +233,13 @@
     <nodeInfo nodeId="6325651360498081447" fileName="MigrateOldIScopeParameter_Action.java" startLine="87" startPosition="41" endLine="88" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6325651360497847383" fileName="MigrateOldIScopeParameter_Action.java" startLine="91" startPosition="41" endLine="92" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6325651360497847394" fileName="MigrateOldIScopeParameter_Action.java" startLine="95" startPosition="37" endLine="96" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="100" startPosition="42" endLine="101" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="106" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6325651360498318162" fileName="MigrateOldIScopeParameter_Action.java" startLine="98" startPosition="9" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6325651360498314407" fileName="MigrateOldIScopeParameter_Action.java" startLine="99" startPosition="0" endLine="100" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6325651360498314390" fileName="MigrateOldIScopeParameter_Action.java" startLine="100" startPosition="143" endLine="101" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6325651360498314358" fileName="MigrateOldIScopeParameter_Action.java" startLine="103" startPosition="41" endLine="104" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6325651360498314382" fileName="MigrateOldIScopeParameter_Action.java" startLine="107" startPosition="37" endLine="108" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="112" startPosition="42" endLine="113" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="118" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="55" startPosition="95" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -245,18 +250,21 @@
     <nodeInfo nodeId="6325651360498081445" fileName="MigrateOldIScopeParameter_Action.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="6325651360497847381" fileName="MigrateOldIScopeParameter_Action.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="6325651360497847392" fileName="MigrateOldIScopeParameter_Action.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="99" startPosition="27" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="99" startPosition="27" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6325651360498314356" fileName="MigrateOldIScopeParameter_Action.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6325651360498314380" fileName="MigrateOldIScopeParameter_Action.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="111" startPosition="27" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="111" startPosition="27" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrateOldIScopeParameter_Action#()V" />
     <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="44" startPosition="89" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6325651360498314347" fileName="MigrateOldIScopeParameter_Action.java" startLine="101" startPosition="222" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="44" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="55" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="6325651360497749220" fileName="MigrateOldIScopeParameter_Action.java" startLine="69" startPosition="222" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6325651360497847373" fileName="MigrateOldIScopeParameter_Action.java" startLine="85" startPosition="222" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="66" startPosition="96" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="66" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="66" startPosition="96" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="66" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="40" startPosition="32" endLine="41" endPosition="16" />
     <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="43" />
     <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="48" startPosition="42" endLine="49" endPosition="100" />
@@ -268,7 +276,9 @@
     <scopeInfo nodeId="6325651360498081446" fileName="MigrateOldIScopeParameter_Action.java" startLine="87" startPosition="41" endLine="88" endPosition="62" />
     <scopeInfo nodeId="6325651360497847382" fileName="MigrateOldIScopeParameter_Action.java" startLine="91" startPosition="41" endLine="92" endPosition="72" />
     <scopeInfo nodeId="6325651360497847393" fileName="MigrateOldIScopeParameter_Action.java" startLine="95" startPosition="37" endLine="96" endPosition="83" />
-    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="100" startPosition="42" endLine="101" endPosition="99" />
+    <scopeInfo nodeId="6325651360498314357" fileName="MigrateOldIScopeParameter_Action.java" startLine="103" startPosition="41" endLine="104" endPosition="62" />
+    <scopeInfo nodeId="6325651360498314381" fileName="MigrateOldIScopeParameter_Action.java" startLine="107" startPosition="37" endLine="108" endPosition="83" />
+    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="112" startPosition="42" endLine="113" endPosition="99" />
     <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="33" startPosition="45" endLine="36" endPosition="41" />
     <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
     <scopeInfo nodeId="6325651360498045198" fileName="MigrateOldIScopeParameter_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
@@ -289,10 +299,16 @@
     <scopeInfo nodeId="6325651360497847392" fileName="MigrateOldIScopeParameter_Action.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="6325651360497847392" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="99" startPosition="0" endLine="102" endPosition="7">
+    <scopeInfo nodeId="6325651360498314356" fileName="MigrateOldIScopeParameter_Action.java" startLine="103" startPosition="0" endLine="106" endPosition="0">
+      <varInfo nodeId="6325651360498314356" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="6325651360498314380" fileName="MigrateOldIScopeParameter_Action.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
+      <varInfo nodeId="6325651360498314380" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="111" startPosition="0" endLine="114" endPosition="7">
       <varInfo nodeId="6325651360497404291" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="99" startPosition="27" endLine="102" endPosition="7" />
+    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="111" startPosition="27" endLine="114" endPosition="7" />
     <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
       <varInfo nodeId="6325651360497404291" varName="t" />
@@ -310,14 +326,16 @@
       <varInfo nodeId="6325651360497404291" varName="_params" />
       <varInfo nodeId="6325651360497404291" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="67" startPosition="9" endLine="98" endPosition="9">
+    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="67" startPosition="9" endLine="110" endPosition="9">
       <varInfo nodeId="6325651360497809260" varName="concept1" />
       <varInfo nodeId="6325651360497847420" varName="concept2" />
+      <varInfo nodeId="6325651360498314408" varName="concept3" />
       <varInfo nodeId="6325651360497812642" varName="instances1" />
       <varInfo nodeId="6325651360497847403" varName="instances2" />
+      <varInfo nodeId="6325651360498314391" varName="instances3" />
     </scopeInfo>
-    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="66" startPosition="96" endLine="103" endPosition="5" />
-    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="66" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="66" startPosition="96" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="66" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="6325651360497404291" varName="_params" />
       <varInfo nodeId="6325651360497404291" varName="event" />
     </scopeInfo>
@@ -327,7 +345,9 @@
     <unitInfo nodeId="6325651360498081445" fileName="MigrateOldIScopeParameter_Action.java" startLine="86" startPosition="154" endLine="90" endPosition="7" unitName="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action$4" />
     <unitInfo nodeId="6325651360497847381" fileName="MigrateOldIScopeParameter_Action.java" startLine="90" startPosition="19" endLine="94" endPosition="7" unitName="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action$5" />
     <unitInfo nodeId="6325651360497847392" fileName="MigrateOldIScopeParameter_Action.java" startLine="94" startPosition="22" endLine="98" endPosition="7" unitName="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action$6" />
-    <unitInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="30" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action" />
+    <unitInfo nodeId="6325651360498314356" fileName="MigrateOldIScopeParameter_Action.java" startLine="102" startPosition="142" endLine="106" endPosition="7" unitName="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action$7" />
+    <unitInfo nodeId="6325651360498314380" fileName="MigrateOldIScopeParameter_Action.java" startLine="106" startPosition="22" endLine="110" endPosition="7" unitName="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action$8" />
+    <unitInfo nodeId="6325651360497404291" fileName="MigrateOldIScopeParameter_Action.java" startLine="30" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action" />
   </root>
   <root nodeRef="r:6c553c79-19b2-42b4-84f8-d7c675cd6e2f(jetbrains.mps.ide.mpsmigration.migration31)/6325651360497982184">
     <nodeInfo nodeId="6325651360497982184" fileName="MigrateOldIScopeInConstraints_Action.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
