@@ -156,7 +156,7 @@
               <link role="link" roleId="tp25.1138056546658" targetNodeId="ktbj.6223439730610790726" />
             </node>
           </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="1278569236051875914" nodeInfo="nn" />
+          <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetLastOperation" typeId="tp2q.1165595910856" id="835247974065298588" nodeInfo="nn" />
         </node>
       </node>
       <node role="output" roleId="gbdf.1220375669566529925" type="gbdf.ConnectionEndBLQuery" typeId="gbdf.1220375669566347117" id="6223439730610762185" nodeInfo="ng">
@@ -172,7 +172,7 @@
               <link role="link" roleId="tp25.1138056546658" targetNodeId="ktbj.6223439730610790722" />
             </node>
           </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="1278569236051883277" nodeInfo="nn" />
+          <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetLastOperation" typeId="tp2q.1165595910856" id="835247974065288324" nodeInfo="nn" />
         </node>
       </node>
     </node>
