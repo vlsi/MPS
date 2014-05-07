@@ -3708,7 +3708,7 @@
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3982520150122341378" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="AttributeQueryStyleClassItem" />
+    <property name="name" nameId="tpck.1169194664001" value="AttributeStyleClassItem" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3982520150122341379" nodeInfo="ig">

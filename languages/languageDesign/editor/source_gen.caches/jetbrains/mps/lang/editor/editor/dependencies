@@ -102,7 +102,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editor.AttributeQueryStyleClassItem_Editor" file="AttributeQueryStyleClassItem_Editor.java">
+  <dependency className="jetbrains.mps.lang.editor.editor.AttributeStyleClassItem_Editor" file="AttributeStyleClassItem_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.FocusPolicy" />
@@ -1654,7 +1654,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.AbstractStyledTextOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ApplyStyleClassCondition_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ApplyStyleClass_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.editor.AttributeQueryStyleClassItem_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.AttributeStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.BooleanStyleSheetItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.CaretPositionParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor" />
