@@ -29,22 +29,18 @@ import org.junit.runner.notification.RunListener;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-public class MpsTestRunListener extends RunListener {
-  private final static Logger LOG = LogManager.getLogger(MpsTestRunListener.class);
+public class TestLightRunListener extends RunListener {
+  private final static Logger LOG = LogManager.getLogger(TestLightRunListener.class);
   private final TestEventsDispatcher myDispatcher;
   private final int myRequestCount;
   private final TestEventFactory myFactory;
 
   private int currentRequest;
 
-  public MpsTestRunListener(TestEventsDispatcher dispatcher, int requestCount) {
+  public TestLightRunListener(TestEventsDispatcher dispatcher, int requestCount) {
     myDispatcher = dispatcher;
     myRequestCount = requestCount;
     myFactory = new TestEventFactory();
-  }
-
-  public void attach(JUnitCore core) {
-    core.addListener(this);
   }
 
   private String getStackTrace(Failure failure) {

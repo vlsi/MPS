@@ -7,12 +7,13 @@ import java.io.PrintStream;
 import java.io.IOException;
 
 public class CommandOutputStream extends FilterOutputStream {
+  private final PrintStream myPrintStream;
   private int myLastChar;
-  private PrintStream myPrintOut;
+
 
   public CommandOutputStream(PrintStream out) {
     super(out);
-    this.myPrintOut = out;
+    this.myPrintStream = out;
   }
 
   @Override
@@ -40,9 +41,9 @@ public class CommandOutputStream extends FilterOutputStream {
 
   public void writeCommand(String command) {
     if (this.myLastChar != '\n' && this.myLastChar != '\r') {
-      this.myPrintOut.println();
+      this.myPrintStream.println();
     }
-    this.myPrintOut.println(command);
+    this.myPrintStream.println(command);
     this.myLastChar = '\n';
   }
 
@@ -51,5 +52,11 @@ public class CommandOutputStream extends FilterOutputStream {
       flush();
     } catch (IOException e) {
     }
+  }
+
+
+
+  public PrintStream getOldStream() {
+    return myPrintStream;
   }
 }

@@ -29,7 +29,7 @@ public class IterableUtil {
 
   public static <T> Iterable<T> merge(@NotNull Iterable<T>... its) {
     if (its.length == 1) {
-      return its[1];
+      return its[0];
     } else if (its.length == 2) {
       return new MergeIterator(its[0].iterator(), its[1].iterator());
     }

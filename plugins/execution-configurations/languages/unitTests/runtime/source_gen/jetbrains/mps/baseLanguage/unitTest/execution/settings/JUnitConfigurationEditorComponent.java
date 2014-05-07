@@ -32,10 +32,10 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   private final ModelChooser myModelChooser;
   private final TestListPanel myClassesList;
   private final TestListPanel myMethodsList;
-  private final JComponent[] myPanels = new JComponent[JUnitRunTypes2.values().length];
-  private final JBRadioButton[] myButtons = new JBRadioButton[JUnitRunTypes2.values().length];
+  private final JComponent[] myPanels = new JComponent[JUnitRunTypes.values().length];
+  private final JBRadioButton[] myButtons = new JBRadioButton[JUnitRunTypes.values().length];
 
-  private JUnitRunTypes2 myRunKind = JUnitRunTypes2.PROJECT;
+  private JUnitRunTypes myRunKind = JUnitRunTypes.PROJECT;
   private SModule myModule;
   private SModel myModel;
 
@@ -50,11 +50,11 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     final JBRadioButton modelKind = new JBRadioButton("All in model");
     final JBRadioButton classKind = new JBRadioButton("Class");
     final JBRadioButton methodKind = new JBRadioButton("Method");
-    myButtons[JUnitRunTypes2.PROJECT.ordinal()] = projectKind;
-    myButtons[JUnitRunTypes2.MODULE.ordinal()] = moduleKind;
-    myButtons[JUnitRunTypes2.MODEL.ordinal()] = modelKind;
-    myButtons[JUnitRunTypes2.NODE.ordinal()] = classKind;
-    myButtons[JUnitRunTypes2.METHOD.ordinal()] = methodKind;
+    myButtons[JUnitRunTypes.PROJECT.ordinal()] = projectKind;
+    myButtons[JUnitRunTypes.MODULE.ordinal()] = moduleKind;
+    myButtons[JUnitRunTypes.MODEL.ordinal()] = modelKind;
+    myButtons[JUnitRunTypes.NODE.ordinal()] = classKind;
+    myButtons[JUnitRunTypes.METHOD.ordinal()] = methodKind;
     final ButtonGroup kindaRadioGroup = new ButtonGroup();
     Sequence.fromIterable(Sequence.fromArray(myButtons)).visitAll(new IVisitor<JBRadioButton>() {
       public void visit(JBRadioButton it) {
@@ -65,7 +65,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     projectKind.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         if (projectKind.isSelected()) {
-          myRunKind = JUnitRunTypes2.PROJECT;
+          myRunKind = JUnitRunTypes.PROJECT;
         }
         updatePanels();
       }
@@ -73,7 +73,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     moduleKind.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         if (moduleKind.isSelected()) {
-          myRunKind = JUnitRunTypes2.MODULE;
+          myRunKind = JUnitRunTypes.MODULE;
         }
         updatePanels();
       }
@@ -81,7 +81,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     modelKind.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         if (modelKind.isSelected()) {
-          myRunKind = JUnitRunTypes2.MODEL;
+          myRunKind = JUnitRunTypes.MODEL;
         }
         updatePanels();
       }
@@ -89,7 +89,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     classKind.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         if (classKind.isSelected()) {
-          myRunKind = JUnitRunTypes2.NODE;
+          myRunKind = JUnitRunTypes.NODE;
         }
         updatePanels();
       }
@@ -97,7 +97,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     methodKind.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         if (methodKind.isSelected()) {
-          myRunKind = JUnitRunTypes2.METHOD;
+          myRunKind = JUnitRunTypes.METHOD;
         }
         updatePanels();
       }
@@ -131,11 +131,11 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     myClassesList = new TestListPanel(project, false);
     myMethodsList = new TestListPanel(project, true);
-    myPanels[JUnitRunTypes2.PROJECT.ordinal()] = projectPanel;
-    myPanels[JUnitRunTypes2.MODULE.ordinal()] = modulePanel;
-    myPanels[JUnitRunTypes2.MODEL.ordinal()] = modelPanel;
-    myPanels[JUnitRunTypes2.NODE.ordinal()] = myClassesList;
-    myPanels[JUnitRunTypes2.METHOD.ordinal()] = myMethodsList;
+    myPanels[JUnitRunTypes.PROJECT.ordinal()] = projectPanel;
+    myPanels[JUnitRunTypes.MODULE.ordinal()] = modulePanel;
+    myPanels[JUnitRunTypes.MODEL.ordinal()] = modelPanel;
+    myPanels[JUnitRunTypes.NODE.ordinal()] = myClassesList;
+    myPanels[JUnitRunTypes.METHOD.ordinal()] = myMethodsList;
 
     add(kindPanel, LayoutUtil.createFieldConstraints(0));
     add(projectPanel, LayoutUtil.createPanelConstraints(1));
@@ -218,7 +218,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     if (configuration.getRunType() != null) {
       myRunKind = configuration.getRunType();
     } else {
-      myRunKind = JUnitRunTypes2.PROJECT;
+      myRunKind = JUnitRunTypes.PROJECT;
     }
     myButtons[myRunKind.ordinal()].setSelected(true);
 

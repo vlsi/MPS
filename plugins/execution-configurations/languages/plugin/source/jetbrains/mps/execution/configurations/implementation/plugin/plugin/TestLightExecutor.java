@@ -16,56 +16,48 @@
 package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import com.intellij.util.WaitFor;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
-
-import java.util.List;
+import org.junit.runner.notification.RunListener;
 
 /**
  * @author Alex Pyshkin on 4/16/14.
  */
-public class TestLightExecutor {
+public class TestLightExecutor extends AbstractTestExecutor {
   private static final Logger LOG = LogManager.getLogger(TestLightExecutor.class);
+  private static final String LIGHTWEIGHT_KEY = "mps.test.lightweight";
 
   private final TestEventsDispatcher myDispatcher;
-  private final TestClassHolder myTestClassHolder = new TestClassHolder();
+  private final Iterable<? extends ITestNodeWrapper> myNodes;
+  private final TestClassStorage myTestClassStorage = new TestClassStorage();
+  private boolean initialized = false;
   private boolean myProcessIsReady = false;
 
-  public TestLightExecutor(TestEventsDispatcher dispatcher) {
+  public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes) {
     myDispatcher = dispatcher;
-    System.setProperty("mps.test.lightweight", "true");
+    myNodes = nodes;
   }
 
-  private List<Request> getRequests(Iterable<? extends ITestNodeWrapper> testNodes) throws Exception {
-    return new TestExtractor(myTestClassHolder).extractTests(testNodes);
+  @Override
+  public void init() {
+    // TODO: make it thread-consistent!
+    System.setProperty(LIGHTWEIGHT_KEY, "true");
+    initialized = true;
   }
 
-  public void execute(Iterable<? extends ITestNodeWrapper> testNodes) {
-    try {
-      JUnitCore core = new JUnitCore();
-
-      List<Request> requests = getRequests(testNodes);
-
-      MpsTestRunListener listener = new MpsTestRunListener(myDispatcher, requests.size());
-      listener.attach(core);
-
-      startWhenReady(core, requests);
-    } catch (Throwable t) {
-      LOG.error("Exception in the test framework", t);
-    }
-  }
-
-  private void startWhenReady(JUnitCore core, List<Request> requests) throws Throwable {
-    // need process to start notifying at first
+  @Override
+  protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
+    assert initialized;
     waitWhileNotReady();
-
-    for (Request request : requests) {
-      core.run(request);
-    }
+    assert System.getProperty(LIGHTWEIGHT_KEY).equals("true");
+    super.doExecute(core, requests);
   }
 
   private void waitWhileNotReady() {
@@ -79,5 +71,25 @@ public class TestLightExecutor {
 
   public void setStarted(boolean processIsReady) {
    myProcessIsReady = processIsReady;
+  }
+
+  @NotNull
+  @Override
+  protected TestsContributor createTestsContributor() {
+    return new NodeWrappersTestsContributor(myNodes, myTestClassStorage);
+  }
+
+  @NotNull
+  @Override
+  protected RunListener createListener(Iterable<Request> requests) {
+    return new TestLightRunListener(myDispatcher, ListSequence.<Request>fromIterable(requests).size());
+  }
+
+  @Override
+  public void dispose() {
+    assert initialized;
+    System.setProperty("mps.test.lightweight", "false");
+    initialized = false;
+    MPSCore.getInstance().setTestMode(false);
   }
 }

@@ -7,19 +7,45 @@ import javax.swing.SwingUtilities;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class TransformationTestExecutor extends TestExecutor {
-  public TransformationTestExecutor() {
+public class TransformationTestExecutor extends BTestExecutor {
+  public TransformationTestExecutor(String[] args) {
+    super(args);
   }
 
+
+
+  @Override
+  public void init() {
+    CachesUtil.setupCaches();
+    super.init();
+  }
+
+
+
+  public void dispose() {
+    super.dispose();
+    TransformationTestExecutor.exitApp();
+    CachesUtil.cleanupCaches();
+  }
+
+
+
   public static void main(String[] args) {
+    TransformationTestExecutor executor = new TransformationTestExecutor(args);
     try {
-      CachesUtil.setupCaches();
-      new TransformationTestExecutor().executeTestsFromArguments(args);
+      executor.init();
+      executor.execute();
+      executor.dispose();
     } catch (Throwable t) {
       t.printStackTrace(System.err);
       CachesUtil.cleanupCaches();
       System.exit(1);
     }
+  }
+
+
+
+  private static void exitApp() {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
@@ -30,6 +56,5 @@ public class TransformationTestExecutor extends TestExecutor {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    System.exit(0);
   }
 }

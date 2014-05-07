@@ -8,11 +8,11 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import java.util.concurrent.Future;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -42,8 +42,9 @@ public class JUnitLightExecutor {
     TestRunState runState = new TestRunState(nodes);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
-    TestLightExecutor lightExecutor = new TestLightExecutor(eventsDispatcher);
-    final Future<?> future = doExecute(lightExecutor, nodes);
+    TestLightExecutor lightExecutor = new TestLightExecutor(eventsDispatcher, nodes);
+    lightExecutor.init();
+    final Future<?> future = doExecute(lightExecutor);
     final FakeProcessHandler process = new FakeProcessHandler(future, lightExecutor);
 
     JUnitProcessPack packProcess = new JUnitProcessPacker(myProject, runState, eventsDispatcher).packProcess(process);
@@ -52,12 +53,12 @@ public class JUnitLightExecutor {
 
 
 
-  private Future<?> doExecute(final TestLightExecutor lightExecutor, final Iterable<? extends ITestNodeWrapper> nodes) {
+  private Future<?> doExecute(final TestExecutor executor) {
     return ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
       public void run() {
         System.out.println("Taking the execution control...");
-        lightExecutor.execute(nodes);
+        executor.execute();
         System.out.println("I am so done");
       }
     });
@@ -68,7 +69,8 @@ public class JUnitLightExecutor {
   private static class DefaultFilter implements Filter<ITestNodeWrapper> {
     @Override
     public boolean accept(Iterable<? extends ITestNodeWrapper> ts) {
-      return Sequence.fromIterable(filter(ts)).count() == Sequence.fromIterable(ts).count();
+      return true;
+      // <node> 
     }
 
 

@@ -186,15 +186,21 @@ public class TransformationTestRunner implements TestRunner {
     } else {
       exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
     }
+    dispose(projectTest);
+    if (exception[0] != null) {
+      throw exception[0];
+    }
+  }
+
+
+
+  private void dispose(final TransformationTest projectTest) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         projectTest.dispose();
       }
     });
-    MPSCore.getInstance().setTestMode(false);
-    if (exception[0] != null) {
-      throw exception[0];
-    }
+//    MPSCore.getInstance().setTestMode(false);
   }
 
 

@@ -22,9 +22,11 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Map;
 
 /**
+ * This class was used for class caching in the Light Test Execution
+ *
  * @author Alex Pyshkin on 4/20/14.
  */
-public class TestClassHolder {
+public class TestClassStorage {
 
   private final Map<String, Class> myLoadedClasses = new HashMap<String, Class>();
 

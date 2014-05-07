@@ -30,11 +30,11 @@ import java.util.List;
 /**
  * @author Alex Pyshkin on 4/20/14.
  */
-public class TestExtractor {
-  private final TestClassHolder myTestClassHolder;
+public class TestLightExtractor {
+  private final TestClassStorage myTestClassStorage;
 
-  public TestExtractor(TestClassHolder testClassHolder) {
-    myTestClassHolder = testClassHolder;
+  public TestLightExtractor(TestClassStorage testClassStorage) {
+    myTestClassStorage = testClassStorage;
   }
 
   public List<Request> extractTests(final Iterable<? extends ITestNodeWrapper> testNodes) throws Exception {
@@ -47,12 +47,12 @@ public class TestExtractor {
             String fqName = testNode.getFqName();
             final SModule module = getModuleByNode(testNode.getNode());
             if (testNode.isTestCase()) {
-              final Class<?> aClass = myTestClassHolder.loadTestClass(fqName, module);
+              final Class<?> aClass = myTestClassStorage.loadTestClass(fqName, module);
               requestList.add(Request.aClass(aClass));
             } else {
               int index = fqName.lastIndexOf('.');
               String testFqName = fqName.substring(0, index);
-              final Class aClass = myTestClassHolder.loadTestClass(testFqName, module);
+              final Class aClass = myTestClassStorage.loadTestClass(testFqName, module);
               String method = fqName.substring(index + 1);
               requestList.add(Request.method(aClass, method));
             }
