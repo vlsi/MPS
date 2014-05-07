@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
@@ -66,6 +67,10 @@ public class DeleteNode_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("nodes", event.getData(MPSCommonDataKeys.NODES));
     if (MapSequence.fromMap(_params).get("nodes") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("packs", event.getData(MPSDataKeys.VIRTUAL_PACKAGES));
+    if (MapSequence.fromMap(_params).get("packs") == null) {
       return false;
     }
     return true;

@@ -26,6 +26,7 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -116,7 +117,7 @@ public class PasteNode_Action extends BaseAction {
             if (!(paster.canPasteAsRoots())) {
               return;
             }
-            paster.pasteAsRoots(((SModel) MapSequence.fromMap(_params).get("contextModel")), ((String) MapSequence.fromMap(_params).get("pack")));
+            paster.pasteAsRoots(((SModel) MapSequence.fromMap(_params).get("contextModel")), ((Pair<SModel, String>) MapSequence.fromMap(_params).get("pack")).o2);
           } else {
             NodePaster paster = new NodePaster(pasteNodes);
             if (!(paster.canPaste(((SNode) MapSequence.fromMap(_params).get("node")), PasteEnv.PROJECT_TREE))) {
