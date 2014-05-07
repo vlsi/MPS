@@ -1472,13 +1472,13 @@
     <unitInfo nodeId="1214405764144" fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ForegroundNullColorStyleClassItem_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1214405914995">
-    <nodeInfo nodeId="1214405922674" fileName="EditableStyleClassItem_Behavior.java" startLine="14" startPosition="95" endLine="15" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214405922674" fileName="EditableStyleClassItem_Behavior.java" startLine="14" startPosition="95" endLine="15" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262585326111607775" fileName="EditableStyleClassItem_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1214405914995" fileName="EditableStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1214405914995" fileName="EditableStyleClassItem_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1214405914995" fileName="EditableStyleClassItem_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStyleAttribute_3639065570239132541#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/style/StyleAttribute;" />
     <scopeInfo nodeId="1214405914997" fileName="EditableStyleClassItem_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="1214405916297" fileName="EditableStyleClassItem_Behavior.java" startLine="14" startPosition="95" endLine="15" endPosition="114" />
+    <scopeInfo nodeId="1214405916297" fileName="EditableStyleClassItem_Behavior.java" startLine="14" startPosition="95" endLine="15" endPosition="228" />
     <scopeInfo nodeId="3639065570239421284" fileName="EditableStyleClassItem_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="36" />
     <scopeInfo nodeId="1214405914995" fileName="EditableStyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="1214405914995" varName="thisNode" />

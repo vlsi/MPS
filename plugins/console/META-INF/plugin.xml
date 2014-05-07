@@ -22,5 +22,8 @@
     <component>
       <implementation-class>jetbrains.mps.console.tool.ConsoleTool</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.console.actions.platform.Actions_PluginInitializer</implementation-class>
+    </component>
   </project-components>
 </idea-plugin>

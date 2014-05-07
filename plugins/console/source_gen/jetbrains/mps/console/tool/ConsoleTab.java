@@ -14,18 +14,14 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.project.MPSExtentions;
-import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ConsoleTab extends BaseConsoleTab {
 
@@ -105,7 +101,7 @@ public class ConsoleTab extends BaseConsoleTab {
 
   private class ExecuteAction extends BaseAction {
     public ExecuteAction() {
-      super("Execute", "Execute last command", IconContainer.ICON_c0a0t);
+      super("Execute", "Execute last command", AllIcons.Actions.Execute);
     }
 
     @Override
@@ -140,7 +136,7 @@ public class ConsoleTab extends BaseConsoleTab {
 
   private class ClearAction extends BaseAction {
     public ClearAction() {
-      super("Clear", "Clear console window", IconContainer.ICON_c0a0v);
+      super("Clear", "Clear console window", AllIcons.Actions.Clean);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -154,7 +150,7 @@ public class ConsoleTab extends BaseConsoleTab {
 
   private class PrevCmdAction extends BaseAction {
     public PrevCmdAction() {
-      super("Prev", "Previous command", IconContainer.ICON_c0a0x);
+      super("Prev", "Previous command", AllIcons.Actions.PreviousOccurence);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -191,7 +187,7 @@ public class ConsoleTab extends BaseConsoleTab {
 
   private class NextCmdAction extends BaseAction {
     public NextCmdAction() {
-      super("Next", "Next command", IconContainer.ICON_c0a0z);
+      super("Next", "Next command", AllIcons.Actions.NextOccurence);
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
@@ -222,16 +218,7 @@ public class ConsoleTab extends BaseConsoleTab {
   protected void loadHistory(final String state) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SModel loadedModel = null;
-        if (state != null) {
-          try {
-            loadedModel = PersistenceUtil.loadModel(state, MPSExtentions.MODEL);
-          } catch (Exception e) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Error on loading console history", e);
-            }
-          }
-        }
+        SModel loadedModel = loadHistoryModel(state);
         myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.base.structure.ConsoleRoot", null);
         if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.ConsoleRoot")).isEmpty()) {
           SLinkOperations.setTarget(myRoot, "history", SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.History", null), true);
@@ -252,5 +239,4 @@ public class ConsoleTab extends BaseConsoleTab {
   }
 
 
-  protected static Logger LOG = LogManager.getLogger(ConsoleTab.class);
 }
