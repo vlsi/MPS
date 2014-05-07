@@ -213,8 +213,8 @@
     <nodeInfo nodeId="5852028673579061386" fileName="ComponentSet_table_Editor.java" startLine="39" startPosition="39" endLine="40" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5852028673579084156" fileName="ComponentSet_table_Editor.java" startLine="43" startPosition="36" endLine="44" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1046366395970913069" fileName="ComponentSet_table_Editor.java" startLine="51" startPosition="42" endLine="52" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8850410458964690176" fileName="ComponentSet_table_Editor.java" startLine="54" startPosition="27" endLine="55" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1046366395970959626" fileName="ComponentSet_table_Editor.java" startLine="57" startPosition="30" endLine="58" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8850410458964690176" fileName="ComponentSet_table_Editor.java" startLine="54" startPosition="27" endLine="55" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1046366395970959626" fileName="ComponentSet_table_Editor.java" startLine="57" startPosition="30" endLine="58" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1046366395970973418" fileName="ComponentSet_table_Editor.java" startLine="61" startPosition="47" endLine="62" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5852028673579290512" fileName="ComponentSet_table_Editor.java" startLine="72" startPosition="87" endLine="73" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5852028673579298911" fileName="ComponentSet_table_Editor.java" startLine="76" startPosition="107" endLine="77" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -265,8 +265,8 @@
     <scopeInfo nodeId="5852028673579056772" fileName="ComponentSet_table_Editor.java" startLine="39" startPosition="39" endLine="40" endPosition="82" />
     <scopeInfo nodeId="5852028673579056778" fileName="ComponentSet_table_Editor.java" startLine="43" startPosition="36" endLine="44" endPosition="82" />
     <scopeInfo nodeId="8850410458964682242" fileName="ComponentSet_table_Editor.java" startLine="51" startPosition="42" endLine="52" endPosition="26" />
-    <scopeInfo nodeId="1046366395970930025" fileName="ComponentSet_table_Editor.java" startLine="54" startPosition="27" endLine="55" endPosition="158" />
-    <scopeInfo nodeId="1046366395970959625" fileName="ComponentSet_table_Editor.java" startLine="57" startPosition="30" endLine="58" endPosition="156" />
+    <scopeInfo nodeId="1046366395970930025" fileName="ComponentSet_table_Editor.java" startLine="54" startPosition="27" endLine="55" endPosition="190" />
+    <scopeInfo nodeId="1046366395970959625" fileName="ComponentSet_table_Editor.java" startLine="57" startPosition="30" endLine="58" endPosition="188" />
     <scopeInfo nodeId="1046366395970973417" fileName="ComponentSet_table_Editor.java" startLine="61" startPosition="47" endLine="62" endPosition="167" />
     <scopeInfo nodeId="5852028673579266734" fileName="ComponentSet_table_Editor.java" startLine="72" startPosition="87" endLine="73" endPosition="57" />
     <scopeInfo nodeId="5852028673579266747" fileName="ComponentSet_table_Editor.java" startLine="76" startPosition="107" endLine="77" endPosition="57" />
@@ -658,8 +658,8 @@
     <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="167" startPosition="37" endLine="168" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="169" startPosition="7" endLine="170" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="170" startPosition="108" endLine="171" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="177" startPosition="31" endLine="178" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="178" startPosition="245" endLine="179" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="177" startPosition="31" endLine="178" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="178" startPosition="246" endLine="179" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="182" startPosition="51" endLine="183" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="185" startPosition="33" endLine="186" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="188" startPosition="9" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -719,7 +719,7 @@
     <scopeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="185" startPosition="33" endLine="186" endPosition="22" />
     <scopeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="57" startPosition="81" endLine="59" endPosition="20" />
     <scopeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="84" startPosition="95" endLine="86" endPosition="47" />
-    <scopeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="177" startPosition="31" endLine="179" endPosition="169" />
+    <scopeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="177" startPosition="31" endLine="179" endPosition="170" />
     <scopeInfo nodeId="6223439730610762168" fileName="Dependency_diagram_Editor.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="6223439730610762168" varName="editorContext" />
       <varInfo nodeId="6223439730610762168" varName="node" />

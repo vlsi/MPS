@@ -52,10 +52,10 @@ public class ComponentSet_table_Editor extends DefaultNodeEditor {
               return null;
             }
             if (row == 0) {
-              return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(column - 1), "in", true);
+              return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(column - 1), "in", true)).first();
             }
             if (column == 0) {
-              return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(row - 1), "out", true);
+              return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(row - 1), "out", true)).first();
             }
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(row - 1), "dep", true)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {

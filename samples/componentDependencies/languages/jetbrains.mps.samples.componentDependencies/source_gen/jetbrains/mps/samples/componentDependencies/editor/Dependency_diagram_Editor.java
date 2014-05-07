@@ -175,8 +175,8 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
 
 
     public void synchronize() {
-      myInputPort.set(MultiTuple.<SNode>from(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(getSNode()), "jetbrains.mps.samples.componentDependencies.structure.Component"), "out", true)).last()));
-      myOutputPort.set(MultiTuple.<SNode>from(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "to", false), "in", true)).last()));
+      myInputPort.set(MultiTuple.<SNode>from(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(getSNode()), "jetbrains.mps.samples.componentDependencies.structure.Component"), "out", true)).first()));
+      myOutputPort.set(MultiTuple.<SNode>from(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "to", false), "in", true)).first()));
     }
 
     private PolyLineConnection createConnection() {
