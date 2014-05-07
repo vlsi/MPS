@@ -1193,6 +1193,14 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
   }
 
+  public static Object referenceMacro_GetReferent_8714766435266938791(final ReferenceMacroContext _context) {
+    if (SPropertyOperations.getBoolean_def(_context.getNode(), "inherited", "true")) {
+      return SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)", "~InheritableStyleAttribute.<init>(java.lang.String)");
+    } else {
+      return SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)", "~SimpleStyleAttribute.<init>(java.lang.String)");
+    }
+  }
+
   public static boolean ifMacro_Condition_7517620136073670748(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "contextHints", true)).isNotEmpty();
   }
@@ -1582,7 +1590,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4933681201882763508(final IfMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration")).isNotEmpty();
+    return Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.StyleSheet")).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "styleClass", true);
+      }
+    }), "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration")).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_5950344441595673031(final IfMacroContext _context) {
@@ -2270,7 +2282,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable<SNode> sourceNodesQuery_1384401029875115887(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "styleClass", true);
+    return SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "styleClass", true), "jetbrains.mps.lang.editor.structure.IStyleSheetMember");
   }
 
   public static Iterable<SNode> sourceNodesQuery_6083395046985415685(final SourceSubstituteMacroNodesContext _context) {
@@ -2278,7 +2290,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable<SNode> sourceNodesQuery_2548761562343263256(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "styleClass", true)).translate(new ITranslator2<SNode, SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "styleClass", true), "jetbrains.mps.lang.editor.structure.IStyleSheetMember")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "styleItem", true);
       }
@@ -2406,7 +2418,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable<SNode> sourceNodesQuery_4933681201882474801(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration")).sort(new ISelector<SNode, String>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.StyleSheet")).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "styleClass", true);
+      }
+    }), "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration")).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
