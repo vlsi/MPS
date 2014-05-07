@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.testHybridEditor.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.testHybridEditor.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:814b5a42-e9ec-45d8-81f9-8c398455e907(jetbrains.mps.testHybridEditor.editor)/4394877045817292529">
     <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="40" startPosition="79" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

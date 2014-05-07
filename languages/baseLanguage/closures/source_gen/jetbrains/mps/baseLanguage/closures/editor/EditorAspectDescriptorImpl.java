@@ -10,10 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AbstractFunctionType_Editor());
       case 1:
@@ -66,5 +71,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference", "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference", "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"};
 }

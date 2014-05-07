@@ -24,7 +24,7 @@ import jetbrains.mps.util.IndexableObjectSet;
  */
 public class StyleAttributeSet extends IndexableObjectSet<StyleAttribute> {
   public StyleAttributeSet(boolean full) {
-    super(StyleAttributes.getAttributesCount(), full);
+    super(StyleAttributes.getInstance().getAttributesCount(), full);
   }
 
   public StyleAttributeSet() {
@@ -38,6 +38,6 @@ public class StyleAttributeSet extends IndexableObjectSet<StyleAttribute> {
 
   @Override
   protected StyleAttribute getObject(int index) {
-    return StyleAttributes.getAttribute(index);
+    return StyleAttributes.getInstance().getAttribute(index);
   }
 }

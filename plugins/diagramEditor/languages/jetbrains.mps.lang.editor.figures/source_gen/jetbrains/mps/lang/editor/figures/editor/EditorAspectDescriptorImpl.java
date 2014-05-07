@@ -10,10 +10,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new ExternalViewFigure_Editor());
       case 1:
@@ -24,11 +27,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new FigureParameterAttribute_Editor());
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditor>emptyList();
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.emptyList();
+    return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
@@ -38,5 +41,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter", "jetbrains.mps.lang.editor.figures.structure.FigureAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter", "jetbrains.mps.lang.editor.figures.structure.FigureAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"};
 }

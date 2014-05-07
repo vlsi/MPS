@@ -11,12 +11,14 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("diagram", "Diagram View", true, "jetbrains.mps.samples.componentDependencies.editor.views.diagram"), new ConceptEditorHintImpl("table", "Table View", true, "jetbrains.mps.samples.componentDependencies.editor.views.table"));
 
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Arrays.asList(new ConceptEditor[]{new Component_Editor(), new Component_diagram_Editor(), new Component_table_Editor()});
       case 1:
@@ -29,11 +31,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Arrays.asList(new ConceptEditor[]{new OutPort_Editor(), new OutPort_table_Editor()});
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditor>emptyList();
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.emptyList();
+    return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
@@ -43,5 +45,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.componentDependencies.structure.Component", "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "jetbrains.mps.samples.componentDependencies.structure.Dependency", "jetbrains.mps.samples.componentDependencies.structure.InPort", "jetbrains.mps.samples.componentDependencies.structure.OutPort"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.componentDependencies.structure.Component", "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "jetbrains.mps.samples.componentDependencies.structure.Dependency", "jetbrains.mps.samples.componentDependencies.structure.InPort", "jetbrains.mps.samples.componentDependencies.structure.OutPort"};
 }

@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="DefaultDiagramElementActionMap_0.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.DefaultDiagramElementActionMap_0$DefaultDiagramElementActionMap_0_DELETE" />
   <unitInfo fileName="DefaultDiagramElementActionMap_0.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.DefaultDiagramElementActionMap_0" />
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.samples.mindmaps.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)/5058522826399262891">
     <nodeInfo nodeId="5058522826399262891" fileName="Specializes_diagram_Editor.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
     <nodeInfo nodeId="5058522826399262891" fileName="Specializes_diagram_Editor.java" startLine="35" startPosition="47" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

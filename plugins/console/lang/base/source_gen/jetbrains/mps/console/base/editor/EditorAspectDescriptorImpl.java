@@ -10,10 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new CommandHolder_Editor());
       case 1:
@@ -48,7 +53,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.console.base.editor.ClickableEditorComponent".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new ClickableEditorComponent());
@@ -71,6 +76,16 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NewLineResponseItem", "jetbrains.mps.console.base.structure.NodeResponseItem", "jetbrains.mps.console.base.structure.OutputConsoleRoot", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.TextResponseItem"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.ConsoleRoot", "jetbrains.mps.console.base.structure.HelpCommand", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.History", "jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference", "jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.console.base.structure.NewLineResponseItem", "jetbrains.mps.console.base.structure.NodeResponseItem", "jetbrains.mps.console.base.structure.OutputConsoleRoot", "jetbrains.mps.console.base.structure.PastedNodeReference", "jetbrains.mps.console.base.structure.Response", "jetbrains.mps.console.base.structure.TextResponseItem"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.console.base.structure.IClickable", "jetbrains.mps.console.base.structure.INodeWithReference"};
 }

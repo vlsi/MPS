@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:fc8d3ef4-4153-4861-a13a-e9c4b97a4b06(jetbrains.mps.baseLanguage.doubleDispatch.editor)/2403002034744698623">
     <nodeInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="14" startPosition="79" endLine="15" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="18" startPosition="88" endLine="19" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

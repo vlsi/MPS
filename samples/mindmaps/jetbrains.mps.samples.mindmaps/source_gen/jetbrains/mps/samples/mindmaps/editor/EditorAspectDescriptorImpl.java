@@ -11,12 +11,14 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("diagram", "", true, "jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"));
 
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new CoreThrought_diagram_Editor());
       case 1:
@@ -29,11 +31,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new Thought_diagram_Editor());
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditor>emptyList();
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.emptyList();
+    return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
@@ -43,5 +45,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.mindmaps.structure.CoreThrought", "jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Specializes", "jetbrains.mps.samples.mindmaps.structure.Thought"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.mindmaps.structure.CoreThrought", "jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Specializes", "jetbrains.mps.samples.mindmaps.structure.Thought"};
 }

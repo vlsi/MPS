@@ -10,10 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new ConvertTo_Editor());
       case 1:
@@ -50,5 +55,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType", "org.jetbrains.mps.samples.Money.structure.MovingAverage", "org.jetbrains.mps.samples.Money.structure.StockSymbol"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType", "org.jetbrains.mps.samples.Money.structure.MovingAverage", "org.jetbrains.mps.samples.Money.structure.StockSymbol"};
 }

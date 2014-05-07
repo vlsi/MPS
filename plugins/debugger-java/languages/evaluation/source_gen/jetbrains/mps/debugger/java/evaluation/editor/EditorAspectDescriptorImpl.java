@@ -10,10 +10,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new DebuggedType_Editor());
       case 1:
@@ -52,5 +57,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.debugger.java.evaluation.structure.Evaluator", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.UnitNode"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  public Map<String, StyleAttribute> getStyleAttributes() {
+    return Collections.emptyMap();
+  }
+
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.debugger.java.evaluation.structure.Evaluator", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.UnitNode"};
 }

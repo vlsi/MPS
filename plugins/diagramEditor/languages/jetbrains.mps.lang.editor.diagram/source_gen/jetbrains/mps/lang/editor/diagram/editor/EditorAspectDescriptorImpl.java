@@ -10,10 +10,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AbstractDiagramCreation_Editor());
       case 1:
@@ -54,11 +57,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new ThisEditorNodeExpression_Editor());
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditor>emptyList();
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.lang.editor.diagram.editor.HandlersComponent".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new HandlersComponent());
@@ -81,7 +84,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         break;
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
@@ -91,6 +94,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation", "jetbrains.mps.lang.editor.diagram.structure.ActionGroup", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping", "jetbrains.mps.lang.editor.diagram.structure.LinkArgument", "jetbrains.mps.lang.editor.diagram.structure.Palette", "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", "jetbrains.mps.lang.editor.diagram.structure.Separator", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation"};
+
+  public StyleAttribute getStyleAttribute(String attributeName) {
+    return null;
+  }
+
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation", "jetbrains.mps.lang.editor.diagram.structure.ActionGroup", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping", "jetbrains.mps.lang.editor.diagram.structure.LinkArgument", "jetbrains.mps.lang.editor.diagram.structure.Palette", "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", "jetbrains.mps.lang.editor.diagram.structure.Separator", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.editor.diagram.structure.AbstractDiagramCreation", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation"};
 }

@@ -24,5 +24,9 @@ public interface StyleAttribute<T> {
 
   int getIndex();
 
+  void register();
+
+  void unregister();
+
   T combine(T parentValue, T currentValue);
 }
