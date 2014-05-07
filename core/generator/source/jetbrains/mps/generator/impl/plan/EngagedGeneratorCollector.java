@@ -16,7 +16,9 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
@@ -26,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -98,6 +101,8 @@ final class EngagedGeneratorCollector {
   }
 
   public Collection<TemplateModule> getDirectlyEngagedGenerators() {
+    // engaged shall respect languages and generators based on new (yet to be defined) generator extensibility/dependency management model
+    // e.g. we shall respect L1 extends L2, and include G2 (from L2) if encounter C1 (from L1). C==Concept, L==Language, G==Generator.
     if (myEngagedGenerators == null) {
       build();
     }
@@ -122,43 +127,40 @@ final class EngagedGeneratorCollector {
       String next = queue.remove();
       LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(next);
       if (language == null) {
-        LOG.error(String.format("Model %s uses language %s which is missing (likely is not yet generated or is a bootstrap dependency)", myModel.getModelName(), next));
+        LOG.error(String.format("Model %s uses language %s which is missing (likely is not yet generated or is a bootstrap dependency)", myModel.getModelName(),
+            next));
         badLanguages.add(next);
         continue;
       }
 
-      Collection<TemplateModule> generators = language.getGenerators();
-      if (generators == null) {
-        result.put(next, Collections.<TemplateModule>emptyList());
-        continue;
-      }
+      HashSet<String> targetLanguages = new HashSet<String>();
+      HashSet<String> moreLanguages = new HashSet<String>();
 
-      ArrayList<TemplateModule> langGenerators = new ArrayList<TemplateModule>(generators.size());
-      result.put(next, langGenerators);
-      for (TemplateModule generator : generators) {
-        if (generator == null) {
-          continue;
+      // collect extra languages from generator module description
+      result.put(next, collectLanguagesFromGenerators(language, targetLanguages, moreLanguages));
+      if (myOnlyLanguageRealUses) {
+        // collect extra languages/generators based on 'extends' relation between languages
+        // here we don't need to process each language referenced from a generator, but only those that could actually appear in the output model
+        HashSet<String> checkExtendedLanguages = new HashSet<String>(targetLanguages); // we'll be modifying targetLanguages, hence the copy
+        checkExtendedLanguages.add(next); // we didn't build a closure of extended langauges, current language may extend other
+        checkExtendedLanguages.removeAll(processed);
+        // we don't build closure of all extended languages here, look at directly extended only, look deeper at the next iteration
+        for (String targetLanguage : checkExtendedLanguages) {
+          Language langModule = ModuleRepositoryFacade.getInstance().getModule(targetLanguage, Language.class);
+          // if L1 extends L2, and we use L1 concepts only, still consider L2 as being explicitly used. This is not quite nice,
+          // but there's lang.plugin.standalone which extends lang.plugin, and latter defines templates for bl.classifiers (DefaultClassifierMethodCall)
+          // if we don't include L2 (lang.plugin) in here, G2 wouldn't make it into engagedGenerators.
+          // We need a new dependency kind for relation rules between generators, and use 'extends' for its true (and only) purpose - when G1 extends G2
+          for (SModuleReference mr : langModule.getExtendedLanguageRefs()) {
+            targetLanguages.add(mr.getModuleName());
+          }
         }
-        langGenerators.add(generator);
-
-        // handle Used languages
-        final Collection<String> generatorOutputLanguages = generator.getUsedLanguages();
-        participatingLanguages.addAll(generatorOutputLanguages);
-        //
-        HashSet<String> moreLanguages = new HashSet<String>();
-        moreLanguages.addAll(generatorOutputLanguages);
-        // handle Referenced generators
-        // XXX I can process generators here directly (generator.getReferencedModules() gives list of generators), but this requires careful refactoring
-        final Collection<String> refGenLangs = getLanguagesFromReferencedModules(generator);
-        // some generator extends another generator (G) (likely to specify rule priorities)
-        // unless it's actually employed, there's little sense to include language of G (except for very few scenarios, where it seems to be
-        // a workaround to overcome inability to specify dependency between the languages in any other way)
-        moreLanguages.addAll(refGenLangs);
-        moreLanguages.removeAll(processed);
-        //
-        processed.addAll(moreLanguages);
-        queue.addAll(moreLanguages);
       }
+      participatingLanguages.addAll(targetLanguages);
+      moreLanguages.addAll(targetLanguages);
+      moreLanguages.removeAll(processed);
+      processed.addAll(moreLanguages);
+      queue.addAll(moreLanguages);
     }
 
     // build accessible generators set and its subset, generators for languages that have a chance to show up in generation for this particular model
@@ -169,9 +171,6 @@ final class EngagedGeneratorCollector {
     myAccessibleGenerators = Collections.unmodifiableList(all);
 
     if (myOnlyLanguageRealUses) {
-      // engaged shall respect languages and generators based on new (yet to be defined) generator extensibility/dependency management model
-      // e.g. we shall respect L1 extends L2, and include G2 (from L2) if encounter C1 (from L1). C==Concept, L==Language, G==Generator.
-      buildLangExtendClosure(Collections.<String>emptyList(), badLanguages);
       // for now, use languages that participate in the process (either in use in initial model or output of some involved generator)
       ArrayList<TemplateModule> engaged = new ArrayList<TemplateModule>();
       participatingLanguages.retainAll(result.keySet());
@@ -182,6 +181,36 @@ final class EngagedGeneratorCollector {
     } else {
       myEngagedGenerators = myAccessibleGenerators;
     }
+  }
+
+  private List<TemplateModule> collectLanguagesFromGenerators(LanguageRuntime language, Set<String> targetLanguages, Set<String> moreLanguages) {
+    Collection<TemplateModule> generators = language.getGenerators();
+    if (generators == null) {
+      return Collections.emptyList();
+    }
+
+    ArrayList<TemplateModule> langGenerators = new ArrayList<TemplateModule>(generators.size());
+
+
+    // collect extra languages from generator module description
+    for (TemplateModule generator : generators) {
+      if (generator == null) {
+        continue;
+      }
+      langGenerators.add(generator);
+
+      // handle Used languages
+      targetLanguages.addAll(generator.getUsedLanguages());
+      //
+      // handle Referenced generators
+      // XXX I can process generators here directly (generator.getReferencedModules() gives list of generators), but this requires careful refactoring
+      final Collection<String> refGenLangs = getLanguagesFromReferencedModules(generator);
+      // some generator extends another generator (G) (likely to specify rule priorities)
+      // unless it's actually employed, there's little sense to include language of G (except for very few scenarios, where it seems to be
+      // a workaround to overcome inability to specify dependency between the languages in any other way)
+      moreLanguages.addAll(refGenLangs);
+    }
+    return langGenerators;
   }
 
   private Collection<String> buildLangExtendClosure(Collection<String> initial, Collection<String> badLanguages) {
