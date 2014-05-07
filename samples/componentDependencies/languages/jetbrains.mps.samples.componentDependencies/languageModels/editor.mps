@@ -38,7 +38,6 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="ny2" modelUID="r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)" version="-1" implicit="yes" />
   <import index="ohyq" modelUID="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" version="1" implicit="yes" />
-  <import index="o2o5" modelUID="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)" version="1" implicit="yes" />
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="6223439730610570923" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="ktbj.6223439730610283563" resolveInfo="ComponentSet" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_Diagram" typeId="gbdf.6306886970791033847" id="6223439730610588171" nodeInfo="ng">
@@ -144,30 +143,36 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="gbdf.CellModel_DiagramConnector" typeId="gbdf.6382742553261733065" id="6223439730610762170" nodeInfo="ng">
       <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="7433225748202976550" resolveInfo="delConnector" />
       <node role="input" roleId="gbdf.1220375669566529919" type="gbdf.ConnectionEndBLQuery" typeId="gbdf.1220375669566347117" id="6223439730610762179" nodeInfo="ng">
-        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9095678365529849339" nodeInfo="nn">
-          <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="9095678365529849089" nodeInfo="nn">
-            <link role="concept" roleId="tp25.1140138128738" targetNodeId="ktbj.6223439730610336068" resolveInfo="Component" />
-            <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9095678365528460221" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="9095678365528460115" nodeInfo="ng" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="9095678365529848498" nodeInfo="nn" />
+        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1278569236051871300" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1278569236051721035" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="9095678365529849089" nodeInfo="nn">
+              <link role="concept" roleId="tp25.1140138128738" targetNodeId="ktbj.6223439730610336068" resolveInfo="Component" />
+              <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9095678365528460221" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="9095678365528460115" nodeInfo="ng" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="9095678365529848498" nodeInfo="nn" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1278569236051721822" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056546658" targetNodeId="ktbj.6223439730610790726" />
             </node>
           </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="9095678365529850241" nodeInfo="nn">
-            <link role="link" roleId="tp25.1138056516764" targetNodeId="ktbj.6223439730610790726" />
-          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="1278569236051875914" nodeInfo="nn" />
         </node>
       </node>
       <node role="output" roleId="gbdf.1220375669566529925" type="gbdf.ConnectionEndBLQuery" typeId="gbdf.1220375669566347117" id="6223439730610762185" nodeInfo="ng">
-        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9095678365529850903" nodeInfo="nn">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6223439730610764567" nodeInfo="nn">
-            <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="6223439730610764491" nodeInfo="ng" />
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6223439730610765635" nodeInfo="nn">
-              <link role="link" roleId="tp25.1138056516764" targetNodeId="ktbj.6223439730610763348" />
+        <node role="targetNode" roleId="gbdf.2915596886892604954" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1278569236051878411" nodeInfo="nn">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1278569236051722993" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6223439730610764567" nodeInfo="nn">
+              <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="6223439730610764491" nodeInfo="ng" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="6223439730610765635" nodeInfo="nn">
+                <link role="link" roleId="tp25.1138056516764" targetNodeId="ktbj.6223439730610763348" />
+              </node>
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1278569236051724257" nodeInfo="nn">
+              <link role="link" roleId="tp25.1138056546658" targetNodeId="ktbj.6223439730610790722" />
             </node>
           </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="9095678365529852291" nodeInfo="nn">
-            <link role="link" roleId="tp25.1138056516764" targetNodeId="ktbj.6223439730610790722" />
-          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="1278569236051883277" nodeInfo="nn" />
         </node>
       </node>
     </node>
@@ -203,16 +208,16 @@
       <node role="inputPort" roleId="gbdf.2084788800269090635" type="gbdf.BLQueryArgument" typeId="gbdf.285670992213637367" id="9095678365530127982" nodeInfo="ng">
         <node role="query" roleId="gbdf.285670992213637368" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9095678365530128601" nodeInfo="nn">
           <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="9095678365530128229" nodeInfo="ng" />
-          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="9095678365530130001" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o2o5.9095678365530118263" resolveInfo="retrieveInPorts" />
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="567015976775451352" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056546658" targetNodeId="ktbj.6223439730610790722" />
           </node>
         </node>
       </node>
       <node role="outputPort" roleId="gbdf.2084788800269090678" type="gbdf.BLQueryArgument" typeId="gbdf.285670992213637367" id="9095678365530130879" nodeInfo="ng">
         <node role="query" roleId="gbdf.285670992213637368" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9095678365530132610" nodeInfo="nn">
           <node role="operand" roleId="tpee.1197027771414" type="gbdf.ThisEditorNodeExpression" typeId="gbdf.3229274890673749551" id="9095678365530131748" nodeInfo="ng" />
-          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="9095678365530134500" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o2o5.9095678365530123411" resolveInfo="retrieveOutPorts" />
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="567015976775455231" nodeInfo="nn">
+            <link role="link" roleId="tp25.1138056546658" targetNodeId="ktbj.6223439730610790726" />
           </node>
         </node>
       </node>
