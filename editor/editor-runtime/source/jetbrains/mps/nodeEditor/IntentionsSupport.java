@@ -272,36 +272,52 @@ public class IntentionsSupport {
     return getInsertedPosition(viewRect, myLightBulb.getPreferredSize(), new Point(x, y));
   }
 
+  private void executeIntention(final IntentionExecutable intention, final SNode node) {
+    Project project = myEditor.getOperationContext().getProject();
+    if (project == null)  return;
+
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
+      @Override
+      public void run() {
+        intention.execute(node, myEditor.getEditorContext());
+      }
+    }, project);
+  }
+
   private AnAction getIntentionGroup(final IntentionExecutable intention, final SNode node) {
     Icon icon = intention.getDescriptor().getType().getIcon();
-    final DefaultActionGroup intentionActionGroup = new DefaultActionGroup(intention.getDescription(node, myEditor.getEditorContext()), true) {
-      @Override
-      public boolean canBePerformed(DataContext c) {
-        return true;
-      }
+    String text = intention.getDescription(node, myEditor.getEditorContext());
 
-      @Override
-      public void actionPerformed(AnActionEvent e) {
-        Project project = myEditor.getOperationContext().getProject();
-        if (project == null) {
-          return;
-        }
-
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
-          @Override
-          public void run() {
-            intention.execute(node, myEditor.getEditorContext());
-          }
-        }, project);
-      }
-    };
-
+    List<AnAction> intentionActions = new ArrayList<AnAction>();
     for (IntentionActionsProvider provider : Extensions.getExtensions(IntentionActionsProvider.EP_NAME)) {
-        intentionActionGroup.addAll(provider.getIntentionActions(intention));
+      for (AnAction action : provider.getIntentionActions(intention))
+        intentionActions.add(action);
     }
 
-    intentionActionGroup.getTemplatePresentation().setIcon(icon);
-    return intentionActionGroup;
+    if (intentionActions.isEmpty()) {
+      return new BaseAction(text, null, icon) {
+        @Override
+        protected void doExecute(AnActionEvent e, Map<String, Object> params) {
+          executeIntention(intention, node);
+        }
+      };
+    } else {
+      DefaultActionGroup intentionActionGroup = new DefaultActionGroup(text, true) {
+        @Override
+        public boolean canBePerformed(DataContext c) {
+          return true;
+        }
+
+        @Override
+        public void actionPerformed(AnActionEvent e) {
+          executeIntention(intention, node);
+        }
+      };
+      intentionActionGroup.addAll(intentionActions);
+      intentionActionGroup.getTemplatePresentation().setIcon(icon);
+      return intentionActionGroup;
+    }
+
   }
 
   private BaseGroup getIntentionsGroup(final DataContext dataContext) {
