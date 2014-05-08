@@ -25,8 +25,6 @@ import java.util.List;
 
 public class MPSDataKeys extends MPSEditorDataKeys {
 
-  @Description(description = "selected package")
-  public static final DataKey<Pair<SModel, String>> VIRTUAL_PACKAGE = DataKey.create("MPS_VirtualPackage");
   @Description(description = "selected packages")
   public static final DataKey<List<Pair<SModel, String>>> VIRTUAL_PACKAGES = DataKey.create("MPS_VirtualPackage_List");
 

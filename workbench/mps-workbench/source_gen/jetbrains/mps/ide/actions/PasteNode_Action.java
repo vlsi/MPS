@@ -15,8 +15,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.smodel.IOperationContext;
@@ -26,11 +26,12 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -76,7 +77,6 @@ public class PasteNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("pack", event.getData(MPSDataKeys.VIRTUAL_PACKAGE));
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
     if (MapSequence.fromMap(_params).get("context") == null) {
@@ -90,6 +90,10 @@ public class PasteNode_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
+    MapSequence.fromMap(_params).put("packs", event.getData(MPSDataKeys.VIRTUAL_PACKAGES));
+    if (MapSequence.fromMap(_params).get("packs") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -117,13 +121,13 @@ public class PasteNode_Action extends BaseAction {
             if (!(paster.canPasteAsRoots())) {
               return;
             }
-            paster.pasteAsRoots(((SModel) MapSequence.fromMap(_params).get("contextModel")), ((Pair<SModel, String>) MapSequence.fromMap(_params).get("pack")).o2);
+            paster.pasteAsRoots(((SModel) MapSequence.fromMap(_params).get("contextModel")), PasteNode_Action.this.getContextPackage(_params));
           } else {
             NodePaster paster = new NodePaster(pasteNodes);
             if (!(paster.canPaste(((SNode) MapSequence.fromMap(_params).get("node")), PasteEnv.PROJECT_TREE))) {
               return;
             }
-            paster.paste(((SNode) MapSequence.fromMap(_params).get("node")), PasteEnv.PROJECT_TREE);
+            paster.paste(((SNode) MapSequence.fromMap(_params).get("node")), PasteEnv.PROJECT_TREE, PasteNode_Action.this.getContextPackage(_params));
           }
           ResolverComponent.getInstance().resolveScopesOnly(refsToResolve, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           // make sure editor will be open 
@@ -158,6 +162,16 @@ public class PasteNode_Action extends BaseAction {
 
   private boolean canPasteNodes(ModelAccess modelAccess, final Map<String, Object> _params) {
     return PasteNode_Action.this.getPasteData(modelAccess, _params) != null;
+  }
+
+  private String getContextPackage(final Map<String, Object> _params) {
+    if (((SNode) MapSequence.fromMap(_params).get("node")) != null) {
+      return SPropertyOperations.getString(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtualPackage");
+    }
+    if (((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")) != null && ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")).size() == 1 && ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")).get(0).o1 == ((SModel) MapSequence.fromMap(_params).get("contextModel"))) {
+      return ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")).get(0).o2;
+    }
+    return null;
   }
 
   protected static Logger LOG = LogManager.getLogger(PasteNode_Action.class);

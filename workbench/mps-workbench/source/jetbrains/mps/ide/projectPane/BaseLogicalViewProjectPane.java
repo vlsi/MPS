@@ -136,11 +136,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) return getContextModule();
     if (dataId.equals(MPSDataKeys.MODULES.getName())) return getSelectedModules();
 
-    if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGE.getName())) {
-      List<Pair<SModel, String>> selectedPackages = getSelectedPackages();
-      if (selectedPackages.size() != 1) return null;
-      return selectedPackages.get(0);
-    }
     if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) return getSelectedPackages();
 
     if (dataId.equals(MPSDataKeys.NAMESPACE.getName())) {
