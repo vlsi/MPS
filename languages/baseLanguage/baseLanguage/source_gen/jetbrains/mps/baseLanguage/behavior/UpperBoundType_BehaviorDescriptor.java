@@ -14,6 +14,10 @@ public class UpperBoundType_BehaviorDescriptor extends Type_BehaviorDescriptor i
     UpperBoundType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
   }
 
+  public SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
+    return IGenericType_Behavior.virtual_eraseGenerics_5089784887112634594(thisNode);
+  }
+
   public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
   }
