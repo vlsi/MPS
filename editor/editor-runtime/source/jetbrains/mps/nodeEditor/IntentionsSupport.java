@@ -274,7 +274,6 @@ public class IntentionsSupport {
 
   private AnAction getIntentionGroup(final IntentionExecutable intention, final SNode node) {
     Icon icon = intention.getDescriptor().getType().getIcon();
-//    final IntentionsManager intentionsManager = IntentionsManager.getInstance();
     final DefaultActionGroup intentionActionGroup = new DefaultActionGroup(intention.getDescription(node, myEditor.getEditorContext()), true) {
       @Override
       public boolean canBePerformed(DataContext c) {
