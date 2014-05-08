@@ -34,11 +34,10 @@ public class NewDevkitUITest extends NewDialogsUITestsBase {
     Assert.assertNotNull("Main frame not found", frame);
 
     final NewDevKitDialog dialog = new NewDevKitDialog(null);
-    dialog.setProject(myCreatedProject);
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        dialog.showDialog();
+        dialog.show();
       }
     });
     flushAWT();
