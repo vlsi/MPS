@@ -54,7 +54,7 @@ public class check_UnqualifiedStaticFieldReference_NonTypesystemRule extends Abs
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(varRef, "unqualified non-local static field reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4988876389104060746", null, errorTarget);
       {
         BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
-        intentionProvider.putArgument("newNode;", sfr);
+        intentionProvider.putArgument("newNode", sfr);
         _reporter_2309309498.addIntentionProvider(intentionProvider);
       }
     }

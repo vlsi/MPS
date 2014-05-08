@@ -357,7 +357,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     return replacement;
   }
 
-  void reloadAll() {
+  public void reloadAll() {
     ModelAccess.assertLegalWrite();
     SModel sModel = myModelReference.resolve(MPSModuleRepository.getInstance());
     for (SNode root : sModel.getRootNodes()) {

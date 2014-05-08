@@ -68,7 +68,7 @@ public class check_UnqualifiedEnumConstUnderSwitch_NonTypesystemRule extends Abs
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(caseExp, "Unqualified enum constant reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5230012391939085755", null, errorTarget);
       {
         BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
-        intentionProvider.putArgument("newNode;", qualifiedEnumRef);
+        intentionProvider.putArgument("newNode", qualifiedEnumRef);
         _reporter_2309309498.addIntentionProvider(intentionProvider);
       }
     }
