@@ -45,9 +45,6 @@ public class NewDevkitUITest extends NewDialogsUITestsBase {
     JTextField nameField = findTextField("Name");
     getHelper().sendString(new StringEventData(this, nameField, "myDev"));
     flushAWT();
-    PathField pathField = findPathField("Path");
-    boolean correctSuffix = pathField.getPath().endsWith(nameField.getText());
-    Assert.assertTrue("Devkit suffix is not added to path", correctSuffix);
 
     pressButton(dialog, "OK");
     flushAWT();
