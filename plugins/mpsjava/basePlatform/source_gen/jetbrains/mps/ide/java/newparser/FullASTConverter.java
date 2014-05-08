@@ -1223,10 +1223,11 @@ public class FullASTConverter extends ASTConverter {
     } else if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
       SLinkOperations.setTarget(result, "arrayType", argType, true);
-      // <node> 
-      // <node> 
       return result;
-
+    } else if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null);
+      SLinkOperations.setTarget(result, "primitiveType", argType, true);
+      return result;
     } else {
       throw new JavaParseException("Type in class literal access is expected to be classifier or array type");
     }
