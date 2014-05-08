@@ -73,7 +73,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         if (targetNode == null) {
           SpecificChecker.addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
             public boolean doFix() {
-              return ResolverComponent.getInstance().resolve(ref, operationContext);
+              return ResolverComponent.getInstance().resolve(ref, operationContext.getProject().getRepository());
             }
           });
           continue;

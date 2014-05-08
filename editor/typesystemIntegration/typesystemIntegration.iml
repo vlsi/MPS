@@ -16,6 +16,8 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
 </module>
 

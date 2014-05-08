@@ -9,18 +9,22 @@ import jetbrains.mps.errors.IErrorReporter;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -36,16 +40,29 @@ public class LanguageErrorsComponent {
   private Map<SNode, Set<SNode>> myDependenciesToNodes = new HashMap<SNode, Set<SNode>>();
   private Map<SNode, Set<SNode>> myNodesToDependecies = new HashMap<SNode, Set<SNode>>();
   private Set<SNode> myInvalidNodes = new HashSet<SNode>();
-  private Set<SNode> myInvalidation = new HashSet<SNode>();
+  private Set<SNode> myDependenciesToInvalidate = new HashSet<SNode>();
   private LanguageErrorsComponent.MyModelListener myModelListener = new LanguageErrorsComponent.MyModelListener();
   private LanguageErrorsComponent.MyModelRepositoryListener myModelRepositoryListener = new LanguageErrorsComponent.MyModelRepositoryListener();
   private Set<SModel> myListenedModels = new HashSet<SModel>();
   private boolean myCheckedRoot = false;
   private SNode myCurrentNode = null;
-  private SNode myRoot;
+  private SModel myModel;
+  private boolean myUpdateInspector = false;
 
-  public LanguageErrorsComponent(SNode root) {
-    myRoot = root;
+
+  private static <T> void addToMappedSet(Map<SNode, Set<T>> map, SNode key, T value) {
+    Set<T> setOfNodes = MapSequence.fromMap(map).get(key);
+    if (setOfNodes == null) {
+      setOfNodes = new HashSet<T>(1);
+      MapSequence.fromMap(map).put(key, setOfNodes);
+    }
+    SetSequence.fromSet(setOfNodes).addElement(value);
+  }
+
+
+
+  public LanguageErrorsComponent(SModel model) {
+    myModel = model;
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
   }
 
@@ -62,29 +79,77 @@ public class LanguageErrorsComponent {
   }
 
   public void addDependency(SNode dependency) {
-    if (myCurrentNode != null) {
-      addDependency(myCurrentNode, dependency);
+    if (myCurrentNode == null) {
+      return;
     }
-  }
-
-  public void addDependency(SNode currentNode, SNode dependency) {
     if (dependency == null) {
       return;
     }
-    Set<SNode> errorNodes = MapSequence.fromMap(myDependenciesToNodes).get(dependency);
-    if (errorNodes == null) {
-      errorNodes = new HashSet<SNode>(1);
-      MapSequence.fromMap(myDependenciesToNodes).put(dependency, errorNodes);
-    }
-    SetSequence.fromSet(errorNodes).addElement(currentNode);
-    Set<SNode> additional = MapSequence.fromMap(myNodesToDependecies).get(currentNode);
-    if (additional == null) {
-      additional = new HashSet<SNode>(1);
-      MapSequence.fromMap(myNodesToDependecies).put(currentNode, additional);
-    }
-    SetSequence.fromSet(additional).addElement(dependency);
+    addDependencyMapping(myCurrentNode, dependency);
     addModelListener(SNodeOperations.getModel(dependency));
   }
+
+
+
+  private void addDependencyMapping(@NotNull SNode node, @NotNull SNode dependency) {
+    addToMappedSet(myNodesToDependecies, node, dependency);
+    addToMappedSet(myDependenciesToNodes, dependency, node);
+  }
+
+  private Set<SNode> removeDependencyFromMapping(@NotNull SNode dependency) {
+    // removing dependency node from any mappings together with all checked nodes 
+    // denending on this dependency node 
+
+    // 1. Removing dependency -> nodes mapping for specified dependency 
+    Set<SNode> nodes = MapSequence.fromMap(myDependenciesToNodes).removeKey(dependency);
+
+    if (nodes != null) {
+      // 2. Removing node -> dependencies mappings for nodes from step 1. 
+      for (SNode node : nodes) {
+        Set<SNode> nodeDependencies = MapSequence.fromMap(myNodesToDependecies).removeKey(node);
+        if (nodeDependencies != null) {
+          // 3. Cleaning "backward" dependency -> nodes maping for removed nodes 
+          for (SNode nodeDependency : nodeDependencies) {
+            Set<SNode> errors = MapSequence.fromMap(myDependenciesToNodes).get(nodeDependency);
+            if (errors != null) {
+              SetSequence.fromSet(errors).removeElement(node);
+              if (SetSequence.fromSet(errors).isEmpty()) {
+                MapSequence.fromMap(myDependenciesToNodes).removeKey(nodeDependency);
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    // returning a set of checked nodes removed from mapping 
+    return nodes;
+  }
+
+  private Set<SNode> getDependenciesToInvalidate(SModel model) {
+    Set<SNode> result = new HashSet<SNode>();
+    for (SNode dependency : MapSequence.fromMap(myDependenciesToNodes).keySet()) {
+      if (jetbrains.mps.util.SNodeOperations.isDisposed(dependency) || SNodeOperations.getModel(dependency) == model) {
+        SetSequence.fromSet(result).addElement(dependency);
+      }
+    }
+    return result;
+  }
+
+
+
+  private void addModelListener(SModel modelDescriptor) {
+    if (modelDescriptor == null) {
+      return;
+    }
+    if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
+      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
+      SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
+    }
+  }
+
+
 
   public void addError(SNode node, String errorString, SNode ruleNode) {
     for (SNode anc : ListSequence.fromList(SNodeOperations.getAncestors(node, null, false))) {
@@ -102,51 +167,41 @@ public class LanguageErrorsComponent {
       return;
     }
     String id = (ruleNode == null ? null : ruleNode.getNodeId().toString());
-    String modelId = (ruleNode == null ? null : check_29uvfh_a0a0c0s(ruleNode.getModel()) + "");
+    String modelId = (ruleNode == null ? null : check_29uvfh_a0a0c0cb(ruleNode.getModel()) + "");
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, modelId, id, MessageStatus.ERROR, messageTarget);
     if (intentionProvider != null) {
       reporter.setIntentionProvider(intentionProvider);
     }
-    Set<IErrorReporter> reporters = MapSequence.fromMap(myNodesToErrors).get(errorNode);
-    if (reporters == null) {
-      reporters = new HashSet<IErrorReporter>(1);
-      MapSequence.fromMap(myNodesToErrors).put(errorNode, reporters);
-    }
-    SetSequence.fromSet(reporters).addElement(reporter);
+
+    addToMappedSet(myNodesToErrors, errorNode, reporter);
   }
 
-  private void addModelListener(SModel modelDescriptor) {
-    if (modelDescriptor == null) {
+
+
+  private void invalidate() {
+    if (SetSequence.fromSet(myDependenciesToInvalidate).isEmpty()) {
       return;
     }
-    if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
-      SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
+    for (SNode toInvalidate : myDependenciesToInvalidate) {
+      invalidateDependency(toInvalidate);
     }
+    SetSequence.fromSet(myDependenciesToInvalidate).clear();
   }
 
-  private void invalidate(SNode errorNode) {
-    // avoid searching for _already_removed_ node later in check() 
-    if (SNodeOperations.getModel(errorNode) != null) {
-      SetSequence.fromSet(myInvalidNodes).addElement(errorNode);
-    }
-    MapSequence.fromMap(myNodesToErrors).removeKey(errorNode);
-    Set<SNode> additionals = MapSequence.fromMap(myNodesToDependecies).removeKey(errorNode);
-    if (additionals != null) {
-      for (SNode additional : additionals) {
-        Set<SNode> errors = MapSequence.fromMap(myDependenciesToNodes).get(additional);
-        if (errors != null) {
-          SetSequence.fromSet(errors).removeElement(errorNode);
-          if (SetSequence.fromSet(errors).isEmpty()) {
-            MapSequence.fromMap(myDependenciesToNodes).removeKey(additional);
-          }
+  private void invalidateDependency(SNode dependency) {
+    Set<SNode> checkedNodes = removeDependencyFromMapping(dependency);
+    if (checkedNodes != null) {
+      for (SNode node : checkedNodes) {
+        // avoid searching for _already_removed_ node later in check() 
+        if (SNodeOperations.getModel(node) != null) {
+          SetSequence.fromSet(myInvalidNodes).addElement(node);
         }
+        MapSequence.fromMap(myNodesToErrors).removeKey(node);
       }
     }
-
   }
 
-  public boolean check(SNode root, Set<AbstractConstraintsChecker> checkers, IOperationContext operationContext) {
+  public boolean check(SNode root, Set<AbstractConstraintsChecker> checkers, SRepository repository) {
     // returns whether state has been changed after check 
     if (root == null) {
       return false;
@@ -155,65 +210,63 @@ public class LanguageErrorsComponent {
     if (myCheckedRoot && SetSequence.fromSet(myInvalidNodes).isEmpty()) {
       return false;
     }
-    Set<SNode> frontier = new HashSet<SNode>(1);
-    SetSequence.fromSet(frontier).addElement(root);
-    Set<SNode> newFrontier = new HashSet<SNode>(1);
-    while (!(SetSequence.fromSet(frontier).isEmpty())) {
-      for (SNode node : frontier) {
-        if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
-          try {
-            myCurrentNode = node;
-            addDependency(node);
-            for (AbstractConstraintsChecker checker : checkers) {
-              checker.checkNode(node, this, operationContext);
-            }
-          } finally {
-            myCurrentNode = null;
-            SetSequence.fromSet(myInvalidNodes).removeElement(node);
+    Queue<SNode> nodesToCheck = QueueSequence.fromQueue(new LinkedList<SNode>());
+    QueueSequence.fromQueue(nodesToCheck).addLastElement(root);
+    while (QueueSequence.fromQueue(nodesToCheck).isNotEmpty()) {
+      SNode node = QueueSequence.fromQueue(nodesToCheck).removeFirstElement();
+      if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
+        try {
+          myCurrentNode = node;
+          addDependency(node);
+          for (AbstractConstraintsChecker checker : checkers) {
+            checker.checkNode(node, this, repository);
           }
+        } finally {
+          myCurrentNode = null;
         }
-        SetSequence.fromSet(newFrontier).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
       }
-      frontier = newFrontier;
-      newFrontier = new HashSet<SNode>(1);
+      QueueSequence.fromQueue(nodesToCheck).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
     }
     // traversed the whole root, should have been removed all invalid nodes 
     SetSequence.fromSet(myInvalidNodes).clear();
     myCheckedRoot = true;
+    myUpdateInspector = true;
     return true;
+  }
+
+  public boolean checkInspector() {
+    if (myUpdateInspector) {
+      myUpdateInspector = false;
+      return true;
+    }
+    return false;
   }
 
   public Set<IErrorReporter> getErrors() {
     Set<IErrorReporter> result = new HashSet<IErrorReporter>(1);
-    for (SNode errorNode : MapSequence.fromMap(myNodesToErrors).keySet()) {
-      SetSequence.fromSet(result).addSequence(SetSequence.fromSet(MapSequence.fromMap(myNodesToErrors).get(errorNode)));
+    for (Set<IErrorReporter> errorReporters : MapSequence.fromMap(myNodesToErrors).values()) {
+      SetSequence.fromSet(result).addSequence(SetSequence.fromSet(errorReporters));
     }
     return result;
   }
 
-  public void invalidate() {
-    if (SetSequence.fromSet(myInvalidation).isEmpty()) {
-      return;
-    }
-    for (SNode toInvalidate : myInvalidation) {
-      processNodeChange(toInvalidate);
-    }
-    SetSequence.fromSet(myInvalidation).clear();
+  public void clear() {
+    myCheckedRoot = false;
+    SetSequence.fromSet(myDependenciesToInvalidate).clear();
+    SetSequence.fromSet(myInvalidNodes).clear();
+    myCurrentNode = null;
+    MapSequence.fromMap(myDependenciesToNodes).clear();
+    MapSequence.fromMap(myNodesToDependecies).clear();
+    MapSequence.fromMap(myNodesToErrors).clear();
+    removeModelListener();
   }
 
-  private void processNodeChange(SNode affectedNode) {
-    Set<SNode> nodes = MapSequence.fromMap(myDependenciesToNodes).removeKey(affectedNode);
-    if (nodes != null) {
-      for (SNode errorNode : nodes) {
-        invalidate(errorNode);
-      }
-    }
-  }
 
-  public void processEvent(SModelChildEvent event) {
-    SetSequence.fromSet(myInvalidation).addElement(event.getParent());
+
+  private void processEvent(SModelChildEvent event) {
+    SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getParent());
     if (event.isRemoved()) {
-      SetSequence.fromSet(myInvalidation).addElement(event.getChild());
+      SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getChild());
     }
     if (event.isAdded()) {
       SetSequence.fromSet(myInvalidNodes).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(((SNode) event.getChild()), null, false, new String[]{})));
@@ -221,38 +274,12 @@ public class LanguageErrorsComponent {
     }
   }
 
-  public void processEvent(SModelReferenceEvent event) {
-    SetSequence.fromSet(myInvalidation).addElement(event.getReference().getSourceNode());
+  private void processEvent(SModelReferenceEvent event) {
+    SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getReference().getSourceNode());
   }
 
-  public void processEvent(SModelPropertyEvent event) {
-    SetSequence.fromSet(myInvalidation).addElement(event.getNode());
-  }
-
-  public void processBeforeModelDisposed(SModel model) {
-    if (!(jetbrains.mps.util.SNodeOperations.isDisposed(myRoot)) && SNodeOperations.getModel(myRoot) == model) {
-      return;
-    }
-    for (SNode additional : new HashSet<SNode>(MapSequence.fromMap(myDependenciesToNodes).keySet())) {
-      if (jetbrains.mps.util.SNodeOperations.isDisposed(additional) || SNodeOperations.getModel(additional) == model) {
-        processNodeChange(additional);
-      }
-    }
-  }
-
-  public void processModelRemoved(SModel modelDescriptor) {
-    SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
-  }
-
-  public void clear() {
-    myCheckedRoot = false;
-    SetSequence.fromSet(myInvalidation).clear();
-    SetSequence.fromSet(myInvalidNodes).clear();
-    myCurrentNode = null;
-    MapSequence.fromMap(myDependenciesToNodes).clear();
-    MapSequence.fromMap(myNodesToDependecies).clear();
-    MapSequence.fromMap(myNodesToErrors).clear();
-    removeModelListener();
+  private void processEvent(SModelPropertyEvent event) {
+    SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getNode());
   }
 
   public <Result> Result runCheckingAction(_FunctionTypes._return_P0_E0<? extends Result> action) {
@@ -294,12 +321,14 @@ public class LanguageErrorsComponent {
   }
 
   public class MyModelListener extends SModelAdapter {
-    public MyModelListener() {
-    }
-
     @Override
     public void beforeModelDisposed(SModel model) {
-      processBeforeModelDisposed(model);
+      if (myModel == model) {
+        return;
+      }
+      for (SNode dependencyToInvalidate : getDependenciesToInvalidate(model)) {
+        invalidateDependency(dependencyToInvalidate);
+      }
     }
 
     @Override
@@ -329,16 +358,13 @@ public class LanguageErrorsComponent {
   }
 
   public class MyModelRepositoryListener extends SModelRepositoryAdapter {
-    public MyModelRepositoryListener() {
-    }
-
     @Override
     public void modelRemoved(SModel descriptor) {
-      processModelRemoved(descriptor);
+      SetSequence.fromSet(myListenedModels).removeElement(descriptor);
     }
   }
 
-  private static SModelReference check_29uvfh_a0a0c0s(SModel checkedDotOperand) {
+  private static SModelReference check_29uvfh_a0a0c0cb(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

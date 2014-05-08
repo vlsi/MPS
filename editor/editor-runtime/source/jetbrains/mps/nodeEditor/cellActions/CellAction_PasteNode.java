@@ -208,7 +208,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
               requireResolveReferences.add(ref);
             }
 
-            ResolverComponent.getInstance().resolveScopesOnly(requireResolveReferences, context.getOperationContext());
+            ResolverComponent.getInstance().resolveScopesOnly(requireResolveReferences, context.getRepository());
 
             // set selection
             editorComponent.flushEvents();

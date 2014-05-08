@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LanguageChecker implements INodeChecker {
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
@@ -25,8 +26,8 @@ public class LanguageChecker implements INodeChecker {
   public Set<IErrorReporter> getErrors(final SNode rootNode, final IOperationContext context) {
     return TypeContextManager.getInstance().runResolveAction(new Computable<Set<IErrorReporter>>() {
       public Set<IErrorReporter> compute() {
-        LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(rootNode);
-        errorsComponent.check(rootNode, myRules, context);
+        LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(SNodeOperations.getModel(rootNode));
+        errorsComponent.check(rootNode, myRules, context.getProject().getRepository());
         Set<IErrorReporter> result = errorsComponent.getErrors();
         errorsComponent.dispose();
         return result;

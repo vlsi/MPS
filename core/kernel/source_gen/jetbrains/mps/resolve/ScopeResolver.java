@@ -7,7 +7,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -26,7 +26,7 @@ public class ScopeResolver implements IResolver {
   }
 
   @Override
-  public boolean resolve(@NotNull final SReference reference, @NotNull final SNode sourceNode, @NotNull final IOperationContext operationContext) {
+  public boolean resolve(@NotNull final SReference reference, @NotNull final SNode sourceNode, @NotNull final SRepository repository) {
     SNode linkDeclaration = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(sourceNode), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{reference.getRole()});
     if (linkDeclaration == null) {
       return false;

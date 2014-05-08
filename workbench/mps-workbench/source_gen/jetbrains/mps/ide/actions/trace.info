@@ -11662,8 +11662,8 @@
     <nodeInfo nodeId="5533671870987189834" fileName="PasteNode_Action.java" startLine="120" startPosition="18" endLine="121" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5533671870987189860" fileName="PasteNode_Action.java" startLine="122" startPosition="112" endLine="123" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5533671870987189810" fileName="PasteNode_Action.java" startLine="124" startPosition="13" endLine="125" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1802459475176537592" fileName="PasteNode_Action.java" startLine="126" startPosition="11" endLine="127" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7236590470026152816" fileName="PasteNode_Action.java" startLine="127" startPosition="142" endLine="128" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1802459475176537592" fileName="PasteNode_Action.java" startLine="126" startPosition="11" endLine="127" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7236590470026152816" fileName="PasteNode_Action.java" startLine="127" startPosition="151" endLine="128" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5533671870987190881" fileName="PasteNode_Action.java" startLine="129" startPosition="96" endLine="130" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5533671870987190894" fileName="PasteNode_Action.java" startLine="130" startPosition="69" endLine="131" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1071422968910407105" fileName="PasteNode_Action.java" startLine="133" startPosition="33" endLine="134" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -15931,7 +15931,7 @@
     <nodeInfo nodeId="4359715074118970528" fileName="GoByReference_ActionGroup.java" startLine="65" startPosition="0" endLine="66" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2010440180771533515" fileName="GoByReference_ActionGroup.java" startLine="69" startPosition="29" endLine="70" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2010440180771533574" fileName="GoByReference_ActionGroup.java" startLine="70" startPosition="140" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1802459475176380959" fileName="GoByReference_ActionGroup.java" startLine="74" startPosition="33" endLine="75" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1802459475176380959" fileName="GoByReference_ActionGroup.java" startLine="74" startPosition="33" endLine="75" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2010440180771533534" fileName="GoByReference_ActionGroup.java" startLine="77" startPosition="37" endLine="78" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2010440180771533540" fileName="GoByReference_ActionGroup.java" startLine="78" startPosition="45" endLine="79" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2010440180771533546" fileName="GoByReference_ActionGroup.java" startLine="79" startPosition="56" endLine="80" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -15968,7 +15968,7 @@
       <varInfo nodeId="965654005418338549" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="965654005418338549" fileName="GoByReference_ActionGroup.java" startLine="36" startPosition="27" endLine="37" endPosition="39" />
-    <scopeInfo nodeId="7018451870009505182" fileName="GoByReference_ActionGroup.java" startLine="74" startPosition="33" endLine="75" endPosition="75" />
+    <scopeInfo nodeId="7018451870009505182" fileName="GoByReference_ActionGroup.java" startLine="74" startPosition="33" endLine="75" endPosition="104" />
     <scopeInfo nodeId="9154096193210246039" fileName="GoByReference_ActionGroup.java" startLine="81" startPosition="33" endLine="82" endPosition="21" />
     <scopeInfo nodeId="2010440180771533564" fileName="GoByReference_ActionGroup.java" startLine="86" startPosition="36" endLine="87" endPosition="21" />
     <scopeInfo nodeId="965654005418338549" fileName="GoByReference_ActionGroup.java" startLine="95" startPosition="0" endLine="96" endPosition="39">

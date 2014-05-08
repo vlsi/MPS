@@ -55,7 +55,7 @@ public class AutoResolver extends EditorCheckerAdapter {
               @Override
               public void run() {
                 // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
-                ResolverComponent.getInstance().resolveScopesOnly(badReferences, operationContext);
+                ResolverComponent.getInstance().resolveScopesOnly(badReferences, editorContext.getRepository());
               }
             }, operationContext.getProject());
           }
