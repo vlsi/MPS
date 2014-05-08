@@ -1672,7 +1672,7 @@ public class QueriesGenerated {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyMapper");
       }
     }).toListSequence();
-    return ((int) ListSequence.fromList(list).count() == 1 ? list : Collections.<SNode>emptyList());
+    return (ListSequence.fromList(list).count() == 1 ? list : Collections.<SNode>emptyList());
   }
 
   public static Iterable<SNode> sourceNodesQuery_6789562173791600095(final SourceSubstituteMacroNodesContext _context) {

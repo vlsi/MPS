@@ -231,7 +231,7 @@ public class BlameDialog extends DialogWrapper {
 
   @Override
   protected void doOKAction() {
-    String title = getBuildString() + myTitleField.getText();
+    /*String title = getBuildString() + myTitleField.getText();
 
     StringBuilder description = new StringBuilder(1000);
     if (myTitleField.getText().trim().length() != 0) {
@@ -273,7 +273,7 @@ public class BlameDialog extends DialogWrapper {
       }
       Messages.showErrorDialog(BlameDialog.this.getOwner(), message, "Error");
       return;
-    }
+    }*/
 
     openIssueInBrowser();
 
@@ -286,7 +286,7 @@ public class BlameDialog extends DialogWrapper {
   private void openIssueInBrowser() {
     String id = myResult.getIssueId();
     if (id != null) {
-      BrowserUtil.launchBrowser(Command.ISSUE_BASE_URL + id);
+      BrowserUtil.browse(Command.ISSUE_BASE_URL + id);
     }
   }
 

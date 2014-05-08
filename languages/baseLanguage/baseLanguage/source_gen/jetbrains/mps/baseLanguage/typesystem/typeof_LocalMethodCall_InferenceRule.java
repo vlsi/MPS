@@ -156,7 +156,7 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   private static SNode _quotation_createNode_v9rubd_a0a1a0a31a1() {

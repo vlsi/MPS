@@ -31,7 +31,7 @@
     <nodeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="60" startPosition="57" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="62" startPosition="35" endLine="63" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="63" startPosition="72" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="64" startPosition="78" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="64" startPosition="78" endLine="65" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="66" startPosition="10" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="70" startPosition="91" endLine="71" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="71" startPosition="132" endLine="72" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -84,7 +84,7 @@
       <varInfo nodeId="3675491646420733859" varName="editorContext" />
       <varInfo nodeId="3675491646420733859" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="62" startPosition="35" endLine="65" endPosition="105">
+    <scopeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="62" startPosition="35" endLine="65" endPosition="109">
       <varInfo nodeId="3675491646420739449" varName="manager" />
       <varInfo nodeId="3675491646420739449" varName="opContext" />
     </scopeInfo>
@@ -181,7 +181,7 @@
     <nodeInfo nodeId="3675491646420872302" fileName="Workflow_Editor.java" startLine="50" startPosition="57" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420872302" fileName="Workflow_Editor.java" startLine="52" startPosition="35" endLine="53" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420872302" fileName="Workflow_Editor.java" startLine="53" startPosition="72" endLine="54" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420872302" fileName="Workflow_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3675491646420872302" fileName="Workflow_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3675491646420872302" fileName="Workflow_Editor.java" startLine="56" startPosition="10" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3675491646420739360" fileName="Workflow_Editor.java" startLine="60" startPosition="88" endLine="61" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420739360" fileName="Workflow_Editor.java" startLine="61" startPosition="94" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -201,7 +201,7 @@
     <nodeInfo nodeId="3675491646420739361" fileName="Workflow_Editor.java" startLine="78" startPosition="57" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420739361" fileName="Workflow_Editor.java" startLine="80" startPosition="35" endLine="81" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420739361" fileName="Workflow_Editor.java" startLine="81" startPosition="72" endLine="82" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420739361" fileName="Workflow_Editor.java" startLine="82" startPosition="78" endLine="83" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3675491646420739361" fileName="Workflow_Editor.java" startLine="82" startPosition="78" endLine="83" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3675491646420739361" fileName="Workflow_Editor.java" startLine="84" startPosition="10" endLine="85" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3675491646420739356" fileName="Workflow_Editor.java" startLine="88" startPosition="90" endLine="89" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420739356" fileName="Workflow_Editor.java" startLine="89" startPosition="96" endLine="90" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -226,7 +226,7 @@
     <nodeInfo nodeId="3675491646420739372" fileName="Workflow_Editor.java" startLine="118" startPosition="57" endLine="119" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420739372" fileName="Workflow_Editor.java" startLine="120" startPosition="35" endLine="121" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420739372" fileName="Workflow_Editor.java" startLine="121" startPosition="72" endLine="122" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420739372" fileName="Workflow_Editor.java" startLine="122" startPosition="78" endLine="123" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3675491646420739372" fileName="Workflow_Editor.java" startLine="122" startPosition="78" endLine="123" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3675491646420739372" fileName="Workflow_Editor.java" startLine="124" startPosition="10" endLine="125" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3675491646420826368" fileName="Workflow_Editor.java" startLine="128" startPosition="88" endLine="129" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3675491646420826368" fileName="Workflow_Editor.java" startLine="129" startPosition="86" endLine="130" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -260,11 +260,11 @@
       <varInfo nodeId="3675491646420739356" varName="editorContext" />
       <varInfo nodeId="3675491646420739356" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3675491646420872302" fileName="Workflow_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="105">
+    <scopeInfo nodeId="3675491646420872302" fileName="Workflow_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="109">
       <varInfo nodeId="3675491646420872302" varName="manager" />
       <varInfo nodeId="3675491646420872302" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3675491646420739361" fileName="Workflow_Editor.java" startLine="80" startPosition="35" endLine="83" endPosition="105">
+    <scopeInfo nodeId="3675491646420739361" fileName="Workflow_Editor.java" startLine="80" startPosition="35" endLine="83" endPosition="109">
       <varInfo nodeId="3675491646420739361" varName="manager" />
       <varInfo nodeId="3675491646420739361" varName="opContext" />
     </scopeInfo>
@@ -273,7 +273,7 @@
       <varInfo nodeId="3675491646420739356" varName="editorContext" />
       <varInfo nodeId="3675491646420739356" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3675491646420739372" fileName="Workflow_Editor.java" startLine="120" startPosition="35" endLine="123" endPosition="105">
+    <scopeInfo nodeId="3675491646420739372" fileName="Workflow_Editor.java" startLine="120" startPosition="35" endLine="123" endPosition="109">
       <varInfo nodeId="3675491646420739372" varName="manager" />
       <varInfo nodeId="3675491646420739372" varName="opContext" />
     </scopeInfo>

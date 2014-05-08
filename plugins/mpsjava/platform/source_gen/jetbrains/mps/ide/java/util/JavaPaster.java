@@ -87,7 +87,7 @@ public class JavaPaster {
     try {
       SNode context = null;
       if (FeatureKind.CLASS_CONTENT.equals(featureKind)) {
-        context = SNodeOperations.getAncestor(anchor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+        context = SNodeOperations.getAncestor(anchor, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
       }
       List<SNode> nodes = parser.parse(javaCode, featureKind, context, true).getNodes();
 

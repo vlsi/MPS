@@ -25,7 +25,7 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
   public void applyRule(final SNode ft, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(ft, "runtimeIface", false) != null)) {
       SNode rt = SLinkOperations.getTarget(ft, "runtimeIface", false);
-      if (!((int) Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(rt)).count() == 1)) {
+      if (!(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(rt)).count() == 1)) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "runtime interface must have exactly one method", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291049608", null, errorTarget);
       }
@@ -41,7 +41,7 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "void expected", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291057444", null, errorTarget);
         }
       }
-      if (!((int) ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(ft, "parameterType", true)).count())) {
+      if (!(ListSequence.fromList(SLinkOperations.getTargets(mtd, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(ft, "parameterType", true)).count())) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ft, "wrong parameter number", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "6871507691291057462", null, errorTarget);
       }

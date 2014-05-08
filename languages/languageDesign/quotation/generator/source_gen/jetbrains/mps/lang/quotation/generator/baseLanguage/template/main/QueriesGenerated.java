@@ -894,6 +894,10 @@ public class QueriesGenerated {
     });
   }
 
+  public static boolean mappingConfiguration_Condition_6450631649356501163(final TemplateQueryContext _context) {
+    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression").isEmpty());
+  }
+
   public static Object insertMacro_varValue_5625022412249398387(final TemplateQueryContext _context) {
     return _context.getNode();
   }

@@ -18,9 +18,11 @@ package jetbrains.mps.ide.ui;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
 @Deprecated
+@ToRemove(version = 3.0)
 public class SimpleSNodeTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
 

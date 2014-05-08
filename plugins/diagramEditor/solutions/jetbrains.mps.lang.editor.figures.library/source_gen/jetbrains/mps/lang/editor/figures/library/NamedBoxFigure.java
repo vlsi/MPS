@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.figures.library;
 import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.cell.TextCell;
-import jetbrains.jetpad.cell.view.CellView;
+import jetbrains.jetpad.cell.toView.CellView;
 import jetbrains.jetpad.values.Color;
 import jetbrains.jetpad.mapper.MapperFactory;
 import jetbrains.jetpad.mapper.Mapper;

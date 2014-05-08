@@ -5,7 +5,7 @@
 
   <target name="platform">
     <ant antfile="getIdeaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true"/>
-    <ant antfile="./jetpad/build.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true"/>
+    <ant antfile="./jetpad/build.xml" target="resolve" inheritAll="true" useNativeBasedir="true"/>
   </target>
 
   <target name="build" depends="platform, base, signed"/>

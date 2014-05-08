@@ -819,7 +819,7 @@
     <nodeInfo nodeId="2870536390420315009" fileName="ActionTestContainer_Editor.java" startLine="59" startPosition="57" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2870536390420315009" fileName="ActionTestContainer_Editor.java" startLine="61" startPosition="35" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2870536390420315009" fileName="ActionTestContainer_Editor.java" startLine="62" startPosition="72" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2870536390420315009" fileName="ActionTestContainer_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2870536390420315009" fileName="ActionTestContainer_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2870536390420315009" fileName="ActionTestContainer_Editor.java" startLine="65" startPosition="10" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2870536390420315010" fileName="ActionTestContainer_Editor.java" startLine="69" startPosition="88" endLine="70" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2870536390420315010" fileName="ActionTestContainer_Editor.java" startLine="70" startPosition="87" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1641,7 +1641,7 @@
       <varInfo nodeId="2550657305103396926" varName="editorContext" />
       <varInfo nodeId="2550657305103396926" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2870536390420315009" fileName="ActionTestContainer_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="105">
+    <scopeInfo nodeId="2870536390420315009" fileName="ActionTestContainer_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="109">
       <varInfo nodeId="2870536390420315009" varName="manager" />
       <varInfo nodeId="2870536390420315009" varName="opContext" />
     </scopeInfo>
@@ -2400,7 +2400,7 @@
     <nodeInfo nodeId="9187447745748952249" fileName="ActionTestChild1_Editor.java" startLine="59" startPosition="57" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9187447745748952249" fileName="ActionTestChild1_Editor.java" startLine="61" startPosition="35" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9187447745748952249" fileName="ActionTestChild1_Editor.java" startLine="62" startPosition="72" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9187447745748952249" fileName="ActionTestChild1_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9187447745748952249" fileName="ActionTestChild1_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9187447745748952249" fileName="ActionTestChild1_Editor.java" startLine="65" startPosition="10" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9187447745748952250" fileName="ActionTestChild1_Editor.java" startLine="69" startPosition="88" endLine="70" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9187447745748952250" fileName="ActionTestChild1_Editor.java" startLine="70" startPosition="87" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2502,7 +2502,7 @@
       <varInfo nodeId="2550657305103442231" varName="editorContext" />
       <varInfo nodeId="2550657305103442231" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9187447745748952249" fileName="ActionTestChild1_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="105">
+    <scopeInfo nodeId="9187447745748952249" fileName="ActionTestChild1_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="109">
       <varInfo nodeId="9187447745748952249" varName="manager" />
       <varInfo nodeId="9187447745748952249" varName="opContext" />
     </scopeInfo>
@@ -2637,7 +2637,7 @@
     <nodeInfo nodeId="2550657305103442554" fileName="ActionTestChild2_Editor.java" startLine="49" startPosition="57" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2550657305103442554" fileName="ActionTestChild2_Editor.java" startLine="51" startPosition="35" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2550657305103442554" fileName="ActionTestChild2_Editor.java" startLine="52" startPosition="72" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2550657305103442554" fileName="ActionTestChild2_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2550657305103442554" fileName="ActionTestChild2_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2550657305103442554" fileName="ActionTestChild2_Editor.java" startLine="55" startPosition="10" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2550657305103442555" fileName="ActionTestChild2_Editor.java" startLine="59" startPosition="88" endLine="60" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2550657305103442555" fileName="ActionTestChild2_Editor.java" startLine="60" startPosition="87" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2660,7 +2660,7 @@
       <varInfo nodeId="2550657305103442522" varName="editorContext" />
       <varInfo nodeId="2550657305103442522" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2550657305103442554" fileName="ActionTestChild2_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="105">
+    <scopeInfo nodeId="2550657305103442554" fileName="ActionTestChild2_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="109">
       <varInfo nodeId="2550657305103442554" varName="manager" />
       <varInfo nodeId="2550657305103442554" varName="opContext" />
     </scopeInfo>
@@ -2727,7 +2727,7 @@
     <nodeInfo nodeId="2747974755163526318" fileName="ActionTestChildToWrap2_Editor.java" startLine="50" startPosition="57" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2747974755163526318" fileName="ActionTestChildToWrap2_Editor.java" startLine="52" startPosition="35" endLine="53" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2747974755163526318" fileName="ActionTestChildToWrap2_Editor.java" startLine="53" startPosition="72" endLine="54" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2747974755163526318" fileName="ActionTestChildToWrap2_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2747974755163526318" fileName="ActionTestChildToWrap2_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2747974755163526318" fileName="ActionTestChildToWrap2_Editor.java" startLine="56" startPosition="10" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2747974755163526319" fileName="ActionTestChildToWrap2_Editor.java" startLine="60" startPosition="88" endLine="61" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2747974755163526319" fileName="ActionTestChildToWrap2_Editor.java" startLine="61" startPosition="87" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2762,7 +2762,7 @@
       <varInfo nodeId="2747974755163525146" varName="editorContext" />
       <varInfo nodeId="2747974755163525146" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2747974755163526318" fileName="ActionTestChildToWrap2_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="105">
+    <scopeInfo nodeId="2747974755163526318" fileName="ActionTestChildToWrap2_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="109">
       <varInfo nodeId="2747974755163526318" varName="manager" />
       <varInfo nodeId="2747974755163526318" varName="opContext" />
     </scopeInfo>
@@ -2873,7 +2873,7 @@
     <nodeInfo nodeId="3185679905989655397" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="97" startPosition="57" endLine="98" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3185679905989655397" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="99" startPosition="35" endLine="100" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3185679905989655397" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="100" startPosition="72" endLine="101" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3185679905989655397" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="101" startPosition="78" endLine="102" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3185679905989655397" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="101" startPosition="78" endLine="102" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3185679905989655397" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="103" startPosition="10" endLine="104" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3185679905989655400" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="107" startPosition="88" endLine="108" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3185679905989655400" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="108" startPosition="87" endLine="109" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2906,7 +2906,7 @@
       <varInfo nodeId="3185679905989655348" varName="editorContext" />
       <varInfo nodeId="3185679905989655348" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3185679905989655397" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="99" startPosition="35" endLine="102" endPosition="105">
+    <scopeInfo nodeId="3185679905989655397" fileName="ActionTestSidetransformTestAncestor_Editor.java" startLine="99" startPosition="35" endLine="102" endPosition="109">
       <varInfo nodeId="3185679905989655397" varName="manager" />
       <varInfo nodeId="3185679905989655397" varName="opContext" />
     </scopeInfo>
@@ -3157,7 +3157,7 @@
     <nodeInfo nodeId="3213804652571077149" fileName="ActionTestChild1SubConcept_Editor.java" startLine="49" startPosition="57" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3213804652571077149" fileName="ActionTestChild1SubConcept_Editor.java" startLine="51" startPosition="35" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3213804652571077149" fileName="ActionTestChild1SubConcept_Editor.java" startLine="52" startPosition="72" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3213804652571077149" fileName="ActionTestChild1SubConcept_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3213804652571077149" fileName="ActionTestChild1SubConcept_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3213804652571077149" fileName="ActionTestChild1SubConcept_Editor.java" startLine="55" startPosition="10" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3213804652571077150" fileName="ActionTestChild1SubConcept_Editor.java" startLine="59" startPosition="88" endLine="60" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3213804652571077150" fileName="ActionTestChild1SubConcept_Editor.java" startLine="60" startPosition="87" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3180,7 +3180,7 @@
       <varInfo nodeId="3213804652571075983" varName="editorContext" />
       <varInfo nodeId="3213804652571075983" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3213804652571077149" fileName="ActionTestChild1SubConcept_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="105">
+    <scopeInfo nodeId="3213804652571077149" fileName="ActionTestChild1SubConcept_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="109">
       <varInfo nodeId="3213804652571077149" varName="manager" />
       <varInfo nodeId="3213804652571077149" varName="opContext" />
     </scopeInfo>
@@ -3365,7 +3365,7 @@
     <nodeInfo nodeId="4942308145797615031" fileName="ActionTestSidetransformChild1_Editor.java" startLine="49" startPosition="57" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4942308145797615031" fileName="ActionTestSidetransformChild1_Editor.java" startLine="51" startPosition="35" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4942308145797615031" fileName="ActionTestSidetransformChild1_Editor.java" startLine="52" startPosition="72" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4942308145797615031" fileName="ActionTestSidetransformChild1_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4942308145797615031" fileName="ActionTestSidetransformChild1_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4942308145797615031" fileName="ActionTestSidetransformChild1_Editor.java" startLine="55" startPosition="10" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4942308145797615032" fileName="ActionTestSidetransformChild1_Editor.java" startLine="59" startPosition="88" endLine="60" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4942308145797615032" fileName="ActionTestSidetransformChild1_Editor.java" startLine="60" startPosition="87" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3388,7 +3388,7 @@
       <varInfo nodeId="4942308145797614930" varName="editorContext" />
       <varInfo nodeId="4942308145797614930" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4942308145797615031" fileName="ActionTestSidetransformChild1_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="105">
+    <scopeInfo nodeId="4942308145797615031" fileName="ActionTestSidetransformChild1_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="109">
       <varInfo nodeId="4942308145797615031" varName="manager" />
       <varInfo nodeId="4942308145797615031" varName="opContext" />
     </scopeInfo>
@@ -3461,7 +3461,7 @@
     <nodeInfo nodeId="2747974755167990661" fileName="ActionTestChildWrapper_Editor.java" startLine="54" startPosition="57" endLine="55" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2747974755167990661" fileName="ActionTestChildWrapper_Editor.java" startLine="56" startPosition="35" endLine="57" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2747974755167990661" fileName="ActionTestChildWrapper_Editor.java" startLine="57" startPosition="72" endLine="58" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2747974755167990661" fileName="ActionTestChildWrapper_Editor.java" startLine="58" startPosition="78" endLine="59" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2747974755167990661" fileName="ActionTestChildWrapper_Editor.java" startLine="58" startPosition="78" endLine="59" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2747974755167990661" fileName="ActionTestChildWrapper_Editor.java" startLine="60" startPosition="10" endLine="61" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2747974755167990662" fileName="ActionTestChildWrapper_Editor.java" startLine="64" startPosition="88" endLine="65" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2747974755167990662" fileName="ActionTestChildWrapper_Editor.java" startLine="65" startPosition="87" endLine="66" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3494,7 +3494,7 @@
     <nodeInfo nodeId="2747974755167990669" fileName="ActionTestChildWrapper_Editor.java" startLine="103" startPosition="57" endLine="104" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2747974755167990669" fileName="ActionTestChildWrapper_Editor.java" startLine="105" startPosition="35" endLine="106" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2747974755167990669" fileName="ActionTestChildWrapper_Editor.java" startLine="106" startPosition="72" endLine="107" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2747974755167990669" fileName="ActionTestChildWrapper_Editor.java" startLine="107" startPosition="78" endLine="108" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2747974755167990669" fileName="ActionTestChildWrapper_Editor.java" startLine="107" startPosition="78" endLine="108" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2747974755167990669" fileName="ActionTestChildWrapper_Editor.java" startLine="109" startPosition="10" endLine="110" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2747974755167990670" fileName="ActionTestChildWrapper_Editor.java" startLine="113" startPosition="88" endLine="114" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2747974755167990670" fileName="ActionTestChildWrapper_Editor.java" startLine="114" startPosition="87" endLine="115" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3529,11 +3529,11 @@
       <varInfo nodeId="5164819300892650872" varName="editorContext" />
       <varInfo nodeId="5164819300892650872" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2747974755167990661" fileName="ActionTestChildWrapper_Editor.java" startLine="56" startPosition="35" endLine="59" endPosition="105">
+    <scopeInfo nodeId="2747974755167990661" fileName="ActionTestChildWrapper_Editor.java" startLine="56" startPosition="35" endLine="59" endPosition="109">
       <varInfo nodeId="2747974755167990661" varName="manager" />
       <varInfo nodeId="2747974755167990661" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2747974755167990669" fileName="ActionTestChildWrapper_Editor.java" startLine="105" startPosition="35" endLine="108" endPosition="105">
+    <scopeInfo nodeId="2747974755167990669" fileName="ActionTestChildWrapper_Editor.java" startLine="105" startPosition="35" endLine="108" endPosition="109">
       <varInfo nodeId="2747974755167990669" varName="manager" />
       <varInfo nodeId="2747974755167990669" varName="opContext" />
     </scopeInfo>
@@ -3633,7 +3633,7 @@
     <nodeInfo nodeId="5164819300894588466" fileName="ActionTestChildToWrap1_Editor.java" startLine="50" startPosition="57" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5164819300894588466" fileName="ActionTestChildToWrap1_Editor.java" startLine="52" startPosition="35" endLine="53" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5164819300894588466" fileName="ActionTestChildToWrap1_Editor.java" startLine="53" startPosition="72" endLine="54" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164819300894588466" fileName="ActionTestChildToWrap1_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5164819300894588466" fileName="ActionTestChildToWrap1_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5164819300894588466" fileName="ActionTestChildToWrap1_Editor.java" startLine="56" startPosition="10" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5164819300894588467" fileName="ActionTestChildToWrap1_Editor.java" startLine="60" startPosition="88" endLine="61" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5164819300894588467" fileName="ActionTestChildToWrap1_Editor.java" startLine="61" startPosition="87" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3668,7 +3668,7 @@
       <varInfo nodeId="5164819300894588410" varName="editorContext" />
       <varInfo nodeId="5164819300894588410" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5164819300894588466" fileName="ActionTestChildToWrap1_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="105">
+    <scopeInfo nodeId="5164819300894588466" fileName="ActionTestChildToWrap1_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="109">
       <varInfo nodeId="5164819300894588466" varName="manager" />
       <varInfo nodeId="5164819300894588466" varName="opContext" />
     </scopeInfo>
@@ -3741,7 +3741,7 @@
     <nodeInfo nodeId="8349639607730662556" fileName="ActionTestDefaultChild1_Editor.java" startLine="49" startPosition="57" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8349639607730662556" fileName="ActionTestDefaultChild1_Editor.java" startLine="51" startPosition="35" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8349639607730662556" fileName="ActionTestDefaultChild1_Editor.java" startLine="52" startPosition="72" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8349639607730662556" fileName="ActionTestDefaultChild1_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8349639607730662556" fileName="ActionTestDefaultChild1_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8349639607730662556" fileName="ActionTestDefaultChild1_Editor.java" startLine="55" startPosition="10" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8349639607730662557" fileName="ActionTestDefaultChild1_Editor.java" startLine="59" startPosition="88" endLine="60" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8349639607730662557" fileName="ActionTestDefaultChild1_Editor.java" startLine="60" startPosition="87" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3764,7 +3764,7 @@
       <varInfo nodeId="8349639607730661202" varName="editorContext" />
       <varInfo nodeId="8349639607730661202" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8349639607730662556" fileName="ActionTestDefaultChild1_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="105">
+    <scopeInfo nodeId="8349639607730662556" fileName="ActionTestDefaultChild1_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="109">
       <varInfo nodeId="8349639607730662556" varName="manager" />
       <varInfo nodeId="8349639607730662556" varName="opContext" />
     </scopeInfo>
@@ -3829,7 +3829,7 @@
     <nodeInfo nodeId="8349639607730662933" fileName="ActionTestDefaultChild2_Editor.java" startLine="49" startPosition="57" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8349639607730662933" fileName="ActionTestDefaultChild2_Editor.java" startLine="51" startPosition="35" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8349639607730662933" fileName="ActionTestDefaultChild2_Editor.java" startLine="52" startPosition="72" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8349639607730662933" fileName="ActionTestDefaultChild2_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8349639607730662933" fileName="ActionTestDefaultChild2_Editor.java" startLine="53" startPosition="78" endLine="54" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8349639607730662933" fileName="ActionTestDefaultChild2_Editor.java" startLine="55" startPosition="10" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8349639607730662934" fileName="ActionTestDefaultChild2_Editor.java" startLine="59" startPosition="88" endLine="60" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8349639607730662934" fileName="ActionTestDefaultChild2_Editor.java" startLine="60" startPosition="87" endLine="61" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3852,7 +3852,7 @@
       <varInfo nodeId="8349639607730662901" varName="editorContext" />
       <varInfo nodeId="8349639607730662901" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8349639607730662933" fileName="ActionTestDefaultChild2_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="105">
+    <scopeInfo nodeId="8349639607730662933" fileName="ActionTestDefaultChild2_Editor.java" startLine="51" startPosition="35" endLine="54" endPosition="109">
       <varInfo nodeId="8349639607730662933" varName="manager" />
       <varInfo nodeId="8349639607730662933" varName="opContext" />
     </scopeInfo>
@@ -3919,7 +3919,7 @@
     <nodeInfo nodeId="9187447745748951447" fileName="ActionTestChild1Child_Editor.java" startLine="50" startPosition="57" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9187447745748951447" fileName="ActionTestChild1Child_Editor.java" startLine="52" startPosition="35" endLine="53" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9187447745748951447" fileName="ActionTestChild1Child_Editor.java" startLine="53" startPosition="72" endLine="54" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9187447745748951447" fileName="ActionTestChild1Child_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9187447745748951447" fileName="ActionTestChild1Child_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9187447745748951447" fileName="ActionTestChild1Child_Editor.java" startLine="56" startPosition="10" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9187447745748951448" fileName="ActionTestChild1Child_Editor.java" startLine="60" startPosition="88" endLine="61" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9187447745748951448" fileName="ActionTestChild1Child_Editor.java" startLine="61" startPosition="87" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3954,7 +3954,7 @@
       <varInfo nodeId="9187447745748949997" varName="editorContext" />
       <varInfo nodeId="9187447745748949997" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9187447745748951447" fileName="ActionTestChild1Child_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="105">
+    <scopeInfo nodeId="9187447745748951447" fileName="ActionTestChild1Child_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="109">
       <varInfo nodeId="9187447745748951447" varName="manager" />
       <varInfo nodeId="9187447745748951447" varName="opContext" />
     </scopeInfo>

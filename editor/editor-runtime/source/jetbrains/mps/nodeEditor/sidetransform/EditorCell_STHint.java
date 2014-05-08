@@ -57,17 +57,18 @@ public class EditorCell_STHint extends EditorCell_Constant {
   private final EditorCell myBigCell;
   @NotNull
   private final EditorCell myAnchorCell;
+  @NotNull
   private final CellSide mySide;
   private boolean myInstalled;
 
-  public EditorCell_STHint(@NotNull EditorCell bigCell, EditorCell anchorCell, CellSide side, String sideTransformTag, CellInfo restoreSelectionCellInto) {
-    super(bigCell.getContext(), bigCell.getSNode(), "");
+  public EditorCell_STHint(@NotNull EditorCell bigCell, @NotNull EditorCell anchorCell, @NotNull CellSide side, String sideTransformTag, CellInfo restoreSelectionCellInto) {
+    super(anchorCell.getContext(), anchorCell.getSNode(), "");
     assert bigCell.isBig();
     mySide = side;
     myRestoreSelectionCellInfo = restoreSelectionCellInto;
     mySideTransformTag = sideTransformTag;
     myBigCell = bigCell;
-    myAnchorCell = anchorCell == null ? myBigCell : anchorCell;
+    myAnchorCell = anchorCell;
     init();
   }
 
@@ -167,6 +168,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
   }
 
   public EditorCell install() {
+    assert !myInstalled;
     myInstalled = true;
     if (myAnchorCell == myBigCell) {
       // Creating wrapper collection to hold both nodeCell & STHintCell

@@ -553,7 +553,7 @@
     <nodeInfo nodeId="2278461409091839000" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="130" startPosition="57" endLine="131" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839000" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="132" startPosition="35" endLine="133" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839000" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="133" startPosition="72" endLine="134" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2278461409091839000" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="134" startPosition="78" endLine="135" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2278461409091839000" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="134" startPosition="78" endLine="135" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839000" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="136" startPosition="10" endLine="137" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839002" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="140" startPosition="89" endLine="141" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839002" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="141" startPosition="87" endLine="142" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -580,7 +580,7 @@
     <nodeInfo nodeId="2278461409091839005" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="168" startPosition="57" endLine="169" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839005" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="170" startPosition="35" endLine="171" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839005" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="171" startPosition="72" endLine="172" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2278461409091839005" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="172" startPosition="78" endLine="173" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2278461409091839005" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="172" startPosition="78" endLine="173" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839005" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="174" startPosition="10" endLine="175" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839007" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="178" startPosition="89" endLine="179" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839007" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="179" startPosition="91" endLine="180" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -607,7 +607,7 @@
     <nodeInfo nodeId="2278461409091839010" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="206" startPosition="57" endLine="207" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839010" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="208" startPosition="35" endLine="209" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839010" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="209" startPosition="72" endLine="210" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2278461409091839010" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="210" startPosition="78" endLine="211" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2278461409091839010" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="210" startPosition="78" endLine="211" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839010" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="212" startPosition="10" endLine="213" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839012" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="216" startPosition="89" endLine="217" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839012" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="217" startPosition="92" endLine="218" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -634,7 +634,7 @@
     <nodeInfo nodeId="2278461409091839015" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="244" startPosition="57" endLine="245" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839015" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="246" startPosition="35" endLine="247" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839015" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="247" startPosition="72" endLine="248" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2278461409091839015" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="248" startPosition="78" endLine="249" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2278461409091839015" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="248" startPosition="78" endLine="249" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839015" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="250" startPosition="10" endLine="251" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839017" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="254" startPosition="89" endLine="255" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839017" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="255" startPosition="96" endLine="256" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -661,7 +661,7 @@
     <nodeInfo nodeId="2278461409091839020" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="282" startPosition="57" endLine="283" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839020" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="284" startPosition="35" endLine="285" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839020" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="285" startPosition="72" endLine="286" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2278461409091839020" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="286" startPosition="78" endLine="287" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2278461409091839020" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="286" startPosition="78" endLine="287" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839020" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="288" startPosition="10" endLine="289" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2278461409091839022" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="292" startPosition="89" endLine="293" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2278461409091839022" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="293" startPosition="86" endLine="294" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -850,23 +850,23 @@
       <varInfo nodeId="2278461409091838986" varName="editorContext" />
       <varInfo nodeId="2278461409091838986" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2278461409091839000" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="132" startPosition="35" endLine="135" endPosition="105">
+    <scopeInfo nodeId="2278461409091839000" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="132" startPosition="35" endLine="135" endPosition="109">
       <varInfo nodeId="2278461409091839000" varName="manager" />
       <varInfo nodeId="2278461409091839000" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2278461409091839005" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="170" startPosition="35" endLine="173" endPosition="105">
+    <scopeInfo nodeId="2278461409091839005" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="170" startPosition="35" endLine="173" endPosition="109">
       <varInfo nodeId="2278461409091839005" varName="manager" />
       <varInfo nodeId="2278461409091839005" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2278461409091839010" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="208" startPosition="35" endLine="211" endPosition="105">
+    <scopeInfo nodeId="2278461409091839010" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="208" startPosition="35" endLine="211" endPosition="109">
       <varInfo nodeId="2278461409091839010" varName="manager" />
       <varInfo nodeId="2278461409091839010" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2278461409091839015" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="246" startPosition="35" endLine="249" endPosition="105">
+    <scopeInfo nodeId="2278461409091839015" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="246" startPosition="35" endLine="249" endPosition="109">
       <varInfo nodeId="2278461409091839015" varName="manager" />
       <varInfo nodeId="2278461409091839015" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2278461409091839020" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="284" startPosition="35" endLine="287" endPosition="105">
+    <scopeInfo nodeId="2278461409091839020" fileName="NodeWithPortQueries_DiagramTestTextual_Editor.java" startLine="284" startPosition="35" endLine="287" endPosition="109">
       <varInfo nodeId="2278461409091839020" varName="manager" />
       <varInfo nodeId="2278461409091839020" varName="opContext" />
     </scopeInfo>
@@ -2123,7 +2123,7 @@
     <nodeInfo nodeId="5540569706414786755" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="130" startPosition="57" endLine="131" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786755" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="132" startPosition="35" endLine="133" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786755" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="133" startPosition="72" endLine="134" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5540569706414786755" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="134" startPosition="78" endLine="135" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5540569706414786755" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="134" startPosition="78" endLine="135" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786755" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="136" startPosition="10" endLine="137" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786757" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="140" startPosition="89" endLine="141" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786757" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="141" startPosition="87" endLine="142" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2150,7 +2150,7 @@
     <nodeInfo nodeId="5540569706414786760" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="168" startPosition="57" endLine="169" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786760" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="170" startPosition="35" endLine="171" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786760" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="171" startPosition="72" endLine="172" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5540569706414786760" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="172" startPosition="78" endLine="173" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5540569706414786760" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="172" startPosition="78" endLine="173" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786760" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="174" startPosition="10" endLine="175" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786762" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="178" startPosition="89" endLine="179" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786762" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="179" startPosition="91" endLine="180" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2177,7 +2177,7 @@
     <nodeInfo nodeId="5540569706414786765" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="206" startPosition="57" endLine="207" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786765" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="208" startPosition="35" endLine="209" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786765" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="209" startPosition="72" endLine="210" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5540569706414786765" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="210" startPosition="78" endLine="211" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5540569706414786765" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="210" startPosition="78" endLine="211" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786765" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="212" startPosition="10" endLine="213" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786767" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="216" startPosition="89" endLine="217" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786767" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="217" startPosition="92" endLine="218" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2204,7 +2204,7 @@
     <nodeInfo nodeId="5540569706414786770" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="244" startPosition="57" endLine="245" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786770" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="246" startPosition="35" endLine="247" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786770" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="247" startPosition="72" endLine="248" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5540569706414786770" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="248" startPosition="78" endLine="249" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5540569706414786770" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="248" startPosition="78" endLine="249" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786770" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="250" startPosition="10" endLine="251" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786772" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="254" startPosition="89" endLine="255" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786772" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="255" startPosition="96" endLine="256" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2231,7 +2231,7 @@
     <nodeInfo nodeId="5540569706414786775" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="282" startPosition="57" endLine="283" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786775" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="284" startPosition="35" endLine="285" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786775" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="285" startPosition="72" endLine="286" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5540569706414786775" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="286" startPosition="78" endLine="287" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5540569706414786775" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="286" startPosition="78" endLine="287" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786775" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="288" startPosition="10" endLine="289" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5540569706414786777" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="292" startPosition="89" endLine="293" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5540569706414786777" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="293" startPosition="86" endLine="294" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2420,23 +2420,23 @@
       <varInfo nodeId="5540569706414786118" varName="editorContext" />
       <varInfo nodeId="5540569706414786118" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5540569706414786755" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="132" startPosition="35" endLine="135" endPosition="105">
+    <scopeInfo nodeId="5540569706414786755" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="132" startPosition="35" endLine="135" endPosition="109">
       <varInfo nodeId="5540569706414786755" varName="manager" />
       <varInfo nodeId="5540569706414786755" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5540569706414786760" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="170" startPosition="35" endLine="173" endPosition="105">
+    <scopeInfo nodeId="5540569706414786760" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="170" startPosition="35" endLine="173" endPosition="109">
       <varInfo nodeId="5540569706414786760" varName="manager" />
       <varInfo nodeId="5540569706414786760" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5540569706414786765" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="208" startPosition="35" endLine="211" endPosition="105">
+    <scopeInfo nodeId="5540569706414786765" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="208" startPosition="35" endLine="211" endPosition="109">
       <varInfo nodeId="5540569706414786765" varName="manager" />
       <varInfo nodeId="5540569706414786765" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5540569706414786770" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="246" startPosition="35" endLine="249" endPosition="105">
+    <scopeInfo nodeId="5540569706414786770" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="246" startPosition="35" endLine="249" endPosition="109">
       <varInfo nodeId="5540569706414786770" varName="manager" />
       <varInfo nodeId="5540569706414786770" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5540569706414786775" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="284" startPosition="35" endLine="287" endPosition="105">
+    <scopeInfo nodeId="5540569706414786775" fileName="NodeWithPorts_DiagramTestTextual_Editor.java" startLine="284" startPosition="35" endLine="287" endPosition="109">
       <varInfo nodeId="5540569706414786775" varName="manager" />
       <varInfo nodeId="5540569706414786775" varName="opContext" />
     </scopeInfo>
@@ -3060,7 +3060,7 @@
     <nodeInfo nodeId="822550549812185557" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="58" startPosition="57" endLine="59" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812185557" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="60" startPosition="35" endLine="61" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812185557" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="61" startPosition="72" endLine="62" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549812185557" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="62" startPosition="78" endLine="63" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549812185557" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="62" startPosition="78" endLine="63" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812185557" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="64" startPosition="10" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812185558" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="68" startPosition="88" endLine="69" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812185558" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="69" startPosition="87" endLine="70" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3085,7 +3085,7 @@
       <varInfo nodeId="5540569706415162758" varName="editorContext" />
       <varInfo nodeId="5540569706415162758" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549812185557" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="105">
+    <scopeInfo nodeId="822550549812185557" fileName="InputPort_DiagramTestTextual_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="109">
       <varInfo nodeId="822550549812185557" varName="manager" />
       <varInfo nodeId="822550549812185557" varName="opContext" />
     </scopeInfo>
@@ -3153,7 +3153,7 @@
     <nodeInfo nodeId="822550549812186312" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="58" startPosition="57" endLine="59" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812186312" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="60" startPosition="35" endLine="61" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812186312" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="61" startPosition="72" endLine="62" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549812186312" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="62" startPosition="78" endLine="63" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549812186312" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="62" startPosition="78" endLine="63" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812186312" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="64" startPosition="10" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812186313" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="68" startPosition="88" endLine="69" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812186313" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="69" startPosition="87" endLine="70" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3178,7 +3178,7 @@
       <varInfo nodeId="5540569706415163095" varName="editorContext" />
       <varInfo nodeId="5540569706415163095" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549812186312" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="105">
+    <scopeInfo nodeId="822550549812186312" fileName="OutputPort_DiagramTestTextual_Editor.java" startLine="60" startPosition="35" endLine="63" endPosition="109">
       <varInfo nodeId="822550549812186312" varName="manager" />
       <varInfo nodeId="822550549812186312" varName="opContext" />
     </scopeInfo>
@@ -3531,7 +3531,7 @@
     <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="70" startPosition="57" endLine="71" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="72" startPosition="35" endLine="73" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="73" startPosition="72" endLine="74" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="74" startPosition="78" endLine="75" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="74" startPosition="78" endLine="75" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="76" startPosition="10" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812186714" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="81" startPosition="33" endLine="82" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="822550549812186714" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="85" startPosition="69" endLine="86" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3549,7 +3549,7 @@
     <nodeInfo nodeId="822550549812186716" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="105" startPosition="59" endLine="106" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812186716" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="107" startPosition="37" endLine="108" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812186716" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="108" startPosition="74" endLine="109" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549812186716" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="109" startPosition="80" endLine="110" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549812186716" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="109" startPosition="80" endLine="110" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812186716" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="111" startPosition="12" endLine="112" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812186717" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="116" startPosition="88" endLine="117" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812186717" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="117" startPosition="89" endLine="118" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3566,7 +3566,7 @@
     <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="131" startPosition="57" endLine="132" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="133" startPosition="35" endLine="134" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="134" startPosition="72" endLine="135" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="135" startPosition="78" endLine="136" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="135" startPosition="78" endLine="136" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="137" startPosition="10" endLine="138" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812186721" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="142" startPosition="33" endLine="143" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="822550549812186721" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="146" startPosition="69" endLine="147" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3584,7 +3584,7 @@
     <nodeInfo nodeId="822550549812186723" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="166" startPosition="59" endLine="167" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812186723" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="168" startPosition="37" endLine="169" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812186723" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="169" startPosition="74" endLine="170" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549812186723" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="170" startPosition="80" endLine="171" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549812186723" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="170" startPosition="80" endLine="171" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812186723" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="172" startPosition="12" endLine="173" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549812186724" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="177" startPosition="88" endLine="178" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549812186724" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="178" startPosition="87" endLine="179" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3636,7 +3636,7 @@
       <varInfo nodeId="822550549812184922" varName="editorContext" />
       <varInfo nodeId="822550549812184922" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="72" startPosition="35" endLine="75" endPosition="105">
+    <scopeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="72" startPosition="35" endLine="75" endPosition="109">
       <varInfo nodeId="822550549812184922" varName="manager" />
       <varInfo nodeId="822550549812184922" varName="opContext" />
     </scopeInfo>
@@ -3648,11 +3648,11 @@
       <varInfo nodeId="822550549812186714" varName="editorContext" />
       <varInfo nodeId="822550549812186714" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549812186716" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="107" startPosition="37" endLine="110" endPosition="107">
+    <scopeInfo nodeId="822550549812186716" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="107" startPosition="37" endLine="110" endPosition="111">
       <varInfo nodeId="822550549812186716" varName="manager" />
       <varInfo nodeId="822550549812186716" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="133" startPosition="35" endLine="136" endPosition="105">
+    <scopeInfo nodeId="822550549812184922" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="133" startPosition="35" endLine="136" endPosition="109">
       <varInfo nodeId="822550549812184922" varName="manager" />
       <varInfo nodeId="822550549812184922" varName="opContext" />
     </scopeInfo>
@@ -3664,7 +3664,7 @@
       <varInfo nodeId="822550549812186721" varName="editorContext" />
       <varInfo nodeId="822550549812186721" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549812186723" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="168" startPosition="37" endLine="171" endPosition="107">
+    <scopeInfo nodeId="822550549812186723" fileName="OutputToInputPortConnector_DiagramTestTextual_Editor.java" startLine="168" startPosition="37" endLine="171" endPosition="111">
       <varInfo nodeId="822550549812186723" varName="manager" />
       <varInfo nodeId="822550549812186723" varName="opContext" />
     </scopeInfo>
@@ -4065,7 +4065,7 @@
     <nodeInfo nodeId="822550549814829219" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="60" startPosition="57" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829219" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="62" startPosition="35" endLine="63" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829219" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="63" startPosition="72" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549814829219" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="64" startPosition="78" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549814829219" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="64" startPosition="78" endLine="65" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829219" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="66" startPosition="10" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829220" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="70" startPosition="88" endLine="71" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829220" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="71" startPosition="87" endLine="72" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4136,7 +4136,7 @@
     <nodeInfo nodeId="822550549814829229" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="133" startPosition="57" endLine="134" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829229" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="135" startPosition="35" endLine="136" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829229" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="136" startPosition="72" endLine="137" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549814829229" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="137" startPosition="78" endLine="138" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549814829229" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="137" startPosition="78" endLine="138" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829229" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="139" startPosition="10" endLine="140" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829231" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="143" startPosition="89" endLine="144" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829231" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="144" startPosition="87" endLine="145" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4163,7 +4163,7 @@
     <nodeInfo nodeId="822550549814829234" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="171" startPosition="57" endLine="172" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829234" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="173" startPosition="35" endLine="174" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829234" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="174" startPosition="72" endLine="175" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549814829234" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="175" startPosition="78" endLine="176" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549814829234" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="175" startPosition="78" endLine="176" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829234" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="177" startPosition="10" endLine="178" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829236" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="181" startPosition="89" endLine="182" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829236" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="182" startPosition="91" endLine="183" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4190,7 +4190,7 @@
     <nodeInfo nodeId="822550549814829239" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="209" startPosition="57" endLine="210" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829239" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="211" startPosition="35" endLine="212" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829239" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="212" startPosition="72" endLine="213" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549814829239" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="213" startPosition="78" endLine="214" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549814829239" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="213" startPosition="78" endLine="214" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829239" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="215" startPosition="10" endLine="216" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829241" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="219" startPosition="89" endLine="220" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829241" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="220" startPosition="92" endLine="221" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4217,7 +4217,7 @@
     <nodeInfo nodeId="822550549814829244" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="247" startPosition="57" endLine="248" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829244" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="249" startPosition="35" endLine="250" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829244" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="250" startPosition="72" endLine="251" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549814829244" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="251" startPosition="78" endLine="252" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549814829244" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="251" startPosition="78" endLine="252" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829244" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="253" startPosition="10" endLine="254" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829246" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="257" startPosition="89" endLine="258" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829246" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="258" startPosition="96" endLine="259" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4244,7 +4244,7 @@
     <nodeInfo nodeId="822550549814829249" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="285" startPosition="57" endLine="286" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829249" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="287" startPosition="35" endLine="288" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829249" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="288" startPosition="72" endLine="289" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="822550549814829249" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="289" startPosition="78" endLine="290" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="822550549814829249" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="289" startPosition="78" endLine="290" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829249" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="291" startPosition="10" endLine="292" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="822550549814829251" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="295" startPosition="88" endLine="296" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="822550549814829251" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="296" startPosition="87" endLine="297" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4308,27 +4308,27 @@
       <varInfo nodeId="822550549814795145" varName="editorContext" />
       <varInfo nodeId="822550549814795145" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549814829219" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="62" startPosition="35" endLine="65" endPosition="105">
+    <scopeInfo nodeId="822550549814829219" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="62" startPosition="35" endLine="65" endPosition="109">
       <varInfo nodeId="822550549814829219" varName="manager" />
       <varInfo nodeId="822550549814829219" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549814829229" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="135" startPosition="35" endLine="138" endPosition="105">
+    <scopeInfo nodeId="822550549814829229" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="135" startPosition="35" endLine="138" endPosition="109">
       <varInfo nodeId="822550549814829229" varName="manager" />
       <varInfo nodeId="822550549814829229" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549814829234" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="173" startPosition="35" endLine="176" endPosition="105">
+    <scopeInfo nodeId="822550549814829234" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="173" startPosition="35" endLine="176" endPosition="109">
       <varInfo nodeId="822550549814829234" varName="manager" />
       <varInfo nodeId="822550549814829234" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549814829239" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="211" startPosition="35" endLine="214" endPosition="105">
+    <scopeInfo nodeId="822550549814829239" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="211" startPosition="35" endLine="214" endPosition="109">
       <varInfo nodeId="822550549814829239" varName="manager" />
       <varInfo nodeId="822550549814829239" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549814829244" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="249" startPosition="35" endLine="252" endPosition="105">
+    <scopeInfo nodeId="822550549814829244" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="249" startPosition="35" endLine="252" endPosition="109">
       <varInfo nodeId="822550549814829244" varName="manager" />
       <varInfo nodeId="822550549814829244" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="822550549814829249" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="287" startPosition="35" endLine="290" endPosition="105">
+    <scopeInfo nodeId="822550549814829249" fileName="NodeWithName_DiagramTestTextual_Editor.java" startLine="287" startPosition="35" endLine="290" endPosition="109">
       <varInfo nodeId="822550549814829249" varName="manager" />
       <varInfo nodeId="822550549814829249" varName="opContext" />
     </scopeInfo>
@@ -5385,7 +5385,7 @@
     <nodeInfo nodeId="8794120090375983517" fileName="Node_DiagramTestTextual_Editor.java" startLine="94" startPosition="57" endLine="95" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090375983517" fileName="Node_DiagramTestTextual_Editor.java" startLine="96" startPosition="35" endLine="97" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090375983517" fileName="Node_DiagramTestTextual_Editor.java" startLine="97" startPosition="72" endLine="98" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794120090375983517" fileName="Node_DiagramTestTextual_Editor.java" startLine="98" startPosition="78" endLine="99" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794120090375983517" fileName="Node_DiagramTestTextual_Editor.java" startLine="98" startPosition="78" endLine="99" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090375983517" fileName="Node_DiagramTestTextual_Editor.java" startLine="100" startPosition="10" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090375983518" fileName="Node_DiagramTestTextual_Editor.java" startLine="104" startPosition="88" endLine="105" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090375983518" fileName="Node_DiagramTestTextual_Editor.java" startLine="105" startPosition="87" endLine="106" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5416,7 +5416,7 @@
     <nodeInfo nodeId="8794120090375983523" fileName="Node_DiagramTestTextual_Editor.java" startLine="139" startPosition="57" endLine="140" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090375983523" fileName="Node_DiagramTestTextual_Editor.java" startLine="141" startPosition="35" endLine="142" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090375983523" fileName="Node_DiagramTestTextual_Editor.java" startLine="142" startPosition="72" endLine="143" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794120090375983523" fileName="Node_DiagramTestTextual_Editor.java" startLine="143" startPosition="78" endLine="144" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794120090375983523" fileName="Node_DiagramTestTextual_Editor.java" startLine="143" startPosition="78" endLine="144" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090375983523" fileName="Node_DiagramTestTextual_Editor.java" startLine="145" startPosition="10" endLine="146" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090375983524" fileName="Node_DiagramTestTextual_Editor.java" startLine="149" startPosition="88" endLine="150" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090375983524" fileName="Node_DiagramTestTextual_Editor.java" startLine="150" startPosition="87" endLine="151" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5457,11 +5457,11 @@
       <varInfo nodeId="8794120090375983405" varName="editorContext" />
       <varInfo nodeId="8794120090375983405" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8794120090375983517" fileName="Node_DiagramTestTextual_Editor.java" startLine="96" startPosition="35" endLine="99" endPosition="105">
+    <scopeInfo nodeId="8794120090375983517" fileName="Node_DiagramTestTextual_Editor.java" startLine="96" startPosition="35" endLine="99" endPosition="109">
       <varInfo nodeId="8794120090375983517" varName="manager" />
       <varInfo nodeId="8794120090375983517" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8794120090375983523" fileName="Node_DiagramTestTextual_Editor.java" startLine="141" startPosition="35" endLine="144" endPosition="105">
+    <scopeInfo nodeId="8794120090375983523" fileName="Node_DiagramTestTextual_Editor.java" startLine="141" startPosition="35" endLine="144" endPosition="109">
       <varInfo nodeId="8794120090375983523" varName="manager" />
       <varInfo nodeId="8794120090375983523" varName="opContext" />
     </scopeInfo>
@@ -5884,7 +5884,7 @@
     <nodeInfo nodeId="8794120090377808531" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="102" startPosition="57" endLine="103" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808531" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="104" startPosition="35" endLine="105" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808531" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="105" startPosition="72" endLine="106" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794120090377808531" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="106" startPosition="78" endLine="107" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794120090377808531" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="106" startPosition="78" endLine="107" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090377808531" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="108" startPosition="10" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090377808532" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="112" startPosition="88" endLine="113" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808532" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="113" startPosition="87" endLine="114" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5915,7 +5915,7 @@
     <nodeInfo nodeId="8794120090377808537" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="147" startPosition="57" endLine="148" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808537" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="149" startPosition="35" endLine="150" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808537" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="150" startPosition="72" endLine="151" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794120090377808537" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="151" startPosition="78" endLine="152" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794120090377808537" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="151" startPosition="78" endLine="152" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090377808537" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="153" startPosition="10" endLine="154" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090377808538" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="157" startPosition="88" endLine="158" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808538" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="158" startPosition="87" endLine="159" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5946,7 +5946,7 @@
     <nodeInfo nodeId="8794120090377808543" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="192" startPosition="57" endLine="193" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808543" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="194" startPosition="35" endLine="195" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808543" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="195" startPosition="72" endLine="196" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794120090377808543" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="196" startPosition="78" endLine="197" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794120090377808543" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="196" startPosition="78" endLine="197" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090377808543" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="198" startPosition="10" endLine="199" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090377808544" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="202" startPosition="88" endLine="203" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808544" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="203" startPosition="87" endLine="204" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -5977,7 +5977,7 @@
     <nodeInfo nodeId="8794120090377808549" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="237" startPosition="57" endLine="238" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808549" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="239" startPosition="35" endLine="240" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808549" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="240" startPosition="72" endLine="241" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8794120090377808549" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="241" startPosition="78" endLine="242" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8794120090377808549" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="241" startPosition="78" endLine="242" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090377808549" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="243" startPosition="10" endLine="244" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8794120090377808550" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="247" startPosition="88" endLine="248" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8794120090377808550" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="248" startPosition="87" endLine="249" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6036,19 +6036,19 @@
       <varInfo nodeId="8794120090377808517" varName="editorContext" />
       <varInfo nodeId="8794120090377808517" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8794120090377808531" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="104" startPosition="35" endLine="107" endPosition="105">
+    <scopeInfo nodeId="8794120090377808531" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="104" startPosition="35" endLine="107" endPosition="109">
       <varInfo nodeId="8794120090377808531" varName="manager" />
       <varInfo nodeId="8794120090377808531" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8794120090377808537" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="149" startPosition="35" endLine="152" endPosition="105">
+    <scopeInfo nodeId="8794120090377808537" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="149" startPosition="35" endLine="152" endPosition="109">
       <varInfo nodeId="8794120090377808537" varName="manager" />
       <varInfo nodeId="8794120090377808537" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8794120090377808543" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="194" startPosition="35" endLine="197" endPosition="105">
+    <scopeInfo nodeId="8794120090377808543" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="194" startPosition="35" endLine="197" endPosition="109">
       <varInfo nodeId="8794120090377808543" varName="manager" />
       <varInfo nodeId="8794120090377808543" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8794120090377808549" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="239" startPosition="35" endLine="242" endPosition="105">
+    <scopeInfo nodeId="8794120090377808549" fileName="NodeWithSize_DiagramTestTextual_Editor.java" startLine="239" startPosition="35" endLine="242" endPosition="109">
       <varInfo nodeId="8794120090377808549" varName="manager" />
       <varInfo nodeId="8794120090377808549" varName="opContext" />
     </scopeInfo>

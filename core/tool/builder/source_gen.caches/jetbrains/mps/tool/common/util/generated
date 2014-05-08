@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5dy7tjgpp7425gfbheffm898j3rl6p">
-  <common hash="7uk7xdtukppepi2whi0amhk5dd73buq" dependsOnNodes="true" />
+<dependencies version="2" modelHash="-bmnen9341yemumfbm3asq6kp07u6kdx">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="avf5fgodgb2ggwgnfrka1qru4atq0bt" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
   <source id="6740693110299850048" name="UrlClassLoader" hash="-2wi0scamkstn0of5lmcgnvy5ltifydg">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="UrlClassLoader.java" />
   </source>
   <source id="6740693110299850542" name="ClassPath" hash="ei0ehytabpp227s2hg1winic37zz9gc">
     <file name="ClassPath.java" />
   </source>
   <source id="6740693110299868256" name="Loader" hash="-9pvpjxhb7h93tb3iwqkhij6mkxn6lll">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Loader.java" />
   </source>
   <source id="6740693110299868293" name="ClasspathCache" hash="4o9xj8gptdc4zh2eh06p9gtah9ctswi">
@@ -23,6 +32,7 @@
     <file name="FileUtil.java" />
   </source>
   <source id="5198178184416573167" name="URLUtil" hash="-4y9jj1a2yn041rn0qkshad0gyeoyofe">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="URLUtil.java" />
   </source>
   <source id="5198178184416573444" name="Timed" hash="-7d67n9734z0gd6jdvsg6u0a6d7e887m">

@@ -90,7 +90,7 @@ public class CopyThisDown_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.duplicateLine");
-      if ((int) ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).count() == 1) {
+      if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).count() == 1) {
         SNode nodeToCopy = ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).first();
         while (SNodeOperations.getParent(nodeToCopy) != null) {
           SNode parent = SNodeOperations.getParent(nodeToCopy);

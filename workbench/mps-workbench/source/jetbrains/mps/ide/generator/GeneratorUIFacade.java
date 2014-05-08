@@ -17,20 +17,17 @@ package jetbrains.mps.ide.generator;
 
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.DumbService;
-import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
 import jetbrains.mps.generator.IGenerationSettings;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
-import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
+import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -56,7 +53,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -174,7 +170,13 @@ public class GeneratorUIFacade {
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new RunnableWithProgress() {
       @Override
       public void run(@NotNull ProgressMonitor monitor) {
-        final OptionsBuilder options = GenerationOptions.fromSettings(settings).incremental(new Strategy(settings));
+        // pretty much the same code as in Generate_Facet
+        final OptionsBuilder options = GenerationOptions.fromSettings(settings);
+        if (settings.isIncremental()) {
+          options.incremental(new DefaultIncrementalStrategy(settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null));
+        } else {
+          options.incremental(new DefaultNonIncrementalStrategy());
+        }
 
         if (GenerationFacade.isLegacyGenTraceEnabled()) {
           IGenerationTracer tracer = ideaProject.getComponent(IGenerationTracer.class);
@@ -224,39 +226,5 @@ public class GeneratorUIFacade {
     }
 
     return GenerationFacade.getModifiedModels(result, new ProjectOperationContext(project));
-  }
-
-  private static class Strategy implements IncrementalGenerationStrategy {
-    private final boolean myIncremental;
-    private final GenerationCacheContainer myCache;
-
-    public Strategy(IGenerationSettings settings) {
-      myIncremental = settings.isIncremental();
-      myCache = myIncremental && settings.isIncrementalUseCache() ? GeneratorCacheComponent.getInstance().getCache() : null;
-    }
-
-    @Override
-    public Map<String, String> getModelHashes(SModel md, IOperationContext operationContext) {
-      if (!(md instanceof GeneratableSModel)) return null;
-      GeneratableSModel sm = (GeneratableSModel) md;
-      if (!sm.isGeneratable()) return null;
-
-      return sm.getGenerationHashes();
-    }
-
-    @Override
-    public GenerationCacheContainer getContainer() {
-      return myCache;
-    }
-
-    @Override
-    public GenerationDependencies getDependencies(SModel sm) {
-      return myIncremental ? GenerationDependenciesCache.getInstance().get(sm) : null;
-    }
-
-    @Override
-    public boolean isIncrementalEnabled() {
-      return myIncremental;
-    }
   }
 }

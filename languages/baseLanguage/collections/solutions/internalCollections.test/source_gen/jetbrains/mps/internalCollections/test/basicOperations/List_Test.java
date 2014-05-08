@@ -445,6 +445,12 @@ __switch__:
     Assert.assertEquals("bar", strings[1]);
   }
 
+  public void test_mps17338() throws Exception {
+    MPS_17338.Map map = new MPS_17338.Map();
+    MPS_17338.Point.Block block = ListSequence.fromList(map.getAllPoints()).first().getBlock();
+    Assert.assertNotNull(block);
+  }
+
   public List<Foo> mps5684helper() {
     List<Bar> bars = ListSequence.fromListAndArray(new ArrayList<Bar>(), new Bar());
     return ListSequence.fromListWithValues(new ArrayList<Foo>(), bars);

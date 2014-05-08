@@ -8,7 +8,7 @@
   <import index="h8nn" modelUID="f:java_stub#134ef213-c518-42b0-b12c-c109aa13d320#jetbrains.mps.baseLanguage.collections.trove.runtime(collections_trove.runtime/jetbrains.mps.baseLanguage.collections.trove.runtime@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <root type="tp2q.CustomContainers" typeId="tp2q.6099516049394485324" id="9034802358628764708" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="TroveSets" />
     <node role="containerDeclaration" roleId="tp2q.6099516049394485326" type="tp2q.CustomContainerDeclaration" typeId="tp2q.6099516049394485216" id="9034802358628764709" nodeInfo="ng">

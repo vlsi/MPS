@@ -197,7 +197,7 @@ public class ResolveUtil {
         }
       }
       return true;
-    } else if ((int) Sequence.fromIterable(parameterTypes).count() == (int) ListSequence.fromList(arguments).count()) {
+    } else if (Sequence.fromIterable(parameterTypes).count() == ListSequence.fromList(arguments).count()) {
       {
         Iterator<SNode> parameterType_it = Sequence.fromIterable(parameterTypes).iterator();
         Iterator<SNode> argument_it = ListSequence.fromList(arguments).iterator();

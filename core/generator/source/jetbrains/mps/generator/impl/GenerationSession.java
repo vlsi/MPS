@@ -34,11 +34,11 @@ import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -70,7 +70,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -649,27 +648,9 @@ class GenerationSession {
       }
     }
     if (generationPlan.hasConflictingPriorityRules()) {
-      Map<TemplateMappingPriorityRule, TemplateModule> myRule2Generator = new HashMap<TemplateMappingPriorityRule, TemplateModule>();
-      for (TemplateModule generator : generationPlan.getGenerators()) {
-        Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
-        if (priorities == null) {
-          continue;
-        }
-
-        for (TemplateMappingPriorityRule rule : priorities) {
-          myRule2Generator.put(rule, generator);
-        }
-      }
-
-
       myLogger.error("Conflicting mapping priority rules encountered:");
-      List<Pair<TemplateMappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
-      for (Pair<TemplateMappingPriorityRule, String> error : errors) {
-        TemplateMappingPriorityRule rule = error.o1;
-        String text = error.o2;
-
-        TemplateModule templateModule = myRule2Generator.get(rule);
-        myLogger.error(templateModule.getReference(), text);
+      for (Conflict c : generationPlan.getConflicts()) {
+        myLogger.error(c.getOrigin(), c.getText());
       }
       myLogger.error("");
       return false;
@@ -678,7 +659,7 @@ class GenerationSession {
   }
 
   private void printGenerationStepData(SModel inputModel) {
-    List<String> references = new ArrayList<String>(ModelContentUtil.getUsedLanguageNamespaces(inputModel, false));
+    List<String> references = new ArrayList<String>(ModelContentUtil.getUsedLanguageNamespaces(inputModel));
     Collections.sort(references);
     myLogger.info("languages used:");
     for (String reference : references) {

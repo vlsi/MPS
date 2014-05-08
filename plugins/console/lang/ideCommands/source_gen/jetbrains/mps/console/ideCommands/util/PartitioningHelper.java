@@ -15,8 +15,9 @@ import java.util.Collection;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -64,13 +65,11 @@ public class PartitioningHelper {
       messagesView.openToolLater(true);
       messagesView.add(new Message(MessageKind.ERROR, PartitioningHelper.class, "Conflicting mapping priority rules encountered:"));
       console.addText("Conflicting mapping priority rules encountered:\n\n");
-      List<Pair<TemplateMappingPriorityRule, String>> messagesFull = plan.getConflictingPriorityRulesAsStrings();
-      for (Pair<TemplateMappingPriorityRule, String> message : messagesFull) {
-        Message msg = new Message(MessageKind.ERROR, PartitioningHelper.class, message.o2);
-        TemplateModule templateModule = myRule2Generator.get(message.o1);
-        msg.setHintObject(templateModule.getReference());
+      for (Conflict c : plan.getConflicts()) {
+        Message msg = new Message(MessageKind.ERROR, PartitioningHelper.class, c.getText());
+        msg.setHintObject(c.getOrigin());
         messagesView.add(msg);
-        console.addText(String.format("%s\n", message.o2));
+        console.addText(String.format("%s\n", c.getText()));
       }
       console.addText("=================================\n");
       messagesView.add(new Message(MessageKind.INFORMATION, "================================="));

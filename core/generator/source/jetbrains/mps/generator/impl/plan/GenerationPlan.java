@@ -19,11 +19,9 @@ import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -100,7 +98,7 @@ public class GenerationPlan {
     if (myPlan.isEmpty()) {
       myPlan.add(new ArrayList<TemplateMappingConfiguration>());
     }
-    myConflictingPriorityRules = new PriorityConflicts();
+    myConflictingPriorityRules = new PriorityConflicts(myGenerators);
   }
 
   public Collection<TemplateModule> getGenerators() {
@@ -143,8 +141,8 @@ public class GenerationPlan {
     return myConflictingPriorityRules.hasConflicts();
   }
 
-  public List<Pair<TemplateMappingPriorityRule, String>> getConflictingPriorityRulesAsStrings() {
-    return myConflictingPriorityRules.describe();
+  public List<Conflict> getConflicts() {
+    return myConflictingPriorityRules.getConflicts();
   }
 
   public String getSignature() {

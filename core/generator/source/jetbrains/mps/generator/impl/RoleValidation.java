@@ -42,7 +42,7 @@ public class RoleValidation {
   }
   
   RoleValidator getValidator(SNode sourceNode, String role, boolean child) {
-    if (child && GeneratorUtilEx.link_BaseConcept_attrs.equals(role)) {
+    if (child && RuleUtil.link_BaseConcept_attrs.equals(role)) {
       //unnecessary warning removed
       return successValidatorMany; //todo maybe add check for attribute links
     }

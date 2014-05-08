@@ -32,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.TreeIterator;
+import org.jetbrains.mps.util.DescendantsTreeIterator;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -515,7 +516,7 @@ public abstract class DeltaBuilder {
      * walk over input root
      */
     public TreeIterator<SNode> iterateOrigin() {
-      return (TreeIterator<SNode>) SNodeUtil.getDescendants(myRoot).iterator();
+      return new DescendantsTreeIterator(myRoot);
     }
 
     // get to know nodes about to be injected

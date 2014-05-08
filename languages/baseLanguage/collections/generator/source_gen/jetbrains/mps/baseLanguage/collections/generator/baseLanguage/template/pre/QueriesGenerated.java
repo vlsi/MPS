@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Helper;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -35,7 +36,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
 
   public static boolean baseMappingRule_Condition_5233164016162060952(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true), "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true), "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true), "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression"), "lValue", true), "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true), "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression"), "lValue", true), "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression");
+    return Helper.isCollectionElementAccess(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
   }
 
   public static boolean baseMappingRule_Condition_5233164016162061001(final BaseMappingRuleContext _context) {
@@ -45,7 +46,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
 
   public static boolean baseMappingRule_Condition_5233164016162061071(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true), "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true), "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true), "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression"), "lValue", true), "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true), "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression"), "lValue", true), "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression");
+    return Helper.isCollectionElementAccess(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
   }
 
   public static SNode sourceNodeQuery_5233164016162060926(final SourceSubstituteMacroNodeContext _context) {
@@ -76,19 +77,7 @@ public class QueriesGenerated extends QueryProviderBase {
     for (SNode node : SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
       SNode le = SLinkOperations.getTarget(node, "leftExpression", true);
       SNode re = SLinkOperations.getTarget(node, "rightExpression", true);
-      if (SNodeOperations.isInstanceOf(le, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(le, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation") && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(le, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"))) {
-        return true;
-      }
-      if (SNodeOperations.isInstanceOf(re, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(re, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation") && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(re, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"))) {
-        return true;
-      }
-      if (SNodeOperations.isInstanceOf(le, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression") || SNodeOperations.isInstanceOf(re, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression")) {
-        return true;
-      }
-      if (SNodeOperations.isInstanceOf(le, "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SNodeOperations.isInstanceOf(re, "jetbrains.mps.baseLanguage.collections.structure.MapElement")) {
-        return true;
-      }
-      if (SNodeOperations.isInstanceOf(le, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression") || SNodeOperations.isInstanceOf(re, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression")) {
+      if (Helper.isCollectionElementAccess(le) || Helper.isCollectionElementAccess(re)) {
         return true;
       }
     }

@@ -16,6 +16,7 @@ import jetbrains.mps.generator.GenerationFacade;
 import java.util.Collections;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import com.intellij.openapi.util.Disposer;
 import java.lang.reflect.InvocationTargetException;
@@ -23,10 +24,6 @@ import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationExce
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import jetbrains.mps.generator.IncrementalGenerationStrategy;
-import java.util.Map;
-import jetbrains.mps.generator.GenerationCacheContainer;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
@@ -41,7 +38,7 @@ public class GeneratorUtil {
       handler.setCompilationListener(compilationResult);
       IMessageHandler messageHandler = new GeneratorUtil.MyMessageHandler(project, developerMode);
       ProgressWindow progressWindow = new ProgressWindow(false, ProjectHelper.toIdeaProject(project));
-      boolean successful = GenerationFacade.generateModels(context.getProject(), Collections.singletonList(modelDescriptor), context, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new GeneratorUtil.MyIncrementalGenerationStrategy()).saveTransientModels(developerMode).rebuildAll(false).reporting(false, false, false, 0).create(), context.getProject().getComponent(TransientModelsComponent.class));
+      boolean successful = GenerationFacade.generateModels(context.getProject(), Collections.singletonList(modelDescriptor), context, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new DefaultNonIncrementalStrategy()).saveTransientModels(developerMode).rebuildAll(false).reporting(false, false, false, 0).create(), context.getProject().getComponent(TransientModelsComponent.class));
 
       Disposer.dispose(progressWindow);
 
@@ -108,31 +105,6 @@ public class GeneratorUtil {
 
     public String getMessage() {
       return myBuffer.toString();
-    }
-  }
-
-  private static class MyIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
-    public MyIncrementalGenerationStrategy() {
-    }
-
-    @Override
-    public Map<String, String> getModelHashes(SModel p0, IOperationContext p1) {
-      return Collections.emptyMap();
-    }
-
-    @Override
-    public GenerationCacheContainer getContainer() {
-      return null;
-    }
-
-    @Override
-    public GenerationDependencies getDependencies(SModel p0) {
-      return null;
-    }
-
-    @Override
-    public boolean isIncrementalEnabled() {
-      return false;
     }
   }
 

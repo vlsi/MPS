@@ -46,6 +46,11 @@ public class FolderTreeNode extends AbstractFileTreeNode {
   }
 
   @Override
+  public boolean isLeaf() {
+    return false;
+  }
+
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }

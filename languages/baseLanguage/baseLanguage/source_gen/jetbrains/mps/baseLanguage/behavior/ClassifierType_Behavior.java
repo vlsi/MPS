@@ -233,7 +233,7 @@ public class ClassifierType_Behavior {
             }
           }
         }
-        if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() && !(SNodeOperations.isInstanceOf(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType") && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count())) {
+        if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() && !(SNodeOperations.isInstanceOf(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count())) {
           return false;
         }
         return true;

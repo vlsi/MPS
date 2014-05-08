@@ -418,11 +418,14 @@
   <!--
   <xi:include href="/META-INF/XmlPlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>
   <xi:include href="/META-INF/RegExpPlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>
+  <xi:include href="/META-INF/ImagesPlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>
   -->
-  <!--<xi:include href="/META-INF/ImagesPlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>-->
-  <!-- Use only one extension from  ImagesPlugin.xml-->
+  <!-- Use only one extension from  ImagesPlugin.xml and one appServ from XmlPlugin.xml-->
   <extensions defaultExtensionNs="com.intellij">
     <fileTypeFactory implementation="org.intellij.images.fileTypes.impl.ImageFileTypeManagerImpl" />
+    <applicationService serviceInterface="com.intellij.ide.browsers.BrowserLauncher" serviceImplementation="com.intellij.ide.browsers.BrowserLauncherImpl"/>
   </extensions>
-  <!--<xi:include href="/META-INF/SpellCheckerPlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>-->
+  <!--
+  <xi:include href="/META-INF/SpellCheckerPlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>
+  -->
 </idea-plugin>

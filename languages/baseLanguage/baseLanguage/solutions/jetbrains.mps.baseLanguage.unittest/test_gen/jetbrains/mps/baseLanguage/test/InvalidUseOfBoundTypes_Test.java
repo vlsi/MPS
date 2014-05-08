@@ -49,9 +49,9 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeInvalidUseOfBoundTypeCheck6923385624927432672() throws Throwable {
+  public void test_NodeInvalidUseOfBoundTypeCheck6405539316368246786() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624927432672", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368246786", true);
   }
 
   @Test
@@ -61,9 +61,9 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeInvalidUseOfBoundTypeCheck6923385624929323637() throws Throwable {
+  public void test_NodeInvalidUseOfBoundTypeCheck6405539316368298938() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624929323637", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368298938", true);
   }
 
   @Test
@@ -73,9 +73,9 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeInvalidUseOfBoundTypeCheck6923385624927501606() throws Throwable {
+  public void test_NodeInvalidUseOfBoundTypeCheck6405539316368298991() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624927501606", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368298991", true);
   }
 
   @Test
@@ -97,9 +97,9 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest4 {
   }
 
   @Test
-  public void test_NodeInvalidUseOfBoundTypeCheck6923385624929506216() throws Throwable {
+  public void test_NodeInvalidUseOfBoundTypeCheck6405539316368313510() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6923385624929506216", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.InvalidUseOfBoundTypes_Test$TestBody", "test_NodeInvalidUseOfBoundTypeCheck6405539316368313510", true);
   }
 
   @MPSLaunch
@@ -134,9 +134,9 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795771528")});
     }
 
-    public void test_NodeInvalidUseOfBoundTypeCheck6923385624927432672() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927432672"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231394")});
+    public void test_NodeInvalidUseOfBoundTypeCheck6405539316368246786() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6405539316368246786"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795772275")});
     }
 
     public void test_ErrorMessagesCheck4632498131795772004() throws Exception {
@@ -144,9 +144,9 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795771997")});
     }
 
-    public void test_NodeInvalidUseOfBoundTypeCheck6923385624929323637() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929323637"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230908")});
+    public void test_NodeInvalidUseOfBoundTypeCheck6405539316368298938() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6405539316368298938"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795772705")});
     }
 
     public void test_ErrorMessagesCheck4632498131795772509() throws Exception {
@@ -154,9 +154,9 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795772500")});
     }
 
-    public void test_NodeInvalidUseOfBoundTypeCheck6923385624927501606() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927501606"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451227426")});
+    public void test_NodeInvalidUseOfBoundTypeCheck6405539316368298991() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6405539316368298991"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795773230")});
     }
 
     public void test_ErrorMessagesCheck4632498131795773025() throws Exception {
@@ -174,9 +174,9 @@ public class InvalidUseOfBoundTypes_Test extends BaseTransformationTest4 {
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231649")});
     }
 
-    public void test_NodeInvalidUseOfBoundTypeCheck6923385624929506216() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929506216"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
-      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451231445")});
+    public void test_NodeInvalidUseOfBoundTypeCheck6405539316368313510() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("6405539316368313510"), "jetbrains.mps.lang.test.structure.NodeCheckOperation");
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4632498131795796084")});
     }
   }
 }

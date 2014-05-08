@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-27en8er4g757lgqiruvgt91f2exd3b0">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="4kxpf1lk5w1iq2wecgk9bz505rq9vzu" />
-  <common hash="ef91e52n0xf4e01madwjogtuda4zhfx" dependsOnNodes="true">
+<dependencies version="2" modelHash="-eizm590kpz37eudje9bpxfisgw3w1ar">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <common hash="dops51n4iwvigxe0estvxfukq6tu9ip" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="5257650213624905145" name="Clazz" hash="e8yaitjgfkrenxlrs6lcijntxn0buja">

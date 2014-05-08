@@ -61,7 +61,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     if (attributeConcept != null) {
       IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
@@ -111,7 +111,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     if (attributeConcept != null) {
       IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
@@ -162,7 +162,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     if (attributeConcept != null) {
       IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

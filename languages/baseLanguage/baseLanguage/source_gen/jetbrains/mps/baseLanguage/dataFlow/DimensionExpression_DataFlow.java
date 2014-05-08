@@ -5,14 +5,16 @@ package jetbrains.mps.baseLanguage.dataFlow;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class DimensionExpression_DataFlow extends DataFlowBuilder {
   public DimensionExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    if (SLinkOperations.getTarget(_context.getNode(), "expression", true) != null) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    }
   }
 }

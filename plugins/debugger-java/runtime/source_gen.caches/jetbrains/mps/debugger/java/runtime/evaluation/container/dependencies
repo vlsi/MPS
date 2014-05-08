@@ -118,14 +118,12 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependencies" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy" />
     <classNode dependClassName="jetbrains.mps.ide.generator.TransientModelsComponent" />
     <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
@@ -140,7 +138,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.compiler.CompilationResultAdapter" />
-    <classNode extendsClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" file="IEvaluationContainer.java">
