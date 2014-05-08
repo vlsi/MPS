@@ -313,10 +313,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     if (paths == null) return result;
     for (TreePath path : paths) {
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-      while (node != null && !(node instanceof PackageNode)) {
-        node = (MPSTreeNode) node.getParent();
-      }
-      if (node != null) {
+      if (node instanceof PackageNode) {
         PackageNode pn = (PackageNode) node;
         result.add(new Pair<SModel, String>(pn.getModelReference().resolve(MPSModuleRepository.getInstance()),pn.getFullPackage()));
       }
