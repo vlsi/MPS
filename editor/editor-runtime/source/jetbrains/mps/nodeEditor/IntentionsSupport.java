@@ -24,6 +24,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.application.RuntimeInterruptedException;
+import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
@@ -273,7 +274,7 @@ public class IntentionsSupport {
 
   private AnAction getIntentionGroup(final IntentionExecutable intention, final SNode node) {
     Icon icon = intention.getDescriptor().getType().getIcon();
-    final IntentionsManager intentionsManager = IntentionsManager.getInstance();
+//    final IntentionsManager intentionsManager = IntentionsManager.getInstance();
     final DefaultActionGroup intentionActionGroup = new DefaultActionGroup(intention.getDescription(node, myEditor.getEditorContext()), true) {
       @Override
       public boolean canBePerformed(DataContext c) {
@@ -296,33 +297,9 @@ public class IntentionsSupport {
       }
     };
 
-    intentionActionGroup.add(new BaseAction("Go to Intention Declaration", "Go to declaration of this intention", icon) {
-      @Override
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            SNodeReference nodeRef = intention.getDescriptor().getIntentionNodeReference();
-            SNode intentionNode = nodeRef==null?null:nodeRef.resolve(MPSModuleRepository.getInstance());
-            if (intentionNode == null) {
-              Messages.showErrorDialog(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()),
-                  "Could not find declaration for " + intention.getClass().getSimpleName()
-                      + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
-            } else {
-              NavigationSupport.getInstance().openNode(myEditor.getOperationContext(), intentionNode, true, true);
-              NavigationSupport.getInstance().selectInTree(myEditor.getOperationContext(), intentionNode, false);
-            }
-          }
-        });
-      }
-    });
-
-    intentionActionGroup.add(new BaseAction("Disable This Intention", "Disables  this intention type", icon) {
-      @Override
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        intentionsManager.disableIntention(intention.getDescriptor().getPersistentStateKey());
-      }
-    });
+    for (IntentionActionsProvider provider : Extensions.getExtensions(IntentionActionsProvider.EP_NAME)) {
+        intentionActionGroup.addAll(provider.getIntentionActions(intention));
+    }
 
     intentionActionGroup.getTemplatePresentation().setIcon(icon);
     return intentionActionGroup;
