@@ -117,6 +117,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
     final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();
     if (!(wasCheckedOnce) || myCachesCleared) {
+      myCachesCleared = false;
       for (SNode methodCall : SNodeOperations.getDescendants(rootNode, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})) {
         testAndFixMethodCall(methodCall, reResolvedTargets);
       }
@@ -206,7 +207,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   public void testAndFixMethodCall(@NotNull SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
-    myCachesCleared = false;
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, "baseMethodDeclaration", false);
     String methodName = getMethodName(methodCallNode);
 
