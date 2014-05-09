@@ -82,6 +82,9 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
     @Override
     public void beforeModelRemoved(SModel model) {
+      if (!(MapSequence.fromMap(myModelToEditorComponentsMap).containsKey(model))) {
+        return;
+      }
       for (EditorComponent editorComponent : MapSequence.fromMap(myModelToEditorComponentsMap).get(model)) {
         MapSequence.fromMap(myEditorComponentToErrorMap).removeKey(editorComponent).dispose();
         editorComponent.removeDisposeListener(myDisposeListener);
