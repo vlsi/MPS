@@ -9356,7 +9356,7 @@
     </node>
   </root>
   <root type="tp33.MigrationScript" typeId="tp33.1177457067821" id="818296778609449086" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="UpdateTernaryOperatorParens" />
+    <property name="name" nameId="tpck.1169194664001" value="UpdateTernaryOperatorExpressionParens" />
     <property name="title" nameId="tp33.1177457669450" value="Add missing parentheses to TernaryOperatorExpressionExpression" />
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="818296778609449087" nodeInfo="ng">
       <property name="description" nameId="tp33.1177457972041" value="Find TernaryOperatorExpressions with required but missing parens around them and add them" />

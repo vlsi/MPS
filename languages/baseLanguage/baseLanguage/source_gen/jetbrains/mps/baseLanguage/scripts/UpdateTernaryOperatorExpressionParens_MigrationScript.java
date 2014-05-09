@@ -10,8 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
-public class UpdateTernaryOperatorParens_MigrationScript extends BaseMigrationScript {
-  public UpdateTernaryOperatorParens_MigrationScript(IOperationContext operationContext) {
+public class UpdateTernaryOperatorExpressionParens_MigrationScript extends BaseMigrationScript {
+  public UpdateTernaryOperatorExpressionParens_MigrationScript(IOperationContext operationContext) {
     super("Add missing parentheses to TernaryOperatorExpressionExpression");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
@@ -27,7 +27,7 @@ public class UpdateTernaryOperatorParens_MigrationScript extends BaseMigrationSc
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BinaryOperation") || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression") && eq_wlljyk_a0a0a0a3a0a0a0a1a0(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), node));
+        return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BinaryOperation") || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression") && eq_lkooh4_a0a0a0a3a0a0a0a1a0(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), node));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -42,7 +42,7 @@ public class UpdateTernaryOperatorParens_MigrationScript extends BaseMigrationSc
     });
   }
 
-  private static boolean eq_wlljyk_a0a0a0a3a0a0a0a1a0(Object a, Object b) {
+  private static boolean eq_lkooh4_a0a0a0a3a0a0a0a1a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

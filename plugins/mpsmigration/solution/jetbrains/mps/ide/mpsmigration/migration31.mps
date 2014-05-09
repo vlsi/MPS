@@ -688,7 +688,7 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SNodeReference" resolveInfo="SNodeReference" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp25.NodePointerExpression" typeId="tp25.1828409047608048457" id="7920213901776142513" nodeInfo="nn">
-              <link role="referentNode" roleId="tp25.1828409047608048458" targetNodeId="tp5n.6090235207264650098" resolveInfo="MigrateNodeCheckOperationsContainer" />
+              <link role="referentNode" roleId="tp25.1828409047608048458" targetNodeId="tp5n.6090235207264650098" resolveInfo="MigrateNodePropertiesContainer" />
             </node>
           </node>
         </node>
