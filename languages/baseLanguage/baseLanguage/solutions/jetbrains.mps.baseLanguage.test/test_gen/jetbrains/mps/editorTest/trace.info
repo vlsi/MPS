@@ -3001,6 +3001,206 @@
     <unitInfo nodeId="4741152186081386068" fileName="InsertBeforeUnaryMinus_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.InsertBeforeUnaryMinus_Test$TestBody" />
     <unitInfo nodeId="4741152186081386068" fileName="InsertBeforeUnaryMinus_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.InsertBeforeUnaryMinus_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4905320928998810980">
+    <nodeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="18" startPosition="59" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998811021" fileName="AddParensToTernary1_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998811022" fileName="AddParensToTernary1_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToTernary1_Test#()V" />
+    <nodeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToTernary1#()V" />
+    <nodeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="14" startPosition="37" endLine="14" endPosition="37" />
+    <scopeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="18" startPosition="59" endLine="20" endPosition="100" />
+    <scopeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="4905320928998810980" varName="editor" />
+      <varInfo nodeId="4905320928998810980" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToTernary1_Test$TestBody" />
+    <unitInfo nodeId="4905320928998810980" fileName="AddParensToTernary1_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToTernary1_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4905320928998846844">
+    <nodeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="18" startPosition="59" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998846867" fileName="AddParensToTernary2_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998846868" fileName="AddParensToTernary2_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToTernary2_Test#()V" />
+    <nodeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToTernary2#()V" />
+    <nodeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="14" startPosition="37" endLine="14" endPosition="37" />
+    <scopeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="18" startPosition="59" endLine="20" endPosition="100" />
+    <scopeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="4905320928998846844" varName="editor" />
+      <varInfo nodeId="4905320928998846844" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToTernary2_Test$TestBody" />
+    <unitInfo nodeId="4905320928998846844" fileName="AddParensToTernary2_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToTernary2_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4905320928998863932">
+    <nodeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="18" startPosition="59" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998863955" fileName="AddParensToTernary3_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998863956" fileName="AddParensToTernary3_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToTernary3_Test#()V" />
+    <nodeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToTernary3#()V" />
+    <nodeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="14" startPosition="37" endLine="14" endPosition="37" />
+    <scopeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="18" startPosition="59" endLine="20" endPosition="100" />
+    <scopeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="4905320928998863932" varName="editor" />
+      <varInfo nodeId="4905320928998863932" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToTernary3_Test$TestBody" />
+    <unitInfo nodeId="4905320928998863932" fileName="AddParensToTernary3_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToTernary3_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4905320928998872011">
+    <nodeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="18" startPosition="59" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998872038" fileName="AddParensToTernary4_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998872039" fileName="AddParensToTernary4_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToTernary4_Test#()V" />
+    <nodeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToTernary4#()V" />
+    <nodeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="14" startPosition="37" endLine="14" endPosition="37" />
+    <scopeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="18" startPosition="59" endLine="20" endPosition="100" />
+    <scopeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="4905320928998872011" varName="editor" />
+      <varInfo nodeId="4905320928998872011" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToTernary4_Test$TestBody" />
+    <unitInfo nodeId="4905320928998872011" fileName="AddParensToTernary4_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToTernary4_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4905320928998881458">
+    <nodeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998881481" fileName="AddParensToNestedTernary1_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998881482" fileName="AddParensToNestedTernary1_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToNestedTernary1_Test#()V" />
+    <nodeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToNestedTernary1#()V" />
+    <nodeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="4905320928998881458" varName="editor" />
+      <varInfo nodeId="4905320928998881458" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToNestedTernary1_Test$TestBody" />
+    <unitInfo nodeId="4905320928998881458" fileName="AddParensToNestedTernary1_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToNestedTernary1_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4905320928998884414">
+    <nodeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998884432" fileName="AddParensToNestedTernary2_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998884433" fileName="AddParensToNestedTernary2_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToNestedTernary2_Test#()V" />
+    <nodeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToNestedTernary2#()V" />
+    <nodeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="4905320928998884414" varName="editor" />
+      <varInfo nodeId="4905320928998884414" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToNestedTernary2_Test$TestBody" />
+    <unitInfo nodeId="4905320928998884414" fileName="AddParensToNestedTernary2_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToNestedTernary2_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4905320928998888078">
+    <nodeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998888104" fileName="AddParensToNestedTernary3_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998888105" fileName="AddParensToNestedTernary3_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToNestedTernary3_Test#()V" />
+    <nodeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToNestedTernary3#()V" />
+    <nodeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="4905320928998888078" varName="editor" />
+      <varInfo nodeId="4905320928998888078" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToNestedTernary3_Test$TestBody" />
+    <unitInfo nodeId="4905320928998888078" fileName="AddParensToNestedTernary3_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToNestedTernary3_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4905320928998888389">
+    <nodeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4905320928998888415" fileName="AddParensToNestedTernary4_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998888416" fileName="AddParensToNestedTernary4_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToNestedTernary4_Test#()V" />
+    <nodeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToNestedTernary4#()V" />
+    <nodeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
+    <scopeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
+      <varInfo nodeId="4905320928998888389" varName="editor" />
+      <varInfo nodeId="4905320928998888389" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToNestedTernary4_Test$TestBody" />
+    <unitInfo nodeId="4905320928998888389" fileName="AddParensToNestedTernary4_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToNestedTernary4_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4910482895444456901">
     <nodeInfo nodeId="4910482895444456901" fileName="RT_Assert_with_colon_Test.java" startLine="18" startPosition="60" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4910482895444456901" fileName="RT_Assert_with_colon_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
