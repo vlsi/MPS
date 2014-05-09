@@ -80,18 +80,20 @@ public class ResolverComponent implements CoreComponent {
     while (performResolve) {
       performResolve = false;
       for (Iterator<SReference> iterator = ListSequence.fromList(unresolvedReferences).iterator(); iterator.hasNext();) {
-        SReference reference = iterator.next();
-        SNode sourceNode = reference.getSourceNode();
-        if (sourceNode == null) {
-          continue;
-        }
-        if (myScopeResolver.resolve(reference, sourceNode, repository)) {
+        if (resolveScopesOnly(iterator.next(), repository)) {
           iterator.remove();
           performResolve = true;
         }
       }
     }
+  }
 
+  public boolean resolveScopesOnly(SReference reference, SRepository repository) {
+    SNode sourceNode = reference.getSourceNode();
+    if (sourceNode == null) {
+      return false;
+    }
+    return myScopeResolver.resolve(reference, sourceNode, repository);
   }
 
   public static ResolverComponent getInstance() {

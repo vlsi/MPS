@@ -73,7 +73,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         if (scopeProvider != null) {
           ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ? ((SNodePointer) scopeProvider.getSearchScopeValidatorNode()).resolve(MPSModuleRepository.getInstance()) : null);
         }
-        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), new RefScopeChecker.ResolveReferenceQuickFix(ref, repository, executeImmediately));
+        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), createResolveReferenceQuickfix(ref, repository, executeImmediately));
       }
     }
   }
@@ -90,9 +90,11 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     return false;
   }
 
+  protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
+    return new RefScopeChecker.ResolveReferenceQuickFix(reference, repository, executeImmediately);
+  }
 
-
-  public class ResolveReferenceQuickFix implements QuickFixProvider {
+  private class ResolveReferenceQuickFix implements QuickFixProvider {
     private boolean myIsError;
     private SReference myReference;
     private SRepository myRepository;

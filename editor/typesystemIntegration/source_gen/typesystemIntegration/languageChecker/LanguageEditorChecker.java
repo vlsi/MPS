@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
-import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.CardinalitiesChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
@@ -106,10 +105,11 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
   };
 
+  private RefScopeCheckerInEditor myScopeChecker;
 
   public LanguageEditorChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
-    SetSequence.fromSet(myRules).addElement(new RefScopeChecker());
+    SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
     SetSequence.fromSet(myRules).addElement(new CardinalitiesChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
 
@@ -181,6 +181,8 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   public Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     SModel model = editorContext.getModel();
+    myScopeChecker.setEditorComponent(editorComponent);
+
     myMessagesChanged = false;
 
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
@@ -250,6 +252,11 @@ public class LanguageEditorChecker extends BaseEditorChecker {
         }
       }
       myMessagesChanged = changed;
+    }
+
+    if (!(myMessagesChanged)) {
+      // skipping quickfix processing if othing was changed 
+      return result;
     }
 
     final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
