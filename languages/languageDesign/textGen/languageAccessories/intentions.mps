@@ -23,18 +23,20 @@
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1217259708145042646" nodeInfo="nn">
                 <property name="value" nameId="tpee.1070475926801" value="Append " />
               </node>
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="1217259708145042677" nodeInfo="nn">
-                <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1217259708145042678" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="without" />
-                </node>
-                <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217259708145042679" nodeInfo="nn">
-                  <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="1217259708145042680" nodeInfo="nn" />
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1217259708145042681" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wbvt.1237466287046" resolveInfo="withIndent" />
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="751045515423522779" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1079359253376" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="1217259708145042677" nodeInfo="nn">
+                  <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1217259708145042678" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1070475926801" value="without" />
                   </node>
-                </node>
-                <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1217259708145042682" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="with" />
+                  <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1217259708145042679" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tp3j.ConceptFunctionParameter_node" typeId="tp3j.1192796902958" id="1217259708145042680" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1217259708145042681" nodeInfo="nn">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wbvt.1237466287046" resolveInfo="withIndent" />
+                    </node>
+                  </node>
+                  <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1217259708145042682" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1070475926801" value="with" />
+                  </node>
                 </node>
               </node>
             </node>
