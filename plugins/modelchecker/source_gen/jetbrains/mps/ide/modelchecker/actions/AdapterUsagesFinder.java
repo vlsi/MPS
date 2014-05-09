@@ -11,7 +11,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -38,7 +38,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
     }
 
     @Override
-    public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
+    public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, SRepository repository) {
       List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
       monitor.start("adapter usages", 1);

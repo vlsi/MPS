@@ -15,7 +15,7 @@ import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
@@ -50,7 +50,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
   }
 
   @Override
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final SRepository repository) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     monitor.start("typesystem", ListSequence.fromList(myLanguageCheckers).count());
@@ -67,7 +67,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
         TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypechecking.Action() {
           @Override
           public void run(TypeCheckingContext p0) {
-            Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext.getProject().getRepository());
+            Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, repository);
             for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
               final IErrorReporter reporter = errorReporter;
               final QuickFix_Runtime quickFix = check_7763bz_a0b0b0a0a2a0a0e0d0f(check_7763bz_a0a1a1a0a0c0a0a4a3a5(errorReporter));

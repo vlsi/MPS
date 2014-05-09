@@ -62,11 +62,9 @@ public class ModelChecker {
           }
 
           if (module != null && project != null) {
-            IOperationContext operationContext = new ModelChecker.ModelCheckerOperationContext(project, module);
-
             for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
               try {
-                List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT), operationContext);
+                List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT), project.getRepository());
                 myResults.getSearchResults().addAll(specificCheckerResults);
               } catch (Throwable t) {
                 if (LOG.isEnabledFor(Level.ERROR)) {
