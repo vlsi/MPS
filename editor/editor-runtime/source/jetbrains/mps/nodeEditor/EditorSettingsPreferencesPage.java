@@ -65,6 +65,7 @@ class EditorSettingsPreferencesPage {
   private JComboBox myIndentSizeComboBox;
   private JCheckBox myAntialiasingCheckBox;
   private JCheckBox myPowerSaveModeCheckBox;
+  private JCheckBox myAutoQuickFixCheckBox;
   private JCheckBox myUseBraces;
   private JSlider myBlinkingRateSlider;
   private final EditorComponent myBlinkingDemo;
@@ -150,6 +151,9 @@ class EditorSettingsPreferencesPage {
 
     myPowerSaveModeCheckBox = new JCheckBox("Power Save Mode");
     checkboxes.add(myPowerSaveModeCheckBox);
+
+    myAutoQuickFixCheckBox = new JCheckBox("Automatically run reference resolve quick fixes");
+    checkboxes.add(myAutoQuickFixCheckBox);
 
     panel.add(checkboxes,
         new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
@@ -289,6 +293,7 @@ class EditorSettingsPreferencesPage {
         mySettings.setUseBraces(myUseBraces.isSelected());
 
         mySettings.setPowerSaveMode(myPowerSaveModeCheckBox.isSelected());
+        mySettings.setAutoQuickFix(myAutoQuickFixCheckBox.isSelected());
 
         try {
           mySettings.getState().setLineSpacing(Double.parseDouble(myLineSpacingField.getText()));
@@ -331,6 +336,7 @@ class EditorSettingsPreferencesPage {
     boolean sameAntialiasing = myAntialiasingCheckBox.isSelected() == mySettings.isUseAntialiasing();
     boolean sameUseBraces = myUseBraces.isSelected() == mySettings.useBraces();
     boolean samePowerSaveMode = myPowerSaveModeCheckBox.isSelected() == mySettings.isPowerSaveMode();
+    boolean sameAutoQuickFix = myAutoQuickFixCheckBox.isSelected() == mySettings.isAutoQuickFix();
     boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals("" + mySettings.getState().getFontSize());
     boolean sameFontFamily = myFontsComboBox.getSelectedItem().equals("" + mySettings.getState().getFontFamily());
     boolean sameLineSpacing = myLineSpacingField.getText().equals("" + mySettings.getState().getLineSpacing());
@@ -338,7 +344,7 @@ class EditorSettingsPreferencesPage {
     boolean sameTabs = myFirstSelection.isSelected();
 
     return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode
-        && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs);
+        && sameAutoQuickFix && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs);
   }
 
   public void reset() {
@@ -351,6 +357,8 @@ class EditorSettingsPreferencesPage {
     myUseBraces.setSelected(mySettings.useBraces());
 
     myPowerSaveModeCheckBox.setSelected(mySettings.isPowerSaveMode());
+
+    myAutoQuickFixCheckBox.setSelected(mySettings.isAutoQuickFix());
 
     myFontSizesComboBox.setSelectedItem("" + mySettings.getState().getFontSize());
 

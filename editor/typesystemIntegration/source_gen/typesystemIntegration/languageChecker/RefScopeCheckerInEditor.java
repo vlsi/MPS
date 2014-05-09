@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.errors.QuickFixProvider;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -18,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class RefScopeCheckerInEditor extends RefScopeChecker {
   private EditorComponent myEditorComponent;
@@ -30,6 +31,13 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
   @Override
   protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
     return new RefScopeCheckerInEditor.ResolveReferenceEditorBasedQuickFix(reference, repository, executeImmediately, myEditorComponent);
+  }
+
+
+
+  @Override
+  protected boolean canExecuteImmediately(SModel model, SRepository repository) {
+    return EditorSettings.getInstance().isAutoQuickFix() && super.canExecuteImmediately(model, repository);
   }
 
   private class ResolveReferenceEditorBasedQuickFix extends RefScopeChecker.ResolveReferenceQuickFix {
@@ -84,7 +92,7 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
       if (result != null) {
         return result;
       }
-      SModule module = check_thufhv_a0c0e3(SNodeOperations.getModel(sourceNode));
+      SModule module = check_thufhv_a0c0e5(SNodeOperations.getModel(sourceNode));
       SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (target != null && module != null) {
         Scope scope = ModelConstraints.getScope(reference);
@@ -107,7 +115,7 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
     }
   }
 
-  private static SModule check_thufhv_a0c0e3(SModel checkedDotOperand) {
+  private static SModule check_thufhv_a0c0e5(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

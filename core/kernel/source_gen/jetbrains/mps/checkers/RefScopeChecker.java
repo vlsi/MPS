@@ -39,7 +39,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       return;
     }
     SNode concept = SNodeOperations.getConceptDeclaration(node);
-    boolean executeImmediately = !(hasUnresolvedImportedModels(SNodeOperations.getModel(node), repository));
+    boolean executeImmediately = canExecuteImmediately(SNodeOperations.getModel(node), repository);
     for (final SReference ref : SNodeOperations.getReferences(node)) {
       final SNode target = SLinkOperations.getTargetNode(ref);
       SNode ld = SLinkOperations.findLinkDeclaration(ref);
@@ -78,16 +78,16 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     }
   }
 
-  private boolean hasUnresolvedImportedModels(SModel model, SRepository repository) {
+  protected boolean canExecuteImmediately(SModel model, SRepository repository) {
     if (repository == null) {
-      return true;
+      return false;
     }
     for (SModelReference modelReference : ListSequence.fromList(SModelOperations.getImportedModelUIDs(model))) {
       if (modelReference.resolve(repository) == null) {
-        return true;
+        return false;
       }
     }
-    return false;
+    return true;
   }
 
   protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
