@@ -67,7 +67,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
         TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypechecking.Action() {
           @Override
           public void run(TypeCheckingContext p0) {
-            Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
+            Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext.getProject().getRepository());
             for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
               final IErrorReporter reporter = errorReporter;
               final QuickFix_Runtime quickFix = check_7763bz_a0b0b0a0a2a0a0e0d0f(check_7763bz_a0a1a1a0a0c0a0a4a3a5(errorReporter));

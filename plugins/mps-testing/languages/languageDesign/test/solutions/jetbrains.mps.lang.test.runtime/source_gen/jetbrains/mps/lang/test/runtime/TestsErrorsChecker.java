@@ -10,7 +10,6 @@ import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.checkers.LanguageChecker;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,28 +17,27 @@ import java.util.ArrayList;
 import jetbrains.mps.errors.MessageStatus;
 
 public class TestsErrorsChecker {
-  private SNode node;
+  private SNode myNode;
 
 
   public TestsErrorsChecker(SNode node) {
-    this.node = node;
+    this.myNode = node;
   }
 
 
 
   public List<IErrorReporter> getTypeSystemErrorReporters() {
     INodeChecker checker = new TypesystemChecker();
-    final Set<IErrorReporter> errors = checker.getErrors(SNodeOperations.getContainingRoot(node), null);
-    return filterReportersByNode(errors, node);
+    final Set<IErrorReporter> errors = checker.getErrors(SNodeOperations.getContainingRoot(myNode), SNodeOperations.getModel(myNode).getRepository());
+    return filterReportersByNode(errors, myNode);
   }
 
 
 
   public List<IErrorReporter> getConstraintsErrorReporters() {
     INodeChecker checker = new LanguageChecker();
-    IOperationContext context = null;
-    final Set<IErrorReporter> errors = checker.getErrors(node, context);
-    return filterReportersByNode(errors, node);
+    final Set<IErrorReporter> errors = checker.getErrors(myNode, SNodeOperations.getModel(myNode).getRepository());
+    return filterReportersByNode(errors, myNode);
   }
 
 

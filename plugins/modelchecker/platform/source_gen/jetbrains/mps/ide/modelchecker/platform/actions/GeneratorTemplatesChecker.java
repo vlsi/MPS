@@ -79,7 +79,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
               continue;
             }
 
-            addIssue(results, node, "Reference across root templates in role `" + SLinkOperations.getRole(ref) + "', use mapping label or reference macro", ModelChecker.SEVERITY_WARNING, "reference across templates", null);
+            SpecificChecker.addIssue(results, node, "Reference across root templates in role `" + SLinkOperations.getRole(ref) + "', use mapping label or reference macro", ModelChecker.SEVERITY_WARNING, "reference across templates", null);
           }
 
         } catch (Exception ex) {

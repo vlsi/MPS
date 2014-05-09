@@ -43,16 +43,16 @@ public class ConstraintsChecker extends SpecificChecker {
         if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isAtLeastOneCardinality_3386205146660812199", new Object[]{})) {
           if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
             if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
-              addIssue(results, node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", null);
+              SpecificChecker.addIssue(results, node, "No children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
           } else {
             if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
-              addIssue(results, node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", ModelChecker.SEVERITY_ERROR, "cardinality", null);
+              SpecificChecker.addIssue(results, node, "No reference in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is 1)", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
           }
         } else if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{})) {
           if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
-            addIssue(results, node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", new IModelCheckerFix() {
+            SpecificChecker.addIssue(results, node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", ModelChecker.SEVERITY_ERROR, "cardinality", new IModelCheckerFix() {
               public boolean doFix() {
                 ListSequence.fromList(SNodeOperations.getChildren(node, link)).skip(1).toListSequence().visitAll(new IVisitor<SNode>() {
                   public void visit(SNode child) {
@@ -72,7 +72,7 @@ public class ConstraintsChecker extends SpecificChecker {
         }
       })) {
         if (!(ModelCheckerUtils.isDeclaredLink(SNodeOperations.getContainingLinkDeclaration(child), true))) {
-          addIssue(results, node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", ModelChecker.SEVERITY_WARNING, "undeclared child", new IModelCheckerFix() {
+          SpecificChecker.addIssue(results, node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", ModelChecker.SEVERITY_WARNING, "undeclared child", new IModelCheckerFix() {
             public boolean doFix() {
               ListSequence.fromList(SNodeOperations.getChildren(node, SNodeOperations.getContainingLinkDeclaration(child))).visitAll(new IVisitor<SNode>() {
                 public void visit(SNode child) {
@@ -87,7 +87,7 @@ public class ConstraintsChecker extends SpecificChecker {
 
       for (final SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
         if (!(ModelCheckerUtils.isDeclaredLink(SLinkOperations.findLinkDeclaration(reference), false))) {
-          addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", ModelChecker.SEVERITY_WARNING, "undeclared reference", new IModelCheckerFix() {
+          SpecificChecker.addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", ModelChecker.SEVERITY_WARNING, "undeclared reference", new IModelCheckerFix() {
             public boolean doFix() {
               SNodeAccessUtil.setReferenceTarget(node, SLinkOperations.getRole(reference), null);
               return true;
