@@ -74,16 +74,24 @@ public class ParenthesisUtil {
         });
         assert firstCommon != null;
 
+        if ((eq_a65dpo_a0a0a5a3a11a6_0(firstCommon, otherExpression) || eq_a65dpo_a0a0a5a3a11a6(firstCommon, myExpression)) && SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+          // one of the parenthesised nodes is the common ancestor 
+          ParenthesisUtil.clearIncompleteParens(otherExpression, completingByRightParen);
+          SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommon, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+          SLinkOperations.setTarget(parens, "expression", firstCommon, true);
+          return parens;
+        }
+
         SNode otherPredecesor = ListSequence.fromList(otherParentPath.value).getElement(ListSequence.fromList(otherParentPath.value).indexOf(firstCommon) - 1);
         SNode myPredecesor = ListSequence.fromList(myParentPath).getElement(ListSequence.fromList(myParentPath).indexOf(firstCommon) - 1);
         if (SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
           // Does left parented node come from the left and right parented node from the right? 
-          if ((completingByRightParen && eq_a65dpo_a0a0a0b0h0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), otherPredecesor) && eq_a65dpo_a0a0a1a7a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), myPredecesor)) || !(completingByRightParen) && eq_a65dpo_a0a0a1a7a3a11a6_0(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), myPredecesor) && eq_a65dpo_a0a0b0h0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), otherPredecesor)) {
+          if ((completingByRightParen && eq_a65dpo_a0a0a0b0j0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), otherPredecesor) && eq_a65dpo_a0a0a1a9a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), myPredecesor)) || !(completingByRightParen) && eq_a65dpo_a0a0a1a9a3a11a6_0(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), myPredecesor) && eq_a65dpo_a0a0b0j0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), otherPredecesor)) {
             break;
           }
         } else if (SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
           // In case of a ternary operator expression being the first common predecessor 
-          if ((completingByRightParen && eq_a65dpo_a0a0a0b0a7a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), otherPredecesor) && eq_a65dpo_a0a0a1a0h0d0l0g_0(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true), myPredecesor)) || !(completingByRightParen) && eq_a65dpo_a0a0a1a0h0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), myPredecesor) && eq_a65dpo_a0a0b0a7a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true), otherPredecesor)) {
+          if ((completingByRightParen && eq_a65dpo_a0a0a0b0a9a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), otherPredecesor) && eq_a65dpo_a0a0a1a0j0d0l0g_0(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true), myPredecesor)) || !(completingByRightParen) && eq_a65dpo_a0a0a1a0j0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), myPredecesor) && eq_a65dpo_a0a0b0a9a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true), otherPredecesor)) {
             break;
           }
         }
@@ -374,35 +382,43 @@ public class ParenthesisUtil {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0a1a7a3a11a6(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a5a3a11a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0a0b0h0d0l0g(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a5a3a11a6_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0b0h0d0l0g(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a1a9a3a11a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0a1a7a3a11a6_0(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a0b0j0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0a1a0h0d0l0g(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0b0j0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0b0a7a3a11a6(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a1a9a3a11a6_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0a1a0h0d0l0g_0(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a1a0j0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_a65dpo_a0a0a0b0a7a3a11a6(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0b0a9a3a11a6(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_a65dpo_a0a0a1a0j0d0l0g_0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_a65dpo_a0a0a0b0a9a3a11a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
