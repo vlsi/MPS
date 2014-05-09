@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import java.util.ArrayList;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Queue;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -25,6 +25,14 @@ public class IGenericType_Behavior {
 
   public static SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
     return IGenericType_Behavior.call_expandGenerics_4122274986016348613(thisNode, substitutions, new ArrayList<SNode>());
+  }
+
+  public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
+    SNode copy = SNodeOperations.copyNode(thisNode);
+    for (SNode c : ListSequence.fromList(SNodeOperations.getChildren(copy)).toListSequence()) {
+      SNodeOperations.deleteNode(c);
+    }
+    return copy;
   }
 
   public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
@@ -76,6 +84,16 @@ public class IGenericType_Behavior {
   @Deprecated
   public static SNode callSuper_expandGenerics_4107091686347199582(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> substitutions) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType"), callerConceptFqName, "virtual_expandGenerics_4107091686347199582", new Class[]{SNode.class, Map.class}, new Object[]{substitutions});
+  }
+
+  @Deprecated
+  public static SNode call_eraseGenerics_5089784887112634594(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_eraseGenerics_5089784887112634594", new Object[]{});
+  }
+
+  @Deprecated
+  public static SNode callSuper_eraseGenerics_5089784887112634594(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType"), callerConceptFqName, "virtual_eraseGenerics_5089784887112634594", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

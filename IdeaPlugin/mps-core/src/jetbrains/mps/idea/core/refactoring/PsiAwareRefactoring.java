@@ -14,6 +14,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -33,7 +34,8 @@ public class PsiAwareRefactoring extends RefactoringWrapper {
     SearchResults<SNode> mpsResults = baseRefactoring.getAffectedNodes(refactoringContext);
 
     Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
-    for (SNode target : refactoringContext.getSelectedNodes()) {
+    List<SNode> nodes = baseRefactoring.getRefactoringTarget().allowMultipleTargets() ? refactoringContext.getSelectedNodes() : Arrays.asList(refactoringContext.getSelectedNode());
+    for (SNode target : nodes) {
       PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(target);
       // todo search scope?
       Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();

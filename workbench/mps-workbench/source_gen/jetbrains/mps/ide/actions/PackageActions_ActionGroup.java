@@ -27,6 +27,7 @@ public class PackageActions_ActionGroup extends GeneratedActionGroup {
       }
       PackageActions_ActionGroup.this.addSeparator();
       PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action");
+      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteNode_Action");
       PackageActions_ActionGroup.this.addSeparator();
       PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenamePackage_Action");
     } catch (Throwable t) {

@@ -76,6 +76,7 @@
     <mps.VisibleModuleMask mask="stubUtils"/>
     <mps.VisibleModuleMask mask="Testbench"/>
     <mps.VisibleModuleMask mask="typesystemIntegration"/>
+    <mps.IntentionActionsProvider implementation="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl" />
   </extensions>
   <actions>
     <group id="MPSWelcomeDocumentationMenu">

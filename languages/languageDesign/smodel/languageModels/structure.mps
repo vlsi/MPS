@@ -918,6 +918,15 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1182506966389" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="scope" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6325651360498329118" nodeInfo="ig">
+        <property name="comment" nameId="tpce.1225118933224" value="rudimental, remove after 3.1" />
+      </node>
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1182511038748" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />

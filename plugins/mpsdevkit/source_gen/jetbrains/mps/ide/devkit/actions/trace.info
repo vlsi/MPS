@@ -3840,6 +3840,56 @@
     <scopeInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="4032646381570777493" fileName="NamespaceNewActionsEx_ActionGroup.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NamespaceNewActionsEx_ActionGroup" />
   </root>
+  <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/4403068512914877423">
+    <nodeInfo nodeId="6783372269476760316" fileName="IntentionActionsProviderImpl.java" startLine="26" startPosition="87" endLine="27" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783372269476757573" fileName="IntentionActionsProviderImpl.java" startLine="27" startPosition="62" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6783372269476651385" fileName="IntentionActionsProviderImpl.java" startLine="33" startPosition="29" endLine="34" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783372269476417506" fileName="IntentionActionsProviderImpl.java" startLine="34" startPosition="87" endLine="35" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783372269476417516" fileName="IntentionActionsProviderImpl.java" startLine="35" startPosition="91" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783372269476417554" fileName="IntentionActionsProviderImpl.java" startLine="37" startPosition="40" endLine="38" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783372269476417534" fileName="IntentionActionsProviderImpl.java" startLine="39" startPosition="20" endLine="40" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783372269476417544" fileName="IntentionActionsProviderImpl.java" startLine="40" startPosition="91" endLine="41" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783372269476682939" fileName="IntentionActionsProviderImpl.java" startLine="48" startPosition="77" endLine="49" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783372269476386914" fileName="IntentionActionsProviderImpl.java" startLine="51" startPosition="7" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6783372269476174395" fileName="IntentionActionsProviderImpl.java" startLine="52" startPosition="0" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6783372269476417532" fileName="IntentionActionsProviderImpl.java" startLine="39" startPosition="18" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6783372269476676773" fileName="IntentionActionsProviderImpl.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="6783372269476417528" fileName="IntentionActionsProviderImpl.java" startLine="36" startPosition="112" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6783372269476417504" fileName="IntentionActionsProviderImpl.java" startLine="33" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6783372269476417500" fileName="IntentionActionsProviderImpl.java" startLine="31" startPosition="83" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6783372269476408388" fileName="IntentionActionsProviderImpl.java" startLine="30" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="6783372269476173814" fileName="IntentionActionsProviderImpl.java" startLine="28" startPosition="0" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6783372269475797256" fileName="IntentionActionsProviderImpl.java" startLine="25" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionActions#(Ljetbrains/mps/intentions/IntentionExecutable;)[Lcom/intellij/openapi/actionSystem/AnAction;" />
+    <scopeInfo nodeId="6783372269476417553" fileName="IntentionActionsProviderImpl.java" startLine="37" startPosition="40" endLine="38" endPosition="245" />
+    <scopeInfo nodeId="6783372269476676781" fileName="IntentionActionsProviderImpl.java" startLine="48" startPosition="77" endLine="49" endPosition="108" />
+    <scopeInfo nodeId="6783372269476417533" fileName="IntentionActionsProviderImpl.java" startLine="39" startPosition="20" endLine="41" endPosition="90" />
+    <scopeInfo nodeId="6783372269476676773" fileName="IntentionActionsProviderImpl.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="6783372269476676775" varName="e" />
+      <varInfo nodeId="6783372269476676777" varName="params" />
+    </scopeInfo>
+    <scopeInfo nodeId="6783372269476417505" fileName="IntentionActionsProviderImpl.java" startLine="33" startPosition="29" endLine="42" endPosition="13">
+      <varInfo nodeId="6783372269476651386" varName="context" />
+      <varInfo nodeId="6783372269476417517" varName="intentionNode" />
+      <varInfo nodeId="6783372269476417507" varName="nodeRef" />
+    </scopeInfo>
+    <scopeInfo nodeId="6783372269476417504" fileName="IntentionActionsProviderImpl.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6783372269476408396" fileName="IntentionActionsProviderImpl.java" startLine="31" startPosition="83" endLine="44" endPosition="11" />
+    <scopeInfo nodeId="6783372269476408388" fileName="IntentionActionsProviderImpl.java" startLine="30" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="6783372269476408390" varName="e" />
+      <varInfo nodeId="6783372269476408392" varName="params" />
+    </scopeInfo>
+    <scopeInfo nodeId="6783372269475797265" fileName="IntentionActionsProviderImpl.java" startLine="26" startPosition="87" endLine="53" endPosition="19">
+      <varInfo nodeId="6783372269476173815" varName="actions" />
+      <varInfo nodeId="6783372269476760315" varName="icon" />
+    </scopeInfo>
+    <scopeInfo nodeId="6783372269475797256" fileName="IntentionActionsProviderImpl.java" startLine="25" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="6783372269475797261" varName="intention" />
+    </scopeInfo>
+    <unitInfo nodeId="6783372269476676771" fileName="IntentionActionsProviderImpl.java" startLine="46" startPosition="11" endLine="51" endPosition="5" unitName="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl$2" />
+    <unitInfo nodeId="6783372269476417504" fileName="IntentionActionsProviderImpl.java" startLine="32" startPosition="49" endLine="44" endPosition="9" unitName="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl$2" />
+    <unitInfo nodeId="6783372269476408386" fileName="IntentionActionsProviderImpl.java" startLine="29" startPosition="30" endLine="46" endPosition="5" unitName="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl$1" />
+    <unitInfo nodeId="4403068512914877423" fileName="IntentionActionsProviderImpl.java" startLine="24" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.IntentionActionsProviderImpl" />
+  </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/5883033498657755836">
     <nodeInfo nodeId="5883033498657755836" fileName="ProjectNewActionsEx_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5883033498657755836" fileName="ProjectNewActionsEx_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
