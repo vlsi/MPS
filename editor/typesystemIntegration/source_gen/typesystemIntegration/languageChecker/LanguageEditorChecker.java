@@ -37,7 +37,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import java.util.ArrayList;
@@ -48,6 +47,8 @@ import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
@@ -214,10 +215,10 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       mainEditorComponent = editorComponent;
     }
 
-    final Wrappers._T<LanguageErrorsComponent> errorsComponent = new Wrappers._T<LanguageErrorsComponent>(MapSequence.fromMap(myEditorComponentToErrorMap).get(mainEditorComponent));
-    if (errorsComponent.value == null) {
-      errorsComponent.value = new LanguageErrorsComponent(model);
-      MapSequence.fromMap(myEditorComponentToErrorMap).put(mainEditorComponent, errorsComponent.value);
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myEditorComponentToErrorMap).get(mainEditorComponent);
+    if (errorsComponent == null) {
+      errorsComponent = new LanguageErrorsComponent(model);
+      MapSequence.fromMap(myEditorComponentToErrorMap).put(mainEditorComponent, errorsComponent);
       mainEditorComponent.addDisposeListener(myDisposeListener);
 
       Set<EditorComponent> mappedEditorComponent = MapSequence.fromMap(myModelToEditorComponentsMap).get(model);
@@ -230,11 +231,11 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
 
     if (!(wasCheckedOnce)) {
-      errorsComponent.value.clear();
+      errorsComponent.clear();
     }
 
     if (inspector) {
-      myMessagesChanged = errorsComponent.value.checkInspector();
+      myMessagesChanged = errorsComponent.checkInspector();
     } else {
       boolean changed = false;
       TypeCheckingContext typecheckingContext = mainEditorComponent.getTypeCheckingContext();
@@ -242,7 +243,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
         if (typecheckingContext != null) {
           typecheckingContext.setIsNonTypesystemComputation();
         }
-        changed = errorsComponent.value.check(SNodeOperations.getContainingRoot(((SNode) node)), myRules, editorContext.getRepository());
+        changed = errorsComponent.check(SNodeOperations.getContainingRoot(((SNode) node)), myRules, editorContext.getRepository());
       } finally {
         if (typecheckingContext != null) {
           typecheckingContext.resetIsNonTypesystemComputation();
@@ -252,7 +253,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
 
     final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
-    for (IErrorReporter errorReporter : errorsComponent.value.getErrors()) {
+    for (IErrorReporter errorReporter : errorsComponent.getErrors()) {
       SNode nodeWithError = errorReporter.getSNode();
       if (!(ListSequence.fromList(SNodeOperations.getAncestors(nodeWithError, null, true)).contains(editedNode))) {
         // in inspector skipping all messages for invisible nodes 
@@ -270,20 +271,15 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       }
       SetSequence.fromSet(result).addElement(message);
     }
-    if (ListSequence.fromList(quickFixesToExecute).isNotEmpty()) {
+    if (ListSequence.fromList(quickFixesToExecute).isNotEmpty() && model instanceof EditableSModel && !(model.getModule() instanceof TransientModelsModule)) {
       LaterInvocator.invokeLater(new Runnable() {
         public void run() {
           ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
             public void run() {
-              boolean wasExecuted = false;
               for (Tuples._2<QuickFix_Runtime, SNode> fix : quickFixesToExecute) {
                 if (SNodeOperations.getModel(fix._1()) != null) {
                   fix._0().execute(fix._1());
-                  wasExecuted = true;
                 }
-              }
-              if (wasExecuted) {
-                errorsComponent.value.clear();
               }
             }
           });

@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -39,13 +40,14 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     }
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     boolean executeImmediately = !(hasUnresolvedImportedModels(SNodeOperations.getModel(node), repository));
-    for (SReference ref : SNodeOperations.getReferences(node)) {
-      SNode target = SLinkOperations.getTargetNode(ref);
+    for (final SReference ref : SNodeOperations.getReferences(node)) {
+      final SNode target = SLinkOperations.getTargetNode(ref);
       SNode ld = SLinkOperations.findLinkDeclaration(ref);
       // don't check unresolved and broken references, they should already have an error message 
       if ((target == null) || ld == null) {
         continue;
       }
+      // do we need all these additional dependencies? mb. it's better to use .runcheckingAction() instead? 
       component.addDependency(target);
       component.addDependency(ld);
       component.addDependency(node);
@@ -53,10 +55,18 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       for (SNode c : SNodeOperations.getChildren(node)) {
         component.addDependency(c);
       }
-      Scope refScope = ModelConstraints.getScope(ref);
+      final Scope refScope = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Scope>() {
+        public Scope invoke() {
+          return ModelConstraints.getScope(ref);
+        }
+      });
       if (refScope instanceof ErrorScope) {
         component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
-      } else if (!(refScope.contains(target))) {
+      } else if (!(component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
+        public Boolean invoke() {
+          return refScope.contains(target);
+        }
+      }))) {
         String name = target.getName();
         ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(concept, ref.getRole());
         SNode ruleNode = null;
