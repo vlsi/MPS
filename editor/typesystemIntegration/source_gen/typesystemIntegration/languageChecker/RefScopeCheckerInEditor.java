@@ -29,21 +29,15 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
 
   @Override
   protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
-    return new RefScopeCheckerInEditor.ResolveReferenceQuickFix(reference, repository, executeImmediately, myEditorComponent);
+    return new RefScopeCheckerInEditor.ResolveReferenceEditorBasedQuickFix(reference, repository, executeImmediately, myEditorComponent);
   }
 
-  private class ResolveReferenceQuickFix implements QuickFixProvider {
-    private boolean myIsError;
-    private SReference myReference;
-    private SRepository myRepository;
-    private boolean myExecuteImmediately;
+  private class ResolveReferenceEditorBasedQuickFix extends RefScopeChecker.ResolveReferenceQuickFix {
     private EditorComponent myEditorComponent;
 
 
-    public ResolveReferenceQuickFix(SReference reference, SRepository repository, boolean executeImmediately, EditorComponent editorComponent) {
-      myReference = reference;
-      myRepository = repository;
-      myExecuteImmediately = executeImmediately;
+    public ResolveReferenceEditorBasedQuickFix(SReference reference, SRepository repository, boolean executeImmediately, EditorComponent editorComponent) {
+      super(reference, repository, executeImmediately);
       myEditorComponent = editorComponent;
     }
 
@@ -90,7 +84,7 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
       if (result != null) {
         return result;
       }
-      SModule module = check_thufhv_a0c0i3(SNodeOperations.getModel(sourceNode));
+      SModule module = check_thufhv_a0c0e3(SNodeOperations.getModel(sourceNode));
       SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (target != null && module != null) {
         Scope scope = ModelConstraints.getScope(reference);
@@ -111,24 +105,9 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
       }
       return result;
     }
-
-    @Override
-    public boolean isExecutedImmediately() {
-      return myExecuteImmediately;
-    }
-
-    @Override
-    public void setIsError(boolean isError) {
-      myIsError = isError;
-    }
-
-    @Override
-    public boolean isError() {
-      return myIsError;
-    }
   }
 
-  private static SModule check_thufhv_a0c0i3(SModel checkedDotOperand) {
+  private static SModule check_thufhv_a0c0e3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

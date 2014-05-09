@@ -94,10 +94,10 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     return new RefScopeChecker.ResolveReferenceQuickFix(reference, repository, executeImmediately);
   }
 
-  private class ResolveReferenceQuickFix implements QuickFixProvider {
+  protected class ResolveReferenceQuickFix implements QuickFixProvider {
     private boolean myIsError;
-    private SReference myReference;
-    private SRepository myRepository;
+    protected SReference myReference;
+    protected SRepository myRepository;
     private boolean myExecuteImmediately;
 
     public ResolveReferenceQuickFix(SReference reference, SRepository repository, boolean executeImmediately) {
