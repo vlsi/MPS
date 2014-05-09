@@ -1398,132 +1398,137 @@
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="257" startPosition="114" endLine="258" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="262" startPosition="77" endLine="263" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="263" startPosition="114" endLine="264" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="269" startPosition="79" endLine="270" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="270" startPosition="146" endLine="271" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="274" startPosition="79" endLine="275" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="275" startPosition="146" endLine="276" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="279" startPosition="79" endLine="280" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="280" startPosition="146" endLine="281" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="284" startPosition="107" endLine="285" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="285" startPosition="146" endLine="286" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="289" startPosition="79" endLine="290" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="290" startPosition="146" endLine="291" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="294" startPosition="80" endLine="295" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="295" startPosition="146" endLine="296" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="299" startPosition="79" endLine="300" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="300" startPosition="146" endLine="301" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="304" startPosition="80" endLine="305" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="305" startPosition="146" endLine="306" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="309" startPosition="77" endLine="310" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="310" startPosition="144" endLine="311" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="314" startPosition="75" endLine="315" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="315" startPosition="146" endLine="316" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="319" startPosition="75" endLine="320" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="320" startPosition="146" endLine="321" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="324" startPosition="75" endLine="325" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="325" startPosition="146" endLine="326" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="329" startPosition="75" endLine="330" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="330" startPosition="146" endLine="331" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="334" startPosition="75" endLine="335" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="335" startPosition="146" endLine="336" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="339" startPosition="75" endLine="340" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="340" startPosition="146" endLine="341" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="344" startPosition="79" endLine="345" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="345" startPosition="146" endLine="346" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="349" startPosition="75" endLine="350" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="350" startPosition="146" endLine="351" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="354" startPosition="75" endLine="355" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="355" startPosition="146" endLine="356" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="359" startPosition="75" endLine="360" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="360" startPosition="146" endLine="361" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="364" startPosition="75" endLine="365" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="365" startPosition="146" endLine="366" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="369" startPosition="75" endLine="370" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="370" startPosition="146" endLine="371" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="374" startPosition="75" endLine="375" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="375" startPosition="146" endLine="376" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="379" startPosition="79" endLine="380" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="380" startPosition="146" endLine="381" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="384" startPosition="75" endLine="385" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="385" startPosition="146" endLine="386" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="389" startPosition="75" endLine="390" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="390" startPosition="146" endLine="391" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="394" startPosition="79" endLine="395" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="395" startPosition="146" endLine="396" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="399" startPosition="100" endLine="400" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="400" startPosition="146" endLine="401" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="404" startPosition="75" endLine="405" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="405" startPosition="146" endLine="406" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="409" startPosition="75" endLine="410" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="410" startPosition="146" endLine="411" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="414" startPosition="75" endLine="415" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="415" startPosition="146" endLine="416" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="419" startPosition="75" endLine="420" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="420" startPosition="146" endLine="421" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="424" startPosition="75" endLine="425" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="425" startPosition="146" endLine="426" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="429" startPosition="75" endLine="430" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="430" startPosition="146" endLine="431" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="434" startPosition="79" endLine="435" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="435" startPosition="146" endLine="436" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="439" startPosition="75" endLine="440" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="440" startPosition="146" endLine="441" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="444" startPosition="75" endLine="445" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="445" startPosition="146" endLine="446" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="449" startPosition="79" endLine="450" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="450" startPosition="146" endLine="451" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="454" startPosition="107" endLine="455" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="455" startPosition="146" endLine="456" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="459" startPosition="75" endLine="460" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="460" startPosition="146" endLine="461" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="464" startPosition="107" endLine="465" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="465" startPosition="146" endLine="466" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="469" startPosition="75" endLine="470" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="470" startPosition="146" endLine="471" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="474" startPosition="79" endLine="475" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="475" startPosition="146" endLine="476" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="269" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066795#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="274" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066847#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="279" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066877#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="284" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929210654#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="289" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066940#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="294" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeTypeSystemCheck6923385624928769094#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="299" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066979#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="304" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeTypeSystemCheck6923385624928697593#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="309" startPosition="0" endLine="313" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck75433039838559829#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="314" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488315187#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="319" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488449834#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="324" startPosition="0" endLine="328" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488320706#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="329" startPosition="0" endLine="333" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583492117057#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="334" startPosition="0" endLine="338" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489448272#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="339" startPosition="0" endLine="343" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489437018#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="344" startPosition="0" endLine="348" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234060636#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="349" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488337419#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="354" startPosition="0" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488343374#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="359" startPosition="0" endLine="363" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488470122#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="364" startPosition="0" endLine="368" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488407475#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="369" startPosition="0" endLine="373" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488467292#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="374" startPosition="0" endLine="378" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583493095176#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="379" startPosition="0" endLine="383" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234102966#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="384" startPosition="0" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488519701#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="389" startPosition="0" endLine="393" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489284037#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="394" startPosition="0" endLine="398" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234103616#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="399" startPosition="0" endLine="403" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeWildcardTypeArgumentExplicitlyCheck2432481583493875687#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="404" startPosition="0" endLine="408" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488437090#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="409" startPosition="0" endLine="413" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488437096#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="414" startPosition="0" endLine="418" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488572526#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="419" startPosition="0" endLine="423" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck5450156852667865188#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="424" startPosition="0" endLine="428" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck5450156852667875900#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="429" startPosition="0" endLine="433" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489259581#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="434" startPosition="0" endLine="438" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234103631#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="439" startPosition="0" endLine="443" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488625033#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="444" startPosition="0" endLine="448" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489271447#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="449" startPosition="0" endLine="453" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234104686#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="454" startPosition="0" endLine="458" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeVariableInitializerIsRedundantWarningCheck2432481583489075236#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="459" startPosition="0" endLine="463" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488758535#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="464" startPosition="0" endLine="468" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeVariableInitializerIsRedundantWarningCheck2432481583489092952#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="469" startPosition="0" endLine="473" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488776292#()V" />
-    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="474" startPosition="0" endLine="478" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234105331#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="268" startPosition="77" endLine="269" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="269" startPosition="114" endLine="270" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="275" startPosition="79" endLine="276" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="276" startPosition="146" endLine="277" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="280" startPosition="79" endLine="281" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="281" startPosition="146" endLine="282" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="285" startPosition="79" endLine="286" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="286" startPosition="146" endLine="287" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="290" startPosition="107" endLine="291" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="291" startPosition="146" endLine="292" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="295" startPosition="79" endLine="296" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="296" startPosition="146" endLine="297" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="300" startPosition="80" endLine="301" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="301" startPosition="146" endLine="302" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="305" startPosition="79" endLine="306" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="306" startPosition="146" endLine="307" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="310" startPosition="80" endLine="311" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="311" startPosition="146" endLine="312" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="315" startPosition="77" endLine="316" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="316" startPosition="144" endLine="317" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="320" startPosition="75" endLine="321" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="321" startPosition="146" endLine="322" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="325" startPosition="75" endLine="326" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="326" startPosition="146" endLine="327" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="330" startPosition="75" endLine="331" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="331" startPosition="146" endLine="332" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="335" startPosition="75" endLine="336" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="336" startPosition="146" endLine="337" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="340" startPosition="75" endLine="341" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="341" startPosition="146" endLine="342" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="345" startPosition="75" endLine="346" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="346" startPosition="146" endLine="347" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="350" startPosition="79" endLine="351" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="351" startPosition="146" endLine="352" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="355" startPosition="75" endLine="356" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="356" startPosition="146" endLine="357" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="360" startPosition="75" endLine="361" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="361" startPosition="146" endLine="362" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="365" startPosition="75" endLine="366" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="366" startPosition="146" endLine="367" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="370" startPosition="75" endLine="371" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="371" startPosition="146" endLine="372" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="375" startPosition="75" endLine="376" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="376" startPosition="146" endLine="377" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="380" startPosition="75" endLine="381" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="381" startPosition="146" endLine="382" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="385" startPosition="79" endLine="386" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="386" startPosition="146" endLine="387" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="390" startPosition="75" endLine="391" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="391" startPosition="146" endLine="392" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="395" startPosition="75" endLine="396" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="396" startPosition="146" endLine="397" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="400" startPosition="79" endLine="401" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="401" startPosition="146" endLine="402" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="405" startPosition="100" endLine="406" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="406" startPosition="146" endLine="407" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="410" startPosition="75" endLine="411" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="411" startPosition="146" endLine="412" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="415" startPosition="75" endLine="416" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="416" startPosition="146" endLine="417" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="420" startPosition="75" endLine="421" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="421" startPosition="146" endLine="422" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="425" startPosition="75" endLine="426" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="426" startPosition="146" endLine="427" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="430" startPosition="75" endLine="431" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="431" startPosition="146" endLine="432" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="435" startPosition="75" endLine="436" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="436" startPosition="146" endLine="437" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="440" startPosition="79" endLine="441" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="441" startPosition="146" endLine="442" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="445" startPosition="75" endLine="446" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="446" startPosition="146" endLine="447" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="450" startPosition="75" endLine="451" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="451" startPosition="146" endLine="452" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="455" startPosition="79" endLine="456" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="456" startPosition="146" endLine="457" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="460" startPosition="107" endLine="461" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="461" startPosition="146" endLine="462" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="465" startPosition="75" endLine="466" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="466" startPosition="146" endLine="467" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="470" startPosition="107" endLine="471" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="471" startPosition="146" endLine="472" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="475" startPosition="75" endLine="476" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="476" startPosition="146" endLine="477" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="480" startPosition="79" endLine="481" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="481" startPosition="146" endLine="482" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="485" startPosition="79" endLine="486" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="486" startPosition="146" endLine="487" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="275" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066795#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="280" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066847#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="285" startPosition="0" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066877#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="290" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeVariableInitializerIsRedundantWarningCheck6923385624929210654#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="295" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066940#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="300" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeTypeSystemCheck6923385624928769094#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="305" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066979#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="310" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeTypeSystemCheck6923385624928697593#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="315" startPosition="0" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck75433039838559829#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="320" startPosition="0" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488315187#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="325" startPosition="0" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488449834#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="330" startPosition="0" endLine="334" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488320706#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="335" startPosition="0" endLine="339" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583492117057#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="340" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489448272#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="345" startPosition="0" endLine="349" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489437018#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="350" startPosition="0" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234060636#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="355" startPosition="0" endLine="359" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488337419#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="360" startPosition="0" endLine="364" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488343374#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="365" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488470122#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="370" startPosition="0" endLine="374" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488407475#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="375" startPosition="0" endLine="379" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488467292#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="380" startPosition="0" endLine="384" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583493095176#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="385" startPosition="0" endLine="389" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234102966#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="390" startPosition="0" endLine="394" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488519701#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="395" startPosition="0" endLine="399" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489284037#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="400" startPosition="0" endLine="404" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234103616#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="405" startPosition="0" endLine="409" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeWildcardTypeArgumentExplicitlyCheck2432481583493875687#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="410" startPosition="0" endLine="414" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488437090#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="415" startPosition="0" endLine="419" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488437096#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="420" startPosition="0" endLine="424" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488572526#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="425" startPosition="0" endLine="429" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck5450156852667865188#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="430" startPosition="0" endLine="434" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck5450156852667875900#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="435" startPosition="0" endLine="439" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489259581#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="440" startPosition="0" endLine="444" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234103631#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="445" startPosition="0" endLine="449" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488625033#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="450" startPosition="0" endLine="454" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583489271447#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="455" startPosition="0" endLine="459" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234104686#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="460" startPosition="0" endLine="464" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeVariableInitializerIsRedundantWarningCheck2432481583489075236#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="465" startPosition="0" endLine="469" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488758535#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="470" startPosition="0" endLine="474" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeVariableInitializerIsRedundantWarningCheck2432481583489092952#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="475" startPosition="0" endLine="479" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488776292#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="480" startPosition="0" endLine="484" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234105331#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="485" startPosition="0" endLine="489" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck7817233971112259125#()V" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066795#()V" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066847#()V" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck4246614868164066877#()V" />
@@ -1566,6 +1571,7 @@
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="249" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeVariableInitializerIsRedundantWarningCheck2432481583489092952#()V" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="255" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck2432481583488776292#()V" />
     <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="261" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck2989670514234105331#()V" />
+    <nodeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="267" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck7817233971112259125#()V" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="16" startPosition="77" endLine="18" endPosition="127" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="22" startPosition="77" endLine="24" endPosition="127" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="28" startPosition="77" endLine="30" endPosition="127" />
@@ -1608,174 +1614,179 @@
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="250" startPosition="105" endLine="252" endPosition="155" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="256" startPosition="73" endLine="258" endPosition="123" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="262" startPosition="77" endLine="264" endPosition="127" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="269" startPosition="79" endLine="271" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="268" startPosition="77" endLine="270" endPosition="127" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="275" startPosition="79" endLine="277" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="274" startPosition="79" endLine="276" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="280" startPosition="79" endLine="282" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="279" startPosition="79" endLine="281" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="285" startPosition="79" endLine="287" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="284" startPosition="107" endLine="286" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="290" startPosition="107" endLine="292" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="289" startPosition="79" endLine="291" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="295" startPosition="79" endLine="297" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="294" startPosition="80" endLine="296" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="300" startPosition="80" endLine="302" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="299" startPosition="79" endLine="301" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="305" startPosition="79" endLine="307" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="304" startPosition="80" endLine="306" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="310" startPosition="80" endLine="312" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="309" startPosition="77" endLine="311" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="315" startPosition="77" endLine="317" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="314" startPosition="75" endLine="316" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="320" startPosition="75" endLine="322" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="319" startPosition="75" endLine="321" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="325" startPosition="75" endLine="327" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="324" startPosition="75" endLine="326" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="330" startPosition="75" endLine="332" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="329" startPosition="75" endLine="331" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="335" startPosition="75" endLine="337" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="334" startPosition="75" endLine="336" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="340" startPosition="75" endLine="342" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="339" startPosition="75" endLine="341" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="345" startPosition="75" endLine="347" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="344" startPosition="79" endLine="346" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="350" startPosition="79" endLine="352" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="349" startPosition="75" endLine="351" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="355" startPosition="75" endLine="357" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="354" startPosition="75" endLine="356" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="360" startPosition="75" endLine="362" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="359" startPosition="75" endLine="361" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="365" startPosition="75" endLine="367" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="364" startPosition="75" endLine="366" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="370" startPosition="75" endLine="372" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="369" startPosition="75" endLine="371" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="375" startPosition="75" endLine="377" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="374" startPosition="75" endLine="376" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="380" startPosition="75" endLine="382" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="379" startPosition="79" endLine="381" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="385" startPosition="79" endLine="387" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="384" startPosition="75" endLine="386" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="390" startPosition="75" endLine="392" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="389" startPosition="75" endLine="391" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="395" startPosition="75" endLine="397" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="394" startPosition="79" endLine="396" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="400" startPosition="79" endLine="402" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="399" startPosition="100" endLine="401" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="405" startPosition="100" endLine="407" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="404" startPosition="75" endLine="406" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="410" startPosition="75" endLine="412" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="409" startPosition="75" endLine="411" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="415" startPosition="75" endLine="417" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="414" startPosition="75" endLine="416" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="420" startPosition="75" endLine="422" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="419" startPosition="75" endLine="421" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="425" startPosition="75" endLine="427" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="424" startPosition="75" endLine="426" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="430" startPosition="75" endLine="432" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="429" startPosition="75" endLine="431" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="435" startPosition="75" endLine="437" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="434" startPosition="79" endLine="436" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="440" startPosition="79" endLine="442" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="439" startPosition="75" endLine="441" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="445" startPosition="75" endLine="447" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="444" startPosition="75" endLine="446" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="450" startPosition="75" endLine="452" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="449" startPosition="79" endLine="451" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="455" startPosition="79" endLine="457" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="454" startPosition="107" endLine="456" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="460" startPosition="107" endLine="462" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="459" startPosition="75" endLine="461" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="465" startPosition="75" endLine="467" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="464" startPosition="107" endLine="466" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="470" startPosition="107" endLine="472" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="469" startPosition="75" endLine="471" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="475" startPosition="75" endLine="477" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="474" startPosition="79" endLine="476" endPosition="159">
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="480" startPosition="79" endLine="482" endPosition="159">
       <varInfo nodeId="4246614868164066709" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="269" startPosition="0" endLine="273" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="274" startPosition="0" endLine="278" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="279" startPosition="0" endLine="283" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="284" startPosition="0" endLine="288" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="289" startPosition="0" endLine="293" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="294" startPosition="0" endLine="298" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="299" startPosition="0" endLine="303" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="304" startPosition="0" endLine="308" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="309" startPosition="0" endLine="313" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="314" startPosition="0" endLine="318" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="319" startPosition="0" endLine="323" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="324" startPosition="0" endLine="328" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="329" startPosition="0" endLine="333" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="334" startPosition="0" endLine="338" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="339" startPosition="0" endLine="343" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="344" startPosition="0" endLine="348" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="349" startPosition="0" endLine="353" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="354" startPosition="0" endLine="358" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="359" startPosition="0" endLine="363" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="364" startPosition="0" endLine="368" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="369" startPosition="0" endLine="373" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="374" startPosition="0" endLine="378" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="379" startPosition="0" endLine="383" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="384" startPosition="0" endLine="388" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="389" startPosition="0" endLine="393" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="394" startPosition="0" endLine="398" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="399" startPosition="0" endLine="403" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="404" startPosition="0" endLine="408" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="409" startPosition="0" endLine="413" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="414" startPosition="0" endLine="418" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="419" startPosition="0" endLine="423" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="424" startPosition="0" endLine="428" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="429" startPosition="0" endLine="433" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="434" startPosition="0" endLine="438" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="439" startPosition="0" endLine="443" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="444" startPosition="0" endLine="448" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="449" startPosition="0" endLine="453" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="454" startPosition="0" endLine="458" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="459" startPosition="0" endLine="463" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="464" startPosition="0" endLine="468" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="469" startPosition="0" endLine="473" endPosition="0" />
-    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="474" startPosition="0" endLine="478" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="485" startPosition="79" endLine="487" endPosition="159">
+      <varInfo nodeId="4246614868164066709" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="275" startPosition="0" endLine="279" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="280" startPosition="0" endLine="284" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="285" startPosition="0" endLine="289" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="290" startPosition="0" endLine="294" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="295" startPosition="0" endLine="299" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="300" startPosition="0" endLine="304" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="305" startPosition="0" endLine="309" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="310" startPosition="0" endLine="314" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="315" startPosition="0" endLine="319" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="320" startPosition="0" endLine="324" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="325" startPosition="0" endLine="329" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="330" startPosition="0" endLine="334" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="335" startPosition="0" endLine="339" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="340" startPosition="0" endLine="344" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="345" startPosition="0" endLine="349" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="350" startPosition="0" endLine="354" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="355" startPosition="0" endLine="359" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="360" startPosition="0" endLine="364" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="365" startPosition="0" endLine="369" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="370" startPosition="0" endLine="374" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="375" startPosition="0" endLine="379" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="380" startPosition="0" endLine="384" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="385" startPosition="0" endLine="389" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="390" startPosition="0" endLine="394" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="395" startPosition="0" endLine="399" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="400" startPosition="0" endLine="404" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="405" startPosition="0" endLine="409" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="410" startPosition="0" endLine="414" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="415" startPosition="0" endLine="419" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="420" startPosition="0" endLine="424" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="425" startPosition="0" endLine="429" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="430" startPosition="0" endLine="434" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="435" startPosition="0" endLine="439" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="440" startPosition="0" endLine="444" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="445" startPosition="0" endLine="449" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="450" startPosition="0" endLine="454" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="455" startPosition="0" endLine="459" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="460" startPosition="0" endLine="464" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="465" startPosition="0" endLine="469" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="470" startPosition="0" endLine="474" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="475" startPosition="0" endLine="479" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="480" startPosition="0" endLine="484" endPosition="0" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="485" startPosition="0" endLine="489" endPosition="0" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
@@ -1818,8 +1829,9 @@
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="249" startPosition="0" endLine="254" endPosition="0" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="255" startPosition="0" endLine="260" endPosition="0" />
     <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="261" startPosition="0" endLine="266" endPosition="0" />
-    <unitInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="267" startPosition="0" endLine="479" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.Generics_Test$TestBody" />
-    <unitInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="13" startPosition="0" endLine="480" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.Generics_Test" />
+    <scopeInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="267" startPosition="0" endLine="272" endPosition="0" />
+    <unitInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="273" startPosition="0" endLine="490" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.Generics_Test$TestBody" />
+    <unitInfo nodeId="4246614868164066709" fileName="Generics_Test.java" startLine="13" startPosition="0" endLine="491" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.Generics_Test" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/4246614868164066980">
     <nodeInfo nodeId="4246614868164066982" fileName="Mapper.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Mapper#()V" />
