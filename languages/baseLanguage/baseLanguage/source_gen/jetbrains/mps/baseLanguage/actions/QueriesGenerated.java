@@ -3105,7 +3105,13 @@ public class QueriesGenerated {
         while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true) == current) {
           current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
         }
-        SNodeOperations.replaceWithAnother(current, to);
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+          SNode parens = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+          SLinkOperations.setTarget(parens, "expression", to, true);
+          SNodeOperations.replaceWithAnother(current, parens);
+        } else {
+          SNodeOperations.replaceWithAnother(current, to);
+        }
         SLinkOperations.setTarget(to, "condition", current, true);
         return to;
       }

@@ -4754,6 +4754,70 @@
     <unitInfo nodeId="8030715741824232266" fileName="PasteParameterManyTimes_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.PasteParameterManyTimes_Test$TestBody" />
     <unitInfo nodeId="8030715741824232266" fileName="PasteParameterManyTimes_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.PasteParameterManyTimes_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/818296778579227381">
+    <nodeInfo nodeId="818296778579227381" fileName="PriorityCheckTestMulFirst_Test.java" startLine="24" startPosition="52" endLine="25" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227381" fileName="PriorityCheckTestMulFirst_Test.java" startLine="25" startPosition="107" endLine="26" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227401" fileName="PriorityCheckTestMulFirst_Test.java" startLine="31" startPosition="54" endLine="32" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227401" fileName="PriorityCheckTestMulFirst_Test.java" startLine="32" startPosition="45" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227404" fileName="PriorityCheckTestMulFirst_Test.java" startLine="33" startPosition="45" endLine="34" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="818296778579227410" fileName="PriorityCheckTestMulFirst_Test.java" startLine="34" startPosition="110" endLine="35" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="818296778579227416" fileName="PriorityCheckTestMulFirst_Test.java" startLine="35" startPosition="118" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227422" fileName="PriorityCheckTestMulFirst_Test.java" startLine="36" startPosition="59" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227428" fileName="PriorityCheckTestMulFirst_Test.java" startLine="37" startPosition="70" endLine="38" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227433" fileName="PriorityCheckTestMulFirst_Test.java" startLine="38" startPosition="162" endLine="39" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227439" fileName="PriorityCheckTestMulFirst_Test.java" startLine="39" startPosition="178" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227442" fileName="PriorityCheckTestMulFirst_Test.java" startLine="41" startPosition="7" endLine="42" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="818296778579227442" fileName="PriorityCheckTestMulFirst_Test.java" startLine="42" startPosition="210" endLine="43" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="818296778579227442" fileName="PriorityCheckTestMulFirst_Test.java" startLine="43" startPosition="209" endLine="44" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579227381" fileName="PriorityCheckTestMulFirst_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRotation#()V" />
+    <nodeInfo nodeId="818296778579227442" fileName="PriorityCheckTestMulFirst_Test.java" startLine="40" startPosition="52" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="818296778579227401" fileName="PriorityCheckTestMulFirst_Test.java" startLine="31" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRotation#()V" />
+    <scopeInfo nodeId="818296778579227381" fileName="PriorityCheckTestMulFirst_Test.java" startLine="24" startPosition="52" endLine="26" endPosition="112" />
+    <scopeInfo nodeId="818296778579227442" fileName="PriorityCheckTestMulFirst_Test.java" startLine="41" startPosition="7" endLine="44" endPosition="146">
+      <varInfo nodeId="818296778579227442" varName="nodesAfter" />
+      <varInfo nodeId="818296778579227442" varName="nodesBefore" />
+    </scopeInfo>
+    <scopeInfo nodeId="818296778579227381" fileName="PriorityCheckTestMulFirst_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="818296778579227401" fileName="PriorityCheckTestMulFirst_Test.java" startLine="31" startPosition="54" endLine="45" endPosition="7">
+      <varInfo nodeId="818296778579227411" varName="constant" />
+      <varInfo nodeId="818296778579227405" varName="op" />
+    </scopeInfo>
+    <scopeInfo nodeId="818296778579227401" fileName="PriorityCheckTestMulFirst_Test.java" startLine="31" startPosition="0" endLine="47" endPosition="0" />
+    <unitInfo nodeId="818296778579227381" fileName="PriorityCheckTestMulFirst_Test.java" startLine="29" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTestMulFirst_Test$TestBody" />
+    <unitInfo nodeId="818296778579227381" fileName="PriorityCheckTestMulFirst_Test.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTestMulFirst_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/818296778579245154">
+    <nodeInfo nodeId="818296778579245154" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="24" startPosition="52" endLine="25" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245154" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="25" startPosition="107" endLine="26" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245174" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="31" startPosition="54" endLine="32" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245174" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="32" startPosition="45" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245177" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="33" startPosition="45" endLine="34" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="818296778579245183" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="34" startPosition="111" endLine="35" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="818296778579245189" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="35" startPosition="118" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245195" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="36" startPosition="59" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245201" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="37" startPosition="70" endLine="38" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245206" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="38" startPosition="161" endLine="39" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245212" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="39" startPosition="177" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245215" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="41" startPosition="7" endLine="42" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="818296778579245215" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="42" startPosition="210" endLine="43" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="818296778579245215" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="43" startPosition="209" endLine="44" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="818296778579245154" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRotation#()V" />
+    <nodeInfo nodeId="818296778579245215" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="40" startPosition="52" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="818296778579245174" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="31" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testRotation#()V" />
+    <scopeInfo nodeId="818296778579245154" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="24" startPosition="52" endLine="26" endPosition="113" />
+    <scopeInfo nodeId="818296778579245215" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="41" startPosition="7" endLine="44" endPosition="146">
+      <varInfo nodeId="818296778579245215" varName="nodesAfter" />
+      <varInfo nodeId="818296778579245215" varName="nodesBefore" />
+    </scopeInfo>
+    <scopeInfo nodeId="818296778579245154" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="818296778579245174" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="31" startPosition="54" endLine="45" endPosition="7">
+      <varInfo nodeId="818296778579245184" varName="constant" />
+      <varInfo nodeId="818296778579245178" varName="op" />
+    </scopeInfo>
+    <scopeInfo nodeId="818296778579245174" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="31" startPosition="0" endLine="47" endPosition="0" />
+    <unitInfo nodeId="818296778579245154" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="29" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTestPlusFirst_Test$TestBody" />
+    <unitInfo nodeId="818296778579245154" fileName="PriorityCheckTestPlusFirst_Test.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.editorTest.PriorityCheckTestPlusFirst_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8221415467041264294">
     <nodeInfo nodeId="8221415467041264294" fileName="RT_addTypeVariable_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8221415467041264294" fileName="RT_addTypeVariable_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -245,15 +245,11 @@ public class ParenthesisUtil {
   }
 
   private static void checkOperationChildWRTPriority(SNode node, boolean isRight) {
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
-      return;
-    }
-    SNode binOp = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-    SNode sideExpr = (isRight ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true));
+    SNode sideExpr = (isRight ? SLinkOperations.getTarget(node, "rightExpression", true) : SLinkOperations.getTarget(node, "leftExpression", true));
     if (SNodeOperations.isInstanceOf(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode sideChild = SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-      if (isBadPriority(sideChild, binOp, isRight)) {
-        ParenthesisUtil.rotateTree(sideChild, binOp, isRight);
+      if (isBadPriority(sideChild, node, isRight)) {
+        ParenthesisUtil.rotateTree(sideChild, node, isRight);
         checkOperationWRTPriority(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       }
     }
