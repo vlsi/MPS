@@ -32,7 +32,6 @@ import org.junit.runner.notification.RunListener;
  */
 public class TestLightExecutor extends AbstractTestExecutor {
   private static final Logger LOG = LogManager.getLogger(TestLightExecutor.class);
-  private static final String LIGHTWEIGHT_KEY = "mps.test.lightweight";
 
   private final TestEventsDispatcher myDispatcher;
   private final Iterable<? extends ITestNodeWrapper> myNodes;
@@ -47,8 +46,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
 
   @Override
   public void init() {
-    // TODO: make it thread-consistent!
-    System.setProperty(LIGHTWEIGHT_KEY, "true");
     initialized = true;
   }
 
@@ -56,7 +53,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
     assert initialized;
     waitWhileNotReady();
-    assert System.getProperty(LIGHTWEIGHT_KEY).equals("true");
+    assert JUnitLightExecutor.isLightRunInProgress();
     super.doExecute(core, requests);
   }
 
@@ -88,8 +85,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
   @Override
   public void dispose() {
     assert initialized;
-    System.setProperty("mps.test.lightweight", "false");
     initialized = false;
-    MPSCore.getInstance().setTestMode(false);
+    assert !MPSCore.getInstance().isTestMode();
   }
 }

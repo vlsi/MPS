@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 public class TestUtils {
   public TestUtils() {
@@ -156,6 +157,9 @@ __switch__:
         if (SModelStereotype.isUserModel(model)) {
           Iterable<ITestNodeWrapper> modelTests = TestUtils.getModelTests(model);
           result = Sequence.fromIterable(result).concat(Sequence.fromIterable(modelTests));
+          if (monitor.isCanceled()) {
+            return result;
+          }
           if (breakOnFirstFound && Sequence.fromIterable(modelTests).isNotEmpty()) {
             return result;
           }
@@ -174,13 +178,16 @@ __switch__:
     Iterable<ITestNodeWrapper> result = Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
 
     Iterable<? extends SModule> projectModules = project.getModules();
-    monitor.start("Fetching modules with tests", IterableUtil.asCollection(projectModules).size());
+    monitor.start("Fetching tests from modules", IterableUtil.asCollection(projectModules).size());
 
     try {
       for (SModule module : Sequence.fromIterable(projectModules)) {
-        Iterable<ITestNodeWrapper> moduleTests = TestUtils.getModuleTests(module, monitor.subTask(1), false);
+        Iterable<ITestNodeWrapper> moduleTests = TestUtils.getModuleTests(module, monitor.subTask(1, SubProgressKind.REPLACING), breakOnFirstFound);
         result = Sequence.fromIterable(result).concat(Sequence.fromIterable(moduleTests));
         monitor.advance(1);
+        if (monitor.isCanceled()) {
+          return result;
+        }
         if (breakOnFirstFound && Sequence.fromIterable(moduleTests).isNotEmpty()) {
           return result;
         }

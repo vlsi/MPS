@@ -23,7 +23,6 @@ import jetbrains.mps.tool.environment.ActiveEnvironment;
 import org.apache.log4j.Priority;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.util.Computable;
 import java.awt.GraphicsEnvironment;
 import java.awt.datatransfer.Clipboard;
@@ -91,7 +90,6 @@ public class TransformationTestRunner implements TestRunner {
         SModel modelDescriptor = findModel(modelName);
         test.setModelDescriptor(modelDescriptor);
         test.init();
-        // <node> 
       }
 
 
@@ -174,7 +172,7 @@ public class TransformationTestRunner implements TestRunner {
     clazz.value.getField("myProject").set(obj, projectTest.getProject());
     final Throwable[] exception = new Throwable[1];
     if (runInCommand) {
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Computable<Throwable>() {
             public Throwable compute() {
@@ -200,7 +198,7 @@ public class TransformationTestRunner implements TestRunner {
         projectTest.dispose();
       }
     });
-//    MPSCore.getInstance().setTestMode(false);
+    MPSCore.getInstance().setTestMode(false);
   }
 
 

@@ -13,6 +13,7 @@ public class ConsoleCreator {
     ConsoleViewImpl result = new ConsoleViewImpl(project, viewer);
     // next method inits editor in order to fix MPS-11721 
     result.getComponent();
+    result.setVisible(true);
     return result;
   }
 }

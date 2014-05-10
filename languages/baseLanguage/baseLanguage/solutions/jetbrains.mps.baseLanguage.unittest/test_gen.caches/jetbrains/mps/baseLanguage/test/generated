@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3kqld3wt94m4s1zzr9qu0xrwponjhdm">
+<dependencies version="2" modelHash="3atspcgu2kftqjosp6v48pxw0fzw17z">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-a6d3ytypfi3pjfrr19d6akdsa3h5fx" />
   <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="-7nky0u138c8u1ynf45s6brel84kqi3m" />
@@ -10,9 +10,9 @@
   <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" hash="-6m581r0dxipbeptr5eqqpu7gu60k1yp" />
   <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" hash="v992z8dcpyv4pfkzatvlve7tu55u8w" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="dr9cshjlh6isonzmwx7lg89qi53acco" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="5y2ibvdnpykyn44i8tek9g9whp4ofpn" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-78qrfil7zsbyzyn2nfvo0y28fgz5rof" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="6gsgv1p6bkd8kmlifl0ddbzjugbmbxl" />
-  <common hash="84cyj8jmvmkonx0n24ed13yapjisnoz" dependsOnNodes="true" />
+  <common hash="-1v63rtzb42gf03t9idtbmypcr7l7wf9" dependsOnNodes="true" />
   <source id="1217271585456" name="OnlyStatementsCanUnreachable" hash="c17sjf9bgq98biu68q9n4zz6pui6pqh" dependsOnNodes="true">
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -1358,7 +1358,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TestSafeEquals_Test.java" />
   </source>
-  <source id="6011730950863071455" name="NullableAnalyzer" hash="-1yh2q9j9z30mukti73ovqoc51tq3ruq" dependsOnNodes="true">
+  <source id="6011730950863071455" name="NullableAnalyzer" hash="3f4yh9wdpcue2fwugysb7yog4fb38i7" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />

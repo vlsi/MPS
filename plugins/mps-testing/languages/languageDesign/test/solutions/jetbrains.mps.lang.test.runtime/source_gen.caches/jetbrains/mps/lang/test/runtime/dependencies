@@ -83,12 +83,12 @@
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor" />
     <classNode dependClassName="jetbrains.mps.generator.impl.CloneUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.LightTransformationTestRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestRunner" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestLightRunner" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
@@ -137,25 +137,6 @@
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Runnable" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.test.runtime.LightTransformationTestRunner" file="LightTransformationTestRunner.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
-    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" file="NodeCheckerUtil.java">
     <classNode dependClassName="java.lang.Runnable" />
@@ -218,6 +199,24 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestLightRunner" file="TransformationTestLightRunner.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestRunner" file="TransformationTestRunner.java">
     <classNode dependClassName="java.awt.GraphicsEnvironment" />
     <classNode dependClassName="java.awt.Toolkit" />
@@ -243,7 +242,6 @@
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />

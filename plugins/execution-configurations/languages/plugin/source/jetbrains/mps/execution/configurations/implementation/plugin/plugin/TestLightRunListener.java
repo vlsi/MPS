@@ -21,7 +21,6 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.runner.Description;
-import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
@@ -34,6 +33,7 @@ public class TestLightRunListener extends RunListener {
   private final TestEventsDispatcher myDispatcher;
   private final int myRequestCount;
   private final TestEventFactory myFactory;
+  private boolean isTerminating = false;
 
   private int currentRequest;
 
@@ -51,18 +51,21 @@ public class TestLightRunListener extends RunListener {
   }
 
   private void terminateRun(int code) {
-    if (Thread.currentThread().isInterrupted()) {
-      code = -1;
-    }
     myDispatcher.onSimpleTextAvailable("Process finished with exit code " + code, ProcessOutputTypes.STDOUT);
     myDispatcher.onProcessTerminated("Process finished with exit code " + code);
   }
 
   @Override
   public void testRunFinished(Result result) throws Exception {
+    if (isTerminating) return;
     if (++currentRequest == myRequestCount) {
       LOG.info("TESTS WERE SUCCESSFUL " + result.wasSuccessful());
-      int code = result.getFailureCount();
+      int code;
+      if (isTerminating)
+        code = 137;
+      else {
+        code = result.getFailureCount();
+      }
       terminateRun(code);
     } else
       LOG.info("Request #" + currentRequest + " is finished -- proceeding to the next request");
@@ -75,32 +78,38 @@ public class TestLightRunListener extends RunListener {
     myDispatcher.onTestEvent(myFactory.create(endToken, failure.getDescription()));
   }
 
-  private void onTestEvent(String startToken, Description description) throws Exception {
-    myDispatcher.onTestEvent(myFactory.create(startToken, description));
+  private void onTestEvent(String token, Description description) throws Exception {
+    myDispatcher.onTestEvent(myFactory.create(token, description));
   }
 
   @Override
   public void testFailure(Failure failure) throws Exception {
-    if (failure.getException() instanceof InterruptedException)
+    if (isTerminating) return;
+    if (failure.getException() instanceof InterruptedException) {
+      isTerminating = true;
       return;
+    }
     LOG.info(TestEvent.ERROR_TEST_PREFIX + failure.getDescription());
     onTestErrorEvent(TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, failure);
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
+    if (isTerminating) return;
     LOG.info(TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
     onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
   }
 
   @Override
   public void testStarted(Description description) throws Exception {
+    if (isTerminating) return;
     LOG.info(TestEvent.START_TEST_PREFIX + description.getDisplayName());
     onTestEvent(TestEvent.START_TEST_PREFIX, description);
   }
 
   @Override
   public void testFinished(Description description) throws Exception {
+    if (isTerminating) return;
     LOG.info(TestEvent.END_TEST_PREFIX + description.getDisplayName());
     onTestEvent(TestEvent.END_TEST_PREFIX, description);
   }

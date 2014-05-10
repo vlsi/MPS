@@ -4,6 +4,7 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
@@ -11,7 +12,6 @@ import jetbrains.mps.generator.impl.CloneUtil;
 
 public abstract class BaseTransformationTest4 implements TransformationTest {
   private TestRunner myRunner;
-  private static final String LIGHT_WEIGHT_FLAG = "mps.test.lightweight";
 
   private SModel myModel;
   private SModel myTransientModel;
@@ -19,21 +19,11 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
 
   private void initTestRunner() {
-    if (isLightWeightOn()) {
-      myRunner = new LightTransformationTestRunner();
+    if (JUnitLightExecutor.isLightRunInProgress()) {
+      myRunner = new TransformationTestLightRunner();
     } else {
       myRunner = new TransformationTestRunner();
     }
-  }
-
-
-
-  private boolean isLightWeightOn() {
-    String property = System.getProperty(LIGHT_WEIGHT_FLAG);
-    if (property == null) {
-      return false;
-    }
-    return property.equals("true");
   }
 
 
@@ -60,12 +50,11 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
   public void initTest(@NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
     if (Thread.currentThread().isInterrupted()) {
-      throw new InterruptedException();
+      return;
     }
     try {
       myRunner.initTest(this, projectName, model, uiTest, reOpenProject);
     } catch (InterruptedException exception) {
-      Thread.currentThread().interrupt();
       throw exception;
     }
   }
@@ -74,12 +63,11 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
     if (Thread.currentThread().isInterrupted()) {
-      throw new InterruptedException();
+      return;
     }
     try {
       myRunner.runTest(this, className, methodName, runInCommand);
     } catch (InterruptedException exception) {
-      Thread.currentThread().interrupt();
       throw exception;
     }
   }

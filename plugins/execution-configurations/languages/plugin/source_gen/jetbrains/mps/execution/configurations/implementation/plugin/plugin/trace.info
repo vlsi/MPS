@@ -3206,67 +3206,80 @@
     <nodeInfo nodeId="6106412458332569190" fileName="JUnitLightExecutor.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodes" />
     <nodeInfo nodeId="6106412458332630716" fileName="JUnitLightExecutor.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="6106412458332664510" fileName="JUnitLightExecutor.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFilter" />
+    <nodeInfo nodeId="2853743909049541540" fileName="JUnitLightExecutor.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourLightRunInProgress" />
     <nodeInfo nodeId="6106412458332569588" fileName="JUnitLightExecutor.java" startLine="27" startPosition="91" endLine="28" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6106412458332632310" fileName="JUnitLightExecutor.java" startLine="28" startPosition="31" endLine="29" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6106412458332528470" fileName="JUnitLightExecutor.java" startLine="34" startPosition="27" endLine="35" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6106412458332634639" fileName="JUnitLightExecutor.java" startLine="40" startPosition="37" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6106412458333308273" fileName="JUnitLightExecutor.java" startLine="41" startPosition="80" endLine="42" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6106412458333349229" fileName="JUnitLightExecutor.java" startLine="42" startPosition="52" endLine="43" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6106412458333402392" fileName="JUnitLightExecutor.java" startLine="43" startPosition="79" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6106412458333410910" fileName="JUnitLightExecutor.java" startLine="44" startPosition="0" endLine="45" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1870361391708448501" fileName="JUnitLightExecutor.java" startLine="45" startPosition="85" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5745550179871920261" fileName="JUnitLightExecutor.java" startLine="46" startPosition="25" endLine="47" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5745550179872137754" fileName="JUnitLightExecutor.java" startLine="47" startPosition="54" endLine="48" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="607988455143702249" fileName="JUnitLightExecutor.java" startLine="48" startPosition="85" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7510281581530603563" fileName="JUnitLightExecutor.java" startLine="49" startPosition="0" endLine="50" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="607988455144507970" fileName="JUnitLightExecutor.java" startLine="50" startPosition="118" endLine="51" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5745550179872059489" fileName="JUnitLightExecutor.java" startLine="59" startPosition="25" endLine="60" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5745550179872095718" fileName="JUnitLightExecutor.java" startLine="60" startPosition="62" endLine="61" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5745550179872089070" fileName="JUnitLightExecutor.java" startLine="61" startPosition="27" endLine="62" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7604912775382963340" fileName="JUnitLightExecutor.java" startLine="71" startPosition="68" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7604912775382967531" fileName="JUnitLightExecutor.java" startLine="72" startPosition="18" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5745550179875642061" fileName="JUnitLightExecutor.java" startLine="79" startPosition="103" endLine="80" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="607988455141841263" fileName="JUnitLightExecutor.java" startLine="85" startPosition="56" endLine="86" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="607988455141841271" fileName="JUnitLightExecutor.java" startLine="86" startPosition="75" endLine="87" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6106412458332681828" fileName="JUnitLightExecutor.java" startLine="91" startPosition="9" endLine="92" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6106412458332528745" fileName="JUnitLightExecutor.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#()Z" />
+    <nodeInfo nodeId="2853743909049907813" fileName="JUnitLightExecutor.java" startLine="35" startPosition="32" endLine="36" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2853743909049954652" fileName="JUnitLightExecutor.java" startLine="37" startPosition="5" endLine="38" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2853743909049933875" fileName="JUnitLightExecutor.java" startLine="39" startPosition="17" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6106412458332528470" fileName="JUnitLightExecutor.java" startLine="41" startPosition="5" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2853743909049628469" fileName="JUnitLightExecutor.java" startLine="47" startPosition="48" endLine="48" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106412458332634639" fileName="JUnitLightExecutor.java" startLine="53" startPosition="37" endLine="54" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6106412458333308273" fileName="JUnitLightExecutor.java" startLine="54" startPosition="80" endLine="55" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6106412458333349229" fileName="JUnitLightExecutor.java" startLine="55" startPosition="52" endLine="56" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6106412458333402392" fileName="JUnitLightExecutor.java" startLine="56" startPosition="79" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6106412458333410910" fileName="JUnitLightExecutor.java" startLine="57" startPosition="0" endLine="58" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1870361391708448501" fileName="JUnitLightExecutor.java" startLine="58" startPosition="85" endLine="59" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5745550179871920261" fileName="JUnitLightExecutor.java" startLine="59" startPosition="25" endLine="60" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5745550179872137754" fileName="JUnitLightExecutor.java" startLine="60" startPosition="54" endLine="61" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607988455143702249" fileName="JUnitLightExecutor.java" startLine="61" startPosition="85" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7510281581530603563" fileName="JUnitLightExecutor.java" startLine="62" startPosition="0" endLine="63" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607988455144507970" fileName="JUnitLightExecutor.java" startLine="63" startPosition="118" endLine="64" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5745550179872059489" fileName="JUnitLightExecutor.java" startLine="72" startPosition="25" endLine="73" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5745550179872095718" fileName="JUnitLightExecutor.java" startLine="73" startPosition="62" endLine="74" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5745550179872089070" fileName="JUnitLightExecutor.java" startLine="74" startPosition="27" endLine="75" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1910564974128765210" fileName="JUnitLightExecutor.java" startLine="75" startPosition="43" endLine="76" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7604912775382963340" fileName="JUnitLightExecutor.java" startLine="85" startPosition="68" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2853743909049876858" fileName="JUnitLightExecutor.java" startLine="86" startPosition="18" endLine="87" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7604912775382967531" fileName="JUnitLightExecutor.java" startLine="87" startPosition="24" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5745550179875642061" fileName="JUnitLightExecutor.java" startLine="94" startPosition="103" endLine="95" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607988455141841263" fileName="JUnitLightExecutor.java" startLine="100" startPosition="56" endLine="101" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="607988455141841271" fileName="JUnitLightExecutor.java" startLine="101" startPosition="75" endLine="102" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106412458332681828" fileName="JUnitLightExecutor.java" startLine="106" startPosition="9" endLine="107" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2853743909049897185" fileName="JUnitLightExecutor.java" startLine="34" startPosition="40" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2853743909049978199" fileName="JUnitLightExecutor.java" startLine="38" startPosition="46" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2853743909049622598" fileName="JUnitLightExecutor.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isLightRunInProgress#()Z" />
     <nodeInfo nodeId="6106412458332566566" fileName="JUnitLightExecutor.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnitLightExecutor#(Ljava/lang/Iterable;Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="607988455141841261" fileName="JUnitLightExecutor.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
-    <nodeInfo nodeId="6106412458332677663" fileName="JUnitLightExecutor.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Iterable;)Z" />
-    <nodeInfo nodeId="5745550179872053218" fileName="JUnitLightExecutor.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5745550179875647224" fileName="JUnitLightExecutor.java" startLine="83" startPosition="27" endLine="89" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5745550179871968463" fileName="JUnitLightExecutor.java" startLine="56" startPosition="60" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5745550179875670458" fileName="JUnitLightExecutor.java" startLine="82" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5745550179871949224" fileName="JUnitLightExecutor.java" startLine="56" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/TestExecutor;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="5745550179875656688" fileName="JUnitLightExecutor.java" startLine="80" startPosition="99" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6106412458332522980" fileName="JUnitLightExecutor.java" startLine="40" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/JUnitProcessPack;" />
-    <nodeInfo nodeId="6106412458332680465" fileName="JUnitLightExecutor.java" startLine="78" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="filter#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="6106412458332519569" fileName="JUnitLightExecutor.java" startLine="34" startPosition="27" endLine="35" endPosition="36" />
+    <nodeInfo nodeId="607988455141841261" fileName="JUnitLightExecutor.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
+    <nodeInfo nodeId="6106412458332677663" fileName="JUnitLightExecutor.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Iterable;)Z" />
+    <nodeInfo nodeId="5745550179875647224" fileName="JUnitLightExecutor.java" startLine="98" startPosition="27" endLine="104" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5745550179872053218" fileName="JUnitLightExecutor.java" startLine="71" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5745550179871968463" fileName="JUnitLightExecutor.java" startLine="69" startPosition="60" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5745550179875670458" fileName="JUnitLightExecutor.java" startLine="97" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6106412458332528745" fileName="JUnitLightExecutor.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#()Z" />
+    <nodeInfo nodeId="5745550179871949224" fileName="JUnitLightExecutor.java" startLine="69" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/TestExecutor;)Ljava/util/concurrent/Future;" />
+    <nodeInfo nodeId="5745550179875656688" fileName="JUnitLightExecutor.java" startLine="95" startPosition="99" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6106412458332522980" fileName="JUnitLightExecutor.java" startLine="53" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/JUnitProcessPack;" />
+    <nodeInfo nodeId="6106412458332680465" fileName="JUnitLightExecutor.java" startLine="93" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="filter#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="2853743909049897188" fileName="JUnitLightExecutor.java" startLine="35" startPosition="32" endLine="36" endPosition="19" />
+    <scopeInfo nodeId="2853743909049978202" fileName="JUnitLightExecutor.java" startLine="39" startPosition="17" endLine="40" endPosition="35" />
+    <scopeInfo nodeId="2853743909049616677" fileName="JUnitLightExecutor.java" startLine="47" startPosition="48" endLine="48" endPosition="33" />
     <scopeInfo nodeId="6106412458332566569" fileName="JUnitLightExecutor.java" startLine="27" startPosition="91" endLine="29" endPosition="24" />
-    <scopeInfo nodeId="6106412458332677671" fileName="JUnitLightExecutor.java" startLine="71" startPosition="68" endLine="73" endPosition="16" />
-    <scopeInfo nodeId="607988455141841262" fileName="JUnitLightExecutor.java" startLine="85" startPosition="56" endLine="87" endPosition="197">
+    <scopeInfo nodeId="607988455141841262" fileName="JUnitLightExecutor.java" startLine="100" startPosition="56" endLine="102" endPosition="197">
       <varInfo nodeId="607988455141841264" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="6106412458332528745" fileName="JUnitLightExecutor.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="5745550179872053222" fileName="JUnitLightExecutor.java" startLine="59" startPosition="25" endLine="62" endPosition="43" />
+    <scopeInfo nodeId="2853743909049622598" fileName="JUnitLightExecutor.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6106412458332677671" fileName="JUnitLightExecutor.java" startLine="85" startPosition="68" endLine="88" endPosition="16" />
     <scopeInfo nodeId="6106412458332566566" fileName="JUnitLightExecutor.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="6106412458332621126" varName="project" />
       <varInfo nodeId="6106412458332566840" varName="testNodeWrappers" />
     </scopeInfo>
-    <scopeInfo nodeId="607988455141841261" fileName="JUnitLightExecutor.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="5745550179872053222" fileName="JUnitLightExecutor.java" startLine="72" startPosition="25" endLine="76" endPosition="38" />
+    <scopeInfo nodeId="607988455141841261" fileName="JUnitLightExecutor.java" startLine="100" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="607988455141841261" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6106412458332677663" fileName="JUnitLightExecutor.java" startLine="70" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="6106412458332677663" fileName="JUnitLightExecutor.java" startLine="84" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="6106412458332677667" varName="ts" />
     </scopeInfo>
-    <scopeInfo nodeId="5745550179872053218" fileName="JUnitLightExecutor.java" startLine="58" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="5745550179875670462" fileName="JUnitLightExecutor.java" startLine="83" startPosition="27" endLine="89" endPosition="14" />
-    <scopeInfo nodeId="5745550179871949227" fileName="JUnitLightExecutor.java" startLine="56" startPosition="60" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="5745550179875670458" fileName="JUnitLightExecutor.java" startLine="82" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="5745550179871949224" fileName="JUnitLightExecutor.java" startLine="56" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="5745550179871958801" varName="executor" />
+    <scopeInfo nodeId="5745550179875670462" fileName="JUnitLightExecutor.java" startLine="98" startPosition="27" endLine="104" endPosition="14" />
+    <scopeInfo nodeId="5745550179872053218" fileName="JUnitLightExecutor.java" startLine="71" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="6106412458332519569" fileName="JUnitLightExecutor.java" startLine="34" startPosition="40" endLine="42" endPosition="18">
+      <varInfo nodeId="2853743909049954653" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6106412458332522983" fileName="JUnitLightExecutor.java" startLine="40" startPosition="37" endLine="51" endPosition="23">
+    <scopeInfo nodeId="5745550179871949227" fileName="JUnitLightExecutor.java" startLine="69" startPosition="60" endLine="78" endPosition="7" />
+    <scopeInfo nodeId="5745550179875670458" fileName="JUnitLightExecutor.java" startLine="97" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="6106412458332528745" fileName="JUnitLightExecutor.java" startLine="34" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6106412458332522983" fileName="JUnitLightExecutor.java" startLine="53" startPosition="37" endLine="64" endPosition="23">
       <varInfo nodeId="6106412458333349230" varName="eventsDispatcher" />
       <varInfo nodeId="5745550179871920259" varName="future" />
       <varInfo nodeId="6106412458333410911" varName="lightExecutor" />
@@ -3275,18 +3288,21 @@
       <varInfo nodeId="5745550179872137752" varName="process" />
       <varInfo nodeId="6106412458333308274" varName="runState" />
     </scopeInfo>
-    <scopeInfo nodeId="6106412458332522980" fileName="JUnitLightExecutor.java" startLine="40" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="6106412458332680468" fileName="JUnitLightExecutor.java" startLine="79" startPosition="103" endLine="92" endPosition="17">
+    <scopeInfo nodeId="5745550179871949224" fileName="JUnitLightExecutor.java" startLine="69" startPosition="0" endLine="80" endPosition="0">
+      <varInfo nodeId="5745550179871958801" varName="executor" />
+    </scopeInfo>
+    <scopeInfo nodeId="6106412458332522980" fileName="JUnitLightExecutor.java" startLine="53" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="6106412458332680468" fileName="JUnitLightExecutor.java" startLine="94" startPosition="103" endLine="107" endPosition="17">
       <varInfo nodeId="5745550179875642062" varName="seq" />
     </scopeInfo>
-    <scopeInfo nodeId="6106412458332680465" fileName="JUnitLightExecutor.java" startLine="78" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="6106412458332680465" fileName="JUnitLightExecutor.java" startLine="93" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="6106412458333055825" varName="ts" />
     </scopeInfo>
-    <unitInfo nodeId="607988455141841261" fileName="JUnitLightExecutor.java" startLine="84" startPosition="85" endLine="89" endPosition="11" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor$2" />
-    <unitInfo nodeId="5745550179872053216" fileName="JUnitLightExecutor.java" startLine="57" startPosition="73" endLine="64" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor$1" />
-    <unitInfo nodeId="5745550179875670456" fileName="JUnitLightExecutor.java" startLine="81" startPosition="47" endLine="91" endPosition="7" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor$1" />
-    <unitInfo nodeId="6106412458332675875" fileName="JUnitLightExecutor.java" startLine="69" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor$DefaultFilter" />
-    <unitInfo nodeId="6106412458332518919" fileName="JUnitLightExecutor.java" startLine="20" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor" />
+    <unitInfo nodeId="607988455141841261" fileName="JUnitLightExecutor.java" startLine="99" startPosition="85" endLine="104" endPosition="11" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor$2" />
+    <unitInfo nodeId="5745550179872053216" fileName="JUnitLightExecutor.java" startLine="70" startPosition="73" endLine="78" endPosition="5" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor$1" />
+    <unitInfo nodeId="5745550179875670456" fileName="JUnitLightExecutor.java" startLine="96" startPosition="47" endLine="106" endPosition="7" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor$1" />
+    <unitInfo nodeId="6106412458332675875" fileName="JUnitLightExecutor.java" startLine="83" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor$DefaultFilter" />
+    <unitInfo nodeId="6106412458332518919" fileName="JUnitLightExecutor.java" startLine="20" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor" />
   </root>
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/6106412458332651011">
     <nodeInfo nodeId="6106412458332651023" fileName="Filter.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/Iterable;)Z" />
