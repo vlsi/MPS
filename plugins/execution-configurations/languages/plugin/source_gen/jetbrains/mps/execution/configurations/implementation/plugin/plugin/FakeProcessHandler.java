@@ -28,7 +28,7 @@ public class FakeProcessHandler extends ProcessHandler {
 
 
   public void terminate() {
-    myFuture.cancel(true);
+    JUnitLightExecutor.terminateRun();
   }
 
 

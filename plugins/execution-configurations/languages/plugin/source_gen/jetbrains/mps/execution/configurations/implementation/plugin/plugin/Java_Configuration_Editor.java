@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser;
 import java.awt.BorderLayout;
-import jetbrains.mps.baseLanguage.execution.api.JavaConfigurationOptions;
+import jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configuration> {
@@ -33,7 +33,7 @@ public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configurati
     panel.add(myLabel, BorderLayout.NORTH);
     panel.add(nodeChooser, BorderLayout.CENTER);
 
-    JavaConfigurationOptions javaRunParametersEditor = myRunParameters.createEditor();
+    JavaConfigurationEditorComponent javaRunParametersEditor = myRunParameters.createEditor();
 
     JPanel mainPanel = new JPanel(new BorderLayout());
     mainPanel.add(panel, BorderLayout.NORTH);

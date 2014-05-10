@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
+import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.util.WaitFor;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
@@ -36,8 +37,10 @@ public class TestLightExecutor extends AbstractTestExecutor {
   private final TestEventsDispatcher myDispatcher;
   private final Iterable<? extends ITestNodeWrapper> myNodes;
   private final TestClassStorage myTestClassStorage = new TestClassStorage();
+  private TestLightRunListener myRunListener;
+
   private boolean initialized = false;
-  private boolean myProcessIsReady = false;
+  private boolean processIsReady = false;
 
   public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes) {
     myDispatcher = dispatcher;
@@ -53,33 +56,39 @@ public class TestLightExecutor extends AbstractTestExecutor {
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
     assert initialized;
     waitWhileNotReady();
-    assert JUnitLightExecutor.isLightRunInProgress();
-    super.doExecute(core, requests);
+    assert JUnitLightExecutor.isRunInProgress();
+    for (Request request : requests) {
+      if (JUnitLightExecutor.isRunTerminating())
+        return;
+      core.run(request);
+    }
   }
 
   private void waitWhileNotReady() {
     new WaitFor() {
       @Override
       protected boolean condition() {
-        return TestLightExecutor.this.myProcessIsReady;
+        return TestLightExecutor.this.processIsReady;
       }
     };
   }
 
   public void setStarted(boolean processIsReady) {
-   myProcessIsReady = processIsReady;
+   this.processIsReady = processIsReady;
   }
 
   @NotNull
   @Override
   protected TestsContributor createTestsContributor() {
-    return new NodeWrappersTestsContributor(myNodes, myTestClassStorage);
+    NodeWrappersTestsContributor nodeWrappersTestsContributor = new NodeWrappersTestsContributor(myNodes, myTestClassStorage);
+    return nodeWrappersTestsContributor;
   }
 
   @NotNull
   @Override
   protected RunListener createListener(Iterable<Request> requests) {
-    return new TestLightRunListener(myDispatcher, ListSequence.<Request>fromIterable(requests).size());
+    myRunListener = new TestLightRunListener(myDispatcher, ListSequence.<Request>fromIterable(requests).size());
+    return myRunListener;
   }
 
   @Override

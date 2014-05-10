@@ -33,9 +33,11 @@ public class TestLightRunListener extends RunListener {
   private final TestEventsDispatcher myDispatcher;
   private final int myRequestCount;
   private final TestEventFactory myFactory;
-  private boolean isTerminating = false;
+
+  private boolean terminating = false;
 
   private int currentRequest;
+  private static final int TERMINATED_CODE = 137;
 
   public TestLightRunListener(TestEventsDispatcher dispatcher, int requestCount) {
     myDispatcher = dispatcher;
@@ -51,21 +53,17 @@ public class TestLightRunListener extends RunListener {
   }
 
   private void terminateRun(int code) {
+    terminating = true;
     myDispatcher.onSimpleTextAvailable("Process finished with exit code " + code, ProcessOutputTypes.STDOUT);
     myDispatcher.onProcessTerminated("Process finished with exit code " + code);
   }
 
   @Override
   public void testRunFinished(Result result) throws Exception {
-    if (isTerminating) return;
+    if (terminating) return;
     if (++currentRequest == myRequestCount) {
       LOG.info("TESTS WERE SUCCESSFUL " + result.wasSuccessful());
-      int code;
-      if (isTerminating)
-        code = 137;
-      else {
-        code = result.getFailureCount();
-      }
+      int code = result.getFailureCount();
       terminateRun(code);
     } else
       LOG.info("Request #" + currentRequest + " is finished -- proceeding to the next request");
@@ -84,32 +82,31 @@ public class TestLightRunListener extends RunListener {
 
   @Override
   public void testFailure(Failure failure) throws Exception {
-    if (isTerminating) return;
-    if (failure.getException() instanceof InterruptedException) {
-      isTerminating = true;
-      return;
-    }
+    if (terminating) return;
     LOG.info(TestEvent.ERROR_TEST_PREFIX + failure.getDescription());
     onTestErrorEvent(TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, failure);
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
-    if (isTerminating) return;
+    if (terminating) return;
     LOG.info(TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
     onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
   }
 
   @Override
   public void testStarted(Description description) throws Exception {
-    if (isTerminating) return;
+    if (terminating) return;
     LOG.info(TestEvent.START_TEST_PREFIX + description.getDisplayName());
     onTestEvent(TestEvent.START_TEST_PREFIX, description);
   }
 
   @Override
   public void testFinished(Description description) throws Exception {
-    if (isTerminating) return;
+    if (terminating) return;
+    if (JUnitLightExecutor.isRunTerminating()) {
+      terminateRun(TERMINATED_CODE);
+    }
     LOG.info(TestEvent.END_TEST_PREFIX + description.getDisplayName());
     onTestEvent(TestEvent.END_TEST_PREFIX, description);
   }

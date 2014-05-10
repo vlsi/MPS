@@ -8,14 +8,14 @@ import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.util.Factory;
 
 public class JavaRunParameters_Configuration_Editor extends SettingsEditorEx<JavaRunParameters_Configuration> {
-  private JavaConfigurationOptions myJavaOptionsEditor = new JavaConfigurationOptions();
+  private JavaConfigurationEditorComponent myJavaOptionsEditor = new JavaConfigurationEditorComponent();
 
   public void disposeEditor() {
     myJavaOptionsEditor.dispose();
   }
 
   @NotNull
-  public JavaConfigurationOptions createEditor() {
+  public JavaConfigurationEditorComponent createEditor() {
     return myJavaOptionsEditor;
   }
 

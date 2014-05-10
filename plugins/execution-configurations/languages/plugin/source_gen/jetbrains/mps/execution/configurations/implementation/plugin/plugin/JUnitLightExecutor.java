@@ -21,7 +21,8 @@ public class JUnitLightExecutor {
   private final Iterable<ITestNodeWrapper> myNodes;
   private final Project myProject;
   private final Filter<ITestNodeWrapper> myFilter = new JUnitLightExecutor.DefaultFilter();
-  private static boolean ourLightRunInProgress = false;
+  private static boolean ourRunInProgress = false;
+  private static boolean ourRunTerminating = false;
 
 
   public JUnitLightExecutor(Iterable<ITestNodeWrapper> testNodeWrappers, Project project) {
@@ -32,20 +33,39 @@ public class JUnitLightExecutor {
 
 
   public synchronized boolean accept() {
-    if (ourLightRunInProgress) {
+    if (ourRunInProgress) {
       return false;
     }
     boolean result = myFilter.accept(myNodes);
     if (result) {
-      ourLightRunInProgress = true;
+      init();
     }
     return result;
   }
 
 
 
-  public static boolean isLightRunInProgress() {
-    return ourLightRunInProgress;
+  private void init() {
+    ourRunInProgress = true;
+    ourRunTerminating = false;
+  }
+
+
+
+  public static boolean isRunInProgress() {
+    return ourRunInProgress;
+  }
+
+
+
+  public static boolean isRunTerminating() {
+    return ourRunTerminating;
+  }
+
+
+
+  /*package*/ static boolean terminateRun() {
+    return ourRunTerminating = true;
   }
 
 
@@ -73,7 +93,7 @@ public class JUnitLightExecutor {
         System.out.println("Taking the execution control...");
         executor.execute();
         System.out.println("I am so done");
-        ourLightRunInProgress = false;
+        ourRunInProgress = false;
       }
     });
   }

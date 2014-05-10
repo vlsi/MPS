@@ -175,7 +175,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myChooserActivated != visible) {
       boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(MPSCore.getInstance().isTestMode());
       if (visible) {
-        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
+        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
         myEditorComponent.pushKeyboardHandler(this);
         myNodeSubstituteInfo.invalidateActions();
         rebuildMenuEntries();
@@ -381,7 +381,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
-        if (!MPSCore.getInstance().isTestMode()) {
+        if (getEditorWindow() != null && !MPSCore.getInstance().isTestMode()) {
           relayoutPopupMenu();
         }
         tryToApplyIntelligentInput();
@@ -500,7 +500,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void relayoutPopupMenu() {
-    if (myPopupActivated) {
+   if (myPopupActivated) {
       getPopupWindow().relayout();
       getPopupWindow().repaint();
     }

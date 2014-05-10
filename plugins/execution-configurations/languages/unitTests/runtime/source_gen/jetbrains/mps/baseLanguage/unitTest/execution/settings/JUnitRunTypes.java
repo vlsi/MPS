@@ -15,13 +15,13 @@ import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.smodel.ModelAccess;
 
 public enum JUnitRunTypes {
   PROJECT() {
@@ -91,7 +91,7 @@ public enum JUnitRunTypes {
       if (model == null) {
         return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
       }
-      return TestUtils.getModelTests(model);
+      return TestUtils.getModelTests(model, monitor, false);
     }
     public String check(JUnitSettings_Configuration configuration, Project project) {
       if (configuration.getModel() == null) {
@@ -111,7 +111,7 @@ public enum JUnitRunTypes {
       if (model == null) {
         return false;
       }
-      return Sequence.fromIterable(TestUtils.getModelTests(model)).isNotEmpty();
+      return Sequence.fromIterable(TestUtils.getModelTests(model, new EmptyProgressMonitor(), true)).isNotEmpty();
     }
 
   },
@@ -178,12 +178,8 @@ public enum JUnitRunTypes {
 
 
   public final Iterable<ITestNodeWrapper> collect(final JUnitSettings_Configuration configuration, final Project project, boolean recollect) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-      }
-    });
     if (recollect || cachedTests == null) {
-      ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(project), "Collecting Tests to Run", true) {
+      ProgressManager.getInstance().run(new Task.Backgroundable(ProjectHelper.toIdeaProject(project), "Collecting Tests to Run", true) {
         @Override
         public void run(@NotNull ProgressIndicator indicator) {
           final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);

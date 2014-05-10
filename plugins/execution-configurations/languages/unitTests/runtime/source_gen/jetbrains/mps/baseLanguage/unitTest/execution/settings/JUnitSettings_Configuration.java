@@ -69,6 +69,10 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     return myState.myModule;
   }
 
+  public boolean getLightExec() {
+    return myState.myLightExec;
+  }
+
   public ClonableList<String> getTestCases() {
     return myState.myTestCases;
   }
@@ -87,6 +91,10 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
 
   public void setModule(String value) {
     myState.myModule = value;
+  }
+
+  public void setLightExec(boolean value) {
+    myState.myLightExec = value;
   }
 
   public void setTestCases(ClonableList<String> value) {
@@ -125,7 +133,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     if (this.getRunType() == null) {
       return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     }
-    return Sequence.fromIterable(this.getRunType().collect(this, project)).toListSequence();
+    return Sequence.fromIterable(this.getRunType().collect(this, project, true)).toListSequence();
   }
 
   public List<SNodeReference> getTestsToMake(final Project project) {
@@ -161,6 +169,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public class MyState {
     public String myModel;
     public String myModule;
+    public boolean myLightExec = true;
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
     public JUnitRunTypes myRunType = JUnitRunTypes.PROJECT;
@@ -173,6 +182,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       JUnitSettings_Configuration.MyState state = new JUnitSettings_Configuration.MyState();
       state.myModel = myModel;
       state.myModule = myModule;
+      state.myLightExec = myLightExec;
       if (myTestCases != null) {
         state.myTestCases = myTestCases.clone();
       }

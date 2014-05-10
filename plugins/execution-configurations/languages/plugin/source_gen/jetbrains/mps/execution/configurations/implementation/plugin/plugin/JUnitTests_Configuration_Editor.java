@@ -9,7 +9,11 @@ import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
+import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent;
 import jetbrains.mps.ide.common.LayoutUtil;
+import jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent;
+import jetbrains.mps.baseLanguage.unitTest.execution.settings.Synchronizer;
+import jetbrains.mps.baseLanguage.unitTest.execution.settings.CheckBoxWithJavaEditorComponentSynchronizer;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests_Configuration> {
@@ -26,9 +30,12 @@ public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests
   public JPanel createEditor() {
     JPanel panel = new JPanel(new GridBagLayout());
 
-    panel.add(myJUnitSettings.createEditor(), LayoutUtil.createPanelConstraints(0));
-    panel.add(myJavaRunParameters.createEditor(), LayoutUtil.createPanelConstraints(1));
-
+    JUnitConfigurationEditorComponent junitOptionsComponent = myJUnitSettings.createEditor();
+    panel.add(junitOptionsComponent, LayoutUtil.createPanelConstraints(0));
+    JavaConfigurationEditorComponent javaOptionsComponent = myJavaRunParameters.createEditor();
+    panel.add(javaOptionsComponent, LayoutUtil.createPanelConstraints(1));
+    Synchronizer synchronizer = new CheckBoxWithJavaEditorComponentSynchronizer(junitOptionsComponent.getLightCheckBox(), javaOptionsComponent);
+    synchronizer.sync();
     return panel;
   }
 

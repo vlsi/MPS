@@ -57,7 +57,7 @@ public class JUnitTests_Configuration_RunProfileState implements RunProfileState
 
     JavaRunParameters parameters = myRunConfiguration.getJavaRunParameters().getJavaRunParameters();
     parameters.programParameters();
-    if (lightExecutor.accept()) {
+    if (myRunConfiguration.getJUnitSettings().getLightExec() && lightExecutor.accept()) {
       processPack = lightExecutor.execute();
     } else {
       TestRunState runState = new TestRunState(nodeWrappers);

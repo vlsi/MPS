@@ -13,14 +13,14 @@ import com.intellij.ui.components.JBLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
 import org.jetbrains.annotations.Nullable;
 
-public class JavaConfigurationOptions extends JBPanel {
+public class JavaConfigurationEditorComponent extends JBPanel {
   private final RawLineEditorComponent myVmParameters;
   private final RawLineEditorComponent myProgramParameters;
   private final FieldWithPathChooseDialog myWorkingDirectory;
   private final JBCheckBox myUseAlternativeJre;
   private final FieldWithPathChooseDialog myJreHome;
 
-  public JavaConfigurationOptions() {
+  public JavaConfigurationEditorComponent() {
     super(new GridBagLayout());
 
     myVmParameters = new RawLineEditorComponent();

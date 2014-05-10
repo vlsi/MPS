@@ -19,8 +19,6 @@ import org.jetbrains.annotations.Nls;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -134,16 +132,28 @@ __switch__:
 
 
 
-  public static Iterable<ITestNodeWrapper> getModelTests(@NotNull SModel model) {
-    return Sequence.fromIterable(((Iterable<SNode>) model.getRootNodes())).select(new ISelector<SNode, ITestNodeWrapper>() {
-      public ITestNodeWrapper select(SNode it) {
-        return TestNodeWrapperFactory.tryToWrap(it);
+  public static Iterable<ITestNodeWrapper> getModelTests(@NotNull SModel model, ProgressMonitor monitor, boolean breakOnFirstFound) {
+    Iterable<ITestNodeWrapper> result = Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
+    Iterable<SNode> roots = (Iterable<SNode>) model.getRootNodes();
+    monitor.start("model " + model.getModelName(), IterableUtil.asCollection(roots).size());
+    try {
+      for (SNode root : Sequence.fromIterable(roots)) {
+        if (monitor.isCanceled()) {
+          return null;
+        }
+        ITestNodeWrapper wrappedNode = TestNodeWrapperFactory.tryToWrap(root);
+        if (wrappedNode != null) {
+          result = Sequence.fromIterable(result).concat(Sequence.singleton(wrappedNode));
+          if (breakOnFirstFound) {
+            return result;
+          }
+        }
+        monitor.advance(1);
       }
-    }).where(new IWhereFilter<ITestNodeWrapper>() {
-      public boolean accept(ITestNodeWrapper it) {
-        return it != null;
-      }
-    });
+    } finally {
+      monitor.done();
+    }
+    return result;
   }
 
 
@@ -155,11 +165,11 @@ __switch__:
     try {
       for (SModel model : Sequence.fromIterable(models)) {
         if (SModelStereotype.isUserModel(model)) {
-          Iterable<ITestNodeWrapper> modelTests = TestUtils.getModelTests(model);
-          result = Sequence.fromIterable(result).concat(Sequence.fromIterable(modelTests));
+          Iterable<ITestNodeWrapper> modelTests = TestUtils.getModelTests(model, monitor.subTask(1), false);
           if (monitor.isCanceled()) {
-            return result;
+            return null;
           }
+          result = Sequence.fromIterable(result).concat(Sequence.fromIterable(modelTests));
           if (breakOnFirstFound && Sequence.fromIterable(modelTests).isNotEmpty()) {
             return result;
           }
@@ -178,16 +188,16 @@ __switch__:
     Iterable<ITestNodeWrapper> result = Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
 
     Iterable<? extends SModule> projectModules = project.getModules();
-    monitor.start("Fetching tests from modules", IterableUtil.asCollection(projectModules).size());
+    monitor.start("Fetching tests from modules", 2 * IterableUtil.asCollection(projectModules).size());
 
     try {
       for (SModule module : Sequence.fromIterable(projectModules)) {
         Iterable<ITestNodeWrapper> moduleTests = TestUtils.getModuleTests(module, monitor.subTask(1, SubProgressKind.REPLACING), breakOnFirstFound);
+        if (monitor.isCanceled()) {
+          return null;
+        }
         result = Sequence.fromIterable(result).concat(Sequence.fromIterable(moduleTests));
         monitor.advance(1);
-        if (monitor.isCanceled()) {
-          return result;
-        }
         if (breakOnFirstFound && Sequence.fromIterable(moduleTests).isNotEmpty()) {
           return result;
         }

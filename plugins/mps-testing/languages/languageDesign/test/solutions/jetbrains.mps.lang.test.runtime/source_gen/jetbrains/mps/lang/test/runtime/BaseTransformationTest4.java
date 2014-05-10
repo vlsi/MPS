@@ -19,7 +19,7 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
 
   private void initTestRunner() {
-    if (JUnitLightExecutor.isLightRunInProgress()) {
+    if (JUnitLightExecutor.isRunInProgress()) {
       myRunner = new TransformationTestLightRunner();
     } else {
       myRunner = new TransformationTestRunner();
@@ -49,27 +49,19 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
 
   public void initTest(@NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
-    if (Thread.currentThread().isInterrupted()) {
+    if (JUnitLightExecutor.isRunTerminating()) {
       return;
     }
-    try {
-      myRunner.initTest(this, projectName, model, uiTest, reOpenProject);
-    } catch (InterruptedException exception) {
-      throw exception;
-    }
+    myRunner.initTest(this, projectName, model, uiTest, reOpenProject);
   }
 
 
 
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
-    if (Thread.currentThread().isInterrupted()) {
+    if (JUnitLightExecutor.isRunTerminating()) {
       return;
     }
-    try {
-      myRunner.runTest(this, className, methodName, runInCommand);
-    } catch (InterruptedException exception) {
-      throw exception;
-    }
+    myRunner.runTest(this, className, methodName, runInCommand);
   }
 
 

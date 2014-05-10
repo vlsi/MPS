@@ -225,9 +225,6 @@ public class BaseEditorTestBody extends BaseTestBody {
     boolean select = !(jetbrains.mps.util.SNodeOperations.isRoot(node));
 
     return opener.openNode(node, context, focus, select, false);
-
-    // <node> 
-    // <node> 
   }
 
 
