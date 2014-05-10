@@ -10,7 +10,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
-import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
@@ -46,11 +45,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-
-
-  public StyleAttribute getStyleAttribute(String attributeName) {
-    return null;
-  }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.BlockInstance", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.ConnectorInstance", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};
 }

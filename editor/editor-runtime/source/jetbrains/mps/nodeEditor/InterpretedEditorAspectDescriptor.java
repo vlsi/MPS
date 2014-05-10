@@ -106,10 +106,4 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
     return Collections.emptyList();
   }
 
-  @Override
-  @Nullable
-  public StyleAttribute getStyleAttribute(String attributeName) {
-    return null;
-  }
-
 }

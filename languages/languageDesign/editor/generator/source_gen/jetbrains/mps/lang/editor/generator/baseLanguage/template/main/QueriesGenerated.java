@@ -1589,7 +1589,15 @@ public class QueriesGenerated {
     }).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_4933681201882763508(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6427926542628736935(final IfMacroContext _context) {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.StyleSheet")).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "styleClass", true);
+      }
+    }), "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration")).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_6427926542628701013(final IfMacroContext _context) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.StyleSheet")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "styleClass", true);

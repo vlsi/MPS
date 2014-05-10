@@ -10,15 +10,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
-import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AtLeastNTimesRegexp_Editor());
       case 1:
@@ -111,11 +108,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new UnicodeCharacterRegexp_Editor());
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditor>emptyList();
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.emptyList();
+    return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
@@ -125,15 +122,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-
-  public StyleAttribute getStyleAttribute(String attributeName) {
-    return null;
-  }
-
-  public Map<String, StyleAttribute> getStyleAttributes() {
-    return Collections.emptyMap();
-  }
-
-
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexps", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", "jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", "jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", "jetbrains.mps.baseLanguage.regexp.structure.Regexp", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.Regexps", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", "jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"};
 }

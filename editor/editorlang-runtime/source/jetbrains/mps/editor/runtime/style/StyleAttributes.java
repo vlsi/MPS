@@ -17,6 +17,7 @@ package jetbrains.mps.editor.runtime.style;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.StyleAttributeProvider;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -119,10 +120,10 @@ public class StyleAttributes {
       return ourLanguageAttributes.get(language).get(attributeName);
     } else {
       EditorAspectDescriptor editorAspectDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-      if (editorAspectDescriptor == null) {
+      if (!(editorAspectDescriptor instanceof StyleAttributeProvider)) {
         throw new IllegalArgumentException("language does not contain editor descriptor: " + languageName);
       }
-      StyleAttribute attribute = editorAspectDescriptor.getStyleAttribute(attributeName);
+      StyleAttribute attribute = ((StyleAttributeProvider) editorAspectDescriptor).getStyleAttribute(attributeName);
       if (attribute == null) {
         throw new IllegalArgumentException("language " + languageName + "does not contain style attribute" + attributeName);
       }

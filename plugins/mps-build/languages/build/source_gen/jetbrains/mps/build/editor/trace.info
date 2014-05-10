@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="252" endPosition="0" unitName="jetbrains.mps.build.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.build.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)/103203307808601011">
     <nodeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="16" startPosition="95" endLine="17" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="103203307808601011" fileName="BuildCompositePath_Actions.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />

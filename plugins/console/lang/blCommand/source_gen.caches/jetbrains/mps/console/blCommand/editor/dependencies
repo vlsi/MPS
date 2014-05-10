@@ -86,7 +86,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.AbstractPrintExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.BLCommand_Editor" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.editor.BLExpression_Editor" />
@@ -106,7 +105,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
   </dependency>

@@ -10,15 +10,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
-import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AbsExpression_Editor());
       case 1:
@@ -83,11 +80,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new VectorType_Editor());
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditor>emptyList();
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
       case 0:
         if ("jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component".equals(editorComponentId)) {
           return Collections.<ConceptEditorComponent>singletonList(new ExponentOperation_Component());
@@ -100,7 +97,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         break;
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
@@ -110,16 +107,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-
-  public StyleAttribute getStyleAttribute(String attributeName) {
-    return null;
-  }
-
-  public Map<String, StyleAttribute> getStyleAttributes() {
-    return Collections.emptyMap();
-  }
-
-
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MathContext"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MathContext"};
 }

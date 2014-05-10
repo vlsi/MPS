@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
-import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
@@ -44,11 +43,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return myHints;
   }
 
-
-
-  public StyleAttribute getStyleAttribute(String attributeName) {
-    return null;
-  }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.mindmaps.structure.CoreThrought", "jetbrains.mps.samples.mindmaps.structure.MindMap", "jetbrains.mps.samples.mindmaps.structure.Relationship", "jetbrains.mps.samples.mindmaps.structure.Specializes", "jetbrains.mps.samples.mindmaps.structure.Thought"};
 }

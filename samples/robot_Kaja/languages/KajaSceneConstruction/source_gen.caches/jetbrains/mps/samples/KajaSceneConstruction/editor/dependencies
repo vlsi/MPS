@@ -35,11 +35,9 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.BuildWall_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.DestroyWall_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.KajaSceneConstruction.editor.DropMark_Editor" />

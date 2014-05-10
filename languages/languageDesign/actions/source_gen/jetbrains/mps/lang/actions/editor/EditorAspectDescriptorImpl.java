@@ -10,15 +10,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
-import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import java.util.Map;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AddMenuPart_Editor());
       case 1:
@@ -99,11 +96,11 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new WrapperSubstituteMenuPart_Editor());
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditor>emptyList();
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.emptyList();
+    return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
@@ -113,15 +110,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-
-  public StyleAttribute getStyleAttribute(String attributeName) {
-    return null;
-  }
-
-  public Map<String, StyleAttribute> getStyleAttributes() {
-    return Collections.emptyMap();
-  }
-
-
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
 }
