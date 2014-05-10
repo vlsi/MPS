@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:34f73689-316b-4d10-bb10-be0263c09014(jetbrains.mps.lang.editor.multiple.testLanguage.editor)/1217012833662056930">
     <nodeInfo nodeId="1217012833662056930" fileName="MultipleEditorsTestEditorComponentRoot_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1217012833662056930" fileName="MultipleEditorsTestEditorComponentRoot_Editor.java" startLine="28" startPosition="89" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

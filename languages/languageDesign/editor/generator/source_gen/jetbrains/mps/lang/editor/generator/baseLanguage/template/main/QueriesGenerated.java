@@ -1581,8 +1581,8 @@ public class QueriesGenerated {
     return Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:mainEditorComponents"))).count() > 1;
   }
 
-  public static boolean ifMacro_Condition_4586907386450104469(final IfMacroContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")).isNotEmpty() && ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")).translate(new ITranslator2<SNode, SNode>() {
+  public static boolean ifMacro_Condition_6427926542643773096(final IfMacroContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "hints", true);
       }
@@ -1595,6 +1595,14 @@ public class QueriesGenerated {
         return SLinkOperations.getTargets(it, "styleClass", true);
       }
     }), "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration")).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_6427926542643349480(final IfMacroContext _context) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "hints", true);
+      }
+    }).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6427926542628701013(final IfMacroContext _context) {

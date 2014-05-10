@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
@@ -35,11 +34,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
-
-
-  public Collection<ConceptEditorHint> getHints() {
-    return Collections.emptyList();
-  }
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"};

@@ -101,9 +101,4 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
     return null;
   }
 
-  @Override
-  public Collection<ConceptEditorHint> getHints() {
-    return Collections.emptyList();
-  }
-
 }

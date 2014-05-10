@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
@@ -37,11 +36,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
-
-
-  public Collection<ConceptEditorHint> getHints() {
-    return Collections.emptyList();
-  }
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef", "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", "jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement"};

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
@@ -59,11 +58,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
-
-
-  public Collection<ConceptEditorHint> getHints() {
-    return Collections.emptyList();
-  }
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.project.structure.DevKit", "jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigNormalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", "jetbrains.mps.lang.project.structure.MappingConfigRefSet", "jetbrains.mps.lang.project.structure.MappingPriorityRule", "jetbrains.mps.lang.project.structure.ModelReference", "jetbrains.mps.lang.project.structure.ModelRoot", "jetbrains.mps.lang.project.structure.ModuleDependency", "jetbrains.mps.lang.project.structure.ModuleReference", "jetbrains.mps.lang.project.structure.Solution", "jetbrains.mps.lang.project.structure.SourcePath", "jetbrains.mps.lang.project.structure.StubEntry", "jetbrains.mps.lang.project.structure.StubSolution"};
