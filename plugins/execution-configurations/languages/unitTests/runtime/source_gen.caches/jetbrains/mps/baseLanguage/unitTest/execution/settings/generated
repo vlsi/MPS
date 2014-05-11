@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cj2gd69uhfk6wvvwq74bldxt6y91hqw">
+<dependencies version="2" modelHash="4sw6co4y8xj07uami8zod5eqaswwhrh">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" />
@@ -145,7 +145,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TestUtils.java" />
   </source>
-  <source id="6062668769034855735" name="JUnitRunTypes" hash="-ef064qf6cjxd8bgpl3apxprxncru36u">
+  <source id="6062668769034855735" name="JUnitRunTypes" hash="5njqzg1cnfg94evr8or7pdk0n9p4xu0">
     <dep root="6062668769034854986" />
     <dep root="6062668769034855273" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" />
@@ -199,7 +199,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TestListPanel.java" />
   </source>
-  <source id="1822803054815683350" name="JUnitConfigurationEditorComponent" hash="e52nt2ildw21w3g9vcxsicsorealuqi">
+  <source id="1822803054815683350" name="JUnitConfigurationEditorComponent" hash="58p3bxleii6ncfosm2ffdyp53gozmu3">
     <dep root="1895567659270719476" />
     <dep root="6062668769034852749" />
     <dep root="6062668769034852880" />

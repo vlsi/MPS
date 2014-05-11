@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-abyy8684vfuk7b16o5jlsv9yipkz59s">
+<dependencies version="2" modelHash="-9xeg6b4ztg2i22up429pdo03ucobcdz">
   <dep model="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)" hash="-7jg9vfaoo6ieosr3q4ip45snr8mu0m3" />
-  <common hash="12mg1griw5bjyfw0rxq5uw5eq5mihm8" dependsOnNodes="true" />
+  <common hash="-6jvrdzcp6983cof8z03qt8mu1whr8bi" dependsOnNodes="true" />
   <source id="5881102044690167886" name="BTestExecutor" hash="evuae34fr0gdgy8um0w1ghka0ikd15z">
     <dep model="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.execution)" />
     <file name="BTestExecutor.java" />
@@ -9,7 +9,7 @@
   <source id="5881102044690168334" name="CommandOutputStream" hash="9qvnr8dbjk6f020kug65tiybma92ve9">
     <file name="CommandOutputStream.java" />
   </source>
-  <source id="3310779261129642822" name="TransformationTestExecutor" hash="6lwsn0d678hfhnuq0zhnmflftkdho5p">
+  <source id="3310779261129642822" name="TransformationTestExecutor" hash="-ckx9hmkzrkjxr3na2bf5tw6z14vhcuh">
     <file name="TransformationTestExecutor.java" />
   </source>
 </dependencies>

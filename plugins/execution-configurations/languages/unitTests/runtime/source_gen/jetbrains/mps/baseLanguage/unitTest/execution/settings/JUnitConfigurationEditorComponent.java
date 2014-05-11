@@ -159,6 +159,8 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     });
   }
 
+
+
   private void setModelValue(final String modelName) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -222,7 +224,10 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     configuration.setTestCases(testCases);
     configuration.setModel(model.value);
     configuration.setModule(module.value);
+    configuration.setLightExec(myLightExecCheckBox.isSelected());
   }
+
+
 
   public void reset(final JUnitSettings_Configuration configuration) {
     if (configuration.getRunType() != null) {
@@ -284,8 +289,14 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
       myModuleChooser.setText(configuration.getModule());
     }
 
+    if (!(myLightExecCheckBox.isSelected())) {
+      myLightExecCheckBox.doClick();
+    }
+
     updatePanels();
   }
+
+
 
   public void resetEditorModelWith(final String modelName) {
     setModelValue(modelName);
@@ -300,6 +311,8 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
       });
     }
   }
+
+
 
   public void dispose() {
     myModuleChooser.dispose();

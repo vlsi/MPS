@@ -179,7 +179,7 @@ public enum JUnitRunTypes {
 
   public final Iterable<ITestNodeWrapper> collect(final JUnitSettings_Configuration configuration, final Project project, boolean recollect) {
     if (recollect || cachedTests == null) {
-      ProgressManager.getInstance().run(new Task.Backgroundable(ProjectHelper.toIdeaProject(project), "Collecting Tests to Run", true) {
+      ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(project), "Collecting Tests to Run", true) {
         @Override
         public void run(@NotNull ProgressIndicator indicator) {
           final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
