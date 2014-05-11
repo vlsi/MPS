@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5kp1f8vx8d9vluf9z6gi4qryd13crk1">
+<dependencies version="2" modelHash="5h110tnh1lbxpvttngh8y7abg3ecyji">
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-bhmd2y5yx1fe7re2ptbhhh7d3abuura" />
-  <common hash="-351eh1h8zxynt250tmedy9gsiaj3vhf" dependsOnNodes="true" />
+  <common hash="-8n24w65csb4iu0ub4fupw1war6o1wg8" dependsOnNodes="true" />
   <source id="6740693110299850048" name="UrlClassLoader" hash="-2wi0scamkstn0of5lmcgnvy5ltifydg">
     <file name="UrlClassLoader.java" />
   </source>

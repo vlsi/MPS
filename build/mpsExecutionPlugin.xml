@@ -541,13 +541,13 @@
       <chunk>
         <module file="${basedir}/plugins/execution-configurations/languages/ant/jetbrains.mps.ant.execution.msd" />
         <module file="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/jetbrains.mps.baseLanguage.execution.util.msd" />
-        <module file="${basedir}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.execution.msd" />
-        <module file="${basedir}/plugins/execution-configurations/languages/unitTests/startup/jetbrains.mps.baseLanguage.unitTest.execution.startup.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/configurations/jetbrains.mps.execution.configurations.mpl" />
         <module file="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/devkit/devkit.devkit" />
       </chunk>
       <chunk>
+        <module file="${basedir}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.execution.msd" />
+        <module file="${basedir}/plugins/execution-configurations/languages/unitTests/startup/jetbrains.mps.baseLanguage.unitTest.execution.startup.msd" />
         <module file="${basedir}/plugins/execution-configurations/languages/plugin/jetbrains.mps.execution.configurations.implementation.plugin.msd" />
       </chunk>
       <jvmargs>
@@ -1048,6 +1048,8 @@
         <fileset file="${artifacts.mpsDebuggerPlugin}/mps-execution-api/lib/execution-api.jar" />
         <pathelement path="${build.tmp}/java/out/execution-languages" />
         <pathelement path="${build.tmp}/java/out/execution-configurations" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
+        <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/bsh-core-2.0b4.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/cglib-nodep-2.1_3.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-core-1.1.jar" />
@@ -1085,11 +1087,11 @@
     <delete dir="${mps_home}/plugins/execution-languages/languages/library/source_gen" />
     <delete dir="${mps_home}/plugins/execution-configurations/languages/ant/source_gen" />
     <delete dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
-    <delete dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
-    <delete dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/generator/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" />
+    <delete dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
+    <delete dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
     <delete dir="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" />
   </target>
 </project>
