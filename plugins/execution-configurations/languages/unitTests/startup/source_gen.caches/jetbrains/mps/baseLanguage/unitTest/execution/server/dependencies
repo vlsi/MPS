@@ -40,7 +40,7 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.util.CachesUtil" />
+    <classNode dependClassName="jetbrains.mps.util.test.CachesUtil" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.BTestExecutor" />
   </dependency>
 </dependenciesRoot>

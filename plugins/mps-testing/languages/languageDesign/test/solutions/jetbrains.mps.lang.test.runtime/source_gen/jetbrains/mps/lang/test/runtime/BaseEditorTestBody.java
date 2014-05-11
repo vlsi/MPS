@@ -51,7 +51,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 
-public class BaseEditorTestBody extends BaseTestBody {
+public abstract class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
   public Editor myEditor;
   private SNode myBefore;
@@ -189,8 +189,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
 
 
-  public void testMethodImpl() throws Exception {
-  }
+  public abstract void testMethodImpl() throws Exception;
 
 
 

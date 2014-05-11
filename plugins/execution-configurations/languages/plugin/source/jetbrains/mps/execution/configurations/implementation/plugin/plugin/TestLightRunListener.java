@@ -30,17 +30,22 @@ import java.io.StringWriter;
 
 public class TestLightRunListener extends RunListener {
   private final static Logger LOG = LogManager.getLogger(TestLightRunListener.class);
+  private final TestLightExecutor myExecutor;
   private final TestEventsDispatcher myDispatcher;
+  private final TestLightRunState myTestRunState;
   private final int myRequestCount;
   private final TestEventFactory myFactory;
 
-  private boolean terminating = false;
-
   private int currentRequest;
-  private static final int TERMINATED_CODE = 137;
 
-  public TestLightRunListener(TestEventsDispatcher dispatcher, int requestCount) {
-    myDispatcher = dispatcher;
+  private boolean isTerminating() {
+    return myTestRunState.isTerminating();
+  }
+
+  public TestLightRunListener(TestLightExecutor executor, int requestCount) {
+    myExecutor = executor;
+    myDispatcher = executor.getDispatcher();
+    myTestRunState = executor.getRunState();
     myRequestCount = requestCount;
     myFactory = new TestEventFactory();
   }
@@ -52,19 +57,13 @@ public class TestLightRunListener extends RunListener {
     return sw.toString();
   }
 
-  private void terminateRun(int code) {
-    terminating = true;
-    myDispatcher.onSimpleTextAvailable("Process finished with exit code " + code, ProcessOutputTypes.STDOUT);
-    myDispatcher.onProcessTerminated("Process finished with exit code " + code);
-  }
-
   @Override
   public void testRunFinished(Result result) throws Exception {
-    if (terminating) return;
+    if (isTerminating()) return;
     if (++currentRequest == myRequestCount) {
       LOG.info("TESTS WERE SUCCESSFUL " + result.wasSuccessful());
       int code = result.getFailureCount();
-      terminateRun(code);
+      myExecutor.terminateProcess(code);
     } else
       LOG.info("Request #" + currentRequest + " is finished -- proceeding to the next request");
   }
@@ -82,31 +81,28 @@ public class TestLightRunListener extends RunListener {
 
   @Override
   public void testFailure(Failure failure) throws Exception {
-    if (terminating) return;
+    if (isTerminating()) return;
     LOG.info(TestEvent.ERROR_TEST_PREFIX + failure.getDescription());
     onTestErrorEvent(TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, failure);
   }
 
   @Override
   public void testAssumptionFailure(Failure failure) {
-    if (terminating) return;
+    if (isTerminating()) return;
     LOG.info(TestEvent.FAILURE_TEST_PREFIX + failure.getDescription());
     onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
   }
 
   @Override
   public void testStarted(Description description) throws Exception {
-    if (terminating) return;
+    if (isTerminating()) return;
     LOG.info(TestEvent.START_TEST_PREFIX + description.getDisplayName());
     onTestEvent(TestEvent.START_TEST_PREFIX, description);
   }
 
   @Override
   public void testFinished(Description description) throws Exception {
-    if (terminating) return;
-    if (JUnitLightExecutor.isRunTerminating()) {
-      terminateRun(TERMINATED_CODE);
-    }
+    if (isTerminating()) return;
     LOG.info(TestEvent.END_TEST_PREFIX + description.getDisplayName());
     onTestEvent(TestEvent.END_TEST_PREFIX, description);
   }
@@ -115,7 +111,10 @@ public class TestLightRunListener extends RunListener {
     public TestEvent create(String token, Description description) {
       String fqName = description.getClassName();
       String methodName = description.getMethodName();
-      return new TestEvent(token, fqName, methodName, 0, 0);
+      Runtime runtime = Runtime.getRuntime();
+      long memory = runtime.totalMemory() - runtime.freeMemory();
+      long time = System.currentTimeMillis();
+      return new TestEvent(token, fqName, methodName, memory, time);
     }
   }
 }

@@ -16,6 +16,7 @@
 package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.util.test.TestCounter;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +29,12 @@ import org.junit.runner.notification.RunListener;
  */
 public abstract class AbstractTestExecutor implements TestExecutor {
   private static final Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
+  protected final long TEST_RUN_ID = TestCounter.get();
+
+  @Override
+  public long getRunId() {
+    return TEST_RUN_ID;
+  }
 
   @Override
   public void execute() {

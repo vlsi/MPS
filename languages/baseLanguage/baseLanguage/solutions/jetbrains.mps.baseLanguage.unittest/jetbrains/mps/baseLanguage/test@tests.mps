@@ -1854,8 +1854,8 @@
     </node>
   </root>
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="6011730950863071455" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="NullableAnalyzer" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="dataFlow" />
+    <property name="name" nameId="tpck.1169194664001" value="NullableAnalyzer" />
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="6011730950863071456" nodeInfo="ng">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6011730950863071457" nodeInfo="ig">
         <property name="name" nameId="tpck.1169194664001" value="F" />

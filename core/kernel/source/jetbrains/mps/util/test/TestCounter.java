@@ -13,14 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
+package jetbrains.mps.util.test;
 
 /**
- * @author Alex Pyshkin on 5/5/14.
+ * @author Alex Pyshkin on 5/11/14.
  */
-public interface TestExecutor {
-  void init();
-  void execute();
-  long getRunId();
-  void dispose();
+public class TestCounter {
+  private volatile static long runId = 0L;
+
+  private TestCounter() {}
+
+  public static long get() {
+    return runId++;
+  }
 }

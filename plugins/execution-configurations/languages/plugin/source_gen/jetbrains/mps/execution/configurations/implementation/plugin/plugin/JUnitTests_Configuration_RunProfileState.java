@@ -16,7 +16,6 @@ import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import com.intellij.execution.process.ProcessHandler;
@@ -55,15 +54,13 @@ public class JUnitTests_Configuration_RunProfileState implements RunProfileState
     JUnitProcessPack processPack;
     JUnitLightExecutor lightExecutor = new JUnitLightExecutor(nodeWrappers, project);
 
-    JavaRunParameters parameters = myRunConfiguration.getJavaRunParameters().getJavaRunParameters();
-    parameters.programParameters();
     if (myRunConfiguration.getJUnitSettings().getLightExec() && lightExecutor.accept()) {
       processPack = lightExecutor.execute();
     } else {
       TestRunState runState = new TestRunState(nodeWrappers);
       TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
-      ProcessHandler process = new Junit_Command().createProcess(nodeWrappers, parameters);
+      ProcessHandler process = new Junit_Command().createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
       processPack = new JUnitProcessPacker(project, runState, eventsDispatcher).packProcess(process);
     }
 

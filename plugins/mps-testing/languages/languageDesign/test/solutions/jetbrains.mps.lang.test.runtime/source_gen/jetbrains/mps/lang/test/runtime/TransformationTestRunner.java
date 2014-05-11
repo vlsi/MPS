@@ -198,7 +198,6 @@ public class TransformationTestRunner implements TestRunner {
         projectTest.dispose();
       }
     });
-    MPSCore.getInstance().setTestMode(false);
   }
 
 

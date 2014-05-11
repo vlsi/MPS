@@ -22,13 +22,13 @@ public class FakeProcessHandler extends ProcessHandler {
   @Override
   public void startNotify() {
     super.startNotify();
-    myExecutor.setStarted(true);
+    myExecutor.setReady();
   }
 
 
 
   public void terminate() {
-    JUnitLightExecutor.terminateRun();
+    myExecutor.terminateRun();
   }
 
 

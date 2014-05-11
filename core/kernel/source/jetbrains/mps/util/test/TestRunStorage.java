@@ -13,14 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
+package jetbrains.mps.util.test;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author Alex Pyshkin on 5/5/14.
+ * @author Alex Pyshkin on 5/11/14.
  */
-public interface TestExecutor {
-  void init();
-  void execute();
-  long getRunId();
-  void dispose();
+public class TestRunStorage {
+  private final static ConcurrentHashMap<Long, Object> USER_OBJECTS = new ConcurrentHashMap<Long, Object>();
+
+  private TestRunStorage() {
+  }
+
+  public static Object getUserObject(long id) {
+    return USER_OBJECTS.get(id);
+  }
+
+  public static void putUserObject(long id, Object value) {
+    USER_OBJECTS.put(id, value);
+  }
 }

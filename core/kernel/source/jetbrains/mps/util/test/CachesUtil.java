@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.util;
+package jetbrains.mps.util.test;
+
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.PathUtil;
 
 import java.io.File;
 import java.util.ArrayList;

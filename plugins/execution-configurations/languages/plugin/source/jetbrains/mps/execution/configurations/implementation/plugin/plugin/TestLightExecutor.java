@@ -17,10 +17,10 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.util.WaitFor;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.test.TestRunStorage;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -33,32 +33,39 @@ import org.junit.runner.notification.RunListener;
  */
 public class TestLightExecutor extends AbstractTestExecutor {
   private static final Logger LOG = LogManager.getLogger(TestLightExecutor.class);
+  private static final int TERMINATION_CODE = 137;
 
   private final TestEventsDispatcher myDispatcher;
   private final Iterable<? extends ITestNodeWrapper> myNodes;
   private final TestClassStorage myTestClassStorage = new TestClassStorage();
-  private TestLightRunListener myRunListener;
 
-  private boolean initialized = false;
-  private boolean processIsReady = false;
+  private boolean myReadyFlag = false;
+  private final TestLightRunState myTestRunState;
 
   public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes) {
+    myTestRunState = TestLightRunState.create();
     myDispatcher = dispatcher;
     myNodes = nodes;
   }
 
   @Override
   public void init() {
-    initialized = true;
+    LOG.info("Initializing TestLightExecutor");
+    TestRunStorage.putUserObject(Thread.currentThread().getId(), myTestRunState);
+    getRunState().advance(TestLightRunStateEnum.INITIALIZED);
+  }
+
+  void setReady() {
+    myReadyFlag = true;
   }
 
   @Override
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
-    assert initialized;
+    assert getRunState().isInitialized();
     waitWhileNotReady();
-    assert JUnitLightExecutor.isRunInProgress();
+    getRunState().advance(TestLightRunStateEnum.RUNNING);
     for (Request request : requests) {
-      if (JUnitLightExecutor.isRunTerminating())
+      if (getRunState().isTerminating())
         return;
       core.run(request);
     }
@@ -68,33 +75,51 @@ public class TestLightExecutor extends AbstractTestExecutor {
     new WaitFor() {
       @Override
       protected boolean condition() {
-        return TestLightExecutor.this.processIsReady;
+        return myReadyFlag;
       }
     };
   }
 
-  public void setStarted(boolean processIsReady) {
-   this.processIsReady = processIsReady;
+  public void terminateRun() {
+    terminateProcess(TERMINATION_CODE);
+  }
+
+  void terminateProcess(int code) {
+    if (getRunState().isTerminated())
+      return;
+    getRunState().advance(TestLightRunStateEnum.TERMINATING);
+    myDispatcher.onSimpleTextAvailable("Process finished with exit code " + code, ProcessOutputTypes.STDOUT);
+    myDispatcher.onProcessTerminated("Process finished with exit code " + code);
+  }
+
+  @Override
+  public void dispose() {
+    assert getRunState().isTerminating();
+    getRunState().advance(TestLightRunStateEnum.TERMINATED);
   }
 
   @NotNull
   @Override
   protected TestsContributor createTestsContributor() {
-    NodeWrappersTestsContributor nodeWrappersTestsContributor = new NodeWrappersTestsContributor(myNodes, myTestClassStorage);
-    return nodeWrappersTestsContributor;
+    return new NodeWrappersTestsContributor(myNodes, myTestClassStorage);
   }
 
   @NotNull
   @Override
   protected RunListener createListener(Iterable<Request> requests) {
-    myRunListener = new TestLightRunListener(myDispatcher, ListSequence.<Request>fromIterable(requests).size());
-    return myRunListener;
+    return new TestLightRunListener(this, ListSequence.fromIterable(requests).size());
   }
 
-  @Override
-  public void dispose() {
-    assert initialized;
-    initialized = false;
-    assert !MPSCore.getInstance().isTestMode();
+  public TestEventsDispatcher getDispatcher() {
+    return myDispatcher;
+  }
+
+  public TestLightRunState getRunState() {
+    return myTestRunState;
+  }
+
+  @NotNull
+  public static TestLightRunState getRunState(long threadId) {
+    return (TestLightRunState) TestRunStorage.getUserObject(threadId);
   }
 }

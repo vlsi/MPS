@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
-/**
- * @author Alex Pyshkin on 5/5/14.
- */
-public interface TestExecutor {
-  void init();
-  void execute();
-  long getRunId();
-  void dispose();
+public enum TestLightRunStateEnum {
+  IDLE,
+  INITIALIZED,
+  RUNNING,
+  TERMINATING,
+  TERMINATED
 }

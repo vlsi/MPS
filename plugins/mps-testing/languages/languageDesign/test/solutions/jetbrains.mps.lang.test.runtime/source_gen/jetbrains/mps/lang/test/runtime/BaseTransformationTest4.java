@@ -49,18 +49,12 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
 
   public void initTest(@NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
-    if (JUnitLightExecutor.isRunTerminating()) {
-      return;
-    }
     myRunner.initTest(this, projectName, model, uiTest, reOpenProject);
   }
 
 
 
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
-    if (JUnitLightExecutor.isRunTerminating()) {
-      return;
-    }
     myRunner.runTest(this, className, methodName, runInCommand);
   }
 

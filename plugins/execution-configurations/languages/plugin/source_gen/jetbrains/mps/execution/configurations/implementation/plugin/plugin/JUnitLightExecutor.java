@@ -22,7 +22,6 @@ public class JUnitLightExecutor {
   private final Project myProject;
   private final Filter<ITestNodeWrapper> myFilter = new JUnitLightExecutor.DefaultFilter();
   private static boolean ourRunInProgress = false;
-  private static boolean ourRunTerminating = false;
 
 
   public JUnitLightExecutor(Iterable<ITestNodeWrapper> testNodeWrappers, Project project) {
@@ -33,7 +32,8 @@ public class JUnitLightExecutor {
 
 
   public synchronized boolean accept() {
-    if (ourRunInProgress) {
+    // allowing only one instance to be light-executed 
+    if (isRunInProgress()) {
       return false;
     }
     boolean result = myFilter.accept(myNodes);
@@ -47,7 +47,6 @@ public class JUnitLightExecutor {
 
   private void init() {
     ourRunInProgress = true;
-    ourRunTerminating = false;
   }
 
 
@@ -58,27 +57,14 @@ public class JUnitLightExecutor {
 
 
 
-  public static boolean isRunTerminating() {
-    return ourRunTerminating;
-  }
-
-
-
-  /*package*/ static boolean terminateRun() {
-    return ourRunTerminating = true;
-  }
-
-
-
   public JUnitProcessPack execute() {
     final Iterable<? extends ITestNodeWrapper> nodes = myFilter.filter(myNodes);
     TestRunState runState = new TestRunState(nodes);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
-    TestLightExecutor lightExecutor = new TestLightExecutor(eventsDispatcher, nodes);
-    lightExecutor.init();
-    final Future<?> future = doExecute(lightExecutor);
-    final FakeProcessHandler process = new FakeProcessHandler(future, lightExecutor);
+    TestLightExecutor executor = new TestLightExecutor(eventsDispatcher, nodes);
+    final Future<?> future = doExecute(executor);
+    final FakeProcessHandler process = new FakeProcessHandler(future, executor);
 
     JUnitProcessPack packProcess = new JUnitProcessPacker(myProject, runState, eventsDispatcher).packProcess(process);
     return packProcess;
@@ -90,10 +76,12 @@ public class JUnitLightExecutor {
     return ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
       public void run() {
-        System.out.println("Taking the execution control...");
-        executor.execute();
-        System.out.println("I am so done");
-        ourRunInProgress = false;
+        try {
+          executor.init();
+          executor.execute();
+        } finally {
+          ourRunInProgress = false;
+        }
       }
     });
   }
