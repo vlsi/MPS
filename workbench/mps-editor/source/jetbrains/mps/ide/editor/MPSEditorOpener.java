@@ -18,7 +18,6 @@ package jetbrains.mps.ide.editor;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.editor.ex.util.EmptyEditorHighlighter;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorProvider;
@@ -109,21 +108,6 @@ public class MPSEditorOpener {
     assert node.getModel() != null : "You can't edit unregistered node";
 
     if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return null;
-
-    //open editor
-    // [++] for http://youtrack.jetbrains.net/issue/MPS-7663
-    if (node.getModel() == null) {
-      SNode current = node;
-      while (current.getParent() != null) {
-        current = current.getParent();
-      }
-      assert false : "Containing root was not found for node: " + node.toString() +
-          ", top-level node: " + current +
-          ", isDisposed: " + jetbrains.mps.util.SNodeOperations.isDisposed(node) +
-          ", model: " + node.getModel() +
-          (node.getModel() != null ? ", modelDisposed: " + jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getModel()) : "");
-    }
-    // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
     final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false, show);
 
     //restore inspector state for opened editor (if exists)
@@ -170,22 +154,15 @@ public class MPSEditorOpener {
       baseNode = root;
     }
 
-    // [++] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
-    assert baseNode.getModel() != null : "BaseNode is not registered";
-    SNodeReference sNodePointer = new jetbrains.mps.smodel.SNodePointer(baseNode);
-    SNode node = sNodePointer.resolve(MPSModuleRepository.getInstance());
-    assert node != null : "Unable to get Node by SNodeReference: " + sNodePointer + " (baseNode = " + baseNode + ", root = " + root + ")";
-    assert node.getModel() != null : "Returned node is not registered (" + node + "|" + baseNode + ")";
-    // [--] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
+
+    checkBaseNodeIsValid(root, baseNode); // assertions for MPS-7792
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
-    // [++] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
-    assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodeReference: " +
-        new jetbrains.mps.smodel.SNodePointer(baseNode).resolve(MPSModuleRepository.getInstance());
-    // [--] assertion for http://youtrack.jetbrains.net/issue/MPS-9753
-    Editor nodeEditor = null;
+    checkVirtualFileBaseNode(baseNode, file); // assertion for MPS-9753
+
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
     file.putUserData(FileEditorProvider.KEY, ApplicationManager.getApplication().getComponent(MPSFileNodeEditorProvider.class));
 
+    Editor nodeEditor;
     if (show) {
       FileEditor fileEditor = editorManager.openFile(file, focus, true)[0];
       MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
@@ -200,9 +177,21 @@ public class MPSEditorOpener {
     return nodeEditor;
   }
 
+  private void checkVirtualFileBaseNode(SNode baseNode, MPSNodeVirtualFile file) {
+    assert file.hasValidMPSNode() : "Invalid file returned for: " + baseNode + ", corresponding node from SNodeReference: " +
+        new SNodePointer(baseNode).resolve(MPSModuleRepository.getInstance());
+  }
+
+  private void checkBaseNodeIsValid(SNode root, SNode baseNode) {
+    assert baseNode.getModel() != null : "BaseNode is not registered";
+    SNodeReference sNodePointer = new SNodePointer(baseNode);
+    SNode node = sNodePointer.resolve(MPSModuleRepository.getInstance());
+    assert node != null : "Unable to get Node by SNodeReference: " + sNodePointer + " (baseNode = " + baseNode + ", root = " + root + ")";
+    assert node.getModel() != null : "Returned node is not registered (" + node + "|" + baseNode + ")";
+  }
+
+
   //----------util
-
-
   private void focus(Editor nodeEditor, boolean cellInInspector) {
     if (!cellInInspector) {
       final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
