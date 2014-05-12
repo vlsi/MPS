@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:13232651-7f9c-48ad-b7ea-67f933cdf1b0(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor)/3675491646421306273">
     <nodeInfo nodeId="3675491646421306273" fileName="StateMachine_tabular_Editor.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
     <nodeInfo nodeId="3675491646421306273" fileName="StateMachine_tabular_Editor.java" startLine="29" startPosition="47" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

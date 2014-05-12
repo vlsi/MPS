@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
+import jetbrains.mps.util.IndexableObjectSet;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class StyleMap<T> {
 
@@ -107,6 +111,10 @@ public class StyleMap<T> {
 
   public void setValue(int index, T value) {
     set(index, search(index), value);
+  }
+
+  public int[] getIndexes() {
+    return indexes;
   }
 
 }

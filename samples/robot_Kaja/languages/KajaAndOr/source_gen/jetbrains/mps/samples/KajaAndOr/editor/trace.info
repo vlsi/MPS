@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)/1412244050168669831">
     <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="14" startPosition="95" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />

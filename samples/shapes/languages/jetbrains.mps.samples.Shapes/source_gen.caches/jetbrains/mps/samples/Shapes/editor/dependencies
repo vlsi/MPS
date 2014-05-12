@@ -140,6 +140,7 @@
     <classNode dependClassName="jetbrains.mps.samples.Shapes.editor.Square_ShapePreview_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Shapes.editor.ShapeColor" file="ShapeColor.java">
     <classNode dependClassName="java.lang.Class" />

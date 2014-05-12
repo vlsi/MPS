@@ -20,7 +20,6 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.samples.generator_demo.demoLang6.editor.Button_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.generator_demo.demoLang6.editor.Label_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:363920dc-2dd0-49fc-94ed-f20b88b2ec02(org.jetbrains.mps.samples.Money.editor)/1790427706118304180">
     <nodeInfo nodeId="1790427706118304180" fileName="GetCurrency_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1790427706118304182" fileName="GetCurrency_Editor.java" startLine="16" startPosition="87" endLine="17" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

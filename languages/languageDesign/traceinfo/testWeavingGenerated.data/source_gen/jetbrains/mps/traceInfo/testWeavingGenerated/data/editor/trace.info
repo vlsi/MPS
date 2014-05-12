@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:e1a02aa6-2632-4f05-9c75-0febc533f533(jetbrains.mps.traceInfo.testWeavingGenerated.data.editor)/6186432342008329120">
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

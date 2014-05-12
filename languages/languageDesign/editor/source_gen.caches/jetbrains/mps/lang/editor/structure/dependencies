@@ -126,6 +126,19 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.structure.StyleAttributeKind" file="StyleAttributeKind.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.structure.StyleAttributeKind_PropertySupport" file="StyleAttributeKind_PropertySupport.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.structure.StyleAttributeKind" />
+    <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.structure.TableComponentEnum" file="TableComponentEnum.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />

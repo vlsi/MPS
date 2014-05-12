@@ -62,7 +62,6 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.CommandList_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.CommentLine_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.editor.Drop_Editor" />

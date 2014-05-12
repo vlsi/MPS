@@ -886,9 +886,9 @@
     <delete dir="${mps_home}/plugins/mps-build/languages/build.workflow/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.workflow/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-build/languages/build/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/solutions/mpsBuild/source_gen" />

@@ -22,20 +22,17 @@ package jetbrains.mps.editor.runtime.style;
 public class SimpleStyleAttribute<T> extends AbstractStyleAttribute<T> {
   private T myDefaultValue;
 
-  public SimpleStyleAttribute(String name, T defaultValue) {
-    super(name, true);
-    myDefaultValue = defaultValue;
-  }
-
-  // Remove after MPS 3.0
-  @Deprecated
-  protected SimpleStyleAttribute(String name, T defaultValue, boolean register) {
+  /*package*/ SimpleStyleAttribute(String name, T defaultValue, boolean register) {
     super(name, register);
     myDefaultValue = defaultValue;
   }
 
+  public SimpleStyleAttribute(String name, T defaultValue) {
+    this(name, defaultValue, false);
+  }
+
   SimpleStyleAttribute(String name) {
-    this(name, null);
+    this(name, null, false);
   }
 
   @Override

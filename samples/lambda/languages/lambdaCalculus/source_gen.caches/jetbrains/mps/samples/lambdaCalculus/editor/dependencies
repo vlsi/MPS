@@ -48,7 +48,6 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.FunctionType_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaAbstraction_Editor" />
