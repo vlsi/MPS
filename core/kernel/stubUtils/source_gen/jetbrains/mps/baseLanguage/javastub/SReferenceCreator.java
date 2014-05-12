@@ -59,7 +59,7 @@ public class SReferenceCreator implements SReferenceHandler {
     SModelReference targetModel = SetSequence.fromSet(possibleModels).first();
     SModuleReference targetModule = SModelRepository.getInstance().getModelDescriptor(targetModel).getModule().getModuleReference();
 
-    SModelReference targetModelStubReference = StubHelper.uidForPackageInStubs(new SModelFqName(pack, JAVA_STUB_STEREOTYPE), targetModule, false);
+    SModelReference targetModelStubReference = StubHelper.uidForPackageInStubs(targetModule, pack);
 
     return jetbrains.mps.smodel.SReference.create(role, source, targetModelStubReference, targetNodeId, resolveInfo);
   }

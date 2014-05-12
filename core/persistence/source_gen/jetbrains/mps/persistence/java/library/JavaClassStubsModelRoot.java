@@ -151,7 +151,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
       String pack = prefix + ((eq_jzcn2m_a0a0a0a3a1a9(prefix, "") ? "" : ".")) + subdir.getName();
 
       if (Sequence.fromIterable(rootClasses).isNotEmpty() && neq_jzcn2m_a0a5a1a9(pack, "")) {
-        final SModelReference modelReference = StubHelper.uidForPackageInStubs(pack, languageId, module.getModuleReference());
+        final SModelReference modelReference = StubHelper.uidForPackageInStubs(module.getModuleReference(), pack);
         JavaClassStubModelDescriptor smd;
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModel descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
