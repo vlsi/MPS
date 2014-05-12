@@ -235,8 +235,8 @@
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="602731281382638048" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7254755065594999519" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7254755065594999712" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~TestCase" resolveInfo="TestCase" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~TestCase%dassertTrue(boolean)%cvoid" resolveInfo="assertTrue" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412073148017" nodeInfo="nn">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1563914226484903641" resolveInfo="match" />
               </node>

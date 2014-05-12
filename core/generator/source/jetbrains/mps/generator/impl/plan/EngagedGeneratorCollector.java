@@ -61,7 +61,7 @@ final class EngagedGeneratorCollector {
   public EngagedGeneratorCollector(@NotNull SModel model, Collection<String> additionalLanguages) {
     myModel = model;
     myAdditionalLanguages = additionalLanguages == null ? Collections.<String>emptyList() : new ArrayList<String>(additionalLanguages);
-    myOnlyLanguageRealUses = true;
+    myOnlyLanguageRealUses = Boolean.getBoolean("mps.internal.generator.plan.extended-languages");
   }
 
   /**
