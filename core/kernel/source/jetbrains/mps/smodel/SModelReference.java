@@ -30,14 +30,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 @ImmutableObject
 public final class SModelReference implements org.jetbrains.mps.openapi.model.SModelReference {
-  /**
-   * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModelReference(String)}
-   */
-  @Deprecated
-  public static SModelReference fromString(String s) {
-    return parseReference(s);
-  }
-
   @NotNull
   private final SModelId myModelId;
   @NotNull
@@ -45,9 +37,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Nullable
   private final SModuleReference myModuleReference;
 
-  /**
-   * @param module can be null only if modelId is globally unique (i.e. can be resolved without a module)
-   */
   public SModelReference(@Nullable SModuleReference module, @NotNull SModelId modelId, @NotNull String modelName) {
     if (module == null && !modelId.isGloballyUnique()) {
       throw new IllegalArgumentException();
@@ -55,22 +44,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     myModuleReference = module;
     myModelId = modelId;
     myModelName = modelName;
-  }
-
-  /**
-   * @deprecated use {@link #getModelId()}
-   */
-  @Deprecated
-  public SModelId getSModelId() {
-    return myModelId;
-  }
-
-  @Deprecated
-  public SModelFqName getSModelFqName() {
-    int atIndex = myModelName.lastIndexOf('@');
-    return new SModelFqName(myModuleReference != null ? myModuleReference.getModuleName() : null,
-        atIndex == -1 ? myModelName : myModelName.substring(0, atIndex),
-        atIndex == -1 ? null : myModelName.substring(atIndex + 1));
   }
 
   @NotNull
@@ -205,21 +178,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     return sb.toString();
   }
 
-  @Deprecated
-  public String getLongName() {
-    return SModelStereotype.withoutStereotype(myModelName);
-  }
-
-  public String getCompactPresentation() {
-    return NameUtil.compactNamespace(myModelName);
-  }
-
   public String getStereotype() {
     return SModelStereotype.getStereotype(myModelName);
-  }
-
-  public boolean hasStereotype() {
-    return myModelName.contains("@");
   }
 
   public SModelReference update() {
