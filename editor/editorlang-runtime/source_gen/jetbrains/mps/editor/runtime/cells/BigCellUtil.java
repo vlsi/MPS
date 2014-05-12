@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class BigCellUtil {
   public static EditorCell findBigCell(EditorCell cell, SNode node) {
     Queue<EditorCell> cellQueue = QueueSequence.fromQueue(new LinkedList<EditorCell>());
+    QueueSequence.fromQueue(cellQueue).addLastElement(cell);
     while (QueueSequence.fromQueue(cellQueue).isNotEmpty()) {
       EditorCell nextCell = QueueSequence.fromQueue(cellQueue).removeFirstElement();
       if (nextCell.getSNode() == node) {
