@@ -61,6 +61,11 @@
   <import index="ivbl" modelUID="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)" version="-1" />
   <import index="ule5" modelUID="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)" version="-1" />
   <import index="h8fw" modelUID="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)" version="-1" />
+  <import index="tizr" modelUID="r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)" version="-1" />
+  <import index="5vzk" modelUID="r:a56a2ec2-acbf-42ea-9fe6-7091c607ee89(jetbrains.mps.baseLanguageInternal.test@tests)" version="-1" />
+  <import index="9sj4" modelUID="r:8aafd777-0043-4d2b-b2da-119dbfcb6271(jetbrains.mps.persistence.xml@tests)" version="-1" />
+  <import index="f7ij" modelUID="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)" version="-1" />
+  <import index="gp3f" modelUID="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707832463" nodeInfo="ng">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707832464" nodeInfo="ig">
@@ -2203,6 +2208,60 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201998" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.2278461409093334296" resolveInfo="UnSelectPort" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936922900508" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936922900509" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.baseLanguage.doubleDispatch.test" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="0528d773-6535-46f8-89a2-16a3751e6ab5" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7261441936922900510" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tizr.3813896760029572858" resolveInfo="DispatchTypeCheckingErrors" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936922902219" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936922902220" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.baseLanguageInternal.test" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="4831e627-794e-416a-983a-50889cae21f8" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7261441936922902221" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="5vzk.1293230950168428284" resolveInfo="InternalClassifier" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936923577467" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936923577468" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.samples.xmlPersistence" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="761394b7-dc42-4fe5-adc7-1d9ff2aa76e6" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923577469" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="9sj4.7358309956615888947" resolveInfo="XmlConverterTest" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936923588597" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936923588598" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.testbench" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="e9000334-f5e2-4a2f-a0fc-9afd1d31e048" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923588599" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="f7ij.9170334376387736840" resolveInfo="AuditTypeSystem" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923588602" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="f7ij.9170334376387816357" resolveInfo="AuditConstraints" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923588605" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="f7ij.9170334376387870447" resolveInfo="CheckProjectStructure" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923588609" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="f7ij.4052780437579008133" resolveInfo="ScopesTest" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936923591989" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936923591990" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.testbench.make" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="79f9d103-4ff6-4def-9c1a-27070f9ba255" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923591991" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="gp3f.9170334376388144449" resolveInfo="ProjectTest" />
     </node>
   </root>
 </model>

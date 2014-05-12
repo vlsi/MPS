@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -62,11 +63,11 @@ public class NodePaster {
   }
 
   public void paste(EditorCell targetCell) {
-    paste(targetCell.getSNode(), getRoleFromCell(targetCell), PasteEnv.NODE_EDITOR);
+    paste(targetCell.getSNode(), getRoleFromCell(targetCell), PasteEnv.NODE_EDITOR, null);
   }
 
-  public void paste(SNode pasteTarget, PasteEnv pasteEnv) {
-    paste(pasteTarget, pasteTarget.getRoleInParent(), pasteEnv);
+  public void paste(SNode pasteTarget, PasteEnv pasteEnv, @Nullable String pack) {
+    paste(pasteTarget, pasteTarget.getRoleInParent(), pasteEnv,pack);
   }
 
   public void pasteWithRemove(List<SNode> pasteTargets) {
@@ -100,7 +101,7 @@ public class NodePaster {
   }
 
 
-  private void paste(SNode pasteTarget, String role, PasteEnv pasteEnv) {
+  private void paste(SNode pasteTarget, String role, PasteEnv pasteEnv,@Nullable String pack) {
     String role_ = role != null ? role : pasteTarget.getRoleInParent();
     int status = canPaste(pasteTarget, role_, pasteEnv);
 
@@ -109,22 +110,17 @@ public class NodePaster {
     } else if (status == PASTE_TO_PARENT) {
       pasteToParent(pasteTarget, role_, PastePlaceHint.DEFAULT, false);
     } else if (status == PASTE_TO_ROOT) {
-      for (SNode pasteNode : myPasteNodes) {
-        pasteTarget.getModel().addRootNode(pasteNode);
-      }
+
+      pasteAsRoots(pasteTarget.getModel(),pack);
     }
   }
 
-  public void pasteAsRoots(SModel model, String dstPackage) {
-    pasteAsRoots(model);
-    for (SNode node : myPasteNodes) {
-      SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, dstPackage);
-    }
-  }
-
-  public void pasteAsRoots(SModel model) {
+  public void pasteAsRoots(SModel model, @Nullable String dstPackage) {
     for (SNode pasteNode : myPasteNodes) {
       model.addRootNode(pasteNode);
+      if (dstPackage==null) continue;
+
+      SNodeAccessUtil.setProperty(pasteNode, SNodeUtil.property_BaseConcept_virtualPackage, dstPackage);
     }
   }
 
@@ -144,7 +140,7 @@ public class NodePaster {
 
   public void pasteRelative(SNode anchorNode, PastePlaceHint placeHint) {
     if (anchorNode.getParent() == null) {
-      pasteAsRoots(anchorNode.getModel());
+      pasteAsRoots(anchorNode.getModel(), null);
     } else {
       pasteToParent(anchorNode, anchorNode.getRoleInParent(), placeHint, false);
     }

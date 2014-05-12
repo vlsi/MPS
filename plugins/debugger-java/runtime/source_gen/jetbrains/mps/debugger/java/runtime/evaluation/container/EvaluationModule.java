@@ -19,9 +19,16 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.SDependencyAdapter;
+import jetbrains.mps.project.structure.modules.Dependency;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import java.util.Collection;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 
 public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
@@ -75,11 +82,21 @@ public class EvaluationModule extends AbstractModule implements SModule {
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    return ((Iterable) MPSModuleRepository.getInstance().getModules());
+    Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
+    return Sequence.fromIterable(modules).select(new ISelector<SModule, SDependency>() {
+      public SDependency select(SModule it) {
+        return ((SDependency) new SDependencyAdapter(new Dependency(it.getModuleReference(), false)));
+      }
+    });
   }
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    return ((Set) new HashSet<Language>(ModuleRepositoryFacade.getInstance().getAllModules(Language.class)));
+    Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
+    return SetSequence.fromSetWithValues(new HashSet<SLanguage>(), CollectionSequence.fromCollection(languages).select(new ISelector<Language, SLanguage>() {
+      public SLanguage select(Language it) {
+        return ((SLanguage) new SLanguageAdapter(it.getModuleName()));
+      }
+    }));
   }
 }

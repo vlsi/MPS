@@ -22,6 +22,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -306,6 +308,23 @@ public class ClassifierType_Behavior {
     }
     MapSequence.fromMap(substitutions).put(SLinkOperations.getTarget(thisNode, "classifier", false), SLinkOperations.getTarget(thisNode, "classifier", false));
 
+    // avoid polluting the substitutions map with recursive references 
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return MapSequence.fromMap(substitutions).containsKey(it);
+      }
+    })) {
+      return;
+    }
+    final Set<SNode> tvds = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true));
+    if (Sequence.fromIterable(MapSequence.fromMap(substitutions).values()).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SetSequence.fromSet(tvds).contains(SLinkOperations.getTarget(SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
+      }
+    })) {
+      return;
+    }
+
     // traverse all extended/implemented classifiers 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
       BehaviorReflection.invokeVirtual(Void.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getSuperclass_1240936569950", new Object[]{}), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
@@ -321,17 +340,10 @@ public class ClassifierType_Behavior {
     }
 
     // for each declared TypeVar substitute its actual value 
-    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return MapSequence.fromMap(substitutions).containsKey(it);
-      }
-    })) {
-      return;
-    }
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
       // treat raw type as if all params were Object or the appropriate bound 
       for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true))) {
-        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_hz3823_a0a0a1a9a91() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
+        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_hz3823_a0a0a1a31a91() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
       }
     } else {
       {
@@ -596,7 +608,7 @@ public class ClassifierType_Behavior {
     return null;
   }
 
-  private static SNode _quotation_createNode_hz3823_a0a0a1a9a91() {
+  private static SNode _quotation_createNode_hz3823_a0a0a1a31a91() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);

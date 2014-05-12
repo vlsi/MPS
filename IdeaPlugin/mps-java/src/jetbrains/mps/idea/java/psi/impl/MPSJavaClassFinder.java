@@ -29,9 +29,10 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.CollectConsumer;
 import com.intellij.util.Consumer;
 import com.intellij.util.indexing.FileBasedIndex;
-import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
+import jetbrains.mps.idea.java.Constants.ConceptNames;
 import jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex;
 import jetbrains.mps.idea.java.index.MPSJavaPackageIndex;
 import jetbrains.mps.idea.java.util.ClassUtil;
@@ -41,6 +42,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -149,24 +151,22 @@ public class MPSJavaClassFinder extends PsiElementFinder {
   }
 
   private void findInModel(SModel model, String qname, Consumer<VirtualFile> processedConsumer, Consumer<SNode> consumer) {
-
-    DataSource dataSource = model.getSource();
-    if (!(dataSource instanceof FileDataSource)) return;
-
-    // todo make util method and try to find similar code in other places
-    String path = ((FileDataSource) dataSource).getFile().getPath();
-    VirtualFile vfile = LocalFileSystem.getInstance().findFileByPath(path);
-
     String packageName = model.getModelName();
     if (!qname.startsWith(packageName + ".")) return;
 
-    if (vfile != null) {
-      processedConsumer.consume(vfile);
+    DataSource dataSource = model.getSource();
+    if (dataSource instanceof FileSystemBasedDataSource)  {
+      // todo make util method and try to find similar code in other places
+      for (IFile iFile : ((FileSystemBasedDataSource) dataSource).getAffectedFiles()) {
+        VirtualFile vFile = LocalFileSystem.getInstance().findFileByPath(iFile.getPath());
+        if (vFile != null) {
+          processedConsumer.consume(vFile);
+        }
+      }
     }
 
     FastNodeFinder fastFinder = ((SModelInternal) model).getFastNodeFinder();
-    List<SNode> classes = fastFinder.getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
-
+    List<SNode> classes = fastFinder.getNodes(ConceptNames.Classifier, true);
     if (classes.isEmpty()) return;
 
     for (SNode claz : classes) {

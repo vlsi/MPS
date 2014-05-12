@@ -6,8 +6,8 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
-import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
+import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class IndexedTupleType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
@@ -16,6 +16,10 @@ public class IndexedTupleType_BehaviorDescriptor extends Type_BehaviorDescriptor
 
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     IndexedTupleType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
+  }
+
+  public SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
+    return IGenericType_Behavior.virtual_eraseGenerics_5089784887112634594(thisNode);
   }
 
   public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {

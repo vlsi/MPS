@@ -10,7 +10,7 @@
     <node role="component" roleId="ktbj.6223439730610302888" type="ktbj.Component" typeId="ktbj.6223439730610336068" id="650270285023051496" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="Core" />
       <property name="x" nameId="ktbj.6223439730610789197" value="239" />
-      <property name="y" nameId="ktbj.6223439730610789199" value="179" />
+      <property name="y" nameId="ktbj.6223439730610789199" value="208" />
       <node role="dep" roleId="ktbj.6223439730610336071" type="ktbj.Dependency" typeId="ktbj.6223439730610762144" id="650270285023198130" nodeInfo="ng">
         <link role="to" roleId="ktbj.6223439730610763348" targetNodeId="650270285023198115" resolveInfo="DB" />
       </node>

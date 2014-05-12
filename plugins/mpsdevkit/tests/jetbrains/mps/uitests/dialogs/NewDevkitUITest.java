@@ -34,11 +34,10 @@ public class NewDevkitUITest extends NewDialogsUITestsBase {
     Assert.assertNotNull("Main frame not found", frame);
 
     final NewDevKitDialog dialog = new NewDevKitDialog(null);
-    dialog.setProject(myCreatedProject);
 
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        dialog.showDialog();
+        dialog.show();
       }
     });
     flushAWT();
@@ -46,9 +45,6 @@ public class NewDevkitUITest extends NewDialogsUITestsBase {
     JTextField nameField = findTextField("Name");
     getHelper().sendString(new StringEventData(this, nameField, "myDev"));
     flushAWT();
-    PathField pathField = findPathField("Path");
-    boolean correctSuffix = pathField.getPath().endsWith(nameField.getText());
-    Assert.assertTrue("Devkit suffix is not added to path", correctSuffix);
 
     pressButton(dialog, "OK");
     flushAWT();

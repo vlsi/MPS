@@ -55,7 +55,7 @@ public class check_UnqualifiedStaticCall_NonTypesystemRule extends AbstractNonTy
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localCall, "unqualified non-local static call", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3151797052703996720", null, errorTarget);
       {
         BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
-        intentionProvider.putArgument("newNode;", smc);
+        intentionProvider.putArgument("newNode", smc);
         _reporter_2309309498.addIntentionProvider(intentionProvider);
       }
     }

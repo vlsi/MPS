@@ -83,8 +83,7 @@ public class NodeEditorComponent extends EditorComponent {
           return;
         }
 
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode) || jetbrains.mps.util.SNodeOperations.isModelDisposed(selectedNode.getModel()))
-          return;
+        if (selectedNode.getModel()==null) return;
 
         inspect(selectedNode);
       }

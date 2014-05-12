@@ -496,29 +496,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       init();
     }
 
-    private String getInfoText() {
-      final StringBuilder messageText = new StringBuilder();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          int references = 0;
-          int properties = 0;
-          messageText.append("<html><body>");
-          SModel model = myModelDescriptor;
-          for (SNode node : SNodeUtil.getDescendants(model)) {
-            references += IterableUtil.asCollection(node.getReferences()).size();
-            properties += jetbrains.mps.util.SNodeOperations.getProperties(node).keySet().size();
-          }
-          messageText.append("Roots : ").append(IterableUtil.asCollection(model.getRootNodes()).size()).append("<br>");
-          messageText.append("Nodes : ").append(jetbrains.mps.util.SNodeOperations.nodesCount(model)).append("<br>");
-          messageText.append("References : ").append(references).append("<br>");
-          messageText.append("Properties : ").append(properties).append("<br>");
-          messageText.append("</body></html>");
-        }
-      });
-      return messageText.toString();
-    }
-
     @Override
     public void init() {
       int rowsCount = myIsDefSModelDescr ? 6 : 5;
@@ -540,9 +517,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
                 GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null,
                 0, false));
       }
-
-      panel.add(new JBLabel(getInfoText()), new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
-          GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       panel.add(new JBLabel(PropertiesBundle.message("mps.properties.configurable.common.commontab.filepathlabel")),
           new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,

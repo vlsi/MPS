@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.samples.componentDependencies.behavior.Component_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.HashSet;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramNodeView;
@@ -108,8 +108,8 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
       myPropertyCell_nwl53h_a0a.synchronize();
       myPropertyCell_nwl53h_a1a.synchronize();
       myPropertyCell_nwl53h_a2a.synchronize();
-      syncPortObjects(Component_Behavior.call_retrieveInPorts_9095678365530118263(getSNode()), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
-      syncPortObjects(Component_Behavior.call_retrieveOutPorts_9095678365530123411(getSNode()), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
+      syncPortObjects(SLinkOperations.getTargets(getSNode(), "in", true), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
+      syncPortObjects(SLinkOperations.getTargets(getSNode(), "out", true), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
     }
 
     public Mapper<SNode, DiagramNodeView> createMapper() {
