@@ -1197,6 +1197,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myComparisonRules.add(comparisonRule);
     }
     {
+      ComparisonRule_Runtime comparisonRule = new char_compatibleWith_byte_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
       ComparisonRule_Runtime comparisonRule = new typevar_comparable_with_classifier_type_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
@@ -1246,7 +1250,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
-          return _quotation_createNode_3ist9o_a0a1a0a0a0rl0a();
+          return _quotation_createNode_3ist9o_a0a1a0a0a0sl0a();
         }
       };
       this.myVariableConverters.add(converter);
@@ -1279,14 +1283,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = _quotation_createNode_3ist9o_a0a0a0a0a0a0a113a0();
+          this.myOperandType = _quotation_createNode_3ist9o_a0a0a0a0a0a0a213a0();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return _quotation_createNode_3ist9o_a0a1a0a0a0a0zl0a();
+          return _quotation_createNode_3ist9o_a0a1a0a0a0a0am0a();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -1542,7 +1546,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0rl0a() {
+  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0sl0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
@@ -1550,14 +1554,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_3ist9o_a0a0a0a0a0a0a113a0() {
+  private static SNode _quotation_createNode_3ist9o_a0a0a0a0a0a0a213a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0a0zl0a() {
+  private static SNode _quotation_createNode_3ist9o_a0a1a0a0a0a0am0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
