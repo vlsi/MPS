@@ -58,25 +58,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   }
 
   /**
-   * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModelReference(org.jetbrains.mps.openapi.module.SModuleReference, org.jetbrains.mps.openapi.model.SModelId, String)}
-   */
-  @Deprecated
-  public SModelReference(@NotNull String longName, @Nullable String stereotype) {
-    this(new SModelFqName(longName, stereotype), null);
-  }
-
-  /**
-   * use {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createModelReference(org.jetbrains.mps.openapi.module.SModuleReference, org.jetbrains.mps.openapi.model.SModelId, String)}
-   */
-  @Deprecated
-  public SModelReference(@NotNull SModelFqName fqName, @Nullable SModelId modelId) {
-    String moduleFqName = fqName.getModuleFqName();
-    myModuleReference = moduleFqName == null || moduleFqName.isEmpty() ? null : new jetbrains.mps.project.structure.modules.ModuleReference(moduleFqName);
-    myModelName = fqName.getModelName();
-    myModelId = modelId != null ? modelId : new ModelNameSModelId(myModelName);
-  }
-
-  /**
    * @deprecated use {@link #getModelId()}
    */
   @Deprecated
