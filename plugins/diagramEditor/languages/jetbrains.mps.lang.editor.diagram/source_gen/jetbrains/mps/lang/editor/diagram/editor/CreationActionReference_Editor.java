@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
 public class CreationActionReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -97,7 +98,12 @@ public class CreationActionReference_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_3ry26z_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent");
-    editorCell.setBig(true);
+    EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
+    if (bigCell != null) {
+      bigCell.setBig(true);
+    } else {
+      throw new RuntimeException("No big cell found!");
+    }
     return editorCell;
   }
 }

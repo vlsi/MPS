@@ -16,6 +16,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
 public class StartProcessHandlerStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -90,7 +91,12 @@ public class StartProcessHandlerStatement_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_iy02al_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.configurations.editor.StartProcessWithTool_Component");
-    editorCell.setBig(true);
+    EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
+    if (bigCell != null) {
+      bigCell.setBig(true);
+    } else {
+      throw new RuntimeException("No big cell found!");
+    }
     return editorCell;
   }
 }

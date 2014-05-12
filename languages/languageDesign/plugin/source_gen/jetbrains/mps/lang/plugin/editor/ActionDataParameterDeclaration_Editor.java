@@ -31,6 +31,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
 public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -198,7 +199,12 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_d8l4wt_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.plugin.editor.ActionParameter_Hint");
-    editorCell.setBig(true);
+    EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
+    if (bigCell != null) {
+      bigCell.setBig(true);
+    } else {
+      throw new RuntimeException("No big cell found!");
+    }
     return editorCell;
   }
 }

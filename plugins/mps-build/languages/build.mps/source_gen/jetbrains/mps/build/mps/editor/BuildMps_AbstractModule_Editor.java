@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
 public class BuildMps_AbstractModule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -33,7 +34,12 @@ public class BuildMps_AbstractModule_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_c0h8k0_a");
-    editorCell.setBig(true);
+    EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
+    if (bigCell != null) {
+      bigCell.setBig(true);
+    } else {
+      throw new RuntimeException("No big cell found!");
+    }
     return editorCell;
   }
 }
