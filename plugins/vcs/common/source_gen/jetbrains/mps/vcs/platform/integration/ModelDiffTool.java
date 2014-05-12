@@ -19,6 +19,7 @@ import java.awt.Window;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.util.FileUtil;
@@ -108,7 +109,7 @@ public class ModelDiffTool implements DiffTool {
       byte[] bytes = content.getBytes();
       // for added/deleted models create empty model to compare with 
       if (bytes.length == 0) {
-        return new MergeTemporaryModel(new SModelReference("", ""), true);
+        return new MergeTemporaryModel(new SModelReference(null, SModelId.generate(), "<empty merge model>"), true);
       }
       FileType contentType = content.getContentType();
       String ext = MPSExtentions.MODEL;

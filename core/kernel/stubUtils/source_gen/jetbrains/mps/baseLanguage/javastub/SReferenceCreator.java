@@ -14,11 +14,11 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.StubModelsResolver;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 
 public class SReferenceCreator implements SReferenceHandler {
   private static final String JAVA_STUB_STEREOTYPE = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -43,8 +43,10 @@ public class SReferenceCreator implements SReferenceHandler {
 
     Set<SModelReference> possibleModels = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, JAVA_STUB_STEREOTYPE).toString(), null);
 
+    SModelReference modelRef = StubHelper.uidForPackageInStubs(module.getModuleReference(), pack);
+
     if (SetSequence.fromSet(possibleModels).isEmpty()) {
-      return jetbrains.mps.smodel.SReference.create(role, source, new jetbrains.mps.smodel.SModelReference(pack, JAVA_STUB_STEREOTYPE), targetNodeId, resolveInfo);
+      return jetbrains.mps.smodel.SReference.create(role, source, modelRef, targetNodeId, resolveInfo);
     }
 
     for (SModelReference m : possibleModels) {
@@ -52,7 +54,7 @@ public class SReferenceCreator implements SReferenceHandler {
     }
 
     if (SetSequence.fromSet(possibleModels).count() > 1) {
-      return new DynamicReference(role, source, new jetbrains.mps.smodel.SModelReference(pack, JAVA_STUB_STEREOTYPE), resolveInfo);
+      return new DynamicReference(role, source, modelRef, resolveInfo);
     }
 
     // only one possible model 

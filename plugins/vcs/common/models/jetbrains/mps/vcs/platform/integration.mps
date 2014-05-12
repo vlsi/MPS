@@ -966,12 +966,14 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bmv6.1549936565245970396" resolveInfo="MergeTemporaryModel" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2668616065832159608" nodeInfo="nn">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2668616065832159609" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~SModelReference%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SModelReference" />
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2668616065832159610" nodeInfo="nn">
-                            <property name="value" nameId="tpee.1070475926801" value="" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~SModelReference%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference,org%djetbrains%dmps%dopenapi%dmodel%dSModelId,java%dlang%dString)" resolveInfo="SModelReference" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6081859757781711020" nodeInfo="nn" />
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6081859757781727633" nodeInfo="nn">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~SModelId%dgenerate()%cjetbrains%dmps%dsmodel%dSModelId" resolveInfo="generate" />
+                            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2d.~SModelId" resolveInfo="SModelId" />
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2668616065832159611" nodeInfo="nn">
-                            <property name="value" nameId="tpee.1070475926801" value="" />
+                            <property name="value" nameId="tpee.1070475926801" value="&lt;empty merge model&gt;" />
                           </node>
                         </node>
                       </node>
