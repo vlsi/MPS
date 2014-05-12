@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -226,15 +225,11 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     return result;
   }
 
-  private static SModelFqName getModelFqName(Language module) {
-    return new SModelFqName(module.getModuleName(), SModelStereotype.DESCRIPTOR);
-  }
-
   private static SModelReference getSModelReference(Language module) {
-    SModelFqName fqName = getModelFqName(module);
     SModuleId moduleId = module.getModuleReference().getModuleId();
-    SModelId id = moduleId != null ? jetbrains.mps.smodel.SModelId.foreign("descriptor", moduleId.toString()) : null;
-    return new jetbrains.mps.smodel.SModelReference(fqName, id);
+    assert moduleId != null;
+    SModelId id = jetbrains.mps.smodel.SModelId.foreign("descriptor", moduleId.toString());
+    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id, module.getModuleName() + "@" + SModelStereotype.DESCRIPTOR);
   }
 
   public String toString() {

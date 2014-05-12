@@ -27,7 +27,6 @@ import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -77,9 +76,8 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
       FileDataSource source = new FileDataSource(handle.getFile(), this);
       String stereotype = SModelStereotype.getStubStereotypeForId("project");
       String longName = handle.getDescriptor().getModuleReference().getModuleName();
-      SModelFqName fqname = new SModelFqName(getModule().getModuleName(), longName, stereotype);
       SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(stereotype, getModule().getModuleId().toString(), longName);
-      SModelReference ref = new jetbrains.mps.smodel.SModelReference(fqname, modelId);
+      SModelReference ref = new jetbrains.mps.smodel.SModelReference(getModule().getModuleReference(), modelId, longName + "@" + stereotype);
       models.add(new ModuleFileSModel(ref, source));
     }
   }

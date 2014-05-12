@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.language.ConceptRepository;
@@ -199,16 +198,11 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return result;
   }
 
-  private static SModelFqName getModelFqName(SModule module) {
-    return new SModelFqName(PersistenceFacade.getInstance().createModuleReference(MODULE_REF).getModuleName(), "module." + module.getModuleName(),
-        SModelStereotype.getStubStereotypeForId("project"));
-  }
-
   private static SModelReference getSModelReference(SModule module) {
-    SModelFqName fqName = getModelFqName(module);
     SModuleId moduleId = module.getModuleReference().getModuleId();
     SModelId id = moduleId != null ? jetbrains.mps.smodel.SModelId.foreign("project", moduleId.toString()) : null;
-    return new jetbrains.mps.smodel.SModelReference(fqName, id);
+    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id,
+        "module." + module.getModuleName() + "@" + SModelStereotype.getStubStereotypeForId("project"));
   }
 
   public String toString() {
