@@ -92,6 +92,7 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
       style.set(StyleAttributes.UNDERLINED, true);
+      style.set(StyleAttributes.EDITABLE, false);
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
       return editorCell;

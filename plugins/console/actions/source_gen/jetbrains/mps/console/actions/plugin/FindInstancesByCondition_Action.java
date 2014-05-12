@@ -13,9 +13,9 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.console.tool.ConsoleTab;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.console.tool.ConsoleTool;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.console.tool.ConsoleTab;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Logger;
@@ -74,8 +74,9 @@ public class FindInstancesByCondition_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ConsoleTab tab = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).getCurrentEditableTab();
-      SNode command = _quotation_createNode_flklsf_a0b0a(((SNode) MapSequence.fromMap(_params).get("node")));
+      ConsoleTool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class);
+      ConsoleTab tab = tool.getCurrentEditableTab();
+      SNode command = _quotation_createNode_flklsf_a0c0a(((SNode) MapSequence.fromMap(_params).get("node")));
       tab.insertCommand(command);
       tab.selectNode(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(tab.getRoot(), "commandHolder", true), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{})).first(), "body", true));
     } catch (Throwable t) {
@@ -87,7 +88,7 @@ public class FindInstancesByCondition_Action extends BaseAction {
 
   protected static Logger LOG = LogManager.getLogger(FindInstancesByCondition_Action.class);
 
-  private static SNode _quotation_createNode_flklsf_a0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_flklsf_a0c0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

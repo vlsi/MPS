@@ -187,7 +187,7 @@ public abstract class UsagesView implements IExternalizeable {
   }
 
   public String getCaption() {
-    return mySearchQuery == null ? "" : mySearchQuery.getCaption();
+    return mySearchQuery == null ? "Usages" : mySearchQuery.getCaption();
   }
 
   public Icon getIcon() {

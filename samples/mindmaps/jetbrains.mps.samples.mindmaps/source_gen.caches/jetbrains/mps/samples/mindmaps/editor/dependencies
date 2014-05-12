@@ -82,6 +82,7 @@
     <classNode dependClassName="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.editor.MindMap_diagram_Editor" file="MindMap_diagram_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />
