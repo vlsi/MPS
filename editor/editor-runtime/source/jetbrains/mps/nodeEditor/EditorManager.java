@@ -498,8 +498,9 @@ public class EditorManager {
         if (!nextCell.isBig()) {
           // trying to avoid calling cell.getSNode().toString() for each node...
           assert false :
-              "Not big cell found. Original cell: " + cell.getCellId() + ", node: " + cell.getSNode() + ". Found cell: " + nextCell.getCellId() + ", node: " +
-                  node;
+              "\"Not big\" cell found. Original cell: " + cell.getCellId() + ", node: " + cell.getSNode() + ", concept: " +
+                  cell.getSNode().getConcept().getQualifiedName() + ". Found cell: " + nextCell.getCellId() + ", node: " +
+                  node + ", concept: " + node.getConcept().getQualifiedName();
         }
         return nextCell;
       }
