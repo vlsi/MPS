@@ -46,15 +46,17 @@ import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.generator.TransientModelsModule;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class LanguageEditorChecker extends BaseEditorChecker {
   private boolean myMessagesChanged = false;
+  private boolean myForceRunQuickFixes = false;
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
 
   private Map<EditorComponent, LanguageErrorsComponent> myEditorComponentToErrorMap = MapSequence.fromMap(new HashMap<EditorComponent, LanguageErrorsComponent>());
@@ -117,7 +119,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   @Override
-  public void doDispose() {
+  protected void doDispose() {
     Sequence.fromIterable(MapSequence.fromMap(myEditorComponentToErrorMap).values()).visitAll(new IVisitor<LanguageErrorsComponent>() {
       public void visit(LanguageErrorsComponent it) {
         it.dispose();
@@ -148,12 +150,12 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   @Override
-  public boolean areMessagesChanged() {
+  protected boolean areMessagesChanged() {
     return myMessagesChanged;
   }
 
   @Override
-  public boolean isLaterThan(BaseEditorChecker checker) {
+  protected boolean isLaterThan(BaseEditorChecker checker) {
     if (checker instanceof TypesEditorChecker) {
       return true;
     }
@@ -164,12 +166,12 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   @Override
-  public boolean hasDramaticalEvent(List<SModelEvent> list) {
+  protected boolean hasDramaticalEvent(List<SModelEvent> list) {
     return true;
   }
 
   @Override
-  public Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
+  protected Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
       @Override
       public Set<EditorMessage> compute(TypeCheckingContext p0) {
@@ -178,7 +180,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     });
   }
 
-  public Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
+  private Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     SModel model = editorContext.getModel();
     myScopeChecker.setEditorComponent(editorComponent);
@@ -259,6 +261,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       return result;
     }
 
+    boolean runQuickFixes = shouldRunQuickFixs(model, inspector);
     final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
     for (IErrorReporter errorReporter : errorsComponent.getErrors()) {
       SNode nodeWithError = errorReporter.getSNode();
@@ -270,7 +273,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       String errorString = errorReporter.reportError();
       HighlighterMessage message = HighlightUtil.createHighlighterMessage(nodeWithError, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, LanguageEditorChecker.this, editorContext);
       List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
-      if (intentionProviders.size() == 1 && intentionProviders.get(0).isExecutedImmediately()) {
+      if (runQuickFixes && intentionProviders.size() == 1 && intentionProviders.get(0).isExecutedImmediately()) {
         QuickFix_Runtime quickFix = intentionProviders.get(0).getQuickFix();
         if (quickFix != null) {
           ListSequence.fromList(quickFixesToExecute).addElement(MultiTuple.<QuickFix_Runtime,SNode>from(quickFix, nodeWithError));
@@ -278,7 +281,14 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       }
       SetSequence.fromSet(result).addElement(message);
     }
-    if (ListSequence.fromList(quickFixesToExecute).isNotEmpty() && model instanceof EditableSModel && !(model.getModule() instanceof TransientModelsModule)) {
+
+    if (inspector) {
+      return result;
+    }
+    // running quick fixes in main editor only 
+    final boolean wasForceRunQuickFixes = myForceRunQuickFixes;
+    myForceRunQuickFixes = false;
+    if (ListSequence.fromList(quickFixesToExecute).isNotEmpty()) {
       LaterInvocator.invokeLater(new Runnable() {
         public void run() {
           ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
@@ -286,6 +296,10 @@ public class LanguageEditorChecker extends BaseEditorChecker {
               for (Tuples._2<QuickFix_Runtime, SNode> fix : quickFixesToExecute) {
                 if (SNodeOperations.getModel(fix._1()) != null) {
                   fix._0().execute(fix._1());
+                  if (wasForceRunQuickFixes) {
+                    // forcing to execute quickFixes for all errors reported on the modified model 
+                    myForceRunQuickFixes = true;
+                  }
                 }
               }
             }
@@ -296,9 +310,22 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     return result;
   }
 
+  private boolean shouldRunQuickFixs(SModel model, boolean inspector) {
+    if (inspector || !(model instanceof EditableSModel) || model.getModule() instanceof TransientModelsModule) {
+      return false;
+    }
+    return EditorSettings.getInstance().isAutoQuickFix() || myForceRunQuickFixes;
+  }
+
   @Override
-  public void clear(SNode node, EditorComponent component) {
+  protected void clear(SNode node, EditorComponent component) {
     MapSequence.fromMap(myEditorComponentToErrorMap).get(component).clear();
+  }
+
+  @Override
+  protected void resetCheckerState() {
+    myForceRunQuickFixes = true;
+    super.resetCheckerState();
   }
 
   protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);

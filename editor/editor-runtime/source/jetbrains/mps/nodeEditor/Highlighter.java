@@ -516,6 +516,11 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           return;
         }
         myCheckedOnceEditors.remove(editorComponent);
+        synchronized (CHECKERS_LOCK) {
+          for (BaseEditorChecker checker : myCheckers) {
+            checker.resetCheckerStateProtected();
+          }
+        }
       }
     });
   }

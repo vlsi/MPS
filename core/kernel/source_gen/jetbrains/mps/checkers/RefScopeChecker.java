@@ -78,7 +78,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     }
   }
 
-  protected boolean canExecuteImmediately(SModel model, SRepository repository) {
+  private boolean canExecuteImmediately(SModel model, SRepository repository) {
     if (repository == null) {
       return false;
     }

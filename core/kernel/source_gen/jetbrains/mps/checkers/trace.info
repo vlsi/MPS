@@ -246,7 +246,7 @@
     <nodeInfo nodeId="3918683731555144231" fileName="RefScopeChecker.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/scope/Scope;" />
     <nodeInfo nodeId="3918683731555149428" fileName="RefScopeChecker.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/Boolean;" />
     <nodeInfo nodeId="1945570412226687446" fileName="RefScopeChecker.java" startLine="72" startPosition="30" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5260402380578225291" fileName="RefScopeChecker.java" startLine="81" startPosition="81" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5260402380578225291" fileName="RefScopeChecker.java" startLine="81" startPosition="79" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5456150969127900180" fileName="RefScopeChecker.java" startLine="85" startPosition="112" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2855655749838441367" fileName="RefScopeChecker.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createResolveReferenceQuickfix#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/module/SRepository;Z)Ljetbrains/mps/errors/QuickFixProvider;" />
     <nodeInfo nodeId="4899682474279701700" fileName="RefScopeChecker.java" startLine="140" startPosition="71" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -324,7 +324,7 @@
       <varInfo nodeId="1945570412226687459" varName="ruleNode" />
       <varInfo nodeId="5452980714151365159" varName="scopeProvider" />
     </scopeInfo>
-    <scopeInfo nodeId="5799208176149770324" fileName="RefScopeChecker.java" startLine="81" startPosition="81" endLine="90" endPosition="16" />
+    <scopeInfo nodeId="5799208176149770324" fileName="RefScopeChecker.java" startLine="81" startPosition="79" endLine="90" endPosition="16" />
     <scopeInfo nodeId="5799208176149770321" fileName="RefScopeChecker.java" startLine="81" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="5799208176149770337" varName="model" />
       <varInfo nodeId="5799208176149770333" varName="repository" />
