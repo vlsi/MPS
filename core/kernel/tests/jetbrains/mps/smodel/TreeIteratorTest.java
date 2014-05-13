@@ -33,7 +33,7 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public class TreeIteratorTest {
-  private SNode start, child1, child2, child3, lastNode, topNode;
+  private SNode start, child1, child2, child3, leafD, leafE, lastNode, topNode;
 
   @Before
   public void setUp() {
@@ -43,8 +43,8 @@ public class TreeIteratorTest {
     start.addChild("role", child3 = newNode("I"));
     //
     child1.addChild("role", newNode("C"));
-    child1.addChild("role", newNode("D"));
-    child1.addChild("role", newNode("E"));
+    child1.addChild("role", leafD = newNode("D"));
+    child1.addChild("role", leafE = newNode("E"));
     //
     child2.addChild("role", newNode("G"));
     child2.addChild("role", newNode("H"));
@@ -65,27 +65,17 @@ public class TreeIteratorTest {
       all.add(n);
     }
     Assert.assertEquals(Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I", "J"), names(all));
-    //
-    ArrayList<SNode> withoutNode2 = new ArrayList<SNode>();
-    for (DescendantsTreeIterator it = new DescendantsTreeIterator(start); it.hasNext(); ) {
-      SNode n = it.next();
-      if (n == child2) {
-        it.skipChildren();
-        continue;
-      }
-      withoutNode2.add(n);
-    }
+    // skip non-leaf element
+    List<SNode> withoutNode2 = iterateTree(start, child2);
     Assert.assertEquals(Arrays.asList("A", "B", "C", "D", "E", "I", "J"), names(withoutNode2));
-    //
-    ArrayList<SNode> withoutLastNode = new ArrayList<SNode>();
-    for (DescendantsTreeIterator it = new DescendantsTreeIterator(start); it.hasNext(); ) {
-      SNode n = it.next();
-      if (n == lastNode) {
-        it.skipChildren();
-        continue;
-      }
-      withoutLastNode.add(n);
-    }
+    // skip leaf element without a sibling
+    List<SNode> withoutLeafE = iterateTree(start, leafE);
+    Assert.assertEquals(Arrays.asList("A", "B", "C", "D", "F", "G", "H", "I", "J"), names(withoutLeafE));
+    // skip leaf element with a sibling
+    List<SNode> withoutLeafD = iterateTree(start, leafD);
+    Assert.assertEquals(Arrays.asList("A", "B", "C", "E", "F", "G", "H", "I", "J"), names(withoutLeafD));
+    // skip very last iteration element
+    List<SNode> withoutLastNode = iterateTree(start, lastNode);
     Assert.assertEquals(Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I"), names(withoutLastNode));
     //
     ArrayList<SNode> singleElement = new ArrayList<SNode>();
@@ -95,17 +85,23 @@ public class TreeIteratorTest {
     }
     Assert.assertEquals(Arrays.asList("W"), names(singleElement));
     //
-    ArrayList<SNode> dropRoot = new ArrayList<SNode>();
+    Assert.assertTrue(iterateTree(start, start).isEmpty());
     final SNode root = newNode("W");
-    for (DescendantsTreeIterator it = new DescendantsTreeIterator(root); it.hasNext(); ) {
+    List<SNode> dropRoot = iterateTree(root, root);
+    Assert.assertTrue(dropRoot.isEmpty());
+  }
+
+  private static List<SNode> iterateTree(SNode start, SNode skipNode) {
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    for (DescendantsTreeIterator it = new DescendantsTreeIterator(start); it.hasNext(); ) {
       SNode n = it.next();
-      if (n == root) {
+      if (n == skipNode) {
         it.skipChildren();
         continue;
       }
-      dropRoot.add(n);
+      rv.add(n);
     }
-    Assert.assertTrue(dropRoot.isEmpty());
+    return rv;
   }
 
   @Test
