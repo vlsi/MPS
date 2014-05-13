@@ -89,7 +89,7 @@ public class GenerationPartitioner {
     loadRules();
 
     // solve
-    final List<GenerationPhase> generationPhases = mySolver.solveNew();
+    final List<GenerationPhase> generationPhases = mySolver.solve();
     return phaseAsPlainList(generationPhases);
 //    return phaseGroupedByGenerator(generationPhases);
   }
@@ -272,21 +272,4 @@ public class GenerationPartitioner {
       return "[" + (myStrict ? "strict" : "weak") + " " + myCauseRules.size() + "]";
     }
   } // class PriorityData
-
-  static class CoherentSetData {
-    Set<TemplateMappingConfiguration> myMappings;
-    Set<MappingPriorityRule> myCauseRules;
-
-    public CoherentSetData(Set<TemplateMappingConfiguration> mappings, MappingPriorityRule rule) {
-      myMappings = mappings;
-      myCauseRules = new HashSet<MappingPriorityRule>();
-      myCauseRules.add(rule);
-    }
-
-    void merge(CoherentSetData other) {
-      myMappings.addAll(other.myMappings);
-      myCauseRules.addAll(other.myCauseRules);
-    }
-  } // class CoherentSetData
-
 }

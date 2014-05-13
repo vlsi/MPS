@@ -40,14 +40,6 @@ public class ModelContentUtil {
     return templateModelScanner.getTargetLanguages();
   }
 
-  @Deprecated
-  public static Collection<String> getUsedLanguageNamespaces(SModel model, boolean isTemplateModel) {
-    if (isTemplateModel) {
-      return getUsedLanguageNamespacesInTemplateModel(model);
-    }
-    return getUsedLanguageNamespaces(model);
-  }
-
   public static Collection<String> getUsedLanguageNamespaces(SModel model) {
     Set<String> namespaces = new HashSet<String>();
     for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
