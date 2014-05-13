@@ -93,6 +93,7 @@
     </copyModels>
     <jar destfile="${build.layout}/mps-console/lib/mps-console.jar">
       <fileset dir="${build.tmp}/java/out/consoleTool" />
+      <fileset dir="${build.tmp}/java/out/consoleActions" />
       <zipfileset file="${mps_home}/plugins/console/jetbrains.mps.console.msd" prefix="modules/jetbrains.mps.console" />
       <zipfileset dir="${mps_home}/plugins/console" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.console" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-console-models" prefix="modules/jetbrains.mps.console/models" />
@@ -436,14 +437,6 @@
       <zipfileset file="${mps_home}/plugins/console/lang/scriptsRuntime/jetbrains.mps.console.scripts.runtime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-console-lang-scriptsRuntime-models" prefix="module/models" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-actions-models">
-      <fileset dir="${mps_home}/plugins/console/actions/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.actions.jar">
-      <zipfileset file="${mps_home}/plugins/console/jetbrains.mps.console.actions.msd" prefix="modules/jetbrains.mps.console.actions" />
-      <zipfileset dir="${mps_home}/plugins/console" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.console.actions" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-console-actions-models" prefix="modules/jetbrains.mps.console.actions/actions/models" />
-    </jar>
     <jar destfile="${build.layout}/migrationAssistant.jar">
       <fileset dir="${build.tmp}/java/out/migrationAssistant" />
       <zipfileset file="${mps_home}/plugins/migrationAssistant/META-INF/plugin.xml" prefix="META-INF" />
@@ -494,7 +487,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker, java.compile.mps-java, java.compile.consoleTool, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.console.blCommand.runtime, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.base#5336086527852717844, java.compile.jetbrains.mps.console.blCommand, java.compile.jetbrains.mps.console.blCommand#5336086527852811409, java.compile.jetbrains.mps.console.ideCommands.runtime, java.compile.jetbrains.mps.console.ideCommands, java.compile.jetbrains.mps.console.ideCommands#7935955022005272663, java.compile.jetbrains.mps.console.internalCommands.runtime, java.compile.jetbrains.mps.console.internalCommands, java.compile.jetbrains.mps.console.internalCommands#8483375838963160298, java.compile.jetbrains.mps.console.scripts.runtime, java.compile.jetbrains.mps.console.scripts, java.compile.jetbrains.mps.console.scripts#1734392475490224704, java.compile.samples, java.compile.mpsmigration" />
+  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker, java.compile.mps-java, java.compile.consoleTool, java.compile.java.modules.cycle.1, java.compile.jetbrains.mps.console.blCommand.runtime, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.base#5336086527852717844, java.compile.jetbrains.mps.console.blCommand, java.compile.jetbrains.mps.console.blCommand#5336086527852811409, java.compile.jetbrains.mps.console.ideCommands.runtime, java.compile.jetbrains.mps.console.ideCommands, java.compile.jetbrains.mps.console.ideCommands#7935955022005272663, java.compile.jetbrains.mps.console.internalCommands.runtime, java.compile.jetbrains.mps.console.internalCommands, java.compile.jetbrains.mps.console.internalCommands#8483375838963160298, java.compile.jetbrains.mps.console.scripts.runtime, java.compile.jetbrains.mps.console.scripts, java.compile.jetbrains.mps.console.scripts#1734392475490224704, java.compile.consoleActions, java.compile.samples, java.compile.mpsmigration" />
   
   <target name="processResources" />
   
@@ -1629,6 +1622,45 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.console.scripts#1734392475490224704">
       <fileset dir="${mps_home}/plugins/console/lang/scripts/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.consoleActions" depends="java.compile.consoleTool, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/console/actions/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/consoleActions" />
+    <javac2 destdir="${build.tmp}/java/out/consoleActions" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/plugins/console/actions/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
+        <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
+        <fileset file="${artifacts.mpsMakePlugin}/mps-make/lib/mps-make.jar" />
+        <pathelement path="${build.tmp}/java/out/consoleTool" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.3.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/consoleActions">
+      <fileset dir="${mps_home}/plugins/console/actions/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
