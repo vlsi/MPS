@@ -81,7 +81,7 @@ public class StyleAttributes {
     return ourAttributes.size();
   }
 
-  StyleAttribute getAttribute(int index) {
+  StyleAttribute getAttributeByIndex(int index) {
     return ourAttributes.get(index);
   }
 

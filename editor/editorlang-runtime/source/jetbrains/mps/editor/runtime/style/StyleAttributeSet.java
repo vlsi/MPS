@@ -38,6 +38,6 @@ public class StyleAttributeSet extends IndexableObjectSet<StyleAttribute> {
 
   @Override
   protected StyleAttribute getObject(int index) {
-    return StyleAttributes.getInstance().getAttribute(index);
+    return StyleAttributes.getInstance().getAttributeByIndex(index);
   }
 }
