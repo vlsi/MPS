@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import org.jetbrains.annotations.NotNull;
@@ -25,7 +24,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -72,10 +70,10 @@ final class PriorityConflicts {
     register(Kind.LoPriLocksHiPri, new Conflict(origin, msg, rules));
   }
 
-  void registerLeftovers(Group group, Collection<MappingPriorityRule> rules) {
+  void registerLeftovers(Collection<MappingPriorityRule> rules) {
     SModuleReference origin = getOrigin(rules);
     String msg = String.format("Rules left after all top-priority rules were consumed: %s", describeCollection(rules));
-    register(Kind.PastTopPri, new Conflict(null, msg, rules));
+    register(Kind.PastTopPri, new Conflict(origin, msg, rules));
   }
 
   void registerInvalid(SModuleReference origin, @NotNull String message, MappingPriorityRule badRule) {
@@ -107,7 +105,7 @@ final class PriorityConflicts {
     return myConflictingRules.get(kind);
   }
 
-  private static String describeCollection(Collection<? extends Object> coll) {
+  private static String describeCollection(Collection<?> coll) {
     if (coll.isEmpty()) {
       return "";
     }
@@ -134,13 +132,4 @@ final class PriorityConflicts {
     }
     return null;
   }
-
-  private static Collection<TemplateMappingConfiguration> unionMapConfigs(Group... groups) {
-    HashSet<TemplateMappingConfiguration> rv = new HashSet<TemplateMappingConfiguration>();
-    for (Group g : groups) {
-      rv.addAll(g.getElements());
-    }
-    return rv;
-  }
-
 }

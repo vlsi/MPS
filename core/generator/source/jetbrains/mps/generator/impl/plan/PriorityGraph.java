@@ -260,7 +260,7 @@ class PriorityGraph {
       if (edge.isTrivial()) {
         continue;
       }
-      conflicts.registerLeftovers(edge.later(), edge.getRules());
+      conflicts.registerLeftovers(edge.getRules());
     }
   }
 

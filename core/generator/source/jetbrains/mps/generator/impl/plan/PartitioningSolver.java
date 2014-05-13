@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -106,9 +105,8 @@ public class PartitioningSolver {
     while (!myPriorityGraph.isEmpty()) {
       Collection<Group> step = myPriorityGraph.getGroupsNotInDependency();
       if (step.isEmpty()) {
+        // non-empty graph but no independent groups
         myPriorityGraph.reportEdgesLeft(myConflicts);
-        // FIXME non-empty graph but no independent groups
-        assert false;
         break;
       }
       for (Iterator<Group> it = step.iterator(); it.hasNext(); ) {

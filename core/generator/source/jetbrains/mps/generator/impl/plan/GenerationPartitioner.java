@@ -234,42 +234,4 @@ public class GenerationPartitioner {
   public PriorityConflicts getConflictingPriorityRules() {
     return myConflicts;
   }
-
-  static class PriorityData {
-    boolean myStrict;
-    Set<MappingPriorityRule> myCauseRules = new HashSet<MappingPriorityRule>();
-
-    public PriorityData(boolean strict, MappingPriorityRule causeRule) {
-      this.myStrict = strict;
-      this.myCauseRules.add(causeRule);
-    }
-
-    public PriorityData(boolean strict, Set<MappingPriorityRule> causeRules) {
-      this.myStrict = strict;
-      this.myCauseRules.addAll(causeRules);
-    }
-
-    public PriorityData(PriorityData pd) {
-      update(pd);
-    }
-
-    public boolean isStrict() {
-      return myStrict;
-    }
-
-    public boolean isWeak() {
-      return !myStrict;
-    }
-
-    public void update(PriorityData pd) {
-      myCauseRules.addAll(pd.myCauseRules);
-      if (pd.myStrict) {
-        myStrict = true;
-      }
-    }
-
-    public String toString() {
-      return "[" + (myStrict ? "strict" : "weak") + " " + myCauseRules.size() + "]";
-    }
-  } // class PriorityData
 }
