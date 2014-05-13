@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 final class PriorityConflicts {
-  /*package*/enum Kind { SelfLock, PastTopPri, LoPriLocksHiPri, CoherentWithStrict, CoherentPrioMix, }
+  /*package*/enum Kind { SelfLock, PastTopPri, LoPriLocksHiPri, CoherentWithStrict, CoherentPrioMix, Invalid}
 
   private final Collection<TemplateModule> myGenerators;
   private final Map<Kind, List<Conflict>> myConflictingRules;
@@ -75,6 +76,10 @@ final class PriorityConflicts {
     SModuleReference origin = getOrigin(rules);
     String msg = String.format("Rules left after all top-priority rules were consumed: %s", describeCollection(rules));
     register(Kind.PastTopPri, new Conflict(null, msg, rules));
+  }
+
+  void registerInvalid(SModuleReference origin, @NotNull String message, MappingPriorityRule badRule) {
+    register(Kind.Invalid, new Conflict(origin, message, Collections.singleton(badRule)));
   }
 
   private void register(Kind kind, Conflict conflict) {

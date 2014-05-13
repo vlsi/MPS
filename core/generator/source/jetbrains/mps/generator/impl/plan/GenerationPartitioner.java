@@ -131,6 +131,17 @@ public class GenerationPartitioner {
 
     Collection<TemplateMappingConfiguration> lhs = getMappingsFromRef(left, generator, generator.getAlias());
     Collection<TemplateMappingConfiguration> rhs = getMappingsFromRef(right, generator, generator.getAlias());
+    if (lhs.isEmpty() || rhs.isEmpty()) {
+      final String lang = generator.getSourceLanguage().getNamespace();
+      if (lhs.isEmpty() && rhs.isEmpty()) {
+        final String msg = String.format("Generator for language %s defines priority rule %s, both sides of the rule miss mapping configuration. The rule doesn't affect the generation and is ignored.", lang, rule);
+        myConflicts.registerInvalid(generator.getReference(), msg, rule);
+      } else {
+        final String msg = String.format("Generator for language %s defines invalid priority rule %s, with no mapping configurations specified at one side. The rule is ignored.", lang, rule);
+        myConflicts.registerInvalid(generator.getReference(), msg, rule);
+      }
+      return;
+    }
     switch (rule.getType()) {
       case STRICTLY_TOGETHER:
         Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(rhs);
