@@ -15,5 +15,9 @@
   <extensions defaultExtensionNs="com.intellij">
     <mps.modelRootEntry rootType="java_classes" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntryFactory"/>
     <mps.facetTabFactory facetType="java" className="jetbrains.mps.ide.java.ui.JavaModuleFacetTabFactory"/>
+    <mps.projectGroupTemplateEP implementation="jetbrains.mps.workbench.dialogs.project.newproject.SolutionProjectsGroup"/>
+    <mps.solutionProjectTemplateEP implementation="jetbrains.mps.workbench.dialogs.project.newproject.DefaultSolutionProjectTemplate"/>
+    <mps.projectGroupTemplateEP implementation="jetbrains.mps.workbench.dialogs.project.newproject.OtherProjectsGroup"/>
+    <mps.otherProjectTemplateEP implementation="jetbrains.mps.workbench.dialogs.project.newproject.EmptyProjectTemplate"/>
   </extensions>
 </components>

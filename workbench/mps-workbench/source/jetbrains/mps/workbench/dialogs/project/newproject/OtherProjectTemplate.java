@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,11 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.extensions.ExtensionPointName;
 
 /**
- * Provides custom project creation
+ * Implementation of this interface extends list of project templates in 'Other' group in 'New project dialog'
  */
-public interface TemplateFiller {
-  /**
-   * Will be invoked immediately after project creation to modify project
-   * @param project - instance of MPSProject that will be transformed
-   */
-  public void fillProjectWithModules(MPSProject project);
+public interface OtherProjectTemplate extends MPSProjectTemplate {
+  public static final ExtensionPointName<OtherProjectTemplate> EP_NAME = ExtensionPointName.create("com.intellij.mps.otherProjectTemplateEP");
 }
