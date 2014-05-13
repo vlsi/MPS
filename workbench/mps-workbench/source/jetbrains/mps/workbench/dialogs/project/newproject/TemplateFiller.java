@@ -17,6 +17,13 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import jetbrains.mps.project.MPSProject;
 
+/**
+ * Provides custom project creation
+ */
 public interface TemplateFiller {
+  /**
+   * Will be invoked immediately after project creation to modify project
+   * @param project - instance of MPSProject that will be transformed
+   */
   public void fillProjectWithModules(MPSProject project);
 }

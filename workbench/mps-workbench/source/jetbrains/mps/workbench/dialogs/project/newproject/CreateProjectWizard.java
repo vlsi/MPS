@@ -40,6 +40,7 @@ import com.intellij.ui.popup.list.GroupedItemsListRenderer;
 import com.intellij.ui.speedSearch.FilteringListModel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.WorkbenchPathManager;
@@ -65,6 +66,8 @@ import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -172,13 +175,22 @@ public class CreateProjectWizard extends DialogWrapper {
 
     myList = new JBList();
 
-    List<ProjectTemplatesGroup> templatesGroups = new LinkedList<ProjectTemplatesGroup>();
+    List<ProjectTemplatesGroup> templatesGroups = new SortedList<ProjectTemplatesGroup>(new Comparator<ProjectTemplatesGroup>() {
+      @Override
+      public int compare(ProjectTemplatesGroup o1, ProjectTemplatesGroup o2) {
+        //Put DSL/Development groups on top & Other group to the last place
+        if(o1.getName().equals("DSL")) return -1;
+        if(o2.getName().equals("DSL")) return 1;
+        if(o1.getName().equals("Development")) return -1;
+        if(o2.getName().equals("Development")) return 1;
+        if(o1.getName().equals("Other")) return 1;
+        if(o2.getName().equals("Other")) return -1;
+        return o1.getName().compareToIgnoreCase(o2.getName());
+      }
+    });
     List<TemplateItem> templateItems = new LinkedList<TemplateItem>();
 
-    templatesGroups.add(new LanguageProjectsGroup());
-    templatesGroups.add(new SolutionProjectsGroup());
-    templatesGroups.add(new OtherProjectsGroup());
-    //if(InternalFlag.isInternalMode()) templatesGroups.add(new FakeProjectTemplatesGroup());
+    templatesGroups.addAll(Arrays.asList(ProjectTemplatesGroup.EP_NAME.getExtensions()));
 
     for (ProjectTemplatesGroup templatesGroup : templatesGroups) {
       for (MPSProjectTemplate template : templatesGroup.getTemplates()) {
