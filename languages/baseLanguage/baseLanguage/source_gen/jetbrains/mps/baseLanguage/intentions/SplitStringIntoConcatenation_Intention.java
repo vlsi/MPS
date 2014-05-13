@@ -8,10 +8,10 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -47,7 +47,14 @@ public class SplitStringIntoConcatenation_Intention implements IntentionFactory 
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(isApplicableToNode(node, editorContext))) {
+      return false;
+    }
     return true;
+  }
+
+  private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return editorContext.getSelectedCell() instanceof EditorCell_Property;
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -74,7 +81,7 @@ public class SplitStringIntoConcatenation_Intention implements IntentionFactory 
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      EditorCell_Label cell = ((EditorCell_Label) editorContext.getContextCell());
+      EditorCell_Property cell = ((EditorCell_Property) editorContext.getContextCell());
       int caretPosition = cell.getCaretPosition();
       String s1 = SPropertyOperations.getString(node, "value").substring(0, caretPosition);
       String s2 = SPropertyOperations.getString(node, "value").substring(caretPosition);
