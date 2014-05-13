@@ -4184,6 +4184,34 @@
     <unitInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.GetElementOperationFollowedByPropertyAccess_Test$TestBody" />
     <unitInfo nodeId="5679018521759262129" fileName="GetElementOperationFollowedByPropertyAccess_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.GetElementOperationFollowedByPropertyAccess_Test" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/595838485955053993">
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="16" startPosition="72" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="22" startPosition="76" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="23" startPosition="114" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="29" startPosition="74" endLine="30" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="30" startPosition="145" endLine="31" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="34" startPosition="78" endLine="35" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="35" startPosition="145" endLine="36" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck595838485955120512#()V" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck595838485955141760#()V" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck595838485955120512#()V" />
+    <nodeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck595838485955141760#()V" />
+    <scopeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="16" startPosition="72" endLine="18" endPosition="163" />
+    <scopeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="22" startPosition="76" endLine="24" endPosition="167" />
+    <scopeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="29" startPosition="74" endLine="31" endPosition="158">
+      <varInfo nodeId="595838485955053993" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="34" startPosition="78" endLine="36" endPosition="158">
+      <varInfo nodeId="595838485955053993" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <unitInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="27" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test$TestBody" />
+    <unitInfo nodeId="595838485955053993" fileName="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.WildCardTypeIsAValidSubstituteForBoundedParameter_Test" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/6011730950863071455">
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="16" startPosition="90" endLine="17" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6011730950863071455" fileName="NullableAnalyzer_Test.java" startLine="17" startPosition="114" endLine="18" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

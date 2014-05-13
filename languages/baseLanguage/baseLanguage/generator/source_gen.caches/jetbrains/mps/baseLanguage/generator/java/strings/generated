@@ -57,8 +57,12 @@
   <source id="1225277059676" name="reduce_IsNotEmptyExpression" hash="-bzmwdrtnlvdomh5cs0bxu5pvqxt9h0l">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1225277059687" name="reduce_NPEEqualsExpression" hash="-af7ffrl1255l17kln5pf0tt60uvmli" />
-  <source id="1225277059706" name="reduce_NPENotEqualsExpression" hash="2lz71sbpe61ug0ynqbyg6pncpb1p96v" />
+  <source id="1225277059687" name="reduce_NPEEqualsExpression" hash="-af7ffrl1255l17kln5pf0tt60uvmli">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1225277059706" name="reduce_NPENotEqualsExpression" hash="2lz71sbpe61ug0ynqbyg6pncpb1p96v">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1225277059742" name="reduce_StringType" hash="26iwcaav6qybc46x57dpbw88orwl1ju" />
   <source id="1225277059745" name="reduce_SubstringExpression" hash="aygxlnph2hd96g9g0ol8z8nx972qfky" />
   <source id="1225277059783" name="reduce_TrimOperation_Both" hash="-2j8m4gnznw4osvgljr36mka2ea9sktk" />
