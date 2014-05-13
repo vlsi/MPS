@@ -19,7 +19,7 @@ package jetbrains.mps.editor.runtime.style;
  * User: shatalin
  * Date: 1/14/13
  */
-public class InheritableStyleAttribute<T> extends AbstractStyleAttribute<T> {
+public final class InheritableStyleAttribute<T> extends AbstractStyleAttribute<T> {
   private T myDefaultValue;
 
   /*package*/ InheritableStyleAttribute(String name, T defaultValue, boolean register) {

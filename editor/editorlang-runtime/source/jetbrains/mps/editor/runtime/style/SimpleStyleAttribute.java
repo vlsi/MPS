@@ -19,7 +19,7 @@ package jetbrains.mps.editor.runtime.style;
  * User: shatalin
  * Date: 1/14/13
  */
-public class SimpleStyleAttribute<T> extends AbstractStyleAttribute<T> {
+public final class SimpleStyleAttribute<T> extends AbstractStyleAttribute<T> {
   private T myDefaultValue;
 
   /*package*/ SimpleStyleAttribute(String name, T defaultValue, boolean register) {
