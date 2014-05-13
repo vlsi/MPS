@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
@@ -174,7 +175,7 @@ public class CopyPasteUtil {
         if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(newSourceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall") && oldTargetNode != null) {
           newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
-          String resolveInfo = (oldTargetNode == null ? ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() : oldTargetNode.getName());
+          String resolveInfo = (oldTargetNode == null ? ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() : ((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(newSourceNode, "jetbrains.mps.baseLanguage.structure.ClassifierType") ? BehaviorReflection.invokeVirtual(String.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(oldTargetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getFqName_1213877404258", new Object[]{}) : oldTargetNode.getName())));
           if (resolveInfo != null) {
             if (oldTargetNode != null && !(SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId(), resolveInfo);
