@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-eki1j3zmbid15sy6qk1uea31il1qxzw">
+<dependencies version="2" modelHash="-4tb82h8x7b312oi6156m1hgqwo7npzo">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-efog2glad1by070i4g5f821mx6dbvdo" />
   <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" hash="-2xsuciyp3cly582ppcv3ypt85zduww0" />
@@ -14,7 +14,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-b5j65z7mcybbtesos0omxqxxxx2nv6e" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="x5zwb0e4ot11ke77qb3any4geijei7" dependsOnNodes="true">
+  <common hash="-8xk29se4wxfcpg7p37qgyeh76gnpwjm" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="1217271585456" name="OnlyStatementsCanUnreachable" hash="c17sjf9bgq98biu68q9n4zz6pui6pqh" dependsOnNodes="true">
@@ -69,6 +69,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -89,6 +90,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OnlyStatementsCanUnreachable_Test.java" />
   </source>
   <source id="1217271585523" name="ForLoop" hash="-6l208e706xung85t4bdk67xml3vh2yg" dependsOnNodes="true">
@@ -143,6 +145,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -153,10 +156,12 @@
     <dep root="9092976468699800028" />
     <dep root="966837649722289098" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ForLoop_Test.java" />
   </source>
@@ -212,6 +217,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -231,6 +237,8 @@
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MethodParametersTest_Test.java" />
   </source>
   <source id="1217271585692" name="UnusedAssignment" hash="-9105xnjsi2pd396gksjscz178i74vwe" dependsOnNodes="true">
@@ -285,6 +293,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -297,15 +306,16 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="UnusedAssignment_Test.java" />
   </source>
-  <source id="1217271586138" name="UnreachableStatements" hash="afkc6y31cs1m36iauckjcdxfc5c8way" dependsOnNodes="true">
+  <source id="1217271586138" name="UnreachableStatements" hash="5k51d9ph9p6fkf3160cwfywbhhvsijb" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -357,6 +367,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -368,14 +379,15 @@
     <dep root="966837649722289098" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="UnreachableStatements_Test.java" />
   </source>
-  <source id="1217271586324" name="ReadAction" hash="d42v504ydlzrx4gdqc9ry3va4h6zg9u" dependsOnNodes="true">
+  <source id="1217271586324" name="ReadAction" hash="9qiy0124y6qj5crga0vt06btyvifpoz" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -427,6 +439,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -438,9 +451,11 @@
     <dep root="966837649722289098" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ReadAction_Test.java" />
   </source>
   <source id="1217271586411" name="DataFlowInClosure" hash="8a2l0h7s8xpnjt9uas85yb182m6irye" dependsOnNodes="true">
@@ -495,6 +510,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -508,13 +524,15 @@
     <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="DataFlowInClosure_Test.java" />
   </source>
-  <source id="1217271586585" name="UnexpectedReturnInAnonymousClass" hash="-23ptkxpmnr6lvgm3l5g9zzuahm4vcc9" dependsOnNodes="true">
+  <source id="1217271586585" name="UnexpectedReturnInAnonymousClass" hash="-59yewjynxklx7b6f025h2tviw25glxa" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -566,6 +584,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -579,13 +598,14 @@
     <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnexpectedReturnInAnonymousClass_Test.java" />
   </source>
-  <source id="1217271587023" name="UnusedVariableDeclaration" hash="-5j9o5m3sbam1y9aq2q4toczr4pn5djf" dependsOnNodes="true">
+  <source id="1217271587023" name="UnusedVariableDeclaration" hash="74quss65ctvw0cgik42wk2kunb4p7tj" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -637,6 +657,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -654,7 +675,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnusedVariableDeclaration_Test.java" />
   </source>
-  <source id="1217271587074" name="AnonymousClass" hash="-ang65nab20pvs2nyx9jvic78x274i5w" dependsOnNodes="true">
+  <source id="1217271587074" name="AnonymousClass" hash="-85ok5pihtj2cakep4uwjbfag5hvg0ph" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -706,6 +727,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -777,6 +799,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -794,7 +817,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="VariableUninitialized_Test.java" />
   </source>
-  <source id="1217271587918" name="IfStatementDataFlow" hash="-82zby4yo1p1565ooq2fmnw5ecl7q1em" dependsOnNodes="true">
+  <source id="1217271587918" name="IfStatementDataFlow" hash="79c4jvzram3gv3cgnym2dg6k0mk2ms3" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -846,6 +869,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -865,7 +889,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="IfStatementDataFlow_Test.java" />
   </source>
-  <source id="1217861204623" name="IfStatementWrongUnreachable" hash="-cx3rjwaczdlmms8704ajp9wuby6h2bn" dependsOnNodes="true">
+  <source id="1217861204623" name="IfStatementWrongUnreachable" hash="-551mmvpzb4xxmzyppbf7vy6jeiz4y6o" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -917,6 +941,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -934,7 +959,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="IfStatementWrongUnreachable_Test.java" />
   </source>
-  <source id="1217866056908" name="UnusedAssignmentWithIF" hash="dnf0vei0bjk9ai0nh0owdn6yco3fxet" dependsOnNodes="true">
+  <source id="1217866056908" name="UnusedAssignmentWithIF" hash="e7vhjtwjz9wq1di1gafj47ngtp8lzox" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -986,6 +1011,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1002,7 +1028,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnusedAssignmentWithIF_Test.java" />
   </source>
-  <source id="1220012417777" name="CatchingUnthrownException" hash="ctrpgi5hbrm0uhvfn288rt1r117mog3" dependsOnNodes="true">
+  <source id="1220012417777" name="CatchingUnthrownException" hash="-dhe6l0o1bii8d02bn9z1jsi215c2a0k" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -1054,6 +1080,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1123,6 +1150,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1191,6 +1219,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1208,7 +1237,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnusedParameters_Test.java" />
   </source>
-  <source id="1222443174371" name="ListWithConceptFunction" hash="-2uusmzkjwcs00q51im4g3pzar1ety9i" dependsOnNodes="true">
+  <source id="1222443174371" name="ListWithConceptFunction" hash="cc6pjzmtwhtfgajborkmd108j14v44q" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -1260,6 +1289,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1328,6 +1358,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1345,7 +1376,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="CommentCanBeUnreachable_Test.java" />
   </source>
-  <source id="1229349783966" name="CommandDataflowWithReturn" hash="-c75fv0ddrrutadrpr1syg7cualk6bw8" dependsOnNodes="true">
+  <source id="1229349783966" name="CommandDataflowWithReturn" hash="dii3q1grat84ffnwqr95b1viwumnwl9" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -1397,6 +1428,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1414,12 +1446,11 @@
     <file name="CommandDataflowWithReturn_Test.java" />
   </source>
   <source id="5097124989039164757" hash="9dbw12qxeeaee7qj7rxvmy0uvkgbyf8" />
-  <source id="1326302914272879450" name="TestSafeEquals_Test" hash="53u82zscgidhzwudbrh2qoqcwviplwx">
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+  <source id="1326302914272879450" name="TestSafeEquals_Test" hash="-b72mq4hjwnz7dr8iolf6d055jy7e26">
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TestSafeEquals_Test.java" />
   </source>
-  <source id="6011730950863071455" name="NullableAnalyzer" hash="-1yh2q9j9z30mukti73ovqoc51tq3ruq" dependsOnNodes="true">
+  <source id="6011730950863071455" name="NullableAnalyzer" hash="41rpjvkmibs9m8a72ne78sar5m1hx3k" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -1471,6 +1502,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1541,6 +1573,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1556,7 +1589,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ForBreakUnreachable_Test.java" />
   </source>
-  <source id="7970711249077196600" name="PrivateField" hash="78bicc2il91tmwnmbetei280sx7kqlb" dependsOnNodes="true">
+  <source id="7970711249077196600" name="PrivateField" hash="-29jspuqvx3crp0w1lj446l5hho8bl13" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -1609,6 +1642,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="818296778600371163" />
@@ -1678,6 +1712,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1746,6 +1781,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1812,6 +1848,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -1879,6 +1916,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7970711249077196600" />
     <dep root="818296778600371163" />
@@ -1895,7 +1933,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="Validation_Test.java" />
   </source>
-  <source id="5113180367541522955" name="TypesTest_BL" hash="-38g254lnx46da4ot3nj71ccqmlx9mi2" dependsOnNodes="true">
+  <source id="5113180367541522955" name="TypesTest_BL" hash="-c7z5a2149diwlygu9o4u3do367j4397" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -1947,6 +1985,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2016,6 +2055,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2031,7 +2071,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="hasSameSignatureTest_Test.java" />
   </source>
-  <source id="4395293866213195826" name="TestExpectedType" hash="-9p1lfaz0oa75huqnmkxoe9dgjbbthlu" dependsOnNodes="true">
+  <source id="4395293866213195826" name="TestExpectedType" hash="4yveyzztffhq7t5t0kna9d3t7b6azkq" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2083,6 +2123,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2099,7 +2140,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="TestExpectedType_Test.java" />
   </source>
-  <source id="4705425356438246924" name="FinalVarRefs" hash="-b5om77n40nmceebrnxgd6yfm9rykh4d" dependsOnNodes="true">
+  <source id="4705425356438246924" name="FinalVarRefs" hash="-8cxd2kkcut8nnuccz9vl9yxt7spf0tg" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2151,6 +2192,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2168,19 +2210,19 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="FinalVarRefs_Test.java" />
   </source>
-  <source id="4246614868164066988" name="MapperKind" hash="1bq04pxbtf4giu30xez7647iuaxal6">
+  <source id="4246614868164066988" name="MapperKind" hash="410oik3mmbhel97b7kqyqj7n7tuv8oh">
     <file name="MapperKind.java" />
   </source>
   <source id="4246614868164066702" name="DataKind" hash="darq3516whk3gfquj8pvb44f2hgtjvu">
     <file name="DataKind.java" />
   </source>
-  <source id="4246614868164067000" name="SomeMapper" hash="-6od4a0xij7aqrqfdozm5jjuripq7ka9">
+  <source id="4246614868164067000" name="SomeMapper" hash="465scq2r3xbe69mmje5ar509raiayvp">
     <file name="SomeMapper.java" />
   </source>
   <source id="4246614868164066980" name="Mapper" hash="-cwf7lxm1aiidp1y951t0ozdwq8kcnrx">
     <file name="Mapper.java" />
   </source>
-  <source id="4246614868164066709" name="Generics" hash="-ecxlwjp0zw134co6ng1gwxn08zhsgim" dependsOnNodes="true">
+  <source id="4246614868164066709" name="Generics" hash="-4xoxy1e05ma0pm5nh6vy3laewy69r5m" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2232,6 +2274,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2249,7 +2292,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="Generics_Test.java" />
   </source>
-  <source id="7209837885462471125" name="ReturnFromTry" hash="-cw5xtdy4nls1uvgv2qbhxikhz9msxn2" dependsOnNodes="true">
+  <source id="7209837885462471125" name="ReturnFromTry" hash="ga7qwiba2rwxm8c70clk5n2mdklw3t" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2301,6 +2344,7 @@
     <dep root="7187651930235347758" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2315,7 +2359,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ReturnFromTry_Test.java" />
   </source>
-  <source id="4632498131795732451" name="InvalidUseOfBoundTypes" hash="d85ab9njce9oca8v7nohzekz5wdwxda" dependsOnNodes="true">
+  <source id="4632498131795732451" name="InvalidUseOfBoundTypes" hash="dsizr3bkn3oulf56ojano3x7u8ocb9p" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2367,6 +2411,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2384,7 +2429,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="InvalidUseOfBoundTypes_Test.java" />
   </source>
-  <source id="8187342170692126565" name="WildcardsInClassDefinition" hash="4m426s6stjymywjwxgsao8z25fism92" dependsOnNodes="true">
+  <source id="8187342170692126565" name="WildcardsInClassDefinition" hash="7jji3vqm8zolvdcf2jnu8ta7tcdvsix" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2437,6 +2482,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2453,7 +2499,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="WildcardsInClassDefinition_Test.java" />
   </source>
-  <source id="4817790028254995038" name="InstanceMethodTypeArgumentMatch" hash="6jdvuukgtndlk1x33mlp1khc6yzlh82" dependsOnNodes="true">
+  <source id="4817790028254995038" name="InstanceMethodTypeArgumentMatch" hash="-69n2dctuttwv482y0d4cjle9jc1p0y8" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2505,6 +2551,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2522,7 +2569,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="InstanceMethodTypeArgumentMatch_Test.java" />
   </source>
-  <source id="6640766779615010044" name="FieldCanBeLocalVar" hash="7r3ecgka1t91t6pe9f98ae46d1hpiww" dependsOnNodes="true">
+  <source id="6640766779615010044" name="FieldCanBeLocalVar" hash="-750fagaaa1b328vzxhgbkory999bkmm" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2574,6 +2621,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2591,7 +2639,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="FieldCanBeLocalVar_Test.java" />
   </source>
-  <source id="4853049144093343618" name="GenericNewExpressionTypeParameters" hash="4emfcftdhn4ez6x0a1e7puflf2drbl" dependsOnNodes="true">
+  <source id="4853049144093343618" name="GenericNewExpressionTypeParameters" hash="81om043neum0t9r3vlzvsl77xs4k56g" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2643,6 +2691,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2660,7 +2709,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="GenericNewExpressionTypeParameters_Test.java" />
   </source>
-  <source id="488298296050326101" name="TypeInference" hash="-61119htltawzqqzhakw9s9wyii74edm" dependsOnNodes="true">
+  <source id="488298296050326101" name="TypeInference" hash="2imf1nw8zguwbw6yiy83skmk3kavw77" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2712,6 +2761,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2780,6 +2830,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2797,7 +2848,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="typeParameterDuplicationAndMisorder_Test.java" />
   </source>
-  <source id="8187342170694467176" name="WildCardsInAnonymousClassCreators" hash="aver42yclprnlt8hzgub7ptnz8cgfsm" dependsOnNodes="true">
+  <source id="8187342170694467176" name="WildCardsInAnonymousClassCreators" hash="-3xyjzds1o39i0e60ailu4uz6ge8r4ex" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2850,6 +2901,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2866,7 +2918,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="WildCardsInAnonymousClassCreators_Test.java" />
   </source>
-  <source id="4914675704512523356" name="FieldDeclarationCanBeLocalVariable" hash="bjyfz8u5sel4y0cg4gs5l0dsnqxji4d" dependsOnNodes="true">
+  <source id="4914675704512523356" name="FieldDeclarationCanBeLocalVariable" hash="cv7mn0aziz7r0vbodfplm14438s6pp0" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -2918,6 +2970,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -2987,6 +3040,7 @@
     <dep root="7187651930235347758" />
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3004,7 +3058,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="UnusedMethodTypeVariableDeclaration_Test.java" />
   </source>
-  <source id="2176128700705692341" name="BoundedTypeOnIllegalPositions" hash="-2egaprhji16zqb52djfx1p6hpx1w6hx" dependsOnNodes="true">
+  <source id="2176128700705692341" name="BoundedTypeOnIllegalPositions" hash="-epmeov09bsx2o2rm9zzxpvomg27xnxl" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -3056,6 +3110,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3073,7 +3128,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="BoundedTypeOnIllegalPositions_Test.java" />
   </source>
-  <source id="7430872850884066230" name="StaticMethodTypeArgumentsMatch" hash="7jdsncknutfppv17vwq6am0s9ipf6y8" dependsOnNodes="true">
+  <source id="7430872850884066230" name="StaticMethodTypeArgumentsMatch" hash="c82uc5debpopjs3u0sauv8bsoiw3qwa" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -3125,6 +3180,7 @@
     <dep root="7187651930235347758" />
     <dep root="7209837885462471125" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3194,6 +3250,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3262,6 +3319,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3278,7 +3336,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="SimpleUnreachable_Test.java" />
   </source>
-  <source id="966837649722289098" name="NonStaticInnerClassInstantiatedInStaticContext" hash="-b0z7c15lirwfph2rdfawsrmsqid218v" dependsOnNodes="true">
+  <source id="966837649722289098" name="NonStaticInnerClassInstantiatedInStaticContext" hash="ah0vcif7axf12w9d0gehiewn2jsec8n" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -3331,6 +3389,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3347,7 +3406,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="NonStaticInnerClassInstantiatedInStaticContext_Test.java" />
   </source>
-  <source id="3983029200623345182" name="InstanceMethodDeclarationThrownExceptions" hash="-q67h1zvoql587exuo7r0s4kjdh7q9q" dependsOnNodes="true">
+  <source id="3983029200623345182" name="InstanceMethodDeclarationThrownExceptions" hash="-915gomyn0nqqzxuikcmou9dz6jfyyny" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -3399,6 +3458,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3469,6 +3529,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
     <dep root="818296778600371163" />
@@ -3536,6 +3597,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3553,7 +3615,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ClassifierNameUniqueness_Test.java" />
   </source>
-  <source id="290469496750208032" name="FloatLiteral" hash="1cbao2pat35zmtanqueyxnewmon5vnb" dependsOnNodes="true">
+  <source id="290469496750208032" name="FloatLiteral" hash="gvhc8hr2a6hwsh82ooy6gj3f6ta9gq" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -3605,6 +3667,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3621,7 +3684,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="FloatLiteral_Test.java" />
   </source>
-  <source id="1100850602766269370" name="ArrayCreatorTest" hash="b4tmtd5g9ox2gsko2sqgg87oepz32df" dependsOnNodes="true">
+  <source id="1100850602766269370" name="ArrayCreatorTest" hash="4vth0ciyplmk3hvd3o9o1lc82t3u278" dependsOnNodes="true">
     <dep root="1217271585456" />
     <dep root="1217271585523" />
     <dep root="1217271585641" />
@@ -3673,6 +3736,7 @@
     <dep root="7209837885462471125" />
     <dep root="7430872850884066230" />
     <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
@@ -3689,7 +3753,146 @@
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <file name="ArrayCreatorTest_Test.java" />
   </source>
-  <source id="818296778600371163" name="UnwrappedTernaryOperator" hash="-4rr1yspbiy2ay64ffrcd2qmg0coetad" dependsOnNodes="true">
+  <source id="818296778600371163" name="UnwrappedTernaryOperator" hash="4q4s9hxng6o1s6alsxh3f9nkr5jh0hi" dependsOnNodes="true">
+    <dep root="1100850602766269370" />
+    <dep root="1217271585456" />
+    <dep root="1217271585523" />
+    <dep root="1217271585641" />
+    <dep root="1217271585692" />
+    <dep root="1217271586138" />
+    <dep root="1217271586324" />
+    <dep root="1217271586411" />
+    <dep root="1217271586585" />
+    <dep root="1217271587023" />
+    <dep root="1217271587074" />
+    <dep root="1217271587656" />
+    <dep root="1217271587918" />
+    <dep root="1217861204623" />
+    <dep root="1217866056908" />
+    <dep root="1220012417777" />
+    <dep root="1220013369431" />
+    <dep root="1220265193995" />
+    <dep root="1222443174371" />
+    <dep root="1226936033402" />
+    <dep root="1229349783966" />
+    <dep root="1326302914272879450" />
+    <dep root="2176128700705692341" />
+    <dep root="2654404125187242906" />
+    <dep root="2702384151996661689" />
+    <dep root="290469496750208032" />
+    <dep root="2970924421778354240" />
+    <dep root="3983029200623345182" />
+    <dep root="4246614868164066702" />
+    <dep root="4246614868164066709" />
+    <dep root="4246614868164066980" />
+    <dep root="4246614868164066988" />
+    <dep root="4246614868164067000" />
+    <dep root="4395293866213195826" />
+    <dep root="4632498131795732451" />
+    <dep root="4705425356438246924" />
+    <dep root="4817790028254995038" />
+    <dep root="4853049144093343618" />
+    <dep root="488298296050326101" />
+    <dep root="4914675704512523356" />
+    <dep root="5097124989039164757" />
+    <dep root="5113180367541522955" />
+    <dep root="5210914756411638023" />
+    <dep root="5679018521759262129" />
+    <dep root="595838485955053993" />
+    <dep root="6011730950863071455" />
+    <dep root="6639374232683434563" />
+    <dep root="6640766779615010044" />
+    <dep root="7187651930235347758" />
+    <dep root="7209837885462471125" />
+    <dep root="7430872850884066230" />
+    <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
+    <dep root="7638302724810884631" />
+    <dep root="7868761255934329294" />
+    <dep root="7970711249077196600" />
+    <dep root="8187342170692126565" />
+    <dep root="8187342170694467176" />
+    <dep root="843236768048177679" />
+    <dep root="9092976468699800028" />
+    <dep root="966837649722289098" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="UnwrappedTernaryOperator_Test.java" />
+  </source>
+  <source id="595838485955053993" name="WildCardTypeIsAValidSubstituteForBoundedParameter" hash="-91quga33xj0qnhxqumyohf5ykelgtvb" dependsOnNodes="true">
+    <dep root="1100850602766269370" />
+    <dep root="1217271585456" />
+    <dep root="1217271585523" />
+    <dep root="1217271585641" />
+    <dep root="1217271585692" />
+    <dep root="1217271586138" />
+    <dep root="1217271586324" />
+    <dep root="1217271586411" />
+    <dep root="1217271586585" />
+    <dep root="1217271587023" />
+    <dep root="1217271587074" />
+    <dep root="1217271587656" />
+    <dep root="1217271587918" />
+    <dep root="1217861204623" />
+    <dep root="1217866056908" />
+    <dep root="1220012417777" />
+    <dep root="1220013369431" />
+    <dep root="1220265193995" />
+    <dep root="1222443174371" />
+    <dep root="1226936033402" />
+    <dep root="1229349783966" />
+    <dep root="1326302914272879450" />
+    <dep root="2176128700705692341" />
+    <dep root="2654404125187242906" />
+    <dep root="2702384151996661689" />
+    <dep root="290469496750208032" />
+    <dep root="2970924421778354240" />
+    <dep root="3983029200623345182" />
+    <dep root="4246614868164066702" />
+    <dep root="4246614868164066709" />
+    <dep root="4246614868164066980" />
+    <dep root="4246614868164066988" />
+    <dep root="4246614868164067000" />
+    <dep root="4395293866213195826" />
+    <dep root="4632498131795732451" />
+    <dep root="4705425356438246924" />
+    <dep root="4817790028254995038" />
+    <dep root="4853049144093343618" />
+    <dep root="488298296050326101" />
+    <dep root="4914675704512523356" />
+    <dep root="5097124989039164757" />
+    <dep root="5113180367541522955" />
+    <dep root="5210914756411638023" />
+    <dep root="5679018521759262129" />
+    <dep root="6011730950863071455" />
+    <dep root="6639374232683434563" />
+    <dep root="6640766779615010044" />
+    <dep root="7187651930235347758" />
+    <dep root="7209837885462471125" />
+    <dep root="7430872850884066230" />
+    <dep root="7430872850884076050" />
+    <dep root="7471623575883264722" />
+    <dep root="7638302724810884631" />
+    <dep root="7868761255934329294" />
+    <dep root="7970711249077196600" />
+    <dep root="818296778600371163" />
+    <dep root="8187342170692126565" />
+    <dep root="8187342170694467176" />
+    <dep root="843236768048177679" />
+    <dep root="9092976468699800028" />
+    <dep root="966837649722289098" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" />
+  </source>
+  <source id="7471623575883264722" name="FinalMethodOverriding" hash="-4mpezx9hhncbsucez97u930dymnpvcv" dependsOnNodes="true">
     <dep root="1100850602766269370" />
     <dep root="1217271585456" />
     <dep root="1217271585523" />
@@ -3745,6 +3948,7 @@
     <dep root="7638302724810884631" />
     <dep root="7868761255934329294" />
     <dep root="7970711249077196600" />
+    <dep root="818296778600371163" />
     <dep root="8187342170692126565" />
     <dep root="8187342170694467176" />
     <dep root="843236768048177679" />
@@ -3756,75 +3960,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
-    <file name="UnwrappedTernaryOperator_Test.java" />
-  </source>
-  <source id="595838485955053993" name="WildCardTypeIsAValidSubstituteForBoundedParameter" hash="-32ii2b8lyrs0j7yemjaxce31vu5hvy4" dependsOnNodes="true">
-    <dep root="1100850602766269370" />
-    <dep root="1217271585456" />
-    <dep root="1217271585523" />
-    <dep root="1217271585641" />
-    <dep root="1217271585692" />
-    <dep root="1217271586138" />
-    <dep root="1217271586324" />
-    <dep root="1217271586411" />
-    <dep root="1217271586585" />
-    <dep root="1217271587023" />
-    <dep root="1217271587074" />
-    <dep root="1217271587656" />
-    <dep root="1217271587918" />
-    <dep root="1217861204623" />
-    <dep root="1217866056908" />
-    <dep root="1220012417777" />
-    <dep root="1220013369431" />
-    <dep root="1220265193995" />
-    <dep root="1222443174371" />
-    <dep root="1226936033402" />
-    <dep root="1229349783966" />
-    <dep root="1326302914272879450" />
-    <dep root="2176128700705692341" />
-    <dep root="2654404125187242906" />
-    <dep root="2702384151996661689" />
-    <dep root="290469496750208032" />
-    <dep root="2970924421778354240" />
-    <dep root="3983029200623345182" />
-    <dep root="4246614868164066702" />
-    <dep root="4246614868164066709" />
-    <dep root="4246614868164066980" />
-    <dep root="4246614868164066988" />
-    <dep root="4246614868164067000" />
-    <dep root="4395293866213195826" />
-    <dep root="4632498131795732451" />
-    <dep root="4705425356438246924" />
-    <dep root="4817790028254995038" />
-    <dep root="4853049144093343618" />
-    <dep root="488298296050326101" />
-    <dep root="4914675704512523356" />
-    <dep root="5097124989039164757" />
-    <dep root="5113180367541522955" />
-    <dep root="5210914756411638023" />
-    <dep root="5679018521759262129" />
-    <dep root="6011730950863071455" />
-    <dep root="6639374232683434563" />
-    <dep root="6640766779615010044" />
-    <dep root="7187651930235347758" />
-    <dep root="7209837885462471125" />
-    <dep root="7430872850884066230" />
-    <dep root="7430872850884076050" />
-    <dep root="7638302724810884631" />
-    <dep root="7868761255934329294" />
-    <dep root="7970711249077196600" />
-    <dep root="818296778600371163" />
-    <dep root="8187342170692126565" />
-    <dep root="8187342170694467176" />
-    <dep root="843236768048177679" />
-    <dep root="9092976468699800028" />
-    <dep root="966837649722289098" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
-    <file name="WildCardTypeIsAValidSubstituteForBoundedParameter_Test.java" />
+    <file name="FinalMethodOverriding_Test.java" />
   </source>
 </dependencies>
 
