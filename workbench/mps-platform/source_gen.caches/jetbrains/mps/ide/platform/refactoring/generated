@@ -79,7 +79,6 @@
     <file name="RenameMethodDialog.java" />
   </source>
   <source id="1399798136780143890" name="RefactoringAccess" hash="-64rx124p41hbikrxij4dbgkimyekyby">
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="RefactoringAccess.java" />
   </source>
   <source id="5814231631271705710" name="ModelElementTargetChooser" hash="-4goxkqauk9qsmt5wx5hai8sd3dt57jw">

@@ -8,6 +8,7 @@
   </common>
   <source id="5522183980949036968" name="ToolTip" hash="-7i2kyy7htjilhgvd7tlevfl4woipfzb">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ToolTip.java" />
   </source>
   <source id="1657638272963062314" name="ToolTipData" hash="4f82de5vnstr7mm9ji5zlwmugqfvi7">
