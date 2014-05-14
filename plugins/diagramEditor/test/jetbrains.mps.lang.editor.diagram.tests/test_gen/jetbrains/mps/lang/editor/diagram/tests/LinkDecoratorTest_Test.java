@@ -8,19 +8,12 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.editor.checkers.ModelProblemMessage;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.jetpad.mapper.Mapper;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.jetpad.mapper.Mapper;
+import jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell;
 import junit.framework.Assert;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView;
 import jetbrains.jetpad.projectional.view.View;
@@ -48,33 +41,18 @@ public class LinkDecoratorTest_Test extends BaseTransformationTest4 {
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("1638882350373488135", "1560508619093517333");
-      final EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              editorComponent.getHighlightManager().mark(new ModelProblemMessage(SNodeOperations.cast(TestBody.this.getNodeById("1638882350373488142"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), MessageStatus.ERROR, null, "error", new EditorMessageOwner() {}));
-              editorComponent.getHighlightManager().repaintAndRebuildEditorMessages();
-            }
-          });
-        }
-      });
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          ConnectorCell connectorCell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), ConnectorCell.class, true);
-          connectorCell.paint(null, new ParentSettings());
-        }
-      });
-      final Wrappers._T<Mapper<? super SNode, ?>> descendantMapper = new Wrappers._T<Mapper<? super SNode, ?>>();
-      final DiagramCell diagramCell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), DiagramCell.class, true);
+      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          descendantMapper.value = diagramCell.getDecorationRootMapper().getDescendantMapper(((SNode) SNodeOperations.cast(TestBody.this.getNodeById("1638882350373488142"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector")));
+          node.value = SNodeOperations.cast(TestBody.this.getNodeById("1638882350373488142"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector");
         }
       });
-      Assert.assertTrue(descendantMapper.value != null);
-      Assert.assertTrue(descendantMapper.value.getTarget() != null && descendantMapper.value.getTarget() instanceof ConnectorDecoratorView);
-      ConnectorDecoratorView connectorDecoratorView = (ConnectorDecoratorView) descendantMapper.value.getTarget();
+      Mapper descendantMapper;
+      descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, editorComponent, ConnectorCell.class);
+      Assert.assertTrue(descendantMapper != null);
+      Assert.assertTrue(descendantMapper.getTarget() != null && descendantMapper.getTarget() instanceof ConnectorDecoratorView);
+      ConnectorDecoratorView connectorDecoratorView = (ConnectorDecoratorView) descendantMapper.getTarget();
       Assert.assertTrue(connectorDecoratorView.hasError.get());
       View cross = Sequence.fromIterable(JetpadUtils.getAllChildren(connectorDecoratorView)).findFirst(new IWhereFilter<View>() {
         public boolean accept(View it) {

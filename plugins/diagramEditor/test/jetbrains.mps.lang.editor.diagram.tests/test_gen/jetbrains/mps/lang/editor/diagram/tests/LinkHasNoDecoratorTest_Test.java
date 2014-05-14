@@ -10,9 +10,6 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.jetpad.mapper.Mapper;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
@@ -37,13 +34,11 @@ public class LinkHasNoDecoratorTest_Test extends BaseTransformationTest4 {
     @Override
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("83003444452668150", "83003444452668142");
-      EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      final Wrappers._T<Mapper<? super SNode, ?>> descendantMapper = new Wrappers._T<Mapper<? super SNode, ?>>();
-
-      final DiagramCell diagramCell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), DiagramCell.class, true);
+      final EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
+      final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          descendantMapper.value = diagramCell.getDecorationRootMapper().getDescendantMapper(((SNode) SNodeOperations.cast(TestBody.this.getNodeById("1560508619093671384"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector")));
+          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(TestBody.this.getNodeById("1560508619093671384"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), editorComponent);
         }
       });
       Assert.assertTrue(descendantMapper.value != null);

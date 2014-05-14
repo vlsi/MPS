@@ -13,17 +13,17 @@ import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 
 @MPSLaunch
-public class BlockHasNoDecoratorTest_Test extends BaseTransformationTest4 {
-  public BlockHasNoDecoratorTest_Test() {
+public class PortHasNoDecoratorTest_Test extends BaseTransformationTest4 {
+  public PortHasNoDecoratorTest_Test() {
   }
 
   @Test
-  public void test_BlockHasNoDecoratorTest() throws Throwable {
+  public void test_PortHasNoDecoratorTest() throws Throwable {
     this.initTest("${mps_home}", "r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)");
-    this.runTest("jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -33,18 +33,18 @@ public class BlockHasNoDecoratorTest_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("83003444452611280", "83003444452611284");
+      final Editor editor = TestBody.this.initEditor("1560508619094462935", "1560508619094462940");
       final EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(TestBody.this.getNodeById("83003444452611281"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName"), editorComponent);
+          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(TestBody.this.getNodeById("1560508619094462938"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort"), editorComponent);
         }
       });
-
       Assert.assertTrue(descendantMapper.value != null);
-      Assert.assertTrue(descendantMapper.value.getTarget() != null && descendantMapper.value.getTarget() instanceof NodeDecoratorView);
-      Assert.assertFalse(((NodeDecoratorView) descendantMapper.value.getTarget()).hasError.get());
+      Assert.assertTrue(descendantMapper.value.getTarget() != null && descendantMapper.value.getTarget() instanceof PortDecoratorView);
+      Assert.assertFalse(((PortDecoratorView) descendantMapper.value.getTarget()).hasError.get());
+
     }
   }
 }
