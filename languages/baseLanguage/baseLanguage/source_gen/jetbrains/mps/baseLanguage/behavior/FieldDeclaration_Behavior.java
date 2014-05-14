@@ -74,7 +74,7 @@ public class FieldDeclaration_Behavior {
   }
 
   public static boolean call_isSetter_1213877243896(SNode thisNode, SNode method) {
-    return (int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && FieldDeclaration_Behavior.call_getSetterName_1213877243861(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(thisNode, "type", true));
+    return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && FieldDeclaration_Behavior.call_getSetterName_1213877243861(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(thisNode, "type", true));
   }
 
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {

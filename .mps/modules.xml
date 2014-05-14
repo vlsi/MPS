@@ -175,7 +175,7 @@
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.baseLanguage.regexp.examples.msd" folder="core.baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.baseLanguage.regexp.sandbox.msd" folder="core.baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.baseLanguage.regexp.unittest.msd" folder="core.baseLanguage.regexp" />
-      <modulePath path="$PROJECT_DIR$/plugins/console/actions/jetbrains.mps.console.actions.msd" folder="platform.console" />
+      <modulePath path="$PROJECT_DIR$/plugins/console/jetbrains.mps.console.actions.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/jetbrains.mps.console.msd" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/base/jetbrains.mps.console.base.mpl" folder="platform.console" />
       <modulePath path="$PROJECT_DIR$/plugins/console/lang/blCommand/jetbrains.mps.console.blCommand.mpl" folder="platform.console" />
@@ -282,6 +282,8 @@
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/languages/complex/jetbrains.mps.samples.complex.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/jetbrains.mps.samples.complex.runtime.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/solutions/sandbox/jetbrains.mps.samples.complex.sandbox.msd" folder="samples" />
+      <modulePath path="$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/jetbrains.mps.samples.componentDependencies.mpl" folder="samples.componentDependencies" />
+      <modulePath path="$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/jetbrains.mps.samples.componentDependencies.sandbox.msd" folder="samples.componentDependencies" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/languages/secretCompartmentLanguage/jetbrains.mps.samples.secretCompartmentLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/solutions/runtime/jetbrains.mps.samples.secretCompartment.runtime.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/secretCompartmentLanguage.sandbox.msd" folder="samples" />
@@ -311,6 +313,9 @@
       <modulePath path="$PROJECT_DIR$/samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/jetbrains.mps.baseLanguage.math.sandbox.msd" folder="samples.math" />
       <modulePath path="$PROJECT_DIR$/samples/math/solutions/jetbrains.mps.baseLanguage.math.tests/jetbrains.mps.baseLanguage.math.tests.msd" folder="samples.math" />
       <modulePath path="$PROJECT_DIR$/samples/math/solutions/pluginSolution/jetbrains.mps.baseLanguage.math.pluginSolution.msd" folder="samples.math" />
+      <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/jetbrains.mps.samples.mindmaps.figures.msd" folder="samples.mindmaps" />
+      <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/jetbrains.mps.samples.mindmaps.sandbox.msd" folder="samples.mindmaps" />
+      <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps/jetbrains.mps.samples.mindmaps.mpl" folder="samples.mindmaps" />
       <modulePath path="$PROJECT_DIR$/samples/money/jetbrains.mps.baseLanguage.money.mpl" folder="samples.money" />
       <modulePath path="$PROJECT_DIR$/samples/money/runtimeSolution/jetbrains.mps.baseLanguage.money.runtime.msd" folder="samples.money" />
       <modulePath path="$PROJECT_DIR$/samples/multipleProjections/languages/org.jetbrains.mps.requestTracking/org.jetbrains.mps.requestTracking.mpl" folder="samples.multipleProjections" />

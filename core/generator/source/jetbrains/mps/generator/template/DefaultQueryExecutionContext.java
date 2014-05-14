@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,6 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -236,7 +235,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       SourceNodesQuery q = myQuerySource.getQueryProvider(qr).getSourceNodesQuery(query);
       final Collection<SNode> result = q.evaluate(new SourceSubstituteMacroNodesContext(context, macroNode.getReference()));
 
-      CollectionUtil.checkForNulls(result, "null values in source nodes");
       @SuppressWarnings("unchecked")
       List<SNode> resultList = (result instanceof List) ? (List<SNode>) result : new ArrayList<SNode>(result);
       return resultList;
@@ -339,6 +337,13 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment env, TemplateContext context) throws GenerationException {
+    assert env == context.getEnvironment();
+    return tryToApply(rule, context);
+  }
+
+  @Override
+  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
+    TemplateExecutionEnvironment env = context.getEnvironment();
     try {
       return rule.tryToApply(env, context);
     } catch (GenerationException ex) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.samples.Shapes.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.samples.Shapes.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:a6f63b9a-5cc8-4eb8-8222-686d3dfeb45e(jetbrains.mps.samples.Shapes.editor)/4001135958232231213">
     <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />
     <nodeInfo nodeId="4001135958232231213" fileName="Circle_ShapePreview_Editor.java" startLine="33" startPosition="47" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -49,7 +49,7 @@
     <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="82" startPosition="57" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="85" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="85" startPosition="72" endLine="86" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="86" startPosition="78" endLine="87" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="86" startPosition="78" endLine="87" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="88" startPosition="10" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232477403" fileName="Circle_ShapePreview_Editor.java" startLine="92" startPosition="88" endLine="93" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232477403" fileName="Circle_ShapePreview_Editor.java" startLine="93" startPosition="88" endLine="94" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -66,7 +66,7 @@
     <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="107" startPosition="57" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="110" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="110" startPosition="72" endLine="111" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="111" startPosition="78" endLine="112" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="111" startPosition="78" endLine="112" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="113" startPosition="10" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232477405" fileName="Circle_ShapePreview_Editor.java" startLine="117" startPosition="88" endLine="118" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232477405" fileName="Circle_ShapePreview_Editor.java" startLine="118" startPosition="93" endLine="119" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -83,7 +83,7 @@
     <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="132" startPosition="57" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="135" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="135" startPosition="72" endLine="136" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="136" startPosition="78" endLine="137" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="136" startPosition="78" endLine="137" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="138" startPosition="10" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232477407" fileName="Circle_ShapePreview_Editor.java" startLine="142" startPosition="89" endLine="143" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232477407" fileName="Circle_ShapePreview_Editor.java" startLine="143" startPosition="141" endLine="144" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -135,15 +135,15 @@
       <varInfo nodeId="4001135958232231213" varName="editorContext" />
       <varInfo nodeId="4001135958232231213" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="87" endPosition="105">
+    <scopeInfo nodeId="4001135958232477402" fileName="Circle_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="87" endPosition="109">
       <varInfo nodeId="4001135958232477402" varName="manager" />
       <varInfo nodeId="4001135958232477402" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="112" endPosition="105">
+    <scopeInfo nodeId="4001135958232477404" fileName="Circle_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="112" endPosition="109">
       <varInfo nodeId="4001135958232477404" varName="manager" />
       <varInfo nodeId="4001135958232477404" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="137" endPosition="105">
+    <scopeInfo nodeId="4001135958232477406" fileName="Circle_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="137" endPosition="109">
       <varInfo nodeId="4001135958232477406" varName="manager" />
       <varInfo nodeId="4001135958232477406" varName="opContext" />
     </scopeInfo>
@@ -288,7 +288,7 @@
     <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="82" startPosition="57" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="85" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="85" startPosition="72" endLine="86" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="86" startPosition="78" endLine="87" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="86" startPosition="78" endLine="87" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="88" startPosition="10" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232518684" fileName="Square_ShapePreview_Editor.java" startLine="92" startPosition="88" endLine="93" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232518684" fileName="Square_ShapePreview_Editor.java" startLine="93" startPosition="88" endLine="94" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -305,7 +305,7 @@
     <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="107" startPosition="57" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="110" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="110" startPosition="72" endLine="111" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="111" startPosition="78" endLine="112" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="111" startPosition="78" endLine="112" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="113" startPosition="10" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232518686" fileName="Square_ShapePreview_Editor.java" startLine="117" startPosition="88" endLine="118" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232518686" fileName="Square_ShapePreview_Editor.java" startLine="118" startPosition="91" endLine="119" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -322,7 +322,7 @@
     <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="132" startPosition="57" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="135" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="135" startPosition="72" endLine="136" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="136" startPosition="78" endLine="137" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="136" startPosition="78" endLine="137" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="138" startPosition="10" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958232518688" fileName="Square_ShapePreview_Editor.java" startLine="142" startPosition="89" endLine="143" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958232518688" fileName="Square_ShapePreview_Editor.java" startLine="143" startPosition="141" endLine="144" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -374,15 +374,15 @@
       <varInfo nodeId="4001135958232512372" varName="editorContext" />
       <varInfo nodeId="4001135958232512372" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="87" endPosition="105">
+    <scopeInfo nodeId="4001135958232518683" fileName="Square_ShapePreview_Editor.java" startLine="84" startPosition="35" endLine="87" endPosition="109">
       <varInfo nodeId="4001135958232518683" varName="manager" />
       <varInfo nodeId="4001135958232518683" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="112" endPosition="105">
+    <scopeInfo nodeId="4001135958232518685" fileName="Square_ShapePreview_Editor.java" startLine="109" startPosition="35" endLine="112" endPosition="109">
       <varInfo nodeId="4001135958232518685" varName="manager" />
       <varInfo nodeId="4001135958232518685" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="137" endPosition="105">
+    <scopeInfo nodeId="4001135958232518687" fileName="Square_ShapePreview_Editor.java" startLine="134" startPosition="35" endLine="137" endPosition="109">
       <varInfo nodeId="4001135958232518687" varName="manager" />
       <varInfo nodeId="4001135958232518687" varName="opContext" />
     </scopeInfo>
@@ -511,7 +511,7 @@
     <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="73" startPosition="57" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="75" startPosition="35" endLine="76" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="76" startPosition="72" endLine="77" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="77" startPosition="78" endLine="78" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="77" startPosition="78" endLine="78" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="79" startPosition="10" endLine="80" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="83" startPosition="90" endLine="84" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958236470107" fileName="Canvas_ScenePreview_Editor.java" startLine="84" startPosition="99" endLine="85" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -594,7 +594,7 @@
       <varInfo nodeId="4001135958236470107" varName="editorContext" />
       <varInfo nodeId="4001135958236470107" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="75" startPosition="35" endLine="78" endPosition="105">
+    <scopeInfo nodeId="4001135958236471271" fileName="Canvas_ScenePreview_Editor.java" startLine="75" startPosition="35" endLine="78" endPosition="109">
       <varInfo nodeId="4001135958236471271" varName="manager" />
       <varInfo nodeId="4001135958236471271" varName="opContext" />
     </scopeInfo>
@@ -712,7 +712,7 @@
     <nodeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="41" startPosition="57" endLine="42" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="43" startPosition="35" endLine="44" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="44" startPosition="72" endLine="45" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="45" startPosition="78" endLine="46" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="45" startPosition="78" endLine="46" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="47" startPosition="10" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4191445539799468575" fileName="ColorReference_Editor.java" startLine="52" startPosition="32" endLine="53" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4191445539799468575" fileName="ColorReference_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -734,7 +734,7 @@
     <nodeInfo nodeId="4191445539799468580" fileName="ColorReference_Editor.java" startLine="80" startPosition="59" endLine="81" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4191445539799468580" fileName="ColorReference_Editor.java" startLine="82" startPosition="37" endLine="83" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4191445539799468580" fileName="ColorReference_Editor.java" startLine="83" startPosition="74" endLine="84" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4191445539799468580" fileName="ColorReference_Editor.java" startLine="84" startPosition="80" endLine="85" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4191445539799468580" fileName="ColorReference_Editor.java" startLine="84" startPosition="80" endLine="85" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4191445539799468580" fileName="ColorReference_Editor.java" startLine="86" startPosition="12" endLine="87" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4191445539799468575" fileName="ColorReference_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_m0piq_a0a#()V" />
@@ -756,7 +756,7 @@
       <varInfo nodeId="4191445539799468057" varName="editorContext" />
       <varInfo nodeId="4191445539799468057" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105">
+    <scopeInfo nodeId="4191445539799468057" fileName="ColorReference_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="109">
       <varInfo nodeId="4191445539799468057" varName="manager" />
       <varInfo nodeId="4191445539799468057" varName="opContext" />
     </scopeInfo>
@@ -768,7 +768,7 @@
       <varInfo nodeId="4191445539799468575" varName="editorContext" />
       <varInfo nodeId="4191445539799468575" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4191445539799468580" fileName="ColorReference_Editor.java" startLine="82" startPosition="37" endLine="85" endPosition="107">
+    <scopeInfo nodeId="4191445539799468580" fileName="ColorReference_Editor.java" startLine="82" startPosition="37" endLine="85" endPosition="111">
       <varInfo nodeId="4191445539799468580" varName="manager" />
       <varInfo nodeId="4191445539799468580" varName="opContext" />
     </scopeInfo>
@@ -847,7 +847,7 @@
     <nodeInfo nodeId="5898776707557478749" fileName="Square_Editor.java" startLine="64" startPosition="57" endLine="65" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557478749" fileName="Square_Editor.java" startLine="66" startPosition="35" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557478749" fileName="Square_Editor.java" startLine="67" startPosition="72" endLine="68" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5898776707557478749" fileName="Square_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5898776707557478749" fileName="Square_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557478749" fileName="Square_Editor.java" startLine="70" startPosition="10" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557478758" fileName="Square_Editor.java" startLine="74" startPosition="88" endLine="75" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557478758" fileName="Square_Editor.java" startLine="75" startPosition="88" endLine="76" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -864,7 +864,7 @@
     <nodeInfo nodeId="5898776707557478770" fileName="Square_Editor.java" startLine="89" startPosition="57" endLine="90" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557478770" fileName="Square_Editor.java" startLine="91" startPosition="35" endLine="92" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557478770" fileName="Square_Editor.java" startLine="92" startPosition="72" endLine="93" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5898776707557478770" fileName="Square_Editor.java" startLine="93" startPosition="78" endLine="94" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5898776707557478770" fileName="Square_Editor.java" startLine="93" startPosition="78" endLine="94" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557478770" fileName="Square_Editor.java" startLine="95" startPosition="10" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557478783" fileName="Square_Editor.java" startLine="99" startPosition="88" endLine="100" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557478783" fileName="Square_Editor.java" startLine="100" startPosition="91" endLine="101" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -881,7 +881,7 @@
     <nodeInfo nodeId="5898776707557478799" fileName="Square_Editor.java" startLine="114" startPosition="57" endLine="115" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557478799" fileName="Square_Editor.java" startLine="116" startPosition="35" endLine="117" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557478799" fileName="Square_Editor.java" startLine="117" startPosition="72" endLine="118" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5898776707557478799" fileName="Square_Editor.java" startLine="118" startPosition="78" endLine="119" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5898776707557478799" fileName="Square_Editor.java" startLine="118" startPosition="78" endLine="119" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557478799" fileName="Square_Editor.java" startLine="120" startPosition="10" endLine="121" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557489092" fileName="Square_Editor.java" startLine="124" startPosition="89" endLine="125" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489092" fileName="Square_Editor.java" startLine="125" startPosition="141" endLine="126" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -914,15 +914,15 @@
       <varInfo nodeId="5898776707557474767" varName="editorContext" />
       <varInfo nodeId="5898776707557474767" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5898776707557478749" fileName="Square_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="105">
+    <scopeInfo nodeId="5898776707557478749" fileName="Square_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="109">
       <varInfo nodeId="5898776707557478749" varName="manager" />
       <varInfo nodeId="5898776707557478749" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5898776707557478770" fileName="Square_Editor.java" startLine="91" startPosition="35" endLine="94" endPosition="105">
+    <scopeInfo nodeId="5898776707557478770" fileName="Square_Editor.java" startLine="91" startPosition="35" endLine="94" endPosition="109">
       <varInfo nodeId="5898776707557478770" varName="manager" />
       <varInfo nodeId="5898776707557478770" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5898776707557478799" fileName="Square_Editor.java" startLine="116" startPosition="35" endLine="119" endPosition="105">
+    <scopeInfo nodeId="5898776707557478799" fileName="Square_Editor.java" startLine="116" startPosition="35" endLine="119" endPosition="109">
       <varInfo nodeId="5898776707557478799" varName="manager" />
       <varInfo nodeId="5898776707557478799" varName="opContext" />
     </scopeInfo>
@@ -1023,7 +1023,7 @@
     <nodeInfo nodeId="4191445539799470738" fileName="ShapeColor.java" startLine="52" startPosition="57" endLine="53" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4191445539799470738" fileName="ShapeColor.java" startLine="54" startPosition="35" endLine="55" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4191445539799470738" fileName="ShapeColor.java" startLine="55" startPosition="72" endLine="56" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4191445539799470738" fileName="ShapeColor.java" startLine="56" startPosition="78" endLine="57" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4191445539799470738" fileName="ShapeColor.java" startLine="56" startPosition="78" endLine="57" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4191445539799470738" fileName="ShapeColor.java" startLine="58" startPosition="10" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557478830" fileName="ShapeColor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextHints#()Ljava/util/Collection;" />
     <nodeInfo nodeId="5898776707557478830" fileName="ShapeColor.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -1042,7 +1042,7 @@
       <varInfo nodeId="5898776707557478830" varName="editorContext" />
       <varInfo nodeId="5898776707557478830" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4191445539799470738" fileName="ShapeColor.java" startLine="54" startPosition="35" endLine="57" endPosition="105">
+    <scopeInfo nodeId="4191445539799470738" fileName="ShapeColor.java" startLine="54" startPosition="35" endLine="57" endPosition="109">
       <varInfo nodeId="4191445539799470738" varName="manager" />
       <varInfo nodeId="4191445539799470738" varName="opContext" />
     </scopeInfo>
@@ -1116,7 +1116,7 @@
     <nodeInfo nodeId="5898776707557489147" fileName="Circle_Editor.java" startLine="64" startPosition="57" endLine="65" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489147" fileName="Circle_Editor.java" startLine="66" startPosition="35" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489147" fileName="Circle_Editor.java" startLine="67" startPosition="72" endLine="68" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5898776707557489147" fileName="Circle_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5898776707557489147" fileName="Circle_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557489147" fileName="Circle_Editor.java" startLine="70" startPosition="10" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557489156" fileName="Circle_Editor.java" startLine="74" startPosition="88" endLine="75" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489156" fileName="Circle_Editor.java" startLine="75" startPosition="88" endLine="76" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1133,7 +1133,7 @@
     <nodeInfo nodeId="5898776707557489168" fileName="Circle_Editor.java" startLine="89" startPosition="57" endLine="90" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489168" fileName="Circle_Editor.java" startLine="91" startPosition="35" endLine="92" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489168" fileName="Circle_Editor.java" startLine="92" startPosition="72" endLine="93" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5898776707557489168" fileName="Circle_Editor.java" startLine="93" startPosition="78" endLine="94" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5898776707557489168" fileName="Circle_Editor.java" startLine="93" startPosition="78" endLine="94" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557489168" fileName="Circle_Editor.java" startLine="95" startPosition="10" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557489181" fileName="Circle_Editor.java" startLine="99" startPosition="88" endLine="100" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489181" fileName="Circle_Editor.java" startLine="100" startPosition="93" endLine="101" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1150,7 +1150,7 @@
     <nodeInfo nodeId="5898776707557489197" fileName="Circle_Editor.java" startLine="114" startPosition="57" endLine="115" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489197" fileName="Circle_Editor.java" startLine="116" startPosition="35" endLine="117" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489197" fileName="Circle_Editor.java" startLine="117" startPosition="72" endLine="118" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5898776707557489197" fileName="Circle_Editor.java" startLine="118" startPosition="78" endLine="119" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5898776707557489197" fileName="Circle_Editor.java" startLine="118" startPosition="78" endLine="119" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557489197" fileName="Circle_Editor.java" startLine="120" startPosition="10" endLine="121" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557489214" fileName="Circle_Editor.java" startLine="124" startPosition="89" endLine="125" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489214" fileName="Circle_Editor.java" startLine="125" startPosition="141" endLine="126" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1183,15 +1183,15 @@
       <varInfo nodeId="5898776707557489124" varName="editorContext" />
       <varInfo nodeId="5898776707557489124" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5898776707557489147" fileName="Circle_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="105">
+    <scopeInfo nodeId="5898776707557489147" fileName="Circle_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="109">
       <varInfo nodeId="5898776707557489147" varName="manager" />
       <varInfo nodeId="5898776707557489147" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5898776707557489168" fileName="Circle_Editor.java" startLine="91" startPosition="35" endLine="94" endPosition="105">
+    <scopeInfo nodeId="5898776707557489168" fileName="Circle_Editor.java" startLine="91" startPosition="35" endLine="94" endPosition="109">
       <varInfo nodeId="5898776707557489168" varName="manager" />
       <varInfo nodeId="5898776707557489168" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5898776707557489197" fileName="Circle_Editor.java" startLine="116" startPosition="35" endLine="119" endPosition="105">
+    <scopeInfo nodeId="5898776707557489197" fileName="Circle_Editor.java" startLine="116" startPosition="35" endLine="119" endPosition="109">
       <varInfo nodeId="5898776707557489197" varName="manager" />
       <varInfo nodeId="5898776707557489197" varName="opContext" />
     </scopeInfo>
@@ -1297,7 +1297,7 @@
     <nodeInfo nodeId="5898776707557489263" fileName="Canvas_Editor.java" startLine="60" startPosition="57" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489263" fileName="Canvas_Editor.java" startLine="62" startPosition="35" endLine="63" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489263" fileName="Canvas_Editor.java" startLine="63" startPosition="72" endLine="64" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5898776707557489263" fileName="Canvas_Editor.java" startLine="64" startPosition="78" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5898776707557489263" fileName="Canvas_Editor.java" startLine="64" startPosition="78" endLine="65" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557489263" fileName="Canvas_Editor.java" startLine="66" startPosition="10" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5898776707557489248" fileName="Canvas_Editor.java" startLine="70" startPosition="91" endLine="71" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5898776707557489248" fileName="Canvas_Editor.java" startLine="71" startPosition="115" endLine="72" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1345,7 +1345,7 @@
       <varInfo nodeId="5898776707557489248" varName="editorContext" />
       <varInfo nodeId="5898776707557489248" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5898776707557489263" fileName="Canvas_Editor.java" startLine="62" startPosition="35" endLine="65" endPosition="105">
+    <scopeInfo nodeId="5898776707557489263" fileName="Canvas_Editor.java" startLine="62" startPosition="35" endLine="65" endPosition="109">
       <varInfo nodeId="5898776707557489263" varName="manager" />
       <varInfo nodeId="5898776707557489263" varName="opContext" />
     </scopeInfo>

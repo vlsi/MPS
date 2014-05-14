@@ -3230,7 +3230,7 @@
     <nodeInfo nodeId="6354194863340390600" fileName="CommentLine_Action.java" startLine="34" startPosition="32" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6354194863340390707" fileName="CommentLine_Action.java" startLine="39" startPosition="95" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6354194863340390714" fileName="CommentLine_Action.java" startLine="41" startPosition="5" endLine="42" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6354194863340390722" fileName="CommentLine_Action.java" startLine="43" startPosition="36" endLine="44" endPosition="545" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6354194863340390722" fileName="CommentLine_Action.java" startLine="43" startPosition="36" endLine="44" endPosition="539" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6354194863340390742" fileName="CommentLine_Action.java" startLine="45" startPosition="5" endLine="46" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6354194863340390750" fileName="CommentLine_Action.java" startLine="47" startPosition="28" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6354194863340390755" fileName="CommentLine_Action.java" startLine="49" startPosition="5" endLine="50" endPosition="367" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3299,7 +3299,7 @@
     <scopeInfo nodeId="6354194863340390600" fileName="CommentLine_Action.java" startLine="73" startPosition="25" endLine="73" endPosition="25" />
     <scopeInfo nodeId="6354194863340390600" fileName="CommentLine_Action.java" startLine="34" startPosition="32" endLine="35" endPosition="16" />
     <scopeInfo nodeId="6354194863340390706" fileName="CommentLine_Action.java" startLine="39" startPosition="95" endLine="40" endPosition="19" />
-    <scopeInfo nodeId="6354194863340390721" fileName="CommentLine_Action.java" startLine="43" startPosition="36" endLine="44" endPosition="545" />
+    <scopeInfo nodeId="6354194863340390721" fileName="CommentLine_Action.java" startLine="43" startPosition="36" endLine="44" endPosition="539" />
     <scopeInfo nodeId="6354194863340390749" fileName="CommentLine_Action.java" startLine="47" startPosition="28" endLine="48" endPosition="19" />
     <scopeInfo nodeId="6354194863340390600" fileName="CommentLine_Action.java" startLine="60" startPosition="42" endLine="61" endPosition="86" />
     <scopeInfo nodeId="6354194863340390600" fileName="CommentLine_Action.java" startLine="68" startPosition="53" endLine="69" endPosition="19" />
@@ -6742,7 +6742,7 @@
     <nodeInfo nodeId="7712522392792696235" fileName="GenerateGettersAndSetters_Action.java" startLine="134" startPosition="42" endLine="135" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7712522392792696279" fileName="GenerateGettersAndSetters_Action.java" startLine="135" startPosition="99" endLine="136" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7712522392792722736" fileName="GenerateGettersAndSetters_Action.java" startLine="138" startPosition="47" endLine="139" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7712522392792722759" fileName="GenerateGettersAndSetters_Action.java" startLine="142" startPosition="47" endLine="143" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7712522392792722759" fileName="GenerateGettersAndSetters_Action.java" startLine="142" startPosition="47" endLine="143" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7111916581652591619" fileName="GenerateGettersAndSetters_Action.java" startLine="150" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7712522392792722785" fileName="GenerateGettersAndSetters_Action.java" startLine="152" startPosition="123" endLine="153" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7712522392792722785" fileName="GenerateGettersAndSetters_Action.java" startLine="153" startPosition="63" endLine="154" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -6877,7 +6877,7 @@
     <scopeInfo nodeId="7111916581652591619" fileName="GenerateGettersAndSetters_Action.java" startLine="121" startPosition="42" endLine="122" endPosition="99" />
     <scopeInfo nodeId="7712522392792669091" fileName="GenerateGettersAndSetters_Action.java" startLine="127" startPosition="68" endLine="128" endPosition="167" />
     <scopeInfo nodeId="7712522392792722735" fileName="GenerateGettersAndSetters_Action.java" startLine="138" startPosition="47" endLine="139" endPosition="174" />
-    <scopeInfo nodeId="7712522392792722758" fileName="GenerateGettersAndSetters_Action.java" startLine="142" startPosition="47" endLine="143" endPosition="183" />
+    <scopeInfo nodeId="7712522392792722758" fileName="GenerateGettersAndSetters_Action.java" startLine="142" startPosition="47" endLine="143" endPosition="177" />
     <scopeInfo nodeId="7712522392792722785" fileName="GenerateGettersAndSetters_Action.java" startLine="163" startPosition="31" endLine="164" endPosition="79" />
     <scopeInfo nodeId="7712522392792722785" fileName="GenerateGettersAndSetters_Action.java" startLine="171" startPosition="31" endLine="172" endPosition="79" />
     <scopeInfo nodeId="7111916581652591871" fileName="GenerateGettersAndSetters_Action.java" startLine="203" startPosition="32" endLine="204" endPosition="77" />
@@ -7124,7 +7124,7 @@
     <nodeInfo nodeId="7111916581652592343" fileName="GenerateMainMethod_Action.java" startLine="34" startPosition="35" endLine="35" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7111916581652592343" fileName="GenerateMainMethod_Action.java" startLine="39" startPosition="32" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7111916581652592390" fileName="GenerateMainMethod_Action.java" startLine="43" startPosition="87" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7111916581652592413" fileName="GenerateMainMethod_Action.java" startLine="46" startPosition="39" endLine="47" endPosition="504" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7111916581652592413" fileName="GenerateMainMethod_Action.java" startLine="46" startPosition="39" endLine="47" endPosition="498" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7111916581652592343" fileName="GenerateMainMethod_Action.java" startLine="54" startPosition="7" endLine="55" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7111916581652592343" fileName="GenerateMainMethod_Action.java" startLine="55" startPosition="60" endLine="56" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7111916581652592343" fileName="GenerateMainMethod_Action.java" startLine="59" startPosition="42" endLine="60" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -7203,7 +7203,7 @@
     <nodeInfo nodeId="7111916581652592364" fileName="GenerateMainMethod_Action.java" startLine="108" startPosition="30" endLine="123" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7111916581652592364" fileName="GenerateMainMethod_Action.java" startLine="100" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_fb0mnr_a0b0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="7111916581652592343" fileName="GenerateMainMethod_Action.java" startLine="39" startPosition="32" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="7111916581652592412" fileName="GenerateMainMethod_Action.java" startLine="46" startPosition="39" endLine="47" endPosition="504" />
+    <scopeInfo nodeId="7111916581652592412" fileName="GenerateMainMethod_Action.java" startLine="46" startPosition="39" endLine="47" endPosition="498" />
     <scopeInfo nodeId="7111916581652592343" fileName="GenerateMainMethod_Action.java" startLine="59" startPosition="42" endLine="60" endPosition="93" />
     <scopeInfo nodeId="7111916581652592343" fileName="GenerateMainMethod_Action.java" startLine="67" startPosition="53" endLine="68" endPosition="19" />
     <scopeInfo nodeId="7111916581652592343" fileName="GenerateMainMethod_Action.java" startLine="71" startPosition="59" endLine="72" endPosition="19" />
@@ -7328,7 +7328,7 @@
     <nodeInfo nodeId="7712522392792669062" fileName="GenerateSetters_Action.java" startLine="128" startPosition="68" endLine="129" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7712522392792696013" fileName="GenerateSetters_Action.java" startLine="132" startPosition="123" endLine="133" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7712522392792696031" fileName="GenerateSetters_Action.java" startLine="135" startPosition="42" endLine="136" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7712522392792696046" fileName="GenerateSetters_Action.java" startLine="138" startPosition="47" endLine="139" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7712522392792696046" fileName="GenerateSetters_Action.java" startLine="138" startPosition="47" endLine="139" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7111916581652592453" fileName="GenerateSetters_Action.java" startLine="146" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7111916581652592641" fileName="GenerateSetters_Action.java" startLine="148" startPosition="143" endLine="149" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7111916581652592641" fileName="GenerateSetters_Action.java" startLine="149" startPosition="63" endLine="150" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -7426,7 +7426,7 @@
     <scopeInfo nodeId="7111916581652592670" fileName="GenerateSetters_Action.java" startLine="117" startPosition="30" endLine="118" endPosition="94" />
     <scopeInfo nodeId="7111916581652592453" fileName="GenerateSetters_Action.java" startLine="122" startPosition="42" endLine="123" endPosition="89" />
     <scopeInfo nodeId="7712522392792669061" fileName="GenerateSetters_Action.java" startLine="128" startPosition="68" endLine="129" endPosition="167" />
-    <scopeInfo nodeId="7712522392792696045" fileName="GenerateSetters_Action.java" startLine="138" startPosition="47" endLine="139" endPosition="183" />
+    <scopeInfo nodeId="7712522392792696045" fileName="GenerateSetters_Action.java" startLine="138" startPosition="47" endLine="139" endPosition="177" />
     <scopeInfo nodeId="7111916581652592641" fileName="GenerateSetters_Action.java" startLine="172" startPosition="32" endLine="173" endPosition="77" />
     <scopeInfo nodeId="7111916581652592641" fileName="GenerateSetters_Action.java" startLine="181" startPosition="32" endLine="182" endPosition="74" />
     <scopeInfo nodeId="7111916581652592683" fileName="GenerateSetters_Action.java" startLine="50" startPosition="87" endLine="52" endPosition="157">

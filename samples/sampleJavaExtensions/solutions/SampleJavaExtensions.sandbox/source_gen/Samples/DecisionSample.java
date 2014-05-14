@@ -130,7 +130,7 @@ public class DecisionSample {
         return new Money(10, "EUR").plus(this.seasonalBonus());
       }
       if (isRetired(person)) {
-        return new Money(10, "EUR").plus(((MapSequence.fromMap(person).get("name") == "Susan") ? this.seasonalBonus() : new Money(40, "EUR")));
+        return new Money(10, "EUR").plus((((MapSequence.fromMap(person).get("name") == "Susan") ? this.seasonalBonus() : new Money(40, "EUR"))));
       }
     }
     return new Money(0, "EUR");

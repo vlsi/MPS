@@ -1672,7 +1672,7 @@ public class QueriesGenerated {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyMapper");
       }
     }).toListSequence();
-    return ((int) ListSequence.fromList(list).count() == 1 ? list : Collections.<SNode>emptyList());
+    return (ListSequence.fromList(list).count() == 1 ? list : Collections.<SNode>emptyList());
   }
 
   public static Iterable<SNode> sourceNodesQuery_6789562173791600095(final SourceSubstituteMacroNodesContext _context) {
@@ -2152,17 +2152,13 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_1659807394254873141(final TemplateQueryContext _context) {
-    SNode options = ((SLinkOperations.getTarget(_context.getNode(), "options", true) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "options", true), "compileOptions", false) : null);
+    SNode options = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "options", true), "compileOptions", false);
     if (options == null) {
-      options = ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
+      options = Sequence.fromIterable(SNodeOperations.ofConcept(SNodeOperations.getAllSiblings(_context.getNode(), false), "jetbrains.mps.build.structure.BuildSource_JavaOptions")).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
+          return isEmptyString(SPropertyOperations.getString(it, "optionsName"));
         }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions");
-        }
-      }).first();
+      });
     }
     return options;
   }

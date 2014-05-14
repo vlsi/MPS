@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.build.behavior.BuildTextStringPart_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.awt.Color;
@@ -33,7 +34,12 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createAlternation_zen9g6_a0_0(editorContext, node);
     }
-    editorCell.setBig(true);
+    EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
+    if (bigCell != null) {
+      bigCell.setBig(true);
+    } else {
+      throw new RuntimeException("No big cell found!");
+    }
     return editorCell;
   }
 
@@ -76,7 +82,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     if (attributeConcept != null) {
       IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
@@ -110,7 +116,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     if (attributeConcept != null) {
       IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
@@ -160,7 +166,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     if (attributeConcept != null) {
       IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
@@ -182,7 +188,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     if (attributeConcept != null) {
       IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

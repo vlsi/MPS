@@ -51,21 +51,6 @@ public class TemplateReductionRuleInterpreted extends ReductionRuleBase implemen
   }
 
   @Override
-  public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    try {
-      if (environment.getGenerator().isIncremental()) {
-        NodeReadEventsCaster.setNodesReadListener(null); // turn tracing off
-      }
-
-      return super.tryToApply(environment, context);
-    } finally {
-      if (environment.getGenerator().isIncremental()) {
-        NodeReadEventsCaster.removeNodesReadListener(); // restore tracing
-      }
-    }
-  }
-
-  @Override
   public boolean isApplicable(TemplateExecutionEnvironment env, TemplateContext context) throws GenerationFailureException {
     if (myCondition == null) {
       myCondition = env.getQueryProvider(getRuleNode()).getReductionRuleCondition(myRuleNode);

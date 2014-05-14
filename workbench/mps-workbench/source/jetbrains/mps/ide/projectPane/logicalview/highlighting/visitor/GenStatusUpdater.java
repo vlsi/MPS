@@ -157,16 +157,19 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
   }
 
   private static boolean generationRequired(SModule module) {
-    if (!(module instanceof AbstractModule)) return false;
-    for (SModel md : ((AbstractModule) module).getModels()) {
-      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md);
-      if (required) return true;
+    for (SModel md : module.getModels()) {
+      if (ModelGenerationStatusManager.getInstance().generationRequired(md)) {
+        return true;
+      }
     }
     return false;
   }
 
   static GenerationStatus getGenerationStatus(ProjectModuleTreeNode node) {
     SModule module = node.getModule();
+    if (module.isReadOnly()) {
+      return GenerationStatus.READONLY;
+    }
     if (generationRequired(module)) return GenerationStatus.REQUIRED;
     if (module instanceof Language) {
       for (Generator generator : ((Language) module).getGenerators()) {

@@ -286,7 +286,7 @@ public class BlameDialog extends DialogWrapper {
   private void openIssueInBrowser() {
     String id = myResult.getIssueId();
     if (id != null) {
-      BrowserUtil.launchBrowser(Command.ISSUE_BASE_URL + id);
+      BrowserUtil.browse(Command.ISSUE_BASE_URL + id);
     }
   }
 

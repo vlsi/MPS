@@ -23,6 +23,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -124,7 +125,7 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
   private void updateHintsFromLanguages(final Iterable<LanguageRuntime> languages) {
     for (LanguageRuntime language : languages) {
       EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
-      if (editorDescriptor == null || editorDescriptor.getHints().isEmpty()) {
+      if (!(editorDescriptor instanceof EditorHintsProvider) || ((EditorHintsProvider) editorDescriptor).getHints().isEmpty()) {
         continue;
       }
       String lang = language.getNamespace();
@@ -132,7 +133,7 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
         mySettings.remove(lang, hint);
       }
 
-      for (ConceptEditorHint hint : editorDescriptor.getHints()) {
+      for (ConceptEditorHint hint : ((EditorHintsProvider) editorDescriptor).getHints()) {
         if (hint.showInUI()) {
           mySettings.put(lang, hint, false);
         }

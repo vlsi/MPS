@@ -95,25 +95,23 @@ public class CellAction_SideTransform extends AbstractCellAction {
 
     STHintUtil.removeTransformHints(node);
     jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell, mySide);
+    assert anchorCell.getSNode() == node : "Incorrect anchor cell was located. Original node: " + node + ", anchorCellNode: " + anchorCell.getSNode();
+    String anchorCellId = anchorCell.getCellId();
 
+    // TODO: shouldn't we call anchorCell.getRightTransformAnchorTag() here?
     String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
     if (mySide == CellSide.LEFT) {
-      STHintUtil.addLeftTransformHint(node, anchorCell.getCellId(), anchorTag);
+      STHintUtil.addLeftTransformHint(node, anchorCellId, anchorTag);
     } else {
-      STHintUtil.addRightTransformHint(node, anchorCell.getCellId(), anchorTag);
+      STHintUtil.addRightTransformHint(node, anchorCellId, anchorTag);
     }
     context.flushEvents();
 
-    EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
-    EditorCell nodeCell = editorComponent.findNodeCell(node);
-    assert nodeCell != null : "can't find cell for node " + node.getNodeId().toString() +  " " + node.getModel();
-    assert node.equals(nodeCell.getSNode()) : "node cell has incorrect node: " + nodeCell.getSNode();
-    EditorCell rtHint = nodeCell.getSTHintCell();
-    if (rtHint == null) {
-      String anchorCellID = anchorCell.getCellId();
-      EditorCell anchor_Cell = editorComponent.findCellWithId(node, anchorCellID);
-      assert rtHint != null : "can't find RT Hint for cell " + nodeCell + " with node " + node.getNodeId().toString() +  " " + node.getModel() + " ( anchorCellId = " + anchorCellID + ", anchor_Cell = " + anchor_Cell + ", original anchor cell: " + anchorCell + ")" ;
-    }
-    editorComponent.changeSelection(rtHint);
+    jetbrains.mps.openapi.editor.EditorComponent editorComponent = context.getEditorComponent();
+    jetbrains.mps.openapi.editor.cells.EditorCell updatedAnchorCell = editorComponent.findCellWithId(node, anchorCellId);
+    assert updatedAnchorCell != null : "Can't find updated anchor cell. Node: " + node + ", anchorCellID: " + anchorCellId;
+    jetbrains.mps.openapi.editor.cells.EditorCell sideTransformHintCell = ((EditorCell) updatedAnchorCell).getSTHintCell();
+    assert sideTransformHintCell != null : "STHint cell was not created. Node: " + node + ", anchorCellID: " + anchorCellId + ", tag: " + anchorTag;
+    editorComponent.changeSelection(sideTransformHintCell);
   }
 }

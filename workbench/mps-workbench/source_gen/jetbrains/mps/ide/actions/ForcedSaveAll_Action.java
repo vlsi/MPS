@@ -10,7 +10,7 @@ import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -27,7 +26,7 @@ public class ForcedSaveAll_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public ForcedSaveAll_Action() {
-    super("Re-save all models from repository", "Re-save all models even if model was not changed", ICON);
+    super("Re-save all models from project", "Re-save all models even if model was not changed", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -61,18 +60,14 @@ public class ForcedSaveAll_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
+      Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
       List<EditableSModel> allModels = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
         public Iterable<SModel> translate(SModule it) {
           return it.getModels();
         }
-      }).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel it) {
-          return SModelStereotype.isUserModel(it) && it instanceof EditableSModel;
-        }
-      }).select(new ISelector<SModel, EditableSModel>() {
-        public EditableSModel select(SModel it) {
-          return (EditableSModel) it;
+      }).ofType(EditableSModel.class).where(new IWhereFilter<EditableSModel>() {
+        public boolean accept(EditableSModel it) {
+          return SModelStereotype.isUserModel(it);
         }
       }).toListSequence();
 

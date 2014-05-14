@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.resolve.ScopeResolver;
-import jetbrains.mps.smodel.ModuleOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -86,14 +86,14 @@ public class Mps30LoggingToLog4jMigration_MigrationScript extends BaseMigrationS
           SModelOperations.validateLanguagesAndImports(SNodeOperations.getModel(node), true, true);
 
           ScopeResolver resolver = new ScopeResolver();
-          ModuleOperationContext context = new ModuleOperationContext(SNodeOperations.getModel(node).getModule());
+          SRepository repository = SNodeOperations.getModel(node).getRepository();
           for (SNode ref : Sequence.fromIterable(references)) {
             SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(ref), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
             if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
-              MigrationUtil.migrateInstanceMethodCall(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), resolver, context);
+              MigrationUtil.migrateInstanceMethodCall(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), resolver, repository);
             } else {
               for (SReference r : Sequence.fromIterable(SNodeOperations.getReferences(operation))) {
-                resolver.resolve(r, operation, context);
+                resolver.resolve(r, operation, repository);
               }
             }
           }

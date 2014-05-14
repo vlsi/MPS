@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.resolve.ScopeResolver;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -39,14 +39,14 @@ public class MigrationUtil {
     return true;
   }
 
-  public static void migrateInstanceMethodCall(SNode node, ScopeResolver resolver, IOperationContext context) {
+  public static void migrateInstanceMethodCall(SNode node, ScopeResolver resolver, SRepository repository) {
     SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
     SNode logger = SLinkOperations.getTarget(dotExpression, "operand", true);
     List<SNode> arguments = SLinkOperations.getTargets(node, "actualArgument", true);
     SNode method = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
 
     if (SPropertyOperations.getString(method, "name").equals("debug") || SPropertyOperations.getString(method, "name").equals("info") || SPropertyOperations.getString(method, "name").equals("error") || SPropertyOperations.getString(method, "name").equals("fatal")) {
-      resolver.resolve(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), node, context);
+      resolver.resolve(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), node, repository);
     } else if (SPropertyOperations.getString(method, "name").equals("warning")) {
       if (method == SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_ajmt7s_a0a0a0a0f0b_0(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false)) {
         SNode newNode = _quotation_createNode_ajmt7s_a0a0a0a5a1(logger);
@@ -69,7 +69,7 @@ public class MigrationUtil {
       SLinkOperations.setTarget(node, "baseMethodDeclaration", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_ajmt7s_a0a0a0a0e5a1(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false), false);
       ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).addElement(_quotation_createNode_ajmt7s_a0a1a4f0b());
     } else {
-      resolver.resolve(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), node, context);
+      resolver.resolve(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), node, repository);
     }
   }
 

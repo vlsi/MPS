@@ -75,7 +75,7 @@ public class MultiTuple {
   }
 
   public static boolean eq(Object a, Object b) {
-    return (a == b) || (a != null ? a.equals(b) : false);
+    return (a == b) || ((a != null ? a.equals(b) : false));
   }
 
   public static class _0 extends MultiTuple implements Tuples._0 {

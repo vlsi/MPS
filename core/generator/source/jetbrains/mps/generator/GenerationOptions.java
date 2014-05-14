@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -190,27 +188,8 @@ public class GenerationOptions {
     private boolean mySaveTransientModels = false;
     private boolean myStrictMode = false;
     private boolean myRebuildAll = true;
-    private IncrementalGenerationStrategy myIncrementalStrategy = new IncrementalGenerationStrategy() {
-      @Override
-      public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {
-        return Collections.emptyMap();
-      }
+    private IncrementalGenerationStrategy myIncrementalStrategy = new DefaultNonIncrementalStrategy();
 
-      @Override
-      public GenerationCacheContainer getContainer() {
-        return null;
-      }
-
-      @Override
-      public GenerationDependencies getDependencies(SModel sm) {
-        return null;
-      }
-
-      @Override
-      public boolean isIncrementalEnabled() {
-        return false;
-      }
-    };
     private Map<SModel, ModelGenerationPlan> myCustomPlans = new HashMap<SModel, ModelGenerationPlan>();
     private boolean myGenerateInParallel = false;
     private int myNumberOfThreads = 4;

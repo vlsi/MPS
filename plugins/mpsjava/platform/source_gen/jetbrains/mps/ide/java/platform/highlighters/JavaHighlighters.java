@@ -34,9 +34,7 @@ public class JavaHighlighters implements ProjectComponent {
     Highlighter highlighter = getHighlighter();
     highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new OverrideMethodsChecker()));
     highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new ToDoHighlighter()));
-    MethodDeclarationsFixer mdf = new MethodDeclarationsFixer();
-    highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(mdf));
-    mdf.init();
+    highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new MethodDeclarationsFixer()));
   }
 
   @Override

@@ -19,16 +19,20 @@ package jetbrains.mps.editor.runtime.style;
  * User: shatalin
  * Date: 1/14/13
  */
-public class InheritableStyleAttribute<T> extends AbstractStyleAttribute<T> {
+public final class InheritableStyleAttribute<T> extends AbstractStyleAttribute<T> {
   private T myDefaultValue;
 
-  public InheritableStyleAttribute(String name, T defaultValue) {
-    super(name, true);
+  /*package*/ InheritableStyleAttribute(String name, T defaultValue, boolean register) {
+    super(name, register);
     myDefaultValue = defaultValue;
   }
 
+  public InheritableStyleAttribute(String name, T defaultValue) {
+    this(name, defaultValue, false);
+  }
+
   public InheritableStyleAttribute(String name) {
-    this(name, null);
+    this(name, null, false);
   }
 
   @Override

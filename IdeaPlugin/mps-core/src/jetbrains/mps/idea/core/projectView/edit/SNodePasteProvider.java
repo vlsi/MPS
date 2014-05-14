@@ -76,12 +76,12 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
       @Override
       public void run() {
         Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(nodeData, myModel, operationContext);
-        ModelAccess.instance().runCommandInEDT(getPasteRunnable(nodeData, addImportsRunnable, operationContext), myProject);
+        ModelAccess.instance().runCommandInEDT(getPasteRunnable(nodeData, addImportsRunnable), myProject);
       }
     };
   }
 
-  private Runnable getPasteRunnable(final PasteNodeData nodeData, final Runnable addImportsRunnable, final IOperationContext operationContext) {
+  private Runnable getPasteRunnable(final PasteNodeData nodeData, final Runnable addImportsRunnable) {
     // Should be executed inside read action
     return new Runnable() {
       @Override
@@ -104,7 +104,7 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
           return;
         }
         pasteProcessor.pasteAsRoots(myModel, "");
-        ResolverComponent.getInstance().resolveScopesOnly(referencesToResolve, operationContext);
+        ResolverComponent.getInstance().resolveScopesOnly(referencesToResolve, myProject.getRepository());
         myModelDescriptor.save();
       }
     };

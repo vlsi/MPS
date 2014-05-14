@@ -8,22 +8,21 @@ import jetbrains.mps.checkers.AbstractConstraintsChecker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.checkers.LanguageErrorsComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
-import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.CardinalitiesChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -35,48 +34,84 @@ import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.errors.QuickFix_Runtime;
+import java.util.ArrayList;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import com.intellij.openapi.application.impl.LaterInvocator;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class LanguageEditorChecker extends BaseEditorChecker {
   private boolean myMessagesChanged = false;
+  private boolean myForceRunQuickFixes = false;
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
-  private Map<SNodeReference, LanguageErrorsComponent> myNodePointersToComponents = MapSequence.fromMap(new HashMap<SNodeReference, LanguageErrorsComponent>());
-  private Set<EditorComponent> myEditorComponents = SetSequence.fromSet(new HashSet<EditorComponent>());
+
+  private Map<EditorComponent, LanguageErrorsComponent> myEditorComponentToErrorMap = MapSequence.fromMap(new HashMap<EditorComponent, LanguageErrorsComponent>());
+  private Map<SModel, Set<EditorComponent>> myModelToEditorComponentsMap = MapSequence.fromMap(new HashMap<SModel, Set<EditorComponent>>());
+
   private EditorComponent.EditorDisposeListener myDisposeListener = new EditorComponent.EditorDisposeListener() {
     @Override
     public void editorWillBeDisposed(EditorComponent editorComponent) {
-      SetSequence.fromSet(myEditorComponents).removeElement(editorComponent);
-      SNodeReference sNodePointer = editorComponent.getEditedNodePointer();
-      if (sNodePointer != null) {
-        MapSequence.fromMap(myNodePointersToComponents).removeKey(sNodePointer);
+      MapSequence.fromMap(myEditorComponentToErrorMap).removeKey(editorComponent).dispose();
+      editorComponent.removeDisposeListener(myDisposeListener);
+
+      for (SModel model : MapSequence.fromMap(myModelToEditorComponentsMap).keySet()) {
+        Set<EditorComponent> editorComponents = MapSequence.fromMap(myModelToEditorComponentsMap).get(model);
+        if (SetSequence.fromSet(editorComponents).removeElement(editorComponent) != null) {
+          if (SetSequence.fromSet(editorComponents).isEmpty()) {
+            MapSequence.fromMap(myModelToEditorComponentsMap).removeKey(model);
+            removeModelListener(model);
+          }
+          break;
+        }
       }
     }
   };
+
   private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
     @Override
-    public void beforeModelRemoved(SModel descriptor) {
-      modelDescriptorRemoved(descriptor);
+    public void beforeModelRemoved(SModel model) {
+      if (!(MapSequence.fromMap(myModelToEditorComponentsMap).containsKey(model))) {
+        return;
+      }
+      for (EditorComponent editorComponent : MapSequence.fromMap(myModelToEditorComponentsMap).get(model)) {
+        MapSequence.fromMap(myEditorComponentToErrorMap).removeKey(editorComponent).dispose();
+        editorComponent.removeDisposeListener(myDisposeListener);
+      }
+      MapSequence.fromMap(myModelToEditorComponentsMap).removeKey(model);
+      removeModelListener(model);
     }
   };
+
   private SModelListener myModelListener = new SModelAdapter() {
     @Override
     public void beforeModelDisposed(SModel model) {
-      clearForModel(model.getReference());
+      for (EditorComponent editorComponent : MapSequence.fromMap(myModelToEditorComponentsMap).get(model)) {
+        MapSequence.fromMap(myEditorComponentToErrorMap).removeKey(editorComponent).dispose();
+        editorComponent.removeDisposeListener(myDisposeListener);
+      }
+      MapSequence.fromMap(myModelToEditorComponentsMap).removeKey(model);
     }
   };
-  private Set<SModel> myListenedModels = SetSequence.fromSet(new HashSet<SModel>());
+
+  private RefScopeCheckerInEditor myScopeChecker;
 
   public LanguageEditorChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
-    SetSequence.fromSet(myRules).addElement(new RefScopeChecker());
+    SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
     SetSequence.fromSet(myRules).addElement(new CardinalitiesChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
 
@@ -84,63 +119,43 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   @Override
-  public void doDispose() {
-    for (LanguageErrorsComponent comp : MapSequence.fromMap(myNodePointersToComponents).values()) {
-      comp.dispose();
-    }
-    for (EditorComponent component : myEditorComponents) {
-      component.removeDisposeListener(myDisposeListener);
-    }
+  protected void doDispose() {
+    Sequence.fromIterable(MapSequence.fromMap(myEditorComponentToErrorMap).values()).visitAll(new IVisitor<LanguageErrorsComponent>() {
+      public void visit(LanguageErrorsComponent it) {
+        it.dispose();
+      }
+    });
+    SetSequence.fromSet(MapSequence.fromMap(myEditorComponentToErrorMap).keySet()).visitAll(new IVisitor<EditorComponent>() {
+      public void visit(EditorComponent it) {
+        it.removeDisposeListener(myDisposeListener);
+      }
+    });
+    myEditorComponentToErrorMap = null;
+    SetSequence.fromSet(MapSequence.fromMap(myModelToEditorComponentsMap).keySet()).visitAll(new IVisitor<SModel>() {
+      public void visit(SModel it) {
+        removeModelListener(it);
+      }
+    });
+    myModelToEditorComponentsMap = null;
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
-    for (SModel modelDescriptor : SetSequence.fromSetWithValues(new HashSet<SModel>(), myListenedModels)) {
-      removeModelListener(modelDescriptor);
-    }
     super.doDispose();
   }
 
-  private void modelDescriptorRemoved(SModel modelDescriptor) {
-    this.removeModelListener(modelDescriptor);
-    this.clearForModel(modelDescriptor.getReference());
-  }
-
-  private void removeModelListener(SModel modelDescriptor) {
-    if (SetSequence.fromSet(myListenedModels).contains(modelDescriptor)) {
-      ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
-      SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
-    }
+  private void removeModelListener(SModel model) {
+    ((SModelInternal) model).removeModelListener(myModelListener);
   }
 
   private void addModelListener(SModel modelDescriptor) {
-    if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
-      SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
-    }
-  }
-
-  private void clearForModel(SModelReference modelReference) {
-    Set<SNodeReference> sNodePointers2Remove = SetSequence.fromSet(new HashSet<SNodeReference>());
-    for (SNodeReference sNodePointer : SetSequence.fromSetWithValues(new HashSet<SNodeReference>(), MapSequence.fromMap(myNodePointersToComponents).keySet())) {
-      if (sNodePointer.getModelReference().equals(modelReference)) {
-        MapSequence.fromMap(myNodePointersToComponents).get(sNodePointer).dispose();
-        MapSequence.fromMap(myNodePointersToComponents).removeKey(sNodePointer);
-        SetSequence.fromSet(sNodePointers2Remove).addElement(sNodePointer);
-      }
-    }
-    for (EditorComponent component : SetSequence.fromSetWithValues(new HashSet<EditorComponent>(), myEditorComponents)) {
-      if (SetSequence.fromSet(sNodePointers2Remove).contains(component.getEditedNodePointer())) {
-        component.removeDisposeListener(myDisposeListener);
-        SetSequence.fromSet(myEditorComponents).removeElement(component);
-      }
-    }
+    ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
   }
 
   @Override
-  public boolean areMessagesChanged() {
+  protected boolean areMessagesChanged() {
     return myMessagesChanged;
   }
 
   @Override
-  public boolean isLaterThan(BaseEditorChecker checker) {
+  protected boolean isLaterThan(BaseEditorChecker checker) {
     if (checker instanceof TypesEditorChecker) {
       return true;
     }
@@ -151,12 +166,12 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   @Override
-  public boolean hasDramaticalEvent(List<SModelEvent> list) {
+  protected boolean hasDramaticalEvent(List<SModelEvent> list) {
     return true;
   }
 
   @Override
-  public Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
+  protected Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
       @Override
       public Set<EditorMessage> compute(TypeCheckingContext p0) {
@@ -165,80 +180,152 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     });
   }
 
-  public Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
-    myMessagesChanged = false;
+  private Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    SNode sNode = editorComponent.getEditedNode();
-    SNodeReference sNodePointer = editorComponent.getEditedNodePointer();
+    SModel model = editorContext.getModel();
+    myScopeChecker.setEditorComponent(editorComponent);
+
+    myMessagesChanged = false;
 
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
-    if (sNode == null) {
+    SNode editedNode = editorComponent.getEditedNode();
+
+    if (editedNode == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("edited node is null");
       }
       return result;
-
     }
-    if (sNodePointer == null) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("edited NodePointer is null");
-      }
-      return result;
-    }
-
-    SModel descriptor = SNodeOperations.getModel(sNode);
-    if (descriptor == null) {
+    if (node.getModel() == null || SNodeOperations.getModel(editedNode) == null) {
       // descriptor is null for a replaced model 
       // after model is replaced but before it is disposed (this can happen asyncronously) 
       return result;
     }
-    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(new SNodePointer(SNodeOperations.getContainingRoot(sNode)));
+
+    EditorComponent mainEditorComponent = null;
+    boolean inspector = editorComponent instanceof InspectorEditorComponent;
+    if (inspector) {
+      List<SNode> editedNodeAncestors = SNodeOperations.getAncestors(editedNode, null, true);
+      for (EditorComponent candidate : MapSequence.fromMap(myEditorComponentToErrorMap).keySet()) {
+        if (ListSequence.fromList(editedNodeAncestors).contains(candidate.getEditedNode())) {
+          mainEditorComponent = candidate;
+          break;
+        }
+      }
+      if (mainEditorComponent == null) {
+        return result;
+      }
+    } else {
+      mainEditorComponent = editorComponent;
+    }
+
+    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myEditorComponentToErrorMap).get(mainEditorComponent);
     if (errorsComponent == null) {
-      errorsComponent = new LanguageErrorsComponent(sNode);
-      MapSequence.fromMap(myNodePointersToComponents).put(sNodePointer, errorsComponent);
+      errorsComponent = new LanguageErrorsComponent(model);
+      MapSequence.fromMap(myEditorComponentToErrorMap).put(mainEditorComponent, errorsComponent);
+      mainEditorComponent.addDisposeListener(myDisposeListener);
+
+      Set<EditorComponent> mappedEditorComponent = MapSequence.fromMap(myModelToEditorComponentsMap).get(model);
+      if (mappedEditorComponent == null) {
+        mappedEditorComponent = SetSequence.fromSet(new HashSet<EditorComponent>());
+        MapSequence.fromMap(myModelToEditorComponentsMap).put(model, mappedEditorComponent);
+        addModelListener(model);
+      }
+      SetSequence.fromSet(mappedEditorComponent).addElement(mainEditorComponent);
     }
-    if (!(editorComponent instanceof InspectorEditorComponent) && !(SetSequence.fromSet(myEditorComponents).contains(editorComponent))) {
-      SetSequence.fromSet(myEditorComponents).addElement(editorComponent);
-      editorComponent.addDisposeListener(myDisposeListener);
-    }
-    addModelListener(descriptor);
 
     if (!(wasCheckedOnce)) {
       errorsComponent.clear();
     }
-    boolean changed = false;
-    TypeCheckingContext typecheckingContext = editorComponent.getTypeCheckingContext();
-    try {
-      if (typecheckingContext != null) {
-        typecheckingContext.setIsNonTypesystemComputation();
+
+    if (inspector) {
+      myMessagesChanged = errorsComponent.checkInspector();
+    } else {
+      boolean changed = false;
+      TypeCheckingContext typecheckingContext = mainEditorComponent.getTypeCheckingContext();
+      try {
+        if (typecheckingContext != null) {
+          typecheckingContext.setIsNonTypesystemComputation();
+        }
+        changed = errorsComponent.check(SNodeOperations.getContainingRoot(((SNode) node)), myRules, editorContext.getRepository());
+      } finally {
+        if (typecheckingContext != null) {
+          typecheckingContext.resetIsNonTypesystemComputation();
+        }
       }
-      changed = errorsComponent.check(node, myRules, editorContext.getOperationContext());
-    } finally {
-      if (typecheckingContext != null) {
-        typecheckingContext.resetIsNonTypesystemComputation();
-      }
+      myMessagesChanged = changed;
     }
-    myMessagesChanged = changed;
+
+    if (!(myMessagesChanged)) {
+      // skipping quickfix processing if othing was changed 
+      return result;
+    }
+
+    boolean runQuickFixes = shouldRunQuickFixs(model, inspector);
+    final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
     for (IErrorReporter errorReporter : errorsComponent.getErrors()) {
+      SNode nodeWithError = errorReporter.getSNode();
+      if (!(ListSequence.fromList(SNodeOperations.getAncestors(nodeWithError, null, true)).contains(editedNode))) {
+        // in inspector skipping all messages for invisible nodes 
+        continue;
+      }
       MessageStatus status = errorReporter.getMessageStatus();
       String errorString = errorReporter.reportError();
-      HighlighterMessage message = HighlightUtil.createHighlighterMessage(errorReporter.getSNode(), NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, LanguageEditorChecker.this, editorContext);
+      HighlighterMessage message = HighlightUtil.createHighlighterMessage(nodeWithError, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, LanguageEditorChecker.this, editorContext);
+      List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
+      if (runQuickFixes && intentionProviders.size() == 1 && intentionProviders.get(0).isExecutedImmediately()) {
+        QuickFix_Runtime quickFix = intentionProviders.get(0).getQuickFix();
+        if (quickFix != null) {
+          ListSequence.fromList(quickFixesToExecute).addElement(MultiTuple.<QuickFix_Runtime,SNode>from(quickFix, nodeWithError));
+        }
+      }
       SetSequence.fromSet(result).addElement(message);
+    }
+
+    if (inspector) {
+      return result;
+    }
+    // running quick fixes in main editor only 
+    final boolean wasForceRunQuickFixes = myForceRunQuickFixes;
+    myForceRunQuickFixes = false;
+    if (ListSequence.fromList(quickFixesToExecute).isNotEmpty()) {
+      LaterInvocator.invokeLater(new Runnable() {
+        public void run() {
+          ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+            public void run() {
+              for (Tuples._2<QuickFix_Runtime, SNode> fix : quickFixesToExecute) {
+                if (SNodeOperations.getModel(fix._1()) != null) {
+                  fix._0().execute(fix._1());
+                  if (wasForceRunQuickFixes) {
+                    // forcing to execute quickFixes for all errors reported on the modified model 
+                    myForceRunQuickFixes = true;
+                  }
+                }
+              }
+            }
+          });
+        }
+      });
     }
     return result;
   }
 
+  private boolean shouldRunQuickFixs(SModel model, boolean inspector) {
+    if (inspector || !(model instanceof EditableSModel) || model.getModule() instanceof TransientModelsModule) {
+      return false;
+    }
+    return EditorSettings.getInstance().isAutoQuickFix() || myForceRunQuickFixes;
+  }
+
   @Override
-  public void clear(SNode node, EditorComponent component) {
-    SNodeReference sNodePointer = component.getEditedNodePointer();
-    if (sNodePointer == null) {
-      return;
-    }
-    LanguageErrorsComponent errorsComponent = MapSequence.fromMap(myNodePointersToComponents).get(sNodePointer);
-    if (errorsComponent == null) {
-      return;
-    }
-    errorsComponent.clear();
+  protected void clear(SNode node, EditorComponent component) {
+    MapSequence.fromMap(myEditorComponentToErrorMap).get(component).clear();
+  }
+
+  @Override
+  protected void resetCheckerState() {
+    myForceRunQuickFixes = true;
+    super.resetCheckerState();
   }
 
   protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);

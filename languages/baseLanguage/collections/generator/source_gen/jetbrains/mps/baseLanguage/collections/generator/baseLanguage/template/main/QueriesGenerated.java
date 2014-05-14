@@ -2118,10 +2118,6 @@ public class QueriesGenerated extends QueryProviderBase {
     return SLinkOperations.getTarget(((SNode) _context.getVariable("dotExpr")), "operand", true);
   }
 
-  public static SNode sourceNodeQuery_7880518146484337815(final SourceSubstituteMacroNodeContext _context) {
-    return ((SNode) _context.getVariable("dotExpr"));
-  }
-
   public static Object templateArgumentQuery_5187796033891072172(final TemplateQueryContext _context) {
     return _context.getNode();
   }
@@ -2956,7 +2952,6 @@ public class QueriesGenerated extends QueryProviderBase {
     snqMethods.put("7880518146486203495", new QueriesGenerated.SNQ(i++));
     snqMethods.put("7880518146486287809", new QueriesGenerated.SNQ(i++));
     snqMethods.put("7880518146486347906", new QueriesGenerated.SNQ(i++));
-    snqMethods.put("7880518146484337815", new QueriesGenerated.SNQ(i++));
   }
 
   @NotNull
@@ -3591,8 +3586,6 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.sourceNodeQuery_7880518146486287809(ctx);
         case 305:
           return QueriesGenerated.sourceNodeQuery_7880518146486347906(ctx);
-        case 306:
-          return QueriesGenerated.sourceNodeQuery_7880518146484337815(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateNode(), methodKey));
       }

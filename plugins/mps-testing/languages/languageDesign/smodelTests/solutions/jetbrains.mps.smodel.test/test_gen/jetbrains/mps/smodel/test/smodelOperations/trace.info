@@ -588,5 +588,45 @@
     <unitInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="60" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test$TestBody" />
     <unitInfo nodeId="278471160714179981" fileName="SLinkImplicitSelect_Test.java" startLine="22" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test" />
   </root>
+  <root nodeRef="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations@tests)/6405539316368481242">
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="16" startPosition="82" endLine="17" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="17" startPosition="125" endLine="18" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="22" startPosition="82" endLine="23" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="23" startPosition="125" endLine="24" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="28" startPosition="77" endLine="29" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="29" startPosition="125" endLine="30" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="35" startPosition="84" endLine="36" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="36" startPosition="146" endLine="37" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="40" startPosition="84" endLine="41" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="41" startPosition="146" endLine="42" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="45" startPosition="79" endLine="46" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="46" startPosition="146" endLine="47" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnnamedWarningCheck6405539316368629718#()V" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnnamedWarningCheck6405539316368638894#()V" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck6405539316368555030#()V" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnnamedWarningCheck6405539316368629718#()V" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeUnnamedWarningCheck6405539316368638894#()V" />
+    <nodeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck6405539316368555030#()V" />
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="16" startPosition="82" endLine="18" endPosition="146" />
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="22" startPosition="82" endLine="24" endPosition="146" />
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="28" startPosition="77" endLine="30" endPosition="141" />
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="35" startPosition="84" endLine="37" endPosition="159">
+      <varInfo nodeId="6405539316368481242" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="40" startPosition="84" endLine="42" endPosition="159">
+      <varInfo nodeId="6405539316368481242" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="45" startPosition="79" endLine="47" endPosition="159">
+      <varInfo nodeId="6405539316368481242" varName="operation" />
+    </scopeInfo>
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="33" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.Collections_Test$TestBody" />
+    <unitInfo nodeId="6405539316368481242" fileName="Collections_Test.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.smodel.test.smodelOperations.Collections_Test" />
+  </root>
 </debugInfo>
 

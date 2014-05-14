@@ -14,6 +14,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -33,19 +34,22 @@ public class PsiAwareRefactoring extends RefactoringWrapper {
     SearchResults<SNode> mpsResults = baseRefactoring.getAffectedNodes(refactoringContext);
 
     Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
-    PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(refactoringContext.getSelectedNode());
-    // todo search scope?
-    Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();
-    // size may be bigger than needed, due to MPS usages returned among PSI usages
-    List<SearchResult<SNode>> psiResults = new ArrayList<SearchResult<SNode>>(psiRefs.size());
-    for (PsiReference ref : psiRefs) {
-      PsiElement element = ref.getElement();
-      if (element instanceof MPSPsiNode) continue;
+    List<SNode> nodes = baseRefactoring.getRefactoringTarget().allowMultipleTargets() ? refactoringContext.getSelectedNodes() : Arrays.asList(refactoringContext.getSelectedNode());
+    for (SNode target : nodes) {
+      PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(target);
+      // todo search scope?
+      Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();
+      // size may be bigger than needed, due to MPS usages returned among PSI usages
+      List<SearchResult<SNode>> psiResults = new ArrayList<SearchResult<SNode>>(psiRefs.size());
+      for (PsiReference ref : psiRefs) {
+        PsiElement element = ref.getElement();
+        if (element instanceof MPSPsiNode) continue;
 
-      psiResults.add(new PsiSearchResult(ref));
+        psiResults.add(new PsiSearchResult(ref));
+      }
+
+      mpsResults.addAll(new SearchResults<SNode>(new HashSet<SNode>(), psiResults));
     }
-
-    mpsResults.addAll(new SearchResults<SNode>(new HashSet<SNode>(), psiResults));
 
     return mpsResults;
   }

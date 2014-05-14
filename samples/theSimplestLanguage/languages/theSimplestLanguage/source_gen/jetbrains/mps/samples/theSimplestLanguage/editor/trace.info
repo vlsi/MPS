@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.theSimplestLanguage.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:e4c3371f-743b-4590-b521-03a11e9bad7f(jetbrains.mps.samples.theSimplestLanguage.editor)/1222954953898">
     <nodeInfo nodeId="1222954953898" fileName="TheSimplestConcept_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222954953898" fileName="TheSimplestConcept_Editor.java" startLine="24" startPosition="89" endLine="25" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -39,7 +39,7 @@
     <nodeInfo nodeId="1222954965284" fileName="TheSimplestConcept_Editor.java" startLine="61" startPosition="57" endLine="62" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222954965284" fileName="TheSimplestConcept_Editor.java" startLine="63" startPosition="35" endLine="64" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222954965284" fileName="TheSimplestConcept_Editor.java" startLine="64" startPosition="72" endLine="65" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222954965284" fileName="TheSimplestConcept_Editor.java" startLine="65" startPosition="78" endLine="66" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954965284" fileName="TheSimplestConcept_Editor.java" startLine="65" startPosition="78" endLine="66" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222954965284" fileName="TheSimplestConcept_Editor.java" startLine="67" startPosition="10" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222954972334" fileName="TheSimplestConcept_Editor.java" startLine="71" startPosition="88" endLine="72" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222954972334" fileName="TheSimplestConcept_Editor.java" startLine="72" startPosition="86" endLine="73" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -74,7 +74,7 @@
     <nodeInfo nodeId="1222954988615" fileName="TheSimplestConcept_Editor.java" startLine="108" startPosition="57" endLine="109" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222954988615" fileName="TheSimplestConcept_Editor.java" startLine="110" startPosition="35" endLine="111" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1222954988615" fileName="TheSimplestConcept_Editor.java" startLine="111" startPosition="72" endLine="112" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222954988615" fileName="TheSimplestConcept_Editor.java" startLine="112" startPosition="78" endLine="113" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222954988615" fileName="TheSimplestConcept_Editor.java" startLine="112" startPosition="78" endLine="113" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222954988615" fileName="TheSimplestConcept_Editor.java" startLine="114" startPosition="10" endLine="115" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222954953898" fileName="TheSimplestConcept_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1222954963359" fileName="TheSimplestConcept_Editor.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1vqlro_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -99,11 +99,11 @@
       <varInfo nodeId="1222954953898" varName="editorContext" />
       <varInfo nodeId="1222954953898" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1222954965284" fileName="TheSimplestConcept_Editor.java" startLine="63" startPosition="35" endLine="66" endPosition="105">
+    <scopeInfo nodeId="1222954965284" fileName="TheSimplestConcept_Editor.java" startLine="63" startPosition="35" endLine="66" endPosition="109">
       <varInfo nodeId="1222954965284" varName="manager" />
       <varInfo nodeId="1222954965284" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1222954988615" fileName="TheSimplestConcept_Editor.java" startLine="110" startPosition="35" endLine="113" endPosition="105">
+    <scopeInfo nodeId="1222954988615" fileName="TheSimplestConcept_Editor.java" startLine="110" startPosition="35" endLine="113" endPosition="109">
       <varInfo nodeId="1222954988615" varName="manager" />
       <varInfo nodeId="1222954988615" varName="opContext" />
     </scopeInfo>

@@ -38,7 +38,7 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
 
   @Override
   public void initComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         init();

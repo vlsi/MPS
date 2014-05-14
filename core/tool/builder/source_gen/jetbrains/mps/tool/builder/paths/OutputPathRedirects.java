@@ -55,4 +55,11 @@ public class OutputPathRedirects implements IRedirects {
     }
     return null;
   }
+
+  public boolean isInCacheOutput(String fullPath) {
+    if (cachesOutputRoot != null && fullPath != null) {
+      return fullPath.startsWith(cachesOutputRoot);
+    }
+    return false;
+  }
 }

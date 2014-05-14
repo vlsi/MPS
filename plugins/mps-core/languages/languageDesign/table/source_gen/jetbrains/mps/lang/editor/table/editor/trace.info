@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.table.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.table.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:8cb98139-dde9-48c6-8624-a531b84be2cd(jetbrains.mps.lang.editor.table.editor)/2253133157536969611">
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -58,7 +58,7 @@
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="87" startPosition="57" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="89" startPosition="35" endLine="90" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="90" startPosition="72" endLine="91" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="91" startPosition="78" endLine="92" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="91" startPosition="78" endLine="92" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="93" startPosition="10" endLine="94" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6216065619544954191" fileName="CellModel_HierarchycalTable_Editor.java" startLine="98" startPosition="35" endLine="99" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6216065619544954191" fileName="CellModel_HierarchycalTable_Editor.java" startLine="102" startPosition="69" endLine="103" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -77,7 +77,7 @@
     <nodeInfo nodeId="6216065619544954192" fileName="CellModel_HierarchycalTable_Editor.java" startLine="123" startPosition="59" endLine="124" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6216065619544954192" fileName="CellModel_HierarchycalTable_Editor.java" startLine="125" startPosition="37" endLine="126" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6216065619544954192" fileName="CellModel_HierarchycalTable_Editor.java" startLine="126" startPosition="74" endLine="127" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6216065619544954192" fileName="CellModel_HierarchycalTable_Editor.java" startLine="127" startPosition="80" endLine="128" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6216065619544954192" fileName="CellModel_HierarchycalTable_Editor.java" startLine="127" startPosition="80" endLine="128" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6216065619544954192" fileName="CellModel_HierarchycalTable_Editor.java" startLine="129" startPosition="12" endLine="130" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6216065619544954196" fileName="CellModel_HierarchycalTable_Editor.java" startLine="134" startPosition="90" endLine="135" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6216065619544954196" fileName="CellModel_HierarchycalTable_Editor.java" startLine="135" startPosition="87" endLine="136" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -128,7 +128,7 @@
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="187" startPosition="57" endLine="188" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="189" startPosition="35" endLine="190" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="190" startPosition="72" endLine="191" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="191" startPosition="78" endLine="192" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="191" startPosition="78" endLine="192" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="193" startPosition="10" endLine="194" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6216065619544954205" fileName="CellModel_HierarchycalTable_Editor.java" startLine="198" startPosition="35" endLine="199" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6216065619544954205" fileName="CellModel_HierarchycalTable_Editor.java" startLine="202" startPosition="69" endLine="203" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -147,7 +147,7 @@
     <nodeInfo nodeId="6216065619544954206" fileName="CellModel_HierarchycalTable_Editor.java" startLine="223" startPosition="59" endLine="224" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6216065619544954206" fileName="CellModel_HierarchycalTable_Editor.java" startLine="225" startPosition="37" endLine="226" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6216065619544954206" fileName="CellModel_HierarchycalTable_Editor.java" startLine="226" startPosition="74" endLine="227" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6216065619544954206" fileName="CellModel_HierarchycalTable_Editor.java" startLine="227" startPosition="80" endLine="228" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6216065619544954206" fileName="CellModel_HierarchycalTable_Editor.java" startLine="227" startPosition="80" endLine="228" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6216065619544954206" fileName="CellModel_HierarchycalTable_Editor.java" startLine="229" startPosition="12" endLine="230" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6216065619544954210" fileName="CellModel_HierarchycalTable_Editor.java" startLine="234" startPosition="90" endLine="235" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6216065619544954210" fileName="CellModel_HierarchycalTable_Editor.java" startLine="235" startPosition="87" endLine="236" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -187,7 +187,7 @@
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="275" startPosition="57" endLine="276" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="277" startPosition="35" endLine="278" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="278" startPosition="72" endLine="279" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="279" startPosition="78" endLine="280" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="279" startPosition="78" endLine="280" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="281" startPosition="10" endLine="282" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6216065619544954217" fileName="CellModel_HierarchycalTable_Editor.java" startLine="286" startPosition="35" endLine="287" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6216065619544954217" fileName="CellModel_HierarchycalTable_Editor.java" startLine="290" startPosition="69" endLine="291" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -206,7 +206,7 @@
     <nodeInfo nodeId="6216065619544954218" fileName="CellModel_HierarchycalTable_Editor.java" startLine="311" startPosition="59" endLine="312" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6216065619544954218" fileName="CellModel_HierarchycalTable_Editor.java" startLine="313" startPosition="37" endLine="314" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6216065619544954218" fileName="CellModel_HierarchycalTable_Editor.java" startLine="314" startPosition="74" endLine="315" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6216065619544954218" fileName="CellModel_HierarchycalTable_Editor.java" startLine="315" startPosition="80" endLine="316" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6216065619544954218" fileName="CellModel_HierarchycalTable_Editor.java" startLine="315" startPosition="80" endLine="316" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6216065619544954218" fileName="CellModel_HierarchycalTable_Editor.java" startLine="317" startPosition="12" endLine="318" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6216065619544954222" fileName="CellModel_HierarchycalTable_Editor.java" startLine="322" startPosition="90" endLine="323" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6216065619544954222" fileName="CellModel_HierarchycalTable_Editor.java" startLine="323" startPosition="87" endLine="324" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -285,7 +285,7 @@
       <varInfo nodeId="2253133157536969611" varName="editorContext" />
       <varInfo nodeId="2253133157536969611" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="89" startPosition="35" endLine="92" endPosition="105">
+    <scopeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="89" startPosition="35" endLine="92" endPosition="109">
       <varInfo nodeId="2253133157536969611" varName="manager" />
       <varInfo nodeId="2253133157536969611" varName="opContext" />
     </scopeInfo>
@@ -297,11 +297,11 @@
       <varInfo nodeId="6216065619544954191" varName="editorContext" />
       <varInfo nodeId="6216065619544954191" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6216065619544954192" fileName="CellModel_HierarchycalTable_Editor.java" startLine="125" startPosition="37" endLine="128" endPosition="107">
+    <scopeInfo nodeId="6216065619544954192" fileName="CellModel_HierarchycalTable_Editor.java" startLine="125" startPosition="37" endLine="128" endPosition="111">
       <varInfo nodeId="6216065619544954192" varName="manager" />
       <varInfo nodeId="6216065619544954192" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="189" startPosition="35" endLine="192" endPosition="105">
+    <scopeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="189" startPosition="35" endLine="192" endPosition="109">
       <varInfo nodeId="2253133157536969611" varName="manager" />
       <varInfo nodeId="2253133157536969611" varName="opContext" />
     </scopeInfo>
@@ -313,11 +313,11 @@
       <varInfo nodeId="6216065619544954205" varName="editorContext" />
       <varInfo nodeId="6216065619544954205" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6216065619544954206" fileName="CellModel_HierarchycalTable_Editor.java" startLine="225" startPosition="37" endLine="228" endPosition="107">
+    <scopeInfo nodeId="6216065619544954206" fileName="CellModel_HierarchycalTable_Editor.java" startLine="225" startPosition="37" endLine="228" endPosition="111">
       <varInfo nodeId="6216065619544954206" varName="manager" />
       <varInfo nodeId="6216065619544954206" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="277" startPosition="35" endLine="280" endPosition="105">
+    <scopeInfo nodeId="2253133157536969611" fileName="CellModel_HierarchycalTable_Editor.java" startLine="277" startPosition="35" endLine="280" endPosition="109">
       <varInfo nodeId="2253133157536969611" varName="manager" />
       <varInfo nodeId="2253133157536969611" varName="opContext" />
     </scopeInfo>
@@ -329,7 +329,7 @@
       <varInfo nodeId="6216065619544954217" varName="editorContext" />
       <varInfo nodeId="6216065619544954217" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6216065619544954218" fileName="CellModel_HierarchycalTable_Editor.java" startLine="313" startPosition="37" endLine="316" endPosition="107">
+    <scopeInfo nodeId="6216065619544954218" fileName="CellModel_HierarchycalTable_Editor.java" startLine="313" startPosition="37" endLine="316" endPosition="111">
       <varInfo nodeId="6216065619544954218" varName="manager" />
       <varInfo nodeId="6216065619544954218" varName="opContext" />
     </scopeInfo>
@@ -586,7 +586,7 @@
     <nodeInfo nodeId="3152052307426710974" fileName="CellModel_Table_Editor.java" startLine="131" startPosition="57" endLine="132" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3152052307426710974" fileName="CellModel_Table_Editor.java" startLine="133" startPosition="35" endLine="134" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3152052307426710974" fileName="CellModel_Table_Editor.java" startLine="134" startPosition="72" endLine="135" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3152052307426710974" fileName="CellModel_Table_Editor.java" startLine="135" startPosition="78" endLine="136" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3152052307426710974" fileName="CellModel_Table_Editor.java" startLine="135" startPosition="78" endLine="136" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3152052307426710974" fileName="CellModel_Table_Editor.java" startLine="137" startPosition="10" endLine="138" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4677325677876404631" fileName="CellModel_Table_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4677325677876404631" fileName="CellModel_Table_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -624,7 +624,7 @@
       <varInfo nodeId="4677325677876404631" varName="editorContext" />
       <varInfo nodeId="4677325677876404631" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3152052307426710974" fileName="CellModel_Table_Editor.java" startLine="133" startPosition="35" endLine="136" endPosition="105">
+    <scopeInfo nodeId="3152052307426710974" fileName="CellModel_Table_Editor.java" startLine="133" startPosition="35" endLine="136" endPosition="109">
       <varInfo nodeId="3152052307426710974" varName="manager" />
       <varInfo nodeId="3152052307426710974" varName="opContext" />
     </scopeInfo>

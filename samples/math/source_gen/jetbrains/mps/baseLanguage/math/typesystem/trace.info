@@ -4409,7 +4409,7 @@
     <unitInfo nodeId="7388416617632229272" fileName="typeof_ConjugateOperation_InferenceRule.java" startLine="22" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.typesystem.typeof_ConjugateOperation_InferenceRule" />
   </root>
   <root nodeRef="r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)/757772128651891024">
-    <nodeInfo nodeId="757772128652074250" fileName="DimensionUtil.java" startLine="25" startPosition="63" endLine="26" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="757772128652074250" fileName="DimensionUtil.java" startLine="25" startPosition="57" endLine="26" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="757772128652074266" fileName="DimensionUtil.java" startLine="26" startPosition="101" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="757772128652074280" fileName="DimensionUtil.java" startLine="27" startPosition="16" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="757772128652074274" fileName="DimensionUtil.java" startLine="28" startPosition="16" endLine="29" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -4775,7 +4775,7 @@
     <scopeInfo nodeId="757772128652074241" fileName="DimensionUtil.java" startLine="30" startPosition="25" endLine="165" endPosition="7">
       <varInfo nodeId="757772128652074242" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="757772128651891044" fileName="DimensionUtil.java" startLine="25" startPosition="63" endLine="194" endPosition="7">
+    <scopeInfo nodeId="757772128651891044" fileName="DimensionUtil.java" startLine="25" startPosition="57" endLine="194" endPosition="7">
       <varInfo nodeId="757772128652074250" varName="T_typevar_757772128652074250" />
       <varInfo nodeId="757772128652075590" varName="cbc" />
       <varInfo nodeId="757772128652074275" varName="cbd" />

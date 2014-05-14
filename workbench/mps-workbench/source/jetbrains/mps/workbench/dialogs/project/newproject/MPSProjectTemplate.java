@@ -25,13 +25,22 @@ public interface MPSProjectTemplate {
 
   @Nullable
   public Icon getIcon();
+
   @NotNull
   public String getName();
+
   @Nullable
   public String getDescription();
+
+  /**
+   * Can extend dialog UI for set special properties
+   * @return additional UI component for settings
+   */
   @Nullable
   public JComponent getSettings();
+
   @NotNull
   public TemplateFiller getTemplateFiller();
+
   public void setProjectPath(String projectPath);
 }

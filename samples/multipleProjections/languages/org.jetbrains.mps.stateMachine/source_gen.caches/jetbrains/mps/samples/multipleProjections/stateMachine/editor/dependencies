@@ -7,7 +7,6 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint" />
     <classNode dependClassName="jetbrains.mps.samples.multipleProjections.stateMachine.editor.EventReference_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.multipleProjections.stateMachine.editor.Event_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.multipleProjections.stateMachine.editor.StateMachine_Editor" />

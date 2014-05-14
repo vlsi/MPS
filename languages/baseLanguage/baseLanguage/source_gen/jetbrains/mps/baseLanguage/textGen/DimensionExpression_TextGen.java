@@ -10,7 +10,9 @@ public class DimensionExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     if ((SLinkOperations.getTarget(node, "expression", true) != null)) {
       this.append("[");
-      appendNode(SLinkOperations.getTarget(node, "expression", true));
+      if (SLinkOperations.getTarget(node, "expression", true) != null) {
+        appendNode(SLinkOperations.getTarget(node, "expression", true));
+      }
       this.append("]");
     } else {
       this.append("[]");

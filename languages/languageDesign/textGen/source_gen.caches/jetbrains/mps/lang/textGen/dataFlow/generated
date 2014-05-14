@@ -1,3 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a14mew8s808qr61sergt3ih4u96zk4q" />
+<dependencies version="2" modelHash="-10kldtxrppurgytaeg1fv2jrxpo626h">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="c1hnhdpddphjo2fhgyvonweo0t1r37x" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="aelgsihqlkydejdy68izklgxf4r668d" />
+  <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" hash="-88trn3i0td71vpzsb971anf8qxig7jm" />
+  <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" hash="-2pxb7647mr1dec6a3lyw4ws639zwpj4" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" hash="96g5257to4yarllf7b003ay3fpaq0jh" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="5xhisw745il21mcstg67be1fd1fr4ee" dependsOnNodes="true">
+    <dep root="1234274822179" />
+    <dep root="1234274918427" />
+    <dep root="1234275154402" />
+    <dep root="1237297313040" />
+    <dep root="1237297500008" />
+    <dep root="1237297544949" />
+    <dep root="1237483202466" />
+    <dep root="1237483235720" />
+    <dep root="1237483307729" />
+    <dep root="1237483338873" />
+    <dep root="1237483369901" />
+    <dep root="1237483382474" />
+    <dep root="1237483388947" />
+    <dep root="1237483407146" />
+    <dep root="1237483413134" />
+    <dep root="1237483419497" />
+    <dep root="1237483518260" />
+    <dep root="6911933836258446116" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="DFABuilders.java" />
+  </common>
+  <source id="1234274822179" name="OperationDeclaration_DataFlow" hash="-3ebrr1kqd30riva2wmyjazzq8o85g2p">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="OperationDeclaration_DataFlow.java" />
+  </source>
+  <source id="1234274918427" name="OperationCall_DataFlow" hash="5w4a7r0refyo5tpylgdsyoa592no75f">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="OperationCall_DataFlow.java" />
+  </source>
+  <source id="1234275154402" name="ConceptTextGenDeclaration_DataFlow" hash="-3y9q7oq35l2pbaqy7erq7iqp7vzdlbg">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="ConceptTextGenDeclaration_DataFlow.java" />
+  </source>
+  <source id="1237297313040" name="WithIndentOperation_DataFlow" hash="8kad8hyha0viixhuypjiq7yanlof4gk">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="WithIndentOperation_DataFlow.java" />
+  </source>
+  <source id="1237297500008" name="UtilityMethodCall_DataFlow" hash="-ef2gzeykg8rfqqmpjq2sg8cik89u6r8">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="UtilityMethodCall_DataFlow.java" />
+  </source>
+  <source id="1237297544949" name="UtilityMethodDeclaration_DataFlow" hash="-cug0phr7weo01s37zsooxz1awfbwg1j">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="UtilityMethodDeclaration_DataFlow.java" />
+  </source>
+  <source id="1237483202466" name="FoundErrorOperation_DataFlow" hash="-ec37eanbm4uiao9f6eu7t2etmfsnujt">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="FoundErrorOperation_DataFlow.java" />
+  </source>
+  <source id="1237483235720" name="AppendOperation_DataFlow" hash="4twitj0pb8fqkw9aguuq21025cdn9fq">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="AppendOperation_DataFlow.java" />
+  </source>
+  <source id="1237483307729" name="CollectionAppendPart_DataFlow" hash="-1q5kdhe40g4azyzge545y7vjp0gu1ev">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="CollectionAppendPart_DataFlow.java" />
+  </source>
+  <source id="1237483338873" name="ConstantStringAppendPart_DataFlow" hash="nxhllm54uckurdw9rj69dw1vtbhwhi">
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="ConstantStringAppendPart_DataFlow.java" />
+  </source>
+  <source id="1237483369901" name="InfoAppendPart_DataFlow" hash="-ahhw7j2ofs09wo10kcb1yyz2cth9x7c">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="InfoAppendPart_DataFlow.java" />
+  </source>
+  <source id="1237483382474" name="NewLineAppendPart_DataFlow" hash="-9kyfy7ra0ljw3u2nnh2iiz38v032p22">
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="NewLineAppendPart_DataFlow.java" />
+  </source>
+  <source id="1237483388947" name="NodeAppendPart_DataFlow" hash="1kzzmqx22864lsag6ilbhqy496tk5ow">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="NodeAppendPart_DataFlow.java" />
+  </source>
+  <source id="1237483407146" name="DecreaseDepthOperation_DataFlow" hash="ettj5eqmb9cv9rtq6sqfhxfslu61xez">
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="DecreaseDepthOperation_DataFlow.java" />
+  </source>
+  <source id="1237483413134" name="IncreaseDepthOperation_DataFlow" hash="-bojq4knoh1qobadnvc36br15zt6dj6j">
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="IncreaseDepthOperation_DataFlow.java" />
+  </source>
+  <source id="1237483419497" name="IndentBufferOperation_DataFlow" hash="-d3nuo7kgmb3smnqtcop9iu9axt73vi5">
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="IndentBufferOperation_DataFlow.java" />
+  </source>
+  <source id="1237483518260" name="LanguageTextGenDeclaration_DataFlow" hash="6p3hf8v6vazl42lh5c87jwo7hq1s341">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="LanguageTextGenDeclaration_DataFlow.java" />
+  </source>
+  <source id="6911933836258446116" name="ReferenceAppendPart_DataFlow" hash="94xwcf60d944ptwkw0b46a8h9j8fgi8">
+    <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
+    <dep model="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
+    <file name="ReferenceAppendPart_DataFlow.java" />
+  </source>
+</dependencies>
 

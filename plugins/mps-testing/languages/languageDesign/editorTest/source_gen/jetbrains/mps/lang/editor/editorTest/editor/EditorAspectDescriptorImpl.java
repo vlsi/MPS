@@ -9,11 +9,12 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import java.util.Arrays;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
+
+
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new AttractsFocusBlock_Editor());
       case 1:
@@ -25,44 +26,45 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 4:
         return Collections.<ConceptEditor>singletonList(new ClassReference_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new IBaseTestBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new Composition_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new IBaseTestBlock_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor());
+        return Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor());
+        return Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor());
+        return Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new StubBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new TestBlockList_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimplePropertyAttribute_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor());
+        return Collections.<ConceptEditor>singletonList(new SimplePropertyContainer_Editor());
       case 15:
-        return Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new StubBlock_Editor());
       case 16:
+        return Collections.<ConceptEditor>singletonList(new TestBlockList_Editor());
+      case 17:
+        return Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor());
+      case 18:
+        return Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor());
+      case 19:
         return Collections.<ConceptEditor>singletonList(new VerticalLayoutBlockList_Editor());
       default:
     }
-    return Collections.emptyList();
+    return Collections.<ConceptEditor>emptyList();
   }
 
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.emptyList();
+    return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
 
-  public Collection<ConceptEditorHint> getHints() {
-    return Collections.emptyList();
-  }
-
-
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
 }

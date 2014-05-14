@@ -1,3 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3gr6mrcfcl8n91cuvo374hr39c9a4ue" />
+<dependencies version="2" modelHash="96g5257to4yarllf7b003ay3fpaq0jh">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="71mhb0v5f0gb4vfw478iy5a4irvpfac" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-82f0oztsfb3gamxv569e99gd66rsxxg" dependsOnNodes="true">
+    <dep root="1224137887853744019" />
+    <dep root="1224137887853744059" />
+    <dep root="1233670071145" />
+    <dep root="1233748055915" />
+    <dep root="1233749247888" />
+    <dep root="1233751620748" />
+    <dep root="1233752719417" />
+    <dep root="1233752780875" />
+    <dep root="1233920501193" />
+    <dep root="1233921373471" />
+    <dep root="1233922353619" />
+    <dep root="1233924848298" />
+    <dep root="1234279682891" />
+    <dep root="1234281982537" />
+    <dep root="1234351783410" />
+    <dep root="1234524838116" />
+    <dep root="1234529062040" />
+    <dep root="1234794705341" />
+    <dep root="1234884991117" />
+    <dep root="1236188139846" />
+    <dep root="1237305115734" />
+    <dep root="1237305208784" />
+    <dep root="1237305275276" />
+    <dep root="1237305334312" />
+    <dep root="1237305491868" />
+    <dep root="1237305557638" />
+    <dep root="1237306079178" />
+    <dep root="6911933836258445304" />
+    <dep root="7166719696753421196" />
+    <dep root="8931911391946696733" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1233670071145" name="ConceptTextGenDeclaration" hash="-6n59za6qmd7wuhkfp6vdab9ehotq6eh" />
+  <source id="1233748055915" name="NodeParameter" hash="8hhqsd8pbqx1o6cxe2ko845vzipds9u" />
+  <source id="1233749247888" name="GenerateTextDeclaration" hash="-afooaqmw7302fb54nahd30qch4q16u2" />
+  <source id="1233751620748" name="SimpleTextGenOperation" hash="-3ltht7gn4jr4shsfh2w8abhvblxdxtl" />
+  <source id="1233752719417" name="IncreaseDepthOperation" hash="cr84fjs7mcinz5mrnrxu7l57y7tr5ce" />
+  <source id="1233752780875" name="DecreaseDepthOperation" hash="-5kzq54pprvjqptneb5i7imy74zig189" />
+  <source id="1233920501193" name="IndentBufferOperation" hash="-byf3uu8kvfk7v6y89um8m6kag0q851z" />
+  <source id="1233921373471" name="LanguageTextGenDeclaration" hash="-53bz0xl9papjwgyjibpjsf10rl0uazl" />
+  <source id="1233922353619" name="OperationDeclaration" hash="-2fuunr8a5p35jqkaqfec4z5k1tt0zy" />
+  <source id="1233924848298" name="OperationCall" hash="e6s1k7fpb1061sx25psd5kshoyjoopj" />
+  <source id="1234279682891" name="ContextParameter" hash="-ch7m1wzw2zkvczku9q24ssar76zyfk6" />
+  <source id="1234281982537" name="AbstractTextGenDeclaration" hash="dcl8k25rpahlgdpq5b5asirqeo8ddbw" />
+  <source id="1234351783410" name="BufferParameter" hash="-dasy5sanpblkct3u8rltrjccpd48609" />
+  <source id="1234524838116" name="UtilityMethodDeclaration" hash="6xv2yus2vgxwyetpf1epv0c621ietut" />
+  <source id="1234529062040" name="UtilityMethodCall" hash="-3lb9uguxs6tnah4sjhx7ioozvppkg49" />
+  <source id="1234794705341" name="FoundErrorOperation" hash="-dplbvctllzlygci3w8bu2t8xdxg1y2h" />
+  <source id="1234884991117" name="AbstractTextGenParameter" hash="-7g3bs5ahr5ng870te6qblkic39grrfe" />
+  <source id="1236188139846" name="WithIndentOperation" hash="-72foxbf07u37rmu22a83bhr4nwmd6wl" />
+  <source id="1237305115734" name="AbstractAppendPart" hash="-3wpsf5018kk1mnue2vq3h1cilh1yjqa" />
+  <source id="1237305208784" name="NewLineAppendPart" hash="4d2z5dt1f137qz4fl5zunp2nfiju7f7" />
+  <source id="1237305275276" name="InfoAppendPart" hash="crvndo9ywpms5kytklz0i8opl72lpnr" />
+  <source id="1237305334312" name="NodeAppendPart" hash="a9pihs4k3blajd081wqpotvjh9us93d" />
+  <source id="1237305491868" name="CollectionAppendPart" hash="-f9941oc1cpyi786fp41y9wegov8cty" />
+  <source id="1237305557638" name="ConstantStringAppendPart" hash="-44fdtk1icoodlynu9gkxu8zbare9og5" />
+  <source id="1237306079178" name="AppendOperation" hash="6loigbu8wr37ehstr6f3tahpinfoxj6" />
+  <source id="8931911391946696733" name="ExtensionDeclaration" hash="6afal0lcfu52mtxr888xfwxtv6qbdgq" />
+  <source id="6911933836258445304" name="ReferenceAppendPart" hash="-4fc9culj7puaeuo27edvoti4mazcex9" />
+  <source id="7166719696753421196" name="EncodingLiteral" hash="-4rww7yq9mbe0c3rlw3uhjog6x4fnb1k" />
+  <source id="1224137887853744019" name="EncodingDeclaration" hash="-drqzwsrqzd7alxp54xg98o8oyc5vstg" />
+  <source id="1224137887853744059" name="EncodingDeclarationBase" hash="-a59vtt1mp0gzb43gijvfxcvh8mwnxb2" />
+</dependencies>
 

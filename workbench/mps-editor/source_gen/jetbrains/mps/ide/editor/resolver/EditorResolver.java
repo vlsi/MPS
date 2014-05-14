@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -17,7 +17,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -29,12 +28,12 @@ public class EditorResolver implements IResolver {
 
   @Nullable
   @Override
-  public boolean resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull IOperationContext operationContext) {
+  public boolean resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull SRepository repository) {
     final String resolveInfo = getResolveInfo(reference, sourceNode);
     if (resolveInfo == null) {
       return false;
     }
-    final EditorResolver.FakeEditorComponent fakeEditor = new EditorResolver.FakeEditorComponent(SNodeOperations.getContainingRoot(sourceNode), operationContext.getProject());
+    final EditorResolver.FakeEditorComponent fakeEditor = new EditorResolver.FakeEditorComponent(SNodeOperations.getContainingRoot(sourceNode), repository);
     try {
       EditorCell cellWithRole = fakeEditor.findNodeCellWithRole(sourceNode, reference.getRole());
       if (cellWithRole == null) {
@@ -83,9 +82,9 @@ public class EditorResolver implements IResolver {
   }
 
   private class FakeEditorComponent extends EditorComponent {
-    public FakeEditorComponent(SNode node, Project project) {
-      super(project.getRepository());
-      setEditorContext(new EditorContext(this, SNodeOperations.getModel(node), project.getRepository()));
+    public FakeEditorComponent(SNode node, SRepository repository) {
+      super(repository);
+      setEditorContext(new EditorContext(this, SNodeOperations.getModel(node), repository));
       editNode(node);
     }
 

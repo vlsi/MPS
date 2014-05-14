@@ -17,6 +17,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.plan.Conflict" />
     <classNode dependClassName="jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner" />
     <classNode dependClassName="jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.plan.GenerationPlan" />

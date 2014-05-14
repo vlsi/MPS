@@ -8,6 +8,8 @@
                     interface="jetbrains.mps.ide.editor.NodeStructureViewProvider"/>
     <extensionPoint qualifiedName="com.intellij.mps.editorWarningsProvider"
                     interface="jetbrains.mps.ide.editor.warningPanel.EditorWarningsProvider"/>
+    <extensionPoint qualifiedName="com.intellij.mps.IntentionActionsProvider"
+                    interface="jetbrains.mps.nodeEditor.IntentionActionsProvider"/>
   </extensionPoints>
 
   <application-components>

@@ -4,5 +4,5 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 
-public interface IStyleSheetMember_BehaviorDescriptor extends IStyle_BehaviorDescriptor, IStyleContainer_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor {
+public interface IStyleSheetMember_BehaviorDescriptor extends IStyle_BehaviorDescriptor, IStyleContainer_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor, IStyleSheetItem_BehaviorDescriptor {
 }

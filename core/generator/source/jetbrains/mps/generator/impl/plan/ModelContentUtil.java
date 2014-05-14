@@ -40,22 +40,16 @@ public class ModelContentUtil {
     return templateModelScanner.getTargetLanguages();
   }
 
-  public static Collection<String> getUsedLanguageNamespaces(SModel model, boolean isTemplateModel) {
-    if (isTemplateModel) {
-      return getUsedLanguageNamespacesInTemplateModel(model);
+  public static Collection<String> getUsedLanguageNamespaces(SModel model) {
+    Set<String> namespaces = new HashSet<String>();
+    for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
+      namespaces.add(ref.getModuleName());
     }
     if (SModelStereotype.isGeneratorModel(model)) {
       TemplateModelScanner templateModelScanner = new TemplateModelScanner(model);
       templateModelScanner.scan();
-      Set<String> namespaces = new HashSet<String>(templateModelScanner.getQueryLanguages());
-      for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
-        namespaces.add(ref.getModuleName());
-      }
+      namespaces.addAll(templateModelScanner.getQueryLanguages());
       return namespaces;
-    }
-    Set<String> namespaces = new HashSet<String>();
-    for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
-      namespaces.add(ref.getModuleName());
     }
     for (SNode child : SNodeUtil.getDescendants(model)) {
       namespaces.add(child.getConcept().getLanguage().getQualifiedName());

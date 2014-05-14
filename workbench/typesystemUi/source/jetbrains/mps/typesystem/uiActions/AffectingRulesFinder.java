@@ -47,6 +47,7 @@ public class AffectingRulesFinder implements IFinder {
     TypeContextManager manager = TypeContextManager.getInstance();
 
     TypeCheckingContext context = manager.acquireTypecheckingContext(root, owner);
+    context.checkRoot(true);
     try {
       IncrementalTypechecking component = context.getBaseNodeTypesComponent();
       List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
@@ -68,7 +69,7 @@ public class AffectingRulesFinder implements IFinder {
       }
       return createResult(term, rules);
     } finally {
-      manager.releaseTypecheckingContext(root, owner);
+      manager.releaseTypecheckingContext(owner);
     }
   }
 

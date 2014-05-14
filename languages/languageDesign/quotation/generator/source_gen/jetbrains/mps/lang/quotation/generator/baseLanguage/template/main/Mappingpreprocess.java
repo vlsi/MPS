@@ -11,6 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
@@ -55,7 +56,7 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
   }
 
   public boolean isApplicable(ITemplateGenerator generator) {
-    return true;
+    return QueriesGenerated.mappingConfiguration_Condition_6450631649356501163(new TemplateQueryContext(null, null, null, generator));
   }
 
   public Collection<TemplateReductionRule> getReductionRules() {

@@ -66,6 +66,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -135,11 +136,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) return getContextModule();
     if (dataId.equals(MPSDataKeys.MODULES.getName())) return getSelectedModules();
 
-    if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGE.getName())) {
-      List<String> selectedPackages = getSelectedPackages();
-      if (selectedPackages.size() != 1) return null;
-      return selectedPackages.get(0);
-    }
     if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) return getSelectedPackages();
 
     if (dataId.equals(MPSDataKeys.NAMESPACE.getName())) {
@@ -306,17 +302,15 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return result;
   }
 
-  public List<String> getSelectedPackages() {
-    List<String> result = new ArrayList<String>();
+  public List<Pair<SModel,String>> getSelectedPackages() {
+    List<Pair<SModel,String>> result = new ArrayList<Pair<SModel,String>>();
     TreePath[] paths = getTree().getSelectionPaths();
     if (paths == null) return result;
     for (TreePath path : paths) {
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-      while (node != null && !(node instanceof PackageNode)) {
-        node = (MPSTreeNode) node.getParent();
-      }
-      if (node != null) {
-        result.add(((PackageNode) node).getFullPackage());
+      if (node instanceof PackageNode) {
+        PackageNode pn = (PackageNode) node;
+        result.add(new Pair<SModel, String>(pn.getModelReference().resolve(MPSModuleRepository.getInstance()),pn.getFullPackage()));
       }
     }
     return result;

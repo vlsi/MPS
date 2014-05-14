@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/2975785153735131708">
     <nodeInfo nodeId="2975785153735131708" fileName="ThreadSafe_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2975785153735131708" fileName="ThreadSafe_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -144,7 +144,7 @@
     <nodeInfo nodeId="633195941006921798" fileName="ThreadPool_Editor.java" startLine="46" startPosition="57" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="633195941006921798" fileName="ThreadPool_Editor.java" startLine="48" startPosition="35" endLine="49" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="633195941006921798" fileName="ThreadPool_Editor.java" startLine="49" startPosition="72" endLine="50" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="633195941006921798" fileName="ThreadPool_Editor.java" startLine="50" startPosition="78" endLine="51" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="633195941006921798" fileName="ThreadPool_Editor.java" startLine="50" startPosition="78" endLine="51" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="633195941006921798" fileName="ThreadPool_Editor.java" startLine="52" startPosition="10" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="633195941006931866" fileName="ThreadPool_Editor.java" startLine="56" startPosition="88" endLine="57" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="633195941006931866" fileName="ThreadPool_Editor.java" startLine="57" startPosition="93" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -164,7 +164,7 @@
       <varInfo nodeId="633195941006921790" varName="editorContext" />
       <varInfo nodeId="633195941006921790" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="633195941006921798" fileName="ThreadPool_Editor.java" startLine="48" startPosition="35" endLine="51" endPosition="105">
+    <scopeInfo nodeId="633195941006921798" fileName="ThreadPool_Editor.java" startLine="48" startPosition="35" endLine="51" endPosition="109">
       <varInfo nodeId="633195941006921798" varName="manager" />
       <varInfo nodeId="633195941006921798" varName="opContext" />
     </scopeInfo>
@@ -296,7 +296,7 @@
     <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="64" startPosition="57" endLine="65" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="66" startPosition="35" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="67" startPosition="72" endLine="68" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="68" startPosition="78" endLine="69" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="70" startPosition="10" endLine="71" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="74" startPosition="89" endLine="75" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1188212207013" fileName="ParallelLoopVariable_Editor.java" startLine="75" startPosition="166" endLine="76" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -326,7 +326,7 @@
       <varInfo nodeId="1188212207006" varName="editorContext" />
       <varInfo nodeId="1188212207006" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="105">
+    <scopeInfo nodeId="1188212207012" fileName="ParallelLoopVariable_Editor.java" startLine="66" startPosition="35" endLine="69" endPosition="109">
       <varInfo nodeId="1188212207012" varName="manager" />
       <varInfo nodeId="1188212207012" varName="opContext" />
     </scopeInfo>
@@ -417,7 +417,7 @@
     <nodeInfo nodeId="8923957828369554101" fileName="ParallelFor_Editor.java" startLine="86" startPosition="57" endLine="87" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554101" fileName="ParallelFor_Editor.java" startLine="88" startPosition="35" endLine="89" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554101" fileName="ParallelFor_Editor.java" startLine="89" startPosition="72" endLine="90" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8923957828369554101" fileName="ParallelFor_Editor.java" startLine="90" startPosition="78" endLine="91" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923957828369554101" fileName="ParallelFor_Editor.java" startLine="90" startPosition="78" endLine="91" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8923957828369554101" fileName="ParallelFor_Editor.java" startLine="92" startPosition="10" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8923957828369554103" fileName="ParallelFor_Editor.java" startLine="96" startPosition="88" endLine="97" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554103" fileName="ParallelFor_Editor.java" startLine="97" startPosition="88" endLine="98" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -437,7 +437,7 @@
     <nodeInfo nodeId="8923957828369554105" fileName="ParallelFor_Editor.java" startLine="116" startPosition="57" endLine="117" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554105" fileName="ParallelFor_Editor.java" startLine="118" startPosition="35" endLine="119" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554105" fileName="ParallelFor_Editor.java" startLine="119" startPosition="72" endLine="120" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8923957828369554105" fileName="ParallelFor_Editor.java" startLine="120" startPosition="78" endLine="121" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923957828369554105" fileName="ParallelFor_Editor.java" startLine="120" startPosition="78" endLine="121" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8923957828369554105" fileName="ParallelFor_Editor.java" startLine="122" startPosition="10" endLine="123" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3294321158385479605" fileName="ParallelFor_Editor.java" startLine="126" startPosition="88" endLine="127" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3294321158385479605" fileName="ParallelFor_Editor.java" startLine="127" startPosition="87" endLine="128" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -470,7 +470,7 @@
     <nodeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="165" startPosition="57" endLine="166" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="167" startPosition="35" endLine="168" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="168" startPosition="72" endLine="169" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="169" startPosition="78" endLine="170" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="169" startPosition="78" endLine="170" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="171" startPosition="10" endLine="172" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7704855178158721944" fileName="ParallelFor_Editor.java" startLine="175" startPosition="97" endLine="176" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="179" startPosition="88" endLine="180" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -507,7 +507,7 @@
     <nodeInfo nodeId="8923957828369554112" fileName="ParallelFor_Editor.java" startLine="221" startPosition="57" endLine="222" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554112" fileName="ParallelFor_Editor.java" startLine="223" startPosition="35" endLine="224" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554112" fileName="ParallelFor_Editor.java" startLine="224" startPosition="72" endLine="225" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8923957828369554112" fileName="ParallelFor_Editor.java" startLine="225" startPosition="78" endLine="226" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8923957828369554112" fileName="ParallelFor_Editor.java" startLine="225" startPosition="78" endLine="226" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8923957828369554112" fileName="ParallelFor_Editor.java" startLine="227" startPosition="10" endLine="228" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8923957828369554115" fileName="ParallelFor_Editor.java" startLine="231" startPosition="88" endLine="232" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8923957828369554115" fileName="ParallelFor_Editor.java" startLine="232" startPosition="87" endLine="233" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -823,11 +823,11 @@
     <scopeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="40" startPosition="81" endLine="43" endPosition="5" />
     <scopeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="43" startPosition="5" endLine="46" endPosition="5" />
     <scopeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="46" startPosition="5" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="8923957828369554101" fileName="ParallelFor_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="105">
+    <scopeInfo nodeId="8923957828369554101" fileName="ParallelFor_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="109">
       <varInfo nodeId="8923957828369554101" varName="manager" />
       <varInfo nodeId="8923957828369554101" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8923957828369554105" fileName="ParallelFor_Editor.java" startLine="118" startPosition="35" endLine="121" endPosition="105">
+    <scopeInfo nodeId="8923957828369554105" fileName="ParallelFor_Editor.java" startLine="118" startPosition="35" endLine="121" endPosition="109">
       <varInfo nodeId="8923957828369554105" varName="manager" />
       <varInfo nodeId="8923957828369554105" varName="opContext" />
     </scopeInfo>
@@ -835,7 +835,7 @@
       <varInfo nodeId="7704855178158627412" varName="editorContext" />
       <varInfo nodeId="7704855178158627412" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="167" startPosition="35" endLine="170" endPosition="105">
+    <scopeInfo nodeId="8923957828369554093" fileName="ParallelFor_Editor.java" startLine="167" startPosition="35" endLine="170" endPosition="109">
       <varInfo nodeId="8923957828369554093" varName="manager" />
       <varInfo nodeId="8923957828369554093" varName="opContext" />
     </scopeInfo>
@@ -847,7 +847,7 @@
       <varInfo nodeId="7704855178158798940" varName="editorContext" />
       <varInfo nodeId="7704855178158798940" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8923957828369554112" fileName="ParallelFor_Editor.java" startLine="223" startPosition="35" endLine="226" endPosition="105">
+    <scopeInfo nodeId="8923957828369554112" fileName="ParallelFor_Editor.java" startLine="223" startPosition="35" endLine="226" endPosition="109">
       <varInfo nodeId="8923957828369554112" varName="manager" />
       <varInfo nodeId="8923957828369554112" varName="opContext" />
     </scopeInfo>

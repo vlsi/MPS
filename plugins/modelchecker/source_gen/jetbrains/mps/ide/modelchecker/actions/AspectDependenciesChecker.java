@@ -11,7 +11,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,7 +50,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
   }
 
   @Override
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final SRepository repository) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     monitor.start("wrong aspect dependencies", 1);
 
@@ -73,7 +73,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         if (targetNode == null) {
           SpecificChecker.addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
             public boolean doFix() {
-              return ResolverComponent.getInstance().resolve(ref, operationContext);
+              return ResolverComponent.getInstance().resolve(ref, repository);
             }
           });
           continue;

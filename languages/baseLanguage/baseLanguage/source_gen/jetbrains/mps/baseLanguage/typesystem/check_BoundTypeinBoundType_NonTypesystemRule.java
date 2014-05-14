@@ -23,13 +23,13 @@ public class check_BoundTypeinBoundType_NonTypesystemRule extends AbstractNonTyp
     if (SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.UpperBoundType") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(nodeToCheck, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), "virtual_isValueType_4836112446988592019", new Object[]{}))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(SNodeOperations.cast(nodeToCheck, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), "Invalid use of bound type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6871159928265525790", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Invalid use of bound type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6871159928265525790", null, errorTarget);
       }
     }
     if (SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.LowerBoundType") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(nodeToCheck, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), "virtual_isValueType_4836112446988592019", new Object[]{}))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(SNodeOperations.cast(nodeToCheck, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), "Invalid use of bound type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6871159928265527030", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Invalid use of bound type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6871159928265527030", null, errorTarget);
       }
     }
   }

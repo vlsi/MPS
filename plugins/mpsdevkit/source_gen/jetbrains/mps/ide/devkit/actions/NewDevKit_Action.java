@@ -71,7 +71,6 @@ public class NewDevKit_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       NewDevKitDialog dialog = new NewDevKitDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
-      dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
       dialog.show();
       final DevKit devkit = dialog.getResult();
       if (devkit == null) {

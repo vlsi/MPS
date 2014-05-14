@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,7 +20,6 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
 import java.util.Iterator;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -27,8 +27,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import java.util.Queue;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
@@ -61,8 +59,10 @@ public class SNodeOperations {
     return res;
   }
 
+  @Deprecated
   public static Iterable<SNode> getDescendants(SNode node, Condition<SNode> cond, boolean includeFirst) {
-    return new SNodeOperations.DescendantsIterable(node, cond, includeFirst);
+    // Deprecated: instead of this method, use openapi.model.SNodeUtil.getDescendants() directly 
+    return SNodeUtil.getDescendants(node, cond, includeFirst);
   }
 
   public static SNode findParent(SNode node, Condition<SNode> condition) {
@@ -92,8 +92,8 @@ public class SNodeOperations {
 
   private static void collectDescendants(SNode node, List<SNode> list, Condition<SNode> condition) {
     for (SNode child : Sequence.fromIterable(node.getChildren())) {
-      if (condition == null || condition == Condition.TRUE_CONDITION || (child instanceof SNode && condition.met(((SNode) child)))) {
-        ListSequence.fromList(list).addElement(((SNode) child));
+      if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(((SNode) child))) {
+        ListSequence.fromList(list).addElement(child);
       }
       collectDescendants(child, list, condition);
     }
@@ -251,63 +251,6 @@ public class SNodeOperations {
       return null;
     }
     return SModelRepository.getInstance().getModelDescriptor(mr);
-  }
-
-  private static class DescendantsIterable implements Iterator<SNode>, Iterable<SNode> {
-    private Condition<SNode> condition;
-    private Queue<SNode> queue = new LinkedList<SNode>();
-    private SNode current;
-
-    /*package*/ DescendantsIterable(SNode original, @Nullable Condition<SNode> condition, boolean includeFirst) {
-      this.condition = condition;
-      current = original;
-      if (current != null) {
-        for (SNode child : current.getChildren()) {
-          queue.offer(child);
-        }
-      }
-      if (!(includeFirst)) {
-        current = nextInternal();
-      }
-      while (current != null && condition != null && !(current instanceof SNode && condition.met(((SNode) current)))) {
-        current = nextInternal();
-      }
-    }
-
-    @Override
-    public boolean hasNext() {
-      return current != null;
-    }
-
-    @Override
-    public SNode next() {
-      SNode result = current;
-      do {
-        current = nextInternal();
-      } while (current != null && condition != null && !(current instanceof SNode && condition.met(((SNode) current))));
-      return ((SNode) result);
-    }
-
-    @Override
-    public void remove() {
-      throw new UnsupportedOperationException();
-    }
-
-    private SNode nextInternal() {
-      SNode next = queue.poll();
-      if (next == null) {
-        return null;
-      }
-      for (SNode child : next.getChildren()) {
-        queue.offer(child);
-      }
-      return next;
-    }
-
-    @Override
-    public Iterator<SNode> iterator() {
-      return this;
-    }
   }
 
   public static SNode getTargetNodeSilently(SReference ref) {

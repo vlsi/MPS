@@ -93,6 +93,15 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
     });
   }
 
+  public final void resetCheckerStateProtected() {
+    performUninterruptableAction(new Runnable() {
+      @Override
+      public void run() {
+        resetCheckerState();
+      }
+    });
+  }
+
   //--------stuff to override---------
 
   protected abstract Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
@@ -111,6 +120,9 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
 
   protected void clear(SNode node, EditorComponent editor) {
 
+  }
+
+  protected void resetCheckerState() {
   }
 
   protected void doDispose(){

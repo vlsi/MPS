@@ -1,3 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-62do7qoma9bbzvsw9ggk8wwdhgwigoi" />
+<dependencies version="2" modelHash="9aq7zii4ugw9leel0rpoom5ju7728g7">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="aelgsihqlkydejdy68izklgxf4r668d" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-9lxkfnwxgniq2yrdljwjnmpdabdli89" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="752944717341761987" name="DataFlowConstructor" hash="-am3tmb4xlmr9a58wyexv0de8h0qv27f">
+    <file name="DataFlowConstructor.java" />
+  </source>
+  <source id="178770917832659559" name="CustomAnalyzerRunner" hash="-8vpr51nnplpfszkiosr07g48huimipi">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="CustomAnalyzerRunner.java" />
+  </source>
+  <source id="7801926404027364448" name="GeneratedInstruction" hash="35gp5x8zmq2mzqgxdm9mmo5uev92k11">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="GeneratedInstruction.java" />
+  </source>
+</dependencies>
 

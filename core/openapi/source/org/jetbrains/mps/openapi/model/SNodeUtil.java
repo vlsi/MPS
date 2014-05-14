@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.util.TreeIterator;
 import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.DescendantsTreeIterator;
+import org.jetbrains.mps.util.FilterIterator;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -55,7 +56,6 @@ public class SNodeUtil {
   public static boolean isInstanceOf(@Nullable SNode node, @NotNull SAbstractConcept concept) {
     if (node == null) return false;
     SConcept c = node.getConcept();
-    if (c == null) return false;
     return c.isSubConceptOf(concept);
   }
 
@@ -66,7 +66,7 @@ public class SNodeUtil {
     SNode nodeParent = node.getParent();
     if (nodeParent == null) {
       SModel model = node.getModel();
-      if (model != null && node.getParent() == null) {
+      if (model != null) {
         node.delete();
         model.addRootNode(replacer);
       }
@@ -147,7 +147,6 @@ public class SNodeUtil {
     return new DescendantsIterable(node, condition, includeFirst);
   }
 
-
   private static class DescendantsIterable implements Iterable<SNode> {
     @NotNull
     private final SNode myNode;
@@ -162,73 +161,15 @@ public class SNodeUtil {
     }
 
     @Override
-    public TreeIterator<SNode> iterator() {
-      return new DescendantsIterator(myNode, myIncludeFirst ? myNode : myNode.getFirstChild(), myCondition);
-    }
-  }
-
-  private static class DescendantsIterator implements TreeIterator<SNode> {
-    private SNode original;
-    private SNode current;
-    private Condition<SNode> condition;
-    private SNode prev;
-
-    DescendantsIterator(SNode original, SNode first, @Nullable Condition<SNode> condition) {
-      this.original = original;
-      this.current = first;
-      this.condition = condition;
-      while (current != null && condition != null && !condition.met(current)) {
-        current = nextInternal(current, false);
-      }
-    }
-
-    @Override
-    public boolean hasNext() {
-      return current != null;
-    }
-
-    @Override
-    public SNode next() {
-      SNode result = current;
-      do {
-        current = nextInternal(current, false);
-      } while (current != null && condition != null && !condition.met(current));
-      prev = result;
-      return result;
-    }
-
-    @Override
-    public void skipChildren() {
-      if (prev == null) throw new IllegalStateException("no element");
-      current = nextInternal(prev, true);
-      while (current != null && condition != null && !condition.met(current)) {
-        current = nextInternal(current, false);
-      }
-    }
-
-    private SNode nextInternal(SNode curr, boolean skipChildren) {
-      if (curr == null) return null;
-      if (!skipChildren) {
-        SNode firstChild = curr.getFirstChild();
-        if (firstChild != null) return firstChild;
-      }
-      if (curr == original) return null;
-      do {
-        if (curr.getNextSibling() != null) {
-          return curr.getNextSibling();
-        }
-        curr = curr.getParent();
-      } while (curr != original);
-      return null;
-    }
-
-    @Override
-    public void remove() {
-      throw new UnsupportedOperationException();
-    }
-
     public Iterator<SNode> iterator() {
-      return this;
+      Iterator<SNode> it = new DescendantsTreeIterator(myNode);
+      if (myCondition != null) {
+        it = new FilterIterator<SNode>(it, myCondition);
+      }
+      if (!myIncludeFirst && it.hasNext()) {
+        it.next();
+      }
+      return it;
     }
   }
 

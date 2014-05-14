@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,18 +16,14 @@
 package jetbrains.mps.generator.test;
 
 import com.intellij.openapi.application.PathManager;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
-import jetbrains.mps.tool.environment.Environment;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
+import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -44,12 +40,16 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
@@ -95,7 +95,7 @@ public class GenerationTestBase {
 
     GenerationOptions options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
-        .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
+        .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
     IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
     GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p),
@@ -109,7 +109,7 @@ public class GenerationTestBase {
 
     options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
-        .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
+        .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
     generationHandler = new IncrementalTestGenerationHandler();
     long start = System.nanoTime();
     GenerationFacade.generateModels(p,
@@ -123,7 +123,7 @@ public class GenerationTestBase {
 
     options = GenerationOptions.getDefaults()
         .generateInParallel(true, threads)
-        .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new MyNonIncrementalGenerationStrategy()).create();
+        .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
     generationHandler = new IncrementalTestGenerationHandler();
     start = System.nanoTime();
     GenerationFacade.generateModels(p,
@@ -400,15 +400,14 @@ public class GenerationTestBase {
     Assert.assertTrue("At least " + numberOfChanges + " are required (have " + changes + ")", changes >= numberOfChanges);
   }
 
-  private static class MyIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
+  private static class MyIncrementalGenerationStrategy extends DefaultIncrementalStrategy {
     private final SModel myModel;
-    private final FileBasedGenerationCacheContainer myGenerationCacheContainer;
     private Map<String, String> myHash;
     private GenerationDependencies myDependencies;
 
     public MyIncrementalGenerationStrategy(SModel descr, FileBasedGenerationCacheContainer generationCacheContainer) {
+      super(generationCacheContainer);
       myModel = descr;
-      myGenerationCacheContainer = generationCacheContainer;
     }
 
     void buildHash() {
@@ -434,11 +433,6 @@ public class GenerationTestBase {
     }
 
     @Override
-    public GenerationCacheContainer getContainer() {
-      return myGenerationCacheContainer;
-    }
-
-    @Override
     public GenerationDependencies getDependencies(SModel sm) {
       if (myModel != sm) {
         return null;
@@ -446,36 +440,8 @@ public class GenerationTestBase {
       return myDependencies;
     }
 
-    @Override
-    public boolean isIncrementalEnabled() {
-      return true;
-    }
-
     public void setDependencies(GenerationDependencies dependencies) {
       myDependencies = dependencies;
-    }
-  }
-
-  private static class MyNonIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
-
-    @Override
-    public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {
-      return Collections.emptyMap();
-    }
-
-    @Override
-    public GenerationCacheContainer getContainer() {
-      return null;
-    }
-
-    @Override
-    public GenerationDependencies getDependencies(SModel sm) {
-      return null;
-    }
-
-    @Override
-    public boolean isIncrementalEnabled() {
-      return false;
     }
   }
 
