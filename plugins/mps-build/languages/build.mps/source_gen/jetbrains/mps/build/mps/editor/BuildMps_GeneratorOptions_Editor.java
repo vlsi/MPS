@@ -82,6 +82,8 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_aauy4y_f2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_aauy4y_g2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_aauy4y_h2a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_aauy4y_i2a(editorContext, node));
     return editorCell;
   }
 
@@ -210,6 +212,37 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_inplace");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_aauy4y_h2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "show warnings");
+    editorCell.setCellId("Constant_aauy4y_h2a");
+    Style style = new StyleImpl();
+    buildStyles_StyleSheet.apply_keyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_aauy4y_i2a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("warnings");
+    provider.setNoTargetText("");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_warnings");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
