@@ -12,18 +12,6 @@
     <classNode dependClassName="jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.plugin.Actions_PluginInitializer" file="Actions_PluginInitializer.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode dependClassName="jetbrains.mps.console.actions.plugin.Actions_ApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.plugins.AbstractPluginFactory" />
-    <classNode dependClassName="jetbrains.mps.plugins.PluginFactoriesRegistry" />
-    <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-  </dependency>
   <dependency className="jetbrains.mps.console.actions.plugin.FindByConditionGroup_ActionGroup" file="FindByConditionGroup_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -121,6 +109,5 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.console.actions.plugin.plugin" file="plugin.xml" />
 </dependenciesRoot>
 
