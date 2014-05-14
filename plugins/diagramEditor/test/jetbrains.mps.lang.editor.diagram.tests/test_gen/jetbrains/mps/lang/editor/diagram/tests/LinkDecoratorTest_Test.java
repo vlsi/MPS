@@ -23,6 +23,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import junit.framework.Assert;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView;
 
 @MPSLaunch
 public class LinkDecoratorTest_Test extends BaseTransformationTest4 {
@@ -42,7 +47,7 @@ public class LinkDecoratorTest_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("1638882350373488135", "1638882350373384614");
+      final Editor editor = TestBody.this.initEditor("1638882350373488135", "1560508619093517333");
       final EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
@@ -69,7 +74,15 @@ public class LinkDecoratorTest_Test extends BaseTransformationTest4 {
       });
       Assert.assertTrue(descendantMapper.value != null);
       Assert.assertTrue(descendantMapper.value.getTarget() != null && descendantMapper.value.getTarget() instanceof ConnectorDecoratorView);
-      Assert.assertTrue(((ConnectorDecoratorView) descendantMapper.value.getTarget()).hasError.get());
+      ConnectorDecoratorView connectorDecoratorView = (ConnectorDecoratorView) descendantMapper.value.getTarget();
+      Assert.assertTrue(connectorDecoratorView.hasError.get());
+      View cross = Sequence.fromIterable(JetpadUtils.getAllChildren(connectorDecoratorView)).findFirst(new IWhereFilter<View>() {
+        public boolean accept(View it) {
+          return it instanceof CrossView;
+        }
+      });
+      Assert.assertTrue(cross != null && cross.visible().get());
+
     }
   }
 }

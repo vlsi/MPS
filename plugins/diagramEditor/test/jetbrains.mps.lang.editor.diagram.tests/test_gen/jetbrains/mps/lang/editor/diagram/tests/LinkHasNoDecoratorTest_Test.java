@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import junit.framework.Assert;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView;
 
 @MPSLaunch
 public class LinkHasNoDecoratorTest_Test extends BaseTransformationTest4 {
@@ -43,12 +43,12 @@ public class LinkHasNoDecoratorTest_Test extends BaseTransformationTest4 {
       final DiagramCell diagramCell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), DiagramCell.class, true);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          descendantMapper.value = diagramCell.getDecorationRootMapper().getDescendantMapper(((SNode) SNodeOperations.cast(TestBody.this.getNodeById("83003444452668158"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector")));
+          descendantMapper.value = diagramCell.getDecorationRootMapper().getDescendantMapper(((SNode) SNodeOperations.cast(TestBody.this.getNodeById("1560508619093671384"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector")));
         }
       });
       Assert.assertTrue(descendantMapper.value != null);
-      Assert.assertTrue(descendantMapper.value.getTarget() != null && descendantMapper.value.getTarget() instanceof NodeDecoratorView);
-      Assert.assertFalse(((NodeDecoratorView) descendantMapper.value.getTarget()).hasError.get());
+      Assert.assertTrue(descendantMapper.value.getTarget() != null && descendantMapper.value.getTarget() instanceof ConnectorDecoratorView);
+      Assert.assertFalse(((ConnectorDecoratorView) descendantMapper.value.getTarget()).hasError.get());
     }
   }
 }

@@ -17,8 +17,8 @@
     </node>
     <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="7060406825703063996" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="blosdfck" />
-      <property name="x" nameId="adck.2353136177974084745" value="27" />
-      <property name="y" nameId="adck.2353136177974084746" value="193" />
+      <property name="x" nameId="adck.2353136177974084745" value="43" />
+      <property name="y" nameId="adck.2353136177974084746" value="210" />
       <property name="width" nameId="adck.3175567003993184638" value="122" />
       <property name="height" nameId="adck.3175567003993184686" value="100" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="7882925886022044419" resolveInfo="Producer" />
@@ -62,7 +62,7 @@
       <property name="height" nameId="adck.3175567003993184686" value="43" />
       <property name="name" nameId="tpck.1169194664001" value="block" />
       <property name="x" nameId="adck.2353136177974084745" value="195" />
-      <property name="y" nameId="adck.2353136177974084746" value="30" />
+      <property name="y" nameId="adck.2353136177974084746" value="22" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
     </node>
     <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="7747320643107897052" nodeInfo="ng">
@@ -78,7 +78,7 @@
       <property name="height" nameId="adck.3175567003993184686" value="43" />
       <property name="name" nameId="tpck.1169194664001" value="block" />
       <property name="x" nameId="adck.2353136177974084745" value="268" />
-      <property name="y" nameId="adck.2353136177974084746" value="136" />
+      <property name="y" nameId="adck.2353136177974084746" value="189" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="7882925886022044419" resolveInfo="Producer" />
     </node>
     <node role="newConnectors" roleId="adck.2353136177974093280" type="adck.ConnectorInstance" typeId="adck.2353136177974088982" id="3879347709287469259" nodeInfo="ng">
@@ -121,7 +121,7 @@
       <property name="height" nameId="adck.3175567003993184686" value="43" />
       <property name="name" nameId="tpck.1169194664001" value="block" />
       <property name="x" nameId="adck.2353136177974084745" value="52" />
-      <property name="y" nameId="adck.2353136177974084746" value="118" />
+      <property name="y" nameId="adck.2353136177974084746" value="119" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
     </node>
     <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="4181264724707639785" nodeInfo="ng">
@@ -129,8 +129,16 @@
       <property name="height" nameId="adck.3175567003993184686" value="50" />
       <property name="name" nameId="tpck.1169194664001" value="block" />
       <property name="x" nameId="adck.2353136177974084745" value="48" />
-      <property name="y" nameId="adck.2353136177974084746" value="43" />
+      <property name="y" nameId="adck.2353136177974084746" value="37" />
       <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="7882925886022044419" resolveInfo="Producer" />
+    </node>
+    <node role="newBlocks" roleId="adck.2353136177974080694" type="adck.BlockInstance" typeId="adck.2353136177974080669" id="1560508619094008343" nodeInfo="ng">
+      <property name="width" nameId="adck.3175567003993184638" value="79" />
+      <property name="height" nameId="adck.3175567003993184686" value="43" />
+      <property name="name" nameId="tpck.1169194664001" value="block" />
+      <property name="x" nameId="adck.2353136177974084745" value="250" />
+      <property name="y" nameId="adck.2353136177974084746" value="105" />
+      <link role="metaBlock" roleId="adck.2353136177974084777" targetNodeId="1220375669565734590" resolveInfo="Consumer" />
     </node>
   </root>
   <root type="adck.MetaBlock" typeId="adck.2353136177973871304" id="1220375669565734590" nodeInfo="ng">
