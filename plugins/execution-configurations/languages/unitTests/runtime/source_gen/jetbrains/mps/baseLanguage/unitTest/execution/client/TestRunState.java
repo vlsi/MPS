@@ -69,8 +69,8 @@ public class TestRunState {
   private void addTestCases(Iterable<? extends ITestNodeWrapper> testCases) {
     for (ITestNodeWrapper testCase : Sequence.fromIterable(testCases)) {
       List<ITestNodeWrapper> testMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-      MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
       ListSequence.fromList(testMethods).addSequence(Sequence.fromIterable(testCase.getTestMethods()));
+      MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
     }
   }
 

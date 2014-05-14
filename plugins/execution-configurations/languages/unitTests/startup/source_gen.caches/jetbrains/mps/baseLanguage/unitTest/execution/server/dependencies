@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.AbstractTestExecutor" file="AbstractTestExecutor.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
+    <classNode dependClassName="jetbrains.mps.util.test.TestCounter" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.junit.runner.JUnitCore" />
+    <classNode dependClassName="org.junit.runner.Request" />
+    <classNode dependClassName="org.junit.runner.notification.RunListener" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.BTestExecutor" file="BTestExecutor.java">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.PrintStream" />
@@ -13,15 +29,31 @@
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandLineTestsContributor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandOutputStream" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.CommandLineTestsContributor" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.TestsContributor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.junit.runner.Description" />
     <classNode dependClassName="org.junit.runner.Request" />
     <classNode dependClassName="org.junit.runner.notification.Failure" />
-    <classNode extendsClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.AbstractTestExecutor" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.AbstractTestExecutor" />
     <classNode extendsClassName="org.junit.runner.notification.RunListener" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandLineTestsContributor" file="CommandLineTestsContributor.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileReader" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.LineNumberReader" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.junit.runner.Request" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandOutputStream" file="CommandOutputStream.java">
     <classNode dependClassName="java.io.IOException" />
@@ -29,6 +61,97 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="java.io.FilterOutputStream" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor" file="NodeWrappersTestsContributor.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExtractor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsClassStorage" />
+    <classNode dependClassName="org.junit.runner.Request" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestExecutor" file="TestExecutor.java" />
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" file="TestLightExecutor.java">
+    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
+    <classNode dependClassName="com.intellij.util.WaitFor" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Thread" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.NodeWrappersTestsContributor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightRunListener" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsClassStorage" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.util.TestLightRunState" />
+    <classNode dependClassName="jetbrains.mps.lang.test.util.TestLightRunStateEnum" />
+    <classNode dependClassName="jetbrains.mps.util.test.TestRunStorage" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.junit.runner.JUnitCore" />
+    <classNode dependClassName="org.junit.runner.Request" />
+    <classNode dependClassName="org.junit.runner.notification.RunListener" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.AbstractTestExecutor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExtractor" file="TestLightExtractor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsClassStorage" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.junit.runner.Request" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightRunListener" file="TestLightRunListener.java">
+    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
+    <classNode dependClassName="java.io.PrintWriter" />
+    <classNode dependClassName="java.io.StringWriter" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runtime" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
+    <classNode dependClassName="jetbrains.mps.lang.test.util.TestLightRunState" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.junit.runner.Description" />
+    <classNode dependClassName="org.junit.runner.Result" />
+    <classNode dependClassName="org.junit.runner.notification.Failure" />
+    <classNode extendsClassName="org.junit.runner.notification.RunListener" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsClassStorage" file="TestsClassStorage.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassLoader" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" file="TestsContributor.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="org.junit.runner.Request" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestExecutor" file="TransformationTestExecutor.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />

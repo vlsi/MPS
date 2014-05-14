@@ -940,8 +940,8 @@
     <nodeInfo nodeId="5881102044690182586" fileName="TestRunState.java" startLine="64" startPosition="74" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5881102044690182587" fileName="TestRunState.java" startLine="65" startPosition="0" endLine="66" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5881102044690182601" fileName="TestRunState.java" startLine="70" startPosition="72" endLine="71" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5881102044690182608" fileName="TestRunState.java" startLine="71" startPosition="100" endLine="72" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5881102044690182616" fileName="TestRunState.java" startLine="72" startPosition="78" endLine="73" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690182616" fileName="TestRunState.java" startLine="71" startPosition="100" endLine="72" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5881102044690182608" fileName="TestRunState.java" startLine="72" startPosition="103" endLine="73" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5881102044690182634" fileName="TestRunState.java" startLine="78" startPosition="76" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5881102044690182640" fileName="TestRunState.java" startLine="79" startPosition="59" endLine="80" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5881102044690182654" fileName="TestRunState.java" startLine="81" startPosition="35" endLine="82" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1121,7 +1121,7 @@
     <scopeInfo nodeId="2034046503361624861" fileName="TestRunState.java" startLine="57" startPosition="110" endLine="60" endPosition="11">
       <varInfo nodeId="2034046503361624883" varName="testMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="5881102044690182600" fileName="TestRunState.java" startLine="70" startPosition="72" endLine="73" endPosition="103">
+    <scopeInfo nodeId="5881102044690182600" fileName="TestRunState.java" startLine="70" startPosition="72" endLine="73" endPosition="78">
       <varInfo nodeId="5881102044690182602" varName="testMethods" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690182684" fileName="TestRunState.java" startLine="91" startPosition="29" endLine="94" endPosition="5" />

@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import com.intellij.execution.process.ProcessHandler;
 import java.util.concurrent.Future;
+import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
 import java.io.OutputStream;
 import com.intellij.openapi.util.Key;
 

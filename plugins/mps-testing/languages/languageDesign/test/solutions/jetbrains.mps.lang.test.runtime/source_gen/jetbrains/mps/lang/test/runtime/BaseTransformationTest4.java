@@ -4,7 +4,7 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
+import jetbrains.mps.lang.test.util.TestLightRunState;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
@@ -19,7 +19,8 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
 
   private void initTestRunner() {
-    if (JUnitLightExecutor.isRunInProgress()) {
+    TestLightRunState runState = TransformationTestLightRunner.getRunState(Thread.currentThread().getId());
+    if (runState.isRunning()) {
       myRunner = new TransformationTestLightRunner();
     } else {
       myRunner = new TransformationTestRunner();

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="8k48w6pm6mhblvdqvl49ev92n69fphr">
+  <common hash="-8ubqi4tmumhxniuq3w9zmz8h0cg3gar" dependsOnNodes="true" />
+  <source id="1813663789079454564" name="TestLightRunState" hash="-826k2ez7j92gh4zc2pw7pvpao5xq29t">
+    <file name="TestLightRunState.java" />
+  </source>
+  <source id="1813663789079454696" name="TestLightRunStateEnum" hash="di7ic0otdp6hz3nj5uzga7q6by8tqk1">
+    <file name="TestLightRunStateEnum.java" />
+  </source>
+</dependencies>
+
