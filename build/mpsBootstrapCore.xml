@@ -2832,7 +2832,7 @@
   
   <target name="generate" depends="declare-mps-tasks">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true">
       <chunk bootstrap="true">
         <module file="${mps_home}/languages/core/stub/Annotations/Annotations.msd" bootstrap="true" />
         <module file="${mps_home}/languages/core/stub/JDK/JDK.msd" bootstrap="true" />
