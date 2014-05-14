@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,26 +107,12 @@ public abstract class SReferenceBase extends SReference {
                       (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
                       ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +
                       "): isRegistered = " + (myImmatureTargetNode.getModel() != null) +
-                      ", isDisposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode) + dumpUnregisteredTrace()));
+                      ", isDisposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode)));
           myImmatureTargetNode = null;
         }
       }
     }
     return myImmatureTargetNode == null;
-  }
-
-  private String dumpUnregisteredTrace() {
-    Throwable trace = Trace.getInstance().getUnregisteredFromModelTrace(myImmatureTargetNode);
-    if (trace == null) {
-      return "";
-    }
-    StringWriter traceWriter = new StringWriter();
-    PrintWriter printTraceWriter = new PrintWriter(traceWriter);
-    printTraceWriter.println();
-    printTraceWriter.println("Unregistered in:");
-    trace.printStackTrace(printTraceWriter);
-    printTraceWriter.close();
-    return traceWriter.toString();
   }
 
   protected synchronized void makeMature() {
