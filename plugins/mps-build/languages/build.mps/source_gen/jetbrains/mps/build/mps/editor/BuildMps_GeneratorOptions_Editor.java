@@ -227,7 +227,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_aauy4y_h2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "show warnings");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "hide warnings");
     editorCell.setCellId("Constant_aauy4y_h2a");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
@@ -238,11 +238,11 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
 
   private EditorCell createProperty_aauy4y_i2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("warnings");
+    provider.setRole("hideWarnings");
     provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_warnings");
+    editorCell.setCellId("property_hideWarnings");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);

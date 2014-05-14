@@ -73,7 +73,7 @@ public class BaseGeneratorWorker extends MpsWorker {
     boolean strictMode = gp.isStrictMode();
     boolean parallelMode = gp.isParallelMode();
     boolean inplace = gp.isInplaceTransform();
-    boolean warnings = gp.isInplaceTransform();
+    boolean warnings = !(gp.isHideWarnings());
     int threadCount = gp.getParallelThreads();
     settings.setStrictMode(strictMode);
     if (strictMode) {
@@ -84,8 +84,8 @@ public class BaseGeneratorWorker extends MpsWorker {
     }
     String[] onoff = new String[]{"on", "off"};
     settings.enableInplaceTransformations(inplace);
-    settings.setShowWarnings(warnings);
-    info(String.format("Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings is %s", onoff[(strictMode ? 0 : 1)], onoff[(parallelMode ? 0 : 1)], (parallelMode ? threadCount : 1), onoff[(inplace ? 0 : 1)], onoff[(warnings ? 0 : 1)]));
+    settings.setShowBadChildWarning(warnings);
+    info(String.format("Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings are %s", onoff[(strictMode ? 0 : 1)], onoff[(parallelMode ? 0 : 1)], (parallelMode ? threadCount : 1), onoff[(inplace ? 0 : 1)], onoff[(warnings ? 0 : 1)]));
   }
 
   @Override

@@ -470,7 +470,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3938719774425518972(final PropertyMacroContext _context) {
-    return Boolean.toString(SPropertyOperations.getBoolean(((SNode) _context.getVariable("var:genOptions")), "warnings"));
+    return Boolean.toString(SPropertyOperations.getBoolean(((SNode) _context.getVariable("var:genOptions")), "hideWarnings"));
   }
 
   public static Object propertyMacro_GetPropertyValue_8845345751178380248(final PropertyMacroContext _context) {
@@ -1627,7 +1627,7 @@ public class QueriesGenerated {
       SPropertyOperations.set(defaults, "parallelThreads", "" + (8));
       SPropertyOperations.set(defaults, "strict", "" + (true));
       SPropertyOperations.set(defaults, "inplace", "" + (false));
-      SPropertyOperations.set(defaults, "warnings", "" + (true));
+      SPropertyOperations.set(defaults, "hideWarnings", "" + (false));
       return defaults;
     }
   }

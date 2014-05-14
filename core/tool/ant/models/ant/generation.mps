@@ -286,10 +286,8 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3938719774425107749" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.3938719774424675043" resolveInfo="setShowWarnings" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3938719774425110793" nodeInfo="nn">
-                <property name="value" nameId="tpee.1068580123138" value="true" />
-              </node>
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.3938719774424675043" resolveInfo="setHideWarnings" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3938719774425110793" nodeInfo="nn" />
             </node>
           </node>
         </node>
@@ -512,7 +510,7 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3938719774425091774" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="setShowWarnings" />
+      <property name="name" nameId="tpck.1169194664001" value="setHideWarnings" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3938719774425091775" nodeInfo="in" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3938719774425091776" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3938719774425091777" nodeInfo="sn">
@@ -522,16 +520,16 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3415722583341679792" resolveInfo="myGenProps" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3938719774425091781" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.3938719774424675043" resolveInfo="setShowWarnings" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.3938719774424675043" resolveInfo="setHideWarnings" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3938719774425091782" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3938719774425091783" resolveInfo="showWarnings" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3938719774425091783" resolveInfo="hideWarnings" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3938719774425091783" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="showWarnings" />
+        <property name="name" nameId="tpck.1169194664001" value="hideWarnings" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="3938719774425091784" nodeInfo="in" />
       </node>
     </node>

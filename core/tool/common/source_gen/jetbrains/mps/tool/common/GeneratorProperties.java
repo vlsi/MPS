@@ -9,7 +9,7 @@ package jetbrains.mps.tool.common;
 public final class GeneratorProperties {
   private static final String TRANSFORM_IN_PLACE = "in-place";
   private static final String THREAD_COUNT = "parallel.threads";
-  private static final String SHOW_WARNINGS = "warnings";
+  private static final String NO_WARNINGS = "noWarnings";
   /**
    * package visibility is just for the sake of deprecated fields in ScriptProperties
    * Once they are gone, these shall be private.
@@ -64,12 +64,12 @@ public final class GeneratorProperties {
     return Boolean.parseBoolean(myScript.getProperty(TRANSFORM_IN_PLACE));
   }
 
-  public GeneratorProperties setShowWarnings(boolean enabled) {
-    myScript.putProperty(SHOW_WARNINGS, Boolean.toString(enabled));
+  public GeneratorProperties setHideWarnings(boolean enabled) {
+    myScript.putProperty(NO_WARNINGS, Boolean.toString(enabled));
     return this;
   }
 
-  public boolean isShowWarnings() {
-    return Boolean.parseBoolean(myScript.getProperty(SHOW_WARNINGS));
+  public boolean isHideWarnings() {
+    return Boolean.parseBoolean(myScript.getProperty(NO_WARNINGS));
   }
 }

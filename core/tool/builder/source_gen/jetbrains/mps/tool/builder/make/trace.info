@@ -512,15 +512,15 @@
     <nodeInfo nodeId="3415722583342042760" fileName="BaseGeneratorWorker.java" startLine="72" startPosition="110" endLine="73" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301294075" fileName="BaseGeneratorWorker.java" startLine="73" startPosition="43" endLine="74" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3415722583343436775" fileName="BaseGeneratorWorker.java" startLine="74" startPosition="47" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3938719774424585828" fileName="BaseGeneratorWorker.java" startLine="75" startPosition="46" endLine="76" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4297162197630137846" fileName="BaseGeneratorWorker.java" startLine="76" startPosition="47" endLine="77" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3938719774424585828" fileName="BaseGeneratorWorker.java" startLine="75" startPosition="46" endLine="76" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4297162197630137846" fileName="BaseGeneratorWorker.java" startLine="76" startPosition="46" endLine="77" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301294065" fileName="BaseGeneratorWorker.java" startLine="77" startPosition="46" endLine="78" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301294083" fileName="BaseGeneratorWorker.java" startLine="79" startPosition="21" endLine="80" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301294092" fileName="BaseGeneratorWorker.java" startLine="81" startPosition="25" endLine="82" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3415722583343633664" fileName="BaseGeneratorWorker.java" startLine="84" startPosition="5" endLine="85" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3415722583342131546" fileName="BaseGeneratorWorker.java" startLine="85" startPosition="47" endLine="86" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3938719774424638347" fileName="BaseGeneratorWorker.java" startLine="86" startPosition="51" endLine="87" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226301294100" fileName="BaseGeneratorWorker.java" startLine="87" startPosition="39" endLine="88" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3938719774424638347" fileName="BaseGeneratorWorker.java" startLine="86" startPosition="51" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226301294100" fileName="BaseGeneratorWorker.java" startLine="87" startPosition="46" endLine="88" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301294113" fileName="BaseGeneratorWorker.java" startLine="92" startPosition="34" endLine="93" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="878521226301294124" fileName="BaseGeneratorWorker.java" startLine="96" startPosition="75" endLine="97" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="878521226301294137" fileName="BaseGeneratorWorker.java" startLine="98" startPosition="40" endLine="99" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -785,7 +785,7 @@
       <varInfo nodeId="878521226301294291" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="2034046503361561028" fileName="BaseGeneratorWorker.java" startLine="214" startPosition="0" endLine="228" endPosition="0" />
-    <scopeInfo nodeId="878521226301294056" fileName="BaseGeneratorWorker.java" startLine="70" startPosition="44" endLine="88" endPosition="276">
+    <scopeInfo nodeId="878521226301294056" fileName="BaseGeneratorWorker.java" startLine="70" startPosition="44" endLine="88" endPosition="277">
       <varInfo nodeId="3415722583341886650" varName="gp" />
       <varInfo nodeId="3415722583343436778" varName="inplace" />
       <varInfo nodeId="3415722583343633667" varName="onoff" />
