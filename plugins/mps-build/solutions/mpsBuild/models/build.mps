@@ -4436,6 +4436,9 @@
         <node role="exports" roleId="kdzh.322010710375832962" type="kdzh.BuildMps_DevKitExportLanguage" typeId="kdzh.322010710375832938" id="8939513996048536489" nodeInfo="ng">
           <link role="language" roleId="kdzh.322010710375832947" targetNodeId="8939513996048535569" resolveInfo="jetbrains.mps.baseLanguage.collections" />
         </node>
+        <node role="exports" roleId="kdzh.322010710375832962" type="kdzh.BuildMps_DevKitExportLanguage" typeId="kdzh.322010710375832938" id="6336299221604482176" nodeInfo="ng">
+          <link role="language" roleId="kdzh.322010710375832947" targetNodeId="8939513996048535672" resolveInfo="jetbrains.mps.baseLanguage.javadoc" />
+        </node>
       </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_DevKit" typeId="kdzh.322010710375794190" id="8939513996048535413" nodeInfo="ng">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
