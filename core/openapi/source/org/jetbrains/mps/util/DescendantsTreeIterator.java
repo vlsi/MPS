@@ -49,6 +49,10 @@ public final class DescendantsTreeIterator implements TreeIterator<SNode> {
    * myNext == null when there are no more children to visit
    */
   private SNode myNext;
+  /*
+   * true iff myNext is a sibling of last element returned from #next()
+   */
+  private boolean myNextIsSibling;
 
   public DescendantsTreeIterator(@Nullable SNode start) {
     myStart = myNext = start;
@@ -68,10 +72,12 @@ public final class DescendantsTreeIterator implements TreeIterator<SNode> {
     final SNode firstChild = myNext.getFirstChild();
     if (firstChild == null) {
       nextSibling(); // leaf node, try sibling or go level up
+      myNextIsSibling = true;
     } else {
       // record the parent of next element (last node with children we've visited)
       myVisitedNodes.push(result);
       myNext = firstChild;
+      myNextIsSibling = false;
     }
     return result;
   }
@@ -86,9 +92,13 @@ public final class DescendantsTreeIterator implements TreeIterator<SNode> {
       // empty stack with non-empty myNext is possible when no next() has been called
       throw new IllegalStateException();
     }
+    if (myNextIsSibling) {
+      return;
+    }
     // return to last non-leaf node, and try next from there
     myNext = myVisitedNodes.pop();
     nextSibling();
+    myNextIsSibling = true; // not really necessary here as subsequent #next() would put correct value.
   }
 
   private void nextSibling() {

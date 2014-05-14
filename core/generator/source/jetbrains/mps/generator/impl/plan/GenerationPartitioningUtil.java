@@ -31,8 +31,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,10 +43,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Igor Alshannikov
@@ -62,35 +59,20 @@ public class GenerationPartitioningUtil {
     List<Pair<String, TemplateMappingConfiguration>> strings = new ArrayList<Pair<String, TemplateMappingConfiguration>>();
 
     // consolidate mappings
-    Map<TemplateModel, Integer> numOfMappingsByModel = new HashMap<TemplateModel, Integer>();
+    MultiMap<TemplateModel, TemplateMappingConfiguration> mcByModel = new MultiMap<TemplateModel, TemplateMappingConfiguration>();
     for (TemplateMappingConfiguration mappingConfig : mappings) {
-      TemplateModel model = mappingConfig.getModel();
-      if (!numOfMappingsByModel.containsKey(model)) {
-        numOfMappingsByModel.put(model, 0);
-      }
-      numOfMappingsByModel.put(model, numOfMappingsByModel.get(model) + 1);
+      mcByModel.putValue(mappingConfig.getModel(), mappingConfig);
     }
-    Iterator<TemplateModel> models = numOfMappingsByModel.keySet().iterator();
-    while (models.hasNext()) {
-      TemplateModel model = models.next();
-      int totalMappings = model.getConfigurations().size();
-      if (totalMappings <= 1 || numOfMappingsByModel.get(model) < totalMappings) {
-        models.remove();
-      } else {
-        numOfMappingsByModel.put(model, 0);
-      }
-    }
-
     // output
-    for (TemplateMappingConfiguration mappingConfig : mappings) {
-      TemplateModel model = mappingConfig.getModel();
-      if (numOfMappingsByModel.containsKey(model)) {
-        if (numOfMappingsByModel.get(model) == 0) {
-          strings.add(new Pair<String, TemplateMappingConfiguration>(model.getLongName() + ".*", mappingConfig));
-          numOfMappingsByModel.put(model, 1);
-        }
+    for (TemplateModel model : mcByModel.keySet()) {
+      HashSet<TemplateMappingConfiguration> all = new HashSet<TemplateMappingConfiguration>(model.getConfigurations());
+      HashSet<TemplateMappingConfiguration> seen = new HashSet<TemplateMappingConfiguration>(mcByModel.get(model));
+      if (all.equals(seen)) {
+        strings.add(new Pair<String, TemplateMappingConfiguration>(model.getLongName() + ".*", seen.iterator().next()));
       } else {
-        strings.add(new Pair<String, TemplateMappingConfiguration>(model.getLongName() + "." + mappingConfig.getName(), mappingConfig));
+        for (TemplateMappingConfiguration mappingConfig : seen) {
+          strings.add(new Pair<String, TemplateMappingConfiguration>(model.getLongName() + "." + mappingConfig.getName(), mappingConfig));
+        }
       }
     }
 

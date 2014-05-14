@@ -89,7 +89,7 @@ public class GenerationPartitioner {
     loadRules();
 
     // solve
-    final List<GenerationPhase> generationPhases = mySolver.solveNew();
+    final List<GenerationPhase> generationPhases = mySolver.solve();
     return phaseAsPlainList(generationPhases);
 //    return phaseGroupedByGenerator(generationPhases);
   }
@@ -131,6 +131,17 @@ public class GenerationPartitioner {
 
     Collection<TemplateMappingConfiguration> lhs = getMappingsFromRef(left, generator, generator.getAlias());
     Collection<TemplateMappingConfiguration> rhs = getMappingsFromRef(right, generator, generator.getAlias());
+    if (lhs.isEmpty() || rhs.isEmpty()) {
+      final String lang = generator.getSourceLanguage().getNamespace();
+      if (lhs.isEmpty() && rhs.isEmpty()) {
+        final String msg = String.format("Generator for language %s defines priority rule %s, both sides of the rule miss mapping configuration. The rule doesn't affect the generation and is ignored.", lang, rule);
+        myConflicts.registerInvalid(generator.getReference(), msg, rule);
+      } else {
+        final String msg = String.format("Generator for language %s defines invalid priority rule %s, with no mapping configurations specified at one side. The rule is ignored.", lang, rule);
+        myConflicts.registerInvalid(generator.getReference(), msg, rule);
+      }
+      return;
+    }
     switch (rule.getType()) {
       case STRICTLY_TOGETHER:
         Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(rhs);
@@ -223,59 +234,4 @@ public class GenerationPartitioner {
   public PriorityConflicts getConflictingPriorityRules() {
     return myConflicts;
   }
-
-  static class PriorityData {
-    boolean myStrict;
-    Set<MappingPriorityRule> myCauseRules = new HashSet<MappingPriorityRule>();
-
-    public PriorityData(boolean strict, MappingPriorityRule causeRule) {
-      this.myStrict = strict;
-      this.myCauseRules.add(causeRule);
-    }
-
-    public PriorityData(boolean strict, Set<MappingPriorityRule> causeRules) {
-      this.myStrict = strict;
-      this.myCauseRules.addAll(causeRules);
-    }
-
-    public PriorityData(PriorityData pd) {
-      update(pd);
-    }
-
-    public boolean isStrict() {
-      return myStrict;
-    }
-
-    public boolean isWeak() {
-      return !myStrict;
-    }
-
-    public void update(PriorityData pd) {
-      myCauseRules.addAll(pd.myCauseRules);
-      if (pd.myStrict) {
-        myStrict = true;
-      }
-    }
-
-    public String toString() {
-      return "[" + (myStrict ? "strict" : "weak") + " " + myCauseRules.size() + "]";
-    }
-  } // class PriorityData
-
-  static class CoherentSetData {
-    Set<TemplateMappingConfiguration> myMappings;
-    Set<MappingPriorityRule> myCauseRules;
-
-    public CoherentSetData(Set<TemplateMappingConfiguration> mappings, MappingPriorityRule rule) {
-      myMappings = mappings;
-      myCauseRules = new HashSet<MappingPriorityRule>();
-      myCauseRules.add(rule);
-    }
-
-    void merge(CoherentSetData other) {
-      myMappings.addAll(other.myMappings);
-      myCauseRules.addAll(other.myCauseRules);
-    }
-  } // class CoherentSetData
-
 }
