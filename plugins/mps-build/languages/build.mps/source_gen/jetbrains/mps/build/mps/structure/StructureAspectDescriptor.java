@@ -57,7 +57,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_Generator").super_("jetbrains.mps.build.mps.structure.BuildMps_Module").parents("jetbrains.mps.build.mps.structure.BuildMps_Module", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("sourceLanguage").alias("generator", "").create();
       case 21:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions").super_("jetbrains.mps.build.structure.BuildProjectPart").parents("jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept").properties("strict", "parallel", "parallelThreads", "inplace").alias("generator options", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions").super_("jetbrains.mps.build.structure.BuildProjectPart").parents("jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept").properties("strict", "parallel", "parallelThreads", "inplace", "hideWarnings").alias("generator options", "").create();
       case 22:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMps_Group").super_("jetbrains.mps.build.structure.BuildProjectPart").parents("jetbrains.mps.build.structure.BuildProjectPart", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"modules"}, new boolean[]{true}).alias("mps group", "").create();
       case 23:
