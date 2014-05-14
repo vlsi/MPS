@@ -16,6 +16,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import junit.framework.Assert;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.NodeDecoratorView;
+import jetbrains.jetpad.projectional.view.View;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.SelectionFrameView;
 
 @MPSLaunch
 public class BlockDecoratorTest_Test extends BaseTransformationTest4 {
@@ -47,7 +52,15 @@ public class BlockDecoratorTest_Test extends BaseTransformationTest4 {
       descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, editorComponent, BlockCell.class);
       Assert.assertTrue(descendantMapper != null);
       Assert.assertTrue(descendantMapper.getTarget() != null && descendantMapper.getTarget() instanceof NodeDecoratorView);
-      Assert.assertTrue(((NodeDecoratorView) descendantMapper.getTarget()).hasError.get());
+      NodeDecoratorView nodeDecoratorView = ((NodeDecoratorView) descendantMapper.getTarget());
+      Assert.assertTrue(nodeDecoratorView.hasError.get());
+      View errorView = Sequence.fromIterable(JetpadUtils.getAllChildren(nodeDecoratorView)).findFirst(new IWhereFilter<View>() {
+        public boolean accept(View it) {
+          return it instanceof SelectionFrameView;
+        }
+      });
+      Assert.assertTrue(errorView != null && errorView.visible().get());
+
 
     }
   }
