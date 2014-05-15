@@ -30,8 +30,6 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
     if (bigCell != null) {
       bigCell.setBig(true);
-    } else {
-      throw new RuntimeException("No big cell found!");
     }
     return editorCell;
   }

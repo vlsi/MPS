@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.editor.BuildAspect_Editor" file="BuildAspect_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -86,7 +85,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildDependency_Editor" file="BuildDependency_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -188,7 +186,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildFileSelector_Editor" file="BuildFileSelector_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -291,7 +288,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildInputResourceSet_Editor" file="BuildInputResourceSet_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -465,7 +461,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildLayout_CopyFlattenMapper_Editor" file="BuildLayout_CopyFlattenMapper_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -497,7 +492,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildLayout_CopyHandler_Editor" file="BuildLayout_CopyHandler_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -613,7 +607,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildLayout_Editor" file="BuildLayout_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -1006,7 +999,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildMacro_Editor" file="BuildMacro_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -1081,7 +1073,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildProjectPart_Editor" file="BuildProjectPart_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -1234,7 +1225,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildSourcePath_Editor" file="BuildSourcePath_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -1279,7 +1269,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildSource_JavaCP_Editor" file="BuildSource_JavaCP_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -1468,7 +1457,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildSource_JavaDependency_Editor" file="BuildSource_JavaDependency_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -1581,7 +1569,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildSource_JavaLibraryElement_Editor" file="BuildSource_JavaLibraryElement_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -1761,7 +1748,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildSource_JavaSources_Editor" file="BuildSource_JavaSources_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -1796,7 +1782,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.editor.BuildStringPart_Editor" file="BuildStringPart_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -1834,7 +1819,6 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildTextStringPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.editor.BuildSimpleName_text" />
     <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
