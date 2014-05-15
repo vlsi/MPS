@@ -4,6 +4,8 @@ package jetbrains.mps.editor.runtime.cells;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -12,6 +14,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class BigCellUtil {
   public static EditorCell findBigCell(EditorCell cell, SNode node) {
+    SNode cellNode = cell.getSNode();
+    if (cellNode == node) {
+      return cell;
+    }
+    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(cellNode), "jetbrains.mps.lang.core.structure.PropertyAttribute")) && !(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(cellNode), "jetbrains.mps.lang.core.structure.LinkAttribute"))) {
+      return cell;
+    }
+
     Queue<EditorCell> cellQueue = QueueSequence.fromQueue(new LinkedList<EditorCell>());
     QueueSequence.fromQueue(cellQueue).addLastElement(cell);
     while (QueueSequence.fromQueue(cellQueue).isNotEmpty()) {
