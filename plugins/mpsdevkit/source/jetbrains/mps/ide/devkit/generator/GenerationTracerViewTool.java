@@ -133,19 +133,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
   @Override
   protected void createTool(boolean early) {
-    if (early) {
-      StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
-        public void run() {
-          postStartup();
-        }
-      });
-    } else {
-      postStartup();
-    }
-  }
-
-  private void postStartup() {
-    SwingUtilities.invokeLater(new Runnable() {
+    StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
       public void run() {
         showNoTabsComponent();
         setTracingDataIsAvailable(hasTracingData());
