@@ -48,12 +48,20 @@ public class CrossView extends GroupView {
 
   private void updateCross(Vector position, int length) {
     if (position == null) {
-      visible().set(false);
+      setVisible(false);
       return;
+    } else {
+      setVisible(true);
     }
     myFirstLine.start().set(new Vector(position.x - length, position.y - length));
     myFirstLine.end().set(new Vector(position.x + length, position.y + length));
     mySecondLine.start().set(new Vector(position.x + length, position.y - length));
     mySecondLine.end().set(new Vector(position.x - length, position.y + length));
+  }
+
+  private void setVisible(boolean isVisible) {
+    visible().set(isVisible);
+    myFirstLine.visible().set(isVisible);
+    mySecondLine.visible().set(isVisible);
   }
 }

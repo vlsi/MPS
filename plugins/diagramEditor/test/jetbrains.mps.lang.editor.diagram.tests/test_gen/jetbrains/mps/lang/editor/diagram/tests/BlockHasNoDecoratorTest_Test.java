@@ -43,7 +43,8 @@ public class BlockHasNoDecoratorTest_Test extends BaseTransformationTest4 {
       });
 
       Assert.assertTrue(descendantMapper.value != null);
-      Assert.assertTrue(descendantMapper.value.getTarget() != null && descendantMapper.value.getTarget() instanceof NodeDecoratorView);
+      Assert.assertTrue(descendantMapper.value.getTarget() != null);
+      Assert.assertTrue(descendantMapper.value.getTarget() instanceof NodeDecoratorView);
       Assert.assertFalse(((NodeDecoratorView) descendantMapper.value.getTarget()).hasError.get());
     }
   }

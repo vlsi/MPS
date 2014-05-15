@@ -42,7 +42,8 @@ public class PortHasNoDecoratorTest_Test extends BaseTransformationTest4 {
         }
       });
       Assert.assertTrue(descendantMapper.value != null);
-      Assert.assertTrue(descendantMapper.value.getTarget() != null && descendantMapper.value.getTarget() instanceof PortDecoratorView);
+      Assert.assertTrue(descendantMapper.value.getTarget() != null);
+      Assert.assertTrue(descendantMapper.value.getTarget() instanceof PortDecoratorView);
       Assert.assertFalse(((PortDecoratorView) descendantMapper.value.getTarget()).hasError.get());
 
     }

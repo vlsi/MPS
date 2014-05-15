@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.lang.reflect.InvocationTargetException;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.editor.checkers.ModelProblemMessage;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
@@ -17,24 +16,21 @@ import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class DecoratorTestRunner {
   public static Mapper prepareAndGetMapper(final SNode node, final EditorComponent editorComponent, final Class cellClass) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            editorComponent.getHighlightManager().mark(new ModelProblemMessage(node, MessageStatus.ERROR, null, "error", new EditorMessageOwner() {}));
-            editorComponent.getHighlightManager().repaintAndRebuildEditorMessages();
-          }
-        });
+        editorComponent.getHighlightManager().mark(new ModelProblemMessage(node, MessageStatus.ERROR, null, "error", new EditorMessageOwner() {}));
+        editorComponent.getHighlightManager().repaintAndRebuildEditorMessages();
       }
     });
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
-        EditorCell portCell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), cellClass, true);
-        if (portCell instanceof AbstractJetpadCell) {
-          ((AbstractJetpadCell) portCell).paint(null, new ParentSettings());
+        EditorCell cell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), cellClass, true);
+        if (cell instanceof AbstractJetpadCell) {
+          ((AbstractJetpadCell) cell).paint(null, new ParentSettings());
         }
       }
     });

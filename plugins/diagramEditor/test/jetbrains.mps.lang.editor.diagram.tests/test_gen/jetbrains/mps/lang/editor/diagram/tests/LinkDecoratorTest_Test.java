@@ -51,7 +51,8 @@ public class LinkDecoratorTest_Test extends BaseTransformationTest4 {
       Mapper descendantMapper;
       descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, editorComponent, ConnectorCell.class);
       Assert.assertTrue(descendantMapper != null);
-      Assert.assertTrue(descendantMapper.getTarget() != null && descendantMapper.getTarget() instanceof ConnectorDecoratorView);
+      Assert.assertTrue(descendantMapper.getTarget() != null);
+      Assert.assertTrue(descendantMapper.getTarget() instanceof ConnectorDecoratorView);
       ConnectorDecoratorView connectorDecoratorView = (ConnectorDecoratorView) descendantMapper.getTarget();
       Assert.assertTrue(connectorDecoratorView.hasError.get());
       View cross = Sequence.fromIterable(JetpadUtils.getAllChildren(connectorDecoratorView)).findFirst(new IWhereFilter<View>() {
@@ -59,7 +60,8 @@ public class LinkDecoratorTest_Test extends BaseTransformationTest4 {
           return it instanceof CrossView;
         }
       });
-      Assert.assertTrue(cross != null && cross.visible().get());
+      Assert.assertTrue(cross != null);
+      Assert.assertTrue(cross.visible().get());
 
     }
   }

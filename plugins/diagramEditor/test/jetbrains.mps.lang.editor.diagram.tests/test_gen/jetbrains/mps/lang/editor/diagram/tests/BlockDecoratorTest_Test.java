@@ -51,7 +51,8 @@ public class BlockDecoratorTest_Test extends BaseTransformationTest4 {
       });
       descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, editorComponent, BlockCell.class);
       Assert.assertTrue(descendantMapper != null);
-      Assert.assertTrue(descendantMapper.getTarget() != null && descendantMapper.getTarget() instanceof NodeDecoratorView);
+      Assert.assertTrue(descendantMapper.getTarget() != null);
+      Assert.assertTrue(descendantMapper.getTarget() instanceof NodeDecoratorView);
       NodeDecoratorView nodeDecoratorView = ((NodeDecoratorView) descendantMapper.getTarget());
       Assert.assertTrue(nodeDecoratorView.hasError.get());
       View errorView = Sequence.fromIterable(JetpadUtils.getAllChildren(nodeDecoratorView)).findFirst(new IWhereFilter<View>() {
@@ -59,7 +60,8 @@ public class BlockDecoratorTest_Test extends BaseTransformationTest4 {
           return it instanceof SelectionFrameView;
         }
       });
-      Assert.assertTrue(errorView != null && errorView.visible().get());
+      Assert.assertTrue(errorView != null);
+      Assert.assertTrue(errorView.visible().get());
 
 
     }

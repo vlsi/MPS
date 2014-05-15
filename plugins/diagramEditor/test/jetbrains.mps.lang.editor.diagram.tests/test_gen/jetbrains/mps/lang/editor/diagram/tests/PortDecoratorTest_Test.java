@@ -53,7 +53,8 @@ public class PortDecoratorTest_Test extends BaseTransformationTest4 {
       descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, editorComponent, PortCell.class);
 
       Assert.assertTrue(descendantMapper != null);
-      Assert.assertTrue(descendantMapper.getTarget() != null && descendantMapper.getTarget() instanceof PortDecoratorView);
+      Assert.assertTrue(descendantMapper.getTarget() != null);
+      Assert.assertTrue(descendantMapper.getTarget() instanceof PortDecoratorView);
       PortDecoratorView portDecoratorView = ((PortDecoratorView) descendantMapper.getTarget());
       Assert.assertTrue(portDecoratorView.hasError.get());
       View errorView = Sequence.fromIterable(JetpadUtils.getAllChildren(portDecoratorView)).findFirst(new IWhereFilter<View>() {
@@ -61,7 +62,8 @@ public class PortDecoratorTest_Test extends BaseTransformationTest4 {
           return it instanceof SelectionFrameView;
         }
       });
-      Assert.assertTrue(errorView != null && errorView.visible().get());
+      Assert.assertTrue(errorView != null);
+      Assert.assertTrue(errorView.visible().get());
 
 
     }

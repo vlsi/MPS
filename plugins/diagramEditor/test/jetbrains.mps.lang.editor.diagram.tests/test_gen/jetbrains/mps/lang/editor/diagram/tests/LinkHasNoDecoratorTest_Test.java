@@ -42,7 +42,8 @@ public class LinkHasNoDecoratorTest_Test extends BaseTransformationTest4 {
         }
       });
       Assert.assertTrue(descendantMapper.value != null);
-      Assert.assertTrue(descendantMapper.value.getTarget() != null && descendantMapper.value.getTarget() instanceof ConnectorDecoratorView);
+      Assert.assertTrue(descendantMapper.value.getTarget() != null);
+      Assert.assertTrue(descendantMapper.value.getTarget() instanceof ConnectorDecoratorView);
       Assert.assertFalse(((ConnectorDecoratorView) descendantMapper.value.getTarget()).hasError.get());
     }
   }
