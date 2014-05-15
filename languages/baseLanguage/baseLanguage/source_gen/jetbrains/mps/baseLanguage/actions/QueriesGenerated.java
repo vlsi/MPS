@@ -52,6 +52,7 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
@@ -2094,12 +2095,20 @@ public class QueriesGenerated {
               return null;
             }
             if (!((pattern == null || pattern.length() == 0))) {
-              String name = pattern;
+              final Wrappers._T<String> name = new Wrappers._T<String>(pattern);
               if (pattern.endsWith(";") || pattern.endsWith("=")) {
-                name = name.substring(0, name.length() - 1);
+                name.value = name.value.substring(0, name.value.length() - 1);
               }
-              if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                return name + ((pattern.endsWith("=") ? "=" : ""));
+              // Visible classifiers should not be offered as potential member names, if the type is still null (user convenience) 
+              if ((SLinkOperations.getTarget(curr, "type", true) == null) && Sequence.fromIterable(ClassifierScopes.getVisibleClassifiersScope(_context.getCurrentTargetNode(), true).getAvailableElements(pattern)).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return eq_x583g4_a0a0a0a0a0a0d0c0d0a0a0a0c0a0c0wc(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"), name.value);
+                }
+              }).isNotEmpty()) {
+                return null;
+              }
+              if (JavaNameUtil.isJavaIdentifier(name.value.trim())) {
+                return name.value + ((pattern.endsWith("=") ? "=" : ""));
               }
             }
             return null;
@@ -6263,6 +6272,10 @@ __switch__:
 
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
+  }
+
+  private static boolean eq_x583g4_a0a0a0a0a0a0d0c0d0a0a0a0c0a0c0wc(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_x583g4_a0a0a08(Object a, Object b) {
