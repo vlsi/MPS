@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,8 +38,10 @@ import java.util.List;
  */
 class IdeaFile implements IFileEx {
 
-  // Class invariant: myVirtualFile and myPath cannot be both null/both not-null
-  private String myPath = null;
+  /*
+   * remember the name used to create this instance, as it might be different from a name in fs on case-insensitive filesystem
+   */
+  private final String myPath;
   private VirtualFile myVirtualFile = null;
 
   IdeaFile(@NotNull String path) {
@@ -48,6 +50,7 @@ class IdeaFile implements IFileEx {
 
   private IdeaFile(@NotNull VirtualFile virtualFile) {
     myVirtualFile = virtualFile;
+    myPath = virtualFile.getPath();
   }
 
   @Override
@@ -151,7 +154,6 @@ class IdeaFile implements IFileEx {
         String fileName = truncFileName(myPath);
         directory.findChild(fileName); // This is a workaround for IDEA-67279
         myVirtualFile = directory.createChildData(ourRequestor(), fileName);
-        myPath = null;
         return true;
       } catch (IOException e) {
         IdeaFileSystemProvider.LOG.error(null, e);
@@ -168,7 +170,6 @@ class IdeaFile implements IFileEx {
     } else {
       try {
         myVirtualFile = VfsUtil.createDirectories(myPath);
-        myPath = null;
         return true;
       } catch (IOException e) {
         return false;
@@ -186,7 +187,6 @@ class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       try {
         myVirtualFile.delete(ourRequestor());
-        myPath = myVirtualFile.getPath();
         myVirtualFile = null;
         return true;
       } catch (IOException e) {
@@ -240,6 +240,16 @@ class IdeaFile implements IFileEx {
       if (myVirtualFile.getFileSystem() instanceof JarFileSystem) {
         throw new UnsupportedOperationException("Cannot write to Jar files");
       } else {
+        if (!myVirtualFile.getFileSystem().isCaseSensitive()) {
+          // Mac default (HFS), NTFS - are case-insensitive, looking up file "b/A" when there's "b/a" gives
+          // existing file. However, Java is strict about case, and won't allow class A to live in file a.java
+          // Hence, when we try to write into a file with the name different from one requested initially,
+          // try to bring the name up to the desired one.
+          final String desiredFileName = truncFileName(myPath);
+          if (!myVirtualFile.getName().equals(desiredFileName)) {
+            rename(desiredFileName);
+          }
+        }
         return myVirtualFile.getOutputStream(ourRequestor());
       }
     } else {
@@ -312,14 +322,10 @@ class IdeaFile implements IFileEx {
 
   private boolean findVirtualFile(boolean withRefresh) {
     if (myVirtualFile != null && !myVirtualFile.isValid()) {
-      myPath = myVirtualFile.getPath();
       myVirtualFile = null;
     }
     if (myVirtualFile == null) {
       myVirtualFile = findIdeaFile(myPath, withRefresh);
-    }
-    if (myVirtualFile != null) {
-      myPath = null;
     }
     return myVirtualFile != null;
   }
