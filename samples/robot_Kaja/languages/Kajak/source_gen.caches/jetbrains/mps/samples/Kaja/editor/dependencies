@@ -38,7 +38,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.Drop_Editor" file="Drop_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -49,7 +48,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.East_Editor" file="East_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -145,7 +143,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.IsFull_Editor" file="IsFull_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -156,7 +153,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.IsMark_Editor" file="IsMark_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -167,7 +163,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.IsWall_Editor" file="IsWall_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -188,7 +183,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.LeftTurn_Editor" file="LeftTurn_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -240,7 +234,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.North_Editor" file="North_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -268,7 +261,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.Pick_Editor" file="Pick_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -389,7 +381,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.South_Editor" file="South_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -400,7 +391,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.Step_Editor" file="Step_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -428,7 +418,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.editor.West_Editor" file="West_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

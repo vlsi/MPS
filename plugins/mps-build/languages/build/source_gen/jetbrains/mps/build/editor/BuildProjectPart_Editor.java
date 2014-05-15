@@ -39,8 +39,6 @@ public class BuildProjectPart_Editor extends DefaultNodeEditor {
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
     if (bigCell != null) {
       bigCell.setBig(true);
-    } else {
-      throw new RuntimeException("No big cell found!");
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

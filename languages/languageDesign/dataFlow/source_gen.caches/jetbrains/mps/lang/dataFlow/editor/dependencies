@@ -42,7 +42,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.editor.BaseInstructionOperation_Editor" file="BaseInstructionOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />

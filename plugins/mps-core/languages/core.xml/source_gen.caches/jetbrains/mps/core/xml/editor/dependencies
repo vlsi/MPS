@@ -54,7 +54,6 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.xml.editor.XmlSS_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
@@ -83,7 +82,6 @@
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlBaseAttribute_Editor" file="XmlBaseAttribute_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -97,7 +95,6 @@
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlBaseElement_Editor" file="XmlBaseElement_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -463,7 +460,6 @@
   </dependency>
   <dependency className="jetbrains.mps.core.xml.editor.XmlPrologElement_Editor" file="XmlPrologElement_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />

@@ -22,8 +22,6 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
     if (bigCell != null) {
       bigCell.setBig(true);
-    } else {
-      throw new RuntimeException("No big cell found!");
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.AUTO_DELETABLE, QueryParameter_Editor._StyleParameter_QueryFunction_pp9zo5_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));

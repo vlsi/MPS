@@ -49,7 +49,6 @@
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Editor" file="AbstractContainerCreator_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -99,7 +98,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.AbstractMappingOperation_Editor" file="AbstractMappingOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -165,7 +163,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.AsSequenceOperation_Editor" file="AsSequenceOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -308,7 +305,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.CustomContainerCreator_Editor" file="CustomContainerCreator_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -377,7 +373,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.CustomMapCreator_Editor" file="CustomMapCreator_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -693,7 +688,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.GetKeysOperation_Editor" file="GetKeysOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -704,7 +698,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.GetValuesOperation_Editor" file="GetValuesOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -715,7 +708,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_Editor" file="HashMapCreator_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -912,7 +904,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.LinkedHashMapCreator_Editor" file="LinkedHashMapCreator_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -1003,7 +994,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.MapClearOperation_Editor" file="MapClearOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1153,7 +1143,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.MappingsSetOperation_Editor" file="MappingsSetOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1253,7 +1242,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.NoArgumentsSequenceOperation_Editor" file="NoArgumentsSequenceOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
@@ -1614,7 +1602,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.SortDirection_Editor" file="SortDirection_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
@@ -1814,7 +1801,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.editor.ToIteratorOperation_Editor" file="ToIteratorOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

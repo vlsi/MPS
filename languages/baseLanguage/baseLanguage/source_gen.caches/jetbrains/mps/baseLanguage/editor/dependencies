@@ -53,7 +53,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.AbstractOperation_Editor" file="AbstractOperation_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
@@ -471,7 +470,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.ArrayLengthOperation_Editor" file="ArrayLengthOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -604,7 +602,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.BLBottomType_Editor" file="BLBottomType_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -1430,7 +1427,6 @@
   <dependency className="jetbrains.mps.baseLanguage.editor.ConceptFunctionParameter_Editor" file="ConceptFunctionParameter_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -1477,7 +1473,6 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -2413,7 +2408,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.EscapeOperation_Editor" file="EscapeOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -2463,7 +2457,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.Expression_Editor" file="Expression_Editor.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
@@ -3627,7 +3620,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.Property_Editor" file="Property_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
@@ -4029,7 +4021,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.StringBooleanOperation_Editor" file="StringBooleanOperation_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -4311,7 +4302,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.ThisExpression_Editor" file="ThisExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ThisExpressionToLocal" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.ThisExpression_ClassConcept_Actions" />
@@ -4522,7 +4512,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.Type_Editor" file="Type_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -4564,7 +4553,6 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.UndefinedType_Editor" file="UndefinedType_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -4626,7 +4614,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.UnknownNameRef_Editor" file="UnknownNameRef_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -4790,7 +4777,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.ValueParameter_Editor" file="ValueParameter_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -4870,7 +4856,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.editor.Visibility_Editor" file="Visibility_Editor.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
