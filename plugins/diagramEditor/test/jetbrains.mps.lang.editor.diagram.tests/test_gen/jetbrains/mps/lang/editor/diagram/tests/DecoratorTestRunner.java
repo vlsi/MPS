@@ -6,34 +6,28 @@ import jetbrains.jetpad.mapper.Mapper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.lang.reflect.InvocationTargetException;
-import javax.swing.SwingUtilities;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.ide.editor.checkers.ModelProblemMessage;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class DecoratorTestRunner {
-  public static Mapper prepareAndGetMapper(final SNode node, final EditorComponent editorComponent, final Class cellClass) throws InterruptedException, InvocationTargetException {
-    SwingUtilities.invokeAndWait(new Runnable() {
-      public void run() {
-        editorComponent.getHighlightManager().mark(new ModelProblemMessage(node, MessageStatus.ERROR, null, "error", new EditorMessageOwner() {}));
-        editorComponent.getHighlightManager().repaintAndRebuildEditorMessages();
-      }
-    });
-    SwingUtilities.invokeAndWait(new Runnable() {
-      public void run() {
-        EditorCell cell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), cellClass, true);
-        if (cell instanceof AbstractJetpadCell) {
-          ((AbstractJetpadCell) cell).paint(null, new ParentSettings());
-        }
-      }
-    });
+  public static Mapper prepareAndGetMapper(SNode node, EditorComponent editorComponent, Class cellClass) throws InterruptedException, InvocationTargetException {
+    editorComponent.getHighlightManager().mark(ListSequence.fromListAndArray(new ArrayList<SimpleEditorMessage>(), new ModelProblemMessage(node, MessageStatus.ERROR, null, "error", new EditorMessageOwner() {})));
+    ModelAccess.instance().flushEventQueue();
+    EditorCell cell = CellFinderUtil.findChildByClass(editorComponent.getRootCell(), cellClass, true);
+    if (cell instanceof AbstractJetpadCell) {
+      ((AbstractJetpadCell) cell).paint(null, new ParentSettings());
+    }
     return getMapper(node, editorComponent);
   }
 
