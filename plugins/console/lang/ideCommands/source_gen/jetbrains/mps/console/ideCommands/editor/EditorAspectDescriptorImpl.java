@@ -36,14 +36,16 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 9:
         return Collections.<ConceptEditor>singletonList(new NodeReference_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new ProjectStatisticsTarget_Editor());
+        return Collections.<ConceptEditor>singletonList(new OfAspectOperation_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new ShowBrokenReferences_Editor());
+        return Collections.<ConceptEditor>singletonList(new ProjectStatisticsTarget_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new ShowGenPlan_Editor());
+        return Collections.<ConceptEditor>singletonList(new ShowBrokenReferences_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new StatCommand_Editor());
+        return Collections.<ConceptEditor>singletonList(new ShowGenPlan_Editor());
       case 14:
+        return Collections.<ConceptEditor>singletonList(new StatCommand_Editor());
+      case 15:
         return Collections.<ConceptEditor>singletonList(new SubtreeStatisticsTarget_Editor());
       default:
     }
@@ -56,5 +58,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.AbsractMake", "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.AbsractMake", "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.OfAspectOperation", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
 }

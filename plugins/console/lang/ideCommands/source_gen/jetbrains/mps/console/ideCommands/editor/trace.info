@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.console.ideCommands.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.console.ideCommands.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/2087237500458012113">
     <nodeInfo nodeId="2087237500458012113" fileName="ShowBrokenReferences_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2087237500458012113" fileName="ShowBrokenReferences_Editor.java" startLine="20" startPosition="89" endLine="21" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1042,6 +1042,148 @@
       <varInfo nodeId="5582028874769074451" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="5582028874769074447" fileName="ModuleProperties_Editor.java" startLine="19" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.console.ideCommands.editor.ModuleProperties_Editor" />
+  </root>
+  <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/5932042262275697533">
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="28" startPosition="89" endLine="29" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="29" startPosition="99" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="30" startPosition="48" endLine="31" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="31" startPosition="28" endLine="32" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="31" startPosition="28" endLine="32" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="35" startPosition="81" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2886182022232400313" fileName="OfAspectOperation_Editor.java" startLine="39" startPosition="89" endLine="40" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400313" fileName="OfAspectOperation_Editor.java" startLine="40" startPosition="131" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2886182022232400313" fileName="OfAspectOperation_Editor.java" startLine="41" startPosition="34" endLine="42" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400313" fileName="OfAspectOperation_Editor.java" startLine="42" startPosition="66" endLine="43" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2886182022232400313" fileName="OfAspectOperation_Editor.java" startLine="43" startPosition="40" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="47" startPosition="88" endLine="48" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="48" startPosition="87" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="49" startPosition="47" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="50" startPosition="34" endLine="51" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="51" startPosition="75" endLine="52" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="52" startPosition="40" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="53" startPosition="34" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="57" startPosition="87" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="58" startPosition="81" endLine="59" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="59" startPosition="40" endLine="60" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="60" startPosition="53" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="61" startPosition="26" endLine="62" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="62" startPosition="89" endLine="63" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="63" startPosition="58" endLine="64" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="64" startPosition="73" endLine="65" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="65" startPosition="57" endLine="66" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="67" startPosition="35" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="68" startPosition="72" endLine="69" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="69" startPosition="78" endLine="70" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="71" startPosition="10" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="76" startPosition="33" endLine="77" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="80" startPosition="69" endLine="81" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="84" startPosition="81" endLine="85" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="88" startPosition="105" endLine="89" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="89" startPosition="132" endLine="90" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="91" startPosition="41" endLine="92" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="92" startPosition="42" endLine="93" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="94" startPosition="7" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="99" startPosition="88" endLine="100" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="100" startPosition="87" endLine="101" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="101" startPosition="47" endLine="102" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="102" startPosition="34" endLine="103" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="103" startPosition="76" endLine="104" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="104" startPosition="40" endLine="105" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="105" startPosition="34" endLine="106" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_1vnrru_a2a#()V" />
+    <nodeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="90" startPosition="64" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="66" startPosition="59" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2886182022232400313" fileName="OfAspectOperation_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_1vnrru_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="47" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1vnrru_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="88" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReferencePresentation_1vnrru_a0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="99" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1vnrru_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1vnrru_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="57" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_1vnrru_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" />
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="31" startPosition="28" endLine="32" endPosition="82" />
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="32" startPosition="82" endLine="33" endPosition="81" />
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="80" />
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="34" startPosition="80" endLine="35" endPosition="81" />
+    <scopeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="76" startPosition="33" endLine="77" endPosition="14" />
+    <scopeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="80" startPosition="69" endLine="81" endPosition="67" />
+    <scopeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="84" startPosition="81" endLine="85" endPosition="79" />
+    <scopeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="91" startPosition="41" endLine="93" endPosition="46" />
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="5932042262275697533" varName="editorContext" />
+      <varInfo nodeId="5932042262275697533" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="67" startPosition="35" endLine="70" endPosition="109">
+      <varInfo nodeId="5932042262275697533" varName="manager" />
+      <varInfo nodeId="5932042262275697533" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="5932042262275697710" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="5932042262275697710" varName="editorContext" />
+      <varInfo nodeId="5932042262275697710" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2886182022232400313" fileName="OfAspectOperation_Editor.java" startLine="39" startPosition="89" endLine="44" endPosition="22">
+      <varInfo nodeId="2886182022232400313" varName="editorCell" />
+      <varInfo nodeId="2886182022232400313" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="2886182022232400313" fileName="OfAspectOperation_Editor.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="2886182022232400313" varName="editorContext" />
+      <varInfo nodeId="2886182022232400313" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="47" startPosition="88" endLine="54" endPosition="22">
+      <varInfo nodeId="4611582986551314341" varName="editorCell" />
+      <varInfo nodeId="4611582986551314341" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="88" startPosition="105" endLine="95" endPosition="24">
+      <varInfo nodeId="5932042262275697718" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="99" startPosition="88" endLine="106" endPosition="22">
+      <varInfo nodeId="4611582986551314343" varName="editorCell" />
+      <varInfo nodeId="4611582986551314343" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="28" startPosition="89" endLine="36" endPosition="22">
+      <varInfo nodeId="5932042262275697533" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4611582986551314341" fileName="OfAspectOperation_Editor.java" startLine="47" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="4611582986551314341" varName="editorContext" />
+      <varInfo nodeId="4611582986551314341" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275697718" fileName="OfAspectOperation_Editor.java" startLine="88" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="5932042262275697718" varName="editorContext" />
+      <varInfo nodeId="5932042262275697718" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4611582986551314343" fileName="OfAspectOperation_Editor.java" startLine="99" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="4611582986551314343" varName="editorContext" />
+      <varInfo nodeId="4611582986551314343" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="5932042262275697533" varName="editorContext" />
+      <varInfo nodeId="5932042262275697533" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="57" startPosition="87" endLine="72" endPosition="22">
+      <varInfo nodeId="5932042262275697533" varName="attributeConcept" />
+      <varInfo nodeId="5932042262275697533" varName="attributeKind" />
+      <varInfo nodeId="5932042262275697533" varName="editorCell" />
+      <varInfo nodeId="5932042262275697533" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="57" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="5932042262275697533" varName="editorContext" />
+      <varInfo nodeId="5932042262275697533" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5932042262275697710" fileName="OfAspectOperation_Editor.java" startLine="75" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_Editor$_Inline_1vnrru_a2a" />
+    <unitInfo nodeId="5932042262275697533" fileName="OfAspectOperation_Editor.java" startLine="23" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_Editor" />
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/7057947030098860371">
     <nodeInfo nodeId="7057947030098860371" fileName="ShowGenPlan_Editor.java" startLine="16" startPosition="79" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
