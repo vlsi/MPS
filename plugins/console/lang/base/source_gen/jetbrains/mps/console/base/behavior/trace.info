@@ -2,18 +2,18 @@
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.console.base.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CommandHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.base.behavior.CommandHolder_BehaviorDescriptor" />
-  <unitInfo fileName="Command_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Command_BehaviorDescriptor" />
-  <unitInfo fileName="ConsoleHelpProvider_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ConsoleHelpProvider_BehaviorDescriptor" />
+  <unitInfo fileName="Command_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Command_BehaviorDescriptor" />
+  <unitInfo fileName="ConsoleHelpProvider_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ConsoleHelpProvider_BehaviorDescriptor" />
   <unitInfo fileName="ConsoleRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ConsoleRoot_BehaviorDescriptor" />
   <unitInfo fileName="GeneratedCommand_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.base.behavior.GeneratedCommand_BehaviorDescriptor" />
   <unitInfo fileName="HelpCommand_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.console.base.behavior.HelpCommand_BehaviorDescriptor" />
   <unitInfo fileName="HelpConceptReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.HelpConceptReference_BehaviorDescriptor" />
   <unitInfo fileName="HistoryItem_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.HistoryItem_BehaviorDescriptor" />
   <unitInfo fileName="History_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.History_BehaviorDescriptor" />
-  <unitInfo fileName="IActionHolder_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor" />
+  <unitInfo fileName="IActionHolder_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor" />
   <unitInfo fileName="IClickable_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.IClickable_BehaviorDescriptor" />
-  <unitInfo fileName="INodeWithReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.console.base.behavior.INodeWithReference_BehaviorDescriptor" />
-  <unitInfo fileName="InterpretedCommand_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
+  <unitInfo fileName="INodeWithReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.console.base.behavior.INodeWithReference_BehaviorDescriptor" />
+  <unitInfo fileName="InterpretedCommand_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.base.behavior.InterpretedCommand_BehaviorDescriptor" />
   <unitInfo fileName="ModifiedCommandHistoryItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.base.behavior.ModifiedCommandHistoryItem_BehaviorDescriptor" />
   <unitInfo fileName="NewLineResponseItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NewLineResponseItem_BehaviorDescriptor" />
   <unitInfo fileName="NodeReferencePresentation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.console.base.behavior.NodeReferencePresentation_BehaviorDescriptor" />

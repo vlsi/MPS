@@ -18,6 +18,4 @@ public abstract class InterpretedCommand_BehaviorDescriptor extends Command_Beha
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.InterpretedCommand";
   }
-
-  public abstract void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console);
 }
