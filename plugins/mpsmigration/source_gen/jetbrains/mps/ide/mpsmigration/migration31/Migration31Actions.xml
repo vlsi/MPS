@@ -2,7 +2,6 @@
   <actions>
     <action id="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeInConstraints_Action" class="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeInConstraints_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action" class="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action"></action>
-    <action id="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrateStaticConceptMethods_Action" class="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrateStaticConceptMethods_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Action" class="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToRemoveStyleSheetClassAndPredefinedStyleClass_Action" class="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToRemoveStyleSheetClassAndPredefinedStyleClass_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToReplaceNodePropertiesContainer_Action" class="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToReplaceNodePropertiesContainer_Action"></action>
@@ -14,7 +13,6 @@
       <reference ref="jetbrains.mps.ide.mpsmigration.migration31.Migration_ForcedSaveAll_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeParameter_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration31.MigrateOldIScopeInConstraints_Action" />
-      <reference ref="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrateStaticConceptMethods_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToUpdateAllConstants_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration31.MigrationScript_MigrationUpdateCastExpressionParens_Action" />
