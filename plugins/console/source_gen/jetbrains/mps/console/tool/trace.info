@@ -661,7 +661,7 @@
     <nodeInfo nodeId="7538089231784120874" fileName="BaseConsoleTab.java" startLine="290" startPosition="0" endLine="306" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveHistory#()Ljava/lang/String;" />
     <nodeInfo nodeId="2893936025731234515" fileName="BaseConsoleTab.java" startLine="333" startPosition="0" endLine="349" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addNodeImports#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4914591330907522709" fileName="BaseConsoleTab.java" startLine="172" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditor#()V" />
-    <nodeInfo nodeId="4914591330906818579" fileName="BaseConsoleTab.java" startLine="352" startPosition="46" endLine="371" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4914591330906818579" fileName="BaseConsoleTab.java" startLine="352" startPosition="43" endLine="371" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4176612323165894334" fileName="BaseConsoleTab.java" startLine="478" startPosition="127" endLine="497" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4914591330906788048" fileName="BaseConsoleTab.java" startLine="352" startPosition="0" endLine="373" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConsoleStream#()Ljetbrains/mps/console/tool/ConsoleStream;" />
     <nodeInfo nodeId="2893936025730044886" fileName="BaseConsoleTab.java" startLine="434" startPosition="0" endLine="455" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Runnable;Ljava/lang/Runnable;)V" />
@@ -941,7 +941,7 @@
       <varInfo nodeId="2893936025731278819" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4914591330907522709" fileName="BaseConsoleTab.java" startLine="172" startPosition="0" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="4914591330906788051" fileName="BaseConsoleTab.java" startLine="352" startPosition="46" endLine="371" endPosition="6" />
+    <scopeInfo nodeId="4914591330906788051" fileName="BaseConsoleTab.java" startLine="352" startPosition="43" endLine="371" endPosition="6" />
     <scopeInfo nodeId="2893936025730044889" fileName="BaseConsoleTab.java" startLine="434" startPosition="127" endLine="453" endPosition="8">
       <varInfo nodeId="592665991632343036" varName="typedCommand" />
     </scopeInfo>
@@ -1009,247 +1009,247 @@
     <unitInfo nodeId="6852607286009617748" fileName="ConsoleStream.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleStream" />
   </root>
   <root nodeRef="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)/7538089231777628716">
-    <nodeInfo nodeId="7538089231777681961" fileName="ConsoleTab.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewCommand" />
-    <nodeInfo nodeId="7538089231777681965" fileName="ConsoleTab.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCursor" />
-    <nodeInfo nodeId="4914591330908344294" fileName="ConsoleTab.java" startLine="34" startPosition="79" endLine="35" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6170872737697150536" fileName="ConsoleTab.java" startLine="41" startPosition="60" endLine="42" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682460" fileName="ConsoleTab.java" startLine="42" startPosition="33" endLine="43" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682468" fileName="ConsoleTab.java" startLine="43" startPosition="86" endLine="44" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682476" fileName="ConsoleTab.java" startLine="44" startPosition="83" endLine="45" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682484" fileName="ConsoleTab.java" startLine="45" startPosition="85" endLine="46" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682577" fileName="ConsoleTab.java" startLine="52" startPosition="27" endLine="53" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777682598" fileName="ConsoleTab.java" startLine="54" startPosition="121" endLine="55" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682605" fileName="ConsoleTab.java" startLine="56" startPosition="5" endLine="57" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7538089231777682611" fileName="ConsoleTab.java" startLine="62" startPosition="39" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777682617" fileName="ConsoleTab.java" startLine="64" startPosition="8" endLine="65" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682633" fileName="ConsoleTab.java" startLine="66" startPosition="124" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7538089231777682634" fileName="ConsoleTab.java" startLine="67" startPosition="0" endLine="68" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7538089231777682643" fileName="ConsoleTab.java" startLine="71" startPosition="39" endLine="72" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777682649" fileName="ConsoleTab.java" startLine="73" startPosition="8" endLine="74" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682665" fileName="ConsoleTab.java" startLine="75" startPosition="124" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7538089231777682666" fileName="ConsoleTab.java" startLine="76" startPosition="0" endLine="77" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7538089231777682781" fileName="ConsoleTab.java" startLine="86" startPosition="29" endLine="87" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682788" fileName="ConsoleTab.java" startLine="87" startPosition="90" endLine="88" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777682799" fileName="ConsoleTab.java" startLine="88" startPosition="90" endLine="89" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682806" fileName="ConsoleTab.java" startLine="90" startPosition="55" endLine="91" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682816" fileName="ConsoleTab.java" startLine="96" startPosition="7" endLine="97" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682826" fileName="ConsoleTab.java" startLine="103" startPosition="28" endLine="104" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7538089231777682858" fileName="ConsoleTab.java" startLine="110" startPosition="27" endLine="111" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682862" fileName="ConsoleTab.java" startLine="111" startPosition="26" endLine="112" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682867" fileName="ConsoleTab.java" startLine="112" startPosition="67" endLine="113" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777682877" fileName="ConsoleTab.java" startLine="114" startPosition="34" endLine="115" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7538089231777683125" fileName="ConsoleTab.java" startLine="118" startPosition="31" endLine="119" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683154" fileName="ConsoleTab.java" startLine="124" startPosition="35" endLine="125" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683163" fileName="ConsoleTab.java" startLine="138" startPosition="26" endLine="139" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7538089231777683181" fileName="ConsoleTab.java" startLine="142" startPosition="76" endLine="143" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683189" fileName="ConsoleTab.java" startLine="143" startPosition="130" endLine="144" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683191" fileName="ConsoleTab.java" startLine="144" startPosition="24" endLine="145" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683198" fileName="ConsoleTab.java" startLine="152" startPosition="28" endLine="153" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7538089231777683216" fileName="ConsoleTab.java" startLine="156" startPosition="76" endLine="157" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777683222" fileName="ConsoleTab.java" startLine="158" startPosition="30" endLine="159" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7538089231777683226" fileName="ConsoleTab.java" startLine="160" startPosition="7" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7538089231777683227" fileName="ConsoleTab.java" startLine="161" startPosition="0" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777683232" fileName="ConsoleTab.java" startLine="163" startPosition="29" endLine="164" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683236" fileName="ConsoleTab.java" startLine="164" startPosition="28" endLine="165" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683249" fileName="ConsoleTab.java" startLine="166" startPosition="14" endLine="167" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683256" fileName="ConsoleTab.java" startLine="168" startPosition="34" endLine="169" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7538089231777683260" fileName="ConsoleTab.java" startLine="170" startPosition="9" endLine="171" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777683266" fileName="ConsoleTab.java" startLine="171" startPosition="85" endLine="172" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777683272" fileName="ConsoleTab.java" startLine="172" startPosition="134" endLine="173" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683278" fileName="ConsoleTab.java" startLine="173" startPosition="81" endLine="174" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683288" fileName="ConsoleTab.java" startLine="174" startPosition="174" endLine="175" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683295" fileName="ConsoleTab.java" startLine="177" startPosition="32" endLine="178" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7538089231777683299" fileName="ConsoleTab.java" startLine="179" startPosition="7" endLine="180" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683303" fileName="ConsoleTab.java" startLine="180" startPosition="27" endLine="181" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683315" fileName="ConsoleTab.java" startLine="181" startPosition="279" endLine="182" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683322" fileName="ConsoleTab.java" startLine="189" startPosition="28" endLine="190" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7538089231777683342" fileName="ConsoleTab.java" startLine="194" startPosition="31" endLine="195" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7538089231777683346" fileName="ConsoleTab.java" startLine="196" startPosition="7" endLine="197" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777683351" fileName="ConsoleTab.java" startLine="197" startPosition="45" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7538089231777683352" fileName="ConsoleTab.java" startLine="198" startPosition="0" endLine="199" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777683358" fileName="ConsoleTab.java" startLine="199" startPosition="83" endLine="200" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777683364" fileName="ConsoleTab.java" startLine="200" startPosition="132" endLine="201" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683370" fileName="ConsoleTab.java" startLine="201" startPosition="79" endLine="202" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683380" fileName="ConsoleTab.java" startLine="202" startPosition="172" endLine="203" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683385" fileName="ConsoleTab.java" startLine="203" startPosition="64" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7538089231777683388" fileName="ConsoleTab.java" startLine="205" startPosition="35" endLine="206" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683392" fileName="ConsoleTab.java" startLine="206" startPosition="29" endLine="207" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683410" fileName="ConsoleTab.java" startLine="208" startPosition="14" endLine="209" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683414" fileName="ConsoleTab.java" startLine="209" startPosition="24" endLine="210" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683426" fileName="ConsoleTab.java" startLine="211" startPosition="7" endLine="212" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683719" fileName="ConsoleTab.java" startLine="220" startPosition="25" endLine="221" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7538089231777683736" fileName="ConsoleTab.java" startLine="221" startPosition="53" endLine="222" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683751" fileName="ConsoleTab.java" startLine="223" startPosition="161" endLine="224" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683770" fileName="ConsoleTab.java" startLine="225" startPosition="16" endLine="226" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683782" fileName="ConsoleTab.java" startLine="227" startPosition="9" endLine="228" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683790" fileName="ConsoleTab.java" startLine="228" startPosition="159" endLine="229" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3362819150778499207" fileName="ConsoleTab.java" startLine="236" startPosition="44" endLine="237" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="773462683490873669" fileName="ConsoleTab.java" startLine="237" startPosition="28" endLine="238" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683768" fileName="ConsoleTab.java" startLine="225" startPosition="14" endLine="227" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7538089231786666719" fileName="ConsoleTab.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConsoleTab#(Ljetbrains/mps/console/tool/ConsoleTool;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7538089231777682587" fileName="ConsoleTab.java" startLine="53" startPosition="139" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7538089231777682615" fileName="ConsoleTab.java" startLine="63" startPosition="21" endLine="66" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="7538089231777682647" fileName="ConsoleTab.java" startLine="72" startPosition="21" endLine="75" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="7538089231777682804" fileName="ConsoleTab.java" startLine="89" startPosition="47" endLine="92" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7538089231777682824" fileName="ConsoleTab.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecuteAction#()V" />
-    <nodeInfo nodeId="7538089231777682875" fileName="ConsoleTab.java" startLine="113" startPosition="133" endLine="116" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2893936025731773577" fileName="ConsoleTab.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1917933279383346321" fileName="ConsoleTab.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7538089231777683161" fileName="ConsoleTab.java" startLine="138" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClearAction#()V" />
-    <nodeInfo nodeId="7538089231777683196" fileName="ConsoleTab.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrevCmdAction#()V" />
-    <nodeInfo nodeId="7538089231777683220" fileName="ConsoleTab.java" startLine="157" startPosition="32" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7538089231777683254" fileName="ConsoleTab.java" startLine="167" startPosition="41" endLine="170" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7538089231777683293" fileName="ConsoleTab.java" startLine="176" startPosition="7" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7538089231777683320" fileName="ConsoleTab.java" startLine="189" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NextCmdAction#()V" />
-    <nodeInfo nodeId="7538089231777683340" fileName="ConsoleTab.java" startLine="193" startPosition="76" endLine="196" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7538089231777683408" fileName="ConsoleTab.java" startLine="208" startPosition="12" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="773462683490695298" fileName="ConsoleTab.java" startLine="236" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertCommand#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1917933279383342541" fileName="ConsoleTab.java" startLine="122" startPosition="31" endLine="127" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683171" fileName="ConsoleTab.java" startLine="142" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="7538089231777683742" fileName="ConsoleTab.java" startLine="222" startPosition="119" endLine="227" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7538089231777682449" fileName="ConsoleTab.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerActions#(Lcom/intellij/openapi/actionSystem/DefaultActionGroup;)V" />
-    <nodeInfo nodeId="7538089231777682573" fileName="ConsoleTab.java" startLine="52" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lastCmd#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2893936025731806889" fileName="ConsoleTab.java" startLine="122" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7538089231777683386" fileName="ConsoleTab.java" startLine="204" startPosition="0" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7538089231777682609" fileName="ConsoleTab.java" startLine="62" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPrevCmd#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7538089231777682641" fileName="ConsoleTab.java" startLine="71" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextCmd#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7538089231777682779" fileName="ConsoleTab.java" startLine="86" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7538089231777682778" fileName="ConsoleTab.java" startLine="84" startPosition="25" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683247" fileName="ConsoleTab.java" startLine="166" startPosition="12" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6243883726569188381" fileName="ConsoleTab.java" startLine="220" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7538089231777682776" fileName="ConsoleTab.java" startLine="84" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2893936025730174784" fileName="ConsoleTab.java" startLine="116" startPosition="11" endLine="129" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6243883726569188379" fileName="ConsoleTab.java" startLine="218" startPosition="50" endLine="231" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682774" fileName="ConsoleTab.java" startLine="82" startPosition="31" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777683230" fileName="ConsoleTab.java" startLine="162" startPosition="22" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7538089231777683717" fileName="ConsoleTab.java" startLine="218" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadHistory#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7538089231777682772" fileName="ConsoleTab.java" startLine="82" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelection#()V" />
-    <nodeInfo nodeId="7538089231777682856" fileName="ConsoleTab.java" startLine="110" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7538089231777683330" fileName="ConsoleTab.java" startLine="193" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="7538089231777682855" fileName="ConsoleTab.java" startLine="108" startPosition="76" endLine="131" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7538089231777682834" fileName="ConsoleTab.java" startLine="107" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="7538089231777683206" fileName="ConsoleTab.java" startLine="156" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="7538089231786666722" fileName="ConsoleTab.java" startLine="34" startPosition="79" endLine="35" endPosition="32" />
-    <scopeInfo nodeId="7538089231777682597" fileName="ConsoleTab.java" startLine="54" startPosition="121" endLine="55" endPosition="122" />
-    <scopeInfo nodeId="7538089231777682616" fileName="ConsoleTab.java" startLine="64" startPosition="8" endLine="65" endPosition="124" />
-    <scopeInfo nodeId="7538089231777682648" fileName="ConsoleTab.java" startLine="73" startPosition="8" endLine="74" endPosition="124" />
-    <scopeInfo nodeId="7538089231777682805" fileName="ConsoleTab.java" startLine="90" startPosition="55" endLine="91" endPosition="50" />
-    <scopeInfo nodeId="7538089231777682825" fileName="ConsoleTab.java" startLine="103" startPosition="28" endLine="104" endPosition="73" />
-    <scopeInfo nodeId="7538089231777682876" fileName="ConsoleTab.java" startLine="114" startPosition="34" endLine="115" endPosition="19" />
-    <scopeInfo nodeId="2893936025731773579" fileName="ConsoleTab.java" startLine="118" startPosition="31" endLine="119" endPosition="34" />
-    <scopeInfo nodeId="1917933279383346322" fileName="ConsoleTab.java" startLine="124" startPosition="35" endLine="125" endPosition="33" />
-    <scopeInfo nodeId="7538089231777683162" fileName="ConsoleTab.java" startLine="138" startPosition="26" endLine="139" endPosition="69" />
-    <scopeInfo nodeId="7538089231777683197" fileName="ConsoleTab.java" startLine="152" startPosition="28" endLine="153" endPosition="76" />
-    <scopeInfo nodeId="7538089231777683221" fileName="ConsoleTab.java" startLine="158" startPosition="30" endLine="159" endPosition="15" />
-    <scopeInfo nodeId="7538089231777683255" fileName="ConsoleTab.java" startLine="168" startPosition="34" endLine="169" endPosition="17" />
-    <scopeInfo nodeId="7538089231777683294" fileName="ConsoleTab.java" startLine="177" startPosition="32" endLine="178" endPosition="15" />
-    <scopeInfo nodeId="7538089231777683321" fileName="ConsoleTab.java" startLine="189" startPosition="28" endLine="190" endPosition="68" />
-    <scopeInfo nodeId="7538089231777683341" fileName="ConsoleTab.java" startLine="194" startPosition="31" endLine="195" endPosition="15" />
-    <scopeInfo nodeId="7538089231777683743" fileName="ConsoleTab.java" startLine="223" startPosition="161" endLine="224" endPosition="149" />
-    <scopeInfo nodeId="7538089231777683769" fileName="ConsoleTab.java" startLine="225" startPosition="16" endLine="226" endPosition="228" />
-    <scopeInfo nodeId="7538089231777683231" fileName="ConsoleTab.java" startLine="163" startPosition="29" endLine="165" endPosition="106" />
-    <scopeInfo nodeId="7538089231777683387" fileName="ConsoleTab.java" startLine="205" startPosition="35" endLine="207" endPosition="281" />
-    <scopeInfo nodeId="7538089231777683409" fileName="ConsoleTab.java" startLine="208" startPosition="14" endLine="210" endPosition="285" />
-    <scopeInfo nodeId="773462683490695301" fileName="ConsoleTab.java" startLine="236" startPosition="44" endLine="238" endPosition="114" />
-    <scopeInfo nodeId="7538089231786666719" fileName="ConsoleTab.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <nodeInfo nodeId="7538089231777681961" fileName="ConsoleTab.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNewCommand" />
+    <nodeInfo nodeId="7538089231777681965" fileName="ConsoleTab.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCursor" />
+    <nodeInfo nodeId="4914591330908344294" fileName="ConsoleTab.java" startLine="32" startPosition="79" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6170872737697150536" fileName="ConsoleTab.java" startLine="38" startPosition="60" endLine="39" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682460" fileName="ConsoleTab.java" startLine="39" startPosition="33" endLine="40" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682468" fileName="ConsoleTab.java" startLine="40" startPosition="86" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682476" fileName="ConsoleTab.java" startLine="41" startPosition="83" endLine="42" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682484" fileName="ConsoleTab.java" startLine="42" startPosition="85" endLine="43" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682577" fileName="ConsoleTab.java" startLine="48" startPosition="27" endLine="49" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777682598" fileName="ConsoleTab.java" startLine="50" startPosition="121" endLine="51" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682605" fileName="ConsoleTab.java" startLine="52" startPosition="5" endLine="53" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7538089231777682611" fileName="ConsoleTab.java" startLine="58" startPosition="39" endLine="59" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777682617" fileName="ConsoleTab.java" startLine="60" startPosition="8" endLine="61" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682633" fileName="ConsoleTab.java" startLine="62" startPosition="124" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7538089231777682634" fileName="ConsoleTab.java" startLine="63" startPosition="0" endLine="64" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7538089231777682643" fileName="ConsoleTab.java" startLine="67" startPosition="39" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777682649" fileName="ConsoleTab.java" startLine="69" startPosition="8" endLine="70" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682665" fileName="ConsoleTab.java" startLine="71" startPosition="124" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7538089231777682666" fileName="ConsoleTab.java" startLine="72" startPosition="0" endLine="73" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7538089231777682781" fileName="ConsoleTab.java" startLine="82" startPosition="29" endLine="83" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682788" fileName="ConsoleTab.java" startLine="83" startPosition="90" endLine="84" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777682799" fileName="ConsoleTab.java" startLine="84" startPosition="90" endLine="85" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682806" fileName="ConsoleTab.java" startLine="86" startPosition="55" endLine="87" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682816" fileName="ConsoleTab.java" startLine="92" startPosition="7" endLine="93" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682826" fileName="ConsoleTab.java" startLine="99" startPosition="28" endLine="100" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7538089231777682858" fileName="ConsoleTab.java" startLine="106" startPosition="27" endLine="107" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682862" fileName="ConsoleTab.java" startLine="107" startPosition="26" endLine="108" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682867" fileName="ConsoleTab.java" startLine="108" startPosition="67" endLine="109" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777682877" fileName="ConsoleTab.java" startLine="110" startPosition="34" endLine="111" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7538089231777683125" fileName="ConsoleTab.java" startLine="114" startPosition="31" endLine="115" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683154" fileName="ConsoleTab.java" startLine="120" startPosition="35" endLine="121" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683163" fileName="ConsoleTab.java" startLine="134" startPosition="26" endLine="135" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7538089231777683181" fileName="ConsoleTab.java" startLine="138" startPosition="76" endLine="139" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683189" fileName="ConsoleTab.java" startLine="139" startPosition="130" endLine="140" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683191" fileName="ConsoleTab.java" startLine="140" startPosition="24" endLine="141" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683198" fileName="ConsoleTab.java" startLine="148" startPosition="28" endLine="149" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7538089231777683216" fileName="ConsoleTab.java" startLine="152" startPosition="76" endLine="153" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777683222" fileName="ConsoleTab.java" startLine="154" startPosition="30" endLine="155" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7538089231777683226" fileName="ConsoleTab.java" startLine="156" startPosition="7" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7538089231777683227" fileName="ConsoleTab.java" startLine="157" startPosition="0" endLine="158" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777683232" fileName="ConsoleTab.java" startLine="159" startPosition="29" endLine="160" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683236" fileName="ConsoleTab.java" startLine="160" startPosition="28" endLine="161" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683249" fileName="ConsoleTab.java" startLine="162" startPosition="14" endLine="163" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683256" fileName="ConsoleTab.java" startLine="164" startPosition="34" endLine="165" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7538089231777683260" fileName="ConsoleTab.java" startLine="166" startPosition="9" endLine="167" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777683266" fileName="ConsoleTab.java" startLine="167" startPosition="85" endLine="168" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777683272" fileName="ConsoleTab.java" startLine="168" startPosition="134" endLine="169" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683278" fileName="ConsoleTab.java" startLine="169" startPosition="81" endLine="170" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683288" fileName="ConsoleTab.java" startLine="170" startPosition="174" endLine="171" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683295" fileName="ConsoleTab.java" startLine="173" startPosition="32" endLine="174" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7538089231777683299" fileName="ConsoleTab.java" startLine="175" startPosition="7" endLine="176" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683303" fileName="ConsoleTab.java" startLine="176" startPosition="27" endLine="177" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683315" fileName="ConsoleTab.java" startLine="177" startPosition="279" endLine="178" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683322" fileName="ConsoleTab.java" startLine="185" startPosition="28" endLine="186" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7538089231777683342" fileName="ConsoleTab.java" startLine="190" startPosition="31" endLine="191" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7538089231777683346" fileName="ConsoleTab.java" startLine="192" startPosition="7" endLine="193" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777683351" fileName="ConsoleTab.java" startLine="193" startPosition="45" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7538089231777683352" fileName="ConsoleTab.java" startLine="194" startPosition="0" endLine="195" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777683358" fileName="ConsoleTab.java" startLine="195" startPosition="83" endLine="196" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777683364" fileName="ConsoleTab.java" startLine="196" startPosition="132" endLine="197" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683370" fileName="ConsoleTab.java" startLine="197" startPosition="79" endLine="198" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683380" fileName="ConsoleTab.java" startLine="198" startPosition="172" endLine="199" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683385" fileName="ConsoleTab.java" startLine="199" startPosition="64" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7538089231777683388" fileName="ConsoleTab.java" startLine="201" startPosition="35" endLine="202" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683392" fileName="ConsoleTab.java" startLine="202" startPosition="29" endLine="203" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683410" fileName="ConsoleTab.java" startLine="204" startPosition="14" endLine="205" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683414" fileName="ConsoleTab.java" startLine="205" startPosition="24" endLine="206" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683426" fileName="ConsoleTab.java" startLine="207" startPosition="7" endLine="208" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683719" fileName="ConsoleTab.java" startLine="216" startPosition="25" endLine="217" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7538089231777683736" fileName="ConsoleTab.java" startLine="217" startPosition="53" endLine="218" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683751" fileName="ConsoleTab.java" startLine="219" startPosition="161" endLine="220" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683770" fileName="ConsoleTab.java" startLine="221" startPosition="16" endLine="222" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683782" fileName="ConsoleTab.java" startLine="223" startPosition="9" endLine="224" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683790" fileName="ConsoleTab.java" startLine="224" startPosition="159" endLine="225" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3362819150778499207" fileName="ConsoleTab.java" startLine="232" startPosition="44" endLine="233" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="773462683490873669" fileName="ConsoleTab.java" startLine="233" startPosition="28" endLine="234" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683768" fileName="ConsoleTab.java" startLine="221" startPosition="14" endLine="223" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7538089231786666719" fileName="ConsoleTab.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConsoleTab#(Ljetbrains/mps/console/tool/ConsoleTool;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7538089231777682587" fileName="ConsoleTab.java" startLine="49" startPosition="139" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7538089231777682615" fileName="ConsoleTab.java" startLine="59" startPosition="21" endLine="62" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="7538089231777682647" fileName="ConsoleTab.java" startLine="68" startPosition="21" endLine="71" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="7538089231777682804" fileName="ConsoleTab.java" startLine="85" startPosition="47" endLine="88" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7538089231777682824" fileName="ConsoleTab.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecuteAction#()V" />
+    <nodeInfo nodeId="7538089231777682875" fileName="ConsoleTab.java" startLine="109" startPosition="133" endLine="112" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2893936025731773577" fileName="ConsoleTab.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1917933279383346321" fileName="ConsoleTab.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7538089231777683161" fileName="ConsoleTab.java" startLine="134" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClearAction#()V" />
+    <nodeInfo nodeId="7538089231777683196" fileName="ConsoleTab.java" startLine="148" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrevCmdAction#()V" />
+    <nodeInfo nodeId="7538089231777683220" fileName="ConsoleTab.java" startLine="153" startPosition="32" endLine="156" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7538089231777683254" fileName="ConsoleTab.java" startLine="163" startPosition="41" endLine="166" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7538089231777683293" fileName="ConsoleTab.java" startLine="172" startPosition="7" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7538089231777683320" fileName="ConsoleTab.java" startLine="185" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NextCmdAction#()V" />
+    <nodeInfo nodeId="7538089231777683340" fileName="ConsoleTab.java" startLine="189" startPosition="76" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7538089231777683408" fileName="ConsoleTab.java" startLine="204" startPosition="12" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="773462683490695298" fileName="ConsoleTab.java" startLine="232" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertCommand#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1917933279383342541" fileName="ConsoleTab.java" startLine="118" startPosition="31" endLine="123" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683171" fileName="ConsoleTab.java" startLine="138" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7538089231777683742" fileName="ConsoleTab.java" startLine="218" startPosition="119" endLine="223" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7538089231777682449" fileName="ConsoleTab.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerActions#(Lcom/intellij/openapi/actionSystem/DefaultActionGroup;)V" />
+    <nodeInfo nodeId="7538089231777682573" fileName="ConsoleTab.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lastCmd#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2893936025731806889" fileName="ConsoleTab.java" startLine="118" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7538089231777683386" fileName="ConsoleTab.java" startLine="200" startPosition="0" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7538089231777682609" fileName="ConsoleTab.java" startLine="58" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPrevCmd#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7538089231777682641" fileName="ConsoleTab.java" startLine="67" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNextCmd#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7538089231777682779" fileName="ConsoleTab.java" startLine="82" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7538089231777682778" fileName="ConsoleTab.java" startLine="80" startPosition="25" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683247" fileName="ConsoleTab.java" startLine="162" startPosition="12" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6243883726569188381" fileName="ConsoleTab.java" startLine="216" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7538089231777682776" fileName="ConsoleTab.java" startLine="80" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2893936025730174784" fileName="ConsoleTab.java" startLine="112" startPosition="11" endLine="125" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6243883726569188379" fileName="ConsoleTab.java" startLine="214" startPosition="50" endLine="227" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682774" fileName="ConsoleTab.java" startLine="78" startPosition="31" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777683230" fileName="ConsoleTab.java" startLine="158" startPosition="22" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7538089231777683717" fileName="ConsoleTab.java" startLine="214" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadHistory#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7538089231777682772" fileName="ConsoleTab.java" startLine="78" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelection#()V" />
+    <nodeInfo nodeId="7538089231777682856" fileName="ConsoleTab.java" startLine="106" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7538089231777683330" fileName="ConsoleTab.java" startLine="189" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7538089231777682855" fileName="ConsoleTab.java" startLine="104" startPosition="76" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7538089231777682834" fileName="ConsoleTab.java" startLine="103" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7538089231777683206" fileName="ConsoleTab.java" startLine="152" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="7538089231786666722" fileName="ConsoleTab.java" startLine="32" startPosition="79" endLine="33" endPosition="32" />
+    <scopeInfo nodeId="7538089231777682597" fileName="ConsoleTab.java" startLine="50" startPosition="121" endLine="51" endPosition="122" />
+    <scopeInfo nodeId="7538089231777682616" fileName="ConsoleTab.java" startLine="60" startPosition="8" endLine="61" endPosition="124" />
+    <scopeInfo nodeId="7538089231777682648" fileName="ConsoleTab.java" startLine="69" startPosition="8" endLine="70" endPosition="124" />
+    <scopeInfo nodeId="7538089231777682805" fileName="ConsoleTab.java" startLine="86" startPosition="55" endLine="87" endPosition="50" />
+    <scopeInfo nodeId="7538089231777682825" fileName="ConsoleTab.java" startLine="99" startPosition="28" endLine="100" endPosition="73" />
+    <scopeInfo nodeId="7538089231777682876" fileName="ConsoleTab.java" startLine="110" startPosition="34" endLine="111" endPosition="19" />
+    <scopeInfo nodeId="2893936025731773579" fileName="ConsoleTab.java" startLine="114" startPosition="31" endLine="115" endPosition="34" />
+    <scopeInfo nodeId="1917933279383346322" fileName="ConsoleTab.java" startLine="120" startPosition="35" endLine="121" endPosition="33" />
+    <scopeInfo nodeId="7538089231777683162" fileName="ConsoleTab.java" startLine="134" startPosition="26" endLine="135" endPosition="69" />
+    <scopeInfo nodeId="7538089231777683197" fileName="ConsoleTab.java" startLine="148" startPosition="28" endLine="149" endPosition="76" />
+    <scopeInfo nodeId="7538089231777683221" fileName="ConsoleTab.java" startLine="154" startPosition="30" endLine="155" endPosition="15" />
+    <scopeInfo nodeId="7538089231777683255" fileName="ConsoleTab.java" startLine="164" startPosition="34" endLine="165" endPosition="17" />
+    <scopeInfo nodeId="7538089231777683294" fileName="ConsoleTab.java" startLine="173" startPosition="32" endLine="174" endPosition="15" />
+    <scopeInfo nodeId="7538089231777683321" fileName="ConsoleTab.java" startLine="185" startPosition="28" endLine="186" endPosition="68" />
+    <scopeInfo nodeId="7538089231777683341" fileName="ConsoleTab.java" startLine="190" startPosition="31" endLine="191" endPosition="15" />
+    <scopeInfo nodeId="7538089231777683743" fileName="ConsoleTab.java" startLine="219" startPosition="161" endLine="220" endPosition="149" />
+    <scopeInfo nodeId="7538089231777683769" fileName="ConsoleTab.java" startLine="221" startPosition="16" endLine="222" endPosition="228" />
+    <scopeInfo nodeId="7538089231777683231" fileName="ConsoleTab.java" startLine="159" startPosition="29" endLine="161" endPosition="106" />
+    <scopeInfo nodeId="7538089231777683387" fileName="ConsoleTab.java" startLine="201" startPosition="35" endLine="203" endPosition="281" />
+    <scopeInfo nodeId="7538089231777683409" fileName="ConsoleTab.java" startLine="204" startPosition="14" endLine="206" endPosition="285" />
+    <scopeInfo nodeId="773462683490695301" fileName="ConsoleTab.java" startLine="232" startPosition="44" endLine="234" endPosition="114" />
+    <scopeInfo nodeId="7538089231786666719" fileName="ConsoleTab.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="7538089231786843084" varName="history" />
       <varInfo nodeId="8871522752922106912" varName="title" />
       <varInfo nodeId="7538089231786733276" varName="tool" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682824" fileName="ConsoleTab.java" startLine="103" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="2893936025731773577" fileName="ConsoleTab.java" startLine="118" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="1917933279383346321" fileName="ConsoleTab.java" startLine="124" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="7538089231777683161" fileName="ConsoleTab.java" startLine="138" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="7538089231777683180" fileName="ConsoleTab.java" startLine="142" startPosition="76" endLine="145" endPosition="21" />
-    <scopeInfo nodeId="7538089231777683196" fileName="ConsoleTab.java" startLine="152" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="7538089231777683320" fileName="ConsoleTab.java" startLine="189" startPosition="0" endLine="192" endPosition="0" />
-    <scopeInfo nodeId="773462683490695298" fileName="ConsoleTab.java" startLine="236" startPosition="0" endLine="240" endPosition="0">
+    <scopeInfo nodeId="7538089231777682824" fileName="ConsoleTab.java" startLine="99" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="2893936025731773577" fileName="ConsoleTab.java" startLine="114" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1917933279383346321" fileName="ConsoleTab.java" startLine="120" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="7538089231777683161" fileName="ConsoleTab.java" startLine="134" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="7538089231777683180" fileName="ConsoleTab.java" startLine="138" startPosition="76" endLine="141" endPosition="21" />
+    <scopeInfo nodeId="7538089231777683196" fileName="ConsoleTab.java" startLine="148" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="7538089231777683320" fileName="ConsoleTab.java" startLine="185" startPosition="0" endLine="188" endPosition="0" />
+    <scopeInfo nodeId="773462683490695298" fileName="ConsoleTab.java" startLine="232" startPosition="0" endLine="236" endPosition="0">
       <varInfo nodeId="773462683490707647" varName="command" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682454" fileName="ConsoleTab.java" startLine="41" startPosition="60" endLine="46" endPosition="89" />
-    <scopeInfo nodeId="7538089231777682576" fileName="ConsoleTab.java" startLine="52" startPosition="27" endLine="57" endPosition="91">
+    <scopeInfo nodeId="7538089231777682454" fileName="ConsoleTab.java" startLine="38" startPosition="60" endLine="43" endPosition="89" />
+    <scopeInfo nodeId="7538089231777682576" fileName="ConsoleTab.java" startLine="48" startPosition="27" endLine="53" endPosition="91">
       <varInfo nodeId="7538089231777682578" varName="cur" />
     </scopeInfo>
-    <scopeInfo nodeId="2893936025731806891" fileName="ConsoleTab.java" startLine="122" startPosition="31" endLine="127" endPosition="17" />
-    <scopeInfo nodeId="7538089231777683171" fileName="ConsoleTab.java" startLine="142" startPosition="0" endLine="147" endPosition="0">
+    <scopeInfo nodeId="2893936025731806891" fileName="ConsoleTab.java" startLine="118" startPosition="31" endLine="123" endPosition="17" />
+    <scopeInfo nodeId="7538089231777683171" fileName="ConsoleTab.java" startLine="138" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="7538089231777683176" varName="arg" />
       <varInfo nodeId="7538089231777683174" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682610" fileName="ConsoleTab.java" startLine="62" startPosition="39" endLine="68" endPosition="92">
+    <scopeInfo nodeId="7538089231777682610" fileName="ConsoleTab.java" startLine="58" startPosition="39" endLine="64" endPosition="92">
       <varInfo nodeId="7538089231777682612" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682642" fileName="ConsoleTab.java" startLine="71" startPosition="39" endLine="77" endPosition="92">
+    <scopeInfo nodeId="7538089231777682642" fileName="ConsoleTab.java" startLine="67" startPosition="39" endLine="73" endPosition="92">
       <varInfo nodeId="7538089231777682644" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682780" fileName="ConsoleTab.java" startLine="86" startPosition="29" endLine="92" endPosition="13">
+    <scopeInfo nodeId="7538089231777682780" fileName="ConsoleTab.java" startLine="82" startPosition="29" endLine="88" endPosition="13">
       <varInfo nodeId="7538089231777682789" varName="lastLeaf" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682449" fileName="ConsoleTab.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="7538089231777682449" fileName="ConsoleTab.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="3976301908734530154" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682573" fileName="ConsoleTab.java" startLine="52" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="2893936025731806889" fileName="ConsoleTab.java" startLine="122" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="7538089231777682609" fileName="ConsoleTab.java" startLine="62" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="7538089231777682573" fileName="ConsoleTab.java" startLine="48" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="2893936025731806889" fileName="ConsoleTab.java" startLine="118" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="7538089231777682609" fileName="ConsoleTab.java" startLine="58" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="7538089231777682639" varName="cmd" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682641" fileName="ConsoleTab.java" startLine="71" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="7538089231777682641" fileName="ConsoleTab.java" startLine="67" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="7538089231777682671" varName="cmd" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682779" fileName="ConsoleTab.java" startLine="86" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="7538089231777683248" fileName="ConsoleTab.java" startLine="166" startPosition="14" endLine="175" endPosition="66">
+    <scopeInfo nodeId="7538089231777682779" fileName="ConsoleTab.java" startLine="82" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="7538089231777683248" fileName="ConsoleTab.java" startLine="162" startPosition="14" endLine="171" endPosition="66">
       <varInfo nodeId="7538089231777683261" varName="myCursorCommand" />
       <varInfo nodeId="7538089231777683267" varName="myCursorNew" />
     </scopeInfo>
-    <scopeInfo nodeId="6243883726569188383" fileName="ConsoleTab.java" startLine="220" startPosition="25" endLine="229" endPosition="65">
+    <scopeInfo nodeId="6243883726569188383" fileName="ConsoleTab.java" startLine="216" startPosition="25" endLine="225" endPosition="65">
       <varInfo nodeId="7538089231777683720" varName="loadedModel" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682777" fileName="ConsoleTab.java" startLine="84" startPosition="25" endLine="94" endPosition="11" />
-    <scopeInfo nodeId="6243883726569188381" fileName="ConsoleTab.java" startLine="220" startPosition="0" endLine="231" endPosition="0" />
-    <scopeInfo nodeId="7538089231777682776" fileName="ConsoleTab.java" startLine="84" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="7538089231777683718" fileName="ConsoleTab.java" startLine="218" startPosition="50" endLine="231" endPosition="7" />
-    <scopeInfo nodeId="7538089231777682773" fileName="ConsoleTab.java" startLine="82" startPosition="31" endLine="97" endPosition="38" />
-    <scopeInfo nodeId="7538089231777683717" fileName="ConsoleTab.java" startLine="218" startPosition="0" endLine="233" endPosition="0">
+    <scopeInfo nodeId="7538089231777682777" fileName="ConsoleTab.java" startLine="80" startPosition="25" endLine="90" endPosition="11" />
+    <scopeInfo nodeId="6243883726569188381" fileName="ConsoleTab.java" startLine="216" startPosition="0" endLine="227" endPosition="0" />
+    <scopeInfo nodeId="7538089231777682776" fileName="ConsoleTab.java" startLine="80" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="7538089231777683718" fileName="ConsoleTab.java" startLine="214" startPosition="50" endLine="227" endPosition="7" />
+    <scopeInfo nodeId="7538089231777682773" fileName="ConsoleTab.java" startLine="78" startPosition="31" endLine="93" endPosition="38" />
+    <scopeInfo nodeId="7538089231777683717" fileName="ConsoleTab.java" startLine="214" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="7538089231781708064" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682772" fileName="ConsoleTab.java" startLine="82" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="7538089231777682857" fileName="ConsoleTab.java" startLine="110" startPosition="27" endLine="129" endPosition="13">
+    <scopeInfo nodeId="7538089231777682772" fileName="ConsoleTab.java" startLine="78" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="7538089231777682857" fileName="ConsoleTab.java" startLine="106" startPosition="27" endLine="125" endPosition="13">
       <varInfo nodeId="7538089231777682868" varName="lastCmd" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777683339" fileName="ConsoleTab.java" startLine="193" startPosition="76" endLine="212" endPosition="21">
+    <scopeInfo nodeId="7538089231777683339" fileName="ConsoleTab.java" startLine="189" startPosition="76" endLine="208" endPosition="21">
       <varInfo nodeId="7538089231777683353" varName="myCursorCommand" />
       <varInfo nodeId="7538089231777683359" varName="myCursorNew" />
       <varInfo nodeId="7538089231777683347" varName="newCursor" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682856" fileName="ConsoleTab.java" startLine="110" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="7538089231777683330" fileName="ConsoleTab.java" startLine="193" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="7538089231777682856" fileName="ConsoleTab.java" startLine="106" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="7538089231777683330" fileName="ConsoleTab.java" startLine="189" startPosition="0" endLine="210" endPosition="0">
       <varInfo nodeId="7538089231777683335" varName="arg" />
       <varInfo nodeId="7538089231777683333" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777682843" fileName="ConsoleTab.java" startLine="108" startPosition="76" endLine="131" endPosition="9" />
-    <scopeInfo nodeId="7538089231777682834" fileName="ConsoleTab.java" startLine="107" startPosition="0" endLine="133" endPosition="0">
+    <scopeInfo nodeId="7538089231777682843" fileName="ConsoleTab.java" startLine="104" startPosition="76" endLine="127" endPosition="9" />
+    <scopeInfo nodeId="7538089231777682834" fileName="ConsoleTab.java" startLine="103" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="7538089231777682839" varName="arg" />
       <varInfo nodeId="7538089231777682837" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777683215" fileName="ConsoleTab.java" startLine="156" startPosition="76" endLine="182" endPosition="21">
+    <scopeInfo nodeId="7538089231777683215" fileName="ConsoleTab.java" startLine="152" startPosition="76" endLine="178" endPosition="21">
       <varInfo nodeId="7538089231777683217" varName="lastCmd" />
       <varInfo nodeId="7538089231777683228" varName="newCursor" />
     </scopeInfo>
-    <scopeInfo nodeId="7538089231777683206" fileName="ConsoleTab.java" startLine="156" startPosition="0" endLine="184" endPosition="0">
+    <scopeInfo nodeId="7538089231777683206" fileName="ConsoleTab.java" startLine="152" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="7538089231777683211" varName="arg" />
       <varInfo nodeId="7538089231777683209" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="2893936025731773577" fileName="ConsoleTab.java" startLine="117" startPosition="28" endLine="121" endPosition="11" unitName="jetbrains.mps.console.tool.ConsoleTab$2" />
-    <unitInfo nodeId="1917933279383346321" fileName="ConsoleTab.java" startLine="123" startPosition="45" endLine="127" endPosition="15" unitName="jetbrains.mps.console.tool.ConsoleTab$3" />
-    <unitInfo nodeId="2893936025731806889" fileName="ConsoleTab.java" startLine="121" startPosition="17" endLine="129" endPosition="11" unitName="jetbrains.mps.console.tool.ConsoleTab$2" />
-    <unitInfo nodeId="7538089231777682779" fileName="ConsoleTab.java" startLine="85" startPosition="49" endLine="94" endPosition="9" unitName="jetbrains.mps.console.tool.ConsoleTab$2" />
-    <unitInfo nodeId="7538089231777683160" fileName="ConsoleTab.java" startLine="137" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab$ClearAction" />
-    <unitInfo nodeId="6243883726569188381" fileName="ConsoleTab.java" startLine="219" startPosition="55" endLine="231" endPosition="5" unitName="jetbrains.mps.console.tool.ConsoleTab$2" />
-    <unitInfo nodeId="7538089231777682776" fileName="ConsoleTab.java" startLine="83" startPosition="35" endLine="96" endPosition="5" unitName="jetbrains.mps.console.tool.ConsoleTab$1" />
-    <unitInfo nodeId="7538089231777682856" fileName="ConsoleTab.java" startLine="109" startPosition="57" endLine="131" endPosition="7" unitName="jetbrains.mps.console.tool.ConsoleTab$1" />
-    <unitInfo nodeId="7538089231777683319" fileName="ConsoleTab.java" startLine="188" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab$NextCmdAction" />
-    <unitInfo nodeId="7538089231777682823" fileName="ConsoleTab.java" startLine="102" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab$ExecuteAction" />
-    <unitInfo nodeId="7538089231777683195" fileName="ConsoleTab.java" startLine="151" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab$PrevCmdAction" />
-    <unitInfo nodeId="7538089231777628716" fileName="ConsoleTab.java" startLine="26" startPosition="0" endLine="243" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab" />
+    <unitInfo nodeId="2893936025731773577" fileName="ConsoleTab.java" startLine="113" startPosition="28" endLine="117" endPosition="11" unitName="jetbrains.mps.console.tool.ConsoleTab$2" />
+    <unitInfo nodeId="1917933279383346321" fileName="ConsoleTab.java" startLine="119" startPosition="45" endLine="123" endPosition="15" unitName="jetbrains.mps.console.tool.ConsoleTab$3" />
+    <unitInfo nodeId="2893936025731806889" fileName="ConsoleTab.java" startLine="117" startPosition="17" endLine="125" endPosition="11" unitName="jetbrains.mps.console.tool.ConsoleTab$2" />
+    <unitInfo nodeId="7538089231777682779" fileName="ConsoleTab.java" startLine="81" startPosition="49" endLine="90" endPosition="9" unitName="jetbrains.mps.console.tool.ConsoleTab$2" />
+    <unitInfo nodeId="7538089231777683160" fileName="ConsoleTab.java" startLine="133" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab$ClearAction" />
+    <unitInfo nodeId="6243883726569188381" fileName="ConsoleTab.java" startLine="215" startPosition="55" endLine="227" endPosition="5" unitName="jetbrains.mps.console.tool.ConsoleTab$2" />
+    <unitInfo nodeId="7538089231777682776" fileName="ConsoleTab.java" startLine="79" startPosition="35" endLine="92" endPosition="5" unitName="jetbrains.mps.console.tool.ConsoleTab$1" />
+    <unitInfo nodeId="7538089231777682856" fileName="ConsoleTab.java" startLine="105" startPosition="57" endLine="127" endPosition="7" unitName="jetbrains.mps.console.tool.ConsoleTab$1" />
+    <unitInfo nodeId="7538089231777683319" fileName="ConsoleTab.java" startLine="184" startPosition="0" endLine="211" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab$NextCmdAction" />
+    <unitInfo nodeId="7538089231777682823" fileName="ConsoleTab.java" startLine="98" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab$ExecuteAction" />
+    <unitInfo nodeId="7538089231777683195" fileName="ConsoleTab.java" startLine="147" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab$PrevCmdAction" />
+    <unitInfo nodeId="7538089231777628716" fileName="ConsoleTab.java" startLine="26" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.console.tool.ConsoleTab" />
   </root>
   <root nodeRef="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)/8704812547333227493">
     <nodeInfo nodeId="5211727872447036873" fileName="ConsoleUtil.java" startLine="34" startPosition="70" endLine="35" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

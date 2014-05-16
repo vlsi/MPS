@@ -349,7 +349,7 @@ public abstract class BaseConsoleTab extends JPanel {
 
 
 
-  protected ConsoleStream getConsoleStream() {
+  public ConsoleStream getConsoleStream() {
     return new ConsoleStream() {
       public void addText(String text) {
         Scanner scanner = new Scanner(text);
