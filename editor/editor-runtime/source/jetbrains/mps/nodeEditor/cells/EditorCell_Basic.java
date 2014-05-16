@@ -23,7 +23,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -210,15 +209,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Override
   public Collection<CellActionType> getAvailableActions() {
     return new HashSet<CellActionType>(myActionMap.keySet());
-  }
-
-  /**
-   * should be removed after MPS 3.0
-   */
-  @Override
-  @Deprecated
-  public void setAction(jetbrains.mps.nodeEditor.CellActionType type, EditorCellAction action) {
-    setAction(CellActionType.valueOf(type.name()), action);
   }
 
   @Override
