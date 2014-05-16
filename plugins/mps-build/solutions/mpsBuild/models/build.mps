@@ -13993,7 +13993,7 @@
       <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7230385212464648576" nodeInfo="ng">
         <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7230385212464648577" nodeInfo="ng">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7230385212464648578" nodeInfo="ng">
-            <property name="text" nameId="3ior.4903714810883755350" value="MPS-132.SNAPSHOT" />
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS-135.SNAPSHOT" />
           </node>
         </node>
       </node>
