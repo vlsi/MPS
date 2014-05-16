@@ -60,16 +60,20 @@ public class JUnitLightExecutor {
 
 
   public JUnitProcessPack execute() {
-    final Iterable<? extends ITestNodeWrapper> nodes = myFilter.filter(myNodes);
-    TestRunState runState = new TestRunState(nodes);
-    TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
+    try {
+      final Iterable<? extends ITestNodeWrapper> nodes = myFilter.filter(myNodes);
+      TestRunState runState = new TestRunState(nodes);
+      TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
-    TestLightExecutor executor = new TestLightExecutor(eventsDispatcher, nodes);
-    final Future<?> future = doExecute(executor);
-    final FakeProcessHandler process = new FakeProcessHandler(future, executor);
+      TestLightExecutor executor = new TestLightExecutor(eventsDispatcher, nodes);
+      final Future<?> future = doExecute(executor);
+      final FakeProcessHandler process = new FakeProcessHandler(future, executor);
 
-    JUnitProcessPack packProcess = new JUnitProcessPacker(myProject, runState, eventsDispatcher).packProcess(process);
-    return packProcess;
+      JUnitProcessPack packProcess = new JUnitProcessPacker(myProject, runState, eventsDispatcher).packProcess(process);
+      return packProcess;
+    } finally {
+      dispose();
+    }
   }
 
 
@@ -82,10 +86,16 @@ public class JUnitLightExecutor {
           executor.init();
           executor.execute();
         } finally {
-          ourRunInProgress = false;
+          JUnitLightExecutor.this.dispose();
         }
       }
     });
+  }
+
+
+
+  private void dispose() {
+    ourRunInProgress = false;
   }
 
 

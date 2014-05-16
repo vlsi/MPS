@@ -12,6 +12,7 @@
   <depends>jetbrains.mps.debugger.api</depends>
   <depends>jetbrains.mps.core</depends>
   <depends>com.intellij.modules.mps</depends>
+  <depends>jetbrains.mps.testing</depends>
 
   <application-components>
     <component>

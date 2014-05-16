@@ -155,7 +155,7 @@
       <library file="${artifacts.mps}/plugins/mps-java/lib/mps-java-common.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
-      <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+      <library file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
       <chunk>
         <module file="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/jetbrains.mps.ide.java.tests.msd" />
       </chunk>
@@ -225,7 +225,7 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>

@@ -2074,7 +2074,7 @@ public class QueriesGenerated {
         continue;
       }
 
-      new FetchDependenciesProcessor(root, _context).process();
+     new FetchDependenciesProcessor(root, _context).process();
     }
   }
 

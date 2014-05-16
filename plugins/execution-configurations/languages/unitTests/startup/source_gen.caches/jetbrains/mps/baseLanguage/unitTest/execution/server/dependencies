@@ -154,8 +154,6 @@
     <classNode dependClassName="org.junit.runner.Request" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestExecutor" file="TransformationTestExecutor.java">
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.application.impl.ApplicationImpl" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

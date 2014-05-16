@@ -33,8 +33,9 @@
     <orderEntry type="module" module-name="execution-api" />
     <orderEntry type="module" module-name="mps-ui" />
     <orderEntry type="library" name="Log4j" level="project" />
-    <orderEntry type="module" module-name="test-runtime" />
     <orderEntry type="library" name="PicoContainer" level="project" />
+    <orderEntry type="module" module-name="execution-configurations-plugin" />
+    <orderEntry type="module" module-name="mps-testing" />
   </component>
 </module>
 

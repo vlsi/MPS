@@ -11,7 +11,6 @@ core/typesystemEngine/classes
 core/generator/classes
 core/make-runtime/classes
 core/make-runtime/solutions/jetbrains.mps.make.facets/classes
-core/tool/builder/classes/jetbrains/mps/tool/builder
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes
 languages/baseLanguage/collections/runtime/classes
@@ -38,3 +37,4 @@ workbench/mps-workbench/classes
 MPSPlugin/apiclasses
 :test
 testbench/classes
+core/tool/builder/classes

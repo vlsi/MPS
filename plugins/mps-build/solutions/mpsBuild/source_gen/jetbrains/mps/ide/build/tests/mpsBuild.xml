@@ -155,7 +155,7 @@
       <library file="${artifacts.mps}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
-      <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+      <library file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
       <chunk>
         <module file="${basedir}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/jetbrains.mps.build.tests.msd" />
       </chunk>
@@ -214,7 +214,7 @@
         <fileset file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.mps}/languages/xml/jetbrains.mps.core.xml.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -283,7 +283,7 @@
       <pathelement location="${artifacts.mps}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">

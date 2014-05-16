@@ -937,8 +937,8 @@
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="modelchecker" />
     <orderEntry type="module" module-name="mps-workbench" />
-    <orderEntry type="module" module-name="mpsjava" />
-    <orderEntry type="module" module-name="mpsmake" />
+    <orderEntry type="module" module-name="mps-java" />
+    <orderEntry type="module" module-name="mps-make" />
     <orderEntry type="module" module-name="openapi" />
     <orderEntry type="module" module-name="smodel" />
     <orderEntry type="module" module-name="Tuples-runtime" />
@@ -946,7 +946,6 @@
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="module" module-name="testbench" />
     <orderEntry type="module" module-name="execution-configurations-unitTests" />
-    <orderEntry type="module" module-name="test-runtime" />
   </component>
 </module>
 

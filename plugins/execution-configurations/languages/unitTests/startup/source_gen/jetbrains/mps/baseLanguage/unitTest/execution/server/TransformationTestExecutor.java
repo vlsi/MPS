@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import jetbrains.mps.util.test.CachesUtil;
 import javax.swing.SwingUtilities;
-import com.intellij.openapi.application.impl.ApplicationImpl;
-import com.intellij.openapi.application.ApplicationManager;
 
 public class TransformationTestExecutor extends BTestExecutor {
   public TransformationTestExecutor(String[] args) {
@@ -50,7 +48,7 @@ public class TransformationTestExecutor extends BTestExecutor {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
         public void run() {
-          ((ApplicationImpl) ApplicationManager.getApplication()).exit(true);
+          // <node> 
         }
       });
     } catch (Exception e) {

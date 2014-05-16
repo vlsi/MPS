@@ -501,7 +501,7 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.editor.editorTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
-      <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+      <library file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
       <chunk>
         <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/jetbrains.mps.lang.actions.testLanguage.mpl" />
         <module file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" />
@@ -1023,7 +1023,7 @@
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -1068,7 +1068,7 @@
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -1131,7 +1131,7 @@
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -1180,7 +1180,7 @@
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -1255,7 +1255,7 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.editor.editorTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.actions.testLanguage.jar" />
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.multiple.testLanguage.jar" />
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.tableTests.jar" />

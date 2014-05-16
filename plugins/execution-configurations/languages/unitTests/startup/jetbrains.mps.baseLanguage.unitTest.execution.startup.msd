@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.unitTest.execution.startup" uuid="8b958198-128f-4136-80e5-ca9777caa869" compileInMPS="false">
+<solution name="jetbrains.mps.baseLanguage.unitTest.execution.startup" uuid="8b958198-128f-4136-80e5-ca9777caa869" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
   </models>
+  <facets>
+    <facet pluginId="jetbrains.mps.execution.configurations" type="ideaPlugin" />
+  </facets>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
