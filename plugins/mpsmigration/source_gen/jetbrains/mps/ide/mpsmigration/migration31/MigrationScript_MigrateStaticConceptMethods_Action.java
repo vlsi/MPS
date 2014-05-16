@@ -27,7 +27,7 @@ public class MigrationScript_MigrateStaticConceptMethods_Action extends BaseActi
   private static final Icon ICON = null;
 
   public MigrationScript_MigrateStaticConceptMethods_Action() {
-    super("Migrate Staic Concept Methods", "", ICON);
+    super("Migrate Static Concept Methods", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

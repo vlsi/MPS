@@ -1656,7 +1656,7 @@
   <root type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4077817974646051434" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     <property name="name" nameId="tpck.1169194664001" value="MigrationScript_MigrateStaticConceptMethods" />
-    <property name="caption" nameId="tp4k.1205250923097" value="Migrate Staic Concept Methods" />
+    <property name="caption" nameId="tp4k.1205250923097" value="Migrate Static Concept Methods" />
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="4077817974646051435" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="context" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
