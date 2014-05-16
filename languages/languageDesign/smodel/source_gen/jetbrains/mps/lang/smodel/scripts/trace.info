@@ -4288,6 +4288,236 @@
     <unitInfo nodeId="3169279647024732092" fileName="MigrateSModelFqName_MigrationScript.java" startLine="1658" startPosition="0" endLine="1761" endPosition="0" unitName="jetbrains.mps.lang.smodel.scripts.MigrateSModelFqName_MigrationScript$Pattern_okm9hk_a0a1a1a0a4a0a0a0a6a0" />
     <unitInfo nodeId="3169279647024551856" fileName="MigrateSModelFqName_MigrationScript.java" startLine="22" startPosition="0" endLine="1898" endPosition="0" unitName="jetbrains.mps.lang.smodel.scripts.MigrateSModelFqName_MigrationScript" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)/4077817974646043869">
+    <nodeInfo nodeId="4077817974646043869" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="22" startPosition="90" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="25" startPosition="31" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="29" startPosition="41" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="33" startPosition="59" endLine="34" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646140685" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="41" startPosition="52" endLine="42" endPosition="533" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="45" startPosition="42" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="50" startPosition="31" endLine="51" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="54" startPosition="41" endLine="55" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="58" startPosition="59" endLine="59" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="62" startPosition="59" endLine="63" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646323911" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="68" startPosition="43" endLine="69" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="74" startPosition="42" endLine="75" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="79" startPosition="31" endLine="80" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="83" startPosition="41" endLine="84" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="87" startPosition="59" endLine="88" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="91" startPosition="59" endLine="92" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646261989" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="95" startPosition="52" endLine="96" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="99" startPosition="42" endLine="100" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="105" startPosition="161" endLine="106" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="106" startPosition="63" endLine="107" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="107" startPosition="30" endLine="108" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="108" startPosition="30" endLine="109" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="109" startPosition="30" endLine="110" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="110" startPosition="30" endLine="111" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="111" startPosition="31" endLine="112" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="112" startPosition="31" endLine="113" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="113" startPosition="149" endLine="114" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="114" startPosition="76" endLine="115" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="116" startPosition="31" endLine="117" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="119" startPosition="5" endLine="120" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="121" startPosition="33" endLine="122" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="124" startPosition="5" endLine="125" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="126" startPosition="31" endLine="127" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="129" startPosition="5" endLine="130" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="131" startPosition="33" endLine="132" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="134" startPosition="5" endLine="135" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="138" startPosition="121" endLine="139" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="139" startPosition="63" endLine="140" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="140" startPosition="30" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="141" startPosition="30" endLine="142" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="142" startPosition="30" endLine="143" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="143" startPosition="30" endLine="144" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="144" startPosition="137" endLine="145" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="145" startPosition="143" endLine="146" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="146" startPosition="96" endLine="147" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="147" startPosition="51" endLine="148" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="148" startPosition="145" endLine="149" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="150" startPosition="5" endLine="151" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="152" startPosition="33" endLine="153" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="155" startPosition="5" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="156" startPosition="53" endLine="157" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4077817974646323531" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="115" startPosition="39" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="120" startPosition="52" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="125" startPosition="39" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="130" startPosition="52" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="144" startPosition="137" endLine="147" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="144" startPosition="137" endLine="147" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="151" startPosition="52" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="114" startPosition="76" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="114" startPosition="76" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="124" startPosition="5" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="124" startPosition="5" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646138529" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="66" startPosition="58" endLine="71" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="118" startPosition="5" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="118" startPosition="5" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="128" startPosition="5" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="128" startPosition="5" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="149" startPosition="99" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="149" startPosition="99" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="147" startPosition="51" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="147" startPosition="51" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="143" startPosition="30" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="143" startPosition="30" endLine="156" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="138" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_df5nox_a0a0a0b#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="112" startPosition="31" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="112" startPosition="31" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646043869" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="23" startPosition="43" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="23" startPosition="43" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646043869" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="77" startPosition="7" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="77" startPosition="7" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646043869" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="48" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="48" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="105" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_df5nox_a0a0a0a#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4077817974646043869" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="22" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrateStaticConceptMethods_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="25" startPosition="31" endLine="26" endPosition="48" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="29" startPosition="41" endLine="30" endPosition="48" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="33" startPosition="59" endLine="34" endPosition="86" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="37" startPosition="59" endLine="38" endPosition="20" />
+    <scopeInfo nodeId="4077817974646049911" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="41" startPosition="52" endLine="42" endPosition="533" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="45" startPosition="42" endLine="46" endPosition="21" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="50" startPosition="31" endLine="51" endPosition="54" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="54" startPosition="41" endLine="55" endPosition="54" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="58" startPosition="59" endLine="59" endPosition="77" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="62" startPosition="59" endLine="63" endPosition="20" />
+    <scopeInfo nodeId="4077817974646323532" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="68" startPosition="43" endLine="69" endPosition="172" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="74" startPosition="42" endLine="75" endPosition="21" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="79" startPosition="31" endLine="80" endPosition="51" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="83" startPosition="41" endLine="84" endPosition="51" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="87" startPosition="59" endLine="88" endPosition="86" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="91" startPosition="59" endLine="92" endPosition="20" />
+    <scopeInfo nodeId="4077817974646257263" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="95" startPosition="52" endLine="96" endPosition="41" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="99" startPosition="42" endLine="100" endPosition="21" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="116" startPosition="31" endLine="117" endPosition="79" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="121" startPosition="33" endLine="122" endPosition="68" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="126" startPosition="31" endLine="127" endPosition="79" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="131" startPosition="33" endLine="132" endPosition="73" />
+    <scopeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="152" startPosition="33" endLine="153" endPosition="78" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4077817974646049907" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4077817974646049907" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="4077817974646138526" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646323531" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="4077817974646323531" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="4077817974646257261" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
+      <varInfo nodeId="4077817974646257261" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="99" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="120" startPosition="52" endLine="123" endPosition="7">
+      <varInfo nodeId="4077817974646107188" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="130" startPosition="52" endLine="133" endPosition="7">
+      <varInfo nodeId="4077817974646107188" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="144" startPosition="137" endLine="147" endPosition="51" />
+    <scopeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="151" startPosition="52" endLine="154" endPosition="7">
+      <varInfo nodeId="4077817974646256909" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="114" startPosition="76" endLine="118" endPosition="5" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="119" startPosition="5" endLine="123" endPosition="7">
+      <varInfo nodeId="4077817974646107188" varName="nodes" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="124" startPosition="5" endLine="128" endPosition="5" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="129" startPosition="5" endLine="133" endPosition="7">
+      <varInfo nodeId="4077817974646107188" varName="nodes" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="150" startPosition="5" endLine="154" endPosition="7">
+      <varInfo nodeId="4077817974646256909" varName="nodes" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646138528" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="66" startPosition="58" endLine="71" endPosition="13" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="118" startPosition="5" endLine="124" endPosition="5" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="128" startPosition="5" endLine="134" endPosition="5" />
+    <scopeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="149" startPosition="99" endLine="155" endPosition="5" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="66" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="4077817974646138526" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="147" startPosition="51" endLine="156" endPosition="53" />
+    <scopeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="143" startPosition="30" endLine="156" endPosition="53" />
+    <scopeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="138" startPosition="121" endLine="157" endPosition="24">
+      <varInfo nodeId="4077817974646256909" varName="facade" />
+      <varInfo nodeId="4077817974646256909" varName="quotedNode_4" />
+      <varInfo nodeId="4077817974646256909" varName="quotedNode_5" />
+      <varInfo nodeId="4077817974646256909" varName="quotedNode_6" />
+      <varInfo nodeId="4077817974646256909" varName="quotedNode_7" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646256909" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="138" startPosition="0" endLine="159" endPosition="0">
+      <varInfo nodeId="4077817974646256909" varName="parameter_1" />
+      <varInfo nodeId="4077817974646256909" varName="parameter_2" />
+      <varInfo nodeId="4077817974646256909" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="112" startPosition="31" endLine="134" endPosition="5" />
+    <scopeInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="23" startPosition="43" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="77" startPosition="7" endLine="102" endPosition="7" />
+    <scopeInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="48" startPosition="7" endLine="77" endPosition="7" />
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="105" startPosition="161" endLine="135" endPosition="24">
+      <varInfo nodeId="4077817974646107188" varName="facade" />
+      <varInfo nodeId="4077817974646107188" varName="quotedNode_10" />
+      <varInfo nodeId="4077817974646107188" varName="quotedNode_11" />
+      <varInfo nodeId="4077817974646107188" varName="quotedNode_6" />
+      <varInfo nodeId="4077817974646107188" varName="quotedNode_7" />
+      <varInfo nodeId="4077817974646107188" varName="quotedNode_8" />
+      <varInfo nodeId="4077817974646107188" varName="quotedNode_9" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646107188" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="105" startPosition="0" endLine="137" endPosition="0">
+      <varInfo nodeId="4077817974646107188" varName="parameter_1" />
+      <varInfo nodeId="4077817974646107188" varName="parameter_2" />
+      <varInfo nodeId="4077817974646107188" varName="parameter_3" />
+      <varInfo nodeId="4077817974646107188" varName="parameter_4" />
+      <varInfo nodeId="4077817974646107188" varName="parameter_5" />
+    </scopeInfo>
+    <scopeInfo nodeId="4077817974646043869" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="22" startPosition="90" endLine="102" endPosition="7" />
+    <scopeInfo nodeId="4077817974646043869" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="22" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="4077817974646043869" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="4077817974646323531" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="67" startPosition="539" endLine="71" endPosition="9" unitName="jetbrains.mps.lang.smodel.scripts.MigrateStaticConceptMethods_MigrationScript$3" />
+    <unitInfo nodeId="4077817974646049907" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="24" startPosition="28" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.smodel.scripts.MigrateStaticConceptMethods_MigrationScript$1" />
+    <unitInfo nodeId="4077817974646257261" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="78" startPosition="28" endLine="102" endPosition="5" unitName="jetbrains.mps.lang.smodel.scripts.MigrateStaticConceptMethods_MigrationScript$3" />
+    <unitInfo nodeId="4077817974646138526" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="49" startPosition="28" endLine="77" endPosition="5" unitName="jetbrains.mps.lang.smodel.scripts.MigrateStaticConceptMethods_MigrationScript$2" />
+    <unitInfo nodeId="4077817974646043869" fileName="MigrateStaticConceptMethods_MigrationScript.java" startLine="21" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.lang.smodel.scripts.MigrateStaticConceptMethods_MigrationScript" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)/5426775851424578122">
     <nodeInfo nodeId="5426775851424578122" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="16" startPosition="98" endLine="17" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5426775851424580246" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="19" startPosition="31" endLine="20" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
