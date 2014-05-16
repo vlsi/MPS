@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.application.ApplicationAdapter;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -25,6 +28,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -56,6 +60,7 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -70,6 +75,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object PENDING_LOCK = new Object();
   private static final int DEFAULT_GRACE_PERIOD = 150;
   public static final int DEFAULT_DELAY_MULTIPLIER = 1;
+  private final MyCancellable myCancellable = new MyCancellable();
+  private final ApplicationAdapter myApplicationListener = new MyApplicationAdapter(myCancellable);
+  private final CommandAdapter myCommandListener = new MyCommandAdapter(myCancellable);
 
   private volatile boolean myStopThread = false;
   private FileEditorManager myFileEditorManager;
@@ -177,6 +185,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
       }
     });
+
+    ApplicationManager.getApplication().addApplicationListener(myApplicationListener);
+    CommandProcessor.getInstance().addCommandListener(myCommandListener);
     ModelAccess.instance().addCommandListener(myCommandWatcher);
     myThread = new HighlighterThread();
     myThread.start();
@@ -186,6 +197,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   public void projectClosed() {
     stopUpdater();
     ModelAccess.instance().removeCommandListener(myCommandWatcher);
+    CommandProcessor.getInstance().removeCommandListener(myCommandListener);
+    ApplicationManager.getApplication().removeApplicationListener(myApplicationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
@@ -356,7 +369,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     EditorComponent inspector = null;
 
     for (final EditorComponent editorComponent : allEditorComponents) {
-      if (myStopThread) {
+      if (myStopThread || myCancellable.isCancelled()) {
         return;
       }
       TypeContextManager.getInstance().runTypecheckingAction(editorComponent, new Runnable() {
@@ -369,7 +382,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       });
     }
 
-    if (myStopThread) {
+    if (myStopThread || myCancellable.isCancelled()) {
       return;
     }
 
@@ -386,7 +399,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       });
     }
 
-    if (myStopThread) {
+    if (myStopThread || myCancellable.isCancelled()) {
       return;
     }
 
@@ -466,7 +479,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              if (myStopThread) return;
+              if (myStopThread || myCancellable.isCancelled()) return;
               for (BaseEditorChecker checker : checkers) {
                 if (checker.hasDramaticalEventProtected(events) && (!essentialOnly || checker.isEssentialProtected())) {
                   checkersToRecheck.add(checker);
@@ -476,7 +489,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           });
         }
 
-        if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread) return false;
+        if ((checkersToRecheck.isEmpty() && checkersToRemove.isEmpty()) || myStopThread || myCancellable.isCancelled()) return false;
 
         List<BaseEditorChecker> checkersToRecheckList = new ArrayList<BaseEditorChecker>(checkersToRecheck);
         Collections.sort(checkersToRecheckList, new PriorityComparator());
@@ -536,7 +549,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       boolean changed = runLoPrioRead(new Computable<Boolean>() {
         @Override
         public Boolean compute() {
-          if (myStopThread) return false;
+          if (myStopThread || myCancellable.isCancelled()) return false;
 
           SNode node = editor.getEditedNode();
           if (node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isDisposed(node))
@@ -552,7 +565,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             IOperationContext operationContext = editor.getOperationContext();
             if (operationContext.isValid()) {
               try {
-                messages.addAll(checker.createMessagesProtected(node, events, wasCheckedOnce, editorContext));
+                messages.addAll(checker.createMessagesProtected(node, events, wasCheckedOnce, editorContext, myCancellable));
                 return checker.areMessagesChangedProtected();
               } catch (IndexNotReadyException ex) {
                 highlightManager.clearForOwner(checker, true);
@@ -565,7 +578,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           return false;
         }
       });
-      if (myStopThread) return false;
+      if (myStopThread || myCancellable.isCancelled()) return false;
 
       if (editor instanceof InspectorEditorComponent && recreateInspectorMessages) {
         changed = true;
@@ -583,18 +596,19 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       EditorMessageOwner owner = ModelAccess.instance().runReadAction(new Computable<EditorMessageOwner>() {
         @Override
         public EditorMessageOwner compute() {
-          if (myStopThread) return null;
+          if (myStopThread || myCancellable.isCancelled()) return null;
           SNode node = editor.getEditedNode();
           if (node == null) return null;
           return checker;
         }
       });
-      if (myStopThread) return false;
+      if (myStopThread || myCancellable.isCancelled()) return false;
 
       highlightManager.clearForOwner(owner, false);
       anyMessageChanged = true;
     }
-    if (myStopThread) return false;
+    if (myStopThread || myCancellable.isCancelled()) return false;
+    if (myStopThread || myCancellable.isCancelled()) return false;
 
     if (anyMessageChanged) {
       highlightManager.repaintAndRebuildEditorMessages();
@@ -626,6 +640,65 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return result;
   }
 
+  private static class MyApplicationAdapter extends ApplicationAdapter {
+    private final MyCancellable myCancellable;
+
+    MyApplicationAdapter(MyCancellable cancellable) {
+      myCancellable = cancellable;
+    }
+
+    @Override
+    public void beforeWriteActionStart(Object action) {
+      myCancellable.setCancelRequested(true);
+    }
+
+    @Override
+    public void writeActionFinished(Object action) {
+      myCancellable.setCancelRequested(false);
+    }
+  }
+
+  private static class MyCommandAdapter extends CommandAdapter {
+    private final MyCancellable myCancellable;
+
+    MyCommandAdapter(MyCancellable cancellable) {
+      myCancellable = cancellable;
+    }
+
+    @Override
+    public void commandStarted(CommandEvent event) {
+      myCancellable.setCancelRequested(true);
+    }
+
+    @Override
+    public void commandFinished(CommandEvent event) {
+      myCancellable.setCancelRequested(false);
+    }
+
+    @Override
+    public void undoTransparentActionStarted() {
+      myCancellable.setCancelRequested(true);
+    }
+
+    @Override
+    public void undoTransparentActionFinished() {
+      myCancellable.setCancelRequested(false);
+    }
+  }
+
+  private static class MyCancellable implements Cancellable {
+    private AtomicBoolean myCancelRequested = new AtomicBoolean(false);
+
+    void setCancelRequested(boolean cancelRequested) {
+      myCancelRequested.set(cancelRequested);
+    }
+
+    @Override
+    public boolean isCancelled() {
+      return ModelAccess.instance().hasScheduledWrites() || myCancelRequested.get();
+    }
+  }
+
   private class HighlighterThread extends Thread {
     public HighlighterThread() {
       super("Highlighter");
@@ -636,11 +709,10 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     public void run() {
       if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
       DumbService dumbService = DumbService.getInstance(myProject);
-      CommandProcessor commandProcessor = CommandProcessor.getInstance();
       while (true) {
         try {
           while (true) {
-            while (commandProcessor.getCurrentCommand() != null) {
+            while (myCancellable.isCancelled()) {
               if (myStopThread) {
                 return;
               }
@@ -732,4 +804,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       myLastCommandFinished.set(time);
     }
   }
+
+
 }

@@ -220,10 +220,15 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   @Override
   public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
+    applyNonTypesystemRulesToRoot(typeCheckingContext, Cancellable.NEVER);
+  }
+
+  @Override
+  public void applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
     ITypeErrorComponent oldTypeErrorComponent = myTypeErrorComponent;
     myTypeErrorComponent = myNonTypeSystemComponent;
     try {
-      myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(typeCheckingContext, getNode());
+      myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(typeCheckingContext, getNode(), c);
     } finally {
       myTypeErrorComponent = oldTypeErrorComponent;
     }

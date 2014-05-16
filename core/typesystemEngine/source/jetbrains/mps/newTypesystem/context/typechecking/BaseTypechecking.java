@@ -20,6 +20,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
@@ -136,6 +137,10 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
   }
 
   public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
+    // do nothing
+  }
+
+  public void applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
     // do nothing
   }
 
