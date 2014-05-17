@@ -1116,7 +1116,7 @@
           </node>
         </node>
       </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="6837509207610490402" nodeInfo="nn" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2950716724467717775" nodeInfo="nn" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6837509207612404650" nodeInfo="in">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4914591330900787311" resolveInfo="BaseConsoleTab" />
       </node>
