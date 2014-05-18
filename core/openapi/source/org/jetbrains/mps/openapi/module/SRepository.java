@@ -49,6 +49,8 @@ public interface SRepository {
 
   RepositoryAccess getRepositoryAccess();
 
+  DebugRegistry getDebugRegistry();
+
   void saveAll();
 
   void addRepositoryListener(SRepositoryListener listener);

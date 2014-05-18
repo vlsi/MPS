@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.DebugRegistry;
 import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
@@ -62,6 +63,11 @@ public class ProjectRepository extends SRepositoryBase {
   @Override
   public RepositoryAccess getRepositoryAccess() {
     throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public DebugRegistry getDebugRegistry() {
+    return null;
   }
 
   @Override
