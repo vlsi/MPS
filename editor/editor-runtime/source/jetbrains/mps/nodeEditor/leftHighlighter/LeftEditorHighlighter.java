@@ -42,12 +42,15 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
@@ -368,10 +371,17 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   public void relayout(boolean updateFolding) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.relayout() should be executed in eventDispatchThread";
-    SNode editedNode = myEditorComponent.getEditedNode();
+    final SNode editedNode = myEditorComponent.getEditedNode();
     // additional check - during editor dispose process some Folding area painters can be removed calling relayout()..
-    if (myEditorComponent.isDisposed() || (editedNode != null && jetbrains.mps.util.SNodeOperations.isDisposed(editedNode))) {
-      return;
+    if (myEditorComponent.isDisposed()) return;
+    if (editedNode != null) {
+      boolean disposed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          return !SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance());
+        }
+      });
+      if (disposed) return;
     }
     if (myRightToLeft) {
       recalculateFoldingAreaWidth();
