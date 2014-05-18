@@ -80,6 +80,8 @@ public class TestLightExecutor extends AbstractTestExecutor {
     terminateProcess(TERMINATION_CODE);
   }
 
+
+
   /*package*/ void terminateProcess(int code) {
     if (getRunState().isTerminated()) {
       return;
@@ -93,7 +95,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
 
   @Override
   public void dispose() {
-    assert getRunState().isTerminating();
     getRunState().advance(TestLightRunStateEnum.TERMINATED);
   }
 

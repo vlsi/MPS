@@ -2,9 +2,9 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util/classes" />
-    <output-test url="file://$MODULE_DIR$/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util/classes/tests" />
+    <output-test url="file://$MODULE_DIR$/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
+    <content url="file://$MODULE_DIR$/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util">
       <sourceFolder url="file://$MODULE_DIR$/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />

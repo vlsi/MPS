@@ -561,59 +561,59 @@
     <nodeInfo nodeId="6796535740154100523" fileName="TestLightExecutor.java" startLine="61" startPosition="7" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6796535740154100540" fileName="TestLightExecutor.java" startLine="71" startPosition="37" endLine="72" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6796535740154100548" fileName="TestLightExecutor.java" startLine="79" startPosition="30" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6796535740154100562" fileName="TestLightExecutor.java" startLine="84" startPosition="39" endLine="85" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6796535740154100563" fileName="TestLightExecutor.java" startLine="86" startPosition="5" endLine="87" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6796535740154100568" fileName="TestLightExecutor.java" startLine="87" startPosition="61" endLine="88" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6796535740154100576" fileName="TestLightExecutor.java" startLine="88" startPosition="109" endLine="89" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6796535740154100587" fileName="TestLightExecutor.java" startLine="95" startPosition="25" endLine="96" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="6796535740154100591" fileName="TestLightExecutor.java" startLine="96" startPosition="41" endLine="97" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6796535740154100602" fileName="TestLightExecutor.java" startLine="104" startPosition="55" endLine="105" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6796535740154100616" fileName="TestLightExecutor.java" startLine="112" startPosition="68" endLine="113" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6796535740154100628" fileName="TestLightExecutor.java" startLine="118" startPosition="47" endLine="119" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6796535740154100634" fileName="TestLightExecutor.java" startLine="124" startPosition="42" endLine="125" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6796535740154100643" fileName="TestLightExecutor.java" startLine="129" startPosition="62" endLine="130" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6796535740154100420" fileName="TestLightExecutor.java" startLine="134" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6796535740154100562" fileName="TestLightExecutor.java" startLine="86" startPosition="39" endLine="87" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6796535740154100563" fileName="TestLightExecutor.java" startLine="88" startPosition="5" endLine="89" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6796535740154100568" fileName="TestLightExecutor.java" startLine="89" startPosition="61" endLine="90" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6796535740154100576" fileName="TestLightExecutor.java" startLine="90" startPosition="109" endLine="91" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6796535740154100591" fileName="TestLightExecutor.java" startLine="97" startPosition="25" endLine="98" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6796535740154100602" fileName="TestLightExecutor.java" startLine="105" startPosition="55" endLine="106" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6796535740154100616" fileName="TestLightExecutor.java" startLine="113" startPosition="68" endLine="114" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6796535740154100628" fileName="TestLightExecutor.java" startLine="119" startPosition="47" endLine="120" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6796535740154100634" fileName="TestLightExecutor.java" startLine="125" startPosition="42" endLine="126" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6796535740154100643" fileName="TestLightExecutor.java" startLine="130" startPosition="62" endLine="131" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6796535740154100420" fileName="TestLightExecutor.java" startLine="135" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6796535740154100470" fileName="TestLightExecutor.java" startLine="37" startPosition="22" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6796535740154100470" fileName="TestLightExecutor.java" startLine="37" startPosition="22" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6796535740154100485" fileName="TestLightExecutor.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setReady#()V" />
     <nodeInfo nodeId="6796535740154100517" fileName="TestLightExecutor.java" startLine="58" startPosition="38" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6796535740154100546" fileName="TestLightExecutor.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="terminateRun#()V" />
-    <nodeInfo nodeId="6796535740154100557" fileName="TestLightExecutor.java" startLine="83" startPosition="47" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6796535740154100626" fileName="TestLightExecutor.java" startLine="118" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDispatcher#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestEventsDispatcher;" />
-    <nodeInfo nodeId="6796535740154100632" fileName="TestLightExecutor.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunState#()Ljetbrains/mps/lang/test/util/TestLightRunState;" />
+    <nodeInfo nodeId="6796535740154100557" fileName="TestLightExecutor.java" startLine="85" startPosition="47" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6796535740154100626" fileName="TestLightExecutor.java" startLine="119" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDispatcher#()Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestEventsDispatcher;" />
+    <nodeInfo nodeId="6796535740154100632" fileName="TestLightExecutor.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunState#()Ljetbrains/mps/lang/test/util/TestLightRunState;" />
     <nodeInfo nodeId="6796535740154100537" fileName="TestLightExecutor.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="condition#()Z" />
-    <nodeInfo nodeId="6796535740154100638" fileName="TestLightExecutor.java" startLine="128" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRunState#(J)Ljetbrains/mps/lang/test/util/TestLightRunState;" />
+    <nodeInfo nodeId="6796535740154100584" fileName="TestLightExecutor.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="6796535740154100638" fileName="TestLightExecutor.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRunState#(J)Ljetbrains/mps/lang/test/util/TestLightRunState;" />
     <nodeInfo nodeId="6796535740154100445" fileName="TestLightExecutor.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestLightExecutor#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestEventsDispatcher;Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="6796535740154100584" fileName="TestLightExecutor.java" startLine="94" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="6796535740154100598" fileName="TestLightExecutor.java" startLine="102" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTestsContributor#()Ljetbrains/mps/baseLanguage/unitTest/execution/server/TestsContributor;" />
-    <nodeInfo nodeId="6796535740154100609" fileName="TestLightExecutor.java" startLine="110" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createListener#(Ljava/lang/Iterable;)Lorg/junit/runner/notification/RunListener;" />
+    <nodeInfo nodeId="6796535740154100598" fileName="TestLightExecutor.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTestsContributor#()Ljetbrains/mps/baseLanguage/unitTest/execution/server/TestsContributor;" />
+    <nodeInfo nodeId="6796535740154100609" fileName="TestLightExecutor.java" startLine="111" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createListener#(Ljava/lang/Iterable;)Lorg/junit/runner/notification/RunListener;" />
     <nodeInfo nodeId="6796535740154100512" fileName="TestLightExecutor.java" startLine="57" startPosition="57" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6796535740154100532" fileName="TestLightExecutor.java" startLine="68" startPosition="36" endLine="74" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6796535740154100467" fileName="TestLightExecutor.java" startLine="36" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="6796535740154100530" fileName="TestLightExecutor.java" startLine="68" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="waitWhileNotReady#()V" />
-    <nodeInfo nodeId="6796535740154100553" fileName="TestLightExecutor.java" startLine="83" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="terminateProcess#(I)V" />
+    <nodeInfo nodeId="6796535740154100553" fileName="TestLightExecutor.java" startLine="85" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="terminateProcess#(I)V" />
     <nodeInfo nodeId="6796535740154100492" fileName="TestLightExecutor.java" startLine="53" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lorg/junit/runner/JUnitCore;Ljava/lang/Iterable;)V" />
     <scopeInfo nodeId="6796535740154100470" fileName="TestLightExecutor.java" startLine="38" startPosition="30" endLine="39" endPosition="49" />
     <scopeInfo nodeId="6796535740154100486" fileName="TestLightExecutor.java" startLine="47" startPosition="26" endLine="48" endPosition="23" />
     <scopeInfo nodeId="6796535740154100521" fileName="TestLightExecutor.java" startLine="59" startPosition="42" endLine="60" endPosition="15" />
     <scopeInfo nodeId="6796535740154100539" fileName="TestLightExecutor.java" startLine="71" startPosition="37" endLine="72" endPosition="27" />
     <scopeInfo nodeId="6796535740154100547" fileName="TestLightExecutor.java" startLine="79" startPosition="30" endLine="80" endPosition="39" />
-    <scopeInfo nodeId="6796535740154100561" fileName="TestLightExecutor.java" startLine="84" startPosition="39" endLine="85" endPosition="13" />
-    <scopeInfo nodeId="6796535740154100601" fileName="TestLightExecutor.java" startLine="104" startPosition="55" endLine="105" endPosition="73" />
-    <scopeInfo nodeId="6796535740154100615" fileName="TestLightExecutor.java" startLine="112" startPosition="68" endLine="113" endPosition="86" />
-    <scopeInfo nodeId="6796535740154100627" fileName="TestLightExecutor.java" startLine="118" startPosition="47" endLine="119" endPosition="24" />
-    <scopeInfo nodeId="6796535740154100633" fileName="TestLightExecutor.java" startLine="124" startPosition="42" endLine="125" endPosition="26" />
-    <scopeInfo nodeId="6796535740154100642" fileName="TestLightExecutor.java" startLine="129" startPosition="62" endLine="130" endPosition="70" />
-    <scopeInfo nodeId="6796535740154100586" fileName="TestLightExecutor.java" startLine="95" startPosition="25" endLine="97" endPosition="60" />
+    <scopeInfo nodeId="6796535740154100561" fileName="TestLightExecutor.java" startLine="86" startPosition="39" endLine="87" endPosition="13" />
+    <scopeInfo nodeId="6796535740154100586" fileName="TestLightExecutor.java" startLine="97" startPosition="25" endLine="98" endPosition="60" />
+    <scopeInfo nodeId="6796535740154100601" fileName="TestLightExecutor.java" startLine="105" startPosition="55" endLine="106" endPosition="73" />
+    <scopeInfo nodeId="6796535740154100615" fileName="TestLightExecutor.java" startLine="113" startPosition="68" endLine="114" endPosition="86" />
+    <scopeInfo nodeId="6796535740154100627" fileName="TestLightExecutor.java" startLine="119" startPosition="47" endLine="120" endPosition="24" />
+    <scopeInfo nodeId="6796535740154100633" fileName="TestLightExecutor.java" startLine="125" startPosition="42" endLine="126" endPosition="26" />
+    <scopeInfo nodeId="6796535740154100642" fileName="TestLightExecutor.java" startLine="130" startPosition="62" endLine="131" endPosition="70" />
     <scopeInfo nodeId="6796535740154100453" fileName="TestLightExecutor.java" startLine="28" startPosition="105" endLine="31" endPosition="20" />
     <scopeInfo nodeId="6796535740154100470" fileName="TestLightExecutor.java" startLine="37" startPosition="22" endLine="40" endPosition="5" />
     <scopeInfo nodeId="6796535740154100485" fileName="TestLightExecutor.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="6796535740154100546" fileName="TestLightExecutor.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6796535740154100626" fileName="TestLightExecutor.java" startLine="118" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="6796535740154100632" fileName="TestLightExecutor.java" startLine="124" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="6796535740154100626" fileName="TestLightExecutor.java" startLine="119" startPosition="0" endLine="122" endPosition="0" />
+    <scopeInfo nodeId="6796535740154100632" fileName="TestLightExecutor.java" startLine="125" startPosition="0" endLine="128" endPosition="0" />
     <scopeInfo nodeId="6796535740154100516" fileName="TestLightExecutor.java" startLine="58" startPosition="38" endLine="62" endPosition="24" />
     <scopeInfo nodeId="6796535740154100537" fileName="TestLightExecutor.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6796535740154100638" fileName="TestLightExecutor.java" startLine="128" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="6796535740154100584" fileName="TestLightExecutor.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="6796535740154100638" fileName="TestLightExecutor.java" startLine="129" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="6796535740154100640" varName="threadId" />
     </scopeInfo>
     <scopeInfo nodeId="6796535740154100445" fileName="TestLightExecutor.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
@@ -621,19 +621,18 @@
       <varInfo nodeId="6796535740154100449" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="6796535740154100469" fileName="TestLightExecutor.java" startLine="37" startPosition="22" endLine="42" endPosition="61" />
-    <scopeInfo nodeId="6796535740154100584" fileName="TestLightExecutor.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="6796535740154100598" fileName="TestLightExecutor.java" startLine="102" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="6796535740154100609" fileName="TestLightExecutor.java" startLine="110" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="6796535740154100598" fileName="TestLightExecutor.java" startLine="103" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="6796535740154100609" fileName="TestLightExecutor.java" startLine="111" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="6796535740154100612" varName="requests" />
     </scopeInfo>
     <scopeInfo nodeId="6796535740154100512" fileName="TestLightExecutor.java" startLine="57" startPosition="57" endLine="63" endPosition="5">
       <varInfo nodeId="6796535740154100514" varName="request" />
     </scopeInfo>
     <scopeInfo nodeId="6796535740154100531" fileName="TestLightExecutor.java" startLine="68" startPosition="36" endLine="74" endPosition="6" />
-    <scopeInfo nodeId="6796535740154100556" fileName="TestLightExecutor.java" startLine="83" startPosition="47" endLine="89" endPosition="80" />
+    <scopeInfo nodeId="6796535740154100556" fileName="TestLightExecutor.java" startLine="85" startPosition="47" endLine="91" endPosition="80" />
     <scopeInfo nodeId="6796535740154100467" fileName="TestLightExecutor.java" startLine="36" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="6796535740154100530" fileName="TestLightExecutor.java" startLine="68" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="6796535740154100553" fileName="TestLightExecutor.java" startLine="83" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="6796535740154100553" fileName="TestLightExecutor.java" startLine="85" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="6796535740154100554" varName="code" />
     </scopeInfo>
     <scopeInfo nodeId="6796535740154100500" fileName="TestLightExecutor.java" startLine="54" startPosition="89" endLine="63" endPosition="5" />
@@ -642,7 +641,7 @@
       <varInfo nodeId="6796535740154100496" varName="requests" />
     </scopeInfo>
     <unitInfo nodeId="6796535740154100535" fileName="TestLightExecutor.java" startLine="69" startPosition="8" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor$1" />
-    <unitInfo nodeId="6796535740154100420" fileName="TestLightExecutor.java" startLine="20" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
+    <unitInfo nodeId="6796535740154100420" fileName="TestLightExecutor.java" startLine="20" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor" />
   </root>
   <root nodeRef="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)/6796535740154100653">
     <nodeInfo nodeId="6796535740154100654" fileName="CommandLineTestsContributor.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myArgs" />
