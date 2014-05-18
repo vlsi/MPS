@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util.test;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -26,6 +28,7 @@ public class TestRunStorage {
   private TestRunStorage() {
   }
 
+  @Nullable
   public static Object getUserObject(long id) {
     return USER_OBJECTS.get(id);
   }
