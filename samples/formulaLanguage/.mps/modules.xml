@@ -5,9 +5,6 @@
       <modulePath path="$PROJECT_DIR$/language/jetbrains.mps.samples.formulaLanguage.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/runtime/jetbrains.mps.samples.formula.runtime.msd" folder="" />
     </projectModules>
-    <genConfs>
-      <genConfModule name="formulaLanguage" moduleRef="jetbrains.mps.samples.formulaLanguage" />
-    </genConfs>
   </component>
 </project>
 
