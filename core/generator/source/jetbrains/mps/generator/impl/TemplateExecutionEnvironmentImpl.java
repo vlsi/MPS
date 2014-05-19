@@ -389,27 +389,26 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
               getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
               return outputNodes;
             }
+          } catch (DismissTopMappingRuleException ex) {
+            // it's ok, just continue with a next applicable rule, if any
+            if (ex.isLoggingNeeded() && reductionRule != null) {
+              SNodeReference ruleNode = reductionRule.getRuleNode();
+              String messageText = String.format("-- dismissed reduction rule: %s", ruleNode);
+              if (ex.isInfo()) {
+                getLogger().info(ruleNode, messageText);
+              } else if (ex.isWarning()) {
+                getLogger().warning(ruleNode, messageText);
+              } else {
+                getLogger().error(ruleNode, messageText);
+              }
+            }
           } finally {
             myReductionTrack.leave();
           }
         }
       }
-
     } catch (AbandonRuleInputException ex) {
       return Collections.emptyList();
-    } catch (DismissTopMappingRuleException ex) {
-      // it's ok, just continue
-      if (ex.isLoggingNeeded() && reductionRule != null) {
-        SNodeReference ruleNode = reductionRule.getRuleNode();
-        String messageText = String.format("-- dismissed reduction rule: %s", ruleNode);
-        if (ex.isInfo()) {
-          getLogger().info(ruleNode, messageText);
-        } else if (ex.isWarning()) {
-          getLogger().warning(ruleNode, messageText);
-        } else {
-          getLogger().error(ruleNode, messageText);
-        }
-      }
     } catch (TemplateProcessingFailureException ex) {
       SNodeReference ruleNode = reductionRule.getRuleNode();
       if (myFailedRules.add(ruleNode)) {
