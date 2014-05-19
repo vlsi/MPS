@@ -32,8 +32,8 @@ public abstract class AbstractTestExecutor implements TestExecutor {
         LOG.error("Exception in the test framework", t);
       }
     } finally {
-      this.dispose();
       assert !(MPSCore.getInstance().isTestMode());
+      this.dispose();
     }
   }
 

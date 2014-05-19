@@ -128,7 +128,7 @@
     <nodeInfo nodeId="1822803054820662787" fileName="JUnitConfigurationEditorComponent.java" startLine="287" startPosition="44" endLine="288" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1822803054820664663" fileName="JUnitConfigurationEditorComponent.java" startLine="288" startPosition="48" endLine="289" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1809126578529168593" fileName="JUnitConfigurationEditorComponent.java" startLine="290" startPosition="5" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1809126578529188783" fileName="JUnitConfigurationEditorComponent.java" startLine="292" startPosition="46" endLine="293" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1809126578529188783" fileName="JUnitConfigurationEditorComponent.java" startLine="292" startPosition="75" endLine="293" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1822803054819269865" fileName="JUnitConfigurationEditorComponent.java" startLine="294" startPosition="5" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1822803054819269860" fileName="JUnitConfigurationEditorComponent.java" startLine="295" startPosition="0" endLine="296" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1822803054820399724" fileName="JUnitConfigurationEditorComponent.java" startLine="301" startPosition="60" endLine="302" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -224,7 +224,7 @@
     <scopeInfo nodeId="1822803054819270695" fileName="JUnitConfigurationEditorComponent.java" startLine="272" startPosition="73" endLine="273" endPosition="95" />
     <scopeInfo nodeId="1822803054820531332" fileName="JUnitConfigurationEditorComponent.java" startLine="274" startPosition="80" endLine="275" endPosition="95" />
     <scopeInfo nodeId="1822803054819270743" fileName="JUnitConfigurationEditorComponent.java" startLine="279" startPosition="29" endLine="280" endPosition="115" />
-    <scopeInfo nodeId="1809126578529296551" fileName="JUnitConfigurationEditorComponent.java" startLine="292" startPosition="46" endLine="293" endPosition="36" />
+    <scopeInfo nodeId="1809126578529296551" fileName="JUnitConfigurationEditorComponent.java" startLine="292" startPosition="75" endLine="293" endPosition="36" />
     <scopeInfo nodeId="642093153354309361" fileName="JUnitConfigurationEditorComponent.java" startLine="62" startPosition="43" endLine="64" endPosition="26" />
     <scopeInfo nodeId="1822803054819270762" fileName="JUnitConfigurationEditorComponent.java" startLine="287" startPosition="44" endLine="289" endPosition="57" />
     <scopeInfo nodeId="1822803054821265680" fileName="JUnitConfigurationEditorComponent.java" startLine="317" startPosition="25" endLine="319" endPosition="29" />
@@ -1344,41 +1344,41 @@
     <unitInfo nodeId="6062668769034855735" fileName="JUnitRunTypes.java" startLine="26" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes" />
   </root>
   <root nodeRef="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)/7210936499602812841">
-    <nodeInfo nodeId="7210936499602823607" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaEditorComponent" />
-    <nodeInfo nodeId="7210936499602824499" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLightCheckBox" />
-    <nodeInfo nodeId="7210936499602824503" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="16" startPosition="134" endLine="17" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7210936499602823611" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="17" startPosition="41" endLine="18" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7210936499602833583" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="18" startPosition="53" endLine="19" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7210936499602425865" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="27" startPosition="51" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4248607759475982589" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="35" startPosition="57" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4248607759475968973" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="37" startPosition="66" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4248607759475863680" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="4248607759475888964" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="36" startPosition="58" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7210936499602822756" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckBoxWithJavaEditorComponentSynchronizer#(Lcom/intellij/ui/components/JBCheckBox;Ljetbrains/mps/baseLanguage/execution/api/JavaConfigurationEditorComponent;)V" />
-    <nodeInfo nodeId="4248607759475789462" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="25" startPosition="22" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7210936499602323912" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateJavaConfigurationEditorComponent#()V" />
-    <nodeInfo nodeId="4248607759475375761" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sync#()V" />
-    <scopeInfo nodeId="4248607759475863686" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="27" startPosition="51" endLine="28" endPosition="49" />
-    <scopeInfo nodeId="4248607759475888967" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="37" startPosition="66" endLine="38" endPosition="35" />
-    <scopeInfo nodeId="7210936499602822759" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="16" startPosition="134" endLine="19" endPosition="45" />
-    <scopeInfo nodeId="4248607759475863680" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+    <nodeInfo nodeId="7210936499602823607" fileName="JUnitJavaEditorSynchronizer.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaEditorComponent" />
+    <nodeInfo nodeId="7210936499602824499" fileName="JUnitJavaEditorSynchronizer.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLightCheckBox" />
+    <nodeInfo nodeId="7210936499602824503" fileName="JUnitJavaEditorSynchronizer.java" startLine="16" startPosition="118" endLine="17" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7210936499602823611" fileName="JUnitJavaEditorSynchronizer.java" startLine="17" startPosition="41" endLine="18" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7210936499602833583" fileName="JUnitJavaEditorSynchronizer.java" startLine="18" startPosition="53" endLine="19" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7210936499602425865" fileName="JUnitJavaEditorSynchronizer.java" startLine="27" startPosition="51" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4248607759475982589" fileName="JUnitJavaEditorSynchronizer.java" startLine="35" startPosition="24" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4248607759475968973" fileName="JUnitJavaEditorSynchronizer.java" startLine="37" startPosition="66" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4248607759475863680" fileName="JUnitJavaEditorSynchronizer.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="4248607759475888964" fileName="JUnitJavaEditorSynchronizer.java" startLine="36" startPosition="58" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7210936499602822756" fileName="JUnitJavaEditorSynchronizer.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JUnitJavaEditorSynchronizer#(Lcom/intellij/ui/components/JBCheckBox;Ljetbrains/mps/baseLanguage/execution/api/JavaConfigurationEditorComponent;)V" />
+    <nodeInfo nodeId="4248607759475789462" fileName="JUnitJavaEditorSynchronizer.java" startLine="25" startPosition="22" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7210936499602323912" fileName="JUnitJavaEditorSynchronizer.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
+    <nodeInfo nodeId="4248607759475375761" fileName="JUnitJavaEditorSynchronizer.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sync#()V" />
+    <scopeInfo nodeId="4248607759475863686" fileName="JUnitJavaEditorSynchronizer.java" startLine="27" startPosition="51" endLine="28" endPosition="17" />
+    <scopeInfo nodeId="4248607759475888967" fileName="JUnitJavaEditorSynchronizer.java" startLine="37" startPosition="66" endLine="38" endPosition="35" />
+    <scopeInfo nodeId="7210936499602822759" fileName="JUnitJavaEditorSynchronizer.java" startLine="16" startPosition="118" endLine="19" endPosition="13" />
+    <scopeInfo nodeId="4248607759475863680" fileName="JUnitJavaEditorSynchronizer.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="4248607759475863684" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="4248607759475888964" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="36" startPosition="58" endLine="39" endPosition="5">
+    <scopeInfo nodeId="4248607759475888964" fileName="JUnitJavaEditorSynchronizer.java" startLine="36" startPosition="58" endLine="39" endPosition="5">
       <varInfo nodeId="4248607759475888965" varName="comp" />
     </scopeInfo>
-    <scopeInfo nodeId="7210936499602323915" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="35" startPosition="57" endLine="39" endPosition="5">
+    <scopeInfo nodeId="7210936499602323915" fileName="JUnitJavaEditorSynchronizer.java" startLine="35" startPosition="24" endLine="39" endPosition="5">
       <varInfo nodeId="4248607759475982590" varName="selected" />
     </scopeInfo>
-    <scopeInfo nodeId="7210936499602822756" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="7210936499602822756" fileName="JUnitJavaEditorSynchronizer.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="7210936499602823533" varName="javaEditorComponent" />
       <varInfo nodeId="7210936499602823446" varName="lightCheckBox" />
     </scopeInfo>
-    <scopeInfo nodeId="4248607759475375764" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="25" startPosition="22" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="7210936499602323912" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4248607759475375761" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="24" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="4248607759475863678" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="26" startPosition="42" endLine="30" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.CheckBoxWithJavaEditorComponentSynchronizer$1" />
-    <unitInfo nodeId="7210936499602812841" fileName="CheckBoxWithJavaEditorComponentSynchronizer.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.CheckBoxWithJavaEditorComponentSynchronizer" />
+    <scopeInfo nodeId="4248607759475375764" fileName="JUnitJavaEditorSynchronizer.java" startLine="25" startPosition="22" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="7210936499602323912" fileName="JUnitJavaEditorSynchronizer.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="4248607759475375761" fileName="JUnitJavaEditorSynchronizer.java" startLine="24" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="4248607759475863678" fileName="JUnitJavaEditorSynchronizer.java" startLine="26" startPosition="42" endLine="30" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitJavaEditorSynchronizer$1" />
+    <unitInfo nodeId="7210936499602812841" fileName="JUnitJavaEditorSynchronizer.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitJavaEditorSynchronizer" />
   </root>
   <root nodeRef="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)/7210936499603016733">
     <nodeInfo nodeId="7210936499603016747" fileName="Synchronizer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sync#()V" />

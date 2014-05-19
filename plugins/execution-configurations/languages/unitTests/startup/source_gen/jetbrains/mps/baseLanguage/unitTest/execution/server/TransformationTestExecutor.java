@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import jetbrains.mps.util.test.CachesUtil;
 import javax.swing.SwingUtilities;
+import com.intellij.openapi.application.impl.ApplicationImpl;
+import com.intellij.openapi.application.ApplicationManager;
 
 public class TransformationTestExecutor extends BTestExecutor {
   public TransformationTestExecutor(String[] args) {
@@ -21,9 +23,9 @@ public class TransformationTestExecutor extends BTestExecutor {
 
 
   public void dispose() {
-    super.dispose();
     TransformationTestExecutor.exitApp();
-    CachesUtil.cleanupCaches();
+    super.dispose();
+    // <node> 
   }
 
 
@@ -33,12 +35,12 @@ public class TransformationTestExecutor extends BTestExecutor {
     try {
       executor.init();
       executor.execute();
-      executor.dispose();
     } catch (Throwable t) {
       t.printStackTrace(System.err);
       CachesUtil.cleanupCaches();
       System.exit(1);
     }
+    System.exit(0);
   }
 
 
@@ -48,7 +50,7 @@ public class TransformationTestExecutor extends BTestExecutor {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
         public void run() {
-          // <node> 
+          ((ApplicationImpl) ApplicationManager.getApplication()).exit(true);
         }
       });
     } catch (Exception e) {

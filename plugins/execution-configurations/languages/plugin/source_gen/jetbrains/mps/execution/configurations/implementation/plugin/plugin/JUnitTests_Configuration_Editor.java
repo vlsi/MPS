@@ -12,8 +12,7 @@ import java.awt.GridBagLayout;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent;
 import jetbrains.mps.ide.common.LayoutUtil;
 import jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent;
-import jetbrains.mps.baseLanguage.unitTest.execution.settings.Synchronizer;
-import jetbrains.mps.baseLanguage.unitTest.execution.settings.CheckBoxWithJavaEditorComponentSynchronizer;
+import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitJavaEditorSynchronizer;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests_Configuration> {
@@ -34,8 +33,7 @@ public class JUnitTests_Configuration_Editor extends SettingsEditorEx<JUnitTests
     panel.add(junitOptionsComponent, LayoutUtil.createPanelConstraints(0));
     JavaConfigurationEditorComponent javaOptionsComponent = myJavaRunParameters.createEditor();
     panel.add(javaOptionsComponent, LayoutUtil.createPanelConstraints(1));
-    Synchronizer synchronizer = new CheckBoxWithJavaEditorComponentSynchronizer(junitOptionsComponent.getLightCheckBox(), javaOptionsComponent);
-    synchronizer.sync();
+    new JUnitJavaEditorSynchronizer(junitOptionsComponent.getLightCheckBox(), javaOptionsComponent).sync();
     return panel;
   }
 

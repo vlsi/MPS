@@ -8,15 +8,15 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Component;
 
-public class CheckBoxWithJavaEditorComponentSynchronizer implements Synchronizer {
+public class JUnitJavaEditorSynchronizer implements Synchronizer {
   private final JavaConfigurationEditorComponent myJavaEditorComponent;
   private final JBCheckBox myLightCheckBox;
 
 
-  public CheckBoxWithJavaEditorComponentSynchronizer(JBCheckBox lightCheckBox, JavaConfigurationEditorComponent javaEditorComponent) {
+  public JUnitJavaEditorSynchronizer(JBCheckBox lightCheckBox, JavaConfigurationEditorComponent javaEditorComponent) {
     this.myLightCheckBox = lightCheckBox;
     this.myJavaEditorComponent = javaEditorComponent;
-    updateJavaConfigurationEditorComponent();
+    update();
   }
 
 
@@ -25,14 +25,14 @@ public class CheckBoxWithJavaEditorComponentSynchronizer implements Synchronizer
   public void sync() {
     myLightCheckBox.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
-        updateJavaConfigurationEditorComponent();
+        update();
       }
     });
   }
 
 
 
-  private void updateJavaConfigurationEditorComponent() {
+  public void update() {
     final boolean selected = myLightCheckBox.isSelected();
     for (Component comp : myJavaEditorComponent.getComponents()) {
       comp.setEnabled(!(selected));

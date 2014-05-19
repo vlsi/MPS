@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d44sjx6uta28hr4l83arvl6tjk76xfm">
+<dependencies version="2" modelHash="-d0jmm54spumjkpubeo2k1kq0m8aknf0">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -13,10 +13,10 @@
   <dep model="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)" hash="8k48w6pm6mhblvdqvl49ev92n69fphr" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="6dagvbpqu57p4yctgftbk50vxnmud5g" dependsOnNodes="true">
+  <common hash="4f74o9911tnk32hbbu8v4tc5dzmbl2z" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="5881102044690167886" name="BTestExecutor" hash="5aru6f0wusi8olpl1b2pe3eaynwo29c">
+  <source id="5881102044690167886" name="BTestExecutor" hash="-bgdcwn8ibsa1zqyt3i61fm117i4xhxg">
     <dep root="5881102044690168334" />
     <dep root="6796535740154099806" />
     <dep root="6796535740154100250" />
@@ -32,24 +32,27 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BTestExecutor.java" />
   </source>
-  <source id="5881102044690168334" name="CommandOutputStream" hash="-a629zew8t6mcgq4jv351fpo5jf8usdi">
+  <source id="5881102044690168334" name="CommandOutputStream" hash="9qvnr8dbjk6f020kug65tiybma92ve9">
     <file name="CommandOutputStream.java" />
   </source>
-  <source id="3310779261129642822" name="TransformationTestExecutor" hash="-7tn2zcypa3ig50jbz3y6dcvym92fuau">
+  <source id="3310779261129642822" name="TransformationTestExecutor" hash="cgu40w0cxxyepz13jy643fe2w0jwft">
     <dep root="5881102044690167886" />
     <dep root="6796535740154099806" />
     <dep root="6796535740154100250" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <file name="TransformationTestExecutor.java" />
   </source>
-  <source id="6796535740154100653" name="CommandLineTestsContributor" hash="-9gnjwt43r6u7uvmn1euip9kk25cqvn9">
-    <dep root="6796535740154099794" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
-    <file name="CommandLineTestsContributor.java" />
+  <source id="6796535740154099794" name="TestsContributor" hash="7g3i8cb7loa1y9slc3ggffdkfiyns6d">
+    <file name="TestsContributor.java" />
   </source>
-  <source id="6796535740154099918" name="TestLightRunListener" hash="c1oybavi8yznqd5p8nfd296w69azvxu">
+  <source id="6796535740154099806" name="AbstractTestExecutor" hash="dmxke37vcbtb0qhhhwz6uyz9x9p0xy8">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
+    <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
+    <file name="AbstractTestExecutor.java" />
+  </source>
+  <source id="6796535740154099918" name="TestLightRunListener" hash="ysjo9h4phwezbyngnrubempaik13pi">
     <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
     <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner.notification(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner.notification@java_stub)" />
     <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
@@ -57,26 +60,16 @@
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <file name="TestLightRunListener.java" />
   </source>
-  <source id="6796535740154100934" name="TestLightExtractor" hash="-8abaxnls4ykd62t1i1anm1bh3sbyhje">
-    <file name="TestLightExtractor.java" />
+  <source id="6796535740154100250" name="TestExecutor" hash="-41qrx3boaj8luir0f454gh5lawtv6tq">
+    <file name="TestExecutor.java" />
   </source>
-  <source id="6796535740154100326" name="TestsClassStorage" hash="-44win1ro2mok5ij2e9ubyjhpqg7i3c0">
-    <file name="TestsClassStorage.java" />
-  </source>
-  <source id="6796535740154099794" name="TestsContributor" hash="-5vee06m71o6q0c0m2ildladeq077i3w">
-    <file name="TestsContributor.java" />
-  </source>
-  <source id="6796535740154099806" name="AbstractTestExecutor" hash="79zdr480xf0no7zaecma6yb4k2cnz1l">
-    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
-    <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
-    <file name="AbstractTestExecutor.java" />
-  </source>
-  <source id="6796535740154100268" name="NodeWrappersTestsContributor" hash="-cvqfpkahni7mun9e8bmhxstwx5w5zo5">
+  <source id="6796535740154100268" name="NodeWrappersTestsContributor" hash="1c9dkx6r8a35ybpgdwrrd8g01lqdu93">
     <file name="NodeWrappersTestsContributor.java" />
   </source>
-  <source id="6796535740154100420" name="TestLightExecutor" hash="-bpbwourl3yktehfoegrayvl6acmigs8">
+  <source id="6796535740154100326" name="TestsClassStorage" hash="-jrsifv2jfxc2caf6fwcepyk3wtn6gl">
+    <file name="TestsClassStorage.java" />
+  </source>
+  <source id="6796535740154100420" name="TestLightExecutor" hash="-913oc1vit73pgw5ukihg7o2jttirhrs">
     <dep root="6796535740154099806" />
     <dep root="6796535740154100250" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -85,8 +78,15 @@
     <dep model="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)" />
     <file name="TestLightExecutor.java" />
   </source>
-  <source id="6796535740154100250" name="TestExecutor" hash="-41qrx3boaj8luir0f454gh5lawtv6tq">
-    <file name="TestExecutor.java" />
+  <source id="6796535740154100653" name="CommandLineTestsContributor" hash="44b94fufj0kayfy7csjh9gln4usoqjq">
+    <dep root="6796535740154099794" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/org.junit.runner@java_stub)" />
+    <file name="CommandLineTestsContributor.java" />
+  </source>
+  <source id="6796535740154100934" name="TestLightExtractor" hash="d9loyu7vqcwzi6c7kj6sacca1m064ca">
+    <file name="TestLightExtractor.java" />
   </source>
 </dependencies>
 

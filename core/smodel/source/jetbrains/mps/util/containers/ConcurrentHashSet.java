@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util.containers;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
@@ -47,18 +49,21 @@ public class ConcurrentHashSet<K> implements Set<K> {
     return map.containsKey(o);
   }
 
+  @NotNull
   @Override
   public Iterator<K> iterator() {
     return map.keySet().iterator();
   }
 
+  @NotNull
   @Override
   public Object[] toArray() {
     return map.keySet().toArray();
   }
 
+  @NotNull
   @Override
-  public <T> T[] toArray(T[] a) {
+  public <T> T[] toArray(@NotNull T[] a) {
     return map.keySet().toArray(a);
   }
 

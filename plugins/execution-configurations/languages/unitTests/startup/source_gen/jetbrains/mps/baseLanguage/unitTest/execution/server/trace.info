@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)/3310779261129642822">
-    <nodeInfo nodeId="8010731360436059848" fileName="TransformationTestExecutor.java" startLine="9" startPosition="52" endLine="10" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3310779261129642877" fileName="TransformationTestExecutor.java" startLine="16" startPosition="22" endLine="17" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8010731360436088614" fileName="TransformationTestExecutor.java" startLine="17" startPosition="29" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8010731360436091951" fileName="TransformationTestExecutor.java" startLine="23" startPosition="25" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8010731360436067251" fileName="TransformationTestExecutor.java" startLine="24" startPosition="20" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8010731360436093042" fileName="TransformationTestExecutor.java" startLine="25" startPosition="41" endLine="26" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8010731360436131051" fileName="TransformationTestExecutor.java" startLine="31" startPosition="42" endLine="32" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8010731360436131877" fileName="TransformationTestExecutor.java" startLine="33" startPosition="9" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3310779261129642879" fileName="TransformationTestExecutor.java" startLine="34" startPosition="22" endLine="35" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8010731360436134839" fileName="TransformationTestExecutor.java" startLine="35" startPosition="25" endLine="36" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3310779261129642889" fileName="TransformationTestExecutor.java" startLine="37" startPosition="27" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3310779261129642894" fileName="TransformationTestExecutor.java" startLine="38" startPosition="36" endLine="39" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3310779261129642896" fileName="TransformationTestExecutor.java" startLine="39" startPosition="33" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5338223990496041325" fileName="TransformationTestExecutor.java" startLine="50" startPosition="27" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8010731360436067227" fileName="TransformationTestExecutor.java" startLine="54" startPosition="27" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3310779261129642940" fileName="TransformationTestExecutor.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransformationTestExecutor#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8010731360436067210" fileName="TransformationTestExecutor.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8010731360436062912" fileName="TransformationTestExecutor.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="8010731360436090145" fileName="TransformationTestExecutor.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="8010731360436067204" fileName="TransformationTestExecutor.java" startLine="47" startPosition="9" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3360598562221689069" fileName="TransformationTestExecutor.java" startLine="32" startPosition="79" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8010731360436067202" fileName="TransformationTestExecutor.java" startLine="46" startPosition="33" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3310779261129642871" fileName="TransformationTestExecutor.java" startLine="31" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8010731360436067233" fileName="TransformationTestExecutor.java" startLine="46" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="exitApp#()V" />
-    <scopeInfo nodeId="3310779261129642943" fileName="TransformationTestExecutor.java" startLine="9" startPosition="52" endLine="10" endPosition="16" />
-    <scopeInfo nodeId="8010731360436067213" fileName="TransformationTestExecutor.java" startLine="50" startPosition="27" endLine="51" endPosition="20" />
-    <scopeInfo nodeId="8010731360436067223" fileName="TransformationTestExecutor.java" startLine="54" startPosition="0" endLine="55" endPosition="26">
+    <nodeInfo nodeId="8010731360436059848" fileName="TransformationTestExecutor.java" startLine="11" startPosition="52" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3310779261129642877" fileName="TransformationTestExecutor.java" startLine="18" startPosition="22" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8010731360436088614" fileName="TransformationTestExecutor.java" startLine="19" startPosition="29" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8010731360436067251" fileName="TransformationTestExecutor.java" startLine="25" startPosition="25" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8010731360436091951" fileName="TransformationTestExecutor.java" startLine="26" startPosition="41" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2533813071712523210" fileName="TransformationTestExecutor.java" startLine="27" startPosition="20" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8010731360436131051" fileName="TransformationTestExecutor.java" startLine="33" startPosition="42" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8010731360436131877" fileName="TransformationTestExecutor.java" startLine="35" startPosition="9" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310779261129642879" fileName="TransformationTestExecutor.java" startLine="36" startPosition="22" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310779261129642889" fileName="TransformationTestExecutor.java" startLine="38" startPosition="27" endLine="39" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310779261129642894" fileName="TransformationTestExecutor.java" startLine="39" startPosition="36" endLine="40" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310779261129642896" fileName="TransformationTestExecutor.java" startLine="40" startPosition="33" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5558891464997325383" fileName="TransformationTestExecutor.java" startLine="42" startPosition="5" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8010731360436067214" fileName="TransformationTestExecutor.java" startLine="52" startPosition="27" endLine="53" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8010731360436067227" fileName="TransformationTestExecutor.java" startLine="56" startPosition="27" endLine="57" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3310779261129642940" fileName="TransformationTestExecutor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransformationTestExecutor#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8010731360436067210" fileName="TransformationTestExecutor.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8010731360436062912" fileName="TransformationTestExecutor.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="8010731360436090145" fileName="TransformationTestExecutor.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="8010731360436067204" fileName="TransformationTestExecutor.java" startLine="49" startPosition="9" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3360598562221689069" fileName="TransformationTestExecutor.java" startLine="34" startPosition="79" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8010731360436067202" fileName="TransformationTestExecutor.java" startLine="48" startPosition="33" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3310779261129642871" fileName="TransformationTestExecutor.java" startLine="33" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8010731360436067233" fileName="TransformationTestExecutor.java" startLine="48" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="exitApp#()V" />
+    <scopeInfo nodeId="3310779261129642943" fileName="TransformationTestExecutor.java" startLine="11" startPosition="52" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="8010731360436067213" fileName="TransformationTestExecutor.java" startLine="52" startPosition="27" endLine="53" endPosition="77" />
+    <scopeInfo nodeId="8010731360436067223" fileName="TransformationTestExecutor.java" startLine="56" startPosition="0" endLine="57" endPosition="26">
       <varInfo nodeId="8010731360436067224" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="8010731360436067226" fileName="TransformationTestExecutor.java" startLine="54" startPosition="27" endLine="55" endPosition="26" />
-    <scopeInfo nodeId="8010731360436062915" fileName="TransformationTestExecutor.java" startLine="16" startPosition="22" endLine="18" endPosition="17" />
-    <scopeInfo nodeId="3310779261129642940" fileName="TransformationTestExecutor.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
+    <scopeInfo nodeId="8010731360436067226" fileName="TransformationTestExecutor.java" startLine="56" startPosition="27" endLine="57" endPosition="26" />
+    <scopeInfo nodeId="8010731360436062915" fileName="TransformationTestExecutor.java" startLine="18" startPosition="22" endLine="20" endPosition="17" />
+    <scopeInfo nodeId="3310779261129642876" fileName="TransformationTestExecutor.java" startLine="35" startPosition="9" endLine="37" endPosition="25" />
+    <scopeInfo nodeId="3310779261129642940" fileName="TransformationTestExecutor.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="8010731360436059212" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="8010731360436090148" fileName="TransformationTestExecutor.java" startLine="23" startPosition="25" endLine="26" endPosition="31" />
-    <scopeInfo nodeId="3310779261129642876" fileName="TransformationTestExecutor.java" startLine="33" startPosition="9" endLine="36" endPosition="25" />
-    <scopeInfo nodeId="3310779261129642885" fileName="TransformationTestExecutor.java" startLine="37" startPosition="0" endLine="40" endPosition="21">
+    <scopeInfo nodeId="8010731360436090148" fileName="TransformationTestExecutor.java" startLine="25" startPosition="25" endLine="28" endPosition="14" />
+    <scopeInfo nodeId="3310779261129642885" fileName="TransformationTestExecutor.java" startLine="38" startPosition="0" endLine="41" endPosition="21">
       <varInfo nodeId="3310779261129642886" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="3310779261129642888" fileName="TransformationTestExecutor.java" startLine="37" startPosition="27" endLine="40" endPosition="21" />
-    <scopeInfo nodeId="8010731360436067210" fileName="TransformationTestExecutor.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8010731360436062912" fileName="TransformationTestExecutor.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8010731360436090145" fileName="TransformationTestExecutor.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="8010731360436067203" fileName="TransformationTestExecutor.java" startLine="47" startPosition="9" endLine="53" endPosition="9" />
-    <scopeInfo nodeId="3310779261129642874" fileName="TransformationTestExecutor.java" startLine="31" startPosition="42" endLine="41" endPosition="5">
+    <scopeInfo nodeId="3310779261129642888" fileName="TransformationTestExecutor.java" startLine="38" startPosition="27" endLine="41" endPosition="21" />
+    <scopeInfo nodeId="8010731360436067210" fileName="TransformationTestExecutor.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="8010731360436062912" fileName="TransformationTestExecutor.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8010731360436090145" fileName="TransformationTestExecutor.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8010731360436067203" fileName="TransformationTestExecutor.java" startLine="49" startPosition="9" endLine="55" endPosition="9" />
+    <scopeInfo nodeId="3310779261129642874" fileName="TransformationTestExecutor.java" startLine="33" startPosition="42" endLine="43" endPosition="19">
       <varInfo nodeId="8010731360436131052" varName="executor" />
     </scopeInfo>
-    <scopeInfo nodeId="8010731360436067201" fileName="TransformationTestExecutor.java" startLine="46" startPosition="33" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="3310779261129642871" fileName="TransformationTestExecutor.java" startLine="31" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="8010731360436067201" fileName="TransformationTestExecutor.java" startLine="48" startPosition="33" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="3310779261129642871" fileName="TransformationTestExecutor.java" startLine="33" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="3310779261129642936" varName="args" />
     </scopeInfo>
-    <scopeInfo nodeId="8010731360436067233" fileName="TransformationTestExecutor.java" startLine="46" startPosition="0" endLine="58" endPosition="0" />
-    <unitInfo nodeId="8010731360436067208" fileName="TransformationTestExecutor.java" startLine="48" startPosition="39" endLine="53" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestExecutor$1" />
-    <unitInfo nodeId="3310779261129642822" fileName="TransformationTestExecutor.java" startLine="8" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestExecutor" />
+    <scopeInfo nodeId="8010731360436067233" fileName="TransformationTestExecutor.java" startLine="48" startPosition="0" endLine="60" endPosition="0" />
+    <unitInfo nodeId="8010731360436067208" fileName="TransformationTestExecutor.java" startLine="50" startPosition="39" endLine="55" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestExecutor$1" />
+    <unitInfo nodeId="3310779261129642822" fileName="TransformationTestExecutor.java" startLine="10" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.server.TransformationTestExecutor" />
   </root>
   <root nodeRef="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)/5881102044690167886">
     <nodeInfo nodeId="8010731360435661359" fileName="BTestExecutor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myArgs" />
@@ -256,8 +256,8 @@
     <nodeInfo nodeId="6796535740154099851" fileName="AbstractTestExecutor.java" startLine="27" startPosition="66" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6796535740154099856" fileName="AbstractTestExecutor.java" startLine="28" startPosition="55" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6796535740154099824" fileName="AbstractTestExecutor.java" startLine="31" startPosition="42" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6796535740154099830" fileName="AbstractTestExecutor.java" startLine="34" startPosition="15" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6796535740154099834" fileName="AbstractTestExecutor.java" startLine="35" startPosition="21" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="6796535740154099834" fileName="AbstractTestExecutor.java" startLine="34" startPosition="15" endLine="35" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="6796535740154099830" fileName="AbstractTestExecutor.java" startLine="35" startPosition="51" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6796535740154099867" fileName="AbstractTestExecutor.java" startLine="40" startPosition="68" endLine="41" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6796535740154099872" fileName="AbstractTestExecutor.java" startLine="41" startPosition="37" endLine="42" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6796535740154099878" fileName="AbstractTestExecutor.java" startLine="42" startPosition="47" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -276,7 +276,7 @@
     <scopeInfo nodeId="6796535740154099813" fileName="AbstractTestExecutor.java" startLine="19" startPosition="26" endLine="20" endPosition="23" />
     <scopeInfo nodeId="6796535740154099824" fileName="AbstractTestExecutor.java" startLine="31" startPosition="42" endLine="32" endPosition="56" />
     <scopeInfo nodeId="6796535740154099894" fileName="AbstractTestExecutor.java" startLine="47" startPosition="38" endLine="48" endPosition="24" />
-    <scopeInfo nodeId="6796535740154099829" fileName="AbstractTestExecutor.java" startLine="34" startPosition="15" endLine="36" endPosition="51" />
+    <scopeInfo nodeId="6796535740154099829" fileName="AbstractTestExecutor.java" startLine="34" startPosition="15" endLine="36" endPosition="21" />
     <scopeInfo nodeId="6796535740154099902" fileName="AbstractTestExecutor.java" startLine="52" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="6796535740154099907" fileName="AbstractTestExecutor.java" startLine="55" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="6796535740154099909" varName="requests" />

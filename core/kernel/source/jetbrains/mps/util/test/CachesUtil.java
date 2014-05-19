@@ -23,10 +23,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 // TODO: refactor this
-public class CachesUtil {
+public final class CachesUtil {
   private static final String MPS_TEST_DIR = "mps_test_dir";
   private static final String PROPERTY_SYSTEM_PATH = "idea.system.path";
   private static final String PROPERTY_CONFIG_PATH = "idea.config.path";
+  public static final String PROPERTY_RUN_ID = "mps.test.run.id";
   private static final List<File> TO_REMOVE = new ArrayList<File>();
 
   // we need to check that caches dirs are writable
@@ -39,8 +40,29 @@ public class CachesUtil {
       setTestCachesInTempDir();
   }
 
+  private static boolean trySetTestCachesFromOptions() {
+    boolean result = useTemporalFolderIfNotSet(PROPERTY_CONFIG_PATH);
+    result &= useTemporalFolderIfNotSet(PROPERTY_SYSTEM_PATH);
+    return result;
+  }
+
+  private static boolean useTemporalFolderIfNotSet(String propertyName) {
+    String path = System.getProperty(propertyName);
+    if (path == null)
+      return false;
+    path = PathUtil.trimPathQuotes(path);
+    path = PathUtil.getAbsolutePath(path);
+    return FileUtil.canWrite(new File(path));
+  }
+
   private static boolean trySetTestCachesPath(String testDirName) {
     File tmpDir = FileUtil.getTempDir();
+    final String idRunProperty = System.getProperty(PROPERTY_RUN_ID);
+    if (idRunProperty != null) {
+      int runId = Integer.parseInt(idRunProperty);
+      testDirName += "_" + runId;
+    }
+    System.out.println("Saving caches in the " + testDirName + " directory");
     File testDirPath = new File(tmpDir.getAbsolutePath(), testDirName);
     File testConfigPath = new File(testDirPath, "config");
     File testSystemPath = new File(testDirPath, "system");
@@ -55,28 +77,12 @@ public class CachesUtil {
     return false;
   }
 
-  private static boolean trySetTestCachesFromOptions() {
-    boolean result = useTemporalFolderIfNotSet(PROPERTY_CONFIG_PATH);
-    result &= useTemporalFolderIfNotSet(PROPERTY_SYSTEM_PATH);
-    return result;
-  }
-
-  private static boolean useTemporalFolderIfNotSet(String propertyName) {
-    String path = System.getProperty(propertyName);
-    if (path != null) {
-      path = PathUtil.trimPathQuotes(path);
-      path = PathUtil.getAbsolutePath(path);
-      return FileUtil.canWrite(new File(path));
-    }
-    return false;
-  }
-
   private static void setTestCachesInTempDir() {
-    setTmpCacheFolder(PROPERTY_CONFIG_PATH);
-    setTmpCacheFolder(PROPERTY_SYSTEM_PATH);
+    setTempFolder(PROPERTY_CONFIG_PATH);
+    setTempFolder(PROPERTY_SYSTEM_PATH);
   }
 
-  private static void setTmpCacheFolder(String propertyName) {
+  private static void setTempFolder(String propertyName) {
     File tmpDir = FileUtil.createTmpDir();
     TO_REMOVE.add(tmpDir);
     System.setProperty(propertyName, tmpDir.getAbsolutePath());

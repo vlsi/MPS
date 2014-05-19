@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.CheckBoxWithJavaEditorComponentSynchronizer" file="CheckBoxWithJavaEditorComponentSynchronizer.java">
-    <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.Synchronizer" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent" file="JUnitConfigurationEditorComponent.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
@@ -43,6 +34,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitJavaEditorSynchronizer" file="JUnitJavaEditorSynchronizer.java">
+    <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
+    <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.awt.event.ActionListener" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.Synchronizer" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes" file="JUnitRunTypes.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />

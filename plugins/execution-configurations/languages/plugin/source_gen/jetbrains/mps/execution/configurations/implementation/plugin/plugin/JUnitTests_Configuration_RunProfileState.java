@@ -18,8 +18,14 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TempRunIdManager;
+import jetbrains.mps.util.test.CachesUtil;
+import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
+import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command;
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessEvent;
 import jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestViewComponent;
 import com.intellij.execution.process.ProcessListener;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -49,18 +55,28 @@ public class JUnitTests_Configuration_RunProfileState implements RunProfileState
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    List<ITestNodeWrapper> nodeWrappers = myRunConfiguration.getJUnitSettings().getTests(ProjectHelper.toMPSProject(project));
 
+    List<ITestNodeWrapper> nodeWrappers = myRunConfiguration.getJUnitSettings().getTests(ProjectHelper.toMPSProject(project));
     JUnitProcessPack processPack;
     JUnitLightExecutor lightExecutor = new JUnitLightExecutor(nodeWrappers, project);
-
     if (myRunConfiguration.getJUnitSettings().getLightExec() && lightExecutor.accept()) {
       processPack = lightExecutor.execute();
     } else {
       TestRunState runState = new TestRunState(nodeWrappers);
       TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
 
-      ProcessHandler process = new Junit_Command().createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
+      final int runId = TempRunIdManager.getInstance().acquireId();
+      String runIdString = "-D" + CachesUtil.PROPERTY_RUN_ID + "=\"" + runId + "\"";
+      JavaRunParameters_Configuration javaRunParams = myRunConfiguration.getJavaRunParameters();
+      JavaRunParameters parameters = javaRunParams.getJavaRunParameters().clone();
+      parameters.setVmOptions(javaRunParams.getJavaRunParameters().getVmOptions() + " " + runIdString);
+      ProcessHandler process = new Junit_Command().createProcess(nodeWrappers, parameters);
+      process.addProcessListener(new ProcessAdapter() {
+        @Override
+        public void processTerminated(ProcessEvent p0) {
+          TempRunIdManager.getInstance().releaseId(runId);
+        }
+      });
       processPack = new JUnitProcessPacker(project, runState, eventsDispatcher).packProcess(process);
     }
 

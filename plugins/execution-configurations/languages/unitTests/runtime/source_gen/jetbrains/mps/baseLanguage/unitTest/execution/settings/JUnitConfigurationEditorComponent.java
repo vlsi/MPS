@@ -289,7 +289,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
       myModuleChooser.setText(configuration.getModule());
     }
 
-    if (!(myLightExecCheckBox.isSelected())) {
+    if (configuration.getLightExec() != myLightExecCheckBox.isSelected()) {
       myLightExecCheckBox.doClick();
     }
 

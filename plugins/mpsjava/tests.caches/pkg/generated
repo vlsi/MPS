@@ -24,8 +24,6 @@
     <file name="Statements.java" />
   </source>
   <source id="3181349427684867081" name="Statements" hash="-bqwznzktfljgo2vjwhzqhfeh6u54lzs">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Statements.java" />
   </source>
 </dependencies>
