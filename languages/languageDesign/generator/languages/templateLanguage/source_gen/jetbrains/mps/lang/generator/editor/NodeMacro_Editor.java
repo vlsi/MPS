@@ -157,6 +157,10 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new NodeMacro_Editor._Inline_e7cx8x_a2a2a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("mappingLabel");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -189,10 +193,6 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("mappingLabel");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
       editorCell.getStyle().putAll(style);

@@ -37,6 +37,10 @@ public class TestNodeReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TestNodeReference_Editor._Inline_tf79mi_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("declaration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -69,10 +73,6 @@ public class TestNodeReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("declaration");
-      }
       Style style = new StyleImpl();
       transformationTest_StyleSheet.apply_NodeAnnotation(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);

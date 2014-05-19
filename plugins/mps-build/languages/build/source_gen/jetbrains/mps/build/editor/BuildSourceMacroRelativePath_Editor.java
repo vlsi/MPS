@@ -70,6 +70,10 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildSourceMacroRelativePath_Editor._Inline_3is4rg_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("macro");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);
@@ -105,10 +109,6 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("macro");
-      }
       Style style = new StyleImpl();
       buildStyles_StyleSheet.apply_macro(style, editorCell);
       editorCell.getStyle().putAll(style);

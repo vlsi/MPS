@@ -40,6 +40,10 @@ public class LinkArgument_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new LinkArgument_Editor._Inline_5vvsh6_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("link");
+    }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkArgument_Editor.ReplaceWith_AbstractArgument_cellMenu_5vvsh6_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -72,10 +76,6 @@ public class LinkArgument_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("link");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, false);
       editorCell.getStyle().putAll(style);

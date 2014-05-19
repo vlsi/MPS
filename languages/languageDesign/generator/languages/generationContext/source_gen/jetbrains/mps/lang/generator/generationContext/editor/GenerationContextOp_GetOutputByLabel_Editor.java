@@ -48,6 +48,10 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabel_Editor._Inline_3dlbxb_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("label");
+    }
     Style style = new StyleImpl();
     jetbrains.mps.lang.generator.editor.Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -83,10 +87,6 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("label");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

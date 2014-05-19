@@ -60,6 +60,10 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new Node_GetReferentSearchScopeOperation_Editor._Inline_8agmue_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("referenceLink");
+    }
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.apply_ReferenceOnConceptualFeature(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -95,10 +99,6 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("referenceLink");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

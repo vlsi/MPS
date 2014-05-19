@@ -51,6 +51,10 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline_a4wjjz_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("classConcept");
+    }
     StaticMethodCall_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -84,10 +88,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("classConcept");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -138,6 +138,10 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new StaticMethodCall_Editor._Inline_a4wjjz_a0d0());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("baseMethodDeclaration");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
@@ -173,10 +177,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("baseMethodDeclaration");
-      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_MPSMethodCall(style, editorCell);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);

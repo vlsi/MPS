@@ -68,6 +68,10 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new NodeBuilderNode_Editor._Inline_3jn7ig_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("concept");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
@@ -103,10 +107,6 @@ public class NodeBuilderNode_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("concept");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
       editorCell.getStyle().putAll(style);

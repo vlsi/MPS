@@ -63,6 +63,10 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildVarRefStringPart_Editor._Inline_ayjduv_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("macro");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -95,10 +99,6 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("macro");
-      }
       Style style = new StyleImpl();
       buildStyles_StyleSheet.apply_macro(style, editorCell);
       editorCell.getStyle().putAll(style);

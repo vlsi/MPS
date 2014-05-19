@@ -98,6 +98,10 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ScopesTest_Editor._Inline_qc0q19_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("checkingReference");
+    }
     ScopeTest_DeleteExpectedNodes.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -126,10 +130,6 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_qc0q19_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "checkingReference");
       editorCell.setCellId("ReferencePresentation_qc0q19_a0b0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("checkingReference");
-      }
       return editorCell;
     }
   }

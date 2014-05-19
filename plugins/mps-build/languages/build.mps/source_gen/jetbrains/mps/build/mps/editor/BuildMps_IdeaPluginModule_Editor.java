@@ -48,6 +48,10 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildMps_IdeaPluginModule_Editor._Inline_37ht8c_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("target");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,10 +79,6 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_37ht8c_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_37ht8c_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("target");
-      }
       return editorCell;
     }
   }

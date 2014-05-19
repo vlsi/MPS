@@ -61,6 +61,10 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ExtensionPointType_Editor._Inline_i3f4o0_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("extensionPoint");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -93,10 +97,6 @@ public class ExtensionPointType_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_extensionName");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("extensionPoint");
-      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_ClassName(style, editorCell);
       editorCell.getStyle().putAll(style);

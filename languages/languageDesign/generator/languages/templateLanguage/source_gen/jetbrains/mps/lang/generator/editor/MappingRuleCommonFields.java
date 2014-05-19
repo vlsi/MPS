@@ -99,6 +99,10 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new MappingRuleCommonFields._Inline_3ei7nb_a0c0());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("labelDeclaration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -131,10 +135,6 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("MRCF_property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("labelDeclaration");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
       editorCell.getStyle().putAll(style);

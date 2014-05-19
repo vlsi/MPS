@@ -37,6 +37,10 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new InterfaceConceptReference_Editor._Inline_j6mzh4_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("intfc");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -69,10 +73,6 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("intfc");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, false);
       editorCell.getStyle().putAll(style);

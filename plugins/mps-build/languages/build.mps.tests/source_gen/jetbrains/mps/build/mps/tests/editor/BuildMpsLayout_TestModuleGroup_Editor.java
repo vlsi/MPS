@@ -38,6 +38,10 @@ public class BuildMpsLayout_TestModuleGroup_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildMpsLayout_TestModuleGroup_Editor._Inline_yz60vz_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("group");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -65,10 +69,6 @@ public class BuildMpsLayout_TestModuleGroup_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_yz60vz_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "group");
       editorCell.setCellId("ReferencePresentation_yz60vz_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("group");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, false);
       editorCell.getStyle().putAll(style);

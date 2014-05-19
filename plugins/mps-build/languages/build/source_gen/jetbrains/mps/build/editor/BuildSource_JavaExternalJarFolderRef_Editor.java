@@ -38,6 +38,10 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildSource_JavaExternalJarFolderRef_Editor._Inline_cqnk8f_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("folder");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -65,10 +69,6 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
     private EditorCell createReferencePresentation_cqnk8f_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "folder");
       editorCell.setCellId("ReferencePresentation_cqnk8f_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("folder");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);

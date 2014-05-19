@@ -38,6 +38,10 @@ public class PersistentPropertyReferenceOperation_Editor extends DefaultNodeEdit
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new PersistentPropertyReferenceOperation_Editor._Inline_biszsy_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("variableDeclaration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -70,10 +74,6 @@ public class PersistentPropertyReferenceOperation_Editor extends DefaultNodeEdit
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("variableDeclaration");
-      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);

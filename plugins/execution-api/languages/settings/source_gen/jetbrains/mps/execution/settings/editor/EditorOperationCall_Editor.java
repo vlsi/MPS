@@ -51,6 +51,10 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new EditorOperationCall_Editor._Inline_jn1wx6_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("editorOperationDeclaration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -77,10 +81,6 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
 
     private EditorCell createComponent_jn1wx6_a0a0(EditorContext editorContext, SNode node) {
       EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("editorOperationDeclaration");
-      }
       Style style = new StyleImpl();
       RunConfigurations_StyleSheet.apply_operation(style, editorCell);
       editorCell.getStyle().putAll(style);

@@ -73,6 +73,10 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ChildNodeRefExpression_Editor._Inline_qcpp4v_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("targetNode");
+    }
     ChildNodeRefExpression_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -106,10 +110,6 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("targetNode");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       editorCell.getStyle().putAll(style);

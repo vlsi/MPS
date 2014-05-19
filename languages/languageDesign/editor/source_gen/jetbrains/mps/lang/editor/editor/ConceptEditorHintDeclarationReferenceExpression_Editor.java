@@ -61,6 +61,10 @@ public class ConceptEditorHintDeclarationReferenceExpression_Editor extends Defa
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ConceptEditorHintDeclarationReferenceExpression_Editor._Inline_nypgoz_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("hint");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -93,10 +97,6 @@ public class ConceptEditorHintDeclarationReferenceExpression_Editor extends Defa
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("hint");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

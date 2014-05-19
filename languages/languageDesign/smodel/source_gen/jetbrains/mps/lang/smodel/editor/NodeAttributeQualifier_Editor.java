@@ -38,6 +38,10 @@ public class NodeAttributeQualifier_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new NodeAttributeQualifier_Editor._Inline_b8v8vy_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("attributeConcept");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -65,10 +69,6 @@ public class NodeAttributeQualifier_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_b8v8vy_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "attributeConcept");
       editorCell.setCellId("ReferencePresentation_b8v8vy_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("attributeConcept");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);

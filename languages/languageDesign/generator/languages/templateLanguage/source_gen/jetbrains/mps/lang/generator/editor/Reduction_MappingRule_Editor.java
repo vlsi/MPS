@@ -102,6 +102,10 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a0b1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("labelDeclaration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -134,10 +138,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("labelDeclaration");
-      }
       Style style = new StyleImpl();
       Styles_StyleSheet.apply_mappingRuleReference(style, editorCell);
       editorCell.getStyle().putAll(style);
