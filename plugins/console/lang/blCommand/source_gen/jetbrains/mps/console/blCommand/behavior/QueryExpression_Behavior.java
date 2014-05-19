@@ -4,6 +4,12 @@ package jetbrains.mps.console.blCommand.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueryExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +17,17 @@ public class QueryExpression_Behavior {
 
   public static boolean virtual_legalAsStatement_1262430001741498032(SAbstractConcept thisConcept) {
     return true;
+  }
+
+  public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
+    String result = "";
+    if (Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope"))) {
+      result += "Scope can be customized with 'scope' parameter:\n" + SPropertyOperations.getString(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()), "conceptAlias") + "<scope = ...>\nDefault is project scope\n";
+    }
+    if (Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly"))) {
+      result += "Read-only models are not included in scope by default.\nThey can be included using r/o+ parameter\n";
+    }
+    return result;
+
   }
 }
