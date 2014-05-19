@@ -10233,6 +10233,12 @@
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="1480008320050917282" resolveInfo="MPS.IDEA" />
           </node>
         </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="1104680060933646679" nodeInfo="nn">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="1104680060933646680" nodeInfo="ng">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="1185869098826643297" resolveInfo="typesystemIntegration" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="8938069739433522645" nodeInfo="ng">
