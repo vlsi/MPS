@@ -33,19 +33,21 @@ public class PsiAwareRefactoring extends RefactoringWrapper {
     SearchResults<SNode> mpsResults = baseRefactoring.getAffectedNodes(refactoringContext);
 
     Project project = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
-    PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(refactoringContext.getSelectedNode());
-    // todo search scope?
-    Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();
-    // size may be bigger than needed, due to MPS usages returned among PSI usages
-    List<SearchResult<SNode>> psiResults = new ArrayList<SearchResult<SNode>>(psiRefs.size());
-    for (PsiReference ref : psiRefs) {
-      PsiElement element = ref.getElement();
-      if (element instanceof MPSPsiNode) continue;
+    for (SNode target : refactoringContext.getSelectedNodes()) {
+      PsiElement psiTarget = MPSPsiProvider.getInstance(project).getPsi(target);
+      // todo search scope?
+      Collection<PsiReference> psiRefs = ReferencesSearch.search(psiTarget).findAll();
+      // size may be bigger than needed, due to MPS usages returned among PSI usages
+      List<SearchResult<SNode>> psiResults = new ArrayList<SearchResult<SNode>>(psiRefs.size());
+      for (PsiReference ref : psiRefs) {
+        PsiElement element = ref.getElement();
+        if (element instanceof MPSPsiNode) continue;
 
-      psiResults.add(new PsiSearchResult(ref));
+        psiResults.add(new PsiSearchResult(ref));
+      }
+
+      mpsResults.addAll(new SearchResults<SNode>(new HashSet<SNode>(), psiResults));
     }
-
-    mpsResults.addAll(new SearchResults<SNode>(new HashSet<SNode>(), psiResults));
 
     return mpsResults;
   }

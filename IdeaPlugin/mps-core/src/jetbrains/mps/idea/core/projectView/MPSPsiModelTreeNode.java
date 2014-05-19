@@ -113,6 +113,7 @@ public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements Nav
   @Override
   public VirtualFile getVirtualFile() {
     MPSPsiModel psiModel = extractPsiFromValue();
+    if(psiModel == null) return null;
     return psiModel.getSourceVirtualFile();
   }
 

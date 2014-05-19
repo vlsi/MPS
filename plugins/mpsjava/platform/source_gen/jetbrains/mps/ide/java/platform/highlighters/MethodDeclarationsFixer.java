@@ -39,18 +39,12 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
@@ -210,7 +204,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, "baseMethodDeclaration", false);
     String methodName = getMethodName(methodCallNode);
 
-    Tuples._2<SNode, Boolean> resolveResult = resolveMethod(methodCallNode, methodName);
+    Tuples._2<SNode, Boolean> resolveResult = MethodResolveUtil.resolveMethod(methodCallNode, methodName);
     SNode newTarget = resolveResult._0();
     boolean good = (boolean) resolveResult._1();
 
@@ -252,73 +246,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     } else {
       return SPropertyOperations.getString(baseMethodDeclaration, "name");
     }
-  }
-
-  private Tuples._2<SNode, Boolean> resolveMethod(SNode methodCall, String name) {
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, methodCall, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Object[]{})) {
-      return resolveMethodUsingScopes(methodCall, name);
-    }
-
-    Iterable<SNode> candidates = getCandidates(methodCall, name);
-    if (candidates == null || Sequence.fromIterable(candidates).isEmpty()) {
-      return MultiTuple.<SNode,Boolean>from((SNode) null, false);
-    }
-    Map<SNode, SNode> typeByTypeVar = getTypeByTypeVar(methodCall);
-
-    return resolveMethodByCandidatesAndTypes(methodCall, candidates, typeByTypeVar);
-  }
-
-  private Tuples._2<SNode, Boolean> resolveMethodUsingScopes(SNode methodCall, final String name) {
-    if (SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")) == null) {
-      return MultiTuple.<SNode,Boolean>from((SNode) null, false);
-    }
-
-    Scope scope = ModelConstraints.getScope(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")));
-    SNode resolvedMethod = SNodeOperations.cast(scope.resolve(methodCall, name), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-    if ((resolvedMethod != null)) {
-      return MultiTuple.<SNode,Boolean>from(resolvedMethod, true);
-    } else {
-      return resolveMethodByCandidatesAndTypes(methodCall, Sequence.fromIterable(((Iterable<SNode>) scope.getAvailableElements(name))).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return eq_vo5uqs_a0a0a0a0a1a0a0e0v(SPropertyOperations.getString(it, "name"), name);
-        }
-      }), null);
-    }
-  }
-
-  private Tuples._2<SNode, Boolean> resolveMethodByCandidatesAndTypes(SNode methodCall, Iterable<SNode> candidates, @Nullable Map<SNode, SNode> typeByTypeVar) {
-    List<SNode> actualArgs = SLinkOperations.getTargets(methodCall, "actualArgument", true);
-    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
-
-    jetbrains.mps.util.Pair<List<SNode>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethodNode(Sequence.fromIterable(candidates).toListSequence(), methodCall);
-    List<SNode> methodDeclarationsGoodParams = parmCountPair.o1;
-
-    if (methodDeclarationsGoodParams.size() == 1) {
-      return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), parmCountPair.o2);
-    } else {
-      parmCountPair = MethodResolveUtil.selectByParmCountReportNoGoodMethodNode(methodDeclarationsGoodParams, actualArgs);
-      methodDeclarationsGoodParams = parmCountPair.o1;
-      if (methodDeclarationsGoodParams.size() == 1) {
-        return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), parmCountPair.o2);
-      } else {
-        if (typeByTypeVar == null) {
-          return MultiTuple.<SNode,Boolean>from(ListSequence.fromList(methodDeclarationsGoodParams).first(), false);
-        }
-
-        jetbrains.mps.util.Pair<SNode, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(baseMethodDeclaration, methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
-        return MultiTuple.<SNode,Boolean>from(parmTypesPair.o1, parmTypesPair.o2);
-      }
-    }
-  }
-
-  private Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
-    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
-  }
-
-  public Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
-    Iterable<SNode> availableMethodDeclarations = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
-    assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(methodCall), "virtual_getFqName_1213877404258", new Object[]{});
-    return availableMethodDeclarations;
   }
 
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {
@@ -407,9 +334,5 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   @Override
   public void clear(SNode node, EditorComponent editor) {
     clearCaches();
-  }
-
-  private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0v(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

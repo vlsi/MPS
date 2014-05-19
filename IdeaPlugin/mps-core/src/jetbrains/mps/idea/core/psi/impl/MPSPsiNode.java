@@ -44,7 +44,7 @@ import java.util.Map;
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiNode extends MPSPsiNodeBase {
+public class MPSPsiNode extends MPSPsiNodeBase implements MPSPsiRealNode {
 
   private final SNodeId myId;
   private final String myConcept;
@@ -75,8 +75,9 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return myContainingRole;
   }
 
+  @Override
   public SNodeReference getSNodeReference() {
-    return new SNodePointer((SModelReference) getContainingModel().getSModelReference(), myId);
+    return new SNodePointer(getContainingModel().getSModelReference(), myId);
   }
 
   public String getProperty(String key) {

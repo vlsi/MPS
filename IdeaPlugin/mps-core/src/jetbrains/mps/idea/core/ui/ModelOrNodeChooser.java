@@ -138,6 +138,10 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
       if (models != null && models.size() == 1) {
         return SModelFileTracker.getInstance().findModel(models.iterator().next());
       }
+      // we could handle the case when we haven't got a model
+      // perhaps, in plugin every directory (under module with MPS facet) should be transparently made into model
+      // we could create the model right here (we're in EDT here)
+      // This way we would allow move nodes into a package where no mps roots are present yet
     }
     return null;
   }
