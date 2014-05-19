@@ -45,6 +45,7 @@ import java.util.Set;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -55,6 +56,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 public class WorkbenchModelAccess extends ModelAccess {
 
   public static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
+  private final AtomicInteger myWritesScheduled = new AtomicInteger();
   private EDTExecutor myEDTExecutor = new EDTExecutor(this);
   private Set<Thread> myIndexingThreads = new ConcurrentHashSet<Thread>();
 
@@ -165,7 +167,12 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     };
     if (ThreadUtils.isEventDispatchThread()) {
-      ApplicationManager.getApplication().runWriteAction(runnable);
+      try {
+        myWritesScheduled.incrementAndGet();
+        ApplicationManager.getApplication().runWriteAction(runnable);
+      } finally {
+        myWritesScheduled.decrementAndGet();
+      }
     } else {
       ApplicationManager.getApplication().runReadAction(runnable);
     }
@@ -193,7 +200,13 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     };
     if (ThreadUtils.isEventDispatchThread()) {
-      return ApplicationManager.getApplication().runWriteAction(computable);
+      try {
+        myWritesScheduled.incrementAndGet();
+        return ApplicationManager.getApplication().runWriteAction(computable);
+      }
+      finally {
+        myWritesScheduled.decrementAndGet();
+      }
     } else {
       return ApplicationManager.getApplication().runReadAction(computable);
     }
@@ -235,31 +248,37 @@ public class WorkbenchModelAccess extends ModelAccess {
     assert !canRead() : "should be outside of read actions";
     assert !myDistributedLocksMode : "cannot re-enter distributed locks mode";
 
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          myDistributedLocksMode = true;
-          ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
-            @Override
-            public void run() {
-              ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
-              progressIndicator.pushState();
-              getWriteLock().lock();
-              try {
-                clearRepositoryStateCaches();
-                process.run(new ProgressMonitorAdapter(progressIndicator));
-              } finally {
-                getWriteLock().unlock();
-                progressIndicator.popState();
+    try {
+      myWritesScheduled.incrementAndGet();
+      ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            myDistributedLocksMode = true;
+            ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+              @Override
+              public void run() {
+                ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+                progressIndicator.pushState();
+                getWriteLock().lock();
+                try {
+                  clearRepositoryStateCaches();
+                  process.run(new ProgressMonitorAdapter(progressIndicator));
+                } finally {
+                  getWriteLock().unlock();
+                  progressIndicator.popState();
+                }
               }
-            }
-          }, progressTitle, canBeCanceled, ProjectHelper.toIdeaProject(project));
-        } finally {
-          myDistributedLocksMode = false;
+            }, progressTitle, canBeCanceled, ProjectHelper.toIdeaProject(project));
+          } finally {
+            myDistributedLocksMode = false;
+          }
         }
-      }
-    });
+      });
+    }
+    finally {
+      myWritesScheduled.decrementAndGet();
+    }
   }
 
   private void assertNotWriteFromRead() {
@@ -704,6 +723,11 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
   }
 
+  @Override
+  public boolean hasScheduledWrites() {
+    return myWritesScheduled.get() > 0 || super.hasScheduledWrites();
+  }
+
   private boolean confirmActionCancellation() {
     if (((ApplicationEx) ApplicationManager.getApplication()).holdsReadLock()) {
       return true;
@@ -878,6 +902,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       Thread.interrupted();
       final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
       try {
+        myWritesScheduled.incrementAndGet();
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           @Override
           public void run() {
@@ -893,6 +918,9 @@ public class WorkbenchModelAccess extends ModelAccess {
           throw re;
         }
         cancelInterrupt(delayedInterrupt);
+      }
+      finally {
+        myWritesScheduled.decrementAndGet();
       }
     }
   }
@@ -911,6 +939,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       Thread.interrupted();
       final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
       try {
+        myWritesScheduled.incrementAndGet();
         return ApplicationManager.getApplication().runWriteAction(new com.intellij.openapi.util.Computable<T>() {
           @Override
           public T compute() {
@@ -927,6 +956,9 @@ public class WorkbenchModelAccess extends ModelAccess {
         }
         cancelInterrupt(delayedInterrupt);
         return null;
+      }
+      finally {
+        myWritesScheduled.decrementAndGet();
       }
     }
   }
