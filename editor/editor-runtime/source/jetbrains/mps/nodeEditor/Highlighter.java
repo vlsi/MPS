@@ -608,7 +608,6 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       anyMessageChanged = true;
     }
     if (myStopThread || myCancellable.isCancelled()) return false;
-    if (myStopThread || myCancellable.isCancelled()) return false;
 
     if (anyMessageChanged) {
       highlightManager.repaintAndRebuildEditorMessages();
