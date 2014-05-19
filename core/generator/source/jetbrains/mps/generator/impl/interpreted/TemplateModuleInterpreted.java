@@ -83,7 +83,7 @@ public class TemplateModuleInterpreted implements TemplateModule {
   public Collection<String> getUsedLanguages() {
     Set<String> languages = new HashSet<String>();
     for (SModel templateModel : generator.getOwnTemplateModels()) {
-      languages.addAll(ModelContentUtil.getUsedLanguageNamespaces(templateModel, true));
+      languages.addAll(ModelContentUtil.getUsedLanguageNamespacesInTemplateModel(templateModel));
     }
     return languages;
   }

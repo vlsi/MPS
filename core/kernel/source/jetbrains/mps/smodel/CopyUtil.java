@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -141,7 +142,7 @@ public final class CopyUtil {
 
   private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
     if (root == null) return;
-    Iterable<SNode> thisAndDesc = jetbrains.mps.util.SNodeOperations.getDescendants(root, null, true);;
+    Iterable<SNode> thisAndDesc = SNodeUtil.getDescendants(root);
     for (SNode inputNode : thisAndDesc) {
       SNode outputNode = mapping.get(inputNode);
       if (outputNode == null) continue;

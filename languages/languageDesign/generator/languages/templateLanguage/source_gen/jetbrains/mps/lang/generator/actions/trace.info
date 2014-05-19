@@ -67,8 +67,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e0(jetbrains.mps.lang.generator.actions)/8421689336187916450">
     <nodeInfo nodeId="8421689336187917112" fileName="QueriesGenerated.java" startLine="85" startPosition="190" endLine="86" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8421689336187928120" fileName="QueriesGenerated.java" startLine="96" startPosition="43" endLine="97" endPosition="831" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8421689336188156509" fileName="QueriesGenerated.java" startLine="97" startPosition="831" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8421689336187928120" fileName="QueriesGenerated.java" startLine="96" startPosition="43" endLine="97" endPosition="967" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8421689336188156509" fileName="QueriesGenerated.java" startLine="97" startPosition="967" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8421689336187916452" fileName="QueriesGenerated.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodeSubstituteActionsBuilder_Precondition_Expression_8421689336187916452#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
     <scopeInfo nodeId="8421689336187916453" fileName="QueriesGenerated.java" startLine="85" startPosition="190" endLine="86" endPosition="122" />
     <scopeInfo nodeId="8421689336187917125" fileName="QueriesGenerated.java" startLine="96" startPosition="43" endLine="98" endPosition="0" />

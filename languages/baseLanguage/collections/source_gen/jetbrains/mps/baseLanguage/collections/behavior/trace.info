@@ -24,7 +24,7 @@
   <unitInfo fileName="ChunkOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ChunkOperation_BehaviorDescriptor" />
   <unitInfo fileName="ClearAllElementsOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ClearAllElementsOperation_BehaviorDescriptor" />
   <unitInfo fileName="ClearSetOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ClearSetOperation_BehaviorDescriptor" />
-  <unitInfo fileName="CollectionType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_BehaviorDescriptor" />
+  <unitInfo fileName="CollectionType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.CollectionType_BehaviorDescriptor" />
   <unitInfo fileName="ComparatorSortOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ComparatorSortOperation_BehaviorDescriptor" />
   <unitInfo fileName="ConcatOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ConcatOperation_BehaviorDescriptor" />
   <unitInfo fileName="ContainerIteratorType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ContainerIteratorType_BehaviorDescriptor" />
@@ -94,7 +94,7 @@
   <unitInfo fileName="LinkedListType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.LinkedListType_BehaviorDescriptor" />
   <unitInfo fileName="ListCreatorWithInit_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListCreatorWithInit_BehaviorDescriptor" />
   <unitInfo fileName="ListElementAccessExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListElementAccessExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ListType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListType_BehaviorDescriptor" />
+  <unitInfo fileName="ListType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListType_BehaviorDescriptor" />
   <unitInfo fileName="MapAsSequenceVarRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapAsSequenceVarRef_BehaviorDescriptor" />
   <unitInfo fileName="MapClearOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapClearOperation_BehaviorDescriptor" />
   <unitInfo fileName="MapElement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapElement_BehaviorDescriptor" />
@@ -103,8 +103,8 @@
   <unitInfo fileName="MapOperationExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapOperationExpression_BehaviorDescriptor" />
   <unitInfo fileName="MapOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapOperation_BehaviorDescriptor" />
   <unitInfo fileName="MapRemoveOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapRemoveOperation_BehaviorDescriptor" />
-  <unitInfo fileName="MapType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapType_BehaviorDescriptor" />
-  <unitInfo fileName="MappingType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MappingType_BehaviorDescriptor" />
+  <unitInfo fileName="MapType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MapType_BehaviorDescriptor" />
+  <unitInfo fileName="MappingType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MappingType_BehaviorDescriptor" />
   <unitInfo fileName="MappingsSetOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MappingsSetOperation_BehaviorDescriptor" />
   <unitInfo fileName="MoveNextOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MoveNextOperation_BehaviorDescriptor" />
   <unitInfo fileName="MultiForEachPair_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.MultiForEachPair_BehaviorDescriptor" />
@@ -119,7 +119,7 @@
   <unitInfo fileName="PriorityQueueCreator_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PriorityQueueCreator_BehaviorDescriptor" />
   <unitInfo fileName="PushOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PushOperation_BehaviorDescriptor" />
   <unitInfo fileName="PutAllOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PutAllOperation_BehaviorDescriptor" />
-  <unitInfo fileName="QueueType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_BehaviorDescriptor" />
+  <unitInfo fileName="QueueType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_BehaviorDescriptor" />
   <unitInfo fileName="ReduceLeftOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ReduceLeftOperation_BehaviorDescriptor" />
   <unitInfo fileName="ReduceRightOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ReduceRightOperation_BehaviorDescriptor" />
   <unitInfo fileName="RemoveAllElementsOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.RemoveAllElementsOperation_BehaviorDescriptor" />
@@ -135,9 +135,9 @@
   <unitInfo fileName="SelectOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SelectOperation_BehaviorDescriptor" />
   <unitInfo fileName="SequenceCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceCreator_BehaviorDescriptor" />
   <unitInfo fileName="SequenceOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_BehaviorDescriptor" />
-  <unitInfo fileName="SequenceType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceType_BehaviorDescriptor" />
+  <unitInfo fileName="SequenceType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SequenceType_BehaviorDescriptor" />
   <unitInfo fileName="SetElementOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetElementOperation_BehaviorDescriptor" />
-  <unitInfo fileName="SetType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_BehaviorDescriptor" />
+  <unitInfo fileName="SetType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SetType_BehaviorDescriptor" />
   <unitInfo fileName="SingleArgumentSequenceOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SingleArgumentSequenceOperation_BehaviorDescriptor" />
   <unitInfo fileName="SingletonSequenceCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SingletonSequenceCreator_BehaviorDescriptor" />
   <unitInfo fileName="SkipOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SkipOperation_BehaviorDescriptor" />
@@ -149,7 +149,7 @@
   <unitInfo fileName="SortedMapType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedMapType_BehaviorDescriptor" />
   <unitInfo fileName="SortedSetOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetOperation_BehaviorDescriptor" />
   <unitInfo fileName="SortedSetType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetType_BehaviorDescriptor" />
-  <unitInfo fileName="StackType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.StackType_BehaviorDescriptor" />
+  <unitInfo fileName="StackType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.StackType_BehaviorDescriptor" />
   <unitInfo fileName="StopStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.StopStatement_BehaviorDescriptor" />
   <unitInfo fileName="SubListOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SubListOperation_BehaviorDescriptor" />
   <unitInfo fileName="SubMapOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SubMapOperation_BehaviorDescriptor" />
@@ -1077,19 +1077,18 @@
     <unitInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.LinkedListCreator_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1237783270701">
-    <nodeInfo nodeId="1237783279164" fileName="AllConstant_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1262430001741703343" fileName="AllConstant_Behavior.java" startLine="14" startPosition="92" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_constant_1262430001741498050#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <scopeInfo nodeId="1237783270703" fileName="AllConstant_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="73" />
-    <scopeInfo nodeId="1262430001741703342" fileName="AllConstant_Behavior.java" startLine="14" startPosition="92" endLine="15" endPosition="17" />
-    <scopeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="1262430001741703343" fileName="AllConstant_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_constant_1262430001741498050#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+    <scopeInfo nodeId="1237783270703" fileName="AllConstant_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1262430001741703342" fileName="AllConstant_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="17" />
+    <scopeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1237783270701" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <scopeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1237783270701" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AllConstant_Behavior" />
+    <unitInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AllConstant_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)/1240239413630">
     <nodeInfo nodeId="1240241646936" fileName="SortedMapType_Behavior.java" startLine="24" startPosition="113" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

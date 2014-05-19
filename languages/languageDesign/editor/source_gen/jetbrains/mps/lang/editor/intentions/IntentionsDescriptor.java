@@ -13,11 +13,11 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
+    IntentionsManager.getInstance().registerIntentionFactory(new AddDominance_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddExtendsClause_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddIndent_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddOnNewLine_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddOverridesClause_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveNewLineForChildren_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new BooleanQuery_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ChangeNonEmptyProperty_Intention());
@@ -37,9 +37,9 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new RemoveNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new RemoveOnNewLine_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SplitConstantCellIntoWords_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SurrondWithHorizontalCollection_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SurrondWithIndentCollection_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SurrondWithVerticalCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithHorizontalCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithIndentCollection_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithVerticalCollection_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new TrimConstantCell_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new UseIndentLayoutInCollection_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new UseIndentLayoutInRefNodeList_Intention());

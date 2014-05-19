@@ -52,7 +52,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
         return cell.isBig();
       case REFERENCE:
         if (cell.isReferenceCell()) {
-          return myMessageTarget.getRole().equals(cell.getRole()) && getNode() == cell.getSNode();
+          return myMessageTarget.getRole().equals(cell.getRole());
         } else {
           return cell.isBig() && getCell(editor) == cell;
         }
@@ -63,7 +63,8 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
         EditorCell_Property propertyCell = (EditorCell_Property) cell;
         ModelAccessor modelAccessor = propertyCell.getModelAccessor();
         if (modelAccessor instanceof PropertyAccessor) {
-          return myMessageTarget.getRole().equals(((PropertyAccessor) modelAccessor).getPropertyName()) && getNode() == propertyCell.getSNode();
+          PropertyAccessor propertyAccessor = (PropertyAccessor) modelAccessor;
+          return myMessageTarget.getRole().equals(propertyAccessor.getPropertyName()) && getNode() == propertyAccessor.getNode();
         }
       case DELETED_CHILD:
         return getCell(editor) == cell;

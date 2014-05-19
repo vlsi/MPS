@@ -116,7 +116,7 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
 
     Set<Pair<SNode, List<IErrorReporter>>> result = new THashSet<Pair<SNode, List<IErrorReporter>>>(1);
     for (SNode key : keySet) {
-      List<IErrorReporter> reporters = getErrors(key);
+      List<IErrorReporter> reporters = nodesToErrorsMap.get(key);
       if (!reporters.isEmpty()) {
         if (key.getContainingRoot() == null) {
           /*  LOG.warn("Type system reports error for node without containing root. Node: " + key);

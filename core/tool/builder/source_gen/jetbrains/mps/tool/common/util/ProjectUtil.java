@@ -5,7 +5,7 @@ package jetbrains.mps.tool.common.util;
 import jetbrains.mps.project.Project;
 import java.io.File;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -20,7 +20,7 @@ public class ProjectUtil {
       String newProjectPath = path.getCanonicalPath();
       return myProjectPath.equals(newProjectPath);
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Cannot access the project file in container", e);
       }
     }

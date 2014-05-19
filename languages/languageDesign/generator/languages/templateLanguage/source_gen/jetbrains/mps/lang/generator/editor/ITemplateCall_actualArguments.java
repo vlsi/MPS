@@ -80,7 +80,7 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new TemplateDeclarationParameterInformationQuery());
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_1xd1xh_a1a0(node, editorContext)) {
+    if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
@@ -153,10 +153,6 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     }
   }
 
-  private static boolean renderingCondition_1xd1xh_a1a0(SNode node, EditorContext editorContext) {
-    return true;
-  }
-
   private EditorCell createConstant_1xd1xh_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1xd1xh_c0a");
@@ -165,14 +161,10 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_1xd1xh_a2a0(node, editorContext)) {
+    if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_1xd1xh_a2a0(SNode node, EditorContext editorContext) {
-    return true;
   }
 }

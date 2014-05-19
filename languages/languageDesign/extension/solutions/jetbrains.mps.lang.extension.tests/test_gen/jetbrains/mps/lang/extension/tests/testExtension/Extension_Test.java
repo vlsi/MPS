@@ -59,15 +59,17 @@ public class Extension_Test extends TestCase {
   }
 
   public void tearDown() {
-    Assert.assertFalse(TEST_OBJECT.isShutDown());
-    ApplicationManagerEx.getApplicationEx().addApplicationListener(new ApplicationAdapter() {
-      @Override
-      public void applicationExiting() {
-        if (!(Extension_Test.TEST_OBJECT.isShutDown())) {
-          throw new RuntimeException("!TestObject.shutDown");
+    if (TEST_OBJECT != null) {
+      Assert.assertFalse(TEST_OBJECT.isShutDown());
+      ApplicationManagerEx.getApplicationEx().addApplicationListener(new ApplicationAdapter() {
+        @Override
+        public void applicationExiting() {
+          if (!(Extension_Test.TEST_OBJECT.isShutDown())) {
+            throw new RuntimeException("!TestObject.shutDown");
+          }
         }
-      }
-    });
+      });
+    }
   }
 
   public Extension_Test() {

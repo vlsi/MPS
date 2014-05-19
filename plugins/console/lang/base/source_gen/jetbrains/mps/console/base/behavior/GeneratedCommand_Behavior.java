@@ -12,7 +12,7 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.lang.reflect.InvocationTargetException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -47,15 +47,15 @@ public class GeneratedCommand_Behavior {
                     }
                   }
                 } catch (ClassNotFoundException ignore) {
-                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                  if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("Exception on query loading", ignore);
                   }
                 } catch (IllegalAccessException ignore) {
-                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                  if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("Exception on query loading", ignore);
                   }
                 } catch (InvocationTargetException ignore) {
-                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                  if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("Exception on query loading", ignore);
                   }
                 }

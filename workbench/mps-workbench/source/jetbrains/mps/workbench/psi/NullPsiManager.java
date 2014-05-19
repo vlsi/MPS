@@ -17,37 +17,27 @@ package jetbrains.mps.workbench.psi;
 
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.FileViewProvider;
-import com.intellij.psi.LanguageInjector;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiTreeChangeListener;
-import com.intellij.psi.codeStyle.CodeStyleManager;
-import com.intellij.psi.impl.PsiManagerEx;
+import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiModificationTrackerImpl;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
-import com.intellij.psi.impl.cache.CacheManager;
 import com.intellij.psi.impl.file.impl.FileManager;
-import com.intellij.psi.impl.source.resolve.ResolveCache;
-import com.intellij.psi.search.PsiSearchHelper;
-import com.intellij.psi.util.CachedValuesManager;
 import com.intellij.psi.util.PsiModificationTracker;
-import com.intellij.util.IncorrectOperationException;
-import com.intellij.util.ThrowableRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
 
-class NullPsiManager extends PsiManagerEx {
+class NullPsiManager extends PsiManagerImpl {
   private Project myProject;
   private FileManager myFileManager;
 
   NullPsiManager(Project project) {
+    super(project, null, null, null, null, null);
     myProject = project;
   }
 
@@ -61,24 +51,8 @@ class NullPsiManager extends PsiManagerEx {
     return false;
   }
 
-  public void nonPhysicalChange() {
-
-  }
-
-  public void physicalChange() {
-
-  }
-
-  public ResolveCache getResolveCache() {
-    return null;
-  }
-
   @Override
   public void registerRunnableToRunOnChange(Runnable runnable) {
-
-  }
-
-  public void registerWeakRunnableToRunOnChange(Runnable runnable) {
 
   }
 
@@ -105,7 +79,8 @@ class NullPsiManager extends PsiManagerEx {
 
   }
 
-  public void invalidateFile(PsiFile file) {
+  @Override
+  public void beforeChildMovement(@NotNull PsiTreeChangeEventImpl event) {
 
   }
 
@@ -115,7 +90,47 @@ class NullPsiManager extends PsiManagerEx {
   }
 
   @Override
+  public void beforeChildrenChange(@NotNull PsiTreeChangeEventImpl event) {
+
+  }
+
+  @Override
   public void beforeChildReplacement(@NotNull PsiTreeChangeEventImpl psiTreeChangeEvent) {
+
+  }
+
+  @Override
+  public void beforePropertyChange(@NotNull PsiTreeChangeEventImpl event) {
+
+  }
+
+  @Override
+  public void childAdded(@NotNull PsiTreeChangeEventImpl event) {
+
+  }
+
+  @Override
+  public void childRemoved(@NotNull PsiTreeChangeEventImpl event) {
+
+  }
+
+  @Override
+  public void childReplaced(@NotNull PsiTreeChangeEventImpl event) {
+
+  }
+
+  @Override
+  public void childMoved(@NotNull PsiTreeChangeEventImpl event) {
+
+  }
+
+  @Override
+  public void childrenChanged(@NotNull PsiTreeChangeEventImpl event) {
+
+  }
+
+  @Override
+  public void propertyChanged(@NotNull PsiTreeChangeEventImpl event) {
 
   }
 
@@ -127,21 +142,6 @@ class NullPsiManager extends PsiManagerEx {
   @Override
   public void afterChange(boolean isPhysical) {
 
-  }
-
-  public CacheManager getCacheManager() {
-    return null;
-  }
-
-  @NotNull
-  public List<? extends LanguageInjector> getLanguageInjectors() {
-    return new ArrayList<LanguageInjector>();
-  }
-
-  @Override
-  @NotNull
-  public Project getProject() {
-    return myProject;
   }
 
   @Override
@@ -186,16 +186,6 @@ class NullPsiManager extends PsiManagerEx {
 
   }
 
-  @NotNull
-  public CodeStyleManager getCodeStyleManager() {
-    throw new UnsupportedOperationException();
-  }
-
-  @NotNull
-  public PsiSearchHelper getSearchHelper() {
-    throw new UnsupportedOperationException();
-  }
-
   @Override
   @NotNull
   public PsiModificationTracker getModificationTracker() {
@@ -216,23 +206,6 @@ class NullPsiManager extends PsiManagerEx {
       }
     };
     //throw new UnsupportedOperationException();
-  }
-
-  @NotNull
-  public CachedValuesManager getCachedValuesManager() {
-    throw new UnsupportedOperationException();
-  }
-
-  public void moveFile(@NotNull PsiFile file, @NotNull PsiDirectory newParentDir) throws IncorrectOperationException {
-
-  }
-
-  public void moveDirectory(@NotNull PsiDirectory dir, @NotNull PsiDirectory newParentDir) throws IncorrectOperationException {
-
-  }
-
-  public void checkMove(@NotNull PsiElement element, @NotNull PsiElement newContainer) throws IncorrectOperationException {
-
   }
 
   @Override
@@ -258,33 +231,5 @@ class NullPsiManager extends PsiManagerEx {
   @Override
   public boolean isInProject(@NotNull PsiElement element) {
     return false;
-  }
-
-  public void performActionWithFormatterDisabled(Runnable r) {
-
-  }
-
-  public <T extends Throwable> void performActionWithFormatterDisabled(ThrowableRunnable<T> r) throws T {
-
-  }
-
-  public <T> T performActionWithFormatterDisabled(Computable<T> r) {
-    return null;
-  }
-
-  public void postponeAutoFormattingInside(Runnable runnable) {
-
-  }
-
-  public void registerLanguageInjector(@NotNull LanguageInjector injector) {
-
-  }
-
-  public void registerLanguageInjector(@NotNull LanguageInjector injector, Disposable parentDisposable) {
-
-  }
-
-  public void unregisterLanguageInjector(@NotNull LanguageInjector injector) {
-
   }
 }

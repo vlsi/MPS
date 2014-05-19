@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.io.File;
@@ -48,7 +48,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "InstallIDEAPlugin", t);
       }
       this.disable(event.getPresentation());
@@ -83,7 +83,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "InstallIDEAPlugin", t);
       }
     }
@@ -117,7 +117,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     if (ListSequence.fromList(existingIdeaConfigs).isEmpty()) {
       JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "IntelliJ IDEA installation was not found", "Cannot install plugin", JOptionPane.ERROR_MESSAGE);
       return null;
-    } else if ((int) ListSequence.fromList(existingIdeaConfigs).count() == 1) {
+    } else if (ListSequence.fromList(existingIdeaConfigs).count() == 1) {
       return VirtualFileUtils.toFile(ListSequence.fromList(existingIdeaConfigs).first());
     }
 

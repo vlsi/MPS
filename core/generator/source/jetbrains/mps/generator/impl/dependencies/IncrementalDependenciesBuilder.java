@@ -247,7 +247,8 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     }
     LOG.error("current to original map:");
     for (SNode n : currentToOriginalMap.keySet()) {
-      LOG.error(String.format("%s --> %s", SNodeUtil.getDebugText(n), SNodeUtil.getDebugText(currentToOriginalMap.get(n))));
+      final SNode o = currentToOriginalMap.get(n);
+      LOG.error(String.format("%s --> %s", SNodeUtil.getDebugText(n), o == null ? String.valueOf(o) : SNodeUtil.getDebugText(o)));
     }
     return null;
   }

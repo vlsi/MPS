@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,9 +19,6 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -29,10 +26,11 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
-import jetbrains.mps.util.CollectionUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
@@ -59,15 +57,13 @@ public class GenerationPartitioner {
   private final Map<SModelReference, TemplateModel> myModelMap;
 
   // result
-  private final PriorityMap myPriorityMap;
-  private final List<CoherentSetData> myCoherentMappings;
-  private PriorityConflicts myConflicts;
+  private final PartitioningSolver mySolver;
+  private final PriorityConflicts myConflicts;
 
   public GenerationPartitioner(Collection<TemplateModule> generators) {
     myGenerators = generators;
-    myPriorityMap = new PriorityMap();
-    myCoherentMappings = new ArrayList<CoherentSetData>();
-    myConflicts = new PriorityConflicts();
+    myConflicts = new PriorityConflicts(generators);
+    mySolver = new PartitioningSolver(myConflicts);
 
     myModulesMap = new HashMap<SModuleReference, TemplateModule>(myGenerators.size());
     myModelMap = new HashMap<SModelReference, TemplateModel>();
@@ -77,21 +73,43 @@ public class GenerationPartitioner {
         myModelMap.put(model.getSModelReference(), model);
       }
     }
-
   }
 
   public List<List<TemplateMappingConfiguration>> createMappingSets() {
+    ArrayList<TemplateMappingConfiguration> allMappingConfigurations = new ArrayList<TemplateMappingConfiguration>();
     for (TemplateModule generator : myGenerators) {
       for (TemplateModel model : generator.getModels()) {
-        myPriorityMap.prepare(model.getConfigurations());
+        allMappingConfigurations.addAll(model.getConfigurations());
       }
     }
+
+    mySolver.prepare(allMappingConfigurations);
 
     // get priority mapping rules from generators and build 'priority map'
     loadRules();
 
     // solve
-    return new PartitioningSolver(myPriorityMap, myCoherentMappings, myConflicts).solve();
+    final List<GenerationPhase> generationPhases = mySolver.solveNew();
+    return phaseAsPlainList(generationPhases);
+//    return phaseGroupedByGenerator(generationPhases);
+  }
+
+  static List<List<TemplateMappingConfiguration>> phaseAsPlainList(List<GenerationPhase> phases) {
+    List<List<TemplateMappingConfiguration>> rv = new ArrayList<List<TemplateMappingConfiguration>>();
+    for (GenerationPhase gp : phases) {
+      rv.add(gp.getAllElements());
+    }
+    return rv;
+  }
+
+  static List<List<TemplateMappingConfiguration>> phaseGroupedByGenerator(List<GenerationPhase> phases) {
+    List<List<TemplateMappingConfiguration>> rv = new ArrayList<List<TemplateMappingConfiguration>>();
+    for (GenerationPhase gp : phases) {
+      for (Group g : gp.groupByGenerator()) {
+        rv.add(new ArrayList<TemplateMappingConfiguration>(g.getElements()));
+      }
+    }
+    return rv;
   }
 
   private void loadRules() {
@@ -111,38 +129,31 @@ public class GenerationPartitioner {
     MappingConfig_AbstractRef right = rule.getRight();
     if (left == null || right == null) return;
 
-    Collection<TemplateMappingConfiguration> hiPrio = getMappingsFromRef(left, generator, generator.getAlias());
-    Collection<TemplateMappingConfiguration> loPrio = getMappingsFromRef(right, generator, generator.getAlias());
-    if (rule.getType() == RuleType.STRICTLY_TOGETHER) {
-      Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(loPrio);
-      coherentMappings.addAll(hiPrio);
-      myCoherentMappings.add(new CoherentSetData(coherentMappings, rule));
-
-    } else {
-
-      // swap
-      if (rule.getType() == RuleType.STRICTLY_AFTER || rule.getType() == RuleType.AFTER_OR_TOGETHER) {
-        Collection<TemplateMappingConfiguration> temp = hiPrio;
-        hiPrio = loPrio;
-        loPrio = temp;
-      }
-
-      // map: lo-pri mapping -> {hi-pri mapping, .... , hi-pri mapping }
-      loPrio = CollectionUtil.subtract(loPrio, hiPrio);
-      boolean isStrict = rule.getType() == RuleType.STRICTLY_BEFORE || rule.getType() == RuleType.STRICTLY_AFTER;
-
-      for (TemplateMappingConfiguration lesserPriMapping : loPrio) {
-        for (TemplateMappingConfiguration grtPriMapping : hiPrio) {
-          myPriorityMap.updateLock(lesserPriMapping, grtPriMapping, new PriorityData(isStrict, rule));
-        }
-      }
+    Collection<TemplateMappingConfiguration> lhs = getMappingsFromRef(left, generator, generator.getAlias());
+    Collection<TemplateMappingConfiguration> rhs = getMappingsFromRef(right, generator, generator.getAlias());
+    switch (rule.getType()) {
+      case STRICTLY_TOGETHER:
+        Set<TemplateMappingConfiguration> coherentMappings = new HashSet<TemplateMappingConfiguration>(rhs);
+        coherentMappings.addAll(lhs);
+        mySolver.registerCoherent(coherentMappings, rule);
+        return;
+      case STRICTLY_BEFORE:
+      case BEFORE_OR_TOGETHER:
+        mySolver.establishDependency(lhs, rhs, rule);
+        return;
+      case AFTER_OR_TOGETHER:
+      case STRICTLY_AFTER:
+        mySolver.establishDependency(rhs, lhs, rule);
+        return;
+      default: throw new IllegalStateException(String.valueOf(rule.getType()));
     }
   }
+
 
   private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator,
       String sourceGeneratorID) {
     if (mappingRef instanceof MappingConfig_RefAllGlobal) {
-      return new ArrayList<TemplateMappingConfiguration>(myPriorityMap.keys());
+      return new ArrayList<TemplateMappingConfiguration>(mySolver.getKnownMapConfigs());
     }
 
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
@@ -167,13 +178,12 @@ public class GenerationPartitioner {
     if (mappingRef instanceof MappingConfig_ExternalRef) {
       SModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
       if (generatorRef != null) {
-        SModuleReference genRef = generatorRef;
-        TemplateModule newRefGenerator = myModulesMap.get(genRef);
+        TemplateModule newRefGenerator = myModulesMap.get(generatorRef);
         if (newRefGenerator != null) {
           return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator, sourceGeneratorID);
         } else {
           // generator is not in the plan - just ignore
-          // LOG.error("couldn't get generator by uid: '" + genRef + "'");
+          // LOG.error("couldn't get generator by uid: '" + generatorRef + "'");
         }
       }
       return Collections.emptyList();
@@ -192,7 +202,7 @@ public class GenerationPartitioner {
           } else {
             SNodeReference node = new jetbrains.mps.smodel.SNodePointer(reference, PersistenceFacade.getInstance().createNodeId(nodeID));
             for (TemplateMappingConfiguration m : refModel.getConfigurations()) {
-              if (node != null && node.equals(m.getMappingNode())) {
+              if (node.equals(m.getMappingNode())) {
                 return Collections.singletonList(m);
               }
             }
@@ -267,4 +277,5 @@ public class GenerationPartitioner {
       myCauseRules.addAll(other.myCauseRules);
     }
   } // class CoherentSetData
+
 }

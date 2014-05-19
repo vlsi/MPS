@@ -17,11 +17,13 @@ package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.messages.Icons;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 
 @Deprecated
+@ToRemove(version = 3.0)
 public class ErrorTreeNode extends TextTreeNode {
   public ErrorTreeNode(@NotNull String text) {
     super(text);

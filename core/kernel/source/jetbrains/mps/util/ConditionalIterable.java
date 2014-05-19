@@ -16,12 +16,13 @@
 package jetbrains.mps.util;
 
 import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.FilterIterator;
 
 import java.util.Iterator;
 
 public class ConditionalIterable<T> implements Iterable<T> {
-  private Condition<T> myCondition;
-  private Iterable<T> myIter;
+  private final Condition<T> myCondition;
+  private final Iterable<T> myIter;
 
   public ConditionalIterable(Iterable<T> iter, Condition<T> condition) {
     myCondition = condition;
@@ -30,6 +31,6 @@ public class ConditionalIterable<T> implements Iterable<T> {
 
   @Override
   public Iterator<T> iterator() {
-    return new ConditionalIterator<T>(myIter.iterator(), myCondition);
+    return myCondition == null ? myIter.iterator() : new FilterIterator<T>(myIter.iterator(), myCondition);
   }
 }

@@ -22,7 +22,7 @@ import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -176,7 +176,7 @@ public class MpsStartupSettings_Configuration implements IPersistentConfiguratio
       clone.myState = (MpsStartupSettings_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", ex);
       }
     }

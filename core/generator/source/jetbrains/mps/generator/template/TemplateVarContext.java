@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
@@ -26,19 +28,20 @@ import org.jetbrains.annotations.NotNull;
 public class TemplateVarContext extends TemplateQueryContext {
 
   /**
-   * @deprecated use {@link #TemplateVarContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #TemplateVarContext(TemplateContext, SNodeReference)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
+  @ToRemove(version = 3.1)
   public TemplateVarContext(SNode inputNode, @NotNull SNodeReference templateNode, TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, templateNode, context, generator);
+    super(templateNode, context == null ? new DefaultTemplateContext(inputNode) : context.subContext(inputNode), generator);
   }
 
   /**
    * @since 3.1
    */
-  public TemplateVarContext(@NotNull TemplateContext context, @NotNull SNodeReference templateNode, @NotNull ITemplateGenerator generator) {
-    super(templateNode, context, generator);
+  public TemplateVarContext(@NotNull TemplateContext context, @NotNull SNodeReference templateNode) {
+    super(templateNode, context);
   }
 }
 

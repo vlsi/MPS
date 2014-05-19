@@ -18,16 +18,15 @@ package jetbrains.mps.workbench;
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
 public class MPSDataKeys extends MPSEditorDataKeys {
 
-  @Description(description = "selected package")
-  public static final DataKey<String> VIRTUAL_PACKAGE = DataKey.create("MPS_VirtualPackage");
   @Description(description = "selected packages")
-  public static final DataKey<List<String>> VIRTUAL_PACKAGES = DataKey.create("MPS_VirtualPackage_List");
+  public static final DataKey<List<Pair<SModel, String>>> VIRTUAL_PACKAGES = DataKey.create("MPS_VirtualPackage_List");
 
   @Description(description = "selected namespace")
   public static final DataKey<String> NAMESPACE = DataKey.create("MPS_Namespace");

@@ -408,12 +408,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ApplyStyleClass_BehaviorDescriptor();
       case 185:
         return new StyleClassReferenceList_BehaviorDescriptor();
-      case 188:
-        return new StyleReference_BehaviorDescriptor();
       case 2:
         return new ApplyStyleClassCondition_BehaviorDescriptor();
       case 104:
         return new DominatesRecord_BehaviorDescriptor();
+      case 188:
+        return new StyleReference_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

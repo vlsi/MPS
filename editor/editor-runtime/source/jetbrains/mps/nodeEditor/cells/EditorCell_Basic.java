@@ -26,10 +26,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
+import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
@@ -783,8 +784,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
 
     EditorCell bigCell = getEditor().findNodeCell(node);
-    Object anchorId = node.getUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
+    String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
     if (anchorId == null) {
+      // TODO: should never be null!..
       if (bigCell != null && bigCell.getParent() != null) {
         for (jetbrains.mps.openapi.editor.cells.EditorCell child : bigCell.getParent()) {
           if (child instanceof EditorCell_STHint) {
@@ -793,7 +795,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         }
       }
     } else {
-      EditorCell anchorCell = getEditor().findCellWithId(node, anchorId.toString());
+      EditorCell anchorCell = getEditor().findCellWithId(node, anchorId);
 
       if (anchorCell == null) {
         return null;

@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
@@ -25,15 +26,21 @@ import org.jetbrains.annotations.NotNull;
  */
 public class SourceSubstituteMacroNodeContext extends TemplateQueryContextWithMacro {
 
+  /**
+   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
+   */
+  @Deprecated
+  @ToRemove(version = 3.1)
   public SourceSubstituteMacroNodeContext(SNode inputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
     super(inputNode, macroNode, context, generator);
   }
 
   /**
-   * @deprecated use {@link #SourceSubstituteMacroNodeContext(TemplateContext, SNodeReference, ITemplateGenerator)} instead. This constructor
+   * @deprecated use {@link #SourceSubstituteMacroNodeContext(TemplateContext, SNodeReference)} instead. This constructor
    * will be removed after 3.1
    */
   @Deprecated
+  @ToRemove(version=3.1)
   public SourceSubstituteMacroNodeContext(SNode inputNode, @NotNull SNodeReference macroNode, TemplateContext context, @NotNull ITemplateGenerator generator) {
     super(inputNode, macroNode, context, generator);
   }
@@ -41,7 +48,7 @@ public class SourceSubstituteMacroNodeContext extends TemplateQueryContextWithMa
   /**
    * @since 3.1
    */
-  public SourceSubstituteMacroNodeContext(@NotNull TemplateContext context, @NotNull SNodeReference macroNode, @NotNull ITemplateGenerator generator) {
-    super(context, macroNode, generator);
+  public SourceSubstituteMacroNodeContext(@NotNull TemplateContext context, @NotNull SNodeReference macroNode) {
+    super(context, macroNode);
   }
 }

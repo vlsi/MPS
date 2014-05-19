@@ -98,7 +98,7 @@
     <nodeInfo nodeId="4664795093170605769" fileName="SpecificDay_Editor.java" startLine="65" startPosition="57" endLine="66" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4664795093170605769" fileName="SpecificDay_Editor.java" startLine="67" startPosition="35" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4664795093170605769" fileName="SpecificDay_Editor.java" startLine="68" startPosition="72" endLine="69" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4664795093170605769" fileName="SpecificDay_Editor.java" startLine="69" startPosition="78" endLine="70" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4664795093170605769" fileName="SpecificDay_Editor.java" startLine="69" startPosition="78" endLine="70" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4664795093170605769" fileName="SpecificDay_Editor.java" startLine="71" startPosition="10" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001397103658746243" fileName="SpecificDay_Editor.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_Applicability_cellMenu_g4jrcx_a0a0#()V" />
     <nodeInfo nodeId="4664795093170605760" fileName="SpecificDay_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -118,7 +118,7 @@
       <varInfo nodeId="4664795093170605760" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4001397103658746243" fileName="SpecificDay_Editor.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="4664795093170605769" fileName="SpecificDay_Editor.java" startLine="67" startPosition="35" endLine="70" endPosition="105">
+    <scopeInfo nodeId="4664795093170605769" fileName="SpecificDay_Editor.java" startLine="67" startPosition="35" endLine="70" endPosition="109">
       <varInfo nodeId="4664795093170605769" varName="manager" />
       <varInfo nodeId="4664795093170605769" varName="opContext" />
     </scopeInfo>
@@ -184,7 +184,7 @@
     <nodeInfo nodeId="4664795093170636257" fileName="DayRange_Editor.java" startLine="67" startPosition="57" endLine="68" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4664795093170636257" fileName="DayRange_Editor.java" startLine="69" startPosition="35" endLine="70" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4664795093170636257" fileName="DayRange_Editor.java" startLine="70" startPosition="72" endLine="71" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4664795093170636257" fileName="DayRange_Editor.java" startLine="71" startPosition="78" endLine="72" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4664795093170636257" fileName="DayRange_Editor.java" startLine="71" startPosition="78" endLine="72" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4664795093170636257" fileName="DayRange_Editor.java" startLine="73" startPosition="10" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4664795093170636264" fileName="DayRange_Editor.java" startLine="77" startPosition="88" endLine="78" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4664795093170636264" fileName="DayRange_Editor.java" startLine="78" startPosition="88" endLine="79" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -204,7 +204,7 @@
     <nodeInfo nodeId="4664795093170636274" fileName="DayRange_Editor.java" startLine="95" startPosition="57" endLine="96" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4664795093170636274" fileName="DayRange_Editor.java" startLine="97" startPosition="35" endLine="98" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4664795093170636274" fileName="DayRange_Editor.java" startLine="98" startPosition="72" endLine="99" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4664795093170636274" fileName="DayRange_Editor.java" startLine="99" startPosition="78" endLine="100" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4664795093170636274" fileName="DayRange_Editor.java" startLine="99" startPosition="78" endLine="100" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4664795093170636274" fileName="DayRange_Editor.java" startLine="101" startPosition="10" endLine="102" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001397103658720674" fileName="DayRange_Editor.java" startLine="48" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceWith_Applicability_cellMenu_rtxy5x_a0a0#()V" />
     <nodeInfo nodeId="4664795093170636242" fileName="DayRange_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -229,11 +229,11 @@
       <varInfo nodeId="4664795093170636242" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4001397103658720674" fileName="DayRange_Editor.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="4664795093170636257" fileName="DayRange_Editor.java" startLine="69" startPosition="35" endLine="72" endPosition="105">
+    <scopeInfo nodeId="4664795093170636257" fileName="DayRange_Editor.java" startLine="69" startPosition="35" endLine="72" endPosition="109">
       <varInfo nodeId="4664795093170636257" varName="manager" />
       <varInfo nodeId="4664795093170636257" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4664795093170636274" fileName="DayRange_Editor.java" startLine="97" startPosition="35" endLine="100" endPosition="105">
+    <scopeInfo nodeId="4664795093170636274" fileName="DayRange_Editor.java" startLine="97" startPosition="35" endLine="100" endPosition="109">
       <varInfo nodeId="4664795093170636274" varName="manager" />
       <varInfo nodeId="4664795093170636274" varName="opContext" />
     </scopeInfo>
@@ -376,7 +376,7 @@
     <nodeInfo nodeId="5063359128232942978" fileName="ChangeEvent_Editor.java" startLine="52" startPosition="57" endLine="53" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128232942978" fileName="ChangeEvent_Editor.java" startLine="54" startPosition="35" endLine="55" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128232942978" fileName="ChangeEvent_Editor.java" startLine="55" startPosition="72" endLine="56" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5063359128232942978" fileName="ChangeEvent_Editor.java" startLine="56" startPosition="78" endLine="57" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128232942978" fileName="ChangeEvent_Editor.java" startLine="56" startPosition="78" endLine="57" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232942978" fileName="ChangeEvent_Editor.java" startLine="58" startPosition="10" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232942993" fileName="ChangeEvent_Editor.java" startLine="62" startPosition="88" endLine="63" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128232942993" fileName="ChangeEvent_Editor.java" startLine="63" startPosition="93" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -399,7 +399,7 @@
       <varInfo nodeId="5063359128232940655" varName="editorContext" />
       <varInfo nodeId="5063359128232940655" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232942978" fileName="ChangeEvent_Editor.java" startLine="54" startPosition="35" endLine="57" endPosition="105">
+    <scopeInfo nodeId="5063359128232942978" fileName="ChangeEvent_Editor.java" startLine="54" startPosition="35" endLine="57" endPosition="109">
       <varInfo nodeId="5063359128232942978" varName="manager" />
       <varInfo nodeId="5063359128232942978" varName="opContext" />
     </scopeInfo>
@@ -477,7 +477,7 @@
     <nodeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="86" startPosition="57" endLine="87" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="88" startPosition="35" endLine="89" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="89" startPosition="72" endLine="90" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="90" startPosition="78" endLine="91" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="90" startPosition="78" endLine="91" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="92" startPosition="10" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="96" startPosition="88" endLine="97" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="97" startPosition="101" endLine="98" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -502,7 +502,7 @@
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="124" startPosition="57" endLine="125" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="126" startPosition="35" endLine="127" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="127" startPosition="72" endLine="128" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="128" startPosition="78" endLine="129" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="128" startPosition="78" endLine="129" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="130" startPosition="10" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="935069066462797648" fileName="DailyPlan_Editor.java" startLine="134" startPosition="97" endLine="135" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="138" startPosition="88" endLine="139" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -633,7 +633,7 @@
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="48" startPosition="5" endLine="51" endPosition="5" />
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="51" startPosition="5" endLine="54" endPosition="5" />
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="54" startPosition="5" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="105">
+    <scopeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="109">
       <varInfo nodeId="4664795093170436235" varName="manager" />
       <varInfo nodeId="4664795093170436235" varName="opContext" />
     </scopeInfo>
@@ -641,7 +641,7 @@
       <varInfo nodeId="935069066462601311" varName="editorContext" />
       <varInfo nodeId="935069066462601311" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="126" startPosition="35" endLine="129" endPosition="105">
+    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="126" startPosition="35" endLine="129" endPosition="109">
       <varInfo nodeId="5063359128232955353" varName="manager" />
       <varInfo nodeId="5063359128232955353" varName="opContext" />
     </scopeInfo>
@@ -815,7 +815,7 @@
     <nodeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="62" startPosition="57" endLine="63" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="64" startPosition="35" endLine="65" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="65" startPosition="72" endLine="66" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="66" startPosition="78" endLine="67" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="66" startPosition="78" endLine="67" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="68" startPosition="10" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128233115129" fileName="HeatingPlan_Editor.java" startLine="72" startPosition="88" endLine="73" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128233115129" fileName="HeatingPlan_Editor.java" startLine="73" startPosition="86" endLine="74" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -883,7 +883,7 @@
       <varInfo nodeId="5063359128232955516" varName="editorContext" />
       <varInfo nodeId="5063359128232955516" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="105">
+    <scopeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="64" startPosition="35" endLine="67" endPosition="109">
       <varInfo nodeId="5063359128232955531" varName="manager" />
       <varInfo nodeId="5063359128232955531" varName="opContext" />
     </scopeInfo>
@@ -1007,7 +1007,7 @@
     <nodeInfo nodeId="5726447348463738298" fileName="Slot_Editor.java" startLine="69" startPosition="57" endLine="70" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5726447348463738298" fileName="Slot_Editor.java" startLine="71" startPosition="35" endLine="72" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5726447348463738298" fileName="Slot_Editor.java" startLine="72" startPosition="72" endLine="73" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5726447348463738298" fileName="Slot_Editor.java" startLine="73" startPosition="78" endLine="74" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5726447348463738298" fileName="Slot_Editor.java" startLine="73" startPosition="78" endLine="74" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5726447348463738298" fileName="Slot_Editor.java" startLine="75" startPosition="10" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5726447348463738311" fileName="Slot_Editor.java" startLine="79" startPosition="88" endLine="80" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5726447348463738311" fileName="Slot_Editor.java" startLine="80" startPosition="93" endLine="81" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1024,7 +1024,7 @@
     <nodeInfo nodeId="5726447348463738323" fileName="Slot_Editor.java" startLine="96" startPosition="57" endLine="97" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5726447348463738323" fileName="Slot_Editor.java" startLine="98" startPosition="35" endLine="99" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5726447348463738323" fileName="Slot_Editor.java" startLine="99" startPosition="72" endLine="100" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5726447348463738323" fileName="Slot_Editor.java" startLine="100" startPosition="78" endLine="101" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5726447348463738323" fileName="Slot_Editor.java" startLine="100" startPosition="78" endLine="101" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5726447348463738323" fileName="Slot_Editor.java" startLine="102" startPosition="10" endLine="103" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5726447348463731349" fileName="Slot_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5726447348463731349" fileName="Slot_Editor.java" startLine="29" startPosition="28" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1056,11 +1056,11 @@
       <varInfo nodeId="935069066463668428" varName="editorContext" />
       <varInfo nodeId="935069066463668428" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5726447348463738298" fileName="Slot_Editor.java" startLine="71" startPosition="35" endLine="74" endPosition="105">
+    <scopeInfo nodeId="5726447348463738298" fileName="Slot_Editor.java" startLine="71" startPosition="35" endLine="74" endPosition="109">
       <varInfo nodeId="5726447348463738298" varName="manager" />
       <varInfo nodeId="5726447348463738298" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5726447348463738323" fileName="Slot_Editor.java" startLine="98" startPosition="35" endLine="101" endPosition="105">
+    <scopeInfo nodeId="5726447348463738323" fileName="Slot_Editor.java" startLine="98" startPosition="35" endLine="101" endPosition="109">
       <varInfo nodeId="5726447348463738323" varName="manager" />
       <varInfo nodeId="5726447348463738323" varName="opContext" />
     </scopeInfo>
@@ -1134,7 +1134,7 @@
     <nodeInfo nodeId="935069066462619722" fileName="DailyPlanReference_Editor.java" startLine="41" startPosition="57" endLine="42" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="935069066462619722" fileName="DailyPlanReference_Editor.java" startLine="43" startPosition="35" endLine="44" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="935069066462619722" fileName="DailyPlanReference_Editor.java" startLine="44" startPosition="72" endLine="45" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935069066462619722" fileName="DailyPlanReference_Editor.java" startLine="45" startPosition="78" endLine="46" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935069066462619722" fileName="DailyPlanReference_Editor.java" startLine="45" startPosition="78" endLine="46" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="935069066462619722" fileName="DailyPlanReference_Editor.java" startLine="47" startPosition="10" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2161719505004888342" fileName="DailyPlanReference_Editor.java" startLine="52" startPosition="33" endLine="53" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2161719505004888342" fileName="DailyPlanReference_Editor.java" startLine="56" startPosition="69" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1156,7 +1156,7 @@
     <nodeInfo nodeId="2161719505004888347" fileName="DailyPlanReference_Editor.java" startLine="80" startPosition="59" endLine="81" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2161719505004888347" fileName="DailyPlanReference_Editor.java" startLine="82" startPosition="37" endLine="83" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2161719505004888347" fileName="DailyPlanReference_Editor.java" startLine="83" startPosition="74" endLine="84" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2161719505004888347" fileName="DailyPlanReference_Editor.java" startLine="84" startPosition="80" endLine="85" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2161719505004888347" fileName="DailyPlanReference_Editor.java" startLine="84" startPosition="80" endLine="85" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2161719505004888347" fileName="DailyPlanReference_Editor.java" startLine="86" startPosition="12" endLine="87" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="935069066462619722" fileName="DailyPlanReference_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2161719505004888342" fileName="DailyPlanReference_Editor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_e3jrht_a0a#()V" />
@@ -1178,7 +1178,7 @@
       <varInfo nodeId="935069066462619722" varName="editorContext" />
       <varInfo nodeId="935069066462619722" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="935069066462619722" fileName="DailyPlanReference_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="105">
+    <scopeInfo nodeId="935069066462619722" fileName="DailyPlanReference_Editor.java" startLine="43" startPosition="35" endLine="46" endPosition="109">
       <varInfo nodeId="935069066462619722" varName="manager" />
       <varInfo nodeId="935069066462619722" varName="opContext" />
     </scopeInfo>
@@ -1190,7 +1190,7 @@
       <varInfo nodeId="2161719505004888342" varName="editorContext" />
       <varInfo nodeId="2161719505004888342" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2161719505004888347" fileName="DailyPlanReference_Editor.java" startLine="82" startPosition="37" endLine="85" endPosition="107">
+    <scopeInfo nodeId="2161719505004888347" fileName="DailyPlanReference_Editor.java" startLine="82" startPosition="37" endLine="85" endPosition="111">
       <varInfo nodeId="2161719505004888347" varName="manager" />
       <varInfo nodeId="2161719505004888347" varName="opContext" />
     </scopeInfo>

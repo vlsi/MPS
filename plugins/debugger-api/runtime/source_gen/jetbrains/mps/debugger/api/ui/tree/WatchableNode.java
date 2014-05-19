@@ -15,7 +15,7 @@ import javax.swing.Icon;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.tree.DefaultTreeModel;
 import com.intellij.openapi.application.ApplicationManager;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -110,7 +110,7 @@ public class WatchableNode extends AbstractWatchableNode {
                       try {
                         callback.invoke();
                       } catch (Throwable t) {
-                        if (LOG.isEnabledFor(Priority.ERROR)) {
+                        if (LOG.isEnabledFor(Level.ERROR)) {
                           LOG.error("", t);
                         }
                       }

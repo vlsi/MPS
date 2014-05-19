@@ -66,11 +66,13 @@ public class VisibleModules {
     }
     for (SNode module : allModules) {
       if (moduleById.containsKey(SPropertyOperations.getString(module, "uuid"))) {
-        report("found two modules with the same id: " + SPropertyOperations.getString(module, "uuid"), project);
+        report("found two modules with the same id: " + SPropertyOperations.getString(module, "uuid"), module);
+        report("found two modules with the same id: " + SPropertyOperations.getString(module, "uuid"), moduleById.get(SPropertyOperations.getString(module, "uuid")));
       }
       moduleById.put(SPropertyOperations.getString(module, "uuid"), module);
       if (moduleByName.containsKey(SPropertyOperations.getString(module, "name"))) {
-        report("found two modules with the same name: " + SPropertyOperations.getString(module, "name"), project);
+        report("found two modules with the same name: " + SPropertyOperations.getString(module, "name"), module);
+        report("found two modules with the same name: " + SPropertyOperations.getString(module, "name"), moduleByName.get(SPropertyOperations.getString(module, "name")));
       }
       moduleByName.put(SPropertyOperations.getString(module, "name"), module);
     }

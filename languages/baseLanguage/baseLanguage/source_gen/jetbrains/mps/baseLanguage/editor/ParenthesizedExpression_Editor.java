@@ -39,7 +39,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    DeleteParenthesis_Actions.setCellActions(editorCell, node, editorContext);
+    DeleteParenthesisLeft_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addKeyMap(new OpenParenthesis_KeyMap());
     editorCell.setDefaultText("");
     return editorCell;
@@ -63,7 +63,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     if (attributeConcept != null) {
       IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
@@ -79,7 +79,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
-    DeleteParenthesis_Actions.setCellActions(editorCell, node, editorContext);
+    DeleteParenthesisRight_Action.setCellActions(editorCell, node, editorContext);
     editorCell.addKeyMap(new CloseParenthesis_KeyMap());
     editorCell.setDefaultText("");
     return editorCell;

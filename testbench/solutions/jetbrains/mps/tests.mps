@@ -59,6 +59,13 @@
   <import index="t7u" modelUID="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute@tests)" version="-1" />
   <import index="zosv" modelUID="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)" version="-1" />
   <import index="ivbl" modelUID="r:fb7fa8cf-2ae4-458a-8a14-51580c7c210c(jetbrains.mps.lang.editor.multiple.editorComponent.tests)" version="-1" />
+  <import index="tizr" modelUID="r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)" version="-1" />
+  <import index="ule5" modelUID="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)" version="-1" />
+  <import index="9sj4" modelUID="r:8aafd777-0043-4d2b-b2da-119dbfcb6271(jetbrains.mps.persistence.xml@tests)" version="-1" />
+  <import index="5vzk" modelUID="r:a56a2ec2-acbf-42ea-9fe6-7091c607ee89(jetbrains.mps.baseLanguageInternal.test@tests)" version="-1" />
+  <import index="h8fw" modelUID="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)" version="-1" />
+  <import index="f7ij" modelUID="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)" version="-1" />
+  <import index="gp3f" modelUID="r:d1867d68-bb03-4cb4-adc6-3d5ffa40e888(jetbrains.mps.testbench)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707832463" nodeInfo="ng">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="2712670354707832464" nodeInfo="ig">
@@ -366,6 +373,24 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2399036385470844740" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tzu1.7023440913657702620" resolveInfo="GoToReference" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8783066269473347624" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="h8fw.3447504547919025660" resolveInfo="AddPropertyAttribute" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8783066269473347659" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="h8fw.3447504547919025692" resolveInfo="LeftTransformForAttributedProperty" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8783066269473347696" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="h8fw.3447504547919025668" resolveInfo="RemovePropertyAttribute" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8783066269473347735" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="h8fw.3447504547919025677" resolveInfo="RemovingLeftTransformForAttributedProperty" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8783066269473347776" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="h8fw.3447504547919057576" resolveInfo="RemovingRightTransformForAttributedProperty" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8783066269473347819" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="h8fw.3447504547919057591" resolveInfo="RightTransformForAttributedProperty" />
     </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707847785" nodeInfo="ng">
@@ -960,6 +985,9 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164094848" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.4246614868164066709" resolveInfo="Generics" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3419811523764951574" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.290469496750208032" resolveInfo="FloatLiteral" />
+    </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7092489630493754343" nodeInfo="ng">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7092489630493754345" nodeInfo="ig">
@@ -1453,7 +1481,7 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1235487648829" resolveInfo="ActionAtFirstPostionProblem" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096824" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1236013278645" resolveInfo="CompexTransformTest" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1236013278645" resolveInfo="ComplexTransformTest" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096825" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1236090523881" resolveInfo="SideDeleteAtEndWithBackSpace" />
@@ -1466,9 +1494,6 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096828" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1240561497307" resolveInfo="LeftTransformOfDotOperation" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096829" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1241100648020" resolveInfo="SurrondByParensesis" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096830" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.1241356058569" resolveInfo="ReplacingSelection" />
@@ -1735,7 +1760,7 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.2907839077756756657" resolveInfo="TryingToLeftTransformNewExpression" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096867" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.3852894662483077199" resolveInfo="SurrondWithParenthesisTest" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.3852894662483077199" resolveInfo="SurroundWithParenthesisTest" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164096868" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.3852894662483397197" resolveInfo="PriorityCheckTest" />
@@ -2072,6 +2097,171 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2601164129533511794" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="zosv.2601164129533059968" resolveInfo="UnsupportedPresentation" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936922900508" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936922900509" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.baseLanguage.doubleDispatch.test" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="0528d773-6535-46f8-89a2-16a3751e6ab5" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7261441936922900510" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tizr.3813896760029572858" resolveInfo="DispatchTypeCheckingErrors" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936923591989" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936923591990" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.testbench.make" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="79f9d103-4ff6-4def-9c1a-27070f9ba255" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923591991" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="gp3f.9170334376388144449" resolveInfo="ProjectTest" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3005375224929183746" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="3005375224929184726" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.lang.editor.diagram.tests" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="779ae18b-ee98-406e-94fd-dec40c78b92f" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200647" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.822550549814784606" resolveInfo="ChangeNodeName" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200652" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.604142159147796275" resolveInfo="CreateDiagramNode" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200659" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.8794120090375557118" resolveInfo="CreateDiagramNodeWithPosition" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200668" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.5540569706413448775" resolveInfo="CreateLink" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200679" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.5540569706413448775" resolveInfo="CreateLink" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200692" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.2278461409093519741" resolveInfo="CreatePort" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200707" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.5003005296038308967" resolveInfo="DeleteDiagramNode" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200724" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.822550549811942062" resolveInfo="DeleteLink" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200743" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.8095638845859579504" resolveInfo="MoveNode" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200764" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.5540569706412486831" resolveInfo="NegativeResizeNode_bottom_central" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200787" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.5540569706412511201" resolveInfo="NegativeResizeNode_bottom_right" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200812" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.1030067674862429074" resolveInfo="NegativeResizeNode_right_central" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200839" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.3873095776498193006" resolveInfo="NoResizeNode_bottom_right" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200868" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.1030067674862347669" resolveInfo="ResizeNode_bottom_centeral" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200899" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.1030067674862347159" resolveInfo="ResizeNode_bottom_left" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200932" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.1030067674862347894" resolveInfo="ResizeNode_bottom_right" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200967" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.3873095776498950263" resolveInfo="ResizeNode_left_central" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201004" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.8794120090377706340" resolveInfo="ResizeNode_top_centeral" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201043" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.7604889971551653125" resolveInfo="ResizeNode_top_left" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201084" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.3873095776497110117" resolveInfo="ResizeNode_top_right" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201127" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.8095638845859254308" resolveInfo="SelectAnotherNode" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201172" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.8041297453110598744" resolveInfo="SelectAnotherNodeFromCode" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201219" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.4459951312287600639" resolveInfo="SelectDiagram" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201268" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.4459951312287602047" resolveInfo="SelectDiagramFromNode" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201319" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.834109970984588248" resolveInfo="SelectDiagramNode" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201372" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.822550549814487817" resolveInfo="SelectLink" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201427" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.8095638845859348584" resolveInfo="SelectNodeOuter" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201484" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.2278461409091538798" resolveInfo="SelectPort" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201602" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.2278461409091838098" resolveInfo="SelectPortQuery" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201663" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.4459951312287474208" resolveInfo="ShowCompletionOnTheDiagram" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201726" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.2278461409094282963" resolveInfo="StopShowCompletionOnTheDiagram" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201791" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.1030067674863337573" resolveInfo="ToZeroSize_ResizeNode_bottom_right" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201858" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.8794120090376139994" resolveInfo="UnSelectDiagramNode" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201927" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.822550549814665085" resolveInfo="UnSelectLink" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929201998" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.2278461409093334296" resolveInfo="UnSelectPort" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936923577467" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936923577468" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.samples.xmlPersistence" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="761394b7-dc42-4fe5-adc7-1d9ff2aa76e6" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923577469" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="9sj4.7358309956615888947" resolveInfo="XmlConverterTest" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936923588597" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936923588598" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.testbench" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="e9000334-f5e2-4a2f-a0fc-9afd1d31e048" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923588599" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="f7ij.9170334376387736840" resolveInfo="AuditTypeSystem" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923588602" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="f7ij.9170334376387816357" resolveInfo="AuditConstraints" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923588605" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="f7ij.9170334376387870447" resolveInfo="CheckProjectStructure" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.JUnit4TestCaseRef" typeId="pop3.4504141816188599480" id="7261441936923588609" nodeInfo="ng">
+      <link role="klass" roleId="pop3.4504141816188599489" targetNodeId="f7ij.4052780437579008133" resolveInfo="ScopesTest" />
+    </node>
+  </root>
+  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7261441936922902219" nodeInfo="ng">
+    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7261441936922902220" nodeInfo="ig">
+      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.baseLanguageInternal.test" />
+      <property name="moduleID" nameId="pop3.1280144168199506910" value="4831e627-794e-416a-983a-50889cae21f8" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7261441936922902221" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="5vzk.1293230950168428284" resolveInfo="InternalClassifier" />
     </node>
   </root>
 </model>

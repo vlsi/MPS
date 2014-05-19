@@ -15,24 +15,27 @@
  */
 package jetbrains.mps.generator;
 
+import org.jetbrains.annotations.Nullable;
+
 public class DefaultModifiableGenerationSettings implements IModifiableGenerationSettings {
   private boolean mySaveTransientModels;
-  private boolean myCheckModelsBeforeGeneration;
-  private boolean myUseNewGenerator;
-  private boolean myStrictMode;
-  private int myCoreNumber;
-  private int myPerformanceTracingLevel;
-  private int myNumberOfModelsToKeep;
-  private boolean myShowInfo;
-  private boolean myShowWarnings;
-  private boolean myKeepModelsWithWarnings;
-  private boolean myIncremental;
-  private boolean myIncrementalUseCache;
-  private boolean myDebugIncrementalDependencies;
-  private boolean myFail;
-  private boolean myGenerateDebugInfo;
-  private boolean myShowBadChildWarning;
-  private boolean myActiveInplaceTransorm;
+  private boolean myCheckModelsBeforeGeneration = true;
+  private boolean myParallelGenerator = false;
+  private boolean myStrictMode = true;
+  private int myNumberOfParallelThreads = 2;
+  private int myPerformanceTracingLevel = GenerationOptions.TRACE_OFF;
+  private int myNumberOfModelsToKeep = -1;
+  private boolean myShowInfo = false;
+  private boolean myShowWarnings = true;
+  private boolean myKeepModelsWithWarnings = true;
+  private boolean myIncremental = true;
+  private boolean myIncrementalUseCache = false;
+  private boolean myDebugIncrementalDependencies = false;
+  private boolean myFailOnMissingTextGen = false;
+  private boolean myGenerateDebugInfo = true;
+  private boolean myShowBadChildWarning = true;
+  private boolean myActiveInplaceTransorm = true;
+  private GenTraceSettings myTraceSettings = new GenTraceSettings();
 
   @Override
   public boolean isSaveTransientModels() {
@@ -56,12 +59,12 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public boolean isParallelGenerator() {
-    return myUseNewGenerator;
+    return myParallelGenerator;
   }
 
   @Override
   public void setParallelGenerator(boolean useNewGenerator) {
-    myUseNewGenerator = useNewGenerator;
+    myParallelGenerator = useNewGenerator;
   }
 
   @Override
@@ -76,12 +79,12 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public int getNumberOfParallelThreads() {
-    return myCoreNumber;
+    return myNumberOfParallelThreads;
   }
 
   @Override
   public void setNumberOfParallelThreads(int coreNumber) {
-    myCoreNumber = coreNumber;
+    myNumberOfParallelThreads = coreNumber;
   }
 
   @Override
@@ -166,12 +169,12 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
 
   @Override
   public boolean isFailOnMissingTextGen() {
-    return myFail;
+    return myFailOnMissingTextGen;
   }
 
   @Override
   public void setFailOnMissingTextGen(boolean fail) {
-    myFail = fail;
+    myFailOnMissingTextGen = fail;
   }
 
   @Override
@@ -202,5 +205,14 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   @Override
   public boolean useInplaceTransofrmations() {
     return myActiveInplaceTransorm;
+  }
+
+  @Override
+  public GenTraceSettings getTraceSettings() {
+    return myTraceSettings;
+  }
+
+  public void setTraceSettings(@Nullable GenTraceSettings settings) {
+    myTraceSettings = settings;
   }
 }

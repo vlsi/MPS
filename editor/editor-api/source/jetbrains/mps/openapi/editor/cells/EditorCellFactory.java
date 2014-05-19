@@ -33,6 +33,11 @@ public interface EditorCellFactory {
    */
   EditorCellContext getCellContext();
 
+  /**
+   * If there is active EditorCellContext
+   *
+   * @return if there is active EditorCellContext in the stack
+   */
   boolean hasCellContext();
 
   /**

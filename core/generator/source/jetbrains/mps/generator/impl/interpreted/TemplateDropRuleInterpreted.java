@@ -16,14 +16,13 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.DropRootRuleContext;
-import jetbrains.mps.generator.template.TemplateFunctionMethodName;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -31,14 +30,11 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
 
   private final SNode myRuleNode;
   private final String myApplicableConcept;
-  private final String myConditionMethod;
   private DropRuleCondition myCondition;
 
   public TemplateDropRuleInterpreted(SNode child) {
     myRuleNode = child;
-    myApplicableConcept = NameUtil.nodeFQName(RuleUtil.getDropRuleApplicableConcept(myRuleNode));
-    SNode condition = RuleUtil.getDropRuleCondition(myRuleNode);
-    myConditionMethod = condition == null ? null : TemplateFunctionMethodName.dropRootRule_Condition(condition);
+    myApplicableConcept = GeneratorUtil.getConceptQualifiedName(RuleUtil.getDropRuleApplicableConcept(myRuleNode));
   }
 
   @Override
@@ -53,19 +49,9 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
 
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
-    if (myConditionMethod == null) {
-      // condition is not required
-      return true;
+    if (myCondition == null) {
+      myCondition = environment.getQueryProvider(getRuleNode()).getDropRuleCondition(myRuleNode);
     }
-    try {
-      if (myCondition == null) {
-        myCondition = environment.getQueryProvider(getRuleNode()).getDropRuleCondition(myConditionMethod);
-      }
-      return myCondition.check(new DropRootRuleContext(context.getInput(), myRuleNode, environment.getGenerator()));
-    } catch (Throwable t) {
-      environment.getLogger().handleException(t);
-      environment.getLogger().error(getRuleNode(), String.format("error executing condition %s (see exception)", myConditionMethod));
-      throw new GenerationFailureException(t);
-    }
+    return myCondition.check(new DropRootRuleContext(context, getRuleNode()));
   }
 }

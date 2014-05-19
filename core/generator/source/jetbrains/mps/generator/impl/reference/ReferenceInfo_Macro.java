@@ -99,12 +99,11 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       if (outputTargetNode_output != null) {
         myOutputTargetNode = outputTargetNode_output;
       } else {
-        SNode macroNode = getMacroNodeRef() == null ? null : getMacroNodeRef().resolve(MPSModuleRepository.getInstance());
         // FIXME showErrorIfStrict
-        generator.getLogger().warning(getOutputSourceNode(), "reference macro returned node from input model; role: " + getReferenceRole() + " in " + SNodeUtil.getDebugText(getOutputSourceNode()),
-          GeneratorUtil.describeIfExists(myOutputTargetNode, "target node in input model"),
-          GeneratorUtil.describeIfExists(macroNode, "reference macro"));
-        generator.getGeneratorSessionContext().keepTransientModel(generator.getInputModel().getReference(), true);
+        final String msg = "reference macro returned node from input model; role: %s in %s";
+        generator.getLogger().warning(getMacroNodeRef(), String.format(msg, getReferenceRole(), SNodeUtil.getDebugText(getOutputSourceNode())),
+            GeneratorUtil.describe(getOutputSourceNode(), "source node"),
+            GeneratorUtil.describeIfExists(myOutputTargetNode, "target node in input model"));
       }
     }
   }

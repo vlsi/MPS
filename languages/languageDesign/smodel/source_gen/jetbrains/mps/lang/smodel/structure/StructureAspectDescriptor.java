@@ -43,7 +43,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"concept", "body"}, new boolean[]{false, false}).create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").children(new String[]{"smodel"}, new boolean[]{false}).alias("sub-concepts", "").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").children(new String[]{"smodel", "scope"}, new boolean[]{false, false}).alias("sub-concepts", "").staticScope(StaticScope.NONE).create();
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").alias("super-concepts/all", "").staticScope(StaticScope.NONE).create();
       case 16:

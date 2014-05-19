@@ -43,7 +43,7 @@ public class StaticMethodDeclaration_Behavior {
     // the difference between two methods is very visible in main node selection in java run configuation () 
     return TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return "main".equals(SPropertyOperations.getString(thisNode, "name")) && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), _quotation_createNode_qyxuoz_b0a0a0a0a3a2(), false);
+        return "main".equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), _quotation_createNode_qyxuoz_b0a0a0a0a3a2(), false);
       }
     });
   }

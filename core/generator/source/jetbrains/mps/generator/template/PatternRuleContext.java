@@ -16,7 +16,10 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -27,15 +30,33 @@ public class PatternRuleContext extends BaseMappingRuleContext {
   // this class extends BaseMappingRuleContext because same context instance is
   // used both for GeneratedMatchingPattern query and condition (which is BaseMappingRule_Condition).
 
+  /**
+   * @deprecated Use the cons that takes TemplateContext
+   */
+  @Deprecated
+  @ToRemove(version=3.1)
   public PatternRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
   }
 
+  /**
+   * @deprecated Use the cons that takes TemplateContext
+   */
+  @Deprecated
+  @ToRemove(version=3.1)
   public PatternRuleContext(SNode inputNode, SNodeReference ruleNode, ITemplateGenerator generator) {
     super(inputNode, ruleNode, generator);
   }
 
+  /**
+   * @since 3.1
+   */
+  public PatternRuleContext(@NotNull TemplateContext context, @NotNull SNodeReference ruleNode) {
+    super(context, ruleNode);
+  }
+
+
   public void createPatternContext(GeneratedMatchingPattern pattern) {
-    myContext = new DefaultTemplateContext(pattern, null, getInputNode());
+    myContext = myContext.subContext(pattern);
   }
 }

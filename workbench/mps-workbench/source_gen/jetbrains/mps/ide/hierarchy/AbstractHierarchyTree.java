@@ -16,7 +16,7 @@ import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import java.util.HashSet;
-import jetbrains.mps.ide.ui.TreeTextUtil;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -196,7 +196,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     if (myHierarchyView != null) {
       myHierarchyView.myTreeNode = hierarchyTreeNode;
       assert myHierarchyView.myTreeNode != null;
-      text = "<html>Hierarchy for <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(myHierarchyView.myTreeNode.calculateNodeIdentifier()) + "</b></font>";
+      text = "<html>Hierarchy for <font color=\"#400090\"><b>" + StringUtil.escapeXml(myHierarchyView.myTreeNode.calculateNodeIdentifier()) + "</b></font>";
     }
     TextTreeNode textRootNode = new AbstractHierarchyTree.RootTextTreeNode(text);
     textRootNode.add(rootNode);

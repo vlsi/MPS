@@ -50,8 +50,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -62,7 +60,6 @@ import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.NodeEditorActions.CompleteSmart;
 import jetbrains.mps.nodeEditor.NodeEditorActions.ShowMessage;
 import jetbrains.mps.nodeEditor.actions.ActionHandlerImpl;
@@ -82,7 +79,7 @@ import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
@@ -92,11 +89,14 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.SelectionInternal;
 import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
+import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -252,8 +252,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>> myCellsToRefTargetsToDependOnMap =
       new WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>>();
-  private HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap =
-      new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell_Property>>();
+  private HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>> myNodePropertiesAccessedCleanlyToDependentCellsMap =
+      new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
   private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap =
       new HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>();
   private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>
@@ -1036,7 +1036,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           notifyDisposal();
         }
 
-        final boolean needNewTypecheckingContext = getNodeForTypechecking(node) != getNodeForTypechecking(myNode);
+        final boolean needNewTypecheckingContext = updateContainingRoot(node);
         if (needNewTypecheckingContext) {
           releaseTypeCheckingContext();
         }
@@ -1207,15 +1207,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return p == null ? null : new ProjectOperationContext(p);
   }
 
-  private EditorCell_Component findCellForComponent(Component component, jetbrains.mps.openapi.editor.cells.EditorCell root) {
-    if (root instanceof EditorCell_Component && ((EditorCell_Component) root).getComponent() == component) {
-      return (EditorCell_Component) root;
+  private EditorCell_WithComponent findCellForComponent(Component component, jetbrains.mps.openapi.editor.cells.EditorCell root) {
+    if (root instanceof EditorCell_WithComponent && ((EditorCell_WithComponent) root).getComponent() == component) {
+      return (EditorCell_WithComponent) root;
     }
 
     if (root instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) root;
       for (jetbrains.mps.openapi.editor.cells.EditorCell cell : collection) {
-        EditorCell_Component result = findCellForComponent(component, cell);
+        EditorCell_WithComponent result = findCellForComponent(component, cell);
         if (result != null) return result;
       }
     }
@@ -1293,8 +1293,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void selectComponentCell(Component component) {
-    EditorCell_Component cell = findCellForComponent(component, myRootCell);
-    if (cell == null) return;
+    EditorCell_WithComponent cell = findCellForComponent(component, myRootCell);
+    Selection selection = mySelectionManager.getSelection();
+    if (cell == null || (selection != null && CellTraversalUtil.isAncestorOrEquals(cell, selection.getSelectedCells().get(0)))) return;
     changeSelection(cell);
   }
 
@@ -1316,6 +1317,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return createRootCell(null);
   }
 
+  protected void pushCellContext() {
+    if (myUseCustomHints) {
+      getEditorContext().getCellFactory().pushCellContext();
+      Object[] hints = myEnabledHints.toArray();
+      getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
+    } else {
+      getEditorContext().getCellFactory().pushCellContext();
+      com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(getCurrentProject());
+      HintsState state = project != null ? ConceptEditorHintSettingsComponent.getInstance(project).getState() : null;
+      if (project != null && state != null) {
+        Object[] hints = state.getEnabledHints().toArray();
+        getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
+      }
+    }
+  }
+
+  protected void popCellContext() {
+    getEditorContext().getCellFactory().popCellContext();
+  }
   protected abstract EditorCell createRootCell(List<SModelEvent> events);
 
   public void setFolded(EditorCell cell, boolean folded) {
@@ -1636,7 +1656,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         int caretPosition = labelCell.getCaretPosition();
         //System.out.println("text:" + text + " len:" + text.length() + "caret at:" + caretPosition);
         if (caretPosition == text.length()) {
-          return jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM;
+          if (caretPosition == 0 && labelCell instanceof EditorCell_Constant) {
+            //empty unbound constant cells should ignore the space key when empty
+            return jetbrains.mps.openapi.editor.cells.CellActionType.SELECT_END;
+          } else {
+            return jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM;
+          }
         }
 
         if (caretPosition == 0) {
@@ -1894,25 +1919,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
 
         getEditorContext().pushTracerTask("Running swap editor cell action", true);
-        boolean pushContext = myUseCustomHints;
-        if (pushContext) {
-          getEditorContext().getCellFactory().pushCellContext();
-          Object[] hints = myEnabledHints.toArray();
-          getEditorContext().getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
-        }
+
         runSwapCellsActions(new Runnable() {
           @Override
           public void run() {
-
             setRootCell(createRootCell(events));
           }
         });
-        if (pushContext) {
-          getEditorContext().getCellFactory().popCellContext();
-        }
         getEditorContext().popTracerTask();
 
-        for (EditorCell_Component component : getCellTracker().getComponentCells()) {
+        for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
           EditorComponent.this.add(component.getComponent());
         }
 
@@ -2463,6 +2479,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
+  /**
+   * Returns false iff the containing root has been changed as a result of this method call.
+   */
+  protected boolean updateContainingRoot(SNode node) {
+    return myNode != node;
+  }
+
   protected SNode getNodeForTypechecking(SNode editedNode) {
     return editedNode;
   }
@@ -2733,10 +2756,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodeReference, String> pair) {
-    WeakSet<EditorCell_Property> dependentCells = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
+  public void addCellDependentOnNodeProperty(EditorCell cell, Pair<SNodeReference, String> pair) {
+    WeakSet<EditorCell> dependentCells = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell_Property>();
+      dependentCells = new WeakSet<EditorCell>();
       myNodePropertiesAccessedCleanlyToDependentCellsMap.put(pair, dependentCells);
     }
     dependentCells.add(cell);
@@ -2971,7 +2994,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
           SNodeReference nodeProxy = new jetbrains.mps.smodel.SNodePointer(((SModelPropertyEvent) events.get(0)).getNode());
           Pair<SNodeReference, String> pair = new Pair<SNodeReference, String>(nodeProxy, propertyName);
-          Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
+          Set<EditorCell> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
           Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
           Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(
               pair);
@@ -2998,7 +3021,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             relayout();
             updateSelection(events, lastSelectedNode);
           } else if (editorCell_properties != null) {
-            for (EditorCell_Property cell : editorCell_properties) {
+            for (EditorCell cell : editorCell_properties) {
               cell.synchronizeViewWithModel();
               fireCellSynchronized(cell);
             }
@@ -3309,22 +3332,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void modelsReplaced(Set<SModel> replacedModels) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
 
-      boolean needToRebuild = false;
+      boolean requiresRebuild = false;
       SModelReference currentModelReference = getCurrentModelReference();
       for (SModel model : replacedModels) {
-        needToRebuild = needToRebuild || mySModelsWithListener.contains(model);
+        requiresRebuild = requiresRebuild || mySModelsWithListener.contains(model);
 
         if (myNode != null && model.getReference().equals(currentModelReference)) {
           assertModelNotDisposed();
           SNode newNode = model.getNode(myNode.getNodeId());
-          if (newNode != null && newNode != myNode) {
+          if (newNode != myNode) {
             myNode = newNode;
-            needToRebuild = true;
+            requiresRebuild = true;
           }
         }
       }
 
-      if (needToRebuild) {
+      if (requiresRebuild) {
         releaseTypeCheckingContext();
         acquireTypeCheckingContext();
         rebuildEditorContent();

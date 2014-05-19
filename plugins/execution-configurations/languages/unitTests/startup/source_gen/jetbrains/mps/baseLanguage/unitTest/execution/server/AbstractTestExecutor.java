@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import jetbrains.mps.util.test.TestCounter;
 import org.junit.runner.Request;
 import org.junit.runner.JUnitCore;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.MPSCore;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
@@ -28,7 +28,7 @@ public abstract class AbstractTestExecutor implements TestExecutor {
       JUnitCore jUnitCore = prepareJUnitCore(requests);
       doExecute(jUnitCore, requests);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Exception in the test framework", t);
       }
     } finally {

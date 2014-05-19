@@ -4,8 +4,9 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SuperConstructorInvocation_Behavior {
   public static void init(SNode thisNode) {
@@ -13,10 +14,18 @@ public class SuperConstructorInvocation_Behavior {
 
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SNode superclass = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    if ((superclass == null)) {
+    SNode superclassType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classConcept, "virtual_getSuperclass_1240936569950", new Object[]{});
+    if ((superclassType == null)) {
       return new ArrayList<SNode>();
     }
+
+    SNode superClassifier = SLinkOperations.getTarget(superclassType, "classifier", false);
+
+    if ((superClassifier == null) || !(SNodeOperations.isInstanceOf(superClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      return new ArrayList<SNode>();
+    }
+
+    SNode superclass = SNodeOperations.cast(superClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     return ClassConcept_Behavior.call_constructors_5292274854859503373(superclass);
   }
 }

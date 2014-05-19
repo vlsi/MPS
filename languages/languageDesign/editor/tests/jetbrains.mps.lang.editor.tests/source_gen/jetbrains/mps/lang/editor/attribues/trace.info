@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919025660">
+    <nodeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="18" startPosition="60" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="19" startPosition="112" endLine="20" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919025664" fileName="AddPropertyAttribute_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddPropertyAttribute_Test#()V" />
+    <nodeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddPropertyAttribute#()V" />
+    <nodeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="14" startPosition="38" endLine="14" endPosition="38" />
+    <scopeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="18" startPosition="60" endLine="20" endPosition="112" />
+    <scopeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="161">
+      <varInfo nodeId="3447504547919025660" varName="editor" />
+      <varInfo nodeId="3447504547919025660" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.AddPropertyAttribute_Test$TestBody" />
+    <unitInfo nodeId="3447504547919025660" fileName="AddPropertyAttribute_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.AddPropertyAttribute_Test" />
+  </root>
+  <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919025668">
+    <nodeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="19" startPosition="112" endLine="20" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919025673" fileName="RemovePropertyAttribute_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemovePropertyAttribute_Test#()V" />
+    <nodeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemovePropertyAttribute#()V" />
+    <nodeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="115" />
+    <scopeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
+      <varInfo nodeId="3447504547919025668" varName="editor" />
+      <varInfo nodeId="3447504547919025668" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.RemovePropertyAttribute_Test$TestBody" />
+    <unitInfo nodeId="3447504547919025668" fileName="RemovePropertyAttribute_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.RemovePropertyAttribute_Test" />
+  </root>
+  <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919025677">
+    <nodeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="18" startPosition="82" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="19" startPosition="112" endLine="20" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919025689" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025690" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemovingLeftTransformForAttributedProperty_Test#()V" />
+    <nodeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemovingLeftTransformForAttributedProperty#()V" />
+    <nodeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="14" startPosition="60" endLine="14" endPosition="60" />
+    <scopeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="18" startPosition="82" endLine="20" endPosition="134" />
+    <scopeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="105">
+      <varInfo nodeId="3447504547919025677" varName="editor" />
+      <varInfo nodeId="3447504547919025677" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.RemovingLeftTransformForAttributedProperty_Test$TestBody" />
+    <unitInfo nodeId="3447504547919025677" fileName="RemovingLeftTransformForAttributedProperty_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.RemovingLeftTransformForAttributedProperty_Test" />
+  </root>
+  <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919025692">
+    <nodeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="18" startPosition="74" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="19" startPosition="112" endLine="20" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919025705" fileName="LeftTransformForAttributedProperty_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025706" fileName="LeftTransformForAttributedProperty_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LeftTransformForAttributedProperty_Test#()V" />
+    <nodeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_LeftTransformForAttributedProperty#()V" />
+    <nodeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="14" startPosition="52" endLine="14" endPosition="52" />
+    <scopeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="18" startPosition="74" endLine="20" endPosition="126" />
+    <scopeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="58">
+      <varInfo nodeId="3447504547919025692" varName="editor" />
+      <varInfo nodeId="3447504547919025692" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.LeftTransformForAttributedProperty_Test$TestBody" />
+    <unitInfo nodeId="3447504547919025692" fileName="LeftTransformForAttributedProperty_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.LeftTransformForAttributedProperty_Test" />
+  </root>
+  <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919057576">
+    <nodeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="18" startPosition="83" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="19" startPosition="112" endLine="20" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919057588" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919057589" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemovingRightTransformForAttributedProperty_Test#()V" />
+    <nodeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemovingRightTransformForAttributedProperty#()V" />
+    <nodeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="14" startPosition="61" endLine="14" endPosition="61" />
+    <scopeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="18" startPosition="83" endLine="20" endPosition="135" />
+    <scopeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="108">
+      <varInfo nodeId="3447504547919057576" varName="editor" />
+      <varInfo nodeId="3447504547919057576" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.RemovingRightTransformForAttributedProperty_Test$TestBody" />
+    <unitInfo nodeId="3447504547919057576" fileName="RemovingRightTransformForAttributedProperty_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.RemovingRightTransformForAttributedProperty_Test" />
+  </root>
+  <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919057591">
+    <nodeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="18" startPosition="75" endLine="19" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="19" startPosition="112" endLine="20" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3447504547919057604" fileName="RightTransformForAttributedProperty_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919057605" fileName="RightTransformForAttributedProperty_Test.java" startLine="32" startPosition="58" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RightTransformForAttributedProperty_Test#()V" />
+    <nodeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RightTransformForAttributedProperty#()V" />
+    <nodeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="14" startPosition="53" endLine="14" endPosition="53" />
+    <scopeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="18" startPosition="75" endLine="20" endPosition="127" />
+    <scopeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="58">
+      <varInfo nodeId="3447504547919057591" varName="editor" />
+      <varInfo nodeId="3447504547919057591" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
+    <unitInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.RightTransformForAttributedProperty_Test$TestBody" />
+    <unitInfo nodeId="3447504547919057591" fileName="RightTransformForAttributedProperty_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.attribues.RightTransformForAttributedProperty_Test" />
+  </root>
+</debugInfo>
+

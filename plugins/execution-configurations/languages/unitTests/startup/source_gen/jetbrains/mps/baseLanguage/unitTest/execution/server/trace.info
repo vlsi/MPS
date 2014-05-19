@@ -255,7 +255,7 @@
     <nodeInfo nodeId="6796535740154099844" fileName="AbstractTestExecutor.java" startLine="26" startPosition="67" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6796535740154099851" fileName="AbstractTestExecutor.java" startLine="27" startPosition="66" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6796535740154099856" fileName="AbstractTestExecutor.java" startLine="28" startPosition="55" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6796535740154099824" fileName="AbstractTestExecutor.java" startLine="31" startPosition="45" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6796535740154099824" fileName="AbstractTestExecutor.java" startLine="31" startPosition="42" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6796535740154099830" fileName="AbstractTestExecutor.java" startLine="34" startPosition="15" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6796535740154099834" fileName="AbstractTestExecutor.java" startLine="35" startPosition="21" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="6796535740154099867" fileName="AbstractTestExecutor.java" startLine="40" startPosition="68" endLine="41" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -274,7 +274,7 @@
     <nodeInfo nodeId="6796535740154099821" fileName="AbstractTestExecutor.java" startLine="24" startPosition="25" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="6796535740154099818" fileName="AbstractTestExecutor.java" startLine="23" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#()V" />
     <scopeInfo nodeId="6796535740154099813" fileName="AbstractTestExecutor.java" startLine="19" startPosition="26" endLine="20" endPosition="23" />
-    <scopeInfo nodeId="6796535740154099824" fileName="AbstractTestExecutor.java" startLine="31" startPosition="45" endLine="32" endPosition="56" />
+    <scopeInfo nodeId="6796535740154099824" fileName="AbstractTestExecutor.java" startLine="31" startPosition="42" endLine="32" endPosition="56" />
     <scopeInfo nodeId="6796535740154099894" fileName="AbstractTestExecutor.java" startLine="47" startPosition="38" endLine="48" endPosition="24" />
     <scopeInfo nodeId="6796535740154099829" fileName="AbstractTestExecutor.java" startLine="34" startPosition="15" endLine="36" endPosition="51" />
     <scopeInfo nodeId="6796535740154099902" fileName="AbstractTestExecutor.java" startLine="52" startPosition="0" endLine="54" endPosition="0" />

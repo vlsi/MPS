@@ -149,12 +149,11 @@ public class QueryMethodGenerated implements CoreComponent {
   public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
     return invoke(methodName, context, contextObject, sourceModel, false);
   }
-  public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    return invoke(methodName, context, contextObject, sourceModel.getReference(), suppressErrorLogging);
+  public static <T> T invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
+    return QueryMethodGenerated.<T>invoke(methodName, context, contextObject, sourceModel.getReference(), suppressErrorLogging);
   }
 
-  public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModelReference sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Object result;
+  public static <T> T invoke(String methodName, IOperationContext context, Object contextObject, SModelReference sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
     Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, suppressErrorLogging);
     try {
       Object[] arguments;
@@ -163,7 +162,9 @@ public class QueryMethodGenerated implements CoreComponent {
       } else {
         arguments = new Object[] { contextObject };
       }
-      result = method.invoke(null, arguments);
+      @SuppressWarnings("unchecked")
+      T result = (T) method.invoke(null, arguments);
+      return result;
     } catch (IllegalArgumentException e) {
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     } catch (IllegalAccessException e) {
@@ -176,7 +177,6 @@ public class QueryMethodGenerated implements CoreComponent {
       LOG.error(message, e.getCause());
       throw new RuntimeException(message, e.getCause());
     }
-    return result;
   }
   private static boolean needsOpContext(Class<?> cls) {
     Boolean rv = ourNeedOpContext.get(cls);
@@ -193,5 +193,43 @@ public class QueryMethodGenerated implements CoreComponent {
     ourNeedOpContext.putIfAbsent(cls, result);
     // highly unlikely for another thread (if any) do get different result, ignore race condition chance
     return result;
+  }
+
+  /**
+   * EXPERIMENTAL CODE. DO NOT USE
+   */
+  public static <T> QueryMethod<T> getQueryMethod(SModelReference sourceModel, String methodName) throws NoSuchMethodException, ClassNotFoundException {
+    final Method method = getQueryMethod(sourceModel, methodName, true);
+    final boolean needOpContext = needsOpContext(method.getDeclaringClass());
+    return new QueryMethod<T>() {
+      @Override
+      @SuppressWarnings("unchecked")
+      public T invoke(IOperationContext context, Object contextObject) {
+        try {
+          if (needOpContext) {
+            return (T) method.invoke(null, context, contextObject);
+          } else {
+            return (T) method.invoke(null, contextObject);
+          }
+        } catch (IllegalArgumentException e) {
+          throw new RuntimeException("error invocation method: \"" + method.getName() + "\" in " + method.getDeclaringClass().getName(), e);
+        } catch (IllegalAccessException e) {
+          throw new RuntimeException("error invocation method: \"" + method.getName() + "\" in " + method.getDeclaringClass().getName(), e);
+        } catch (InvocationTargetException e) {
+          if (e.getCause() instanceof IllegalModelChangeError) {
+            throw (IllegalModelChangeError) e.getCause();
+          }
+          String message = "error invocation method: \"" + method.getName() + "\" in " + method.getDeclaringClass().getName();
+          LOG.error(message, e.getCause());
+          throw new RuntimeException(message, e.getCause());
+        }
+      }
+    };
+  }
+  /**
+   * EXPERIMENTAL CODE. DO NOT USE
+   */
+  public interface QueryMethod<T> {
+    T invoke(IOperationContext context, Object contextObject);
   }
 }

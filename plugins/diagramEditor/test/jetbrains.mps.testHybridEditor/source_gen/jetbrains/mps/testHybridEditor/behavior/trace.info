@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BlockExt_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.BlockExt_BehaviorDescriptor" />
+  <unitInfo fileName="BlockInstance_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.BlockInstance_BehaviorDescriptor" />
+  <unitInfo fileName="Block_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.Block_BehaviorDescriptor" />
+  <unitInfo fileName="ConnectorEndInstance_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.ConnectorEndInstance_BehaviorDescriptor" />
+  <unitInfo fileName="ConnectorInstance_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.ConnectorInstance_BehaviorDescriptor" />
+  <unitInfo fileName="Connector_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.Connector_BehaviorDescriptor" />
+  <unitInfo fileName="Diagram_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.Diagram_BehaviorDescriptor" />
+  <unitInfo fileName="InputPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.InputPort_BehaviorDescriptor" />
+  <unitInfo fileName="MetaBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.MetaBlock_BehaviorDescriptor" />
+  <unitInfo fileName="MetaPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.MetaPort_BehaviorDescriptor" />
+  <unitInfo fileName="OutputPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.OutputPort_BehaviorDescriptor" />
+  <root nodeRef="r:e439f2bb-d621-491c-afa6-8441abb35a00(jetbrains.mps.testHybridEditor.behavior)/3175567003993184846">
+    <nodeInfo nodeId="3175567003993185080" fileName="BlockInstance_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3175567003993189884" fileName="BlockInstance_Behavior.java" startLine="10" startPosition="58" endLine="11" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3175567003993184846" fileName="BlockInstance_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="3175567003993184999" fileName="BlockInstance_Behavior.java" startLine="9" startPosition="43" endLine="11" endPosition="59" />
+    <scopeInfo nodeId="3175567003993184846" fileName="BlockInstance_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="3175567003993184846" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3175567003993184846" fileName="BlockInstance_Behavior.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.testHybridEditor.behavior.BlockInstance_Behavior" />
+  </root>
+</debugInfo>
+

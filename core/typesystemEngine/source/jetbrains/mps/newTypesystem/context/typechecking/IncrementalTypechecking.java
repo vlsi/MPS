@@ -257,7 +257,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     keySet.addAll(nodesToErrorsMapNT.keySet());
 
     for (SNode key : keySet) {
-      List<IErrorReporter> reporters = getErrors(key);
+      List<IErrorReporter> reporters = nodesToErrorsMapNT.get(key);
       if (reporters.isEmpty()) continue;
       if (key.getModel() == null) {
         LOG.warning("Type system reports error for node without containing root. Node: " + key);

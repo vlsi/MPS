@@ -233,7 +233,7 @@ public class ClassifierType_Behavior {
             }
           }
         }
-        if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() && !(SNodeOperations.isInstanceOf(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType") && (int) ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count())) {
+        if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() && !(SNodeOperations.isInstanceOf(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType") && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(coercedNode_hz3823_b0k, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count())) {
           return false;
         }
         return true;
@@ -306,6 +306,20 @@ public class ClassifierType_Behavior {
     }
     MapSequence.fromMap(substitutions).put(SLinkOperations.getTarget(thisNode, "classifier", false), SLinkOperations.getTarget(thisNode, "classifier", false));
 
+    // traverse all extended/implemented classifiers 
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+      BehaviorReflection.invokeVirtual(Void.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getSuperclass_1240936569950", new Object[]{}), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      BehaviorReflection.invokeVirtual(Void.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+      for (SNode ifc : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true))) {
+        BehaviorReflection.invokeVirtual(Void.class, ifc, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+      }
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      for (SNode ifc : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true))) {
+        BehaviorReflection.invokeVirtual(Void.class, ifc, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
+      }
+    }
+
     // for each declared TypeVar substitute its actual value 
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -317,7 +331,7 @@ public class ClassifierType_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
       // treat raw type as if all params were Object or the appropriate bound 
       for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true))) {
-        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_hz3823_a0a0a1a6a91() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
+        MapSequence.fromMap(substitutions).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_hz3823_a0a0a1a9a91() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
       }
     } else {
       {
@@ -337,19 +351,6 @@ public class ClassifierType_Behavior {
       }
     }
 
-    // traverse all extended/implemented classifiers 
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-      BehaviorReflection.invokeVirtual(Void.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "virtual_getSuperclass_1240936569950", new Object[]{}), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      BehaviorReflection.invokeVirtual(Void.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
-      for (SNode ifc : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true))) {
-        BehaviorReflection.invokeVirtual(Void.class, ifc, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
-      }
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      for (SNode ifc : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true))) {
-        BehaviorReflection.invokeVirtual(Void.class, ifc, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
-      }
-    }
     // traverse all enclosing classifiers if not in static context 
     // TODO : move to generic declaration? 
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "classifier", false), "virtual_isStatic_8986964027630462944", new Object[]{}))) {
@@ -595,7 +596,7 @@ public class ClassifierType_Behavior {
     return null;
   }
 
-  private static SNode _quotation_createNode_hz3823_a0a0a1a6a91() {
+  private static SNode _quotation_createNode_hz3823_a0a0a1a9a91() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);

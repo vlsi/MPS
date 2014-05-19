@@ -19,6 +19,7 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.EditorCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
@@ -67,7 +68,7 @@ import java.util.Queue;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public class EditorCell_Collection extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Collection {
+public class EditorCell_Collection extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Collection, SynchronizeableEditorCell {
   public static final String FOLDED_TEXT = "...";
   private static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
@@ -110,6 +111,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   private int myAscent = -1;
   private int myDescent = -1;
   private MouseListener myUnfoldCollectionMouseListener;
+  private boolean myCanBeSynchronized;
 
   @SuppressWarnings({"UnusedDeclaration"})
   public static EditorCell_Collection createVertical(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
@@ -523,6 +525,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     Queue<EditorCell> children = new LinkedList<EditorCell>(getEditorCells());
     while (!children.isEmpty()) {
       EditorCell child = children.poll();
+      if (child instanceof EditorCell_WithComponent) {
+        ((EditorCell_WithComponent) child).getComponent().setVisible(true);
+      }
       if (!(child instanceof EditorCell_Collection)) {
         continue;
       }
@@ -539,6 +544,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     Queue<EditorCell> children = new LinkedList<EditorCell>(getEditorCells());
     while (!children.isEmpty()) {
       EditorCell child = children.poll();
+      if (child instanceof EditorCell_WithComponent) {
+        ((EditorCell_WithComponent) child).getComponent().setVisible(false);
+      }
       if (!(child instanceof EditorCell_Collection)) {
         continue;
       }
@@ -918,6 +926,29 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       ((EditorCell_Basic) getFoldedCell()).onRemove();
     }
     super.onRemove();
+  }
+
+  @Override
+  public void synchronize() {
+    for (EditorCell cell : getCellsToSynchronize()) {
+      ((SynchronizeableEditorCell) cell).synchronize();
+    }
+  }
+
+  @Override
+  public boolean canBeSynchronized() {
+    return myCanBeSynchronized;
+  }
+
+  public void setCanBeSynchronized(boolean canBeSynchronized) {
+    myCanBeSynchronized = canBeSynchronized;
+  }
+
+  private Iterable<EditorCell> getCellsToSynchronize() {
+    ArrayList<EditorCell> result = new ArrayList<EditorCell>();
+    result.addAll(getEditorCells());
+    result.addAll(getFoldedCellCollection());
+    return result;
   }
 
   private class SelectFirstChild extends AbstractCellAction {

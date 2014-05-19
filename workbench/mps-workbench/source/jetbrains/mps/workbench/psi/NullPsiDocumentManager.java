@@ -76,6 +76,12 @@ public class NullPsiDocumentManager extends PsiDocumentManager {
 
   }
 
+  @NotNull
+  @Override
+  public CharSequence getLastCommittedText(@NotNull Document document) {
+    return null;
+  }
+
   @Override
   public Document[] getUncommittedDocuments() {
     return new Document[0];

@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
@@ -36,36 +37,43 @@ import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
+import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Evgeny Gryaznov, 11/10/10
  */
 public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnvironment {
   private final TemplateGenerator generator;
-  private final ReductionContext reductionContext;
   private final QueryExecutionContext myExecutionContext;
+  private final ITemplateProcessor myTemplateProcessor;
+  private final ReductionTrack myReductionTrack;
 
-  public TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext) {
-    this(generator, executionContext, new ReductionContext());
-  }
-
-  private TemplateExecutionEnvironmentImpl(@NotNull TemplateGenerator generator, @NotNull QueryExecutionContext executionContext, @NotNull ReductionContext reductionContext) {
-    this.generator = generator;
-    this.reductionContext = reductionContext;
+  // although it's possible to instantiate ReductionTrack here (we've got generator in TP),
+  // I plan to separate TEE and RT so that they are independent
+  public TemplateExecutionEnvironmentImpl(@NotNull TemplateProcessor templateProcessor, @NotNull QueryExecutionContext executionContext, @NotNull ReductionTrack reductionTrack) {
+    this.generator = templateProcessor.getGenerator();
     myExecutionContext = executionContext;
+    myTemplateProcessor = templateProcessor;
+    myReductionTrack = reductionTrack;
   }
 
   @Override
@@ -113,13 +121,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @NotNull
   @Override
   public ReductionContext getReductionContext() {
-    return reductionContext;
+    // this method is not used
+    return new ReductionContext();
   }
 
   @NotNull
   @Override
   public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
-    return generator.getGeneratorSessionContext().getQueryProvider(ruleNode);
+    return generator.getQuerySource().getQueryProvider(ruleNode);
   }
 
   @NotNull
@@ -128,9 +137,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return myExecutionContext;
   }
 
+  @NotNull
+  @Override
+  public ITemplateProcessor getTemplateProcessor() {
+    return myTemplateProcessor;
+  }
+
   @Override
   public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule) {
-    return new TemplateExecutionEnvironmentImpl(generator, myExecutionContext, new ReductionContext(reductionContext, inputNode, rule));
+    return this;
   }
 
   @Override
@@ -139,7 +154,18 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     // earlier approach to mappingName here used to hide mappingName from the context (null down to generator.copySrc => no mapping label
     // however, interpreted templates keep context mappingName (common approach for all node macros - ctx.subContext(newNameOrNullIfNone))
     // hence here's the same code to ensure mappingName propagation is the same either for interpreted or generated.
-    return generator.copyNodes(inputNodes, templateContext.subContext(mappingName), templateNode, templateId, this);
+    return copyNodes(inputNodes, templateNode, templateId, templateContext.subContext(mappingName));
+  }
+
+  @Override
+  @NotNull
+  public List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateId,
+      @NotNull TemplateContext ctx) throws GenerationCanceledException, GenerationFailureException {
+    List<SNode> outputNodes = generator.copyNodes(inputNodes, ctx, templateId, this);
+    if (!outputNodes.isEmpty()) {
+      new ChildAdopter(generator).checkIsExpectedLanguage(outputNodes, templateNode, ctx);
+    }
+    return outputNodes;
   }
 
   @Override
@@ -151,20 +177,28 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public Collection<SNode> trySwitch(SNodeReference switch_, String mappingName, TemplateContext context) throws GenerationException {
-    Collection<SNode> collection = generator.tryToReduce(switch_, context, mappingName, this);
-    if (collection != null) {
-      return collection;
+    return trySwitch(switch_, context.subContext(mappingName));
+  }
+
+  @Nullable
+  @Override
+  public Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException {
+    FastRuleFinder rf = generator.getRuleManager().getRuleFinder(_switch);
+    Collection<SNode> outputNodes = tryToReduce(rf, context);
+    if (outputNodes != null) {
+      if (outputNodes.size() == 1 && context.getInputName() != null) {
+        SNode reducedNode = outputNodes.iterator().next();
+        // register copied node
+        generator.registerMappingLabel(context.getInput(), context.getInputName(), reducedNode);
+      }
+      return outputNodes;
     }
 
     // try the default case
-    TemplateSwitchMapping current = generator.getSwitch(switch_);
+    TemplateSwitchMapping current = generator.getSwitch(_switch);
     if (current != null) {
-      collection = current.applyDefault(this, switch_, mappingName, context);
-      if (collection != null) {
-        return collection;
-      }
+      return current.applyDefault(this, _switch, context.getInputName(), context); // FIXME TSM.applyDefault without explicit mappingLabel
     }
-
     // no switch-case found for the inputNode - continue with templateNode under the $switch$
     return null;
   }
@@ -293,5 +327,105 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         contextParentNode.addChild(childRole, outputNodeToWeave);
       }
     }
+  }
+
+  // Internal API, perhaps, shall be part of ExecutionEnvironmentInternal iface
+
+  void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode) {
+    myReductionTrack.blockReductionsForCopiedNode(inputNode, outputNode);
+  }
+
+  @Nullable
+  Collection<SNode> tryToReduce(@NotNull SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
+    FastRuleFinder rf = generator.getRuleManager().getRuleFinder();
+    Collection<SNode> outputNodes = tryToReduce(rf, new DefaultTemplateContext(this, inputNode, null));
+    if (outputNodes != null) {
+      if (outputNodes.size() == 1) {
+        // [artem] I have no idea why same mappings are not done for switch, but it's the way it goes from rev d552b27
+        SNode reducedNode = outputNodes.iterator().next();
+        // output node should be accessible via 'findCopiedNode'
+        generator.addCopiedOutputNodeForInputNode(inputNode, reducedNode);
+        // preserve user objects
+        if (TracingUtil.getInput(reducedNode) == null) {
+          jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, reducedNode);
+          // keep track of 'original input node'
+          TracingUtil.fillOriginalNode(inputNode, reducedNode, false);
+        }
+      }
+      return outputNodes;
+    }
+    return null;
+  }
+
+
+  protected final Set<SNodeReference> myFailedRules = new ConcurrentHashSet<SNodeReference>();
+  /*
+   * returns null if no reductions found
+   */
+  @Nullable
+  Collection<SNode> tryToReduce(FastRuleFinder ruleFinder, @NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
+    final SNode inputNode = context.getInput();
+    TemplateReductionRule reductionRule = null;
+    // find rule
+    TemplateReductionRule[] conceptRules = ruleFinder.findReductionRules(inputNode);
+    if (conceptRules == null) {
+      return null;
+    }
+    try {
+      for (TemplateReductionRule rule : conceptRules) {
+        reductionRule = rule;
+        if (!myReductionTrack.isReductionBlocked(inputNode, rule)) {
+          if (rule instanceof TemplateRuleWithCondition) {
+            if (!getQueryExecutor().isApplicable((TemplateRuleWithCondition) rule, context)) {
+              continue;
+            }
+            // fall-through
+          }
+          try {
+            myReductionTrack.enter(inputNode, rule);
+            Collection<SNode> outputNodes = getQueryExecutor().tryToApply(rule, this, context);
+            if (outputNodes != null) {
+              SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
+              getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
+              return outputNodes;
+            }
+          } finally {
+            myReductionTrack.leave();
+          }
+        }
+      }
+
+    } catch (AbandonRuleInputException ex) {
+      return Collections.emptyList();
+    } catch (DismissTopMappingRuleException ex) {
+      // it's ok, just continue
+      if (ex.isLoggingNeeded() && reductionRule != null) {
+        SNodeReference ruleNode = reductionRule.getRuleNode();
+        String messageText = String.format("-- dismissed reduction rule: %s", ruleNode);
+        if (ex.isInfo()) {
+          getLogger().info(ruleNode, messageText);
+        } else if (ex.isWarning()) {
+          getLogger().warning(ruleNode, messageText);
+        } else {
+          getLogger().error(ruleNode, messageText);
+        }
+      }
+    } catch (TemplateProcessingFailureException ex) {
+      SNodeReference ruleNode = reductionRule.getRuleNode();
+      if (myFailedRules.add(ruleNode)) {
+        getLogger().error(ruleNode, String.format("Reduction rule failed: %s", ex.getMessage()), ex.asProblemDescription());
+      }
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (GenerationCanceledException ex) {
+      if (getTracer().isTracing() && getLogger().needsInfo()) {
+        getLogger().info("generation canceled when processing branch:");
+        GeneratorUtil.logCurrentGenerationBranch(getLogger(), getTracer(), false);
+      }
+      throw ex;
+    } catch (GenerationException ex) {
+      // ignore
+    }
+    return null;
   }
 }

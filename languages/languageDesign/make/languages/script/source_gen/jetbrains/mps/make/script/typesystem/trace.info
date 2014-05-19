@@ -544,8 +544,8 @@
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/3308693286243702024">
     <nodeInfo nodeId="3308693286243766019" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="27" startPosition="118" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4902420589004940453" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="29" startPosition="26" endLine="30" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="32" startPosition="41" endLine="33" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="36" startPosition="39" endLine="37" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="32" startPosition="41" endLine="33" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="36" startPosition="39" endLine="37" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4902420589006046593" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="40" startPosition="115" endLine="41" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4902420589005913653" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="42" startPosition="9" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4902420589005913653" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="43" startPosition="51" endLine="44" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -600,8 +600,8 @@
     <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_InputResourcesParameter_InferenceRule#()V" />
     <nodeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="80" startPosition="30" endLine="82" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="80" startPosition="30" endLine="82" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="93" startPosition="39" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -639,8 +639,8 @@
     <nodeInfo nodeId="3308693286243766602" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="28" startPosition="123" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="27" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="24" startPosition="57" endLine="24" endPosition="57" />
-    <scopeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="32" startPosition="41" endLine="33" endPosition="78" />
-    <scopeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="36" startPosition="39" endLine="37" endPosition="68" />
+    <scopeInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="32" startPosition="41" endLine="33" endPosition="78" />
+    <scopeInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="36" startPosition="39" endLine="37" endPosition="68" />
     <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="63" startPosition="46" endLine="64" endPosition="73" />
     <scopeInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="74" startPosition="30" endLine="75" endPosition="16" />
     <scopeInfo nodeId="4902420589005913655" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="94" startPosition="31" endLine="95" endPosition="83" />
@@ -649,11 +649,11 @@
       <varInfo nodeId="3308693286243702024" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="4902420589006046595" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="80" startPosition="30" endLine="82" endPosition="88" />
-    <scopeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="4902420589005758343" varName="it" />
+    <scopeInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="4902420589005758341" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="4902420589005758343" varName="it" />
+    <scopeInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="4902420589005758341" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="4902420589005913653" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="42" startPosition="9" endLine="45" endPosition="290">
       <varInfo nodeId="4902420589005913653" varName="_info_12389875345" />
@@ -731,8 +731,8 @@
       <varInfo nodeId="3308693286243702024" varName="status" />
       <varInfo nodeId="3308693286243702024" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="31" startPosition="64" endLine="35" endPosition="7" unitName="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule$1" />
-    <unitInfo nodeId="4902420589005758343" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="35" startPosition="20" endLine="39" endPosition="7" unitName="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule$2" />
+    <unitInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="31" startPosition="64" endLine="35" endPosition="7" unitName="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule$1" />
+    <unitInfo nodeId="4902420589005758341" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="35" startPosition="20" endLine="39" endPosition="7" unitName="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule$2" />
     <unitInfo nodeId="3308693286243702024" fileName="typeof_InputResourcesParameter_InferenceRule.java" startLine="23" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.make.script.typesystem.typeof_InputResourcesParameter_InferenceRule" />
   </root>
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/4902420589011877927">

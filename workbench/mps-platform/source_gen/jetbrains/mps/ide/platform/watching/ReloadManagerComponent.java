@@ -14,7 +14,7 @@ import com.intellij.util.ui.update.MergingUpdateQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.util.ui.update.Update;
@@ -109,7 +109,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       reloadAction.runAction(participant);
       rs.updateStatus();
     } catch (RuntimeException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Exception during reload", e);
       }
       throw e;

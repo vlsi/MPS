@@ -125,8 +125,13 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.internalCollections.test.basicOperations.Bar" />
     <classNode dependClassName="jetbrains.mps.internalCollections.test.basicOperations.Foo" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.basicOperations.MPS_17338" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
+  </dependency>
+  <dependency className="jetbrains.mps.internalCollections.test.basicOperations.MPS_17338" file="MPS_17338.java">
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
   </dependency>
   <dependency className="jetbrains.mps.internalCollections.test.basicOperations.Map_Test" file="Map_Test.java">
     <classNode dependClassName="java.lang.Character" />

@@ -20,7 +20,7 @@ import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.util.Computable;
@@ -120,7 +120,7 @@ public class TransformationTestRunner implements TestRunner {
     File projectPath = new File(expandedProjectPath);
     Environment currentEnv = ActiveEnvironment.getInstance();
     if ((projectPathName == null || projectPathName.length() == 0)) {
-      if (LOG.isEnabledFor(Priority.WARN)) {
+      if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Project path is empty");
       }
       Project project = anyOpenedProject();

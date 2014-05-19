@@ -177,7 +177,7 @@
     <nodeInfo nodeId="6132171475559180056" fileName="GeneratorWorker.java" startLine="56" startPosition="0" endLine="57" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6132171475559189696" fileName="GeneratorWorker.java" startLine="57" startPosition="68" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6852586464621587310" fileName="GeneratorWorker.java" startLine="59" startPosition="52" endLine="60" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6852586464621688301" fileName="GeneratorWorker.java" startLine="61" startPosition="32" endLine="62" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6852586464621688301" fileName="GeneratorWorker.java" startLine="61" startPosition="32" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6132171475559190323" fileName="GeneratorWorker.java" startLine="63" startPosition="7" endLine="64" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6132171475559305388" fileName="GeneratorWorker.java" startLine="66" startPosition="87" endLine="67" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6132171475559371274" fileName="GeneratorWorker.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -256,7 +256,7 @@
     <nodeInfo nodeId="3643570831018883554" fileName="GeneratorWorker.java" startLine="76" startPosition="0" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2629213608913753728" fileName="GeneratorWorker.java" startLine="151" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createClassloader#()Ljetbrains/mps/tool/common/util/UrlClassLoader;" />
     <nodeInfo nodeId="3643570831018878886" fileName="GeneratorWorker.java" startLine="53" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="work#()V" />
-    <scopeInfo nodeId="6852586464621660422" fileName="GeneratorWorker.java" startLine="61" startPosition="32" endLine="62" endPosition="53" />
+    <scopeInfo nodeId="6852586464621660422" fileName="GeneratorWorker.java" startLine="61" startPosition="32" endLine="62" endPosition="55" />
     <scopeInfo nodeId="6132171475559248820" fileName="GeneratorWorker.java" startLine="66" startPosition="87" endLine="67" endPosition="69" />
     <scopeInfo nodeId="3643570831018883795" fileName="GeneratorWorker.java" startLine="80" startPosition="45" endLine="81" endPosition="57" />
     <scopeInfo nodeId="3643570831018883681" fileName="GeneratorWorker.java" startLine="84" startPosition="22" endLine="85" endPosition="92" />

@@ -42,8 +42,9 @@ public final class TextGenBuffer {
   public static final String SPACES = "                                ";
 
   private StringBuilder[] myBuffers;
+  private StringBuilder myCurrentBuffer;
 
-  private int myCurrBuffer = 1;
+  private int myCurrBufferKey = DEFAULT;
   private HashMap myUserObjects = new HashMap();
 
   private final int myIndent = 2;
@@ -63,12 +64,39 @@ public final class TextGenBuffer {
       myLineNumbers = null;
     }
     myBuffers = buffers != null ? buffers : new StringBuilder[]{new StringBuilder(2048), new StringBuilder(4096)};
+    selectPart(DEFAULT);
   }
 
   public String getText() {
-    String topBufferText = myBuffers[TOP].toString();
-    String defaultBufferText = myBuffers[DEFAULT].toString();
-    return topBufferText.length() <= 0 ? defaultBufferText : topBufferText + LINE_SEPARATOR + LINE_SEPARATOR + defaultBufferText;
+    final StringBuilder topBuffer = myBuffers[TOP];
+    final StringBuilder defaultBuffer = myBuffers[DEFAULT];
+    if (topBuffer.length() == 0) {
+      return defaultBuffer.toString();
+    }
+    StringBuilder rv = new StringBuilder(topBuffer.length() + defaultBuffer.length());
+    rv.append(topBuffer);
+    rv.append(LINE_SEPARATOR);
+    rv.append(LINE_SEPARATOR);
+    rv.append(defaultBuffer);
+    return rv.toString();
+  }
+
+  /*package*/ int getTopBufferLineCount() {
+    final StringBuilder b = myBuffers[TOP];
+    if (b.length() == 0) {
+      return 0;
+    }
+    // this used to be b.split(LINE_SEPARATOR, -1).length + 2
+    // however split("A\nB\n").length == split("A\nB").length, and two extra newlines between top and default buffer give different
+    // line number (for human-friendly values, latter sample gives correct value, for 0-based indexes - former sample).
+    int lineSepIndex = b.indexOf(LINE_SEPARATOR, 0);
+    int lineCount = 0;
+    while (lineSepIndex != -1) {
+      lineCount++;
+      lineSepIndex = b.indexOf(LINE_SEPARATOR, lineSepIndex + LINE_SEPARATOR.length());
+    }
+    // account for newlines added in #getText()
+    return lineCount + 2;
   }
 
   public String getLineSeparator() {
@@ -124,17 +152,25 @@ public final class TextGenBuffer {
       return;
     }
     if (myPostions != null) {
-      if (s.contains(LINE_SEPARATOR)) {
-        myLineNumbers[myCurrBuffer] += s.split(LINE_SEPARATOR, -1).length - 1;
-        myPostions[myCurrBuffer] = s.length() - s.lastIndexOf(LINE_SEPARATOR) - LINE_SEPARATOR.length();
+      int lastLineSepIndex, lineSepIndex;
+      lastLineSepIndex = lineSepIndex = s.indexOf(LINE_SEPARATOR, 0);
+      if (lastLineSepIndex >= 0) {
+        int lineCount = 0;
+        while (lineSepIndex != -1) {
+          lineCount++;
+          lastLineSepIndex = lineSepIndex;
+          lineSepIndex = s.indexOf(LINE_SEPARATOR, lineSepIndex + LINE_SEPARATOR.length());
+        }
+        myLineNumbers[myCurrBufferKey] += lineCount;
+        myPostions[myCurrBufferKey] = s.length() - lastLineSepIndex - LINE_SEPARATOR.length();
       } else {
-        myPostions[myCurrBuffer] += s.length();
+        myPostions[myCurrBufferKey] += s.length();
       }
     }
-    myBuffers[myCurrBuffer].append(s);
+    myCurrentBuffer.append(s);
   }
 
-  protected void appendWithIndent(String s) {
+    protected void appendWithIndent(String s) {
     indentBuffer();
     append(s);
   }
@@ -142,12 +178,12 @@ public final class TextGenBuffer {
   protected void indentBuffer() {
     int spaces = myIndent * myDepth;
     if (myPostions != null) {
-      myPostions[myCurrBuffer] += spaces;
+      myPostions[myCurrBufferKey] += spaces;
     }
 
     while (spaces > 0) {
       int i = spaces > SPACES.length() ? SPACES.length() : spaces;
-      myBuffers[myCurrBuffer].append(SPACES, 0, i);
+      myCurrentBuffer.append(SPACES, 0, i);
       spaces -= i;
     }
   }
@@ -195,8 +231,9 @@ public final class TextGenBuffer {
   }
 
   public int selectPart(int partId) {
-    int currPartId = myCurrBuffer;
-    myCurrBuffer = partId;
+    int currPartId = myCurrBufferKey;
+    myCurrBufferKey = partId;
+    myCurrentBuffer = myBuffers[partId];
     return currPartId;
   }
 }

@@ -241,7 +241,7 @@ public class MPSMakeMediator {
         }
 
         // all non-java files got to be copied
-        if (!JavaBuilder.JAVA_SOURCES_FILTER.accept(file)) {
+        if (!JavaBuilder.JAVA_SOURCES_FILTER.accept(file) && !myRedirects.isInCacheOutput(writtenFile)) {
           try {
             copyResource(target, file);
           }
@@ -426,6 +426,13 @@ public class MPSMakeMediator {
         }
       }
       return null;
+    }
+
+    public boolean isInCacheOutput(String fullPath) {
+      for (OutputPathRedirects redirects : myOutputRedirects) {
+        if (redirects.isInCacheOutput(fullPath)) return true;
+      }
+      return false;
     }
   }
 }

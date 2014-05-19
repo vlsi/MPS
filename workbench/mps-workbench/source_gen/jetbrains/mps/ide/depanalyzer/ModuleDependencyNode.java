@@ -38,7 +38,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
   public ModuleDependencyNode(List<SModule> modules, IOperationContext context) {
     super(context);
     myModules = modules;
-    if ((int) ListSequence.fromList(modules).count() == 1) {
+    if (ListSequence.fromList(modules).count() == 1) {
       setIcon(IconManager.getIconFor(ListSequence.fromList(modules).first()));
     }
     String text = ListSequence.fromList(modules).first().getModuleName();
@@ -77,6 +77,11 @@ public class ModuleDependencyNode extends MPSTreeNode {
       return (ModuleDependencyNode) node;
     }
     return null;
+  }
+
+  @Override
+  public boolean isLeaf() {
+    return false;
   }
 
   @Override
@@ -140,8 +145,8 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
   @Override
   public void doubleClick() {
-    if ((int) ListSequence.fromList(myModules).count() == 1) {
-      ProjectPane.getInstance(check_lba8jw_a0a0a0a41(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
+    if (ListSequence.fromList(myModules).count() == 1) {
+      ProjectPane.getInstance(check_lba8jw_a0a0a0a51(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
     }
   }
 
@@ -178,7 +183,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     }
   }
 
-  private static Project check_lba8jw_a0a0a0a41(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
+  private static Project check_lba8jw_a0a0a0a51(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();
     }

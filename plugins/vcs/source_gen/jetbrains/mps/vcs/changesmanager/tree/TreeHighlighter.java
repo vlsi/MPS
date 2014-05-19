@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -153,7 +153,7 @@ public class TreeHighlighter implements TreeMessageOwner {
         if (myFeaturesHolder.getNodesByFeature(feature).contains(node)) {
           myFeaturesHolder.removeNodeWithFeature(feature, node);
         } else {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("trying to remove tree node which was not registered: " + node.getClass().getName() + " " + feature);
           }
         }
@@ -202,6 +202,9 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
   private void rehighlightFeatureAndDescendants(@NotNull final Feature feature) {
+    if (myTree.isDisposed()) {
+      return;
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         synchronized (myFeaturesHolder) {

@@ -28,7 +28,7 @@
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="41" startPosition="32" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="49" startPosition="45" endLine="50" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="49" startPosition="42" endLine="50" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="51" startPosition="7" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -60,7 +60,7 @@
     <nodeInfo nodeId="5487985028841908800" fileName="ShowNodeType_Action.java" startLine="110" startPosition="11" endLine="111" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2034046503381295230" fileName="ShowNodeType_Action.java" startLine="114" startPosition="29" endLine="115" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2034046503381295235" fileName="ShowNodeType_Action.java" startLine="115" startPosition="54" endLine="116" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="121" startPosition="45" endLine="122" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="121" startPosition="42" endLine="122" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="127" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -93,14 +93,14 @@
     <nodeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="79" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="41" startPosition="32" endLine="42" endPosition="16" />
     <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="46" startPosition="9" endLine="47" endPosition="43" />
-    <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="49" startPosition="45" endLine="50" endPosition="87" />
+    <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="49" startPosition="42" endLine="50" endPosition="87" />
     <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" />
     <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="61" startPosition="62" endLine="62" endPosition="19" />
     <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="65" startPosition="60" endLine="66" endPosition="19" />
     <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="69" startPosition="59" endLine="70" endPosition="19" />
     <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="73" startPosition="70" endLine="74" endPosition="19" />
     <scopeInfo nodeId="2034046503373003464" fileName="ShowNodeType_Action.java" startLine="88" startPosition="66" endLine="89" endPosition="115" />
-    <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="121" startPosition="45" endLine="122" endPosition="86" />
+    <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="121" startPosition="42" endLine="122" endPosition="86" />
     <scopeInfo nodeId="6277318027977508734" fileName="ShowNodeType_Action.java" startLine="96" startPosition="31" endLine="98" endPosition="15" />
     <scopeInfo nodeId="2034046503381295229" fileName="ShowNodeType_Action.java" startLine="114" startPosition="29" endLine="116" endPosition="66" />
     <scopeInfo nodeId="5487985028841908720" fileName="ShowNodeType_Action.java" startLine="34" startPosition="32" endLine="37" endPosition="40" />

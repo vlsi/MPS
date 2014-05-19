@@ -816,7 +816,7 @@
     <nodeInfo nodeId="5900076103425047643" fileName="MapPathMacrosProvider.java" startLine="21" startPosition="39" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5900076103425047653" fileName="MapPathMacrosProvider.java" startLine="26" startPosition="37" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5900076103425047663" fileName="MapPathMacrosProvider.java" startLine="31" startPosition="33" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="37" startPosition="42" endLine="38" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="37" startPosition="39" endLine="38" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5900076103425047615" fileName="MapPathMacrosProvider.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5900076103425047623" fileName="MapPathMacrosProvider.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapPathMacrosProvider#(Ljava/util/Map;)V" />
     <nodeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="36" startPosition="52" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -829,7 +829,7 @@
     <scopeInfo nodeId="5900076103425047642" fileName="MapPathMacrosProvider.java" startLine="21" startPosition="39" endLine="22" endPosition="28" />
     <scopeInfo nodeId="5900076103425047652" fileName="MapPathMacrosProvider.java" startLine="26" startPosition="37" endLine="27" endPosition="56" />
     <scopeInfo nodeId="5900076103425047662" fileName="MapPathMacrosProvider.java" startLine="31" startPosition="33" endLine="32" endPosition="56" />
-    <scopeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="37" startPosition="42" endLine="38" endPosition="61" />
+    <scopeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="37" startPosition="39" endLine="38" endPosition="61" />
     <scopeInfo nodeId="5900076103425047623" fileName="MapPathMacrosProvider.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="5900076103425047633" varName="macros" />
     </scopeInfo>

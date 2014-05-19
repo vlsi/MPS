@@ -24,8 +24,6 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -47,6 +45,8 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WindowsUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -218,116 +218,125 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void rebuildMenuEntries() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    Runnable todo = new Runnable() {
       @Override
       public void run() {
-        myMenuEmpty = false;
-        final String pattern = getPatternEditor().getPattern();
-
-        List<SubstituteAction> matchingActions = getMatchingActions(pattern, false);
-        if (matchingActions.isEmpty()) {
-          matchingActions = getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
-        }
-
-        try {
-          Collections.sort(matchingActions, new Comparator<SubstituteAction>() {
-            private Map<SubstituteAction, Integer> mySortPriorities = new HashMap<SubstituteAction, Integer>();
-            private Map<SubstituteAction, String> myVisibleMatchingTexts = new HashMap<SubstituteAction, String>();
-
-            private int getSortPriority(SubstituteAction a) {
-              Integer result = mySortPriorities.get(a);
-              if (result == null) {
-                if (a.getParameterObject() instanceof SNode) {
-                  result = NodePresentationUtil.getSortPriority(a.getSourceNode(), (SNode) a.getParameterObject());
-                } else {
-                  result = 0;
-                }
-                mySortPriorities.put(a, result);
-              }
-              return result;
-            }
-
-            private String getVisibleMatchingText(SubstituteAction a) {
-              String result = myVisibleMatchingTexts.get(a);
-              if (result == null) {
-                result = a.getVisibleMatchingText(pattern);
-                myVisibleMatchingTexts.put(a, result);
-              }
-              return result;
-            }
-
-            @Override
-            public int compare(SubstituteAction i1, SubstituteAction i2) {
-              boolean strictly1 = i1.canSubstituteStrictly(pattern);
-              boolean strictly2 = i2.canSubstituteStrictly(pattern);
-              if (strictly1 != strictly2) {
-                return strictly1 ? -1 : 1;
-              }
-
-              int p1 = getSortPriority(i1);
-              int p2 = getSortPriority(i2);
-              if (p1 != p2) {
-                return p1 - p2;
-              }
-
-              String s1 = getVisibleMatchingText(i1);
-              String s2 = getVisibleMatchingText(i2);
-
-              boolean null_s1 = (s1 == null || s1.length() == 0);
-              boolean null_s2 = (s2 == null || s2.length() == 0);
-              if (null_s1 && null_s2) return 0;
-              if (null_s1) return 1;
-              if (null_s2) return -1;
-              int comparisonResult = s1.compareTo(s2);
-
-              if (comparisonResult == 0) {
-                return 0;
-              }
-
-              return comparisonResult;
-            }
-          });
-
-          if (myIsSmart /*&& false*/) {
-            sortSmartActions(matchingActions);
-          }
-        } catch (Exception e) {
-          LOG.error(e, e);
-        }
-
-        mySubstituteActions = matchingActions;
-        if (mySubstituteActions.size() == 0) {
-          myMenuEmpty = true;
-          mySubstituteActions.add(new AbstractNodeSubstituteAction() {
-            @Override
-            public String getMatchingText(String pattern) {
-              return "No variants for \"" + getPatternEditor().getPattern() + "\"";
-            }
-
-            @Override
-            public String getVisibleMatchingText(String pattern) {
-              return getMatchingText(pattern);
-            }
-
-            @Override
-            public SNode doSubstitute(@Nullable final jetbrains.mps.openapi.editor.EditorContext editorContext, String pattern) {
-              return null;
-            }
-          });
-        }
-
-        int textLength = 0;
-        int descriptionLength = 0;
-        for (SubstituteAction item : mySubstituteActions) {
-          try {
-            textLength = Math.max(textLength, getTextLength(item, pattern));
-            descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
-          } catch (Throwable t) {
-            LOG.error(t, t);
-          }
-        }
+        doRebuildMenuEntries();
       }
-    });
+    };
+    if (myIsSmart) {
+      ModelAccess.instance().runWriteActionInCommand(todo);
+    } else {
+      ModelAccess.instance().runReadAction(todo);
+    }
+  }
+
+  private void doRebuildMenuEntries() {
+    myMenuEmpty = false;
+    final String pattern = getPatternEditor().getPattern();
+
+    List<SubstituteAction> matchingActions = getMatchingActions(pattern, false);
+    if (matchingActions.isEmpty()) {
+      matchingActions = getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
+    }
+
+    try {
+      Collections.sort(matchingActions, new Comparator<SubstituteAction>() {
+        private Map<SubstituteAction, Integer> mySortPriorities = new HashMap<SubstituteAction, Integer>();
+        private Map<SubstituteAction, String> myVisibleMatchingTexts = new HashMap<SubstituteAction, String>();
+
+        private int getSortPriority(SubstituteAction a) {
+          Integer result = mySortPriorities.get(a);
+          if (result == null) {
+            if (a.getParameterObject() instanceof SNode) {
+              result = NodePresentationUtil.getSortPriority(a.getSourceNode(), (SNode) a.getParameterObject());
+            } else {
+              result = 0;
+            }
+            mySortPriorities.put(a, result);
+          }
+          return result;
+        }
+
+        private String getVisibleMatchingText(SubstituteAction a) {
+          String result = myVisibleMatchingTexts.get(a);
+          if (result == null) {
+            result = a.getVisibleMatchingText(pattern);
+            myVisibleMatchingTexts.put(a, result);
+          }
+          return result;
+        }
+
+        @Override
+        public int compare(SubstituteAction i1, SubstituteAction i2) {
+          boolean strictly1 = i1.canSubstituteStrictly(pattern);
+          boolean strictly2 = i2.canSubstituteStrictly(pattern);
+          if (strictly1 != strictly2) {
+            return strictly1 ? -1 : 1;
+          }
+
+          int p1 = getSortPriority(i1);
+          int p2 = getSortPriority(i2);
+          if (p1 != p2) {
+            return p1 - p2;
+          }
+
+          String s1 = getVisibleMatchingText(i1);
+          String s2 = getVisibleMatchingText(i2);
+
+          boolean null_s1 = (s1 == null || s1.length() == 0);
+          boolean null_s2 = (s2 == null || s2.length() == 0);
+          if (null_s1 && null_s2) return 0;
+          if (null_s1) return 1;
+          if (null_s2) return -1;
+          int comparisonResult = s1.compareTo(s2);
+
+          if (comparisonResult == 0) {
+            return 0;
+          }
+
+          return comparisonResult;
+        }
+      });
+
+      if (myIsSmart /*&& false*/) {
+        sortSmartActions(matchingActions);
+      }
+    } catch (Exception e) {
+      LOG.error(e, e);
+    }
+
+    mySubstituteActions = matchingActions;
+    if (mySubstituteActions.size() == 0) {
+      myMenuEmpty = true;
+      mySubstituteActions.add(new AbstractNodeSubstituteAction() {
+        @Override
+        public String getMatchingText(String pattern) {
+          return "No variants for \"" + getPatternEditor().getPattern() + "\"";
+        }
+
+        @Override
+        public String getVisibleMatchingText(String pattern) {
+          return getMatchingText(pattern);
+        }
+
+        @Override
+        public SNode doSubstitute(@Nullable final jetbrains.mps.openapi.editor.EditorContext editorContext, String pattern) {
+          return null;
+        }
+      });
+    }
+
+    int textLength = 0;
+    int descriptionLength = 0;
+    for (SubstituteAction item : mySubstituteActions) {
+      try {
+        textLength = Math.max(textLength, getTextLength(item, pattern));
+        descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
+      } catch (Throwable t) {
+        LOG.error(t, t);
+      }
+    }
   }
 
   private void sortSmartActions(List<SubstituteAction> matchingActions) {
@@ -667,10 +676,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
 
     public void relayout() {
-      Component component = myEditorComponent;
-      Point anchor = component.getLocationOnScreen();
-      Point location =
-          new Point(anchor.x + myRelativeCell.getX() + myRelativeCell.getLeftInset(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
+      Point location = myPatternEditor.getLeftBottomPosition();
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
@@ -693,7 +699,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       pack();
 
       if (getPosition() == PopupWindowPosition.TOP) {
-        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
+        newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myPatternEditor.getHeight());
       }
 
       if (getWidth() >= deviceBounds.width) {

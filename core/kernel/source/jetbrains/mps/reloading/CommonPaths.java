@@ -193,7 +193,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/log4j.jar");
     addIfExists(result, "/lib/trove4j.jar");
     addIfExists(result, "/lib/jdom.jar");
-    addIfExists(result, "/lib/ecj-4.2.1.jar");
+    addIfExists(result, "/lib/ecj-4.3.2.jar");
     addIfExists(result, "/lib/guava-14.0.1.jar");
     addIfExists(result, "/lib/xstream-1.4.3.jar");
     addIfExists(result, "/lib/diffutils-1.2.1.jar");
@@ -228,7 +228,7 @@ public class CommonPaths {
 
   private static void addWorkbenchJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-workbench.jar");
-    addIfExists(result, "/lib/junit-4.10.jar");
+    addIfExists(result, "/lib/junit-4.11.jar");
     addIfExists(result, "/lib/beansbinding-1.2.1.jar");
   }
 

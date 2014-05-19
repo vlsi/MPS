@@ -33,7 +33,7 @@
     <nodeInfo nodeId="1646518082434566202" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="61" startPosition="57" endLine="62" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1646518082434566202" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="63" startPosition="35" endLine="64" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1646518082434566202" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="64" startPosition="72" endLine="65" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1646518082434566202" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="65" startPosition="78" endLine="66" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1646518082434566202" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="65" startPosition="78" endLine="66" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1646518082434566202" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="67" startPosition="10" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1646518082434566207" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="71" startPosition="88" endLine="72" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1646518082434566207" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="72" startPosition="86" endLine="73" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -93,7 +93,7 @@
       <varInfo nodeId="1646518082434566195" varName="editorContext" />
       <varInfo nodeId="1646518082434566195" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1646518082434566202" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="63" startPosition="35" endLine="66" endPosition="105">
+    <scopeInfo nodeId="1646518082434566202" fileName="DefaultGeneratorParameterContainer_Editor.java" startLine="63" startPosition="35" endLine="66" endPosition="109">
       <varInfo nodeId="1646518082434566202" varName="manager" />
       <varInfo nodeId="1646518082434566202" varName="opContext" />
     </scopeInfo>
@@ -204,7 +204,7 @@
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="59" startPosition="57" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="61" startPosition="35" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="62" startPosition="72" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="65" startPosition="10" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3064182000795631824" fileName="DefaultGenerationParameterId_Editor.java" startLine="70" startPosition="33" endLine="71" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3064182000795631824" fileName="DefaultGenerationParameterId_Editor.java" startLine="74" startPosition="69" endLine="75" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -226,7 +226,7 @@
     <nodeInfo nodeId="3064182000795631826" fileName="DefaultGenerationParameterId_Editor.java" startLine="98" startPosition="59" endLine="99" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064182000795631826" fileName="DefaultGenerationParameterId_Editor.java" startLine="100" startPosition="37" endLine="101" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064182000795631826" fileName="DefaultGenerationParameterId_Editor.java" startLine="101" startPosition="74" endLine="102" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3064182000795631826" fileName="DefaultGenerationParameterId_Editor.java" startLine="102" startPosition="80" endLine="103" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3064182000795631826" fileName="DefaultGenerationParameterId_Editor.java" startLine="102" startPosition="80" endLine="103" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3064182000795631826" fileName="DefaultGenerationParameterId_Editor.java" startLine="104" startPosition="12" endLine="105" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3064182000795631820" fileName="DefaultGenerationParameterId_Editor.java" startLine="109" startPosition="88" endLine="110" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064182000795631820" fileName="DefaultGenerationParameterId_Editor.java" startLine="110" startPosition="88" endLine="111" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -248,7 +248,7 @@
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="129" startPosition="57" endLine="130" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="131" startPosition="35" endLine="132" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="132" startPosition="72" endLine="133" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="133" startPosition="78" endLine="134" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="133" startPosition="78" endLine="134" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="135" startPosition="10" endLine="136" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3064182000795631829" fileName="DefaultGenerationParameterId_Editor.java" startLine="140" startPosition="33" endLine="141" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3064182000795631829" fileName="DefaultGenerationParameterId_Editor.java" startLine="144" startPosition="69" endLine="145" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -271,7 +271,7 @@
     <nodeInfo nodeId="3064182000795631831" fileName="DefaultGenerationParameterId_Editor.java" startLine="169" startPosition="59" endLine="170" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064182000795631831" fileName="DefaultGenerationParameterId_Editor.java" startLine="171" startPosition="37" endLine="172" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3064182000795631831" fileName="DefaultGenerationParameterId_Editor.java" startLine="172" startPosition="74" endLine="173" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3064182000795631831" fileName="DefaultGenerationParameterId_Editor.java" startLine="173" startPosition="80" endLine="174" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3064182000795631831" fileName="DefaultGenerationParameterId_Editor.java" startLine="173" startPosition="80" endLine="174" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3064182000795631831" fileName="DefaultGenerationParameterId_Editor.java" startLine="175" startPosition="12" endLine="176" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3064182000795631824" fileName="DefaultGenerationParameterId_Editor.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_38ix8g_a1a#()V" />
@@ -310,7 +310,7 @@
       <varInfo nodeId="3064182000795631812" varName="editorContext" />
       <varInfo nodeId="3064182000795631812" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="105">
+    <scopeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="109">
       <varInfo nodeId="3064182000795631812" varName="manager" />
       <varInfo nodeId="3064182000795631812" varName="opContext" />
     </scopeInfo>
@@ -322,11 +322,11 @@
       <varInfo nodeId="3064182000795631824" varName="editorContext" />
       <varInfo nodeId="3064182000795631824" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3064182000795631826" fileName="DefaultGenerationParameterId_Editor.java" startLine="100" startPosition="37" endLine="103" endPosition="107">
+    <scopeInfo nodeId="3064182000795631826" fileName="DefaultGenerationParameterId_Editor.java" startLine="100" startPosition="37" endLine="103" endPosition="111">
       <varInfo nodeId="3064182000795631826" varName="manager" />
       <varInfo nodeId="3064182000795631826" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="131" startPosition="35" endLine="134" endPosition="105">
+    <scopeInfo nodeId="3064182000795631812" fileName="DefaultGenerationParameterId_Editor.java" startLine="131" startPosition="35" endLine="134" endPosition="109">
       <varInfo nodeId="3064182000795631812" varName="manager" />
       <varInfo nodeId="3064182000795631812" varName="opContext" />
     </scopeInfo>
@@ -338,7 +338,7 @@
       <varInfo nodeId="3064182000795631829" varName="editorContext" />
       <varInfo nodeId="3064182000795631829" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3064182000795631831" fileName="DefaultGenerationParameterId_Editor.java" startLine="171" startPosition="37" endLine="174" endPosition="107">
+    <scopeInfo nodeId="3064182000795631831" fileName="DefaultGenerationParameterId_Editor.java" startLine="171" startPosition="37" endLine="174" endPosition="111">
       <varInfo nodeId="3064182000795631831" varName="manager" />
       <varInfo nodeId="3064182000795631831" varName="opContext" />
     </scopeInfo>
@@ -438,7 +438,7 @@
     <nodeInfo nodeId="8484425748929510079" fileName="DefaultGeneratorParameter_Editor.java" startLine="59" startPosition="57" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8484425748929510079" fileName="DefaultGeneratorParameter_Editor.java" startLine="61" startPosition="35" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8484425748929510079" fileName="DefaultGeneratorParameter_Editor.java" startLine="62" startPosition="72" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8484425748929510079" fileName="DefaultGeneratorParameter_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8484425748929510079" fileName="DefaultGeneratorParameter_Editor.java" startLine="63" startPosition="78" endLine="64" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8484425748929510079" fileName="DefaultGeneratorParameter_Editor.java" startLine="65" startPosition="10" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8484425748929510081" fileName="DefaultGeneratorParameter_Editor.java" startLine="69" startPosition="88" endLine="70" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8484425748929510081" fileName="DefaultGeneratorParameter_Editor.java" startLine="70" startPosition="87" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -455,7 +455,7 @@
     <nodeInfo nodeId="8484425748929510082" fileName="DefaultGeneratorParameter_Editor.java" startLine="86" startPosition="57" endLine="87" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8484425748929510082" fileName="DefaultGeneratorParameter_Editor.java" startLine="88" startPosition="35" endLine="89" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8484425748929510082" fileName="DefaultGeneratorParameter_Editor.java" startLine="89" startPosition="72" endLine="90" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8484425748929510082" fileName="DefaultGeneratorParameter_Editor.java" startLine="90" startPosition="78" endLine="91" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8484425748929510082" fileName="DefaultGeneratorParameter_Editor.java" startLine="90" startPosition="78" endLine="91" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8484425748929510082" fileName="DefaultGeneratorParameter_Editor.java" startLine="92" startPosition="10" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8484425748929510077" fileName="DefaultGeneratorParameter_Editor.java" startLine="96" startPosition="91" endLine="97" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8484425748929510077" fileName="DefaultGeneratorParameter_Editor.java" startLine="97" startPosition="96" endLine="98" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -515,11 +515,11 @@
       <varInfo nodeId="8484425748929510077" varName="editorContext" />
       <varInfo nodeId="8484425748929510077" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8484425748929510079" fileName="DefaultGeneratorParameter_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="105">
+    <scopeInfo nodeId="8484425748929510079" fileName="DefaultGeneratorParameter_Editor.java" startLine="61" startPosition="35" endLine="64" endPosition="109">
       <varInfo nodeId="8484425748929510079" varName="manager" />
       <varInfo nodeId="8484425748929510079" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8484425748929510082" fileName="DefaultGeneratorParameter_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="105">
+    <scopeInfo nodeId="8484425748929510082" fileName="DefaultGeneratorParameter_Editor.java" startLine="88" startPosition="35" endLine="91" endPosition="109">
       <varInfo nodeId="8484425748929510082" varName="manager" />
       <varInfo nodeId="8484425748929510082" varName="opContext" />
     </scopeInfo>

@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
 import com.sun.jdi.request.EventRequest;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -78,7 +78,7 @@ public class ContextManager {
           // Patches.MAC_RESUME_VM_HACK &&  
           // Its funny, but second resume solves the problem 
         } else {
-          if (LOG.isEnabledFor(Priority.ERROR)) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("", e);
           }
           break;

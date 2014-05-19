@@ -29,7 +29,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
   public void applyRule(final SNode mae, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(mae, "index", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}))) {
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Tuple index must be a constant expression", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238859427576", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mae, "Tuple index must be a constant expression", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238859427576", null, errorTarget);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mae, "index", true);
@@ -49,7 +49,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
               if (coercedNode_2aq6od_a0c0c0 != null) {
                 if (!(index >= 0 && index < ListSequence.fromList(SLinkOperations.getTargets(coercedNode_2aq6od_a0c0c0, "componentType", true)).count())) {
                   MessageTarget errorTarget = new NodeMessageTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Index value out of range", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864218062", null, errorTarget);
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mae, "Index value out of range", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864218062", null, errorTarget);
                 }
                 if (index >= 0 && index < ListSequence.fromList(SLinkOperations.getTargets(coercedNode_2aq6od_a0c0c0, "componentType", true)).count()) {
                   List<SNode> mtypes = SLinkOperations.getTargets(coercedNode_2aq6od_a0c0c0, "componentType", true);

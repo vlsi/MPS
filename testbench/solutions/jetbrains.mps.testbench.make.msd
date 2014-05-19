@@ -28,6 +28,7 @@
     <dependency reexport="false">39a1a79d-8ae2-4e54-a86a-8f7b9e17e2fe(collections_unittest)</dependency>
     <dependency reexport="false">b5660d3a-8a0d-4815-881b-7c884f61c9c7(internalCollections.test)</dependency>
     <dependency reexport="false">fa54094d-fc7a-4393-885f-13866cecf3f3(jetbrains.mps.baseLanguage.closures.unittest)</dependency>
+    <dependency reexport="false">0528d773-6535-46f8-89a2-16a3751e6ab5(jetbrains.mps.baseLanguage.doubleDispatch.test)</dependency>
     <dependency reexport="false">9cc656d8-ed07-4493-9531-69f1c9c308c5(jetbrains.mps.baseLanguage.math.tests)</dependency>
     <dependency reexport="false">19cb79b5-ebc3-43ce-9f4c-d4bdce7013ab(jetbrains.mps.baseLanguage.regexp.unittest)</dependency>
     <dependency reexport="false">9c8b4b95-5d89-4201-ad78-0b2db3a22768(jetbrains.mps.baseLanguage.test)</dependency>
@@ -35,6 +36,7 @@
     <dependency reexport="false">83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)</dependency>
     <dependency reexport="false">444220d9-055e-44dd-a551-ed91c97d5067(jetbrains.mps.baseLanguage.unitTest.sandbox)</dependency>
     <dependency reexport="false">e60b351d-8d80-4c13-8ad4-3e4759e2a3ea(jetbrains.mps.baseLanguage.unittest)</dependency>
+    <dependency reexport="false">4831e627-794e-416a-983a-50889cae21f8(jetbrains.mps.baseLanguageInternal.test)</dependency>
     <dependency reexport="false">39742b07-848c-43a7-be0a-845055dd3333(jetbrains.mps.build.tests)</dependency>
     <dependency reexport="false">70b17f0c-ff72-43e8-9468-eda69efb2b71(jetbrains.mps.debugger.java.runtime.tests)</dependency>
     <dependency reexport="false">7b15492d-a198-43e2-91e3-4a7e9116ce2b(jetbrains.mps.execution.impl.tests)</dependency>
@@ -46,6 +48,7 @@
     <dependency reexport="false">4076bab3-4981-4035-94aa-19b6b4c51a84(jetbrains.mps.kernel.tests)</dependency>
     <dependency reexport="false">6ed0339f-b777-4ada-9cf7-73354b12f191(jetbrains.mps.lang.actions.test)</dependency>
     <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
+    <dependency reexport="false">779ae18b-ee98-406e-94fd-dec40c78b92f(jetbrains.mps.lang.editor.diagram.tests)</dependency>
     <dependency reexport="false">3c41aa01-5120-470c-8122-06f284bc0419(jetbrains.mps.lang.editor.multiple.tests)</dependency>
     <dependency reexport="false">69de002c-bbba-40be-be5b-f3a6e61ea828(jetbrains.mps.lang.editor.table.tests)</dependency>
     <dependency reexport="false">7597197a-bad8-4672-9806-215a3efe8740(jetbrains.mps.lang.editor.tests)</dependency>
@@ -63,11 +66,13 @@
     <dependency reexport="false">8e87e036-7d3f-4e47-809f-c244e2a938e8(jetbrains.mps.makeTest)</dependency>
     <dependency reexport="false">45571709-5529-4a2c-94c9-5b0e2469ad35(jetbrains.mps.samples.agreement.framework)</dependency>
     <dependency reexport="false">086f6299-eca0-43c4-bbca-fab3f95963aa(jetbrains.mps.samples.secretCompartment.runtime)</dependency>
+    <dependency reexport="false">761394b7-dc42-4fe5-adc7-1d9ff2aa76e6(jetbrains.mps.samples.xmlPersistence)</dependency>
     <dependency reexport="false">df9d410f-2ebb-43f7-893a-483a4f085250(jetbrains.mps.smodel.resources)</dependency>
     <dependency reexport="false">d2213aeb-6827-43e6-8179-d5886cfd0bb6(jetbrains.mps.smodel.test)</dependency>
     <dependency reexport="false">ae6cedf1-e261-45d9-972d-e8cfbc5e7f52(jetbrains.mps.testActions)</dependency>
     <dependency reexport="false">3d09e340-55d4-4ddc-8195-a92c0c5cf603(jetbrains.mps.testRead)</dependency>
     <dependency reexport="false">e9000334-f5e2-4a2f-a0fc-9afd1d31e048(jetbrains.mps.testbench)</dependency>
+    <dependency reexport="false">79f9d103-4ff6-4def-9c1a-27070f9ba255(jetbrains.mps.testbench.make)</dependency>
     <dependency reexport="false">415bc577-86ca-46a6-b873-4670fd19e169(jetbrains.mps.traceInfo.test)</dependency>
     <dependency reexport="false">dc080be0-da6e-4885-aed0-7d999c120619(jetbrains.mps.traceInfo.testWeaving)</dependency>
     <dependency reexport="false">cdd4e8a8-17c1-4f16-b054-27e94948bd47(jetbrains.mps.transformation.test.inputModels)</dependency>

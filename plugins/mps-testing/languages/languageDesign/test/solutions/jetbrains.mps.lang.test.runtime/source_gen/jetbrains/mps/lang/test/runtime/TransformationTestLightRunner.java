@@ -12,7 +12,7 @@ import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import jetbrains.mps.project.ProjectManager;
 import java.io.IOException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -81,7 +81,7 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
       String newProjectPath = path.getCanonicalPath();
       return myProjectPath.equals(newProjectPath);
     } catch (IOException e) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Cannot access the project file in container", e);
       }
     }

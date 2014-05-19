@@ -35,7 +35,7 @@ import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.model.SModelBase;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -134,7 +134,7 @@ public class TestMergeDialog {
             try {
               ModelPersistence.saveModel(as_jrs6o7_a0a0a0c0a0a0a0f0a0a0a8a7(result, SModelBase.class).getSModelInternal(), new FileDataSource(iFile));
             } catch (IOException ex) {
-              if (LOG.isEnabledFor(Priority.ERROR)) {
+              if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("Cannot save model.", ex);
               }
             }

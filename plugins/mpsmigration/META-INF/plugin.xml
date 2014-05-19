@@ -4,17 +4,17 @@
     "http://plugins.intellij.net/plugin.dtd"
 >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
-  <id>jetbrains.mps.ide.migration_30</id>
-  <name>Migration 3.0</name>
+  <id>jetbrains.mps.ide.mpsmigration</id>
+  <name>Migration 3.1</name>
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
   <version>3.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="129.1" until-build="134.1"/>
+  <idea-version since-build="135.1" until-build="136.1"/>
     
   <depends>jetbrains.mps.ide.modelchecker</depends>
   <depends>jetbrains.mps.ide.java</depends>
 
-  <xi:include href="../classes/jetbrains/mps/ide/mpsmigration/migration30/Migration30Actions.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/jetbrains/mps/ide/mpsmigration/migration31/Migration31Actions.xml" xpointer="xpointer(/components/*)"/>
     
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/solution" />

@@ -5,9 +5,14 @@ package jetbrains.mps.lang.test.matcher;
 
 public class PropertyDifferense extends DifferanceItem {
   private String myProperty;
+  private String myActualValue;
+  private String myExpectedValue;
 
-  public PropertyDifferense(String property) {
+
+  public PropertyDifferense(String property, String actualValue, String expectedValue) {
     myProperty = property;
+    myActualValue = actualValue;
+    myExpectedValue = expectedValue;
   }
 
   public PropertyDifferense(String role, boolean b) {
@@ -16,7 +21,7 @@ public class PropertyDifferense extends DifferanceItem {
 
   @Override
   public String toString() {
-    return "Different property: " + myProperty;
+    return "Different property: " + myProperty + " = " + myActualValue + ", expected: " + myExpectedValue;
   }
 
   @Override

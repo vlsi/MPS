@@ -16,12 +16,10 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -60,7 +58,10 @@ public class FastRuleFinder {
       rules.add(rule);
 
       if (rule.applyToInheritors()) {
-        for (String conceptFqName : ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName)) {
+        final Set<String> allDescendantConcepts = ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName);
+        // don't duplicate the rule for the initial concept in inheritedRules - it already is in specificRules
+        allDescendantConcepts.remove(applicableConceptFqName);
+        for (String conceptFqName : allDescendantConcepts) {
           rules = inheritedRules.get(conceptFqName);
           if (rules == null) {
             rules = new LinkedList<TemplateReductionRule>();
@@ -117,12 +118,7 @@ public class FastRuleFinder {
       return (BlockedReductionsData) blockedReductions;
     }
 
-    public boolean isReductionBlocked(SNode node, TemplateReductionRule rule, ReductionContext reductionContext) {
-      return isReductionBlocked(node, rule)
-        || reductionContext != null && reductionContext.isBlocked(node, rule);
-    }
-
-    private boolean isReductionBlocked(SNode node, TemplateReductionRule rule) {
+    public boolean isReductionBlocked(SNode node, TemplateReductionRule rule) {
       Object o = myCurrentReductionData.get(node);
       if (o == null) return false;
       if (o == rule) return true;
@@ -158,36 +154,6 @@ public class FastRuleFinder {
         return;
       }
       nxt.add(rule);
-    }
-
-    /**
-     * Update blocked rules to apply for nodes in cloned model, assuming present nodes were cloned into clonedModel with nodeid preserved.
-     * Single-thread.
-     */
-    public void advanceForModelClone(@NotNull SModel clonedModel, @NotNull IGeneratorLogger log) {
-      HashMap<SNode, Object> nextReductionData = new HashMap<SNode, Object>(myCurrentReductionData.size() * 4 / 3);
-      for (Map.Entry<SNode,Object> e : myCurrentReductionData.entrySet()) {
-        final SNode clonedNode = clonedModel.getNode(e.getKey().getNodeId());
-        if (clonedNode != null) {
-          nextReductionData.put(clonedNode, e.getValue());
-        } else {
-          log.warning(e.getKey().getReference(), "Node copied in one of previous microsteps is not found in cloned model");
-        }
-      }
-      myCurrentReductionData.clear();
-      myCurrentReductionData.putAll(nextReductionData);
-      //
-      HashMap<SNode, Collection<TemplateWeavingRule>> nextWeaveData = new HashMap<SNode, Collection<TemplateWeavingRule>>(myCurrentWeaveData.size() * 4 / 3);
-      for (Map.Entry<SNode, Collection<TemplateWeavingRule>> e : myCurrentWeaveData.entrySet()) {
-        final SNode clonedNode = clonedModel.getNode(e.getKey().getNodeId());
-        if (clonedNode != null) {
-          nextWeaveData.put(clonedNode, e.getValue());
-        } else {
-          log.warning(e.getKey().getReference(), "Node copied in one of previous microsteps is not found in cloned model");
-        }
-      }
-      myCurrentWeaveData.clear();
-      myCurrentWeaveData.putAll(nextWeaveData);
     }
 
     public void advanceStep() {

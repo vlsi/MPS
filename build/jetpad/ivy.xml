@@ -1,0 +1,57 @@
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+  <info organisation="org.jetbrains.mps" module="mps"/>
+
+  <dependencies>
+    <dependency org="jetbrains.jetpad" name="grammar" rev="${jetpad.version}">
+      <artifact name="grammar" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.mapper" name="gwt-util" rev="${jetpad.version}">
+      <artifact name="gwt-util" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.mapper" name="mapper" rev="${jetpad.version}">
+      <artifact name="mapper" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad" name="model" rev="${jetpad.version}">
+      <artifact name="model" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.projectional" name="base-projectional" rev="${jetpad.version}">
+      <artifact name="base-projectional" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.projectional" name="cell" rev="${jetpad.version}">
+      <artifact name="cell" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.projectional" name="completion" rev="${jetpad.version}">
+      <artifact name="completion" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.projectional" name="diagram" rev="${jetpad.version}">
+      <artifact name="diagram" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.projectional" name="domUtil" rev="${jetpad.version}">
+      <artifact name="domUtil" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.projectional" name="event" rev="${jetpad.version}">
+      <artifact name="event" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.projectional" name="projectional" rev="${jetpad.version}">
+      <artifact name="projectional" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.projectional" name="view" rev="${jetpad.version}">
+      <artifact name="view" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad" name="test" rev="${jetpad.version}">
+      <artifact name="test" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.util" name="base" rev="${jetpad.version}">
+      <artifact name="base" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.util" name="geometry" rev="${jetpad.version}">
+      <artifact name="geometry" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.util" name="json" rev="${jetpad.version}">
+      <artifact name="json" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+    <dependency org="jetbrains.jetpad.util" name="values" rev="${jetpad.version}">
+      <artifact name="values" m:classifier="jvm6" ext="jar"/>
+    </dependency>
+  </dependencies>
+</ivy-module>

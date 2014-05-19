@@ -18,144 +18,223 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GeneratorUtilEx.ConsequenceDispatch;
+import jetbrains.mps.generator.impl.interpreted.TemplateCall;
+import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
+import jetbrains.mps.generator.impl.template.QueryExecutor;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Handles rule consequences
+ * Handles rule consequences.
  *
  * @author Artem Tikhomirov
  */
-public class RuleConsequenceProcessor {
-  private final TemplateProcessor myTemplateProcessor;
-  private TemplateContainer myTemplateContainer;
-  private TemplateContext myConsequenceContext;
-
-  public RuleConsequenceProcessor(TemplateExecutionEnvironment env) {
-    this(new TemplateProcessor(env));
+public abstract class RuleConsequenceProcessor {
+  /*package*/ RuleConsequenceProcessor() {
   }
 
-  public RuleConsequenceProcessor(TemplateProcessor templateProcessor) {
-    myTemplateProcessor = templateProcessor;
+  /**
+   * Factory method for rule consequences
+   */
+  public static RuleConsequenceProcessor prepare(@NotNull SNode ruleConsequence) {
+    ConsequenceHandler h = new ConsequenceHandler();
+    return h.dispatch(ruleConsequence);
   }
 
-  // XXX GenerationFailureException is thrown from QueryExecutionContext.checkCondition to check query in inline switch cases - perhaps,
-  // can extract switch and perform case selection in {@link #processRuleConsequence()} later?
-  public void prepare(@NotNull SNode ruleConsequence, @NotNull TemplateContext templateContext)
-      throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, TemplateProcessingFailureException {
-    // the reason why the method is left here is described in TemplateContainer#initialize()
-    ConsequenceHandler h = new ConsequenceHandler(templateContext);
-    h.dispatch(ruleConsequence);
-    h.checkExceptions();
-    myConsequenceContext = h.getUltimateContext();
-    myTemplateContainer = h.getNodeAndMappingNamePairs();
-    if (h.actualRuleConsequence() != null && myTemplateContainer != null) {
-      myTemplateContainer.initialize();
-    }
-  }
-
-  // XXX Does DismissTopMappingRuleException get thrown from within TemplateProcessor, or it's solely GeneratorUtilEx realm (i.e. whether it's rule
-  // level or lower, template level). Remove from throws here if can't happen from within TP (the only suspicious location is switch.tryDefault (macro).
   @NotNull
-  public List<SNode> processRuleConsequence() throws DismissTopMappingRuleException,
-      GenerationFailureException, GenerationCanceledException, TemplateProcessingFailureException {
-    return myTemplateContainer.apply(myConsequenceContext);
+  public abstract List<SNode> processRuleConsequence(@NotNull TemplateContext context)
+      throws GenerationFailureException, GenerationCanceledException, DismissTopMappingRuleException, AbandonRuleInputException;
+
+  private static class InlineSwitch extends RuleConsequenceProcessor {
+    @NotNull
+    private final SNode mySwitchNode;
+    private volatile CaseRuntime[] myCases;
+
+    InlineSwitch(@NotNull SNode inlineSwitchNode) {
+      mySwitchNode = inlineSwitchNode;
+    }
+
+    @NotNull
+    @Override
+    public List<SNode> processRuleConsequence(@NotNull TemplateContext context)
+        throws GenerationFailureException, GenerationCanceledException, DismissTopMappingRuleException, AbandonRuleInputException {
+      final QueryExecutor queryExecutor = context.getEnvironment().getQueryExecutor();
+      for (CaseRuntime switchCase : getCases(context.getEnvironment())) {
+        if (queryExecutor.evaluate(switchCase.condition, new InlineSwitchCaseContext(context, switchCase.nodeReference))) {
+          return switchCase.consequence.processRuleConsequence(context);
+        }
+      }
+      SNode defaultConsequence = RuleUtil.getInlineSwitch_defaultConsequence(mySwitchNode);
+      if (defaultConsequence == null) {
+        IGeneratorLogger log = context.getEnvironment().getLogger();
+        log.error(mySwitchNode.getReference(), "no default consequence in switch", GeneratorUtil.describeInput(context));
+        throw new GenerationFailureException("no default consequence in switch");
+      } else {
+        RuleConsequenceProcessor rcp = RuleConsequenceProcessor.prepare(defaultConsequence);
+        return rcp.processRuleConsequence(context);
+      }
+    }
+
+    private CaseRuntime[] getCases(GeneratorQueryProvider.Source qps) {
+      CaseRuntime[] rv = myCases;
+      if (rv == null) {
+        ArrayList<CaseRuntime> l = new ArrayList<CaseRuntime>();
+        for (SNode switchCase : RuleUtil.getInlineSwitch_case(mySwitchNode)) {
+          final InlineSwitchCaseCondition condition = qps.getQueryProvider(mySwitchNode.getReference()).getInlineSwitchCaseCondition(switchCase);
+          SNode caseConsequence = RuleUtil.getInlineSwitch_caseConsequence(switchCase);
+          RuleConsequenceProcessor rcp = RuleConsequenceProcessor.prepare(caseConsequence);
+          l.add(new CaseRuntime(condition, rcp, switchCase.getReference()));
+        }
+        if (myCases == null) {
+          myCases = rv = l.toArray(new CaseRuntime[l.size()]);
+        } else {
+          rv = myCases;
+        }
+      }
+      return rv;
+    }
+
+    private static class CaseRuntime {
+      public final SNodeReference nodeReference;
+      public final RuleConsequenceProcessor consequence;
+      public final InlineSwitchCaseCondition condition;
+      public CaseRuntime(InlineSwitchCaseCondition condition, RuleConsequenceProcessor rcp, SNodeReference nodeRef) {
+        this.condition = condition;
+        this.consequence = rcp;
+        this.nodeReference = nodeRef;
+      }
+    }
   }
 
-  private class ConsequenceHandler implements ConsequenceDispatch {
-    private TemplateContainer myTemplateContainer;
-    private AbandonRuleInputException myAbandonRuleException;
-    private DismissTopMappingRuleException myDismissRuleException;
-    private GenerationFailureException myFailureException;
-    private TemplateContext myTemplateContext;
-    private SNode myRuleConsequenceInUse;
+  private static class ControlFlowConsequence extends RuleConsequenceProcessor {
+    private final AbandonRuleInputException myAbandonInputException;
+    private final DismissTopMappingRuleException myDismissRuleException;
 
-    public ConsequenceHandler(@NotNull TemplateContext ctx) {
-      myTemplateContext = ctx;
+    public ControlFlowConsequence(@NotNull AbandonRuleInputException ex) {
+      myAbandonInputException = ex;
+      myDismissRuleException = null;
+    }
+    ControlFlowConsequence(@NotNull DismissTopMappingRuleException ex) {
+      myAbandonInputException = null;
+      myDismissRuleException = ex;
     }
 
-    public void dispatch(@NotNull SNode ruleConsequence) {
-      myRuleConsequenceInUse = ruleConsequence;
+    @NotNull
+    @Override
+    public List<SNode> processRuleConsequence(@NotNull TemplateContext context) throws AbandonRuleInputException, DismissTopMappingRuleException {
+      if (myAbandonInputException != null) {
+        throw myAbandonInputException;
+      }
+      if (myDismissRuleException != null) {
+        throw myDismissRuleException;
+      }
+      throw new IllegalStateException();
+    }
+  }
+
+  private static class BadConsequence extends RuleConsequenceProcessor {
+    private final SNode myConsequence;
+    private final String myMessage;
+
+    public BadConsequence(@NotNull SNode consequence, @NotNull String message) {
+      myConsequence = consequence;
+      myMessage = message;
+    }
+
+    @NotNull
+    @Override
+    public List<SNode> processRuleConsequence(@NotNull TemplateContext context) throws GenerationFailureException {
+      IGeneratorLogger log = context.getEnvironment().getLogger();
+      log.error(myConsequence.getReference(), myMessage, GeneratorUtil.describeInput(context));
+      throw new GenerationFailureException(myMessage);
+    }
+  }
+
+  private static class TemplateDeclarationReference extends RuleConsequenceProcessor {
+    private final RuleConsequenceProcessor myTemplateContainer;
+    private final TemplateCall myTemplateCall;
+
+    public TemplateDeclarationReference(@NotNull SNode ruleConsequence, @NotNull RuleConsequenceProcessor templateContainer) {
+      myTemplateContainer = templateContainer;
+      myTemplateCall = new TemplateCall(ruleConsequence);
+    }
+
+    @NotNull
+    @Override
+    public List<SNode> processRuleConsequence(@NotNull TemplateContext context)
+        throws GenerationFailureException, GenerationCanceledException, DismissTopMappingRuleException, AbandonRuleInputException {
+      TemplateContext ctx = myTemplateCall.prepareCallContext(context);
+      return myTemplateContainer.processRuleConsequence(ctx);
+    }
+  }
+
+  private static class ConsequenceHandler implements ConsequenceDispatch {
+    private RuleConsequenceProcessor myConsequence;
+
+    @NotNull
+    public RuleConsequenceProcessor dispatch(@NotNull SNode ruleConsequence) {
+      myConsequence = null;
       GeneratorUtilEx.dispatchRuleConsequence(ruleConsequence, this);
-    }
-
-    public SNode actualRuleConsequence() {
-      return myRuleConsequenceInUse;
-    }
-
-    public TemplateContext getUltimateContext() {
-      return myTemplateContext;
-    }
-
-    public TemplateContainer getNodeAndMappingNamePairs() {
-      return myTemplateContainer;
+      if (myConsequence == null) {
+        assert false; // can't happen provided there's no mistake in GeneratorUtilEx.dispatchRuleConsequence
+        myConsequence = new BadConsequence(ruleConsequence, "unknown consequence kind");
+      }
+      return myConsequence;
     }
 
     @Override
     public void inlineSwitch(SNode ruleConsequence) {
-      try {
-        for (SNode switchCase : RuleUtil.getInlineSwitch_case(ruleConsequence)) {
-          SNode condition = RuleUtil.getInlineSwitch_caseCondition(switchCase);
-          if (getEnvironment().getQueryExecutor().checkCondition(condition, true, myTemplateContext, switchCase)) {
-            SNode caseConsequence = RuleUtil.getInlineSwitch_caseConsequence(switchCase);
-            dispatch(caseConsequence);
-            return;
-          }
-        }
-        SNode defaultConsequence = RuleUtil.getInlineSwitch_defaultConsequence(ruleConsequence);
-        if (defaultConsequence == null) {
-          showErrorMessage(ruleConsequence, "no default consequence in switch");
-        } else {
-          dispatch(defaultConsequence);
-        }
-      } catch (GenerationFailureException ex) {
-        myFailureException = null;
-      }
+      myConsequence = new InlineSwitch(ruleConsequence);
     }
 
     @Override
     public void inlineTemplateWithContext(SNode ruleConsequence) {
-      processTemplateContainer(ruleConsequence, RuleUtil.getInlineTemplateWithContext_contentNode(ruleConsequence));
+      myConsequence = getTemplateContainer(ruleConsequence, RuleUtil.getInlineTemplateWithContext_contentNode(ruleConsequence));
     }
 
     @Override
     public void inlineTemplate(SNode ruleConsequence) {
       SNode templateNode = RuleUtil.getInlineTemplate_templateNode(ruleConsequence);
       if (templateNode != null) {
-        myTemplateContainer = new TemplateContainer(myTemplateProcessor, new Pair<SNode, String>(templateNode, null));
+        myConsequence = new TemplateContainer(new Pair<SNode, String>(templateNode, null));
       } else {
-        showErrorMessage(ruleConsequence, "no template node");
+        myConsequence = new BadConsequence(ruleConsequence, "no template node");
       }
     }
 
     @Override
     public void templateDeclarationReference(SNode ruleConsequence) {
-      // XXX for unknown reason we don't use TemplateDeclarationInterpreted here.
-      myTemplateContext = GeneratorUtil.createConsequenceContext(myTemplateContext, getEnvironment(), ruleConsequence);
-      processTemplateContainer(ruleConsequence, RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence));
+      // XXX the reason we don't use TemplateDeclarationInterpreted here seems to be
+      // limitation of the TemplateDeclarationInterpreted - the way arguments are supplied there is different
+      // from the one we use here (latter evaluates, while former get actual values)
+      final RuleConsequenceProcessor templateContainer = getTemplateContainer(ruleConsequence, RuleUtil.getTemplateDeclarationReference_Template(ruleConsequence));
+      myConsequence = new TemplateDeclarationReference(ruleConsequence, templateContainer);
     }
 
-    private void processTemplateContainer(SNode ruleConsequence, SNode templateContainer) {
-      if (templateContainer == null) {
-        showErrorMessage(ruleConsequence, "error processing template consequence: no 'template'");
-        return;
+    private static RuleConsequenceProcessor getTemplateContainer(SNode ruleConsequence, SNode templateContainer) {
+      if (templateContainer != null) {
+        return new TemplateContainer(templateContainer);
+      } else {
+        return new BadConsequence(ruleConsequence, "error processing template consequence: no 'template'");
       }
-      myTemplateContainer = new TemplateContainer(myTemplateProcessor, templateContainer);
     }
 
     @Override
     public void weaveEach(SNode ruleConsequence) {
-      unknown(ruleConsequence);
+      myConsequence = new BadConsequence(ruleConsequence, "weaveEach is not expected here");
     }
 
     @Override
     public void abandonInput(SNode ruleConsequence) {
-      myAbandonRuleException = new AbandonRuleInputException();
+      myConsequence = new ControlFlowConsequence(new AbandonRuleInputException());
     }
 
     @Override
@@ -163,40 +242,12 @@ public class RuleConsequenceProcessor {
       SNode message = RuleUtil.getDismissTopRule_message(ruleConsequence);
       DismissTopMappingRuleException.MessageType messageType = GeneratorUtilEx.getGeneratorMessage_kind(message);
       String text = GeneratorUtilEx.getGeneratorMessage_text(message);
-      if (message != null) {
-        GeneratorUtil.log(getLog(),ruleConsequence.getReference(), messageType, text, GeneratorUtil.describeIfExists(myTemplateContext.getInput(), "input node"));
-      }
-      myDismissRuleException = new DismissTopMappingRuleException(messageType, text);
+      myConsequence = new ControlFlowConsequence(new DismissTopMappingRuleException(messageType, text));
     }
 
     @Override
     public void unknown(SNode ruleConsequence) {
-      showErrorMessage(ruleConsequence, "unsupported rule consequence");
-    }
-
-    public void checkExceptions() throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
-      if (myAbandonRuleException != null) {
-        throw myAbandonRuleException;
-      }
-      if (myDismissRuleException != null) {
-        throw myDismissRuleException;
-      }
-      if (myFailureException != null) {
-        throw myFailureException;
-      }
-      // go on gracefully
-    }
-
-    private void showErrorMessage(SNode templateNode, String message) {
-      getLog().error(templateNode.getReference(), message, GeneratorUtil.describeIfExists(myTemplateContext.getInput(), "input node"));
-    }
-
-    private IGeneratorLogger getLog() {
-      return getEnvironment().getLogger();
-    }
-
-    private TemplateExecutionEnvironment getEnvironment() {
-      return myTemplateProcessor.getEnvironment();
+      myConsequence = new BadConsequence(ruleConsequence, "unsupported rule consequence");
     }
   }
 }

@@ -9,7 +9,7 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <import index="tpjx" modelUID="r:00000000-0000-4000-0000-011c89590581(jetbrains.mps.baseLanguage.logging.util)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
@@ -24,6 +24,7 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tpf3" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" implicit="yes" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" implicit="yes" />
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1167240570149" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="main_logging" />
     <node role="weavingMappingRule" roleId="tpf8.1167172143858" type="tpf8.Weaving_MappingRule" typeId="tpf8.1167171569011" id="1169464520732" nodeInfo="ng">
@@ -220,6 +221,46 @@
       <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="tpib.1167227138527" resolveInfo="LogStatement" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node role="condition" roleId="tpf8.7830515785164764091" type="tpf8.MappingConfiguration_Condition" typeId="tpf8.7830515785164762753" id="6450631649356134114" nodeInfo="nn">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6450631649356146489" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6450631649356160128" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="6450631649356203293" nodeInfo="nn">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="6450631649356237024" nodeInfo="nn">
+              <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6450631649356237026" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6450631649356237027" nodeInfo="nn">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6450631649356237028" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="6450631649356237029" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetInputModel" typeId="tpf3.1217004708011" id="6450631649356237030" nodeInfo="nn" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesOperation" typeId="tp25.1171323947159" id="6450631649356237031" nodeInfo="nn">
+                    <link role="concept" roleId="tp25.1171323947160" targetNodeId="tpib.1168401810208" resolveInfo="PrintStatement" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6450631649356237032" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%disEmpty()%cboolean" resolveInfo="isEmpty" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotExpression" typeId="tpee.1081516740877" id="6450631649356238568" nodeInfo="nn">
+              <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6450631649356238570" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6450631649356238571" nodeInfo="nn">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6450631649356238572" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="6450631649356238573" nodeInfo="nn" />
+                    <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetInputModel" typeId="tpf3.1217004708011" id="6450631649356238574" nodeInfo="nn" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_NodesOperation" typeId="tp25.1171323947159" id="6450631649356238575" nodeInfo="nn">
+                    <link role="concept" roleId="tp25.1171323947160" targetNodeId="tpib.1167227138527" resolveInfo="LogStatement" />
+                  </node>
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6450631649356238576" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%disEmpty()%cboolean" resolveInfo="isEmpty" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1167240601336" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="reduce_LogStatement" />
@@ -286,8 +327,8 @@
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1207737142033" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fagr.~Category%disDebugEnabled()%cboolean" resolveInfo="isDebugEnabled" />
-                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="1210168908728" nodeInfo="nn">
-                      <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1210168677734" resolveInfo="switch_IsEnabled" />
+                    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateSwitchMacro" typeId="tpf8.982871510068000147" id="3565042316596700004" nodeInfo="ng">
+                      <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1210168677734" resolveInfo="switch_IsEnabled" />
                     </node>
                   </node>
                 </node>
@@ -751,8 +792,8 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fagr.~Category%disEnabledFor(org%dapache%dlog4j%dPriority)%cboolean" resolveInfo="isEnabledFor" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2423165640493160323" nodeInfo="ng" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5548342346323400294" nodeInfo="nn">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Priority" resolveInfo="Priority" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Priority%dFATAL" resolveInfo="FATAL" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Level" resolveInfo="Level" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Level%dFATAL" resolveInfo="FATAL" />
                       </node>
                     </node>
                   </node>
@@ -802,8 +843,8 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fagr.~Category%disEnabledFor(org%dapache%dlog4j%dPriority)%cboolean" resolveInfo="isEnabledFor" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2423165640493160311" nodeInfo="ng" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5548342346323394874" nodeInfo="nn">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Priority" resolveInfo="Priority" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Priority%dERROR" resolveInfo="ERROR" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Level" resolveInfo="Level" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Level%dERROR" resolveInfo="ERROR" />
                       </node>
                     </node>
                   </node>
@@ -853,8 +894,8 @@
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fagr.~Category%disEnabledFor(org%dapache%dlog4j%dPriority)%cboolean" resolveInfo="isEnabledFor" />
                       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2423165640493160299" nodeInfo="ng" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5548342346323372066" nodeInfo="nn">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Priority" resolveInfo="Priority" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Priority%dWARN" resolveInfo="WARN" />
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="fagr.~Level" resolveInfo="Level" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="fagr.~Level%dWARN" resolveInfo="WARN" />
                       </node>
                     </node>
                   </node>

@@ -52,10 +52,15 @@ public final class RuleUtil {
   public static final String concept_TemplateArgumentPatternRef = "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef";
   public static final String concept_TemplateArgumentQueryExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression";
   public static final String concept_TemplateArgumentParameterExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression";
+  public static final String concept_TemplateArgumentVarRefExpression = "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression";
   public static final String concept_TemplateSwitchMacro = "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro";
+  public static final String concept_TemplateQueryBase = "jetbrains.mps.lang.generator.structure.TemplateQueryBase";
+  public static final String concept_TemplateFragment = "jetbrains.mps.lang.generator.structure.TemplateFragment";
+  public static final String concept_RootTemplateAnnotation = "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation";
+  public static final String concept_InlineTemplate_RuleConsequence = "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence";
   public static final String link_MappingConfiguration_preMappingScript = "preMappingScript";
   public static final String link_TemplateSwitch_modifiedSwitch = "modifiedSwitch";
-
+  public static final String link_BaseConcept_attrs = "smodelAttribute";
 
   /**
    * Alternative to isInstanceOf check in isNodeMacro: supported node macros are known at generation time,
@@ -380,6 +385,10 @@ public final class RuleUtil {
 
   public static SNode getTemplateArgumentParameterExpression_Parameter(SNode expr) {
     return SLinkOperations.getTarget(expr, "parameter", false);
+  }
+
+  public static SNode getTemplateArgumentVarRef_VarMacro(SNode expr) {
+    return SLinkOperations.getTarget(expr, "varmacro", false);
   }
 
   public static boolean getMappingScript_IsPreProcess(SNode script) {

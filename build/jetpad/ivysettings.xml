@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-settings>
+  <settings defaultResolver='jb-public-repository'/>
+  <caches defaultCacheDir="${mps.ivy.home}/.ivy2/cache"/>
+  <resolvers>
+    <chain name="jb-public-repository">
+      <url name="public" m2compatible="true">
+        <artifact pattern="http://repository.jetbrains.com/all/[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]" />
+        <ivy pattern="http://repository.jetbrains.com/all/[organization]/[module]/[revision]/ivy-[revision].xml" />
+      </url>
+    </chain>
+  </resolvers>
+</ivy-settings>

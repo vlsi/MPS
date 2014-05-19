@@ -30,7 +30,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * Author: Sergey Dmitriev
  * Created Sep 14, 2003
  */
-public class EditorCell_Property extends EditorCell_Label {
+public class EditorCell_Property extends EditorCell_Label implements SynchronizeableEditorCell {
   private ModelAccessor myModelAccessor;
   private boolean myCommitInProgress;
   private boolean myCommitInCommand = true;
@@ -161,6 +161,15 @@ public class EditorCell_Property extends EditorCell_Label {
     myCommitInCommand = commit;
   }
 
+  @Override
+  public void synchronize() {
+    synchronizeViewWithModel();
+  }
+
+  @Override
+  public boolean canBeSynchronized() {
+    return true;
+  }
 
   public static interface SynchronizationListener {
     public void cellSynchronizedViewWithModel(EditorCell_Property editorCell_property);

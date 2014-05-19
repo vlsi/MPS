@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
@@ -80,7 +80,7 @@ public class ClassConcept_Behavior {
       return true;
     }
     if (SetSequence.fromSet(visited).contains(thisNode)) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
       }
       return false;
@@ -97,7 +97,7 @@ public class ClassConcept_Behavior {
 
   public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(thisNode)) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("circular hierarchy in class " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
       }
       return false;
@@ -183,7 +183,8 @@ public class ClassConcept_Behavior {
     if (Classifier_Behavior.call_isSame_4855996797771684010(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), thisNode)) {
       return null;
     }
-    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false) != null) ? SLinkOperations.getTarget(thisNode, "superclass", true) : _quotation_createNode_xjj00_a0b0j());
+    SNode classifier = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false);
+    return ((classifier != null) && SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") ? SLinkOperations.getTarget(thisNode, "superclass", true) : _quotation_createNode_xjj00_a0c0j());
   }
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
@@ -260,7 +261,7 @@ public class ClassConcept_Behavior {
       }
 
       if ((superClass == null)) {
-        if (LOG.isEnabledFor(Priority.WARN)) {
+        if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("Superclass classifier is null for not java.lang.Object classifier in " + thisNode);
         }
         return new EmptyScope();
@@ -443,7 +444,7 @@ public class ClassConcept_Behavior {
 
   protected static Logger LOG = LogManager.getLogger(ClassConcept_Behavior.class);
 
-  private static SNode _quotation_createNode_xjj00_a0b0j() {
+  private static SNode _quotation_createNode_xjj00_a0c0j() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);

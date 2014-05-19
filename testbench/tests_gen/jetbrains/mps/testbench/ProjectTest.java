@@ -72,6 +72,8 @@ public class ProjectTest {
       Assert.assertTrue("Build errors:\n" + IterableUtils.join(errors, "\n"), errors.isEmpty());
       List<String> warns = generationHolder.buildWarns();
       Assert.assertTrue("Build warnings:\n" + IterableUtils.join(warns, "\n"), warns.isEmpty());
+      //  sanity, if build fails without messages 
+      Assert.fail(String.format("Make failed with %d errors and %d warnings", errors.size(), warns.size()));
     }
   }
 

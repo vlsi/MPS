@@ -174,7 +174,7 @@ public class Classifier_Behavior {
       containers = newContainers;
     }
 
-    if ((int) ListSequence.fromList(containers).count() == 1) {
+    if (ListSequence.fromList(containers).count() == 1) {
       return SPropertyOperations.getString(thisNode, "name");
     }
 

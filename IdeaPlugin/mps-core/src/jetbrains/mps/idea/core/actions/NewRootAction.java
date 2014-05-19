@@ -76,7 +76,7 @@ import java.util.List;
 import java.util.Map;
 
 public class NewRootAction extends AnAction {
-  private EditableSModelDescriptor myModelDescriptor;
+  private EditableSModel myModelDescriptor;
   private Project myProject;
   private IOperationContext myOperationContext;
   private Map<String, SNodeReference> myConceptFqNameToNodePointerMap = new LinkedHashMap<String, SNodeReference>();
@@ -149,7 +149,7 @@ public class NewRootAction extends AnAction {
     }
     final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
-    myModelDescriptor = (EditableSModelDescriptor) ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+    myModelDescriptor = (EditableSModel) ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
       @Override
       public SModel compute() {
         ModelRoot useModelRoot = null;
@@ -160,7 +160,7 @@ public class NewRootAction extends AnAction {
           for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
             if (FileUtil.isSubPath(sourceRoot, targetDir.getPath())) {
               useModelRoot = root;
-              useSourceRoot = sourceRoot;
+              useSourceRoot = targetDir.getPath();
               break;
             }
           }

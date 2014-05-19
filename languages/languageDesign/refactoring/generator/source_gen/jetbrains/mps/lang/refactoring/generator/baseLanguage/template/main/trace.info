@@ -73,10 +73,10 @@
     <nodeInfo nodeId="7573235936722711837" fileName="QueriesGenerated.java" startLine="234" startPosition="108" endLine="235" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951505974" fileName="QueriesGenerated.java" startLine="238" startPosition="108" endLine="239" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1347577327951506003" fileName="QueriesGenerated.java" startLine="242" startPosition="108" endLine="243" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="478744034994714502" fileName="QueriesGenerated.java" startLine="298" startPosition="112" endLine="299" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="478744034994714502" fileName="QueriesGenerated.java" startLine="298" startPosition="119" endLine="299" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="478744034994714512" fileName="QueriesGenerated.java" startLine="301" startPosition="87" endLine="302" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="478744034994714542" fileName="QueriesGenerated.java" startLine="304" startPosition="5" endLine="305" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7573235936722710677" fileName="QueriesGenerated.java" startLine="308" startPosition="113" endLine="309" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7573235936722710677" fileName="QueriesGenerated.java" startLine="308" startPosition="120" endLine="309" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7573235936722710687" fileName="QueriesGenerated.java" startLine="311" startPosition="87" endLine="312" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7573235936722710700" fileName="QueriesGenerated.java" startLine="314" startPosition="5" endLine="315" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="478744034994714837" fileName="QueriesGenerated.java" startLine="64" startPosition="88" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -116,10 +116,10 @@
     <scopeInfo nodeId="7573235936722710683" fileName="QueriesGenerated.java" startLine="309" startPosition="48" endLine="314" endPosition="5">
       <varInfo nodeId="7573235936722710695" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="478744034994714501" fileName="QueriesGenerated.java" startLine="298" startPosition="112" endLine="305" endPosition="18">
+    <scopeInfo nodeId="478744034994714501" fileName="QueriesGenerated.java" startLine="298" startPosition="119" endLine="305" endPosition="18">
       <varInfo nodeId="478744034994714503" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7573235936722710655" fileName="QueriesGenerated.java" startLine="308" startPosition="113" endLine="315" endPosition="18">
+    <scopeInfo nodeId="7573235936722710655" fileName="QueriesGenerated.java" startLine="308" startPosition="120" endLine="315" endPosition="18">
       <varInfo nodeId="7573235936722710678" varName="result" />
     </scopeInfo>
   </root>
@@ -134,14 +134,14 @@
     <nodeInfo nodeId="6154323256625882624" fileName="QueriesGenerated.java" startLine="99" startPosition="112" endLine="100" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6154323256625882643" fileName="QueriesGenerated.java" startLine="286" startPosition="108" endLine="287" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6154323256625882651" fileName="QueriesGenerated.java" startLine="290" startPosition="108" endLine="291" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6154323256625882615" fileName="QueriesGenerated.java" startLine="322" startPosition="113" endLine="323" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6154323256625882634" fileName="QueriesGenerated.java" startLine="326" startPosition="113" endLine="327" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6154323256625882615" fileName="QueriesGenerated.java" startLine="322" startPosition="120" endLine="323" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6154323256625882634" fileName="QueriesGenerated.java" startLine="326" startPosition="120" endLine="327" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="6154323256625882593" fileName="QueriesGenerated.java" startLine="95" startPosition="112" endLine="96" endPosition="251" />
     <scopeInfo nodeId="6154323256625882623" fileName="QueriesGenerated.java" startLine="99" startPosition="112" endLine="100" endPosition="69" />
     <scopeInfo nodeId="6154323256625882642" fileName="QueriesGenerated.java" startLine="286" startPosition="108" endLine="287" endPosition="73" />
     <scopeInfo nodeId="6154323256625882650" fileName="QueriesGenerated.java" startLine="290" startPosition="108" endLine="291" endPosition="74" />
-    <scopeInfo nodeId="6154323256625882614" fileName="QueriesGenerated.java" startLine="322" startPosition="113" endLine="323" endPosition="126" />
-    <scopeInfo nodeId="6154323256625882633" fileName="QueriesGenerated.java" startLine="326" startPosition="113" endLine="327" endPosition="78" />
+    <scopeInfo nodeId="6154323256625882614" fileName="QueriesGenerated.java" startLine="322" startPosition="120" endLine="323" endPosition="126" />
+    <scopeInfo nodeId="6154323256625882633" fileName="QueriesGenerated.java" startLine="326" startPosition="120" endLine="327" endPosition="78" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959031a(jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main@generator)/6598645150040061901">
     <nodeInfo nodeId="6598645150040061971" fileName="QueriesGenerated.java" startLine="103" startPosition="112" endLine="104" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -255,11 +255,11 @@
     <nodeInfo nodeId="2298239814950984739" fileName="QueriesGenerated.java" startLine="134" startPosition="109" endLine="135" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2298239814950984749" fileName="QueriesGenerated.java" startLine="262" startPosition="108" endLine="263" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2298239814950984759" fileName="QueriesGenerated.java" startLine="266" startPosition="108" endLine="267" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2298239814950984769" fileName="QueriesGenerated.java" startLine="318" startPosition="113" endLine="319" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2298239814950984769" fileName="QueriesGenerated.java" startLine="318" startPosition="120" endLine="319" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="2298239814950984738" fileName="QueriesGenerated.java" startLine="134" startPosition="109" endLine="135" endPosition="79" />
     <scopeInfo nodeId="2298239814950984748" fileName="QueriesGenerated.java" startLine="262" startPosition="108" endLine="263" endPosition="73" />
     <scopeInfo nodeId="2298239814950984758" fileName="QueriesGenerated.java" startLine="266" startPosition="108" endLine="267" endPosition="74" />
-    <scopeInfo nodeId="2298239814950984768" fileName="QueriesGenerated.java" startLine="318" startPosition="113" endLine="319" endPosition="78" />
+    <scopeInfo nodeId="2298239814950984768" fileName="QueriesGenerated.java" startLine="318" startPosition="120" endLine="319" endPosition="78" />
   </root>
 </debugInfo>
 

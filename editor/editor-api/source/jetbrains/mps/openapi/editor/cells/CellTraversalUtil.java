@@ -143,11 +143,11 @@ public class CellTraversalUtil {
 
 
     for (EditorCell cell : ((EditorCell_Collection) parent)) {
-      if (isAncestor(cell, firstCell) || firstCell.equals(cell)) {
+      if (isAncestorOrEquals(cell, firstCell)) {
         return -1;
       }
 
-      if (isAncestor(cell, secondCell) || secondCell.equals(cell)) {
+      if (isAncestorOrEquals(cell, secondCell)) {
         return 1;
       }
     }
@@ -185,6 +185,9 @@ public class CellTraversalUtil {
     return false;
   }
 
+  public static boolean isAncestorOrEquals(@NotNull EditorCell ancestor, @NotNull EditorCell child) {
+    return ancestor.equals(child) || isAncestor(ancestor, child);
+  }
   public static EditorCell_Collection getFoldedParent(@NotNull EditorCell cell) {
     for (EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
       if (parent.isFolded()) {

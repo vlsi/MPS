@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
+import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
-import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
@@ -27,7 +29,6 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -52,14 +53,11 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   private List<TemplateMappingScript> myPreScripts = new ArrayList<TemplateMappingScript>();
   private List<TemplateMappingScript> myPostScripts = new ArrayList<TemplateMappingScript>();
   private TemplateModel myModel;
-  private final String myConditionMethod;
   private MapConfigurationCondition myCondition;
 
   public TemplateMappingConfigurationInterpreted(TemplateModel model, SNode mappingConfiguration) {
     myModel = model;
     myMappingConfiguration = mappingConfiguration;
-    SNode condition = RuleUtil.getMappingConfiguration_IsApplicable(myMappingConfiguration);
-    myConditionMethod = condition == null ? null : TemplateFunctionMethodName.mappingConfiguration_Condition(condition);
     int patternRulesCount = 0;
 
     for (SNode child : mappingConfiguration.getChildren()) {
@@ -102,14 +100,19 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   }
 
   @Override
-  public boolean isApplicable(ITemplateGenerator generator) throws GenerationException {
-    if (myConditionMethod == null) {
-      return true;
+  public boolean isApplicable(ITemplateGenerator generator) throws GenerationFailureException {
+    try {
+      if (myCondition == null) {
+        myCondition = generator.getGeneratorSessionContext().getQueryProvider(getMappingNode()).getMapConfigurationCondition(myMappingConfiguration);
+      }
+      return myCondition.check(new TemplateQueryContext(null, null, null, generator));
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch(Throwable th) {
+      generator.getLogger().handleException(th);
+      generator.getLogger().error(getMappingNode(), "error executing condition (see exception)");
+      throw new GenerationFailureException(th);
     }
-    if (myCondition == null) {
-      myCondition = generator.getGeneratorSessionContext().getQueryProvider(getMappingNode()).getMapConfigurationCondition(myConditionMethod);
-    }
-    return myCondition.check(new TemplateQueryContext(null, null, null, generator));
   }
 
   @Override

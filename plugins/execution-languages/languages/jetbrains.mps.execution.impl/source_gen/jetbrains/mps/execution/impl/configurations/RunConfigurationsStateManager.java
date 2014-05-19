@@ -8,7 +8,7 @@ import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.plugins.PluginReloadingListener;
 import jetbrains.mps.MPSCore;
 import com.intellij.openapi.util.InvalidDataException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import java.util.List;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
@@ -85,7 +85,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         myState.restoreState();
         myState = null;
       } catch (InvalidDataException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't read execution configurations state.", e);
         }
       }
@@ -105,12 +105,12 @@ public class RunConfigurationsStateManager implements ProjectComponent {
           while (d_it.hasNext()) {
             d_var = d_it.next();
             if (d_var.getAttachedContent() == null) {
-              if (LOG.isEnabledFor(Priority.WARN)) {
+              if (LOG.isEnabledFor(Level.WARN)) {
                 LOG.warn("Attached content of descriptor " + d_var.getDisplayName() + " is null.");
               }
             } else
             if (d_var.getAttachedContent().getManager() == null) {
-              if (LOG.isEnabledFor(Priority.WARN)) {
+              if (LOG.isEnabledFor(Level.WARN)) {
                 LOG.warn("Manager of attached content of descriptor " + d_var.getDisplayName() + " is null.");
               }
             } else {
@@ -126,7 +126,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         myState = new RunConfigurationsStateManager.State();
         getRunManager().clearAll();
       } catch (WriteExternalException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't save run configurations state.", e);
         }
       }

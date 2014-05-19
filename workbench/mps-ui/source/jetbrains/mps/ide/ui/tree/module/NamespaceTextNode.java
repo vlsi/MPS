@@ -17,42 +17,44 @@ package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.TreeElement;
+import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTreeBuilder.NamespaceNodeBuilder;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.InternUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NamespaceTextNode extends TextTreeNode {
-  private static final NamespaceNodeBuilder<NamespaceTextNode> BUILDER = new NamespaceNodeBuilder<NamespaceTextNode>() {
-    @Override
-    public NamespaceTextNode createNamespaceNode(String text, IOperationContext context) {
-      return new NamespaceTextNode(text, context);
-    }
-
-    @Override
-    public String getName(NamespaceTextNode node) {
-      return node.getName();
-    }
-
-    @Override
-    public void setName(NamespaceTextNode node, String name) {
-      node.setName(name);
-    }
-
-    @Override
-    public boolean isNamespaceNode(MPSTreeNode n) {
-      return n instanceof NamespaceTextNode;
-    }
-  };
+public class NamespaceTextNode extends TextTreeNode implements TreeElement {
 
   public static NamespaceNodeBuilder<NamespaceTextNode> getBuilder() {
-    return BUILDER;
+    return new NamespaceNodeBuilder<NamespaceTextNode>() {
+      @Override
+      public NamespaceTextNode createNamespaceNode(String text, IOperationContext context) {
+        return new NamespaceTextNode(text, context);
+      }
+
+      @Override
+      public String getName(NamespaceTextNode node) {
+        return node.getName();
+      }
+
+      @Override
+      public void setName(NamespaceTextNode node, String name) {
+        node.setName(name);
+      }
+
+      @Override
+      public boolean isNamespaceNode(MPSTreeNode n) {
+        return n instanceof NamespaceTextNode;
+      }
+    };
   }
 
   private String myName;
@@ -129,5 +131,10 @@ public class NamespaceTextNode extends TextTreeNode {
 
   public boolean isFinalName() {
     return false;
+  }
+
+  @Override
+  public void accept(@NotNull TreeNodeVisitor visitor) {
+    visitor.visitNamespaceNode(this);
   }
 }

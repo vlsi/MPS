@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:d8a04b41-593b-40ad-8fa1-52c3ccb0b7ef(jetbrains.mps.ide.java.testMaterial.testModel3)/8083368042256418373">
+    <nodeInfo nodeId="8083368042256418390" fileName="Cl.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="x" />
+    <unitInfo nodeId="8083368042256418373" fileName="Cl.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.ide.java.testMaterial.testModel3.Cl" />
+  </root>
+</debugInfo>
+

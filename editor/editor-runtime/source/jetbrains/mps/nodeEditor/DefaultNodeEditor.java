@@ -43,7 +43,9 @@ public class DefaultNodeEditor implements ConceptEditor {
    */
   @Deprecated
   public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new EditorCell_Error(editorContext, node, "no editor found");
+    EditorCell_Error editorCell_error = new EditorCell_Error(editorContext, node, "no editor found");
+    editorCell_error.setBig(true);
+    return editorCell_error;
   }
 
   @Override
@@ -63,6 +65,7 @@ public class DefaultNodeEditor implements ConceptEditor {
   public static class DefaultInspectorCell extends EditorCell_Constant {
     public DefaultInspectorCell(@NotNull jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, String text, boolean editable) {
       super(editorContext, node, text, editable);
+      setBig(true);
     }
   }
 }

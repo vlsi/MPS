@@ -639,7 +639,7 @@
     <nodeInfo nodeId="2891782949125205963" fileName="ContextManager.java" startLine="75" startPosition="98" endLine="76" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2891782949125205965" fileName="ContextManager.java" startLine="77" startPosition="92" endLine="78" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2891782949125205967" fileName="ContextManager.java" startLine="78" startPosition="44" endLine="79" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4838790954312079765" fileName="ContextManager.java" startLine="81" startPosition="49" endLine="82" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4838790954312079765" fileName="ContextManager.java" startLine="81" startPosition="46" endLine="82" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2891782949125171934" fileName="ContextManager.java" startLine="83" startPosition="11" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="4838790954312082288" fileName="ContextManager.java" startLine="92" startPosition="32" endLine="93" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4838790954312082147" fileName="ContextManager.java" startLine="95" startPosition="66" endLine="96" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -695,7 +695,7 @@
       <varInfo nodeId="2891782949125171913" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125171912" fileName="ContextManager.java" startLine="72" startPosition="44" endLine="73" endPosition="108" />
-    <scopeInfo nodeId="4838790954312079765" fileName="ContextManager.java" startLine="81" startPosition="49" endLine="82" endPosition="29" />
+    <scopeInfo nodeId="4838790954312079765" fileName="ContextManager.java" startLine="81" startPosition="46" endLine="82" endPosition="29" />
     <scopeInfo nodeId="4838790954312082264" fileName="ContextManager.java" startLine="92" startPosition="32" endLine="93" endPosition="27" />
     <scopeInfo nodeId="4838790954312082293" fileName="ContextManager.java" startLine="95" startPosition="66" endLine="96" endPosition="57" />
     <scopeInfo nodeId="1900503386039683423" fileName="ContextManager.java" startLine="104" startPosition="46" endLine="105" endPosition="73" />

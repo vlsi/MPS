@@ -13,7 +13,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -49,7 +49,7 @@ public class NewAspectModel_Action extends BaseAction {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "NewAspectModel", t);
       }
       this.disable(event.getPresentation());
@@ -82,7 +82,7 @@ public class NewAspectModel_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "NewAspectModel", t);
       }
     }

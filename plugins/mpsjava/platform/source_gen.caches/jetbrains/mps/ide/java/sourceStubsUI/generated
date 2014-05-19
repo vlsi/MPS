@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cvfgdbk4zvg7zylzztja33lpzexyrct" />
+<dependencies version="2" modelHash="-4br03ih5lazu8ax5xhkego2826br5zu">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-bmuetnvtitb569xv7p5azkbndbq413k" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="1483465595852166755" name="JavaSourceStubModelRootSettingsEditor" hash="aubwrajqenmaepz9dz8t65kbd8rzagl">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="JavaSourceStubModelRootSettingsEditor.java" />
+  </source>
+  <source id="1483465595852166869" name="JavaSourceStubModelRootSettingsProvider" hash="-3l3nnr1wrs8zt05o59obrdf4ibvabjz">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="JavaSourceStubModelRootSettingsProvider.java" />
+  </source>
+</dependencies>
 

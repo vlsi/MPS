@@ -20,7 +20,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -65,7 +65,7 @@ public class InternalActionsUtils {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
-        if (LOG.isEnabledFor(Priority.WARN)) {
+        if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("Modules: " + Sequence.fromIterable(modules).count());
         }
         modelReferences.value = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
@@ -77,7 +77,7 @@ public class InternalActionsUtils {
             return it.getReference();
           }
         });
-        if (LOG.isEnabledFor(Priority.WARN)) {
+        if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("Models: " + Sequence.fromIterable(modelReferences.value).count());
         }
       }
@@ -93,7 +93,7 @@ public class InternalActionsUtils {
             // hack for conf stubs 
             UnregisteredNodes.instance().clear();
             if (num.value++ % 100 == 0) {
-              if (LOG.isEnabledFor(Priority.WARN)) {
+              if (LOG.isEnabledFor(Level.WARN)) {
                 LOG.warn("Model num: " + num.value + ", name: " + SModelStereotype.withoutStereotype(modelRef.getModelName()));
               }
             }
@@ -103,7 +103,7 @@ public class InternalActionsUtils {
                 try {
                   nodeCallback.invoke(node);
                 } catch (Throwable t) {
-                  if (LOG.isEnabledFor(Priority.ERROR)) {
+                  if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("Exception in callback for node " + node, t);
                   }
                 }

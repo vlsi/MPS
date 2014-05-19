@@ -7,12 +7,13 @@
   <unitInfo fileName="ActionReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ActionReference_BehaviorDescriptor" />
   <unitInfo fileName="AnonymousCellAnnotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="AssertMatch_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.AssertMatch_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BootstrapActionReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.BootstrapActionReference_BehaviorDescriptor" />
   <unitInfo fileName="CheckDataFlowOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.CheckDataFlowOperation_BehaviorDescriptor" />
   <unitInfo fileName="CheckNodeDataflow_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.CheckNodeDataflow_BehaviorDescriptor" />
   <unitInfo fileName="CheckNodeForErrorMessagesOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.CheckNodeForErrorMessagesOperation_BehaviorDescriptor" />
   <unitInfo fileName="CheckNodeForErrors_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.CheckNodeForErrors_BehaviorDescriptor" />
+  <unitInfo fileName="DragMouseStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.DragMouseStatement_BehaviorDescriptor" />
   <unitInfo fileName="EditorComponentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.EditorComponentExpression_BehaviorDescriptor" />
   <unitInfo fileName="EditorExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.EditorExpression_BehaviorDescriptor" />
   <unitInfo fileName="EditorOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.EditorOperation_BehaviorDescriptor" />
@@ -28,12 +29,12 @@
   <unitInfo fileName="MockAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.MockAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="ModelExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ModelExpression_BehaviorDescriptor" />
   <unitInfo fileName="NodeCheckOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor" />
-  <unitInfo fileName="NodeCheckOperationsContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeCheckOperationsContainer_BehaviorDescriptor" />
   <unitInfo fileName="NodeConstraintsErrorCheckOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeConstraintsErrorCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeConstraintsWarningCheckOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeConstraintsWarningCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeErrorCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeExpectedTypeCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeExpectedTypeCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeOperationsContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeOperationsContainer_BehaviorDescriptor" />
+  <unitInfo fileName="NodePropertiesContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodePropertiesContainer_BehaviorDescriptor" />
   <unitInfo fileName="NodeReachable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeReachable_BehaviorDescriptor" />
   <unitInfo fileName="NodeRuleCheckOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_BehaviorDescriptor" />
   <unitInfo fileName="NodeTypeCheckOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeTypeCheckOperation_BehaviorDescriptor" />
@@ -48,6 +49,7 @@
   <unitInfo fileName="NodesTestCase_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodesTestCase_BehaviorDescriptor" />
   <unitInfo fileName="NodesTestMethod_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodesTestMethod_BehaviorDescriptor" />
   <unitInfo fileName="PressKeyStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.PressKeyStatement_BehaviorDescriptor" />
+  <unitInfo fileName="PressMouseStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.PressMouseStatement_BehaviorDescriptor" />
   <unitInfo fileName="ProjectExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ProjectExpression_BehaviorDescriptor" />
   <unitInfo fileName="ReportErrorStatementReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ReportErrorStatementReference_BehaviorDescriptor" />
   <unitInfo fileName="ScopesExpectedNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.ScopesExpectedNode_BehaviorDescriptor" />
@@ -387,12 +389,12 @@
     <unitInfo nodeId="1229204042979" fileName="EditorTestCase_Behavior.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.EditorTestCase_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1262430001741647533">
-    <nodeInfo nodeId="1262430001741647533" fileName="NodeCheckOperationsContainer_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1262430001741647535" fileName="NodeCheckOperationsContainer_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1262430001741647533" fileName="NodeCheckOperationsContainer_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+    <nodeInfo nodeId="1262430001741647533" fileName="NodePropertiesContainer_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1262430001741647535" fileName="NodePropertiesContainer_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1262430001741647533" fileName="NodePropertiesContainer_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1262430001741647533" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741647533" fileName="NodeCheckOperationsContainer_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeCheckOperationsContainer_Behavior" />
+    <unitInfo nodeId="1262430001741647533" fileName="NodePropertiesContainer_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodePropertiesContainer_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/1262430001741703830">
     <nodeInfo nodeId="5587533744543561306" fileName="NodeOperationsContainer_Behavior.java" startLine="19" startPosition="39" endLine="20" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -893,6 +895,20 @@
       <varInfo nodeId="4098794966562281137" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="4098794966562281137" fileName="NodeRuleCheckOperation_Behavior.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/4196004291146430722">
+    <nodeInfo nodeId="4196004291146437959" fileName="DragMouseStatement_Behavior.java" startLine="12" startPosition="87" endLine="13" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4196004291146430722" fileName="DragMouseStatement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4196004291146430722" fileName="DragMouseStatement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPressMouseStatement_4196004291146433125#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="4196004291146430875" fileName="DragMouseStatement_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="4196004291146433128" fileName="DragMouseStatement_Behavior.java" startLine="12" startPosition="87" endLine="13" endPosition="120" />
+    <scopeInfo nodeId="4196004291146430722" fileName="DragMouseStatement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="4196004291146430722" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4196004291146430722" fileName="DragMouseStatement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="4196004291146430722" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="4196004291146430722" fileName="DragMouseStatement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.behavior.DragMouseStatement_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)/4239542196496960972">
     <nodeInfo nodeId="1211716198725168800" fileName="MPSActionReference_Behavior.java" startLine="16" startPosition="80" endLine="17" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

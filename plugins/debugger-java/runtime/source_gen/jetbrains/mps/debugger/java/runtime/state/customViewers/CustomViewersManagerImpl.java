@@ -24,7 +24,7 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
 import com.sun.jdi.InterfaceType;
 import com.sun.jdi.ClassType;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
@@ -98,7 +98,7 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
           currentBest._1(newType);
         }
       } catch (EvaluationException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Error while trying to select best custom viewer. Current factory is " + factory, e);
         }
       }

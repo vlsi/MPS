@@ -152,7 +152,7 @@
     <nodeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="125" startPosition="36" endLine="126" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="126" startPosition="76" endLine="127" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="127" startPosition="96" endLine="128" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="130" startPosition="45" endLine="131" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="130" startPosition="42" endLine="131" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="133" startPosition="5" endLine="134" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5963359171343833854" fileName="DeployPlugins_Configuration.java" startLine="138" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySkipModulesLoading" />
     <nodeInfo nodeId="5963359171343834568" fileName="DeployPlugins_Configuration.java" startLine="139" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRestartCurrentInstance" />
@@ -265,7 +265,7 @@
     <scopeInfo nodeId="8279827005673215785" fileName="DeployPlugins_Configuration.java" startLine="102" startPosition="37" endLine="103" endPosition="20" />
     <scopeInfo nodeId="8279827005672912150" fileName="DeployPlugins_Configuration.java" startLine="110" startPosition="53" endLine="111" endPosition="58" />
     <scopeInfo nodeId="8279827005672912173" fileName="DeployPlugins_Configuration.java" startLine="114" startPosition="39" endLine="115" endPosition="70" />
-    <scopeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="130" startPosition="45" endLine="131" endPosition="26" />
+    <scopeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="130" startPosition="42" endLine="131" endPosition="26" />
     <scopeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="153" startPosition="113" endLine="154" endPosition="34" />
     <scopeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="158" startPosition="132" endLine="159" endPosition="88" />
     <scopeInfo nodeId="2023531404351503243" fileName="DeployPlugins_Configuration.java" startLine="163" startPosition="103" endLine="164" endPosition="16" />
@@ -584,7 +584,7 @@
     <nodeInfo nodeId="4337072726662308018" fileName="DeployPlugins_BeforeTask.java" startLine="102" startPosition="75" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8679254744080812102" fileName="DeployPlugins_BeforeTask.java" startLine="103" startPosition="0" endLine="104" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4337072726661437248" fileName="DeployPlugins_BeforeTask.java" startLine="105" startPosition="11" endLine="106" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4337072726661559160" fileName="DeployPlugins_BeforeTask.java" startLine="108" startPosition="47" endLine="109" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4337072726661559160" fileName="DeployPlugins_BeforeTask.java" startLine="108" startPosition="44" endLine="109" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5057842142813004308" fileName="DeployPlugins_BeforeTask.java" startLine="110" startPosition="9" endLine="111" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4337072726661624144" fileName="DeployPlugins_BeforeTask.java" startLine="111" startPosition="31" endLine="112" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8679254744081298928" fileName="DeployPlugins_BeforeTask.java" startLine="113" startPosition="7" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -645,7 +645,7 @@
     <scopeInfo nodeId="7126833505588416772" fileName="DeployPlugins_BeforeTask.java" startLine="78" startPosition="55" endLine="79" endPosition="20" />
     <scopeInfo nodeId="33324785354799866" fileName="DeployPlugins_BeforeTask.java" startLine="88" startPosition="31" endLine="89" endPosition="71" />
     <scopeInfo nodeId="4337072726661557826" fileName="DeployPlugins_BeforeTask.java" startLine="105" startPosition="11" endLine="106" endPosition="191" />
-    <scopeInfo nodeId="4337072726661559160" fileName="DeployPlugins_BeforeTask.java" startLine="108" startPosition="47" endLine="109" endPosition="49" />
+    <scopeInfo nodeId="4337072726661559160" fileName="DeployPlugins_BeforeTask.java" startLine="108" startPosition="44" endLine="109" endPosition="49" />
     <scopeInfo nodeId="2545331098615354246" fileName="DeployPlugins_BeforeTask.java" startLine="128" startPosition="60" endLine="129" endPosition="57" />
     <scopeInfo nodeId="5057842142812948189" fileName="DeployPlugins_BeforeTask.java" startLine="96" startPosition="81" endLine="98" endPosition="21" />
     <scopeInfo nodeId="4337072726662448036" fileName="DeployPlugins_BeforeTask.java" startLine="144" startPosition="26" endLine="146" endPosition="21" />
@@ -881,7 +881,7 @@
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="174" startPosition="9" endLine="175" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="175" startPosition="36" endLine="176" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="176" startPosition="81" endLine="177" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="179" startPosition="45" endLine="180" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="179" startPosition="42" endLine="180" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="182" startPosition="5" endLine="183" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="468375730750990913" fileName="MpsStartupSettings_Configuration.java" startLine="187" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVmOptions" />
     <nodeInfo nodeId="468375730750990915" fileName="MpsStartupSettings_Configuration.java" startLine="188" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJrePath" />
@@ -996,7 +996,7 @@
     <scopeInfo nodeId="468375730751048498" fileName="MpsStartupSettings_Configuration.java" startLine="148" startPosition="39" endLine="149" endPosition="52" />
     <scopeInfo nodeId="468375730751048509" fileName="MpsStartupSettings_Configuration.java" startLine="151" startPosition="42" endLine="152" endPosition="59" />
     <scopeInfo nodeId="468375730751048574" fileName="MpsStartupSettings_Configuration.java" startLine="165" startPosition="37" endLine="166" endPosition="51" />
-    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="179" startPosition="45" endLine="180" endPosition="26" />
+    <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="179" startPosition="42" endLine="180" endPosition="26" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="215" startPosition="65" endLine="216" endPosition="50" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="219" startPosition="62" endLine="220" endPosition="57" />
     <scopeInfo nodeId="468375730750988347" fileName="MpsStartupSettings_Configuration.java" startLine="224" startPosition="29" endLine="225" endPosition="31" />
@@ -1142,7 +1142,7 @@
     <nodeInfo nodeId="5057842142812859069" fileName="DeployScript.java" startLine="73" startPosition="62" endLine="74" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5057842142812859090" fileName="DeployScript.java" startLine="74" startPosition="197" endLine="75" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5057842142812859096" fileName="DeployScript.java" startLine="76" startPosition="11" endLine="77" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5057842142813438146" fileName="DeployScript.java" startLine="83" startPosition="47" endLine="84" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5057842142813438146" fileName="DeployScript.java" startLine="83" startPosition="44" endLine="84" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5057842142812870714" fileName="DeployScript.java" startLine="85" startPosition="9" endLine="86" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5057842142812644389" fileName="DeployScript.java" startLine="87" startPosition="7" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5057842142812873002" fileName="DeployScript.java" startLine="89" startPosition="5" endLine="90" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1193,7 +1193,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5057842142812859113" fileName="DeployScript.java" startLine="80" startPosition="43" endLine="80" endPosition="43" />
     <scopeInfo nodeId="5057842142812859095" fileName="DeployScript.java" startLine="76" startPosition="11" endLine="77" endPosition="30" />
-    <scopeInfo nodeId="5057842142813438146" fileName="DeployScript.java" startLine="83" startPosition="47" endLine="84" endPosition="54" />
+    <scopeInfo nodeId="5057842142813438146" fileName="DeployScript.java" startLine="83" startPosition="44" endLine="84" endPosition="54" />
     <scopeInfo nodeId="5057842142813065864" fileName="DeployScript.java" startLine="95" startPosition="36" endLine="96" endPosition="27" />
     <scopeInfo nodeId="4283566179239153968" fileName="DeployScript.java" startLine="99" startPosition="43" endLine="100" endPosition="30" />
     <scopeInfo nodeId="5057842142812605011" fileName="DeployScript.java" startLine="111" startPosition="25" endLine="112" endPosition="108" />
@@ -1458,7 +1458,7 @@
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="132" startPosition="67" endLine="133" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="133" startPosition="74" endLine="134" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="134" startPosition="88" endLine="135" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="45" endLine="138" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="42" endLine="138" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="140" startPosition="5" endLine="141" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="149" startPosition="61" endLine="150" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="150" startPosition="74" endLine="151" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1569,7 +1569,7 @@
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="112" startPosition="35" endLine="113" endPosition="104" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="119" startPosition="56" endLine="120" endPosition="18" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="123" startPosition="61" endLine="124" endPosition="27" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="45" endLine="138" endPosition="26" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="42" endLine="138" endPosition="26" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="155" startPosition="95" endLine="156" endPosition="34" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="160" startPosition="132" endLine="161" endPosition="79" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="165" startPosition="103" endLine="166" endPosition="16" />
@@ -2006,7 +2006,7 @@
     <nodeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="103" startPosition="73" endLine="104" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="104" startPosition="84" endLine="105" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="105" startPosition="96" endLine="106" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="108" startPosition="45" endLine="109" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="108" startPosition="42" endLine="109" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="111" startPosition="5" endLine="112" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="120" startPosition="61" endLine="121" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="121" startPosition="86" endLine="122" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2105,7 +2105,7 @@
     <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="86" startPosition="57" endLine="87" endPosition="27" />
     <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="90" startPosition="65" endLine="91" endPosition="31" />
     <scopeInfo nodeId="6062668769034642259" fileName="JUnitTests_Configuration.java" startLine="94" startPosition="48" endLine="95" endPosition="97" />
-    <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="108" startPosition="45" endLine="109" endPosition="26" />
+    <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="108" startPosition="42" endLine="109" endPosition="26" />
     <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="126" startPosition="107" endLine="127" endPosition="34" />
     <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="131" startPosition="132" endLine="132" endPosition="85" />
     <scopeInfo nodeId="6062668769034010590" fileName="JUnitTests_Configuration.java" startLine="136" startPosition="103" endLine="137" endPosition="16" />
@@ -2696,7 +2696,7 @@
     <nodeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="100" startPosition="74" endLine="101" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="101" startPosition="85" endLine="102" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="102" startPosition="96" endLine="103" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="105" startPosition="45" endLine="106" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="105" startPosition="42" endLine="106" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="108" startPosition="5" endLine="109" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="117" startPosition="61" endLine="118" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="118" startPosition="88" endLine="119" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2792,7 +2792,7 @@
     <scopeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="83" startPosition="60" endLine="84" endPosition="25" />
     <scopeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="87" startPosition="67" endLine="88" endPosition="29" />
     <scopeInfo nodeId="4337072726662484652" fileName="MPSInstance_Configuration.java" startLine="91" startPosition="32" endLine="92" endPosition="111" />
-    <scopeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="105" startPosition="45" endLine="106" endPosition="26" />
+    <scopeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="105" startPosition="42" endLine="106" endPosition="26" />
     <scopeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="123" startPosition="109" endLine="124" endPosition="34" />
     <scopeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="128" startPosition="132" endLine="129" endPosition="86" />
     <scopeInfo nodeId="6062668769034024114" fileName="MPSInstance_Configuration.java" startLine="133" startPosition="103" endLine="134" endPosition="16" />
@@ -3383,7 +3383,7 @@
     <nodeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="60" startPosition="9" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="61" startPosition="36" endLine="62" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="62" startPosition="69" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="65" startPosition="45" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="65" startPosition="42" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="68" startPosition="5" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6391517972808447586" fileName="Remote_Configuration.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySettings" />
     <nodeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="79" startPosition="61" endLine="80" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3448,7 +3448,7 @@
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="43" startPosition="26" endLine="44" endPosition="81" />
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="49" startPosition="49" endLine="50" endPosition="30" />
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="53" startPosition="59" endLine="54" endPosition="31" />
-    <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="65" startPosition="45" endLine="66" endPosition="26" />
+    <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="65" startPosition="42" endLine="66" endPosition="26" />
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="81" startPosition="31" endLine="82" endPosition="46" />
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="88" startPosition="99" endLine="89" endPosition="34" />
     <scopeInfo nodeId="6391517972808447557" fileName="Remote_Configuration.java" startLine="93" startPosition="132" endLine="94" endPosition="81" />
@@ -3732,7 +3732,7 @@
     <nodeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="57" startPosition="9" endLine="58" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="58" startPosition="36" endLine="59" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="59" startPosition="84" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="62" startPosition="45" endLine="63" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="62" startPosition="42" endLine="63" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="65" startPosition="5" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5647974406687807901" fileName="DeployPluginsSettings_Configuration.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPluginsToDeploy" />
     <nodeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="76" startPosition="61" endLine="77" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -3793,7 +3793,7 @@
     <scopeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="42" startPosition="52" endLine="43" endPosition="37" />
     <scopeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="46" startPosition="62" endLine="47" endPosition="38" />
     <scopeInfo nodeId="5647974406689024857" fileName="DeployPluginsSettings_Configuration.java" startLine="50" startPosition="56" endLine="51" endPosition="71" />
-    <scopeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="62" startPosition="45" endLine="63" endPosition="26" />
+    <scopeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="62" startPosition="42" endLine="63" endPosition="26" />
     <scopeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="78" startPosition="38" endLine="79" endPosition="60" />
     <scopeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="90" startPosition="68" endLine="91" endPosition="53" />
     <scopeInfo nodeId="6883107143361156570" fileName="DeployPluginsSettings_Configuration.java" startLine="94" startPosition="65" endLine="95" endPosition="60" />

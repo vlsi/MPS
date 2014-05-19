@@ -27,7 +27,7 @@ import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.awt.datatransfer.DataFlavor;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
@@ -279,11 +279,11 @@ public class CopyPasteUtil {
         nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
         return nodeTransferable.createNodeData();
       } catch (UnsupportedFlavorException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Exception", e);
         }
       } catch (IOException e) {
-        if (LOG.isEnabledFor(Priority.ERROR)) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Exception", e);
         }
       }

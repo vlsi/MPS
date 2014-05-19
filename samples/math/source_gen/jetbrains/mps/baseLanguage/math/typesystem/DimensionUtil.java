@@ -22,7 +22,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class DimensionUtil {
   @InferenceMethod
   public static void checkDim(final TypeCheckingContext typeCheckingContext, final List<SNode> components, final int n, final List<SNode> types, final boolean row, final SNode node) {
-    if (n == (int) ListSequence.fromList(components).count()) {
+    if (n == ListSequence.fromList(components).count()) {
       final SNode T_typevar_757772128652074250 = typeCheckingContext.createNewRuntimeTypesVariable();
       int s = 0;
       int f = 0;

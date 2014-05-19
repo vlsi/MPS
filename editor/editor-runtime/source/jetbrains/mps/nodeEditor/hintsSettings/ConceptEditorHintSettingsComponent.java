@@ -20,7 +20,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.MyState;
+import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -46,9 +46,9 @@ import java.util.Set;
         )
     }
 )
-public class ConceptEditorHintSettingsComponent implements PersistentStateComponent<MyState>, ProjectComponent {
-  private MyState myPersistenceState = new MyState();
-  private MyState myCurrentState = new MyState();
+public class ConceptEditorHintSettingsComponent implements PersistentStateComponent<HintsState>, ProjectComponent {
+  private HintsState myPersistenceState = new HintsState();
+  private HintsState myCurrentState = new HintsState();
   private ConceptEditorHintSettings mySettings;
   private LanguageRegistryListener myListener;
 
@@ -93,7 +93,7 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
 
   @Nullable
   @Override
-  public MyState getState() {
+  public HintsState getState() {
     if (mySettings != null) {
       myPersistenceState.setEnabledHints(mySettings.getEnabledHints());
     }
@@ -101,7 +101,7 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
   }
 
   @Override
-  public void loadState(MyState state) {
+  public void loadState(HintsState state) {
     myCurrentState.getEnabledHints().clear();
     myCurrentState.addEnabledHints(state.getEnabledHints());
     if (mySettings != null) {
@@ -151,7 +151,7 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
   }
 
 
-  public static class MyState {
+  public static class HintsState {
     private Set<String> myEnabledHints = new HashSet<String>();
 
     public Set<String> getEnabledHints() {

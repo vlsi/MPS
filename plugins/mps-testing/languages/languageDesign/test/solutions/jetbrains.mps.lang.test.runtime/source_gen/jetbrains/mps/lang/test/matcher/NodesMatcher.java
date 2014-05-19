@@ -184,7 +184,7 @@ public class NodesMatcher {
         continue;
       }
       if (p1 == null || p2 == null || !(p1.equals(p2))) {
-        difference.add(new PropertyDifferense(key));
+        difference.add(new PropertyDifferense(key, p1, p2));
       }
     }
   }

@@ -15,43 +15,31 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.ui.LightColors;
-import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
-import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
-import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
-import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.MyState;
+import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
+import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
-import jetbrains.mps.openapi.editor.cells.KeyMap;
-import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
-import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -59,7 +47,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -67,16 +54,14 @@ import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
 public class EditorManager {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorManager.class));
 
-  public static final String BIG_CELL_CONTEXT = "big-cell-context";
-
-  public static final String SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID = "st-hint-anchor-cell-id";
-  public static final String SIDE_TRANSFORM_HINT_ANCHOR_TAG = "st-hint-anchor-tag";
+  private static final String BIG_CELL_CONTEXT = "big-cell-context";
 
   public static final String OLD_NODE_FOR_SUBSTITUTION = "oldNode";
 
@@ -84,7 +69,7 @@ public class EditorManager {
   private boolean myCreatingInspectedCell = false;
 
   private Map<Class, Stack<EditorCell>> myAttributedClassesToAttributedCellStacksMap = new HashMap<Class, Stack<EditorCell>>();
-  private EditorCell myLastAttributedCell;
+  private Deque<EditorCell> myAttributedCells = new LinkedList<EditorCell>();
   private Stack<SNode> myAttributesStack = new Stack<SNode>();
 
   @Nullable
@@ -125,7 +110,8 @@ public class EditorManager {
               }
               return myHashCode;
             }
-          }));
+          }
+      ));
     }
     return new ArrayList<Pair<SNode, SNodeReference>>(result);
   }
@@ -135,7 +121,6 @@ public class EditorManager {
   }
 
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
-    boolean needToPushContext = false;
     try {
       pushTask(context, "Creating " + (isInspectorCell ? "inspector" : "root") + " cell");
       EditorComponent nodeEditorComponent = getEditorComponent(context);
@@ -148,21 +133,8 @@ public class EditorManager {
         fillContextToCellMap(rootCell, myContextToOldCellMap.peek());
       }
       myCreatingInspectedCell = isInspectorCell;
-      needToPushContext = !context.getCellFactory().hasCellContext();
-      if (needToPushContext) {
-        context.getCellFactory().pushCellContext();
-        com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(ProjectHelper.getProject(context.getRepository()));
-        MyState state = project != null ? ConceptEditorHintSettingsComponent.getInstance(project).getState() : null;
-        if (project != null && state != null) {
-          Object[] hints = state.getEnabledHints().toArray();
-          context.getCellFactory().addCellContextHints(Arrays.copyOf(hints, hints.length, String[].class));
-        }
-      }
       return createEditorCell(context, modifications, nodeRefContext);
     } finally {
-      if (needToPushContext) {
-        context.getCellFactory().popCellContext();
-      }
       myContextToOldCellMap.pop();
       popTask(context);
     }
@@ -194,39 +166,14 @@ public class EditorManager {
   }
 
   /**
-   * Should be removed after MPS 3.0
+   * Should be removed after MPS 3.1
    *
-   * @deprecated use getCurrentAttributedCellWithRole() instead
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell getCurrentAttributedPropertyCell() {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCurrentAttributedCellWithRole(AttributeKind.Property.class);
-  }
-
-  /**
-   * Should be removed after MPS 3.0
-   *
-   * @deprecated use getCurrentAttributedCellWithRole() instead
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell getCurrentAttributedLinkCell() {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
-  }
-
-  /**
-   * Should be removed after MPS 3.0
-   *
-   * @deprecated use getCurrentAttributedCellWithRole() instead
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell getCurrentAttributedNodeCell() {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCurrentAttributedCellWithRole(AttributeKind.Node.class);
-  }
-
-  /**
-   * Should be removed after MPS 3.0
-   *
-   * @deprecated use createNodeRoleAttributeCell() instead
+   * @param context
+   * @param roleAttribute
+   * @param attributeKind
+   * @param cellWithRole
+   * @return
+   * @deprecated since MPS 3.1 use createNodeRoleAttributeCell()
    */
   @Deprecated
   public jetbrains.mps.nodeEditor.cells.EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeKind,
@@ -285,14 +232,42 @@ public class EditorManager {
       myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
     }
     stack.push(cellWithRole);
-    myLastAttributedCell = cellWithRole;
+
+    // For the compatibility with Attribute concept editor.
+    // If the editor for sub-concept of Attribute was not specified then default one will be used, so
+    // providing the possibility to always call getCurrentAttributedCellWithRole() with AttributeKind.Node.class
+    // specified as a parameter.
+    Stack<EditorCell> nodeAttributeStack = null;
+    if (attributeKind != AttributeKind.Node.class) {
+      nodeAttributeStack = myAttributedClassesToAttributedCellStacksMap.get(AttributeKind.Node.class);
+      if (nodeAttributeStack == null) {
+        nodeAttributeStack = new Stack<EditorCell>();
+        myAttributedClassesToAttributedCellStacksMap.put(AttributeKind.Node.class, nodeAttributeStack);
+      }
+      nodeAttributeStack.push(cellWithRole);
+    }
+    myAttributedCells.addLast(cellWithRole);
     EditorCell result = createEditorCell(context, modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
-    myLastAttributedCell = null;
+    myAttributedCells.removeLast();
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
+    if (nodeAttributeStack != null) {
+      cellWithRolePopped = nodeAttributeStack.pop();
+      LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
+    }
     return result;
   }
 
+  /**
+   * Should be removed after MPS 3.1
+   *
+   * @param context
+   * @param attribute
+   * @param nodeCell
+   * @return
+   * @deprecated since MPS 3.1 use createNodeRoleAttributeCell(context, attribute, AttributeKind.Node.class, nodeCell)
+   */
+  @Deprecated
   public EditorCell createNodeAttributeCell(EditorContext context, SNode attribute, EditorCell nodeCell) {
     return createRoleAttributeCell(context, attribute, AttributeKind.Node.class, nodeCell);
   }
@@ -327,15 +302,16 @@ public class EditorManager {
 
             SNode poppedAttribute = myAttributesStack.pop();
             LOG.assertLog(poppedAttribute == attribute, "Assertion failed.");
-            return createNodeAttributeCell(context, attribute, nodeCell);
+            return createNodeRoleAttributeCell(context, attribute, AttributeKind.Node.class, nodeCell);
           }
         }
       }
 
       EditorComponent nodeEditorComponent = getEditorComponent(context);
       Map<ReferencedNodeContext, EditorCell> childContextToCellMap = null;
+      EditorCell oldCell = null;
       if (modifications != null) {
-        EditorCell oldCell = myContextToOldCellMap.peek().get(refContext);
+        oldCell = myContextToOldCellMap.peek().get(refContext);
         boolean nodeChanged = isNodeChanged(modifications, nodeEditorComponent, oldCell, context.getCellFactory().getCellContext());
 
         if (!nodeChanged) {
@@ -371,6 +347,9 @@ public class EditorManager {
         if (childContextToCellMap != null) {
           myContextToOldCellMap.push(childContextToCellMap);
         }
+        if (oldCell instanceof SynchronizeableEditorCell && ((SynchronizeableEditorCell) oldCell).canBeSynchronized() && isSynchronizable(node)) {
+          return syncEditorCell((SynchronizeableEditorCell) oldCell, context, refContext);
+        }
         return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
       } finally {
         if (childContextToCellMap != null) {
@@ -380,6 +359,18 @@ public class EditorManager {
     } finally {
       popTask(context);
     }
+  }
+
+  /**
+   * In the current state we cannot synchronize nodes having property/link attributes.
+   * Example of not working synchronization is: property macro upon IntegerConstant in generator template.
+   * On adding/removing such macro synchronization logic cannot update editor properly and add/remove
+   * corresponding "wrapping" attribute cell..
+   * <p/>
+   * In future if proper way of handling such attributes is developed we can get rid of this method.
+   */
+  private boolean isSynchronizable(SNode node) {
+    return !AttributeOperations.hasPropertyAttributes(node) && !AttributeOperations.hasLinkAttributes(node);
   }
 
   private boolean isNodeChanged(List<Pair<SNode, SNodeReference>> modifications, EditorComponent nodeEditorComponent, EditorCell oldCell,
@@ -400,11 +391,49 @@ public class EditorManager {
     return myCreatingInspectedCell;
   }
 
-  private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
+  private EditorCell syncEditorCell(SynchronizeableEditorCell editorCell, EditorContext context, ReferencedNodeContext refContext) {
     pushTask(context, getMessage(context, refContext, "+"));
+    EditorCell result = null;
     try {
       final SNode node = refContext.getNode();
+      NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
+      try {
+        if (!isAttributedCell(editorCell)) {
+          editorCell = removeSideTransformHintCell(editorCell);
+        }
+        NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
+        editorCell.synchronize();
+        result = editorCell;
 
+        if (!isAttributedCell(result)) {
+          result = addSideTransformHintCell(result, node);
+        }
+      } catch (Throwable e) {
+        LOG.error("Failed to synchronize cell for node " + SNodeUtil.getDebugText(node), e);
+        result = new EditorCell_Error(context, node, "!exception!:" + SNodeUtil.getDebugText(node));
+        result.setBig(true);
+      } finally {
+        NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
+        addNodeDependenciesToEditor(result, nodeAccessListener, context);
+        if (!isAttributedCell(result)) {
+          result.putUserObject(BIG_CELL_CONTEXT, refContext);
+          EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(result, node);
+          if (unwrappedNodeBigCell != null) {
+            getEditorComponent(context).registerAsBigCell(unwrappedNodeBigCell, this);
+          }
+        }
+      }
+      return result;
+    } finally {
+      popTask(context);
+    }
+  }
+
+  private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
+    pushTask(context, getMessage(context, refContext, "+"));
+    final SNode node = refContext.getNode();
+
+    try {
       //reset creating inspected cell : we don't create not-root inspected cells
       myCreatingInspectedCell = false;
 
@@ -412,37 +441,33 @@ public class EditorManager {
       EditorCell nodeCell = null;
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
       try {
-        //voodoo for editor incremental rebuild support
         NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
         nodeCell = context.getCellFactory().createEditorCell(node, isInspectorCell);
-        //-voodoo
 
-        if (isAttributedCell(nodeCell)) {
-          return nodeCell;
-        }
-
-        if (SNodeEditorUtil.hasRightTransformHint(node)) {
-          nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.RIGHT);
-          return nodeCell;
-        }
-
-        if (SNodeEditorUtil.hasLeftTransformHint(node)) {
-          nodeCell = addSideTransformHintCell(node, nodeCell, context, CellSide.LEFT);
-          return nodeCell;
+        if (!isAttributedCell(nodeCell)) {
+          nodeCell = addSideTransformHintCell(nodeCell, node);
         }
       } catch (Throwable e) {
         LOG.error("Failed to create cell for node " + SNodeUtil.getDebugText(node), e);
         nodeCell = new EditorCell_Error(context, node, "!exception!:" + SNodeUtil.getDebugText(node));
+        nodeCell.setBig(true);
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
-        if (nodeCell != null && !isAttributedCell(nodeCell)) {
+        assert nodeCell != null;
+        if (!isAttributedCell(nodeCell)) {
           nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
-          editorComponent.registerAsBigCell(nodeCell, this);
+          EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(nodeCell, node);
+          if (unwrappedNodeBigCell != null) {
+            editorComponent.registerAsBigCell(unwrappedNodeBigCell, this);
+          }
           addNodeDependenciesToEditor(nodeCell, nodeAccessListener, context);
         }
       }
 
-      assert nodeCell != null;
+      if (nodeCell instanceof EditorCell_Collection && ((EditorCell_Collection) nodeCell).canBeSynchronized() && !isSynchronizable(node)) {
+        ((EditorCell_Collection) nodeCell).setCanBeSynchronized(false);
+      }
+
       return nodeCell;
     } finally {
       popTask(context);
@@ -450,12 +475,55 @@ public class EditorManager {
   }
 
   /**
-   * Some attributes node editors return attributed node cell directly. For such an editors we should skip
-   * all attribute-specific cell processing. This method is used to determine if the result of generated
-   * Editor execution is equals to not wrapped cell of attributed node.
+   * Property or reference attributes can wrap some particular cells of the main node editor into attribute node editor cells.
+   * Such "wrapping" cells when should be inserted into the main node editor instead of original property/reference cells.
+   * <p/>
+   * It can happen that  main node editor contains only one property/reference cell. In such case if corresponding property/reference
+   * attribute is attached to the main node then the "main" cell will be wrapped into a property/reference attribute node editor cell(s)
+   * and returned from EditorCellFactory.createEditorCell() method execution.
+   * <p/>
+   * To property handle such situations we should "unwrap" returned cell to get direct access to the big cell representing original main node.
+   * This method was created ti handle such situations.
+   *
+   * @param cell EditorCell created by EditorCellFactory.createEditorCell() method
+   * @param node main node used as a parameter while creating this cell
+   * @return "big" cell representing main node. It will be either cell or it's child cell.
    */
-  private boolean isAttributedCell(EditorCell nodeCell) {
-    return myLastAttributedCell == nodeCell;
+  private EditorCell getUnwrappedNodeBigCell(EditorCell cell, SNode node) {
+    Queue<EditorCell> cells = new LinkedList<EditorCell>();
+    cells.add(cell);
+    while (!cells.isEmpty()) {
+      EditorCell nextCell = cells.remove();
+      if (nextCell.getSNode() == node && !(nextCell instanceof EditorCell_STHint)) {
+        if (!nextCell.isBig()) {
+          // trying to avoid calling cell.getSNode().toString() for each node...
+          assert false :
+              "Not big cell found. Original cell: " + cell.getCellId() + ", node: " + cell.getSNode() + ". Found cell: " + nextCell.getCellId() + ", node: " +
+                  node;
+        }
+        return nextCell;
+      }
+      if (nextCell instanceof EditorCell_Collection) {
+        for (EditorCell childCell : (EditorCell_Collection) nextCell) {
+          cells.add(childCell);
+        }
+      }
+    }
+    LOG.error("Editor cell created for the node: " + node + " does not contain any cell associated with this node. Following node was used instead: " +
+        cell.getSNode(), cell.getSNode());
+    return null;
+  }
+
+  /**
+   * Some node attribute editors may return attributed node cell directly. (e.g. if specified editor is like: [> attributed node <]).
+   * For such editors we should skip all additional cell processing because additional cell processing was already performed for this
+   * cell while constructing it for the original node.
+   * <p/>
+   * This method is used to determine if the result of the generated attribute editor execution is equals to original cell of the
+   * attributed node.
+   */
+  private boolean isAttributedCell(@NotNull EditorCell nodeCell) {
+    return myAttributedCells.peekLast() == nodeCell;
   }
 
   private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener, EditorContext editorContext) {
@@ -469,180 +537,64 @@ public class EditorManager {
     }
   }
 
-  private EditorCell addSideTransformHintCell(final SNode node, EditorCell nodeCell, final EditorContext context, final CellSide side) {
-    // create the hint cell
-    final EditorCell_STHint sideTransformHintCell = new EditorCell_STHint(context, node, side);
-    final CellInfo nodeCellInfo = getEditorComponent(context).getRecentlySelectedCellInfo();
+  private SynchronizeableEditorCell removeSideTransformHintCell(SynchronizeableEditorCell nodeCell) {
+    EditorCell_STHint hintCell = null;
 
-    // delete the hint when pressed ctrl-delete, delete or backspace
-    sideTransformHintCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType.DELETE, new AbstractCellAction() {
-      @Override
-      public void execute(final EditorContext context) {
-        removeSTHintAndChangeSelection(context, node, nodeCellInfo);
-      }
-    });
-    // delete the hint when double press 'space'
-    sideTransformHintCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM, new AbstractCellAction() {
-      @Override
-      public void execute(EditorContext context) {
-        removeSTHintAndChangeSelection(context, node, nodeCellInfo);
-      }
-    });
-
-    sideTransformHintCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM, new AbstractCellAction() {
-      @Override
-      public void execute(EditorContext context) {
-        removeSTHintAndChangeSelection(context, node, nodeCellInfo);
-      }
-    });
-
-    // delete the hint when double press 'esc'
-    KeyMap keyMap = new KeyMapImpl();
-    keyMap.putAction(KeyMap.KEY_MODIFIERS_NONE, "VK_ESCAPE", new KeyMapActionImpl() {
-      @Override
-      public void execute(EditorContext context) {
-        removeSTHintAndChangeSelection(context, node, nodeCellInfo);
-      }
-    });
-    sideTransformHintCell.addKeyMap(keyMap);
-
-    // create the hint's auto-completion menu
-    final String transformTag = (String) node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG);
-    sideTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
-      @Override
-      protected List<SubstituteAction> createActions() {
-        List<SubstituteAction> list = ModelActions.createSideTransformHintSubstituteActions(node, side, transformTag, context.getOperationContext());
-        List<SubstituteAction> wrapperList = new ArrayList<SubstituteAction>(list.size());
-        for (final SubstituteAction action : list) {
-          wrapperList.add(new NodeSubstituteActionWrapper(action) {
-            @Override
-            public SNode substitute(@Nullable EditorContext context, String pattern) {
-              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                @Override
-                public void run() {
-                  SNodeEditorUtil.removeRightTransformHint(node);
-                  SNodeEditorUtil.removeLeftTransformHint(node);
-                }
-              });
-              return super.substitute(context, pattern);
-            }
-
-            public String toString() {
-              return "RTWrapper for " + action + "(" + action.getClass() + ")";
-            }
-          });
+    // traversing all child cells of nodeCell representing same node and looking for EditorCell_STHint
+    Queue<EditorCell> queue = new LinkedList<EditorCell>();
+    queue.add(nodeCell);
+    while (hintCell == null && !queue.isEmpty()) {
+      EditorCell nextCell = queue.remove();
+      if (nextCell instanceof EditorCell_STHint) {
+        hintCell = (EditorCell_STHint) nextCell;
+      } else if (nextCell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
+        for (EditorCell childCell : ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) nextCell)) {
+          if (childCell.getSNode() == nodeCell.getSNode()) {
+            queue.add(childCell);
+          }
         }
-        return wrapperList;
       }
-    });
+    }
 
-    // decide position of the hint cell
-    EditorCell resultCell;
-    Object anchorId = node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
-    EditorCell anchorCell = anchorId == null ? null : CellFinderUtil.findChildById(nodeCell, node, anchorId.toString(), true);
-    if (anchorCell != null && anchorCell != nodeCell) {
-      jetbrains.mps.openapi.editor.cells.EditorCell_Collection cellCollection = anchorCell.getParent();
-      int index;
-      if (side == CellSide.RIGHT) {
-        index = cellCollection.indexOf(anchorCell) + 1;
-      } else {
-        index = cellCollection.indexOf(anchorCell);
-      }
+    return hintCell != null ? (SynchronizeableEditorCell) hintCell.uninstall() : nodeCell;
+  }
 
-      cellCollection.addEditorCellAt(index, sideTransformHintCell, false);
-      resultCell = nodeCell;
-      sideTransformHintCell.setAnchor(anchorCell);
+  private EditorCell addSideTransformHintCell(EditorCell nodeCell, SNode node) {
+    CellSide side;
+    if (STHintUtil.hasRightTransformHint(node)) {
+      side = CellSide.RIGHT;
+    } else if (STHintUtil.hasLeftTransformHint(node)) {
+      side = CellSide.LEFT;
     } else {
-      // couldn't insert hint cell - create wrapper collection and put hint to last position
-      EditorCell_Collection rowWrapper = EditorCell_Collection.createHorizontal(context, node);
-      rowWrapper.setSelectable(false);
-      rowWrapper.addEditorCell(nodeCell);
-      if (side == CellSide.RIGHT) {
-        rowWrapper.addEditorCell(sideTransformHintCell);
-      } else {
-        rowWrapper.addEditorCellAt(0, sideTransformHintCell, false);
-      }
-      resultCell = rowWrapper;
-      sideTransformHintCell.setAnchor(nodeCell);
-    }
-    return resultCell;
-  }
-
-  private void removeSTHintAndChangeSelection(final EditorContext context, SNode node, final CellInfo cellInfoToSelect) {
-    SNodeEditorUtil.removeRightTransformHint(node);
-    SNodeEditorUtil.removeLeftTransformHint(node);
-
-    context.flushEvents();
-
-    EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
-    if (cellInfoToSelect == null) return;
-    EditorCell newlySelectedCell = cellInfoToSelect.findCell(editorComponent);
-    if (newlySelectedCell == null) return;
-    editorComponent.changeSelection(newlySelectedCell);
-    if (newlySelectedCell instanceof EditorCell_Label) {
-      newlySelectedCell.end();
-    }
-  }
-
-
-  public static class EditorCell_STHint extends EditorCell_Constant {
-
-    private EditorCell myAnchorCell;
-    private CellSide mySide;
-
-    protected EditorCell_STHint(EditorContext editorContext, SNode node, CellSide side) {
-      super(editorContext, node, "");
-      setCellId("STHint");
-      setDefaultText(" ");
-      setEditable(true);
-      setCellBackgroundColor(LightColors.BLUE);
-
-      getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
-      getStyle().set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      getStyle().set(StyleAttributes.FIRST_POSITION_ALLOWED, true);
-      getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, true);
-
-      mySide = side;
+      return nodeCell;
     }
 
-    @Override
-    public CellInfo getCellInfo() {
-      return new STHintCellInfo(EditorCell_STHint.this, myAnchorCell);
+    String anchorId = STHintUtil.getTransformHintAnchorCellId(node);
+  /*
+   * AnchorCellId is saved in UserObjects now. UserObjects are not updated on undo/redo in model, so sometimes
+   * it's possible that SNode got side-transform hint (as a result of undo action), but AnchorCellId & HintAnchorTag are not restored.
+   * To handle this situation we are checking anchorId for null below and process null value somehow.
+   *
+   * proper solution would be to save anchorId together with side=transform hint in model and undo/redo corresponding value properly.
+   * in this case we will be able to remove "anchorId == null ?" check below and un-comment ssertion.
+   */
+//    assert anchorId != null : "CellId was not specified";
+    EditorCell anchorCell = anchorId == null ? getUnwrappedNodeBigCell(nodeCell, node) : CellFinderUtil.findChildById(nodeCell, node, anchorId, true);
+    if (anchorCell == null) {
+      // anchor cell was not found. Possible reason: different node presentations in editor and inside inspector, so
+      // side-transforms in the main editor should not affect inspector.
+      return nodeCell;
     }
+    assert
+        anchorCell.getSNode() == node :
+        "Anchor cell should be associated with the same node as main cell. Anchor cell node: " + anchorCell.getSNode().getNodeId() + "; main node: " +
+            node.getNodeId();
 
-    @Override
-    public void changeText(String text) {
-      super.changeText(text);
-      if ("".equals(getText())) {
-        SNodeEditorUtil.removeRightTransformHint(getSNode());
-        SNodeEditorUtil.removeLeftTransformHint(getSNode());
-      }
-    }
+    String sideTransformTag = STHintUtil.getTransformHintAnchorTag(node);
 
-    @Override
-    public void setCaretPosition(int position, boolean selection) {
-      if (position != getText().length() && mySide == CellSide.LEFT) {
-        validate(true, false);
-      }
-      super.setCaretPosition(position, selection);
-    }
-
-    public CellSide getSide() {
-      return mySide;
-    }
-
-    public EditorCell getAnchorCell() {
-      return myAnchorCell;
-    }
-
-    private void setAnchor(EditorCell anchorCell) {
-      myAnchorCell = anchorCell;
-    }
-
-    @Override
-    public void synchronizeViewWithModel() {
-
-    }
+    EditorCell_STHint sideTransformHintCell =
+        new EditorCell_STHint(nodeCell, anchorCell, side, sideTransformTag, getEditorComponent(nodeCell.getContext()).getRecentlySelectedCellInfo());
+    return sideTransformHintCell.install();
   }
 
   EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
@@ -673,32 +625,5 @@ public class EditorManager {
       return prefix + refContext.toString();
     }
     return prefix;
-  }
-
-  private static class STHintCellInfo extends DefaultCellInfo {
-    CellInfo myAnchorCellInfo;
-
-    public STHintCellInfo(EditorCell_Constant rightTransformHintCell, EditorCell anchorCell) {
-      super(rightTransformHintCell);
-      myAnchorCellInfo = ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getCellInfo();
-    }
-
-    @Override
-    public jetbrains.mps.nodeEditor.cells.EditorCell findCell(EditorComponent editorComponent) {
-      EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
-      if (anchorCell == null) return super.findCell(editorComponent);
-      return ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getSTHintCell();
-    }
-
-    @Override
-    public jetbrains.mps.nodeEditor.cells.EditorCell findClosestCell(EditorComponent editorComponent) {
-      EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
-      if (anchorCell == null) return super.findCell(editorComponent);
-      EditorCell_Label rtHint = ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getSTHintCell();
-      if (rtHint == null) {
-        return (jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell;
-      }
-      return rtHint;
-    }
   }
 }

@@ -179,7 +179,7 @@ public class QueriesGenerated {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_1206456525472(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1206456525472(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, "conceptDeclaration", false), "virtual_getFqName_1213877404258", new Object[]{});

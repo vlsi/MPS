@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.generator.impl.query;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @author Artem Tikhomirov
  */
-public interface WeaveRuleQuery {
-  SNode contextNode(WeavingMappingRuleContext ctx);
+public interface WeaveRuleQuery extends Query {
+  SNode contextNode(WeavingMappingRuleContext ctx) throws GenerationFailureException;
 }

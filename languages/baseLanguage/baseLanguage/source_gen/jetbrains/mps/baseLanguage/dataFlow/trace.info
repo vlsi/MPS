@@ -550,21 +550,24 @@
     <nodeInfo nodeId="7597254041024527756" fileName="TryCatchStatement_DataFlow.java" startLine="26" startPosition="190" endLine="27" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207218496728" fileName="TryCatchStatement_DataFlow.java" startLine="31" startPosition="25" endLine="32" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207140776970" fileName="TryCatchStatement_DataFlow.java" startLine="35" startPosition="89" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8768955936812442517" fileName="TryCatchStatement_DataFlow.java" startLine="38" startPosition="27" endLine="39" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TryCatchStatement_DataFlow#()V" />
     <nodeInfo nodeId="7970753809667931443" fileName="TryCatchStatement_DataFlow.java" startLine="17" startPosition="102" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7180022869589272950" fileName="TryCatchStatement_DataFlow.java" startLine="22" startPosition="139" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7597254041024527728" fileName="TryCatchStatement_DataFlow.java" startLine="25" startPosition="7" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1207218708174" fileName="TryCatchStatement_DataFlow.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1207140763814" fileName="TryCatchStatement_DataFlow.java" startLine="34" startPosition="7" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8768955936812968901" fileName="TryCatchStatement_DataFlow.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1207218708174" fileName="TryCatchStatement_DataFlow.java" startLine="29" startPosition="5" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8768955936812968901" fileName="TryCatchStatement_DataFlow.java" startLine="36" startPosition="45" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4969132436615607632" fileName="TryCatchStatement_DataFlow.java" startLine="21" startPosition="101" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="17" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <nodeInfo nodeId="1207140763814" fileName="TryCatchStatement_DataFlow.java" startLine="34" startPosition="7" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="17" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="14" startPosition="39" endLine="14" endPosition="39" />
     <scopeInfo nodeId="7970753809667931444" fileName="TryCatchStatement_DataFlow.java" startLine="18" startPosition="99" endLine="19" endPosition="181" />
     <scopeInfo nodeId="7180022869589272951" fileName="TryCatchStatement_DataFlow.java" startLine="23" startPosition="124" endLine="24" endPosition="17" />
     <scopeInfo nodeId="7597254041024527730" fileName="TryCatchStatement_DataFlow.java" startLine="26" startPosition="190" endLine="27" endPosition="231" />
     <scopeInfo nodeId="1207218708174" fileName="TryCatchStatement_DataFlow.java" startLine="31" startPosition="25" endLine="32" endPosition="181" />
-    <scopeInfo nodeId="1207140763815" fileName="TryCatchStatement_DataFlow.java" startLine="35" startPosition="89" endLine="36" endPosition="45" />
+    <scopeInfo nodeId="8768955936812968901" fileName="TryCatchStatement_DataFlow.java" startLine="38" startPosition="27" endLine="39" endPosition="189" />
     <scopeInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="7970753809667931443" fileName="TryCatchStatement_DataFlow.java" startLine="17" startPosition="102" endLine="20" endPosition="5">
       <varInfo nodeId="7970753809667931497" varName="catchClause" />
@@ -573,20 +576,23 @@
       <varInfo nodeId="7597254041024527729" varName="catchClause" />
     </scopeInfo>
     <scopeInfo nodeId="1207218708174" fileName="TryCatchStatement_DataFlow.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1207140763814" fileName="TryCatchStatement_DataFlow.java" startLine="34" startPosition="7" endLine="37" endPosition="5">
-      <varInfo nodeId="1207140763818" varName="c" />
-    </scopeInfo>
+    <scopeInfo nodeId="8768955936812968901" fileName="TryCatchStatement_DataFlow.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="4969132436615607633" fileName="TryCatchStatement_DataFlow.java" startLine="22" startPosition="139" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="1207140763815" fileName="TryCatchStatement_DataFlow.java" startLine="35" startPosition="89" endLine="41" endPosition="9" />
     <scopeInfo nodeId="4969132436615607632" fileName="TryCatchStatement_DataFlow.java" startLine="21" startPosition="101" endLine="29" endPosition="5">
       <varInfo nodeId="4969132436615607636" varName="instruction" />
     </scopeInfo>
-    <scopeInfo nodeId="1206542990056" fileName="TryCatchStatement_DataFlow.java" startLine="17" startPosition="102" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="17" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="1207140763814" fileName="TryCatchStatement_DataFlow.java" startLine="34" startPosition="7" endLine="42" endPosition="5">
+      <varInfo nodeId="1207140763818" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="1206542990056" fileName="TryCatchStatement_DataFlow.java" startLine="17" startPosition="102" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="17" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1206542990054" varName="_context" />
       <varInfo nodeId="1206542990054" varName="operationContext" />
     </scopeInfo>
     <unitInfo nodeId="1207218708174" fileName="TryCatchStatement_DataFlow.java" startLine="30" startPosition="51" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.dataFlow.TryCatchStatement_DataFlow$1" />
-    <unitInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TryCatchStatement_DataFlow" />
+    <unitInfo nodeId="8768955936812968901" fileName="TryCatchStatement_DataFlow.java" startLine="37" startPosition="53" endLine="41" endPosition="7" unitName="jetbrains.mps.baseLanguage.dataFlow.TryCatchStatement_DataFlow$2" />
+    <unitInfo nodeId="1206542990054" fileName="TryCatchStatement_DataFlow.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.TryCatchStatement_DataFlow" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206543144792">
     <nodeInfo nodeId="1206543147046" fileName="ParenthesizedExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -666,17 +672,19 @@
     <unitInfo nodeId="1206544649897" fileName="ArrayLiteral_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.ArrayLiteral_DataFlow" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206544689883">
-    <nodeInfo nodeId="1206544722702" fileName="DimensionExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206544722702" fileName="DimensionExpression_DataFlow.java" startLine="16" startPosition="84" endLine="17" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DimensionExpression_DataFlow#()V" />
-    <nodeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+    <nodeInfo nodeId="1100850602755845260" fileName="DimensionExpression_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
     <scopeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="12" startPosition="41" endLine="12" endPosition="41" />
-    <scopeInfo nodeId="1206544689885" fileName="DimensionExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
+    <scopeInfo nodeId="1100850602755845261" fileName="DimensionExpression_DataFlow.java" startLine="16" startPosition="84" endLine="17" endPosition="109" />
     <scopeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="1206544689885" fileName="DimensionExpression_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="5" />
+    <scopeInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="15" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1206544689883" varName="_context" />
       <varInfo nodeId="1206544689883" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DimensionExpression_DataFlow" />
+    <unitInfo nodeId="1206544689883" fileName="DimensionExpression_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.dataFlow.DimensionExpression_DataFlow" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206544778849">
     <nodeInfo nodeId="1206544781508" fileName="InstanceOfExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

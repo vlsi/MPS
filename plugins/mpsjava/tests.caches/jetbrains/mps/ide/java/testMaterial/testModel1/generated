@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="3egkj037s30ksh61csjayzddwa47591">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <common hash="-4vbydon4emh9njeilgco0ye2zcdstb2" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="8083368042256394201" name="Cl" hash="118b0ro0w3u2h52e4g0174qp2fxtdzn">
+    <file name="Cl.java" />
+  </source>
+  <source id="8083368042256394207" name="Integer" hash="b155hltw74a630tw0n1konnarpth61r">
+    <file name="Integer.java" />
+  </source>
+</dependencies>
+

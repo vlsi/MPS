@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -23,10 +22,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.smodel.SModelStereotype;
-import java.io.File;
-import java.io.IOException;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
@@ -52,10 +47,15 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   }
 
   @Override
-  public synchronized SModel getSModelInternal() {
+  public SModel getSModelInternal() {
     if (myModel == null) {
-      myModel = createModel();
-      myModel.setModelDescriptor(this);
+      synchronized (this) {
+        if (myModel != null) {
+          return myModel;
+        }
+        myModel = createModel();
+        myModel.setModelDescriptor(this);
+      }
       fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -83,8 +83,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     for (Language l : getLanguagesToImport()) {
       model.addLanguage(l.getModuleReference());
     }
-    CompositeClassPathItem cp = createClassPath();
-    new ASMModelLoader(myModelRoot.getModule(), cp, model, false).updateModel();
+    new ASMModelLoader(myModelRoot.getModule(), getSource().getPaths(), model, false).updateModel();
     return model;
   }
 
@@ -97,31 +96,6 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       }
     });
     return SetSequence.fromSetWithValues(new HashSet<Language>(), languages);
-  }
-
-  private CompositeClassPathItem createClassPath() {
-    CompositeClassPathItem cp = new CompositeClassPathItem();
-    for (String dir : getSource().getPaths()) {
-      try {
-        if (dir.indexOf("!") != -1) {
-          cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
-        } else {
-          String name = SModelStereotype.withoutStereotype(getReference().getModelName()).replace('.', File.separatorChar);
-
-          // dirty hack for current problems with path separators 
-          String dirCorrected = dir.replace('/', File.separatorChar);
-          dirCorrected = dirCorrected.replace('\\', File.separatorChar);
-          assert dirCorrected.contains(name) : "Strange dir for model " + name + "; dir = " + dir;
-
-          int index = dirCorrected.indexOf(name);
-          dir = dir.substring(0, index);
-          cp.add(ClassPathFactory.getInstance().createFromPath(dir, this.getClass().getName()));
-        }
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    }
-    return cp;
   }
 
   @Override

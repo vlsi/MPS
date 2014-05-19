@@ -15,12 +15,18 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * @deprecated Use org.jetbrains.mps.util.FilterIterator instead
+ */
+@Deprecated
+@ToRemove(version = 3.1)
 public class ConditionalIterator<T> implements Iterator<T> {
   private Iterator<T> myIterator;
   private Condition<T> myCond;

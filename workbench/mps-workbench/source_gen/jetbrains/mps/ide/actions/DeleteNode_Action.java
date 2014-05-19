@@ -6,18 +6,29 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Priority;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
+import java.util.Set;
+import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class DeleteNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,12 +45,13 @@ public class DeleteNode_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
-      if (check_v2o7qu_a0a0a0(node.getModel())) {
-        return false;
+    final Wrappers._boolean res = new Wrappers._boolean();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        res.value = Sequence.fromIterable(DeleteNode_Action.this.getAffectedNodes(_params)).count() != 0;
       }
-    }
-    return ((List<SNode>) MapSequence.fromMap(_params).get("nodes")).size() != 0;
+    });
+    return res.value;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -49,7 +61,7 @@ public class DeleteNode_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "DeleteNode", t);
       }
       this.disable(event.getPresentation());
@@ -68,15 +80,25 @@ public class DeleteNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("packs", event.getData(MPSDataKeys.VIRTUAL_PACKAGES));
+    if (MapSequence.fromMap(_params).get("packs") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final DeleteNodesHelper helper = new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+      final Wrappers._T<List<SNode>> affNodes = new Wrappers._T<List<SNode>>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          affNodes.value = Sequence.fromIterable(DeleteNode_Action.this.getAffectedNodes(_params)).toListSequence();
+        }
+      });
+      final DeleteNodesHelper helper = new DeleteNodesHelper(affNodes.value, ((MPSProject) MapSequence.fromMap(_params).get("project")));
 
       final Wrappers._boolean dialogNeeded = new Wrappers._boolean(false);
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           dialogNeeded.value = helper.hasOptions();
         }
@@ -93,15 +115,33 @@ public class DeleteNode_Action extends BaseAction {
       }
       helper.deleteNodes(safeOption.selected, aspectsOption.selected, true);
     } catch (Throwable t) {
-      if (LOG.isEnabledFor(Priority.ERROR)) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "DeleteNode", t);
       }
     }
   }
 
+  private Iterable<SNode> getAffectedNodes(final Map<String, Object> _params) {
+    Set<Pair<SModel, String>> packs = SetSequence.fromSetWithValues(new HashSet<Pair<SModel, String>>(), ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")));
+    Iterable<SNode> nodeFromPacks = SetSequence.fromSet(packs).translate(new ITranslator2<Pair<SModel, String>, SNode>() {
+      public Iterable<SNode> translate(final Pair<SModel, String> pack) {
+        return ListSequence.fromList(SModelOperations.getRoots(((SModel) pack.o1), null)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode node) {
+            return SPropertyOperations.getString(node, "virtualPackage") != null && SPropertyOperations.getString(node, "virtualPackage").startsWith(pack.o2);
+          }
+        });
+      }
+    });
+    return Sequence.fromIterable(nodeFromPacks).union(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(check_v2o7qu_a0a0a0a2a0(it.getModel()));
+      }
+    });
+  }
+
   protected static Logger LOG = LogManager.getLogger(DeleteNode_Action.class);
 
-  private static boolean check_v2o7qu_a0a0a0(SModel checkedDotOperand) {
+  private static boolean check_v2o7qu_a0a0a0a2a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();
     }

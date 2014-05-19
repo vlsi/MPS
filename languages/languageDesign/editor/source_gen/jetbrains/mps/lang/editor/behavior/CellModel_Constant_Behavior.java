@@ -12,4 +12,12 @@ public class CellModel_Constant_Behavior {
   public static int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return EditorCell_Constant.DEFAULT_FONT_STYLE;
   }
+
+  public static boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {
+    return true;
+  }
+
+  public static boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
+    return false;
+  }
 }

@@ -26,4 +26,12 @@ public class CellModel_Property_Behavior {
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return "}";
   }
+
+  public static boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {
+    return true;
+  }
+
+  public static boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
+    return false;
+  }
 }

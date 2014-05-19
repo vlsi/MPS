@@ -133,6 +133,14 @@ public class AttributeOperations {
     });
   }
 
+  public static boolean hasPropertyAttributes(SNode node) {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.PropertyAttribute")).isNotEmpty();
+  }
+
+  public static boolean hasLinkAttributes(SNode node) {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.LinkAttribute")).isNotEmpty();
+  }
+
   public static class AttributeList extends AbstractSNodeList {
     private IAttributeDescriptor myAttributeDescriptor;
 

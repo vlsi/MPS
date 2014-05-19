@@ -102,7 +102,7 @@ public class NodeEditorComponent extends EditorComponent {
     if (getInspector() == null) return;
 
     FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSCommonDataKeys.FILE_EDITOR.getName());
-    getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor);
+    getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor, getUseCustomHints() ? getEnabledHints() : null);
   }
 
   protected boolean isValidEditor() {
@@ -126,7 +126,10 @@ public class NodeEditorComponent extends EditorComponent {
       jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
       return new EditorCell_Constant(editorContext, getEditedNode(), getEditedNode() == null ? "<no edited node>" : "<edited node is not inside a model>");
     }
-    return getEditorContext().createRootCell(getEditedNode(), events);
+    pushCellContext();
+    EditorCell rootCell = getEditorContext().createRootCell(getEditedNode(), events);
+    popCellContext();
+    return rootCell;
   }
 
   public EditorComponent getInspector() {
@@ -145,7 +148,7 @@ public class NodeEditorComponent extends EditorComponent {
     InspectorTool inspectorTool = getInspectorTool();
     if (inspectorTool != null) {
       if (inspectorTool.getInspector().getEditedNode() == this.getLastInspectedNode()) {
-        inspectorTool.inspect(null, null, null);
+        inspectorTool.inspect(null, null, null, null);
       }
     }
     myLastInspectedNode = null;

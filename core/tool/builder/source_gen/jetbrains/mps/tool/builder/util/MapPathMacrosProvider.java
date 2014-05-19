@@ -6,7 +6,7 @@ import jetbrains.mps.project.PathMacrosProvider;
 import java.util.Map;
 import java.util.Set;
 import java.util.Collections;
-import org.apache.log4j.Priority;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -34,7 +34,7 @@ public class MapPathMacrosProvider implements PathMacrosProvider {
 
   @Override
   public void report(String message, String macro) {
-    if (LOG.isEnabledFor(Priority.WARN)) {
+    if (LOG.isEnabledFor(Level.WARN)) {
       LOG.warn("Undefined macro: " + macro + ". " + message);
     }
   }

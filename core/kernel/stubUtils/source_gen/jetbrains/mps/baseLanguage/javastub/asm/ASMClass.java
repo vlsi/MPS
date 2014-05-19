@@ -12,6 +12,7 @@ import org.jetbrains.asm4.tree.FieldNode;
 import org.jetbrains.asm4.tree.MethodNode;
 import org.jetbrains.asm4.tree.AnnotationNode;
 import org.jetbrains.asm4.Opcodes;
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import org.jetbrains.asm4.tree.InnerClassNode;
 import java.util.Collections;
 
@@ -118,6 +119,10 @@ public class ASMClass {
     return (Opcodes.ACC_DEPRECATED & myNode.access) != 0;
   }
 
+  public ClassifierKind getClassifierKind() {
+    return ClassifierKind.getClassifierKind(myNode.access);
+  }
+
   public String getName() {
     return (myNode.name == null ? "" : myNode.name);
   }
@@ -126,7 +131,7 @@ public class ASMClass {
     if (myNode.name == null) {
       return "";
     }
-    return myNode.name.replace("/", ".");
+    return myNode.name.replace('/', '.');
   }
 
   public List<InnerClassNode> getInnerClasses() {

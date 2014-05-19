@@ -607,7 +607,7 @@
     <nodeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="157" startPosition="9" endLine="158" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="158" startPosition="36" endLine="159" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="159" startPosition="76" endLine="160" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="162" startPosition="45" endLine="163" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="162" startPosition="42" endLine="163" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="165" startPosition="5" endLine="166" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855185" fileName="JUnitSettings_Configuration.java" startLine="170" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="6062668769034855187" fileName="JUnitSettings_Configuration.java" startLine="171" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
@@ -723,7 +723,7 @@
     <scopeInfo nodeId="8139840817146402360" fileName="JUnitSettings_Configuration.java" startLine="133" startPosition="36" endLine="134" endPosition="70" />
     <scopeInfo nodeId="6062668769034855157" fileName="JUnitSettings_Configuration.java" startLine="143" startPosition="25" endLine="144" endPosition="56" />
     <scopeInfo nodeId="6062668769034855176" fileName="JUnitSettings_Configuration.java" startLine="148" startPosition="57" endLine="149" endPosition="35" />
-    <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="162" startPosition="45" endLine="163" endPosition="26" />
+    <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="162" startPosition="42" endLine="163" endPosition="26" />
     <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="186" startPosition="32" endLine="187" endPosition="48" />
     <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="189" startPosition="34" endLine="190" endPosition="52" />
     <scopeInfo nodeId="6062668769034854986" fileName="JUnitSettings_Configuration.java" startLine="197" startPosition="84" endLine="198" endPosition="24" />

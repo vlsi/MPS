@@ -88,11 +88,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "icon", true), "iconExpression", true);
   }
 
-  public static Iterable sourceNodesQuery_2990235398086399665(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2990235398086399665(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "icons", true);
   }
 
-  public static Iterable sourceNodesQuery_6759767305208041204(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_6759767305208041204(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.resources.structure.IconResourceExpression");
   }
 

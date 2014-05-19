@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -190,27 +188,8 @@ public class GenerationOptions {
     private boolean mySaveTransientModels = false;
     private boolean myStrictMode = false;
     private boolean myRebuildAll = true;
-    private IncrementalGenerationStrategy myIncrementalStrategy = new IncrementalGenerationStrategy() {
-      @Override
-      public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {
-        return Collections.emptyMap();
-      }
+    private IncrementalGenerationStrategy myIncrementalStrategy = new DefaultNonIncrementalStrategy();
 
-      @Override
-      public GenerationCacheContainer getContainer() {
-        return null;
-      }
-
-      @Override
-      public GenerationDependencies getDependencies(SModel sm) {
-        return null;
-      }
-
-      @Override
-      public boolean isIncrementalEnabled() {
-        return false;
-      }
-    };
     private Map<SModel, ModelGenerationPlan> myCustomPlans = new HashMap<SModel, ModelGenerationPlan>();
     private boolean myGenerateInParallel = false;
     private int myNumberOfThreads = 4;
@@ -241,7 +220,7 @@ public class GenerationOptions {
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll, myUseInplace,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep,
-        myGenerationTracer == null ? NullGenerationTracer.INSTANCE : myGenerationTracer,
+        myGenerationTracer == null ? new NullGenerationTracer() : myGenerationTracer,
         myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning,
         myCustomPlans, myDebugIncrementalDependencies);
     }
@@ -301,8 +280,11 @@ public class GenerationOptions {
     }
 
     public OptionsBuilder tracing(int tracingMode, IGenerationTracer generationTracer) {
-      myTracingMode = tracingMode;
       myGenerationTracer = generationTracer;
+      return tracing(tracingMode);
+    }
+    public OptionsBuilder tracing(int tracingMode) {
+      myTracingMode = tracingMode;
       return this;
     }
 

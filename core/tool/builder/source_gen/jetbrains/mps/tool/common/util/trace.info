@@ -1454,7 +1454,7 @@
     <nodeInfo nodeId="8406928085288813463" fileName="ProjectUtil.java" startLine="18" startPosition="9" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8406928085288813469" fileName="ProjectUtil.java" startLine="19" startPosition="60" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8406928085288813475" fileName="ProjectUtil.java" startLine="20" startPosition="54" endLine="21" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8406928085288813482" fileName="ProjectUtil.java" startLine="23" startPosition="45" endLine="24" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8406928085288813482" fileName="ProjectUtil.java" startLine="23" startPosition="42" endLine="24" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8406928085288813487" fileName="ProjectUtil.java" startLine="26" startPosition="5" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8406928085288798011" fileName="ProjectUtil.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8406928085288813454" fileName="ProjectUtil.java" startLine="14" startPosition="48" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1463,7 +1463,7 @@
     <nodeInfo nodeId="8406928085288813461" fileName="ProjectUtil.java" startLine="17" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8406928085288813446" fileName="ProjectUtil.java" startLine="13" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="projectHasPath#(Ljetbrains/mps/project/Project;Ljava/io/File;)Z" />
     <scopeInfo nodeId="8406928085288813458" fileName="ProjectUtil.java" startLine="15" startPosition="30" endLine="16" endPosition="19" />
-    <scopeInfo nodeId="8406928085288813482" fileName="ProjectUtil.java" startLine="23" startPosition="45" endLine="24" endPosition="68" />
+    <scopeInfo nodeId="8406928085288813482" fileName="ProjectUtil.java" startLine="23" startPosition="42" endLine="24" endPosition="68" />
     <scopeInfo nodeId="8406928085288813462" fileName="ProjectUtil.java" startLine="18" startPosition="9" endLine="21" endPosition="50">
       <varInfo nodeId="8406928085288813464" varName="myProjectPath" />
       <varInfo nodeId="8406928085288813470" varName="newProjectPath" />

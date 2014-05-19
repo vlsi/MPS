@@ -21,9 +21,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * @author Artem Tikhomirov
+ * @since 3.1
  */
 public class MapRootRuleContext extends BaseMappingRuleContext {
-  public MapRootRuleContext(@NotNull TemplateContext ctx, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
-    super(ctx, ruleNode, generator);
+  public MapRootRuleContext(@NotNull TemplateContext ctx, @NotNull SNodeReference ruleNode) {
+    super(ctx, ruleNode);
   }
 }

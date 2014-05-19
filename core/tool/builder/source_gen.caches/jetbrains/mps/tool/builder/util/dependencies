@@ -42,9 +42,9 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode extendsClassName="jetbrains.mps.project.PathMacrosProvider" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.util.MpsPlatform" file="MpsPlatform.java">

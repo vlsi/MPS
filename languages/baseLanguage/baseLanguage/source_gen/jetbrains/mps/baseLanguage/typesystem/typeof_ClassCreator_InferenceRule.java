@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -48,10 +49,20 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(creator, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1216200944338", null, errorTarget);
       }
     }
+    if (ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.WildCardType");
+      }
+    })) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(creator, "can't instantiate wildcard type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2432481583491258359", null, errorTarget);
+      }
+    }
     boolean creatingRawClass = ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).isNotEmpty();
 
     for (SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_4w0o2k_a1a0a0a8a1(), "descriptor", false), false)))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_4w0o2k_a1a0a0a9a1(), "descriptor", false), false)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1212781606006", null, errorTarget);
       }
@@ -60,7 +71,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
     if (creatingRawClass) {
       for (SNode tvd : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
-        MapSequence.fromMap(subs).put(tvd, _quotation_createNode_4w0o2k_a0a0a0l0b());
+        MapSequence.fromMap(subs).put(tvd, _quotation_createNode_4w0o2k_a0a0a0m0b());
       }
     }
 
@@ -71,27 +82,34 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       }
     }
 
-    // TODO: this is to avoid collecting generics from explicitly substituted types 
-    List<SNode> typeParam = ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode tp) {
-        final SNode TP_typevar_4340163696368051056 = typeCheckingContext.createNewRuntimeTypesVariable();
-        SNode tmp = typeCheckingContext.getRepresentative(TP_typevar_4340163696368051056);
-        {
-          SNode _nodeToCheck_1029348928467 = tp;
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4340163696365984469", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(TP_typevar_4340163696368051056), (SNode) tp, _info_12389875345);
+    SNode newType = null;
+    if (creatingRawClass) {
+      newType = _quotation_createNode_4w0o2k_a0a0r0b(classifier);
+    } else {
+      // TODO: this is to avoid collecting generics from explicitly substituted types 
+      List<SNode> typeParam = ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode tp) {
+          final SNode TP_typevar_4340163696368051056 = typeCheckingContext.createNewRuntimeTypesVariable();
+          SNode tmp = typeCheckingContext.getRepresentative(TP_typevar_4340163696368051056);
+          {
+            SNode _nodeToCheck_1029348928467 = tp;
+            EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4340163696365984469", 0, null);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(TP_typevar_4340163696368051056), (SNode) tp, _info_12389875345);
+          }
+          return tmp;
         }
-        return tmp;
-      }
-    }).toListSequence();
-    SNode newType = _quotation_createNode_4w0o2k_a0r0b(classifier, typeParam);
-    BehaviorReflection.invokeVirtual(Void.class, newType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+      }).toListSequence();
+      newType = _quotation_createNode_4w0o2k_a0c0a71a1(classifier, typeParam);
+      BehaviorReflection.invokeVirtual(Void.class, newType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+    }
 
     List<SNode> argl = SLinkOperations.getTargets(creator, "actualArgument", true);
     List<SNode> typel = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cdecl, "virtual_getTypeApplicationParameters_8277080359323839095", new Object[]{ListSequence.fromList(argl).count()});
-    for (SNode type : ListSequence.fromList(typel)) {
-      if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
-        BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+    if (!(creatingRawClass)) {
+      for (SNode type : ListSequence.fromList(typel)) {
+        if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+          BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
+        }
       }
     }
 
@@ -104,10 +122,14 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
         type_var = type_it.next();
         arg_var = arg_it.next();
         if (SNodeOperations.isInstanceOf(type_var, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+          SNode gtype = type_var;
+          if (creatingRawClass) {
+            gtype = (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(type_var, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_eraseGenerics_5089784887112634594", new Object[]{});
+          }
           {
             SNode _nodeToCheck_1029348928467 = arg_var;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2062135263152102048", 0, null);
-            typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(type_var, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2062135263152102050", true), false, true, _info_12389875345);
+            typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(gtype, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2062135263152102050", true), false, true, _info_12389875345);
           }
         } else {
           if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -142,7 +164,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     return true;
   }
 
-  private static SNode _quotation_createNode_4w0o2k_a1a0a0a8a1() {
+  private static SNode _quotation_createNode_4w0o2k_a1a0a0a9a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, false);
@@ -150,7 +172,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_4w0o2k_a0a0a0l0b() {
+  private static SNode _quotation_createNode_4w0o2k_a0a0a0m0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
@@ -158,7 +180,15 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_4w0o2k_a0r0b(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_4w0o2k_a0a0r0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_4w0o2k_a0c0a71a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
