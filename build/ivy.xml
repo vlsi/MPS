@@ -462,10 +462,10 @@
     <dependency org="lib" name="resolver.jar" rev="${idea.platform.version}">
       <artifact name="resolver.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="resources.jar" rev="${idea.platform.version}">
+    <dependency org="lib" name="resources.jar" rev="${idea.platform.version}.1">
       <artifact name="resources.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="resources_en.jar" rev="${idea.platform.version}">
+    <dependency org="lib" name="resources_en.jar" rev="${idea.platform.version}.1">
       <artifact name="resources_en.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="sanselan-0.98-snapshot.jar" rev="${idea.platform.version}">

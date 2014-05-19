@@ -1,5 +1,3 @@
 <component name="CopyrightManager">
-  <settings default="MPS, Apache 2.0">
-    <module2copyright />
-  </settings>
+  <settings default="MPS, Apache 2.0" />
 </component>
