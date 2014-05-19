@@ -13186,6 +13186,20 @@
                   </node>
                 </node>
               </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="342515234599611869" nodeInfo="ng">
+                <property name="filemode" nameId="3ior.9126048691955221291" value="755" />
+                <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="342515234599611871" nodeInfo="ng">
+                  <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="342515234599611938" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="bin" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="342515234599611942" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="mac" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="342515234599611946" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="printenv.py" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="3730845620956883004" nodeInfo="ng">
                 <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="3730845620956883005" nodeInfo="ng">
                   <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="3730845620956883006" nodeInfo="ng">
@@ -13631,6 +13645,20 @@
                     <property name="head" nameId="3ior.8618885170173601779" value="mac" />
                     <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001284692" nodeInfo="nn">
                       <property name="head" nameId="3ior.8618885170173601779" value="fsnotifier" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="342515234599629688" nodeInfo="ng">
+              <property name="filemode" nameId="3ior.9126048691955221291" value="755" />
+              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="342515234599629690" nodeInfo="ng">
+                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="342515234599629729" nodeInfo="nn">
+                  <property name="head" nameId="3ior.8618885170173601779" value="bin" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="342515234599629733" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="mac" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="342515234599629737" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="printenv.py" />
                     </node>
                   </node>
                 </node>
