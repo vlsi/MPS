@@ -11,8 +11,9 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -33,22 +34,17 @@ public class check_UnqualifiedStaticCall_NonTypesystemRule extends AbstractNonTy
       return;
     }
 
-    // now check whether it's in another class 
-    SNode thisClass = SNodeOperations.getAncestor(localCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    SNode thatClass = SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    // it should be ok to use ==, I think 
-    if (thisClass == thatClass) {
-      // same class, such local method call is ok in baseLanguage 
+    Scope staticMethodScope = Scope.getScope(SNodeOperations.getParent(localCall), localCall, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+    if (staticMethodScope.contains(target)) {
       return;
     }
 
-    // different class, let's make this call non-local, but qualified 
+    // it's out of scope, let's make it StaticMethodCall 
     SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-    SLinkOperations.setTarget(smc, "classConcept", thatClass, false);
+    SLinkOperations.setTarget(smc, "classConcept", SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
     SLinkOperations.setTarget(smc, "baseMethodDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
-    for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(localCall, "actualArgument", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(smc, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
-    }
+    ResolveUnknownUtil.reattachMethodArguments(localCall, smc);
+    ResolveUnknownUtil.reattachTypeArguments(localCall, smc);
 
     {
       MessageTarget errorTarget = new NodeMessageTarget();
