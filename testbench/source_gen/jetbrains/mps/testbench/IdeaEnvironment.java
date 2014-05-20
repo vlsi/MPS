@@ -175,9 +175,6 @@ public class IdeaEnvironment implements Environment {
         System.gc();
       }
     });
-
-    // comment from ProjectTest: magic 
-    // <node> 
   }
 
 
@@ -267,7 +264,6 @@ public class IdeaEnvironment implements Environment {
       // this actually happens 
       throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc[0]);
     }
-    // <node> 
     return project[0].getComponent(MPSProject.class);
   }
 

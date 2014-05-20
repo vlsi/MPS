@@ -250,6 +250,7 @@
     <classNode dependClassName="java.awt.datatransfer.StringSelection" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.InterruptedException" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/1779544457787804365">
-    <nodeInfo nodeId="1779544457787978447" fileName="TempRunIdManager.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
+    <nodeInfo nodeId="1779544457787978447" fileName="TempRunIdManager.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourInstance" />
     <nodeInfo nodeId="1779544457787807910" fileName="TempRunIdManager.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestRunIdLocks" />
     <nodeInfo nodeId="1779544457787807926" fileName="TempRunIdManager.java" startLine="17" startPosition="39" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1779544457787807930" fileName="TempRunIdManager.java" startLine="18" startPosition="39" endLine="19" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -9,8 +9,8 @@
     <nodeInfo nodeId="1779544457787807955" fileName="TempRunIdManager.java" startLine="24" startPosition="5" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1779544457787807958" fileName="TempRunIdManager.java" startLine="25" startPosition="33" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1779544457787807966" fileName="TempRunIdManager.java" startLine="31" startPosition="46" endLine="32" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1779544457787996304" fileName="TempRunIdManager.java" startLine="38" startPosition="27" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1779544457787993370" fileName="TempRunIdManager.java" startLine="40" startPosition="5" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1779544457787996304" fileName="TempRunIdManager.java" startLine="38" startPosition="30" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1779544457787993370" fileName="TempRunIdManager.java" startLine="40" startPosition="5" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1779544457787807917" fileName="TempRunIdManager.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TempRunIdManager#()V" />
     <nodeInfo nodeId="1779544457787807946" fileName="TempRunIdManager.java" startLine="20" startPosition="36" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1779544457787807962" fileName="TempRunIdManager.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="releaseId#(I)V" />
@@ -21,13 +21,13 @@
     <scopeInfo nodeId="1779544457787807921" fileName="TempRunIdManager.java" startLine="12" startPosition="30" endLine="12" endPosition="30" />
     <scopeInfo nodeId="1779544457787807954" fileName="TempRunIdManager.java" startLine="21" startPosition="44" endLine="22" endPosition="19" />
     <scopeInfo nodeId="1779544457787807965" fileName="TempRunIdManager.java" startLine="31" startPosition="46" endLine="32" endPosition="32" />
-    <scopeInfo nodeId="1779544457787993639" fileName="TempRunIdManager.java" startLine="38" startPosition="27" endLine="39" endPosition="40" />
+    <scopeInfo nodeId="1779544457787993639" fileName="TempRunIdManager.java" startLine="38" startPosition="30" endLine="39" endPosition="43" />
     <scopeInfo nodeId="1779544457787807917" fileName="TempRunIdManager.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="1779544457787807945" fileName="TempRunIdManager.java" startLine="20" startPosition="36" endLine="23" endPosition="7" />
     <scopeInfo nodeId="1779544457787807962" fileName="TempRunIdManager.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="1779544457787807963" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="1779544457787989706" fileName="TempRunIdManager.java" startLine="37" startPosition="61" endLine="41" endPosition="20" />
+    <scopeInfo nodeId="1779544457787989706" fileName="TempRunIdManager.java" startLine="37" startPosition="61" endLine="41" endPosition="23" />
     <scopeInfo nodeId="1779544457787807933" fileName="TempRunIdManager.java" startLine="19" startPosition="22" endLine="24" endPosition="5">
       <varInfo nodeId="1779544457787807934" varName="i" />
     </scopeInfo>

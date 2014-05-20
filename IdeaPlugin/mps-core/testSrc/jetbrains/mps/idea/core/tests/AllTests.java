@@ -17,7 +17,6 @@
 package jetbrains.mps.idea.core.tests;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.ide.IdeMain;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

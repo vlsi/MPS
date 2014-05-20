@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class TempRunIdManager {
-  private static TempRunIdManager instance;
+  private static TempRunIdManager ourInstance;
   private Set<Integer> myTestRunIdLocks = new HashSet<Integer>();
 
   private TempRunIdManager() {
@@ -35,9 +35,9 @@ public class TempRunIdManager {
 
 
   public static synchronized TempRunIdManager getInstance() {
-    if (instance == null) {
-      instance = new TempRunIdManager();
+    if (ourInstance == null) {
+      ourInstance = new TempRunIdManager();
     }
-    return instance;
+    return ourInstance;
   }
 }

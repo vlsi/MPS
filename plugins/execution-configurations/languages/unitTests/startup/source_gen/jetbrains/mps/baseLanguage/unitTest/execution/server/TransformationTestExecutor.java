@@ -25,7 +25,6 @@ public class TransformationTestExecutor extends BTestExecutor {
   public void dispose() {
     TransformationTestExecutor.exitApp();
     super.dispose();
-    // <node> 
   }
 
 

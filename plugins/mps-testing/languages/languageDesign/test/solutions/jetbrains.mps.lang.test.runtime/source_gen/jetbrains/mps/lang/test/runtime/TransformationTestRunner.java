@@ -159,7 +159,9 @@ public class TransformationTestRunner implements TestRunner {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         clazz.value = ClassLoaderManager.getInstance().getClass(projectTest.getModelDescriptor().getModule(), className);
-        String classLoader = clazz.value.getClassLoader().toString();
+        ClassLoader cLoader = clazz.value.getClassLoader();
+        assert cLoader != null;
+        String classLoader = cLoader.toString();
         String module = projectTest.getModelDescriptor().getModule().getModuleName();
         assert classLoader.contains(module) : "class: " + clazz.value + "; classLoader: " + classLoader + "; module: " + module;
       }
