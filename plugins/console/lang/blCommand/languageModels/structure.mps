@@ -295,5 +295,12 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.473081947981012231" resolveInfo="ConsoleHelpProvider" />
     </node>
   </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5932042262275648515" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ConsoleOperation" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="expression" />
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5932042262275648673" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="eynw.473081947981012231" resolveInfo="ConsoleHelpProvider" />
+    </node>
+  </root>
 </model>
 

@@ -2104,6 +2104,12 @@
       <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.lang.editor.diagram.tests" />
       <property name="moduleID" nameId="pop3.1280144168199506910" value="779ae18b-ee98-406e-94fd-dec40c78b92f" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2430983636799461120" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.141381309807570241" resolveInfo="BlockDecoratorTest" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2430983636799461159" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.83003444452611279" resolveInfo="BlockHasNoDecoratorTest" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200647" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.822550549814784606" resolveInfo="ChangeNodeName" />
     </node>
@@ -2128,6 +2134,12 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200724" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.822550549811942062" resolveInfo="DeleteLink" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2430983636799461199" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.1638882350373384592" resolveInfo="LinkDecoratorTest" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2430983636799461240" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.83003444452667991" resolveInfo="LinkHasNoDecoratorTest" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200743" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.8095638845859579504" resolveInfo="MoveNode" />
     </node>
@@ -2142,6 +2154,12 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200839" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.3873095776498193006" resolveInfo="NoResizeNode_bottom_right" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2430983636799460314" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.1560508619094015367" resolveInfo="PortDecoratorTest" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2430983636799461082" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.1560508619094462934" resolveInfo="PortHasNoDecoratorTest" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3005375224929200868" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ule5.1030067674862347669" resolveInfo="ResizeNode_bottom_centeral" />

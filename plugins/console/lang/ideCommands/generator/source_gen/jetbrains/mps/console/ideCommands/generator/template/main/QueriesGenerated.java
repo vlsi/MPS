@@ -83,6 +83,10 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.console.blCommand.structure.BLCommand", false, false), "contextParameter");
   }
 
+  public static Object referenceMacro_GetReferent_5932042262276049107(final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "requestedAspect", false);
+  }
+
   public static boolean ifMacro_Condition_4615018937607135820(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "argument", true) != null;
   }

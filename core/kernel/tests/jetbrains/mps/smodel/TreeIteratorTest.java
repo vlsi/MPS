@@ -163,7 +163,7 @@ public class TreeIteratorTest {
 
     @Override
     public boolean met(SNode object) {
-      return object != myFilteredNode;
+      return object == myFilteredNode;
     }
   }
 }

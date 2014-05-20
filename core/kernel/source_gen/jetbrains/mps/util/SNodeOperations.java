@@ -10,15 +10,15 @@ import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.Map;
 import java.util.LinkedHashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -84,19 +84,10 @@ public class SNodeOperations {
     return result;
   }
 
+  @Deprecated
   public static List<SNode> getDescendants(SNode node, Condition<SNode> condition) {
-    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
-    collectDescendants(node, res, condition);
-    return res;
-  }
-
-  private static void collectDescendants(SNode node, List<SNode> list, Condition<SNode> condition) {
-    for (SNode child : Sequence.fromIterable(node.getChildren())) {
-      if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(((SNode) child))) {
-        ListSequence.fromList(list).addElement(child);
-      }
-      collectDescendants(child, list, condition);
-    }
+    // Deprecated: use openapi.model.SNodeUtil.getDescendants() instead 
+    return IterableUtil.asList(SNodeUtil.getDescendants(node, condition, false));
   }
 
   /**
@@ -123,7 +114,7 @@ public class SNodeOperations {
   public static List<SReference> getReferences(SNode n) {
     List<SReference> res = new LinkedList<SReference>();
     for (SReference ref : Sequence.fromIterable(n.getReferences())) {
-      res.add(((jetbrains.mps.smodel.SReference) ref));
+      res.add(ref);
     }
     return res;
   }
@@ -134,7 +125,7 @@ public class SNodeOperations {
   public static List<SNode> getChildren(SNode n) {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode child : Sequence.fromIterable(n.getChildren())) {
-      ListSequence.fromList(res).addElement((SNode) child);
+      ListSequence.fromList(res).addElement(child);
     }
     return res;
   }

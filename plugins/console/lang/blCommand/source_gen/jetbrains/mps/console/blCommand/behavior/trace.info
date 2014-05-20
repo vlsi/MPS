@@ -5,6 +5,7 @@
   <unitInfo fileName="BLExpression_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BLExpression_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ConsoleExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ConsoleExpression_BehaviorDescriptor" />
+  <unitInfo fileName="ConsoleOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ConsoleOperation_BehaviorDescriptor" />
   <unitInfo fileName="CustomScope_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.CustomScope_BehaviorDescriptor" />
   <unitInfo fileName="ExceptionHolder_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ExceptionHolder_BehaviorDescriptor" />
   <unitInfo fileName="GlobalScope_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.GlobalScope_BehaviorDescriptor" />
@@ -266,6 +267,20 @@
       <varInfo nodeId="4307205004146976962" varName="thisConcept" />
     </scopeInfo>
     <unitInfo nodeId="4307205004146976962" fileName="ReferencesExpression_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ReferencesExpression_Behavior" />
+  </root>
+  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/5932042262275648698">
+    <nodeInfo nodeId="5932042262275683930" fileName="ConsoleOperation_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932042262275648698" fileName="ConsoleOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5932042262275648698" fileName="ConsoleOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getKind_7006261637493126084#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+    <scopeInfo nodeId="5932042262275648700" fileName="ConsoleOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="5932042262275683923" fileName="ConsoleOperation_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="23" />
+    <scopeInfo nodeId="5932042262275648698" fileName="ConsoleOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="5932042262275648698" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5932042262275648698" fileName="ConsoleOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="5932042262275648698" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="5932042262275648698" fileName="ConsoleOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ConsoleOperation_Behavior" />
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/6558068108108193352">
     <nodeInfo nodeId="4221956679900513485" fileName="ExceptionHolder_Behavior.java" startLine="18" startPosition="91" endLine="19" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

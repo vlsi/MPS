@@ -54,8 +54,8 @@
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="tp2q.1204796294226" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2663801026049990373" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3xdn.7006261637496548496" resolveInfo="ConsoleExpression" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5932042262275682987" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3xdn.5932042262275648515" resolveInfo="ConsoleOperation" />
     </node>
   </root>
 </model>

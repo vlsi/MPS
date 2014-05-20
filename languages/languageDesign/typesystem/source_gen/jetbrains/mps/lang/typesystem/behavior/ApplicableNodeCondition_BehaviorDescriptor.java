@@ -20,6 +20,4 @@ public abstract class ApplicableNodeCondition_BehaviorDescriptor extends BaseCon
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition";
   }
-
-  public abstract SNode virtual_getApplicableConcept_1213877307633(SNode thisNode);
 }

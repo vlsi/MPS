@@ -144,9 +144,9 @@ public final class ModelScanner {
     @Override
     public boolean met(SNode node) {
       if (!RuleUtil.link_BaseConcept_attrs.equals(node.getRoleInParent())) {
-        return true;
+        return false;
       }
-      return !GeneratorUtilEx.isTemplateLanguageElement(node);
+      return GeneratorUtilEx.isTemplateLanguageElement(node);
     }
   }
 }

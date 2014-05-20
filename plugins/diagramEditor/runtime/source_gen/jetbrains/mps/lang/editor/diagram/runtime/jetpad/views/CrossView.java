@@ -15,7 +15,7 @@ public class CrossView extends GroupView {
   public Property<Color> color = new ValueProperty<Color>(Color.BLACK);
   public Property<Integer> segmentLength = new ValueProperty<Integer>(4);
   public Property<Integer> lineWidth = new ValueProperty<Integer>(3);
-  public Property<Vector> centerLocation = new ValueProperty<Vector>(new Vector(0, 0));
+  public Property<Vector> centerLocation = new ValueProperty<Vector>(null);
 
   private final LineView myFirstLine = new NonFocusableLineView();
   private final LineView mySecondLine = new NonFocusableLineView();
@@ -47,9 +47,21 @@ public class CrossView extends GroupView {
   }
 
   private void updateCross(Vector position, int length) {
+    if (position == null) {
+      setVisible(false);
+      return;
+    } else {
+      setVisible(true);
+    }
     myFirstLine.start().set(new Vector(position.x - length, position.y - length));
     myFirstLine.end().set(new Vector(position.x + length, position.y + length));
     mySecondLine.start().set(new Vector(position.x + length, position.y - length));
     mySecondLine.end().set(new Vector(position.x - length, position.y + length));
+  }
+
+  private void setVisible(boolean isVisible) {
+    visible().set(isVisible);
+    myFirstLine.visible().set(isVisible);
+    mySecondLine.visible().set(isVisible);
   }
 }

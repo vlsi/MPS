@@ -179,6 +179,244 @@
     <unitInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="25" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ToZeroSize_ResizeNode_bottom_right_Test$TestBody" />
     <unitInfo nodeId="1030067674863337573" fileName="ToZeroSize_ResizeNode_bottom_right_Test.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ToZeroSize_ResizeNode_bottom_right_Test" />
   </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/141381309807570241">
+    <nodeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="31" startPosition="58" endLine="32" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="32" startPosition="122" endLine="33" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="42" startPosition="51" endLine="43" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="43" startPosition="97" endLine="44" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094151776" fileName="BlockDecoratorTest_Test.java" startLine="44" startPosition="93" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094749541" fileName="BlockDecoratorTest_Test.java" startLine="45" startPosition="30" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094751096" fileName="BlockDecoratorTest_Test.java" startLine="48" startPosition="27" endLine="49" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094507945" fileName="BlockDecoratorTest_Test.java" startLine="51" startPosition="9" endLine="52" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4181264724709222264" fileName="BlockDecoratorTest_Test.java" startLine="52" startPosition="111" endLine="53" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4181264724709222268" fileName="BlockDecoratorTest_Test.java" startLine="53" startPosition="50" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260833787" fileName="BlockDecoratorTest_Test.java" startLine="54" startPosition="62" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8637675947033349106" fileName="BlockDecoratorTest_Test.java" startLine="55" startPosition="83" endLine="56" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4181264724709349090" fileName="BlockDecoratorTest_Test.java" startLine="56" startPosition="95" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8637675947033361693" fileName="BlockDecoratorTest_Test.java" startLine="59" startPosition="40" endLine="60" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8637675947033361699" fileName="BlockDecoratorTest_Test.java" startLine="62" startPosition="9" endLine="63" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260836367" fileName="BlockDecoratorTest_Test.java" startLine="63" startPosition="43" endLine="64" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8637675947033360479" fileName="BlockDecoratorTest_Test.java" startLine="64" startPosition="51" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4181264724709219620" fileName="BlockDecoratorTest_Test.java" startLine="65" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockDecoratorTest_Test#()V" />
+    <nodeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="38" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1560508619094753193" fileName="BlockDecoratorTest_Test.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8637675947033361691" fileName="BlockDecoratorTest_Test.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/jetpad/projectional/view/View;)Z" />
+    <nodeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_BlockDecoratorTest#()V" />
+    <nodeInfo nodeId="1560508619094753191" fileName="BlockDecoratorTest_Test.java" startLine="46" startPosition="63" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8637675947033361684" fileName="BlockDecoratorTest_Test.java" startLine="57" startPosition="58" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="41" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="27" startPosition="36" endLine="27" endPosition="36" />
+    <scopeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="38" startPosition="23" endLine="38" endPosition="23" />
+    <scopeInfo nodeId="1560508619094753195" fileName="BlockDecoratorTest_Test.java" startLine="48" startPosition="27" endLine="49" endPosition="166" />
+    <scopeInfo nodeId="8637675947033361692" fileName="BlockDecoratorTest_Test.java" startLine="59" startPosition="40" endLine="60" endPosition="50" />
+    <scopeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="31" startPosition="58" endLine="33" endPosition="114" />
+    <scopeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="38" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1560508619094753193" fileName="BlockDecoratorTest_Test.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="8637675947033361691" fileName="BlockDecoratorTest_Test.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="8637675947033361691" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="42" startPosition="51" endLine="66" endPosition="0">
+      <varInfo nodeId="1560508619094151777" varName="descendantMapper" />
+      <varInfo nodeId="141381309807570241" varName="editor" />
+      <varInfo nodeId="141381309807570241" varName="editorComponent" />
+      <varInfo nodeId="8637675947033361685" varName="errorView" />
+      <varInfo nodeId="1560508619094749544" varName="node" />
+      <varInfo nodeId="8637675947033349107" varName="nodeDecoratorView" />
+    </scopeInfo>
+    <scopeInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="41" startPosition="0" endLine="68" endPosition="0" />
+    <unitInfo nodeId="1560508619094753193" fileName="BlockDecoratorTest_Test.java" startLine="47" startPosition="47" endLine="51" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$1" />
+    <unitInfo nodeId="8637675947033361691" fileName="BlockDecoratorTest_Test.java" startLine="58" startPosition="106" endLine="62" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$2" />
+    <unitInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="36" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test$TestBody" />
+    <unitInfo nodeId="141381309807570241" fileName="BlockDecoratorTest_Test.java" startLine="25" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.BlockDecoratorTest_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1560508619094015367">
+    <nodeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="31" startPosition="57" endLine="32" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="32" startPosition="122" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="42" startPosition="51" endLine="43" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="43" startPosition="99" endLine="44" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094843920" fileName="PortDecoratorTest_Test.java" startLine="44" startPosition="93" endLine="45" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094843926" fileName="PortDecoratorTest_Test.java" startLine="47" startPosition="27" endLine="48" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094842975" fileName="PortDecoratorTest_Test.java" startLine="50" startPosition="9" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1560508619094533047" fileName="PortDecoratorTest_Test.java" startLine="51" startPosition="0" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094533053" fileName="PortDecoratorTest_Test.java" startLine="52" startPosition="30" endLine="53" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094532179" fileName="PortDecoratorTest_Test.java" startLine="53" startPosition="110" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1560508619094015454" fileName="PortDecoratorTest_Test.java" startLine="54" startPosition="0" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094015458" fileName="PortDecoratorTest_Test.java" startLine="55" startPosition="50" endLine="56" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260801451" fileName="PortDecoratorTest_Test.java" startLine="56" startPosition="62" endLine="57" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8637675947033226396" fileName="PortDecoratorTest_Test.java" startLine="57" startPosition="83" endLine="58" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094015470" fileName="PortDecoratorTest_Test.java" startLine="58" startPosition="95" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8637675947033301924" fileName="PortDecoratorTest_Test.java" startLine="61" startPosition="40" endLine="62" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8637675947033301930" fileName="PortDecoratorTest_Test.java" startLine="64" startPosition="9" endLine="65" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260827435" fileName="PortDecoratorTest_Test.java" startLine="65" startPosition="43" endLine="66" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8637675947033300708" fileName="PortDecoratorTest_Test.java" startLine="66" startPosition="51" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1560508619094015481" fileName="PortDecoratorTest_Test.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PortDecoratorTest_Test#()V" />
+    <nodeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="38" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1560508619094843924" fileName="PortDecoratorTest_Test.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8637675947033301922" fileName="PortDecoratorTest_Test.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/jetpad/projectional/view/View;)Z" />
+    <nodeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PortDecoratorTest#()V" />
+    <nodeInfo nodeId="1560508619094843923" fileName="PortDecoratorTest_Test.java" startLine="45" startPosition="63" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8637675947033301915" fileName="PortDecoratorTest_Test.java" startLine="59" startPosition="58" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="41" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="27" startPosition="35" endLine="27" endPosition="35" />
+    <scopeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="38" startPosition="23" endLine="38" endPosition="23" />
+    <scopeInfo nodeId="1560508619094843925" fileName="PortDecoratorTest_Test.java" startLine="47" startPosition="27" endLine="48" endPosition="164" />
+    <scopeInfo nodeId="8637675947033301923" fileName="PortDecoratorTest_Test.java" startLine="61" startPosition="40" endLine="62" endPosition="50" />
+    <scopeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="31" startPosition="57" endLine="33" endPosition="113" />
+    <scopeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="38" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1560508619094843924" fileName="PortDecoratorTest_Test.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="8637675947033301922" fileName="PortDecoratorTest_Test.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="8637675947033301922" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="42" startPosition="51" endLine="68" endPosition="0">
+      <varInfo nodeId="1560508619094533048" varName="descendantMapper" />
+      <varInfo nodeId="1560508619094015367" varName="editor" />
+      <varInfo nodeId="1560508619094015367" varName="editorComponent" />
+      <varInfo nodeId="8637675947033301916" varName="errorView" />
+      <varInfo nodeId="1560508619094843921" varName="node" />
+      <varInfo nodeId="8637675947033226397" varName="portDecoratorView" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="41" startPosition="0" endLine="70" endPosition="0" />
+    <unitInfo nodeId="1560508619094843924" fileName="PortDecoratorTest_Test.java" startLine="46" startPosition="47" endLine="50" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test$1" />
+    <unitInfo nodeId="8637675947033301922" fileName="PortDecoratorTest_Test.java" startLine="60" startPosition="106" endLine="64" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test$2" />
+    <unitInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="36" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test$TestBody" />
+    <unitInfo nodeId="1560508619094015367" fileName="PortDecoratorTest_Test.java" startLine="25" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.PortDecoratorTest_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1560508619094084433">
+    <nodeInfo nodeId="1560508619094091321" fileName="DecoratorTestRunner.java" startLine="24" startPosition="161" endLine="25" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055261846156" fileName="DecoratorTestRunner.java" startLine="25" startPosition="212" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094091347" fileName="DecoratorTestRunner.java" startLine="26" startPosition="45" endLine="27" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094091356" fileName="DecoratorTestRunner.java" startLine="28" startPosition="45" endLine="29" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094417168" fileName="DecoratorTestRunner.java" startLine="30" startPosition="5" endLine="31" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560508619094392577" fileName="DecoratorTestRunner.java" startLine="34" startPosition="85" endLine="35" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094392583" fileName="DecoratorTestRunner.java" startLine="35" startPosition="111" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1560508619094392584" fileName="DecoratorTestRunner.java" startLine="36" startPosition="0" endLine="37" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094405450" fileName="DecoratorTestRunner.java" startLine="38" startPosition="30" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560508619094392596" fileName="DecoratorTestRunner.java" startLine="42" startPosition="25" endLine="43" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094412711" fileName="DecoratorTestRunner.java" startLine="45" startPosition="7" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560508619094171781" fileName="DecoratorTestRunner.java" startLine="27" startPosition="102" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560508619094405448" fileName="DecoratorTestRunner.java" startLine="37" startPosition="124" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560508619094392594" fileName="DecoratorTestRunner.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1560508619094392593" fileName="DecoratorTestRunner.java" startLine="40" startPosition="5" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094087236" fileName="DecoratorTestRunner.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="prepareAndGetMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Ljava/lang/Class;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <nodeInfo nodeId="1560508619094391055" fileName="DecoratorTestRunner.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMapper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/jetpad/mapper/Mapper;" />
+    <scopeInfo nodeId="1560508619094171784" fileName="DecoratorTestRunner.java" startLine="28" startPosition="45" endLine="29" endPosition="68" />
+    <scopeInfo nodeId="1560508619094405449" fileName="DecoratorTestRunner.java" startLine="38" startPosition="30" endLine="39" endPosition="18" />
+    <scopeInfo nodeId="1560508619094392595" fileName="DecoratorTestRunner.java" startLine="42" startPosition="25" endLine="43" endPosition="97" />
+    <scopeInfo nodeId="1560508619094392594" fileName="DecoratorTestRunner.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1560508619094087239" fileName="DecoratorTestRunner.java" startLine="24" startPosition="161" endLine="31" endPosition="44">
+      <varInfo nodeId="1560508619094091348" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560508619094087236" fileName="DecoratorTestRunner.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1560508619094163422" varName="cellClass" />
+      <varInfo nodeId="1560508619094099028" varName="editorComponent" />
+      <varInfo nodeId="1560508619094096142" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560508619094391058" fileName="DecoratorTestRunner.java" startLine="34" startPosition="85" endLine="46" endPosition="34">
+      <varInfo nodeId="1560508619094392578" varName="descendantMapper" />
+      <varInfo nodeId="1560508619094392585" varName="diagramCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560508619094391055" fileName="DecoratorTestRunner.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1560508619094395543" varName="editorComponent" />
+      <varInfo nodeId="1560508619094395541" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1560508619094091335" fileName="DecoratorTestRunner.java" startLine="25" startPosition="185" endLine="25" endPosition="208" unitName="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$1" />
+    <unitInfo nodeId="1560508619094392594" fileName="DecoratorTestRunner.java" startLine="41" startPosition="45" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner$2" />
+    <unitInfo nodeId="1560508619094084433" fileName="DecoratorTestRunner.java" startLine="23" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.DecoratorTestRunner" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1560508619094462934">
+    <nodeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="24" startPosition="62" endLine="25" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="25" startPosition="122" endLine="26" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="35" startPosition="51" endLine="36" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="36" startPosition="99" endLine="37" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094539122" fileName="PortHasNoDecoratorTest_Test.java" startLine="37" startPosition="99" endLine="38" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094539128" fileName="PortHasNoDecoratorTest_Test.java" startLine="40" startPosition="27" endLine="41" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094462951" fileName="PortHasNoDecoratorTest_Test.java" startLine="43" startPosition="9" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094462955" fileName="PortHasNoDecoratorTest_Test.java" startLine="44" startPosition="56" endLine="45" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260853060" fileName="PortHasNoDecoratorTest_Test.java" startLine="45" startPosition="68" endLine="46" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094917336" fileName="PortHasNoDecoratorTest_Test.java" startLine="46" startPosition="89" endLine="47" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094462978" fileName="PortHasNoDecoratorTest_Test.java" startLine="47" startPosition="98" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PortHasNoDecoratorTest_Test#()V" />
+    <nodeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1560508619094539126" fileName="PortHasNoDecoratorTest_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PortHasNoDecoratorTest#()V" />
+    <nodeInfo nodeId="1560508619094539125" fileName="PortHasNoDecoratorTest_Test.java" startLine="38" startPosition="77" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="34" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="20" startPosition="40" endLine="20" endPosition="40" />
+    <scopeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="31" startPosition="23" endLine="31" endPosition="23" />
+    <scopeInfo nodeId="1560508619094539127" fileName="PortHasNoDecoratorTest_Test.java" startLine="40" startPosition="27" endLine="41" endPosition="224" />
+    <scopeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="24" startPosition="62" endLine="26" endPosition="118" />
+    <scopeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="31" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1560508619094539126" fileName="PortHasNoDecoratorTest_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="35" startPosition="51" endLine="48" endPosition="0">
+      <varInfo nodeId="1560508619094539123" varName="descendantMapper" />
+      <varInfo nodeId="1560508619094462934" varName="editor" />
+      <varInfo nodeId="1560508619094462934" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="34" startPosition="0" endLine="50" endPosition="0" />
+    <unitInfo nodeId="1560508619094539126" fileName="PortHasNoDecoratorTest_Test.java" startLine="39" startPosition="47" endLine="43" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test$1" />
+    <unitInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="29" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test$TestBody" />
+    <unitInfo nodeId="1560508619094462934" fileName="PortHasNoDecoratorTest_Test.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.PortHasNoDecoratorTest_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/1638882350373384592">
+    <nodeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="31" startPosition="57" endLine="32" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="32" startPosition="122" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="42" startPosition="51" endLine="43" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="43" startPosition="99" endLine="44" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094826344" fileName="LinkDecoratorTest_Test.java" startLine="44" startPosition="93" endLine="45" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094826350" fileName="LinkDecoratorTest_Test.java" startLine="47" startPosition="27" endLine="48" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094515089" fileName="LinkDecoratorTest_Test.java" startLine="50" startPosition="9" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094515095" fileName="LinkDecoratorTest_Test.java" startLine="51" startPosition="30" endLine="52" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452565955" fileName="LinkDecoratorTest_Test.java" startLine="52" startPosition="115" endLine="53" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452565959" fileName="LinkDecoratorTest_Test.java" startLine="53" startPosition="50" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260841556" fileName="LinkDecoratorTest_Test.java" startLine="54" startPosition="62" endLine="55" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7634868377612908405" fileName="LinkDecoratorTest_Test.java" startLine="55" startPosition="88" endLine="56" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="83003444452565971" fileName="LinkDecoratorTest_Test.java" startLine="56" startPosition="108" endLine="57" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7634868377612971674" fileName="LinkDecoratorTest_Test.java" startLine="59" startPosition="40" endLine="60" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7634868377612905485" fileName="LinkDecoratorTest_Test.java" startLine="62" startPosition="9" endLine="63" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260844115" fileName="LinkDecoratorTest_Test.java" startLine="63" startPosition="39" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7634868377612967711" fileName="LinkDecoratorTest_Test.java" startLine="64" startPosition="47" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinkDecoratorTest_Test#()V" />
+    <nodeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="38" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1560508619094826348" fileName="LinkDecoratorTest_Test.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7634868377612971672" fileName="LinkDecoratorTest_Test.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/jetpad/projectional/view/View;)Z" />
+    <nodeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_LinkDecoratorTest#()V" />
+    <nodeInfo nodeId="1560508619094826347" fileName="LinkDecoratorTest_Test.java" startLine="45" startPosition="63" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7634868377612971666" fileName="LinkDecoratorTest_Test.java" startLine="57" startPosition="63" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="41" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="27" startPosition="35" endLine="27" endPosition="35" />
+    <scopeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="38" startPosition="23" endLine="38" endPosition="23" />
+    <scopeInfo nodeId="1560508619094826349" fileName="LinkDecoratorTest_Test.java" startLine="47" startPosition="27" endLine="48" endPosition="181" />
+    <scopeInfo nodeId="7634868377612971673" fileName="LinkDecoratorTest_Test.java" startLine="59" startPosition="40" endLine="60" endPosition="41" />
+    <scopeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="31" startPosition="57" endLine="33" endPosition="113" />
+    <scopeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="38" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1560508619094826348" fileName="LinkDecoratorTest_Test.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="7634868377612971672" fileName="LinkDecoratorTest_Test.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="7634868377612971672" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="42" startPosition="51" endLine="65" endPosition="0">
+      <varInfo nodeId="7634868377612908406" varName="connectorDecoratorView" />
+      <varInfo nodeId="7634868377612971667" varName="cross" />
+      <varInfo nodeId="1560508619094515090" varName="descendantMapper" />
+      <varInfo nodeId="1638882350373384592" varName="editor" />
+      <varInfo nodeId="1638882350373384592" varName="editorComponent" />
+      <varInfo nodeId="1560508619094826345" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="41" startPosition="0" endLine="67" endPosition="0" />
+    <unitInfo nodeId="1560508619094826348" fileName="LinkDecoratorTest_Test.java" startLine="46" startPosition="47" endLine="50" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$1" />
+    <unitInfo nodeId="7634868377612971672" fileName="LinkDecoratorTest_Test.java" startLine="58" startPosition="107" endLine="62" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$2" />
+    <unitInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="36" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test$TestBody" />
+    <unitInfo nodeId="1638882350373384592" fileName="LinkDecoratorTest_Test.java" startLine="25" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.LinkDecoratorTest_Test" />
+  </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409091538798">
     <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="20" startPosition="50" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2278461409091538798" fileName="SelectPort_Test.java" startLine="21" startPosition="122" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1094,6 +1332,77 @@
     <scopeInfo nodeId="822550549814784606" fileName="ChangeNodeName_Test.java" startLine="32" startPosition="0" endLine="48" endPosition="0" />
     <unitInfo nodeId="822550549814784606" fileName="ChangeNodeName_Test.java" startLine="27" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ChangeNodeName_Test$TestBody" />
     <unitInfo nodeId="822550549814784606" fileName="ChangeNodeName_Test.java" startLine="16" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.ChangeNodeName_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/83003444452611279">
+    <nodeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="24" startPosition="63" endLine="25" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="25" startPosition="122" endLine="26" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="35" startPosition="51" endLine="36" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="36" startPosition="95" endLine="37" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094548466" fileName="BlockHasNoDecoratorTest_Test.java" startLine="37" startPosition="99" endLine="38" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094548472" fileName="BlockHasNoDecoratorTest_Test.java" startLine="40" startPosition="27" endLine="41" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619094547547" fileName="BlockHasNoDecoratorTest_Test.java" startLine="43" startPosition="9" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="83003444452611318" fileName="BlockHasNoDecoratorTest_Test.java" startLine="44" startPosition="0" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452611322" fileName="BlockHasNoDecoratorTest_Test.java" startLine="45" startPosition="56" endLine="46" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260847469" fileName="BlockHasNoDecoratorTest_Test.java" startLine="46" startPosition="68" endLine="47" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452611334" fileName="BlockHasNoDecoratorTest_Test.java" startLine="47" startPosition="89" endLine="48" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockHasNoDecoratorTest_Test#()V" />
+    <nodeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1560508619094548470" fileName="BlockHasNoDecoratorTest_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_BlockHasNoDecoratorTest#()V" />
+    <nodeInfo nodeId="1560508619094548469" fileName="BlockHasNoDecoratorTest_Test.java" startLine="38" startPosition="77" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="34" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="20" startPosition="41" endLine="20" endPosition="41" />
+    <scopeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="31" startPosition="23" endLine="31" endPosition="23" />
+    <scopeInfo nodeId="1560508619094548471" fileName="BlockHasNoDecoratorTest_Test.java" startLine="40" startPosition="27" endLine="41" endPosition="225" />
+    <scopeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="24" startPosition="63" endLine="26" endPosition="119" />
+    <scopeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="31" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1560508619094548470" fileName="BlockHasNoDecoratorTest_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="35" startPosition="51" endLine="48" endPosition="98">
+      <varInfo nodeId="1560508619094548467" varName="descendantMapper" />
+      <varInfo nodeId="83003444452611279" varName="editor" />
+      <varInfo nodeId="83003444452611279" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="34" startPosition="0" endLine="50" endPosition="0" />
+    <unitInfo nodeId="1560508619094548470" fileName="BlockHasNoDecoratorTest_Test.java" startLine="39" startPosition="47" endLine="43" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test$1" />
+    <unitInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="29" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test$TestBody" />
+    <unitInfo nodeId="83003444452611279" fileName="BlockHasNoDecoratorTest_Test.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.BlockHasNoDecoratorTest_Test" />
+  </root>
+  <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/83003444452667991">
+    <nodeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="24" startPosition="62" endLine="25" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="25" startPosition="122" endLine="26" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="35" startPosition="51" endLine="36" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="36" startPosition="95" endLine="37" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094544035" fileName="LinkHasNoDecoratorTest_Test.java" startLine="37" startPosition="99" endLine="38" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560508619094544041" fileName="LinkHasNoDecoratorTest_Test.java" startLine="40" startPosition="27" endLine="41" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452668024" fileName="LinkHasNoDecoratorTest_Test.java" startLine="43" startPosition="9" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452668028" fileName="LinkHasNoDecoratorTest_Test.java" startLine="44" startPosition="56" endLine="45" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260849864" fileName="LinkHasNoDecoratorTest_Test.java" startLine="45" startPosition="68" endLine="46" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452668040" fileName="LinkHasNoDecoratorTest_Test.java" startLine="46" startPosition="94" endLine="47" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinkHasNoDecoratorTest_Test#()V" />
+    <nodeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="1560508619094544039" fileName="LinkHasNoDecoratorTest_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_LinkHasNoDecoratorTest#()V" />
+    <nodeInfo nodeId="1560508619094544038" fileName="LinkHasNoDecoratorTest_Test.java" startLine="38" startPosition="77" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="34" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="20" startPosition="40" endLine="20" endPosition="40" />
+    <scopeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="31" startPosition="23" endLine="31" endPosition="23" />
+    <scopeInfo nodeId="1560508619094544040" fileName="LinkHasNoDecoratorTest_Test.java" startLine="40" startPosition="27" endLine="41" endPosition="241" />
+    <scopeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="24" startPosition="62" endLine="26" endPosition="118" />
+    <scopeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="31" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1560508619094544039" fileName="LinkHasNoDecoratorTest_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="35" startPosition="51" endLine="47" endPosition="103">
+      <varInfo nodeId="1560508619094544036" varName="descendantMapper" />
+      <varInfo nodeId="83003444452667991" varName="editor" />
+      <varInfo nodeId="83003444452667991" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="34" startPosition="0" endLine="49" endPosition="0" />
+    <unitInfo nodeId="1560508619094544039" fileName="LinkHasNoDecoratorTest_Test.java" startLine="39" startPosition="47" endLine="43" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test$1" />
+    <unitInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="29" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test$TestBody" />
+    <unitInfo nodeId="83003444452667991" fileName="LinkHasNoDecoratorTest_Test.java" startLine="18" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.tests.LinkHasNoDecoratorTest_Test" />
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/834109970984588248">
     <nodeInfo nodeId="834109970984588248" fileName="SelectDiagramNode_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

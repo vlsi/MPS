@@ -11,7 +11,6 @@
     <tipAndTrick file="TabNavigation.html"/>
     <tipAndTrick file="GoToDefinition.html"/>
     <tipAndTrick file="InsertEnter.html"/>
-    <tipAndTrick file="Escape.html"/>
     <tipAndTrick file="Rename.html"/>
     <tipAndTrick file="IntroduceVariable.html"/>
     <tipAndTrick file="IntroduceConstant.html"/>
@@ -24,14 +23,9 @@
     <tipAndTrick file="GoToClass.html"/>
     <tipAndTrick file="HighlightUsagesInFile.html"/>
     <tipAndTrick file="MoveUpDown.html"/>
-    <tipAndTrick file="GoToImplementation.html"/>
     <tipAndTrick file="GoToOverriden.html"/>
     <tipAndTrick file="RecentFiles.html"/>
-    <tipAndTrick file="ParameterInfo.html"/>
-    <tipAndTrick file="CommitCtrlK.html"/>
-    <tipAndTrick file="CloseOthers.html"/>
     <tipAndTrick file="ChangesView.html"/>
-    <tipAndTrick file="HorizontalScrolling.html"/>
     <tipAndTrick file="GoToConcept.html"/>
     <tipAndTrick file="GoToModule.html"/>
     <tipAndTrick file="GoToEditorDeclaration.html"/>
@@ -54,5 +48,13 @@
     <tipAndTrick file="gotoModel.html"/>
     <tipAndTrick file="HelpMenu.html"/>
     <tipAndTrick file="JetBrainsTV.html"/>
+
+    <!--Copied from IDEA-->
+    <tipAndTrick file="Escape.html"/>
+    <tipAndTrick file="GoToImplementation.html"/>
+    <tipAndTrick file="ParameterInfo.html"/>
+    <tipAndTrick file="CommitCtrlK.html"/>
+    <tipAndTrick file="CloseOthers.html"/>
+    <tipAndTrick file="HorizontalScrolling.html"/>
   </extensions>
 </idea-plugin>

@@ -25,8 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class ConsoleTab extends BaseConsoleTab {
 
-
-
   private SNode myNewCommand = null;
   private SNode myCursor = null;
 
@@ -37,7 +35,6 @@ public class ConsoleTab extends BaseConsoleTab {
 
 
 
-
   protected void registerActions(DefaultActionGroup group) {
     super.registerActions(group);
     group.add(registerKeyShortcut(new ConsoleTab.ExecuteAction(), KeyEvent.VK_ENTER));
@@ -45,7 +42,6 @@ public class ConsoleTab extends BaseConsoleTab {
     group.add(registerKeyShortcut(new ConsoleTab.NextCmdAction(), KeyEvent.VK_DOWN));
     group.add(registerKeyShortcut(new ConsoleTab.ClearAction(), KeyEvent.VK_BACK_SPACE));
   }
-
 
 
 
