@@ -16,7 +16,7 @@
 
 package jetbrains.mps.idea.java.tests;
 
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.MPSCore;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -26,6 +26,6 @@ import org.junit.runners.Suite;
 public class AllJavaTests {
   @BeforeClass
   public static void setTestMode() {
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+    MPSCore.getInstance().setTestMode(true);
   }
 }

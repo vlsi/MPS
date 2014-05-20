@@ -26,7 +26,6 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.event.SModelReplacedEvent;

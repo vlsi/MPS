@@ -7,6 +7,13 @@
         <option name="UUID" value="c1969cf6-0de2-4f84-9a6b-4019c52c438c" />
         <option name="generatorOutputPath" value="$MODULE_DIR$/source_gen" />
         <option name="modelRoots" />
+        <modelRoots>
+          <modelRoot type="default">
+            <settings contentPath="$MODULE_DIR$" type="default">
+              <sourceRoot location="src" />
+            </settings>
+          </modelRoot>
+        </modelRoots>
       </configuration>
     </facet>
   </component>
@@ -28,6 +35,7 @@
     <orderEntry type="library" name="mps.MPS.Editor" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
     <orderEntry type="library" scope="TEST" name="mps.jetbrains.mps.lang.test.runtime" level="project" />
+    <orderEntry type="library" name="junit-4.11" level="project" />
   </component>
 </module>
 

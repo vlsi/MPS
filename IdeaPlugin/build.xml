@@ -44,7 +44,7 @@
   <target name="loadVars" depends="loadIdeaPathVar, loadIdeaPluginsPathVar"/>
 
   <target name="loadJavaHomeEnv" unless="home.jdk" if="env.JAVA_HOME">
-    <property name="jdkPath" value="${env.JAVA_HOME}"/>
+    <echo message="JDK PATH: ${JAVA_HOME}"/>
   </target>
 
   <target name="loadJavaHomeProperty" if="home.jdk">
