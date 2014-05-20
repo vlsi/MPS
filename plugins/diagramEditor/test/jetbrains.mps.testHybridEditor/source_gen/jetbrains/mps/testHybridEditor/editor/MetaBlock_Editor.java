@@ -269,6 +269,8 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createAlternation_liyxwi_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_liyxwi_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_liyxwi_c0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_liyxwi_d0(editorContext, node));
     return editorCell;
   }
 
@@ -365,5 +367,30 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
 
   private static JComponent _QueryFunction_JComponent_liyxwi_a2b0(final SNode node, final EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, editorContext);
+  }
+
+  private EditorCell createConstant_liyxwi_c0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path:");
+    editorCell.setCellId("Constant_liyxwi_c0_0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_liyxwi_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("path");
+    provider.setNoTargetText("<no path>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_path");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
   }
 }

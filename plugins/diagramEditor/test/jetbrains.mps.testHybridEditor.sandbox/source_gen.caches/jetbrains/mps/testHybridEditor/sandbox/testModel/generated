@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5mt1oda5p74qxxlbgp7eo2syda3l816">
+<dependencies version="2" modelHash="9xo93rp0gpbmykq51r6f0x8hwlfachn">
   <common hash="-am5hepfakquzbutnp77fiisao0zgalb" />
-  <source id="725186580883618058" name="myDiagram" hash="etrbmhv586ps70squa49t3mun9xcbry">
+  <source id="725186580883618058" name="myDiagram" hash="4s8utty8poozw7ezfhcusclebpsfcre">
     <file name="myDiagram" />
   </source>
-  <source id="1220375669565734590" name="Consumer" hash="37vm19kgns34xpetncrrx8re29214yn">
+  <source id="1220375669565734590" name="Consumer" hash="-63yii7siwaknfht95ey5gsvy5bgo8kf">
     <file name="Consumer" />
   </source>
-  <source id="7882925886022044419" name="Producer" hash="370u87148gb6nztmzzqyqzo7iy9bqqr">
+  <source id="7882925886022044419" name="Producer" hash="-bj0vz9b8mtpnhzq0gymx29fl2uho2nb">
     <file name="Producer" />
   </source>
   <source id="5368079267489881313" name="otherDiagram" hash="-97jhlhsvyhhj8g0caj67jxvwi7tpqvf">
     <file name="otherDiagram" />
+  </source>
+  <source id="2336278055264741873" name="Minus" hash="-7tz0tyl7asap5cvgxkd8is5ignu266v">
+    <file name="Minus" />
+  </source>
+  <source id="2336278055264741883" name="Plus" hash="-e9f4p7p6l3msf6cgpdnaafb850ihhdw">
+    <file name="Plus" />
   </source>
 </dependencies>
 

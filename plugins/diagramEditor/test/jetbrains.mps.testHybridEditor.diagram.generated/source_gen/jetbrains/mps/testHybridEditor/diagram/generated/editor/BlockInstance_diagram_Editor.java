@@ -58,7 +58,7 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
     BlockCell editorCell = new BlockInstance_diagram_Editor.BlockCellImpl_79747v_a(editorContext, node);
     editorCell.setCellId("DiagramNode_79747v_a");
     editorCell.setBig(true);
-    BlockActionMap.setCellActions(editorCell, node, editorContext);
+    DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 
