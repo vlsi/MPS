@@ -8,7 +8,7 @@
   <unitInfo fileName="AbstractRule_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AbstractRule_BehaviorDescriptor" />
   <unitInfo fileName="AbstractSubtypingRule_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AbstractSubtypingRule_BehaviorDescriptor" />
   <unitInfo fileName="AddDependencyStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AddDependencyStatement_BehaviorDescriptor" />
-  <unitInfo fileName="ApplicableNodeCondition_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_BehaviorDescriptor" />
+  <unitInfo fileName="ApplicableNodeCondition_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_BehaviorDescriptor" />
   <unitInfo fileName="ApplicableNodeReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeReference_BehaviorDescriptor" />
   <unitInfo fileName="AssertStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AssertStatement_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
@@ -47,7 +47,7 @@
   <unitInfo fileName="FindSourceBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.FindSourceBlock_BehaviorDescriptor" />
   <unitInfo fileName="GetOperationType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.GetOperationType_BehaviorDescriptor" />
   <unitInfo fileName="IRuleWithOneNode_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.IRuleWithOneNode_BehaviorDescriptor" />
-  <unitInfo fileName="IRuleWithTwoNodes_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.IRuleWithTwoNodes_BehaviorDescriptor" />
+  <unitInfo fileName="IRuleWithTwoNodes_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.IRuleWithTwoNodes_BehaviorDescriptor" />
   <unitInfo fileName="ImmediateSupertypesExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.ImmediateSupertypesExpression_BehaviorDescriptor" />
   <unitInfo fileName="InequationReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.InequationReference_BehaviorDescriptor" />
   <unitInfo fileName="InequationReplacementRule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.InequationReplacementRule_BehaviorDescriptor" />
@@ -67,7 +67,7 @@
   <unitInfo fileName="MeetContainer_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetContainer_BehaviorDescriptor" />
   <unitInfo fileName="MeetType_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetType_BehaviorDescriptor" />
   <unitInfo fileName="MessageStatementAnnotation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageStatementAnnotation_BehaviorDescriptor" />
-  <unitInfo fileName="MessageStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageStatement_BehaviorDescriptor" />
+  <unitInfo fileName="MessageStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageStatement_BehaviorDescriptor" />
   <unitInfo fileName="MessageTarget_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MessageTarget_BehaviorDescriptor" />
   <unitInfo fileName="MultipleForeachLoopVariable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoopVariable_BehaviorDescriptor" />
   <unitInfo fileName="MultipleForeachLoop_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_BehaviorDescriptor" />

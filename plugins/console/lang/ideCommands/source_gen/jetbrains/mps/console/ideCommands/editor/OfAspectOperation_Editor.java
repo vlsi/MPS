@@ -61,6 +61,10 @@ public class OfAspectOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new OfAspectOperation_Editor._Inline_1vnrru_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("requestedAspect");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -88,10 +92,6 @@ public class OfAspectOperation_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_1vnrru_a0c0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "requestedAspect");
       editorCell.setCellId("ReferencePresentation_1vnrru_a0c0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("requestedAspect");
-      }
       return editorCell;
     }
   }
