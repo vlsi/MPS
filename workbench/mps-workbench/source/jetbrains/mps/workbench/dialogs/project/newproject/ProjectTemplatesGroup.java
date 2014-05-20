@@ -15,9 +15,18 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
+import com.intellij.openapi.extensions.ExtensionPointName;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Collection;
 
+/**
+ * Implementation of this interface extends list of groups in 'New project dialog'
+ */
 public interface ProjectTemplatesGroup {
+  public static final ExtensionPointName<ProjectTemplatesGroup> EP_NAME = ExtensionPointName.create("com.intellij.mps.projectGroupTemplateEP");
+  @NotNull
   public String getName();
+  @NotNull
   public Collection<MPSProjectTemplate> getTemplates();
 }

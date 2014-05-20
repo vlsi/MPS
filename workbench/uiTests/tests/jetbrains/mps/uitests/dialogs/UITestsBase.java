@@ -18,17 +18,12 @@ package jetbrains.mps.uitests.dialogs;
 import com.intellij.ide.GeneralSettings;
 import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.MPSMainImpl;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.testbench.IdeaEnvironment;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import junit.extensions.jfcunit.JFCTestCase;
 import junit.extensions.jfcunit.JFCTestHelper;
@@ -38,10 +33,8 @@ import junit.extensions.jfcunit.finder.NamedComponentFinder;
 
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 import java.awt.Component;
 import java.awt.Container;
-import java.io.File;
 import java.util.List;
 
 public abstract class UITestsBase extends JFCTestCase {

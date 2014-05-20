@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -37,6 +38,8 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -490,6 +493,17 @@ public class EditorManager {
    * @return "big" cell representing main node. It will be either cell or it's child cell.
    */
   private EditorCell getUnwrappedNodeBigCell(EditorCell cell, SNode node) {
+    SNode cellNode = cell.getSNode();
+    if (cellNode == node) {
+      return cell;
+    }
+    String cellNodeConcept = cellNode.getConcept().getQualifiedName();
+    if (!SModelUtil.isAssignableConcept(cellNodeConcept, "jetbrains.mps.lang.core.structure.PropertyAttribute") &&
+        !SModelUtil.isAssignableConcept(cellNodeConcept, "jetbrains.mps.lang.core.structure.LinkAttribute")) {
+      // the only known possibility to get "wrapped" cell is when the cell is wrapped into a PropertyAttribute or LinkAttribute.
+      return cell;
+    }
+
     Queue<EditorCell> cells = new LinkedList<EditorCell>();
     cells.add(cell);
     while (!cells.isEmpty()) {
@@ -498,8 +512,9 @@ public class EditorManager {
         if (!nextCell.isBig()) {
           // trying to avoid calling cell.getSNode().toString() for each node...
           assert false :
-              "Not big cell found. Original cell: " + cell.getCellId() + ", node: " + cell.getSNode() + ". Found cell: " + nextCell.getCellId() + ", node: " +
-                  node;
+              "\"Not big\" cell found. Original cell: " + cell.getCellId() + ", node: " + cell.getSNode() + ", concept: " +
+                  cell.getSNode().getConcept().getQualifiedName() + ". Found cell: " + nextCell.getCellId() + ", node: " +
+                  node + ", concept: " + node.getConcept().getQualifiedName();
         }
         return nextCell;
       }

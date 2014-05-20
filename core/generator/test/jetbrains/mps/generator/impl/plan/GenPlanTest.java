@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -74,7 +73,7 @@ public class GenPlanTest {
     addStrict(tmcB, tmcC);
 
     //
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -110,7 +109,7 @@ public class GenPlanTest {
     addStrict(tmcX, tmcA);
     addWeak(tmcY, tmcA);
     //
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(3, phases.size());
     List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -151,7 +150,7 @@ public class GenPlanTest {
     addCoherentConfigs(tmcE, tmcD);
     addStrict(tmcB, tmcX);
     //
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -182,7 +181,7 @@ public class GenPlanTest {
     addWeak(tmcA, tmcB);
     addCoherentConfigs(tmcB, tmcC);
     //
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(1, phases.size());
     final List<Group> groups = phases.get(0).getGroups();
@@ -220,7 +219,7 @@ public class GenPlanTest {
     addWeak(tmcA, tmcB);
     addCoherentConfigs(tmcA, tmcB);
     //
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(1, phases.size());
     final List<Group> groups = phases.get(0).getGroups();
@@ -244,7 +243,7 @@ public class GenPlanTest {
     addCoherentConfigs(tmcA, tmcC);
     addCoherentConfigs(tmcB, tmcC);
     assertFalse("[sanity]", myConflicts.hasConflicts());
-    mySolver.solveNew();
+    mySolver.solve();
     assertTrue(myConflicts.hasConflicts());
   }
 
@@ -269,7 +268,7 @@ public class GenPlanTest {
     addCoherentConfigs(tmcA, tmcC);
     addCoherentConfigs(tmcB, tmcC);
     //
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     final List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -296,7 +295,7 @@ public class GenPlanTest {
     mySolver.prepare(allConfigs);
     addWeak(tmcB, tmcC);
     addWeak(tmcC, tmcD);
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     final List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -319,7 +318,7 @@ public class GenPlanTest {
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
     mySolver.prepare(allConfigs);
     addStrict(tmcA, tmcB);
-    mySolver.solveNew();
+    mySolver.solve();
     assertTrue(myConflicts.hasConflicts());
     assertFalse(myConflicts.get(Kind.LoPriLocksHiPri).isEmpty());
   }
@@ -340,7 +339,7 @@ public class GenPlanTest {
     mySolver.prepare(allConfigs);
     addStrict(tmcA, tmcB);
     addStrict(tmcA, tmcC);
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(3, phases.size());
     final List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -369,8 +368,7 @@ public class GenPlanTest {
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
     addStrict(tmcA, tmcC);
-    mySolver.solveNew();
-    print(mySolver.solve());
+    mySolver.solve();
     assertTrue(myConflicts.hasConflicts());
     assertFalse(myConflicts.get(Kind.LoPriLocksHiPri).isEmpty());
   }
@@ -387,7 +385,7 @@ public class GenPlanTest {
     final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB);
     mySolver.prepare(allConfigs);
     addCoherentConfigs(tmcA, tmcB);
-    mySolver.solveNew();
+    mySolver.solve();
     assertTrue(myConflicts.hasConflicts());
     assertFalse(myConflicts.get(Kind.CoherentPrioMix).isEmpty());
   }
@@ -407,7 +405,7 @@ public class GenPlanTest {
     mySolver.prepare(allConfigs);
     addWeak(tmcA, tmcB);
     addStrict(tmcA, tmcB);
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     final List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -437,7 +435,7 @@ public class GenPlanTest {
     addStrict(tmcB, tmcD);
     addStrict(tmcC, tmcD);
     addCoherentConfigs(tmcB, tmcE);
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     final List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -470,7 +468,7 @@ public class GenPlanTest {
     addStrict(tmcA, tmcB);
     addCoherentConfigs(tmcA, tmcC);
     addCoherentConfigs(tmcB, tmcD);
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     final List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -499,8 +497,7 @@ public class GenPlanTest {
     addStrict(tmcA, tmcC);
     addStrict(tmcB, tmcC);
     addCoherentConfigs(tmcA, tmcB);
-    print(mySolver.solve());
-    final List<GenerationPhase> phases = mySolver.solveNew();
+    final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
     assertEquals(2, phases.size());
     final List<Group> groupsPhase1 = phases.get(0).getGroups();
@@ -511,20 +508,6 @@ public class GenPlanTest {
     assertEquals(new Group(tmcC), groupsPhase2.get(0));
   }
 
-
-  private void go() {
-    System.out.println("New");
-    print(GenerationPartitioner.phaseAsPlainList(mySolver.solveNew()));
-    System.out.println("Legacy");
-    print(mySolver.solve());
-    if (myConflicts.hasConflicts()) {
-      System.out.println("CONFLICTS!");
-      for (Conflict c : myConflicts.getConflicts()) {
-        System.out.println(c.getText());
-      }
-    }
-    Assert.fail();
-  }
 
   private void addWeak(TemplateMappingConfiguration sooner, TemplateMappingConfiguration later) {
     mySolver.establishDependency(Collections.singleton(sooner), Collections.singleton(later), getWeakRule());

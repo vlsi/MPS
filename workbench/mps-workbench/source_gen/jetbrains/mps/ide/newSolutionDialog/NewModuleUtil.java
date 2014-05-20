@@ -189,7 +189,7 @@ public class NewModuleUtil {
     language.setLanguageDescriptor(descriptor, false);
     language.save();
 
-    final Generator newGenerator = (Generator) MPSModuleRepository.getInstance().getModule(generatorDescriptor.getId());
+    final Generator newGenerator = (Generator) MPSModuleRepository.getInstance().getModuleById(generatorDescriptor.getId());
 
     boolean alreadyOwnsTemplateModel = false;
     for (SModel modelDescriptor : newGenerator.getModels()) {

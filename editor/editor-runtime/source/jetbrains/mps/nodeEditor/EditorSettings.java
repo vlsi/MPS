@@ -143,8 +143,16 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     return myState.myPowerSaveMode;
   }
 
+  public boolean isAutoQuickFix() {
+    return myState.myAutoQuickFix;
+  }
+
   public void setPowerSaveMode(boolean powerSaveMode) {
     myState.myPowerSaveMode = powerSaveMode;
+  }
+
+  public void setAutoQuickFix(boolean autoQuickFix) {
+    myState.myAutoQuickFix = autoQuickFix;
   }
 
   public boolean isHighightChanges() {
@@ -260,6 +268,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
     private boolean myPowerSaveMode = false;
     private boolean myHighlightChanges = false;
+    private boolean myAutoQuickFix = false;
 
     private boolean showPlain = true;
     private boolean showGrayed = true;
@@ -292,6 +301,10 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
         return false;
       }
 
+      if (myAutoQuickFix != otherState.myAutoQuickFix) {
+        return false;
+      }
+
       if (myHighlightChanges != otherState.myHighlightChanges) {
         return false;
       }
@@ -311,6 +324,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       result = 31 * result + myIndentSize;
       result = 31 * result + myVerticalBound;
       result = 31 * result + (myPowerSaveMode ? 1 : 0);
+      result = 31 * result + (myAutoQuickFix ? 1 : 0);
       result = 31 * result + (myHighlightChanges ? 1 : 0);
       result = 31 * result + (myUseAntialiasing ? 1 : 0);
       result = 31 * result + (myUseBraces ? 1 : 0);

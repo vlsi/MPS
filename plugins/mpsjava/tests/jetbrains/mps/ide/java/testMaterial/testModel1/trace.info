@@ -3,7 +3,7 @@
   <root nodeRef="r:ef4b52fd-dbf4-4fce-b7bb-1854f38cfc7e(jetbrains.mps.ide.java.testMaterial.testModel1)/8083368042256394201">
     <nodeInfo nodeId="8083368042256394219" fileName="Cl.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="x" />
     <nodeInfo nodeId="8083368042256394223" fileName="Cl.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="4190636643601561267" fileName="Cl.java" startLine="10" startPosition="42" endLine="10" endPosition="42" />
+    <scopeInfo nodeId="2790039039257307832" fileName="Cl.java" startLine="10" startPosition="42" endLine="10" endPosition="42" />
     <scopeInfo nodeId="8083368042256394223" fileName="Cl.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="8083368042256394227" varName="args" />
     </scopeInfo>
@@ -13,8 +13,8 @@
     <nodeInfo nodeId="8083368042256400940" fileName="Integer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="i" />
     <nodeInfo nodeId="8083368042256394209" fileName="Integer.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Integer#(I)V" />
     <nodeInfo nodeId="8083368042256394233" fileName="Integer.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <scopeInfo nodeId="4190636643601561268" fileName="Integer.java" startLine="9" startPosition="25" endLine="9" endPosition="25" />
-    <scopeInfo nodeId="4190636643601561269" fileName="Integer.java" startLine="13" startPosition="28" endLine="13" endPosition="28" />
+    <scopeInfo nodeId="2790039039257307833" fileName="Integer.java" startLine="9" startPosition="25" endLine="9" endPosition="25" />
+    <scopeInfo nodeId="2790039039257307834" fileName="Integer.java" startLine="13" startPosition="28" endLine="13" endPosition="28" />
     <scopeInfo nodeId="8083368042256394209" fileName="Integer.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="8083368042256394231" varName="x" />
     </scopeInfo>

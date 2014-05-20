@@ -60,8 +60,8 @@
              url="http://confluence.jetbrains.com/display/MPS/Download+3.1+EAP"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="1">
-      <build number="135.39" version="3.1-EAP1">
-        <message>JetBrains MPS 3.1-EAP1 is available.</message>
+      <build number="135.527" version="3.1-EAP3">
+        <message>JetBrains MPS 3.1-EAP3 is available.</message>
       </build>
     </channel>
 

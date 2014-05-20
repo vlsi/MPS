@@ -56,7 +56,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Scanner;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.MouseShortcut;
@@ -64,14 +63,22 @@ import java.awt.event.MouseEvent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
+import javax.swing.JViewport;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import com.intellij.openapi.wm.IdeFocusManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -331,9 +338,9 @@ public abstract class BaseConsoleTab extends JPanel {
         ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
       }
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(subNode))) {
-        SModelReference usedModel = ref.getTargetSModelReference();
+        SModel usedModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(ref));
         if (usedModel != null && !(((SModelInternal) myModel).importedModels().contains(usedModel))) {
-          ((SModelInternal) myModel).addModelImport(usedModel, false);
+          ((SModelInternal) myModel).addModelImport(usedModel.getReference(), false);
           ((AbstractModule) myModel.getModule()).addDependency(SNodeOperations.getModel(SLinkOperations.getTargetNode(ref)).getModule().getModuleReference(), false);
         }
       }
@@ -342,7 +349,7 @@ public abstract class BaseConsoleTab extends JPanel {
 
 
 
-  protected ConsoleStream getConsoleStream() {
+  public ConsoleStream getConsoleStream() {
     return new ConsoleStream() {
       public void addText(String text) {
         Scanner scanner = new Scanner(text);
@@ -402,14 +409,23 @@ public abstract class BaseConsoleTab extends JPanel {
     toolbarComponent.add(toolbar.getComponent(), BorderLayout.CENTER);
 
     this.add(toolbarComponent, BorderLayout.WEST);
-    JPanel editorPanel = new JPanel(new BorderLayout());
-    editorPanel.add(myEditor);
+    JPanel editorPanel = new ScrollablePanel(new BorderLayout()) {
+      @Override
+      public boolean getScrollableTracksViewportHeight() {
+        return getParent() instanceof JViewport && getPreferredSize().height < getParent().getHeight();
+      }
+
+      @Override
+      public boolean getScrollableTracksViewportWidth() {
+        return getParent() instanceof JViewport && getPreferredSize().width < getParent().getWidth();
+      }
+    };
+    editorPanel.add(myEditor, BorderLayout.CENTER);
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(editorPanel);
-    scrollPane.getVerticalScrollBar().setBlockIncrement(10);
     this.add(scrollPane, BorderLayout.CENTER);
     this.add(myEditor.getUpperPanel(), BorderLayout.NORTH);
 
-    myHighlighter = check_6q36mf_a0t0cc(myTool.getProject());
+    myHighlighter = check_6q36mf_a0s0cc(myTool.getProject());
     myHighlighter.addAdditionalEditorComponent(myEditor);
   }
 
@@ -452,6 +468,43 @@ public abstract class BaseConsoleTab extends JPanel {
       }
     });
     myTool.selectTab(this);
+  }
+
+
+
+  protected SModel loadHistoryModel(String state) {
+    if (state != null) {
+      try {
+        final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadModel(state, MPSExtentions.MODEL));
+        ListSequence.fromList(SModelOperations.getNodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return ConceptRegistry.getInstance().getConceptDescriptor(it.getConcept().getQualifiedName()) instanceof IllegalConceptDescriptor;
+          }
+        }).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            if ((SNodeOperations.getAncestor(it, "jetbrains.mps.console.base.structure.HistoryItem", false, false) != null)) {
+              SNodeOperations.deleteNode(SNodeOperations.getAncestor(it, "jetbrains.mps.console.base.structure.HistoryItem", false, false));
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error("Unknown concept on loading console history: removing enclosing history item");
+              }
+            } else {
+              loadedModel.value = null;
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error("Unknown concept on loading console history: not loading history");
+              }
+            }
+          }
+        });
+        return loadedModel.value;
+      } catch (Exception e) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("Error on loading console history", e);
+        }
+        return null;
+      }
+    } else {
+      return null;
+    }
   }
 
 
@@ -500,7 +553,7 @@ public abstract class BaseConsoleTab extends JPanel {
     return quotedNode_2;
   }
 
-  private static Highlighter check_6q36mf_a0t0cc(com.intellij.openapi.project.Project checkedDotOperand) {
+  private static Highlighter check_6q36mf_a0s0cc(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(Highlighter.class);
     }

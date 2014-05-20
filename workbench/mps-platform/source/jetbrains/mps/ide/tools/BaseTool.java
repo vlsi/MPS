@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +30,6 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerListener;
 
 import jetbrains.mps.ide.ThreadUtils;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,8 +39,6 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
 public abstract class BaseTool {
-  private static final Logger LOG = LogManager.getLogger(BaseTool.class);
-
   private Project myProject;
   private String myId;
   private int myNumber;
@@ -186,7 +182,8 @@ public abstract class BaseTool {
     }
 
     if (!isRegistered()) register();
-    return myWindowManager.getToolWindow(myId);
+    // register() may fail if myProject hasn't been initialized - ToolWindowManager is a ProjectComponent
+    return myWindowManager == null ? null : myWindowManager.getToolWindow(myId);
   }
 
   @NonNls

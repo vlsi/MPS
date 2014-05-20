@@ -274,9 +274,15 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
 
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    assert environment == context.getEnvironment();
+    return tryToApply(rule, context);
+  }
+
+  @Override
+  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       final DependenciesReadListener l;
-      if (environment.getGenerator().isIncremental()) {
+      if (context.getEnvironment().getGenerator().isIncremental()) {
         // this code used to be in TemplateReductionRuleInterpreted, added to address MPS-16916
         // Moved here for next reasons: (a) generated rules shall behave the same as interpreted;
         // (b) this class is the only place we install listeners via NodeReadEventsCaster, and there shall be no way to get into TRRI with a
@@ -288,7 +294,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
         l = listener;
       }
       NodeReadEventsCaster.setNodesReadListener(l);
-      return wrapped.tryToApply(rule, environment, context);
+      return wrapped.tryToApply(rule, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

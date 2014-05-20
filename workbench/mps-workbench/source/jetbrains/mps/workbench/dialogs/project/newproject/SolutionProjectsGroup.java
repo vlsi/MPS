@@ -1,22 +1,13 @@
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
-import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.icons.MPSIcons.Nodes;
-import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
-import jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.DocumentationHelper;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import javax.swing.Icon;
-import javax.swing.JComponent;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 
 class SolutionProjectsGroup implements ProjectTemplatesGroup {
+
+  public SolutionProjectsGroup() {
+  }
 
   @Override
   public String getName() {
@@ -25,65 +16,9 @@ class SolutionProjectsGroup implements ProjectTemplatesGroup {
 
   @Override
   public Collection<MPSProjectTemplate> getTemplates() {
-    return Arrays.asList(new MPSProjectTemplate[]{new SolutionProjectTemplate()});
-  }
-
-  class SolutionProjectTemplate implements MPSProjectTemplate {
-
-    private final NewSolutionSettings myNewSolutionSettings = new NewSolutionSettings();
-
-    @Nullable
-    @Override
-    public Icon getIcon() {
-      return Nodes.Solution;
-    }
-
-    @NotNull
-    @Override
-    public String getName() {
-      return "Solution project";
-    }
-
-    @Nullable
-    @Override
-    public String getDescription() {
-      return "Solutions are used to store code written in MPS languages. " +
-          "Each <a href=\"" + DocumentationHelper.getConfluenceBase() + "MPS+project+structure#MPSprojectstructure-solutions\">MPS solution</a> " +
-          "is a set of models with a name.";
-    }
-
-    @Nullable
-    @Override
-    public JComponent getSettings() {
-      return myNewSolutionSettings;
-    }
-
-    @NotNull
-    @Override
-    public TemplateFiller getTemplateFiller() {
-      return new TemplateFiller() {
-        @Override
-        public void fillProjectWithModules(final MPSProject project) {
-          StartupManager.getInstance(project.getProject()).registerPostStartupActivity(new Runnable() {
-            @Override
-            public void run() {
-              ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                @Override
-                public void run() {
-                  Solution solution = NewModuleUtil.createSolution(myNewSolutionSettings.getSolutionName(), myNewSolutionSettings.getSolutionLocation(), project);
-                  project.addModule(solution.getModuleReference());
-                }
-              }
-              );
-            }
-          });
-        }
-      };
-    }
-
-    @Override
-    public void setProjectPath(String projectPath) {
-      myNewSolutionSettings.setProjectPath(projectPath);
-    }
+    List<MPSProjectTemplate> mpsProjectTemplates = new LinkedList<MPSProjectTemplate>();
+    for(SolutionProjectTemplate template : SolutionProjectTemplate.EP_NAME.getExtensions())
+      mpsProjectTemplates.add(template);
+    return mpsProjectTemplates;
   }
 }

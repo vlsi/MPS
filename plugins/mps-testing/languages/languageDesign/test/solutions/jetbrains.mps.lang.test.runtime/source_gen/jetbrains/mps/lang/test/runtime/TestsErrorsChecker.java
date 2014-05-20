@@ -18,26 +18,26 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 
 public class TestsErrorsChecker {
-  private SNode node;
+  private SNode myNode;
   private static TestsErrorsChecker.ModelErrorsHolder<IErrorReporter> modelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder();
 
 
   public TestsErrorsChecker(SNode node) {
-    this.node = node;
+    this.myNode = node;
   }
 
 
 
   private Iterable<IErrorReporter> getTypeSystemErrors() {
     INodeChecker checker = new TypesystemChecker();
-    return checker.getErrors(SNodeOperations.getContainingRoot(node), null);
+    return checker.getErrors(SNodeOperations.getContainingRoot(myNode), null);
   }
 
 
 
   private Iterable<IErrorReporter> getConstraintsErrors() {
     INodeChecker checker = new LanguageChecker();
-    return checker.getErrors(SNodeOperations.getContainingRoot(node), null);
+    return checker.getErrors(SNodeOperations.getContainingRoot(myNode), null);
   }
 
 
@@ -54,13 +54,13 @@ public class TestsErrorsChecker {
 
   public Iterable<IErrorReporter> getErrors() {
     Iterable<IErrorReporter> result = getModelErrors();
-    return filterReportersByNode(result, node);
+    return filterReportersByNode(result, myNode);
   }
 
 
 
   private Iterable<IErrorReporter> getModelErrors() {
-    Set<IErrorReporter> cachedErrors = modelErrorsHolder.get(SNodeOperations.getModel(node));
+    Set<IErrorReporter> cachedErrors = modelErrorsHolder.get(SNodeOperations.getModel(myNode));
     if (cachedErrors != null) {
       return SetSequence.fromSet(cachedErrors).toListSequence();
     }
@@ -75,7 +75,7 @@ public class TestsErrorsChecker {
     Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
     SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getTypeSystemErrors()));
     SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getConstraintsErrors()));
-    modelErrorsHolder.set(SNodeOperations.getModel(node), result);
+    modelErrorsHolder.set(SNodeOperations.getModel(myNode), result);
     return result;
   }
 

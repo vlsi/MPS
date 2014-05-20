@@ -19,6 +19,6 @@ public class ReloadClassesCommand_Behavior {
   }
 
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "reload classes";
+    return "reload classes of all modules";
   }
 }

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ui.dialogs.properties.StateUtil;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -50,8 +50,8 @@ public final class ListsFactory {
       if (super.isEqual(o1, o2)) {
         return true;
       }
-      SModule m1 = ModuleRepositoryFacade.getInstance().getModule(o1);
-      SModule m2 = ModuleRepositoryFacade.getInstance().getModule(o2);
+      SModule m1 = MPSModuleRepository.getInstance().getModule(o1);
+      SModule m2 = MPSModuleRepository.getInstance().getModule(o2);
       return EqualUtil.equals(m1, m2);
     }
   };
@@ -87,8 +87,8 @@ public final class ListsFactory {
       if (super.isEqual(o1, o2)) {
         return true;
       }
-      SModule m1 = ModuleRepositoryFacade.getInstance().getModule(o1.getModuleRef());
-      SModule m2 = ModuleRepositoryFacade.getInstance().getModule(o2.getModuleRef());
+      SModule m1 = MPSModuleRepository.getInstance().getModule(o1.getModuleRef());
+      SModule m2 = MPSModuleRepository.getInstance().getModule(o2.getModuleRef());
       return EqualUtil.equals(m1, m2);
     }
   };

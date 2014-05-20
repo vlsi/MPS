@@ -17,7 +17,6 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.WorkbenchMpsTest;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.ActiveEnvironment;

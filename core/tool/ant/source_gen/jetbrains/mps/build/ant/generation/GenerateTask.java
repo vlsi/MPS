@@ -18,7 +18,7 @@ public class GenerateTask extends MpsLoadTask {
 
   public GenerateTask() {
     myGenProps = new GeneratorProperties(myWhatToDo);
-    myGenProps.setStrictMode(true).setParallelMode(false).setInplaceTransform(false);
+    myGenProps.setStrictMode(true).setParallelMode(false).setInplaceTransform(false).setHideWarnings(false);
   }
 
   @Override
@@ -51,6 +51,10 @@ public class GenerateTask extends MpsLoadTask {
 
   public void setParallelThreads(int threadCount) {
     myGenProps.setParallelThreads(threadCount);
+  }
+
+  public void setHideWarnings(boolean hideWarnings) {
+    myGenProps.setHideWarnings(hideWarnings);
   }
 
   public void addConfiguredPlugin(Plugin plugin) {

@@ -337,6 +337,13 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment env, TemplateContext context) throws GenerationException {
+    assert env == context.getEnvironment();
+    return tryToApply(rule, context);
+  }
+
+  @Override
+  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
+    TemplateExecutionEnvironment env = context.getEnvironment();
     try {
       return rule.tryToApply(env, context);
     } catch (GenerationException ex) {

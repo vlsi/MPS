@@ -513,7 +513,7 @@
     <nodeInfo nodeId="1613125646032873212" fileName="NewGeneratorDialog.java" startLine="178" startPosition="64" endLine="179" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8978606230572474873" fileName="NewGeneratorDialog.java" startLine="179" startPosition="62" endLine="180" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2273513587775220371" fileName="NewGeneratorDialog.java" startLine="180" startPosition="20" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2273513587775220372" fileName="NewGeneratorDialog.java" startLine="181" startPosition="0" endLine="182" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2273513587775220372" fileName="NewGeneratorDialog.java" startLine="181" startPosition="0" endLine="182" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1613125646032873250" fileName="NewGeneratorDialog.java" startLine="185" startPosition="66" endLine="186" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1613125646032873264" fileName="NewGeneratorDialog.java" startLine="189" startPosition="85" endLine="190" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1613125646032873279" fileName="NewGeneratorDialog.java" startLine="192" startPosition="63" endLine="193" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -616,7 +616,7 @@
       <varInfo nodeId="1613125646032873352" varName="mappingConfiguration" />
       <varInfo nodeId="8623608763345593587" varName="templateModel" />
     </scopeInfo>
-    <scopeInfo nodeId="1613125646032873146" fileName="NewGeneratorDialog.java" startLine="166" startPosition="106" endLine="182" endPosition="96">
+    <scopeInfo nodeId="1613125646032873146" fileName="NewGeneratorDialog.java" startLine="166" startPosition="106" endLine="182" endPosition="100">
       <varInfo nodeId="1613125646032873154" varName="generatorDescriptor" />
       <varInfo nodeId="1613125646032873148" varName="languageDescriptor" />
       <varInfo nodeId="1613125646032873175" varName="templateModelsRoot" />

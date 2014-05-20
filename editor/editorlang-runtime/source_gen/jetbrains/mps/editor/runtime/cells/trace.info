@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:c8a1fc75-b429-441c-bf65-e0144f080c3f(jetbrains.mps.editor.runtime.cells)/5299592197032499638">
+    <nodeInfo nodeId="269961672423375031" fileName="BigCellUtil.java" startLine="16" startPosition="69" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="269961672423361050" fileName="BigCellUtil.java" startLine="18" startPosition="27" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="269961672423386594" fileName="BigCellUtil.java" startLine="21" startPosition="291" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="269961672423361977" fileName="BigCellUtil.java" startLine="23" startPosition="5" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5299592197032535118" fileName="BigCellUtil.java" startLine="24" startPosition="0" endLine="25" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5424600205655627772" fileName="BigCellUtil.java" startLine="25" startPosition="88" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5299592197032552564" fileName="BigCellUtil.java" startLine="27" startPosition="61" endLine="28" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5299592197032554036" fileName="BigCellUtil.java" startLine="29" startPosition="40" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5299592197032570169" fileName="BigCellUtil.java" startLine="33" startPosition="96" endLine="34" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5299592197032577833" fileName="BigCellUtil.java" startLine="37" startPosition="5" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="269961672423359692" fileName="BigCellUtil.java" startLine="17" startPosition="37" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="269961672423362602" fileName="BigCellUtil.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5299592197032552905" fileName="BigCellUtil.java" startLine="28" startPosition="84" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5299592197032569406" fileName="BigCellUtil.java" startLine="32" startPosition="54" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5299592197032555249" fileName="BigCellUtil.java" startLine="31" startPosition="7" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5299592197032537768" fileName="BigCellUtil.java" startLine="26" startPosition="60" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="5299592197032500605" fileName="BigCellUtil.java" startLine="16" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findBigCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="269961672423359695" fileName="BigCellUtil.java" startLine="18" startPosition="27" endLine="19" endPosition="18" />
+    <scopeInfo nodeId="269961672423362605" fileName="BigCellUtil.java" startLine="21" startPosition="291" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="5299592197032552908" fileName="BigCellUtil.java" startLine="29" startPosition="40" endLine="30" endPosition="24" />
+    <scopeInfo nodeId="5299592197032569409" fileName="BigCellUtil.java" startLine="33" startPosition="96" endLine="34" endPosition="71" />
+    <scopeInfo nodeId="5299592197032555252" fileName="BigCellUtil.java" startLine="32" startPosition="54" endLine="35" endPosition="9" />
+    <scopeInfo nodeId="5299592197032569406" fileName="BigCellUtil.java" startLine="32" startPosition="54" endLine="35" endPosition="9">
+      <varInfo nodeId="5299592197032569407" varName="childCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5299592197032537770" fileName="BigCellUtil.java" startLine="27" startPosition="61" endLine="36" endPosition="7">
+      <varInfo nodeId="5299592197032552565" varName="nextCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="5299592197032500608" fileName="BigCellUtil.java" startLine="16" startPosition="69" endLine="38" endPosition="16">
+      <varInfo nodeId="269961672423375032" varName="cellNode" />
+      <varInfo nodeId="5299592197032535121" varName="cellQueue" />
+    </scopeInfo>
+    <scopeInfo nodeId="5299592197032500605" fileName="BigCellUtil.java" startLine="16" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="5299592197032500638" varName="cell" />
+      <varInfo nodeId="5299592197032509774" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5299592197032499638" fileName="BigCellUtil.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
+  </root>
+</debugInfo>
+

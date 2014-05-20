@@ -21,9 +21,9 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   private void initTestRunner() {
     TestLightRunState runState = TransformationTestLightRunner.getRunState(Thread.currentThread().getId());
     if (runState.isRunning()) {
-      myRunner = new TransformationTestLightRunner();
+      setTestRunner(new TransformationTestLightRunner());
     } else {
-      myRunner = new TransformationTestRunner();
+      setTestRunner(new TransformationTestRunner());
     }
   }
 
@@ -31,6 +31,20 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
   public BaseTransformationTest4() {
     initTestRunner();
+  }
+
+
+
+  @Override
+  public void setTestRunner(TestRunner runner) {
+    myRunner = runner;
+  }
+
+
+
+  @Override
+  public TestRunner getTestRunner() {
+    return myRunner;
   }
 
 

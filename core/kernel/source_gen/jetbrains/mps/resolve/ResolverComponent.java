@@ -10,7 +10,7 @@ import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
 
@@ -61,37 +61,39 @@ public class ResolverComponent implements CoreComponent {
     ListSequence.fromList(myResolvers).removeElement(resolver);
   }
 
-  public boolean resolve(SReference reference, IOperationContext operationContext) {
+  public boolean resolve(SReference reference, SRepository repository) {
     SNode sourceNode = reference.getSourceNode();
     if (sourceNode == null) {
       return false;
     }
     for (IResolver nextResolver : ListSequence.fromList(myResolvers)) {
-      if (nextResolver.resolve(reference, sourceNode, operationContext)) {
+      if (nextResolver.resolve(reference, sourceNode, repository)) {
         return true;
       }
     }
     return false;
   }
 
-  public void resolveScopesOnly(Iterable<SReference> references, IOperationContext operationContext) {
+  public void resolveScopesOnly(Iterable<SReference> references, SRepository repository) {
     List<SReference> unresolvedReferences = Sequence.fromIterable(references).sort(REFERENCE_COMPARATOR, true).toListSequence();
     boolean performResolve = true;
     while (performResolve) {
       performResolve = false;
       for (Iterator<SReference> iterator = ListSequence.fromList(unresolvedReferences).iterator(); iterator.hasNext();) {
-        SReference reference = iterator.next();
-        SNode sourceNode = reference.getSourceNode();
-        if (sourceNode == null) {
-          continue;
-        }
-        if (myScopeResolver.resolve(reference, sourceNode, operationContext)) {
+        if (resolveScopesOnly(iterator.next(), repository)) {
           iterator.remove();
           performResolve = true;
         }
       }
     }
+  }
 
+  public boolean resolveScopesOnly(SReference reference, SRepository repository) {
+    SNode sourceNode = reference.getSourceNode();
+    if (sourceNode == null) {
+      return false;
+    }
+    return myScopeResolver.resolve(reference, sourceNode, repository);
   }
 
   public static ResolverComponent getInstance() {

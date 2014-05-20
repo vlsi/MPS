@@ -7,7 +7,7 @@ import jetbrains.mps.checkers.INodeChecker;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypechecking;
@@ -25,7 +25,7 @@ public class TypesystemChecker extends DefaultTypecheckingContextOwner implement
   }
 
   @Override
-  public Set<IErrorReporter> getErrors(SNode node, IOperationContext context) {
+  public Set<IErrorReporter> getErrors(SNode node, SRepository repository) {
     final Set<IErrorReporter> result = new HashSet<IErrorReporter>();
     TypeContextManager.getInstance().runTypeCheckingAction(this, node, new ITypechecking.Action() {
       @Override

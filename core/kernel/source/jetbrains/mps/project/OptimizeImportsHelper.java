@@ -119,9 +119,15 @@ public class OptimizeImportsHelper {
 
     Set<SModelReference> unusedModels = new HashSet<SModelReference>();
     for (SModelReference model : SModelOperations.getImportedModelUIDs(modelDescriptor)) {
-      if (!result.myUsedModels.contains(model)) {
-        unusedModels.add(model);
-      }
+      if (result.myUsedModels.contains(model)) continue;
+
+      //this is a temp code to fix http://youtrack.jetbrains.com/issue/MPS-19621
+      //we should re-save models and make them resolve through modules, not just by ID
+      //this code is supposed to be deleted after 3.1 release
+      if (result.myUsedModels.contains(model.resolve(MPSModuleRepository.getInstance()).getReference())) continue;
+      //end of tmp code
+
+      unusedModels.add(model);
     }
 
     Set<SModuleReference> unusedLanguages = new HashSet<SModuleReference>();

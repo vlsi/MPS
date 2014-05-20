@@ -148,9 +148,7 @@ public class SNodeUtil {
   }
 
   private static class DescendantsIterable implements Iterable<SNode> {
-    @NotNull
     private final SNode myNode;
-    @Nullable
     private final Condition<SNode> myCondition;
     private final boolean myIncludeFirst;
 
@@ -163,11 +161,11 @@ public class SNodeUtil {
     @Override
     public Iterator<SNode> iterator() {
       Iterator<SNode> it = new DescendantsTreeIterator(myNode);
-      if (myCondition != null) {
-        it = new FilterIterator<SNode>(it, myCondition);
-      }
       if (!myIncludeFirst && it.hasNext()) {
         it.next();
+      }
+      if (myCondition != null) {
+        it = new FilterIterator<SNode>(it, myCondition);
       }
       return it;
     }

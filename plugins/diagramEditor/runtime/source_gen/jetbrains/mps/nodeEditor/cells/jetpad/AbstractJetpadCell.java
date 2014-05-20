@@ -35,7 +35,7 @@ import jetbrains.jetpad.event.ModifierKey;
 
 public abstract class AbstractJetpadCell extends EditorCell_Collection implements SynchronizeableEditorCell {
   private List<ReadableModelProperty> myModelProperties;
-  protected Property<Boolean> myErrorItem = new ValueProperty<Boolean>(true);
+  protected Property<Boolean> myErrorItem = new ValueProperty<Boolean>(false);
   protected Property<Boolean> mySelectedItem = new ValueProperty<Boolean>(false);
 
   public AbstractJetpadCell(EditorContext editorContext, SNode node) {

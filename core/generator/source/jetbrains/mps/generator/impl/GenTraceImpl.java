@@ -32,6 +32,8 @@ import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Semaphore;
 
 /**
  * @author Artem Tikhomirov
@@ -167,12 +169,15 @@ public class GenTraceImpl implements GenerationTrace {
       template = with;
     }
   }
+
   /*package*/ static class Phase {
     private final ArrayList<Element> myTrace = new ArrayList<Element>();
     public Phase next;
     public final Phase prev;
     public final SModelReference input, output;
     private Map<SNodeId, Collection<Element>> inputIndex, outputIndex;
+    private ConcurrentLinkedQueue<Element> myAdditionQueue = new ConcurrentLinkedQueue<Element>();
+    private final Semaphore myTraceLock = new Semaphore(1);
 
     public Phase(@NotNull SModelReference inputModel, @NotNull SModelReference outputModel, @Nullable Phase previous) {
       input = inputModel;
@@ -182,8 +187,18 @@ public class GenTraceImpl implements GenerationTrace {
 
     public void add(@Nullable SNodeId input, @NotNull List<SNodeId> output, @NotNull SNodeReference templateNode) {
       inputIndex = outputIndex = null;
-      for (SNodeId n : output) {
-        myTrace.add(new Element(input, n, templateNode));
+      if (myTraceLock.tryAcquire()) {
+        for (SNodeId n : output) {
+          myTrace.add(new Element(input, n, templateNode));
+        }
+        drainAdditionQueue();
+        myTraceLock.release();
+      } else {
+        // do not block each thread reporting the trace, just memorize it in the concurrent queue
+        // which will get drained by the thread which holds the lock already.
+        for (SNodeId n : output) {
+          myAdditionQueue.offer(new Element(input, n, templateNode));
+        }
       }
     }
 
@@ -223,10 +238,18 @@ public class GenTraceImpl implements GenerationTrace {
       return rv == null ? Collections.<Element>emptyList() : rv;
     }
 
+    private void drainAdditionQueue() {
+      while(!myAdditionQueue.isEmpty()) {
+        myTrace.add(myAdditionQueue.poll());
+      }
+    }
+
     private void buildIndex() {
       if (inputIndex != null && outputIndex != null) {
         return;
       }
+      // just in case there were trace elements after the queue was drained but the lock wasn't yet released.
+      drainAdditionQueue();
       HashMap<SNodeId, Collection<Element>> index1 = new HashMap<SNodeId, Collection<Element>>();
       HashMap<SNodeId, Collection<Element>> index2 = new HashMap<SNodeId, Collection<Element>>();
       for (Element e : myTrace) {

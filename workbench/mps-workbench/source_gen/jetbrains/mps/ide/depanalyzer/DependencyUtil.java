@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
@@ -146,7 +147,7 @@ public class DependencyUtil {
     }
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(modules).select(new ISelector<SModuleReference, SModule>() {
       public SModule select(SModuleReference ref) {
-        return ModuleRepositoryFacade.getInstance().getModule(ref);
+        return MPSModuleRepository.getInstance().getModule(ref);
       }
     }).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule module) {

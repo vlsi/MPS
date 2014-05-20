@@ -33,50 +33,56 @@ import java.util.NoSuchElementException;
  *     |
  *     o NodeD
  * </pre>
- * and condition <code>!endsWith("B")</code>, this iterator would yield {NodeA, NodeD}, i.e. completely throwing away NodeB and its sub-tree
+ * and condition <code>endsWith("B")</code>, this iterator would yield {NodeA, NodeD}, i.e. completely throwing away NodeB and its sub-tree.
+ * <p/>
+ * Note, unlike {@link org.jetbrains.mps.util.FilterIterator}, satisfied condition means element will be abandoned.
  *
  * @author Artem Tikhomirov
  */
 public final class TreeFilterIterator<T> implements Iterator<T> {
-    private final TreeIterator<T> myIterator;
-    private final Condition<T> myCondition;
-    private T myNext;
+  private final TreeIterator<T> myIterator;
+  private final Condition<T> myCondition;
+  private T myNext;
 
-    public TreeFilterIterator(@NotNull TreeIterator<T> iterator, @NotNull Condition<T> condition) {
-      myIterator = iterator;
-      myCondition = condition;
-      myNext = nextInternal();
-    }
-
-    @Override
-    public boolean hasNext() {
-      return myNext != null;
-    }
-
-    @Override
-    public T next() {
-      if (myNext == null) {
-        throw new NoSuchElementException();
-      }
-      T result = myNext;
-      myNext = nextInternal();
-      return result;
-    }
-
-    @Override
-    public void remove() {
-      myIterator.remove();
-    }
-
-    private T nextInternal() {
-      T next;
-      while (myIterator.hasNext()) {
-        next = myIterator.next();
-        if (myCondition.met(next)) {
-          return next;
-        }
-        myIterator.skipChildren();
-      }
-      return null;
-    }
+  /**
+   * @param iterator source of nodes
+   * @param skipCondition when condition is <code>met</code>, subtree is abandoned
+   */
+  public TreeFilterIterator(@NotNull TreeIterator<T> iterator, @NotNull Condition<T> skipCondition) {
+    myIterator = iterator;
+    myCondition = skipCondition;
+    myNext = nextInternal();
   }
+
+  @Override
+  public boolean hasNext() {
+    return myNext != null;
+  }
+
+  @Override
+  public T next() {
+    if (myNext == null) {
+      throw new NoSuchElementException();
+    }
+    T result = myNext;
+    myNext = nextInternal();
+    return result;
+  }
+
+  @Override
+  public void remove() {
+    myIterator.remove();
+  }
+
+  private T nextInternal() {
+    T next;
+    while (myIterator.hasNext()) {
+      next = myIterator.next();
+      if (!myCondition.met(next)) {
+        return next;
+      }
+      myIterator.skipChildren();
+    }
+    return null;
+  }
+}

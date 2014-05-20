@@ -5,7 +5,7 @@ package jetbrains.mps.resolve;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public interface IResolver {
   /**
@@ -13,8 +13,8 @@ public interface IResolver {
    * 
    * @param reference SReference to resolve
    * @param sourceNode SNode the source of the reference
-   * @param operationContext  
+   * @param repository  
    * @return false if IResolver was not able to resolve this reference
    */
-  public boolean resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull IOperationContext operationContext);
+  public boolean resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull SRepository repository);
 }

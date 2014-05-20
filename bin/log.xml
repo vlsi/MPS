@@ -87,9 +87,16 @@
         <appender-ref ref="FILE"/>
     </category>
 
-    <root>
+    <category name="jetbrains.mps" additivity="false">
         <priority value="INFO"/>
         <appender-ref ref="CONSOLE-ALL"/>
+        <appender-ref ref="DIALOG"/>
+        <appender-ref ref="FILE"/>
+    </category>
+
+    <root>
+        <priority value="INFO"/>
+        <appender-ref ref="CONSOLE-WARN"/>
         <appender-ref ref="DIALOG"/>
         <appender-ref ref="FILE"/>
     </root>

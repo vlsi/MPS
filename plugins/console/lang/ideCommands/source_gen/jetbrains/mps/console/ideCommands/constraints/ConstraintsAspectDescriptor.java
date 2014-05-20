@@ -12,7 +12,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 3:
+      case 4:
         return new SubtreeStatisticsTarget_Constraints();
       case 2:
         return new NodeReference_Constraints();
@@ -20,11 +20,13 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ModelReference_Constraints();
       case 0:
         return new ActionCallDeclaredParameter_Constraints();
+      case 3:
+        return new OfAspectOperation_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.OfAspectOperation", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
 }

@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -67,7 +68,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
         while (typeArgument_it.hasNext() && typeVar_it.hasNext()) {
           typeArgument_var = typeArgument_it.next();
           typeVar_var = typeVar_it.next();
-          if ((SLinkOperations.getTarget(typeVar_var, "bound", true) != null)) {
+          if ((SLinkOperations.getTarget(typeVar_var, "bound", true) != null) && !(SNodeOperations.isInstanceOf(typeArgument_var, "jetbrains.mps.baseLanguage.structure.WildCardType"))) {
             if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(typeVar_var, "bound", true), "virtual_isSupersetOf_9029841626175335449", new Object[]{typeArgument_var, substitutions}))) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();

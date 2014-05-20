@@ -72,7 +72,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
             ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
               @Override
               public void run() {
-                ResolverComponent.getInstance().resolve(finalRef, context);
+                ResolverComponent.getInstance().resolve(finalRef, context.getProject().getRepository());
               }
             }, context.getProject());
             String role = finalRef.getRole();

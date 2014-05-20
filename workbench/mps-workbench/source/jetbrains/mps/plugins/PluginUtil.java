@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.plugins;
 
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;

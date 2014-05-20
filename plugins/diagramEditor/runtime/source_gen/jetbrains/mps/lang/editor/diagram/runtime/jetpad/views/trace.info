@@ -801,24 +801,39 @@
     <nodeInfo nodeId="3129755042159204600" fileName="CrossView.java" startLine="33" startPosition="82" endLine="34" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3129755042158870362" fileName="CrossView.java" startLine="36" startPosition="29" endLine="37" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3129755042158871928" fileName="CrossView.java" startLine="41" startPosition="29" endLine="42" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874987247222" fileName="CrossView.java" startLine="49" startPosition="57" endLine="50" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874987247235" fileName="CrossView.java" startLine="50" startPosition="82" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874987247241" fileName="CrossView.java" startLine="51" startPosition="80" endLine="52" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874987247247" fileName="CrossView.java" startLine="52" startPosition="83" endLine="53" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260693027" fileName="CrossView.java" startLine="50" startPosition="27" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560508619093339527" fileName="CrossView.java" startLine="51" startPosition="24" endLine="52" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2336278055260729520" fileName="CrossView.java" startLine="53" startPosition="12" endLine="54" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987247222" fileName="CrossView.java" startLine="55" startPosition="5" endLine="56" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987247235" fileName="CrossView.java" startLine="56" startPosition="82" endLine="57" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987247241" fileName="CrossView.java" startLine="57" startPosition="80" endLine="58" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4287318874987247247" fileName="CrossView.java" startLine="58" startPosition="83" endLine="59" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260693002" fileName="CrossView.java" startLine="62" startPosition="46" endLine="63" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260693007" fileName="CrossView.java" startLine="63" startPosition="29" endLine="64" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260693014" fileName="CrossView.java" startLine="64" startPosition="41" endLine="65" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2336278055260532592" fileName="CrossView.java" startLine="53" startPosition="10" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3129755042158848985" fileName="CrossView.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3129755042158855554" fileName="CrossView.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3129755042158820486" fileName="CrossView.java" startLine="34" startPosition="88" endLine="39" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3129755042158855548" fileName="CrossView.java" startLine="39" startPosition="12" endLine="44" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4287318874987144214" fileName="CrossView.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateCross#(Ljetbrains/jetpad/geometry/Vector;I)V" />
+    <nodeInfo nodeId="2336278055260693023" fileName="CrossView.java" startLine="62" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVisible#(Z)V" />
+    <nodeInfo nodeId="1560508619093331272" fileName="CrossView.java" startLine="49" startPosition="57" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4287318874987144214" fileName="CrossView.java" startLine="49" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateCross#(Ljetbrains/jetpad/geometry/Vector;I)V" />
     <nodeInfo nodeId="3129755042158781863" fileName="CrossView.java" startLine="28" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerSynchronizers#(Ljetbrains/jetpad/mapper/Mapper/SynchronizersConfiguration;)V" />
     <nodeInfo nodeId="3129755042158776749" fileName="CrossView.java" startLine="26" startPosition="33" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4287318874984382286" fileName="CrossView.java" startLine="24" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CrossView#()V" />
     <scopeInfo nodeId="3129755042158848987" fileName="CrossView.java" startLine="36" startPosition="29" endLine="37" endPosition="67" />
     <scopeInfo nodeId="3129755042158855555" fileName="CrossView.java" startLine="41" startPosition="29" endLine="42" endPosition="67" />
+    <scopeInfo nodeId="2336278055260532593" fileName="CrossView.java" startLine="53" startPosition="12" endLine="54" endPosition="23" />
+    <scopeInfo nodeId="1560508619093331275" fileName="CrossView.java" startLine="50" startPosition="27" endLine="52" endPosition="13" />
     <scopeInfo nodeId="3129755042158848985" fileName="CrossView.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="3129755042158855554" fileName="CrossView.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4287318874987144217" fileName="CrossView.java" startLine="49" startPosition="57" endLine="53" endPosition="81" />
-    <scopeInfo nodeId="4287318874987144214" fileName="CrossView.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="2336278055260693001" fileName="CrossView.java" startLine="62" startPosition="46" endLine="65" endPosition="42" />
+    <scopeInfo nodeId="2336278055260693023" fileName="CrossView.java" startLine="62" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="2336278055260703336" varName="isVisible" />
+    </scopeInfo>
+    <scopeInfo nodeId="4287318874987144217" fileName="CrossView.java" startLine="49" startPosition="57" endLine="59" endPosition="81" />
+    <scopeInfo nodeId="4287318874987144214" fileName="CrossView.java" startLine="49" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="3129755042158897815" varName="length" />
       <varInfo nodeId="3129755042158881339" varName="position" />
     </scopeInfo>
@@ -831,7 +846,7 @@
     <unitInfo nodeId="3129755042158848985" fileName="CrossView.java" startLine="35" startPosition="72" endLine="39" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView$2" />
     <unitInfo nodeId="3129755042158855554" fileName="CrossView.java" startLine="40" startPosition="71" endLine="44" endPosition="9" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView$2" />
     <unitInfo nodeId="3129755042158778425" fileName="CrossView.java" startLine="27" startPosition="8" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView$1" />
-    <unitInfo nodeId="4287318874984352379" fileName="CrossView.java" startLine="14" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView" />
+    <unitInfo nodeId="4287318874984352379" fileName="CrossView.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.CrossView" />
   </root>
   <root nodeRef="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)/4287318874988311587">
     <nodeInfo nodeId="1897569136986956221" fileName="RectDecoratorView.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ERROR_FRAME_WIDTH" />

@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.ModuleOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
@@ -48,11 +47,10 @@ public class CheckingTestsUtil {
           if (SModelStereotype.isGeneratorModel(sm)) {
             continue;
           }
-          ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
           for (SNode root : SModelOperations.getRoots(((SModel) sm), null)) {
             Set<IErrorReporter> errorReporters = null;
             try {
-              errorReporters = checker.getErrors(root, operationContext);
+              errorReporters = checker.getErrors(root, sm.getRepository());
             } catch (IllegalStateException e) {
               errors.add(e.getMessage());
             }

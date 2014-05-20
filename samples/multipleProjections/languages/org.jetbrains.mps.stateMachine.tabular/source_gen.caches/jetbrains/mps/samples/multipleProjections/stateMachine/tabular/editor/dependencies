@@ -15,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Transition_tabular_Editor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.EditorHintsProvider" />
   </dependency>
   <dependency className="jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Event_hidden_Editor" file="Event_hidden_Editor.java">
     <classNode dependClassName="java.lang.Class" />

@@ -173,6 +173,9 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
       if (PlatformDataKeys.VIRTUAL_FILE.getName().equals(dataId) && myFileEditor != null) {
         return DataManager.getInstance().getDataContext(myFileEditor.getComponent()).getData(dataId);
       }
+      if (PlatformDataKeys.HELP_ID.is(dataId)) {
+        return "ideaInterface.editor";
+      }
       return null;
     }
   }
