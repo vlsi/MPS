@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
     <classNode dependClassName="jetbrains.mps.typesystem.checking.HighlightUtil" />
     <classNode dependClassName="jetbrains.mps.typesystem.checking.TypesEditorChecker" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
