@@ -31,6 +31,7 @@
     <tipAndTrick file="GoToEditorDeclaration.html"/>
     <tipAndTrick file="OverrideBehaviorMethod.html"/>
     <tipAndTrick file="ImplementBehaviorMethod.html"/>
+    <tipAndTrick file="StyleClasses.html"/>
     <tipAndTrick file="DeleteLine.html"/>
     <tipAndTrick file="LeftTransform.html"/>
     <tipAndTrick file="SurroundWith.html"/>
@@ -41,6 +42,8 @@
     <tipAndTrick file="NodeExplorer.html"/>
     <tipAndTrick file="GoToAction.html"/>
     <tipAndTrick file="ToolButtons.html"/>
+    <tipAndTrick file="Console.html"/>
+    <tipAndTrick file="GeneratorConfig.html"/>
     <tipAndTrick file="ProductivityGuide.html"/>
     <tipAndTrick file="FindUsages.html"/>
     <tipAndTrick file="ShowHierarchy.html"/>
