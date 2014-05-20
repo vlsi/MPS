@@ -43,6 +43,10 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildMps_ModuleDependencyOnJavaModule_Editor._Inline_1yxynp_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("module");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,10 +79,6 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("module");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
       editorCell.getStyle().putAll(style);

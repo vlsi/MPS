@@ -46,6 +46,10 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new PropertyAttributeQualifier_Editor._Inline_wc9pc4_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("attributeConcept");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
@@ -76,10 +80,6 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_wc9pc4_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "attributeConcept");
       editorCell.setCellId("ReferencePresentation_wc9pc4_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("attributeConcept");
-      }
       return editorCell;
     }
   }

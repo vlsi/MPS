@@ -49,6 +49,10 @@ public class BuildLayout_FilesOf_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildLayout_FilesOf_Editor._Inline_1i5f76_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("element");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -76,10 +80,6 @@ public class BuildLayout_FilesOf_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_1i5f76_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "element");
       editorCell.setCellId("ReferencePresentation_1i5f76_a0b0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("element");
-      }
       return editorCell;
     }
   }

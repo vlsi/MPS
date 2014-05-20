@@ -38,6 +38,10 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new NamedTupleComponentAccessOperation_Editor._Inline_rt0op7_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("component");
+    }
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -73,10 +77,6 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("component");
-      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       style.set(StyleAttributes.AUTO_DELETABLE, true);

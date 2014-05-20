@@ -125,6 +125,10 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new WeaveEach_RuleConsequence_Editor._Inline_hfot0g_a2b0());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("template");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -157,10 +161,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("template");
-      }
       Style style = new StyleImpl();
       Styles_StyleSheet.apply_reference(style, editorCell);
       editorCell.getStyle().putAll(style);

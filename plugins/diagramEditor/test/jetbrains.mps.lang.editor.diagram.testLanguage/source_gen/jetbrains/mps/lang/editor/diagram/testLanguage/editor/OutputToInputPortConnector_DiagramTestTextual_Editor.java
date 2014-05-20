@@ -66,6 +66,10 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new OutputToInputPortConnector_DiagramTestTextual_Editor._Inline_bem9lq_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("src");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -97,10 +101,6 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("src");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -127,6 +127,10 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new OutputToInputPortConnector_DiagramTestTextual_Editor._Inline_bem9lq_a4a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("dst");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -158,10 +162,6 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("dst");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

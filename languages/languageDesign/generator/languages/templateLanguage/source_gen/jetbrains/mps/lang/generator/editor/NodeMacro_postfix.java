@@ -110,6 +110,10 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline_crgygw_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("mappingLabel");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -142,10 +146,6 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("NM_property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("mappingLabel");
-      }
       Style style = new StyleImpl();
       Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
       style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));

@@ -83,6 +83,10 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new AdvanceWorkStatement_Editor._Inline_wnrqtk_a3a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("workStatement");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -115,10 +119,6 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_workName");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("workStatement");
-      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
       editorCell.getStyle().putAll(style);

@@ -43,6 +43,10 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GeneratorInternal_BuildSource_JavaJar_Editor._Inline_g0zw24_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("targetJar");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -70,10 +74,6 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
     private EditorCell createCollection_g0zw24_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_g0zw24_a0b0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("targetJar");
-      }
       editorCell.addEditorCell(this.createRefNode_g0zw24_a0a1a(editorContext, node));
       return editorCell;
     }

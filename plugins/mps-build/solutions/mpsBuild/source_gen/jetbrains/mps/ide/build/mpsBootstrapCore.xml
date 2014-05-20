@@ -2919,6 +2919,7 @@
         <module file="${mps_home}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" bootstrap="true" />
         <module file="${mps_home}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" bootstrap="true" />
         <module file="${mps_home}/core/kernel/stubUtils/stubUtils.msd" bootstrap="true" />
+        <module file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" bootstrap="true" />
       </chunk>
       <chunk>
         <module file="${mps_home}/languages/core/stub/Ant/Ant.msd" />
@@ -2940,7 +2941,6 @@
         <module file="${mps_home}/languages/languageDesign/make/languages/gentest/jetbrains.mps.tool.gentest.mpl" />
         <module file="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.traceInfo.msd" />
         <module file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" />
-        <module file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       </chunk>
       <chunk />
       <jvmargs>
@@ -8416,7 +8416,6 @@
     <delete dir="${mps_home}/languages/languageDesign/make/languages/gentest/source_gen" />
     <delete dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" />
     <delete dir="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
-    <delete dir="${mps_home}/editor/typesystemIntegration/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/generator/source_gen" />
   </target>
 </project>

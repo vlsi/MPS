@@ -41,6 +41,10 @@ public class XMLSAXAttributeReference_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new XMLSAXAttributeReference_Editor._Inline_air6th_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("attribute");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -68,10 +72,6 @@ public class XMLSAXAttributeReference_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_air6th_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "attribute");
       editorCell.setCellId("ReferencePresentation_air6th_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("attribute");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);

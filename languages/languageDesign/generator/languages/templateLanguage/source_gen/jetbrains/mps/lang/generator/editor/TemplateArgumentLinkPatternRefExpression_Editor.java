@@ -40,6 +40,10 @@ public class TemplateArgumentLinkPatternRefExpression_Editor extends DefaultNode
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TemplateArgumentLinkPatternRefExpression_Editor._Inline_f8ef2o_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("patternVar");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -72,10 +76,6 @@ public class TemplateArgumentLinkPatternRefExpression_Editor extends DefaultNode
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("patternVar");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
