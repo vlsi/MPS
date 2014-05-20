@@ -37,7 +37,6 @@ import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.icons.MPSIcons;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.platform.watching.ReloadListener;

@@ -30,7 +30,6 @@ import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.persistence.DefaultModelPersistence;

@@ -22,7 +22,6 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.MPSMainImpl;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import junit.extensions.jfcunit.JFCTestCase;
