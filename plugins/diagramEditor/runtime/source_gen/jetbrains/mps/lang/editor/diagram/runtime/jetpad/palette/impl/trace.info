@@ -415,5 +415,27 @@
     <unitInfo nodeId="4394877045818107905" fileName="AbstractPaletteCreationAction.java" startLine="47" startPosition="45" endLine="52" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.AbstractPaletteCreationAction$1" />
     <unitInfo nodeId="6194248980632146498" fileName="AbstractPaletteCreationAction.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.AbstractPaletteCreationAction" />
   </root>
+  <root nodeRef="r:fe63f202-319c-458b-a90e-3e34b73997ae(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl)/708810380380373892">
+    <nodeInfo nodeId="708810380380622534" fileName="DiagramTraitButton.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiagramCell" />
+    <nodeInfo nodeId="708810380380622973" fileName="DiagramTraitButton.java" startLine="13" startPosition="47" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708810380380625508" fileName="DiagramTraitButton.java" startLine="17" startPosition="25" endLine="18" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="708810380380617220" fileName="DiagramTraitButton.java" startLine="21" startPosition="25" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708810380380382757" fileName="DiagramTraitButton.java" startLine="25" startPosition="27" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="708810380380621654" fileName="DiagramTraitButton.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiagramTraitButton#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;)V" />
+    <nodeInfo nodeId="708810380380382470" fileName="DiagramTraitButton.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onClick#()V" />
+    <nodeInfo nodeId="708810380380382476" fileName="DiagramTraitButton.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="708810380380382485" fileName="DiagramTraitButton.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <scopeInfo nodeId="708810380380621657" fileName="DiagramTraitButton.java" startLine="13" startPosition="47" endLine="14" endPosition="25" />
+    <scopeInfo nodeId="708810380380382475" fileName="DiagramTraitButton.java" startLine="17" startPosition="25" endLine="18" endPosition="41" />
+    <scopeInfo nodeId="708810380380382482" fileName="DiagramTraitButton.java" startLine="21" startPosition="25" endLine="22" endPosition="34" />
+    <scopeInfo nodeId="708810380380382491" fileName="DiagramTraitButton.java" startLine="25" startPosition="27" endLine="26" endPosition="39" />
+    <scopeInfo nodeId="708810380380621654" fileName="DiagramTraitButton.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="708810380380621890" varName="cell" />
+    </scopeInfo>
+    <scopeInfo nodeId="708810380380382470" fileName="DiagramTraitButton.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="708810380380382476" fileName="DiagramTraitButton.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="708810380380382485" fileName="DiagramTraitButton.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <unitInfo nodeId="708810380380373892" fileName="DiagramTraitButton.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTraitButton" />
+  </root>
 </debugInfo>
 

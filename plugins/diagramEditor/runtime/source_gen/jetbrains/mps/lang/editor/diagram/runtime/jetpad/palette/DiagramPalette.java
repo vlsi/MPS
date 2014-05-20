@@ -52,6 +52,7 @@ public class DiagramPalette extends JPanel {
   }
 
   public void unselectActionWhichWasSelected() {
+    check_1eehpg_a0a11(mySelectedToggleAction);
     mySelectedToggleAction = null;
   }
 
@@ -77,6 +78,13 @@ public class DiagramPalette extends JPanel {
 
 
   private static void check_1eehpg_a0a0a0a01(ToggleAction checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.setSelected(null, false);
+    }
+
+  }
+
+  private static void check_1eehpg_a0a11(ToggleAction checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setSelected(null, false);
     }

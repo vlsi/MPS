@@ -19,6 +19,7 @@ public class PaletteToggleActionAdapter extends DiagramPaletteToggleAction {
 
   @Override
   public void setSelected(AnActionEvent event, boolean isSelected) {
+    super.setSelected(event, isSelected);
     if (isSelected) {
       myAction.onClick();
     }

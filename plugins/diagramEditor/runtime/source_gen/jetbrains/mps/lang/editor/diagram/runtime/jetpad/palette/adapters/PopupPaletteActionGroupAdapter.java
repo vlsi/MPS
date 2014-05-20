@@ -17,11 +17,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class PopupPaletteActionGroupAdapter extends ActionGroup implements Toggleable, AlwaysVisibleActionGroup {
   private DiagramPalette myPalette;
   private PaletteActionGroup myPaletteActionGroup;
   private List<AnAction> myChildren = ListSequence.fromList(new ArrayList<AnAction>());
+  private AnAction mySelectedAction;
 
 
   public PopupPaletteActionGroupAdapter(final DiagramPalette palette, PaletteActionGroup group) {
@@ -45,9 +48,36 @@ public class PopupPaletteActionGroupAdapter extends ActionGroup implements Toggl
         return PaletteElementFactory.createPaletteElementAdapter(myPalette, element);
       }
     }).toListSequence();
+    ListSequence.fromList(myChildren).where(new IWhereFilter<AnAction>() {
+      public boolean accept(AnAction it) {
+        return it instanceof PaletteToggleActionAdapter;
+      }
+    }).visitAll(new IVisitor<AnAction>() {
+      public void visit(AnAction it) {
+        ((PaletteToggleActionAdapter) it).setParentGroup(PopupPaletteActionGroupAdapter.this);
+      }
+    });
   }
 
   public void removeChildren() {
     ListSequence.fromList(myChildren).clear();
+  }
+
+
+
+  @Override
+  public void update(AnActionEvent event) {
+    super.update(event);
+    if (mySelectedAction != null) {
+      event.getPresentation().setIcon(mySelectedAction.getTemplatePresentation().getIcon());
+      event.getPresentation().putClientProperty(SELECTED_PROPERTY, true);
+    } else {
+      event.getPresentation().setIcon(getTemplatePresentation().getIcon());
+      event.getPresentation().putClientProperty(SELECTED_PROPERTY, false);
+    }
+  }
+
+  /*package*/ void setSelectedAction(AnAction action) {
+    mySelectedAction = action;
   }
 }
