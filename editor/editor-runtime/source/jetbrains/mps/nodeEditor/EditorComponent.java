@@ -128,6 +128,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
+import jetbrains.mps.typesystem.inference.NonReusableTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
@@ -2718,7 +2719,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return runRead(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
-        return TypeContextManager.getInstance().runTypeCheckingComputation(getTypecheckingContextOwner(), myNode,
+        final ITypeContextOwner contextOwner = isSmart ? new NonReusableTypecheckingContextOwner(): getTypecheckingContextOwner();
+        return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myNode,
             new Computation<List<SubstituteAction>>() {
               @Override
               public List<SubstituteAction> compute(TypeCheckingContext context) {

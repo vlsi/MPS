@@ -108,32 +108,32 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   }
 
   @Override
-  public List<SubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
-    InequalitySystem inequalitiesSystem = getInequalitiesSystem(contextCell);
-
-    List<SubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
-    if (inequalitiesSystem == null) return substituteActionList;
-
+  public List<SubstituteAction> getSmartMatchingActions(final String pattern, final boolean strictMatching, EditorCell contextCell) {
+    // TODO make this thread local maybe?
     ourModelForTypechecking = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
     for (SModuleReference l : ((SModelBase) getEditorContext().getModel()).getSModel().getModelDepsManager().getAllImportedLanguages()) {
       ((SModelBase) ourModelForTypechecking).getSModel().addLanguage(l);
     }
 
-    List<SubstituteAction> result = new ArrayList<SubstituteAction>();
     try {
-      // In case this becomes a performance bottleneck, use the SubtypingCache
-      for (SubstituteAction nodeSubstituteAction : substituteActionList) {
-        SNode type = nodeSubstituteAction.getActionType(pattern, contextCell);
+      final InequalitySystem inequalitiesSystem = getInequalitiesSystem(contextCell);
+
+      List<SubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
+      if (inequalitiesSystem == null) return substituteActionList;
+
+      List<SubstituteAction> result = new ArrayList<SubstituteAction>();
+      for (SubstituteAction nodeSubstituteAction :   substituteActionList) {
+        SNode type = nodeSubstituteAction.getActionType(pattern);
         if (type != null && inequalitiesSystem.satisfies(type)) {
           result.add(nodeSubstituteAction);
         }
       }
-    } finally {
+      return result;
+    }
+    finally {
       TemporaryModels.getInstance().dispose(ourModelForTypechecking);
       ourModelForTypechecking = null;
     }
-
-    return result;
   }
 
   @Override

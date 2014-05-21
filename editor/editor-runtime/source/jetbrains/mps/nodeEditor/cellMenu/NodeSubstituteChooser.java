@@ -39,7 +39,9 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
+import jetbrains.mps.typesystem.inference.NonReusableTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
@@ -207,7 +209,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation(myEditorComponent.getTypecheckingContextOwner(), myEditorComponent.getEditedNode(),
+    final ITypeContextOwner contextOwner = myIsSmart ? new NonReusableTypecheckingContextOwner() :  myEditorComponent.getTypecheckingContextOwner();
+    return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myEditorComponent.getEditedNode(),
         new Computation<List<SubstituteAction>>() {
           @Override
           public List<SubstituteAction> compute(TypeCheckingContext context) {
