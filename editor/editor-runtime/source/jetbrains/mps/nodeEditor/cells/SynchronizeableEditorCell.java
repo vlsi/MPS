@@ -28,5 +28,12 @@ public interface SynchronizeableEditorCell extends EditorCell {
    */
   void synchronize();
 
+  /**
+   * called for "big" node cell only and used as an indicator that EditorManager should try synchronize
+   * process for this cell instead of re-creating it.
+   *
+   * Ignored for child cells within collection. This means, if "big" cell is instance of EditorCell_Collection
+   * then this method will be called for this collection only.
+   */
   boolean canBeSynchronized();
 }

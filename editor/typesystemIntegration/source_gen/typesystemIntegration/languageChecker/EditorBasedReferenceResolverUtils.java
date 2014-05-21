@@ -31,6 +31,7 @@ public class EditorBasedReferenceResolverUtils {
 
   private static SubstituteAction getApplicableSubstituteAction(SubstituteInfo substituteInfo, String resolveInfo) {
     SubstituteAction result = null;
+    substituteInfo.invalidateActions();
     for (SubstituteAction nextAction : ListSequence.fromList(substituteInfo.getMatchingActions(resolveInfo, true))) {
       if (nextAction.canSubstitute(resolveInfo)) {
         if (result != null) {

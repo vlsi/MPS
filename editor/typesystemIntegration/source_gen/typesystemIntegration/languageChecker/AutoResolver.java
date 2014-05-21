@@ -26,6 +26,7 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 public class AutoResolver extends EditorCheckerAdapter {
   private boolean myForceAutofix = false;
@@ -118,5 +119,13 @@ public class AutoResolver extends EditorCheckerAdapter {
   protected void resetCheckerState() {
     myForceAutofix = true;
     super.resetCheckerState();
+  }
+
+  @Override
+  protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
+    if (EditorSettings.getInstance().isAutoQuickFix() && "name".equals(event.getPropertyName())) {
+      return true;
+    }
+    return super.isPropertyEventDramatical(event);
   }
 }
