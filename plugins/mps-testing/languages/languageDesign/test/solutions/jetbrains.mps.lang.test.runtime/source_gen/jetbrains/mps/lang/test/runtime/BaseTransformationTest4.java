@@ -20,7 +20,7 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
 
   private void initTestRunner() {
     TestLightRunState runState = TransformationTestLightRunner.getRunState(Thread.currentThread().getId());
-    if (runState.isRunning()) {
+    if (runState != null && runState.isRunning()) {
       setTestRunner(new TransformationTestLightRunner());
     } else {
       setTestRunner(new TransformationTestRunner());
