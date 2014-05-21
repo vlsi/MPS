@@ -43,7 +43,6 @@ import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteConnectorCreationActionGroup;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTraitButton;
 
 public class Diagram_diagram_Editor extends DefaultNodeEditor {
@@ -400,31 +399,6 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
       private DiagramPaletteImpl_32adaa_a4a(DiagramCell diagramCell) {
         super(diagramCell);
         addPaletteElement(new MyMainActionGroup(diagramCell));
-        addPaletteElement(new PaletteConnectorCreationActionGroup(diagramCell, getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.ConnectorInstance"), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
-          public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
-            return SNodeOperations.isInstanceOf(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && fromId instanceof SNode && SNodeOperations.isInstanceOf(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance") && toId instanceof SNode && eq_32adaa_a0a0a0a0e0a0a2a0i21(SNodeOperations.getContainingLinkDeclaration(((SNode) toId)), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.MetaBlock", "inMetaPorts"));
-          }
-        }, new _FunctionTypes._void_P5_E0<SNode, SNode, Object, SNode, Object>() {
-          public void invoke(SNode node, SNode from, Object fromId, SNode to, Object toId) {
-            SNode connector = SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance");
-            SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "source", true), "block", SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
-            final SNode port = ((SNode) fromId);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "source", true), "metaPort", ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(from, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), "metaBlock", false), "outMetaPorts", true)).findFirst(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return eq_32adaa_a0a0a0a0a2a3a0a0f0a0a2a0i21(it, port);
-              }
-            }), false);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "block", SNodeOperations.cast(to, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), false);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(connector, "target", true), "metaPort", (SNode) toId, false);
-          }
-        }) {
-
-
-          @Override
-          public String getText() {
-            return "connectors";
-          }
-        });
         addPaletteElement(new DiagramTraitButton(diagramCell));
         createPalette();
       }
@@ -444,14 +418,6 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
   }
 
   private static boolean eq_32adaa_a0a0a0a0a2a3a0a0e0a0a0d21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_32adaa_a0a0a0a0e0a0a2a0i21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_32adaa_a0a0a0a0a2a3a0a0f0a0a2a0i21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

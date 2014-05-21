@@ -34,7 +34,7 @@ public class MyMainActionGroup implements PaletteActionGroup {
 
 
   public PaletteElement[] getElements() {
-    List<PaletteActionGroup> groups = ListSequence.fromList(new ArrayList<PaletteActionGroup>());
+    List<PaletteElement> groups = ListSequence.fromList(new ArrayList<PaletteElement>());
     ModelPlusImportedScope scope = new ModelPlusImportedScope(myDiagramCell.getSNode().getModel(), false, NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testHybridEditor.structure.MetaBlock")));
     for (SNode node : Sequence.fromIterable(scope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -50,7 +50,8 @@ public class MyMainActionGroup implements PaletteActionGroup {
     for (String tag : MapSequence.fromMap(tagToGroupMap).keySet()) {
       ListSequence.fromList(groups).addElement(new MyActionGroup(MapSequence.fromMap(tagToGroupMap).get(tag), myDiagramCell, myDiagramCell.getSNode(), SLinkOperations.findLinkDeclaration("jetbrains.mps.testHybridEditor.structure.Diagram", "newBlocks"), tag));
     }
-    return ListSequence.fromList(groups).toGenericArray(PaletteActionGroup.class);
+    ListSequence.fromList(groups).addElement(new MyConnectorCreationAction(myDiagramCell));
+    return ListSequence.fromList(groups).toGenericArray(PaletteElement.class);
   }
 
   public boolean isPopup() {
