@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.interpreted.TemplateMappingConfigurationInte
 import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.SModel;
@@ -569,7 +570,7 @@ public class GenPlanTest {
       super(null, createMapConfigNode(name));
       myName = name;
       myTopPri = topPri;
-      myNode = new SNodePointer(new SModelReference(null, SModelId.generate(), "MockModel"), SModel.generateUniqueId());
+      myNode = new SNodePointer(new SModelReference(new ModuleReference("MockModule"), SModelId.generate(), "MockModel"), SModel.generateUniqueId());
     }
 
     @Override
