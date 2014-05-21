@@ -30,7 +30,8 @@ public interface SModelInternal {
 
   void removeModelListener(@NotNull SModelListener listener);
 
-  //todo get rid of, try to cast, show an error if not casted
+  @Deprecated
+  //use SNodeUtil.isAccessible for nodes or write a custom check for the fact this model is in repository
   boolean isDisposed();
 
   //todo cast if can be

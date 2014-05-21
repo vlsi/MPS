@@ -47,6 +47,10 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new DropRootRule_Editor._Inline_fdnaen_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("applicableConcept");
+    }
     Style style = new StyleImpl();
     SharedStyles_StyleSheet.apply_ReferenceOnConcept(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -85,10 +89,6 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("applicableConcept");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

@@ -78,6 +78,10 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ClassCreator_Editor._Inline_53xyyk_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("baseMethodDeclaration");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
@@ -108,10 +112,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_53xyyk_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "baseMethodDeclaration");
       editorCell.setCellId("ReferencePresentation_53xyyk_a0b0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("baseMethodDeclaration");
-      }
       return editorCell;
     }
   }

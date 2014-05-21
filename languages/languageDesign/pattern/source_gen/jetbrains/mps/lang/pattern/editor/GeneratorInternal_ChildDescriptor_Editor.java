@@ -79,6 +79,10 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GeneratorInternal_ChildDescriptor_Editor._Inline_s0kiw8_a3a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("childLinkDeclaration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -110,10 +114,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role_1");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("childLinkDeclaration");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -140,6 +140,10 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GeneratorInternal_ChildDescriptor_Editor._Inline_s0kiw8_a5a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("mainNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -167,10 +171,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     private EditorCell createReferencePresentation_s0kiw8_a0f0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "mainNode");
       editorCell.setCellId("ReferencePresentation_s0kiw8_a0f0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("mainNode");
-      }
       return editorCell;
     }
   }

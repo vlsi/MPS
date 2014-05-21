@@ -44,6 +44,10 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TemplatePersistentConfigurationType_Editor._Inline_1clvom_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("persistentConfiguration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -76,10 +80,6 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("persistentConfiguration");
-      }
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.apply_persistentConfigurationRef(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -106,6 +106,10 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new TemplatePersistentConfigurationType_Editor._Inline_1clvom_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("persistentConfiguration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -138,10 +142,6 @@ public class TemplatePersistentConfigurationType_Editor extends DefaultNodeEdito
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("persistentConfiguration");
-      }
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.apply_persistentConfigurationRefDeprecated(style, editorCell);
       editorCell.getStyle().putAll(style);

@@ -46,6 +46,10 @@ public class GenerationContextOp_GenParameterRef_Editor extends DefaultNodeEdito
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GenParameterRef_Editor._Inline_h52dks_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("importClause");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
@@ -89,10 +93,6 @@ public class GenerationContextOp_GenParameterRef_Editor extends DefaultNodeEdito
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_h52dks_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("importClause");
-      }
       return editorCell;
     }
   }

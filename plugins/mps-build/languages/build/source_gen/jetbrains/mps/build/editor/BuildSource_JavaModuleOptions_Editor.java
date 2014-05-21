@@ -49,6 +49,10 @@ public class BuildSource_JavaModuleOptions_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildSource_JavaModuleOptions_Editor._Inline_bvukwp_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("compileOptions");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -76,10 +80,6 @@ public class BuildSource_JavaModuleOptions_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_bvukwp_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "compileOptions");
       editorCell.setCellId("ReferencePresentation_bvukwp_a0b0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("compileOptions");
-      }
       return editorCell;
     }
   }

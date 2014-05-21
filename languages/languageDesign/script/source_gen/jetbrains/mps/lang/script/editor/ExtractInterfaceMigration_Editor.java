@@ -98,6 +98,10 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new ExtractInterfaceMigration_Editor._Inline_7cysuj_a3a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("newClassifier");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -125,10 +129,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_7cysuj_a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "newClassifier");
       editorCell.setCellId("ReferencePresentation_7cysuj_a0d0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("newClassifier");
-      }
       return editorCell;
     }
   }

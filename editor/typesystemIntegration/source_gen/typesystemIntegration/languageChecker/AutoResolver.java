@@ -12,40 +12,44 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
+import jetbrains.mps.resolve.ReferenceResolverUtils;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelOperations;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 
 public class AutoResolver extends EditorCheckerAdapter {
+  private boolean myForceAutofix = false;
+
+
   public AutoResolver() {
   }
 
   @Override
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
-    if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode) == null) {
+    if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode).getModule() == null) {
       return messages;
     }
-    if (SNodeOperations.getModel(rootNode).getModule() instanceof TransientModelsModule) {
-      return messages;
-    }
-    boolean autoresolve = !(hasUnresolvedImportedModels(SNodeOperations.getModel(rootNode), editorContext));
+    // TODO: use same settings as in LanguageEritorChecker 
+    boolean autofix = isAutofix(SNodeOperations.getModel(rootNode), editorContext.getRepository());
     final Set<SReference> badReferences = collectBadReferences(rootNode);
     for (SReference ref : SetSequence.fromSet(badReferences)) {
       EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "Unresolved reference", this, editorContext);
       SetSequence.fromSet(messages).addElement(message);
     }
-    if (autoresolve) {
+    if (autofix) {
+      final boolean wasForceAutofix = myForceAutofix;
+      myForceAutofix = false;
       final IOperationContext operationContext = editorContext.getOperationContext();
       if (operationContext != null) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
@@ -55,28 +59,33 @@ public class AutoResolver extends EditorCheckerAdapter {
               @Override
               public void run() {
                 // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
-                ResolverComponent.getInstance().resolveScopesOnly(badReferences, editorContext.getRepository());
+                // <node> 
+                for (SReference brokenRef : SetSequence.fromSet(badReferences)) {
+                  if (!(ResolverComponent.getInstance().resolveScopesOnly(brokenRef, editorContext.getRepository()))) {
+                    SNode sourceNode = brokenRef.getSourceNode();
+                    if (sourceNode == null) {
+                      return;
+                    }
+                    final String resolveInfo = ReferenceResolverUtils.getResolveInfo(brokenRef, sourceNode);
+                    if (resolveInfo == null) {
+                      return;
+                    }
+                    if (!(EditorBasedReferenceResolverUtils.resolveInEditor((EditorComponent) editorContext.getEditorComponent(), sourceNode, resolveInfo, brokenRef.getRole()))) {
+                      return;
+                    }
+                  }
+                  if (wasForceAutofix) {
+                    // re-running next checker in force autofix mode 
+                    myForceAutofix = true;
+                  }
+                }
               }
             }, operationContext.getProject());
           }
         });
-
       }
     }
     return messages;
-  }
-
-  private boolean hasUnresolvedImportedModels(SModel model, EditorContext editorContext) {
-    if (editorContext == null) {
-      return true;
-    }
-    SRepository repository = editorContext.getRepository();
-    for (SModelReference modelReference : ListSequence.fromList(SModelOperations.getImportedModelUIDs(model))) {
-      if (modelReference.resolve(repository) == null) {
-        return true;
-      }
-    }
-    return false;
   }
 
   private Set<SReference> collectBadReferences(SNode cellNode) {
@@ -96,8 +105,18 @@ public class AutoResolver extends EditorCheckerAdapter {
     }
   }
 
+  private boolean isAutofix(SModel model, SRepository repository) {
+    return model instanceof EditableSModel && !(model.getModule() instanceof TransientModelsModule) && ReferenceResolverUtils.canExecuteImmediately(model, repository) && (EditorSettings.getInstance().isAutoQuickFix() || myForceAutofix);
+  }
+
   @Override
   public boolean isLaterThan(BaseEditorChecker editorChecker) {
     return editorChecker instanceof TypesEditorChecker;
+  }
+
+  @Override
+  protected void resetCheckerState() {
+    myForceAutofix = true;
+    super.resetCheckerState();
   }
 }

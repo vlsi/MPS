@@ -87,6 +87,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new AnonymousClass_Editor._Inline_msf9u8_a0a0());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("classifier");
+    }
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
@@ -120,10 +124,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_msf9u8_a0a0a(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "classifier");
       editorCell.setCellId("ReferencePresentation_msf9u8_a0a0a");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("classifier");
-      }
       return editorCell;
     }
   }

@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.openapi.editor.TextBuilder;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.util.Condition;
 
@@ -64,13 +61,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   // TODO: move this group of methods to open API
   NodeSubstitutePatternEditor createSubstitutePatternEditor();
-
-  /**
-   * Since MPS 3.0 use setAction(jetbrains.mps.openapi.editor.cells.CellActionType, jetbrains.mps.openapi.editor.cells.CellAction) instead
-   * should be removed after MPS 3.0
-   */
-  @Deprecated
-  void setAction(CellActionType type, EditorCellAction action);
 
   /**
    * Starting from MPS 3.0 use getEditorComponent(); instead

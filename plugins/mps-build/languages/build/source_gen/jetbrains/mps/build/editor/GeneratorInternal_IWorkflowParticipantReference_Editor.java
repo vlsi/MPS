@@ -37,6 +37,10 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GeneratorInternal_IWorkflowParticipantReference_Editor._Inline_n7w759_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("participant");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -69,10 +73,6 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_alias");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("participant");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, true);
       editorCell.getStyle().putAll(style);
