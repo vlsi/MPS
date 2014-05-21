@@ -247,7 +247,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     return super.getProject(); // public for GenerationTracerView
   }
 
-  private TraceNodeUI buildForwardTrace(SNode node) {
+  TraceNodeUI buildForwardTrace(SNode node) {
     if (GenerationFacade.isLegacyGenTraceEnabled()) {
       return myTracer.buildTraceInputTree(node);
     } else {
@@ -262,7 +262,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
       return newTrace;
     }
   }
-  private TraceNodeUI buildBackwardTrace(SNode node) {
+  TraceNodeUI buildBackwardTrace(SNode node) {
     if (GenerationFacade.isLegacyGenTraceEnabled()) {
       return myTracer.buildTracebackTree(node);
     } else {
