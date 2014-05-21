@@ -98,6 +98,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   @Override
   public SNode getActionType(String pattern) {
     SNode node = createChildNode(getParameterObject(), AbstractNodeSubstituteInfo.getModelForTypechecking(), pattern);
+    if (node == null) return null;
     if (ActionsUtil.isInstanceOfIType(node)) return node;
 
     //the following is for smart-type completion

@@ -170,7 +170,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
               } else {
                 if (!(typeCheckingContext.isSingleTypeComputation())) {
                   {
-                    SNode _nodeToCheck_1029348928467 = argt_var;
+                    SNode _nodeToCheck_1029348928467 = mcallop;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099522937", 0, null);
                     {
                       BaseQuickFixProvider intentionProvider = null;
@@ -179,7 +179,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
                       intentionProvider.putArgument("expression", actualArgument);
                       _info_12389875345.addIntentionProvider(intentionProvider);
                     }
-                    typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099522939", true), true, true, _info_12389875345);
+                    typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) argt_var, true, true, _info_12389875345);
                   }
                 }
               }
