@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="8051061021619748469" modelId="r:2527791c-6ce6-4422-9215-ce9af0862613(jetbrains.mps.ide.java.testMaterial.singleFiles)">
+    <nodeInfo nodeId="8051061021619748481" fileName="Statements.java" startLine="10" startPosition="36" endLine="11" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8051061021619748487" fileName="Statements.java" startLine="11" startPosition="16" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8051061021619748471" fileName="Statements.java" startLine="6" startPosition="25" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Statements#()V" />
+    <nodeInfo nodeId="8051061021619748475" fileName="Statements.java" startLine="9" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="method#(I)V" />
+    <scopeInfo nodeId="8051061021619748474" fileName="Statements.java" startLine="7" startPosition="23" endLine="7" endPosition="23" />
+    <scopeInfo nodeId="8051061021619748471" fileName="Statements.java" startLine="6" startPosition="25" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="8051061021619748478" fileName="Statements.java" startLine="10" startPosition="36" endLine="12" endPosition="14">
+      <varInfo nodeId="8051061021619748482" varName="x" />
+      <varInfo nodeId="8051061021619748488" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="8051061021619748475" fileName="Statements.java" startLine="9" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="8051061021619748479" varName="arg" />
+    </scopeInfo>
+    <unitInfo nodeId="8051061021619748469" fileName="Statements.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ide.java.testMaterial.singleFiles.Statements" />
+  </root>
+</debugInfo>
+

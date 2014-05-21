@@ -108,14 +108,11 @@ public class TransformationTestRunner implements TestRunner {
         ModelAccess.instance().runWriteActionInCommand(runnable, testProject);
       }
     });
-    // <node> 
   }
 
 
 
   protected Project openTestProject(String projectPathName, boolean reopenProject) {
-    // <node> 
-    // <node> 
     String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPathName);
     File projectPath = new File(expandedProjectPath);
     Environment currentEnv = ActiveEnvironment.getInstance();

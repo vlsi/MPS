@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4mzked8eh1srgzh1vp98acrsfr0tjze">
+<dependencies version="2" modelHash="-2omn0xkv7hnyit17uy93xv4nqn7p6rn">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
@@ -21,6 +21,11 @@
     <file name="Statements.java" />
   </source>
   <source id="2790039039257311059" name="Statements" hash="c0cp2isx9x99779z08o4313on652y4t">
+    <file name="Statements.java" />
+  </source>
+  <source id="3181349427684867081" name="Statements" hash="-bqwznzktfljgo2vjwhzqhfeh6u54lzs">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Statements.java" />
   </source>
 </dependencies>

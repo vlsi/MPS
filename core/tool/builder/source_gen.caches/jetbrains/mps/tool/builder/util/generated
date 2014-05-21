@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-egaxjmw2zfhvb8w4nsekvb1wg8gsxol">
+<dependencies version="2" modelHash="-65ae6o4n7r69oro26gcgk2yie6niy1f">
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="esw4kfzqsep0i31uc99yts4q6nnhwtf" />
@@ -26,7 +26,7 @@
   <source id="878521226300613674" name="MpsPlatform" hash="4smq9pv531havgaps3koestq8cz4y8p">
     <file name="MpsPlatform.java" />
   </source>
-  <source id="1365200781785613152" name="ClassloaderUtil" hash="bep9sgfbet9us28zb15ihvhwzrhbldh">
+  <source id="1365200781785613152" name="ClassloaderUtil" hash="aasz706dytmn0vrkeamgwsmwkgdsxm7">
     <file name="ClassloaderUtil.java" />
   </source>
   <source id="1365200781786323609" name="ContainerUtil" hash="4rhjofel9oov1paix45ubdbrdlfxqnt">

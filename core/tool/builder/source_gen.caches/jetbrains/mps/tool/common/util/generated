@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ehoxyl2z59cqqx0pnr95f6uphjx1lcg">
+<dependencies version="2" modelHash="b2qg35qtjrzi6drwwnjjqa3d8xbhkcf">
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="esw4kfzqsep0i31uc99yts4q6nnhwtf" />
@@ -33,11 +33,11 @@
   <source id="5198178184416573141" name="FileUtil" hash="cgby5pnyo86b2lsrjpt185tllwhsadr">
     <file name="FileUtil.java" />
   </source>
-  <source id="5198178184416573167" name="URLUtil" hash="5ym8pa45vy17uyryjz5lr5a4gb022j4">
+  <source id="5198178184416573167" name="URLUtil" hash="-o7m279vallz96sysu2xzo45x0udntw">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="URLUtil.java" />
   </source>
-  <source id="5198178184416573444" name="Timed" hash="6gzxrtyhk2g2yh2ncpz2aggenmyjv0x">
+  <source id="5198178184416573444" name="Timed" hash="9akbb862lpyc7dfwz11qn42s8myrel4">
     <file name="Timed.java" />
   </source>
   <source id="5198178184416574646" name="TimedComputable" hash="dfrcbzm8ej20ygbdsjhjatvmcvrfiy7">
