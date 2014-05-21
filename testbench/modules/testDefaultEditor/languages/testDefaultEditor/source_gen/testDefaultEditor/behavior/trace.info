@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="testDefaultEditor.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="testDefaultEditor.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="Company_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="testDefaultEditor.behavior.Company_BehaviorDescriptor" />
+  <unitInfo fileName="DefaultNodeAttribute_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="testDefaultEditor.behavior.DefaultNodeAttribute_BehaviorDescriptor" />
+  <unitInfo fileName="DefaultPropertyAttribute_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="testDefaultEditor.behavior.DefaultPropertyAttribute_BehaviorDescriptor" />
+  <unitInfo fileName="DefaultReferenceAttribute_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="testDefaultEditor.behavior.DefaultReferenceAttribute_BehaviorDescriptor" />
   <unitInfo fileName="Developer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="testDefaultEditor.behavior.Developer_BehaviorDescriptor" />
   <unitInfo fileName="DummyMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="testDefaultEditor.behavior.DummyMethod_BehaviorDescriptor" />
   <unitInfo fileName="Friend_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="testDefaultEditor.behavior.Friend_BehaviorDescriptor" />

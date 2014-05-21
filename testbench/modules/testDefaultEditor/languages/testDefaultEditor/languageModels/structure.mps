@@ -104,5 +104,35 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2870455723671203428" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="DefaultPropertyAttribute" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049750" resolveInfo="PropertyAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="2870455723671203493" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="propAttr" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="2870455723671203497" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="938834323431434553" resolveInfo="Developer" />
+      </node>
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2870455723671203511" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="DefaultReferenceAttribute" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049745" resolveInfo="LinkAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="2870455723671203512" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="refAttr" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="2870455723671203513" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="938834323431434553" resolveInfo="Developer" />
+      </node>
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2870455723671203553" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="DefaultNodeAttribute" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="2870455723671203554" nodeInfo="ng">
+      <property name="role" nameId="tpce.7588428831955550663" value="nodeAttr" />
+      <node role="attributed" roleId="tpce.7588428831947959310" type="tpce.AttributeInfo_AttributedConcept" typeId="tpce.6054523464627964745" id="2870455723671203555" nodeInfo="ng">
+        <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="938834323431434553" resolveInfo="Developer" />
+      </node>
+    </node>
+  </root>
 </model>
 

@@ -40,6 +40,7 @@
   <import index="y596" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(jetbrains.mps.openapi.editor.selection@java_stub)" version="-1" />
   <import index="r9fo" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(org.jetbrains.mps.util@java_stub)" version="-1" />
   <import index="53gy" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" version="-1" />
+  <import index="4rc5" modelUID="r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)" version="-1" />
   <import index="tp5g" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="40" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="35" implicit="yes" />
@@ -16388,6 +16389,33 @@
         <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="4905320928998888417" nodeInfo="ng">
           <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.991796682690297081" resolveInfo="MoveLeft" />
         </node>
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="2870455723671254292" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="defaultEditor" />
+    <property name="name" nameId="tpck.1169194664001" value="AddNodeAttribute" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="add node attribute" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="2870455723671260727" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="Simon" />
+      <property name="age" nameId="j0bb.938834323431434568" value="23" />
+      <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="2870455723671260727" resolveInfo="Simon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2870455723671260730" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="8" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="8" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="8" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="constant_0" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="2870455723671261234" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="Simon" />
+      <property name="age" nameId="j0bb.938834323431434568" value="23" />
+      <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="2870455723671261234" resolveInfo="Simon" />
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2870455723671262004" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeIntentionStatement" typeId="tp5g.1225989773458" id="2870455723671262003" nodeInfo="nn">
+        <link role="intention" roleId="tp5g.1225989811227" targetNodeId="4rc5.2870455723671212067" resolveInfo="AddDefaultNodeAttribute" />
       </node>
     </node>
   </root>
