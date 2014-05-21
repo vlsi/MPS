@@ -10,10 +10,11 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -45,7 +46,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
             final SNode rightType = typeCheckingContext.getRepresentative(rightExpressionType_typevar_8613885519962201007);
             typeCheckingContext.whenConcrete(rightType, new Runnable() {
               public void run() {
-                SNode op;
+                final SNode op;
                 {
                   SNode matchedNode_pa16g7_b0a0f0 = oper;
                   {
@@ -95,7 +96,12 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
                     }
                   }
                 }
-                SNode opType = typeCheckingContext.getOverloadedOperationType(op, typeCheckingContext.getExpandedNode(leftType), typeCheckingContext.getExpandedNode(rightType));
+                SNode opType = typeCheckingContext.getOverloadedOperationType(op, typeCheckingContext.getExpandedNode(leftType), typeCheckingContext.getExpandedNode(rightType), new IRuleConflictWarningProducer() {
+                  public void produceWarning(String modelId, String ruleId) {
+                    typeCheckingContext.reportWarning(op, "coflicting rules for overloaded operation type", modelId, ruleId, null, new NodeMessageTarget());
+
+                  }
+                });
                 if (!(SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType") && (SNodeOperations.isInstanceOf(MathUtil.getUnboxedElementType(opType), "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || SNodeOperations.isInstanceOf(MathUtil.getUnboxedElementType(opType), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType"))))) {
                   {
                     MessageTarget errorTarget = new NodeMessageTarget();
