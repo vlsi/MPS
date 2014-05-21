@@ -18,7 +18,6 @@ package jetbrains.mps.ide.generator;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import org.jetbrains.annotations.Nullable;
@@ -72,10 +71,6 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myFailOnMissingTextgen = new JCheckBox("Fail if textgen not found");
   private JCheckBox myGenerateDebugInfo = new JCheckBox("Generate debug information");
 
-  private JCheckBox myTraceGroupSteps = new JCheckBox("Group changes by step");
-  private JCheckBox myTraceCompactTemplates = new JCheckBox("Show change-specific templates only");
-  private JCheckBox myTraceShowEmptySteps = new JCheckBox("Show steps without changes");
-
   private JLabel myStatusLabel;
   private final ItemListener myStatusUpdater = new ItemListener() {
     @Override
@@ -121,9 +116,6 @@ class GenerationSettingsPreferencesPage {
 
     c.gridy++;
     myMainPanel.add(createTraceLevelPanel(), c);
-
-    c.gridy++;
-    myMainPanel.add(createTraceOptionsPanel(), c);
 
     c.gridy++;
     myMainPanel.add(createTextGenPanel(), c);
@@ -285,18 +277,6 @@ class GenerationSettingsPreferencesPage {
     return gotoPanel;
   }
 
-  private JPanel createTraceOptionsPanel() {
-    JPanel p = new JPanel();
-    p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
-    p.setBorder(IdeBorderFactory.createTitledBorder("Generation trace"));
-    p.add(myTraceGroupSteps);
-    p.add(myTraceCompactTemplates);
-    p.add(myTraceShowEmptySteps);
-
-    myButtonState.track(myTraceGroupSteps, myTraceCompactTemplates, myTraceShowEmptySteps);
-    return p;
-  }
-
   private JPanel createTextGenPanel() {
     JPanel textgenPanel = new JPanel();
     textgenPanel.setLayout(new BoxLayout(textgenPanel, BoxLayout.Y_AXIS));
@@ -331,11 +311,6 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.enableInplaceTransformations(myInplaceTransform.isSelected());
     myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
-
-    final GenTraceSettings gts = myGenerationSettings.getTraceSettings();
-    gts.setShowEmptySteps(myTraceShowEmptySteps.isSelected());
-    gts.setGroupByStep(myTraceGroupSteps.isSelected());
-    gts.setCompactTemplates(myTraceCompactTemplates.isSelected());
   }
 
   private int getTracingLevel() {
@@ -387,11 +362,6 @@ class GenerationSettingsPreferencesPage {
 
     myFailOnMissingTextgen.setSelected(myGenerationSettings.isFailOnMissingTextGen());
     myGenerateDebugInfo.setSelected(myGenerationSettings.isGenerateDebugInfo());
-
-    final GenTraceSettings gts = myGenerationSettings.getTraceSettings();
-    myTraceGroupSteps.setSelected(gts.isGroupByStep());
-    myTraceShowEmptySteps.setSelected(gts.isShowEmptySteps());
-    myTraceCompactTemplates.setSelected(gts.isCompactTemplates());
 
     final JRadioButton[] allbuttons = {myTraceNone, myTraceSteps, myTraceLanguages, myTraceTypes};
     allbuttons[myGenerationSettings.getPerformanceTracingLevel()].setSelected(true);
