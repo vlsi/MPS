@@ -403,6 +403,14 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       myPowerSaveMode = powerSaveMode;
     }
 
+    public boolean isAutoQuickFix() {
+      return myAutoQuickFix;
+    }
+
+    public void setAutoQuickFix(boolean autoQuickFix) {
+      myAutoQuickFix = autoQuickFix;
+    }
+
     //setters are for persistence
     public void setShowPlain(boolean showPlain) {
       this.showPlain = showPlain;
