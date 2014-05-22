@@ -16,6 +16,11 @@ import jetbrains.mps.debugger.api.ui.icons.Icons;
 import com.intellij.execution.ui.layout.PlaceInGrid;
 import javax.swing.JComponent;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
+import com.intellij.openapi.actionSystem.DataProvider;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import java.awt.LayoutManager;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.ui.ListCellRendererWrapper;
@@ -51,7 +56,7 @@ public class DebuggerToolPanel {
     myUiState = myDebugSession.getUiState();
     myDebugSession.addChangeListener(new DebuggerToolPanel.MySessionChangeListener());
     ui.getDefaults().initTabDefaults(0, "Debugger", null);
-    JPanel framesPanel = new JPanel(new BorderLayout());
+    JPanel framesPanel = new DebuggerToolPanel.DebuggerPanel(new BorderLayout());
     framesPanel.add(createThreadsComponent(), BorderLayout.NORTH);
     framesPanel.add(createStackFrameComponent(), BorderLayout.CENTER);
     Content framesContent = ui.createContent(DebuggerToolContent.FRAMES, framesPanel, "Frames", Icons.FRAMES, null);
@@ -71,6 +76,26 @@ public class DebuggerToolPanel {
       }
     }
   }
+
+
+
+  public class DebuggerPanel extends JPanel implements DataProvider {
+
+
+    @Nullable
+    public Object getData(@NonNls String id) {
+      if (PlatformDataKeys.HELP_ID.is(id)) {
+        return "ideaInterface.debuggerView";
+      }
+      return null;
+    }
+
+    public DebuggerPanel(LayoutManager p0) {
+      super(p0);
+    }
+  }
+
+
 
   private JComponent createVariablesPanel(Project project) {
     myVariablesTree = new VariablesTree(project, myDebugSession.getUiState());

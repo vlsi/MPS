@@ -27,6 +27,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.project.Project;
@@ -858,6 +859,11 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
         }
         return messages;
       }
+
+      if (PlatformDataKeys.HELP_ID.is(id)) {
+        return "ideaInterface.messageList";
+      }
+
       return null;
 
     }

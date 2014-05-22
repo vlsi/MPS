@@ -44,6 +44,7 @@
   <dependency className="jetbrains.mps.debugger.api.ui.tool.DebuggerToolPanel" file="DebuggerToolPanel.java">
     <classNode dependClassName="com.intellij.execution.ui.RunnerLayoutUi" />
     <classNode dependClassName="com.intellij.execution.ui.layout.PlaceInGrid" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.ComboBox" />
@@ -54,6 +55,7 @@
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
+    <classNode dependClassName="java.awt.LayoutManager" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -62,7 +64,6 @@
     <classNode dependClassName="javax.swing.DefaultListCellRenderer" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JList" />
-    <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.ListSelectionModel" />
     <classNode dependClassName="javax.swing.event.ListSelectionEvent" />
     <classNode dependClassName="javax.swing.event.ListSelectionListener" />
@@ -76,9 +77,13 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.tool.DebuggerToolContent" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="javax.swing.AbstractListModel" />
     <classNode extendsClassName="javax.swing.ComboBoxModel" />
+    <classNode extendsClassName="javax.swing.JPanel" />
     <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
   </dependency>
 </dependenciesRoot>
