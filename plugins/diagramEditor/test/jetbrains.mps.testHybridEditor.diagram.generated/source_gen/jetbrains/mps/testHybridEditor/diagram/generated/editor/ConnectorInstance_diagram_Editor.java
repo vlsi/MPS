@@ -45,7 +45,7 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
     final ConnectorCell editorCell = new ConnectorInstance_diagram_Editor.ConnectorCellImpl_z1vupn_a(editorContext, node);
     editorCell.setCellId("DiagramConnector_z1vupn_a");
     editorCell.setBig(true);
-    DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
+    ConnectorActionMap.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 

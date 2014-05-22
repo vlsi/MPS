@@ -15,7 +15,7 @@ import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.projectional.view.ViewTrait;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.ui.DiagramPalette;
 import javax.swing.JPanel;
 import jetbrains.jetpad.base.Registration;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -133,7 +133,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   @Override
   protected void relayoutImpl() {
     super.relayoutImpl();
-    check_xnhqai_a1a91(getPalette(), this);
+    check_xnhqai_a1a91(myPalettePanel);
     getContainerComponent().doLayout();
     getComponent().doLayout();
     Dimension preferredSize = getComponent().getPreferredSize();
@@ -194,10 +194,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     return false;
   }
 
-  private DiagramPalette getPalette() {
-    return myPalettePanel;
-  }
-
   public void setPalette(DiagramPalette palette) {
     myPalettePanel = palette;
   }
@@ -246,7 +242,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         public void handle(View view, MouseEvent event) {
           if (!(hasConnectionDragFeedback())) {
             View sourceView = view.viewAt(event.location());
-            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0hb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
+            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
               return;
             }
             showConnectionDragFeedback(sourceView);
@@ -632,7 +628,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  private static void check_xnhqai_a1a91(DiagramPalette checkedDotOperand, DiagramCell checkedDotThisExpression) {
+  private static void check_xnhqai_a1a91(DiagramPalette checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.doLayout();
     }
@@ -646,7 +642,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
   }
 
-  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0hb(Boolean checkedDotOperand) {
+  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(Boolean checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.booleanValue();
     }

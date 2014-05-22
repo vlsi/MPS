@@ -12,7 +12,7 @@
     <nodeInfo nodeId="121824560294376365" fileName="PaletteActionGroup.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isPopup#()Z" />
     <scopeInfo nodeId="121824560294376360" fileName="PaletteActionGroup.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
     <scopeInfo nodeId="121824560294376365" fileName="PaletteActionGroup.java" startLine="8" startPosition="0" endLine="9" endPosition="0" />
-    <unitInfo nodeId="121824560294376355" fileName="PaletteActionGroup.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
+    <unitInfo nodeId="121824560294376355" fileName="PaletteActionGroup.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteActionGroup" />
   </root>
   <root nodeRef="r:fc9c4864-4036-4c2e-9220-1fcd2b04815c(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi)/121824560294376372">
     <nodeInfo nodeId="5142486769434332505" fileName="PaletteAction.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onClick#()V" />
