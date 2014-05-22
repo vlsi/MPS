@@ -28,7 +28,7 @@ public class transformationTest_StyleSheet {
   public static void apply_TestLabel(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
 
   public static void apply_EditorOperation(Style style, EditorCell editorCell) {
