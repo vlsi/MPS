@@ -28,7 +28,7 @@ public class DefaultPropertyAttribute_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_tfur4z_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$P$");
-    editorCell.setCellId("Constant_tfur4z_a0");
+    editorCell.setCellId("const");
     editorCell.setDefaultText("");
     return editorCell;
   }

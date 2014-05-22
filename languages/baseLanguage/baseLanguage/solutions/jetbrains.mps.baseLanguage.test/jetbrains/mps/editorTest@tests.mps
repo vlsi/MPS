@@ -9728,11 +9728,12 @@
       <node role="developer" roleId="j0bb.938834323431434551" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="6007318803030932492" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="Timur" />
         <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="3215314425155389398" resolveInfo="Simon" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2798981647750161725" nodeInfo="ng">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5473249369684432710" nodeInfo="ng">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="5" />
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="5" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="reference_bestFriend" />
         </node>
       </node>
     </node>
@@ -16400,7 +16401,7 @@
       <property name="name" nameId="tpck.1169194664001" value="Simon" />
       <property name="age" nameId="j0bb.938834323431434568" value="23" />
       <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="2870455723671260727" resolveInfo="Simon" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2870455723671260730" nodeInfo="ng">
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7548887999679468361" nodeInfo="ng">
         <property name="caretPosition" nameId="tp5g.1229194968596" value="8" />
         <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
         <property name="selectionStart" nameId="tp5g.6268941039745498163" value="8" />
@@ -16412,10 +16413,93 @@
       <property name="name" nameId="tpck.1169194664001" value="Simon" />
       <property name="age" nameId="j0bb.938834323431434568" value="23" />
       <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="2870455723671261234" resolveInfo="Simon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="j0bb.DefaultNodeAttribute" typeId="j0bb.2870455723671203553" id="7548887999679374985" nodeInfo="ng">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7548887999679468359" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="const" />
+        </node>
+      </node>
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="2870455723671262004" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeIntentionStatement" typeId="tp5g.1225989773458" id="2870455723671262003" nodeInfo="nn">
         <link role="intention" roleId="tp5g.1225989811227" targetNodeId="4rc5.2870455723671212067" resolveInfo="AddDefaultNodeAttribute" />
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7548887999679190579" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="defaultEditor" />
+    <property name="name" nameId="tpck.1169194664001" value="AddPropertyAttribute" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="add node attribute" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="7548887999679381427" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="Simon" />
+      <property name="age" nameId="j0bb.938834323431434568" value="23" />
+      <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="7548887999679381427" resolveInfo="Simon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7548887999679381431" nodeInfo="ng">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_age" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="7548887999679381441" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="Simon" />
+      <property name="age" nameId="j0bb.938834323431434568" value="23" />
+      <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="7548887999679381441" resolveInfo="Simon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="j0bb.DefaultPropertyAttribute" typeId="j0bb.2870455723671203428" id="7548887999679381445" nodeInfo="ng">
+        <property name="propertyName" nameId="tpck.1757699476691236117" value="age" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7548887999679381459" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="const" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7548887999679381452" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeIntentionStatement" typeId="tp5g.1225989773458" id="7548887999679381457" nodeInfo="nn">
+        <link role="intention" roleId="tp5g.1225989811227" targetNodeId="4rc5.5527270534710867991" resolveInfo="AddDefaultPropertyAttribute" />
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7548887999679237080" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="defaultEditor" />
+    <property name="name" nameId="tpck.1169194664001" value="AddReferenceAttribute" />
+    <property name="description" nameId="tp5g.1883175908513350760" value="add reference attribute" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="7548887999679237081" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="Simon" />
+      <property name="age" nameId="j0bb.938834323431434568" value="23" />
+      <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="7548887999679237081" resolveInfo="Simon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5473249369683936410" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="2" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="reference_bestFriend" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="j0bb.Developer" typeId="j0bb.938834323431434553" id="7548887999679237083" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="Simon" />
+      <property name="age" nameId="j0bb.938834323431434568" value="23" />
+      <link role="bestFriend" roleId="j0bb.938834323431434579" targetNodeId="7548887999679237083" resolveInfo="Simon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="j0bb.DefaultReferenceAttribute" typeId="j0bb.2870455723671203511" id="7548887999679381417" nodeInfo="ng">
+        <property name="linkRole" nameId="tpck.1757699476691236116" value="bestFriend" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7548887999679594616" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="const" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7548887999679237085" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeIntentionStatement" typeId="tp5g.1225989773458" id="7548887999679237086" nodeInfo="nn">
+        <link role="intention" roleId="tp5g.1225989811227" targetNodeId="4rc5.2870455723671213010" resolveInfo="AddDefaultReferenceAttribute" />
       </node>
     </node>
   </root>

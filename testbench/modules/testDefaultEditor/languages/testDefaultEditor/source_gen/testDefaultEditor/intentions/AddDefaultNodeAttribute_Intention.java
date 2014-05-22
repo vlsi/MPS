@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddDefaultNodeAttribute_Intention implements IntentionFactory {
@@ -83,6 +84,7 @@ public class AddDefaultNodeAttribute_Intention implements IntentionFactory {
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("testDefaultEditor.structure.DefaultNodeAttribute")));
       } else {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("testDefaultEditor.structure.DefaultNodeAttribute"), SConceptOperations.createNewNode("testDefaultEditor.structure.DefaultNodeAttribute", null));
+        SelectionUtil.selectCell(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("testDefaultEditor.structure.DefaultNodeAttribute")), "const");
       }
     }
 

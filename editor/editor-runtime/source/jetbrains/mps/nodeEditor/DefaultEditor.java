@@ -250,6 +250,9 @@ public class DefaultEditor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    if (editorCell.getCellId() == null) {
+      editorCell.setCellId("reference_" + role);
+    }
     addCellWithRole(provider, editorCell);
   }
 
@@ -293,8 +296,10 @@ public class DefaultEditor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(myEditorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setCellId("property_" + name);
-     addCellWithRole(provider, editorCell);
+    if (editorCell.getCellId() == null) {
+      editorCell.setCellId("property_" + name);
+    }
+    addCellWithRole(provider, editorCell);
   }
 
   private void addCellWithRole(CellProviderWithRole provider, EditorCell editorCell) {

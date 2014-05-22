@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddDefaultReferenceAttribute_Intention implements IntentionFactory {
@@ -83,6 +84,7 @@ public class AddDefaultReferenceAttribute_Intention implements IntentionFactory 
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend")));
       } else {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend"), SConceptOperations.createNewNode("testDefaultEditor.structure.DefaultReferenceAttribute", null));
+        SelectionUtil.selectCell(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("testDefaultEditor.structure.DefaultReferenceAttribute", "bestFriend")), "const");
       }
 
     }

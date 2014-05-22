@@ -28,7 +28,7 @@ public class DefaultReferenceAttribute_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_nltvu5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$R$");
-    editorCell.setCellId("Constant_nltvu5_a0");
+    editorCell.setCellId("const");
     editorCell.setDefaultText("");
     return editorCell;
   }

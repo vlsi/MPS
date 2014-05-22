@@ -28,7 +28,7 @@ public class DefaultNodeAttribute_Editor extends DefaultNodeEditor {
 
   private EditorCell createConstant_gltv09_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$N$");
-    editorCell.setCellId("Constant_gltv09_a0");
+    editorCell.setCellId("const");
     editorCell.setDefaultText("");
     return editorCell;
   }
