@@ -608,6 +608,10 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="plugin" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848004876" resolveInfo="BuildLayout_AbstractContainer" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3389822811991596365" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="stripImplementation" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6592112598314801433" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
       <property name="role" nameId="tpce.1071599776563" value="plugin" />

@@ -15,15 +15,22 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.logging.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloadedOpsTypesProvider {
   protected SNode myOperandType;
   protected String myOperationConceptFQName;
   protected boolean myTypeIsExact = false;
   protected boolean myIsStrong = false;
+
+  protected String myRuleModelId;
+  protected String myRuleNodeId;
 
   @Override
   public String getApplicableConceptFQName() {
@@ -62,5 +69,10 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
       return 1;
     }
     return 0;
+  }
+
+  @Override
+  public void reportConflict(IRuleConflictWarningProducer warningProducer) {
+    Logger.wrap(LogManager.getLogger(myOperationConceptFQName)).warning("conflicting rules for overloaded operation type detected " + String.valueOf(myOperandType));
   }
 }

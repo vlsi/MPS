@@ -39,6 +39,10 @@ final class GenerationTracerTree extends MPSTree {
     myProject = project;
   }
 
+  void setRoot(@NotNull TraceNodeUI root) {
+    myRootTracerNode = root;
+  }
+
   protected MPSTreeNode rebuild() {
     return create(myRootTracerNode);
   }

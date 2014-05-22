@@ -9,8 +9,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -31,7 +32,12 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
       final SNode exType = typeCheckingContext.getRepresentative(expressionType_typevar_7602524515424797598);
       typeCheckingContext.whenConcrete(exType, new Runnable() {
         public void run() {
-          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getExpandedNode(exType), _quotation_createNode_2vfzm_c0a0a0c0b());
+          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getExpandedNode(exType), _quotation_createNode_2vfzm_c0a0a0c0b(), new IRuleConflictWarningProducer() {
+            public void produceWarning(String modelId, String ruleId) {
+              typeCheckingContext.reportWarning(minus, "coflicting rules for overloaded operation type", modelId, ruleId, null, new NodeMessageTarget());
+
+            }
+          });
           if (type != null) {
             {
               SNode _nodeToCheck_1029348928467 = minus;
