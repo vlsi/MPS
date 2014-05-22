@@ -91,23 +91,18 @@ public abstract class SReferenceBase extends SReference {
   public synchronized final boolean makeIndirect(boolean force) {
     if (myImmatureTargetNode != null) {
       SNode sourceNode = getSourceNode();
-      if (
-          !jetbrains.mps.util.SNodeOperations.isDisposed(sourceNode) &&
-              !jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode) &&
-              sourceNode.getModel() != null &&
-              myImmatureTargetNode.getModel() != null) {
+      if (sourceNode.getModel() != null && myImmatureTargetNode.getModel() != null) {
         // convert 'young' reference to 'mature'
         makeMature();
       }
       if (force && myImmatureTargetNode != null) {
-        if (!jetbrains.mps.util.SNodeOperations.isDisposed(sourceNode) && sourceNode.getModel() != null) {
+        if (sourceNode.getModel() != null) {
           error("Impossible to resolve immature reference",
               new ProblemDescription(myImmatureTargetNode.getReference(),
                   "ImmatureTargetNode(modelID: " +
                       (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
                       ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +
-                      "): isRegistered = " + (myImmatureTargetNode.getModel() != null) +
-                      ", isDisposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode)));
+                      "): isRegistered = " + (myImmatureTargetNode.getModel() != null)));
           myImmatureTargetNode = null;
         }
       }
