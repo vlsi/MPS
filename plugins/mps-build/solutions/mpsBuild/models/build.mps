@@ -13194,6 +13194,10 @@
               </node>
               <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="342515234599611869" nodeInfo="ng">
                 <property name="filemode" nameId="3ior.9126048691955221291" value="755" />
+                <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyFilterFixCRLF" typeId="3ior.4198392933254416812" id="923272113938453826" nodeInfo="ng">
+                  <property name="eol" nameId="3ior.4198392933254416822" value="lf" />
+                  <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
+                </node>
                 <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="342515234599611871" nodeInfo="ng">
                   <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="342515234599611938" nodeInfo="nn">
                     <property name="head" nameId="3ior.8618885170173601779" value="bin" />
@@ -13658,6 +13662,10 @@
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="342515234599629688" nodeInfo="ng">
               <property name="filemode" nameId="3ior.9126048691955221291" value="755" />
+              <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyFilterFixCRLF" typeId="3ior.4198392933254416812" id="923272113938466907" nodeInfo="ng">
+                <property name="eol" nameId="3ior.4198392933254416822" value="lf" />
+                <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
+              </node>
               <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="342515234599629690" nodeInfo="ng">
                 <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="342515234599629729" nodeInfo="nn">
                   <property name="head" nameId="3ior.8618885170173601779" value="bin" />

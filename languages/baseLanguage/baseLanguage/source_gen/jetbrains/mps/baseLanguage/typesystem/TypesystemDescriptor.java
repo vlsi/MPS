@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOpsProvider_OneTypeSpecified;
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -1291,10 +1292,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
+          this.myRuleModelId = "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)";
+          this.myRuleNodeId = "1533154877881631948";
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           return _quotation_createNode_3ist9o_a0a1a0a0a0a0bm0a();
+        }
+
+        @Override
+        public void reportConflict(IRuleConflictWarningProducer producer) {
+          producer.produceWarning(myRuleModelId, myRuleNodeId);
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -1310,6 +1318,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)";
+      this.myRuleNodeId = "1236166412686";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -1318,6 +1328,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       } else {
         return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
       }
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a0b() {
@@ -1346,10 +1361,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)";
+      this.myRuleNodeId = "1239449442584";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return _quotation_createNode_3ist9o_a0a1c();
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a0c() {
@@ -1385,6 +1407,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)";
+      this.myRuleNodeId = "3860149536565525570";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -1397,6 +1421,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           return leftOperandType;
         }
       }
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a0d() {
@@ -1425,6 +1454,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)";
+      this.myRuleNodeId = "4957392803029379669";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -1433,6 +1464,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       } else {
         return null;
       }
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a0e() {
@@ -1461,10 +1497,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)";
+      this.myRuleNodeId = "4957392803029437149";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return leftOperandType;
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a5() {
@@ -1491,10 +1534,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)";
+      this.myRuleNodeId = "4957392803029437174";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return leftOperandType;
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a6() {
@@ -1522,10 +1572,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)";
+      this.myRuleNodeId = "6361444434083801794";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return _quotation_createNode_3ist9o_a0a1h();
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a7() {
