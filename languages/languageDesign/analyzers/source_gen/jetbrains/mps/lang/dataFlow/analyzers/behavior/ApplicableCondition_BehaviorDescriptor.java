@@ -19,6 +19,4 @@ public abstract class ApplicableCondition_BehaviorDescriptor extends BaseConcept
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition";
   }
-
-  public abstract SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode);
 }

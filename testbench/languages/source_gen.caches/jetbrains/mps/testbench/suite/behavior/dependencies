@@ -24,10 +24,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.IModuleRef_BehaviorDescriptor" file="IModuleRef_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.behavior.ITestRef_Behavior" file="ITestRef_Behavior.java">
@@ -41,11 +38,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" file="ITestRef_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
+  <dependency className="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" file="ITestRef_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_Behavior" file="JUnit3TestCaseRef_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
