@@ -36,7 +36,9 @@ import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -45,7 +47,7 @@ public class ProjectPaneTreeHighlighter {
   private final ErrorChecker myErrorVisitor = new ErrorChecker();
   private final ModifiedMarker myModifiedMarker = new ModifiedMarker();
   private final TreeNodeUpdater myUpdater = new TreeNodeUpdater();
-  private final ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 3, 5, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>());
+  private final ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 3, 5, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(100), new RescheduleExecutionHandler());
 
   private final MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
   private ProjectPaneTree myTree;
@@ -176,6 +178,56 @@ public class ProjectPaneTreeHighlighter {
 
     @Override
     public void beforeTreeDisposed(MPSTree tree) {
+    }
+  }
+
+  /*
+   * Policy that reschedules rejected tasks to be executed once tasks that employed available threads are over.
+   * Re-scheduling happens from a separate thread to avoid dead-lock when executor.execute() is invoked from withing another
+   * task being executed. Rescheduling thread dies after certain amount of inactivity not to consume resources.
+   */
+  private static class RescheduleExecutionHandler implements RejectedExecutionHandler, Runnable {
+    private final LinkedBlockingQueue<Runnable> myQueue = new LinkedBlockingQueue<Runnable>();
+    private volatile Thread myRescheduleThread;
+    private ThreadPoolExecutor myExecutor;
+
+    @Override
+    public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+      if (executor.isShutdown()) {
+        return;
+      }
+      myQueue.add(r);
+      if (myRescheduleThread == null) {
+        synchronized (this) {
+          if (myRescheduleThread == null) {
+            myExecutor = executor;
+            myRescheduleThread = new Thread(this);
+            myRescheduleThread.start();
+          }
+        }
+      }
+
+    }
+
+    @Override
+    public void run() {
+      do {
+        try {
+          Runnable r = myQueue.poll(3000, TimeUnit.MILLISECONDS);
+          if (r == null) {
+            // die, if there's no new element for 3 seconds
+            break;
+          }
+          myExecutor.getQueue().put(r);
+        } catch (InterruptedException ex) {
+          // ignore, not too much of a trouble to loose tree status update
+        }
+      } while (true);
+      // if queue is empty for quite a long time, stop the thread.
+      synchronized (this) {
+        myExecutor = null;
+        myRescheduleThread = null;
+      }
     }
   }
 }
