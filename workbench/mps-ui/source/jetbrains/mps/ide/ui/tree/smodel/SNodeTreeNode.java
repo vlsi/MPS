@@ -182,6 +182,11 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myInitialized = true;
   }
 
+  @Override
+  public boolean isLeaf() {
+    return ourShowStructureCondition != null && !ourShowStructureCondition.met(getTree());
+  }
+
   protected SNodeTreeNode createChildTreeNode(SNode childNode, String role, IOperationContext operationContext) {
     SModelTreeNode sModelTreeNode = getSModelModelTreeNode();
     SNodeTreeNode child = sModelTreeNode == null ? new SNodeTreeNode(childNode, role, operationContext)
