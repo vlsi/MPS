@@ -5050,9 +5050,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="selectors" roleId="3ior.5248329904287794679" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="4198392933254321227" nodeInfo="ng">
-                  <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.java" />
-                </node>
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="2540145662854694641" nodeInfo="nn">
                 <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2540145662854694642" nodeInfo="nn">
