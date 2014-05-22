@@ -660,6 +660,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gmtuod_a4a(SNode node, EditorContext editorContext) {
+    if (SLinkOperations.getTarget(node, "overriddenMethod", false) == null) {
+      return false;
+    }
     return !(SPropertyOperations.getBoolean(node, "isVirtual")) && !(SPropertyOperations.getBoolean(node, "isPrivate"));
   }
 

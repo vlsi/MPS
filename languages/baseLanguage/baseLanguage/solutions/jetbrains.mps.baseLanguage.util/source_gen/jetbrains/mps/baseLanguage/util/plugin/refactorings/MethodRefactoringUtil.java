@@ -6,8 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class RenameUtil {
-  public RenameUtil() {
+public class MethodRefactoringUtil {
+  public MethodRefactoringUtil() {
   }
 
   public static SNode getMethodDeclaration(SNode methodOrMethodCall) {
