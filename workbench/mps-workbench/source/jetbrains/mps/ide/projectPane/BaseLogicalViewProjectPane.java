@@ -175,7 +175,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     super.dispose();
   }
 
-  public boolean isShowPropertiesAndReferences() {
+  public boolean showNodeStructure() {
     return getProjectView().isShowMembers(getId());
   }
 
@@ -214,7 +214,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   @Override
   public void addToolbarActions(final DefaultActionGroup group) {
-    group.add(new PropertiesAndReferencesToggleAction());
+    group.add(new ShowNodeStructureToggleAction());
     group.addAction(new SortByTypeToggleAction()).setAsSecondary(true);
   }
 
@@ -559,19 +559,19 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   }
 
-  private class PropertiesAndReferencesToggleAction extends ToggleAction {
-    public PropertiesAndReferencesToggleAction() {
-      super("Show Properties and References", "Show properties and references", Icons.PROP_AND_REF);
+  private class ShowNodeStructureToggleAction extends ToggleAction {
+    public ShowNodeStructureToggleAction() {
+      super("Show node structure", "Show node structure", Icons.PROP_AND_REF);
     }
 
     @Override
     public boolean isSelected(@Nullable AnActionEvent e) {
-      return isShowPropertiesAndReferences();
+      return showNodeStructure();
     }
 
     @Override
     public void setSelected(@Nullable AnActionEvent e, boolean state) {
-      if (state != isShowPropertiesAndReferences()) {
+      if (state != showNodeStructure()) {
         if (getProjectView() instanceof ProjectViewImpl) {
           ((ProjectViewImpl) getProjectView()).setShowMembers(state, getId());
         }
