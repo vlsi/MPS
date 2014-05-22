@@ -29,6 +29,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
@@ -76,6 +77,12 @@ public class FindUsagesDialog extends DialogWrapper {
     updateOkButton();
 
     init();
+  }
+
+  @Nullable
+  @Override
+  protected String getHelpId() {
+    return "dialog.findUsages";
   }
 
   private void updateOkButton() {
