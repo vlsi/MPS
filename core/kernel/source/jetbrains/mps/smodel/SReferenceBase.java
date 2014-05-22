@@ -23,9 +23,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
 /**
  * Igor Alshannikov
  * Sep 28, 2007
@@ -89,22 +86,27 @@ public abstract class SReferenceBase extends SReference {
   }
 
   public synchronized final boolean makeIndirect(boolean force) {
-    if (myImmatureTargetNode != null) {
-      SNode sourceNode = getSourceNode();
-      if (sourceNode.getModel() != null && myImmatureTargetNode.getModel() != null) {
-        // convert 'young' reference to 'mature'
-        makeMature();
-      }
-      if (force && myImmatureTargetNode != null) {
-        if (sourceNode.getModel() != null) {
-          error("Impossible to resolve immature reference",
-              new ProblemDescription(myImmatureTargetNode.getReference(),
-                  "ImmatureTargetNode(modelID: " +
-                      (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
-                      ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +
-                      "): isRegistered = " + (myImmatureTargetNode.getModel() != null)));
-          myImmatureTargetNode = null;
-        }
+    if (myImmatureTargetNode == null) return true;
+
+    ImmatureReferences.getInstance().remove(this);
+    SNode sourceNode = getSourceNode();
+    if (!org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(sourceNode, MPSModuleRepository.getInstance())) return myImmatureTargetNode == null;
+
+    if (sourceNode.getModel() != null && myImmatureTargetNode.getModel() != null) {
+      // convert 'young' reference to 'mature'
+      makeMature();
+    }
+    if (force && myImmatureTargetNode != null) {
+      if (sourceNode.getModel() != null) {
+        error("Impossible to resolve immature reference",
+            new ProblemDescription(myImmatureTargetNode.getReference(),
+                "ImmatureTargetNode(modelID: " +
+                    (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
+                    ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +
+                    "): isRegistered = " + (myImmatureTargetNode.getModel() != null)
+            )
+        );
+        myImmatureTargetNode = null;
       }
     }
     return myImmatureTargetNode == null;
@@ -112,7 +114,6 @@ public abstract class SReferenceBase extends SReference {
 
   protected synchronized void makeMature() {
     if (myImmatureTargetNode == null) return;
-    ImmatureReferences.getInstance().remove(this);
     final SNode immatureNode = myImmatureTargetNode;
     myImmatureTargetNode = null;
     adjustMature(immatureNode);
