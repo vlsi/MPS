@@ -36,4 +36,6 @@ public abstract class ContextMemberOperation_BehaviorDescriptor extends BaseConc
   public String getConceptFqName() {
     return "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation";
   }
+
+  public abstract SNode virtual_createType_7012097027058652452(SNode thisNode);
 }

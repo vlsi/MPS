@@ -266,7 +266,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" file="IGeneratorParameter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.IParameterizedTemplate_BehaviorDescriptor" file="IParameterizedTemplate_BehaviorDescriptor.java">
@@ -888,6 +890,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternVarRefExpression_Behavior" file="TemplateArgumentPatternVarRefExpression_Behavior.java">
