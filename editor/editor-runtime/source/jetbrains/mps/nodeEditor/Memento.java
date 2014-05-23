@@ -190,6 +190,9 @@ class Memento {
   private static final String ENABLED_HINTS_ELEMENT = "enabledHintsElement";
   private static final String ENABLED_HINTS_ATTRIBUTE = "enabledHintsAttribute";
   private static final String USE_CUSTOM_HINTS = "useCustomHints";
+  private static final String ERROR_LABELS = "errorLabels";
+  private static final String ERROR_LABEL = "errorLabel";
+  private static final String ERROR_TEXT = "errorText";
 
   public void save(Element e) {
     Element selectionStack = new Element(SELECTION_STACK);
@@ -198,6 +201,15 @@ class Memento {
       Element stackElement = new Element(STACK_ELEMENT);
       ((SelectionInfoImpl) selectionInfo).persistToXML(stackElement);
       selectionStack.addContent(stackElement);
+    }
+
+    Element errorLabels = new Element(ERROR_LABELS);
+    e.addContent(errorLabels);
+    for (Entry<CellInfo, String> errorTextEntry : myErrorTexts.entrySet()) {
+      Element errorLabelElement = new Element(ERROR_LABEL);
+      errorLabelElement.setAttribute(ERROR_TEXT, errorTextEntry.getValue());
+      ((DefaultCellInfo) errorTextEntry.getKey()).saveTo(errorLabelElement);
+      errorLabels.addContent(errorLabelElement);
     }
 
     boolean success = true;
@@ -238,6 +250,16 @@ class Memento {
         memento.mySelectionStack.add(new SelectionInfoImpl((Element) o));
       }
     }
+
+    Element errorLabels = e.getChild(ERROR_LABELS);
+    if (errorLabels != null) {
+      for (Element errorLabelElement : errorLabels.getChildren(ERROR_LABEL)) {
+        String errorText = errorLabelElement.getAttributeValue(ERROR_TEXT);
+        CellInfo cellInfo = DefaultCellInfo.loadFrom(errorLabelElement);
+        memento.myErrorTexts.put(cellInfo, errorText);
+      }
+    }
+
     Element folded = e.getChild(FOLDED);
     if (folded != null) {
       List children = folded.getChildren(FOLDED_ELEMENT);
