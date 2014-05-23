@@ -134,7 +134,7 @@ public class TemplateModelScanner {
     // as this class executed before ALL generation process we cannot use isInstanceOf operation here 
     // so isInstanceOf limited only to generator language concepts 
     // todo: extending generator macroses impossible anymore, is it ok? 
-    if (eq_8grp5z_a0d0u(node.getConcept().getLanguage().getQualifiedName(), "jetbrains.mps.lang.generator")) {
+    if (node != null && eq_8grp5z_a0a3a02(node.getConcept().getLanguage().getQualifiedName(), "jetbrains.mps.lang.generator")) {
       return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept));
     } else {
       return false;
@@ -150,7 +150,7 @@ public class TemplateModelScanner {
     });
   }
 
-  private static boolean eq_8grp5z_a0d0u(Object a, Object b) {
+  private static boolean eq_8grp5z_a0a3a02(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

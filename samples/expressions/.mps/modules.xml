@@ -5,7 +5,6 @@
       <modulePath path="$PROJECT_DIR$/jetbrains.mps.samples.Expressions.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/sandbox/jetbrains.mps.samples.Expressions.sandbox.msd" folder="" />
     </projectModules>
-    <genConfs />
   </component>
 </project>
 

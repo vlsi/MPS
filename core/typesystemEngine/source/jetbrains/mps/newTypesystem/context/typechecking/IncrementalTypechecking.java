@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
@@ -219,10 +220,15 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   @Override
   public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
+    applyNonTypesystemRulesToRoot(typeCheckingContext, Cancellable.NEVER);
+  }
+
+  @Override
+  public void applyNonTypesystemRulesToRoot(TypeCheckingContext typeCheckingContext, Cancellable c) {
     ITypeErrorComponent oldTypeErrorComponent = myTypeErrorComponent;
     myTypeErrorComponent = myNonTypeSystemComponent;
     try {
-      myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(typeCheckingContext, getNode());
+      myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(typeCheckingContext, getNode(), c);
     } finally {
       myTypeErrorComponent = oldTypeErrorComponent;
     }
@@ -340,16 +346,23 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       markInvalid(child);
       markInvalid(parent);
 
-      final List<SNode> descendants = jetbrains.mps.util.SNodeOperations.getDescendants(child, null);
-      for (SNode descendant : descendants) {
-        if (event.isRemoved()) {
+      List<SNode> childWithDescendants = IterableUtil.copyToList(SNodeUtil.getDescendants(child, null, true));
+      if (event.isRemoved()) {
+        Iterator<SNode> it = childWithDescendants.iterator();
+        it.next(); // skip child, we've marked it as invalid already
+        while (it.hasNext()) {
+          SNode descendant = it.next();
           //invalidate nodes which are removed
           markDependentNodesForInvalidation(descendant, myNonTypeSystemComponent);
           markDependentNodesForInvalidation(descendant, getTypecheckingComponent());
         }
       }
 
-      markReferenceTargetsInvalid(collectReferences(child, descendants));
+      List<SReference> references = new ArrayList<SReference>();
+      for (SNode descendant : childWithDescendants) {
+        references.addAll(IterableUtil.asCollection(descendant.getReferences()));
+      }
+      markReferenceTargetsInvalid(references);
     }
 
     private void markReferenceTargetsInvalid(List<SReference> references) {
@@ -390,15 +403,6 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 
-    private List<SReference> collectReferences(SNode child, List<SNode> descendants) {
-      List<SReference> references = new ArrayList<SReference>();
-      references.addAll(IterableUtil.asCollection(child.getReferences()));
-      for (SNode descendant : descendants) {
-        references.addAll(IterableUtil.asCollection(descendant.getReferences()));
-      }
-      return references;
-    }
-
     private void markInvalid(SNode node) {
       markDependentNodesForInvalidation(node, getTypecheckingComponent());
       markDependentNodesForInvalidation(node, myNonTypeSystemComponent);
@@ -434,7 +438,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
      * We do not check for duplicated nodes
      */
     void track(SNode node) {
-      if (!org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
+      if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
 
       SModel sm = node.getModel();
       if (!myNodesCount.containsKey(sm)) {

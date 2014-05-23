@@ -16,6 +16,7 @@
 package jetbrains.mps.typesystem.inference;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -247,7 +248,11 @@ public class RulesManager {
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-    return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType);
+    return getOperationType(operation, leftOperandType, rightOperandType, IRuleConflictWarningProducer.NULL);
+  }
+
+  public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType, IRuleConflictWarningProducer warningProducer) {
+    return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType, warningProducer);
   }
 
   @Deprecated

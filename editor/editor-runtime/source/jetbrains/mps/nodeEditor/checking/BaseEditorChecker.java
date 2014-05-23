@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 
@@ -29,12 +30,12 @@ import java.util.Set;
 public abstract class BaseEditorChecker implements EditorMessageOwner {
   //--------accessible stuff--------
 
-  public final Set<EditorMessage> createMessagesProtected(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext){
+  public final Set<EditorMessage> createMessagesProtected(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext, final Cancellable cancellable){
     final Set<EditorMessage> result = new HashSet<EditorMessage>();
     performUninterruptableAction(new Runnable() {
       @Override
       public void run() {
-        result.addAll(createMessages(rootNode, events, wasCheckedOnce, editorContext));
+        result.addAll(createMessages(rootNode, events, wasCheckedOnce, editorContext, cancellable));
       }
     });
     return result;
@@ -105,6 +106,10 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
   //--------stuff to override---------
 
   protected abstract Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
+
+  protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext, Cancellable c) {
+    return createMessages(rootNode, events, wasCheckedOnce, editorContext);
+  }
 
   protected abstract boolean hasDramaticalEvent(List<SModelEvent> events);
 

@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
@@ -101,10 +102,17 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)";
+      this.myRuleNodeId = "2073504467210323425";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return createSimpleMathIntegerType_3ist9o_a0a1b();
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode createSimpleMathIntegerType_3ist9o_a0a0a1() {
@@ -135,6 +143,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)";
+      this.myRuleNodeId = "2073504467210336004";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -143,6 +153,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftOperandType, createSimpleMathLongType_3ist9o_b0a0a0a2c_0())) || !(TypeChecker.getInstance().getSubtypingManager().isSubtype(rightOperandType, createSimpleMathLongType_3ist9o_b0a0a0a2c()));
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode createSimpleMathFloatType_3ist9o_a0a0a2() {
@@ -185,6 +200,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)";
+      this.myRuleNodeId = "2073504467210336494";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -193,6 +210,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftOperandType, createSimpleMathFloatType_3ist9o_b0a0a0a2d_0())) || !(TypeChecker.getInstance().getSubtypingManager().isSubtype(rightOperandType, createSimpleMathFloatType_3ist9o_b0a0a0a2d()));
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode createSimpleMathNumberType_3ist9o_a0a0a3() {
@@ -235,6 +257,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRightTypeIsExact = false;
       this.myRightIsStrong = false;
       this.myLeftIsStrong = false;
+      this.myRuleModelId = "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)";
+      this.myRuleNodeId = "2073504467211045081";
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
@@ -243,6 +267,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
       return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftOperandType, createSimpleMathIntegerType_3ist9o_b0a0a0a2e_0())) || !(TypeChecker.getInstance().getSubtypingManager().isSubtype(rightOperandType, createSimpleMathIntegerType_3ist9o_b0a0a0a2e()));
+    }
+
+    @Override
+    public void reportConflict(IRuleConflictWarningProducer producer) {
+      producer.produceWarning(myRuleModelId, myRuleNodeId);
     }
 
     private static SNode createSimpleMathLongType_3ist9o_a0a0a4() {

@@ -54,6 +54,10 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildMps_IdeaPluginGroup_Editor._Inline_ulfewq_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("group");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -81,10 +85,6 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_ulfewq_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "group");
       editorCell.setCellId("ReferencePresentation_ulfewq_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("group");
-      }
       return editorCell;
     }
   }

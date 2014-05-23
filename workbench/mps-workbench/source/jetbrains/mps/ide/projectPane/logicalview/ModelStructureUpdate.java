@@ -38,7 +38,7 @@ class ModelStructureUpdate extends SNodeTreeUpdater<SModelTreeNode> {
 
   @Override
   public boolean showPropertiesAndReferences() {
-    return ProjectPane.getInstance(myProject).isShowPropertiesAndReferences();
+    return ProjectPane.getInstance(myProject).showNodeStructure();
   }
 
   private SNodeTreeNode findRootSNodeTreeNode(SNode node) {

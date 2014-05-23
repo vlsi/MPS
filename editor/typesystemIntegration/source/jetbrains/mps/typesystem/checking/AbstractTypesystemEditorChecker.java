@@ -24,6 +24,7 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
+import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -56,16 +57,21 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
 
   protected abstract void doCreateMessages(TypeCheckingContext context, boolean wasCheckedOnce, EditorContext editorContext, SNode rootNode,
-      Set<EditorMessage> messages);
+      Set<EditorMessage> messages, Cancellable cancellable);
 
   @Override
-  public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
+  protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
+    return createMessages(rootNode, events, wasCheckedOnce, editorContext, Cancellable.NEVER);
+  }
+
+  @Override
+  public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext, final Cancellable cancellable) {
     myMessagesChanged = false;
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new Computation<Set<EditorMessage>>() {
       @Override
       public Set<EditorMessage> compute(final TypeCheckingContext context) {
         final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-        doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, messages);
+        doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, messages, cancellable);
         return messages;
       }
     });

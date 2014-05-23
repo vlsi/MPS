@@ -67,6 +67,10 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
             });
 
             PsiElement modelElement = PsiManager.getInstance(project).findFile(modelFile);
+            if (modelElement == null) {
+              modelElement = PsiManager.getInstance(project).findDirectory(modelFile);
+            }
+            if (modelElement == null) return;
             new ProjectPaneSelectInTarget(project).select(modelElement, true);
           }
         };

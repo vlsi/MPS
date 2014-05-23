@@ -168,7 +168,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
   @Override
   public boolean canBeSynchronized() {
-    return true;
+    return false;
   }
 
   public static interface SynchronizationListener {

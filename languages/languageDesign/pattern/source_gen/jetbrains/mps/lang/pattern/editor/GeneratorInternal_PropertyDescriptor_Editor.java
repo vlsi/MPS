@@ -80,6 +80,10 @@ public class GeneratorInternal_PropertyDescriptor_Editor extends DefaultNodeEdit
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new GeneratorInternal_PropertyDescriptor_Editor._Inline_6n82d8_a3a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("mainNode");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -107,10 +111,6 @@ public class GeneratorInternal_PropertyDescriptor_Editor extends DefaultNodeEdit
     private EditorCell createReferencePresentation_6n82d8_a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "mainNode");
       editorCell.setCellId("ReferencePresentation_6n82d8_a0d0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("mainNode");
-      }
       return editorCell;
     }
   }

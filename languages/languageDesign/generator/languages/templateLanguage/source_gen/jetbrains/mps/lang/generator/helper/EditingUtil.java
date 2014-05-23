@@ -58,16 +58,16 @@ public final class EditingUtil {
     return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", linkRole)) == null;
   }
 
-  private static boolean isAnyMacroApplicable(SNode node) {
+  public static boolean isAnyMacroApplicable(SNode node) {
     // not inside 'root template annotation' 
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", true, false) != null) {
       return false;
     }
     //  not inside any kind of macro (code shown in inspector) but OK on a macro node itself 
-    SNode ancestorMacro = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, true, false);
-    if (ancestorMacro != null) {
+    SNode ancestorTemplateElement = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.NodeMacro", "jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence", "jetbrains.mps.lang.generator.structure.TemplateFragment"}, true, false);
+    if (ancestorTemplateElement != null) {
       //  exception: can be inside 'alternativeConsequence' in IF-macro 
-      if (SNodeOperations.isInstanceOf(ancestorMacro, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(ancestorMacro, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
+      if (SNodeOperations.isInstanceOf(ancestorTemplateElement, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence") || SNodeOperations.isInstanceOf(ancestorTemplateElement, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence")) {
         return true;
       }
       return false;

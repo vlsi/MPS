@@ -116,6 +116,10 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new DecimalBinaryOperation_Editor._Inline_sl2ryj_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("context");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -142,10 +146,6 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
 
     private EditorCell createComponent_sl2ryj_a0a0(EditorContext editorContext, SNode node) {
       EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.math.editor.MathContextEditorPart");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("context");
-      }
       return editorCell;
     }
   }

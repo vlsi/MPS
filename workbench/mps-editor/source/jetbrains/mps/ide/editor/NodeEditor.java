@@ -33,7 +33,7 @@ public class NodeEditor extends BaseNodeEditor {
   public NodeEditor(IOperationContext context, SNode node) {
     super(context);
     myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
-    editNode(node.getReference(), context, false);
+    editNode(node.getReference(), null);
   }
 
   @Override

@@ -54,6 +54,10 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new NavigatableReferenceStyleClassItem_Editor._Inline_8msx3u_a2a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("link");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -86,10 +90,6 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("link");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

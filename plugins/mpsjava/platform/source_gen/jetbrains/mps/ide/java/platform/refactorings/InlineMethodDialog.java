@@ -7,6 +7,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.Nullable;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import javax.swing.border.EmptyBorder;
@@ -18,7 +19,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import javax.swing.Action;
@@ -54,6 +54,12 @@ public class InlineMethodDialog extends RefactoringDialog {
     myModel = new InlineMethodModel(node);
     myOperationContext = operationContext;
     init();
+  }
+
+  @Nullable
+  @Override
+  protected String getHelpId() {
+    return "refactoring.inlineMethod";
   }
 
   private JPanel createCheckBoxes() {

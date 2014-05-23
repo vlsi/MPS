@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.NullErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
@@ -153,9 +154,15 @@ public abstract class BaseTypecheckingContext<STATE extends State> extends TypeC
 
   @Override
   public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+    return getOverloadedOperationType(operation, leftOperandType, rightOperandType, IRuleConflictWarningProducer.NULL);
+  }
+
+  @Override
+  public SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType,
+      IRuleConflictWarningProducer warningProducer) {
     SNode left = getState().expand(leftOperandType);
     SNode right = getState().expand(rightOperandType);
-    return myTypeChecker.getRulesManager().getOperationType(operation, left, right);
+    return myTypeChecker.getRulesManager().getOperationType(operation, left, right, warningProducer);
   }
 
   @Override

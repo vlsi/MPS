@@ -64,7 +64,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
 
 
 
-  private BaseConsoleTab addConsoleTab(@Nullable ConsoleTool.TabState tabState, @Nullable Icon icon, boolean openTool) {
+  public BaseConsoleTab addConsoleTab(@Nullable ConsoleTool.TabState tabState, @Nullable Icon icon, boolean openTool) {
     String title = check_xg3v07_a0a0q(tabState);
     String history = check_xg3v07_a0b0q(tabState);
     if (icon == null) {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
+import com.intellij.icons.AllIcons.General;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -22,9 +23,12 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.PopupAction;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.ide.devkit.generator.icons.Icons;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -33,12 +37,17 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Map;
 
 /**
@@ -83,7 +92,19 @@ final class GenerationTracerView {
       }
     };
 
-    ActionGroup group = ActionUtils.groupFromActions(autoscrollAction, closeAction);
+    class PresentationSettings extends AnAction implements PopupAction {
+      PresentationSettings() {
+        super("Settings", "Settings", General.Settings);
+      }
+
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        JPopupMenu menu = createViewSettingsMenu();
+        menu.show(e.getInputEvent().getComponent(), 10, 10);
+      }
+    }
+
+    ActionGroup group = ActionUtils.groupFromActions(autoscrollAction, closeAction, new PresentationSettings());
     ActionManager manager = ActionManager.getInstance();
     ActionToolbar toolbar = manager.createActionToolbar(ActionPlaces.USAGE_VIEW_TOOLBAR, group, false);
     return toolbar.getComponent();
@@ -120,6 +141,69 @@ final class GenerationTracerView {
 
   void setAutoscrollToSource(boolean b) {
     myTree.setAutoOpen(b);
+  }
+
+  void viewSettingsChanged() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        rebuildTree();
+      }
+    });
+  }
+
+  void rebuildTree() {
+    SNode inputNode = myInputNode.resolve(MPSModuleRepository.getInstance());
+    if (inputNode == null) {
+      return;
+    }
+    TraceNodeUI traceNode = null;
+    if (isForwardTraceView()) {
+      traceNode = myTool.buildForwardTrace(inputNode);
+    } else if (isBackwardTraceView()) {
+      traceNode = myTool.buildBackwardTrace(inputNode);
+    }
+    if (traceNode != null) {
+      myTree.setRoot(traceNode);
+      myTree.rebuildLater();
+    }
+  }
+
+  JPopupMenu createViewSettingsMenu() {
+    ActionListener l = new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        if (false == e.getSource() instanceof JCheckBoxMenuItem) {
+          return;
+        }
+        final GenTraceSettings settings = GenerationSettings.getInstance().getTraceSettings();
+        boolean value = ((JCheckBoxMenuItem) e.getSource()).isSelected();
+        switch (Integer.parseInt(e.getActionCommand())) {
+          case 1 : settings.setGroupByStep(value); break;
+          case 2 : settings.setCompactTemplates(value); break;
+          case 3 : settings.setShowEmptySteps(value); break;
+        }
+        viewSettingsChanged();
+      }
+    };
+    final GenTraceSettings settings = GenerationSettings.getInstance().getTraceSettings();
+    final JPopupMenu menu = new JPopupMenu();
+    JCheckBoxMenuItem menuItem = new JCheckBoxMenuItem("Group changes by step");
+    menuItem.setSelected(settings.isGroupByStep());
+    menuItem.setActionCommand(String.valueOf(1));
+    menuItem.addActionListener(l);
+    menu.add(menuItem);
+    menuItem = new JCheckBoxMenuItem("Show change-specific templates only");
+    menuItem.setSelected(settings.isCompactTemplates());
+    menuItem.setActionCommand(String.valueOf(2));
+    menuItem.addActionListener(l);
+    menu.add(menuItem);
+    menuItem = new JCheckBoxMenuItem("Show steps without changes");
+    menuItem.setSelected(settings.isShowEmptySteps());
+    menuItem.setActionCommand(String.valueOf(3));
+    menuItem.addActionListener(l);
+    menu.add(menuItem);
+    return menu;
   }
 
   private class NodeActionGroup implements Computable<ActionGroup> {

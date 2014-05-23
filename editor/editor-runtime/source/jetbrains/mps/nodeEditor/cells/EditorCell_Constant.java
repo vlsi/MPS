@@ -74,6 +74,6 @@ public class EditorCell_Constant extends EditorCell_Label implements Synchronize
 
   @Override
   public boolean canBeSynchronized() {
-    return true;
+    return false;
   }
 }

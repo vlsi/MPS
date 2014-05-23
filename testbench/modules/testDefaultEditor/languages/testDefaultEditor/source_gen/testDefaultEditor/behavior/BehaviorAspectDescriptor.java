@@ -14,18 +14,24 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
         return new Company_BehaviorDescriptor();
-      case 4:
+      case 7:
         return new Team_BehaviorDescriptor();
-      case 1:
+      case 4:
         return new Developer_BehaviorDescriptor();
-      case 3:
+      case 6:
         return new Friend_BehaviorDescriptor();
-      case 2:
+      case 5:
         return new DummyMethod_BehaviorDescriptor();
+      case 2:
+        return new DefaultPropertyAttribute_BehaviorDescriptor();
+      case 3:
+        return new DefaultReferenceAttribute_BehaviorDescriptor();
+      case 1:
+        return new DefaultNodeAttribute_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"testDefaultEditor.structure.Company", "testDefaultEditor.structure.Developer", "testDefaultEditor.structure.DummyMethod", "testDefaultEditor.structure.Friend", "testDefaultEditor.structure.Team"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"testDefaultEditor.structure.Company", "testDefaultEditor.structure.DefaultNodeAttribute", "testDefaultEditor.structure.DefaultPropertyAttribute", "testDefaultEditor.structure.DefaultReferenceAttribute", "testDefaultEditor.structure.Developer", "testDefaultEditor.structure.DummyMethod", "testDefaultEditor.structure.Friend", "testDefaultEditor.structure.Team"};
 }

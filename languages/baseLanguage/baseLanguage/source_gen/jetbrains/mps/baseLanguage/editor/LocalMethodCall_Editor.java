@@ -50,6 +50,10 @@ public class LocalMethodCall_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new LocalMethodCall_Editor._Inline_2jlgx_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("baseMethodDeclaration");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -82,10 +86,6 @@ public class LocalMethodCall_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("baseMethodDeclaration");
-      }
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_MPSMethodCall(style, editorCell);
       editorCell.getStyle().putAll(style);

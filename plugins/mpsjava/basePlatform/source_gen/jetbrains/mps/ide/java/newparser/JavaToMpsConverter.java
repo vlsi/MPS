@@ -47,6 +47,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -783,21 +784,20 @@ public class JavaToMpsConverter {
       return null;
     }
 
-    // now check whether it's in another class 
-    SNode thisClass = SNodeOperations.getAncestor(localCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    SNode thatClass = SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    // it should be ok to use ==, I think 
-    if (thisClass == thatClass) {
-      // same class, such local method call is ok in baseLanguage 
+    Scope staticMethodScope = Scope.getScope(SNodeOperations.getParent(localCall), localCall, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+    if (staticMethodScope.contains(target)) {
       return null;
     }
 
-    // different class, let's make this call non-local, but qualified 
+    // it's out of scope, let's make it StaticMethodCall 
     SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-    SLinkOperations.setTarget(smc, "classConcept", thatClass, false);
+    SLinkOperations.setTarget(smc, "classConcept", SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
     SLinkOperations.setTarget(smc, "baseMethodDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(localCall, "actualArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(smc, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
+    }
+    for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(localCall, "typeArgument", true))) {
+      ListSequence.fromList(SLinkOperations.getTargets(smc, "typeArgument", true)).addElement(SNodeOperations.copyNode(arg));
     }
 
     return smc;

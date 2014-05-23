@@ -9,13 +9,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.ArrayList;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.util.InstanceOfCondition;
+import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.util.DescendantsTreeIterator;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
@@ -38,7 +40,7 @@ public class SNodeOperations {
    * For example, if there's NodeA.nodeB [0..1] and NodeB.nodeC[0..*], the query
    * <code>myA.nodeB.nodeC.add(new NodeC)</code> used to pass silently even if nodeB was not set.
    */
-  /*package*/ static final List<SNode> EMPTY_LIST = new EmptyList<SNode>("Attempt to add node to unexistent parent or role. Node: %s");
+  /*package*/ static final List<SNode> EMPTY_LIST = new EmptyList<SNode>("Attempt to add node to nonexistent parent or role. Node: %s");
 
   public SNodeOperations() {
   }
@@ -167,7 +169,7 @@ public class SNodeOperations {
         }
       }
     }
-    return outputNode;
+    return null;
   }
 
   public static List<SNode> getAncestors(SNode node, String ancestorConceptFqName, boolean inclusion) {
@@ -192,7 +194,7 @@ public class SNodeOperations {
       return EMPTY_LIST;
     }
     List<SNode> result = new ArrayList<SNode>();
-    if (!(inclusion) && node != null) {
+    if (!(inclusion)) {
       node = node.getParent();
     }
     while (node != null) {
@@ -205,82 +207,61 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion) {
-    return SNodeOperations.getDescendants(node, childConceptFqName, inclusion, new String[0]);
+    if (node == null) {
+      return EMPTY_LIST;
+    }
+    return IterableUtil.asList(SNodeUtil.getDescendants(node, (childConceptFqName == null ? null : new InstanceOfCondition(childConceptFqName)), inclusion));
   }
 
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion, final String[] stopConceptFqNames) {
     if (node == null) {
       return EMPTY_LIST;
     }
-    List<SNode> result = new ArrayList<SNode>();
-
+    if (stopConceptFqNames == null || stopConceptFqNames.length == 0) {
+      return getDescendants(node, childConceptFqName, inclusion);
+    }
     if (childConceptFqName == null) {
-      result = (List<SNode>) jetbrains.mps.util.SNodeOperations.getDescendants(node, null);
-      if (inclusion) {
-        result.add(0, node);
-      }
-      return result;
+      // It's odd to ignore stop condition when there's no designated childConcept, 
+      // but this is how it used to be from revision ad249caf since 2009. 
+      return getDescendants(node, null, inclusion);
     }
-
-    if (inclusion) {
-      if (SNodeOperations._isInstanceOf(node, childConceptFqName)) {
-        result.add(node);
-      }
-    }
-    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ? Condition.FALSE_CONDITION : new Condition<SNode>() {
-      @Override
-      public boolean met(SNode node) {
-        return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
-      }
-    });
-    SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
-      @Override
-      public boolean met(SNode node) {
-        return SNodeOperations._isInstanceOf(node, childConceptFqName);
-      }
-    }, stopCondition);
-    return result;
+    return descendantsAsList(node, inclusion, new InstanceOfCondition(childConceptFqName), new InstanceOfCondition(stopConceptFqNames));
   }
 
   public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion) {
-    return SNodeOperations.getDescendantsWhereConceptInList(node, descendantConceptFqNames, inclusion, new String[0]);
+    if (node == null || descendantConceptFqNames.length == 0) {
+      return EMPTY_LIST;
+    }
+    return IterableUtil.asList(SNodeUtil.getDescendants(node, new InstanceOfCondition(descendantConceptFqNames), inclusion));
   }
 
   public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion, final String[] stopConceptFqNames) {
     if (node == null || descendantConceptFqNames.length == 0) {
       return EMPTY_LIST;
     }
-
-    List<SNode> result = new ArrayList<SNode>();
-    if (inclusion) {
-      if (SNodeOperations._isInstanceOf(node, descendantConceptFqNames)) {
-        result.add(node);
-      }
+    if (stopConceptFqNames == null || stopConceptFqNames.length == 0) {
+      return getDescendantsWhereConceptInList(node, descendantConceptFqNames, inclusion);
     }
-    Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ? Condition.FALSE_CONDITION : new Condition<SNode>() {
-      @Override
-      public boolean met(SNode node) {
-        return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
-      }
-    });
-    SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
-      @Override
-      public boolean met(SNode node) {
-        return SNodeOperations._isInstanceOf(node, descendantConceptFqNames);
-      }
-    }, stopCondition);
-    return result;
+    return descendantsAsList(node, inclusion, new InstanceOfCondition(descendantConceptFqNames), new InstanceOfCondition(stopConceptFqNames));
   }
 
-  private static void _populateListOfDescendants(List<SNode> list, SNode node, Condition<SNode> condition, Condition<SNode> stopCondition) {
-    for (SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
-      if (condition.met(child)) {
-        list.add(child);
+  private static List<SNode> descendantsAsList(SNode node, boolean inclusion, Condition<SNode> condition, Condition<SNode> stopCondition) {
+    // can't use TreeFilterIterator as nodes that match both condition and stopCondition are proper return values 
+    ArrayList<SNode> rv = new ArrayList<SNode>();
+    final DescendantsTreeIterator it = new DescendantsTreeIterator(node);
+    if (!(inclusion) && it.hasNext()) {
+      it.next();
+    }
+    while (it.hasNext()) {
+      SNode next = it.next();
+      if (condition.met(next)) {
+        rv.add(next);
       }
-      if (stopCondition == null || !(stopCondition.met(child))) {
-        SNodeOperations._populateListOfDescendants(list, child, condition, stopCondition);
+      if (stopCondition.met(next)) {
+        it.skipChildren();
       }
     }
+    return rv;
   }
 
   private static boolean _isInstanceOf(SNode node, String[] conceptFqNames) {
