@@ -5,6 +5,7 @@ package typesystemIntegration.languageChecker;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,15 +16,19 @@ public class EditorBasedReferenceResolverUtils {
     if (cellWithRole == null) {
       return false;
     }
-    SubstituteInfo substituteInfo = cellWithRole.getSubstituteInfo();
+    return substituteCell(cellWithRole, resolveInfo, editorComponent.getEditorContext());
+  }
+
+  public static boolean substituteCell(EditorCell editorCell, String pattern, EditorContext editorContext) {
+    SubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
     if (substituteInfo == null) {
       return false;
     }
-    final SubstituteAction applicableSubstituteAction = getApplicableSubstituteAction(substituteInfo, resolveInfo);
+    final SubstituteAction applicableSubstituteAction = EditorBasedReferenceResolverUtils.getApplicableSubstituteAction(substituteInfo, pattern);
     if (applicableSubstituteAction == null) {
       return false;
     }
-    applicableSubstituteAction.substitute(editorComponent.getEditorContext(), resolveInfo);
+    applicableSubstituteAction.substitute(editorContext, pattern);
     return true;
   }
 
