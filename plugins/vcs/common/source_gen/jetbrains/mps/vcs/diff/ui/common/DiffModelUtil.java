@@ -34,7 +34,8 @@ public class DiffModelUtil {
     MapSequence.fromMap(myRegisteredModels).put(model, mo);
     SModuleBase module = (SModuleBase) mo.createModule();
     module.registerModel((SModelBase) model);
-    MissingDependenciesFixer.fixDependencies(model, true);
+    new MissingDependenciesFixer(model).fixAllDependencies();
+
   }
 
   public static void unregisterModel(SModel model) {

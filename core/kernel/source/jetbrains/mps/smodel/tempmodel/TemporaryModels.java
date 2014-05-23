@@ -64,7 +64,7 @@ public class TemporaryModels {
     assert model instanceof TempModel : "TemporaryModels is asked to handle non-temporary model " + model.getModelName();
 
     SModelOperations.validateLanguagesAndImports(model, false, true);
-    MissingDependenciesFixer.fixDependencies(model);
+    new MissingDependenciesFixer(model).fixModuleDependencies();
   }
 
   public void dispose(SModel model) {

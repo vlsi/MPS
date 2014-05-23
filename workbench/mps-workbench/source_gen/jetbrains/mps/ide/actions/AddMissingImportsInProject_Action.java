@@ -70,7 +70,7 @@ public class AddMissingImportsInProject_Action extends BaseAction {
             continue;
           }
 
-          MissingDependenciesFixer.fixDependencies(model);
+          new MissingDependenciesFixer(model).fixModuleDependencies();
         }
       }
     } catch (Throwable t) {

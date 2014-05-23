@@ -133,7 +133,8 @@ public class ModelProperties {
     if (myModelDescriptor.getSource() instanceof NullDataSource) {
       ((EditableSModel) myModelDescriptor).save();
     }
-    MissingDependenciesFixer.fixDependencies(myModelDescriptor);
+
+    new MissingDependenciesFixer(myModelDescriptor).fixModuleDependencies();
     // change of model properties might affect generation status. This explicit call is needed  
     // unless model dispatch proper change events (which it does not at the moment), and project pane  
     // got no other means to find out it needs to update generation status 

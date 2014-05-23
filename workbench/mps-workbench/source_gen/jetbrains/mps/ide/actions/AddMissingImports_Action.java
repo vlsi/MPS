@@ -52,7 +52,7 @@ public class AddMissingImports_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MissingDependenciesFixer.fixDependencies(((SModel) MapSequence.fromMap(_params).get("model")));
+      new MissingDependenciesFixer(((SModel) MapSequence.fromMap(_params).get("model"))).fixModuleDependencies();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "AddMissingImports", t);
