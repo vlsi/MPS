@@ -578,7 +578,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           return false;
         }
       });
-      if (myStopThread || myCancellable.isCancelled()) return false;
+//      if (myStopThread || myCancellable.isCancelled()) return false;
 
       if (editor instanceof InspectorEditorComponent && recreateInspectorMessages) {
         changed = true;
@@ -596,18 +596,18 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       EditorMessageOwner owner = ModelAccess.instance().runReadAction(new Computable<EditorMessageOwner>() {
         @Override
         public EditorMessageOwner compute() {
-          if (myStopThread || myCancellable.isCancelled()) return null;
+//          if (myStopThread || myCancellable.isCancelled()) return null;
           SNode node = editor.getEditedNode();
           if (node == null) return null;
           return checker;
         }
       });
-      if (myStopThread || myCancellable.isCancelled()) return false;
+//      if (myStopThread || myCancellable.isCancelled()) return false;
 
       highlightManager.clearForOwner(owner, false);
       anyMessageChanged = true;
     }
-    if (myStopThread || myCancellable.isCancelled()) return false;
+//    if (myStopThread || myCancellable.isCancelled()) return false;
 
     if (anyMessageChanged) {
       highlightManager.repaintAndRebuildEditorMessages();
