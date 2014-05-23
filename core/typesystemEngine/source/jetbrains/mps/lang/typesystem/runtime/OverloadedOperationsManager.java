@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -46,6 +47,10 @@ public class OverloadedOperationsManager {
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+    return getOperationType(operation, leftOperandType, rightOperandType, IRuleConflictWarningProducer.NULL);
+  }
+
+  public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType, IRuleConflictWarningProducer warningProducer) {
     Set<IOverloadedOpsTypesProvider> operationsTypesProviderSet = myOperationsToTypeProviders.getRules(operation);
     if (operationsTypesProviderSet.isEmpty()) {
       return null;
@@ -60,18 +65,22 @@ public class OverloadedOperationsManager {
       }
     }
     final boolean[] severalRules = new boolean[]{false};
+    final IOverloadedOpsTypesProvider[] matchedProviders = new IOverloadedOpsTypesProvider[2];
     Collections.sort(filteredProviders, new Comparator<IOverloadedOpsTypesProvider>() {
       @Override
       public int compare(IOverloadedOpsTypesProvider o1, IOverloadedOpsTypesProvider o2) {
         int i = o1.compareTo(o2);
         if (i == 0) {
           severalRules[0] = true;
+          matchedProviders[0] = o1;
+          matchedProviders[1] = o2;
         }
         return i;
       }
     });
     if (severalRules[0]) {
-      LOG.warning("several overloaded rules found for operation '" + operation+"'\n", operation);
+      matchedProviders[0].reportConflict(warningProducer);
+      matchedProviders[1].reportConflict(warningProducer);
     }
     for (IOverloadedOpsTypesProvider provider : filteredProviders) {
       SNode result = provider.getOperationType(operation, leftOperandType, rightOperandType);

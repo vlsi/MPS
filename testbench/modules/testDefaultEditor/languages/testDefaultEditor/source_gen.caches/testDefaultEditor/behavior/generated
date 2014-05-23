@@ -5,7 +5,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="aelgsihqlkydejdy68izklgxf4r668d" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="10j9fpm4vzf616grwjwo6h4yg4p13k6" />
-  <dep model="r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)" hash="-bmr2na59xghg9z1rjfvnphhkjr92vqd" />
+  <dep model="r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)" hash="lebrf37sy33wznurlt6kb6n54x9zar" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="-5v75a4ol6w7vjnw3a3u0n1zaaja9s2i" dependsOnNodes="true">
@@ -19,6 +19,9 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BehaviorAspectDescriptor.java" />
     <file name="Company_BehaviorDescriptor.java" />
+    <file name="DefaultNodeAttribute_BehaviorDescriptor.java" />
+    <file name="DefaultPropertyAttribute_BehaviorDescriptor.java" />
+    <file name="DefaultReferenceAttribute_BehaviorDescriptor.java" />
     <file name="Developer_BehaviorDescriptor.java" />
     <file name="DummyMethod_BehaviorDescriptor.java" />
     <file name="Friend_BehaviorDescriptor.java" />

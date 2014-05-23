@@ -62,7 +62,7 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable {
   @Nullable
   @Override
   public String getHelpTopic() {
-    return null;
+    return "preferences.editor.hints";
   }
 
   @Nullable

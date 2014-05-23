@@ -6,6 +6,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractIntroduceFiel
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring;
+import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
@@ -16,7 +17,6 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.FieldInitializationPl
 import java.awt.GridBagConstraints;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
-import org.jetbrains.annotations.Nullable;
 import java.awt.Insets;
 
 public class IntroduceFieldDialog extends IntroduceVariableDialog {
@@ -36,6 +36,14 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
   @Override
   public IntroduceVariableRefactoring getRefactoring() {
     return this.myRefactoring;
+  }
+
+
+
+  @Nullable
+  @Override
+  protected String getHelpId() {
+    return "refactoring.introduceField";
   }
 
   private JComponent createInitDestinationPanel() {

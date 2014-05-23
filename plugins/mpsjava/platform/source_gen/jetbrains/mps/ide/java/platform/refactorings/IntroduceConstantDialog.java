@@ -45,4 +45,12 @@ public class IntroduceConstantDialog extends IntroduceVariableDialog {
     myPanel.add(new JPanel(), c);
     return myPanel;
   }
+
+
+
+  @Nullable
+  @Override
+  protected String getHelpId() {
+    return "refactoring.introduceConstant";
+  }
 }
