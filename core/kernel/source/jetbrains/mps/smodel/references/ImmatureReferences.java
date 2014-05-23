@@ -48,7 +48,8 @@ public class ImmatureReferences implements CoreComponent {
 
   private SModelRepository mySModelRepository;
 
-  private ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, Object>> myReferences = new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase, Object>>();
+  private ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, Object>> myReferences =
+      new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase, Object>>();
 
   private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, Object>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, Object>>();
 
@@ -107,7 +108,11 @@ public class ImmatureReferences implements CoreComponent {
 
   public void remove(SReferenceBase ref) {
     if (myDisabled) return;
-    SModelReference modelRef = ref.getSourceNode().getModel().getReference();
+
+    SModel model = ref.getSourceNode().getModel();
+    if (model == null) return;
+
+    SModelReference modelRef = model.getReference();
     ConcurrentMap<SReferenceBase, Object> refSet = myReferences.get(modelRef);
     if (refSet != null) {
       refSet.remove(ref);
