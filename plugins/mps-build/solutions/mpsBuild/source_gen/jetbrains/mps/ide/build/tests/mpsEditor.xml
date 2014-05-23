@@ -70,7 +70,7 @@
       <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.actions.testLanguage-src.jar">
-      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/source_gen" />
       <zipfileset file="${basedir}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/jetbrains.mps.lang.actions.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-jetbrains.mps.lang.actions.testLanguage-languageModels" prefix="module/languageModels" />
     </jar>
@@ -104,7 +104,7 @@
       <fileset dir="${basedir}/languages/languageDesign/editor/languages/tableTests/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.tableTests-src.jar">
-      <fileset dir="${basedir}/languages/languageDesign/editor/languages/tableTests/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/languageDesign/editor/languages/tableTests/source_gen" />
       <zipfileset file="${basedir}/languages/languageDesign/editor/languages/tableTests/jetbrains.mps.lang.editor.tableTests.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-editor-languages-tableTests-languageModels" prefix="module/languageModels" />
     </jar>
@@ -143,8 +143,8 @@
       <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/testDefaultEditor-src.jar">
-      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" includes="**/*.java" />
-      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" />
+      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" />
       <zipfileset file="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-languageModels" prefix="module/languageModels" />
@@ -184,8 +184,8 @@
       <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/testMoveElements-src.jar">
-      <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" includes="**/*.java" />
-      <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" />
+      <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" />
       <zipfileset file="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/testMoveElements.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testMoveElements-languages-testMoveElements-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testMoveElements-languages-testMoveElements-languageModels" prefix="module/languageModels" />
@@ -225,8 +225,8 @@
       <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.multiple.testLanguage-src.jar">
-      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/generator/source_gen" includes="**/*.java" />
-      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/generator/source_gen" />
+      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/source_gen" />
       <zipfileset file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-jetbrains.mps.lang.editor.multiple.testLanguage-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-jetbrains.mps.lang.editor.multiple.testLanguage-languageModels" prefix="module/languageModels" />
@@ -266,8 +266,8 @@
       <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.multiple.extension.testLanguage-src.jar">
-      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/generator/source_gen" includes="**/*.java" />
-      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/generator/source_gen" />
+      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/source_gen" />
       <zipfileset file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-jetbrains.mps.lang.editor.multiple.extension.testLanguage-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-jetbrains.mps.lang.editor.multiple.extension.testLanguage-languageModels" prefix="module/languageModels" />
@@ -305,7 +305,7 @@
       <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.baseLanguage.test-src.jar">
-      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/source_gen" />
       <zipfileset file="${basedir}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.test/jetbrains.mps.baseLanguage.test.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.test-jetbrains" prefix="module/jetbrains" />
     </jar>
@@ -405,7 +405,7 @@
       <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.multiple.tests-src.jar">
-      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/source_gen" />
       <zipfileset file="${basedir}/languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/jetbrains.mps.lang.editor.multiple.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-jetbrains.mps.lang.editor.multiple.tests-models" prefix="module/models" />
     </jar>
