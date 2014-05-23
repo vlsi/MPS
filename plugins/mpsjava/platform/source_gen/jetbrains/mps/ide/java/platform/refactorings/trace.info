@@ -170,7 +170,7 @@
     <nodeInfo nodeId="2370003301082356" fileName="IntroduceVariableDialog.java" startLine="38" startPosition="93" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2370003301082359" fileName="IntroduceVariableDialog.java" startLine="39" startPosition="25" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2370003301082362" fileName="IntroduceVariableDialog.java" startLine="40" startPosition="19" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6421564267611634693" fileName="IntroduceVariableDialog.java" startLine="48" startPosition="32" endLine="49" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6421564267611634693" fileName="IntroduceVariableDialog.java" startLine="48" startPosition="32" endLine="49" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2370003301082041" fileName="IntroduceVariableDialog.java" startLine="52" startPosition="36" endLine="53" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2370003301082048" fileName="IntroduceVariableDialog.java" startLine="53" startPosition="52" endLine="54" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2370003301082053" fileName="IntroduceVariableDialog.java" startLine="54" startPosition="52" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -246,7 +246,7 @@
     <nodeInfo nodeId="2370003301082412" fileName="IntroduceVariableDialog.java" startLine="125" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initPanel#()V" />
     <nodeInfo nodeId="2370003301082481" fileName="IntroduceVariableDialog.java" startLine="137" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
     <nodeInfo nodeId="2370003301082037" fileName="IntroduceVariableDialog.java" startLine="52" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNamePanel#()Ljavax/swing/JPanel;" />
-    <scopeInfo nodeId="6421564267611622759" fileName="IntroduceVariableDialog.java" startLine="48" startPosition="32" endLine="49" endPosition="43" />
+    <scopeInfo nodeId="6421564267611622759" fileName="IntroduceVariableDialog.java" startLine="48" startPosition="32" endLine="49" endPosition="44" />
     <scopeInfo nodeId="2370003301082139" fileName="IntroduceVariableDialog.java" startLine="67" startPosition="51" endLine="68" endPosition="128" />
     <scopeInfo nodeId="2370003301082217" fileName="IntroduceVariableDialog.java" startLine="78" startPosition="110" endLine="79" endPosition="32" />
     <scopeInfo nodeId="2370003301082321" fileName="IntroduceVariableDialog.java" startLine="109" startPosition="0" endLine="110" endPosition="0" />
@@ -433,7 +433,7 @@
     <nodeInfo nodeId="2034046503361626780" fileName="ExtractMethodDialog.java" startLine="81" startPosition="25" endLine="82" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2034046503361626789" fileName="ExtractMethodDialog.java" startLine="82" startPosition="117" endLine="83" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602804260" fileName="ExtractMethodDialog.java" startLine="85" startPosition="7" endLine="86" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6421564267611496483" fileName="ExtractMethodDialog.java" startLine="93" startPosition="32" endLine="94" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6421564267611496483" fileName="ExtractMethodDialog.java" startLine="93" startPosition="32" endLine="94" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2034046503361590275" fileName="ExtractMethodDialog.java" startLine="99" startPosition="25" endLine="100" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2034046503361590283" fileName="ExtractMethodDialog.java" startLine="100" startPosition="87" endLine="101" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2034046503361590292" fileName="ExtractMethodDialog.java" startLine="101" startPosition="91" endLine="102" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -700,7 +700,7 @@
     <nodeInfo nodeId="4507335185602804279" fileName="ExtractMethodDialog.java" startLine="349" startPosition="0" endLine="386" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
     <nodeInfo nodeId="4507335185602802853" fileName="ExtractMethodDialog.java" startLine="415" startPosition="0" endLine="468" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initPanel#()V" />
     <nodeInfo nodeId="4507335185602803361" fileName="ExtractMethodDialog.java" startLine="144" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="6421564267611446391" fileName="ExtractMethodDialog.java" startLine="93" startPosition="32" endLine="94" endPosition="39" />
+    <scopeInfo nodeId="6421564267611446391" fileName="ExtractMethodDialog.java" startLine="93" startPosition="32" endLine="94" endPosition="40" />
     <scopeInfo nodeId="4507335185602803212" fileName="ExtractMethodDialog.java" startLine="117" startPosition="53" endLine="118" endPosition="88" />
     <scopeInfo nodeId="4507335185602803316" fileName="ExtractMethodDialog.java" startLine="131" startPosition="160" endLine="132" endPosition="53" />
     <scopeInfo nodeId="4507335185602803323" fileName="ExtractMethodDialog.java" startLine="133" startPosition="14" endLine="134" endPosition="129" />

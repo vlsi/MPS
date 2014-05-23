@@ -91,7 +91,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
   @Nullable
   @Override
   protected String getHelpId() {
-    return "refactoring.extractMethod";
+    return "refactoring.extractMethod1";
   }
 
   private void update() {

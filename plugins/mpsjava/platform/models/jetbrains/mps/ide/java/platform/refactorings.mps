@@ -361,7 +361,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6421564267611446391" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6421564267611496483" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6421564267611496482" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="refactoring.extractMethod" />
+            <property name="value" nameId="tpee.1070475926801" value="refactoring.extractMethod1" />
           </node>
         </node>
       </node>
@@ -12472,7 +12472,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6421564267611622759" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6421564267611634693" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6421564267611634692" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="refactoring.introduceVariable" />
+            <property name="value" nameId="tpee.1070475926801" value="refactoring.introduceVariable1" />
           </node>
         </node>
       </node>
