@@ -276,7 +276,6 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
       <chunk>
         <module file="${mps_home}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures/jetbrains.mps.lang.editor.figures.mpl" />
@@ -524,7 +523,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" />
-        <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0.0-jvm6.jar" />
         <fileset file="${artifacts.jetpad}/jetpad/lib/base-projectional-1.0.0-jvm6.jar" />

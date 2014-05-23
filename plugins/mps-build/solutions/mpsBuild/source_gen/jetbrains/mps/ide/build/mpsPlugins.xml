@@ -1390,7 +1390,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.console.internalCommands" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.blCommand, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.console.internalCommands" depends="java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.blCommand, java.compile.jetbrains.mps.console.internalCommands.runtime, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/console/lang/internalCommands/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
@@ -1414,6 +1414,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.base" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.console.internalCommands.runtime" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
