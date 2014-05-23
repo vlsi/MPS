@@ -38,10 +38,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.ui.DiagramPalette;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationActionGroup;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSeparator;
 import javax.swing.Icon;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTraitButton;
 
 public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.diagram"});
@@ -202,7 +203,14 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
             SPropertyOperations.set(node, "x", "" + (x));
             SPropertyOperations.set(node, "y", "" + (y));
           }
-        }) {});
+        }) {
+          @Override
+          public String getText() {
+            return "New Component";
+          }
+
+
+        });
         addPaletteElement(new PaletteSeparator() {
           public Icon getIcon() {
             return null;
@@ -212,6 +220,7 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
             return "";
           }
         });
+        addPaletteElement(new DiagramTraitButton(diagramCell));
         createPalette();
       }
     }
