@@ -46,7 +46,7 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
   @Nullable
   @Override
   protected String getHelpId() {
-    return "refactoring.introduceVariable";
+    return "refactoring.introduceVariable1";
   }
 
   private JPanel createNamePanel() {
