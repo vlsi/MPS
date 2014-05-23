@@ -2154,26 +2154,27 @@
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="58" startPosition="59" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1216124712337" fileName="ShowInLogicalView_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216124732520" fileName="ShowInLogicalView_Action.java" startLine="66" startPosition="106" endLine="67" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="69" startPosition="42" endLine="70" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3198730878951497489" fileName="ShowInLogicalView_Action.java" startLine="66" startPosition="106" endLine="67" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216124732520" fileName="ShowInLogicalView_Action.java" startLine="67" startPosition="180" endLine="68" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="70" startPosition="42" endLine="71" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="45" startPosition="95" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="49" startPosition="87" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="53" startPosition="100" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="57" startPosition="84" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="68" startPosition="27" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="68" startPosition="27" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="69" startPosition="27" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="69" startPosition="27" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="48" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="52" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="56" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowInLogicalView_Action#()V" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="34" startPosition="89" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="64" startPosition="96" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="64" startPosition="96" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="64" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="64" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="45" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="30" startPosition="32" endLine="31" endPosition="16" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="35" startPosition="9" endLine="36" endPosition="43" />
@@ -2182,16 +2183,17 @@
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="50" startPosition="62" endLine="51" endPosition="19" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="54" startPosition="62" endLine="55" endPosition="19" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="58" startPosition="59" endLine="59" endPosition="19" />
-    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="69" startPosition="42" endLine="70" endPosition="91" />
-    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="65" startPosition="9" endLine="67" endPosition="80">
-      <varInfo nodeId="1216124712338" varName="pane" />
-    </scopeInfo>
+    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="70" startPosition="42" endLine="71" endPosition="91" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="23" startPosition="37" endLine="26" endPosition="41" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="37" startPosition="27" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="68" startPosition="0" endLine="71" endPosition="7">
+    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="65" startPosition="9" endLine="68" endPosition="42">
+      <varInfo nodeId="3198730878951497490" varName="nodeToSelect" />
+      <varInfo nodeId="1216124712338" varName="pane" />
+    </scopeInfo>
+    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="69" startPosition="0" endLine="72" endPosition="7">
       <varInfo nodeId="1216124527478" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="68" startPosition="27" endLine="71" endPosition="7" />
+    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="69" startPosition="27" endLine="72" endPosition="7" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="44">
       <varInfo nodeId="1216124527478" varName="t" />
@@ -2202,12 +2204,12 @@
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="56" startPosition="5" endLine="60" endPosition="5" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="34" startPosition="89" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="64" startPosition="96" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="64" startPosition="96" endLine="73" endPosition="5" />
     <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1216124527478" varName="_params" />
       <varInfo nodeId="1216124527478" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="64" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="64" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="1216124527478" varName="_params" />
       <varInfo nodeId="1216124527478" varName="event" />
     </scopeInfo>
@@ -2216,7 +2218,7 @@
       <varInfo nodeId="1216124527478" varName="_params" />
       <varInfo nodeId="1216124527478" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="20" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowInLogicalView_Action" />
+    <unitInfo nodeId="1216124527478" fileName="ShowInLogicalView_Action.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowInLogicalView_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/1216125431295">
     <nodeInfo nodeId="1216125431295" fileName="ShowNodeInInspector_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

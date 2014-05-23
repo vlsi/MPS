@@ -7296,7 +7296,7 @@
           <property name="value" nameId="tpee.1070475926801" value="annotations.jar" />
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4452305126578631436" nodeInfo="nn">
-          <property name="value" nameId="tpee.1070475926801" value="commons-logging-1.1.1.jar" />
+          <property name="value" nameId="tpee.1070475926801" value="commons-logging-1.1.4.jar" />
         </node>
       </node>
     </node>
