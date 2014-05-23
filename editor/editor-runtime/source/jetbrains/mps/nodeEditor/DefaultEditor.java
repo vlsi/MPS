@@ -250,7 +250,10 @@ public class DefaultEditor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    addCell(editorCell);
+    if (editorCell.getCellId() == null) {
+      editorCell.setCellId("reference_" + role);
+    }
+    addCellWithRole(provider, editorCell);
   }
 
   private void setSemanticNodeToCells(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, SNode semanticNode) {
@@ -268,7 +271,7 @@ public class DefaultEditor extends DefaultNodeEditor {
 
   private void addProperties() {
     for (String property : myPropertyNames) {
-      if (property == myNameProperty) {
+      if (property.equals(myNameProperty)) {
         continue;
       }
       addRoleLabel(property, "property");
@@ -293,8 +296,31 @@ public class DefaultEditor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(myEditorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setCellId("property_" + name);
-    addCell(editorCell);
+    if (editorCell.getCellId() == null) {
+      editorCell.setCellId("property_" + name);
+    }
+    addCellWithRole(provider, editorCell);
+  }
+
+  private void addCellWithRole(CellProviderWithRole provider, EditorCell editorCell) {
+    EditorCell roleAttributeCell = createRoleAttributeCell(provider, editorCell);
+    if (roleAttributeCell != null) {
+      addCell(roleAttributeCell);
+    } else {
+      addCell(editorCell);
+    }
+  }
+
+  private EditorCell createRoleAttributeCell(CellProviderWithRole provider, EditorCell editorCell) {
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext.getOperationContext());
+      if (manager != null) {
+        return manager.createNodeRoleAttributeCell(myEditorContext, attributeConcept, attributeKind, editorCell);
+      }
+    }
+    return null;
   }
 
   private void addPropertyCellForNullConcept(final String name) {

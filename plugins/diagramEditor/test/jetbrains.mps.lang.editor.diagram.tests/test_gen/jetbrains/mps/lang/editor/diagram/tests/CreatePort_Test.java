@@ -39,12 +39,13 @@ public class CreatePort_Test extends BaseTransformationTest4 {
           SNodeFactoryOperations.addNewChild(SNodeOperations.cast(TestBody.this.getNodeById("2278461409093572746"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts"), "outputs", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort");
         }
       }, editorComponent.getOperationContext().getProject());
+      ModelAccess.instance().flushEventQueue();
       {
-        int x_rszpwe_b0 = 87;
-        int y_rszpwe_b0 = 42;
-        Component eventTargetComponent_rszpwe_b0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_rszpwe_b0, y_rszpwe_b0, MouseEvent.MOUSE_PRESSED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rszpwe_b0, x_rszpwe_b0, y_rszpwe_b0, MouseEvent.MOUSE_RELEASED);
-        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rszpwe_b0, x_rszpwe_b0, y_rszpwe_b0, MouseEvent.MOUSE_CLICKED);
+        int x_rszpwe_c0 = 87;
+        int y_rszpwe_c0 = 42;
+        Component eventTargetComponent_rszpwe_c0 = BaseEditorTestBody.processMouseEvent(editorComponent, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_PRESSED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rszpwe_c0, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_RELEASED);
+        BaseEditorTestBody.processSecondaryMouseEvent(eventTargetComponent_rszpwe_c0, x_rszpwe_c0, y_rszpwe_c0, MouseEvent.MOUSE_CLICKED);
       }
 
     }

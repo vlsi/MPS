@@ -56,7 +56,6 @@
   <source id="3981318653438276256" name="Quotation_Behavior" hash="5qyhyg6mn68fq0t2gmtes5aioml4tmr">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Quotation_Behavior.java" />
   </source>
   <source id="3981318653438276804" name="AbstractAntiquotation_Behavior" hash="-bl7uertlgzdkpxoanpkgdsbbhshcv89">

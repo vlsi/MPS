@@ -6,6 +6,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode dependClassName="testDefaultEditor.behavior.Company_BehaviorDescriptor" />
+    <classNode dependClassName="testDefaultEditor.behavior.DefaultNodeAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="testDefaultEditor.behavior.DefaultPropertyAttribute_BehaviorDescriptor" />
+    <classNode dependClassName="testDefaultEditor.behavior.DefaultReferenceAttribute_BehaviorDescriptor" />
     <classNode dependClassName="testDefaultEditor.behavior.Developer_BehaviorDescriptor" />
     <classNode dependClassName="testDefaultEditor.behavior.DummyMethod_BehaviorDescriptor" />
     <classNode dependClassName="testDefaultEditor.behavior.Friend_BehaviorDescriptor" />
@@ -20,6 +23,24 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="testDefaultEditor.behavior.DefaultNodeAttribute_BehaviorDescriptor" file="DefaultNodeAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="testDefaultEditor.behavior.DefaultPropertyAttribute_BehaviorDescriptor" file="DefaultPropertyAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="testDefaultEditor.behavior.DefaultReferenceAttribute_BehaviorDescriptor" file="DefaultReferenceAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="testDefaultEditor.behavior.Developer_BehaviorDescriptor" file="Developer_BehaviorDescriptor.java">

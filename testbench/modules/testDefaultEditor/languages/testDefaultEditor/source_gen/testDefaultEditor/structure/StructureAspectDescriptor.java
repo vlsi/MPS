@@ -16,17 +16,23 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("testDefaultEditor.structure.Company").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"team"}, new boolean[]{true}).create();
       case 1:
-        return new ConceptDescriptorBuilder("testDefaultEditor.structure.Developer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("age", "sex", "lastName", "politicWing").references("bestFriend", "teamHeWants").children(new String[]{"friend", "someChild"}, new boolean[]{true, false}).create();
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.DefaultNodeAttribute").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
       case 2:
-        return new ConceptDescriptorBuilder("testDefaultEditor.structure.DummyMethod").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statements"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.DefaultPropertyAttribute").super_("jetbrains.mps.lang.core.structure.PropertyAttribute").parents("jetbrains.mps.lang.core.structure.PropertyAttribute").create();
       case 3:
-        return new ConceptDescriptorBuilder("testDefaultEditor.structure.Friend").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("friend").create();
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.DefaultReferenceAttribute").super_("jetbrains.mps.lang.core.structure.LinkAttribute").parents("jetbrains.mps.lang.core.structure.LinkAttribute").create();
       case 4:
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.Developer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("age", "sex", "lastName", "politicWing").references("bestFriend", "teamHeWants").children(new String[]{"friend", "someChild"}, new boolean[]{true, false}).create();
+      case 5:
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.DummyMethod").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statements"}, new boolean[]{true}).create();
+      case 6:
+        return new ConceptDescriptorBuilder("testDefaultEditor.structure.Friend").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("friend").create();
+      case 7:
         return new ConceptDescriptorBuilder("testDefaultEditor.structure.Team").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("isOpenSource").children(new String[]{"developer"}, new boolean[]{true}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"testDefaultEditor.structure.Company", "testDefaultEditor.structure.Developer", "testDefaultEditor.structure.DummyMethod", "testDefaultEditor.structure.Friend", "testDefaultEditor.structure.Team"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"testDefaultEditor.structure.Company", "testDefaultEditor.structure.DefaultNodeAttribute", "testDefaultEditor.structure.DefaultPropertyAttribute", "testDefaultEditor.structure.DefaultReferenceAttribute", "testDefaultEditor.structure.Developer", "testDefaultEditor.structure.DummyMethod", "testDefaultEditor.structure.Friend", "testDefaultEditor.structure.Team"};
 }
