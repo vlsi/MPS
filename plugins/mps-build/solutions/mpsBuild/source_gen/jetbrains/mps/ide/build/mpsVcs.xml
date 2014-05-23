@@ -97,7 +97,7 @@
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/mps-vcs/languages/jetbrains.mps.ide.vcs.modelmetadata-src.jar">
-      <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" includes="**/*.java" />
+      <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
       <zipfileset file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels" prefix="module/languageModels" />
     </jar>

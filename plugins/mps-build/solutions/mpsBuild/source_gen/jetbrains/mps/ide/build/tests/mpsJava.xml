@@ -68,7 +68,7 @@
       <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.ide.java.tests-src.jar">
-      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" />
       <zipfileset file="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/jetbrains.mps.ide.java.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-jetbrains.mps.ide.java.tests-models" prefix="module/models" />
     </jar>
