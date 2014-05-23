@@ -120,7 +120,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   @Nullable
   @NonNls
   public String getHelpTopic() {
-    return "Generator";
+    return "preferences.generator";
   }
 
   @Override

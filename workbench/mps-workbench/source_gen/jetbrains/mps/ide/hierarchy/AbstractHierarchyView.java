@@ -40,6 +40,9 @@ import com.intellij.icons.AllIcons;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.ide.OccurenceNavigator;
+import com.intellij.openapi.actionSystem.DataProvider;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public abstract class AbstractHierarchyView extends BaseProjectTool {
   protected AbstractHierarchyTree myHierarchyTree;
@@ -223,9 +226,17 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     return myComponent;
   }
 
-  public class RootPanel extends JPanel implements OccurenceNavigator {
+  public class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
     public RootPanel() {
       super(new BorderLayout());
+    }
+
+    @Nullable
+    public Object getData(@NonNls String id) {
+      if (PlatformDataKeys.HELP_ID.is(id)) {
+        return "ideaInterface.hierarchyView";
+      }
+      return null;
     }
 
     @Override
