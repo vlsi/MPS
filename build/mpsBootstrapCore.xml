@@ -5604,7 +5604,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.behavior#1225195312923" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-persistence, java.compile.mps-generator, java.compile.mps-ui, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.behavior, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.constraints#1147476727047, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.behavior#1225195312923" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-project, java.compile.mps-textgen, java.compile.mps-core, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-persistence, java.compile.mps-generator, java.compile.mps-ui, java.compile.mps-platform, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.lang.behavior, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, fetchDependencies">
     <mkdir dir="${mps_home}/languages/languageDesign/behavior/languages/behavior/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.behavior#1225195312923" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.behavior#1225195312923" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
@@ -5635,7 +5635,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.scopes" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.behavior" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.constraints" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.constraints#1147476727047" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />

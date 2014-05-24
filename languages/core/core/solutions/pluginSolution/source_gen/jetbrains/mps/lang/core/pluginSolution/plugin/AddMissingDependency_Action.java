@@ -4,28 +4,22 @@ package jetbrains.mps.lang.core.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.intentions.icons.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class AddMissingDependency_Action extends BaseAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = Icons.QUICKFIX;
 
   public AddMissingDependency_Action() {
     super("Add Missing Dependency", "", ICON);
@@ -39,20 +33,7 @@ public class AddMissingDependency_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    for (SReference ref : ((SNode) MapSequence.fromMap(_params).get("selectedNode")).getReferences()) {
-      SModelReference mr = ref.getTargetSModelReference();
-      if (mr == null) {
-        continue;
-      }
-      SModel model = mr.resolve(MPSModuleRepository.getInstance());
-      if (model == null) {
-        continue;
-      }
-      if (!(new GlobalModuleDependenciesManager(((SModule) MapSequence.fromMap(_params).get("module"))).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(model.getModule()))) {
-        return true;
-      }
-    }
-    return false;
+    return new DependencyHelper(((SNode) MapSequence.fromMap(_params).get("selectedNode")), ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project")))).isApplicable();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -90,25 +71,16 @@ public class AddMissingDependency_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorContext") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SReference ref : ((SNode) MapSequence.fromMap(_params).get("selectedNode")).getReferences()) {
-        SModelReference mr = ref.getTargetSModelReference();
-        if (mr == null) {
-          continue;
-        }
-        SModel model = mr.resolve(MPSModuleRepository.getInstance());
-        if (model == null) {
-          continue;
-        }
-        if (!(new GlobalModuleDependenciesManager(((SModule) MapSequence.fromMap(_params).get("module"))).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(model.getModule()))) {
-          ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))).addDependency(model.getModule().getModuleReference(), false);
-        }
-      }
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      new DependencyHelper(((SNode) MapSequence.fromMap(_params).get("selectedNode")), ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project")))).execute();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "AddMissingDependency", t);

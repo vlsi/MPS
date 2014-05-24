@@ -20,11 +20,11 @@ import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class AddMissingImportsInProject_Action extends BaseAction {
+public class FixModuleImportsInProject_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public AddMissingImportsInProject_Action() {
-    super("Add Missing Imports", "", ICON);
+  public FixModuleImportsInProject_Action() {
+    super("Fix Module Imports", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
@@ -39,7 +39,7 @@ public class AddMissingImportsInProject_Action extends BaseAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "AddMissingImportsInProject", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "FixModuleImportsInProject", t);
       }
       this.disable(event.getPresentation());
     }
@@ -75,10 +75,10 @@ public class AddMissingImportsInProject_Action extends BaseAction {
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "AddMissingImportsInProject", t);
+        LOG.error("User's action execute method failed. Action:" + "FixModuleImportsInProject", t);
       }
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(AddMissingImportsInProject_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FixModuleImportsInProject_Action.class);
 }
