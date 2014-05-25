@@ -45,6 +45,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import javax.swing.SwingUtilities;
@@ -74,7 +75,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
     boolean disposed = false;
     for (SNode node : selection.getSelectedNodes()) {
-      if (jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
+      if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
         disposed = true;
         break;
       }
@@ -88,7 +89,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
         return false;
       }
       SNode selectedNode = selectedCell.getSNode();
-      if (selectedNode == null || jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
+      if (selectedNode == null || !(SNodeUtil.isAccessible(selectedNode, MPSModuleRepository.getInstance()))) {
         return false;
       }
 
@@ -230,10 +231,10 @@ public class CellAction_PasteNode extends AbstractCellAction {
     return false;
   }
 
-  private boolean checkDisposed(SNodeReference currentSelectedReference, SNode currentSelectedNode) {
-    if (jetbrains.mps.util.SNodeOperations.isDisposed(currentSelectedNode)) {
+  private boolean checkDisposed(SNodeReference currentSelectedReference, SNode selectedNode) {
+    if (!SNodeUtil.isAccessible(selectedNode, MPSModuleRepository.getInstance())) {
       LOG.error(
-          "Selected node is disposed: node = " + currentSelectedNode.toString() + " ; node pointer = (" + currentSelectedReference.toString() +
+          "Selected node is disposed: node = " + selectedNode.toString() + " ; node pointer = (" + currentSelectedReference.toString() +
               ")");
       return true;
     }

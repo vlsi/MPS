@@ -19,8 +19,10 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ConceptTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
@@ -76,9 +78,7 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
       @Override
       public void run() {
         SNode concept = getSNode();
-        if (concept == null || jetbrains.mps.util.SNodeOperations.isDisposed(concept) || concept.getModel() == null || concept.getModel() == null) {
-          return;
-        }
+        if (concept == null || !SNodeUtil.isAccessible(concept, MPSModuleRepository.getInstance())) return;
         // TODO: use node pointers here
         NavigationSupport.getInstance().openNode(getOperationContext(), concept, true, true);
       }
