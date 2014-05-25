@@ -338,452 +338,452 @@
     <unitInfo nodeId="7390982340086718297" fileName="RefScopeChecker.java" startLine="26" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.checkers.RefScopeChecker" />
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086718486">
-    <nodeInfo nodeId="7390982340086719359" fileName="LanguageErrorsComponent.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToErrors" />
-    <nodeInfo nodeId="7390982340086719370" fileName="LanguageErrorsComponent.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependenciesToNodes" />
-    <nodeInfo nodeId="7390982340086719381" fileName="LanguageErrorsComponent.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToDependecies" />
-    <nodeInfo nodeId="7390982340086719392" fileName="LanguageErrorsComponent.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInvalidNodes" />
-    <nodeInfo nodeId="7390982340086719399" fileName="LanguageErrorsComponent.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependenciesToInvalidate" />
-    <nodeInfo nodeId="7390982340086719406" fileName="LanguageErrorsComponent.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelListener" />
-    <nodeInfo nodeId="7390982340086719411" fileName="LanguageErrorsComponent.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRepositoryListener" />
-    <nodeInfo nodeId="7390982340086719416" fileName="LanguageErrorsComponent.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListenedModels" />
-    <nodeInfo nodeId="7390982340086719423" fileName="LanguageErrorsComponent.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckedRoot" />
-    <nodeInfo nodeId="7390982340086719427" fileName="LanguageErrorsComponent.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentNode" />
-    <nodeInfo nodeId="7425893169997366865" fileName="LanguageErrorsComponent.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="7425893170003471813" fileName="LanguageErrorsComponent.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUpdateInspector" />
-    <nodeInfo nodeId="4766865704923402327" fileName="LanguageErrorsComponent.java" startLine="53" startPosition="86" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4766865704923402336" fileName="LanguageErrorsComponent.java" startLine="55" startPosition="29" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4766865704923402343" fileName="LanguageErrorsComponent.java" startLine="56" startPosition="37" endLine="57" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4766865704923402352" fileName="LanguageErrorsComponent.java" startLine="58" startPosition="5" endLine="59" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719439" fileName="LanguageErrorsComponent.java" startLine="64" startPosition="48" endLine="65" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719443" fileName="LanguageErrorsComponent.java" startLine="65" startPosition="20" endLine="66" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718577" fileName="LanguageErrorsComponent.java" startLine="69" startPosition="25" endLine="70" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718581" fileName="LanguageErrorsComponent.java" startLine="70" startPosition="31" endLine="71" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718595" fileName="LanguageErrorsComponent.java" startLine="75" startPosition="53" endLine="76" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718600" fileName="LanguageErrorsComponent.java" startLine="77" startPosition="5" endLine="78" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4766865704923560608" fileName="LanguageErrorsComponent.java" startLine="82" startPosition="32" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086718625" fileName="LanguageErrorsComponent.java" startLine="85" startPosition="29" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2132380399755818463" fileName="LanguageErrorsComponent.java" startLine="87" startPosition="5" endLine="88" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718689" fileName="LanguageErrorsComponent.java" startLine="88" startPosition="52" endLine="89" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4766865704923541968" fileName="LanguageErrorsComponent.java" startLine="94" startPosition="85" endLine="95" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4766865704923529509" fileName="LanguageErrorsComponent.java" startLine="95" startPosition="59" endLine="96" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399757056002" fileName="LanguageErrorsComponent.java" startLine="99" startPosition="77" endLine="100" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2132380399757067602" fileName="LanguageErrorsComponent.java" startLine="100" startPosition="82" endLine="101" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2132380399757048965" fileName="LanguageErrorsComponent.java" startLine="101" startPosition="41" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2132380399756871160" fileName="LanguageErrorsComponent.java" startLine="102" startPosition="0" endLine="103" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2132380399756084688" fileName="LanguageErrorsComponent.java" startLine="103" startPosition="72" endLine="104" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2132380399756975775" fileName="LanguageErrorsComponent.java" startLine="104" startPosition="88" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2132380399756981817" fileName="LanguageErrorsComponent.java" startLine="106" startPosition="24" endLine="107" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2132380399756939529" fileName="LanguageErrorsComponent.java" startLine="108" startPosition="32" endLine="109" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2132380399757046529" fileName="LanguageErrorsComponent.java" startLine="110" startPosition="39" endLine="111" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2132380399756939543" fileName="LanguageErrorsComponent.java" startLine="112" startPosition="57" endLine="113" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2132380399756939552" fileName="LanguageErrorsComponent.java" startLine="114" startPosition="33" endLine="115" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399756939559" fileName="LanguageErrorsComponent.java" startLine="116" startPosition="58" endLine="117" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399756939338" fileName="LanguageErrorsComponent.java" startLine="121" startPosition="9" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2132380399757112017" fileName="LanguageErrorsComponent.java" startLine="124" startPosition="5" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2132380399757510562" fileName="LanguageErrorsComponent.java" startLine="125" startPosition="0" endLine="126" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2132380399757117920" fileName="LanguageErrorsComponent.java" startLine="126" startPosition="61" endLine="127" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2132380399758616876" fileName="LanguageErrorsComponent.java" startLine="130" startPosition="64" endLine="131" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2132380399759213662" fileName="LanguageErrorsComponent.java" startLine="133" startPosition="119" endLine="134" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399759238093" fileName="LanguageErrorsComponent.java" startLine="136" startPosition="5" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086718812" fileName="LanguageErrorsComponent.java" startLine="143" startPosition="34" endLine="144" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086718818" fileName="LanguageErrorsComponent.java" startLine="146" startPosition="77" endLine="147" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718823" fileName="LanguageErrorsComponent.java" startLine="147" startPosition="75" endLine="148" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6926756761799928686" fileName="LanguageErrorsComponent.java" startLine="155" startPosition="94" endLine="156" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718705" fileName="LanguageErrorsComponent.java" startLine="157" startPosition="5" endLine="158" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8055860683983271230" fileName="LanguageErrorsComponent.java" startLine="161" startPosition="106" endLine="162" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6786156891328436222" fileName="LanguageErrorsComponent.java" startLine="166" startPosition="58" endLine="167" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6786156891328436223" fileName="LanguageErrorsComponent.java" startLine="168" startPosition="5" endLine="169" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6786156891328436235" fileName="LanguageErrorsComponent.java" startLine="169" startPosition="76" endLine="170" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6786156891328436249" fileName="LanguageErrorsComponent.java" startLine="170" startPosition="97" endLine="171" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6786156891328436292" fileName="LanguageErrorsComponent.java" startLine="172" startPosition="36" endLine="173" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399754952266" fileName="LanguageErrorsComponent.java" startLine="174" startPosition="5" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2132380399754955001" fileName="LanguageErrorsComponent.java" startLine="175" startPosition="0" endLine="176" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719052" fileName="LanguageErrorsComponent.java" startLine="182" startPosition="68" endLine="183" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086719061" fileName="LanguageErrorsComponent.java" startLine="185" startPosition="59" endLine="186" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719064" fileName="LanguageErrorsComponent.java" startLine="187" startPosition="5" endLine="188" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399757261666" fileName="LanguageErrorsComponent.java" startLine="191" startPosition="55" endLine="192" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5658550323136456023" fileName="LanguageErrorsComponent.java" startLine="194" startPosition="39" endLine="195" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7390982340086718839" fileName="LanguageErrorsComponent.java" startLine="196" startPosition="53" endLine="197" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718844" fileName="LanguageErrorsComponent.java" startLine="198" startPosition="9" endLine="199" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718901" fileName="LanguageErrorsComponent.java" startLine="204" startPosition="102" endLine="205" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9089804454209335404" fileName="LanguageErrorsComponent.java" startLine="206" startPosition="23" endLine="207" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086718903" fileName="LanguageErrorsComponent.java" startLine="208" startPosition="5" endLine="209" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718907" fileName="LanguageErrorsComponent.java" startLine="210" startPosition="73" endLine="211" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2132380399760531726" fileName="LanguageErrorsComponent.java" startLine="212" startPosition="5" endLine="213" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2132380399760610451" fileName="LanguageErrorsComponent.java" startLine="213" startPosition="81" endLine="214" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399760753692" fileName="LanguageErrorsComponent.java" startLine="215" startPosition="64" endLine="216" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2132380399760757067" fileName="LanguageErrorsComponent.java" startLine="218" startPosition="13" endLine="219" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399760757071" fileName="LanguageErrorsComponent.java" startLine="219" startPosition="31" endLine="220" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399760757079" fileName="LanguageErrorsComponent.java" startLine="221" startPosition="63" endLine="222" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399760757087" fileName="LanguageErrorsComponent.java" startLine="224" startPosition="19" endLine="225" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2132380399760871654" fileName="LanguageErrorsComponent.java" startLine="227" startPosition="7" endLine="228" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2116795276266150129" fileName="LanguageErrorsComponent.java" startLine="229" startPosition="5" endLine="230" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2116795276266242877" fileName="LanguageErrorsComponent.java" startLine="230" startPosition="76" endLine="231" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719004" fileName="LanguageErrorsComponent.java" startLine="231" startPosition="48" endLine="232" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7425893170003543913" fileName="LanguageErrorsComponent.java" startLine="232" startPosition="25" endLine="233" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719008" fileName="LanguageErrorsComponent.java" startLine="233" startPosition="29" endLine="234" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7425893170003836494" fileName="LanguageErrorsComponent.java" startLine="238" startPosition="28" endLine="239" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7425893170003837678" fileName="LanguageErrorsComponent.java" startLine="239" startPosition="32" endLine="240" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7425893170003607887" fileName="LanguageErrorsComponent.java" startLine="241" startPosition="5" endLine="242" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086719022" fileName="LanguageErrorsComponent.java" startLine="245" startPosition="42" endLine="246" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086719034" fileName="LanguageErrorsComponent.java" startLine="247" startPosition="94" endLine="248" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719044" fileName="LanguageErrorsComponent.java" startLine="249" startPosition="5" endLine="250" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086719202" fileName="LanguageErrorsComponent.java" startLine="253" startPosition="23" endLine="254" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719206" fileName="LanguageErrorsComponent.java" startLine="254" startPosition="26" endLine="255" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719210" fileName="LanguageErrorsComponent.java" startLine="255" startPosition="60" endLine="256" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719214" fileName="LanguageErrorsComponent.java" startLine="256" startPosition="48" endLine="257" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719218" fileName="LanguageErrorsComponent.java" startLine="257" startPosition="25" endLine="258" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719222" fileName="LanguageErrorsComponent.java" startLine="258" startPosition="55" endLine="259" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719226" fileName="LanguageErrorsComponent.java" startLine="259" startPosition="54" endLine="260" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719230" fileName="LanguageErrorsComponent.java" startLine="260" startPosition="49" endLine="261" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719099" fileName="LanguageErrorsComponent.java" startLine="266" startPosition="53" endLine="267" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719108" fileName="LanguageErrorsComponent.java" startLine="268" startPosition="28" endLine="269" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="617146245871693100" fileName="LanguageErrorsComponent.java" startLine="271" startPosition="26" endLine="272" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="617146245871693120" fileName="LanguageErrorsComponent.java" startLine="272" startPosition="166" endLine="273" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719124" fileName="LanguageErrorsComponent.java" startLine="277" startPosition="57" endLine="278" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719139" fileName="LanguageErrorsComponent.java" startLine="281" startPosition="56" endLine="282" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719236" fileName="LanguageErrorsComponent.java" startLine="285" startPosition="99" endLine="286" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086719243" fileName="LanguageErrorsComponent.java" startLine="286" startPosition="58" endLine="287" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086719267" fileName="LanguageErrorsComponent.java" startLine="291" startPosition="60" endLine="292" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719282" fileName="LanguageErrorsComponent.java" startLine="296" startPosition="83" endLine="297" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719297" fileName="LanguageErrorsComponent.java" startLine="301" startPosition="85" endLine="302" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719302" fileName="LanguageErrorsComponent.java" startLine="302" startPosition="62" endLine="303" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719317" fileName="LanguageErrorsComponent.java" startLine="307" startPosition="79" endLine="308" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719322" fileName="LanguageErrorsComponent.java" startLine="308" startPosition="62" endLine="309" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719327" fileName="LanguageErrorsComponent.java" startLine="311" startPosition="8" endLine="312" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719330" fileName="LanguageErrorsComponent.java" startLine="312" startPosition="58" endLine="313" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719339" fileName="LanguageErrorsComponent.java" startLine="314" startPosition="15" endLine="315" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719343" fileName="LanguageErrorsComponent.java" startLine="317" startPosition="46" endLine="318" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719349" fileName="LanguageErrorsComponent.java" startLine="319" startPosition="5" endLine="320" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2132380399759466086" fileName="LanguageErrorsComponent.java" startLine="326" startPosition="29" endLine="327" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2132380399759466095" fileName="LanguageErrorsComponent.java" startLine="329" startPosition="79" endLine="330" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718509" fileName="LanguageErrorsComponent.java" startLine="335" startPosition="62" endLine="336" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718518" fileName="LanguageErrorsComponent.java" startLine="340" startPosition="60" endLine="341" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718527" fileName="LanguageErrorsComponent.java" startLine="345" startPosition="54" endLine="346" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718536" fileName="LanguageErrorsComponent.java" startLine="350" startPosition="52" endLine="351" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086718545" fileName="LanguageErrorsComponent.java" startLine="355" startPosition="60" endLine="356" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719191" fileName="LanguageErrorsComponent.java" startLine="362" startPosition="49" endLine="363" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="368" startPosition="36" endLine="369" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="370" startPosition="5" endLine="371" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7390982340086718590" fileName="LanguageErrorsComponent.java" startLine="74" startPosition="38" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4766865704923559185" fileName="LanguageErrorsComponent.java" startLine="81" startPosition="47" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086718623" fileName="LanguageErrorsComponent.java" startLine="84" startPosition="5" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2132380399756939557" fileName="LanguageErrorsComponent.java" startLine="115" startPosition="62" endLine="118" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2132380399758540897" fileName="LanguageErrorsComponent.java" startLine="132" startPosition="82" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086718810" fileName="LanguageErrorsComponent.java" startLine="142" startPosition="57" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6926756761799928672" fileName="LanguageErrorsComponent.java" startLine="154" startPosition="72" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7390982340086718718" fileName="LanguageErrorsComponent.java" startLine="161" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addError#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/errors/messageTargets/MessageTarget;)V" />
-    <nodeInfo nodeId="6786156891328436217" fileName="LanguageErrorsComponent.java" startLine="165" startPosition="142" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6786156891328436323" fileName="LanguageErrorsComponent.java" startLine="171" startPosition="132" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086719050" fileName="LanguageErrorsComponent.java" startLine="181" startPosition="29" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086719056" fileName="LanguageErrorsComponent.java" startLine="184" startPosition="5" endLine="187" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5658550323136292063" fileName="LanguageErrorsComponent.java" startLine="195" startPosition="71" endLine="198" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9089804454209335375" fileName="LanguageErrorsComponent.java" startLine="205" startPosition="58" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086718905" fileName="LanguageErrorsComponent.java" startLine="209" startPosition="17" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2132380399760757074" fileName="LanguageErrorsComponent.java" startLine="220" startPosition="30" endLine="223" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7390982340086719030" fileName="LanguageErrorsComponent.java" startLine="246" startPosition="64" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7390982340086719106" fileName="LanguageErrorsComponent.java" startLine="267" startPosition="82" endLine="270" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086719120" fileName="LanguageErrorsComponent.java" startLine="277" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processEvent#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
-    <nodeInfo nodeId="7390982340086719135" fileName="LanguageErrorsComponent.java" startLine="281" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processEvent#(Ljetbrains/mps/smodel/event/SModelPropertyEvent;)V" />
-    <nodeInfo nodeId="7390982340086719341" fileName="LanguageErrorsComponent.java" startLine="316" startPosition="5" endLine="319" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2132380399759466074" fileName="LanguageErrorsComponent.java" startLine="325" startPosition="51" endLine="328" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2132380399759486085" fileName="LanguageErrorsComponent.java" startLine="328" startPosition="7" endLine="331" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="367" startPosition="82" endLine="370" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4766865704923402334" fileName="LanguageErrorsComponent.java" startLine="54" startPosition="58" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086719435" fileName="LanguageErrorsComponent.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageErrorsComponent#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="7390982340086718573" fileName="LanguageErrorsComponent.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="2132380399755652705" fileName="LanguageErrorsComponent.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDependencyMapping#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7390982340086718816" fileName="LanguageErrorsComponent.java" startLine="145" startPosition="5" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7425893170003772901" fileName="LanguageErrorsComponent.java" startLine="237" startPosition="35" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="617146245871693090" fileName="LanguageErrorsComponent.java" startLine="270" startPosition="5" endLine="274" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086719261" fileName="LanguageErrorsComponent.java" startLine="290" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeUnclassifiedReadAccess#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7390982340086719272" fileName="LanguageErrorsComponent.java" startLine="295" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodePropertyReadAccess#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7390982340086718503" fileName="LanguageErrorsComponent.java" startLine="334" startPosition="0" endLine="338" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceRemoved#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
-    <nodeInfo nodeId="7390982340086718512" fileName="LanguageErrorsComponent.java" startLine="339" startPosition="0" endLine="343" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceAdded#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
-    <nodeInfo nodeId="7390982340086718521" fileName="LanguageErrorsComponent.java" startLine="344" startPosition="0" endLine="348" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childRemoved#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" />
-    <nodeInfo nodeId="7390982340086718530" fileName="LanguageErrorsComponent.java" startLine="349" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childAdded#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" />
-    <nodeInfo nodeId="7390982340086718539" fileName="LanguageErrorsComponent.java" startLine="354" startPosition="0" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertyChanged#(Ljetbrains/mps/smodel/event/SModelPropertyEvent;)V" />
-    <nodeInfo nodeId="7390982340086718555" fileName="LanguageErrorsComponent.java" startLine="361" startPosition="0" endLine="365" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelRemoved#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="2132380399758640193" fileName="LanguageErrorsComponent.java" startLine="131" startPosition="45" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7390982340086719287" fileName="LanguageErrorsComponent.java" startLine="300" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeReferentReadAccess#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7390982340086719307" fileName="LanguageErrorsComponent.java" startLine="306" startPosition="0" endLine="311" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeChildReadAccess#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7390982340086718586" fileName="LanguageErrorsComponent.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeModelListener#()V" />
-    <nodeInfo nodeId="2132380399756939550" fileName="LanguageErrorsComponent.java" startLine="113" startPosition="95" endLine="119" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086718701" fileName="LanguageErrorsComponent.java" startLine="154" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addError#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="367" startPosition="0" endLine="373" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_29uvfh_a0a0c0cb#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-    <nodeInfo nodeId="2132380399757321547" fileName="LanguageErrorsComponent.java" startLine="193" startPosition="31" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7425893170003054753" fileName="LanguageErrorsComponent.java" startLine="237" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInspector#()Z" />
-    <nodeInfo nodeId="7390982340086719017" fileName="LanguageErrorsComponent.java" startLine="245" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrors#()Ljava/util/Set;" />
-    <nodeInfo nodeId="4766865704923475030" fileName="LanguageErrorsComponent.java" startLine="53" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addToMappedSet#(Ljava/util/Map;Lorg/jetbrains/mps/openapi/model/SNode;null)V" />
-    <nodeInfo nodeId="2132380399756939539" fileName="LanguageErrorsComponent.java" startLine="111" startPosition="81" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2132380399758499820" fileName="LanguageErrorsComponent.java" startLine="130" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependenciesToInvalidate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/Set;" />
-    <nodeInfo nodeId="7390982340086718806" fileName="LanguageErrorsComponent.java" startLine="142" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModelListener#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="7390982340086719046" fileName="LanguageErrorsComponent.java" startLine="181" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invalidate#()V" />
-    <nodeInfo nodeId="2132380399757266642" fileName="LanguageErrorsComponent.java" startLine="192" startPosition="70" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2132380399760757065" fileName="LanguageErrorsComponent.java" startLine="217" startPosition="83" endLine="226" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="7390982340086718494" fileName="LanguageErrorsComponent.java" startLine="324" startPosition="0" endLine="333" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelDisposed#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="7390982340086718604" fileName="LanguageErrorsComponent.java" startLine="81" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDependency#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7390982340086719198" fileName="LanguageErrorsComponent.java" startLine="253" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="7390982340086719095" fileName="LanguageErrorsComponent.java" startLine="266" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processEvent#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" />
-    <nodeInfo nodeId="2132380399760757056" fileName="LanguageErrorsComponent.java" startLine="216" startPosition="78" endLine="227" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2132380399756939537" fileName="LanguageErrorsComponent.java" startLine="109" startPosition="96" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086719068" fileName="LanguageErrorsComponent.java" startLine="191" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invalidateDependency#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6786156891328436159" fileName="LanguageErrorsComponent.java" startLine="165" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addError#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/errors/messageTargets/MessageTarget;Ljetbrains/mps/errors/QuickFixProvider;)V" />
-    <nodeInfo nodeId="2132380399760702292" fileName="LanguageErrorsComponent.java" startLine="214" startPosition="63" endLine="229" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2132380399756937359" fileName="LanguageErrorsComponent.java" startLine="107" startPosition="74" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2132380399756926061" fileName="LanguageErrorsComponent.java" startLine="105" startPosition="0" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7390982340086719254" fileName="LanguageErrorsComponent.java" startLine="288" startPosition="9" endLine="311" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7390982340086719252" fileName="LanguageErrorsComponent.java" startLine="287" startPosition="42" endLine="316" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="2132380399755951310" fileName="LanguageErrorsComponent.java" startLine="99" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeDependencyFromMapping#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
-    <nodeInfo nodeId="7390982340086718897" fileName="LanguageErrorsComponent.java" startLine="204" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Lorg/jetbrains/mps/openapi/module/SRepository;)Z" />
-    <nodeInfo nodeId="7390982340086719232" fileName="LanguageErrorsComponent.java" startLine="285" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runCheckingAction#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
-    <scopeInfo nodeId="7390982340086718594" fileName="LanguageErrorsComponent.java" startLine="75" startPosition="53" endLine="76" endPosition="78" />
-    <scopeInfo nodeId="4766865704923559188" fileName="LanguageErrorsComponent.java" startLine="82" startPosition="32" endLine="83" endPosition="13" />
-    <scopeInfo nodeId="7390982340086718624" fileName="LanguageErrorsComponent.java" startLine="85" startPosition="29" endLine="86" endPosition="13" />
-    <scopeInfo nodeId="2132380399756939558" fileName="LanguageErrorsComponent.java" startLine="116" startPosition="58" endLine="117" endPosition="85" />
-    <scopeInfo nodeId="2132380399758540898" fileName="LanguageErrorsComponent.java" startLine="133" startPosition="119" endLine="134" endPosition="59" />
-    <scopeInfo nodeId="7390982340086718811" fileName="LanguageErrorsComponent.java" startLine="143" startPosition="34" endLine="144" endPosition="13" />
-    <scopeInfo nodeId="6926756761799928675" fileName="LanguageErrorsComponent.java" startLine="155" startPosition="94" endLine="156" endPosition="25" />
-    <scopeInfo nodeId="7390982340086718721" fileName="LanguageErrorsComponent.java" startLine="161" startPosition="106" endLine="162" endPosition="68" />
-    <scopeInfo nodeId="6786156891328436221" fileName="LanguageErrorsComponent.java" startLine="166" startPosition="58" endLine="167" endPosition="13" />
-    <scopeInfo nodeId="6786156891328436324" fileName="LanguageErrorsComponent.java" startLine="172" startPosition="36" endLine="173" endPosition="55" />
-    <scopeInfo nodeId="7390982340086719051" fileName="LanguageErrorsComponent.java" startLine="182" startPosition="68" endLine="183" endPosition="13" />
-    <scopeInfo nodeId="7390982340086719060" fileName="LanguageErrorsComponent.java" startLine="185" startPosition="59" endLine="186" endPosition="41" />
-    <scopeInfo nodeId="5658550323136292066" fileName="LanguageErrorsComponent.java" startLine="196" startPosition="53" endLine="197" endPosition="63" />
-    <scopeInfo nodeId="9089804454209335376" fileName="LanguageErrorsComponent.java" startLine="206" startPosition="23" endLine="207" endPosition="19" />
-    <scopeInfo nodeId="7390982340086718906" fileName="LanguageErrorsComponent.java" startLine="210" startPosition="73" endLine="211" endPosition="19" />
-    <scopeInfo nodeId="2132380399760757078" fileName="LanguageErrorsComponent.java" startLine="221" startPosition="63" endLine="222" endPosition="54" />
-    <scopeInfo nodeId="2132380399760757086" fileName="LanguageErrorsComponent.java" startLine="224" startPosition="19" endLine="225" endPosition="31" />
-    <scopeInfo nodeId="7390982340086719033" fileName="LanguageErrorsComponent.java" startLine="247" startPosition="94" endLine="248" endPosition="83" />
-    <scopeInfo nodeId="7390982340086719107" fileName="LanguageErrorsComponent.java" startLine="268" startPosition="28" endLine="269" endPosition="83" />
-    <scopeInfo nodeId="7390982340086719123" fileName="LanguageErrorsComponent.java" startLine="277" startPosition="57" endLine="278" endPosition="101" />
-    <scopeInfo nodeId="7390982340086719138" fileName="LanguageErrorsComponent.java" startLine="281" startPosition="56" endLine="282" endPosition="80" />
-    <scopeInfo nodeId="7390982340086719266" fileName="LanguageErrorsComponent.java" startLine="291" startPosition="60" endLine="292" endPosition="62" />
-    <scopeInfo nodeId="7390982340086719281" fileName="LanguageErrorsComponent.java" startLine="296" startPosition="83" endLine="297" endPosition="62" />
-    <scopeInfo nodeId="7390982340086719338" fileName="LanguageErrorsComponent.java" startLine="314" startPosition="15" endLine="315" endPosition="53" />
-    <scopeInfo nodeId="7390982340086719342" fileName="LanguageErrorsComponent.java" startLine="317" startPosition="46" endLine="318" endPosition="34" />
-    <scopeInfo nodeId="2132380399759466085" fileName="LanguageErrorsComponent.java" startLine="326" startPosition="29" endLine="327" endPosition="15" />
-    <scopeInfo nodeId="2132380399759486088" fileName="LanguageErrorsComponent.java" startLine="329" startPosition="79" endLine="330" endPosition="53" />
-    <scopeInfo nodeId="7390982340086718508" fileName="LanguageErrorsComponent.java" startLine="335" startPosition="62" endLine="336" endPosition="26" />
-    <scopeInfo nodeId="7390982340086718517" fileName="LanguageErrorsComponent.java" startLine="340" startPosition="60" endLine="341" endPosition="26" />
-    <scopeInfo nodeId="7390982340086718526" fileName="LanguageErrorsComponent.java" startLine="345" startPosition="54" endLine="346" endPosition="26" />
-    <scopeInfo nodeId="7390982340086718535" fileName="LanguageErrorsComponent.java" startLine="350" startPosition="52" endLine="351" endPosition="26" />
-    <scopeInfo nodeId="7390982340086718544" fileName="LanguageErrorsComponent.java" startLine="355" startPosition="60" endLine="356" endPosition="26" />
-    <scopeInfo nodeId="7390982340086718560" fileName="LanguageErrorsComponent.java" startLine="362" startPosition="49" endLine="363" endPosition="70" />
-    <scopeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="368" startPosition="36" endLine="369" endPosition="46" />
-    <scopeInfo nodeId="4766865704923402335" fileName="LanguageErrorsComponent.java" startLine="55" startPosition="29" endLine="57" endPosition="52" />
-    <scopeInfo nodeId="7390982340086719438" fileName="LanguageErrorsComponent.java" startLine="64" startPosition="48" endLine="66" endPosition="89" />
-    <scopeInfo nodeId="7390982340086718576" fileName="LanguageErrorsComponent.java" startLine="69" startPosition="25" endLine="71" endPosition="92" />
-    <scopeInfo nodeId="2132380399755652708" fileName="LanguageErrorsComponent.java" startLine="94" startPosition="85" endLine="96" endPosition="60" />
-    <scopeInfo nodeId="7390982340086718817" fileName="LanguageErrorsComponent.java" startLine="146" startPosition="77" endLine="148" endPosition="72" />
-    <scopeInfo nodeId="7425893170003772904" fileName="LanguageErrorsComponent.java" startLine="238" startPosition="28" endLine="240" endPosition="18" />
-    <scopeInfo nodeId="617146245871693091" fileName="LanguageErrorsComponent.java" startLine="271" startPosition="26" endLine="273" endPosition="71" />
-    <scopeInfo nodeId="7390982340086719296" fileName="LanguageErrorsComponent.java" startLine="301" startPosition="85" endLine="303" endPosition="66" />
-    <scopeInfo nodeId="7390982340086719316" fileName="LanguageErrorsComponent.java" startLine="307" startPosition="79" endLine="309" endPosition="63" />
-    <scopeInfo nodeId="7390982340086718590" fileName="LanguageErrorsComponent.java" startLine="74" startPosition="38" endLine="77" endPosition="5">
+    <nodeInfo nodeId="7390982340086719359" fileName="LanguageErrorsComponent.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToErrors" />
+    <nodeInfo nodeId="7390982340086719370" fileName="LanguageErrorsComponent.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependenciesToNodes" />
+    <nodeInfo nodeId="7390982340086719381" fileName="LanguageErrorsComponent.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToDependecies" />
+    <nodeInfo nodeId="7390982340086719392" fileName="LanguageErrorsComponent.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInvalidNodes" />
+    <nodeInfo nodeId="7390982340086719399" fileName="LanguageErrorsComponent.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependenciesToInvalidate" />
+    <nodeInfo nodeId="7390982340086719406" fileName="LanguageErrorsComponent.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelListener" />
+    <nodeInfo nodeId="7390982340086719411" fileName="LanguageErrorsComponent.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelRepositoryListener" />
+    <nodeInfo nodeId="7390982340086719416" fileName="LanguageErrorsComponent.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListenedModels" />
+    <nodeInfo nodeId="7390982340086719423" fileName="LanguageErrorsComponent.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckedRoot" />
+    <nodeInfo nodeId="7390982340086719427" fileName="LanguageErrorsComponent.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrentNode" />
+    <nodeInfo nodeId="7425893169997366865" fileName="LanguageErrorsComponent.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="7425893170003471813" fileName="LanguageErrorsComponent.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUpdateInspector" />
+    <nodeInfo nodeId="4766865704923402327" fileName="LanguageErrorsComponent.java" startLine="55" startPosition="86" endLine="56" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4766865704923402336" fileName="LanguageErrorsComponent.java" startLine="57" startPosition="29" endLine="58" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4766865704923402343" fileName="LanguageErrorsComponent.java" startLine="58" startPosition="37" endLine="59" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4766865704923402352" fileName="LanguageErrorsComponent.java" startLine="60" startPosition="5" endLine="61" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719439" fileName="LanguageErrorsComponent.java" startLine="66" startPosition="48" endLine="67" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719443" fileName="LanguageErrorsComponent.java" startLine="67" startPosition="20" endLine="68" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718577" fileName="LanguageErrorsComponent.java" startLine="71" startPosition="25" endLine="72" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718581" fileName="LanguageErrorsComponent.java" startLine="72" startPosition="31" endLine="73" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718595" fileName="LanguageErrorsComponent.java" startLine="77" startPosition="53" endLine="78" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718600" fileName="LanguageErrorsComponent.java" startLine="79" startPosition="5" endLine="80" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4766865704923560608" fileName="LanguageErrorsComponent.java" startLine="84" startPosition="32" endLine="85" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086718625" fileName="LanguageErrorsComponent.java" startLine="87" startPosition="29" endLine="88" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2132380399755818463" fileName="LanguageErrorsComponent.java" startLine="89" startPosition="5" endLine="90" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718689" fileName="LanguageErrorsComponent.java" startLine="90" startPosition="52" endLine="91" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4766865704923541968" fileName="LanguageErrorsComponent.java" startLine="96" startPosition="85" endLine="97" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4766865704923529509" fileName="LanguageErrorsComponent.java" startLine="97" startPosition="59" endLine="98" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399757056002" fileName="LanguageErrorsComponent.java" startLine="101" startPosition="77" endLine="102" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2132380399757067602" fileName="LanguageErrorsComponent.java" startLine="102" startPosition="82" endLine="103" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2132380399757048965" fileName="LanguageErrorsComponent.java" startLine="103" startPosition="41" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2132380399756871160" fileName="LanguageErrorsComponent.java" startLine="104" startPosition="0" endLine="105" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2132380399756084688" fileName="LanguageErrorsComponent.java" startLine="105" startPosition="72" endLine="106" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2132380399756975775" fileName="LanguageErrorsComponent.java" startLine="106" startPosition="88" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2132380399756981817" fileName="LanguageErrorsComponent.java" startLine="108" startPosition="24" endLine="109" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2132380399756939529" fileName="LanguageErrorsComponent.java" startLine="110" startPosition="32" endLine="111" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2132380399757046529" fileName="LanguageErrorsComponent.java" startLine="112" startPosition="39" endLine="113" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2132380399756939543" fileName="LanguageErrorsComponent.java" startLine="114" startPosition="57" endLine="115" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2132380399756939552" fileName="LanguageErrorsComponent.java" startLine="116" startPosition="33" endLine="117" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399756939559" fileName="LanguageErrorsComponent.java" startLine="118" startPosition="58" endLine="119" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399756939338" fileName="LanguageErrorsComponent.java" startLine="123" startPosition="9" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2132380399757112017" fileName="LanguageErrorsComponent.java" startLine="126" startPosition="5" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2132380399757510562" fileName="LanguageErrorsComponent.java" startLine="127" startPosition="0" endLine="128" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2132380399757117920" fileName="LanguageErrorsComponent.java" startLine="128" startPosition="61" endLine="129" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2132380399758616876" fileName="LanguageErrorsComponent.java" startLine="132" startPosition="64" endLine="133" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2132380399759213662" fileName="LanguageErrorsComponent.java" startLine="135" startPosition="134" endLine="136" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399759238093" fileName="LanguageErrorsComponent.java" startLine="138" startPosition="5" endLine="139" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086718812" fileName="LanguageErrorsComponent.java" startLine="145" startPosition="34" endLine="146" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086718818" fileName="LanguageErrorsComponent.java" startLine="148" startPosition="77" endLine="149" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718823" fileName="LanguageErrorsComponent.java" startLine="149" startPosition="75" endLine="150" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6926756761799928686" fileName="LanguageErrorsComponent.java" startLine="157" startPosition="94" endLine="158" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718705" fileName="LanguageErrorsComponent.java" startLine="159" startPosition="5" endLine="160" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8055860683983271230" fileName="LanguageErrorsComponent.java" startLine="163" startPosition="106" endLine="164" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6786156891328436222" fileName="LanguageErrorsComponent.java" startLine="168" startPosition="58" endLine="169" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6786156891328436223" fileName="LanguageErrorsComponent.java" startLine="170" startPosition="5" endLine="171" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6786156891328436235" fileName="LanguageErrorsComponent.java" startLine="171" startPosition="76" endLine="172" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6786156891328436249" fileName="LanguageErrorsComponent.java" startLine="172" startPosition="97" endLine="173" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6786156891328436292" fileName="LanguageErrorsComponent.java" startLine="174" startPosition="36" endLine="175" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399754952266" fileName="LanguageErrorsComponent.java" startLine="176" startPosition="5" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2132380399754955001" fileName="LanguageErrorsComponent.java" startLine="177" startPosition="0" endLine="178" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719052" fileName="LanguageErrorsComponent.java" startLine="184" startPosition="68" endLine="185" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086719061" fileName="LanguageErrorsComponent.java" startLine="187" startPosition="59" endLine="188" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719064" fileName="LanguageErrorsComponent.java" startLine="189" startPosition="5" endLine="190" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399757261666" fileName="LanguageErrorsComponent.java" startLine="193" startPosition="55" endLine="194" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658550323136456023" fileName="LanguageErrorsComponent.java" startLine="196" startPosition="39" endLine="197" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7390982340086718839" fileName="LanguageErrorsComponent.java" startLine="198" startPosition="53" endLine="199" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718844" fileName="LanguageErrorsComponent.java" startLine="200" startPosition="9" endLine="201" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718901" fileName="LanguageErrorsComponent.java" startLine="206" startPosition="102" endLine="207" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9089804454209335404" fileName="LanguageErrorsComponent.java" startLine="208" startPosition="23" endLine="209" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086718903" fileName="LanguageErrorsComponent.java" startLine="210" startPosition="5" endLine="211" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718907" fileName="LanguageErrorsComponent.java" startLine="212" startPosition="73" endLine="213" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2132380399760531726" fileName="LanguageErrorsComponent.java" startLine="214" startPosition="5" endLine="215" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2132380399760610451" fileName="LanguageErrorsComponent.java" startLine="215" startPosition="81" endLine="216" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399760753692" fileName="LanguageErrorsComponent.java" startLine="217" startPosition="64" endLine="218" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2132380399760757067" fileName="LanguageErrorsComponent.java" startLine="220" startPosition="13" endLine="221" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399760757071" fileName="LanguageErrorsComponent.java" startLine="221" startPosition="31" endLine="222" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399760757079" fileName="LanguageErrorsComponent.java" startLine="223" startPosition="63" endLine="224" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399760757087" fileName="LanguageErrorsComponent.java" startLine="226" startPosition="19" endLine="227" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2132380399760871654" fileName="LanguageErrorsComponent.java" startLine="229" startPosition="7" endLine="230" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2116795276266150129" fileName="LanguageErrorsComponent.java" startLine="231" startPosition="5" endLine="232" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2116795276266242877" fileName="LanguageErrorsComponent.java" startLine="232" startPosition="76" endLine="233" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719004" fileName="LanguageErrorsComponent.java" startLine="233" startPosition="48" endLine="234" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7425893170003543913" fileName="LanguageErrorsComponent.java" startLine="234" startPosition="25" endLine="235" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719008" fileName="LanguageErrorsComponent.java" startLine="235" startPosition="29" endLine="236" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7425893170003836494" fileName="LanguageErrorsComponent.java" startLine="240" startPosition="28" endLine="241" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7425893170003837678" fileName="LanguageErrorsComponent.java" startLine="241" startPosition="32" endLine="242" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7425893170003607887" fileName="LanguageErrorsComponent.java" startLine="243" startPosition="5" endLine="244" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086719022" fileName="LanguageErrorsComponent.java" startLine="247" startPosition="42" endLine="248" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086719034" fileName="LanguageErrorsComponent.java" startLine="249" startPosition="94" endLine="250" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719044" fileName="LanguageErrorsComponent.java" startLine="251" startPosition="5" endLine="252" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086719202" fileName="LanguageErrorsComponent.java" startLine="255" startPosition="23" endLine="256" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719206" fileName="LanguageErrorsComponent.java" startLine="256" startPosition="26" endLine="257" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719210" fileName="LanguageErrorsComponent.java" startLine="257" startPosition="60" endLine="258" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719214" fileName="LanguageErrorsComponent.java" startLine="258" startPosition="48" endLine="259" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719218" fileName="LanguageErrorsComponent.java" startLine="259" startPosition="25" endLine="260" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719222" fileName="LanguageErrorsComponent.java" startLine="260" startPosition="55" endLine="261" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719226" fileName="LanguageErrorsComponent.java" startLine="261" startPosition="54" endLine="262" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719230" fileName="LanguageErrorsComponent.java" startLine="262" startPosition="49" endLine="263" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719099" fileName="LanguageErrorsComponent.java" startLine="268" startPosition="53" endLine="269" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719108" fileName="LanguageErrorsComponent.java" startLine="270" startPosition="28" endLine="271" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="617146245871693100" fileName="LanguageErrorsComponent.java" startLine="273" startPosition="26" endLine="274" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="617146245871693120" fileName="LanguageErrorsComponent.java" startLine="274" startPosition="166" endLine="275" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719124" fileName="LanguageErrorsComponent.java" startLine="279" startPosition="57" endLine="280" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719139" fileName="LanguageErrorsComponent.java" startLine="283" startPosition="56" endLine="284" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719236" fileName="LanguageErrorsComponent.java" startLine="287" startPosition="99" endLine="288" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086719243" fileName="LanguageErrorsComponent.java" startLine="288" startPosition="58" endLine="289" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086719267" fileName="LanguageErrorsComponent.java" startLine="293" startPosition="60" endLine="294" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719282" fileName="LanguageErrorsComponent.java" startLine="298" startPosition="83" endLine="299" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719297" fileName="LanguageErrorsComponent.java" startLine="303" startPosition="85" endLine="304" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719302" fileName="LanguageErrorsComponent.java" startLine="304" startPosition="62" endLine="305" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719317" fileName="LanguageErrorsComponent.java" startLine="309" startPosition="79" endLine="310" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719322" fileName="LanguageErrorsComponent.java" startLine="310" startPosition="62" endLine="311" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719327" fileName="LanguageErrorsComponent.java" startLine="313" startPosition="8" endLine="314" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719330" fileName="LanguageErrorsComponent.java" startLine="314" startPosition="58" endLine="315" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719339" fileName="LanguageErrorsComponent.java" startLine="316" startPosition="15" endLine="317" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719343" fileName="LanguageErrorsComponent.java" startLine="319" startPosition="46" endLine="320" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719349" fileName="LanguageErrorsComponent.java" startLine="321" startPosition="5" endLine="322" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2132380399759466086" fileName="LanguageErrorsComponent.java" startLine="328" startPosition="29" endLine="329" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2132380399759466095" fileName="LanguageErrorsComponent.java" startLine="331" startPosition="79" endLine="332" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718509" fileName="LanguageErrorsComponent.java" startLine="337" startPosition="62" endLine="338" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718518" fileName="LanguageErrorsComponent.java" startLine="342" startPosition="60" endLine="343" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718527" fileName="LanguageErrorsComponent.java" startLine="347" startPosition="54" endLine="348" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718536" fileName="LanguageErrorsComponent.java" startLine="352" startPosition="52" endLine="353" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086718545" fileName="LanguageErrorsComponent.java" startLine="357" startPosition="60" endLine="358" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719191" fileName="LanguageErrorsComponent.java" startLine="364" startPosition="49" endLine="365" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="370" startPosition="36" endLine="371" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="372" startPosition="5" endLine="373" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7390982340086718590" fileName="LanguageErrorsComponent.java" startLine="76" startPosition="38" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4766865704923559185" fileName="LanguageErrorsComponent.java" startLine="83" startPosition="47" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086718623" fileName="LanguageErrorsComponent.java" startLine="86" startPosition="5" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2132380399756939557" fileName="LanguageErrorsComponent.java" startLine="117" startPosition="62" endLine="120" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2132380399758540897" fileName="LanguageErrorsComponent.java" startLine="134" startPosition="82" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086718810" fileName="LanguageErrorsComponent.java" startLine="144" startPosition="57" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6926756761799928672" fileName="LanguageErrorsComponent.java" startLine="156" startPosition="72" endLine="159" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7390982340086718718" fileName="LanguageErrorsComponent.java" startLine="163" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addError#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/errors/messageTargets/MessageTarget;)V" />
+    <nodeInfo nodeId="6786156891328436217" fileName="LanguageErrorsComponent.java" startLine="167" startPosition="142" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6786156891328436323" fileName="LanguageErrorsComponent.java" startLine="173" startPosition="132" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086719050" fileName="LanguageErrorsComponent.java" startLine="183" startPosition="29" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086719056" fileName="LanguageErrorsComponent.java" startLine="186" startPosition="5" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5658550323136292063" fileName="LanguageErrorsComponent.java" startLine="197" startPosition="71" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9089804454209335375" fileName="LanguageErrorsComponent.java" startLine="207" startPosition="58" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086718905" fileName="LanguageErrorsComponent.java" startLine="211" startPosition="17" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2132380399760757074" fileName="LanguageErrorsComponent.java" startLine="222" startPosition="30" endLine="225" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7390982340086719030" fileName="LanguageErrorsComponent.java" startLine="248" startPosition="64" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7390982340086719106" fileName="LanguageErrorsComponent.java" startLine="269" startPosition="82" endLine="272" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086719120" fileName="LanguageErrorsComponent.java" startLine="279" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processEvent#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
+    <nodeInfo nodeId="7390982340086719135" fileName="LanguageErrorsComponent.java" startLine="283" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processEvent#(Ljetbrains/mps/smodel/event/SModelPropertyEvent;)V" />
+    <nodeInfo nodeId="7390982340086719341" fileName="LanguageErrorsComponent.java" startLine="318" startPosition="5" endLine="321" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2132380399759466074" fileName="LanguageErrorsComponent.java" startLine="327" startPosition="51" endLine="330" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2132380399759486085" fileName="LanguageErrorsComponent.java" startLine="330" startPosition="7" endLine="333" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="369" startPosition="82" endLine="372" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4766865704923402334" fileName="LanguageErrorsComponent.java" startLine="56" startPosition="58" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086719435" fileName="LanguageErrorsComponent.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageErrorsComponent#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="7390982340086718573" fileName="LanguageErrorsComponent.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="2132380399755652705" fileName="LanguageErrorsComponent.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDependencyMapping#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7390982340086718816" fileName="LanguageErrorsComponent.java" startLine="147" startPosition="5" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7425893170003772901" fileName="LanguageErrorsComponent.java" startLine="239" startPosition="35" endLine="243" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="617146245871693090" fileName="LanguageErrorsComponent.java" startLine="272" startPosition="5" endLine="276" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086719261" fileName="LanguageErrorsComponent.java" startLine="292" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeUnclassifiedReadAccess#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7390982340086719272" fileName="LanguageErrorsComponent.java" startLine="297" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodePropertyReadAccess#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7390982340086718503" fileName="LanguageErrorsComponent.java" startLine="336" startPosition="0" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceRemoved#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
+    <nodeInfo nodeId="7390982340086718512" fileName="LanguageErrorsComponent.java" startLine="341" startPosition="0" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceAdded#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
+    <nodeInfo nodeId="7390982340086718521" fileName="LanguageErrorsComponent.java" startLine="346" startPosition="0" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childRemoved#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" />
+    <nodeInfo nodeId="7390982340086718530" fileName="LanguageErrorsComponent.java" startLine="351" startPosition="0" endLine="355" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="childAdded#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" />
+    <nodeInfo nodeId="7390982340086718539" fileName="LanguageErrorsComponent.java" startLine="356" startPosition="0" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertyChanged#(Ljetbrains/mps/smodel/event/SModelPropertyEvent;)V" />
+    <nodeInfo nodeId="7390982340086718555" fileName="LanguageErrorsComponent.java" startLine="363" startPosition="0" endLine="367" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelRemoved#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="2132380399758640193" fileName="LanguageErrorsComponent.java" startLine="133" startPosition="45" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7390982340086719287" fileName="LanguageErrorsComponent.java" startLine="302" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeReferentReadAccess#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7390982340086719307" fileName="LanguageErrorsComponent.java" startLine="308" startPosition="0" endLine="313" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeChildReadAccess#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7390982340086718586" fileName="LanguageErrorsComponent.java" startLine="76" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeModelListener#()V" />
+    <nodeInfo nodeId="2132380399756939550" fileName="LanguageErrorsComponent.java" startLine="115" startPosition="95" endLine="121" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086718701" fileName="LanguageErrorsComponent.java" startLine="156" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addError#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="369" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_29uvfh_a0a0c0cb#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+    <nodeInfo nodeId="2132380399757321547" fileName="LanguageErrorsComponent.java" startLine="195" startPosition="31" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7425893170003054753" fileName="LanguageErrorsComponent.java" startLine="239" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInspector#()Z" />
+    <nodeInfo nodeId="7390982340086719017" fileName="LanguageErrorsComponent.java" startLine="247" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrors#()Ljava/util/Set;" />
+    <nodeInfo nodeId="4766865704923475030" fileName="LanguageErrorsComponent.java" startLine="55" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addToMappedSet#(Ljava/util/Map;Lorg/jetbrains/mps/openapi/model/SNode;null)V" />
+    <nodeInfo nodeId="2132380399756939539" fileName="LanguageErrorsComponent.java" startLine="113" startPosition="81" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2132380399758499820" fileName="LanguageErrorsComponent.java" startLine="132" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependenciesToInvalidate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/Set;" />
+    <nodeInfo nodeId="7390982340086718806" fileName="LanguageErrorsComponent.java" startLine="144" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModelListener#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="7390982340086719046" fileName="LanguageErrorsComponent.java" startLine="183" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invalidate#()V" />
+    <nodeInfo nodeId="2132380399757266642" fileName="LanguageErrorsComponent.java" startLine="194" startPosition="70" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2132380399760757065" fileName="LanguageErrorsComponent.java" startLine="219" startPosition="83" endLine="228" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="7390982340086718494" fileName="LanguageErrorsComponent.java" startLine="326" startPosition="0" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelDisposed#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="7390982340086718604" fileName="LanguageErrorsComponent.java" startLine="83" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addDependency#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7390982340086719198" fileName="LanguageErrorsComponent.java" startLine="255" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
+    <nodeInfo nodeId="7390982340086719095" fileName="LanguageErrorsComponent.java" startLine="268" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processEvent#(Ljetbrains/mps/smodel/event/SModelChildEvent;)V" />
+    <nodeInfo nodeId="2132380399760757056" fileName="LanguageErrorsComponent.java" startLine="218" startPosition="78" endLine="229" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2132380399756939537" fileName="LanguageErrorsComponent.java" startLine="111" startPosition="96" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086719068" fileName="LanguageErrorsComponent.java" startLine="193" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invalidateDependency#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6786156891328436159" fileName="LanguageErrorsComponent.java" startLine="167" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addError#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/errors/messageTargets/MessageTarget;Ljetbrains/mps/errors/QuickFixProvider;)V" />
+    <nodeInfo nodeId="2132380399760702292" fileName="LanguageErrorsComponent.java" startLine="216" startPosition="63" endLine="231" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2132380399756937359" fileName="LanguageErrorsComponent.java" startLine="109" startPosition="74" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2132380399756926061" fileName="LanguageErrorsComponent.java" startLine="107" startPosition="0" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7390982340086719254" fileName="LanguageErrorsComponent.java" startLine="290" startPosition="9" endLine="313" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086719252" fileName="LanguageErrorsComponent.java" startLine="289" startPosition="42" endLine="318" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="2132380399755951310" fileName="LanguageErrorsComponent.java" startLine="101" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeDependencyFromMapping#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="7390982340086718897" fileName="LanguageErrorsComponent.java" startLine="206" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Lorg/jetbrains/mps/openapi/module/SRepository;)Z" />
+    <nodeInfo nodeId="7390982340086719232" fileName="LanguageErrorsComponent.java" startLine="287" startPosition="0" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runCheckingAction#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
+    <scopeInfo nodeId="7390982340086718594" fileName="LanguageErrorsComponent.java" startLine="77" startPosition="53" endLine="78" endPosition="78" />
+    <scopeInfo nodeId="4766865704923559188" fileName="LanguageErrorsComponent.java" startLine="84" startPosition="32" endLine="85" endPosition="13" />
+    <scopeInfo nodeId="7390982340086718624" fileName="LanguageErrorsComponent.java" startLine="87" startPosition="29" endLine="88" endPosition="13" />
+    <scopeInfo nodeId="2132380399756939558" fileName="LanguageErrorsComponent.java" startLine="118" startPosition="58" endLine="119" endPosition="85" />
+    <scopeInfo nodeId="2132380399758540898" fileName="LanguageErrorsComponent.java" startLine="135" startPosition="134" endLine="136" endPosition="59" />
+    <scopeInfo nodeId="7390982340086718811" fileName="LanguageErrorsComponent.java" startLine="145" startPosition="34" endLine="146" endPosition="13" />
+    <scopeInfo nodeId="6926756761799928675" fileName="LanguageErrorsComponent.java" startLine="157" startPosition="94" endLine="158" endPosition="25" />
+    <scopeInfo nodeId="7390982340086718721" fileName="LanguageErrorsComponent.java" startLine="163" startPosition="106" endLine="164" endPosition="68" />
+    <scopeInfo nodeId="6786156891328436221" fileName="LanguageErrorsComponent.java" startLine="168" startPosition="58" endLine="169" endPosition="13" />
+    <scopeInfo nodeId="6786156891328436324" fileName="LanguageErrorsComponent.java" startLine="174" startPosition="36" endLine="175" endPosition="55" />
+    <scopeInfo nodeId="7390982340086719051" fileName="LanguageErrorsComponent.java" startLine="184" startPosition="68" endLine="185" endPosition="13" />
+    <scopeInfo nodeId="7390982340086719060" fileName="LanguageErrorsComponent.java" startLine="187" startPosition="59" endLine="188" endPosition="41" />
+    <scopeInfo nodeId="5658550323136292066" fileName="LanguageErrorsComponent.java" startLine="198" startPosition="53" endLine="199" endPosition="63" />
+    <scopeInfo nodeId="9089804454209335376" fileName="LanguageErrorsComponent.java" startLine="208" startPosition="23" endLine="209" endPosition="19" />
+    <scopeInfo nodeId="7390982340086718906" fileName="LanguageErrorsComponent.java" startLine="212" startPosition="73" endLine="213" endPosition="19" />
+    <scopeInfo nodeId="2132380399760757078" fileName="LanguageErrorsComponent.java" startLine="223" startPosition="63" endLine="224" endPosition="54" />
+    <scopeInfo nodeId="2132380399760757086" fileName="LanguageErrorsComponent.java" startLine="226" startPosition="19" endLine="227" endPosition="31" />
+    <scopeInfo nodeId="7390982340086719033" fileName="LanguageErrorsComponent.java" startLine="249" startPosition="94" endLine="250" endPosition="83" />
+    <scopeInfo nodeId="7390982340086719107" fileName="LanguageErrorsComponent.java" startLine="270" startPosition="28" endLine="271" endPosition="83" />
+    <scopeInfo nodeId="7390982340086719123" fileName="LanguageErrorsComponent.java" startLine="279" startPosition="57" endLine="280" endPosition="101" />
+    <scopeInfo nodeId="7390982340086719138" fileName="LanguageErrorsComponent.java" startLine="283" startPosition="56" endLine="284" endPosition="80" />
+    <scopeInfo nodeId="7390982340086719266" fileName="LanguageErrorsComponent.java" startLine="293" startPosition="60" endLine="294" endPosition="62" />
+    <scopeInfo nodeId="7390982340086719281" fileName="LanguageErrorsComponent.java" startLine="298" startPosition="83" endLine="299" endPosition="62" />
+    <scopeInfo nodeId="7390982340086719338" fileName="LanguageErrorsComponent.java" startLine="316" startPosition="15" endLine="317" endPosition="53" />
+    <scopeInfo nodeId="7390982340086719342" fileName="LanguageErrorsComponent.java" startLine="319" startPosition="46" endLine="320" endPosition="34" />
+    <scopeInfo nodeId="2132380399759466085" fileName="LanguageErrorsComponent.java" startLine="328" startPosition="29" endLine="329" endPosition="15" />
+    <scopeInfo nodeId="2132380399759486088" fileName="LanguageErrorsComponent.java" startLine="331" startPosition="79" endLine="332" endPosition="53" />
+    <scopeInfo nodeId="7390982340086718508" fileName="LanguageErrorsComponent.java" startLine="337" startPosition="62" endLine="338" endPosition="26" />
+    <scopeInfo nodeId="7390982340086718517" fileName="LanguageErrorsComponent.java" startLine="342" startPosition="60" endLine="343" endPosition="26" />
+    <scopeInfo nodeId="7390982340086718526" fileName="LanguageErrorsComponent.java" startLine="347" startPosition="54" endLine="348" endPosition="26" />
+    <scopeInfo nodeId="7390982340086718535" fileName="LanguageErrorsComponent.java" startLine="352" startPosition="52" endLine="353" endPosition="26" />
+    <scopeInfo nodeId="7390982340086718544" fileName="LanguageErrorsComponent.java" startLine="357" startPosition="60" endLine="358" endPosition="26" />
+    <scopeInfo nodeId="7390982340086718560" fileName="LanguageErrorsComponent.java" startLine="364" startPosition="49" endLine="365" endPosition="70" />
+    <scopeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="370" startPosition="36" endLine="371" endPosition="46" />
+    <scopeInfo nodeId="4766865704923402335" fileName="LanguageErrorsComponent.java" startLine="57" startPosition="29" endLine="59" endPosition="52" />
+    <scopeInfo nodeId="7390982340086719438" fileName="LanguageErrorsComponent.java" startLine="66" startPosition="48" endLine="68" endPosition="89" />
+    <scopeInfo nodeId="7390982340086718576" fileName="LanguageErrorsComponent.java" startLine="71" startPosition="25" endLine="73" endPosition="92" />
+    <scopeInfo nodeId="2132380399755652708" fileName="LanguageErrorsComponent.java" startLine="96" startPosition="85" endLine="98" endPosition="60" />
+    <scopeInfo nodeId="7390982340086718817" fileName="LanguageErrorsComponent.java" startLine="148" startPosition="77" endLine="150" endPosition="72" />
+    <scopeInfo nodeId="7425893170003772904" fileName="LanguageErrorsComponent.java" startLine="240" startPosition="28" endLine="242" endPosition="18" />
+    <scopeInfo nodeId="617146245871693091" fileName="LanguageErrorsComponent.java" startLine="273" startPosition="26" endLine="275" endPosition="71" />
+    <scopeInfo nodeId="7390982340086719296" fileName="LanguageErrorsComponent.java" startLine="303" startPosition="85" endLine="305" endPosition="66" />
+    <scopeInfo nodeId="7390982340086719316" fileName="LanguageErrorsComponent.java" startLine="309" startPosition="79" endLine="311" endPosition="63" />
+    <scopeInfo nodeId="7390982340086718590" fileName="LanguageErrorsComponent.java" startLine="76" startPosition="38" endLine="79" endPosition="5">
       <varInfo nodeId="7390982340086718591" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399758640196" fileName="LanguageErrorsComponent.java" startLine="132" startPosition="82" endLine="135" endPosition="7" />
-    <scopeInfo nodeId="6926756761799928672" fileName="LanguageErrorsComponent.java" startLine="154" startPosition="72" endLine="157" endPosition="5">
+    <scopeInfo nodeId="2132380399758640196" fileName="LanguageErrorsComponent.java" startLine="134" startPosition="82" endLine="137" endPosition="7" />
+    <scopeInfo nodeId="6926756761799928672" fileName="LanguageErrorsComponent.java" startLine="156" startPosition="72" endLine="159" endPosition="5">
       <varInfo nodeId="6926756761799928673" varName="anc" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718718" fileName="LanguageErrorsComponent.java" startLine="161" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="7390982340086718718" fileName="LanguageErrorsComponent.java" startLine="163" startPosition="0" endLine="166" endPosition="0">
       <varInfo nodeId="7390982340086718798" varName="errorNode" />
       <varInfo nodeId="7390982340086718800" varName="errorString" />
       <varInfo nodeId="7390982340086718804" varName="messageTarget" />
       <varInfo nodeId="7390982340086718802" varName="ruleNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719056" fileName="LanguageErrorsComponent.java" startLine="184" startPosition="5" endLine="187" endPosition="5">
+    <scopeInfo nodeId="7390982340086719056" fileName="LanguageErrorsComponent.java" startLine="186" startPosition="5" endLine="189" endPosition="5">
       <varInfo nodeId="7390982340086719057" varName="toInvalidate" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399760757074" fileName="LanguageErrorsComponent.java" startLine="220" startPosition="30" endLine="223" endPosition="11">
+    <scopeInfo nodeId="2132380399760757074" fileName="LanguageErrorsComponent.java" startLine="222" startPosition="30" endLine="225" endPosition="11">
       <varInfo nodeId="2132380399760757075" varName="checker" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719030" fileName="LanguageErrorsComponent.java" startLine="246" startPosition="64" endLine="249" endPosition="5">
+    <scopeInfo nodeId="7390982340086719030" fileName="LanguageErrorsComponent.java" startLine="248" startPosition="64" endLine="251" endPosition="5">
       <varInfo nodeId="7390982340086719031" varName="errorReporters" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719120" fileName="LanguageErrorsComponent.java" startLine="277" startPosition="0" endLine="280" endPosition="0">
+    <scopeInfo nodeId="7390982340086719120" fileName="LanguageErrorsComponent.java" startLine="279" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="7390982340086719133" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719135" fileName="LanguageErrorsComponent.java" startLine="281" startPosition="0" endLine="284" endPosition="0">
+    <scopeInfo nodeId="7390982340086719135" fileName="LanguageErrorsComponent.java" startLine="283" startPosition="0" endLine="286" endPosition="0">
       <varInfo nodeId="7390982340086719146" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719341" fileName="LanguageErrorsComponent.java" startLine="316" startPosition="5" endLine="319" endPosition="5">
+    <scopeInfo nodeId="7390982340086719341" fileName="LanguageErrorsComponent.java" startLine="318" startPosition="5" endLine="321" endPosition="5">
       <varInfo nodeId="7390982340086719346" varName="accessedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399759486085" fileName="LanguageErrorsComponent.java" startLine="328" startPosition="7" endLine="331" endPosition="7">
+    <scopeInfo nodeId="2132380399759486085" fileName="LanguageErrorsComponent.java" startLine="330" startPosition="7" endLine="333" endPosition="7">
       <varInfo nodeId="2132380399759486091" varName="dependencyToInvalidate" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719435" fileName="LanguageErrorsComponent.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="7390982340086719435" fileName="LanguageErrorsComponent.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="7390982340086719448" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718573" fileName="LanguageErrorsComponent.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="7390982340086718589" fileName="LanguageErrorsComponent.java" startLine="74" startPosition="38" endLine="78" endPosition="50" />
-    <scopeInfo nodeId="2132380399755652705" fileName="LanguageErrorsComponent.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="7390982340086718573" fileName="LanguageErrorsComponent.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="7390982340086718589" fileName="LanguageErrorsComponent.java" startLine="76" startPosition="38" endLine="80" endPosition="50" />
+    <scopeInfo nodeId="2132380399755652705" fileName="LanguageErrorsComponent.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="2132380399755733466" varName="dependency" />
       <varInfo nodeId="2132380399755690915" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399756939551" fileName="LanguageErrorsComponent.java" startLine="114" startPosition="33" endLine="118" endPosition="15" />
-    <scopeInfo nodeId="7390982340086718704" fileName="LanguageErrorsComponent.java" startLine="154" startPosition="72" endLine="158" endPosition="67" />
-    <scopeInfo nodeId="7390982340086719261" fileName="LanguageErrorsComponent.java" startLine="290" startPosition="0" endLine="294" endPosition="0">
+    <scopeInfo nodeId="2132380399756939551" fileName="LanguageErrorsComponent.java" startLine="116" startPosition="33" endLine="120" endPosition="15" />
+    <scopeInfo nodeId="7390982340086718704" fileName="LanguageErrorsComponent.java" startLine="156" startPosition="72" endLine="160" endPosition="67" />
+    <scopeInfo nodeId="7390982340086719261" fileName="LanguageErrorsComponent.java" startLine="292" startPosition="0" endLine="296" endPosition="0">
       <varInfo nodeId="7390982340086719264" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719272" fileName="LanguageErrorsComponent.java" startLine="295" startPosition="0" endLine="299" endPosition="0">
+    <scopeInfo nodeId="7390982340086719272" fileName="LanguageErrorsComponent.java" startLine="297" startPosition="0" endLine="301" endPosition="0">
       <varInfo nodeId="7390982340086719277" varName="name" />
       <varInfo nodeId="7390982340086719275" varName="node" />
       <varInfo nodeId="7390982340086719279" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718503" fileName="LanguageErrorsComponent.java" startLine="334" startPosition="0" endLine="338" endPosition="0">
+    <scopeInfo nodeId="7390982340086718503" fileName="LanguageErrorsComponent.java" startLine="336" startPosition="0" endLine="340" endPosition="0">
       <varInfo nodeId="7390982340086718506" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718512" fileName="LanguageErrorsComponent.java" startLine="339" startPosition="0" endLine="343" endPosition="0">
+    <scopeInfo nodeId="7390982340086718512" fileName="LanguageErrorsComponent.java" startLine="341" startPosition="0" endLine="345" endPosition="0">
       <varInfo nodeId="7390982340086718515" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718521" fileName="LanguageErrorsComponent.java" startLine="344" startPosition="0" endLine="348" endPosition="0">
+    <scopeInfo nodeId="7390982340086718521" fileName="LanguageErrorsComponent.java" startLine="346" startPosition="0" endLine="350" endPosition="0">
       <varInfo nodeId="7390982340086718524" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718530" fileName="LanguageErrorsComponent.java" startLine="349" startPosition="0" endLine="353" endPosition="0">
+    <scopeInfo nodeId="7390982340086718530" fileName="LanguageErrorsComponent.java" startLine="351" startPosition="0" endLine="355" endPosition="0">
       <varInfo nodeId="7390982340086718533" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718539" fileName="LanguageErrorsComponent.java" startLine="354" startPosition="0" endLine="358" endPosition="0">
+    <scopeInfo nodeId="7390982340086718539" fileName="LanguageErrorsComponent.java" startLine="356" startPosition="0" endLine="360" endPosition="0">
       <varInfo nodeId="7390982340086718542" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718555" fileName="LanguageErrorsComponent.java" startLine="361" startPosition="0" endLine="365" endPosition="0">
+    <scopeInfo nodeId="7390982340086718555" fileName="LanguageErrorsComponent.java" startLine="363" startPosition="0" endLine="367" endPosition="0">
       <varInfo nodeId="7390982340086718558" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="367" startPosition="82" endLine="371" endPosition="16" />
-    <scopeInfo nodeId="2132380399758640193" fileName="LanguageErrorsComponent.java" startLine="131" startPosition="45" endLine="136" endPosition="5">
+    <scopeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="369" startPosition="82" endLine="373" endPosition="16" />
+    <scopeInfo nodeId="2132380399758640193" fileName="LanguageErrorsComponent.java" startLine="133" startPosition="45" endLine="138" endPosition="5">
       <varInfo nodeId="2132380399758640199" varName="dependency" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399757321550" fileName="LanguageErrorsComponent.java" startLine="194" startPosition="39" endLine="199" endPosition="61" />
-    <scopeInfo nodeId="2132380399760757066" fileName="LanguageErrorsComponent.java" startLine="218" startPosition="13" endLine="223" endPosition="11" />
-    <scopeInfo nodeId="7425893170003054756" fileName="LanguageErrorsComponent.java" startLine="237" startPosition="35" endLine="242" endPosition="17" />
-    <scopeInfo nodeId="7390982340086719021" fileName="LanguageErrorsComponent.java" startLine="245" startPosition="42" endLine="250" endPosition="18">
+    <scopeInfo nodeId="2132380399757321550" fileName="LanguageErrorsComponent.java" startLine="196" startPosition="39" endLine="201" endPosition="61" />
+    <scopeInfo nodeId="2132380399760757066" fileName="LanguageErrorsComponent.java" startLine="220" startPosition="13" endLine="225" endPosition="11" />
+    <scopeInfo nodeId="7425893170003054756" fileName="LanguageErrorsComponent.java" startLine="239" startPosition="35" endLine="244" endPosition="17" />
+    <scopeInfo nodeId="7390982340086719021" fileName="LanguageErrorsComponent.java" startLine="247" startPosition="42" endLine="252" endPosition="18">
       <varInfo nodeId="7390982340086719023" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719287" fileName="LanguageErrorsComponent.java" startLine="300" startPosition="0" endLine="305" endPosition="0">
+    <scopeInfo nodeId="7390982340086719287" fileName="LanguageErrorsComponent.java" startLine="302" startPosition="0" endLine="307" endPosition="0">
       <varInfo nodeId="7390982340086719290" varName="node" />
       <varInfo nodeId="7390982340086719294" varName="referent" />
       <varInfo nodeId="7390982340086719292" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719307" fileName="LanguageErrorsComponent.java" startLine="306" startPosition="0" endLine="311" endPosition="0">
+    <scopeInfo nodeId="7390982340086719307" fileName="LanguageErrorsComponent.java" startLine="308" startPosition="0" endLine="313" endPosition="0">
       <varInfo nodeId="7390982340086719314" varName="child" />
       <varInfo nodeId="7390982340086719310" varName="node" />
       <varInfo nodeId="7390982340086719312" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="4766865704923122879" fileName="LanguageErrorsComponent.java" startLine="53" startPosition="86" endLine="59" endPosition="54">
+    <scopeInfo nodeId="4766865704923122879" fileName="LanguageErrorsComponent.java" startLine="55" startPosition="86" endLine="61" endPosition="54">
       <varInfo nodeId="4766865704923402328" varName="setOfNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718586" fileName="LanguageErrorsComponent.java" startLine="74" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="7390982340086718701" fileName="LanguageErrorsComponent.java" startLine="154" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="7390982340086718586" fileName="LanguageErrorsComponent.java" startLine="76" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="7390982340086718701" fileName="LanguageErrorsComponent.java" startLine="156" startPosition="0" endLine="162" endPosition="0">
       <varInfo nodeId="7390982340086718714" varName="errorString" />
       <varInfo nodeId="7390982340086718712" varName="node" />
       <varInfo nodeId="7390982340086718716" varName="ruleNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718499" fileName="LanguageErrorsComponent.java" startLine="325" startPosition="51" endLine="331" endPosition="7" />
-    <scopeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="367" startPosition="0" endLine="373" endPosition="0">
+    <scopeInfo nodeId="7390982340086718499" fileName="LanguageErrorsComponent.java" startLine="327" startPosition="51" endLine="333" endPosition="7" />
+    <scopeInfo nodeId="6625581259957452961" fileName="LanguageErrorsComponent.java" startLine="369" startPosition="0" endLine="375" endPosition="0">
       <varInfo nodeId="6625581259957452961" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399756939542" fileName="LanguageErrorsComponent.java" startLine="112" startPosition="57" endLine="119" endPosition="13">
+    <scopeInfo nodeId="2132380399756939542" fileName="LanguageErrorsComponent.java" startLine="114" startPosition="57" endLine="121" endPosition="13">
       <varInfo nodeId="2132380399756939544" varName="errors" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399758499823" fileName="LanguageErrorsComponent.java" startLine="130" startPosition="64" endLine="137" endPosition="18">
+    <scopeInfo nodeId="2132380399758499823" fileName="LanguageErrorsComponent.java" startLine="132" startPosition="64" endLine="139" endPosition="18">
       <varInfo nodeId="2132380399758616879" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718809" fileName="LanguageErrorsComponent.java" startLine="142" startPosition="57" endLine="149" endPosition="5" />
-    <scopeInfo nodeId="7390982340086719049" fileName="LanguageErrorsComponent.java" startLine="181" startPosition="29" endLine="188" endPosition="60" />
-    <scopeInfo nodeId="2132380399757266645" fileName="LanguageErrorsComponent.java" startLine="193" startPosition="31" endLine="200" endPosition="7" />
-    <scopeInfo nodeId="2132380399757321547" fileName="LanguageErrorsComponent.java" startLine="193" startPosition="31" endLine="200" endPosition="7">
+    <scopeInfo nodeId="7390982340086718809" fileName="LanguageErrorsComponent.java" startLine="144" startPosition="57" endLine="151" endPosition="5" />
+    <scopeInfo nodeId="7390982340086719049" fileName="LanguageErrorsComponent.java" startLine="183" startPosition="29" endLine="190" endPosition="60" />
+    <scopeInfo nodeId="2132380399757266645" fileName="LanguageErrorsComponent.java" startLine="195" startPosition="31" endLine="202" endPosition="7" />
+    <scopeInfo nodeId="2132380399757321547" fileName="LanguageErrorsComponent.java" startLine="195" startPosition="31" endLine="202" endPosition="7">
       <varInfo nodeId="2132380399757321548" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7425893170003054753" fileName="LanguageErrorsComponent.java" startLine="237" startPosition="0" endLine="244" endPosition="0" />
-    <scopeInfo nodeId="7390982340086719017" fileName="LanguageErrorsComponent.java" startLine="245" startPosition="0" endLine="252" endPosition="0" />
-    <scopeInfo nodeId="4766865704923475030" fileName="LanguageErrorsComponent.java" startLine="53" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="7425893170003054753" fileName="LanguageErrorsComponent.java" startLine="239" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="7390982340086719017" fileName="LanguageErrorsComponent.java" startLine="247" startPosition="0" endLine="254" endPosition="0" />
+    <scopeInfo nodeId="4766865704923475030" fileName="LanguageErrorsComponent.java" startLine="55" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="4766865704923209628" varName="key" />
       <varInfo nodeId="4766865704923165660" varName="map" />
       <varInfo nodeId="4766865704923249501" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718607" fileName="LanguageErrorsComponent.java" startLine="81" startPosition="47" endLine="89" endPosition="59" />
-    <scopeInfo nodeId="7390982340086719201" fileName="LanguageErrorsComponent.java" startLine="253" startPosition="23" endLine="261" endPosition="26" />
-    <scopeInfo nodeId="7390982340086719098" fileName="LanguageErrorsComponent.java" startLine="266" startPosition="53" endLine="274" endPosition="5" />
-    <scopeInfo nodeId="2132380399756939539" fileName="LanguageErrorsComponent.java" startLine="111" startPosition="81" endLine="120" endPosition="11">
+    <scopeInfo nodeId="7390982340086718607" fileName="LanguageErrorsComponent.java" startLine="83" startPosition="47" endLine="91" endPosition="59" />
+    <scopeInfo nodeId="7390982340086719201" fileName="LanguageErrorsComponent.java" startLine="255" startPosition="23" endLine="263" endPosition="26" />
+    <scopeInfo nodeId="7390982340086719098" fileName="LanguageErrorsComponent.java" startLine="268" startPosition="53" endLine="276" endPosition="5" />
+    <scopeInfo nodeId="2132380399756939539" fileName="LanguageErrorsComponent.java" startLine="113" startPosition="81" endLine="122" endPosition="11">
       <varInfo nodeId="2132380399756939540" varName="nodeDependency" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399758499820" fileName="LanguageErrorsComponent.java" startLine="130" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="2132380399758499820" fileName="LanguageErrorsComponent.java" startLine="132" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="2132380399758545045" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718806" fileName="LanguageErrorsComponent.java" startLine="142" startPosition="0" endLine="151" endPosition="0">
+    <scopeInfo nodeId="7390982340086718806" fileName="LanguageErrorsComponent.java" startLine="144" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="7390982340086718833" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719046" fileName="LanguageErrorsComponent.java" startLine="181" startPosition="0" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="2132380399760757064" fileName="LanguageErrorsComponent.java" startLine="217" startPosition="83" endLine="226" endPosition="9" />
-    <scopeInfo nodeId="7390982340086718494" fileName="LanguageErrorsComponent.java" startLine="324" startPosition="0" endLine="333" endPosition="0">
+    <scopeInfo nodeId="7390982340086719046" fileName="LanguageErrorsComponent.java" startLine="183" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="2132380399760757064" fileName="LanguageErrorsComponent.java" startLine="219" startPosition="83" endLine="228" endPosition="9" />
+    <scopeInfo nodeId="7390982340086718494" fileName="LanguageErrorsComponent.java" startLine="326" startPosition="0" endLine="335" endPosition="0">
       <varInfo nodeId="7390982340086718497" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718604" fileName="LanguageErrorsComponent.java" startLine="81" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="7390982340086718604" fileName="LanguageErrorsComponent.java" startLine="83" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="7390982340086718617" varName="dependency" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399756939538" fileName="LanguageErrorsComponent.java" startLine="110" startPosition="39" endLine="120" endPosition="11" />
-    <scopeInfo nodeId="7390982340086719071" fileName="LanguageErrorsComponent.java" startLine="191" startPosition="55" endLine="201" endPosition="5">
+    <scopeInfo nodeId="2132380399756939538" fileName="LanguageErrorsComponent.java" startLine="112" startPosition="39" endLine="122" endPosition="11" />
+    <scopeInfo nodeId="7390982340086719071" fileName="LanguageErrorsComponent.java" startLine="193" startPosition="55" endLine="203" endPosition="5">
       <varInfo nodeId="2132380399757261667" varName="checkedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719198" fileName="LanguageErrorsComponent.java" startLine="253" startPosition="0" endLine="263" endPosition="0" />
-    <scopeInfo nodeId="7390982340086719095" fileName="LanguageErrorsComponent.java" startLine="266" startPosition="0" endLine="276" endPosition="0">
+    <scopeInfo nodeId="7390982340086719198" fileName="LanguageErrorsComponent.java" startLine="255" startPosition="0" endLine="265" endPosition="0" />
+    <scopeInfo nodeId="7390982340086719095" fileName="LanguageErrorsComponent.java" startLine="268" startPosition="0" endLine="278" endPosition="0">
       <varInfo nodeId="7390982340086719118" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6786156891328436162" fileName="LanguageErrorsComponent.java" startLine="165" startPosition="142" endLine="176" endPosition="57">
+    <scopeInfo nodeId="6786156891328436162" fileName="LanguageErrorsComponent.java" startLine="167" startPosition="142" endLine="178" endPosition="57">
       <varInfo nodeId="6786156891328436224" varName="id" />
       <varInfo nodeId="6786156891328436236" varName="modelId" />
       <varInfo nodeId="6786156891328436250" varName="reporter" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719068" fileName="LanguageErrorsComponent.java" startLine="191" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="7390982340086719068" fileName="LanguageErrorsComponent.java" startLine="193" startPosition="0" endLine="205" endPosition="0">
       <varInfo nodeId="7390982340086719093" varName="dependency" />
     </scopeInfo>
-    <scopeInfo nodeId="6786156891328436159" fileName="LanguageErrorsComponent.java" startLine="165" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="6786156891328436159" fileName="LanguageErrorsComponent.java" startLine="167" startPosition="0" endLine="180" endPosition="0">
       <varInfo nodeId="6786156891328436167" varName="errorNode" />
       <varInfo nodeId="6786156891328436169" varName="errorString" />
       <varInfo nodeId="6786156891328436211" varName="intentionProvider" />
       <varInfo nodeId="6786156891328436173" varName="messageTarget" />
       <varInfo nodeId="6786156891328436171" varName="ruleNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399760702294" fileName="LanguageErrorsComponent.java" startLine="215" startPosition="64" endLine="228" endPosition="114">
+    <scopeInfo nodeId="2132380399760702294" fileName="LanguageErrorsComponent.java" startLine="217" startPosition="64" endLine="230" endPosition="114">
       <varInfo nodeId="2132380399760753693" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399756937365" fileName="LanguageErrorsComponent.java" startLine="108" startPosition="32" endLine="122" endPosition="0">
+    <scopeInfo nodeId="2132380399756937365" fileName="LanguageErrorsComponent.java" startLine="110" startPosition="32" endLine="124" endPosition="0">
       <varInfo nodeId="2132380399756939530" varName="nodeDependencies" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399756937359" fileName="LanguageErrorsComponent.java" startLine="107" startPosition="74" endLine="123" endPosition="7">
+    <scopeInfo nodeId="2132380399756937359" fileName="LanguageErrorsComponent.java" startLine="109" startPosition="74" endLine="125" endPosition="7">
       <varInfo nodeId="2132380399756937371" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399756926064" fileName="LanguageErrorsComponent.java" startLine="106" startPosition="24" endLine="123" endPosition="7" />
-    <scopeInfo nodeId="7390982340086719253" fileName="LanguageErrorsComponent.java" startLine="288" startPosition="9" endLine="313" endPosition="34">
+    <scopeInfo nodeId="2132380399756926064" fileName="LanguageErrorsComponent.java" startLine="108" startPosition="24" endLine="125" endPosition="7" />
+    <scopeInfo nodeId="7390982340086719253" fileName="LanguageErrorsComponent.java" startLine="290" startPosition="9" endLine="315" endPosition="34">
       <varInfo nodeId="7390982340086719255" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399755951311" fileName="LanguageErrorsComponent.java" startLine="99" startPosition="77" endLine="127" endPosition="17">
+    <scopeInfo nodeId="2132380399755951311" fileName="LanguageErrorsComponent.java" startLine="101" startPosition="77" endLine="129" endPosition="17">
       <varInfo nodeId="2132380399756084689" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="2132380399755951310" fileName="LanguageErrorsComponent.java" startLine="99" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="2132380399755951310" fileName="LanguageErrorsComponent.java" startLine="101" startPosition="0" endLine="131" endPosition="0">
       <varInfo nodeId="2132380399755951327" varName="dependency" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718900" fileName="LanguageErrorsComponent.java" startLine="204" startPosition="102" endLine="234" endPosition="16">
+    <scopeInfo nodeId="7390982340086718900" fileName="LanguageErrorsComponent.java" startLine="206" startPosition="102" endLine="236" endPosition="16">
       <varInfo nodeId="2132380399760531729" varName="nodesToCheck" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086718897" fileName="LanguageErrorsComponent.java" startLine="204" startPosition="0" endLine="236" endPosition="0">
+    <scopeInfo nodeId="7390982340086718897" fileName="LanguageErrorsComponent.java" startLine="206" startPosition="0" endLine="238" endPosition="0">
       <varInfo nodeId="7390982340086719012" varName="checkers" />
       <varInfo nodeId="7390982340086719015" varName="repository" />
       <varInfo nodeId="7390982340086719010" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719235" fileName="LanguageErrorsComponent.java" startLine="285" startPosition="99" endLine="320" endPosition="30">
+    <scopeInfo nodeId="7390982340086719235" fileName="LanguageErrorsComponent.java" startLine="287" startPosition="99" endLine="322" endPosition="30">
       <varInfo nodeId="7390982340086719237" varName="accessedNodes" />
       <varInfo nodeId="7390982340086719244" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086719232" fileName="LanguageErrorsComponent.java" startLine="285" startPosition="0" endLine="322" endPosition="0">
+    <scopeInfo nodeId="7390982340086719232" fileName="LanguageErrorsComponent.java" startLine="287" startPosition="0" endLine="324" endPosition="0">
       <varInfo nodeId="7390982340086719355" varName="action" />
     </scopeInfo>
-    <unitInfo nodeId="7390982340086718548" fileName="LanguageErrorsComponent.java" startLine="360" startPosition="0" endLine="366" endPosition="0" unitName="jetbrains.mps.checkers.LanguageErrorsComponent$MyModelRepositoryListener" />
-    <unitInfo nodeId="7390982340086719259" fileName="LanguageErrorsComponent.java" startLine="289" startPosition="47" endLine="311" endPosition="7" unitName="jetbrains.mps.checkers.LanguageErrorsComponent$1" />
-    <unitInfo nodeId="7390982340086718487" fileName="LanguageErrorsComponent.java" startLine="323" startPosition="0" endLine="359" endPosition="0" unitName="jetbrains.mps.checkers.LanguageErrorsComponent$MyModelListener" />
-    <unitInfo nodeId="7390982340086718486" fileName="LanguageErrorsComponent.java" startLine="38" startPosition="0" endLine="374" endPosition="0" unitName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <unitInfo nodeId="7390982340086718548" fileName="LanguageErrorsComponent.java" startLine="362" startPosition="0" endLine="368" endPosition="0" unitName="jetbrains.mps.checkers.LanguageErrorsComponent$MyModelRepositoryListener" />
+    <unitInfo nodeId="7390982340086719259" fileName="LanguageErrorsComponent.java" startLine="291" startPosition="47" endLine="313" endPosition="7" unitName="jetbrains.mps.checkers.LanguageErrorsComponent$1" />
+    <unitInfo nodeId="7390982340086718487" fileName="LanguageErrorsComponent.java" startLine="325" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.checkers.LanguageErrorsComponent$MyModelListener" />
+    <unitInfo nodeId="7390982340086718486" fileName="LanguageErrorsComponent.java" startLine="40" startPosition="0" endLine="376" endPosition="0" unitName="jetbrains.mps.checkers.LanguageErrorsComponent" />
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086720127">
     <nodeInfo nodeId="8112532282171046256" fileName="ConstraintsChecker.java" startLine="35" startPosition="88" endLine="36" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
