@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MoveStaticMethodExecutable implements MoveStaticMemberExecutable {
 
@@ -30,11 +32,11 @@ public class MoveStaticMethodExecutable implements MoveStaticMemberExecutable {
       @Override
       public void run() {
         SNode node = ((SNode) target);
-        if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) target))) {
+        if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
           return;
         }
         SNode node1 = ((SNode) whereToMove);
-        if (!(node1.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) whereToMove))) {
+        if (!(SNodeUtil.isAccessible(node1, MPSModuleRepository.getInstance()))) {
           return;
         }
 

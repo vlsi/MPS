@@ -25,7 +25,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.HashSet;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -112,7 +113,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
           return;
         }
 
-        if (SNodeOperations.isDisposed(editedNode)) {
+        if (!(SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance()))) {
           Set<IBreakpoint> allBreakpoints = myBreakpointsManagerComponent.getAllIBreakpoints();
           Set<ILocationBreakpoint> locationBreakpoints = new HashSet<ILocationBreakpoint>();
           for (IBreakpoint breakpoint : allBreakpoints) {
