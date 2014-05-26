@@ -1742,7 +1742,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_9208428239641178371(final IfMacroContext _context) {
-    return !(TypesystemGenUtil.isInCheckEquation(_context.getNode()));
+    return !(TypesystemGenUtil.isInCheckEquation(_context.getNode())) && TypesystemGenUtil.isInRuleWithContext(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_3000845361816500841(final IfMacroContext _context) {
@@ -1809,7 +1809,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8729667892977793971(final IfMacroContext _context) {
-    return !(TypesystemGenUtil.isInCheckEquation(_context.getNode()));
+    return !(TypesystemGenUtil.isInCheckEquation(_context.getNode())) && TypesystemGenUtil.isInRuleWithContext(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_7734991387983328761(final IfMacroContext _context) {
