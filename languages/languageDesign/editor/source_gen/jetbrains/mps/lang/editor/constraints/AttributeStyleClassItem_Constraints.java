@@ -54,6 +54,7 @@ public class AttributeStyleClassItem_Constraints extends BaseConstraintsDescript
             {
               List<Language> languages = SModelOperations.getLanguages(_context.getModel());
               List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
+              ListSequence.fromList(models).addElement(_context.getModel());
               ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelOperations.allImportedModels(_context.getModel())));
               ListSequence.fromList(models).addSequence(ListSequence.fromList(languages).select(new ISelector<Language, EditableSModelDescriptor>() {
                 public EditableSModelDescriptor select(Language it) {
