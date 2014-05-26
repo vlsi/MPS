@@ -1,6 +1,11 @@
 <extensions>
   <errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>
   <appStarter implementation="com.intellij.openapi.diff.DiffApplication"/>
+  <!--
+  <appStarter implementation="com.intellij.openapi.diff.MergeApplication"/>
+  <appStarter implementation="com.intellij.ui.win.RecentProjectApplication"/>
+  -->                                                                  cd
+  <appStarter implementation="com.intellij.help.impl.KeymapGenerator"/>
   <!--MPS Patch: search in settings-->
   <appStarter implementation="com.intellij.ide.ui.search.TraverseUIStarter"/>
   <!--MPS Patch: enable project view-->
