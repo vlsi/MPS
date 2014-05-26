@@ -96,7 +96,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
 
-
   private synchronized void onTabIndexChange() {
     if (myDisposed) return;
 
@@ -223,7 +222,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
       myRebuilding = oldRebuilding;
     }
 
-    if (selNode != null) {
+    if (selNode != null && selNode.resolve(MPSModuleRepository.getInstance()) != null) {
       for (PlainEditorTab tab : myRealTabs) {
         if (EqualUtil.equals(tab.getNode(), selNode)) {
           myJbTabs.setSelectedIndex(myRealTabs.indexOf(tab));
@@ -240,6 +239,12 @@ public class PlainTabsComponent extends BaseTabsComponent {
     } else {
       if (myJbTabs.getTabCount() > 0) {
         myJbTabs.setSelectedIndex(0);
+
+        if (selNode != null) {
+          //this is needed as Idea component sends no events if we've just removed all tabs and added one new and then are trying to select it
+          //see http://youtrack.jetbrains.com/issue/MPS-17943
+          onTabIndexChange();
+        }
       }
     }
   }
