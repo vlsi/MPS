@@ -63,6 +63,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -135,14 +136,14 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     setEnabledState(event.getPresentation(), true);
 
-    List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor);
+    List<SModuleReference> modelLanguages = new ArrayList<SModuleReference>(SModelOperations.getAllImportedLanguages(modelDescriptor));
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
     if (aspect != null) {
       SModuleReference ref = aspect.getMainLanguage();
       Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
       if (lang != null) {
-        modelLanguages.remove(lang);
+        modelLanguages.remove(ref);
 
         for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
           if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor)) {
@@ -157,11 +158,14 @@ public class CreateRootNodeGroup extends BaseGroup {
     Collections.sort(modelLanguages, new ToStringComparator());
 
     List<Language> languagesWithRoots = new ArrayList<Language>();
-    for (final Language language : modelLanguages) {
-      for (SNode conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor)) {
-          languagesWithRoots.add(language);
-          break;
+    for (final SModuleReference ref : modelLanguages) {
+      Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
+      if (lang != null) {
+        for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
+          if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor)) {
+            languagesWithRoots.add(lang);
+            break;
+          }
         }
       }
     }
