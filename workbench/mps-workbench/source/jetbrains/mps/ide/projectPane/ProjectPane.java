@@ -138,6 +138,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     SNodeTreeNode.setShowStructureCondition(new Condition<MPSTree>() {
       @Override
       public boolean met(MPSTree tree) {
+        if (project.isDisposed()) return false;
         return !(tree instanceof ProjectPaneTree) || ProjectPane.getInstance(project).showNodeStructure();
       }
     });
