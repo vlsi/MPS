@@ -105,6 +105,8 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/languages/tableTests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.styleTests/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.styleTests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/editor/tests/table/source_gen" includeSubdirectories="true" />
