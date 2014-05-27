@@ -181,7 +181,7 @@ public class NewRootAction extends AnAction {
 
         //TODO: This methods are from SModuleOperations.createModelWithAdjustments. Need to check them really needed.
         ModelsAutoImportsManager.doAutoImport(useModelRoot.getModule(), model);
-        MissingDependenciesFixer.fixDependencies(model);
+        new MissingDependenciesFixer(model).fixModuleDependencies();
 
         return model;
       }
