@@ -2877,25 +2877,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     try {
       myCellSwapInProgress = true;
       EditorContext ec = getEditorContext();
+      assert ec != null;
 
-      boolean needsSavingState = ec != null;
-      if (getRootCell() != null && getRootCell().getSNode() != null && ((jetbrains.mps.smodel.SNode) getRootCell().getSNode()).isDisposed()) {
-        needsSavingState = false;
+      jetbrains.mps.openapi.editor.cells.EditorCell sc = getSelectedCell();
+      if (sc != null) {
+        myRecentlySelectedCellInfo = APICellAdapter.getCellInfo(sc);
       }
+      Object memento = ec.createMemento();
+      action.run();
+      ec.pushTracerTask("restoring memento", true);
+      ec.setMemento(memento);
+      ec.popTracerTask();
 
-      if (needsSavingState) {
-        jetbrains.mps.openapi.editor.cells.EditorCell sc = getSelectedCell();
-        if (sc != null) {
-          myRecentlySelectedCellInfo = APICellAdapter.getCellInfo(sc);
-        }
-        Object memento = ec.createMemento();
-        action.run();
-        ec.pushTracerTask("restoring memento", true);
-        ec.setMemento(memento);
-        ec.popTracerTask();
-      } else {
-        action.run();
-      }
       myRecentlySelectedCellInfo = null;
     } finally {
       myCellSwapInProgress = false;
