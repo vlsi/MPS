@@ -2141,7 +2141,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return false;
     }
     for (jetbrains.mps.openapi.editor.cells.EditorCell selectedCell : selection.getSelectedCells()) {
-      if (CellTraversalUtil.isAncestor(selectedCell, cell)) {
+      if (CellTraversalUtil.isAncestorOrEquals(selectedCell, cell)) {
         return true;
       }
     }
