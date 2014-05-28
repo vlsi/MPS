@@ -777,13 +777,13 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/demo/pluginSolution/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/test_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests/test_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/test_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-build">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build.mps.tests/generator/source_gen" isTestSource="false" />

@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.ModelsOnlyScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -74,9 +74,9 @@ public class LanguageUsagesFinder implements IFinder {
           collectUsagesInDevKit(language, (DevKit) module, searchResults);
         }
       }
-    } else if (query.getScope() instanceof ModelsOnlyScope) {
+    } else if (query.getScope() instanceof ModelsScope) {
       searchResults.getSearchedNodes().add(language);
-      for (SModel modelDescriptor : (as_m2sz3c_a0a0b0a9a8(query.getScope(), ModelsOnlyScope.class)).getModels()) {
+      for (SModel modelDescriptor : (as_m2sz3c_a0a0b0a9a8(query.getScope(), ModelsScope.class)).getModels()) {
         collectUsagesInModel(language, modelDescriptor, searchResults);
       }
     }

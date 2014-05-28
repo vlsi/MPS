@@ -12,17 +12,18 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="module" module-name="kernel-resources" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
-    <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="baseLanguage-util" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="mpsmake" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>
 

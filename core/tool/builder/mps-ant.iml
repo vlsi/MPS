@@ -20,6 +20,7 @@
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="kernel-resources" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="typesystemEngine" />

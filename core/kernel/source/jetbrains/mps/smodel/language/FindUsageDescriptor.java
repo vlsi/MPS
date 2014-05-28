@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.language;
 
-import org.jetbrains.mps.openapi.model.SModel;
-
-import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
-
-@Deprecated
-public class ModelsOnlyScope extends ModelsScope {
-  public ModelsOnlyScope(SModel... modelDescriptors) {
-    super(modelDescriptors);
-  }
+/**
+ * Marker interface for a usage finder for a language.
+ * It's not intentionally marker, once there's anything to expect from this descriptor, it might get some API.
+ * Meanwhile, it's here to decouple j.m.ide.findusages module from kernel
+ *
+ * @author Artem Tikhomirov
+ */
+public interface FindUsageDescriptor {
 }

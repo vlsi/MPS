@@ -16,11 +16,9 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
@@ -32,9 +30,15 @@ import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class TextGen {
   public static final String PACKAGE_NAME = "PACKAGE_NAME";
@@ -164,7 +168,7 @@ public class TextGen {
   }
 
   private static List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer, Set<String> skipSet) {
-    SetSequence<String> dependenciesObject = (SetSequence<String>) buffer.getUserObject(key);
+    Set<String> dependenciesObject = (Set<String>) buffer.getUserObject(key);
     final String nodeFQName = NameUtil.nodeFQName(node);
     if (dependenciesObject != null) {
       List<String> dependencies = new ArrayList<String>(dependenciesObject.size());
