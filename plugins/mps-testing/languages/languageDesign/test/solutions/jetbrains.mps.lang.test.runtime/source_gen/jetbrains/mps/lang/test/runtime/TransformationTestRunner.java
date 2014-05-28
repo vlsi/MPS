@@ -159,8 +159,8 @@ public class TransformationTestRunner implements TestRunner {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         clazz.value = ClassLoaderManager.getInstance().getClass(projectTest.getModelDescriptor().getModule(), className);
-        ClassLoader cLoader = clazz.value.getClassLoader();
-        assert cLoader != null;
+        ClassLoader cLoader = check_ovzmet_a0b0a0a2a71(clazz.value);
+        assert cLoader != null : "Class is not found " + className;
         String classLoader = cLoader.toString();
         String module = projectTest.getModelDescriptor().getModule().getModuleName();
         assert classLoader.contains(module) : "class: " + clazz.value + "; classLoader: " + classLoader + "; module: " + module;
@@ -250,4 +250,11 @@ public class TransformationTestRunner implements TestRunner {
   }
 
   protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
+
+  private static ClassLoader check_ovzmet_a0b0a0a2a71(Class checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getClassLoader();
+    }
+    return null;
+  }
 }

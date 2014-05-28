@@ -34,6 +34,7 @@ import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
@@ -227,6 +228,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     for (SModuleReference ref : existingModules) {
       super.removeModule(ref);
     }
+    ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
   }
 
   private void error(String text) {

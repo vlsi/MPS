@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
@@ -50,6 +51,8 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
   @Override
   public void projectOpened() {
+    if (MPSCore.getInstance().isTestMode())
+      return;
     compileProjectModulesWithProgress(true);
   }
 
