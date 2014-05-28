@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.startup.structure.ClassPathItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("path").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.build.startup.structure.MpsStartupScript").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("startupFolder", "startupClass").children(new String[]{"bootClasspath", "vmOptions"}, new boolean[]{true, true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.build.startup.structure.MpsStartupScript").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("startupFolder", "startupClass").children(new String[]{"bootClasspath", "vmOptions", "vmOptions64"}, new boolean[]{true, true, true}).create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.build.startup.structure.SimpleVmOptions").super_("jetbrains.mps.build.startup.structure.VmOptions").parents("jetbrains.mps.build.startup.structure.VmOptions").properties("options", "commented").create();
       case 3:
