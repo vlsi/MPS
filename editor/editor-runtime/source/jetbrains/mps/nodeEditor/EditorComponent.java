@@ -2129,13 +2129,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       newSelectedCell = myRootCell.findCellWeak(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
     }
 
-    jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
-    if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !CellTraversalUtil.isAncestor(selectedCell,
-        newSelectedCell))) {
+    if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || !isUnderSelection(getSelectionManager().getSelection(), newSelectedCell))) {
       mySelectionManager.setSelection(newSelectedCell);
       newSelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint();
     }
+  }
+
+  private boolean isUnderSelection(Selection selection, jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    if (selection == null) {
+      return false;
+    }
+    for (jetbrains.mps.openapi.editor.cells.EditorCell selectedCell : selection.getSelectedCells()) {
+      if (CellTraversalUtil.isAncestor(selectedCell, cell)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public void clearSelectionStack() {
