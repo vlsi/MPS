@@ -39,7 +39,7 @@ public enum SDependencyScope {
   /* only between language modules  */
 
   /**
-   * Applicable only between two language modules
+   * Applicable between either two language or two generator modules
    */
   EXTENDS("Extends"),
 

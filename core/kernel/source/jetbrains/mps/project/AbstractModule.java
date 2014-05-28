@@ -20,9 +20,9 @@ import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -58,6 +58,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -129,7 +130,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // add declared dependencies
     List<SDependency> dependencies = new ArrayList<SDependency>();
     for (Dependency dependency : descriptor.getDependencies()) {
-      dependencies.add(new SDependencyAdapter(dependency));
+      SModule target = ModuleRepositoryFacade.getInstance().getModule(dependency.getModuleRef());
+      if (target != null) {
+        dependencies.add(new SDependencyImpl(target, SDependencyScope.DEFAULT, dependency.isReexport()));
+      }
     }
 
     // add dependencies provided by devkits as nonreexport dependencies
@@ -138,7 +142,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (devKit != null) {
         for (Solution solution : devKit.getAllExportedSolutions()) {
           if (solution != null) {
-            dependencies.add(new SDependencyAdapter(new Dependency(solution.getModuleReference(), false)));
+            dependencies.add(new SDependencyImpl(solution, SDependencyScope.DEFAULT, false));
           }
         }
       }
@@ -328,21 +332,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   //----get deps
 
+  /**
+   * @deprecated use {@link #getDeclaredDependencies()} instead
+   */
   @Deprecated
-  public final DependenciesManager getDependenciesManager() {
-    assertCanRead();
-    throw new UnsupportedOperationException();
-  }
-
   public final List<Dependency> getDependencies() {
     assertCanRead();
-    List<Dependency> dependencies = new ArrayList<Dependency>();
-    for (SDependency dependency : getDeclaredDependencies()) {
-      if (dependency instanceof SDependencyAdapter) {
-        dependencies.add(((SDependencyAdapter) dependency).getOriginalDependency());
-      }
+    ArrayList<Dependency> rv = new ArrayList<Dependency>();
+    for (SDependency dep : getDeclaredDependencies()) {
+      rv.add(new Dependency(dep.getTarget().getModuleReference(), dep.isReexport()));
     }
-    return dependencies;
+    return rv;
   }
 
   //----languages & devkits

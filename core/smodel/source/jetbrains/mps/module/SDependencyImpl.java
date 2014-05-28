@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,38 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.module;
 
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public class SDependencyAdapter implements SDependency {
-  private final Dependency myDependency;
-
-  public SDependencyAdapter(Dependency dependency) {
-    myDependency = dependency;
+/**
+ * Straightforward implementation of SDependency interface
+ */
+@Immutable
+public final class SDependencyImpl implements SDependency {
+  private final SModule myTarget;
+  private final SDependencyScope myScope;
+  private final boolean myIsExport;
+  public SDependencyImpl(@NotNull SModule target, @NotNull SDependencyScope scope, boolean export) {
+    myTarget = target;
+    myScope = scope;
+    myIsExport = export;
   }
 
   @Override
+  @NotNull
   public SDependencyScope getScope() {
-    // todo: !
-    throw new UnsupportedOperationException();
+    return myScope;
   }
 
   @Override
   public boolean isReexport() {
-    return myDependency.isReexport();
+    return myIsExport;
   }
 
   @Override
+  @NotNull
   public SModule getTarget() {
-    return ModuleRepositoryFacade.getInstance().getModule(myDependency.getModuleRef());
-  }
-
-  public Dependency getOriginalDependency() {
-    return myDependency;
+    return myTarget;
   }
 }
