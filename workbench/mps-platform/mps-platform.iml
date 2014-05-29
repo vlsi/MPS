@@ -32,6 +32,7 @@
     <orderEntry type="library" name="Commons-httpclient" level="project" />
     <orderEntry type="module" module-name="mps-ui" />
     <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="module" module-name="kernel-resources" />
   </component>
 </module>
 

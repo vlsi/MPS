@@ -26,14 +26,13 @@ import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
+import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -43,6 +42,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -186,10 +186,7 @@ public abstract class StubSolutionIdea extends StubSolution {
 //      }
 
     for (SModule module : ModuleRepositoryFacade.getInstance().getAllModules(StubSolutionIdea.class)) {
-      Dependency dep = new Dependency();
-      dep.setModuleRef(module.getModuleReference());
-      dep.setReexport(false);
-      deps.add(new SDependencyAdapter(dep));
+      deps.add(new SDependencyImpl(module, SDependencyScope.DEFAULT, false));
     }
     return deps;
   }
@@ -244,11 +241,7 @@ public abstract class StubSolutionIdea extends StubSolution {
       if (myBaseJdk == null) return Collections.emptySet();
 
       Solution baseJdkSolution = ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).getSdkSolution(myBaseJdk);
-      Dependency dep = new Dependency();
-      dep.setModuleRef(baseJdkSolution.getModuleReference());
-      dep.setReexport(true);
-
-      return Collections.<SDependency>singleton(new SDependencyAdapter(dep));
+      return Collections.<SDependency>singleton(new SDependencyImpl(baseJdkSolution, SDependencyScope.DEFAULT, false));
     }
   }
 }

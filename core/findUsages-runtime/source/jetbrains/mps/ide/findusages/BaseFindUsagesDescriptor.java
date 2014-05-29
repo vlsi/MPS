@@ -16,12 +16,13 @@
 package jetbrains.mps.ide.findusages;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.smodel.language.FindUsageDescriptor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public abstract class BaseFindUsagesDescriptor {
+public abstract class BaseFindUsagesDescriptor implements FindUsageDescriptor {
   private SModuleReference myModuleRef;
   private SModelReference myModelRef;
 

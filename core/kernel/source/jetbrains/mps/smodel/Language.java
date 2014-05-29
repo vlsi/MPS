@@ -20,16 +20,15 @@ import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -52,6 +51,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -138,16 +138,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
     for (Language language : getAllExtendedLanguages()) {
-      Dependency dep = new Dependency();
-      dep.setModuleRef(language.getModuleReference());
-      dep.setReexport(true);
-      dependencies.add(new SDependencyAdapter(dep));
+      dependencies.add(new SDependencyImpl(language, SDependencyScope.EXTENDS, true));
     }
 
-    Dependency dep = new Dependency();
-    dep.setModuleRef(BootstrapLanguages.coreLanguageRef());
-    dep.setReexport(true);
-    dependencies.add(new SDependencyAdapter(dep));
+    dependencies.add(new SDependencyImpl(BootstrapLanguages.coreLanguage(), SDependencyScope.DEFAULT, true));
 
     return dependencies;
   }

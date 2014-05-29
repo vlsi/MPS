@@ -41,22 +41,21 @@ import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.idea.core.project.stubs.DifferentSdkException;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
+import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.Dependency;
-import org.jetbrains.mps.openapi.module.SDependency;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -176,10 +175,7 @@ public class SolutionIdea extends Solution {
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
         if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
-          Dependency dep = new Dependency();
-          dep.setModuleRef(usedModuleMPSFacet.getSolution().getModuleReference());
-          dep.setReexport(false);
-          myDependencies.add(new SDependencyAdapter(dep));
+          myDependencies.add(new SDependencyImpl(usedModuleMPSFacet.getSolution(), SDependencyScope.DEFAULT, false));
         }
       }
 
@@ -200,7 +196,7 @@ public class SolutionIdea extends Solution {
   private void addUsedSdk(final List<SDependency> dependencies) {
     Solution sdkSolution = ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).getModuleSdkSolution(myModule);
     if (sdkSolution != null) {
-      dependencies.add(new SDependencyAdapter(new Dependency(sdkSolution.getModuleReference(), false)));
+      dependencies.add(new SDependencyImpl(sdkSolution, SDependencyScope.DEFAULT, false));
     }
   }
 
@@ -209,7 +205,7 @@ public class SolutionIdea extends Solution {
   }
 
   public static List<SDependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final Project project, final boolean includeStubs) {
-    final Map<SModuleReference, Boolean> modules = new HashMap<SModuleReference, Boolean>();
+    final Map<SModule, Boolean> modules = new HashMap<SModule, Boolean>();
     orderEnumerator.forEach(new Processor<OrderEntry>() {
       public boolean process(OrderEntry oe) {
         if (!(oe instanceof LibraryOrderEntry)) {
@@ -224,27 +220,31 @@ public class SolutionIdea extends Solution {
         if (ModuleLibraryType.isModuleLibrary(library)) {
           Set<SModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(library);
           for (SModuleReference moduleReference : moduleReferences) {
+            SModule m = moduleReference.resolve(MPSModuleRepository.getInstance()); // FIXME module repo
+            if (m == null) {
+              continue;
+            }
             if (modules.containsKey(moduleReference)) {
               if (loe.isExported()) {
-                modules.put(moduleReference, true);
+                modules.put(m, true);
               }
             } else {
-              modules.put(moduleReference, loe.isExported());
+              modules.put(m, loe.isExported());
             }
           }
         } else if (includeStubs) {
           // try to find stub solution
-          Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(library.getName()));
+          SModule s = MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(library.getName()));
           if (s != null) {
-            modules.put(s.getModuleReference(), loe.isExported());
+            modules.put(s, loe.isExported());
           }
         }
         return true;
       }
     });
     List<SDependency> result = new ArrayList<SDependency>();
-    for (Entry<SModuleReference, Boolean> entry : modules.entrySet()) {
-      result.add(new SDependencyAdapter(new Dependency(entry.getKey(), entry.getValue())));
+    for (Entry<SModule, Boolean> entry : modules.entrySet()) {
+      result.add(new SDependencyImpl(entry.getKey(), SDependencyScope.DEFAULT, entry.getValue()));
     }
     return result;
   }

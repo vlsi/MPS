@@ -37,6 +37,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -58,18 +59,14 @@ import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelsOnlyScope;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.IterableUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -268,7 +265,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void actionPerformed(AnActionEvent e) {
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final SearchScope scope = new ModelsOnlyScope(myModelDescriptor);
+          final SearchScope scope = new ModelsScope(myModelDescriptor);
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
@@ -391,7 +388,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     protected void findUsages(final Object value) {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final SearchScope scope = new ModelsOnlyScope(myModelDescriptor);
+      final SearchScope scope = new ModelsScope(myModelDescriptor);
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
@@ -413,7 +410,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void actionPerformed(AnActionEvent e) {
           final SearchQuery[] query = new SearchQuery[1];
           final IResultProvider[] provider = new IResultProvider[1];
-          final SearchScope scope = new ModelsOnlyScope(myModelDescriptor);
+          final SearchScope scope = new ModelsScope(myModelDescriptor);
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {

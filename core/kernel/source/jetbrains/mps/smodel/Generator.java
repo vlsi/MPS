@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -34,8 +33,10 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -150,22 +151,31 @@ public class Generator extends AbstractModule {
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
+    final SRepository repo = getRepository();
     Set<SDependency> dependencies = new HashSet<SDependency>();
     dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
     for (SModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
-      dependencies.add(new SDependencyAdapter(new Dependency(ref, false)));
+      SModule rt = repo == null ? ModuleRepositoryFacade.getInstance().getModule(ref) : ref.resolve(repo);
+      if (rt != null) {
+        dependencies.add(new SDependencyImpl(rt, SDependencyScope.RUNTIME, false));
+      }
     }
 
     //generator sees all modules from source language as non-reexported
     for (Language language : getSourceLanguage().getAllExtendedLanguages()) {
-      dependencies.add(new SDependencyAdapter(new Dependency(language.getModuleReference(), false)));
+      dependencies.add(new SDependencyImpl(language, SDependencyScope.DEFAULT, false));
     }
 
     //generator sees all dependent generators as non-reexport
     for (SModuleReference refGenerator : getReferencedGeneratorUIDs()) {
-      SModule gm = ModuleRepositoryFacade.getInstance().getModule(refGenerator);
-      if (gm == null) continue;
-      dependencies.add(new SDependencyAdapter(new Dependency(gm.getModuleReference(), false)));
+      // XXX not sure it's right to resolve modules through global repository if this module is not attached anywhere
+      SModule gm = repo == null ? ModuleRepositoryFacade.getInstance().getModule(refGenerator) : refGenerator.resolve(repo);
+      if (gm != null) {
+        // FIXME all referenced generators are of 'extends' dependency at the moment
+        // but this might need a change once we store extended generators as a regular SDependency
+        // instead of hacky getReferencedGeneratorUIDs
+        dependencies.add(new SDependencyImpl(gm, SDependencyScope.EXTENDS, false));
+      }
     }
 
     return dependencies;
