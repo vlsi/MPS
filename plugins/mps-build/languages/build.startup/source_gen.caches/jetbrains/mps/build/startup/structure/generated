@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5q81ej8g4z9xi8cs9ddtynjfzm2c7oh" />
+<dependencies version="2" modelHash="9kzz4darg4q5pajkugwwff8m5d8mwwc">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="6s2860ukb6nn4tsw2d5skabbz9lrxyy" dependsOnNodes="true">
+    <dep root="1731640411964205180" />
+    <dep root="1731640411964205218" />
+    <dep root="3885435385580582152" />
+    <dep root="3885435385580582153" />
+    <dep root="3885435385580582157" />
+    <dep root="3885435385580582732" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="3885435385580582152" name="MpsStartupScript" hash="8byjxf0h4ouee2xrhljsrx6z90m2vbj" />
+  <source id="3885435385580582153" name="ClassPathItem" hash="aqabang9v2i6rfvia7113v1e12doce9" />
+  <source id="3885435385580582157" name="VmOptions" hash="938tq5ssobilxxleoz4uftad41cwtux" />
+  <source id="3885435385580582732" name="SimpleVmOptions" hash="azpu7q1zy1o6g5g06upllf7jj08l5p6" />
+  <source id="1731640411964205180" name="TextFile" hash="4x6g808glskf9w35d9qkuueyjruse5" />
+  <source id="1731640411964205218" name="TextLine" hash="-7ucw71gbsv6jmdn5taflw0svcuf7vw8" />
+</dependencies>
 

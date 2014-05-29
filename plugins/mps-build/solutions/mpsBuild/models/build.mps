@@ -12786,6 +12786,44 @@
                 <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
               </node>
             </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="2693344784291110050" nodeInfo="ng">
+              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2693344784291110051" nodeInfo="ng">
+                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110052" nodeInfo="nn">
+                  <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110053" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="mps-build" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110054" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110055" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mpsBuild" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110056" nodeInfo="nn">
+                          <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110057" nodeInfo="nn">
+                            <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110058" nodeInfo="nn">
+                              <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110059" nodeInfo="nn">
+                                <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110060" nodeInfo="nn">
+                                  <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110402" nodeInfo="nn">
+                                    <property name="head" nameId="3ior.8618885170173601779" value="mps64.vmoptions" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyFilterFixCRLF" typeId="3ior.4198392933254416812" id="2693344784291110062" nodeInfo="ng">
+                <property name="eol" nameId="3ior.4198392933254416822" value="lf" />
+                <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
+              </node>
+            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Files" typeId="3ior.2750015747481074431" id="2688703077001102101" nodeInfo="ng">
               <node role="parameters" roleId="3ior.2750015747481074433" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="7520888572190001274" nodeInfo="ng">
                 <property name="pattern" nameId="3ior.5248329904288051112" value="**/fsnotifier" />
@@ -12931,6 +12969,44 @@
                 </node>
               </node>
             </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="2693344784291110901" nodeInfo="ng">
+              <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyFilterFixCRLF" typeId="3ior.4198392933254416812" id="2693344784291110902" nodeInfo="ng">
+                <property name="eol" nameId="3ior.4198392933254416822" value="lf" />
+                <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
+              </node>
+              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2693344784291110903" nodeInfo="ng">
+                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110904" nodeInfo="nn">
+                  <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110905" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="mps-build" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110906" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110907" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mpsBuild" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110908" nodeInfo="nn">
+                          <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110909" nodeInfo="nn">
+                            <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110910" nodeInfo="nn">
+                              <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110911" nodeInfo="nn">
+                                <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110912" nodeInfo="nn">
+                                  <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291110913" nodeInfo="nn">
+                                    <property name="head" nameId="3ior.8618885170173601779" value="mps64.vmoptions" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="2688703077001193284" nodeInfo="ng">
               <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyGlobMapper" typeId="3ior.3970102152660702410" id="7520888572190001474" nodeInfo="ng">
                 <property name="from" nameId="3ior.3970102152660874508" value="*" />
@@ -12964,6 +13040,51 @@
                                   <property name="head" nameId="3ior.8618885170173601779" value="build" />
                                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6057022384936477749" nodeInfo="nn">
                                     <property name="head" nameId="3ior.8618885170173601779" value="mps.vmoptions" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="2693344784291111768" nodeInfo="ng">
+              <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyGlobMapper" typeId="3ior.3970102152660702410" id="2693344784291111769" nodeInfo="ng">
+                <property name="from" nameId="3ior.3970102152660874508" value="*" />
+                <node role="to" roleId="3ior.3970102152660874509" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="2693344784291111770" nodeInfo="ng">
+                  <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="2693344784291111771" nodeInfo="ng">
+                    <property name="text" nameId="3ior.4903714810883755350" value="mps64.exe.vmoptions" />
+                  </node>
+                </node>
+              </node>
+              <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyFilterFixCRLF" typeId="3ior.4198392933254416812" id="2693344784291111772" nodeInfo="ng">
+                <property name="eol" nameId="3ior.4198392933254416822" value="crlf" />
+              </node>
+              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2693344784291111773" nodeInfo="ng">
+                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111774" nodeInfo="nn">
+                  <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111775" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="mps-build" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111776" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111777" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mpsBuild" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111778" nodeInfo="nn">
+                          <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111779" nodeInfo="nn">
+                            <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111780" nodeInfo="nn">
+                              <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111781" nodeInfo="nn">
+                                <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111782" nodeInfo="nn">
+                                  <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291111783" nodeInfo="nn">
+                                    <property name="head" nameId="3ior.8618885170173601779" value="mps64.vmoptions" />
                                   </node>
                                 </node>
                               </node>
@@ -13635,6 +13756,44 @@
                                   <property name="head" nameId="3ior.8618885170173601779" value="build" />
                                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6057022384936478330" nodeInfo="nn">
                                     <property name="head" nameId="3ior.8618885170173601779" value="mps.vmoptions" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="2693344784291112300" nodeInfo="ng">
+              <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyFilterFixCRLF" typeId="3ior.4198392933254416812" id="2693344784291112301" nodeInfo="ng">
+                <property name="eol" nameId="3ior.4198392933254416822" value="lf" />
+                <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
+              </node>
+              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2693344784291112302" nodeInfo="ng">
+                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112303" nodeInfo="nn">
+                  <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112304" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="mps-build" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112305" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112306" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mpsBuild" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112307" nodeInfo="nn">
+                          <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112308" nodeInfo="nn">
+                            <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112309" nodeInfo="nn">
+                              <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112310" nodeInfo="nn">
+                                <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112311" nodeInfo="nn">
+                                  <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2693344784291112312" nodeInfo="nn">
+                                    <property name="head" nameId="3ior.8618885170173601779" value="mps64.vmoptions" />
                                   </node>
                                 </node>
                               </node>
@@ -22117,6 +22276,13 @@
     <property name="name" nameId="tpck.1169194664001" value="mps" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.data" />
     <property name="startupFolder" nameId="s7om.3885435385580582155" value="bin" />
+    <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="2693344784284678846" nodeInfo="ng">
+      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS31" />
+    </node>
+    <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="2693344784284678847" nodeInfo="ng">
+      <property name="commented" nameId="s7om.5842819808956906658" value="true" />
+      <property name="options" nameId="s7om.3885435385580582733" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
+    </node>
     <node role="bootClasspath" roleId="s7om.3885435385580582696" type="s7om.ClassPathItem" typeId="s7om.3885435385580582153" id="716066598061903714" nodeInfo="ng">
       <property name="path" nameId="s7om.3885435385580582154" value="lib/branding.jar" />
     </node>
@@ -22145,7 +22311,7 @@
       <property name="path" nameId="s7om.3885435385580582154" value="lib/trove4j.jar" />
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903723" nodeInfo="ng">
-      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx1100m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS31" />
+      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx950m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS31" />
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903724" nodeInfo="ng">
       <property name="commented" nameId="s7om.5842819808956906658" value="true" />
