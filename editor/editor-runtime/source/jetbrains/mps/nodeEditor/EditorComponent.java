@@ -2129,13 +2129,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       newSelectedCell = myRootCell.findCellWeak(mouseEvent.getX(), mouseEvent.getY(), CellConditions.SELECTABLE);
     }
 
-    jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
-    if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || selectedCell == null || !CellTraversalUtil.isAncestor(selectedCell,
-        newSelectedCell))) {
+    if (newSelectedCell != null && (mouseEvent.getButton() != MouseEvent.BUTTON3 || !isUnderSelection(getSelectionManager().getSelection(), newSelectedCell))) {
       mySelectionManager.setSelection(newSelectedCell);
       newSelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint();
     }
+  }
+
+  private boolean isUnderSelection(Selection selection, jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    if (selection == null) {
+      return false;
+    }
+    for (jetbrains.mps.openapi.editor.cells.EditorCell selectedCell : selection.getSelectedCells()) {
+      if (CellTraversalUtil.isAncestorOrEquals(selectedCell, cell)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public void clearSelectionStack() {
@@ -2877,25 +2887,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     try {
       myCellSwapInProgress = true;
       EditorContext ec = getEditorContext();
+      assert ec != null;
 
-      boolean needsSavingState = ec != null;
-      if (getRootCell() != null && getRootCell().getSNode() != null && ((jetbrains.mps.smodel.SNode) getRootCell().getSNode()).isDisposed()) {
-        needsSavingState = false;
+      jetbrains.mps.openapi.editor.cells.EditorCell sc = getSelectedCell();
+      if (sc != null) {
+        myRecentlySelectedCellInfo = APICellAdapter.getCellInfo(sc);
       }
+      Object memento = ec.createMemento();
+      action.run();
+      ec.pushTracerTask("restoring memento", true);
+      ec.setMemento(memento);
+      ec.popTracerTask();
 
-      if (needsSavingState) {
-        jetbrains.mps.openapi.editor.cells.EditorCell sc = getSelectedCell();
-        if (sc != null) {
-          myRecentlySelectedCellInfo = APICellAdapter.getCellInfo(sc);
-        }
-        Object memento = ec.createMemento();
-        action.run();
-        ec.pushTracerTask("restoring memento", true);
-        ec.setMemento(memento);
-        ec.popTracerTask();
-      } else {
-        action.run();
-      }
       myRecentlySelectedCellInfo = null;
     } finally {
       myCellSwapInProgress = false;
