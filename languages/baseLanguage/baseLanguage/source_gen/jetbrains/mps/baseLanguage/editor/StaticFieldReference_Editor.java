@@ -25,6 +25,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
@@ -184,6 +186,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
       SLinkOperations.setTarget(expr, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);
       SNodeOperations.replaceWithAnother(node, expr);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, expr, SelectionManager.LAST_CELL, -1);
     }
 
     public String getMatchingText() {
