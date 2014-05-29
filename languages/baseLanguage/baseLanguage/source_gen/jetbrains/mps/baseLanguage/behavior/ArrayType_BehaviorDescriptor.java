@@ -20,7 +20,7 @@ public class ArrayType_BehaviorDescriptor extends Type_BehaviorDescriptor implem
   }
 
   public SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
-    return IGenericType_Behavior.virtual_eraseGenerics_5089784887112634594(thisNode);
+    return ArrayType_Behavior.virtual_eraseGenerics_5089784887112634594(thisNode);
   }
 
   public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {

@@ -89,4 +89,13 @@ public class ArrayType_Behavior {
   public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     return "jetbrains.mps.baseLanguage.structure.ArrayType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.structure.ClassifierType".equals(conceptFqName);
   }
+
+  public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
+    SNode copy = SNodeOperations.copyNode(thisNode);
+    SNode componentType = SLinkOperations.getTarget(copy, "componentType", true);
+    if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+      SNodeOperations.replaceWithAnother(componentType, SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_eraseGenerics_5089784887112634594", new Object[]{}), "jetbrains.mps.baseLanguage.structure.Type"));
+    }
+    return copy;
+  }
 }
