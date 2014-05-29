@@ -1282,6 +1282,11 @@
                             </node>
                           </node>
                         </node>
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3528973105712576480" nodeInfo="nn">
+                          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="3528973105712576479" nodeInfo="nn">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22296216606246938" resolveInfo="fireChanged" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -1697,7 +1702,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="22296216606303406" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="22296216606303405" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22296216606246938" resolveInfo="fireChaged" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22296216606246938" resolveInfo="fireChanged" />
           </node>
         </node>
       </node>
@@ -1774,7 +1779,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="22296216606294280" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="22296216606294279" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22296216606246938" resolveInfo="fireChaged" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22296216606246938" resolveInfo="fireChanged" />
           </node>
         </node>
       </node>
@@ -1991,7 +1996,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="22296216606312531" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="22296216606312530" nodeInfo="nn">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22296216606246938" resolveInfo="fireChaged" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="22296216606246938" resolveInfo="fireChanged" />
           </node>
         </node>
       </node>
@@ -2026,7 +2031,7 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="22296216606246938" nodeInfo="igu">
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="fireChaged" />
+      <property name="name" nameId="tpck.1169194664001" value="fireChanged" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="22296216606246941" nodeInfo="sn">
@@ -2051,7 +2056,6 @@
           </node>
         </node>
       </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="22296216606246482" nodeInfo="nn" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="22296216606246936" nodeInfo="in" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="5729690357938457410" nodeInfo="ngu" />
