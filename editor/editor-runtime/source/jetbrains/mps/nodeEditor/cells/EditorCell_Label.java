@@ -983,7 +983,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       // TODO: use EditorCell_Label.this. instead..
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       SNode node = label.getSNode();
-      return node != null && label.canPasteText() && (label.isTheOnlyCompletelySelectedLabelInBigCell() ? CopyPasteUtil.isStringOnTopOfClipboard() : TextPasteUtil.hasStringInClipboard());
+      return node != null && label.canPasteText() && CopyPasteUtil.isStringOnTopOfClipboard();
     }
 
     @Override
