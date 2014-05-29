@@ -7,6 +7,7 @@
   <dependency className="jetbrains.mps.ide.build.mps.sh" file="mps.sh" />
   <dependency className="jetbrains.mps.ide.build.mps.vmoptions" file="mps.vmoptions" />
   <dependency className="jetbrains.mps.ide.build.mps" file="mps.xml" />
+  <dependency className="jetbrains.mps.ide.build.mps64.vmoptions" file="mps64.vmoptions" />
   <dependency className="jetbrains.mps.ide.build.mpsBootstrapCore" file="mpsBootstrapCore.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsBuild" file="mpsBuild.xml" />
   <dependency className="jetbrains.mps.ide.build.mpsBuildUI" file="mpsBuildUI.xml" />

@@ -44,6 +44,9 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gszs7u_h0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gszs7u_i0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_gszs7u_j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gszs7u_k0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gszs7u_l0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_gszs7u_m0(editorContext, node));
     return editorCell;
   }
 
@@ -232,7 +235,7 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_gszs7u_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vm options");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vm options (64 bit)");
     editorCell.setCellId("Constant_gszs7u_i0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -255,15 +258,92 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_gszs7u_b9a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new MpsStartupScript_Editor.vmOptionsListHandler_gszs7u_b9a(node, "vmOptions", editorContext);
+    AbstractCellListHandler handler = new MpsStartupScript_Editor.vmOptions64ListHandler_gszs7u_b9a(node, "vmOptions64", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+    editorCell.setCellId("refNodeList_vmOptions64");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private static class vmOptions64ListHandler_gszs7u_b9a extends RefNodeListHandler {
+    public vmOptions64ListHandler_gszs7u_b9a(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        if (elementNode != null) {
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+  }
+
+  private EditorCell createConstant_gszs7u_k0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_gszs7u_k0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_gszs7u_l0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vm options (32 bit)");
+    editorCell.setCellId("Constant_gszs7u_l0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_gszs7u_m0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_gszs7u_m0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createIndentCell_gszs7u_a21a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_gszs7u_b21a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createIndentCell_gszs7u_a21a(EditorContext editorContext, SNode node) {
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_gszs7u_b21a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MpsStartupScript_Editor.vmOptionsListHandler_gszs7u_b21a(node, "vmOptions", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_vmOptions");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class vmOptionsListHandler_gszs7u_b9a extends RefNodeListHandler {
-    public vmOptionsListHandler_gszs7u_b9a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class vmOptionsListHandler_gszs7u_b21a extends RefNodeListHandler {
+    public vmOptionsListHandler_gszs7u_b21a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
