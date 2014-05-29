@@ -53,6 +53,7 @@ import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.lang.ref.WeakReference;
+import java.util.Collections;
 
 public abstract class EditorCell_Label extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Label {
   protected boolean myNoTextSet;
@@ -374,7 +375,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
        * Suppressing selection painting in case this cell is not actually selected and additionalCellFontColor() for it is not null.
        * This will hide messages feedback if there is an AdditionalPainter instance (with specified cellFontColor) covering this cell.
        * Probably it's good idea to use separate property (not cellFontColor) to determine if this AdditionalPainter is "hiding" messages feedback
-       * or simply let some additional painters paint background below and above editor messages.   
+       * or simply let some additional painters paint background below and above editor messages.
        */
       return;
     }
@@ -791,6 +792,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     getEditorComponent().getSelectionManager().setSelection(getEditorComponent().getSelectionManager().getSelection());
   }
 
+  private boolean isTheOnlyCompletelySelectedLabelInBigCell() {
+    EditorCell containingBigCell = getContainingBigCell();
+    return containingBigCell != null && containingBigCell.getFirstLeaf() == this && containingBigCell.getLastLeaf() == this && getText().equals(getSelectedText());
+  }
+
   private static class MySNodeUndoableAction extends SNodeUndoableAction {
     private final CellInfo myCellInfo;
     private final WeakReference<EditorComponent> myEditor;
@@ -910,8 +916,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
     @Override
     public void execute(EditorContext context) {
+      // TODO: use EditorCell_Label.this. instead..
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
-      CopyPasteUtil.copyTextToClipboard(label.getSelectedText());
+      if (label.isTheOnlyCompletelySelectedLabelInBigCell()) {
+        CopyPasteUtil.copyTextAndNodeToClipboard(label.getSelectedText(), getSNode());
+      } else {
+        CopyPasteUtil.copyTextToClipboard(label.getSelectedText());
+      }
     }
   }
 
@@ -969,9 +980,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     @Override
     public boolean canExecute(EditorContext context) {
       if (!(context.getSelectedCell() instanceof EditorCell_Label)) return false;
+      // TODO: use EditorCell_Label.this. instead..
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       SNode node = label.getSNode();
-      return node != null && label.canPasteText() && TextPasteUtil.hasStringInClipboard() && !(CopyPasteUtil.doesClipboardContainNode());
+      return node != null && label.canPasteText() && (label.isTheOnlyCompletelySelectedLabelInBigCell() ? CopyPasteUtil.isStringOnTopOfClipboard() : TextPasteUtil.hasStringInClipboard());
     }
 
     @Override
@@ -997,9 +1009,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
     @Override
     public void execute(EditorContext context) {
+      // TODO: use EditorCell_Label.this. instead..
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
-      String toCopy = label.getSelectedText();
-      CopyPasteUtil.copyTextToClipboard(toCopy);
+      if (label.isTheOnlyCompletelySelectedLabelInBigCell()) {
+        CopyPasteUtil.copyTextAndNodeToClipboard(label.getSelectedText(), getSNode());
+      } else {
+        CopyPasteUtil.copyTextToClipboard(label.getSelectedText());
+      }
       if (label.canPasteText()) {
         label.deleteSelection();
       }
