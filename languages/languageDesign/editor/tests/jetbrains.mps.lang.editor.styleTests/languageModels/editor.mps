@@ -71,6 +71,33 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6609104295326650929" nodeInfo="nn">
           <property name="text" nameId="tpc2.1073389577007" value="mi" />
         </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7571028832046340360" nodeInfo="nn">
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7571028832046676331" resolveInfo="priorityStyle" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="7571028832046340362" nodeInfo="nn">
+            <property name="flag" nameId="tpc2.1186414551515" value="false" />
+          </node>
+          <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7571028832046340389" nodeInfo="nn">
+            <property name="text" nameId="tpc2.1073389577007" value="fa" />
+          </node>
+          <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7571028832046340397" nodeInfo="nn">
+            <property name="text" nameId="tpc2.1073389577007" value="sol" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7571028832046235254" resolveInfo="hugePriorityStyle" />
+          </node>
+          <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7571028832046341173" nodeInfo="nn">
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7571028832047359190" resolveInfo="unapplyPriorityStyle" />
+            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="7571028832046341175" nodeInfo="nn">
+              <property name="flag" nameId="tpc2.1186414551515" value="false" />
+            </node>
+            <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7571028832046341288" nodeInfo="nn">
+              <property name="text" nameId="tpc2.1073389577007" value="la" />
+            </node>
+            <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7571028832046341296" nodeInfo="nn">
+              <property name="text" nameId="tpc2.1073389577007" value="ti" />
+            </node>
+            <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7571028832046341178" nodeInfo="nn" />
+          </node>
+          <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7571028832046340365" nodeInfo="nn" />
+        </node>
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6609104295326650912" nodeInfo="nn" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="6609104295326650889" nodeInfo="nn" />
@@ -100,6 +127,52 @@
       <node role="valueType" roleId="tpc2.3982520150113092206" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6609104295326651023" nodeInfo="in" />
       <node role="defaultValue" roleId="tpc2.3982520150113147643" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6609104295326651032" nodeInfo="nn">
         <property name="value" nameId="tpee.1068580123138" value="true" />
+      </node>
+    </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="7571028832046676331" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="priorityStyle" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AttributeStyleClassItem" typeId="tpc2.3982520150122341378" id="7571028832046676332" nodeInfo="ng">
+        <link role="attribute" roleId="tpc2.3982520150122346707" targetNodeId="6609104295326650972" resolveInfo="test-inherited-attribute" />
+        <node role="query" roleId="tpc2.3982520150122341379" type="tpc2.QueryFunction_AttributeStyleParameter" typeId="tpc2.3982520150125052579" id="7571028832046676333" nodeInfo="ng">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7571028832046676334" nodeInfo="sn">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7571028832046676335" nodeInfo="nn">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7571028832046676336" nodeInfo="nn">
+                <property name="value" nameId="tpee.1070475926801" value="Priority" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="dominates" roleId="tpc2.3383245079137422296" type="tpc2.DominatesRecord" typeId="tpc2.2491174914159318432" id="7571028832046676337" nodeInfo="ng" />
+    </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="7571028832046235254" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="hugePriorityStyle" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AttributeStyleClassItem" typeId="tpc2.3982520150122341378" id="7571028832046360135" nodeInfo="ng">
+        <link role="attribute" roleId="tpc2.3982520150122346707" targetNodeId="6609104295326650972" resolveInfo="test-inherited-attribute" />
+        <node role="query" roleId="tpc2.3982520150122341379" type="tpc2.QueryFunction_AttributeStyleParameter" typeId="tpc2.3982520150125052579" id="7571028832046360136" nodeInfo="ng">
+          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7571028832046360137" nodeInfo="sn">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7571028832046360796" nodeInfo="nn">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7571028832046360795" nodeInfo="nn">
+                <property name="value" nameId="tpee.1070475926801" value="Huge" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="dominates" roleId="tpc2.3383245079137422296" type="tpc2.DominatesRecord" typeId="tpc2.2491174914159318432" id="7571028832046672374" nodeInfo="ng">
+        <node role="dominatesStyleClassList" roleId="tpc2.2491174914159330058" type="tpc2.StyleClassReferenceList" typeId="tpc2.9122903797276194520" id="7571028832046677423" nodeInfo="ng">
+          <node role="element" roleId="tpc2.9122903797276195161" type="tpc2.StyleClassReference" typeId="tpc2.3383245079137422349" id="7571028832046677422" nodeInfo="ng">
+            <link role="styleClass" roleId="tpc2.3383245079137422350" targetNodeId="7571028832046676331" resolveInfo="priorityStyle" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="7571028832047359190" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="unapplyPriorityStyle" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.UnapplyStyle" typeId="tpc2.1950447826686048995" id="7571028832047359191" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="7571028832047359192" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7571028832046676331" resolveInfo="priorityStyle" />
+        </node>
       </node>
     </node>
   </root>
