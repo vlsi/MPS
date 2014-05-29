@@ -75,6 +75,7 @@ public final class RuleUtil {
   private static final String concept_ReplaceNewOp = "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation";
   private static final String concept_ReplaceOp = "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation";
 
+  public static String concept_ExportMacro = "jetbrains.mps.lang.generator.crossmodel.structure.ExportMacro";
   /**
    * Alternative to isInstanceOf check in isNodeMacro: supported node macros are known at generation time,
    * no reason to perform dynamic check where static check is possible.
@@ -98,6 +99,7 @@ public final class RuleUtil {
     NodeMacroConcepts.add(concept_VarMacro);
     NodeMacroConcepts.add(concept_WeaveMacro);
     NodeMacroConcepts.add(concept_NodeMacro);
+    NodeMacroConcepts.add(concept_ExportMacro);
   }
   /**
    * Set of operations that might alter model (insertion of new nodes, replacement)

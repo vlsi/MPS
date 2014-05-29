@@ -214,8 +214,6 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   @Override
   public SModel resolveInDependencies(SModelId reference) {
     // FIXME what's the purpose of this implementation?
-    String name = reference.getModelName();
-    if (name == null) return super.resolveInDependencies(reference);
     for (SModel m : myModelVault.allModels()) {
       if (reference.equals(m.getModelId())) {
         return m;

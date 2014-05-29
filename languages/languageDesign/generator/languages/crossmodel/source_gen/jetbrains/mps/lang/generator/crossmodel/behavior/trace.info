@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="MarshalFunction_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.MarshalFunction_BehaviorDescriptor" />
+    </file>
+    <file name="GenerationContextOp_GetExport_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.GenerationContextOp_GetExport_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabel_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.ExportLabel_BehaviorDescriptor" />
+    </file>
+    <file name="FunctionDeclaration_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.FunctionDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="MapConfigExt_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.MapConfigExt_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabelParameter_outputNode_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.ExportLabelParameter_outputNode_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabelParameter_keeper_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.ExportLabelParameter_keeper_BehaviorDescriptor" />
+    </file>
+    <file name="Entry_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.Entry_BehaviorDescriptor" />
+    </file>
+    <file name="ExportMacro_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.ExportMacro_BehaviorDescriptor" />
+    </file>
+    <file name="FunctionCall_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.FunctionCall_BehaviorDescriptor" />
+    </file>
+    <file name="TrivialKeeper_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.TrivialKeeper_BehaviorDescriptor" />
+    </file>
+    <file name="FunctionDeclarationContainer_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.FunctionDeclarationContainer_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabelParameter_inputNode_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.ExportLabelParameter_inputNode_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,52,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="NodeA_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.NodeA_BehaviorDescriptor" />
+    </file>
+    <file name="UnmarshalFunction_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.UnmarshalFunction_BehaviorDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:ceb48cab-e2f2-4f9a-bad1-a5a3b64d1d55(jetbrains.mps.lang.generator.crossmodel.behavior)/7325101476743014802">
+    <file name="MarshalFunction_Behavior.java">
+      <node id="7325101476743226941" at="17,125,18,69" concept="1" />
+      <node id="7325101476743055436" at="18,69,19,184" concept="0" />
+      <node id="7325101476743316120" at="19,184,20,171" concept="0" />
+      <node id="8915420221429815040" at="20,171,21,167" concept="0" />
+      <node id="7325101476743313957" at="21,167,22,16" concept="2" />
+      <node id="7325101476743014802" at="14,0,16,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7325101476743014802" at="17,0,24,0" concept="3" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <scope id="7325101476743014958" at="14,43,14,43" />
+      <scope id="7325101476743014802" at="14,0,16,0">
+        <var name="thisNode" id="7325101476743014802" />
+      </scope>
+      <scope id="7325101476743055430" at="17,125,22,16">
+        <var name="list" id="7325101476743226942" />
+      </scope>
+      <scope id="7325101476743014802" at="17,0,24,0">
+        <var name="thisConcept" id="7325101476743014802" />
+      </scope>
+      <unit id="7325101476743014802" at="13,0,25,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.MarshalFunction_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:ceb48cab-e2f2-4f9a-bad1-a5a3b64d1d55(jetbrains.mps.lang.generator.crossmodel.behavior)/7325101476743439464">
+    <file name="UnmarshalFunction_Behavior.java">
+      <node id="7325101476743440215" at="16,125,17,69" concept="1" />
+      <node id="7325101476743499306" at="17,69,18,170" concept="0" />
+      <node id="8915420221429816300" at="18,170,19,167" concept="0" />
+      <node id="8915420221429816516" at="19,167,20,171" concept="0" />
+      <node id="7325101476743440288" at="20,171,21,16" concept="2" />
+      <node id="7325101476743439464" at="13,0,15,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7325101476743439464" at="16,0,23,0" concept="3" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <scope id="7325101476743439466" at="13,43,13,43" />
+      <scope id="7325101476743439464" at="13,0,15,0">
+        <var name="thisNode" id="7325101476743439464" />
+      </scope>
+      <scope id="7325101476743439488" at="16,125,21,16">
+        <var name="list" id="7325101476743440216" />
+      </scope>
+      <scope id="7325101476743439464" at="16,0,23,0">
+        <var name="thisConcept" id="7325101476743439464" />
+      </scope>
+      <unit id="7325101476743439464" at="12,0,24,0" name="jetbrains.mps.lang.generator.crossmodel.behavior.UnmarshalFunction_Behavior" />
+    </file>
+  </root>
+</debug-info>
+

@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.crossmodel.ExportLabelContext;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import jetbrains.mps.generator.impl.ExportsVault;
+import jetbrains.mps.generator.impl.ExportsVault.ExportEntry;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.project.ModuleContext;
@@ -30,6 +33,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -223,6 +227,19 @@ public class TemplateQueryContext {
 
   public Object getSessionObject(Object key) {
     return myGenerator.getGeneratorSessionContext().getSessionObject(key);
+  }
+
+
+  public SNode getOutputNodeProxy(SNode inputNode, String exportLabelName) {
+    final ExportsVault exportsVault = new ExportsVault(myGenerator.getGeneratorSessionContext());
+    final Collection<ExportEntry> exports = exportsVault.find(exportLabelName, inputNode);
+    if (exports.isEmpty()) {
+      return null;
+    }
+    if (exports.size() > 1) {
+      showErrorMessage(inputNode, String.format("There are %d known exports with label %s for input node %s", exports.size(), exportLabelName, inputNode));
+    }
+    return exportsVault.instantiateOutputProxy(exports.iterator().next(), inputNode);
   }
 
   public void showInformationMessage(SNode node, String message) {

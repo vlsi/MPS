@@ -539,6 +539,9 @@
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
       </node>
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3071639529306440782" nodeInfo="ng">
+        <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="3071639529306440780" resolveInfo="ExtensionsPlaceholder" />
+      </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1200911414924" nodeInfo="nn">
         <property name="vertical" nameId="tpc2.1073389446425" value="true" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1200911421694" nodeInfo="nn">
@@ -2873,14 +2876,14 @@
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
             <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+            <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="6925838366769718225" nodeInfo="ng">
+              <property name="name" nameId="tpck.1169194664001" value="templateName" />
+            </node>
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="1214314934068" nodeInfo="nn">
               <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
             </node>
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678141" nodeInfo="nn">
               <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
-            <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="6925838366769718225" nodeInfo="ng">
-              <property name="name" nameId="tpck.1169194664001" value="templateName" />
             </node>
           </node>
         </node>
@@ -3402,14 +3405,14 @@
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
             <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+            <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="6925838366768540126" nodeInfo="ng">
+              <property name="name" nameId="tpck.1169194664001" value="templateName" />
+            </node>
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="1214314934352" nodeInfo="nn">
               <property name="style" nameId="tpc2.1186403771423" value="ITALIC" />
             </node>
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399677853" nodeInfo="nn">
               <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
-            <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="6925838366768540126" nodeInfo="ng">
-              <property name="name" nameId="tpck.1169194664001" value="templateName" />
             </node>
           </node>
         </node>
@@ -7091,6 +7094,11 @@
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4426797670062835734" nodeInfo="nn" />
     </node>
+  </root>
+  <root type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="3071639529306440780" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="ExtensionsPlaceholder" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.1095416546421" resolveInfo="MappingConfiguration" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3071639529306440781" nodeInfo="nn" />
   </root>
 </model>
 

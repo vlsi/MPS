@@ -52,7 +52,7 @@ public class TemplateModelInterpreted implements TemplateModel {
       String conceptName = root.getConcept().getQualifiedName();
       if (conceptName.equals(RuleUtil.concept_TemplateSwitch)) {
         mySwitches.add(new TemplateSwitchMappingInterpreted(root));
-      } else if (conceptName.equals(RuleUtil.concept_MappingConfiguration)) {
+      } else if (conceptName.equals(RuleUtil.concept_MappingConfiguration) || conceptName.equals("jetbrains.mps.lang.generator.crossmodel.structure.MapConfigExt")) {
         myMappings.add(new TemplateMappingConfigurationInterpreted(this, root));
       }
     }

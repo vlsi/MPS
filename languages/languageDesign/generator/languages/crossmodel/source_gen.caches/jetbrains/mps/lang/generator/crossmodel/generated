@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-6vpwlbc3yt0rcpsbat3hv371pfng3dq">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:5e9d1d70-deea-44c4-aaf8-6dffb260582e(jetbrains.mps.lang.generator.crossmodel.constraints)" hash="-cpuxf6l7rpy9dayw45bcpxg8kbpkt5b" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:c09dc325-2afc-4b1e-9abd-3068d12c99bf(jetbrains.mps.lang.generator.crossmodel.typesystem)" hash="-1artgkd7fst9hfat42q4riinyiohv8w" />
+  <dep model="r:ceb48cab-e2f2-4f9a-bad1-a5a3b64d1d55(jetbrains.mps.lang.generator.crossmodel.behavior)" hash="3q933qucoe9cw5foe5za3g1yacv6wmw" />
+  <dep model="r:eefd1388-23f6-4800-81f0-1e7c481dc3b4(jetbrains.mps.lang.generator.crossmodel.structure)" hash="aeaso3ybzkpmhsx79peo68v3jj3fwe0" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <dep model="r:fd9ee1b4-662f-467b-a063-faebe734cfbe(jetbrains.mps.lang.generator.crossmodel.editor)" hash="5j3vh976pk2z6z9hx7i3clvgdy24k2o" />
+  <common dependsOnNodes="true">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:5e9d1d70-deea-44c4-aaf8-6dffb260582e(jetbrains.mps.lang.generator.crossmodel.constraints)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c09dc325-2afc-4b1e-9abd-3068d12c99bf(jetbrains.mps.lang.generator.crossmodel.typesystem)" />
+    <dep model="r:ceb48cab-e2f2-4f9a-bad1-a5a3b64d1d55(jetbrains.mps.lang.generator.crossmodel.behavior)" />
+    <dep model="r:eefd1388-23f6-4800-81f0-1e7c481dc3b4(jetbrains.mps.lang.generator.crossmodel.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:fd9ee1b4-662f-467b-a063-faebe734cfbe(jetbrains.mps.lang.generator.crossmodel.editor)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+
