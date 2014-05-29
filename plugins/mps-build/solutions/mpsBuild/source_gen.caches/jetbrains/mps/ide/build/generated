@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dshu1qjeyufaek4iyfs6ni3yvxt2yqo">
+<dependencies version="2" modelHash="9yac3ixakt2950h1i6vlaieljl144ua">
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-b7uc8zn9s21moznq6gl69vj86eo9fz" />
   <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" hash="b3levz77xf5i5ay54ipz1d9fnhdtp28" />
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="el555j0kj7po3h5p1ywngqm4lweuwm2" />
@@ -246,7 +246,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsConnectorPlugin.xml" />
   </source>
-  <source id="716066598061903713" name="mps" hash="4j5pljtk88hl3bvs0xd6qv8a8gb7a4r">
+  <source id="716066598061903713" name="mps" hash="e2sw36acn5id1lifwjcrqq5q2spm6rm">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <file name="Info.plist.xml" />
     <file name="mps.bat" />
