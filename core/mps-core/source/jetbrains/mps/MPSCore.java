@@ -68,9 +68,6 @@ public class MPSCore extends ComponentPlugin {
 
   }
 
-  private MPSModuleRepository myModuleRepository;
-  private GlobalSModelEventsManager myGlobalSModelEventsManager;
-
   public static MPSCore getInstance() {
     return ourInstance;
   }
@@ -87,35 +84,35 @@ public class MPSCore extends ComponentPlugin {
 
     // repositories
     init(new SRepositoryRegistry());
-    init(new SModelRepository());
-    myModuleRepository = init(new MPSModuleRepository());
-    myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(getModelRepository()));
-    ClassLoaderManager classLoaderManager = init(new ClassLoaderManager());
+    SModelRepository modelRepository = init(new SModelRepository());
+    MPSModuleRepository moduleRepository = init(new MPSModuleRepository());
+    GlobalSModelEventsManager globalSModelEventsManager = init(new GlobalSModelEventsManager(modelRepository));
+    ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(moduleRepository));
 
     init(new SModelFileTracker(SRepositoryRegistry.getInstance()));
-    init(new ModuleRepositoryFacade(myModuleRepository));
-    init(new ModuleFileTracker(myModuleRepository));
+    init(new ModuleRepositoryFacade(moduleRepository));
+    init(new ModuleFileTracker(moduleRepository));
     init(new CleanupManager(classLoaderManager));
     init(new PathMacros());
-    init(new LibraryInitializer(myModuleRepository, classLoaderManager));
-    init(new GlobalScope(myModuleRepository, getModelRepository()));
-    init(new ImmatureReferences(getModelRepository()));
+    init(new LibraryInitializer(moduleRepository, classLoaderManager));
+    init(new GlobalScope(moduleRepository, modelRepository));
+    init(new ImmatureReferences(modelRepository));
 
     init(new QueryMethodGenerated(classLoaderManager));
     ConceptRegistry conceptRegistry = init(new ConceptRegistry());
     init(new LanguageRegistry(classLoaderManager, conceptRegistry));
-    init(new ExtensionRegistry(classLoaderManager, myModuleRepository));
-    init(new LanguageHierarchyCache(myModuleRepository));
-    init(new ConceptDescendantsCache(myModuleRepository, LanguageRegistry.getInstance()));
+    init(new ExtensionRegistry(classLoaderManager, moduleRepository));
+    init(new LanguageHierarchyCache(moduleRepository));
+    init(new ConceptDescendantsCache(moduleRepository, LanguageRegistry.getInstance()));
     init(new StructureAspectInterpreted());
-    init(new SModelUtil_new(classLoaderManager, myGlobalSModelEventsManager));
-    init(new CachesManager(classLoaderManager, getModelRepository()));
+    init(new SModelUtil_new(classLoaderManager, globalSModelEventsManager));
+    init(new CachesManager(classLoaderManager, modelRepository));
     init(new LanguageDescriptorModelProvider());
-    init(new ProjectStructureModule(myModuleRepository, getModelRepository()));
+    init(new ProjectStructureModule(moduleRepository, modelRepository));
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
-    init(new BLDependenciesCache(getModelRepository()));
-    init(new DataFlowManager(classLoaderManager, myModuleRepository));
+    init(new BLDependenciesCache(modelRepository));
+    init(new DataFlowManager(classLoaderManager, moduleRepository));
 
     init(new ResolverComponent());
     init(new CheckersComponent());
@@ -125,23 +122,31 @@ public class MPSCore extends ComponentPlugin {
     init(new InterpretedLanguageAspectsRegistry());
   }
 
-  @Override
-  public void dispose() {
-    super.dispose();
-    myModuleRepository = null;
-    myGlobalSModelEventsManager = null;
-  }
-
+  /**
+   * @deprecated use {@link jetbrains.mps.smodel.SModelRepository#getInstance()} directly
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public SModelRepository getModelRepository() {
     return SModelRepository.getInstance();
   }
 
+  /**
+   * @deprecated use {@link jetbrains.mps.smodel.MPSModuleRepository#getInstance()} directly
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public MPSModuleRepository getModuleRepository() {
-    return myModuleRepository;
+    return MPSModuleRepository.getInstance();
   }
 
+  /**
+   * @deprecated use {@link jetbrains.mps.smodel.GlobalSModelEventsManager#getInstance()} directly
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public GlobalSModelEventsManager getGlobalSModelEventsManager() {
-    return myGlobalSModelEventsManager;
+    return GlobalSModelEventsManager.getInstance();
   }
 
   /**
