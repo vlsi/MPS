@@ -23,6 +23,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new ExportScopeNamespace_Editor());
       case 3:
         return Collections.<ConceptEditor>singletonList(new ExportScopePublic_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new SuppressErrorsAnnotation_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -46,7 +48,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a2 = new String[]{"jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent", "jetbrains.mps.lang.core.editor.alias"};
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"};
 }
