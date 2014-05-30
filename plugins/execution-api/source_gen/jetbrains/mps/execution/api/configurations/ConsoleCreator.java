@@ -11,6 +11,7 @@ public class ConsoleCreator {
 
   public static ConsoleViewImpl createConsoleView(Project project, boolean viewer) {
     ConsoleViewImpl result = new ConsoleViewImpl(project, viewer);
+    result.setHelpId("reference.dialogs.debugview.consoletab");
     // next method inits editor in order to fix MPS-11721 
     result.getComponent();
     return result;
