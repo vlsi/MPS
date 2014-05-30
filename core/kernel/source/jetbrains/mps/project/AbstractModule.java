@@ -414,28 +414,44 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
         List<String> paths = new LinkedList<String>();
 
-        String contentPath = mrd.getMemento().get("contentPath");
-        for(Memento sr : mrd.getMemento().getChildren("sourceRoot")) {
-          paths.add(contentPath + File.separator + sr.get("location"));
-        }
-
-        Memento newMemento = new MementoImpl();
-        newMemento.put("contentPath", contentPath.replaceAll("[^\\/]+[.]jar!/module", ""));
-        Memento newMementoChild =  newMemento.createChild("sourceRoot");
-
-        boolean update = false;
-        for(String path : paths) {
+        //MPS-19756
+        // TODO: get rid of this code - use special descriptor
+        if(mrd.getMemento().get("path") != null) {
+          // See JavaSourceStubModelRoot & JavaClassStubsModelRoot load methods need to replace with super
+          String path = mrd.getMemento().get("path");
           String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
 
           if (convertedPath != null) {
-            newMementoChild.put("location", convertedPath.replace(newMemento.get("contentPath"), ""));
-            update = true;
+            Memento newMemento = new MementoImpl();
+            newMemento.put("path", convertedPath);
+            toAdd.add(new ModelRootDescriptor(mrd.getType(), newMemento));
           }
+        } else {
+
+
+          String contentPath = mrd.getMemento().get("contentPath");
+          for (Memento sr : mrd.getMemento().getChildren("sourceRoot")) {
+            paths.add(contentPath + File.separator + sr.get("location"));
+          }
+
+          Memento newMemento = new MementoImpl();
+          newMemento.put("contentPath", contentPath.replaceAll("[^\\/]+[.]jar!/module", ""));
+          Memento newMementoChild = newMemento.createChild("sourceRoot");
+
+          boolean update = false;
+          for (String path : paths) {
+            String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
+
+            if (convertedPath != null) {
+              newMementoChild.put("location", convertedPath.replace(newMemento.get("contentPath"), ""));
+              update = true;
+            }
+          }
+          if(update)
+            toAdd.add(new ModelRootDescriptor(mrd.getType(), newMemento));
         }
 
         toRemove.add(mrd);
-        if(update)
-          toAdd.add(new ModelRootDescriptor(mrd.getType(), newMemento));
       }
       descriptor.getModelRootDescriptors().removeAll(toRemove);
       descriptor.getModelRootDescriptors().addAll(toAdd);
