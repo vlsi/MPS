@@ -1,12 +1,14 @@
 New Features in MPS 3.1
 
 - Diagram editor
+
 - Generator improvements
   - In-place transformation
   - New generation trace
   - New configuration options
   - The Ant generation task more configurable
   - Support for arguments in SWITCH macros
+
 - Projectional Editor improvements
   - Style priorities
   - Style inheritance
@@ -14,7 +16,7 @@ New Features in MPS 3.1
   - Automatic reference re-resolving
   - Presentation mode
   - Fluent parentheses editing in BaseLanguage expressions
-  - Adaptable copy-paste functionality
+
 - Testing Framework Improvements
   - Improved usability
   - Constraints tests
