@@ -70,8 +70,8 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
 
   @Override
-  public void dispose() {
-    super.dispose();
+  public void detach() {
+    super.detach();
     getSource().removeListener(this);
   }
 

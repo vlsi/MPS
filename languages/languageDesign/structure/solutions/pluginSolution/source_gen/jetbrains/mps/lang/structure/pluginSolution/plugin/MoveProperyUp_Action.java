@@ -17,6 +17,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.refactoring.MoveUpDialog;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -99,11 +101,11 @@ public class MoveProperyUp_Action extends BaseAction {
       modelAccess.runReadInEDT(new Runnable() {
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
-          if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {
+          if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
             return;
           }
           SNode node1 = ((SNode) targetConcept);
-          if (!(node1.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) targetConcept))) {
+          if (!(SNodeUtil.isAccessible(node1, MPSModuleRepository.getInstance()))) {
             return;
           }
 

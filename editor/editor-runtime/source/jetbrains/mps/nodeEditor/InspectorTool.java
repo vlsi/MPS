@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
@@ -138,9 +139,8 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     return myComponent;
   }
 
-  public void inspect(SNode node, IOperationContext context, FileEditor fileEditor, Set<String> enabledHints)
-  {
-    if (node instanceof jetbrains.mps.smodel.SNode && ((jetbrains.mps.smodel.SNode) node).isDisposed()) {
+  public void inspect(SNode node, IOperationContext context, FileEditor fileEditor, Set<String> enabledHints) {
+    if (node instanceof jetbrains.mps.smodel.SNode && !SNodeUtil.isAccessible(node, myInspectorComponent.getRepository())) {
       // Note: inspector does not support disposed nodes. If we get one, just clear the tool.
       // The editor holds references to nodes between read actions and these references are updated asynchronously.
       // This means that sometimes an editor may give us an outdated node.

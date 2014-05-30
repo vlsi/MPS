@@ -52,10 +52,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private static final String[] EMPTY_ARRAY = new String[0];
   private static final Object USER_OBJECT_LOCK = new Object();
 
-  private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
-
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
-  private static ThreadLocal<Boolean> ourReadAccessHandlingInProgress = new ThreadLocal<Boolean>();
 
   public static void setNodeMemberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
@@ -83,45 +80,35 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     myId = SModel.generateUniqueId();
   }
 
-
   @Override
   public void attach(@NotNull SRepository repo) {
-//    assert !(myRepository instanceof DisposedRepository) : "Not supposed to do this, just detach the node";
     repo.getModelAccess().checkReadAccess();
-//    if (!myModel.isUpdateMode()) {
-//      repo.getModelAccess().checkWriteAccess();
-//    }
     if (myRepository == repo) return;
     synchronized (REPO_LOCK) {
       if (myRepository == repo) return;
-      //    org.jetbrains.mps.openapi.model.SModel model = getModel();
-      //assert model != null && model.getModule() != null && model.getModule().getRepository() != null;
-      //    assert myRepository == null : "Can't register disposed node or node from another repo. Repo:" + myRepository + ", attaching to " + repo;
+      if (myRepository != null) {
+        throw new IllegalStateException("trying to attach a node from a repository to some other repository");
+      }
       myRepository = repo;
     }
   }
 
   @Override
   public void detach() {
-    if (myRepository == DisposedRepository.INSTANCE) return;
-    if (myRepository != null) {
-      myRepository.getModelAccess().checkWriteAccess();
-    }
-    for (SNode c = firstChild(); c != null; c = c.next) {
-      c.detach();
-    }
+    if (myRepository == null) return;
     synchronized (REPO_LOCK) {
-      myRepository = DisposedRepository.INSTANCE;
+      if (myRepository == null) return;
+      myRepository.getModelAccess().checkWriteAccess();
+      myRepository = null;
+      for (SNode c = first; c != null; c = c.next) {
+        c.detach();
+      }
     }
   }
 
   protected void assertCanRead() {
     final SRepository repo = myRepository;
     if (repo == null) return;
-    if (repo instanceof DisposedRepository) {
-      showDisposedMessage();
-      return;
-    }
     repo.getModelAccess().checkReadAccess();
   }
 
@@ -129,12 +116,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     final SRepository repo = myRepository;
     final SModel model = myModel;
     if (repo == null) return;
-    if (repo instanceof DisposedRepository) {
-      showDisposedMessage();
-      return;
-    }
     org.jetbrains.mps.openapi.module.ModelAccess modelAccess = repo.getModelAccess();
-    modelAccess.checkReadAccess();
     if (model != null && model.isUpdateMode()) return;
     modelAccess.checkWriteAccess();
     if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
@@ -142,14 +124,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
           "registered node can only be modified inside undoable command or in 'loading' model " +
               org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
       );
-    }
-  }
-
-  private void showDisposedMessage() {
-    org.jetbrains.mps.openapi.model.SModel model = getModel();
-    String modelName = model == null ? "null" : jetbrains.mps.util.SNodeOperations.getModelLongName(model);
-    if (ourErroredModels.add(modelName)) {
-//      LOG.error(new IllegalModelAccessError("Accessing disposed node in model " + modelName));
     }
   }
 
@@ -274,7 +248,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SNode parent = treeParent();
 
-    if (parent!=null){
+    if (parent != null) {
       parent.nodeRead();
       parent.fireNodeReadAccess();
       parent.fireNodeUnclassifiedReadAccess();
@@ -633,7 +607,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         if (myUserObjects[i].equals(key)) {
           Object[] newarr = new Object[myUserObjects.length];
           System.arraycopy(myUserObjects, 0, newarr, 0, myUserObjects.length);
-          newarr[i+1] = value;
+          newarr[i + 1] = value;
           myUserObjects = newarr;
           return;
         }
@@ -678,7 +652,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanRead();
 
     SNode child = firstChild();
-    if (child!=null){
+    if (child != null) {
       child.nodeRead();
       child.fireNodeReadAccess();
     }
@@ -707,7 +681,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SNode tp = treePrevious();
     SNode ps = tp.next == null ? null : tp;
-    if (ps!=null){
+    if (ps != null) {
       ps.nodeRead();
       ps.fireNodeReadAccess();
     }
@@ -722,7 +696,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (p == null) return null;
 
     SNode tn = treeNext();
-    if (tn != null){
+    if (tn != null) {
       tn.nodeRead();
       tn.fireNodeReadAccess();
     }
@@ -848,15 +822,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //-------------------------------------------------------
 
   //----root, deleted, etc.---
-
-  /*
-  calling this means we've held a node between read actions and now it is deleted
-  this won't happen if we store only node pointers
-  in this case, isDisposed() can be replaced with false
-   */
-  public boolean isDisposed() {
-    return myRepository instanceof DisposedRepository;
-  }
 
   public void setId(@Nullable org.jetbrains.mps.openapi.model.SNodeId id) {
     if (EqualUtil.equals(id, myId)) return;
@@ -1020,32 +985,32 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   void fireNodeUnclassifiedReadAccess() {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-        NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
+    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
   }
 
   void fireNodeReadAccess() {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-        NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
+    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
   private void fireNodeChildReadAccess(String role, SNode child) {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-        NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
+    NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
   }
 
   private void fireNodePropertyReadAccess(String propertyName, String propertyValue) {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-        NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
+    NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
   }
 
   private void fireNodeReferentReadAccess(String referentRole, SNode referent) {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-        NodeReadEventsCaster.fireNodeReferentReadAccess(this, referentRole, referent);
+    NodeReadEventsCaster.fireNodeReferentReadAccess(this, referentRole, referent);
   }
 
   private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck) {
     if (myModel == null || !myModel.canFireReadEvent()) return;
-        NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
+    NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
   }
 
   //--------private classes-------

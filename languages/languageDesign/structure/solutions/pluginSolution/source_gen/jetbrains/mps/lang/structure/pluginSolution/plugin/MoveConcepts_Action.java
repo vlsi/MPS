@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -127,7 +128,7 @@ public class MoveConcepts_Action extends BaseAction {
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadInEDT(new Runnable() {
         public void run() {
           for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
-            if (!(((SNode) node).getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
+            if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
               return;
             }
           }

@@ -224,8 +224,7 @@ public class IntentionsSupport {
   }
 
   private boolean isInconsistentEditor() {
-    return myEditor.isDisposed() || myEditor.getEditedNode() == null || jetbrains.mps.util.SNodeOperations.isDisposed(myEditor.getEditedNode()) ||
-        !myEditor.hasValidSelectedNode();
+    return myEditor.isDisposed() || myEditor.getEditedNode() == null || !myEditor.hasValidSelectedNode();
   }
 
   private void adjustLightBulbLocation() {

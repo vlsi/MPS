@@ -9,7 +9,8 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
@@ -42,7 +43,7 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
     }
     SNodeReference nodePointer = null;
     if (node != null) {
-      if (SNodeOperations.isDisposed(node) || node.getModel() == null) {
+      if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
         return null;
       }
       nodePointer = new SNodePointer(node);

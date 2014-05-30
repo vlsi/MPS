@@ -1336,6 +1336,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected void popCellContext() {
     getEditorContext().getCellFactory().popCellContext();
   }
+
   protected abstract EditorCell createRootCell(List<SModelEvent> events);
 
   public void setFolded(EditorCell cell, boolean folded) {
@@ -1416,7 +1417,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean hasValidSelectedNode() {
     SNode selectedNode = getSelectedNode();
-    return selectedNode != null && !((jetbrains.mps.smodel.SNode) selectedNode).isDisposed() && selectedNode.getModel() != null;
+    return selectedNode != null && SNodeUtil.isAccessible(selectedNode, myRepository);
   }
 
   @Override
@@ -1488,9 +1489,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     but can be called outside of read action.
    */
   private boolean isInvalidLightweight() {
-    return getEditorContext() == null ||
-        getEditedNode() == null ||
-        jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
+    return getEditorContext() == null || getEditedNode() == null;
   }
 
   private void addOurListeners(@NotNull SModel sm) {
@@ -2071,7 +2070,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                             public void run() {
                               GoToTypeErrorRuleUtil.goToRuleById(getCurrentProject(),
                                   new Pair<String, String>(herror.getRuleModel(),
-                                      herror.getRuleId()));
+                                      herror.getRuleId())
+                              );
                               dialog.dispose();
                             }
                           });
@@ -2276,14 +2276,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                   new Rectangle(
                       x1, largestVerticalBigCell.getY(),
                       x0 - x1 + width, largestVerticalBigCell.getHeight()
-                  )));
+                  )
+              )
+          );
         } else {
           scrollToRectIfNotVisible(
               expandRectangleOneLine(
                   new Rectangle(
                       x0 - SCROLL_GAP, largestVerticalBigCell.getY(),
                       viewportWidth + SCROLL_GAP, largestVerticalBigCell.getHeight()
-                  )));
+                  )
+              )
+          );
         }
       } else {
         scrollToRectIfNotVisible(
@@ -2291,7 +2295,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                 new Rectangle(
                     x0, largestVerticalBigCell.getY(),
                     width, largestVerticalBigCell.getHeight()
-                )));
+                )
+            )
+        );
       }
     }
   }
@@ -2737,7 +2743,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                 return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
                     substituteInfo.getMatchingActions(pattern, false);
               }
-            });
+            }
+        );
       }
     });
   }
@@ -3415,6 +3422,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void setUseCustomHints(boolean useDefaultsHints) {
     myUseCustomHints = useDefaultsHints;
   }
+
   public boolean getUseCustomHints() {
     return myUseCustomHints;
   }
