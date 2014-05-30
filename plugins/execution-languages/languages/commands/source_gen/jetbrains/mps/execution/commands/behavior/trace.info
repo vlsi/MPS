@@ -26,7 +26,7 @@
   <unitInfo fileName="ProcessType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessType_BehaviorDescriptor" />
   <unitInfo fileName="PropertyCommandPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.PropertyCommandPart_BehaviorDescriptor" />
   <unitInfo fileName="RedirectOutputExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.RedirectOutputExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ReportErrorStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_BehaviorDescriptor" />
+  <unitInfo fileName="ReportErrorStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_BehaviorDescriptor" />
   <unitInfo fileName="ReportExecutionError_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ReportExecutionError_BehaviorDescriptor" />
   <unitInfo fileName="StartAndWaitOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.StartAndWaitOperation_BehaviorDescriptor" />
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/1262430001741647344">

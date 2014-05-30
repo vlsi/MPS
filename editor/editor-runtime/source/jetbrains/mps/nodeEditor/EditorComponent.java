@@ -384,6 +384,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft) {
+    setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
     setEditorContext(new EditorContext(this, null, repository));
 
@@ -2360,8 +2361,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   }
 
-  @Override
-  public Dimension getPreferredSize() {
+  Dimension preferredComponentSize() {
     if (myRootCell == null) {
       JViewport viewport = myScrollPane.getViewport();
       Rectangle viewRect = viewport.getViewRect();

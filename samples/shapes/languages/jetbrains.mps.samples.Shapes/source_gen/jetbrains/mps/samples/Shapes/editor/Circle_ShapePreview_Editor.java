@@ -169,7 +169,15 @@ public class Circle_ShapePreview_Editor extends DefaultNodeEditor {
 
       @Override
       public Dimension getPreferredSize() {
-        return new Dimension(20 + SPropertyOperations.getInteger(node, "radius"), 20 + SPropertyOperations.getInteger(node, "radius"));
+        final Dimension dimension = new Dimension();
+
+        SNodeOperations.getModel(node).getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            dimension.width = 20 + SPropertyOperations.getInteger(node, "radius");
+            dimension.height = 20 + SPropertyOperations.getInteger(node, "radius");
+          }
+        });
+        return dimension;
       }
     };
   }

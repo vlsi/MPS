@@ -1345,7 +1345,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     myGapRight = gap;
   }
 
-  protected void requestRelayout() {
+  public void requestRelayout() {
     myIsNeedRelayout = true;
     if (getParent() != null) {
       getParent().requestRelayout();
