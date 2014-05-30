@@ -26,6 +26,9 @@ public final class RuntimeFlags {
   private static boolean ourTestMode = false;
   private static boolean ourMergeDriverMode = false;
 
+  private RuntimeFlags() {
+  }
+
   public static boolean isTestMode() {
     return ourTestMode;
   }

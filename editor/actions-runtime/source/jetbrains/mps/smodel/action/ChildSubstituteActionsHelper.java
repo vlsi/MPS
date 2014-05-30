@@ -19,7 +19,6 @@ import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
@@ -27,10 +26,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil.ReferenceDescriptor;
+import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -175,17 +172,7 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  /**
-   * TODO: remove this method after MPS 3.0
-   *
-   * @deprecated since MPS 3.0, createDefaultSubstituteActions() should be used instead
-   */
-  public static List<INodeSubstituteAction> createDefaultActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild,
-      IChildNodeSetter setter, IOperationContext operationContext) {
-    return (List) createDefaultSubstituteActions(applicableConcept, parentNode, currentChild, setter, operationContext);
-  }
-
-  public static List<SubstituteAction> createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild,
+   public static List<SubstituteAction> createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild,
       IChildNodeSetter setter, IOperationContext operationContext) {
     String conceptFqName = NameUtil.nodeFQName(applicableConcept);
     SNode link = null;
@@ -232,23 +219,21 @@ public class ChildSubstituteActionsHelper {
 //      return Collections.emptyList();
 //    }
 
-    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getSmartReferenceDescriptor(parentNode,
+    if (smartConcept == null) {
+      return Collections.emptyList();
+    }
+    ReferenceDescriptor refDescriptor = ModelConstraints.getSmartReferenceDescriptor(parentNode,
         linkDeclaration == null ? null : SModelUtil.getLinkDeclarationRole(linkDeclaration), index, smartConcept);
-    if (refDescriptor == null) return Collections.emptyList();
-
-    Scope searchScope = refDescriptor.getScope();
-    if (searchScope == null) return Collections.emptyList();
 
     // create smart actions
     final String targetConcept = NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(smartReference));
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
-    IReferencePresentation presentation = refDescriptor.getReferencePresentation();
-    Iterable<SNode> referentNodes = searchScope.getAvailableElements(null);
+    Iterable<SNode> referentNodes = refDescriptor.getScope().getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
       if (referentNode == null || !referentNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(targetConcept)))
         continue;
       actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode,
-          currentChild, childSetter, smartConcept, smartReference, presentation));
+          currentChild, childSetter, smartConcept, smartReference, refDescriptor));
     }
 
     return actions;
@@ -270,25 +255,24 @@ public class ChildSubstituteActionsHelper {
     private final SNode myReferentNode;
     private final SNode mySmartConcept;
     private final SNode mySmartReference;
-    private IReferencePresentation myPresentation;
+    private final ReferenceDescriptor myRefDescriptor;
 
     public SmartRefChildNodeSubstituteAction(SNode referentNode, SNode parentNode, SNode currentChild, IChildNodeSetter childSetter, SNode smartConcept,
-        SNode smartReference, IReferencePresentation presentation) {
+        SNode smartReference, @NotNull ReferenceDescriptor descriptor) {
       super(smartConcept, referentNode, parentNode, currentChild, childSetter);
       myReferentNode = referentNode;
       myParentNode = parentNode;
       myCurrentChild = currentChild;
       mySmartConcept = smartConcept;
       mySmartReference = smartReference;
-      myPresentation = presentation;
+      myRefDescriptor = descriptor;
     }
 
     @Override
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
-        if (myPresentation != null) {
-          myMatchingText = myPresentation.getText(myReferentNode, false, true, false);
-        } else {
+        myMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, false, true, false);
+        if (myMatchingText == null) {
           myMatchingText = getSmartMatchingText(mySmartConcept, myReferentNode, false);
         }
       }
@@ -298,9 +282,8 @@ public class ChildSubstituteActionsHelper {
     @Override
     public String getVisibleMatchingText(String pattern) {
       if (myVisibleMatchingText == null) {
-        if (myPresentation != null) {
-          myVisibleMatchingText = myPresentation.getText(myReferentNode, true, true, false);
-        } else {
+        myVisibleMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, true, true, false);
+        if (myVisibleMatchingText == null) {
           myVisibleMatchingText = getSmartMatchingText(mySmartConcept, myReferentNode, true);
         }
       }

@@ -16,11 +16,10 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.constraints.IReferencePresentation;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.util.EqualUtil;
 
 public class EditorCell_RefPresentation {
 
@@ -50,11 +49,11 @@ public class EditorCell_RefPresentation {
         // FIXME throw exception if reference is null
         return myNode.getPresentation();
       }
-      IReferencePresentation presentation = ModelConstraintsUtil.getReferenceDescriptor(ref).getReferencePresentation();
+      String presentation = ModelConstraints.getReferenceDescriptor(ref).getReferencePresentation(myNode, true, false, true);
       if (presentation == null) {
         return myNode.getPresentation();
       }
-      return presentation.getText(myNode, true, false, true);
+      return presentation;
     }
 
     @Override
