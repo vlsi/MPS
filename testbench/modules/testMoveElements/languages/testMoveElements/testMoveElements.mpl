@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="testMoveElements#7465696304914465848" uuid="b13b124e-29f1-4981-a1ff-065e670d8a49" needs-opctx="false">
+    <generator name="" generatorUID="testMoveElements#7465696304914465848" uuid="b13b124e-29f1-4981-a1ff-065e670d8a49">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
