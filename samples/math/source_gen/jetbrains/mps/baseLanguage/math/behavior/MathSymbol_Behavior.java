@@ -16,8 +16,8 @@ public class MathSymbol_Behavior {
 
   public static void call_getVisibleIndices_1236440390782(SNode thisNode, SNode sender, List<SNode> indices) {
     SNode sI = SNodeOperations.getAncestor(sender, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", true, false);
-    if (sI != SLinkOperations.getTarget(thisNode, "var", true) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex")) {
-      ListSequence.fromList(indices).addElement(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"));
+    if (sI != SLinkOperations.getTarget(thisNode, "var", true)) {
+      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(thisNode, "var", true));
     }
     SNode ms = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.math.structure.MathSymbol", false, false);
     if (ms != null) {
