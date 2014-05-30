@@ -22,4 +22,6 @@ public abstract class ReportErrorStatement_BehaviorDescriptor extends Statement_
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.ReportErrorStatement";
   }
+
+  public abstract SNode virtual_getException_856705193941282181(SNode thisNode);
 }
