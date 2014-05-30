@@ -220,6 +220,7 @@
     <property name="name" nameId="tpck.1169194664001" value="class_EnumerationDataTypeDeclaration_Enum" />
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1095942414630" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="_constant_name_" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1095942431178" nodeInfo="nn">
         <property name="value" nameId="tpee.1070475926801" value="_external_value_" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="1095942431179" nodeInfo="nn">
