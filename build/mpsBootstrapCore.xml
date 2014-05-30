@@ -3083,6 +3083,7 @@
         <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" />
         <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" />
         <pathelement path="${mps_home}/core/textgen/source" />
+        <pathelement path="${mps_home}/core/mps-core/source" />
         <path location="${mps_home}/core/persistence/source" />
         <path location="${mps_home}/core/persistence/source_gen" />
       </src>
@@ -3131,6 +3132,7 @@
         <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" />
         <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" />
         <pathelement path="${mps_home}/core/textgen/source" />
+        <pathelement path="${mps_home}/core/mps-core/source" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -3173,6 +3175,7 @@
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/textgen/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/mps-core/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
