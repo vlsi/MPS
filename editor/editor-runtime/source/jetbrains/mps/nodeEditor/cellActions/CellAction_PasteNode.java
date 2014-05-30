@@ -103,7 +103,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
   private boolean isCompletelySelected(EditorCellLabelSelection labelSelection) {
     int textLength = labelSelection.getEditorCellLabel().getText().length();
-    return labelSelection.getSelectionStart() == 0 && labelSelection.getSelectionEnd() == textLength;
+    return labelSelection.getSelectionStart() == 0 && labelSelection.getSelectionEnd() == textLength && textLength > 0;
   }
 
   private boolean canPasteViaNodePaster(EditorCell selectedCell, List<SNode> pasteNodes) {

@@ -53,7 +53,6 @@ import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.lang.ref.WeakReference;
-import java.util.Collections;
 
 public abstract class EditorCell_Label extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Label {
   protected boolean myNoTextSet;
@@ -983,7 +982,20 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       // TODO: use EditorCell_Label.this. instead..
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       SNode node = label.getSNode();
-      return node != null && label.canPasteText() && CopyPasteUtil.isStringOnTopOfClipboard();
+
+      // If selected cell is:
+      // - the only completely selected label in big cell
+      // - the cursor is in the beginning of this cell
+      // - the cursor is in the end of this cell
+      // then we paste text into the cell only if it is on top of clipboard (text was copied from another cell)
+      // otherwise in this case this action will not be applicable, so node paste action should perform actual pasting
+      //
+      // if non of above is true then just pasting text from the clipboard into this cell (e.g. you can copy 1 + 2 and
+      // paste it into the name label).
+      return node != null && label.canPasteText() && label.isEditable() &&
+          (label.isTheOnlyCompletelySelectedLabelInBigCell() || isFirstCaretPosition() && !getTextLine().hasNonTrivialSelection() ||
+              isLastCaretPosition() && !getTextLine().hasNonTrivialSelection() ? CopyPasteUtil.isStringOnTopOfClipboard() :
+              TextPasteUtil.hasStringInClipboard());
     }
 
     @Override
