@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -407,18 +408,37 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
       // stub model roots
       List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
+      List<ModelRootDescriptor> toAdd = new ArrayList<ModelRootDescriptor>();
       for (ModelRootDescriptor mrd : descriptor.getModelRootDescriptors()) {
         if (!mrd.getType().equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) continue;
-        String path = mrd.getMemento().get("path");
-        String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
 
-        if (convertedPath != null) {
-          mrd.getMemento().put("path", convertedPath);
-        } else {
-          toRemove.add(mrd);
+        List<String> paths = new LinkedList<String>();
+
+        String contentPath = mrd.getMemento().get("contentPath");
+        for(Memento sr : mrd.getMemento().getChildren("sourceRoot")) {
+          paths.add(contentPath + File.separator + sr.get("location"));
         }
+
+        Memento newMemento = new MementoImpl();
+        newMemento.put("contentPath", contentPath.replaceAll("[^\\/]+[.]jar!/module", ""));
+        Memento newMementoChild =  newMemento.createChild("sourceRoot");
+
+        boolean update = false;
+        for(String path : paths) {
+          String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
+
+          if (convertedPath != null) {
+            newMementoChild.put("location", convertedPath.replace(newMemento.get("contentPath"), ""));
+            update = true;
+          }
+        }
+
+        toRemove.add(mrd);
+        if(update)
+          toAdd.add(new ModelRootDescriptor(mrd.getType(), newMemento));
       }
       descriptor.getModelRootDescriptors().removeAll(toRemove);
+      descriptor.getModelRootDescriptors().addAll(toAdd);
     }
 
     // 3
