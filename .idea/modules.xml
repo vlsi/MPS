@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/basePlatform/basePlatform.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/basePlatform/basePlatform.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/collections/runtime/collections-runtime.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/plugins/console/console.iml" filepath="$PROJECT_DIR$/plugins/console/console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/kernel/dataFlowRuntime/dataflow-rt.iml" filepath="$PROJECT_DIR$/core/kernel/dataFlowRuntime/dataflow-rt.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-api/api/debugger-api-api.iml" filepath="$PROJECT_DIR$/plugins/debugger-api/api/debugger-api-api.iml" group="plugins/debugger/debugger-api" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-api/runtime/debugger-api-runtime.iml" filepath="$PROJECT_DIR$/plugins/debugger-api/runtime/debugger-api-runtime.iml" group="plugins/debugger/debugger-api" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-java/api/debugger-java-api.iml" filepath="$PROJECT_DIR$/plugins/debugger-java/api/debugger-java-api.iml" group="plugins/debugger/debugger-java" />
@@ -47,6 +48,7 @@
       <module fileurl="file://$PROJECT_DIR$/plugins/modelchecker/modelchecker.iml" filepath="$PROJECT_DIR$/plugins/modelchecker/modelchecker.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/mps.iml" filepath="$PROJECT_DIR$/mps.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/tool/builder/mps-ant.iml" filepath="$PROJECT_DIR$/core/tool/builder/mps-ant.iml" group="ant" />
+      <module fileurl="file://$PROJECT_DIR$/core/mps-core/mps-core.iml" filepath="$PROJECT_DIR$/core/mps-core/mps-core.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-debugger/mps-debugger.iml" filepath="$PROJECT_DIR$/workbench/mps-debugger/mps-debugger.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" filepath="$PROJECT_DIR$/workbench/mps-editor/mps-editor.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-icons/mps-icons.iml" filepath="$PROJECT_DIR$/workbench/mps-icons/mps-icons.iml" group="workbench" />

@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import java.util.List;
 import java.util.Map;
@@ -68,7 +68,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (RuntimeFlags.isTestMode()) {
       return;
     }
     myTaskQueue = new SuspiciousModelIndex.MyTaskQueue(myProjectManager, myVirtualFileManager, myReloadManager);
@@ -87,7 +87,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
   @Override
   public void disposeComponent() {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (RuntimeFlags.isTestMode()) {
       return;
     }
     myTaskQueue.dispose();

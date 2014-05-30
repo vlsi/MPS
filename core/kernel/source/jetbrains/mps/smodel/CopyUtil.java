@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -148,7 +148,7 @@ public final class CopyUtil {
       if (outputNode == null) continue;
 
       for (SReference ref : inputNode.getReferences()) {
-        boolean cloneRefs = forceCloneRefs || MPSCore.getInstance().isMergeDriverMode();
+        boolean cloneRefs = forceCloneRefs || RuntimeFlags.isMergeDriverMode();
         SNode inputTargetNode = cloneRefs ? null : jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
         if (inputTargetNode == null) { //broken reference or need to clone
           if (ref instanceof StaticReference) {

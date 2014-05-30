@@ -354,12 +354,12 @@
     <nodeInfo nodeId="8632185942131071343" fileName="MPSProjectIDEHandler.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="8632185942131071348" fileName="MPSProjectIDEHandler.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
     <nodeInfo nodeId="8632185942131071357" fileName="MPSProjectIDEHandler.java" startLine="48" startPosition="71" endLine="49" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131071371" fileName="MPSProjectIDEHandler.java" startLine="54" startPosition="45" endLine="55" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131071371" fileName="MPSProjectIDEHandler.java" startLine="54" startPosition="36" endLine="55" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632185942131071570" fileName="MPSProjectIDEHandler.java" startLine="60" startPosition="13" endLine="61" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8632185942131071582" fileName="MPSProjectIDEHandler.java" startLine="62" startPosition="32" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632185942131071583" fileName="MPSProjectIDEHandler.java" startLine="64" startPosition="11" endLine="65" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8632185942131071563" fileName="MPSProjectIDEHandler.java" startLine="66" startPosition="37" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131071390" fileName="MPSProjectIDEHandler.java" startLine="75" startPosition="45" endLine="76" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131071390" fileName="MPSProjectIDEHandler.java" startLine="75" startPosition="36" endLine="76" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632185942131071589" fileName="MPSProjectIDEHandler.java" startLine="80" startPosition="25" endLine="81" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8632185942131071612" fileName="MPSProjectIDEHandler.java" startLine="83" startPosition="15" endLine="84" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8632185942131071604" fileName="MPSProjectIDEHandler.java" startLine="85" startPosition="39" endLine="86" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -448,13 +448,13 @@
     <scopeInfo nodeId="8632185942131071411" fileName="MPSProjectIDEHandler.java" startLine="106" startPosition="31" endLine="106" endPosition="31" />
     <scopeInfo nodeId="8632185942131071415" fileName="MPSProjectIDEHandler.java" startLine="110" startPosition="34" endLine="110" endPosition="34" />
     <scopeInfo nodeId="8632185942131071356" fileName="MPSProjectIDEHandler.java" startLine="48" startPosition="71" endLine="49" endPosition="24" />
-    <scopeInfo nodeId="8632185942131071370" fileName="MPSProjectIDEHandler.java" startLine="54" startPosition="45" endLine="55" endPosition="13" />
+    <scopeInfo nodeId="8632185942131071370" fileName="MPSProjectIDEHandler.java" startLine="54" startPosition="36" endLine="55" endPosition="13" />
     <scopeInfo nodeId="8632185942131071581" fileName="MPSProjectIDEHandler.java" startLine="62" startPosition="32" endLine="63" endPosition="19" />
     <scopeInfo nodeId="8632185942131071561" fileName="MPSProjectIDEHandler.java" startLine="66" startPosition="0" endLine="67" endPosition="30">
       <varInfo nodeId="8632185942131071567" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="8632185942131071562" fileName="MPSProjectIDEHandler.java" startLine="66" startPosition="37" endLine="67" endPosition="30" />
-    <scopeInfo nodeId="8632185942131071389" fileName="MPSProjectIDEHandler.java" startLine="75" startPosition="45" endLine="76" endPosition="13" />
+    <scopeInfo nodeId="8632185942131071389" fileName="MPSProjectIDEHandler.java" startLine="75" startPosition="36" endLine="76" endPosition="13" />
     <scopeInfo nodeId="8632185942131071611" fileName="MPSProjectIDEHandler.java" startLine="83" startPosition="15" endLine="84" endPosition="64" />
     <scopeInfo nodeId="8632185942131071602" fileName="MPSProjectIDEHandler.java" startLine="85" startPosition="0" endLine="86" endPosition="52">
       <varInfo nodeId="8632185942131071609" varName="e" />
@@ -585,7 +585,7 @@
     <nodeInfo nodeId="8632185942131072146" fileName="IdeaJavaCompilerImpl.java" startLine="34" startPosition="25" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4255423530121211561" fileName="IdeaJavaCompilerImpl.java" startLine="41" startPosition="31" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8632185942131072023" fileName="IdeaJavaCompilerImpl.java" startLine="47" startPosition="36" endLine="48" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4255423530121220790" fileName="IdeaJavaCompilerImpl.java" startLine="60" startPosition="28" endLine="61" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4255423530121220790" fileName="IdeaJavaCompilerImpl.java" startLine="60" startPosition="28" endLine="61" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652478519508028116" fileName="IdeaJavaCompilerImpl.java" startLine="66" startPosition="23" endLine="67" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6338816248140568476" fileName="IdeaJavaCompilerImpl.java" startLine="68" startPosition="5" endLine="69" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6338816248140957411" fileName="IdeaJavaCompilerImpl.java" startLine="71" startPosition="70" endLine="72" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -593,7 +593,7 @@
     <nodeInfo nodeId="4652478519508028142" fileName="IdeaJavaCompilerImpl.java" startLine="77" startPosition="23" endLine="78" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652478519508028121" fileName="IdeaJavaCompilerImpl.java" startLine="80" startPosition="33" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652478519508028157" fileName="IdeaJavaCompilerImpl.java" startLine="82" startPosition="5" endLine="83" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131072069" fileName="IdeaJavaCompilerImpl.java" startLine="87" startPosition="45" endLine="88" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131072069" fileName="IdeaJavaCompilerImpl.java" startLine="87" startPosition="36" endLine="88" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632185942131072071" fileName="IdeaJavaCompilerImpl.java" startLine="89" startPosition="5" endLine="90" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8632185942131071990" fileName="IdeaJavaCompilerImpl.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaJavaCompilerImpl#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="8632185942131072026" fileName="IdeaJavaCompilerImpl.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
@@ -618,7 +618,7 @@
     <scopeInfo nodeId="8632185942131072145" fileName="IdeaJavaCompilerImpl.java" startLine="34" startPosition="25" endLine="35" endPosition="81" />
     <scopeInfo nodeId="8632185942131072018" fileName="IdeaJavaCompilerImpl.java" startLine="41" startPosition="31" endLine="42" endPosition="32" />
     <scopeInfo nodeId="8632185942131072022" fileName="IdeaJavaCompilerImpl.java" startLine="47" startPosition="36" endLine="48" endPosition="32" />
-    <scopeInfo nodeId="8632185942131072044" fileName="IdeaJavaCompilerImpl.java" startLine="60" startPosition="28" endLine="61" endPosition="81" />
+    <scopeInfo nodeId="8632185942131072044" fileName="IdeaJavaCompilerImpl.java" startLine="60" startPosition="28" endLine="61" endPosition="72" />
     <scopeInfo nodeId="4652478519508028115" fileName="IdeaJavaCompilerImpl.java" startLine="66" startPosition="23" endLine="67" endPosition="18" />
     <scopeInfo nodeId="6338816248140731492" fileName="IdeaJavaCompilerImpl.java" startLine="71" startPosition="70" endLine="72" endPosition="95" />
     <scopeInfo nodeId="4652478519508028141" fileName="IdeaJavaCompilerImpl.java" startLine="77" startPosition="23" endLine="78" endPosition="176" />
@@ -626,7 +626,7 @@
       <varInfo nodeId="4652478519508028125" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="4652478519508028120" fileName="IdeaJavaCompilerImpl.java" startLine="80" startPosition="33" endLine="81" endPosition="26" />
-    <scopeInfo nodeId="8632185942131072068" fileName="IdeaJavaCompilerImpl.java" startLine="87" startPosition="45" endLine="88" endPosition="18" />
+    <scopeInfo nodeId="8632185942131072068" fileName="IdeaJavaCompilerImpl.java" startLine="87" startPosition="36" endLine="88" endPosition="18" />
     <scopeInfo nodeId="8632185942131071990" fileName="IdeaJavaCompilerImpl.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="8632185942131071993" varName="project" />
     </scopeInfo>

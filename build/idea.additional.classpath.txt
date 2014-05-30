@@ -14,6 +14,8 @@ core/make-runtime/classes
 core/make-runtime/solutions/jetbrains.mps.make.facets/classes
 core/textgen/classes
 core/kernel/jetbrains.mps.debug.api.info/classes
+core/kernel/dataFlowRuntime/classes
+core/mps-core/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes
 languages/baseLanguage/collections/runtime/classes

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -47,7 +47,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
-    if (MPSCore.getInstance().isMergeDriverMode()) return node.getProperty(name);
+    if (RuntimeFlags.isMergeDriverMode()) return node.getProperty(name);
 
     Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>> getters = ourPropertyGettersInProgress.get();
     Pair<org.jetbrains.mps.openapi.model.SNode, String> current = new Pair<org.jetbrains.mps.openapi.model.SNode, String>(node, name);

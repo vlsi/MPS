@@ -24,7 +24,7 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.ModulesMiner;
@@ -292,7 +292,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
     //todo hack
     if (myProject != null) {
-      if (MPSCore.getInstance().isTestMode() && !(myProject.isDisposed())) {
+      if (RuntimeFlags.isTestMode() && !(myProject.isDisposed())) {
         //second check if for MPS-12881, we invoked this method reqursively and tried to dispose a disposed project
         ProjectUtil.closeAndDispose(myProject);
       }

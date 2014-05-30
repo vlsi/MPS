@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
@@ -151,7 +151,7 @@ public class SModelOperations {
     List<SModuleReference> devkits = ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits();
     Set<SModuleReference> result = new HashSet<SModuleReference>(langs.size() + devkits.size() * 8);
     result.addAll(langs);
-    if (!MPSCore.getInstance().isMergeDriverMode()) {
+    if (!RuntimeFlags.isMergeDriverMode()) {
       for (SModuleReference dk : devkits) {
         DevKit devKit = ((DevKit) dk.resolve(MPSModuleRepository.getInstance()));
         if (devKit == null) continue;
@@ -367,7 +367,7 @@ public class SModelOperations {
     List<SModuleReference> devkits = (model).importedDevkits();
     Set<SModuleReference> result = new HashSet<SModuleReference>(langs.size() + devkits.size() * 8);
     result.addAll(langs);
-    if (!MPSCore.getInstance().isMergeDriverMode()) {
+    if (!RuntimeFlags.isMergeDriverMode()) {
       for (SModuleReference dk : devkits) {
         DevKit devKit = ((DevKit) dk.resolve(MPSModuleRepository.getInstance()));
         if (devKit == null) continue;

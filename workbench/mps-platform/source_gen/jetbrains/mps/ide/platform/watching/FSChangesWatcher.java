@@ -10,7 +10,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.openapi.vfs.newvfs.BulkFileListener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
@@ -65,7 +65,7 @@ public class FSChangesWatcher implements ApplicationComponent {
   }
 
   public void initComponent(boolean force) {
-    if (myConnection == null && (force || !(MPSCore.getInstance().isTestMode()))) {
+    if (myConnection == null && (force || !(RuntimeFlags.isTestMode()))) {
       myConnection = myBus.connect();
       myConnection.subscribe(VirtualFileManager.VFS_CHANGES, myBusListener);
       myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);

@@ -20,7 +20,7 @@ import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -177,7 +177,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myChooserActivated != b) {
       if (b) {
         myEditorComponent.pushKeyboardHandler(this);
-        if (!(MPSCore.getInstance().isTestMode())) {
+        if (!RuntimeFlags.isTestMode()) {
           getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
           myNodeSubstituteInfo.invalidateActions();
           rebuildMenuEntries();
@@ -194,7 +194,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
         myPopupActivated = true;
       } else {
-        if (!(MPSCore.getInstance().isTestMode())) {
+        if (!RuntimeFlags.isTestMode()) {
           getPopupWindow().setVisible(false);
           getPatternEditor().done();
           getPopupWindow().setRelativeCell(null);
@@ -396,7 +396,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
-        if (!MPSCore.getInstance().isTestMode()) {
+        if (!RuntimeFlags.isTestMode()) {
           relayoutPopupMenu();
         }
         tryToApplyIntelligentInput();

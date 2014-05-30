@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.junit.BeforeClass;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import java.util.Properties;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.AfterClass;
@@ -62,10 +62,10 @@ public class MergeCoreTest extends WorkbenchMpsTest {
   @BeforeClass
   public static void setUpClass() {
     ourPlayRefactoringWas = System.getProperty(PLAY_REFACTORINGS_PROPERTY);
-    ourMergeDriverModeWas = MPSCore.getInstance().isMergeDriverMode();
+    ourMergeDriverModeWas = RuntimeFlags.isMergeDriverMode();
 
     System.setProperty(PLAY_REFACTORINGS_PROPERTY, "false");
-    MPSCore.getInstance().setMergeDriverMode(true);
+    RuntimeFlags.setMergeDriverMode(true);
 
     Properties p = new Properties();
     p.setProperty("log4j.rootLogger", "info, console");
@@ -83,7 +83,7 @@ public class MergeCoreTest extends WorkbenchMpsTest {
     } else {
       System.setProperty(PLAY_REFACTORINGS_PROPERTY, ourPlayRefactoringWas);
     }
-    MPSCore.getInstance().setMergeDriverMode(ourMergeDriverModeWas);
+    RuntimeFlags.setMergeDriverMode(ourMergeDriverModeWas);
   }
 
   public static void main(String[] args) throws IOException, ModelReadException {

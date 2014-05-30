@@ -27,30 +27,38 @@ import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
-import jetbrains.mps.MPSCore;
-import jetbrains.mps.util.Cancellable;
-import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.smodel.event.SModelReplacedEvent;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessAdapter;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelReplacedEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Cancellable;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.WeakSet;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -59,7 +67,11 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -239,7 +251,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   public void addChecker(BaseEditorChecker checker) {
-    if (MPSCore.getInstance().isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) return;
 
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {
@@ -256,7 +268,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   public void removeChecker(BaseEditorChecker checker) {
-    if (MPSCore.getInstance().isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) return;
 
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {

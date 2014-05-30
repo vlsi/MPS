@@ -25,6 +25,7 @@
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="make-facets" />
+    <orderEntry type="module" module-name="mps-core" />
   </component>
 </module>
 

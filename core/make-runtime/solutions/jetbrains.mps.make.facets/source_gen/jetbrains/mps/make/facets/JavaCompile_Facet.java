@@ -35,7 +35,7 @@ import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
 import jetbrains.mps.project.Project;
 import java.util.Map;
@@ -283,7 +283,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               if (Sequence.fromIterable(toCompile).isEmpty()) {
                 return new IResult.SUCCESS(_output_wf1ya0_a0b);
               }
-              if (MPSCore.getInstance().isTestMode()) {
+              if (RuntimeFlags.isTestMode()) {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
 

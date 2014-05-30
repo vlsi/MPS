@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SNodeBase;
@@ -555,7 +555,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     // Note: during indexing we invoke `node.getConcept().getQualifiedName()`
     // 1) without read action 2) we must not use deployed version of the concept
     // ?? may be we need a separate getConceptQualifiedName() method here
-    if (MPSCore.getInstance().isMergeDriverMode() || /* for indexing */ !ModelAccess.instance().canRead()) {
+    if (RuntimeFlags.isMergeDriverMode() || /* for indexing */ !ModelAccess.instance().canRead()) {
       return new SConceptAdapter(myConceptFqName);
     }
 

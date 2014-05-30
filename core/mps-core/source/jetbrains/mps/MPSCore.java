@@ -53,6 +53,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -62,9 +63,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class MPSCore extends ComponentPlugin {
 
   private static MPSCore ourInstance = new MPSCore();
-
-  private boolean testMode = false;
-  private boolean mergeDriverMode = false;
 
   private MPSCore() {
 
@@ -146,19 +144,39 @@ public class MPSCore extends ComponentPlugin {
     return myGlobalSModelEventsManager;
   }
 
+  /**
+   * @deprecated use [kernel] {@link RuntimeFlags#isTestMode()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public boolean isTestMode() {
-    return testMode;
+    return RuntimeFlags.isTestMode();
   }
 
+  /**
+   * @deprecated use [kernel] {@link RuntimeFlags#setTestMode(boolean)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public void setTestMode() {
-    testMode = true;
+    RuntimeFlags.setTestMode(true);
   }
 
+  /**
+   * @deprecated use [kernel] {@link jetbrains.mps.RuntimeFlags#isMergeDriverMode()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public boolean isMergeDriverMode() {
-    return mergeDriverMode;
+    return RuntimeFlags.isMergeDriverMode();
   }
 
+  /**
+   * @deprecated use [kernel] {@link RuntimeFlags#setMergeDriverMode(boolean)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public void setMergeDriverMode(boolean mergeDriverMode) {
-    this.mergeDriverMode = mergeDriverMode;
+    RuntimeFlags.setMergeDriverMode(mergeDriverMode);
   }
 }

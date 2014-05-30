@@ -45,7 +45,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -1381,7 +1381,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     fireEditorWillBeDisposed();
     myDisposed = true;
     myDisposedTrace = new Throwable("Editor was disposed by: ");
-    if (!MPSCore.getInstance().isTestMode()) {
+    if (!RuntimeFlags.isTestMode()) {
       hideMessageToolTip();
     }
 

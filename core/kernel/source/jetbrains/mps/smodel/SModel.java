@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SNodeBase;
@@ -682,7 +682,7 @@ public class SModel implements SModelData {
     importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
     if (importElement == null) {
       org.jetbrains.mps.openapi.model.SModel modelDescriptor =
-          MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
+          RuntimeFlags.isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
       int usedVersion = -1;
       if (modelDescriptor instanceof RefactorableSModelDescriptor) {
         usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
