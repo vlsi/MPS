@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
@@ -242,20 +241,20 @@ public enum LanguageAspect {
     }
   }
 
-  public boolean is(org.jetbrains.mps.openapi.model.SModel sm) {
+  public boolean is(SModel sm) {
     return Language.getModelAspect(sm) == this;
   }
 
-  public EditableSModelDescriptor get(Language l) {
+  public SModel get(Language l) {
     return get_internal(l, false);
   }
 
-  public EditableSModelDescriptor getOrCreate(Language l) {
+  public SModel getOrCreate(Language l) {
     return get_internal(l, true);
   }
 
-  private EditableSModelDescriptor get_internal(Language l, boolean doCreate) {
-    EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(l.getModuleName() + "." + myName);
+  private SModel get_internal(Language l, boolean doCreate) {
+    SModel md = SModelRepository.getInstance().getModelDescriptor(l.getModuleName() + "." + myName);
     if (md != null && SModelRepository.getInstance().getOwner(md) == l) return md;
     return doCreate ? createNew(l) : null;
   }
@@ -268,11 +267,11 @@ public enum LanguageAspect {
     return myName;
   }
 
-  public EditableSModelDescriptor createNew(Language l) {
+  public SModel createNew(Language l) {
     return createNew(l, true);
   }
 
-  public EditableSModelDescriptor createNew(final Language l, final boolean saveModel) {
+  public SModel createNew(final Language l, final boolean saveModel) {
     assert get(l) == null;
 
     SModel structureModel = l.getStructureModelDescriptor();
@@ -282,7 +281,7 @@ public enum LanguageAspect {
     } else {
       modelRoot = ModelRootUtil.getModelRoot(structureModel);
     }
-    return (EditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(l.getModuleName() + "." + getName(), modelRoot);
+    return SModuleOperations.createModelWithAdjustments(l.getModuleName() + "." + getName(), modelRoot);
   }
 
   @Nullable
@@ -290,10 +289,10 @@ public enum LanguageAspect {
 
   public abstract SModuleReference getMainLanguage();
 
-  public static Collection<EditableSModelDescriptor> getAspectModels(Language l) {
-    Set<EditableSModelDescriptor> result = new HashSet<EditableSModelDescriptor>();
+  public static Collection<SModel> getAspectModels(Language l) {
+    Set<SModel> result = new HashSet<SModel>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
-      EditableSModelDescriptor asp = aspect.get(l);
+      SModel asp = aspect.get(l);
       if (asp != null) {
         result.add(asp);
       }

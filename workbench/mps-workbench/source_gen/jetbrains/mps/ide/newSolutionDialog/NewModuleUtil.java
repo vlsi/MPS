@@ -229,11 +229,11 @@ public class NewModuleUtil {
 
   public static void createMainLanguageAspects(Language language) throws IOException {
     assert language.getModelRoots().iterator().hasNext();
-    LanguageAspect.STRUCTURE.createNew(language).save();
-    LanguageAspect.EDITOR.createNew(language).save();
-    LanguageAspect.CONSTRAINTS.createNew(language).save();
-    LanguageAspect.BEHAVIOR.createNew(language).save();
-    LanguageAspect.TYPESYSTEM.createNew(language).save();
+    ((EditableSModel) LanguageAspect.STRUCTURE.createNew(language)).save();
+    ((EditableSModel) LanguageAspect.EDITOR.createNew(language)).save();
+    ((EditableSModel) LanguageAspect.CONSTRAINTS.createNew(language)).save();
+    ((EditableSModel) LanguageAspect.BEHAVIOR.createNew(language)).save();
+    ((EditableSModel) LanguageAspect.TYPESYSTEM.createNew(language)).save();
   }
 
 
