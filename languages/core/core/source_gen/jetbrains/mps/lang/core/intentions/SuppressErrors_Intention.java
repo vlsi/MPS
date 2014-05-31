@@ -11,6 +11,11 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -59,7 +64,20 @@ public class SuppressErrors_Intention implements IntentionFactory {
       return true;
     }
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    return editorComponent.getErrorReporterFor(editorComponent.getSelectedCell()) != null;
+    for (SNode childNode : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", true, new String[]{}))) {
+      EditorCell childCell = editorComponent.findNodeCell(childNode);
+      if (childCell instanceof EditorCell_Collection) {
+        for (jetbrains.mps.openapi.editor.cells.EditorCell childCell1 : Sequence.fromIterable((jetbrains.mps.nodeEditor.cells.EditorCell_Collection) childCell)) {
+          if (editorComponent.getErrorReporterFor(childCell1) != null) {
+            return true;
+          }
+        }
+      }
+      if (editorComponent.getErrorReporterFor(childCell) != null) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public SNodeReference getIntentionNodeReference() {
