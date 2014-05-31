@@ -7,8 +7,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildSourcePath_Behavior {
   public static void init(SNode thisNode) {
@@ -41,18 +39,8 @@ public class BuildSourcePath_Behavior {
   }
 
   @Deprecated
-  public static String callSuper_getLocalPath_5481553824944787364(SNode thisNode, String callerConceptFqName, Context context) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getLocalPath_5481553824944787364", new Class[]{SNode.class, Context.class}, new Object[]{context});
-  }
-
-  @Deprecated
   public static String call_getRelativePath_5481553824944787371(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRelativePath_5481553824944787371", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getRelativePath_5481553824944787371(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getRelativePath_5481553824944787371", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -61,27 +49,12 @@ public class BuildSourcePath_Behavior {
   }
 
   @Deprecated
-  public static String callSuper_getAntPath_8563603456895173701(SNode thisNode, String callerConceptFqName, Context context) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getAntPath_8563603456895173701", new Class[]{SNode.class, Context.class}, new Object[]{context});
-  }
-
-  @Deprecated
   public static String call_getLastSegment_1368030936106771141(SNode thisNode, MacroHelper helper) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getLastSegment_1368030936106771141", new Object[]{helper});
   }
 
   @Deprecated
-  public static String callSuper_getLastSegment_1368030936106771141(SNode thisNode, String callerConceptFqName, MacroHelper helper) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getLastSegment_1368030936106771141", new Class[]{SNode.class, MacroHelper.class}, new Object[]{helper});
-  }
-
-  @Deprecated
   public static SNode call_getParent_8654221991637145399(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_8654221991637145399", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getParent_8654221991637145399(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSourcePath"), callerConceptFqName, "virtual_getParent_8654221991637145399", new Class[]{SNode.class}, new Object[]{});
   }
 }

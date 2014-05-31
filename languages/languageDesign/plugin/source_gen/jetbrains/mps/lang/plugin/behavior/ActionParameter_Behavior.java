@@ -4,8 +4,6 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ActionParameter_Behavior {
   public static void init(SNode thisNode) {
@@ -17,17 +15,7 @@ public class ActionParameter_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getType_1171743928471337193(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ActionParameter"), callerConceptFqName, "virtual_getType_1171743928471337193", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static SNode call_getFieldDeclaration_1171743928471867409(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getFieldDeclaration_1171743928471867409(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ActionParameter"), callerConceptFqName, "virtual_getFieldDeclaration_1171743928471867409", new Class[]{SNode.class}, new Object[]{});
   }
 }

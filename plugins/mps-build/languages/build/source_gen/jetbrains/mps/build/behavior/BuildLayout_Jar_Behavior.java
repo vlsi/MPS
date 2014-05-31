@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -91,11 +90,6 @@ public class BuildLayout_Jar_Behavior {
   @Deprecated
   public static String call_getExpectedExtension_6967233722066020217(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getExpectedExtension_6967233722066020217", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getExpectedExtension_6967233722066020217(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Jar"), callerConceptFqName, "virtual_getExpectedExtension_6967233722066020217", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_20awhq_a0a1a5a0(Object parameter_1) {

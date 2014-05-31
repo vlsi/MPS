@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ILocalDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -61,17 +60,7 @@ public class ILocalDeclaration_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_isReferencedInClosure_3262277503800823422(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInClosure_3262277503800823422", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalDeclaration"), callerConceptFqName, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", new Class[]{SNode.class}, new Object[]{});
   }
 }

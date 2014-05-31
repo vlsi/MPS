@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildStringPart_Behavior {
   public static void init(SNode thisNode) {
@@ -37,18 +36,8 @@ public class BuildStringPart_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_punctuationLeft_5096397858823356723(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_punctuationLeft_5096397858823356723", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFirstPositionAllowed_624440001685459414", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isFirstPositionAllowed_624440001685459414(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_isFirstPositionAllowed_624440001685459414", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -57,18 +46,8 @@ public class BuildStringPart_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_isLastPositionAllowed_624440001685490925(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_isLastPositionAllowed_624440001685490925", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static String call_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getText_4380385936562037054", new Object[]{helper});
-  }
-
-  @Deprecated
-  public static String callSuper_getText_4380385936562037054(SNode thisNode, String callerConceptFqName, MacroHelper helper) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_getText_4380385936562037054", new Class[]{SNode.class, MacroHelper.class}, new Object[]{helper});
   }
 
   private static boolean eq_cuvs1r_a0b0b(Object a, Object b) {

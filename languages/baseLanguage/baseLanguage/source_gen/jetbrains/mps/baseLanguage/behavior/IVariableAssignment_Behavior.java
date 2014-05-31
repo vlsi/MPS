@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IVariableAssignment_Behavior {
   public static void init(SNode thisNode) {
@@ -21,17 +19,7 @@ public class IVariableAssignment_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_isCanBeUnused_1223985713603(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_isCanBeUnused_1223985713603", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static SNode call_getValue_1224857430232(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getValue_1224857430232", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getValue_1224857430232(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_getValue_1224857430232", new Class[]{SNode.class}, new Object[]{});
   }
 }

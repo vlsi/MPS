@@ -4,8 +4,6 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Synchronizeable_Behavior {
   public static void init(SNode thisNode) {
@@ -17,17 +15,7 @@ public class Synchronizeable_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_canBeSynchronized_4052492221165595783(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.Synchronizeable"), callerConceptFqName, "virtual_canBeSynchronized_4052492221165595783", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_shellBeSynchronized_4500758155551546553(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_shellBeSynchronized_4500758155551546553", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_shellBeSynchronized_4500758155551546553(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.Synchronizeable"), callerConceptFqName, "virtual_shellBeSynchronized_4500758155551546553", new Class[]{SNode.class}, new Object[]{});
   }
 }

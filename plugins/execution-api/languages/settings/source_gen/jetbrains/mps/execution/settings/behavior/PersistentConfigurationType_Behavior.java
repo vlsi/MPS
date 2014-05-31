@@ -6,8 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class PersistentConfigurationType_Behavior {
   public static void init(SNode thisNode) {
@@ -20,10 +18,5 @@ public class PersistentConfigurationType_Behavior {
   @Deprecated
   public static List<SNode> call_getMembers_946964771156066373(SNode thisNode, SNode contextNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877402148", new Object[]{contextNode});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getMembers_946964771156066373(SNode thisNode, String callerConceptFqName, SNode contextNode) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"), callerConceptFqName, "virtual_getMembers_1213877402148", new Class[]{SNode.class, SNode.class}, new Object[]{contextNode});
   }
 }

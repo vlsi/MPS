@@ -8,8 +8,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LiteralReplacement_Behavior {
   public static void init(SNode thisNode) {
@@ -89,11 +87,6 @@ public class LiteralReplacement_Behavior {
   @Deprecated
   public static String call_toString_3796137614137538916(SNode thisNode, SNode search) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_toString_3796137614137538905", new Object[]{search});
-  }
-
-  @Deprecated
-  public static String callSuper_toString_3796137614137538916(SNode thisNode, String callerConceptFqName, SNode search) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", new Class[]{SNode.class, SNode.class}, new Object[]{search});
   }
 
   private static boolean isEmptyString(String str) {

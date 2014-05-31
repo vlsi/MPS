@@ -4,8 +4,6 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IWorkflowParticipant_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class IWorkflowParticipant_Behavior {
   @Deprecated
   public static SNode call_getTargetTask_6854204111265837872(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetTask_6854204111265837872", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getTargetTask_6854204111265837872(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.IWorkflowParticipant"), callerConceptFqName, "virtual_getTargetTask_6854204111265837872", new Class[]{SNode.class}, new Object[]{});
   }
 }

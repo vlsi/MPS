@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InlineTagCommentLinePart_Behavior {
   public static void init(SNode thisNode) {
@@ -29,10 +28,5 @@ public class InlineTagCommentLinePart_Behavior {
   @Deprecated
   public static NodeCaretPair call_smartDelete_3633133276124360200(SNode thisNode, boolean isBegining) {
     return BehaviorReflection.invokeVirtual(NodeCaretPair.class, thisNode, "virtual_smartDelete_9042833497008205283", new Object[]{isBegining});
-  }
-
-  @Deprecated
-  public static NodeCaretPair callSuper_smartDelete_3633133276124360200(SNode thisNode, String callerConceptFqName, boolean isBegining) {
-    return BehaviorManager.getInstance().invokeSuper(NodeCaretPair.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", new Class[]{SNode.class, Boolean.TYPE}, new Object[]{isBegining});
   }
 }

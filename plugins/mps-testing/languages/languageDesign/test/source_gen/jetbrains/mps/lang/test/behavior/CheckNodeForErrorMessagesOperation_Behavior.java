@@ -7,8 +7,6 @@ import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CheckNodeForErrorMessagesOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -31,10 +29,5 @@ public class CheckNodeForErrorMessagesOperation_Behavior {
   @Deprecated
   public static void call_perform_1215607135205(SNode thisNode, SNode node) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_245688835340859348", new Object[]{node});
-  }
-
-  @Deprecated
-  public static void callSuper_perform_1215607135205(SNode thisNode, String callerConceptFqName, SNode node) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation"), callerConceptFqName, "virtual_perform_245688835340859348", new Class[]{SNode.class, SNode.class}, new Object[]{node});
   }
 }

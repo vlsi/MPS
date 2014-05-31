@@ -10,7 +10,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -76,11 +75,6 @@ public class ConceptMethodDeclaration_Behavior {
     return BehaviorMethodNames.getCallerMethodName(thisNode);
   }
 
-  @Deprecated
-  public static String call_getSuperCallerMethodName_5914983970298756775(SNode thisNode) {
-    return BehaviorMethodNames.getSuperCallerMethodName(thisNode);
-  }
-
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "isAbstract");
   }
@@ -96,10 +90,5 @@ public class ConceptMethodDeclaration_Behavior {
   @Deprecated
   public static SNode call_getNearestOverriddenMethod_5014346297260520836(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getNearestOverriddenMethod_5014346297260520836(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", new Class[]{SNode.class}, new Object[]{});
   }
 }

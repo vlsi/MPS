@@ -4,8 +4,6 @@ package jetbrains.mps.build.mps.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildMps_IdeaPluginContent_Behavior {
   public static void init(SNode thisNode) {
@@ -18,10 +16,5 @@ public class BuildMps_IdeaPluginContent_Behavior {
   @Deprecated
   public static boolean call_exports_6547494638219603457(SNode thisNode, Object object) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_exports_6547494638219603457", new Object[]{object});
-  }
-
-  @Deprecated
-  public static boolean callSuper_exports_6547494638219603457(SNode thisNode, String callerConceptFqName, Object object) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent"), callerConceptFqName, "virtual_exports_6547494638219603457", new Class[]{SNode.class, Object.class}, new Object[]{object});
   }
 }

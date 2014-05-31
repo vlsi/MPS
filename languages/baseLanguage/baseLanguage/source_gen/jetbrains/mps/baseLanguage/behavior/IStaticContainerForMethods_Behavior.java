@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IStaticContainerForMethods_Behavior {
   public static void init(SNode thisNode) {
@@ -15,10 +13,5 @@ public class IStaticContainerForMethods_Behavior {
   @Deprecated
   public static IStaticContainerProcessor call_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
     return BehaviorReflection.invokeVirtual(IStaticContainerProcessor.class, thisNode, "virtual_getStaticContainerProcessor_1222174378300", new Object[]{node});
-  }
-
-  @Deprecated
-  public static IStaticContainerProcessor callSuper_getStaticContainerProcessor_1222174378300(SNode thisNode, String callerConceptFqName, SNode node) {
-    return BehaviorManager.getInstance().invokeSuper(IStaticContainerProcessor.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), callerConceptFqName, "virtual_getStaticContainerProcessor_1222174378300", new Class[]{SNode.class, SNode.class}, new Object[]{node});
   }
 }

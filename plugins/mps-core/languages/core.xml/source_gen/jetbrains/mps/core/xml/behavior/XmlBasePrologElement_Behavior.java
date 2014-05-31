@@ -5,7 +5,6 @@ package jetbrains.mps.core.xml.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class XmlBasePrologElement_Behavior {
   public static void init(SNode thisNode) {
@@ -61,18 +60,8 @@ public class XmlBasePrologElement_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_onNewLine_5491461270226170010(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_onNewLine_2133624044437631588", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_hasNewLineAfter_2133624044437592936(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_hasNewLineAfter_2133624044437592936(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_hasNewLineAfter_2133624044437631594", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -81,17 +70,7 @@ public class XmlBasePrologElement_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_isFirstPositionAllowed_2133624044437631900(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_isFirstPositionAllowed_2133624044437631446", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_isLastPositionAllowed_2133624044437631956(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isLastPositionAllowed_2133624044437631956(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlBasePrologElement"), callerConceptFqName, "virtual_isLastPositionAllowed_2133624044437631519", new Class[]{SNode.class}, new Object[]{});
   }
 }

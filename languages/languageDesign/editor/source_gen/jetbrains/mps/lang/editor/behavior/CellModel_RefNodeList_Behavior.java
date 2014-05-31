@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CellModel_RefNodeList_Behavior {
   public static void init(SNode thisNode) {
@@ -39,10 +38,5 @@ public class CellModel_RefNodeList_Behavior {
   @Deprecated
   public static String call_getRoleForCell_1182113674817411794(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRoleForCell_1216377898846", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getRoleForCell_1182113674817411794(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), callerConceptFqName, "virtual_getRoleForCell_1216377898846", new Class[]{SNode.class}, new Object[]{});
   }
 }

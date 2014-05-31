@@ -6,8 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IMemberContainer_Behavior {
   public static void init(SNode thisNode) {
@@ -27,27 +25,12 @@ public class IMemberContainer_Behavior {
   }
 
   @Deprecated
-  public static List<SNode> callSuper_getMembers_1213877531970(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMembers_1213877531970", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static List<SNode> call_getMethodsToOverride_5418393554803767537(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{});
   }
 
   @Deprecated
-  public static List<SNode> callSuper_getMethodsToOverride_5418393554803767537(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMethodsToOverride_5418393554803767537", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static List<SNode> call_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getMethodsToImplement_5418393554803775106(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMethodsToImplement_5418393554803775106", new Class[]{SNode.class}, new Object[]{});
   }
 }

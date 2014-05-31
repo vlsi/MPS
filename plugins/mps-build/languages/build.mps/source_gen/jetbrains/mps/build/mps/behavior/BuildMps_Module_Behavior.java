@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior;
 import jetbrains.mps.build.util.JavaExportUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildMps_Module_Behavior {
   public static void init(SNode thisNode) {
@@ -166,11 +165,6 @@ public class BuildMps_Module_Behavior {
   @Deprecated
   public static boolean call_isCompilable_7454762407073969360(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isCompilable_7454762407073969360", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isCompilable_7454762407073969360(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), callerConceptFqName, "virtual_isCompilable_7454762407073969360", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static boolean isNotEmptyString(String str) {

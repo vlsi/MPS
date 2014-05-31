@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MatchVariableReferenceReplacement_Behavior {
   public static void init(SNode thisNode) {
@@ -24,10 +22,5 @@ public class MatchVariableReferenceReplacement_Behavior {
   @Deprecated
   public static String call_toString_3796137614137539495(SNode thisNode, SNode search) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_toString_3796137614137538905", new Object[]{search});
-  }
-
-  @Deprecated
-  public static String callSuper_toString_3796137614137539495(SNode thisNode, String callerConceptFqName, SNode search) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", new Class[]{SNode.class, SNode.class}, new Object[]{search});
   }
 }

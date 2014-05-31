@@ -5,8 +5,6 @@ package jetbrains.mps.lang.dataFlow.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DataFlowBuilderDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -26,17 +24,7 @@ public class DataFlowBuilderDeclaration_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getBaseConcept_8952337903384725404(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static void call_setBaseConcept_6261424444345978709(SNode thisNode, SNode baseConcept) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
-  }
-
-  @Deprecated
-  public static void callSuper_setBaseConcept_6261424444345978709(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
   }
 }

@@ -5,7 +5,6 @@ package jetbrains.mps.core.xml.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class XmlValuePart_Behavior {
   public static void init(SNode thisNode) {
@@ -44,18 +43,8 @@ public class XmlValuePart_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_isFirstPositionAllowed_3080189811177340436(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_isFirstPositionAllowed_3080189811177340436", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_isLastPositionAllowed_3080189811177340441(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLastPositionAllowed_3080189811177340441", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isLastPositionAllowed_3080189811177340441(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_isLastPositionAllowed_3080189811177340441", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -64,17 +53,7 @@ public class XmlValuePart_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_onNewLine_3080189811177340422(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_onNewLine_3080189811177340422", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_hasNewLineAfter_3080189811177340429(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_hasNewLineAfter_3080189811177340429(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_hasNewLineAfter_3080189811177340429", new Class[]{SNode.class}, new Object[]{});
   }
 }

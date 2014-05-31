@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -81,10 +80,5 @@ public class BTestCase_Behavior {
   @Deprecated
   public static String call_getSimpleClassName_4520990320128651400(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSimpleClassName_1229278847513", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getSimpleClassName_4520990320128651400(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), callerConceptFqName, "virtual_getSimpleClassName_1229278847513", new Class[]{SNode.class}, new Object[]{});
   }
 }

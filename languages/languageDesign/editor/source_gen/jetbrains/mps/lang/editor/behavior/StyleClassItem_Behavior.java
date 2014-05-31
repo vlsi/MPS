@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class StyleClassItem_Behavior {
   public static void init(SNode thisNode) {
@@ -22,10 +21,5 @@ public class StyleClassItem_Behavior {
   @Deprecated
   public static boolean call_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicableTo_1214304723440", new Object[]{cellModel});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isApplicableTo_1214304723440(SNode thisNode, String callerConceptFqName, SNode cellModel) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_isApplicableTo_1214304723440", new Class[]{SNode.class, SNode.class}, new Object[]{cellModel});
   }
 }

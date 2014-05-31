@@ -6,8 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildExternalDependency_Behavior {
   public static void init(SNode thisNode) {
@@ -16,10 +14,5 @@ public class BuildExternalDependency_Behavior {
   @Deprecated
   public static void call_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_fetchDependencies_5908258303322131137", new Object[]{artifacts, builder});
-  }
-
-  @Deprecated
-  public static void callSuper_fetchDependencies_5908258303322131137(SNode thisNode, String callerConceptFqName, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), callerConceptFqName, "virtual_fetchDependencies_5908258303322131137", new Class[]{SNode.class, VisibleArtifacts.class, RequiredDependenciesBuilder.class}, new Object[]{artifacts, builder});
   }
 }

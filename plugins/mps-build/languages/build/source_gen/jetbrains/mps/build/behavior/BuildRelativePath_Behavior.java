@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildRelativePath_Behavior {
   public static void init(SNode thisNode) {
@@ -89,11 +88,6 @@ public class BuildRelativePath_Behavior {
   @Deprecated
   public static String call_getBasePath_4959435991187140515(SNode thisNode, Context context) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getBasePath_4959435991187140515", new Object[]{context});
-  }
-
-  @Deprecated
-  public static String callSuper_getBasePath_4959435991187140515(SNode thisNode, String callerConceptFqName, Context context) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), callerConceptFqName, "virtual_getBasePath_4959435991187140515", new Class[]{SNode.class, Context.class}, new Object[]{context});
   }
 
   private static boolean isEmptyString(String str) {

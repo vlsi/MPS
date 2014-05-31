@@ -6,8 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class HasAnnotation_Behavior {
   public static void init(SNode thisNode) {
@@ -27,17 +25,7 @@ public class HasAnnotation_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_canBeAnnotated_1233076312117(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), callerConceptFqName, "virtual_canBeAnnotated_1233076312117", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
   }
 }

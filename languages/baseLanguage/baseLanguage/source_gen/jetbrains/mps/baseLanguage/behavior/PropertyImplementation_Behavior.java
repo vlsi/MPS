@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class PropertyImplementation_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class PropertyImplementation_Behavior {
   @Deprecated
   public static boolean call_hasSetter_1213877430658(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasSetter_1213877430658", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_hasSetter_1213877430658(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), callerConceptFqName, "virtual_hasSetter_1213877430658", new Class[]{SNode.class}, new Object[]{});
   }
 }

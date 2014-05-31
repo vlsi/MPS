@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ILocalReference_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class ILocalReference_Behavior {
   @Deprecated
   public static SNode call_getDeclaration_3262277503800831941(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDeclaration_3262277503800831941", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getDeclaration_3262277503800831941(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalReference"), callerConceptFqName, "virtual_getDeclaration_3262277503800831941", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class FacetDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -73,10 +72,5 @@ public class FacetDeclaration_Behavior {
   @Deprecated
   public static String call_classifierName_8853708281362019178(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_classifierName_8853708281362019178(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), callerConceptFqName, "virtual_classifierName_4609636120081351397", new Class[]{SNode.class}, new Object[]{});
   }
 }

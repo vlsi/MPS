@@ -4,8 +4,6 @@ package jetbrains.mps.lang.core.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExportScopePublic_Behavior {
   public static void init(SNode thisNode) {
@@ -18,10 +16,5 @@ public class ExportScopePublic_Behavior {
   @Deprecated
   public static boolean call_checkExport_402007580867586251(SNode thisNode, String sourceNamespace, SNode targetNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_checkExport_2565736246230026584", new Object[]{sourceNamespace, targetNode});
-  }
-
-  @Deprecated
-  public static boolean callSuper_checkExport_402007580867586251(SNode thisNode, String callerConceptFqName, String sourceNamespace, SNode targetNode) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopePublic"), callerConceptFqName, "virtual_checkExport_2565736246230026584", new Class[]{SNode.class, String.class, SNode.class}, new Object[]{sourceNamespace, targetNode});
   }
 }

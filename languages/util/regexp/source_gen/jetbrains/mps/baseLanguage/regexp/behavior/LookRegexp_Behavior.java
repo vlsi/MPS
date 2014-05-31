@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LookRegexp_Behavior {
   public static void init(SNode thisNode) {
@@ -21,10 +20,5 @@ public class LookRegexp_Behavior {
   @Deprecated
   public static String call_getString_1222861536253(SNode thisNode, List<SNode> vars) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
-
-  @Deprecated
-  public static String callSuper_getString_1222861536253(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
   }
 }

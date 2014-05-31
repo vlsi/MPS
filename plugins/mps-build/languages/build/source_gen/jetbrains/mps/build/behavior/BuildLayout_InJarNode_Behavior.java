@@ -4,8 +4,6 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildLayout_InJarNode_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class BuildLayout_InJarNode_Behavior {
   @Deprecated
   public static boolean call_reexportsFromJar_5970181360961342219(SNode thisNode, Object o) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_reexportsFromJar_5970181360961342219", new Object[]{o});
-  }
-
-  @Deprecated
-  public static boolean callSuper_reexportsFromJar_5970181360961342219(SNode thisNode, String callerConceptFqName, Object o) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_InJarNode"), callerConceptFqName, "virtual_reexportsFromJar_5970181360961342219", new Class[]{SNode.class, Object.class}, new Object[]{o});
   }
 }

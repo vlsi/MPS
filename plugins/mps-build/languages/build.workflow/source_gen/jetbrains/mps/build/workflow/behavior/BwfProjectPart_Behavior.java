@@ -4,8 +4,6 @@ package jetbrains.mps.build.workflow.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BwfProjectPart_Behavior {
   public static void init(SNode thisNode) {
@@ -18,10 +16,5 @@ public class BwfProjectPart_Behavior {
   @Deprecated
   public static int call_getPriority_2059109515400548718(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_getPriority_2059109515400548718", new Object[]{});
-  }
-
-  @Deprecated
-  public static int callSuper_getPriority_2059109515400548718(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Integer.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.workflow.structure.BwfProjectPart"), callerConceptFqName, "virtual_getPriority_2059109515400548718", new Class[]{SNode.class}, new Object[]{});
   }
 }

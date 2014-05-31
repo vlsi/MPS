@@ -7,8 +7,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Command_Behavior {
   public static void init(SNode thisNode) {
@@ -21,10 +19,5 @@ public class Command_Behavior {
   @Deprecated
   public static void call_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable beforeCallback, Runnable afterCallback) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_execute_6854397602732226506", new Object[]{c, console, beforeCallback, afterCallback});
-  }
-
-  @Deprecated
-  public static void callSuper_execute_6854397602732226506(SNode thisNode, String callerConceptFqName, ConsoleContext c, ConsoleStream console, Runnable beforeCallback, Runnable afterCallback) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.Command"), callerConceptFqName, "virtual_execute_6854397602732226506", new Class[]{SNode.class, ConsoleContext.class, ConsoleStream.class, Runnable.class, Runnable.class}, new Object[]{c, console, beforeCallback, afterCallback});
   }
 }

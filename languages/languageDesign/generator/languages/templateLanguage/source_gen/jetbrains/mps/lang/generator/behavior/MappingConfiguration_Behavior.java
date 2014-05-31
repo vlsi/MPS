@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MappingConfiguration_Behavior {
   public static void init(SNode thisNode) {
@@ -67,17 +66,7 @@ public class MappingConfiguration_Behavior {
   }
 
   @Deprecated
-  public static List<SNode> callSuper_getBaseConceptCollection_8360039740498071265(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_isApplicable_390427525177434695(SNode thisNode, SNode candidate) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_7839831476331657915", new Object[]{candidate});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isApplicable_390427525177434695(SNode thisNode, String callerConceptFqName, SNode candidate) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_isApplicable_7839831476331657915", new Class[]{SNode.class, SNode.class}, new Object[]{candidate});
   }
 }

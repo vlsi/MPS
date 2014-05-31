@@ -4,8 +4,6 @@ package jetbrains.mps.lang.core.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IDeprecatable_Behavior {
   public static void init(SNode thisNode) {
@@ -25,17 +23,7 @@ public class IDeprecatable_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_isDeprecated_1224609060727(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_isDeprecated_1224609060727", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static String call_getMessage_1225207468592(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getMessage_1225207468592", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getMessage_1225207468592(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_getMessage_1225207468592", new Class[]{SNode.class}, new Object[]{});
   }
 }

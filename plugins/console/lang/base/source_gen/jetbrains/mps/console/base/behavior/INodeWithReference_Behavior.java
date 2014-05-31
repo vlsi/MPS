@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class INodeWithReference_Behavior {
   public static void init(SNode thisNode) {
@@ -39,10 +38,5 @@ public class INodeWithReference_Behavior {
   @Deprecated
   public static String call_getTextWhenBroken_328850564593858078(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTextWhenBroken_328850564593858078", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getTextWhenBroken_328850564593858078(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.INodeWithReference"), callerConceptFqName, "virtual_getTextWhenBroken_328850564593858078", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -4,8 +4,6 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MessageStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -17,17 +15,7 @@ public class MessageStatement_Behavior {
   }
 
   @Deprecated
-  public static void callSuper_attachNewMessageAnnotation_8489045168661849665(SNode thisNode, String callerConceptFqName) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), callerConceptFqName, "virtual_attachNewMessageAnnotation_8489045168661849665", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static String call_getName_1597542831856389237(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1597542831856389237", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getName_1597542831856389237(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), callerConceptFqName, "virtual_getName_1597542831856389237", new Class[]{SNode.class}, new Object[]{});
   }
 }

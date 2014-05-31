@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IStyleContainer_Behavior {
   public static void init(SNode thisNode) {
@@ -44,10 +43,5 @@ public class IStyleContainer_Behavior {
   @Deprecated
   public static SNode call_getParent_1219419981626(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getParent_1219419981626(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), callerConceptFqName, "virtual_getParent_1219419981626", new Class[]{SNode.class}, new Object[]{});
   }
 }

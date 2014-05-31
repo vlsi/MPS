@@ -18,8 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModuleReferenceExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -48,10 +46,5 @@ public class ModuleReferenceExpression_Behavior {
   @Deprecated
   public static List<SModule> call_getVisibleModules_4040588429969394404(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), thisNode, "virtual_getVisibleModules_4040588429969394404", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SModule> callSuper_getVisibleModules_4040588429969394404(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SModule>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression"), callerConceptFqName, "virtual_getVisibleModules_4040588429969394404", new Class[]{SNode.class}, new Object[]{});
   }
 }

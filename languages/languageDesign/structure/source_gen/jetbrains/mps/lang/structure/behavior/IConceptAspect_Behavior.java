@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IConceptAspect_Behavior {
   public static void init(SNode thisNode) {
@@ -40,18 +38,8 @@ public class IConceptAspect_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getBaseConcept_2621449412040133768(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static List<SNode> call_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getBaseConceptCollection_5270353093116013036(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -60,17 +48,7 @@ public class IConceptAspect_Behavior {
   }
 
   @Deprecated
-  public static void callSuper_setBaseConcept_6261424444345963020(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
-  }
-
-  @Deprecated
   public static boolean call_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_7839831476331657915", new Object[]{candidate});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isApplicable_7839831476331657915(SNode thisNode, String callerConceptFqName, SNode candidate) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_isApplicable_7839831476331657915", new Class[]{SNode.class, SNode.class}, new Object[]{candidate});
   }
 }

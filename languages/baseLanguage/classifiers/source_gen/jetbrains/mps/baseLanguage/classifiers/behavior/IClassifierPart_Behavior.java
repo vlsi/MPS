@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IClassifierPart_Behavior {
   public static void init(SNode thisNode) {
@@ -27,10 +26,5 @@ public class IClassifierPart_Behavior {
   @Deprecated
   public static SNode call_getMainClassifier_1213877255428(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getMainClassifier_1213877255428", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getMainClassifier_1213877255428(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), callerConceptFqName, "virtual_getMainClassifier_1213877255428", new Class[]{SNode.class}, new Object[]{});
   }
 }

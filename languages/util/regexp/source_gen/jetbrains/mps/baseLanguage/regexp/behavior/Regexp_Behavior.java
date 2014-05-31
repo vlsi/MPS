@@ -10,7 +10,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Regexp_Behavior {
   public static void init(SNode thisNode) {
@@ -77,18 +76,8 @@ public class Regexp_Behavior {
   }
 
   @Deprecated
-  public static String callSuper_toString_1213877429451(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), callerConceptFqName, "virtual_toString_1213877429451", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static String call_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
-
-  @Deprecated
-  public static String callSuper_getString_1222432436326(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
   }
 
   @Deprecated
@@ -97,17 +86,7 @@ public class Regexp_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_needParentheses_1353467374623880338(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), callerConceptFqName, "virtual_needParentheses_1353467374623880338", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_isValid_4759120547781297301(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isValid_4759120547781297301", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isValid_4759120547781297301(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), callerConceptFqName, "virtual_isValid_4759120547781297301", new Class[]{SNode.class}, new Object[]{});
   }
 }

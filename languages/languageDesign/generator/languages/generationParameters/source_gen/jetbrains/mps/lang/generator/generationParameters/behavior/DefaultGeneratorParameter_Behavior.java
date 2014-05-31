@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class DefaultGeneratorParameter_Behavior {
   public static void init(SNode thisNode) {
@@ -20,10 +19,5 @@ public class DefaultGeneratorParameter_Behavior {
   @Deprecated
   public static String call_getUniqueId_8484425748929510087(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUniqueId_650531548511609559", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getUniqueId_8484425748929510087(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter"), callerConceptFqName, "virtual_getUniqueId_650531548511609559", new Class[]{SNode.class}, new Object[]{});
   }
 }

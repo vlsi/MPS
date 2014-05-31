@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IMethodLike_Behavior {
   public static void init(SNode thisNode) {
@@ -52,18 +51,8 @@ public class IMethodLike_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getExpectedRetType_1239354342632(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static SNode call_getLastStatement_1239354409446(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getLastStatement_1239354409446", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getLastStatement_1239354409446(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getLastStatement_1239354409446", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -72,18 +61,8 @@ public class IMethodLike_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getBody_1239354440022(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getBody_1239354440022", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static List<SNode> call_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getThrowableTypes_6204026822016975623", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getThrowableTypes_6204026822016975623(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -92,17 +71,7 @@ public class IMethodLike_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_implicitThrows_4989157187872658723(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_implicitThrows_4989157187872658723", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_supportsCheckedExceptions_8510677279630867629", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_supportsCheckedExceptions_8510677279630867629(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_supportsCheckedExceptions_8510677279630867629", new Class[]{SNode.class}, new Object[]{});
   }
 }

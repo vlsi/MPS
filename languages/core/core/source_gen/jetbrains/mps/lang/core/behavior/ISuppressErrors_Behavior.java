@@ -4,8 +4,6 @@ package jetbrains.mps.lang.core.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ISuppressErrors_Behavior {
   public static void init(SNode thisNode) {
@@ -18,10 +16,5 @@ public class ISuppressErrors_Behavior {
   @Deprecated
   public static boolean call_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_suppress_3393165121846091591", new Object[]{child});
-  }
-
-  @Deprecated
-  public static boolean callSuper_suppress_3393165121846091591(SNode thisNode, String callerConceptFqName, SNode child) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors"), callerConceptFqName, "virtual_suppress_3393165121846091591", new Class[]{SNode.class, SNode.class}, new Object[]{child});
   }
 }

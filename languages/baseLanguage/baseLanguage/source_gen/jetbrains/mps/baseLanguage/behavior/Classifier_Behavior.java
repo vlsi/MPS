@@ -43,7 +43,6 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScopeAdapter;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
@@ -603,18 +602,8 @@ public class Classifier_Behavior {
   }
 
   @Deprecated
-  public static List<Icon> callSuper_getMarkIcons_5039675756633081868(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static Scope call_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
     return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getVisibleMembers_8083692786967356611", new Object[]{contextNode, kind});
-  }
-
-  @Deprecated
-  public static Scope callSuper_getVisibleMembers_8083692786967356611(SNode thisNode, String callerConceptFqName, SNode contextNode, SNode kind) {
-    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getVisibleMembers_8083692786967356611", new Class[]{SNode.class, SNode.class, SNode.class}, new Object[]{contextNode, kind});
   }
 
   @Deprecated
@@ -623,18 +612,8 @@ public class Classifier_Behavior {
   }
 
   @Deprecated
-  public static Scope callSuper_getMembers_2201875424515824604(SNode thisNode, String callerConceptFqName, final SNode kind) {
-    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getMembers_2201875424515824604", new Class[]{SNode.class, SNode.class}, new Object[]{kind});
-  }
-
-  @Deprecated
   public static List<SNode> call_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getExtendedClassifierTypes_2201875424516179426(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getExtendedClassifierTypes_2201875424516179426", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -643,18 +622,8 @@ public class Classifier_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_hasStaticMemebers_1214840444586(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_hasStaticMemebers_1214840444586", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static String call_getNestedName_8540045600162184125(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getNestedName_8540045600162184125", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getNestedName_8540045600162184125(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -663,18 +632,8 @@ public class Classifier_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_checkLoops_3980490811621705344(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_checkLoops_3980490811621705344", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_isDescendant_7165541881557222913(SNode thisNode, SNode nodeToCompare) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isDescendant_7165541881557222913", new Object[]{nodeToCompare});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isDescendant_7165541881557222913(SNode thisNode, String callerConceptFqName, SNode nodeToCompare) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_isDescendant_7165541881557222913", new Class[]{SNode.class, SNode.class}, new Object[]{nodeToCompare});
   }
 
   @Deprecated
@@ -683,18 +642,8 @@ public class Classifier_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_isDescendant_checkLoops_7165541881557222950(SNode thisNode, String callerConceptFqName, SNode nodeToCompare, Set<SNode> visited) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_isDescendant_checkLoops_7165541881557222950", new Class[]{SNode.class, SNode.class, Set.class}, new Object[]{nodeToCompare, visited});
-  }
-
-  @Deprecated
   public static boolean call_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_checkLoops_3980490811621705349", new Object[]{visited});
-  }
-
-  @Deprecated
-  public static boolean callSuper_checkLoops_3980490811621705349(SNode thisNode, String callerConceptFqName, Set<SNode> visited) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_checkLoops_3980490811621705349", new Class[]{SNode.class, Set.class}, new Object[]{visited});
   }
 
   @Deprecated
@@ -703,28 +652,13 @@ public class Classifier_Behavior {
   }
 
   @Deprecated
-  public static List<SNode> callSuper_getOwnMethods_1906502351318572840(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getOwnMethods_1906502351318572840", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static Icon call_getAdditionalIcon_5017341185733869650(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
   }
 
   @Deprecated
-  public static Icon callSuper_getAdditionalIcon_5017341185733869650(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static SNode call_getThisType_3305065273710880775(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_3305065273710880775", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getThisType_3305065273710880775(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}, new Object[]{});
   }
 
   public static class Pattern_qw8l7c_a1a0a0a52 extends GeneratedMatchingPattern implements IMatchingPattern {

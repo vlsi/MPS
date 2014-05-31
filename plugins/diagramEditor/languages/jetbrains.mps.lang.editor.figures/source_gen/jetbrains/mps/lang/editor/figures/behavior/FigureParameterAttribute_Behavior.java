@@ -4,8 +4,6 @@ package jetbrains.mps.lang.editor.figures.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FigureParameterAttribute_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class FigureParameterAttribute_Behavior {
   @Deprecated
   public static SNode call_getParameterMember_5422656561931910498(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParameterMember_5422656561931910498", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getParameterMember_5422656561931910498(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute"), callerConceptFqName, "virtual_getParameterMember_5422656561931910498", new Class[]{SNode.class}, new Object[]{});
   }
 }

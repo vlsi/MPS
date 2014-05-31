@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BaseSimpleBuilderDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class BaseSimpleBuilderDeclaration_Behavior {
   @Deprecated
   public static SNode call_getContextDeclaration_6254726786820551255(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getContextDeclaration_6254726786820551255", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getContextDeclaration_6254726786820551255(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), callerConceptFqName, "virtual_getContextDeclaration_6254726786820551255", new Class[]{SNode.class}, new Object[]{});
   }
 }

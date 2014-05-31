@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IClassifierType_Behavior {
   public static void init(SNode thisNode) {
@@ -82,17 +81,7 @@ public class IClassifierType_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getClassifier_7405920559687237513(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), callerConceptFqName, "virtual_getClassifier_7405920559687237513", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static Iterable<SNode> call_getTypeParameters_7405920559687237518(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getTypeParameters_7405920559687237518", new Object[]{});
-  }
-
-  @Deprecated
-  public static Iterable<SNode> callSuper_getTypeParameters_7405920559687237518(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IClassifierType"), callerConceptFqName, "virtual_getTypeParameters_7405920559687237518", new Class[]{SNode.class}, new Object[]{});
   }
 }

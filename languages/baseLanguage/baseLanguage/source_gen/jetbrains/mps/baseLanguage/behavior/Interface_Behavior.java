@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -119,11 +118,6 @@ public class Interface_Behavior {
   @Deprecated
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_5067982036267369911", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getUnitName_2496361171403551004(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}, new Object[]{});
   }
 
   protected static Logger LOG = LogManager.getLogger(Interface_Behavior.class);

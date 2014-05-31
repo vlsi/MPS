@@ -4,8 +4,6 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class PluginDependency_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class PluginDependency_Behavior {
   @Deprecated
   public static String call_getPluginId_5864553086652219131(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPluginId_5864553086652219131", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getPluginId_5864553086652219131(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.PluginDependency"), callerConceptFqName, "virtual_getPluginId_5864553086652219131", new Class[]{SNode.class}, new Object[]{});
   }
 }

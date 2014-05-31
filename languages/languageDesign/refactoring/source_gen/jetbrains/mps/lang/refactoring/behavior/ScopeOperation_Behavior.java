@@ -4,8 +4,6 @@ package jetbrains.mps.lang.refactoring.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -21,11 +19,6 @@ public class ScopeOperation_Behavior {
   @Deprecated
   public static SNode call_createType_7012097027058652550(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_7012097027058652452", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_createType_7012097027058652550(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_p44uz3_a0a0() {

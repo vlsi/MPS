@@ -4,8 +4,6 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildLayout_FileSet_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class BuildLayout_FileSet_Behavior {
   @Deprecated
   public static boolean call_isImplicit_1330375798085107777(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isImplicit_1330375798085107777", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isImplicit_1330375798085107777(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_FileSet"), callerConceptFqName, "virtual_isImplicit_1330375798085107777", new Class[]{SNode.class}, new Object[]{});
   }
 }

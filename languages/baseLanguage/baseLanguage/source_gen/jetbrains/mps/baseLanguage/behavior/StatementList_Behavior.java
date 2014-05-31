@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class StatementList_Behavior {
   public static void init(SNode thisNode) {
@@ -152,10 +151,5 @@ public class StatementList_Behavior {
   @Deprecated
   public static List<SNode> call_getScopeVariables_2496361171403550911(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getScopeVariables_2496361171403550911(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
   }
 }

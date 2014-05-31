@@ -6,8 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BaseDocComment_Behavior {
   public static void init(SNode thisNode) {
@@ -20,10 +18,5 @@ public class BaseDocComment_Behavior {
   @Deprecated
   public static boolean call_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isTagSectionEmpty_8465538089690623795(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), callerConceptFqName, "virtual_isTagSectionEmpty_8465538089690623795", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class CustomContainerCreator_Behavior {
   public static void init(SNode thisNode) {
@@ -30,10 +29,5 @@ public class CustomContainerCreator_Behavior {
   @Deprecated
   public static SNode call_createType_1331913329176106428(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1237722437229", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_createType_1331913329176106428(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", new Class[]{SNode.class}, new Object[]{});
   }
 }

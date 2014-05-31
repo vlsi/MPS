@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ITestMethod_Behavior {
   public static void init(SNode thisNode) {
@@ -17,17 +15,7 @@ public class ITestMethod_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getTestCase_1216134500045(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestCase_1216134500045", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static String call_getTestName_1216136419751(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTestName_1216136419751", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getTestName_1216136419751(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"), callerConceptFqName, "virtual_getTestName_1216136419751", new Class[]{SNode.class}, new Object[]{});
   }
 }

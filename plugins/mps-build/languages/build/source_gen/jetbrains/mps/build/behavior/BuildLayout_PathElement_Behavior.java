@@ -5,8 +5,6 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.DependenciesHelper;
 
 public class BuildLayout_PathElement_Behavior {
@@ -19,27 +17,12 @@ public class BuildLayout_PathElement_Behavior {
   }
 
   @Deprecated
-  public static void callSuper_unpack_7128123785277710736(SNode thisNode, String callerConceptFqName, UnpackHelper helper, Iterable<Object> artifacts) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_unpack_7128123785277710736", new Class[]{SNode.class, UnpackHelper.class, Iterable.class}, new Object[]{helper, artifacts});
-  }
-
-  @Deprecated
   public static void call_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_appendName_1368030936106665465", new Object[]{parent, sb});
   }
 
   @Deprecated
-  public static void callSuper_appendName_1368030936106665465(SNode thisNode, String callerConceptFqName, SNode parent, StringBuilder sb) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_appendName_1368030936106665465", new Class[]{SNode.class, SNode.class, StringBuilder.class}, new Object[]{parent, sb});
-  }
-
-  @Deprecated
   public static String call_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_location_7117056644539862594", new Object[]{helper, artifactId});
-  }
-
-  @Deprecated
-  public static String callSuper_location_7117056644539862594(SNode thisNode, String callerConceptFqName, DependenciesHelper helper, Object artifactId) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_PathElement"), callerConceptFqName, "virtual_location_7117056644539862594", new Class[]{SNode.class, DependenciesHelper.class, Object.class}, new Object[]{helper, artifactId});
   }
 }

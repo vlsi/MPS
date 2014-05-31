@@ -6,8 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class InterpretedCommand_Behavior {
   public static void init(SNode thisNode) {
@@ -22,10 +20,5 @@ public class InterpretedCommand_Behavior {
   @Deprecated
   public static void call_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_doExecute_3321948346081469500", new Object[]{context, console});
-  }
-
-  @Deprecated
-  public static void callSuper_doExecute_3321948346081469500(SNode thisNode, String callerConceptFqName, ConsoleContext context, ConsoleStream console) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.console.base.structure.InterpretedCommand"), callerConceptFqName, "virtual_doExecute_3321948346081469500", new Class[]{SNode.class, ConsoleContext.class, ConsoleStream.class}, new Object[]{context, console});
   }
 }

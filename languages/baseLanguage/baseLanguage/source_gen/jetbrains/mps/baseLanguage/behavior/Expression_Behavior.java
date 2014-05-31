@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Expression_Behavior {
   public static void init(SNode thisNode) {
@@ -60,18 +59,8 @@ public class Expression_Behavior {
   }
 
   @Deprecated
-  public static Object callSuper_eval_1213877519769(SNode thisNode, String callerConceptFqName, SModule module) {
-    return BehaviorManager.getInstance().invokeSuper(Object.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_eval_1213877519769", new Class[]{SNode.class, SModule.class}, new Object[]{module});
-  }
-
-  @Deprecated
   public static String call_getVariableExpectedName_1213877519781(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getVariableExpectedName_1213877519781", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getVariableExpectedName_1213877519781(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getVariableExpectedName_1213877519781", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -80,18 +69,8 @@ public class Expression_Behavior {
   }
 
   @Deprecated
-  public static boolean callSuper_isLValue_1213877519786(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isLValue_1213877519786", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_isCompileTimeConstant_1238860258777(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isCompileTimeConstant_1238860258777", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isCompileTimeConstant_1238860258777(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isCompileTimeConstant_1238860258777", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -100,17 +79,7 @@ public class Expression_Behavior {
   }
 
   @Deprecated
-  public static Object callSuper_getCompileTimeConstantValue_1238860310638(SNode thisNode, String callerConceptFqName, SModule module) {
-    return BehaviorManager.getInstance().invokeSuper(Object.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getCompileTimeConstantValue_1238860310638", new Class[]{SNode.class, SModule.class}, new Object[]{module});
-  }
-
-  @Deprecated
   public static boolean call_isLegalAsStatement_1239211900844(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLegalAsStatement_1239211900844", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isLegalAsStatement_1239211900844(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IParameter_Behavior {
   public static void init(SNode thisNode) {
@@ -17,17 +15,7 @@ public class IParameter_Behavior {
   }
 
   @Deprecated
-  public static String callSuper_getParameterName_1225280611056(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getParameterName_1225280611056", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static SNode call_getDeclaration_1225282371351(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDeclaration_1225282371351", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getDeclaration_1225282371351(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getDeclaration_1225282371351", new Class[]{SNode.class}, new Object[]{});
   }
 }

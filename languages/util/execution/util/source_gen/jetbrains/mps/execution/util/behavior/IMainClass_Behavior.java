@@ -7,8 +7,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IMainClass_Behavior {
   public static void init(SNode thisNode) {
@@ -34,18 +32,8 @@ public class IMainClass_Behavior {
   }
 
   @Deprecated
-  public static String callSuper_getUnitName_4666195181811081431(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), callerConceptFqName, "virtual_getUnitName_4666195181811081431", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static boolean call_isNodeRunnable_4666195181811081448(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isNodeRunnable_4666195181811081448", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isNodeRunnable_4666195181811081448(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), callerConceptFqName, "virtual_isNodeRunnable_4666195181811081448", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static boolean isNotEmptyString(String str) {

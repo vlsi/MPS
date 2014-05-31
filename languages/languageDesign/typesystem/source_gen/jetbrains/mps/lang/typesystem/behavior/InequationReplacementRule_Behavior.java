@@ -5,8 +5,6 @@ package jetbrains.mps.lang.typesystem.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class InequationReplacementRule_Behavior {
   public static void init(SNode thisNode) {
@@ -19,10 +17,5 @@ public class InequationReplacementRule_Behavior {
   @Deprecated
   public static SNode call_getSecondNodeCondition_4484478261143622410(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getSecondNodeCondition_4484478261143622410(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", new Class[]{SNode.class}, new Object[]{});
   }
 }

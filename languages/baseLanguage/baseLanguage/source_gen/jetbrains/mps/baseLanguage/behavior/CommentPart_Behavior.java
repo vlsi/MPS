@@ -4,8 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CommentPart_Behavior {
   public static void init(SNode thisNode) {
@@ -18,10 +16,5 @@ public class CommentPart_Behavior {
   @Deprecated
   public static boolean call_isToDo_7236590470026152831(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isToDo_7236590470026152831", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isToDo_7236590470026152831(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CommentPart"), callerConceptFqName, "virtual_isToDo_7236590470026152831", new Class[]{SNode.class}, new Object[]{});
   }
 }

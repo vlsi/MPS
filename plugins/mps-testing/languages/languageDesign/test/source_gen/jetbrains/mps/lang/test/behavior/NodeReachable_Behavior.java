@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.NodeDataFlowCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeReachable_Behavior {
   public static void init(SNode thisNode) {
@@ -23,10 +22,5 @@ public class NodeReachable_Behavior {
   @Deprecated
   public static void call_perform_2702384151998373447(SNode thisNode, SNode node) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_245688835340859348", new Object[]{node});
-  }
-
-  @Deprecated
-  public static void callSuper_perform_2702384151998373447(SNode thisNode, String callerConceptFqName, SNode node) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeReachable"), callerConceptFqName, "virtual_perform_245688835340859348", new Class[]{SNode.class, SNode.class}, new Object[]{node});
   }
 }

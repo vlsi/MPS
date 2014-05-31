@@ -31,7 +31,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.Pair;
 import java.util.HashSet;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractConceptDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -345,10 +344,5 @@ public class AbstractConceptDeclaration_Behavior {
   @Deprecated
   public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getImmediateSuperconcepts_1222430305282(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -12,8 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -77,11 +75,6 @@ public class PersistentPropertyDeclaration_Behavior {
   @Deprecated
   public static boolean call_isInitializable_946964771156066897(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isInitializable_1213877517488", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isInitializable_946964771156066897(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_ex141d_b0a0a0() {

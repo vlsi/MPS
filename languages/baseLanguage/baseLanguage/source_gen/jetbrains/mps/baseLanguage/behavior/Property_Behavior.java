@@ -22,7 +22,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import javax.swing.Icon;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Property_Behavior {
   public static void init(SNode thisNode) {
@@ -140,11 +139,6 @@ public class Property_Behavior {
   @Deprecated
   public static Icon call_getAdditionalIcon_8884554759541381539(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
-  }
-
-  @Deprecated
-  public static Icon callSuper_getAdditionalIcon_8884554759541381539(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Property"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static boolean check_9xvv7i_a0a0g(SNode checkedDotOperand) {

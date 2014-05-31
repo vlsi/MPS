@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class StyleAttributeDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -36,17 +35,7 @@ public class StyleAttributeDeclaration_Behavior {
   }
 
   @Deprecated
-  public static SNode callSuper_getDefaultValue_7677730757102472473(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), callerConceptFqName, "virtual_getDefaultValue_7677730757102472473", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
   public static SNode call_getType_7677730757102475082(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_7677730757102475082", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getType_7677730757102475082(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), callerConceptFqName, "virtual_getType_7677730757102475082", new Class[]{SNode.class}, new Object[]{});
   }
 }

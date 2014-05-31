@@ -4,8 +4,6 @@ package jetbrains.mps.lang.core.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IMetaLevelChanger_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class IMetaLevelChanger_Behavior {
   @Deprecated
   public static int call_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_getMetaLevelChange_201537367881074474", new Object[]{});
-  }
-
-  @Deprecated
-  public static int callSuper_getMetaLevelChange_201537367881074474(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Integer.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"), callerConceptFqName, "virtual_getMetaLevelChange_201537367881074474", new Class[]{SNode.class}, new Object[]{});
   }
 }

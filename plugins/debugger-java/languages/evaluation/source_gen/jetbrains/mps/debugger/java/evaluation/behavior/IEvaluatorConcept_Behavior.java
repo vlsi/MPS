@@ -4,8 +4,6 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IEvaluatorConcept_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +12,5 @@ public class IEvaluatorConcept_Behavior {
   @Deprecated
   public static SNode call_getCode_317191294093624551(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCode_317191294093624551", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getCode_317191294093624551(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), callerConceptFqName, "virtual_getCode_317191294093624551", new Class[]{SNode.class}, new Object[]{});
   }
 }

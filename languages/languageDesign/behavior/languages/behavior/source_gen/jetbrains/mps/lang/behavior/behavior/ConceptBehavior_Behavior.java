@@ -7,14 +7,11 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.IStaticContainerProcessor;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -28,10 +25,6 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConceptBehavior_Behavior {
   public static void init(SNode thisNode) {
@@ -40,35 +33,7 @@ public class ConceptBehavior_Behavior {
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
     return members;
-  }
-
-  public static List<SNode> call_getVisibleStaticMethods_1225194243338(SNode thisNode, SNode contextNode) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode method : SLinkOperations.getTargets(thisNode, "staticMethod", true)) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
-        ListSequence.fromList(result).addElement(method);
-      }
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-        if (SNodeOperations.getAncestor(contextNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false) == thisNode) {
-          ListSequence.fromList(result).addElement(method);
-        }
-      }
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
-        SNode contextConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(contextNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
-        SNode methodConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false), "concept", false);
-        if (SConceptOperations.isSubConceptOf(contextConcept, NameUtil.nodeFQName(methodConcept))) {
-          ListSequence.fromList(result).addElement(method);
-        }
-      }
-      if ((SLinkOperations.getTarget(method, "visibility", true) == null)) {
-        if (SNodeOperations.getModel(method) == SNodeOperations.getModel(contextNode)) {
-          ListSequence.fromList(result).addElement(method);
-        }
-      }
-    }
-    return result;
   }
 
   public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
@@ -94,20 +59,6 @@ public class ConceptBehavior_Behavior {
       }
     };
     return result;
-  }
-
-  public static IStaticContainerProcessor virtual_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
-    return new AbstractStaticContainerProcessor(node) {
-      @Override
-      public SNode createNewMethod() {
-        return SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", null);
-      }
-
-      @Override
-      public SNode createMethodCall(SNode method, List<SNode> arguments) {
-        return _quotation_createNode_xahq23_a0a1a0a0a3(arguments);
-      }
-    };
   }
 
   public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
@@ -199,30 +150,5 @@ public class ConceptBehavior_Behavior {
   @Deprecated
   public static void call_setBaseConcept_6261424444345978650(SNode thisNode, SNode baseConcept) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
-  }
-
-  @Deprecated
-  public static void callSuper_setBaseConcept_6261424444345978650(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
-  }
-
-  private static SNode _quotation_createNode_xahq23_a0a1a0a0a3(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    SNode quotedNode_5 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null, null, false);
-    {
-      List<SNode> nodes = (List<SNode>) parameter_1;
-      for (SNode child : nodes) {
-        quotedNode_3.addChild("actualArgument", HUtil.copyIfNecessary(child));
-      }
-    }
-    quotedNode_2.addChild("operation", quotedNode_3);
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptRefExpression", null, null, false);
-    quotedNode_2.addChild("operand", quotedNode_4);
-    return quotedNode_2;
   }
 }
