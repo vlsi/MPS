@@ -110,9 +110,8 @@ public class ImmatureReferences implements CoreComponent {
     if (myDisabled) return;
 
     SModel model = ref.getSourceNode().getModel();
-    if (model == null) return;
 
-    SModelReference modelRef = model.getReference();
+    SModelReference modelRef = model == null ? myVirtualRef : model.getReference();
     ConcurrentMap<SReferenceBase, Object> refSet = myReferences.get(modelRef);
     if (refSet != null) {
       refSet.remove(ref);
