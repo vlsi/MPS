@@ -81,8 +81,9 @@ public class CellAction_PasteNode extends AbstractCellAction {
     }
 
     boolean canPasteWithRemove = !disposed && canPasteViaNodePasterWithRemove(selection.getSelectedNodes(), pasteNodes);
-    if (selection instanceof SingularSelection && (selection instanceof EditorCellLabelSelection ||
-        (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
+    if (selection instanceof SingularSelection &&
+        (selection instanceof EditorCellLabelSelection && !isCompletelySelected((EditorCellLabelSelection) selection) ||
+            (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
       EditorCell selectedCell = getCellToPasteTo(context.getSelectedCell());
       if (selectedCell == null) {
         return false;
@@ -98,6 +99,11 @@ public class CellAction_PasteNode extends AbstractCellAction {
       return true;
     }
     return false;
+  }
+
+  private boolean isCompletelySelected(EditorCellLabelSelection labelSelection) {
+    int textLength = labelSelection.getEditorCellLabel().getText().length();
+    return labelSelection.getSelectionStart() == 0 && labelSelection.getSelectionEnd() == textLength && textLength > 0;
   }
 
   private boolean canPasteViaNodePaster(EditorCell selectedCell, List<SNode> pasteNodes) {
@@ -180,8 +186,9 @@ public class CellAction_PasteNode extends AbstractCellAction {
             NodePaster nodePaster = new NodePaster(pasteNodes);
             boolean disposed = checkDisposedSelectedNodes(currentSelectedNodes, selectedReferences);
             boolean canPasteWithRemove = !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
-            if (selection instanceof SingularSelection && (selection instanceof EditorCellLabelSelection ||
-                (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
+            if (selection instanceof SingularSelection &&
+                (selection instanceof EditorCellLabelSelection && !isCompletelySelected((EditorCellLabelSelection) selection) ||
+                    (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
               EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
               assert selectedCell != null;
 

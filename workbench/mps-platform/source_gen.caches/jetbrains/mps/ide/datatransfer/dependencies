@@ -64,10 +64,12 @@
     <classNode dependClassName="java.awt.datatransfer.UnsupportedFlavorException" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.StringReader" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />

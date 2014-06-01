@@ -198,8 +198,18 @@ public class CopyPasteUtil {
     CopyPasteManagerEx.getInstanceEx().setContents(new StringSelection(text));
   }
 
+
+
+  /**
+   * Deprecated since MPS 3.1 looks like not used anymore
+   */
+  @Deprecated
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, String text) {
     setClipboardContents(new SNodeTransferable(nodes, text));
+  }
+
+  public static void copyTextAndNodeToClipboard(String text, SNode node) {
+    setClipboardContents(new SNodeTransferable(text, node));
   }
 
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, Map<SNode, Set<SNode>> nodesAndAttributes, String text) {
@@ -249,7 +259,7 @@ public class CopyPasteUtil {
       }
       i++;
     }
-    CopyPasteUtil.copyNodesAndTextToClipboard(nodes, stringBuilder.toString());
+    setClipboardContents(new SNodeTransferable(nodes, stringBuilder.toString()));
   }
 
   public static void copyNodeToClipboard(SNode node) {
@@ -389,6 +399,30 @@ public class CopyPasteUtil {
     };
   }
 
+  public static boolean isStringOnTopOfClipboard() {
+    // This method was created in accordance with TextPasteUtil.hasStringInClipboard()/.getStringFromClipboard() 
+    // methods we should consider reimplementing these methods in order to iterrate over .getAllContents() collection 
+    // in case first available Transferable does not support neither stringFlavor nor sNode one. 
+    for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+      if (trf != null) {
+        for (DataFlavor nextFlavor : trf.getTransferDataFlavors()) {
+          if (nextFlavor == SModelDataFlavor.stringFlavor) {
+            return true;
+          }
+          if (nextFlavor == SModelDataFlavor.sNode) {
+            return false;
+          }
+        }
+      }
+      break;
+    }
+    return false;
+  }
+
+  /**
+   * Deprecated since MPS 3.1 looks like not used anymore
+   */
+  @Deprecated
   public static boolean doesClipboardContainNode() {
     Transferable content = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
