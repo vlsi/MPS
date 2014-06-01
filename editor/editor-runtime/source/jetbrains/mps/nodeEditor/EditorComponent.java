@@ -2361,7 +2361,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   }
 
-  Dimension preferredComponentSize() {
+  Dimension getPreferredComponentSize() {
     if (myRootCell == null) {
       JViewport viewport = myScrollPane.getViewport();
       Rectangle viewRect = viewport.getViewRect();

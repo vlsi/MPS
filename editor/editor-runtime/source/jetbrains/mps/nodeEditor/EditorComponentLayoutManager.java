@@ -25,9 +25,11 @@ import java.awt.LayoutManager;
 
 public class EditorComponentLayoutManager implements LayoutManager {
   private EditorComponent myEditorComponent;
+
   public EditorComponentLayoutManager(EditorComponent component) {
     myEditorComponent = component;
   }
+
   @Override
   public void addLayoutComponent(String name, Component comp) {
 
@@ -41,13 +43,13 @@ public class EditorComponentLayoutManager implements LayoutManager {
   @Override
   public Dimension preferredLayoutSize(Container parent) {
     checkContainer(parent);
-    return ((EditorComponent) parent).preferredComponentSize();
+    return ((EditorComponent) parent).getPreferredComponentSize();
   }
 
   @Override
   public Dimension minimumLayoutSize(Container parent) {
     checkContainer(parent);
-    return ((EditorComponent) parent).preferredComponentSize();
+    return ((EditorComponent) parent).getPreferredComponentSize();
   }
 
   @Override
@@ -58,11 +60,11 @@ public class EditorComponentLayoutManager implements LayoutManager {
     for (EditorCell_WithComponent cell : editorComponent.getCellTracker().getComponentCells()) {
       JComponent component = cell.getComponent();
       component.validate();
-      if (!component.getSize().equals(component.getPreferredSize())) {
-        Dimension size = component.getPreferredSize();
-        component.setSize(size);
+      Dimension preferredSize = component.getPreferredSize();
+      if (!component.getSize().equals(preferredSize)) {
+        component.setSize(preferredSize);
         if (cell instanceof EditorCell_Basic)
-        ((EditorCell_Basic) cell).requestRelayout();
+          ((EditorCell_Basic) cell).requestRelayout();
         needRelayout = true;
       }
     }
