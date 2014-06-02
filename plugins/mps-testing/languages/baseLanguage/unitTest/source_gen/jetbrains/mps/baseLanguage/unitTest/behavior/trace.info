@@ -13,9 +13,9 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BinaryAssert_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.BinaryAssert_BehaviorDescriptor" />
   <unitInfo fileName="Fail_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.Fail_BehaviorDescriptor" />
-  <unitInfo fileName="ITestCase_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
-  <unitInfo fileName="ITestMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
-  <unitInfo fileName="ITestable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" />
+  <unitInfo fileName="ITestCase_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
+  <unitInfo fileName="ITestMethod_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
+  <unitInfo fileName="ITestable_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" />
   <unitInfo fileName="MessageHolder_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.MessageHolder_BehaviorDescriptor" />
   <unitInfo fileName="Message_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.Message_BehaviorDescriptor" />
   <unitInfo fileName="PrepareMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.behavior.PrepareMethod_BehaviorDescriptor" />
