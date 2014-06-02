@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_Behavior;
@@ -22,7 +23,6 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
@@ -68,16 +68,20 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4731970554578284954(final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false), "virtual_getFqName_1213877404258", new Object[]{});
+  }
+
   public static Object propertyMacro_GetPropertyValue_257065298285659954(final PropertyMacroContext _context) {
     SNode behavior = SNodeOperations.cast(SNodeOperations.getContainingRoot(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false)), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
     return NameUtil.nodeFQName(behavior);
   }
 
   public static Object propertyMacro_GetPropertyValue_257065298285659969(final PropertyMacroContext _context) {
-    if (LocalBehaviorMethodCall_Behavior.call_isVirtualMethodCall_7148319044498537586(_context.getNode())) {
-      return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1225196404032(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false));
+    if (LocalBehaviorMethodCall_Behavior.call_isVirtualMethodCall_7148319044498537586(_context.getNode()) && !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "isStatic"))) {
+      return BehaviorMethodNames.getCallerMethodName(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false));
     } else {
-      return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1225196404000(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false));
+      return BehaviorMethodNames.getDeclarationName(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false));
     }
   }
 
@@ -190,6 +194,10 @@ public class QueriesGenerated {
     return ((enclosingMethod != null) && SPropertyOperations.getBoolean(enclosingMethod, "isStatic"));
   }
 
+  public static boolean ifMacro_Condition_7647236785198512013(final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "isStatic");
+  }
+
   public static boolean ifMacro_Condition_2061371070686302345(final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), "isStatic"));
   }
@@ -257,7 +265,7 @@ public class QueriesGenerated {
       // todo: remove getClassExpression here 
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_x583g4_a0a0c0sb(returnType);
+      return _quotation_createNode_x583g4_a0a0c0ub(returnType);
     }
   }
 
@@ -454,7 +462,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a0c0sb(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0a0c0ub(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

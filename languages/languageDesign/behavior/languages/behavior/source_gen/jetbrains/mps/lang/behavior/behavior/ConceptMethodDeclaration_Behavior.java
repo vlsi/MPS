@@ -65,16 +65,6 @@ public class ConceptMethodDeclaration_Behavior {
     return SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
-  @Deprecated
-  public static String call_getGeneratedName_1225196404000(SNode thisNode) {
-    return BehaviorMethodNames.getDeclarationName(thisNode);
-  }
-
-  @Deprecated
-  public static String call_getCallerMethodName_1225196404032(SNode thisNode) {
-    return BehaviorMethodNames.getCallerMethodName(thisNode);
-  }
-
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "isAbstract");
   }
