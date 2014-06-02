@@ -135,6 +135,8 @@ public class ConvertPackageToModel extends AnAction {
     final JavaToMpsConverter parser = new JavaToMpsConverter(mpsModule, mpsProject.getRepository(), true, true);
     final List<IFile> javaFiles = toIFiles(psiJavaFiles);
 
+    ApplicationManager.getApplication().saveAll();
+
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
       @Override
       public void run(@NotNull final ProgressIndicator progressIndicator) {
