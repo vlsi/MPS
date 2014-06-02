@@ -264,7 +264,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/constraints/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/dataFlow/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/dataFlow/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/dataFlow/solutions/jetbrains.mps.bootstrap.dataFlow.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/languages/tableTests/classes_gen" />
