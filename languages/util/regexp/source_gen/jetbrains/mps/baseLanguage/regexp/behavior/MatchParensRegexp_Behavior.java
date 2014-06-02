@@ -28,14 +28,4 @@ public class MatchParensRegexp_Behavior {
   public static SNode virtual_getValue_1224857430232(SNode thisNode) {
     throw new UnsupportedOperationException();
   }
-
-  @Deprecated
-  public static String call_getString_1222435297321(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
-
-  @Deprecated
-  public static SNode call_getValue_4204903511793602684(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getValue_1224857430232", new Object[]{});
-  }
 }

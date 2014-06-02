@@ -7,7 +7,6 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CellModel_RefNodeList_Behavior {
   public static void init(SNode thisNode) {
@@ -33,10 +32,5 @@ public class CellModel_RefNodeList_Behavior {
 
   public static String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
-  }
-
-  @Deprecated
-  public static String call_getRoleForCell_1182113674817411794(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRoleForCell_1216377898846", new Object[]{});
   }
 }

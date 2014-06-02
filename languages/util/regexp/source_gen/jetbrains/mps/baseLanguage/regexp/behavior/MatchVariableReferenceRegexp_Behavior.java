@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MatchVariableReferenceRegexp_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +13,5 @@ public class MatchVariableReferenceRegexp_Behavior {
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return "\\" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, "match", false)) + 1);
-  }
-
-  @Deprecated
-  public static String call_getString_1222610343965(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
   }
 }

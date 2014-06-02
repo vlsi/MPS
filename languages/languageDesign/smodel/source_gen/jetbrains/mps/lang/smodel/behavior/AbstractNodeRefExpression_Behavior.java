@@ -46,9 +46,4 @@ public class AbstractNodeRefExpression_Behavior {
     }
     return result;
   }
-
-  @Deprecated
-  public static SNode call_getTargetNode_3575813534625153815(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_3575813534625153815", new Object[]{});
-  }
 }

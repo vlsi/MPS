@@ -96,19 +96,4 @@ public class LocalVariableDeclaration_Behavior {
 
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
   }
-
-  @Deprecated
-  public static String call_getPrefix_3012473318495506424(SNode thisNode, Project project) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPrefix_3012473318495495520", new Object[]{project});
-  }
-
-  @Deprecated
-  public static String call_getSuffix_3012473318495506430(SNode thisNode, Project project) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_3012473318495499856", new Object[]{project});
-  }
-
-  @Deprecated
-  public static SNode call_getValue_4163393263914882931(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getValue_1224857430232", new Object[]{});
-  }
 }

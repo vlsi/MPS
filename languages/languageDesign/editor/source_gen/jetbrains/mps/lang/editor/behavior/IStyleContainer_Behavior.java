@@ -39,9 +39,4 @@ public class IStyleContainer_Behavior {
       IStyleContainer_Behavior.call_fillClassItems_2551781846503685010(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{}), classItems, itemConcept, visitedContainers);
     }
   }
-
-  @Deprecated
-  public static SNode call_getParent_1219419981626(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getParent_1219419981626", new Object[]{});
-  }
 }

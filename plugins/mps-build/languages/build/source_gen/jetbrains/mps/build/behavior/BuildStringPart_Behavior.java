@@ -5,7 +5,6 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.MacroHelper;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BuildStringPart_Behavior {
   public static void init(SNode thisNode) {
@@ -28,26 +27,6 @@ public class BuildStringPart_Behavior {
 
   public static String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
     return "";
-  }
-
-  @Deprecated
-  public static boolean call_punctuationLeft_5096397858823356723(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_punctuationLeft_5096397858823356723", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFirstPositionAllowed_624440001685459414", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isLastPositionAllowed_624440001685490925(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLastPositionAllowed_624440001685490925", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getText_4380385936562037054", new Object[]{helper});
   }
 
   private static boolean eq_cuvs1r_a0b0b(Object a, Object b) {

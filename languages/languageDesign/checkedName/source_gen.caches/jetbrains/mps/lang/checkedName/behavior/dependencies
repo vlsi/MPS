@@ -11,7 +11,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior" file="ICheckedNamePolicy_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

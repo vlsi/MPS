@@ -340,9 +340,4 @@ public class AbstractConceptDeclaration_Behavior {
 
     return new Pair(inLanguageAncestors, notInLanguageAncestors);
   }
-
-  @Deprecated
-  public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
-  }
 }

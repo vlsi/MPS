@@ -53,14 +53,4 @@ public class ILocalDeclaration_Behavior {
     }
     return false;
   }
-
-  @Deprecated
-  public static boolean call_isReferencedInClosure_3262277503800823422(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReferencedInClosure_3262277503800823422", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReferencedInControlFlowInterrupter_1644061362849513751", new Object[]{});
-  }
 }

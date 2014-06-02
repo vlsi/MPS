@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ComparisonRule_Behavior {
   public static void init(SNode thisNode) {
@@ -12,10 +11,5 @@ public class ComparisonRule_Behavior {
 
   public static SNode virtual_getSecondNodeCondition_4484478261143583672(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "anotherNode", true);
-  }
-
-  @Deprecated
-  public static SNode call_getSecondNodeCondition_4484478261143589913(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSecondNodeCondition_4484478261143583672", new Object[]{});
   }
 }

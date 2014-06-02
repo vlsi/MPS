@@ -162,11 +162,6 @@ public class BuildMps_Module_Behavior {
     }
   }
 
-  @Deprecated
-  public static boolean call_isCompilable_7454762407073969360(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isCompilable_7454762407073969360", new Object[]{});
-  }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

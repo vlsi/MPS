@@ -114,10 +114,5 @@ public class Interface_Behavior {
     return Classifier_Behavior.call_isInner_521412098689998677(thisNode) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_7405920559687241224", new Object[]{}));
   }
 
-  @Deprecated
-  public static String call_getUnitName_2496361171403551004(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_5067982036267369911", new Object[]{});
-  }
-
   protected static Logger LOG = LogManager.getLogger(Interface_Behavior.class);
 }

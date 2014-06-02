@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LiteralReplacement_Behavior {
   public static void init(SNode thisNode) {
@@ -82,11 +81,6 @@ public class LiteralReplacement_Behavior {
       }
     }
     return sb.toString();
-  }
-
-  @Deprecated
-  public static String call_toString_3796137614137538916(SNode thisNode, SNode search) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_toString_3796137614137538905", new Object[]{search});
   }
 
   private static boolean isEmptyString(String str) {

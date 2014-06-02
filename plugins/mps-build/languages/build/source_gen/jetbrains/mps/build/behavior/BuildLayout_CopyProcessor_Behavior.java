@@ -15,7 +15,6 @@ import jetbrains.mps.build.util.Context;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.Map;
 
 public class BuildLayout_CopyProcessor_Behavior {
   public static void init(SNode thisNode) {
@@ -69,15 +68,5 @@ public class BuildLayout_CopyProcessor_Behavior {
       return BuildLayout_CopyProcessor_Behavior.call_representativeName_1330375798101242503(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyProcessor"))), SLinkOperations.getTarget(SNodeOperations.cast(fileset, "jetbrains.mps.build.structure.BuildInputFiles"), "dir", true));
     }
     return "copy";
-  }
-
-  @Deprecated
-  public static String call_getTaskName_1330375798060763184(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTaskName_1330375798060763184", new Object[]{});
-  }
-
-  @Deprecated
-  public static Map<String, String> call_getTaskArguments_7918752904805535914(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Map<String, String>>) ((Class) Object.class), thisNode, "virtual_getTaskArguments_7918752904805535914", new Object[]{});
   }
 }

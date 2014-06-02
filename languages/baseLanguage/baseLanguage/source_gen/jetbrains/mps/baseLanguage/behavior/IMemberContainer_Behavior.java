@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class IMemberContainer_Behavior {
   public static void init(SNode thisNode) {
@@ -17,20 +16,5 @@ public class IMemberContainer_Behavior {
 
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return new ArrayList<SNode>();
-  }
-
-  @Deprecated
-  public static List<SNode> call_getMembers_1213877531970(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877531970", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getMethodsToOverride_5418393554803767537(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getMethodsToImplement_5418393554803775106(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{});
   }
 }

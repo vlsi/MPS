@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ExtractStatementListExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -18,10 +17,5 @@ public class ExtractStatementListExpression_Behavior {
     ListSequence.fromList(elems).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "stmts", true), "statement", true)));
     ListSequence.fromList(elems).addElement(SLinkOperations.getTarget(thisNode, "innerExpr", true));
     return elems;
-  }
-
-  @Deprecated
-  public static List<SNode> call_getLocalVariableElements_3196918548952834932(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getLocalVariableElements_1238805763253", new Object[]{});
   }
 }

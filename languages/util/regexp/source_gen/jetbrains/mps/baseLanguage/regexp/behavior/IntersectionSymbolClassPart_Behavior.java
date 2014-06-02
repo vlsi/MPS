@@ -13,9 +13,4 @@ public class IntersectionSymbolClassPart_Behavior {
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "left", true), "virtual_getRepresentation_8173814113624650482", new Object[]{}) + "&&" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "right", true), "virtual_getRepresentation_8173814113624650482", new Object[]{});
   }
-
-  @Deprecated
-  public static String call_getRepresentation_8173814113624650585(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRepresentation_8173814113624650482", new Object[]{});
-  }
 }

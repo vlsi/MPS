@@ -37,9 +37,4 @@ public class IntentionDeclaration_Behavior {
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "forConcept", false);
   }
-
-  @Deprecated
-  public static SNode call_getBaseConcept_8952337903384724184(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
-  }
 }

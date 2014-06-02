@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ExportScopeModule_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +13,5 @@ public class ExportScopeModule_Behavior {
 
   public static boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
     return sourceNamespace.equals(ExportScope_Behavior.call_getNamespace_2565736246230026649(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), targetNode));
-  }
-
-  @Deprecated
-  public static boolean call_checkExport_402007580867586263(SNode thisNode, String sourceNamespace, SNode targetNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_checkExport_2565736246230026584", new Object[]{sourceNamespace, targetNode});
   }
 }

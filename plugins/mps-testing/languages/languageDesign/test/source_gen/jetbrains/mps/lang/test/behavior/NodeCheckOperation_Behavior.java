@@ -35,14 +35,4 @@ public class NodeCheckOperation_Behavior {
     SNode container = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.test.structure.NodeOperationsContainer");
     return SNodeOperations.getParent(container);
   }
-
-  @Deprecated
-  public static String call_getDefaultName_8578280453511146306(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDefaultName_8578280453511146306", new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_perform_245688835340859348(SNode thisNode, SNode node) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_245688835340859348", new Object[]{node});
-  }
 }

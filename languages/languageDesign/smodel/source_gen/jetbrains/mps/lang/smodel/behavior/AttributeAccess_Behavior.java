@@ -51,21 +51,6 @@ public class AttributeAccess_Behavior {
     return true;
   }
 
-  @Deprecated
-  public static boolean call_isSingularCardinality_6960953357954063537(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSingularCardinality_4024382256428848847", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isAggregation_6960953357954063547(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isAggregation_4024382256428848854", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getTargetConcept_6960953357954063543(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetConcept_4024382256428848859", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_q663c8_a0b0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

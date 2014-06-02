@@ -254,31 +254,6 @@ public class EditorCellModel_Behavior {
     return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
   }
 
-  @Deprecated
-  public static String call_getDefaultCellId_4539255030934103845(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDefaultCellId_4539255030934103845", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getOpeningText_1220339714057(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getOpeningText_1220339714057", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getClosingText_1220339738643(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getClosingText_1220339738643", new Object[]{});
-  }
-
-  @Deprecated
-  public static int call_getDefaultFontStyle_1221472292001(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_getDefaultFontStyle_1221472292001", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isCellIdInitialized_1229948571177(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isCellIdInitialized_1229948571177", new Object[]{});
-  }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

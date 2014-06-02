@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LetExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -17,10 +16,5 @@ public class LetExpression_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "variable", true));
     return result;
-  }
-
-  @Deprecated
-  public static List<SNode> call_getVariables_8981808925914844606(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getVariables_8981808925914841576", new Object[]{});
   }
 }

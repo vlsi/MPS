@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ModuleReferenceExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -41,10 +40,5 @@ public class ModuleReferenceExpression_Behavior {
     List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
     ListSequence.fromList(result).addSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules()));
     return result;
-  }
-
-  @Deprecated
-  public static List<SModule> call_getVisibleModules_4040588429969394404(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), thisNode, "virtual_getVisibleModules_4040588429969394404", new Object[]{});
   }
 }

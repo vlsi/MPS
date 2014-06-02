@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class UnicodeCharacterRegexp_Behavior {
   public static void init(SNode thisNode) {
@@ -13,10 +12,5 @@ public class UnicodeCharacterRegexp_Behavior {
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return "\\u" + SPropertyOperations.getString(thisNode, "code");
-  }
-
-  @Deprecated
-  public static String call_getString_1222433041600(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
   }
 }

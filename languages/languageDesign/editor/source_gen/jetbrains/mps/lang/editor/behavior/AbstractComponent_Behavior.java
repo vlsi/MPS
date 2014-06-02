@@ -4,7 +4,6 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AbstractComponent_Behavior {
   public static void init(SNode thisNode) {
@@ -12,10 +11,5 @@ public class AbstractComponent_Behavior {
 
   public static SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
-  }
-
-  @Deprecated
-  public static SNode call_getConceptDeclaration_7055725856388417603(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
   }
 }

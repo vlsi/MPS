@@ -41,24 +41,4 @@ public class IOperation_Behavior {
   public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
     return false;
   }
-
-  @Deprecated
-  public static boolean call_isLValue_1213877410080(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLValue_1213877410080", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_operandCanBeNull_323410281720656291(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_operandCanBeNull_323410281720656291", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getVariableExpectedName_1213877410087(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getVariableExpectedName_1213877410087", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isDotExpressionLegalAsStatement_1239212437413", new Object[]{});
-  }
 }

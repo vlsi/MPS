@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CellModel_URL_Behavior {
   public static void init(SNode thisNode) {
@@ -21,15 +20,5 @@ public class CellModel_URL_Behavior {
 
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return "}";
-  }
-
-  @Deprecated
-  public static String call_getOpeningText_3696012239575646497(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getOpeningText_1220339714057", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getClosingText_3696012239575646509(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getClosingText_1220339738643", new Object[]{});
   }
 }

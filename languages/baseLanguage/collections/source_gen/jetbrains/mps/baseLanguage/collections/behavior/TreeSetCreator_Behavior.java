@@ -38,11 +38,6 @@ public class TreeSetCreator_Behavior {
     return result;
   }
 
-  @Deprecated
-  public static boolean call_canHaveParameter_2261417478150191164(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canHaveParameter_2261417478150191157", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_529210_a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -121,31 +121,6 @@ public class IMethodCall_Behavior {
     return false;
   }
 
-  @Deprecated
-  public static SNode call_getInstanceType_8008512149545154471(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInstanceType_8008512149545154471", new Object[]{});
-  }
-
-  @Deprecated
-  public static Map<SNode, SNode> call_getTypesByTypeVars_851115533308208851(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), thisNode, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
-  }
-
-  @Deprecated
-  public static Iterable<SNode> call_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
-  }
-
-  @Deprecated
-  public static boolean call_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Object[]{});
-  }
-
   public static class Pattern_fq0410_a0a0a5a2a1a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_param;
     /*package*/ SNode patternVar_ignore;

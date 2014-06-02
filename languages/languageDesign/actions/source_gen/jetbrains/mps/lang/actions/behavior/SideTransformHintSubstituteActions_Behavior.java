@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class SideTransformHintSubstituteActions_Behavior {
   public static void init(SNode thisNode) {
@@ -26,15 +25,5 @@ public class SideTransformHintSubstituteActions_Behavior {
     SNode actionsBuilder = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", null);
     SLinkOperations.setTarget(actionsBuilder, "applicableConcept", baseConcept, false);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actionsBuilder", true)).addElement(actionsBuilder);
-  }
-
-  @Deprecated
-  public static List<SNode> call_getBaseConceptCollection_5270353093116090177(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_setBaseConcept_6261424444345978589(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
   }
 }

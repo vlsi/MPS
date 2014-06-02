@@ -14,9 +14,4 @@ public class InferenceRule_Behavior {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
     SPropertyOperations.set(thisNode, "name", "typeof_" + SPropertyOperations.getString(baseConcept, "name"));
   }
-
-  @Deprecated
-  public static void call_setBaseConcept_590757823759239749(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
-  }
 }

@@ -6,18 +6,12 @@
   <unitInfo fileName="Execute_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
   <unitInfo fileName="RefactorOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.RefactorOperation_BehaviorDescriptor" />
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235553">
-    <nodeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getCommands_1734392475491235554#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="1734392475491235560" fileName="AbstractConsoleScript_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="162" />
-    <scopeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1734392475491235560" fileName="AbstractConsoleScript_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1734392475491235553" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="1734392475491235553" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_Behavior" />
+    <unitInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_Behavior" />
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235576">
     <nodeInfo nodeId="1734392475491235582" fileName="ConsoleScript_Behavior.java" startLine="12" startPosition="89" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -44,34 +44,4 @@ public class IMethodLike_Behavior {
   public static boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return true;
   }
-
-  @Deprecated
-  public static SNode call_getExpectedRetType_1239354342632(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedRetType_1239354342632", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getLastStatement_1239354409446(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getLastStatement_1239354409446", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getBody_1239354440022(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getThrowableTypes_6204026822016975623(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getThrowableTypes_6204026822016975623", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_implicitThrows_4989157187872658723(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_implicitThrows_4989157187872658723", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_supportsCheckedExceptions_8510677279630867629", new Object[]{});
-  }
 }

@@ -26,16 +26,6 @@ public class IMainClass_Behavior {
     return isNotEmptyString(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_4666195181811081431", new Object[]{}));
   }
 
-  @Deprecated
-  public static String call_getUnitName_4666195181811081431(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_4666195181811081431", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isNodeRunnable_4666195181811081448(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isNodeRunnable_4666195181811081448", new Object[]{});
-  }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

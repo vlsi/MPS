@@ -72,11 +72,6 @@ public class PersistentPropertyDeclaration_Behavior {
     return name.substring(0, 1).toLowerCase() + name.substring(1);
   }
 
-  @Deprecated
-  public static boolean call_isInitializable_946964771156066897(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isInitializable_1213877517488", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_ex141d_b0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

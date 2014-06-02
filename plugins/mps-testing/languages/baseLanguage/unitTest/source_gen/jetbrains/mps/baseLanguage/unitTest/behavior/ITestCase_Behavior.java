@@ -24,24 +24,4 @@ public class ITestCase_Behavior {
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     return new ArrayList<SNode>();
   }
-
-  @Deprecated
-  public static List<SNode> call_getTestSet_1216130724401(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getTestSet_1216130724401", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getClassName_1216136193905(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getClassName_1216136193905", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getSimpleClassName_1229278847513(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSimpleClassName_1229278847513", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getTestMethods_2148145109766218395(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getTestMethods_2148145109766218395", new Object[]{});
-  }
 }

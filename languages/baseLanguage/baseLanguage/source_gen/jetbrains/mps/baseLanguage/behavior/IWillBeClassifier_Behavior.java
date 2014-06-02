@@ -31,21 +31,6 @@ public class IWillBeClassifier_Behavior {
     });
   }
 
-  @Deprecated
-  public static String call_classifierName_4609636120081351397(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_baseClassifier_4125795553993767872(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_baseClassifier_4125795553993767872", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_resolve_4609636120081469956", new Object[]{targetModel});
-  }
-
   private static SNode _quotation_createNode_937vih_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -27,19 +27,4 @@ public class ReportErrorStatement_Behavior {
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return true;
   }
-
-  @Deprecated
-  public static SNode call_getException_856705193941282181(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getException_856705193941282181", new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_collectUncaughtMethodThrowables_856705193941282185(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
-  }
-
-  @Deprecated
-  public static boolean call_isGuardClauseStatement_856705193941282217(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isGuardClauseStatement_1237547327995", new Object[]{});
-  }
 }

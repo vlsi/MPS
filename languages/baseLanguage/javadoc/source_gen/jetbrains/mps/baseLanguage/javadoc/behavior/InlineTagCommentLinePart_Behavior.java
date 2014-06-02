@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class InlineTagCommentLinePart_Behavior {
   public static void init(SNode thisNode) {
@@ -23,10 +22,5 @@ public class InlineTagCommentLinePart_Behavior {
     } else {
       return pair;
     }
-  }
-
-  @Deprecated
-  public static NodeCaretPair call_smartDelete_3633133276124360200(SNode thisNode, boolean isBegining) {
-    return BehaviorReflection.invokeVirtual(NodeCaretPair.class, thisNode, "virtual_smartDelete_9042833497008205283", new Object[]{isBegining});
   }
 }

@@ -77,11 +77,6 @@ public class ListType_Behavior {
     return true;
   }
 
-  @Deprecated
-  public static List<SNode> call_getAbstractCreators_7602110602933345720(SNode thisNode, SModel targetModel) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_7602110602933317830", new Object[]{targetModel});
-  }
-
   private static SNode _quotation_createNode_ywnljw_a0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

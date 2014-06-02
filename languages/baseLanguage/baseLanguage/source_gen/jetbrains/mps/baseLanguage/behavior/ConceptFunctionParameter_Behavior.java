@@ -63,24 +63,4 @@ public class ConceptFunctionParameter_Behavior {
   public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
     return false;
   }
-
-  @Deprecated
-  public static boolean call_getFromParameterObject_1213877522908(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_getFromParameterObject_1213877522908", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isParameterObjectUsed_1213877522926(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isParameterObjectUsed_1213877522926", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_needConceptFunction_1236687728308(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_needConceptFunction_1236687728308", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getType_2443692612523876968(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_2443692612523876968", new Object[]{});
-  }
 }

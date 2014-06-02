@@ -71,26 +71,6 @@ public class IGeneratedToClass_Behavior {
     return IGeneratedToClass_Behavior.call_makeUpperCase_946964771156905431(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), name, 0);
   }
 
-  @Deprecated
-  public static String call_getSuffix_946964771156905483(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_946964771156905483", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getGeneratedClassName_946964771156905488(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getFullName_946964771156905503(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFullName_946964771156905503", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getBaseName_4366236229294148974(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getBaseName_4366236229294148974", new Object[]{});
-  }
-
   private static Pattern REGEXP_tq53pp_b0a1a9 = Pattern.compile("(\\w)\\W+(\\w)", 0);
   private static Pattern REGEXP_tq53pp_b0a3a9 = Pattern.compile("(.)\\W+$", 0);
   private static Pattern REGEXP_tq53pp_b0a5a9 = Pattern.compile("^\\W+(\\w)", 0);

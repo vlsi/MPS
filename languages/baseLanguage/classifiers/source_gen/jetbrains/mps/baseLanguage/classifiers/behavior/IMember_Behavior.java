@@ -51,29 +51,4 @@ public class IMember_Behavior {
   public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
-
-  @Deprecated
-  public static SNode call_getVisiblity_1213877352965(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getVisiblity_1213877352965", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getOperationConcept_1213877352972(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOperationConcept_1213877352972", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_createOperation_1213877353000(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createOperation_1213877353000", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_canBeReferent_8179323502814657526(SNode thisNode, SNode referentConcept) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canBeReferent_8179323502814657526", new Object[]{referentConcept});
-  }
-
-  @Deprecated
-  public static boolean call_canOperationBeChild_4593153787954614840(SNode thisNode, SNode parentNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canOperationBeChild_4593153787954614840", new Object[]{parentNode});
-  }
 }

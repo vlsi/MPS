@@ -400,26 +400,6 @@ public class ClassConcept_Behavior {
     return SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
   }
 
-  @Deprecated
-  public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isRunnable_7941158526576616752", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<Icon> call_getMarkIcons_5039675756632924553(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getSuperclass_1240936569950(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSuperclass_1240936569950", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getUnitName_2496361171403551057(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_5067982036267369911", new Object[]{});
-  }
-
   protected static Logger LOG = LogManager.getLogger(ClassConcept_Behavior.class);
 
   private static SNode _quotation_createNode_xjj00_a0c0j() {

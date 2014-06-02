@@ -393,11 +393,6 @@ public class ClassifierType_Behavior {
     return true;
   }
 
-  @Deprecated
-  public static SNode call_createDefaultTypeExpression_9011026350741578236(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
-  }
-
   public static class Pattern_hz3823_a0a1a1a0a0a01 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_hz3823_a0a1a1a0a0a01() {
     }

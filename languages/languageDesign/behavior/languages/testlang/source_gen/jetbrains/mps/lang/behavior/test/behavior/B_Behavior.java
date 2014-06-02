@@ -46,14 +46,4 @@ public class B_Behavior {
     // FIXME it's possible to declare static virtual abstract method, but impossible to call it 
     // staticAbstractVirtualMethod() 
   }
-
-  @Deprecated
-  public static String call_abstractVirtualMethod_4731970554577217984(SNode thisNode, int x) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_abstractVirtualMethod_4731970554577217984", new Object[]{x});
-  }
-
-  @Deprecated
-  public static String call_virtualMethod_4731970554577218058(SNode thisNode, String in, int dummy) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577218058", new Object[]{in, dummy});
-  }
 }

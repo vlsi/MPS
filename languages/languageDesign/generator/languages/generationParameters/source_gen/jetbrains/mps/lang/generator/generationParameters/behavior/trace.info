@@ -5,27 +5,21 @@
   <unitInfo fileName="DefaultGeneratorParameterContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameterContainer_BehaviorDescriptor" />
   <unitInfo fileName="DefaultGeneratorParameter_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_BehaviorDescriptor" />
   <root nodeRef="r:fd22fe79-96d7-4028-99df-53ccd194ec8d(jetbrains.mps.lang.generator.generationParameters.behavior)/8484425748929510084">
-    <nodeInfo nodeId="8484425748929510090" fileName="DefaultGeneratorParameter_Behavior.java" startLine="14" startPosition="79" endLine="15" endPosition="357" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8484425748929510113" fileName="DefaultGeneratorParameter_Behavior.java" startLine="15" startPosition="357" endLine="16" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="20" startPosition="77" endLine="21" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUniqueId_650531548511609559#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getUniqueId_8484425748929510087#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8484425748929510086" fileName="DefaultGeneratorParameter_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="20" startPosition="77" endLine="21" endPosition="126" />
-    <scopeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="8484425748929510090" fileName="DefaultGeneratorParameter_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="357" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8484425748929510113" fileName="DefaultGeneratorParameter_Behavior.java" startLine="14" startPosition="357" endLine="15" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUniqueId_650531548511609559#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="8484425748929510086" fileName="DefaultGeneratorParameter_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="8484425748929510084" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8484425748929510089" fileName="DefaultGeneratorParameter_Behavior.java" startLine="14" startPosition="79" endLine="16" endPosition="137">
+    <scopeInfo nodeId="8484425748929510089" fileName="DefaultGeneratorParameter_Behavior.java" startLine="13" startPosition="79" endLine="15" endPosition="137">
       <varInfo nodeId="8484425748929510091" varName="containerName" />
     </scopeInfo>
-    <scopeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="8484425748929510084" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="8484425748929510084" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_Behavior" />
+    <unitInfo nodeId="8484425748929510084" fileName="DefaultGeneratorParameter_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_Behavior" />
   </root>
 </debugInfo>
 

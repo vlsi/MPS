@@ -4,7 +4,6 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class GenerationContextOp_NodePatternRef_Behavior {
   public static void init(SNode thisNode) {
@@ -16,15 +15,5 @@ public class GenerationContextOp_NodePatternRef_Behavior {
 
   public static void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
     SLinkOperations.setTarget(thisNode, "patternVarDecl", null, false);
-  }
-
-  @Deprecated
-  public static SNode call_getTarget_1758784108620115416(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTarget_1758784108620114792", new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_setTarget_1758784108620254557(SNode thisNode, SNode target) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setTarget_1758784108620254533", new Object[]{target});
   }
 }

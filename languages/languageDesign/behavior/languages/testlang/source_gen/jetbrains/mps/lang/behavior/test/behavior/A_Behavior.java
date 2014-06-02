@@ -45,14 +45,4 @@ public class A_Behavior {
     // 
     A_Behavior.virtual_staticVirtualMethod_4731970554577185580(SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.behavior.test.structure.A"), "", 0);
   }
-
-  @Deprecated
-  public static String call_virtualMethod_4731970554577185009(SNode thisNode, String in, int dummy) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577185009", new Object[]{in, dummy});
-  }
-
-  @Deprecated
-  public static String call_finalVirtualMethod_4731970554577187301(SNode thisNode, String in, int dummy) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_finalVirtualMethod_4731970554577187301", new Object[]{in, dummy});
-  }
 }

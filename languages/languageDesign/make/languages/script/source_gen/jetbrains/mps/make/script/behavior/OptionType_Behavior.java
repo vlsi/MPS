@@ -13,9 +13,4 @@ public class OptionType_Behavior {
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "expectedOption", false), "virtual_classifierName_4609636120081351397", new Object[]{});
   }
-
-  @Deprecated
-  public static String call_classifierName_4125795553994047768(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
-  }
 }

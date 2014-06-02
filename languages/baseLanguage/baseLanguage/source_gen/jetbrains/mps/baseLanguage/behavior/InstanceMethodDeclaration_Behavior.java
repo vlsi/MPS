@@ -102,26 +102,6 @@ public class InstanceMethodDeclaration_Behavior {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Interface"));
   }
 
-  @Deprecated
-  public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459792(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getImplementedInterfaceMethod_8302934035201331324(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getImplementedInterfaceMethod_8302934035201331324", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getNearestOverriddenMethod_5014346297260520665(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
-  }
-
   private static boolean eq_4b3xw6_a0a0a0d0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

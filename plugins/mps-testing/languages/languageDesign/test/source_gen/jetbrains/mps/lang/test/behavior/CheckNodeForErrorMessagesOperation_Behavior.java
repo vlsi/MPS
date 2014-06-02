@@ -24,9 +24,4 @@ public class CheckNodeForErrorMessagesOperation_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTestName_1216136419751", new Object[]{});
   }
-
-  @Deprecated
-  public static void call_perform_1215607135205(SNode thisNode, SNode node) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_perform_245688835340859348", new Object[]{node});
-  }
 }

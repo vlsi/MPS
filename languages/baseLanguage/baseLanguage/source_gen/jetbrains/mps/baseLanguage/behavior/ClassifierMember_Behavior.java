@@ -105,26 +105,6 @@ public class ClassifierMember_Behavior {
     return false;
   }
 
-  @Deprecated
-  public static boolean call_isStatic_8986964027630462944(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isVisible_8083692786967482069", new Object[]{contextClassifier, contextNode});
-  }
-
-  @Deprecated
-  public static boolean call_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_needsEmptyLineBefore_641490355014296733", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
-  }
-
   private static boolean eq_i8o263_a0a0l0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

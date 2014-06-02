@@ -4,7 +4,6 @@ package jetbrains.mps.lang.project.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class Module_Behavior {
   public static void init(SNode thisNode) {
@@ -20,20 +19,5 @@ public class Module_Behavior {
 
   public static String virtual_getModuleReference_9020561928507315628(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "namespace") + ")";
-  }
-
-  @Deprecated
-  public static String call_getFqName_6370754048397730432(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getPresentation_6370754048397730452(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getModuleReference_9020561928507315628(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getModuleReference_9020561928507315628", new Object[]{});
   }
 }

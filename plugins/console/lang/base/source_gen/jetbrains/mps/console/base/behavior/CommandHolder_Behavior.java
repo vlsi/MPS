@@ -5,7 +5,6 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CommandHolder_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +13,5 @@ public class CommandHolder_Behavior {
 
   public static SNode virtual_getCommandToEdit_691634242167796942(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "command", true);
-  }
-
-  @Deprecated
-  public static SNode call_getCommandToEdit_691634242167796942(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCommandToEdit_691634242167796942", new Object[]{});
   }
 }

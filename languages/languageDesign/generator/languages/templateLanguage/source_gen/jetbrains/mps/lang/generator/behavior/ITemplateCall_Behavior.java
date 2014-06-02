@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ITemplateCall_Behavior {
   public static void init(SNode thisNode) {
@@ -23,10 +22,5 @@ public class ITemplateCall_Behavior {
       }
     }
     return null;
-  }
-
-  @Deprecated
-  public static SNode call_deriveType_1722980698497626491(SNode thisNode, SNode expression) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_deriveType_1213877435747", new Object[]{expression});
   }
 }

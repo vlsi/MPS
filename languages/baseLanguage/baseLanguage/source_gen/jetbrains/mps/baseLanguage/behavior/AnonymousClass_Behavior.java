@@ -126,21 +126,6 @@ public class AnonymousClass_Behavior {
     return false;
   }
 
-  @Deprecated
-  public static String call_getUnitName_2496361171403550994(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_5067982036267369911", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getNestedName_2193927380279967693(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getNestedName_8540045600162184125", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getFqName_7523932196475787022(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
-  }
-
   protected static Logger LOG = LogManager.getLogger(AnonymousClass_Behavior.class);
 
   private static SNode _quotation_createNode_mhnjwj_a0a3(Object parameter_1, Object parameter_2) {

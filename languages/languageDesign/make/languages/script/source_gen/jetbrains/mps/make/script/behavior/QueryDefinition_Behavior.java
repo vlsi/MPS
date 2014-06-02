@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class QueryDefinition_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +13,5 @@ public class QueryDefinition_Behavior {
 
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
     return NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
-  }
-
-  @Deprecated
-  public static String call_classifierName_8486446835277382819(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
   }
 }

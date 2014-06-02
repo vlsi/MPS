@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BootstrapActionReference_Behavior {
   public static void init(SNode thisNode) {
@@ -12,10 +11,5 @@ public class BootstrapActionReference_Behavior {
 
   public static String virtual_getActionId_1101347953350122762(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "actionId");
-  }
-
-  @Deprecated
-  public static String call_getActionId_1101347953350127914(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getActionId_1101347953350122762", new Object[]{});
   }
 }

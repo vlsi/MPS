@@ -41,9 +41,4 @@ public class ForStatement_Behavior {
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.AbstractForStatement", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
-
-  @Deprecated
-  public static List<SNode> call_getScopeVariables_2496361171403550965(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
-  }
 }

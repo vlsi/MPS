@@ -306,16 +306,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
 
-  public static Iterable<SNode> sourceNodesQuery_1225195370480(final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode md : SLinkOperations.getTargets(_context.getNode(), "method", true)) {
-      if (SPropertyOperations.getBoolean(md, "isVirtual") && !(SPropertyOperations.getBoolean(md, "isStatic"))) {
-        ListSequence.fromList(methods).addElement(md);
-      }
-    }
-    return methods;
-  }
-
   public static Iterable<SNode> sourceNodesQuery_257065298285659936(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }

@@ -16,9 +16,4 @@ public class InterpretedCommand_Behavior {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_doExecute_3321948346081469500", new Object[]{context, console});
     afterCallback.run();
   }
-
-  @Deprecated
-  public static void call_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_doExecute_3321948346081469500", new Object[]{context, console});
-  }
 }

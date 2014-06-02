@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ConceptCondition_Behavior {
   public static void init(SNode thisNode) {
@@ -12,10 +11,5 @@ public class ConceptCondition_Behavior {
 
   public static SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
-  }
-
-  @Deprecated
-  public static SNode call_getApplicableConcept_4943044633101739075(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getApplicableConcept_4413230749907681652", new Object[]{});
   }
 }

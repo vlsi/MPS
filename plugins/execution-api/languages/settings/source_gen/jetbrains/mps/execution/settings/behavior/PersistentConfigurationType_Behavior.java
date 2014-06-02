@@ -14,9 +14,4 @@ public class PersistentConfigurationType_Behavior {
   public static List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "persistentConfiguration", false), "virtual_getMembers_1213877528020", new Object[]{contextNode});
   }
-
-  @Deprecated
-  public static List<SNode> call_getMembers_946964771156066373(SNode thisNode, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877402148", new Object[]{contextNode});
-  }
 }

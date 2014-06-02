@@ -4,7 +4,6 @@ package jetbrains.mps.lang.script.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AbstractMethodSpecification_Behavior {
   public static void init(SNode thisNode) {
@@ -12,10 +11,5 @@ public class AbstractMethodSpecification_Behavior {
 
   public static SNode call_getPullUpMethod_2291767839160328420(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.script.structure.PullUpMethod");
-  }
-
-  @Deprecated
-  public static String call_getPresentation_7941431147614164371(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_7941431147614164371", new Object[]{});
   }
 }

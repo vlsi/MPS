@@ -28,14 +28,4 @@ public class SymbolClassRegexp_Behavior {
     }
     return result.toString();
   }
-
-  @Deprecated
-  public static String call_getString_1222857578599(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
-
-  @Deprecated
-  public static String call_getRepresentation_8173814113624650627(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRepresentation_8173814113624650482", new Object[]{});
-  }
 }

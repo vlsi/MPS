@@ -33,11 +33,6 @@ public class QueryFunction_ParametersList_Behavior {
     return result;
   }
 
-  @Deprecated
-  public static SNode call_getExpectedReturnType_7806530711846755632(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_1gao1h_a0a2a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -145,9 +145,4 @@ public class ConceptBehavior_Behavior {
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "concept", baseConcept, false);
   }
-
-  @Deprecated
-  public static void call_setBaseConcept_6261424444345978650(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
-  }
 }

@@ -38,16 +38,6 @@ public class ExecuteConfiguration_Function_Behavior {
     return true;
   }
 
-  @Deprecated
-  public static List<SNode> call_getLocalVariableElements_6538811202682334478(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getLocalVariableElements_1238805763253", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getParameters_3091009652595815824(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_cw5ucd_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

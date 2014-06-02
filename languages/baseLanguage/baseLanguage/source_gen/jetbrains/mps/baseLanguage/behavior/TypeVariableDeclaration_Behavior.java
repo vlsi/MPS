@@ -67,11 +67,6 @@ public class TypeVariableDeclaration_Behavior {
     }
   }
 
-  @Deprecated
-  public static String call_getPresentation_1775412259244835270(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_ct7zh2_a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -68,9 +68,4 @@ public class FacetDeclaration_Behavior {
   public static String call_getFacetFqName_1919086248986828221(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode)), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(thisNode, "name");
   }
-
-  @Deprecated
-  public static String call_classifierName_8853708281362019178(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
-  }
 }

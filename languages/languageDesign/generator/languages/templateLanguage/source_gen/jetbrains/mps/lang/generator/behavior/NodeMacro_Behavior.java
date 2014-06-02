@@ -75,9 +75,4 @@ public class NodeMacro_Behavior {
     SNode rootAnnotation = AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(thisNode), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
     return SLinkOperations.getTarget(SNodeOperations.cast(rootAnnotation, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
   }
-
-  @Deprecated
-  public static SNode call_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
-  }
 }

@@ -58,14 +58,4 @@ public class Statement_Behavior {
       }
     });
   }
-
-  @Deprecated
-  public static boolean call_isGuardClauseStatement_1237547327995(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isGuardClauseStatement_1237547327995", new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
-  }
 }

@@ -5,7 +5,6 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class PatternCondition_Behavior {
   public static void init(SNode thisNode) {
@@ -13,10 +12,5 @@ public class PatternCondition_Behavior {
 
   public static SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode) {
     return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "pattern", true), "patternNode", true));
-  }
-
-  @Deprecated
-  public static SNode call_getApplicableConcept_4413230749907681660(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getApplicableConcept_4413230749907681652", new Object[]{});
   }
 }

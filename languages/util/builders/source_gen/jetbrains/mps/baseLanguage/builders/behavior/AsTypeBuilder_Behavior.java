@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AsTypeBuilder_Behavior {
   public static void init(SNode thisNode) {
@@ -16,15 +15,5 @@ public class AsTypeBuilder_Behavior {
 
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "type", true);
-  }
-
-  @Deprecated
-  public static SNode call_getCreatorExpression_5389689214216563780(SNode thisNode, SNode parentRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCreatorExpression_7057666463730727863", new Object[]{parentRef});
-  }
-
-  @Deprecated
-  public static SNode call_getResultType_5389689214216563784(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_7057666463730718251", new Object[]{});
   }
 }

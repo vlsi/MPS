@@ -5,7 +5,6 @@ package jetbrains.mps.lang.textGen.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AbstractTextGenParameter_Behavior {
   public static void init(SNode thisNode) {
@@ -31,10 +30,5 @@ public class AbstractTextGenParameter_Behavior {
 
   public static boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
     return false;
-  }
-
-  @Deprecated
-  public static String call_getGetterName_1234885318469(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getGetterName_1234885318469", new Object[]{});
   }
 }

@@ -60,29 +60,4 @@ public class IGenericType_Behavior {
       }
     }
   }
-
-  @Deprecated
-  public static void call_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
-  }
-
-  @Deprecated
-  public static SNode call_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenerics_4107091686347199582", new Object[]{substitutions});
-  }
-
-  @Deprecated
-  public static SNode call_eraseGenerics_5089784887112634594(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_eraseGenerics_5089784887112634594", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
-  }
-
-  @Deprecated
-  public static SNode call_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{expanded, substitutions, expTrace});
-  }
 }

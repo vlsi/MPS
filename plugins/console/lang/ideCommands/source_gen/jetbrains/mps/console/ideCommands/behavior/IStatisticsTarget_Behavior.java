@@ -5,7 +5,6 @@ package jetbrains.mps.console.ideCommands.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.console.tool.ConsoleContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class IStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
@@ -13,10 +12,5 @@ public class IStatisticsTarget_Behavior {
 
   public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     return null;
-  }
-
-  @Deprecated
-  public static Iterable<Tuples._2<String, Integer>> call_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), thisNode, "virtual_getStat_7490254719527247609", new Object[]{context});
   }
 }

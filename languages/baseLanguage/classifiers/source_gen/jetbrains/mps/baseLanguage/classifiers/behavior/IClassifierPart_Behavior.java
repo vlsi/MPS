@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class IClassifierPart_Behavior {
   public static void init(SNode thisNode) {
@@ -21,10 +20,5 @@ public class IClassifierPart_Behavior {
       }
     }
     return result;
-  }
-
-  @Deprecated
-  public static SNode call_getMainClassifier_1213877255428(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getMainClassifier_1213877255428", new Object[]{});
   }
 }

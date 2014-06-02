@@ -14,9 +14,4 @@ public class NonTypesystemRule_Behavior {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
     SPropertyOperations.set(thisNode, "name", "check_" + SPropertyOperations.getString(baseConcept, "name"));
   }
-
-  @Deprecated
-  public static void call_setBaseConcept_590757823759247531(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
-  }
 }

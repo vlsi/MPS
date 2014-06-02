@@ -53,24 +53,4 @@ public class XmlBasePrologElement_Behavior {
   public static boolean virtual_isTextLike_2133624044437631604(SNode thisNode) {
     return false;
   }
-
-  @Deprecated
-  public static boolean call_onNewLine_5491461270226170010(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_onNewLine_2133624044437631588", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_hasNewLineAfter_2133624044437592936(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isFirstPositionAllowed_2133624044437631900(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isLastPositionAllowed_2133624044437631956(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
-  }
 }

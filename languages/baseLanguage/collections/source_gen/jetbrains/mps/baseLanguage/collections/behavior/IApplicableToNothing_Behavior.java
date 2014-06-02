@@ -71,9 +71,4 @@ public class IApplicableToNothing_Behavior {
     }
     return jt;
   }
-
-  @Deprecated
-  public static SNode call_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expectedOperandType_6368025520509018230", new Object[]{elementType});
-  }
 }

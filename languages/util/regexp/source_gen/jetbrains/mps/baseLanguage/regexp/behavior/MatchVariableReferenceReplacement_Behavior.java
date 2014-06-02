@@ -18,9 +18,4 @@ public class MatchVariableReferenceReplacement_Behavior {
     BehaviorReflection.invokeVirtual(String.class, search, "virtual_getString_1222432436326", new Object[]{vars});
     return "$" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, "match", false)) + 1);
   }
-
-  @Deprecated
-  public static String call_toString_3796137614137539495(SNode thisNode, SNode search) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_toString_3796137614137538905", new Object[]{search});
-  }
 }

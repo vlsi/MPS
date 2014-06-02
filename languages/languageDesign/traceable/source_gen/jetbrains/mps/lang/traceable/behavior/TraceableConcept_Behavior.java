@@ -4,7 +4,6 @@ package jetbrains.mps.lang.traceable.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class TraceableConcept_Behavior {
   public static void init(SNode thisNode) {
@@ -13,10 +12,5 @@ public class TraceableConcept_Behavior {
   @Nullable
   public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return null;
-  }
-
-  @Deprecated
-  public static String call_getTraceableProperty_5067982036267369901(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
   }
 }

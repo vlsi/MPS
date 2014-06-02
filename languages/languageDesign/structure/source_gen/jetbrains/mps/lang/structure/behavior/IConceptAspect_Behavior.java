@@ -31,24 +31,4 @@ public class IConceptAspect_Behavior {
   public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return true;
   }
-
-  @Deprecated
-  public static SNode call_getBaseConcept_2621449412040133768(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
-  }
-
-  @Deprecated
-  public static boolean call_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_7839831476331657915", new Object[]{candidate});
-  }
 }

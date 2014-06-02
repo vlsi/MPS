@@ -104,29 +104,4 @@ public class IClassifier_Behavior {
     }
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", true, false), "virtual_getMainClassifier_1213877255428", new Object[]{});
   }
-
-  @Deprecated
-  public static SNode call_createType_1213877527970(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_createSuperType_1217433657148(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createSuperType_1217433657148", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getParts_1213877527988(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParts_1213877527988", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877528020", new Object[]{contextNode});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getMembers_1213877528124(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877528124", new Object[]{});
-  }
 }

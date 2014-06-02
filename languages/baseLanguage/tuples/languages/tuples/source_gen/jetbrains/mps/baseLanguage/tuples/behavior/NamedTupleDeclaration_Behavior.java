@@ -103,11 +103,6 @@ public class NamedTupleDeclaration_Behavior {
     return ")";
   }
 
-  @Deprecated
-  public static SNode call_getThisType_6742265879766289824(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_3305065273710880775", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_ds5lpv_a0a0a0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

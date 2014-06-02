@@ -34,24 +34,4 @@ public class SimpleBuilderPropertyBuilder_Behavior {
     }
     return result;
   }
-
-  @Deprecated
-  public static boolean call_isLeaf_5389689214217569806(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isLeaf_7057666463730595159", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getResultType_5389689214217665421(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_7057666463730718251", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getCreatorExpression_5389689214217665417(SNode thisNode, SNode parentRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCreatorExpression_7057666463730727863", new Object[]{parentRef});
-  }
-
-  @Deprecated
-  public static SNode call_getAttachStatementChild_5389689214217667234(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAttachStatementChild_4797501453850305563", new Object[]{parentBuilder, parentRef, childRef});
-  }
 }

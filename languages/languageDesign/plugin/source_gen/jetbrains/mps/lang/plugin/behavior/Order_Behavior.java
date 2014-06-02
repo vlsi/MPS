@@ -9,7 +9,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class Order_Behavior {
   public static void init(SNode thisNode) {
@@ -35,16 +34,6 @@ public class Order_Behavior {
 
   public static SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
     return thisNode;
-  }
-
-  @Deprecated
-  public static boolean call_presents_1499919975383913755(SNode thisNode, SNode tab) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_presents_1499919975383879508", new Object[]{tab});
-  }
-
-  @Deprecated
-  public static SNode call_getOrder_3038738109029048958(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOrder_3038738109029048953", new Object[]{});
   }
 
   private static boolean isEmptyString(String str) {

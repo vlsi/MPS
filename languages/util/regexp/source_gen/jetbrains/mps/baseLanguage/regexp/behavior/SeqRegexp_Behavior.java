@@ -18,14 +18,4 @@ public class SeqRegexp_Behavior {
   public static boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
     return true;
   }
-
-  @Deprecated
-  public static String call_getString_1222436755347(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
-
-  @Deprecated
-  public static boolean call_needParentheses_1353467374623955980(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_needParentheses_1353467374623880338", new Object[]{});
-  }
 }

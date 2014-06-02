@@ -62,9 +62,4 @@ public class DotExpression_Behavior {
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
   }
-
-  @Deprecated
-  public static boolean call_allowsNullOperand_4585239809762176541(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_allowsNullOperand_4585239809762176541", new Object[]{});
-  }
 }

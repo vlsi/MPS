@@ -17,14 +17,4 @@ public class ScopeProvider_Behavior {
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_3734116213129936182", new Object[]{kind, null});
   }
-
-  @Deprecated
-  public static Scope call_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_3734116213129936182", new Object[]{kind, child});
-  }
-
-  @Deprecated
-  public static Scope call_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
-  }
 }

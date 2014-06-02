@@ -14,9 +14,4 @@ public class RegexpDeclarationReferenceRegexp_Behavior {
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return Regexp_Behavior.call_par_1222433790846(thisNode, BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "regexp", false), "regexp", true), "virtual_getString_1222432436326", new Object[]{vars}));
   }
-
-  @Deprecated
-  public static String call_getString_1222437178336(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
 }

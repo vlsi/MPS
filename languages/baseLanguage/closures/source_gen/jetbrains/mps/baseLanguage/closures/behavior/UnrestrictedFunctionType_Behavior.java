@@ -57,9 +57,4 @@ public class UnrestrictedFunctionType_Behavior {
     }
     return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ? tt : null);
   }
-
-  @Deprecated
-  public static String call_getRuntimeSignature_3841277577642912754(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
-  }
 }

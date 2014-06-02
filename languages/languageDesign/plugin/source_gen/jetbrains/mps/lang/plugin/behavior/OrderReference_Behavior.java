@@ -17,14 +17,4 @@ public class OrderReference_Behavior {
   public static SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "order", false);
   }
-
-  @Deprecated
-  public static boolean call_presents_1499919975383980893(SNode thisNode, SNode tab) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_presents_1499919975383879508", new Object[]{tab});
-  }
-
-  @Deprecated
-  public static SNode call_getOrder_3038738109029048964(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getOrder_3038738109029048953", new Object[]{});
-  }
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Set;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class EditorComponentDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -38,15 +37,5 @@ public class EditorComponentDeclaration_Behavior {
       return EditorComponentDeclaration_Behavior.call_getConceptDeclaration_8288068497639818367(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "overridenEditorComponent", true), "editorComponent", false), visitedEditorComponents);
     }
     return null;
-  }
-
-  @Deprecated
-  public static SNode call_getBaseConcept_5270353093116097898(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_setBaseConcept_6261424444345979367(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
   }
 }

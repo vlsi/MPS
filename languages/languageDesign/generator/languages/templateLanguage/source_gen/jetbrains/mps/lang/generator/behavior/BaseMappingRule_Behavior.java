@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BaseMappingRule_Behavior {
   public static void init(SNode thisNode) {
@@ -32,10 +31,5 @@ public class BaseMappingRule_Behavior {
       return mappingLabel;
     }
     return null;
-  }
-
-  @Deprecated
-  public static SNode call_getTemplateType_1213877498511(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTemplateType_1213877498511", new Object[]{});
   }
 }

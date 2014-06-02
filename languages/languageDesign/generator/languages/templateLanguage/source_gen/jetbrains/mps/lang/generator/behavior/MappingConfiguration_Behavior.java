@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MappingConfiguration_Behavior {
   public static void init(SNode thisNode) {
@@ -58,15 +57,5 @@ public class MappingConfiguration_Behavior {
 
   public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return false;
-  }
-
-  @Deprecated
-  public static List<SNode> call_getBaseConceptCollection_8360039740498071265(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getBaseConceptCollection_5270353093116013036", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isApplicable_390427525177434695(SNode thisNode, SNode candidate) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isApplicable_7839831476331657915", new Object[]{candidate});
   }
 }

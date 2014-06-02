@@ -15,19 +15,11 @@
     <nodeInfo nodeId="4844813484172611461" fileName="ICheckedNamePolicy_Behavior.java" startLine="32" startPosition="27" endLine="33" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4844813484172611469" fileName="ICheckedNamePolicy_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611477" fileName="ICheckedNamePolicy_Behavior.java" startLine="38" startPosition="98" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="43" startPosition="92" endLine="44" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="48" startPosition="85" endLine="49" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="53" startPosition="103" endLine="54" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="58" startPosition="95" endLine="59" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4844813484172611427" fileName="ICheckedNamePolicy_Behavior.java" startLine="18" startPosition="166" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDescendantToCheck_4844813484172611439#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="4844813484172611459" fileName="ICheckedNamePolicy_Behavior.java" startLine="31" startPosition="193" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_4844813484172611473#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDescendantsToCheck_4844813484172611413#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDescendantToCheck_4844813484172611439#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPropertiesToCheck_4844813484172611445#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPropertyToCheck_4844813484172611473#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="16" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDescendantsToCheck_4844813484172611413#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertiesToCheck_4844813484172611445#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="4844813484172611412" fileName="ICheckedNamePolicy_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
@@ -35,10 +27,6 @@
     <scopeInfo nodeId="4844813484172611442" fileName="ICheckedNamePolicy_Behavior.java" startLine="25" startPosition="88" endLine="26" endPosition="16" />
     <scopeInfo nodeId="4844813484172611460" fileName="ICheckedNamePolicy_Behavior.java" startLine="32" startPosition="27" endLine="33" endPosition="57" />
     <scopeInfo nodeId="4844813484172611476" fileName="ICheckedNamePolicy_Behavior.java" startLine="38" startPosition="98" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="43" startPosition="92" endLine="44" endPosition="168" />
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="48" startPosition="85" endLine="49" endPosition="161" />
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="53" startPosition="103" endLine="54" endPosition="179" />
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="58" startPosition="95" endLine="59" endPosition="171" />
     <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="4844813484172611410" varName="thisNode" />
     </scopeInfo>
@@ -46,18 +34,6 @@
       <varInfo nodeId="4844813484172611410" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="4844813484172611410" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="4844813484172611410" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="4844813484172611410" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="4844813484172611410" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="4844813484172611410" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="4844813484172611416" fileName="ICheckedNamePolicy_Behavior.java" startLine="16" startPosition="95" endLine="22" endPosition="18">
@@ -74,7 +50,7 @@
     <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="4844813484172611410" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="12" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior" />
+    <unitInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior" />
   </root>
 </debugInfo>
 

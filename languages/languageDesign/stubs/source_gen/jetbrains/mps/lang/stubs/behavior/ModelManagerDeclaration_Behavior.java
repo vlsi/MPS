@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -25,11 +24,6 @@ public class ModelManagerDeclaration_Behavior {
 
   public static String call_getGeneratedClassFQName_4063774604867753801(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ModelManagerDeclaration_Behavior.call_getGeneratedName_4063774604867753792(thisNode);
-  }
-
-  @Deprecated
-  public static SNode call_createType_5553449326502622488(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
   }
 
   private static SNode _quotation_createNode_v31ybx_a0a0(Object parameter_1) {

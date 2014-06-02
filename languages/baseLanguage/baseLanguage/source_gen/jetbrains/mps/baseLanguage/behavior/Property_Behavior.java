@@ -136,11 +136,6 @@ public class Property_Behavior {
     context.addMember(thisNode, null);
   }
 
-  @Deprecated
-  public static Icon call_getAdditionalIcon_8884554759541381539(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
-  }
-
   private static boolean check_9xvv7i_a0a0g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.BooleanType");

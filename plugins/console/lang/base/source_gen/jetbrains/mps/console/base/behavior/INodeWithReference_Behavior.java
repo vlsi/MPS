@@ -11,7 +11,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class INodeWithReference_Behavior {
   public static void init(SNode thisNode) {
@@ -33,10 +32,5 @@ public class INodeWithReference_Behavior {
 
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "referencePresentation") + " (deleted node)";
-  }
-
-  @Deprecated
-  public static String call_getTextWhenBroken_328850564593858078(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTextWhenBroken_328850564593858078", new Object[]{});
   }
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.lang.project.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MappingConfigNormalRef_Behavior {
   public static void init(SNode thisNode) {
@@ -21,11 +20,6 @@ public class MappingConfigNormalRef_Behavior {
       return false;
     }
     return true;
-  }
-
-  @Deprecated
-  public static boolean call_isComplete_2721285250110400383(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isComplete_2721285250110257005", new Object[]{});
   }
 
   private static boolean isEmptyString(String str) {

@@ -48,8 +48,6 @@
     <nodeInfo nodeId="5003188907305392380" fileName="FinderDeclaration_Behavior.java" startLine="29" startPosition="98" endLine="30" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8952337903384725280" fileName="FinderDeclaration_Behavior.java" startLine="33" startPosition="82" endLine="34" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6261424444345979407" fileName="FinderDeclaration_Behavior.java" startLine="37" startPosition="100" endLine="38" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="42" startPosition="79" endLine="43" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="47" startPosition="97" endLine="48" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassName_1213877240101#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getConceptName_1213877240111#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -57,8 +55,6 @@
     <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPropertyToCheck_4844813484172611473#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
     <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBaseConcept_2621449412040133768#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getBaseConcept_8952337903384724634#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setBaseConcept_6261424444345979396#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1216644254064" fileName="FinderDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1213877240103" fileName="FinderDeclaration_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="99" />
     <scopeInfo nodeId="1213877240113" fileName="FinderDeclaration_Behavior.java" startLine="21" startPosition="74" endLine="22" endPosition="167" />
@@ -66,8 +62,6 @@
     <scopeInfo nodeId="5003188907305392375" fileName="FinderDeclaration_Behavior.java" startLine="29" startPosition="98" endLine="30" endPosition="58" />
     <scopeInfo nodeId="8952337903384724636" fileName="FinderDeclaration_Behavior.java" startLine="33" startPosition="82" endLine="34" endPosition="68" />
     <scopeInfo nodeId="6261424444345979398" fileName="FinderDeclaration_Behavior.java" startLine="37" startPosition="100" endLine="38" endPosition="74" />
-    <scopeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="42" startPosition="79" endLine="43" endPosition="155" />
-    <scopeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="47" startPosition="97" endLine="48" endPosition="132" />
     <scopeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1213877240100" varName="thisNode" />
     </scopeInfo>
@@ -90,14 +84,7 @@
       <varInfo nodeId="6261424444345979399" varName="baseConcept" />
       <varInfo nodeId="1213877240100" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1213877240100" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="6261424444345979399" varName="baseConcept" />
-      <varInfo nodeId="1213877240100" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior" />
+    <unitInfo nodeId="1213877240100" fileName="FinderDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1213877299657">
     <nodeInfo nodeId="1213877299657" fileName="ExecuteFinderExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

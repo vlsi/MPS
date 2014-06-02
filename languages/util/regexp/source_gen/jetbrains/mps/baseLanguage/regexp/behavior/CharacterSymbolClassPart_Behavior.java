@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CharacterSymbolClassPart_Behavior {
   public static void init(SNode thisNode) {
@@ -12,10 +11,5 @@ public class CharacterSymbolClassPart_Behavior {
 
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return SymbolClassPart_Behavior.call_escapeChar_8173814113624637238(thisNode, SPropertyOperations.getString(thisNode, "character"));
-  }
-
-  @Deprecated
-  public static String call_getRepresentation_8173814113624650574(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRepresentation_8173814113624650482", new Object[]{});
   }
 }

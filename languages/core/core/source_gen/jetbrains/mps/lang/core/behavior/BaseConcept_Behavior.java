@@ -76,34 +76,4 @@ public class BaseConcept_Behavior {
   public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SAbstractConcept thisConcept) {
     return false;
   }
-
-  @Deprecated
-  public static Icon call_getAdditionalIcon_5017341185733863694(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<Icon> call_getMarkIcons_3923831204883340393(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isRunnable_7941158526576616752(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isRunnable_7941158526576616752", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getPresentation_1213877396640(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getDetailedPresentation_2354269628709769373(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDetailedPresentation_2354269628709769373", new Object[]{});
-  }
-
-  @Deprecated
-  public static int call_getMetaLevel_3981318653438234726(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Integer.TYPE, thisNode, "virtual_getMetaLevel_3981318653438234726", new Object[]{});
-  }
 }

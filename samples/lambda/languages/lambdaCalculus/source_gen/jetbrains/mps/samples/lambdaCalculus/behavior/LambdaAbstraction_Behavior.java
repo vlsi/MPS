@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LambdaAbstraction_Behavior {
   public static void init(SNode thisNode) {
@@ -33,10 +32,5 @@ public class LambdaAbstraction_Behavior {
 
   public static List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "variable", true);
-  }
-
-  @Deprecated
-  public static List<SNode> call_getVariables_8981808925914844638(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getVariables_8981808925914841576", new Object[]{});
   }
 }

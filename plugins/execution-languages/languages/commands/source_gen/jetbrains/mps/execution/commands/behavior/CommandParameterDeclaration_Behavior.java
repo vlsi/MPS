@@ -47,9 +47,4 @@ public class CommandParameterDeclaration_Behavior {
   public static String call_getUpperCaseName_7327337331549086070(SAbstractConcept thisConcept, String name) {
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
-
-  @Deprecated
-  public static boolean call_generateField_8478830098674441876(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_generateField_8478830098674441876", new Object[]{});
-  }
 }

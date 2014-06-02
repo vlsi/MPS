@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ConceptMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -75,10 +74,5 @@ public class ConceptMethodDeclaration_Behavior {
 
   public static boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return false;
-  }
-
-  @Deprecated
-  public static SNode call_getNearestOverriddenMethod_5014346297260520836(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
   }
 }

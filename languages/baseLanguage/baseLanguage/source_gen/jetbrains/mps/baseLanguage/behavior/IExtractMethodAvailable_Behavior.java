@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class IExtractMethodAvailable_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +13,5 @@ public class IExtractMethodAvailable_Behavior {
 
   public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
     return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToExtract);
-  }
-
-  @Deprecated
-  public static IExtractMethodRefactoringProcessor call_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
-    return BehaviorReflection.invokeVirtual(IExtractMethodRefactoringProcessor.class, thisNode, "virtual_getExtractMethodRefactoringProcessor_1221393367929", new Object[]{nodesToExtract});
   }
 }

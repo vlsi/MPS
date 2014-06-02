@@ -4,7 +4,6 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AbstractTextGenDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -16,15 +15,5 @@ public class AbstractTextGenDeclaration_Behavior {
 
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
     return null;
-  }
-
-  @Deprecated
-  public static String call_getTextGenNode_1234784577703(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTextGenNode_1234784577703", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getAvailableOperations_1234781444746(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAvailableOperations_1234781444746", new Object[]{});
   }
 }

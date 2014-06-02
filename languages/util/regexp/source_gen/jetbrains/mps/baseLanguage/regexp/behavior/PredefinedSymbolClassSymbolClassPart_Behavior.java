@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class PredefinedSymbolClassSymbolClassPart_Behavior {
   public static void init(SNode thisNode) {
@@ -13,10 +12,5 @@ public class PredefinedSymbolClassSymbolClassPart_Behavior {
 
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "declaration", false), "name");
-  }
-
-  @Deprecated
-  public static String call_getRepresentation_8173814113624650544(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRepresentation_8173814113624650482", new Object[]{});
   }
 }

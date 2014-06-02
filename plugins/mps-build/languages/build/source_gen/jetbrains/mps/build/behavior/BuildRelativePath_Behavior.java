@@ -85,11 +85,6 @@ public class BuildRelativePath_Behavior {
     return SLinkOperations.getTarget(cp, "tail", true);
   }
 
-  @Deprecated
-  public static String call_getBasePath_4959435991187140515(SNode thisNode, Context context) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getBasePath_4959435991187140515", new Object[]{context});
-  }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

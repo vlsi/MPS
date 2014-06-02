@@ -24,14 +24,4 @@ public class OrRegexp_Behavior {
   public static boolean call_inParentheses_1353467374623956858(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp");
   }
-
-  @Deprecated
-  public static String call_getString_1222434354398(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
-
-  @Deprecated
-  public static boolean call_needParentheses_1353467374623956023(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_needParentheses_1353467374623880338", new Object[]{});
-  }
 }

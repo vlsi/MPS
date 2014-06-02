@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class OperationParm_LinkQualifier_Behavior {
   public static void init(SNode thisNode) {
@@ -29,10 +28,5 @@ public class OperationParm_LinkQualifier_Behavior {
         return (acceptAggregations ? SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference") : SPropertyOperations.hasValue(it, "metaClass", "reference", "reference"));
       }
     });
-  }
-
-  @Deprecated
-  public static Iterable<SNode> call_getLinkAccessScope_2906110183022538865(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getLinkAccessScope_2906110183022538642", new Object[]{});
   }
 }

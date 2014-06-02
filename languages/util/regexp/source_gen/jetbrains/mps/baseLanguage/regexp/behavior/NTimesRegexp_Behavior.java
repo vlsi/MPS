@@ -16,9 +16,4 @@ public class NTimesRegexp_Behavior {
     String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars});
     return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ? Regexp_Behavior.call_par_1222433790846(thisNode, s) : s)) + "{" + SPropertyOperations.getInteger(thisNode, "n") + "}";
   }
-
-  @Deprecated
-  public static String call_getString_1222437729031(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
 }

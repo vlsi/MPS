@@ -39,11 +39,6 @@ public class TemplateArgumentQuery_Behavior {
     return result;
   }
 
-  @Deprecated
-  public static SNode call_getExpectedReturnType_4035562641222622443(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_8mmc34_a4a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

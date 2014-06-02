@@ -95,11 +95,6 @@ public class PersistentConfiguration_Behavior {
     return "checkConfiguration";
   }
 
-  @Deprecated
-  public static SNode call_createType_946964771156066501(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_4ves9l_a0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

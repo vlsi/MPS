@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class INamedConcept_Behavior {
   public static void init(SNode thisNode) {
@@ -23,10 +22,5 @@ public class INamedConcept_Behavior {
       return SPropertyOperations.getString(thisNode, "name");
     }
     return longName + "." + SPropertyOperations.getString(thisNode, "name");
-  }
-
-  @Deprecated
-  public static String call_getFqName_1213877404258(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
   }
 }

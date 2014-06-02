@@ -65,11 +65,6 @@ public class ExportScope_Behavior {
     return check_ogf5a0_a2a4(check_ogf5a0_a0c0e(((AbstractModule) module)));
   }
 
-  @Deprecated
-  public static boolean call_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_checkExport_2565736246230026584", new Object[]{sourceNamespace, targetNode});
-  }
-
   private static SModule check_ogf5a0_a0a0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

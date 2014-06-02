@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CommentLinePart_Behavior {
   public static void init(SNode thisNode) {
@@ -14,10 +13,5 @@ public class CommentLinePart_Behavior {
   public static NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
     SNodeOperations.deleteNode(thisNode);
     return null;
-  }
-
-  @Deprecated
-  public static NodeCaretPair call_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
-    return BehaviorReflection.invokeVirtual(NodeCaretPair.class, thisNode, "virtual_smartDelete_9042833497008205283", new Object[]{isBeginning});
   }
 }

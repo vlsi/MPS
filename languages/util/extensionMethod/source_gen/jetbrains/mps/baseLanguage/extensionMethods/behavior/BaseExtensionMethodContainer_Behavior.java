@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BaseExtensionMethodContainer_Behavior {
   public static void init(SNode thisNode) {
@@ -13,10 +12,5 @@ public class BaseExtensionMethodContainer_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "methods", true);
-  }
-
-  @Deprecated
-  public static List<SNode> call_getMembers_8578055449697886101(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877531970", new Object[]{});
   }
 }

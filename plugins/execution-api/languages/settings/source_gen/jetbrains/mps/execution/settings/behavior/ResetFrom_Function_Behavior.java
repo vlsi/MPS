@@ -30,14 +30,4 @@ public class ResetFrom_Function_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)", "946964771156067216"));
     return result;
   }
-
-  @Deprecated
-  public static SNode call_getJavaMethod_946964771156067021(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaMethod_946964771156066991", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getPublicJavaMethod_203908296139519720(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{});
-  }
 }

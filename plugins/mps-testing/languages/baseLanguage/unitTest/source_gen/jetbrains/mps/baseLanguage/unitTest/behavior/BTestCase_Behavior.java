@@ -75,9 +75,4 @@ public class BTestCase_Behavior {
   public static String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name");
   }
-
-  @Deprecated
-  public static String call_getSimpleClassName_4520990320128651400(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSimpleClassName_1229278847513", new Object[]{});
-  }
 }

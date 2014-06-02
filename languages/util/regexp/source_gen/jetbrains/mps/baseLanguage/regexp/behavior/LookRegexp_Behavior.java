@@ -16,9 +16,4 @@ public class LookRegexp_Behavior {
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars}) + ")";
   }
-
-  @Deprecated
-  public static String call_getString_1222861536253(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
 }

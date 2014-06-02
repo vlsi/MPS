@@ -62,21 +62,6 @@ public class InternalAnonymousClass_Behavior {
     return result;
   }
 
-  @Deprecated
-  public static String call_getUnitName_3421461530438560389(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_5067982036267369911", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getNestedName_3421461530438560275(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getNestedName_8540045600162184125", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getFqName_3421461530438560303(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_bwi1fo_a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

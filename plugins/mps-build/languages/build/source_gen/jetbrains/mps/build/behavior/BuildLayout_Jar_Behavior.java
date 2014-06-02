@@ -87,11 +87,6 @@ public class BuildLayout_Jar_Behavior {
     return ".jar";
   }
 
-  @Deprecated
-  public static String call_getExpectedExtension_6967233722066020217(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getExpectedExtension_6967233722066020217", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_20awhq_a0a1a5a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -14,9 +14,4 @@ public class ParensRegexp_Behavior {
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return Regexp_Behavior.call_par_1222433790846(thisNode, BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "expr", true), "virtual_getString_1222432436326", new Object[]{vars}));
   }
-
-  @Deprecated
-  public static String call_getString_1222434892303(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
 }

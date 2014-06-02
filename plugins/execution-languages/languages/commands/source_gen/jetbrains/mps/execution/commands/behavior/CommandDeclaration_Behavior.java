@@ -106,16 +106,6 @@ public class CommandDeclaration_Behavior {
     return "getDebuggerConfiguration";
   }
 
-  @Deprecated
-  public static String call_getSuffix_856705193941282112(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSuffix_946964771156905483", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_createType_856705193941282121(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
-  }
-
   private static SNode _quotation_createNode_5aznw1_a0a2(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

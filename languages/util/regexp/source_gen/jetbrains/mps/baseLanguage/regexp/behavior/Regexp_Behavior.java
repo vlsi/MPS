@@ -69,24 +69,4 @@ public class Regexp_Behavior {
     }
     return true;
   }
-
-  @Deprecated
-  public static String call_toString_1213877429451(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_toString_1213877429451", new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
-
-  @Deprecated
-  public static boolean call_needParentheses_1353467374623880338(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_needParentheses_1353467374623880338", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isValid_4759120547781297301(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isValid_4759120547781297301", new Object[]{});
-  }
 }

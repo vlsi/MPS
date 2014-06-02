@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BuildPlugin_Behavior {
   public static void init(SNode thisNode) {
@@ -27,20 +26,5 @@ public class BuildPlugin_Behavior {
 
   public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     return ListSequence.fromList(new ArrayList<SNode>());
-  }
-
-  @Deprecated
-  public static Scope call_getProjectStructureScope_3734116213129936182(SNode thisNode, SNode kind) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getProjectStructureScope_3734116213129936182", new Object[]{kind});
-  }
-
-  @Deprecated
-  public static Scope call_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getLayoutScope_1224588814561807654", new Object[]{kind});
-  }
-
-  @Deprecated
-  public static Iterable<SNode> call_getImportedLibraries_4101476690142937969(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getImportedLibraries_4101476690142937969", new Object[]{});
   }
 }
