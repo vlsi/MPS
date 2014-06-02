@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
@@ -40,7 +39,7 @@ public class AnonymousClass_Behavior {
   public static String call_getJavaName_2977939203456914071(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, true);
     if ((ancestor == null)) {
-      return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+      return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
     }
     return BehaviorReflection.invokeVirtual(String.class, ancestor, "virtual_getFqName_1213877404258", new Object[]{}) + "$" + AnonymousClass_Behavior.call_getIndexInContainingClass_4164197659856373643(thisNode);
   }

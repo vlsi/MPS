@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -24,7 +24,6 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ConceptBehavior_Behavior {
   public static void init(SNode thisNode) {
@@ -92,7 +91,7 @@ public class ConceptBehavior_Behavior {
   }
 
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
-    SNode baseNode = IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(thisNode);
+    SNode baseNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
     if ((baseNode == null)) {
       return new ArrayList<SNode>();
     }

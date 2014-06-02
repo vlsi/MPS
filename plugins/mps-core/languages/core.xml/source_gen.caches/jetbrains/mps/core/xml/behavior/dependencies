@@ -319,10 +319,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlTextValue_Behavior" file="XmlTextValue_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlTextValue_BehaviorDescriptor" file="XmlTextValue_BehaviorDescriptor.java">
@@ -339,7 +341,6 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
@@ -379,7 +380,6 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />

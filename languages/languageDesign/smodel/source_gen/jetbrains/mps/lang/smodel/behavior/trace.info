@@ -406,7 +406,7 @@
     <nodeInfo nodeId="1213877317192" fileName="SNodeType_Behavior.java" startLine="42" startPosition="96" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877317197" fileName="SNodeType_Behavior.java" startLine="46" startPosition="80" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3508583411998065083" fileName="SNodeType_Behavior.java" startLine="50" startPosition="90" endLine="51" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6639374232683319258" fileName="SNodeType_Behavior.java" startLine="54" startPosition="77" endLine="55" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6639374232683319258" fileName="SNodeType_Behavior.java" startLine="54" startPosition="77" endLine="55" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6639374232683319253" fileName="SNodeType_Behavior.java" startLine="58" startPosition="73" endLine="59" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5628905464388529316" fileName="SNodeType_Behavior.java" startLine="63" startPosition="96" endLine="64" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5628905464388529877" fileName="SNodeType_Behavior.java" startLine="65" startPosition="5" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -442,7 +442,7 @@
     <scopeInfo nodeId="1213877317127" fileName="SNodeType_Behavior.java" startLine="25" startPosition="26" endLine="26" endPosition="22" />
     <scopeInfo nodeId="1213877317196" fileName="SNodeType_Behavior.java" startLine="46" startPosition="80" endLine="47" endPosition="47" />
     <scopeInfo nodeId="3508583411998065078" fileName="SNodeType_Behavior.java" startLine="50" startPosition="90" endLine="51" endPosition="75" />
-    <scopeInfo nodeId="6639374232683319227" fileName="SNodeType_Behavior.java" startLine="54" startPosition="77" endLine="55" endPosition="66" />
+    <scopeInfo nodeId="6639374232683319227" fileName="SNodeType_Behavior.java" startLine="54" startPosition="77" endLine="55" endPosition="146" />
     <scopeInfo nodeId="6639374232683319245" fileName="SNodeType_Behavior.java" startLine="58" startPosition="73" endLine="59" endPosition="47" />
     <scopeInfo nodeId="5628905464388528931" fileName="SNodeType_Behavior.java" startLine="63" startPosition="96" endLine="64" endPosition="19" />
     <scopeInfo nodeId="1213877317114" fileName="SNodeType_Behavior.java" startLine="20" startPosition="0" endLine="22" endPosition="0">

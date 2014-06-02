@@ -51,7 +51,7 @@ public class BaseMethodDeclaration_Behavior {
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     SNode expectedRetType = SLinkOperations.getTarget(thisNode, "returnType", true);
-    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || BaseMethodDeclaration_Behavior.call_isReturnsVoid_1234359555698(thisNode)) {
+    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReturnsVoid_1234359555698", new Object[]{})) {
       // actually - no return type 
       expectedRetType = null;
     }
@@ -143,7 +143,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static SNode call_getBaseMethod_5014346297260519893(SNode thisNode) {
-    SNode result = BaseMethodDeclaration_Behavior.call_getNearestOverriddenMethod_5358895268254685434(thisNode);
+    SNode result = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
     if ((result == null)) {
       return null;
     }
@@ -236,7 +236,7 @@ public class BaseMethodDeclaration_Behavior {
 
   @Nullable
   public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "name") + "#" + BaseMethodDeclaration_Behavior.call_jniSignature_8847328628797656446(thisNode);
+    return SPropertyOperations.getString(thisNode, "name") + "#" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_jniSignature_8847328628797656446", new Object[]{});
   }
 
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {

@@ -619,7 +619,7 @@
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941282180">
     <nodeInfo nodeId="856705193941282190" fileName="ReportErrorStatement_Behavior.java" startLine="20" startPosition="35" endLine="21" endPosition="307" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="856705193941282196" fileName="ReportErrorStatement_Behavior.java" startLine="21" startPosition="307" endLine="22" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="856705193941282204" fileName="ReportErrorStatement_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="856705193941282204" fileName="ReportErrorStatement_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="856705193941282220" fileName="ReportErrorStatement_Behavior.java" startLine="27" startPosition="86" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941282180" fileName="ReportErrorStatement_Behavior.java" startLine="32" startPosition="76" endLine="33" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941282180" fileName="ReportErrorStatement_Behavior.java" startLine="37" startPosition="148" endLine="38" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -654,7 +654,7 @@
     <scopeInfo nodeId="856705193941282180" fileName="ReportErrorStatement_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="856705193941282180" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="856705193941282187" fileName="ReportErrorStatement_Behavior.java" startLine="19" startPosition="152" endLine="24" endPosition="173" />
+    <scopeInfo nodeId="856705193941282187" fileName="ReportErrorStatement_Behavior.java" startLine="19" startPosition="152" endLine="24" endPosition="237" />
     <scopeInfo nodeId="856705193941282180" fileName="ReportErrorStatement_Behavior.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="856705193941282214" varName="ignoreMayBeThrowables" />
       <varInfo nodeId="856705193941282180" varName="thisNode" />

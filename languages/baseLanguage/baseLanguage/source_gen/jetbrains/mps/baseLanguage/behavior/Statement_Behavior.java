@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -16,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class Statement_Behavior {
   public static void init(SNode thisNode) {
@@ -28,7 +28,7 @@ public class Statement_Behavior {
 
   public static Set<SNode> call_uncaughtThrowables_5412515780383108857(SNode thisNode, boolean ignoreMayBeThrowables) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-    Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383134223(thisNode, result, ignoreMayBeThrowables);
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{result, ignoreMayBeThrowables});
     return result;
   }
 

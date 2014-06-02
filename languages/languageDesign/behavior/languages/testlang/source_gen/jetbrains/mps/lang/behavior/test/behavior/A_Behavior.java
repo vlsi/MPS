@@ -35,10 +35,10 @@ public class A_Behavior {
     A_Behavior.call_nonVirtualMethod_4731970554577184968(thisNode, "", 0);
     A_Behavior.call_nonVirtualMethod_4731970554577184968(thisNode, "", 0);
     // 
-    A_Behavior.call_virtualMethod_4731970554577185009(thisNode, "", 0);
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577185009", new Object[]{"", 0});
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577185009", new Object[]{"", 0});
     // 
-    A_Behavior.call_finalVirtualMethod_4731970554577187301(thisNode, "", 0);
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_finalVirtualMethod_4731970554577187301", new Object[]{"", 0});
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_finalVirtualMethod_4731970554577187301", new Object[]{"", 0});
     // 
     A_Behavior.call_staticMethod_4731970554577185180(SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.behavior.test.structure.A"), "", 0);

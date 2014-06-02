@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Queue;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
@@ -23,7 +23,7 @@ public class IGenericType_Behavior {
   }
 
   public static SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.call_expandGenerics_4122274986016348613(thisNode, substitutions, new ArrayList<SNode>());
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, new ArrayList<SNode>()});
   }
 
   public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
@@ -31,7 +31,7 @@ public class IGenericType_Behavior {
   }
 
   public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.call_expandGenericDescendants_4107091686347838550(thisNode, SNodeOperations.copyNode(thisNode), substitutions, expTrace);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{SNodeOperations.copyNode(thisNode), substitutions, expTrace});
   }
 
   public static SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, final Map<SNode, SNode> substitutions, final List<SNode> expTrace) {

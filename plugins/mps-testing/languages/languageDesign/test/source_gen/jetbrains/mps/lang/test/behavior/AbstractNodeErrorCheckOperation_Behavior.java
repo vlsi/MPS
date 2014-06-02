@@ -25,6 +25,6 @@ public class AbstractNodeErrorCheckOperation_Behavior {
   }
 
   public static SNode virtual_getReferencedRuleNode_2893471348147987869(SNode thisNode) {
-    return SLinkOperations.getTarget(IReferenceAttachable_Behavior.call_getReference_8333855927540237654(thisNode), "declaration", false);
+    return SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReference_8333855927540237654", new Object[]{}), "declaration", false);
   }
 }

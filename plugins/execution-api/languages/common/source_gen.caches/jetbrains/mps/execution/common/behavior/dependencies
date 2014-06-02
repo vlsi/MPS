@@ -16,7 +16,6 @@
     <classNode dependClassName="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0b0j" />
     <classNode dependClassName="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0d0j" />
     <classNode dependClassName="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0f0j" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />

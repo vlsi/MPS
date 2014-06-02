@@ -21,7 +21,7 @@ public class ReportErrorStatement_Behavior {
       Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, SLinkOperations.getTarget(thisNode, "message", true));
       Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, SLinkOperations.getTarget(thisNode, "exception", true));
     }
-    SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(ReportErrorStatement_Behavior.call_getException_856705193941282181(thisNode), "classifier", false));
+    SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getException_856705193941282181", new Object[]{}), "classifier", false));
   }
 
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {

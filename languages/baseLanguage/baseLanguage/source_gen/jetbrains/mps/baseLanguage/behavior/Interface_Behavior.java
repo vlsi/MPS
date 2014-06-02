@@ -6,11 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Level;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.HashSet;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -27,7 +26,7 @@ public class Interface_Behavior {
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(thisNode)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+        LOG.error("circular hierarchy in interface " + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{}));
       }
       return false;
     }
@@ -47,7 +46,7 @@ public class Interface_Behavior {
   public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(thisNode)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("circular hierarchy in interface " + INamedConcept_Behavior.call_getFqName_1213877404258(thisNode));
+        LOG.error("circular hierarchy in interface " + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{}));
       }
       return false;
     }
@@ -62,7 +61,7 @@ public class Interface_Behavior {
   }
 
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
-    String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+    String fqName = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
     if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
       return fqName;
     }

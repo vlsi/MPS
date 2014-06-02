@@ -11,7 +11,7 @@ public class BuildMpsLayout_TestModules_Content_Behavior {
   }
 
   public static boolean virtual_contains_4560297596904469640(SNode thisNode, SNode module) {
-    return Sequence.fromIterable(BuildMpsLayout_TestModules_Content_Behavior.call_getModules_4560297596904469651(thisNode)).contains(module);
+    return Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getModules_4560297596904469651", new Object[]{})).contains(module);
   }
 
   @Deprecated

@@ -297,7 +297,7 @@ public class ClassifierType_Behavior {
     if (ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).isEmpty()) {
       return thisNode;
     }
-    return IGenericType_Behavior.call_expandGenericDescendants_4107091686347838550(thisNode, SNodeOperations.copyNode(thisNode), substitutions, expTrace);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{SNodeOperations.copyNode(thisNode), substitutions, expTrace});
   }
 
   public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {

@@ -86,7 +86,7 @@ public class Classifier_Behavior {
   public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
     // use sequence<node<IClassifierMember> getMembers() instead 
     // returns all accessible classifier members in classifier 
-    SNode thisType = IClassifier_Behavior.call_getThisType_7405920559687254782(thisNode);
+    SNode thisType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_7405920559687254782", new Object[]{});
     Iterable<SNode> members = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(thisType)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
@@ -209,11 +209,11 @@ public class Classifier_Behavior {
   }
 
   public static boolean virtual_checkLoops_3980490811621705344(SNode thisNode) {
-    return Classifier_Behavior.call_checkLoops_3980490811621705349(thisNode, SetSequence.fromSet(new HashSet<SNode>()));
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_checkLoops_3980490811621705349", new Object[]{SetSequence.fromSet(new HashSet<SNode>())});
   }
 
   public static boolean virtual_isDescendant_7165541881557222913(SNode thisNode, SNode nodeToCompare) {
-    return Classifier_Behavior.call_isDescendant_checkLoops_7165541881557222950(thisNode, nodeToCompare, SetSequence.fromSet(new HashSet<SNode>()));
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isDescendant_checkLoops_7165541881557222950", new Object[]{nodeToCompare, SetSequence.fromSet(new HashSet<SNode>())});
   }
 
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
@@ -274,7 +274,7 @@ public class Classifier_Behavior {
   }
 
   public static SNode call_getWithResolvedTypevars_3305065273710852527(SNode thisNode, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
-    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier_Behavior.call_getThisType_3305065273710880775(thisNode), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a52(ancestor), true);
+    SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_3305065273710880775", new Object[]{}), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a52(ancestor), true);
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return Classifier_Behavior.call_getResolvedVar_3305065273710881245(thisNode, SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), ancestor, coercedType, method, baseMethod);
     } else {
@@ -448,7 +448,7 @@ public class Classifier_Behavior {
             addition = new NamedElementsScope(members);
           } else {
             if (!(isStaticContext) && child != null) {
-              addition = Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
+              addition = BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getVisibleMembers_8083692786967356611", new Object[]{child, kind});
             }
           }
           return (addition != null ? Scopes.defaultWithNameHiding(kind, addition, ScopeUtils.lazyParentScope(thisNode, kind)) : ScopeUtils.lazyParentScope(thisNode, kind));

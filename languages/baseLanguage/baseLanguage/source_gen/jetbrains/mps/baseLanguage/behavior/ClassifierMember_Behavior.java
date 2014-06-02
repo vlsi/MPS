@@ -86,11 +86,11 @@ public class ClassifierMember_Behavior {
   }
 
   public static boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
-    return ClassifierMember_Behavior.call_isVisible_8083692786967482069(thisNode, SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextClassifierType, "virtual_getClassifier_7405920559687237513", new Object[]{}), "jetbrains.mps.baseLanguage.structure.Classifier"), contextNode);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isVisible_8083692786967482069", new Object[]{SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextClassifierType, "virtual_getClassifier_7405920559687237513", new Object[]{}), "jetbrains.mps.baseLanguage.structure.Classifier"), contextNode});
   }
 
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
-    return ClassifierMember_Behavior.call_isStatic_8986964027630462944(thisNode);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});
   }
 
   public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {

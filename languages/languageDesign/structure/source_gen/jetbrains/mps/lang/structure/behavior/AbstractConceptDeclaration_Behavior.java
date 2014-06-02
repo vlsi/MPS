@@ -304,7 +304,7 @@ public class AbstractConceptDeclaration_Behavior {
       return result;
     }
 
-    for (SNode superconcept : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(thisNode)).where(new IWhereFilter<SNode>() {
+    for (SNode superconcept : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (it != null);
       }
@@ -323,7 +323,7 @@ public class AbstractConceptDeclaration_Behavior {
     Set<SNode> inLanguageAncestors = SetSequence.fromSet(new HashSet<SNode>());
     Set<SNode> notInLanguageAncestors = SetSequence.fromSet(new HashSet<SNode>());
 
-    for (SNode superconcept : AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(thisNode)) {
+    for (SNode superconcept : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{})) {
       if ((superconcept != null)) {
         if (SNodeOperations.getModel(superconcept) == SNodeOperations.getModel(thisNode)) {
           Pair<Set<SNode>, Set<SNode>> superconceptResult = AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(superconcept);

@@ -4,8 +4,8 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeCheckOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -13,7 +13,7 @@ public class NodeCheckOperation_Behavior {
 
   public static String call_getName_1217435265700(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "name") == null || SPropertyOperations.getString(thisNode, "name").length() == 0) {
-      return NodeCheckOperation_Behavior.call_getDefaultName_8578280453511146306(thisNode);
+      return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDefaultName_8578280453511146306", new Object[]{});
     } else {
       return SPropertyOperations.getString(thisNode, "name");
     }

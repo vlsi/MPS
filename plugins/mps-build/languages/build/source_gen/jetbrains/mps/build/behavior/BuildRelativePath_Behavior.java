@@ -5,6 +5,7 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.build.util.Context;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.MacroHelper;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -13,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BuildRelativePath_Behavior {
   public static void init(SNode thisNode) {
@@ -25,7 +25,7 @@ public class BuildRelativePath_Behavior {
   }
 
   public static String virtual_getLocalPath_5481553824944787364(SNode thisNode, Context context) {
-    String basePath = BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(thisNode, context);
+    String basePath = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getBasePath_4959435991187140515", new Object[]{context});
     if (basePath == null) {
       return null;
     }

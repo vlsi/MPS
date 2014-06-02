@@ -5,8 +5,8 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.util.MacroHelper;
 
 public class BuildSourcePath_Behavior {
   public static void init(SNode thisNode) {
@@ -22,7 +22,7 @@ public class BuildSourcePath_Behavior {
   }
 
   public static String virtual_getAntPath_8563603456895173701(SNode thisNode, Context context) {
-    return BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(thisNode);
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRelativePath_5481553824944787371", new Object[]{});
   }
 
   public static String virtual_getLastSegment_1368030936106771141(SNode thisNode, MacroHelper helper) {

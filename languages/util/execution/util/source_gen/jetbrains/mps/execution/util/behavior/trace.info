@@ -6,7 +6,7 @@
     <nodeInfo nodeId="4666195181811081435" fileName="IMainClass_Behavior.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2034046503361581926" fileName="IMainClass_Behavior.java" startLine="18" startPosition="25" endLine="19" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4666195181811081446" fileName="IMainClass_Behavior.java" startLine="21" startPosition="7" endLine="22" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6494122940871944847" fileName="IMainClass_Behavior.java" startLine="25" startPosition="84" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6494122940871944847" fileName="IMainClass_Behavior.java" startLine="25" startPosition="84" endLine="26" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="30" startPosition="77" endLine="31" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="35" startPosition="81" endLine="36" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6494122940871960275" fileName="IMainClass_Behavior.java" startLine="39" startPosition="55" endLine="40" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -20,7 +20,7 @@
     <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="15" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUnitName_4666195181811081431#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="4666195181811081455" fileName="IMainClass_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="2034046503361581925" fileName="IMainClass_Behavior.java" startLine="18" startPosition="25" endLine="19" endPosition="57" />
-    <scopeInfo nodeId="4666195181811081450" fileName="IMainClass_Behavior.java" startLine="25" startPosition="84" endLine="26" endPosition="96" />
+    <scopeInfo nodeId="4666195181811081450" fileName="IMainClass_Behavior.java" startLine="25" startPosition="84" endLine="26" endPosition="145" />
     <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="30" startPosition="77" endLine="31" endPosition="127" />
     <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="35" startPosition="81" endLine="36" endPosition="130" />
     <scopeInfo nodeId="6494122940871960275" fileName="IMainClass_Behavior.java" startLine="39" startPosition="55" endLine="40" endPosition="43" />

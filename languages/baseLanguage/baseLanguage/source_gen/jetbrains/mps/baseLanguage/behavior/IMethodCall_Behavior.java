@@ -41,7 +41,7 @@ public class IMethodCall_Behavior {
       if (i < ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count()) {
         SNode parameterDeclaration = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
         SNode rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(parameterDeclaration, "type", true));
-        SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
+        SNode instanceType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInstanceType_8008512149545154471", new Object[]{});
         if ((instanceType == null)) {
           return rawType;
         }
@@ -94,7 +94,7 @@ public class IMethodCall_Behavior {
   }
 
   public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
-    SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
+    SNode instanceType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInstanceType_8008512149545154471", new Object[]{});
     HashMap<SNode, SNode> result = new HashMap<SNode, SNode>();
     if ((instanceType == null)) {
       return result;

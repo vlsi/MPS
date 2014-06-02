@@ -19,7 +19,7 @@ public class ConceptFunctionParameter_Behavior {
   }
 
   public static boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
-    if (!(ConceptFunctionParameter_Behavior.call_isParameterObjectUsed_1213877522926(thisNode))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isParameterObjectUsed_1213877522926", new Object[]{}))) {
       return false;
     }
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, ConceptFunctionParameter_Behavior.call_findConceptFunction_1213877522934(thisNode), "virtual_usesParameterObjectFor_1213877374432", new Object[]{thisNode});

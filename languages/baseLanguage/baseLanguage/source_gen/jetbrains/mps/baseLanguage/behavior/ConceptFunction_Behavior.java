@@ -39,7 +39,7 @@ public class ConceptFunction_Behavior {
   }
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(thisNode);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
   }
 
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
@@ -74,7 +74,7 @@ public class ConceptFunction_Behavior {
     // if you need presentation like alias(...)->.. 
     // then use the ConceptFunctionAliased_Component 
     if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_showName_1262430001741498082", new Object[]{})) {
-      result.append(ConceptFunction_Behavior.call_getName_1216468837268(thisNode));
+      result.append(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1216468837268", new Object[]{}));
     }
     return ConceptFunction_Behavior.call_appendHeader_2866018809101869378(thisNode, result);
   }
@@ -86,7 +86,7 @@ public class ConceptFunction_Behavior {
 
   public static String call_appendHeader_2866018809101869378(SNode thisNode, StringBuilder result) {
     result.append("(");
-    List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1213877374450(thisNode);
+    List<SNode> parameters = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
     boolean isFirst = true;
     for (SNode cfp : parameters) {
       if (!(isFirst)) {
@@ -96,7 +96,7 @@ public class ConceptFunction_Behavior {
       result.append(SPropertyOperations.getString(cfp, "conceptAlias"));
     }
     result.append(")->");
-    SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(thisNode);
+    SNode expectedReturnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     if (expectedReturnType == null) {
       result.append("void");
     } else {

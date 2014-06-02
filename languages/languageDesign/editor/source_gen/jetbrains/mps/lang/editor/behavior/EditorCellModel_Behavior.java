@@ -7,10 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.awt.Color;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -31,7 +31,7 @@ public class EditorCellModel_Behavior {
     if (SLinkOperations.getTarget(thisNode, "id", true) != null && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name"))) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "id", true), "name");
     }
-    String defaultCellId = EditorCellModel_Behavior.call_getDefaultCellId_4539255030934103845(thisNode);
+    String defaultCellId = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDefaultCellId_4539255030934103845", new Object[]{});
     if (defaultCellId != null) {
       return EditorCellModel_Behavior.call_getUniqueCellIdPrefix_8288068497638798229(thisNode) + defaultCellId;
     }

@@ -5,7 +5,6 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CheckNodeForErrorMessagesOperation_Behavior {
@@ -23,7 +22,7 @@ public class CheckNodeForErrorMessagesOperation_Behavior {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return ITestMethod_Behavior.call_getTestName_1216136419751(thisNode);
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTestName_1216136419751", new Object[]{});
   }
 
   @Deprecated

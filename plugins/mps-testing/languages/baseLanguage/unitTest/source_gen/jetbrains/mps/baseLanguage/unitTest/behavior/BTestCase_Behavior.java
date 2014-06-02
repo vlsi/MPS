@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BTestCase_Behavior {
@@ -37,7 +36,7 @@ public class BTestCase_Behavior {
   }
 
   public static String virtual_getClassName_1216136193905(SNode thisNode) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {

@@ -207,7 +207,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.ScopeUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -989,7 +988,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.NamedElementsScope" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -1127,7 +1125,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -1186,7 +1183,6 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IVisible_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
@@ -2152,12 +2148,13 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IAnonymousClass_BehaviorDescriptor" file="IAnonymousClass_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior" file="IBLDeprecatable_Behavior.java">
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_BehaviorDescriptor" file="IBLDeprecatable_BehaviorDescriptor.java">
@@ -2653,7 +2650,6 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Members" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MethodResolveUtil" />
@@ -2800,7 +2796,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
@@ -3912,7 +3907,6 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -4076,10 +4070,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.StringType_Behavior" file="StringType_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
@@ -4478,7 +4474,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -4787,7 +4782,6 @@
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

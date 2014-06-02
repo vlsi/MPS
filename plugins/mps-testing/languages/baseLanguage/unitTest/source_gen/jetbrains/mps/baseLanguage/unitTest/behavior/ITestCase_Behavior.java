@@ -4,17 +4,17 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ITestCase_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getClassName_1216136193905(SNode thisNode) {
-    return SNodeOperations.getModelLongName(thisNode.getModel()) + "." + ITestCase_Behavior.call_getSimpleClassName_1229278847513(thisNode);
+    return SNodeOperations.getModelLongName(thisNode.getModel()) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSimpleClassName_1229278847513", new Object[]{});
   }
 
   public static String virtual_getSimpleClassName_1229278847513(SNode thisNode) {

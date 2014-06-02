@@ -11,7 +11,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.IReferenceAttachable_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.PerformUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -194,7 +193,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
@@ -391,11 +389,13 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeConstraintsErrorCheckOperation_Behavior" file="NodeConstraintsErrorCheckOperation_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.IReferenceAttachable_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeRuleReference" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.RuleType" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeConstraintsErrorCheckOperation_BehaviorDescriptor" file="NodeConstraintsErrorCheckOperation_BehaviorDescriptor.java">
@@ -409,11 +409,13 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeConstraintsWarningCheckOperation_Behavior" file="NodeConstraintsWarningCheckOperation_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.IReferenceAttachable_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeRuleReference" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.RuleType" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeConstraintsWarningCheckOperation_BehaviorDescriptor" file="NodeConstraintsWarningCheckOperation_BehaviorDescriptor.java">
@@ -427,10 +429,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_Behavior" file="NodeErrorCheckOperation_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.IReferenceAttachable_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeErrorCheckOperation_BehaviorDescriptor" file="NodeErrorCheckOperation_BehaviorDescriptor.java">
@@ -507,11 +511,13 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_Behavior" file="NodeRuleCheckOperation_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.IReferenceAttachable_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeRuleCheckOperation_BehaviorDescriptor" file="NodeRuleCheckOperation_BehaviorDescriptor.java">
@@ -629,11 +635,13 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeUnknownErrorCheckOperation_Behavior" file="NodeUnknownErrorCheckOperation_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.IReferenceAttachable_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeRuleReference" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.RuleType" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeUnknownErrorCheckOperation_BehaviorDescriptor" file="NodeUnknownErrorCheckOperation_BehaviorDescriptor.java">
@@ -647,11 +655,13 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeUnknownWarningCheckOperation_Behavior" file="NodeUnknownWarningCheckOperation_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.IReferenceAttachable_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeRuleReference" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.RuleType" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeUnknownWarningCheckOperation_BehaviorDescriptor" file="NodeUnknownWarningCheckOperation_BehaviorDescriptor.java">
@@ -683,10 +693,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeWarningCheckOperation_Behavior" file="NodeWarningCheckOperation_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.IReferenceAttachable_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeWarningCheckOperation_BehaviorDescriptor" file="NodeWarningCheckOperation_BehaviorDescriptor.java">

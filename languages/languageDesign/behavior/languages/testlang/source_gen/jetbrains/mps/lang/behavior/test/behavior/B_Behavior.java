@@ -28,12 +28,12 @@ public class B_Behavior {
   }
 
   public static void call_doInvokeAll_4731970554577222218(SNode thisNode) {
-    B_Behavior.call_abstractVirtualMethod_4731970554577217984(thisNode, 0);
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_abstractVirtualMethod_4731970554577217984", new Object[]{0});
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_abstractVirtualMethod_4731970554577217984", new Object[]{0});
     // 
-    B_Behavior.call_virtualMethod_4731970554577218058(thisNode, "from B", 0);
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577218058", new Object[]{"from B", 0});
-    A_Behavior.call_virtualMethod_4731970554577185009(thisNode, "from A", 0);
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577218058", new Object[]{"from B", 0});
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577185009", new Object[]{"from A", 0});
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577185009", new Object[]{"from A", 0});
     // 
     B_Behavior.call_nonVirtualMethod_4731970554577218075(thisNode, "from B", 0);

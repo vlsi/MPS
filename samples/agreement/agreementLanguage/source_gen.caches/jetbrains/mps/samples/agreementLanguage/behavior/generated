@@ -7,7 +7,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" hash="-4lb9gmvoqfjeoiazsba2i6msyptbcwu" />
   <dep model="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" hash="y2q5cddsqs5syau1vemum1w6ertem9" />
   <dep model="r:1b10f100-c346-40ca-b330-d6726b0e867e(jetbrains.mps.samples.formulaLanguage.behavior)" hash="96zf1spy3otyo7xm1wi78rzeuykd3xv" />
-  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-ampc8g90x8rzn23hc4xo5gsixct60hd" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="55pzjvqvomqo7mj54s2jmp6w4hbmxz0" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="71fkp4toqdc82ckkhgr3g43ogi1wlrl" dependsOnNodes="true">

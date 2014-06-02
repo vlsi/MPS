@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Iterator;
@@ -55,7 +54,7 @@ public class NamedTupleType_Behavior {
     if (ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).isEmpty()) {
       return thisNode;
     }
-    return IGenericType_Behavior.call_expandGenericDescendants_4107091686347838550(thisNode, SNodeOperations.copyNode(thisNode), substitutions, expTrace);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{SNodeOperations.copyNode(thisNode), substitutions, expTrace});
   }
 
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, final Map<SNode, SNode> substitutions) {

@@ -263,19 +263,21 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelStatisticsTarget_Behavior" file="ModelStatisticsTarget_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.INodeSetReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.behavior.ModelReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

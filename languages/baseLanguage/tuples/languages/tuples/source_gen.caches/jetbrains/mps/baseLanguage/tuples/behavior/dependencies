@@ -180,6 +180,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_Behavior" file="NamedTupleType_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -188,7 +189,6 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

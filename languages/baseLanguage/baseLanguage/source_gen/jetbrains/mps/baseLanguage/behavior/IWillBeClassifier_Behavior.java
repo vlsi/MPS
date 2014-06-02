@@ -5,11 +5,11 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -23,7 +23,7 @@ public class IWillBeClassifier_Behavior {
   }
 
   public static SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
-    final String clsName = IWillBeClassifier_Behavior.call_classifierName_4609636120081351397(thisNode);
+    final String clsName = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
     return ListSequence.fromList(SModelOperations.getRoots(targetModel, "jetbrains.mps.baseLanguage.structure.Classifier")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode cls) {
         return clsName.equals(SPropertyOperations.getString(cls, "name"));

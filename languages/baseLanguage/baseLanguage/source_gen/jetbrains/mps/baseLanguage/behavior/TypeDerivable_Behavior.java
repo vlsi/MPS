@@ -14,7 +14,7 @@ public class TypeDerivable_Behavior {
   }
 
   public static SNode virtual_deriveType_4555537781928374706(SNode thisNode, SNode expression, SNode link) {
-    return TypeDerivable_Behavior.call_deriveType_1213877435747(thisNode, expression);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_deriveType_1213877435747", new Object[]{expression});
   }
 
   @Deprecated

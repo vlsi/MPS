@@ -6,8 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class StyleAttributeDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -26,7 +26,7 @@ public class StyleAttributeDeclaration_Behavior {
   }
 
   public static SNode call_getClassifierType_6029276237639807717(SNode thisNode) {
-    return TypeChecker.getInstance().getRuntimeSupport().coerce_(StyleAttributeDeclaration_Behavior.call_getType_7677730757102475082(thisNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    return TypeChecker.getInstance().getRuntimeSupport().coerce_(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_7677730757102475082", new Object[]{}), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }
 
   @Deprecated

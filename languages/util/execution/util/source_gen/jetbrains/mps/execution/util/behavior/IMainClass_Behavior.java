@@ -23,7 +23,7 @@ public class IMainClass_Behavior {
   }
 
   public static boolean virtual_isNodeRunnable_4666195181811081448(SNode thisNode) {
-    return isNotEmptyString(IMainClass_Behavior.call_getUnitName_4666195181811081431(thisNode));
+    return isNotEmptyString(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_4666195181811081431", new Object[]{}));
   }
 
   @Deprecated

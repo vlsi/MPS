@@ -31,7 +31,7 @@ public class VariableReference_Behavior {
       SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       SNode classifier = SNodeOperations.as(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.Classifier");
       if ((classifier != null) && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(SNodeOperations.getModel(classifier).getReference().getModelName()))) {
-        return Expression_Behavior.call_eval_1213877519769(thisNode, module);
+        return BehaviorReflection.invokeVirtual(Object.class, thisNode, "virtual_eval_1213877519769", new Object[]{module});
       } else {
         return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(declaration, "initializer", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ? BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(declaration, "initializer", true), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module}) : null);
       }

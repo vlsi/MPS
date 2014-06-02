@@ -23,6 +23,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior" file="ConceptBehavior_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -47,7 +48,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

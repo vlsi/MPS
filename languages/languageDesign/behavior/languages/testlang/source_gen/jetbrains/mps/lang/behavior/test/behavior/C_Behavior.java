@@ -25,24 +25,24 @@ public class C_Behavior {
     BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.lang.behavior.test.structure.B", "virtual_virtualMethod_4731970554577218058", new Object[]{"from B", 0});
     BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.lang.behavior.test.structure.B", "virtual_virtualMethod_4731970554577185009", new Object[]{"from A", 0});
     // 
-    B_Behavior.call_virtualMethod_4731970554577218058(thisNode, "from B", 0);
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577218058", new Object[]{"from B", 0});
-    A_Behavior.call_virtualMethod_4731970554577185009(thisNode, "from A", 0);
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577218058", new Object[]{"from B", 0});
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577185009", new Object[]{"from A", 0});
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualMethod_4731970554577185009", new Object[]{"from A", 0});
     B_Behavior.call_nonVirtualMethod_4731970554577218075(thisNode, "from B", 0);
     B_Behavior.call_nonVirtualMethod_4731970554577218075(thisNode, "from B", 0);
     A_Behavior.call_nonVirtualMethod_4731970554577184968(thisNode, "from A", 0);
     A_Behavior.call_nonVirtualMethod_4731970554577184968(thisNode, "from A", 0);
     // 
-    B_Behavior.call_abstractVirtualMethod_4731970554577217984(thisNode, 0);
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_abstractVirtualMethod_4731970554577217984", new Object[]{0});
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_abstractVirtualMethod_4731970554577217984", new Object[]{0});
     // staticAbstractVirtualMethod() 
     // staticVirtualAbstractFromInterfaceConcept() FIXME possible to declare static abstract virtual method in iface, 
     // implement it here (override), but impossible to invoke 
     // 
-    I_Behavior.call_virtualAbstractFromInterfaceConcept_4731970554577185906(thisNode, 0);
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualAbstractFromInterfaceConcept_4731970554577185906", new Object[]{0});
-    I_Behavior.call_virtualFromInterfaceConcept_4731970554577186975(thisNode, "");
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualAbstractFromInterfaceConcept_4731970554577185906", new Object[]{0});
+    BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualFromInterfaceConcept_4731970554577186975", new Object[]{""});
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_virtualFromInterfaceConcept_4731970554577186975", new Object[]{""});
   }
 }
