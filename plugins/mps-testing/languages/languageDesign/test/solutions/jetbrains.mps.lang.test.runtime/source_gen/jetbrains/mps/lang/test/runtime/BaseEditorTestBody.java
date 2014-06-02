@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -33,7 +34,6 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
@@ -110,6 +110,11 @@ public class BaseEditorTestBody extends BaseTestBody {
           BaseEditorTestBody.this.myFinish = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(after));
         }
         BaseEditorTestBody.this.myEditor = BaseEditorTestBody.openEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myModel, BaseEditorTestBody.this.myBefore);
+        if (BaseEditorTestBody.this.myEditor.getCurrentEditorComponent() instanceof EditorComponent) {
+          EditorComponent component = ((EditorComponent) BaseEditorTestBody.this.myEditor.getCurrentEditorComponent());
+          component.addNotify();
+          component.validate();
+        }
         BaseEditorTestBody.this.myStart.setupSelection(BaseEditorTestBody.this.myEditor);
       }
     });
