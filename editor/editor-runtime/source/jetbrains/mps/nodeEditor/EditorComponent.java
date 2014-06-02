@@ -1903,6 +1903,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
+    LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
     //i.e. we are disposed. it's too late to rebuild
     if (getEditorContext() == null) {
       return;
@@ -1932,7 +1933,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
           EditorComponent.this.add(component.getComponent());
         }
-
+        validate();
         getEditorContext().pushTracerTask("Executing rebuild liteners", true);
         for (RebuildListener listener : myRebuildListeners) {
           listener.editorRebuilt(EditorComponent.this);
