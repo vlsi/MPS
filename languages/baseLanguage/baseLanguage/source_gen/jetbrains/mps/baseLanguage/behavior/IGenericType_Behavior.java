@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Queue;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -28,11 +28,7 @@ public class IGenericType_Behavior {
   }
 
   public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
-    SNode copy = SNodeOperations.copyNode(thisNode);
-    for (SNode c : ListSequence.fromList(SNodeOperations.getChildren(copy)).toListSequence()) {
-      SNodeOperations.deleteNode(c);
-    }
-    return copy;
+    return thisNode;
   }
 
   public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {

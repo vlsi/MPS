@@ -1912,38 +1912,47 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (getComponents().length > 0) {
-          removeAll();
-        }
-
-        if (events != null) {
-          revertErrorCells(events);
-        }
-
-        getEditorContext().pushTracerTask("Running swap editor cell action", true);
-
-        runSwapCellsActions(new Runnable() {
+        TypeContextManager.getInstance().runTypecheckingAction(EditorComponent.this, new Runnable() {
           @Override
           public void run() {
-            setRootCell(createRootCell(events));
+            doRebuildEditorContent(events);
           }
         });
-        getEditorContext().popTracerTask();
-
-        for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
-          EditorComponent.this.add(component.getComponent());
-        }
-        validate();
-        getEditorContext().pushTracerTask("Executing rebuild liteners", true);
-        for (RebuildListener listener : myRebuildListeners) {
-          listener.editorRebuilt(EditorComponent.this);
-        }
-        getEditorContext().popTracerTask();
-
-        updateMessages();
       }
     });
     getEditorContext().popTracerTask();
+  }
+
+  private void doRebuildEditorContent(final List<SModelEvent> events) {
+    if (getComponents().length > 0) {
+      removeAll();
+    }
+
+    if (events != null) {
+      revertErrorCells(events);
+    }
+
+    getEditorContext().pushTracerTask("Running swap editor cell action", true);
+
+    runSwapCellsActions(new Runnable() {
+      @Override
+      public void run() {
+        setRootCell(createRootCell(events));
+      }
+    });
+    getEditorContext().popTracerTask();
+
+    for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
+      EditorComponent.this.add(component.getComponent());
+    }
+    validate();
+    getEditorContext().pushTracerTask("Executing rebuild liteners", true);
+    for (RebuildListener listener : myRebuildListeners) {
+      listener.editorRebuilt(EditorComponent.this);
+    }
+    getEditorContext().popTracerTask();
+
+    updateMessages();
   }
 
   private void fireEditorWillBeDisposed() {

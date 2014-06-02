@@ -238,18 +238,35 @@
     <nodeInfo nodeId="1213877428195" fileName="MeetType_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877428209" fileName="MeetType_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877428214" fileName="MeetType_Behavior.java" startLine="25" startPosition="19" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1344517983670962736" fileName="MeetType_Behavior.java" startLine="29" startPosition="81" endLine="30" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1344517983670962746" fileName="MeetType_Behavior.java" startLine="32" startPosition="99" endLine="33" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1344517983670962765" fileName="MeetType_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877428193" fileName="MeetType_Behavior.java" startLine="20" startPosition="126" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1344517983670962744" fileName="MeetType_Behavior.java" startLine="31" startPosition="114" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1344517983670962742" fileName="MeetType_Behavior.java" startLine="30" startPosition="52" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1213877428181" fileName="MeetType_Behavior.java" startLine="18" startPosition="79" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="29" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_eraseGenerics_5089784887112634594#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="16" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1213877428167" fileName="MeetType_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="1213877428194" fileName="MeetType_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="1344517983670962745" fileName="MeetType_Behavior.java" startLine="32" startPosition="99" endLine="33" endPosition="262" />
     <scopeInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1213877428165" varName="thisNode" />
     </scopeInfo>
+    <scopeInfo nodeId="1344517983670962743" fileName="MeetType_Behavior.java" startLine="31" startPosition="114" endLine="34" endPosition="7" />
     <scopeInfo nodeId="1213877428185" fileName="MeetType_Behavior.java" startLine="19" startPosition="29" endLine="23" endPosition="7" />
+    <scopeInfo nodeId="1344517983670962742" fileName="MeetType_Behavior.java" startLine="30" startPosition="52" endLine="35" endPosition="5">
+      <varInfo nodeId="1344517983670962758" varName="arg" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877428181" fileName="MeetType_Behavior.java" startLine="18" startPosition="79" endLine="24" endPosition="5">
       <varInfo nodeId="1213877428183" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="1344517983670952753" fileName="MeetType_Behavior.java" startLine="29" startPosition="81" endLine="36" endPosition="16">
+      <varInfo nodeId="1344517983670962737" varName="copy" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="29" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1213877428165" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1213877428169" fileName="MeetType_Behavior.java" startLine="16" startPosition="78" endLine="26" endPosition="25">
       <varInfo nodeId="1213877428176" varName="nodes" />
@@ -258,7 +275,7 @@
     <scopeInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="16" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1213877428165" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetType_Behavior" />
+    <unitInfo nodeId="1213877428165" fileName="MeetType_Behavior.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MeetType_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1213877480052">
     <nodeInfo nodeId="1213877480052" fileName="PatternVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -291,18 +308,35 @@
     <nodeInfo nodeId="1213877496062" fileName="JoinType_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877496076" fileName="JoinType_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877496081" fileName="JoinType_Behavior.java" startLine="25" startPosition="19" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1344517983670814534" fileName="JoinType_Behavior.java" startLine="29" startPosition="81" endLine="30" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1344517983670840039" fileName="JoinType_Behavior.java" startLine="32" startPosition="99" endLine="33" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1344517983670843136" fileName="JoinType_Behavior.java" startLine="35" startPosition="5" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877496060" fileName="JoinType_Behavior.java" startLine="20" startPosition="126" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1344517983670836877" fileName="JoinType_Behavior.java" startLine="31" startPosition="114" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1344517983670818028" fileName="JoinType_Behavior.java" startLine="30" startPosition="52" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1213877496048" fileName="JoinType_Behavior.java" startLine="18" startPosition="79" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="29" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_eraseGenerics_5089784887112634594#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="16" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1213877496087" fileName="JoinType_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="1213877496061" fileName="JoinType_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="1344517983670836878" fileName="JoinType_Behavior.java" startLine="32" startPosition="99" endLine="33" endPosition="262" />
     <scopeInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1213877496034" varName="thisNode" />
     </scopeInfo>
+    <scopeInfo nodeId="1344517983670818029" fileName="JoinType_Behavior.java" startLine="31" startPosition="114" endLine="34" endPosition="7" />
     <scopeInfo nodeId="1213877496052" fileName="JoinType_Behavior.java" startLine="19" startPosition="29" endLine="23" endPosition="7" />
+    <scopeInfo nodeId="1344517983670818028" fileName="JoinType_Behavior.java" startLine="30" startPosition="52" endLine="35" endPosition="5">
+      <varInfo nodeId="1344517983670818032" varName="arg" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877496048" fileName="JoinType_Behavior.java" startLine="18" startPosition="79" endLine="24" endPosition="5">
       <varInfo nodeId="1213877496050" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="1344517983670748451" fileName="JoinType_Behavior.java" startLine="29" startPosition="81" endLine="36" endPosition="16">
+      <varInfo nodeId="1344517983670814535" varName="copy" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="29" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1213877496034" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1213877496036" fileName="JoinType_Behavior.java" startLine="16" startPosition="78" endLine="26" endPosition="25">
       <varInfo nodeId="1213877496043" varName="nodes" />
@@ -311,7 +345,7 @@
     <scopeInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="16" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1213877496034" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.JoinType_Behavior" />
+    <unitInfo nodeId="1213877496034" fileName="JoinType_Behavior.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.JoinType_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1213877521567">
     <nodeInfo nodeId="1213877521570" fileName="FindSourceBlock_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
