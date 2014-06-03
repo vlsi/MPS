@@ -35,6 +35,7 @@ import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
@@ -52,6 +53,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -290,12 +292,15 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
+        final ClassLoaderManager manager = ClassLoaderManager.getInstance();
+        manager.stopListening();
+        Collection<SModule> projectModules = ModuleRepositoryFacade.getInstance().getModules(StandaloneMPSProject.this, SModule.class);
+        manager.unloadClasses(projectModules, new EmptyProgressMonitor());
         ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
-
+        manager.startListening();
         CleanupManager.getInstance().cleanup();
-
         if (ProjectManager.getInstance().getOpenProjects().length > 0) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+          manager.reloadAll(new EmptyProgressMonitor());
         }
       }
     });

@@ -25,8 +25,10 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.smodel.DisposedRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
@@ -98,11 +100,11 @@ public class ClassLoaderManager implements CoreComponent {
   @Override
   public void init() {
     if (INSTANCE != null) {
-      throw new IllegalStateException("already initialized");
+      throw new IllegalStateException("ClassLoaderManager is already initialized");
     }
     INSTANCE = this;
     addClassesHandler(SModelRootClassesListener.INSTANCE);
-    myRepository.addRepositoryListener(myRepositoryListener);
+    startListening();
     FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
       @Override
       public SModuleFacet create() {
@@ -119,7 +121,7 @@ public class ClassLoaderManager implements CoreComponent {
         unloadClasses(myRepository.getModules(), new EmptyProgressMonitor());
       }
     });
-    myRepository.removeRepositoryListener(myRepositoryListener);
+    stopListening();
     INSTANCE = null;
   }
 
@@ -139,8 +141,8 @@ public class ClassLoaderManager implements CoreComponent {
 
   @Nullable
   public Class getClass(SModule module, String classFqName) {
-    // todo: make version without possible exception and with Language instead of SModule argument?
-    // todo: add onlyFromSelf argument?
+    assert !(module.getRepository() instanceof DisposedRepository) : "Cannot get class from disposed module";
+
     if (!canLoad(module)) {
       throw new IllegalArgumentException("Module " + module.getModuleName() + " can't be start point for classes loading");
     }
@@ -427,6 +429,14 @@ public class ClassLoaderManager implements CoreComponent {
     return entries;
   }
 
+  public void stopListening() {
+    myRepository.removeRepositoryListener(myRepositoryListener);
+  }
+
+  public void startListening() {
+    myRepository.addRepositoryListener(myRepositoryListener);
+  }
+
   //---------------deprecated part------------------
   // Suggesting that this method should be in the main api of this class. Eager to remove public access to loadClasses/unloadClasses
   // methods, because it violates the inner organisation of class loading.
@@ -463,5 +473,4 @@ public class ClassLoaderManager implements CoreComponent {
   public void removeReloadHandler(ReloadListener handler) {
     removeClassesHandler(handler);
   }
-
 }

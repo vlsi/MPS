@@ -30,8 +30,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
-* Created by alexeyka on 3/7/14.
-*/
+ * @author Alex Pyshkin  3/7/14.
+ */
 class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
   private static final Logger LOG = LogManager.getLogger(ClassLoaderManagerRepositoryListener.class);
 
