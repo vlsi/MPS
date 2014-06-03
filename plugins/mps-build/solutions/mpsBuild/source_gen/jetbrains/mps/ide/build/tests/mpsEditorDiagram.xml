@@ -94,20 +94,12 @@
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.diagram.testLanguage.jar" />
     </jar>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.diagram.testLanguage-generator.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage#2154068179223227585" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.diagram.testLanguage-generator-template">
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.diagram.testLanguage-languageModels">
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.diagram.testLanguage-src.jar">
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/source_gen" />
       <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" />
       <zipfileset file="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/jetbrains.mps.lang.editor.diagram.testLanguage.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.diagram.testLanguage-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-diagramEditor-test-jetbrains.mps.lang.editor.diagram.testLanguage-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.diagram.tests.jar" />
@@ -158,7 +150,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.editor.figures.sandbox, java.compile.jetbrains.mps.lang.editor.diagram.tests, java.compile.jetbrains.mps.lang.editor.diagram.testLanguage, java.compile.jetbrains.mps.lang.editor.diagram.testLanguage#2154068179223227585" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.editor.figures.sandbox, java.compile.jetbrains.mps.lang.editor.diagram.tests, java.compile.jetbrains.mps.lang.editor.diagram.testLanguage" />
   
   <target name="processResources" />
   
@@ -451,50 +443,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.diagram.testLanguage#2154068179223227585" depends="java.compile.jetbrains.mps.lang.editor.diagram.testLanguage, fetchDependencies">
-    <mkdir dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage#2154068179223227585" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage#2154068179223227585" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.3.2.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.testLanguage#2154068179223227585">
-      <fileset dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="test.editorDiagram" depends="assemble">
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -572,7 +520,6 @@
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
     <path id="mps.tests.path">
-      <pathelement location="${build.layout}/tests/jetbrains.mps.lang.editor.diagram.testLanguage-generator.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.editor.diagram.testLanguage.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.editor.diagram.tests.jar" />
       <pathelement location="${build.layout}/tests/jetbrains.mps.lang.editor.figures.sandbox.jar" />
@@ -612,7 +559,6 @@
   <target name="cleanSources">
     <delete dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/source_gen" />
     <delete dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.figures.sandbox/source_gen" />
-    <delete dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.testLanguage/generator/source_gen" />
     <delete dir="${basedir}/plugins/diagramEditor/test/jetbrains.mps.lang.editor.diagram.tests/test_gen" />
   </target>
 </project>

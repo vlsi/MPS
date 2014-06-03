@@ -43,7 +43,7 @@
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/languages/jetbrains.mps.samples.xmlPersistence.build-src.jar">
-      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" />
       <zipfileset file="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/jetbrains.mps.samples.xmlPersistence.build.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence.build-models" prefix="module/models" />
     </jar>
@@ -65,7 +65,7 @@
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin-src.jar">
-      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" />
       <zipfileset file="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence.ideaPlugin-models" prefix="module/models" />
     </jar>
@@ -90,8 +90,8 @@
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/lib/jetbrains.mps.samples.xmlPersistence-src.jar">
-      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen" includes="**/*.java" />
-      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" includes="**/*.java" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" />
       <zipfileset file="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence-models" prefix="module/models" />
     </jar>
@@ -125,7 +125,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true">
       <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
