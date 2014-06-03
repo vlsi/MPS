@@ -4,8 +4,8 @@
   <unitInfo fileName="ComponentSet_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_BehaviorDescriptor" />
   <unitInfo fileName="Component_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.Component_BehaviorDescriptor" />
   <unitInfo fileName="Dependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.Dependency_BehaviorDescriptor" />
-  <unitInfo fileName="InPort_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.InPort_BehaviorDescriptor" />
-  <unitInfo fileName="OutPort_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.OutPort_BehaviorDescriptor" />
+  <unitInfo fileName="InPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.InPort_BehaviorDescriptor" />
+  <unitInfo fileName="OutPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.OutPort_BehaviorDescriptor" />
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365528900259">
     <nodeInfo nodeId="9095678365528919653" fileName="ComponentSet_Behavior.java" startLine="16" startPosition="50" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9095678365528900259" fileName="ComponentSet_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
