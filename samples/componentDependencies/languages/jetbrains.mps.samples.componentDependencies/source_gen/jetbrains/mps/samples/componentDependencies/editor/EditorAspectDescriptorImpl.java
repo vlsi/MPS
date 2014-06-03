@@ -26,9 +26,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Edito
       case 2:
         return Arrays.asList(new ConceptEditor[]{new Dependency_Editor(), new Dependency_diagram_Editor(), new Dependency_table_Editor()});
       case 3:
-        return Arrays.asList(new ConceptEditor[]{new InPort_Editor(), new InPort_table_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new InPort_Editor(), new InPort_diagram_Editor(), new InPort_table_Editor()});
       case 4:
-        return Arrays.asList(new ConceptEditor[]{new OutPort_Editor(), new OutPort_table_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new OutPort_Editor(), new OutPort_diagram_Editor(), new OutPort_table_Editor()});
       default:
     }
     return Collections.<ConceptEditor>emptyList();

@@ -55,7 +55,11 @@ public class ComponentSet_table_Editor extends DefaultNodeEditor {
               return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(column - 1), "in", true)).first();
             }
             if (column == 0) {
-              return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(row - 1), "out", true)).first();
+              SNode component = ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(row - 1);
+              if (ListSequence.fromList(SLinkOperations.getTargets(component, "out", true)).isEmpty()) {
+                return component;
+              }
+              return ListSequence.fromList(SLinkOperations.getTargets(component, "out", true)).first();
             }
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(row - 1), "dep", true)).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
