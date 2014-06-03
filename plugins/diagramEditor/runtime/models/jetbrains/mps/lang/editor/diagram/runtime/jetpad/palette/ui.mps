@@ -1510,7 +1510,7 @@
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3607386276087791925" nodeInfo="nn">
                   <link role="classifier" roleId="tpee.1144433057691" targetNodeId="kbmk.~GridConstraints" resolveInfo="GridConstraints" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="kbmk.~GridConstraints%dANCHOR_CENTER" resolveInfo="ANCHOR_CENTER" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="kbmk.~GridConstraints%dANCHOR_NORTH" resolveInfo="ANCHOR_NORTH" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3607386276087791926" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="kbmk.~GridConstraints%dFILL_NONE" resolveInfo="FILL_NONE" />

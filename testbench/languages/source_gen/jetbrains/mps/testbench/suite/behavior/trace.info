@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="IModuleRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.IModuleRef_BehaviorDescriptor" />
-  <unitInfo fileName="ITestRef_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
+  <unitInfo fileName="IModuleRef_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.IModuleRef_BehaviorDescriptor" />
+  <unitInfo fileName="ITestRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ITestRef_BehaviorDescriptor" />
   <unitInfo fileName="JUnit3TestCaseRef_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit3TestCaseRef_BehaviorDescriptor" />
   <unitInfo fileName="JUnit4TestCaseRef_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.JUnit4TestCaseRef_BehaviorDescriptor" />
   <unitInfo fileName="ModuleSuite_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.testbench.suite.behavior.ModuleSuite_BehaviorDescriptor" />
