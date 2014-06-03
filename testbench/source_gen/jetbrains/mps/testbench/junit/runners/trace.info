@@ -901,141 +901,142 @@
     <unitInfo nodeId="9085186120773985667" fileName="misc.xml" startLine="1" startPosition="0" endLine="11" endPosition="10" unitName="jetbrains.mps.testbench.junit.runners.misc" />
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/935017990628671531">
-    <nodeInfo nodeId="115383379929991185" fileName="TeamCityParameterized.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />
-    <nodeInfo nodeId="935017990628671596" fileName="TeamCityParameterized.java" startLine="28" startPosition="88" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="115383379930028355" fileName="TeamCityParameterized.java" startLine="29" startPosition="17" endLine="30" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105519997960710100" fileName="TeamCityParameterized.java" startLine="33" startPosition="99" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935017990628671600" fileName="TeamCityParameterized.java" startLine="34" startPosition="51" endLine="35" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935017990628671619" fileName="TeamCityParameterized.java" startLine="36" startPosition="53" endLine="37" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935017990628671629" fileName="TeamCityParameterized.java" startLine="37" startPosition="171" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105519997960713812" fileName="TeamCityParameterized.java" startLine="39" startPosition="5" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="115383379929983971" fileName="TeamCityParameterized.java" startLine="43" startPosition="40" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="115383379930116224" fileName="TeamCityParameterized.java" startLine="47" startPosition="53" endLine="48" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="115383379930123207" fileName="TeamCityParameterized.java" startLine="51" startPosition="64" endLine="52" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="115383379930123224" fileName="TeamCityParameterized.java" startLine="53" startPosition="9" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="115383379930123215" fileName="TeamCityParameterized.java" startLine="55" startPosition="15" endLine="56" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="115383379930123219" fileName="TeamCityParameterized.java" startLine="56" startPosition="58" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935017990628671651" fileName="TeamCityParameterized.java" startLine="62" startPosition="85" endLine="63" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935017990628671671" fileName="TeamCityParameterized.java" startLine="66" startPosition="92" endLine="67" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935017990628671684" fileName="TeamCityParameterized.java" startLine="68" startPosition="42" endLine="69" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935017990628671699" fileName="TeamCityParameterized.java" startLine="70" startPosition="73" endLine="71" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935017990628671701" fileName="TeamCityParameterized.java" startLine="73" startPosition="5" endLine="74" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="935017990628671537" fileName="TeamCityParameterized.java" startLine="78" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="fParameterSetNumber" />
-    <nodeInfo nodeId="935017990628671540" fileName="TeamCityParameterized.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="fParameterList" />
-    <nodeInfo nodeId="935017990628671711" fileName="TeamCityParameterized.java" startLine="81" startPosition="125" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="935017990628671713" fileName="TeamCityParameterized.java" startLine="82" startPosition="18" endLine="83" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935017990628671717" fileName="TeamCityParameterized.java" startLine="83" startPosition="37" endLine="84" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935017990628671723" fileName="TeamCityParameterized.java" startLine="88" startPosition="49" endLine="89" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935017990628671751" fileName="TeamCityParameterized.java" startLine="93" startPosition="11" endLine="94" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935017990628671736" fileName="TeamCityParameterized.java" startLine="95" startPosition="38" endLine="96" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="935017990628671758" fileName="TeamCityParameterized.java" startLine="101" startPosition="32" endLine="102" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935017990628671805" fileName="TeamCityParameterized.java" startLine="102" startPosition="67" endLine="103" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935017990628671811" fileName="TeamCityParameterized.java" startLine="107" startPosition="61" endLine="108" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935017990628671825" fileName="TeamCityParameterized.java" startLine="112" startPosition="64" endLine="113" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935017990628671830" fileName="TeamCityParameterized.java" startLine="117" startPosition="58" endLine="118" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="115383379929983963" fileName="TeamCityParameterized.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
-    <nodeInfo nodeId="115383379929983972" fileName="TeamCityParameterized.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describeChild#(Lorg/junit/runner/Runner;)Lorg/junit/runner/Description;" />
-    <nodeInfo nodeId="935017990628671692" fileName="TeamCityParameterized.java" startLine="69" startPosition="54" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="935017990628671589" fileName="TeamCityParameterized.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TeamCityParameterized#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
-    <nodeInfo nodeId="935017990628671607" fileName="TeamCityParameterized.java" startLine="35" startPosition="70" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="2105519997960372120" fileName="TeamCityParameterized.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getParametersList#(Lorg/junit/runners/model/TestClass;)Ljava/util/List;" />
-    <nodeInfo nodeId="935017990628671556" fileName="TeamCityParameterized.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTest#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="935017990628671566" fileName="TeamCityParameterized.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testName#(Lorg/junit/runners/model/FrameworkMethod;)Ljava/lang/String;" />
-    <nodeInfo nodeId="935017990628671571" fileName="TeamCityParameterized.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateConstructor#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="935017990628671577" fileName="TeamCityParameterized.java" startLine="116" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classBlock#(Lorg/junit/runner/notification/RunNotifier;)Lorg/junit/runners/model/Statement;" />
-    <nodeInfo nodeId="935017990628671545" fileName="TeamCityParameterized.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestClassRunnerForParameters#(Ljava/lang/Class;Ljava/util/List;I)V" />
-    <nodeInfo nodeId="935017990628671733" fileName="TeamCityParameterized.java" startLine="92" startPosition="55" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="935017990628671563" fileName="TeamCityParameterized.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="115383379930123213" fileName="TeamCityParameterized.java" startLine="52" startPosition="72" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="935017990628671679" fileName="TeamCityParameterized.java" startLine="67" startPosition="98" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="935017990628671559" fileName="TeamCityParameterized.java" startLine="92" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="computeParams#()[Ljava/lang/Object;" />
-    <nodeInfo nodeId="2105519997962151905" fileName="TeamCityParameterized.java" startLine="33" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChildRunners#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)Ljava/util/List;" />
-    <nodeInfo nodeId="115383379929983982" fileName="TeamCityParameterized.java" startLine="51" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
-    <nodeInfo nodeId="2105519997959978226" fileName="TeamCityParameterized.java" startLine="66" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getParametersMethod#(Lorg/junit/runners/model/TestClass;)Lorg/junit/runners/model/FrameworkMethod;" />
-    <scopeInfo nodeId="115383379929983969" fileName="TeamCityParameterized.java" startLine="43" startPosition="40" endLine="44" endPosition="20" />
-    <scopeInfo nodeId="115383379929983979" fileName="TeamCityParameterized.java" startLine="47" startPosition="53" endLine="48" endPosition="34" />
-    <scopeInfo nodeId="115383379930123223" fileName="TeamCityParameterized.java" startLine="53" startPosition="9" endLine="54" endPosition="30" />
-    <scopeInfo nodeId="2105519997960372123" fileName="TeamCityParameterized.java" startLine="62" startPosition="85" endLine="63" endPosition="79" />
-    <scopeInfo nodeId="935017990628671698" fileName="TeamCityParameterized.java" startLine="70" startPosition="73" endLine="71" endPosition="20" />
-    <scopeInfo nodeId="935017990628671722" fileName="TeamCityParameterized.java" startLine="88" startPosition="49" endLine="89" endPosition="78" />
-    <scopeInfo nodeId="935017990628671750" fileName="TeamCityParameterized.java" startLine="93" startPosition="11" endLine="94" endPosition="55" />
-    <scopeInfo nodeId="935017990628671734" fileName="TeamCityParameterized.java" startLine="95" startPosition="0" endLine="96" endPosition="185">
+    <nodeInfo nodeId="115383379929991185" fileName="TeamCityParameterized.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="children" />
+    <nodeInfo nodeId="935017990628671596" fileName="TeamCityParameterized.java" startLine="30" startPosition="88" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="115383379930028355" fileName="TeamCityParameterized.java" startLine="31" startPosition="17" endLine="32" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105519997960710100" fileName="TeamCityParameterized.java" startLine="35" startPosition="99" endLine="36" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671600" fileName="TeamCityParameterized.java" startLine="36" startPosition="51" endLine="37" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671619" fileName="TeamCityParameterized.java" startLine="38" startPosition="53" endLine="39" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671629" fileName="TeamCityParameterized.java" startLine="39" startPosition="171" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105519997960713812" fileName="TeamCityParameterized.java" startLine="41" startPosition="5" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="115383379929983971" fileName="TeamCityParameterized.java" startLine="45" startPosition="40" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="115383379930116224" fileName="TeamCityParameterized.java" startLine="49" startPosition="53" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="115383379930123207" fileName="TeamCityParameterized.java" startLine="53" startPosition="64" endLine="54" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7248003801508782926" fileName="TeamCityParameterized.java" startLine="55" startPosition="9" endLine="56" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="115383379930123224" fileName="TeamCityParameterized.java" startLine="56" startPosition="54" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="115383379930123215" fileName="TeamCityParameterized.java" startLine="58" startPosition="15" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="115383379930123219" fileName="TeamCityParameterized.java" startLine="59" startPosition="58" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671651" fileName="TeamCityParameterized.java" startLine="65" startPosition="85" endLine="66" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671671" fileName="TeamCityParameterized.java" startLine="69" startPosition="92" endLine="70" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671684" fileName="TeamCityParameterized.java" startLine="71" startPosition="42" endLine="72" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671699" fileName="TeamCityParameterized.java" startLine="73" startPosition="73" endLine="74" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671701" fileName="TeamCityParameterized.java" startLine="76" startPosition="5" endLine="77" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="935017990628671537" fileName="TeamCityParameterized.java" startLine="81" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="fParameterSetNumber" />
+    <nodeInfo nodeId="935017990628671540" fileName="TeamCityParameterized.java" startLine="82" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="fParameterList" />
+    <nodeInfo nodeId="935017990628671711" fileName="TeamCityParameterized.java" startLine="84" startPosition="125" endLine="85" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="935017990628671713" fileName="TeamCityParameterized.java" startLine="85" startPosition="18" endLine="86" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671717" fileName="TeamCityParameterized.java" startLine="86" startPosition="37" endLine="87" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671723" fileName="TeamCityParameterized.java" startLine="91" startPosition="49" endLine="92" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671751" fileName="TeamCityParameterized.java" startLine="96" startPosition="11" endLine="97" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671736" fileName="TeamCityParameterized.java" startLine="98" startPosition="38" endLine="99" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="935017990628671758" fileName="TeamCityParameterized.java" startLine="104" startPosition="32" endLine="105" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="935017990628671805" fileName="TeamCityParameterized.java" startLine="105" startPosition="67" endLine="106" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671811" fileName="TeamCityParameterized.java" startLine="110" startPosition="61" endLine="111" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="935017990628671825" fileName="TeamCityParameterized.java" startLine="115" startPosition="64" endLine="116" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935017990628671830" fileName="TeamCityParameterized.java" startLine="120" startPosition="58" endLine="121" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="115383379929983963" fileName="TeamCityParameterized.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#()Ljava/util/List;" />
+    <nodeInfo nodeId="115383379929983972" fileName="TeamCityParameterized.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="describeChild#(Lorg/junit/runner/Runner;)Lorg/junit/runner/Description;" />
+    <nodeInfo nodeId="935017990628671692" fileName="TeamCityParameterized.java" startLine="72" startPosition="54" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="935017990628671589" fileName="TeamCityParameterized.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TeamCityParameterized#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
+    <nodeInfo nodeId="935017990628671607" fileName="TeamCityParameterized.java" startLine="37" startPosition="70" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="2105519997960372120" fileName="TeamCityParameterized.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getParametersList#(Lorg/junit/runners/model/TestClass;)Ljava/util/List;" />
+    <nodeInfo nodeId="935017990628671556" fileName="TeamCityParameterized.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTest#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="935017990628671566" fileName="TeamCityParameterized.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testName#(Lorg/junit/runners/model/FrameworkMethod;)Ljava/lang/String;" />
+    <nodeInfo nodeId="935017990628671571" fileName="TeamCityParameterized.java" startLine="114" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateConstructor#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="935017990628671577" fileName="TeamCityParameterized.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classBlock#(Lorg/junit/runner/notification/RunNotifier;)Lorg/junit/runners/model/Statement;" />
+    <nodeInfo nodeId="935017990628671545" fileName="TeamCityParameterized.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestClassRunnerForParameters#(Ljava/lang/Class;Ljava/util/List;I)V" />
+    <nodeInfo nodeId="935017990628671733" fileName="TeamCityParameterized.java" startLine="95" startPosition="55" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="935017990628671563" fileName="TeamCityParameterized.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="935017990628671679" fileName="TeamCityParameterized.java" startLine="70" startPosition="98" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="115383379930123213" fileName="TeamCityParameterized.java" startLine="54" startPosition="72" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="935017990628671559" fileName="TeamCityParameterized.java" startLine="95" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="computeParams#()[Ljava/lang/Object;" />
+    <nodeInfo nodeId="2105519997962151905" fileName="TeamCityParameterized.java" startLine="35" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChildRunners#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)Ljava/util/List;" />
+    <nodeInfo nodeId="115383379929983982" fileName="TeamCityParameterized.java" startLine="53" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runChild#(Lorg/junit/runner/Runner;Lorg/junit/runner/notification/RunNotifier;)V" />
+    <nodeInfo nodeId="2105519997959978226" fileName="TeamCityParameterized.java" startLine="69" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getParametersMethod#(Lorg/junit/runners/model/TestClass;)Lorg/junit/runners/model/FrameworkMethod;" />
+    <scopeInfo nodeId="115383379929983969" fileName="TeamCityParameterized.java" startLine="45" startPosition="40" endLine="46" endPosition="20" />
+    <scopeInfo nodeId="115383379929983979" fileName="TeamCityParameterized.java" startLine="49" startPosition="53" endLine="50" endPosition="34" />
+    <scopeInfo nodeId="2105519997960372123" fileName="TeamCityParameterized.java" startLine="65" startPosition="85" endLine="66" endPosition="79" />
+    <scopeInfo nodeId="935017990628671698" fileName="TeamCityParameterized.java" startLine="73" startPosition="73" endLine="74" endPosition="20" />
+    <scopeInfo nodeId="935017990628671722" fileName="TeamCityParameterized.java" startLine="91" startPosition="49" endLine="92" endPosition="78" />
+    <scopeInfo nodeId="935017990628671750" fileName="TeamCityParameterized.java" startLine="96" startPosition="11" endLine="97" endPosition="55" />
+    <scopeInfo nodeId="935017990628671734" fileName="TeamCityParameterized.java" startLine="98" startPosition="0" endLine="99" endPosition="185">
       <varInfo nodeId="935017990628671748" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671735" fileName="TeamCityParameterized.java" startLine="95" startPosition="38" endLine="96" endPosition="185" />
-    <scopeInfo nodeId="935017990628671810" fileName="TeamCityParameterized.java" startLine="107" startPosition="61" endLine="108" endPosition="100" />
-    <scopeInfo nodeId="935017990628671824" fileName="TeamCityParameterized.java" startLine="112" startPosition="64" endLine="113" endPosition="41" />
-    <scopeInfo nodeId="935017990628671829" fileName="TeamCityParameterized.java" startLine="117" startPosition="58" endLine="118" endPosition="39" />
-    <scopeInfo nodeId="935017990628671595" fileName="TeamCityParameterized.java" startLine="28" startPosition="88" endLine="30" endPosition="50" />
-    <scopeInfo nodeId="935017990628671618" fileName="TeamCityParameterized.java" startLine="36" startPosition="53" endLine="38" endPosition="26">
+    <scopeInfo nodeId="935017990628671735" fileName="TeamCityParameterized.java" startLine="98" startPosition="38" endLine="99" endPosition="185" />
+    <scopeInfo nodeId="935017990628671810" fileName="TeamCityParameterized.java" startLine="110" startPosition="61" endLine="111" endPosition="100" />
+    <scopeInfo nodeId="935017990628671824" fileName="TeamCityParameterized.java" startLine="115" startPosition="64" endLine="116" endPosition="41" />
+    <scopeInfo nodeId="935017990628671829" fileName="TeamCityParameterized.java" startLine="120" startPosition="58" endLine="121" endPosition="39" />
+    <scopeInfo nodeId="935017990628671595" fileName="TeamCityParameterized.java" startLine="30" startPosition="88" endLine="32" endPosition="50" />
+    <scopeInfo nodeId="935017990628671618" fileName="TeamCityParameterized.java" startLine="38" startPosition="53" endLine="40" endPosition="26">
       <varInfo nodeId="935017990628671620" varName="runner" />
     </scopeInfo>
-    <scopeInfo nodeId="115383379930123214" fileName="TeamCityParameterized.java" startLine="55" startPosition="15" endLine="57" endPosition="28" />
-    <scopeInfo nodeId="935017990628671757" fileName="TeamCityParameterized.java" startLine="101" startPosition="32" endLine="103" endPosition="59">
+    <scopeInfo nodeId="115383379930123223" fileName="TeamCityParameterized.java" startLine="55" startPosition="9" endLine="57" endPosition="30" />
+    <scopeInfo nodeId="115383379930123214" fileName="TeamCityParameterized.java" startLine="58" startPosition="15" endLine="60" endPosition="28" />
+    <scopeInfo nodeId="935017990628671757" fileName="TeamCityParameterized.java" startLine="104" startPosition="32" endLine="106" endPosition="59">
       <varInfo nodeId="935017990628671759" varName="firstArg" />
     </scopeInfo>
-    <scopeInfo nodeId="115383379929983963" fileName="TeamCityParameterized.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="115383379929983972" fileName="TeamCityParameterized.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="115383379929983963" fileName="TeamCityParameterized.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="115383379929983972" fileName="TeamCityParameterized.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="115383379929983976" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671710" fileName="TeamCityParameterized.java" startLine="81" startPosition="125" endLine="84" endPosition="30" />
-    <scopeInfo nodeId="935017990628671589" fileName="TeamCityParameterized.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="935017990628671710" fileName="TeamCityParameterized.java" startLine="84" startPosition="125" endLine="87" endPosition="30" />
+    <scopeInfo nodeId="935017990628671589" fileName="TeamCityParameterized.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="2105519997962111457" varName="builder" />
       <varInfo nodeId="935017990628671592" varName="klass" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671607" fileName="TeamCityParameterized.java" startLine="35" startPosition="70" endLine="39" endPosition="5">
+    <scopeInfo nodeId="935017990628671607" fileName="TeamCityParameterized.java" startLine="37" startPosition="70" endLine="41" endPosition="5">
       <varInfo nodeId="935017990628671613" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2105519997960372120" fileName="TeamCityParameterized.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="2105519997960372120" fileName="TeamCityParameterized.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="2105519997960375782" varName="klass" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671683" fileName="TeamCityParameterized.java" startLine="68" startPosition="42" endLine="72" endPosition="7">
+    <scopeInfo nodeId="935017990628671683" fileName="TeamCityParameterized.java" startLine="71" startPosition="42" endLine="75" endPosition="7">
       <varInfo nodeId="935017990628671685" varName="modifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671556" fileName="TeamCityParameterized.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="935017990628671566" fileName="TeamCityParameterized.java" startLine="106" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="935017990628671556" fileName="TeamCityParameterized.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="935017990628671566" fileName="TeamCityParameterized.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="935017990628671569" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671571" fileName="TeamCityParameterized.java" startLine="111" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="935017990628671571" fileName="TeamCityParameterized.java" startLine="114" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="935017990628671574" varName="errors" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671577" fileName="TeamCityParameterized.java" startLine="116" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="935017990628671577" fileName="TeamCityParameterized.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="935017990628671580" varName="notifier" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671545" fileName="TeamCityParameterized.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="935017990628671545" fileName="TeamCityParameterized.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="935017990628671554" varName="i" />
       <varInfo nodeId="935017990628671550" varName="parameterList" />
       <varInfo nodeId="935017990628671547" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671732" fileName="TeamCityParameterized.java" startLine="92" startPosition="55" endLine="97" endPosition="7" />
-    <scopeInfo nodeId="935017990628671563" fileName="TeamCityParameterized.java" startLine="100" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="935017990628671679" fileName="TeamCityParameterized.java" startLine="67" startPosition="98" endLine="73" endPosition="5">
+    <scopeInfo nodeId="935017990628671732" fileName="TeamCityParameterized.java" startLine="95" startPosition="55" endLine="100" endPosition="7" />
+    <scopeInfo nodeId="935017990628671563" fileName="TeamCityParameterized.java" startLine="103" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="935017990628671679" fileName="TeamCityParameterized.java" startLine="70" startPosition="98" endLine="76" endPosition="5">
       <varInfo nodeId="935017990628671681" varName="each" />
     </scopeInfo>
-    <scopeInfo nodeId="2105519997962151916" fileName="TeamCityParameterized.java" startLine="33" startPosition="99" endLine="40" endPosition="19">
+    <scopeInfo nodeId="2105519997962151916" fileName="TeamCityParameterized.java" startLine="35" startPosition="99" endLine="42" endPosition="19">
       <varInfo nodeId="935017990628671601" varName="parametersList" />
       <varInfo nodeId="2105519997960710101" varName="runners" />
     </scopeInfo>
-    <scopeInfo nodeId="115383379929983991" fileName="TeamCityParameterized.java" startLine="51" startPosition="64" endLine="58" endPosition="5">
+    <scopeInfo nodeId="935017990628671559" fileName="TeamCityParameterized.java" startLine="95" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="115383379929983991" fileName="TeamCityParameterized.java" startLine="53" startPosition="64" endLine="61" endPosition="5">
       <varInfo nodeId="115383379930123208" varName="runNotifier" />
     </scopeInfo>
-    <scopeInfo nodeId="935017990628671559" fileName="TeamCityParameterized.java" startLine="92" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="2105519997959978229" fileName="TeamCityParameterized.java" startLine="66" startPosition="92" endLine="74" endPosition="94">
+    <scopeInfo nodeId="2105519997959978229" fileName="TeamCityParameterized.java" startLine="69" startPosition="92" endLine="77" endPosition="94">
       <varInfo nodeId="935017990628671672" varName="methods" />
     </scopeInfo>
-    <scopeInfo nodeId="2105519997962151905" fileName="TeamCityParameterized.java" startLine="33" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="2105519997962151905" fileName="TeamCityParameterized.java" startLine="35" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="2105519997962151914" varName="builder" />
       <varInfo nodeId="2105519997962151907" varName="klass" />
     </scopeInfo>
-    <scopeInfo nodeId="115383379929983982" fileName="TeamCityParameterized.java" startLine="51" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="115383379929983982" fileName="TeamCityParameterized.java" startLine="53" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="115383379929983988" varName="notifier" />
       <varInfo nodeId="115383379929983986" varName="runner" />
     </scopeInfo>
-    <scopeInfo nodeId="2105519997959978226" fileName="TeamCityParameterized.java" startLine="66" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="2105519997959978226" fileName="TeamCityParameterized.java" startLine="69" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="2105519997959978538" varName="testClass" />
     </scopeInfo>
-    <unitInfo nodeId="935017990628671534" fileName="TeamCityParameterized.java" startLine="77" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.TeamCityParameterized$TestClassRunnerForParameters" />
-    <unitInfo nodeId="935017990628671531" fileName="TeamCityParameterized.java" startLine="22" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.TeamCityParameterized" />
+    <unitInfo nodeId="935017990628671534" fileName="TeamCityParameterized.java" startLine="80" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.TeamCityParameterized$TestClassRunnerForParameters" />
+    <unitInfo nodeId="935017990628671531" fileName="TeamCityParameterized.java" startLine="24" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.TeamCityParameterized" />
   </root>
 </debugInfo>
 

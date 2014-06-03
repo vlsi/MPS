@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import jetbrains.mps.testbench.junit.WatchingRunNotifier;
+import org.junit.runner.manipulation.Sorter;
+import jetbrains.mps.testbench.junit.OrderComparator;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import org.junit.runners.model.TestClass;
 import org.junit.runners.model.FrameworkMethod;
@@ -51,6 +53,7 @@ public class TeamCityParameterized extends ParentRunner<Runner> {
   protected void runChild(Runner runner, RunNotifier notifier) {
     WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
     try {
+      new Sorter(new OrderComparator()).apply(runner);
       runner.run(runNotifier);
     } finally {
       PerformanceMessenger.getInstance().generateReport();
