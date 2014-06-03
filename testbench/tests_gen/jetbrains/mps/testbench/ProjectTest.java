@@ -60,8 +60,6 @@ public class ProjectTest {
     return res;
   }
 
-
-
   @Test
   @Order(value = 1)
   public void buildModule() throws Exception {
@@ -80,6 +78,9 @@ public class ProjectTest {
   @Test
   @Order(value = 2)
   public void diffModule() throws Exception {
+    if (generationHolder.needsGeneration()) {
+      Assert.assertTrue("Can't diff a module that needs generation but didn't get any file generated", generationHolder.hasFilesGenerated());
+    }
     List<String> diffReport = generationHolder.diff();
     Assert.assertTrue("Difference:\n" + IterableUtils.join(diffReport, "\n"), diffReport.isEmpty());
 
