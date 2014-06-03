@@ -27,6 +27,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -78,7 +79,9 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   private final Map<SModuleReference, Path> myModuleToPath = new HashMap<SModuleReference, Path>();
 
-  public StandaloneMPSProject(Project project) {
+  private WatchRequestor myWatchRequestor;
+
+  public StandaloneMPSProject(final Project project) {
     super(project);
   }
 
@@ -115,6 +118,13 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   @Override
   public void initComponent() {
     super.initComponent();
+    myWatchRequestor = new WatchRequestor() {
+      private String path = myProject.getBaseDir().getPath();
+      @Override
+      public String getDirectory() {
+        return path;
+      }
+    };
   }
 
   @Override
@@ -302,11 +312,11 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   private void startWatching() {
-    ApplicationManager.getApplication().getComponent(WatchedRoots.class).addProjectWatch(myProject);
+    ApplicationManager.getApplication().getComponent(WatchedRoots.class).addGlobalWatch(myWatchRequestor);
   }
 
   private void stopWatching() {
-    ApplicationManager.getApplication().getComponent(WatchedRoots.class).removeProjectWatch(myProject);
+    ApplicationManager.getApplication().getComponent(WatchedRoots.class).removeGlobalWatch(myWatchRequestor);
   }
 
   private Path getPathForModule(SModule module) {
