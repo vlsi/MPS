@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -89,7 +88,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
   private final SAbstractConcept myNamedConcept;
   private final SNodeReference myFakeNameTopContextNode = new SNodePointer((SModelReference) null, null);
-  private final Map<SNode, String> topToSuffix = new WeakHashMap<SNode, String>();
+  private final Map<SNode, String> myTopToSuffix;
 
   public GenerationSessionContext(IOperationContext invocationContext,
                                   GenerationOptions generationOptions,
@@ -114,6 +113,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
     myUsedNames = new ConcurrentHashMap<SNodeReference, Set<String>>();
+    myTopToSuffix = new ConcurrentHashMap<SNode, String>();
   }
 
   // copy cons
@@ -130,6 +130,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myValidation = prevContext.myValidation;
     myNamedConcept = prevContext.myNamedConcept;
     myQueryProviders = prevContext.myQueryProviders;
+    myTopToSuffix = prevContext.myTopToSuffix;
     myGenerationPlan = generationPlan;
     myParameters = parameters;
     // the moment this copy cons is used, nothing happened, reuse
@@ -155,6 +156,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myGenerationPlan = prevContext.myGenerationPlan;
     myParameters = prevContext.myParameters;
     myQueryProviders = prevContext.myQueryProviders;
+    myTopToSuffix = prevContext.myTopToSuffix;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -304,7 +306,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
       }
 
       if (topmostNamed != null) {
-        String suffix = topToSuffix.get(topmostNamed);
+        String suffix = myTopToSuffix.get(topmostNamed);
         if (suffix != null) {
           uniqueNameBuffer.append('_');
           uniqueNameBuffer.append(suffix);
@@ -317,7 +319,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
             // Can't simply get rid of >>>1 as it would require rebuilding all the models where unique names were
             // used (i.e. almost every model out there).
             suffix = Integer.toString(name.hashCode() >>> 1, Character.MAX_RADIX);
-            topToSuffix.put(topmostNamed, suffix);
+            myTopToSuffix.put(topmostNamed, suffix);
             uniqueNameBuffer.append('_');
             uniqueNameBuffer.append(suffix);
           }

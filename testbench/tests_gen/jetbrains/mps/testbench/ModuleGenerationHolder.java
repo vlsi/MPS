@@ -92,11 +92,12 @@ public class ModuleGenerationHolder {
 
 
   public void build() throws Exception {
-    if (!(needsGeneration(module))) {
+    if (!(needsGeneration())) {
       isSucessful = true;
       return;
     }
-
+    // sanity check build() doesn't come after diff() (due to broken test method ordering) 
+    assert tmpPath != null;
     // <node> 
     final GenerationOptions.OptionsBuilder optBuilder = GenerationOptions.getDefaults();
     boolean isParallel = "true".equalsIgnoreCase(System.getProperty("parallel.generation"));
@@ -155,6 +156,10 @@ public class ModuleGenerationHolder {
 
   public List<String> buildWarns() {
     return myMessageHandler.getGenerationWarnings();
+  }
+
+  /*package*/ boolean hasFilesGenerated() {
+    return !(MapSequence.fromMap(path2tmp).isEmpty());
   }
 
   public List<String> diff() {
@@ -275,7 +280,7 @@ public class ModuleGenerationHolder {
     myMessageHandler.cleanUp();
   }
 
-  private static boolean needsGeneration(final SModule module) {
+  /*package*/ boolean needsGeneration() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         for (SModel descriptor : module.getModels()) {
