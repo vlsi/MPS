@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.library;
 
+import jetbrains.mps.fs.MPSDirectoryWatcher;
+import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
@@ -40,11 +42,18 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
   private final ClassLoader parent;
   private final boolean isHidden;
   private AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
+  private final WatchRequestor myWatchRequestor;
 
   SLibrary(IFile file, ClassLoader parent, boolean hidden) {
     this.file = file;
     this.parent = parent;
     this.isHidden = hidden;
+    myWatchRequestor = new WatchRequestor() {
+      @Override
+      public String getDirectory() {
+        return SLibrary.this.file.getPath();
+      }
+    };
   }
 
   public IFile getFile() {
@@ -58,6 +67,7 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
   }
 
   void attach(boolean refreshFiles) {
+    MPSDirectoryWatcher.getInstance().addGlobalWatch(myWatchRequestor);
     update(refreshFiles);
     FileSystem.getInstance().addListener(this);
   }
@@ -65,6 +75,7 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
   void dispose() {
     FileSystem.getInstance().removeListener(this);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    MPSDirectoryWatcher.getInstance().removeGlobalWatch(myWatchRequestor);
   }
 
   @Override
