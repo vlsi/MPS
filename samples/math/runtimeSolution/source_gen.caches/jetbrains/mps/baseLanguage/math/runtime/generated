@@ -33,7 +33,6 @@
     <file name="Complex.java" />
   </source>
   <source id="877422884702865830" name="BigComplexScalarOperations" hash="7ixlupwl0ukt8pcrcyh89t0hb058l8m">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="BigComplexScalarOperations.java" />
   </source>
   <source id="877422884702771040" name="BigComplex" hash="1olos5ih956a7p8fjc05scgeegz586g">

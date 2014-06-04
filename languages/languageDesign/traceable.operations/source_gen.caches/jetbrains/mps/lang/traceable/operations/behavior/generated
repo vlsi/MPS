@@ -33,6 +33,7 @@
   <source id="1262430001741703821" name="Node_CopyWithTraceOperation_Behavior" hash="1p9bn0jfuvmwbccym9s0qh0ges14tom">
     <dep model="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
     <dep model="r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Node_CopyWithTraceOperation_Behavior.java" />
   </source>
 </dependencies>

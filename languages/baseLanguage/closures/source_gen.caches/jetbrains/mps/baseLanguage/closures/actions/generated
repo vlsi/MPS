@@ -71,7 +71,9 @@
   <source id="1199651296107" name="subs_ThisExpression" hash="38est91ccsmsn1pnc4ygc2xorr6h51n">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1199711404365" name="subs_InvokeFunction" hash="-eu4uisgajf3u4vynh97yh6hrjcd9ggh" />
+  <source id="1199711404365" name="subs_InvokeFunction" hash="-eu4uisgajf3u4vynh97yh6hrjcd9ggh">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1200829951751" name="remove_ReturnStatement" hash="-c0kpcbo25ao27r1x8y3tsgxy2gxsr6w" />
   <source id="1201777162518" name="remove_YieldStatement" hash="-91dy8xidsc22h1v6uiyhv8xnzg8zw3c" />
   <source id="1229704819604" name="subsitute_ClosureControlStatement" hash="-8jg9onyugh0j2q13ni7tz1ijls84siw">

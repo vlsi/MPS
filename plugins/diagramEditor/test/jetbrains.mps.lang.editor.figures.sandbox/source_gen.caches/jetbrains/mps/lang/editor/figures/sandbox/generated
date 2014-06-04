@@ -53,7 +53,6 @@
   <source id="604142159147854337" name="MPSRectView" hash="40pkv56ysqxodyvbhi0xnjqckauk99">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MPSRectView.java" />
   </source>
   <source id="822550549815772625" name="BoxFigureExt" hash="1qyto2x6ydam9tk34b7vbrjainntk2f">

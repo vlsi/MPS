@@ -367,34 +367,14 @@
     <unitInfo nodeId="1330375798060762852" fileName="BuildLayout_CopyProcessor_Behavior.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085107723">
-    <nodeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="20" startPosition="110" endLine="21" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isImplicit_1330375798085107777#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isImplicit_1330375798085107777#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
     <scopeInfo nodeId="1330375798085107725" fileName="BuildLayout_FileSet_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1330375798085107725" fileName="BuildLayout_FileSet_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="126" />
-    <scopeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="20" startPosition="110" endLine="21" endPosition="257" />
     <scopeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1330375798085107723" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1330375798085107723" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="1330375798085107723" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1330375798085107723" varName="callerConceptFqName" />
-      <varInfo nodeId="1330375798085107723" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_FileSet_Behavior" />
-    <unitInfo nodeId="1330375798085107723" fileName="BuildLayout_FileSet_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_FileSet_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085118680">
-    <nodeInfo nodeId="1330375798085118689" fileName="BuildInputFiles_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1330375798085118689" fileName="BuildInputFiles_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1330375798085118680" fileName="BuildInputFiles_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1330375798085118680" fileName="BuildInputFiles_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isImplicit_1330375798085107777#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -410,7 +390,6 @@
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085131849">
     <nodeInfo nodeId="1330375798085131886" fileName="BuildLayout_CompileOutputOf_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1330375798085131886" fileName="BuildLayout_CompileOutputOf_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1330375798085131849" fileName="BuildLayout_CompileOutputOf_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1330375798085131849" fileName="BuildLayout_CompileOutputOf_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isImplicit_1330375798085107777#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="1330375798085131851" fileName="BuildLayout_CompileOutputOf_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -424,7 +403,6 @@
     <unitInfo nodeId="1330375798085131849" fileName="BuildLayout_CompileOutputOf_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/1330375798085137504">
-    <nodeInfo nodeId="1330375798085137541" fileName="BuildLayout_Copy_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1330375798085137541" fileName="BuildLayout_Copy_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1330375798085137504" fileName="BuildLayout_Copy_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1330375798085137504" fileName="BuildLayout_Copy_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isImplicit_1330375798085107777#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -1316,76 +1294,21 @@
     <unitInfo nodeId="4380385936562037086" fileName="BuildVarRefStringPart_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildVarRefStringPart_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4701820937132344008">
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="16" startPosition="113" endLine="17" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="21" startPosition="146" endLine="22" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="26" startPosition="85" endLine="27" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="31" startPosition="118" endLine="32" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="36" startPosition="86" endLine="37" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="41" startPosition="119" endLine="42" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getChildrenOutputDir_WithMacro_4701820937132344011#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getChildrenOutputDir_WithMacro_4701820937132344011#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPrepareSubTaskId_4701820937132344041#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPrepareSubTaskId_4701820937132344041#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAssembleSubTaskId_4701820937132344052#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getAssembleSubTaskId_4701820937132344052#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="4701820937132344010" fileName="BuildLayout_Container_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="4701820937132344010" fileName="BuildLayout_Container_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="16" startPosition="113" endLine="17" endPosition="153" />
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="21" startPosition="146" endLine="22" endPosition="301" />
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="26" startPosition="85" endLine="27" endPosition="135" />
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="31" startPosition="118" endLine="32" endPosition="268" />
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="36" startPosition="86" endLine="37" endPosition="136" />
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="41" startPosition="119" endLine="42" endPosition="269" />
     <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="4701820937132344008" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="4701820937132344008" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="4701820937132344017" varName="context" />
-      <varInfo nodeId="4701820937132344008" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="4701820937132344008" varName="callerConceptFqName" />
-      <varInfo nodeId="4701820937132344017" varName="context" />
-      <varInfo nodeId="4701820937132344008" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="4701820937132344008" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="4701820937132344008" varName="callerConceptFqName" />
-      <varInfo nodeId="4701820937132344008" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="4701820937132344008" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="4701820937132344008" varName="callerConceptFqName" />
-      <varInfo nodeId="4701820937132344008" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Container_Behavior" />
-    <unitInfo nodeId="4701820937132344008" fileName="BuildLayout_Container_Behavior.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Container_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/4701820937132391104">
     <nodeInfo nodeId="4701820937132391143" fileName="BuildNamedLayout_Behavior.java" startLine="16" startPosition="116" endLine="17" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132391143" fileName="BuildNamedLayout_Behavior.java" startLine="16" startPosition="116" endLine="17" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132391124" fileName="BuildNamedLayout_Behavior.java" startLine="20" startPosition="89" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4701820937132391124" fileName="BuildNamedLayout_Behavior.java" startLine="20" startPosition="89" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4701820937132391135" fileName="BuildNamedLayout_Behavior.java" startLine="24" startPosition="88" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4701820937132391135" fileName="BuildNamedLayout_Behavior.java" startLine="24" startPosition="88" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1368030936106737006" fileName="BuildNamedLayout_Behavior.java" startLine="29" startPosition="122" endLine="30" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1368030936106737006" fileName="BuildNamedLayout_Behavior.java" startLine="29" startPosition="122" endLine="30" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1368030936106737016" fileName="BuildNamedLayout_Behavior.java" startLine="30" startPosition="160" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1368030936106737016" fileName="BuildNamedLayout_Behavior.java" startLine="30" startPosition="160" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1368030936106737027" fileName="BuildNamedLayout_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1368030936106737027" fileName="BuildNamedLayout_Behavior.java" startLine="32" startPosition="5" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1368030936106737070" fileName="BuildNamedLayout_Behavior.java" startLine="36" startPosition="122" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1368030936106737070" fileName="BuildNamedLayout_Behavior.java" startLine="36" startPosition="122" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7117056644539885216" fileName="BuildNamedLayout_Behavior.java" startLine="40" startPosition="123" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7117056644539885216" fileName="BuildNamedLayout_Behavior.java" startLine="40" startPosition="123" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4701820937132391104" fileName="BuildNamedLayout_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4701820937132391104" fileName="BuildNamedLayout_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getChildrenOutputDir_WithMacro_4701820937132344011#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
@@ -1393,7 +1316,6 @@
     <nodeInfo nodeId="4701820937132391104" fileName="BuildNamedLayout_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPrepareSubTaskId_4701820937132344041#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="4701820937132391104" fileName="BuildNamedLayout_Behavior.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_unpack_7128123785277710736#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/UnpackHelper;Ljava/lang/Iterable;)V" />
     <nodeInfo nodeId="4701820937132391104" fileName="BuildNamedLayout_Behavior.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_location_7117056644539862594#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/DependenciesHelper;Ljava/lang/Object;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1368030936106737004" fileName="BuildNamedLayout_Behavior.java" startLine="28" startPosition="109" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1368030936106737004" fileName="BuildNamedLayout_Behavior.java" startLine="28" startPosition="109" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4701820937132391104" fileName="BuildNamedLayout_Behavior.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_appendName_1368030936106665465#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/StringBuilder;)V" />
     <scopeInfo nodeId="4701820937132391106" fileName="BuildNamedLayout_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
@@ -1712,20 +1634,12 @@
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5584673629410192611">
     <nodeInfo nodeId="5584673629410321098" fileName="BuildLayout_Behavior.java" startLine="13" startPosition="116" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5584673629410321098" fileName="BuildLayout_Behavior.java" startLine="13" startPosition="116" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963359435" fileName="BuildLayout_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1117643560963359435" fileName="BuildLayout_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1117643560963359438" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963359438" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8739007987174736714" fileName="BuildLayout_Behavior.java" startLine="25" startPosition="109" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8739007987174736714" fileName="BuildLayout_Behavior.java" startLine="25" startPosition="109" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5908258303322131066" fileName="BuildLayout_Behavior.java" startLine="29" startPosition="122" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5908258303322131066" fileName="BuildLayout_Behavior.java" startLine="29" startPosition="122" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4560297596872168902" fileName="BuildLayout_Behavior.java" startLine="31" startPosition="25" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4560297596872168902" fileName="BuildLayout_Behavior.java" startLine="31" startPosition="25" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5908258303322131073" fileName="BuildLayout_Behavior.java" startLine="33" startPosition="12" endLine="34" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5908258303322131073" fileName="BuildLayout_Behavior.java" startLine="33" startPosition="12" endLine="34" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5908258303322131090" fileName="BuildLayout_Behavior.java" startLine="34" startPosition="68" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5908258303322131090" fileName="BuildLayout_Behavior.java" startLine="34" startPosition="68" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5584673629410192611" fileName="BuildLayout_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5584673629410192611" fileName="BuildLayout_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getChildrenOutputDir_WithMacro_4701820937132344011#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
@@ -1733,8 +1647,6 @@
     <nodeInfo nodeId="5584673629410192611" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPrepareSubTaskId_4701820937132344041#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="5584673629410192611" fileName="BuildLayout_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_appendName_1368030936106665465#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/StringBuilder;)V" />
     <nodeInfo nodeId="4560297596872228198" fileName="BuildLayout_Behavior.java" startLine="33" startPosition="10" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4560297596872228198" fileName="BuildLayout_Behavior.java" startLine="33" startPosition="10" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6966570740985870786" fileName="BuildLayout_Behavior.java" startLine="30" startPosition="43" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6966570740985870786" fileName="BuildLayout_Behavior.java" startLine="30" startPosition="43" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5584673629410192611" fileName="BuildLayout_Behavior.java" startLine="29" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_unpack_7128123785277710736#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/UnpackHelper;Ljava/lang/Iterable;)V" />
     <scopeInfo nodeId="5584673629410192613" fileName="BuildLayout_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
@@ -1809,31 +1721,12 @@
     <unitInfo nodeId="5610619299013068447" fileName="BuildLayout_ImportContent_Behavior.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_ImportContent_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299013425875">
-    <nodeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="15" startPosition="84" endLine="16" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getApproximateName_5610619299013425878#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getApproximateName_5610619299013425878#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="5610619299013425877" fileName="BuildSource_SingleFile_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="5610619299013425877" fileName="BuildSource_SingleFile_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="15" startPosition="84" endLine="16" endPosition="134" />
-    <scopeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="268" />
     <scopeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="5610619299013425875" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="5610619299013425875" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="5610619299013425875" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="5610619299013425875" varName="callerConceptFqName" />
-      <varInfo nodeId="5610619299013425875" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior" />
-    <unitInfo nodeId="5610619299013425875" fileName="BuildSource_SingleFile_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299013975125">
     <nodeInfo nodeId="5610619299013975132" fileName="BuildInputSingleFile_Behavior.java" startLine="13" startPosition="87" endLine="14" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1930,31 +1823,12 @@
     <unitInfo nodeId="5610619299014446522" fileName="BuildSource_JavaLibraryExternalJar_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJar_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299014531544">
-    <nodeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="15" startPosition="84" endLine="16" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getApproximateName_5610619299014531547#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getApproximateName_5610619299014531547#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="5610619299014531546" fileName="BuildSource_SingleFolder_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="5610619299014531546" fileName="BuildSource_SingleFolder_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="15" startPosition="84" endLine="16" endPosition="134" />
-    <scopeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="270" />
     <scopeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="5610619299014531544" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="5610619299014531544" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="5610619299014531544" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="5610619299014531544" varName="callerConceptFqName" />
-      <varInfo nodeId="5610619299014531544" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior" />
-    <unitInfo nodeId="5610619299014531544" fileName="BuildSource_SingleFolder_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5610619299014531588">
     <nodeInfo nodeId="5610619299014531595" fileName="BuildInputSingleFolder_Behavior.java" startLine="13" startPosition="87" endLine="14" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2011,86 +1885,20 @@
     <unitInfo nodeId="5610619299014531836" fileName="BuildSource_JavaLibraryExternalJarFolder_Behavior.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaLibraryExternalJarFolder_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/5970181360961342216">
-    <nodeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="15" startPosition="93" endLine="16" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="20" startPosition="126" endLine="21" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_reexportsFromJar_5970181360961342219#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_reexportsFromJar_5970181360961342219#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="5970181360961342218" fileName="BuildLayout_InJarNode_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="5970181360961342218" fileName="BuildLayout_InJarNode_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="15" startPosition="93" endLine="16" endPosition="133" />
-    <scopeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="20" startPosition="126" endLine="21" endPosition="280" />
     <scopeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="5970181360961342216" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="5970181360961342216" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="5970181360961342224" varName="o" />
-      <varInfo nodeId="5970181360961342216" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="5970181360961342216" varName="callerConceptFqName" />
-      <varInfo nodeId="5970181360961342224" varName="o" />
-      <varInfo nodeId="5970181360961342216" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_InJarNode_Behavior" />
-    <unitInfo nodeId="5970181360961342216" fileName="BuildLayout_InJarNode_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_InJarNode_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6408167411310575209">
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="15" startPosition="85" endLine="16" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="20" startPosition="118" endLine="21" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="25" startPosition="85" endLine="26" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="30" startPosition="118" endLine="31" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="35" startPosition="87" endLine="36" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="40" startPosition="120" endLine="41" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFileSetExtension_6408167411310575216#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getFileSetExtension_6408167411310575216#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_hasPrefixAttribute_6408167411310575232#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_hasPrefixAttribute_6408167411310575232#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_hasFileModeAttribute_6408167411310575237#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_hasFileModeAttribute_6408167411310575237#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
     <scopeInfo nodeId="6408167411310575211" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="6408167411310575211" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="15" startPosition="85" endLine="16" endPosition="135" />
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="20" startPosition="118" endLine="21" endPosition="284" />
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="25" startPosition="85" endLine="26" endPosition="134" />
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="30" startPosition="118" endLine="31" endPosition="283" />
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="35" startPosition="87" endLine="36" endPosition="136" />
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="40" startPosition="120" endLine="41" endPosition="285" />
     <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="6408167411310575209" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="6408167411310575209" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="6408167411310575209" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="6408167411310575209" varName="callerConceptFqName" />
-      <varInfo nodeId="6408167411310575209" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="6408167411310575209" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="6408167411310575209" varName="callerConceptFqName" />
-      <varInfo nodeId="6408167411310575209" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="6408167411310575209" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="6408167411310575209" varName="callerConceptFqName" />
-      <varInfo nodeId="6408167411310575209" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_Behavior" />
-    <unitInfo nodeId="6408167411310575209" fileName="BuildLayout_ContainerAcceptingFileSet_Behavior.java" startLine="10" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6547494638219485324">
     <nodeInfo nodeId="6547494638219485350" fileName="BuildLayout_Jar_Behavior.java" startLine="21" startPosition="122" endLine="22" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2325,45 +2133,19 @@
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6547494638219688110">
     <nodeInfo nodeId="6547494638219688118" fileName="BuildMacro_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6547494638219688118" fileName="BuildMacro_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="19" startPosition="75" endLine="20" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="24" startPosition="108" endLine="25" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isPublic_6547494638219688113#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isPublic_6547494638219688113#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isPublic_6547494638219688113#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isPublic_6547494638219688113#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
     <scopeInfo nodeId="6547494638219688112" fileName="BuildMacro_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="6547494638219688112" fileName="BuildMacro_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="6547494638219688116" fileName="BuildMacro_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="17" />
-    <scopeInfo nodeId="6547494638219688116" fileName="BuildMacro_Behavior.java" startLine="14" startPosition="78" endLine="15" endPosition="17" />
-    <scopeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="19" startPosition="75" endLine="20" endPosition="124" />
-    <scopeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="24" startPosition="108" endLine="25" endPosition="246" />
     <scopeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="6547494638219688110" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="6547494638219688110" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="6547494638219688110" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="6547494638219688110" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="6547494638219688110" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="6547494638219688110" varName="callerConceptFqName" />
-      <varInfo nodeId="6547494638219688110" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildMacro_Behavior" />
-    <unitInfo nodeId="6547494638219688110" fileName="BuildMacro_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildMacro_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6547494638219688122">
-    <nodeInfo nodeId="6547494638219712573" fileName="BuildVariableMacro_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6547494638219712573" fileName="BuildVariableMacro_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6547494638219688122" fileName="BuildVariableMacro_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6547494638219688122" fileName="BuildVariableMacro_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isPublic_6547494638219688113#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -2386,31 +2168,12 @@
     <unitInfo nodeId="6853883513540398153" fileName="BuildSource_JavaCP_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildSource_JavaCP_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6854204111265837869">
-    <nodeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="20" startPosition="111" endLine="21" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTargetTask_6854204111265837872#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTargetTask_6854204111265837872#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="6854204111265837871" fileName="IWorkflowParticipant_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="6854204111265837871" fileName="IWorkflowParticipant_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="154" />
-    <scopeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="20" startPosition="111" endLine="21" endPosition="286" />
     <scopeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="6854204111265837869" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="6854204111265837869" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="6854204111265837869" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="6854204111265837869" varName="callerConceptFqName" />
-      <varInfo nodeId="6854204111265837869" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.IWorkflowParticipant_Behavior" />
-    <unitInfo nodeId="6854204111265837869" fileName="IWorkflowParticipant_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.behavior.IWorkflowParticipant_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/6859736767834558025">
     <nodeInfo nodeId="6859736767834802002" fileName="BuildSource_JavaDependencyExternalJar_Behavior.java" startLine="16" startPosition="149" endLine="17" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2454,69 +2217,12 @@
     <unitInfo nodeId="6967233722066057022" fileName="BuildLayout_War_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_War_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7128123785277710733">
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="17" startPosition="119" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="22" startPosition="152" endLine="23" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="27" startPosition="106" endLine="28" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="32" startPosition="139" endLine="33" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="37" startPosition="120" endLine="38" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="42" startPosition="153" endLine="43" endPosition="317" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_unpack_7128123785277710736#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/UnpackHelper;Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_unpack_7128123785277710736#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/build/util/UnpackHelper;Ljava/lang/Iterable;)V" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_appendName_1368030936106665465#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/StringBuilder;)V" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_appendName_1368030936106665465#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/StringBuilder;)V" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_location_7117056644539862594#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/DependenciesHelper;Ljava/lang/Object;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_location_7117056644539862594#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/build/util/DependenciesHelper;Ljava/lang/Object;)Ljava/lang/String;" />
     <scopeInfo nodeId="7128123785277710735" fileName="BuildLayout_PathElement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="7128123785277710735" fileName="BuildLayout_PathElement_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="17" startPosition="119" endLine="18" endPosition="130" />
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="22" startPosition="152" endLine="23" endPosition="301" />
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="27" startPosition="106" endLine="28" endPosition="127" />
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="32" startPosition="139" endLine="33" endPosition="296" />
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="37" startPosition="120" endLine="38" endPosition="142" />
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="42" startPosition="153" endLine="43" endPosition="317" />
     <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="7128123785277710733" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="7128123785277710733" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="1957532277556953133" varName="artifacts" />
-      <varInfo nodeId="7128123785277710742" varName="helper" />
-      <varInfo nodeId="7128123785277710733" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1957532277556953133" varName="artifacts" />
-      <varInfo nodeId="7128123785277710733" varName="callerConceptFqName" />
-      <varInfo nodeId="7128123785277710742" varName="helper" />
-      <varInfo nodeId="7128123785277710733" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="1368030936106717043" varName="parent" />
-      <varInfo nodeId="1368030936106665470" varName="sb" />
-      <varInfo nodeId="7128123785277710733" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="7128123785277710733" varName="callerConceptFqName" />
-      <varInfo nodeId="1368030936106717043" varName="parent" />
-      <varInfo nodeId="1368030936106665470" varName="sb" />
-      <varInfo nodeId="7128123785277710733" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="7117056644539862601" varName="artifactId" />
-      <varInfo nodeId="7117056644539862599" varName="helper" />
-      <varInfo nodeId="7128123785277710733" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="7117056644539862601" varName="artifactId" />
-      <varInfo nodeId="7128123785277710733" varName="callerConceptFqName" />
-      <varInfo nodeId="7117056644539862599" varName="helper" />
-      <varInfo nodeId="7128123785277710733" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior" />
-    <unitInfo nodeId="7128123785277710733" fileName="BuildLayout_PathElement_Behavior.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7128123785277898836">
     <nodeInfo nodeId="7128123785277898851" fileName="BuildLayout_Zip_Behavior.java" startLine="18" startPosition="122" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2772,16 +2478,10 @@
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7181125477683417259">
     <nodeInfo nodeId="7181125477683417322" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="15" startPosition="122" endLine="16" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7181125477683417322" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="15" startPosition="122" endLine="16" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7181125477683417334" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="16" startPosition="137" endLine="17" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7181125477683417334" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="16" startPosition="137" endLine="17" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7181125477683417342" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="17" startPosition="47" endLine="18" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7181125477683417342" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="17" startPosition="47" endLine="18" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7181125477683417356" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="21" startPosition="109" endLine="22" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7181125477683417356" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="21" startPosition="109" endLine="22" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7181125477683417365" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="22" startPosition="107" endLine="23" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7181125477683417365" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="22" startPosition="107" endLine="23" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7117056644539885298" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="26" startPosition="123" endLine="27" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7117056644539885298" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="26" startPosition="123" endLine="27" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7181125477683417259" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7181125477683417259" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_location_7117056644539862594#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/DependenciesHelper;Ljava/lang/Object;)Ljava/lang/String;" />
@@ -2815,8 +2515,6 @@
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7389400916848004877">
     <nodeInfo nodeId="1117643560963359380" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="11" startPosition="89" endLine="12" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963359380" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="11" startPosition="89" endLine="12" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963359342" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="15" startPosition="88" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1117643560963359342" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="15" startPosition="88" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7389400916848004877" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7389400916848004877" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAssembleSubTaskId_4701820937132344052#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -3174,17 +2872,11 @@
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7471276865246016972">
     <nodeInfo nodeId="7471276865246017105" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="16" startPosition="30" endLine="17" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7471276865246017105" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="16" startPosition="30" endLine="17" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8990969321155703164" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8990969321155703164" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="18" startPosition="5" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6083230236994605917" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6083230236994605917" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6083230236994605921" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6083230236994605921" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7471276865246016972" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7471276865246016986" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="15" startPosition="116" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7471276865246016986" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="15" startPosition="116" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6083230236994605202" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="23" startPosition="108" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6083230236994605202" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="23" startPosition="108" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7471276865246016972" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isValidPart_9184644532456897464#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="7471276865246016972" fileName="BuildLayout_JarManifest_Attribute_Behavior.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getColorForTextPart_6083230236994422116#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/awt/Color;" />
@@ -3209,16 +2901,10 @@
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/763409143595654857">
     <nodeInfo nodeId="4640279023716692259" fileName="BuildProjectDependency_Behavior.java" startLine="15" startPosition="122" endLine="16" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4640279023716692259" fileName="BuildProjectDependency_Behavior.java" startLine="15" startPosition="122" endLine="16" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7128123785277723772" fileName="BuildProjectDependency_Behavior.java" startLine="16" startPosition="137" endLine="17" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7128123785277723772" fileName="BuildProjectDependency_Behavior.java" startLine="16" startPosition="137" endLine="17" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4640279023716692272" fileName="BuildProjectDependency_Behavior.java" startLine="17" startPosition="47" endLine="18" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4640279023716692272" fileName="BuildProjectDependency_Behavior.java" startLine="17" startPosition="47" endLine="18" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7117056644539885226" fileName="BuildProjectDependency_Behavior.java" startLine="21" startPosition="123" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7117056644539885226" fileName="BuildProjectDependency_Behavior.java" startLine="21" startPosition="123" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1368030936106665781" fileName="BuildProjectDependency_Behavior.java" startLine="25" startPosition="109" endLine="26" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1368030936106665781" fileName="BuildProjectDependency_Behavior.java" startLine="25" startPosition="109" endLine="26" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1368030936106665862" fileName="BuildProjectDependency_Behavior.java" startLine="26" startPosition="107" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1368030936106665862" fileName="BuildProjectDependency_Behavior.java" startLine="26" startPosition="107" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="763409143595654857" fileName="BuildProjectDependency_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="763409143595654857" fileName="BuildProjectDependency_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_location_7117056644539862594#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/DependenciesHelper;Ljava/lang/Object;)Ljava/lang/String;" />
@@ -3281,34 +2967,20 @@
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7801138212747310472">
     <nodeInfo nodeId="7801138212747310492" fileName="BuildLayout_Filemode_Behavior.java" startLine="14" startPosition="116" endLine="15" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7801138212747310492" fileName="BuildLayout_Filemode_Behavior.java" startLine="14" startPosition="116" endLine="15" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7801138212747310520" fileName="BuildLayout_Filemode_Behavior.java" startLine="15" startPosition="121" endLine="16" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7801138212747310520" fileName="BuildLayout_Filemode_Behavior.java" startLine="15" startPosition="121" endLine="16" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7801138212747310701" fileName="BuildLayout_Filemode_Behavior.java" startLine="16" startPosition="142" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7801138212747310701" fileName="BuildLayout_Filemode_Behavior.java" startLine="16" startPosition="142" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7801138212747310709" fileName="BuildLayout_Filemode_Behavior.java" startLine="18" startPosition="98" endLine="19" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7801138212747310709" fileName="BuildLayout_Filemode_Behavior.java" startLine="18" startPosition="98" endLine="19" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7801138212747310751" fileName="BuildLayout_Filemode_Behavior.java" startLine="20" startPosition="12" endLine="21" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7801138212747310751" fileName="BuildLayout_Filemode_Behavior.java" startLine="20" startPosition="12" endLine="21" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7801138212747310761" fileName="BuildLayout_Filemode_Behavior.java" startLine="21" startPosition="126" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7801138212747310761" fileName="BuildLayout_Filemode_Behavior.java" startLine="21" startPosition="126" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7801138212747310876" fileName="BuildLayout_Filemode_Behavior.java" startLine="24" startPosition="80" endLine="25" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7801138212747310876" fileName="BuildLayout_Filemode_Behavior.java" startLine="24" startPosition="80" endLine="25" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7801138212747311032" fileName="BuildLayout_Filemode_Behavior.java" startLine="27" startPosition="79" endLine="28" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7801138212747311032" fileName="BuildLayout_Filemode_Behavior.java" startLine="27" startPosition="79" endLine="28" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7801138212747310501" fileName="BuildLayout_Filemode_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7801138212747310501" fileName="BuildLayout_Filemode_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7801138212747310875" fileName="BuildLayout_Filemode_Behavior.java" startLine="33" startPosition="55" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7801138212747310875" fileName="BuildLayout_Filemode_Behavior.java" startLine="33" startPosition="55" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7801138212747310472" fileName="BuildLayout_Filemode_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7801138212747310715" fileName="BuildLayout_Filemode_Behavior.java" startLine="20" startPosition="10" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7801138212747310715" fileName="BuildLayout_Filemode_Behavior.java" startLine="20" startPosition="10" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7801138212747310817" fileName="BuildLayout_Filemode_Behavior.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7801138212747310817" fileName="BuildLayout_Filemode_Behavior.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7801138212747310972" fileName="BuildLayout_Filemode_Behavior.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7801138212747310972" fileName="BuildLayout_Filemode_Behavior.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7801138212747310875" fileName="BuildLayout_Filemode_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="7801138212747310705" fileName="BuildLayout_Filemode_Behavior.java" startLine="17" startPosition="16" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7801138212747310705" fileName="BuildLayout_Filemode_Behavior.java" startLine="17" startPosition="16" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7801138212747310472" fileName="BuildLayout_Filemode_Behavior.java" startLine="14" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getChildrenOutputDir_WithMacro_4701820937132344011#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
     <scopeInfo nodeId="7801138212747310474" fileName="BuildLayout_Filemode_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
@@ -3337,35 +3009,12 @@
     <unitInfo nodeId="7801138212747310472" fileName="BuildLayout_Filemode_Behavior.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Filemode_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/841011766566205092">
-    <nodeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="17" startPosition="146" endLine="18" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="22" startPosition="179" endLine="23" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_fetchDependencies_5908258303322131137#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
-    <nodeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_fetchDependencies_5908258303322131137#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
     <scopeInfo nodeId="841011766566205094" fileName="BuildExternalDependency_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="841011766566205094" fileName="BuildExternalDependency_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="17" startPosition="146" endLine="18" endPosition="142" />
-    <scopeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="22" startPosition="179" endLine="23" endPosition="336" />
     <scopeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="841011766566205092" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="841011766566205092" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="5908258303322131144" varName="artifacts" />
-      <varInfo nodeId="5908258303322131146" varName="builder" />
-      <varInfo nodeId="841011766566205092" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="5908258303322131144" varName="artifacts" />
-      <varInfo nodeId="5908258303322131146" varName="builder" />
-      <varInfo nodeId="841011766566205092" varName="callerConceptFqName" />
-      <varInfo nodeId="841011766566205092" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildExternalDependency_Behavior" />
-    <unitInfo nodeId="841011766566205092" fileName="BuildExternalDependency_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildExternalDependency_Behavior" />
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/841011766566205111">
     <nodeInfo nodeId="7128123785277724025" fileName="BuildLayout_Import_Behavior.java" startLine="16" startPosition="145" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3899,63 +3548,18 @@
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/9184644532456897461">
     <nodeInfo nodeId="6083230236994476392" fileName="BuildStringContainer_Behavior.java" startLine="15" startPosition="108" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6083230236994476392" fileName="BuildStringContainer_Behavior.java" startLine="18" startPosition="108" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="23" startPosition="113" endLine="24" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="28" startPosition="146" endLine="29" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="33" startPosition="105" endLine="34" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="38" startPosition="138" endLine="39" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getColorForTextPart_6083230236994422116#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/awt/Color;" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getColorForTextPart_6083230236994422116#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/awt/Color;" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isValidPart_9184644532456897464#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isValidPart_9184644532456897464#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getColorForTextPart_6083230236994422116#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/awt/Color;" />
-    <nodeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getColorForTextPart_6083230236994422116#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Ljava/awt/Color;" />
     <scopeInfo nodeId="9184644532456897463" fileName="BuildStringContainer_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="9184644532456897463" fileName="BuildStringContainer_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="6083230236994422119" fileName="BuildStringContainer_Behavior.java" startLine="15" startPosition="108" endLine="16" endPosition="16" />
-    <scopeInfo nodeId="6083230236994422119" fileName="BuildStringContainer_Behavior.java" startLine="18" startPosition="108" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="23" startPosition="113" endLine="24" endPosition="146" />
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="28" startPosition="146" endLine="29" endPosition="306" />
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="33" startPosition="105" endLine="34" endPosition="138" />
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="38" startPosition="138" endLine="39" endPosition="284" />
     <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="9184644532456897461" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="9184644532456897461" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6083230236994422122" varName="role" />
       <varInfo nodeId="9184644532456897461" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="6083230236994422122" varName="role" />
-      <varInfo nodeId="9184644532456897461" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="9184644532456897469" varName="propertyValue" />
-      <varInfo nodeId="6592112598314896446" varName="role" />
-      <varInfo nodeId="9184644532456897461" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="9184644532456897461" varName="callerConceptFqName" />
-      <varInfo nodeId="9184644532456897469" varName="propertyValue" />
-      <varInfo nodeId="6592112598314896446" varName="role" />
-      <varInfo nodeId="9184644532456897461" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="6083230236994422122" varName="role" />
-      <varInfo nodeId="9184644532456897461" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="9184644532456897461" varName="callerConceptFqName" />
-      <varInfo nodeId="6083230236994422122" varName="role" />
-      <varInfo nodeId="9184644532456897461" varName="thisNode" />
-    </scopeInfo>
     <unitInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" />
-    <unitInfo nodeId="9184644532456897461" fileName="BuildStringContainer_Behavior.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildStringContainer_Behavior" />
   </root>
 </debugInfo>
 

@@ -82,7 +82,6 @@
   <source id="4474271214083118844" name="AbstractWatchableNode" hash="e6agh5f8xxag06wi8unz7eyttfk4blw">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AbstractWatchableNode.java" />
   </source>
   <source id="4474271214083120082" name="WatchableNode" hash="90rqp9iqdogrv3hhtlp56y0k47y5f6a">

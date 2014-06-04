@@ -85,7 +85,9 @@
   <source id="1237219277494" name="BinaryOperationSwitch" hash="5cd7vefrmntd7d81yfbp14zesicop1a">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1237534730273" name="AssignmentOperationSwitch" hash="-4b5h0lokmpz96i5qmku984quma6cvjf" />
+  <source id="1237534730273" name="AssignmentOperationSwitch" hash="-4b5h0lokmpz96i5qmku984quma6cvjf">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1237546393303" name="main_pass1" hash="1rj5doq7oigsz0bhbtrbg8csvyb77c2" />
   <source id="1237807489587" name="comparable_compare" hash="asdmqfnr6uobnvfq99ezez8hdi8n99b" />
   <source id="1238322736434" name="object_equals" hash="-2l13ud9pqfzb92kfu9jfpo76toi41ry" />

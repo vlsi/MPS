@@ -48,7 +48,9 @@
   <source id="3885435385580635038" name="main" hash="aetr0urqgab3i3n9tb63v8po7nw0sr">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="8979762117546970698" name="Info.plist" hash="agyp7mmqdojah76ptp2dw1658x66w1y" />
+  <source id="8979762117546970698" name="Info.plist" hash="agyp7mmqdojah76ptp2dw1658x66w1y">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1731640411964801460" name="mps.bat" hash="-117u3v2y547ud7cg29fwrl2pv1h5ob1">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>

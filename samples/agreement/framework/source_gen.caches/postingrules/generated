@@ -7,12 +7,12 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="6531435794299649861" name="AccountingException" hash="-2k9jnfz4mhsr20ks657mjuw68miyf7y">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AccountingException.java" />
   </source>
   <source id="6531435794299649876" name="AccountingTransaction" hash="-2ox96me2wjakt2266uq8u41a7skv8ak">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AccountingTransaction.java" />
   </source>
   <source id="6531435794299650125" name="Subject" hash="7ly2945bk9u3lvh068yr3j7jckos3iy">

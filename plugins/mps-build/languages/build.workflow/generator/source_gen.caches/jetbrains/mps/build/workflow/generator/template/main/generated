@@ -68,7 +68,9 @@
   <source id="2769948622284790861" name="antBuild.xml" hash="-akog5yh9paz2xrzuhbtobw8he28vvfk">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4755209551904406820" name="process_cycles" hash="-cdthrnc4insjjz0x0a8memzut954v0m" />
+  <source id="4755209551904406820" name="process_cycles" hash="-cdthrnc4insjjz0x0a8memzut954v0m">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="7385586609667789438" name="step1_Structure" hash="-3f0jwa876tqctc3fueloq15aqa41sza" />
   <source id="6896005762093592212" name="build.properties" hash="228eniqzj2il34p43m11hkh3tnnhkko" />
   <source id="1117643560963147795" name="import_libraries" hash="crppnm5yjrhd32opmg0xwa5mpoo9tat" />

@@ -441,6 +441,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:44a13e0a-5741-450e-b617-f6a7b8d52ba5(jetbrains.mps.baseLanguage.math.generator.template.types@generator)" />
     <file name="double_extends_bigdecimal_SubtypingRule.java" />
   </source>
   <source id="1237206461318" name="long_extends_biginteger" hash="qangy5c97nv2tc6cv2xrq9lvo2gl7j">

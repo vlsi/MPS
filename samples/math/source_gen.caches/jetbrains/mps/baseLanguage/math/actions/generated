@@ -82,12 +82,16 @@
     <dep model="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="3498370411873438847" name="ML_Actions" hash="-4hd06tpxe8pb2bsv8n5ftl5udz323wx" />
+  <source id="3498370411873438847" name="ML_Actions" hash="-4hd06tpxe8pb2bsv8n5ftl5udz323wx">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="6389121991274660118" name="ML_SideTransforms" hash="285sufef5o58jhekdc47vkavbh29dnd">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:44a13e0a-5741-450e-b617-f6a7b8d52ba5(jetbrains.mps.baseLanguage.math.generator.template.types@generator)" />
     <dep model="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" />
   </source>
-  <source id="4334427517307386358" name="ML_NodeFactories" hash="7qldbp7ardzmtlhqyrp3uo2rgfi3tgx" />
+  <source id="4334427517307386358" name="ML_NodeFactories" hash="7qldbp7ardzmtlhqyrp3uo2rgfi3tgx">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
+  </source>
 </dependencies>
 

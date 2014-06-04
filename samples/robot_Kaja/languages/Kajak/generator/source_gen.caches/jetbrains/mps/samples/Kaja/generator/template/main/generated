@@ -70,7 +70,9 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3308300503039580716" name="reduce_Step" hash="avkkym8mgyh3ms4hvsneieu9r4g9b3n" />
+  <source id="3308300503039580716" name="reduce_Step" hash="avkkym8mgyh3ms4hvsneieu9r4g9b3n">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="3308300503039647645" name="reduce_LeftTurn" hash="9w9y7t61jw2d244odcv52h616wj3w86" />
   <source id="3308300503039647798" name="reduce_IsWall" hash="b0detvmcwcntw37t7fe4lin57msqce0" />
   <source id="3308300503039647832" name="reduce_IfStatement" hash="-cyhpzg4crvxzecs7yw3rjm5fi9tmsms" />

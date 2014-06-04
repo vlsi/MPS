@@ -31,7 +31,6 @@
     <file name="UnitTestAdapter.java" />
   </source>
   <source id="2546981710036147264" name="UnitTestListener" hash="-6wg1a95xvzvpgyiybtrnpbmkgdjxnoc">
-    <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
     <file name="UnitTestListener.java" />
   </source>
   <source id="2546981710036147300" name="UnitTestOutputReader" hash="7ic6eckjqkobq26kar8chd9fug9bmtn">

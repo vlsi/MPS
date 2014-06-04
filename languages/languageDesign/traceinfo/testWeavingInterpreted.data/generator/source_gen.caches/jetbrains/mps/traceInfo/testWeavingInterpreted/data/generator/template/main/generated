@@ -34,11 +34,8 @@
   </source>
   <source id="6186432342008490321" name="map_RootConcept" hash="-dhtt1c59v9hdy1iupqnlb2ta4w0tn6k">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6186432342008522510" name="weave_ChildConceptWeave" hash="brk4qb5y6rldas686lftkojgr32x3gy">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="6186432342008522510" name="weave_ChildConceptWeave" hash="brk4qb5y6rldas686lftkojgr32x3gy" />
   <source id="6186432342008533395" name="weave_ChildConceptWeaveMany" hash="3cvlkl5st99e19l6zz94hgdd17mn0u4" />
 </dependencies>
 

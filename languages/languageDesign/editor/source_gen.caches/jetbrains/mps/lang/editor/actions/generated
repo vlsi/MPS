@@ -14,7 +14,7 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="2mca3ncg6d36jbzt437k417bb81y2d6" />
-  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="en3wlq27efz329pn8rofil1rbvziv6u" />
+  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="d84v1sde05g7zyuee06a1ewtc4x2khm" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-28ija9yzete4yfixjjc6ng91m5blf8a" />
   <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="5n6euud87j0xdxqx6m352icz46s10vi" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="-84gcr55sftqrw1yhcvpggnb8ug0gcr1" />
@@ -81,13 +81,13 @@
   <source id="1119639069735" name="EDTL_node_substitute" hash="5x6pqno2z8wpappfbmg3o6s4ojnyxzi">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1158947431096" name="EDTL_node_factories" hash="-c0pkvyk1axop2hwi4rpi15i8m0zx1pq" />
+  <source id="1158947431096" name="EDTL_node_factories" hash="-c0pkvyk1axop2hwi4rpi15i8m0zx1pq">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1177585757706" name="custom_actions" hash="cqp52x0wgw3b4expn6190obm8xsatp5">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1185874421312" name="EDTL_Actions_node_substitute" hash="cepl1rj1gmblkhlwowcedoelgfiuce1">
-    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1185874421312" name="EDTL_Actions_node_substitute" hash="cepl1rj1gmblkhlwowcedoelgfiuce1" />
   <source id="1222177296905" name="StyleClassItem" hash="-6lmtr2cnywpn2ccrohy71gglhlrj5xr" />
   <source id="226730285127010423" name="SubstituteAbstractStyledTextOperation" hash="3v6f3bm4tl0op7rmmv55z7cxhhwyxyu" />
   <source id="6150987479536935717" name="ContextHintsSpecification" hash="-9i9nmodabt3bflodofvwramlm0aoa62" />

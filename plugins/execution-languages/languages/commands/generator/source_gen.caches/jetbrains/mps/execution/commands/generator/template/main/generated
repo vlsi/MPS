@@ -102,12 +102,9 @@
   <source id="865001690840232870" name="reduce_CommandDebuggerReferenceExpression" hash="-bh0fz7edu4b1qsoa5dedggce3uh4wt5">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="865001690840232898" name="reduce_CommandParameterReference" hash="a75at5c93t3rv2nff2435bgdmh93bko">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="865001690840232898" name="reduce_CommandParameterReference" hash="a75at5c93t3rv2nff2435bgdmh93bko" />
   <source id="865001690840232933" name="CommandDeclaration_Template" hash="-4tq4qie4m0w59svlso1m66am3p08o2x">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="865001690840233199" name="reduce_CommandMethodCallExpression" hash="2ubcsyhwrriw0yniuragj3e9l2vejz3" />
   <source id="865001690840233257" name="reduce_CommandBuilderExpressionNew" hash="20uxuplfbjsgi9lqihmc1gcf44sym85" />

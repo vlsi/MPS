@@ -43,9 +43,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="2799321329875582952" name="closure_operations" hash="-83ta7pn5w13s30fq1ynaa68v20vzzde">
-    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="2799321329875582952" name="closure_operations" hash="-83ta7pn5w13s30fq1ynaa68v20vzzde" />
   <source id="5932042262275851225" hash="dnvfn40iaecuzmz32on4kslhf2oqxq8">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>

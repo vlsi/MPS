@@ -5,9 +5,6 @@ package jetbrains.mps.samples.Shapes.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Graphics;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Shape_Behavior {
   public static void init(SNode thisNode) {
@@ -19,25 +16,5 @@ public class Shape_Behavior {
 
   public static void virtual_drawShapeAt_4001135958238383544(SNode thisNode, Graphics graphics, int x, int y) {
     graphics.setColor(ColorReference_Behavior.call_findColor_2097561739636344968(SLinkOperations.getTarget(thisNode, "color", true)));
-  }
-
-  @Deprecated
-  public static void call_drawShape_1082824515535573731(SNode thisNode, Graphics graphics) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_drawShape_1082824515535573731", new Object[]{graphics});
-  }
-
-  @Deprecated
-  public static void callSuper_drawShape_1082824515535573731(SNode thisNode, String callerConceptFqName, Graphics graphics) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.samples.Shapes.structure.Shape"), callerConceptFqName, "virtual_drawShape_1082824515535573731", new Class[]{SNode.class, Graphics.class}, new Object[]{graphics});
-  }
-
-  @Deprecated
-  public static void call_drawShapeAt_4001135958238383544(SNode thisNode, Graphics graphics, int x, int y) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_drawShapeAt_4001135958238383544", new Object[]{graphics, x, y});
-  }
-
-  @Deprecated
-  public static void callSuper_drawShapeAt_4001135958238383544(SNode thisNode, String callerConceptFqName, Graphics graphics, int x, int y) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.samples.Shapes.structure.Shape"), callerConceptFqName, "virtual_drawShapeAt_4001135958238383544", new Class[]{SNode.class, Graphics.class, Integer.TYPE, Integer.TYPE}, new Object[]{graphics, x, y});
   }
 }

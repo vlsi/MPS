@@ -84,6 +84,7 @@
   </source>
   <source id="4474271214082914260" name="BreakpointInfo" hash="-4woaar44bvx8m0forgh30rlqp35qmf">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="BreakpointInfo.java" />
   </source>
   <source id="4474271214082913267" name="EmptyDebuggerSettings" hash="-d2gghc29tj9cze5dsobipc1c8almgfk">

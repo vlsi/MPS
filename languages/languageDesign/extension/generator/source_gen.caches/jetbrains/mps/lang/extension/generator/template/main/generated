@@ -52,6 +52,7 @@
   </source>
   <source id="8820339482096464708" name="ExtensionDescriptor" hash="ebivnv7jekhdjkz6w5pcopei75f3hbf">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="8820339482096486792" name="Extension" hash="-4j0opdnmcn6jeh5l4u901iwkpwp2i71">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />

@@ -52,7 +52,6 @@
   </common>
   <source id="1213104840465" name="EnumerationMemberDeclaration_Constraints" hash="-2czfv24gmogqyt4pelpy82c4x6zzyvr">
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EnumerationMemberDeclaration_Constraints.java" />
   </source>
   <source id="1213104840673" name="ConceptDeclaration_Constraints" hash="cbk0dxtvnz0ohbjw7ia8mzvh5bmbhvc">

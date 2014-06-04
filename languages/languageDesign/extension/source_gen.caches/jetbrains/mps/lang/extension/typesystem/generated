@@ -34,7 +34,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="typeof_ExtensionObjectGetter_InferenceRule.java" />
   </source>
   <source id="6626851894249712466" name="typeof_ExtensionPointExpression" hash="-7g8kbpei5vz2kayvgbo5hskzwmv9i5e">

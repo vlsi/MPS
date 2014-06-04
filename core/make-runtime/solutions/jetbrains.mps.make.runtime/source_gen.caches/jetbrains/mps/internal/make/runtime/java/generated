@@ -22,6 +22,7 @@
     <file name="FileProcessor.java" />
   </source>
   <source id="4328738523548226177" name="JavaStreamHandler" hash="-55yd88oiyu1s6afg91ymev2b87nc4x9">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:0bcaf439-5bc6-429b-a457-4e0d9746449f(jetbrains.mps.make.delta)" />
     <file name="JavaStreamHandler.java" />
   </source>
@@ -30,7 +31,6 @@
   </source>
   <source id="4101850974336562102" name="FileDeltaCollector" hash="4nubicrpsdlt7qygfvc1zohec8yubd7">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FileDeltaCollector.java" />
   </source>
 </dependencies>
