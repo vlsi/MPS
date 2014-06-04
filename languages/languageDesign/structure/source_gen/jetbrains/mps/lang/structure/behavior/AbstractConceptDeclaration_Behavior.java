@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -242,10 +241,6 @@ public class AbstractConceptDeclaration_Behavior {
   public static SNode call_findPropertyDeclaration_1219835742593(SNode thisNode, String name) {
     SNode p = SModelSearchUtil.findPropertyDeclaration(thisNode, name);
     return SNodeOperations.cast(p, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
-  }
-
-  public static List<SNode> call_getConceptLinkDeclarations_1213877394578(SNode thisNode) {
-    return (List<SNode>) IterableUtil.asList(SModelSearchUtil.getConceptLinkDeclarations(thisNode));
   }
 
   public static SNode call_specializeLink_4304720797559012132(SNode thisNode, SNode link, SNode targetConcept) {

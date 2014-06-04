@@ -122,14 +122,6 @@ public class SNodeUtil {
     return SLinkOperations.getTargets(concept, "propertyDeclaration", true);
   }
 
-  public static Iterable<SNode> getConcept_ConceptLinks(SNode concept) {
-    return SLinkOperations.getTargets(concept, "conceptLink", true);
-  }
-
-  public static Iterable<SNode> getConcept_ConceptLinkDeclarations(SNode concept) {
-    return SLinkOperations.getTargets(concept, "conceptLinkDeclaration", true);
-  }
-
   public static Iterable<SNode> getInterfaceConceptDeclaration_Extends(SNode concept) {
     return ListSequence.fromList(SLinkOperations.getTargets(concept, "extends", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -208,18 +200,6 @@ public class SNodeUtil {
 
   public static boolean getLinkDeclaration_IsSingular(SNode link) {
     return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{});
-  }
-
-  public static boolean isInstanceOfConceptLink(SNode node) {
-    if (node == null) {
-      return false;
-    }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return conceptFqName.equals("jetbrains.mps.lang.structure.structure.AggregationConceptLink") || conceptFqName.equals("jetbrains.mps.lang.structure.structure.ConceptLink");
-  }
-
-  public static SNode getConceptLink_Declaration(SNode link) {
-    return SLinkOperations.getTarget(link, "conceptLinkDeclaration", false);
   }
 
   public static boolean hasReferenceMacro(SNode node, String role) {

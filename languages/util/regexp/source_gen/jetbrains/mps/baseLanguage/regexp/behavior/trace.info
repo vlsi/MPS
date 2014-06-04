@@ -587,6 +587,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137538899">
     <nodeInfo nodeId="4161170987575807315" fileName="Replacement_Behavior.java" startLine="11" startPosition="91" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4161170987575807315" fileName="Replacement_Behavior.java" startLine="11" startPosition="91" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3796137614137538899" fileName="Replacement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3796137614137538899" fileName="Replacement_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_toString_3796137614137538905#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="3796137614137538901" fileName="Replacement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

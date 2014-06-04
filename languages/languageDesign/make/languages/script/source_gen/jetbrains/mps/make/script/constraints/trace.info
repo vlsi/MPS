@@ -88,6 +88,7 @@
   </root>
   <root nodeRef="r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)/3308693286243335385">
     <nodeInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResourceType_Constraints#()V" />
     <scopeInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="8" startPosition="37" endLine="9" endPosition="62" />
     <scopeInfo nodeId="3308693286243335385" fileName="ResourceType_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />

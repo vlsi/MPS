@@ -135,6 +135,7 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593938231406">
     <nodeInfo nodeId="2840424593938232596" fileName="Clean_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2840424593938232596" fileName="Clean_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2840424593938231406" fileName="Clean_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="2840424593938231559" fileName="Clean_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -168,6 +169,7 @@
     <unitInfo nodeId="2840424593984889709" fileName="AbsractMake_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.AbsractMake_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/2840424593984900719">
+    <nodeInfo nodeId="2840424593984900922" fileName="RemoveGenSources_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2840424593984900922" fileName="RemoveGenSources_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2840424593984900719" fileName="RemoveGenSources_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2840424593984900719" fileName="RemoveGenSources_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -302,6 +304,7 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5207260697411458160">
     <nodeInfo nodeId="9053534423437703278" fileName="INodeSetReference_Behavior.java" startLine="12" startPosition="110" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9053534423437703278" fileName="INodeSetReference_Behavior.java" startLine="12" startPosition="110" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5207260697411458160" fileName="INodeSetReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5207260697411458160" fileName="INodeSetReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getNodes_5207260697411458163#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="5207260697411458162" fileName="INodeSetReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -373,6 +376,7 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5582028874769074492">
     <nodeInfo nodeId="5582028874769074498" fileName="ActionCallGlobalParameter_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5582028874769074498" fileName="ActionCallGlobalParameter_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5582028874769074492" fileName="ActionCallGlobalParameter_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5582028874769074492" fileName="ActionCallGlobalParameter_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameterDeclaration_5582028874769074473#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="5582028874769074494" fileName="ActionCallGlobalParameter_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -401,7 +405,10 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5582028874771853135">
     <nodeInfo nodeId="4830115408593678019" fileName="Make_Behavior.java" startLine="14" startPosition="114" endLine="15" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4830115408593678019" fileName="Make_Behavior.java" startLine="14" startPosition="114" endLine="15" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="748410583119628796" fileName="Make_Behavior.java" startLine="18" startPosition="94" endLine="19" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="748410583119628796" fileName="Make_Behavior.java" startLine="18" startPosition="94" endLine="19" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="617513640566863466" fileName="Make_Behavior.java" startLine="22" startPosition="94" endLine="23" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="617513640566863466" fileName="Make_Behavior.java" startLine="22" startPosition="94" endLine="23" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
@@ -426,6 +433,7 @@
     <unitInfo nodeId="5582028874771853135" fileName="Make_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.Make_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/5932042262275694881">
+    <nodeInfo nodeId="5932042262275694895" fileName="OfAspectOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5932042262275694895" fileName="OfAspectOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5932042262275694881" fileName="OfAspectOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5932042262275694881" fileName="OfAspectOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -537,6 +545,7 @@
     <unitInfo nodeId="7490254719522983804" fileName="StatCommand_Behavior.java" startLine="15" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.console.ideCommands.behavior.StatCommand_Behavior" />
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/7490254719527247598">
+    <nodeInfo nodeId="6766461360452196449" fileName="IStatisticsTarget_Behavior.java" startLine="13" startPosition="130" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6766461360452196449" fileName="IStatisticsTarget_Behavior.java" startLine="13" startPosition="130" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7490254719527247598" fileName="IStatisticsTarget_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7490254719527247598" fileName="IStatisticsTarget_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getStat_7490254719527247609#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;)Ljava/lang/Iterable;" />

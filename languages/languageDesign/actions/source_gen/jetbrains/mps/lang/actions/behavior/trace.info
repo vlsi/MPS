@@ -952,6 +952,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1220279472899">
     <nodeInfo nodeId="1220279484562" fileName="RemoveSTByConditionPart_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1220279484562" fileName="RemoveSTByConditionPart_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1220279472899" fileName="RemoveSTByConditionPart_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1220279472899" fileName="RemoveSTByConditionPart_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getQueryMethodName_1220279474449#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1220279472901" fileName="RemoveSTByConditionPart_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -965,6 +966,7 @@
     <unitInfo nodeId="1220279472899" fileName="RemoveSTByConditionPart_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1221137354968">
+    <nodeInfo nodeId="1221137365526" fileName="ConceptFunctionParameter_nodeToPasteWrap_Behavior.java" startLine="12" startPosition="69" endLine="13" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221137365526" fileName="ConceptFunctionParameter_nodeToPasteWrap_Behavior.java" startLine="12" startPosition="69" endLine="13" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1221137354968" fileName="ConceptFunctionParameter_nodeToPasteWrap_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1221137354968" fileName="ConceptFunctionParameter_nodeToPasteWrap_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getWrapper_1221137356128#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />

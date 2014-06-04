@@ -698,6 +698,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)/1225799468871">
     <nodeInfo nodeId="1225799494507" fileName="InvokeFunctionExpression_Behavior.java" startLine="11" startPosition="76" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225799494507" fileName="InvokeFunctionExpression_Behavior.java" startLine="11" startPosition="76" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225799468871" fileName="InvokeFunctionExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1225799468871" fileName="InvokeFunctionExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isDeprecated_1224609060727#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="1225799468873" fileName="InvokeFunctionExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

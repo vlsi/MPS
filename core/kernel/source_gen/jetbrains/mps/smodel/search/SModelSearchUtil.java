@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.FlattenIterable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.Language;
@@ -84,15 +83,6 @@ public class SModelSearchUtil {
       return null;
     }
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
-  }
-
-  public static Iterable<SNode> getConceptLinkDeclarations(SNode concept) {
-    FlattenIterable<SNode> result = new FlattenIterable<SNode>(new ArrayList<Iterable<SNode>>());
-    List<SNode> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
-    for (SNode c : concepts) {
-      result.add(SNodeUtil.getConcept_ConceptLinkDeclarations(c));
-    }
-    return result;
   }
 
   private static class _ConceptsFromModelLanguagesScope extends AbstractSearchScope {

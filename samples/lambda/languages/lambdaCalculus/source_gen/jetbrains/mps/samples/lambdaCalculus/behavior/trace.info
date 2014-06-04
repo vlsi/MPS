@@ -216,7 +216,10 @@
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5400493247431796468">
     <nodeInfo nodeId="8981808925914844611" fileName="LetExpression_Behavior.java" startLine="15" startPosition="86" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8981808925914844611" fileName="LetExpression_Behavior.java" startLine="15" startPosition="86" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8981808925914844617" fileName="LetExpression_Behavior.java" startLine="16" startPosition="48" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8981808925914844617" fileName="LetExpression_Behavior.java" startLine="16" startPosition="48" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8981808925914844624" fileName="LetExpression_Behavior.java" startLine="17" startPosition="100" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8981808925914844624" fileName="LetExpression_Behavior.java" startLine="17" startPosition="100" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariables_8981808925914841576#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />

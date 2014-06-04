@@ -11,15 +11,6 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
-import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import java.awt.Frame;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -66,14 +57,6 @@ public class MigrationScript_MigrateConceptFunctions_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)", "658365993683956507");
-
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "MigrateConceptFunctions", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
-      if (ModelAccess.instance().canWrite()) {
-        executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
-      } else {
-        executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));
-      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MigrationScript_MigrateConceptFunctions", t);

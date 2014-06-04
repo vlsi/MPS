@@ -286,6 +286,7 @@
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/5932042262275648698">
     <nodeInfo nodeId="5932042262275683930" fileName="ConsoleOperation_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5932042262275683930" fileName="ConsoleOperation_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5932042262275648698" fileName="ConsoleOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5932042262275648698" fileName="ConsoleOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getKind_7006261637493126084#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="5932042262275648700" fileName="ConsoleOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -327,6 +328,8 @@
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/7006261637493132074">
     <nodeInfo nodeId="7006261637493132088" fileName="BLExpression_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7006261637493132088" fileName="BLExpression_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7006261637493135794" fileName="BLExpression_Behavior.java" startLine="16" startPosition="99" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7006261637493135794" fileName="BLExpression_Behavior.java" startLine="16" startPosition="99" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7006261637493132074" fileName="BLExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7006261637493132074" fileName="BLExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -347,6 +350,7 @@
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/7006261637496548522">
     <nodeInfo nodeId="7006261637496548544" fileName="ConsoleExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7006261637496548544" fileName="ConsoleExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7006261637496548522" fileName="ConsoleExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7006261637496548522" fileName="ConsoleExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getKind_7006261637493126084#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="7006261637496548524" fileName="ConsoleExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -360,6 +364,7 @@
     <unitInfo nodeId="7006261637496548522" fileName="ConsoleExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.blCommand.behavior.ConsoleExpression_Behavior" />
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/7006261637496586602">
+    <nodeInfo nodeId="7006261637496599738" fileName="PrintExpression_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7006261637496599738" fileName="PrintExpression_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7006261637496586602" fileName="PrintExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7006261637496586602" fileName="PrintExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />

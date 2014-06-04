@@ -187,6 +187,8 @@
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3894227536041770958">
     <nodeInfo nodeId="3894227536041771148" fileName="NodeWithClosure_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3894227536041771148" fileName="NodeWithClosure_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="497034489490439351" fileName="NodeWithClosure_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="497034489490439351" fileName="NodeWithClosure_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3894227536041770958" fileName="NodeWithClosure_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3894227536041770958" fileName="NodeWithClosure_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)V" />

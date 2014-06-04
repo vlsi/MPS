@@ -29,6 +29,8 @@
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/2663801026049983654">
     <nodeInfo nodeId="2663801026050030057" fileName="RefactorOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2663801026050030057" fileName="RefactorOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2663801026050030496" fileName="RefactorOperation_Behavior.java" startLine="16" startPosition="94" endLine="17" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2663801026050030496" fileName="RefactorOperation_Behavior.java" startLine="16" startPosition="94" endLine="17" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
@@ -48,6 +50,7 @@
     <unitInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.RefactorOperation_Behavior" />
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/748410583119789988">
+    <nodeInfo nodeId="748410583119790123" fileName="Execute_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="748410583119790123" fileName="Execute_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />

@@ -14,6 +14,7 @@
   <unitInfo fileName="WeekendDay_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.WeekendDay_BehaviorDescriptor" />
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/2161719505004719341">
     <nodeInfo nodeId="2161719505004719670" fileName="WeekendDay_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2161719505004719670" fileName="WeekendDay_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2161719505004719341" fileName="WeekendDay_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2161719505004719341" fileName="WeekendDay_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="2161719505004719343" fileName="WeekendDay_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -85,6 +86,7 @@
     <unitInfo nodeId="4664795093170895833" fileName="DayRange_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DayRange_Behavior" />
   </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/935069066463259013">
+    <nodeInfo nodeId="935069066463259693" fileName="WeekDays_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="935069066463259693" fileName="WeekDays_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="935069066463259013" fileName="WeekDays_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="935069066463259013" fileName="WeekDays_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />

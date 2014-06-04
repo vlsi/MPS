@@ -15,15 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.util.Condition;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SNodeOperations {
   public static int depth(SNode sNode) {
@@ -40,55 +33,5 @@ public class SNodeOperations {
   public static boolean isUnknown(SNode sNode) {
     SModule language = MPSModuleRepository.getInstance().getModuleByFqName(sNode.getConcept().getLanguage().getQualifiedName());
     return !(language instanceof Language) || ((Language) language).findConceptDeclaration(sNode.getConcept().getName()) == null;
-  }
-
-  public static List<SNode> getConceptLinkTargets(final SNode node, String linkName, boolean lookupHierarchy) {
-    List<SNode> result = new ArrayList<SNode>();
-    List<SNode> conceptLinks = getConceptLinks(node, linkName, lookupHierarchy);
-    for (SNode conceptLink : conceptLinks) {
-      SNode target = SModelUtil.getConceptLinkTarget(conceptLink);
-      if (target != null) {
-        result.add(target);
-      }
-    }
-    return result;
-  }
-
-  public static List<SNode> getConceptLinks(final SNode node, final String linkName, boolean lookupHierarchy) {
-    SNode conceptDeclaration = node;
-    if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(conceptDeclaration))) {
-      conceptDeclaration = SModelUtil.findConceptDeclaration(conceptDeclaration.getConcept().getQualifiedName());
-    }
-
-    if (lookupHierarchy) {
-      final SNode finalConceptDeclaration = conceptDeclaration;
-      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
-        @Override
-        public List<SNode> compute() {
-          return new ConceptAndSuperConceptsScope(finalConceptDeclaration).
-            getNodes(new Condition<SNode>() {
-              @Override
-              public boolean met(SNode n) {
-                if (SNodeUtil.isInstanceOfConceptLink(n)) {
-                  SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);
-                  return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
-                }
-                return false;
-              }
-            });
-
-        }
-      });
-    }
-
-    List<SNode> result = new ArrayList<SNode>();
-    Iterable<SNode> conceptLinks = SNodeUtil.getConcept_ConceptLinks(conceptDeclaration);
-    for (SNode conceptLink : conceptLinks) {
-      SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(conceptLink);
-      if (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName())) {
-        result.add(conceptLink);
-      }
-    }
-    return result;
   }
 }

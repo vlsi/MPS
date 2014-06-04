@@ -703,6 +703,7 @@
   </root>
   <root nodeRef="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)/932644095877881868">
     <nodeInfo nodeId="932644095877881876" fileName="BuilderContainer_Behavior.java" startLine="11" startPosition="75" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="932644095877881876" fileName="BuilderContainer_Behavior.java" startLine="11" startPosition="75" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="932644095877881868" fileName="BuilderContainer_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="932644095877881868" fileName="BuilderContainer_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLeaf_932644095877881871#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="932644095877881870" fileName="BuilderContainer_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />

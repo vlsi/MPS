@@ -504,8 +504,11 @@
   </root>
   <root nodeRef="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)/980633948652568092">
     <nodeInfo nodeId="980633948652574158" fileName="XMLSAXParser_Behavior.java" startLine="15" startPosition="233" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="980633948652574158" fileName="XMLSAXParser_Behavior.java" startLine="15" startPosition="233" endLine="16" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="980633948652572909" fileName="XMLSAXParser_Behavior.java" startLine="17" startPosition="5" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="980633948652572909" fileName="XMLSAXParser_Behavior.java" startLine="17" startPosition="5" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="980633948652568092" fileName="XMLSAXParser_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="980633948652572963" fileName="XMLSAXParser_Behavior.java" startLine="14" startPosition="101" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="980633948652572963" fileName="XMLSAXParser_Behavior.java" startLine="14" startPosition="101" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="980633948652568092" fileName="XMLSAXParser_Behavior.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
     <scopeInfo nodeId="980633948652568254" fileName="XMLSAXParser_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />

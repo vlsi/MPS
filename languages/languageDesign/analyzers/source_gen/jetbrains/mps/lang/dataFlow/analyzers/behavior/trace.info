@@ -155,6 +155,7 @@
   </root>
   <root nodeRef="r:f75f396b-f66a-4c8f-9533-fd8bd4d19e49(jetbrains.mps.lang.dataFlow.analyzers.behavior)/4413230749907681645">
     <nodeInfo nodeId="4413230749907681664" fileName="PatternCondition_Behavior.java" startLine="13" startPosition="88" endLine="14" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4413230749907681664" fileName="PatternCondition_Behavior.java" startLine="13" startPosition="88" endLine="14" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4413230749907681645" fileName="PatternCondition_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConcept_4413230749907681652#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="4413230749907681647" fileName="PatternCondition_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />

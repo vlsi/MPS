@@ -20,8 +20,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Set;
@@ -98,10 +98,6 @@ public class SModelUtil {
         return result;
       }
     });
-  }
-
-  public static SNode getConceptLinkTarget(SNode link) {
-    return SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.AggregationConceptLink"), "target", true);
   }
 
   @NotNull
@@ -208,7 +204,7 @@ public class SModelUtil {
   }
 
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    if (eq_74see4_a0a0q(fromFqName, toFqName)) {
+    if (eq_74see4_a0a0p(fromFqName, toFqName)) {
       return true;
     }
     if (fromFqName == null || toFqName == null) {
@@ -252,7 +248,7 @@ public class SModelUtil {
 
   protected static Logger LOG = LogManager.getLogger(SModelUtil.class);
 
-  private static boolean eq_74see4_a0a0q(Object a, Object b) {
+  private static boolean eq_74see4_a0a0p(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

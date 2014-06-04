@@ -155,6 +155,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1224608888226">
     <nodeInfo nodeId="1224609505672" fileName="IDeprecatable_Behavior.java" startLine="11" startPosition="76" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224609505672" fileName="IDeprecatable_Behavior.java" startLine="11" startPosition="76" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225207483003" fileName="IDeprecatable_Behavior.java" startLine="15" startPosition="73" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225207483003" fileName="IDeprecatable_Behavior.java" startLine="15" startPosition="73" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1224608888226" fileName="IDeprecatable_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isDeprecated_1224609060727#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -326,6 +328,7 @@
     <unitInfo nodeId="2565736246230026577" fileName="ExportScope_Behavior.java" startLine="23" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/3393165121846091588">
+    <nodeInfo nodeId="2942851545184979187" fileName="ISuppressErrors_Behavior.java" startLine="11" startPosition="91" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2942851545184979187" fileName="ISuppressErrors_Behavior.java" startLine="11" startPosition="91" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3393165121846091588" fileName="ISuppressErrors_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3393165121846091588" fileName="ISuppressErrors_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />

@@ -1118,6 +1118,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/4484478261143589910">
     <nodeInfo nodeId="4484478261143622398" fileName="ComparisonRule_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4484478261143622398" fileName="ComparisonRule_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4484478261143589910" fileName="ComparisonRule_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4484478261143589910" fileName="ComparisonRule_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSecondNodeCondition_4484478261143583672#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="4484478261143589912" fileName="ComparisonRule_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1132,6 +1133,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/4484478261143622407">
     <nodeInfo nodeId="4484478261143622414" fileName="InequationReplacementRule_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4484478261143622414" fileName="InequationReplacementRule_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4484478261143622407" fileName="InequationReplacementRule_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4484478261143622407" fileName="InequationReplacementRule_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSecondNodeCondition_4484478261143583672#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="4484478261143622409" fileName="InequationReplacementRule_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -1145,6 +1147,7 @@
     <unitInfo nodeId="4484478261143622407" fileName="InequationReplacementRule_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.InequationReplacementRule_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/5312038888515830436">
+    <nodeInfo nodeId="5312038888515830444" fileName="AbstractInequationStatement_Behavior.java" startLine="12" startPosition="87" endLine="13" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5312038888515830444" fileName="AbstractInequationStatement_Behavior.java" startLine="12" startPosition="87" endLine="13" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5312038888515830436" fileName="AbstractInequationStatement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5312038888515830436" fileName="AbstractInequationStatement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isLessThanInequality_5312038888515830439#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -1606,6 +1609,7 @@
     <unitInfo nodeId="6640659353039802498" fileName="MultipleForeachLoop_Behavior.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.MultipleForeachLoop_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/7342618720440051596">
+    <nodeInfo nodeId="7342618720440051604" fileName="DefaultGroupReference_Behavior.java" startLine="11" startPosition="90" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7342618720440051604" fileName="DefaultGroupReference_Behavior.java" startLine="11" startPosition="90" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7342618720440051596" fileName="DefaultGroupReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="7342618720440051596" fileName="DefaultGroupReference_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createGeneratedNodeId_7342618720440051599#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />

@@ -3,6 +3,7 @@
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.heating.constraints.ConstraintsAspectDescriptor" />
   <root nodeRef="r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)/2161719505004861768">
     <nodeInfo nodeId="2161719505004861768" fileName="Applicability_Constraints.java" startLine="8" startPosition="38" endLine="9" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2161719505004861768" fileName="Applicability_Constraints.java" startLine="8" startPosition="38" endLine="9" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2161719505004861768" fileName="Applicability_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Applicability_Constraints#()V" />
     <scopeInfo nodeId="2161719505004861768" fileName="Applicability_Constraints.java" startLine="8" startPosition="38" endLine="9" endPosition="67" />
     <scopeInfo nodeId="2161719505004861768" fileName="Applicability_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
