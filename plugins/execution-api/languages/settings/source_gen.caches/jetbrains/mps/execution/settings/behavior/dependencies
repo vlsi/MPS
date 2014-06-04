@@ -92,8 +92,11 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_Behavior" file="CreateEditor_Function_Behavior.java">
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_BehaviorDescriptor" file="CreateEditor_Function_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

@@ -6,6 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
 import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildStringContainer_Behavior {
   public static void init(SNode thisNode) {
@@ -14,5 +17,25 @@ public class BuildStringContainer_Behavior {
   @Nullable
   public static Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
     return null;
+  }
+
+  @Deprecated
+  public static boolean call_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isValidPart_9184644532456897464", new Object[]{propertyValue, role});
+  }
+
+  @Deprecated
+  public static boolean callSuper_isValidPart_9184644532456897464(SNode thisNode, String callerConceptFqName, String propertyValue, String role) {
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", new Class[]{SNode.class, String.class, String.class}, new Object[]{propertyValue, role});
+  }
+
+  @Deprecated
+  public static Color call_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
+    return BehaviorReflection.invokeVirtual(Color.class, thisNode, "virtual_getColorForTextPart_6083230236994422116", new Object[]{role});
+  }
+
+  @Deprecated
+  public static Color callSuper_getColorForTextPart_6083230236994422116(SNode thisNode, String callerConceptFqName, @NonNls String role) {
+    return BehaviorManager.getInstance().invokeSuper(Color.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_getColorForTextPart_6083230236994422116", new Class[]{SNode.class, String.class}, new Object[]{role});
   }
 }

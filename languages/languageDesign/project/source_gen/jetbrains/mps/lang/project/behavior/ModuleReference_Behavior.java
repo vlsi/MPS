@@ -4,6 +4,9 @@ package jetbrains.mps.lang.project.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModuleReference_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +14,15 @@ public class ModuleReference_Behavior {
 
   public static String virtual_getModuleReference_1250389701475344624(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "qualifiedName") + ")";
+  }
+
+  @Deprecated
+  public static String call_getModuleReference_1250389701475344624(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getModuleReference_1250389701475344624", new Object[]{});
+  }
+
+  @Deprecated
+  public static String callSuper_getModuleReference_1250389701475344624(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.ModuleReference"), callerConceptFqName, "virtual_getModuleReference_1250389701475344624", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -4,6 +4,9 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class INodeSetReference_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +14,15 @@ public class INodeSetReference_Behavior {
 
   public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
     return null;
+  }
+
+  @Deprecated
+  public static Iterable<SNode> call_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
+    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getNodes_5207260697411458163", new Object[]{context});
+  }
+
+  @Deprecated
+  public static Iterable<SNode> callSuper_getNodes_5207260697411458163(SNode thisNode, String callerConceptFqName, ConsoleContext context) {
+    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.console.ideCommands.structure.INodeSetReference"), callerConceptFqName, "virtual_getNodes_5207260697411458163", new Class[]{SNode.class, ConsoleContext.class}, new Object[]{context});
   }
 }
