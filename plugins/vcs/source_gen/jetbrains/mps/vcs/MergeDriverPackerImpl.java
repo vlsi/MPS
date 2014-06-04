@@ -8,9 +8,9 @@ import com.intellij.openapi.application.PathManager;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
+import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.io.File;
 import java.util.Arrays;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -27,34 +27,35 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
   @Override
   protected Set<String> getClasspathInternal() {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
+    final String fsep = File.separator;
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(MergeDriverPacker.mpsAddJars).select(new ISelector<String, String>() {
       public String select(String it) {
-        return PathManager.getLibPath() + File.separator + it;
+        return PathManager.getLibPath() + fsep + it;
       }
     }));
 
-    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "openapi", "smodel", "mps-core", "make-runtime", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence");
+    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "openapi", "smodel", "mps-core", "make-runtime", "kernel" + fsep + "dataFlowRuntime", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence");
     String homePath = PathManager.getHomePath();
-    final String corePath = homePath + File.separator + "core";
+    final String corePath = homePath + fsep + "core";
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(CLASSPATHS).select(new ISelector<String, String>() {
       public String select(String it) {
-        return corePath + File.separator + it + File.separator + "classes";
+        return corePath + fsep + it + fsep + "classes";
       }
     }));
 
-    final String languagesPath = homePath + File.separator + "languages";
+    final String languagesPath = homePath + fsep + "languages";
     final Iterable<String> OTHER_CLASSES = Arrays.asList("closures", "collections", "tuples");
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(OTHER_CLASSES).select(new ISelector<String, String>() {
       public String select(String it) {
-        return languagesPath + File.separator + "baseLanguage" + File.separator + it + File.separator + "runtime" + File.separator + "classes";
+        return languagesPath + fsep + "baseLanguage" + fsep + it + fsep + "runtime" + fsep + "classes";
       }
     }));
-    SetSequence.fromSet(classpathItems).addElement(languagesPath + File.separator + "baseLanguage" + File.separator + "baseLanguage" + File.separator + "solutions" + File.separator + "jetbrains.mps.baseLanguage.search" + File.separator + "classes");
-    SetSequence.fromSet(classpathItems).addElement(languagesPath + File.separator + "baseLanguage" + File.separator + "baseLanguage" + File.separator + "solutions" + File.separator + "jetbrains.mps.baseLanguage.util" + File.separator + "classes");
+    SetSequence.fromSet(classpathItems).addElement(languagesPath + fsep + "baseLanguage" + fsep + "baseLanguage" + fsep + "solutions" + fsep + "jetbrains.mps.baseLanguage.search" + fsep + "classes");
+    SetSequence.fromSet(classpathItems).addElement(languagesPath + fsep + "baseLanguage" + fsep + "baseLanguage" + fsep + "solutions" + fsep + "jetbrains.mps.baseLanguage.util" + fsep + "classes");
 
-    SetSequence.fromSet(classpathItems).addElement(corePath + File.separator + "make-runtime" + File.separator + "solutions" + File.separator + "jetbrains.mps.make.facets" + File.separator + "classes");
+    SetSequence.fromSet(classpathItems).addElement(corePath + fsep + "make-runtime" + fsep + "solutions" + fsep + "jetbrains.mps.make.facets" + fsep + "classes");
 
-    SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + File.separator + "lib" + File.separator + "classes");
+    SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + fsep + "lib" + fsep + "classes");
     return classpathItems;
 
   }
