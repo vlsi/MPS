@@ -797,7 +797,7 @@
     <nodeInfo nodeId="8887378328853569076" fileName="ConstraintsChecker.java" startLine="50" startPosition="0" endLine="51" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7390982340086720147" fileName="ConstraintsChecker.java" startLine="51" startPosition="112" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7390982340086720150" fileName="ConstraintsChecker.java" startLine="53" startPosition="50" endLine="54" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086720164" fileName="ConstraintsChecker.java" startLine="56" startPosition="136" endLine="57" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7390982340086720164" fileName="ConstraintsChecker.java" startLine="56" startPosition="134" endLine="57" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5579660120283334222" fileName="ConstraintsChecker.java" startLine="58" startPosition="25" endLine="59" endPosition="364" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086720179" fileName="ConstraintsChecker.java" startLine="59" startPosition="364" endLine="60" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8428637256415899387" fileName="ConstraintsChecker.java" startLine="63" startPosition="33" endLine="64" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -929,7 +929,7 @@
     <scopeInfo nodeId="8887378328853481940" fileName="ConstraintsChecker.java" startLine="35" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="8887378328853538111" varName="checkingNodeContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7390982340086720163" fileName="ConstraintsChecker.java" startLine="56" startPosition="136" endLine="70" endPosition="7">
+    <scopeInfo nodeId="7390982340086720163" fileName="ConstraintsChecker.java" startLine="56" startPosition="134" endLine="70" endPosition="7">
       <varInfo nodeId="7390982340086720185" varName="canBeChild" />
       <varInfo nodeId="7390982340086720165" varName="link" />
     </scopeInfo>

@@ -34,7 +34,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.Primitives;
-import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
@@ -51,7 +50,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     myPropertyName = InternUtil.intern(role.toString());
     myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
     if (myPropertyDeclaration == null) {
-      if (!SNodeOperations.isUnknown(getSNode())) {
+      if (!jetbrains.mps.util.SNodeOperations.isUnknown(getSNode())) {
         LOG.error("no property declaration could be found in NODE " + getSNode() + " for PROPERTY name " + myPropertyName);
       }
       myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
