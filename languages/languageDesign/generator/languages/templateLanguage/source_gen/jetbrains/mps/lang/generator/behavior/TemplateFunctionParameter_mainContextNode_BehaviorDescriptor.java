@@ -4,9 +4,14 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class TemplateFunctionParameter_mainContextNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public TemplateFunctionParameter_mainContextNode_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
+    return TemplateFunctionParameter_mainContextNode_Behavior.virtual_getType_2443692612523876968(thisNode);
   }
 
   @Override

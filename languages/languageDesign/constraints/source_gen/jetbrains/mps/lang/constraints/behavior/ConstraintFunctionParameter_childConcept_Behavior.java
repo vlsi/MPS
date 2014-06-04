@@ -4,6 +4,8 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class ConstraintFunctionParameter_childConcept_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +13,16 @@ public class ConstraintFunctionParameter_childConcept_Behavior {
 
   public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
     return true;
+  }
+
+  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
+    return _quotation_createNode_5f7vu5_a0a1();
+  }
+
+  private static SNode _quotation_createNode_5f7vu5_a0a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, false);
+    return quotedNode_1;
   }
 }

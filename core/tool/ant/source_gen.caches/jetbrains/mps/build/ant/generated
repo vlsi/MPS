@@ -7,13 +7,12 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="4003657351907886467" name="Arg" hash="9nr7m7eom8u6qbrsv91vwj2rt439uxl">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Arg.java" />
   </source>
   <source id="4003657351907889245" name="MyExecuteStreamHandler" hash="-4z614gwwz2cvo31577lt04gpsp95x3c">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MyExecuteStreamHandler.java" />
   </source>
   <source id="4003657351907889440" name="Macro" hash="-7ll4i24qeb4824pn59h31hianvjk0ie">

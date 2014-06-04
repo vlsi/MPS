@@ -24,6 +24,7 @@
     <file name="ConsoleTestReporter.java" />
   </source>
   <source id="2546981710036147162" name="ITestReporter" hash="6h1dzvbdclufo9g8z4wzjdw660ci8sv">
+    <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
     <file name="ITestReporter.java" />
   </source>
   <source id="2546981710036147218" name="UnitTestAdapter" hash="97m9we04qgvm7g16479aesgtnf4wpbj">

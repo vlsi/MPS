@@ -101,8 +101,6 @@
   </root>
   <root nodeRef="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)/8974276187400030151">
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="15" startPosition="72" endLine="16" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="15" startPosition="72" endLine="16" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="20" startPosition="105" endLine="21" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="20" startPosition="105" endLine="21" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_generate_8974276187400030152#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -123,7 +121,6 @@
     <unitInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.resources.behavior.Resource_Behavior" />
   </root>
   <root nodeRef="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)/8974276187400030158">
-    <nodeInfo nodeId="8974276187400030163" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400030163" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="77" endLine="14" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400030158" fileName="IconResourceBundle_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8974276187400030158" fileName="IconResourceBundle_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getJavaName_8974276187400030159#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />

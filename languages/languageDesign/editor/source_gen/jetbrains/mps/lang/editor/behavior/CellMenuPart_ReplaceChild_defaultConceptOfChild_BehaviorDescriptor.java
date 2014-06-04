@@ -4,9 +4,14 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class CellMenuPart_ReplaceChild_defaultConceptOfChild_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public CellMenuPart_ReplaceChild_defaultConceptOfChild_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
+    return CellMenuPart_ReplaceChild_defaultConceptOfChild_Behavior.virtual_getType_2443692612523876968(thisNode);
   }
 
   @Override

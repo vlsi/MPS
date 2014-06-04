@@ -12,7 +12,6 @@
   <unitInfo fileName="TypeExtension_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.TypeExtension_BehaviorDescriptor" />
   <root nodeRef="r:a5509d93-a6df-4356-9363-7de4efc47849(jetbrains.mps.baseLanguage.extensionMethods.behavior)/1262430001741717168">
     <nodeInfo nodeId="1262430001741717166" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741717166" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717168" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741717168" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
     <scopeInfo nodeId="1262430001741717170" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -26,7 +25,6 @@
     <unitInfo nodeId="1262430001741717168" fileName="ExtensionStaticFieldReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionStaticFieldReference_Behavior" />
   </root>
   <root nodeRef="r:a5509d93-a6df-4356-9363-7de4efc47849(jetbrains.mps.baseLanguage.extensionMethods.behavior)/1713017043373861885">
-    <nodeInfo nodeId="1713017043373861890" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1713017043373861890" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="11" startPosition="79" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1713017043373861885" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1713017043373861885" fileName="ExtensionStaticFieldDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isInitializable_1213877517488#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -81,10 +79,7 @@
   </root>
   <root nodeRef="r:a5509d93-a6df-4356-9363-7de4efc47849(jetbrains.mps.baseLanguage.extensionMethods.behavior)/8578055449697886098">
     <nodeInfo nodeId="8578055449697886105" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="16" startPosition="78" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8578055449697886105" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="16" startPosition="78" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="26" startPosition="114" endLine="27" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="26" startPosition="114" endLine="27" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMembers_1213877531970#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
@@ -110,7 +105,6 @@
     <unitInfo nodeId="8578055449697886098" fileName="BaseExtensionMethodContainer_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.behavior.BaseExtensionMethodContainer_Behavior" />
   </root>
   <root nodeRef="r:a5509d93-a6df-4356-9363-7de4efc47849(jetbrains.mps.baseLanguage.extensionMethods.behavior)/8872816273829182991">
-    <nodeInfo nodeId="8872816273829183002" fileName="ExtensionMethodCall_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8872816273829183002" fileName="ExtensionMethodCall_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8872816273829182991" fileName="ExtensionMethodCall_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8872816273829182991" fileName="ExtensionMethodCall_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_operandCanBeNull_323410281720656291#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />

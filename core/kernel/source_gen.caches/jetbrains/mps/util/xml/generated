@@ -14,7 +14,6 @@
     <file name="BreakParseSAXException.java" />
   </source>
   <source id="2084096332909492403" name="XMLSAXHandler" hash="6n7yvfp2vpqtlhgu1s4eyf0rrm39wjg">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="XMLSAXHandler.java" />
   </source>
   <source id="4876847581624854372" name="XmlUtil" hash="7t3ohk05emba6yqjem7bc9hxvn93llx">

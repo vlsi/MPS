@@ -21,6 +21,8 @@
   <source id="393299394024627257" name="main" hash="44k34hxstlv9i87nnf8aciibe1pe6m3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="954830572076054994" name="reduce_MyIfStatement" hash="ax3fdpazaqphdk228iwbx61vkz420xj" />
+  <source id="954830572076054994" name="reduce_MyIfStatement" hash="ax3fdpazaqphdk228iwbx61vkz420xj">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
 </dependencies>
 

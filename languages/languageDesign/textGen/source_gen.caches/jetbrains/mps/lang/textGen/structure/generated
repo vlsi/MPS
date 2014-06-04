@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ejf7z3y5etvk0bmqaf14nh8a6rbgmvi">
+<dependencies version="2" modelHash="-4qdi59f0o20v9bakvml5apndaubrwy8">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="9d8mf5fh5uwzzraj3wepjahity3ixrn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="2mca3ncg6d36jbzt437k417bb81y2d6" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6coyx9cq8icm86dy9j1trq5a7ubwr79" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
@@ -59,9 +59,9 @@
   <source id="1233921373471" name="LanguageTextGenDeclaration" hash="-53bz0xl9papjwgyjibpjsf10rl0uazl" />
   <source id="1233922353619" name="OperationDeclaration" hash="-2fuunr8a5p35jqkaqfec4z5k1tt0zy" />
   <source id="1233924848298" name="OperationCall" hash="e6s1k7fpb1061sx25psd5kshoyjoopj" />
-  <source id="1234279682891" name="ContextParameter" hash="-ch7m1wzw2zkvczku9q24ssar76zyfk6" />
+  <source id="1234279682891" name="ContextParameter" hash="-15chvpfd1uzulftuc78qysmmioxi0n5" />
   <source id="1234281982537" name="AbstractTextGenDeclaration" hash="dcl8k25rpahlgdpq5b5asirqeo8ddbw" />
-  <source id="1234351783410" name="BufferParameter" hash="-dasy5sanpblkct3u8rltrjccpd48609" />
+  <source id="1234351783410" name="BufferParameter" hash="aa7d3w3hfuzoeq276yaqakep6s2k5po" />
   <source id="1234524838116" name="UtilityMethodDeclaration" hash="6xv2yus2vgxwyetpf1epv0c621ietut" />
   <source id="1234529062040" name="UtilityMethodCall" hash="-3lb9uguxs6tnah4sjhx7ioozvppkg49" />
   <source id="1234794705341" name="FoundErrorOperation" hash="-dplbvctllzlygci3w8bu2t8xdxg1y2h" />

@@ -5,14 +5,14 @@
   <unitInfo fileName="CreateBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.CreateBlock_BehaviorDescriptor" />
   <unitInfo fileName="CreateFunction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.CreateFunction_BehaviorDescriptor" />
   <unitInfo fileName="DescriptorsFunction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.DescriptorsFunction_BehaviorDescriptor" />
-  <unitInfo fileName="IModule_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.IModule_ConceptFunctionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="IModule_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.IModule_ConceptFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="LanguageRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.LanguageRef_BehaviorDescriptor" />
   <unitInfo fileName="ModelCreationSettings_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelCreationSettings_BehaviorDescriptor" />
   <unitInfo fileName="ModelManagerDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelManagerDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ModelRoot_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelRoot_ConceptFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="Model_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.Model_ConceptFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="SModelFqName_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.SModelFqName_ConceptFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="SModelRoot_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.SModelRoot_ConceptFunctionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="ModelRoot_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelRoot_ConceptFunctionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="Model_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.Model_ConceptFunctionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="SModelFqName_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.SModelFqName_ConceptFunctionParameter_BehaviorDescriptor" />
+  <unitInfo fileName="SModelRoot_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.SModelRoot_ConceptFunctionParameter_BehaviorDescriptor" />
   <root nodeRef="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)/1262430001741647553">
     <nodeInfo nodeId="1262430001741647551" fileName="CreateFunction_Behavior.java" startLine="19" startPosition="92" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914724445" fileName="CreateFunction_Behavior.java" startLine="23" startPosition="125" endLine="24" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -159,30 +159,157 @@
     <scopeInfo nodeId="658365993682019666" fileName="DescriptorsFunction_Behavior.java" startLine="35" startPosition="0" endLine="45" endPosition="0" />
     <unitInfo nodeId="1262430001741703507" fileName="DescriptorsFunction_Behavior.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.DescriptorsFunction_Behavior" />
   </root>
+  <root nodeRef="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)/5452844340287050963">
+    <nodeInfo nodeId="5452844340287051153" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="60" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="19" startPosition="63" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="21" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="21" startPosition="138" endLine="22" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="22" startPosition="294" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287050963" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287050963" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_lcmrnj_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="5452844340287050965" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="5452844340287051152" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="47" />
+    <scopeInfo nodeId="5452844340287050963" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="5452844340287050963" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="294" />
+    <scopeInfo nodeId="5452844340287050963" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="5452844340287050963" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="60" endLine="23" endPosition="24">
+      <varInfo nodeId="5452844340287051149" varName="facade" />
+      <varInfo nodeId="5452844340287051149" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287051149" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="5452844340287050963" fileName="IModule_ConceptFunctionParameter_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.IModule_ConceptFunctionParameter_Behavior" />
+  </root>
+  <root nodeRef="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)/5452844340287051309">
+    <nodeInfo nodeId="5452844340287051316" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="13" startPosition="75" endLine="14" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="17" startPosition="60" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="63" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="19" startPosition="30" endLine="20" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="19" startPosition="30" endLine="20" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="19" startPosition="30" endLine="20" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="133" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287051309" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5452844340287051309" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3zbibd_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="5452844340287051311" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="5452844340287051315" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="13" startPosition="75" endLine="14" endPosition="47" />
+    <scopeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="19" startPosition="30" endLine="20" endPosition="133" />
+    <scopeInfo nodeId="5452844340287051309" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+      <varInfo nodeId="5452844340287051309" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287051309" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="5452844340287051309" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="17" startPosition="60" endLine="21" endPosition="24">
+      <varInfo nodeId="5452844340287051312" varName="facade" />
+      <varInfo nodeId="5452844340287051312" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287051312" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" />
+    <unitInfo nodeId="5452844340287051309" fileName="Model_ConceptFunctionParameter_Behavior.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.Model_ConceptFunctionParameter_Behavior" />
+  </root>
+  <root nodeRef="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)/5452844340287051378">
+    <nodeInfo nodeId="5452844340287051630" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="60" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="19" startPosition="63" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="21" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="21" startPosition="138" endLine="22" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="22" startPosition="303" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287051378" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287051378" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_hgjo1m_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="5452844340287051380" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="5452844340287051629" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="47" />
+    <scopeInfo nodeId="5452844340287051378" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="5452844340287051378" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="303" />
+    <scopeInfo nodeId="5452844340287051378" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="5452844340287051378" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="60" endLine="23" endPosition="24">
+      <varInfo nodeId="5452844340287051381" varName="facade" />
+      <varInfo nodeId="5452844340287051381" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287051381" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="5452844340287051378" fileName="ModelRoot_ConceptFunctionParameter_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.ModelRoot_ConceptFunctionParameter_Behavior" />
+  </root>
+  <root nodeRef="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)/5452844340287052808">
+    <nodeInfo nodeId="5452844340287052815" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="60" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="19" startPosition="63" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="21" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="21" startPosition="138" endLine="22" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="22" startPosition="272" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287052808" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287052808" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_73do6i_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="5452844340287052810" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="5452844340287052814" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="47" />
+    <scopeInfo nodeId="5452844340287052808" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="5452844340287052808" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="272" />
+    <scopeInfo nodeId="5452844340287052808" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="5452844340287052808" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="60" endLine="23" endPosition="24">
+      <varInfo nodeId="5452844340287052811" varName="facade" />
+      <varInfo nodeId="5452844340287052811" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287052811" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="5452844340287052808" fileName="SModelFqName_ConceptFunctionParameter_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.SModelFqName_ConceptFunctionParameter_Behavior" />
+  </root>
+  <root nodeRef="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)/5452844340287052817">
+    <nodeInfo nodeId="5452844340287052824" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="60" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="19" startPosition="63" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="21" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="21" startPosition="138" endLine="22" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="22" startPosition="272" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452844340287052817" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5452844340287052817" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ohi7vk_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="5452844340287052819" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="5452844340287052823" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="75" endLine="15" endPosition="47" />
+    <scopeInfo nodeId="5452844340287052817" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="5452844340287052817" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="272" />
+    <scopeInfo nodeId="5452844340287052817" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="5452844340287052817" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="60" endLine="23" endPosition="24">
+      <varInfo nodeId="5452844340287052820" varName="facade" />
+      <varInfo nodeId="5452844340287052820" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="5452844340287052820" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="18" startPosition="0" endLine="25" endPosition="0" />
+    <unitInfo nodeId="5452844340287052817" fileName="SModelRoot_ConceptFunctionParameter_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.stubs.behavior.SModelRoot_ConceptFunctionParameter_Behavior" />
+  </root>
   <root nodeRef="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)/5553449326502622485">
     <nodeInfo nodeId="5553449326502622491" fileName="ModelManagerDeclaration_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622491" fileName="ModelManagerDeclaration_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4063774604867753795" fileName="ModelManagerDeclaration_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4063774604867753795" fileName="ModelManagerDeclaration_Behavior.java" startLine="23" startPosition="82" endLine="24" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4063774604867753804" fileName="ModelManagerDeclaration_Behavior.java" startLine="27" startPosition="89" endLine="28" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4063774604867753804" fileName="ModelManagerDeclaration_Behavior.java" startLine="27" startPosition="89" endLine="28" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622485" fileName="ModelManagerDeclaration_Behavior.java" startLine="32" startPosition="75" endLine="33" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5553449326502622485" fileName="ModelManagerDeclaration_Behavior.java" startLine="32" startPosition="75" endLine="33" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5553449326502622485" fileName="ModelManagerDeclaration_Behavior.java" startLine="37" startPosition="108" endLine="38" endPosition="335" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622485" fileName="ModelManagerDeclaration_Behavior.java" startLine="37" startPosition="108" endLine="38" endPosition="335" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="41" startPosition="78" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="41" startPosition="78" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="42" startPosition="63" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="42" startPosition="63" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="43" startPosition="30" endLine="44" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="43" startPosition="30" endLine="44" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="44" startPosition="157" endLine="45" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="44" startPosition="157" endLine="45" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="45" startPosition="88" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="45" startPosition="88" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5553449326502622485" fileName="ModelManagerDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="43" startPosition="30" endLine="45" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="43" startPosition="30" endLine="45" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="43" startPosition="30" endLine="45" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4063774604867691940" fileName="ModelManagerDeclaration_Behavior.java" startLine="43" startPosition="30" endLine="45" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5553449326502622485" fileName="ModelManagerDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1213877527970#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
