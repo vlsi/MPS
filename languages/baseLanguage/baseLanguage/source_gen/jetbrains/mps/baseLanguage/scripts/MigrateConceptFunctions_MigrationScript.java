@@ -66,6 +66,43 @@ public class MigrateConceptFunctions_MigrationScript extends BaseMigrationScript
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
+        return "concept function parameter type";
+      }
+
+      public String getAdditionalInfo() {
+        return "concept function parameter type";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.structure.structure.AggregationConceptLink";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SLinkOperations.getTarget(node, "conceptLinkDeclaration", false) == ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1107135704075"), "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return eq_3uyx8s_a0a0a0a0a0a0a3a0a0a0a2a0(SPropertyOperations.getString(it, "name"), "conceptFunctionParameterType");
+          }
+        });
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration", false, false);
+        SNode behavior = ((SNode) AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR));
+        if (behavior == null) {
+          behavior = ((SNode) ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.BEHAVIOR, concept, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior")));
+        }
+        SNode q = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.Quotation", null);
+        SLinkOperations.setTarget(q, "quotedNode", SLinkOperations.getTarget(node, "target", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(behavior, "method", true)).addElement(_quotation_createNode_49yvvj_a0a5a0b(q));
+        SNodeOperations.deleteNode(node);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
         return "throws items";
       }
 
@@ -82,7 +119,7 @@ public class MigrateConceptFunctions_MigrationScript extends BaseMigrationScript
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, "conceptLinkDeclaration", false) == ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1137021947720"), "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_3uyx8s_a0a0a0a0a0a0a0a0a0a0a3a0a0a0a2a0(SPropertyOperations.getString(it, "name"), "conceptFunctionThrowsType");
+                return eq_3uyx8s_a0a0a0a0a0a0a0a0a0a0a3a0a0a0a3a0(SPropertyOperations.getString(it, "name"), "conceptFunctionThrowsType");
               }
             });
           }
@@ -99,7 +136,7 @@ public class MigrateConceptFunctions_MigrationScript extends BaseMigrationScript
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, "conceptLinkDeclaration", false) == ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1137021947720"), "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return eq_3uyx8s_a0a0a0a0a0a0a0a0a0a0d0e0a0a0a0c0a(SPropertyOperations.getString(it, "name"), "conceptFunctionThrowsType");
+                return eq_3uyx8s_a0a0a0a0a0a0a0a0a0a0d0e0a0a0a0d0a(SPropertyOperations.getString(it, "name"), "conceptFunctionThrowsType");
               }
             });
           }
@@ -110,7 +147,7 @@ public class MigrateConceptFunctions_MigrationScript extends BaseMigrationScript
           }
         }).toListSequence());
 
-        ListSequence.fromList(SLinkOperations.getTargets(behavior, "method", true)).addElement(_quotation_createNode_49yvvj_a0a6a0b(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
+        ListSequence.fromList(SLinkOperations.getTargets(behavior, "method", true)).addElement(_quotation_createNode_49yvvj_a0a6a0c(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             SNode res = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.Quotation", null);
             SLinkOperations.setTarget(res, "quotedNode", it, true);
@@ -159,7 +196,36 @@ public class MigrateConceptFunctions_MigrationScript extends BaseMigrationScript
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_49yvvj_a0a6a0b(Object parameter_1) {
+  private static SNode _quotation_createNode_49yvvj_a0a5a0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    SNode quotedNode_7 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", null, null, false);
+    SNodeAccessUtil.setProperty(quotedNode_2, "name", "getType");
+    SNodeAccessUtil.setProperty(quotedNode_2, "isVirtual", "false");
+    SNodeAccessUtil.setProperty(quotedNode_2, "isAbstract", "false");
+    quotedNode_2.setReference("overriddenMethod", SReference.create("overriddenMethod", quotedNode_2, facade.createModelReference("r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)"), facade.createNodeId("2443692612523876968")));
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, false);
+    quotedNode_2.addChild("visibility", quotedNode_3);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
+    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, false);
+    quotedNode_7 = (SNode) parameter_1;
+    if (quotedNode_7 != null) {
+      quotedNode_6.addChild("expression", HUtil.copyIfNecessary(quotedNode_7));
+    }
+    quotedNode_4.addChild("statement", quotedNode_6);
+    quotedNode_2.addChild("body", quotedNode_4);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
+    quotedNode_5.setReference("concept", SReference.create("concept", quotedNode_5, facade.createModelReference("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), facade.createNodeId("1068431790189")));
+    quotedNode_2.addChild("returnType", quotedNode_5);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_49yvvj_a0a6a0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -242,11 +308,15 @@ public class MigrateConceptFunctions_MigrationScript extends BaseMigrationScript
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_3uyx8s_a0a0a0a0a0a0a0a0a0a0a3a0a0a0a2a0(Object a, Object b) {
+  private static boolean eq_3uyx8s_a0a0a0a0a0a0a3a0a0a0a2a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_3uyx8s_a0a0a0a0a0a0a0a0a0a0d0e0a0a0a0c0a(Object a, Object b) {
+  private static boolean eq_3uyx8s_a0a0a0a0a0a0a0a0a0a0a3a0a0a0a3a0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_3uyx8s_a0a0a0a0a0a0a0a0a0a0d0e0a0a0a0d0a(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
