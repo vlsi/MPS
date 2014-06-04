@@ -15,6 +15,14 @@ public class XMLSAXChildRuleCondition_BehaviorDescriptor extends ConceptFunction
     return XMLSAXChildRuleCondition_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return XMLSAXChildRuleCondition_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
+  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
+    return XMLSAXChildRuleCondition_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRuleCondition";

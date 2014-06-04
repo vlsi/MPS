@@ -15,6 +15,10 @@ public class GenerateTextDeclaration_BehaviorDescriptor extends ConceptFunction_
     return GenerateTextDeclaration_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return GenerateTextDeclaration_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration";

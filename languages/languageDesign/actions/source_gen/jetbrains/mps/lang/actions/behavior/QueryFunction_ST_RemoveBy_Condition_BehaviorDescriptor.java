@@ -15,6 +15,10 @@ public class QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor extends Conc
     return QueryFunction_ST_RemoveBy_Condition_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return QueryFunction_ST_RemoveBy_Condition_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return QueryFunction_ST_RemoveBy_Condition_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
   }

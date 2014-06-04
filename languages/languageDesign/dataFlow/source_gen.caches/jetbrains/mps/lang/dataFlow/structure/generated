@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-88trn3i0td71vpzsb971anf8qxig7jm">
+<dependencies version="2" modelHash="e9aizn9ys5y0hyt40usgnrp9uh7vd3d">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="71mhb0v5f0gb4vfw478iy5a4irvpfac" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="9d8mf5fh5uwzzraj3wepjahity3ixrn" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
@@ -52,7 +52,7 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="1206442055221" name="DataFlowBuilderDeclaration" hash="7jxcuho8bfswvdg4lcmj601nm2vekqa" />
-  <source id="1206442659665" name="BuilderBlock" hash="-bv0q3mrmcmrb6n5cs0vghiccivtmlld" />
+  <source id="1206442659665" name="BuilderBlock" hash="9rjko3spozmj9jw3l0i56zsslpswtbr" />
   <source id="1206442747519" name="NodeParameter" hash="2nfb7igita41zfci1uoqcnznis085y3" />
   <source id="1206443583064" name="EmitStatement" hash="evemipywzbjqqhy94t6svdl88nu3k24" />
   <source id="1206443660532" name="EmitNopStatement" hash="-akjpurhuipiwcctrqx3y5vwd8to3htz" />

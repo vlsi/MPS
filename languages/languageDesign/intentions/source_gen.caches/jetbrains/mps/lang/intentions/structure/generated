@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-apy4kgv7uj2buif698qndeyewpcs532">
+<dependencies version="2" modelHash="7em77rbt2zb3icarp3kxkvaqsekal4i">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="71mhb0v5f0gb4vfw478iy5a4irvpfac" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="9d8mf5fh5uwzzraj3wepjahity3ixrn" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" hash="-7zfaw081azxsymmxu2b38xxv0iqlcus" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="elq7sj3fhojr5ms57gke9wl7zds34np" dependsOnNodes="true">
+  <common hash="-7e44p4r1rvm0y0udb8ojx4xbu4y97j0" dependsOnNodes="true">
     <dep root="1192794744107" />
     <dep root="1192794782375" />
     <dep root="1192795771125" />
@@ -37,15 +37,15 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="1192794744107" name="IntentionDeclaration" hash="-355bjwn4vse41mk4o6wscxgm9tryiko" />
-  <source id="1192794782375" name="DescriptionBlock" hash="-3dx0osxlpwo2mywr3ewwqe3javdb1w3" />
-  <source id="1192795771125" name="IsApplicableBlock" hash="exl1jhiiya18mq3387apx6weogd7llx" />
-  <source id="1192795911897" name="ExecuteBlock" hash="-81c5zihe2hsrnwh5zvlwn6hzhqluco" />
+  <source id="1192794782375" name="DescriptionBlock" hash="3yxqlokovxm8ssxxklmtbeb5cbuxm8d" />
+  <source id="1192795771125" name="IsApplicableBlock" hash="-1icfw4ths2o179fd3wmiql40qnggtvr" />
+  <source id="1192795911897" name="ExecuteBlock" hash="-aiu113dkngx186qvl09fvqd146jt4gb" />
   <source id="1192796902958" name="ConceptFunctionParameter_node" hash="-73x3fyz6cf6spxoxsyvog33qfab12sk" />
-  <source id="1240316299033" name="QueryBlock" hash="6wor88wf34y1hj327q8tb42ywrml425" />
+  <source id="1240316299033" name="QueryBlock" hash="3ots9f14du0r29ch37ythybva8e8w3z" />
   <source id="1240322627579" name="IntentionParameter" hash="-6c0y6tmhscoejw5jhe1ytpud8yqrahg" />
   <source id="1240395258925" name="ParameterizedIntentionDeclaration" hash="cbs6vuhzgu3rghbav4n4up0riqsx8k3" />
   <source id="3618415754251190680" name="ChildFilterBlock" hash="-7q6sbu2lwgy85hqtv4yh6s3eybdg3qq" />
-  <source id="3618415754251190715" name="ChildFilterFunction" hash="ems810l3moeet8ic5a3bodyjp9cuzww" />
+  <source id="3618415754251190715" name="ChildFilterFunction" hash="-93lga9d55add9i8m1p4414duzwgedcc" />
   <source id="3618415754251192144" name="ConceptFunctionParameter_childNode" hash="bwvifyxqrswfw86tmbrhaefmt7f7qa" />
   <source id="2522969319638091381" name="BaseIntentionDeclaration" hash="-e9ay9l2ed169xjity85xkfatn852a0u" />
   <source id="2522969319638198293" name="SurroundWithIntentionDeclaration" hash="9214zcx1pdocpaok9uj18oh3rbj2cen" />

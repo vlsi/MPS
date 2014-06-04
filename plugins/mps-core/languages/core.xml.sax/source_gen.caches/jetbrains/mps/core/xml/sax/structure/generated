@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-aqry8y804r2py0xx8qly5nxzrq4whng">
+<dependencies version="2" modelHash="a9o01w9f2go7x7rc82i1vn1kv8gbk9e">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
@@ -49,12 +49,12 @@
   <source id="2264311582634140376" name="XMLSAXChildRule" hash="6hi93vg4r5ivv1vnlpdo6yjorrxi2xs" />
   <source id="2264311582634140381" name="XMLSAXFieldDeclaration" hash="-2z50jlqdho8ps9bxavhiq8u3abn61ez" />
   <source id="2264311582634140384" name="XMLSAXFieldReference" hash="chymuhed0rn5ei60tqxel9xxmcdqmef" />
-  <source id="2264311582634140387" name="XMLSAXHandlerFunction" hash="7cegwtvdycv9wx44r4rdhpsusfkpsl5" />
+  <source id="2264311582634140387" name="XMLSAXHandlerFunction" hash="-b8m2nm94s0ab8gllx7nyijset7ajg2m" />
   <source id="2264311582634140394" name="XMLSAXHandler_resultObject" hash="36x82eqpf43f9d1ico3ppajlwdy4y0b" />
   <source id="2264311582634140397" name="XMLSAXLocatorExpression" hash="3uxyvtvjgxm4dfm40dsy50s5rvyihs1" />
-  <source id="2264311582634140399" name="XMLSAXNodeCreator" hash="1uyuakjoolj7dbi7umwbvlw5lo12bhw" />
+  <source id="2264311582634140399" name="XMLSAXNodeCreator" hash="-bgckcskjyz6u2i63am79rpav4md9lmk" />
   <source id="2264311582634140402" name="XMLSAXNodeRule" hash="-ene3uqxuxj8dbn3nqukbjvf6qgwmavx" />
-  <source id="2264311582634140412" name="XMLSAXNodeValidator" hash="-d5b3u5ycyg3h96f734ievisr5jbcymd" />
+  <source id="2264311582634140412" name="XMLSAXNodeValidator" hash="-7wym0bait2ubbq2oxgubqn3omck2ww7" />
   <source id="2264311582634140417" name="XMLSAXParser" hash="-6chh1qxfcppklumeee41nhtpfzfr08q" />
   <source id="2264311582634140424" name="XMLSAXTextHandler" hash="7ytkdfth6hb6ulavfnm4wzvluwaqrxi" />
   <source id="2264311582634140432" name="XMLSAXTextRule" hash="-9vwqc1urxiykcrb9q5b0ip4vfw9bch9" />
@@ -62,6 +62,6 @@
   <source id="3465552206661911172" name="XMLSAXTextHandler_value" hash="3053j7y2sztipobmisjgzvlmst2phcn" />
   <source id="980633948634473453" name="XMLSAXNodeRuleParam" hash="-e9spvjwfhd43u1kvj7cte69veg89ojt" />
   <source id="4720003541456852678" name="XMLSAXNodeRuleParamRef" hash="dkjmuaws86pw866rgqvgo8w6d3sjafg" />
-  <source id="4720003541470384741" name="XMLSAXChildRuleCondition" hash="-4zlslbfbjwo2pc7snzak7w8omx572ho" />
+  <source id="4720003541470384741" name="XMLSAXChildRuleCondition" hash="48smvixreunela3bad9aur32sokvfxg" />
 </dependencies>
 

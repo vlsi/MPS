@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2krvv1jgch49241sva4ve3c4tpi1es4">
+<dependencies version="2" modelHash="-e1rxqxjt4p36s0im6omlj3l06beqobp">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
@@ -30,7 +30,7 @@
   <source id="3729007189729192406" name="ExtensionPointDeclaration" hash="-csgjp9lk4mq0doh0e76gxn73d5e2t2w" />
   <source id="8029776554053043557" name="ExtensionObjectGetter" hash="-6ium6ltxk9mt7gccyumktgojlz8xzh5" />
   <source id="6626851894249711936" name="ExtensionPointExpression" hash="-amrjtacxc9qor0zeoryptnnip8j8qt9" />
-  <source id="7036359038356050927" name="ExtensionFunction" hash="2ouvgo5epy8mcy9tv8yijkia01njovq" />
+  <source id="7036359038356050927" name="ExtensionFunction" hash="-23ggmu249wx106sk4iazbh0wssxnbc6" />
   <source id="7036359038356115097" name="ExtensionFieldDeclaration" hash="1sml7ja6puzqhp34o1crsrpoegz9la6" />
   <source id="7036359038356115102" name="ExtensionFieldReference" hash="-8mqlo358lge3p12eav65el1f7xrfdc7" />
   <source id="3175313036448544056" name="ExtensionPointType" hash="-d2zvewpeyx7g6ravav2slbls0quvwf2" />

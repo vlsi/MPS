@@ -3,25 +3,45 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CellModel_HierarchycalTable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_BehaviorDescriptor" />
   <unitInfo fileName="CellModel_Table_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.CellModel_Table_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_TableModel_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.QueryFunction_TableModel_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_TableModel_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.QueryFunction_TableModel_BehaviorDescriptor" />
   <root nodeRef="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)/3044950653914723868">
-    <nodeInfo nodeId="3044950653914723842" fileName="QueryFunction_TableModel_Behavior.java" startLine="16" startPosition="125" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914723857" fileName="QueryFunction_TableModel_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914723862" fileName="QueryFunction_TableModel_Behavior.java" startLine="18" startPosition="166" endLine="19" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914723866" fileName="QueryFunction_TableModel_Behavior.java" startLine="19" startPosition="166" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914723870" fileName="QueryFunction_TableModel_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="3044950653914723842" fileName="QueryFunction_TableModel_Behavior.java" startLine="19" startPosition="125" endLine="20" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914723857" fileName="QueryFunction_TableModel_Behavior.java" startLine="20" startPosition="261" endLine="21" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914723862" fileName="QueryFunction_TableModel_Behavior.java" startLine="21" startPosition="166" endLine="22" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914723866" fileName="QueryFunction_TableModel_Behavior.java" startLine="22" startPosition="166" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682018382" fileName="QueryFunction_TableModel_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="30" startPosition="60" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="31" startPosition="63" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="33" startPosition="138" endLine="34" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="34" startPosition="247" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="32" startPosition="30" endLine="34" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="32" startPosition="30" endLine="34" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_exju2j_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="3044950653914723870" fileName="QueryFunction_TableModel_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="658365993682018381" fileName="QueryFunction_TableModel_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="47" />
+    <scopeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="3044950653914723868" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914723841" fileName="QueryFunction_TableModel_Behavior.java" startLine="16" startPosition="125" endLine="20" endPosition="18">
+    <scopeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="32" startPosition="30" endLine="34" endPosition="247" />
+    <scopeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="3044950653914723868" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3044950653914723841" fileName="QueryFunction_TableModel_Behavior.java" startLine="19" startPosition="125" endLine="23" endPosition="18">
       <varInfo nodeId="3044950653914723843" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="30" startPosition="60" endLine="35" endPosition="24">
+      <varInfo nodeId="658365993682017734" varName="facade" />
+      <varInfo nodeId="658365993682017734" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="3044950653914723868" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.QueryFunction_TableModel_Behavior" />
+    <scopeInfo nodeId="658365993682017734" fileName="QueryFunction_TableModel_Behavior.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="3044950653914723868" fileName="QueryFunction_TableModel_Behavior.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.table.behavior.QueryFunction_TableModel_Behavior" />
   </root>
   <root nodeRef="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)/6216065619544941718">
     <nodeInfo nodeId="6216065619544944236" fileName="CellModel_HierarchycalTable_Behavior.java" startLine="13" startPosition="96" endLine="14" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
