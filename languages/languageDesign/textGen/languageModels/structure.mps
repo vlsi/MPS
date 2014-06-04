@@ -34,6 +34,11 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1233749247888" resolveInfo="GenerateTextDeclaration" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="45307784116711884" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="filename" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="45307784116571022" resolveInfo="FilenameFunction" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1233670257997" nodeInfo="ig">
       <property name="role" nameId="tpce.1071599776563" value="conceptDeclaration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
@@ -429,6 +434,14 @@
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1224137887853744059" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="EncodingDeclarationBase" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="45307784116571022" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="FilenameFunction" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="filename" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="name of output file" />
+    <property name="final" nameId="tpce.4628067390765956807" value="true" />
+    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
   </root>
 </model>
 

@@ -21,7 +21,10 @@ import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.annotations.Nullable;
 
 public interface TextGenDescriptor {
-  void doGenerateText(@NotNull SNode node, TextGenBuffer buffer);
+  void doGenerateText(@NotNull SNode node, @NotNull TextGenBuffer buffer);
+
+  @NotNull
+  String getFilename(SNode node);
 
   @Nullable
   public String getExtension(SNode node);
