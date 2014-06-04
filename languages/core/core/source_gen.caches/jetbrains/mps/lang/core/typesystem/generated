@@ -101,6 +101,7 @@
     <file name="RemoveUnknownChildren_QuickFix.java" />
   </source>
   <source id="1556973682253873271" name="RemoveUnknownReference" hash="co6jnu3nmjk4tvuidtro86as2npti56">
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <file name="RemoveUnknownReference_QuickFix.java" />
   </source>

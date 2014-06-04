@@ -32,7 +32,7 @@
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6lqwy64mga622tpk5t288xgf49o6z88" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
-  <dep model="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)" hash="-dpjiz6iox6qysp36vd1ojyprk6fzm6s" />
+  <dep model="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)" hash="-15ld6x5hkwlg92dzbe634wzg88m0379" />
   <common hash="-doeg7rghyqzzs2ge7xt3en233jcbxhx" dependsOnNodes="true">
     <dep root="1237208627073" />
     <dep root="1237219277494" />
@@ -82,7 +82,9 @@
   <source id="1237208627073" name="main" hash="7s77ydmwh36ktphddc6aikis6qlccqx">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1237219277494" name="BinaryOperationSwitch" hash="5cd7vefrmntd7d81yfbp14zesicop1a" />
+  <source id="1237219277494" name="BinaryOperationSwitch" hash="5cd7vefrmntd7d81yfbp14zesicop1a">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1237534730273" name="AssignmentOperationSwitch" hash="-4b5h0lokmpz96i5qmku984quma6cvjf" />
   <source id="1237546393303" name="main_pass1" hash="1rj5doq7oigsz0bhbtrbg8csvyb77c2" />
   <source id="1237807489587" name="comparable_compare" hash="asdmqfnr6uobnvfq99ezez8hdi8n99b" />

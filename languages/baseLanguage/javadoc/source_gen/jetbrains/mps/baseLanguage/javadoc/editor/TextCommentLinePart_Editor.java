@@ -42,7 +42,7 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
       }
 
       public void setText(String text) {
-        SPropertyOperations.set(node, "text", "" + (text));
+        SPropertyOperations.set(node, "text", text);
         TextCommentPartUtil.processCellText(editorContext, node, text);
       }
 

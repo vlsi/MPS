@@ -49,12 +49,8 @@
   <source id="7935955022005272664" name="main" hash="-3luzje2ougtuauexopp6wrkw5e1xrap">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5582028874769201297" name="reduce_CallActionExpression" hash="tu102i25hjr5umo2ijd0ev5lnbntwx">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
-  <source id="5582028874769203950" name="reduce_ModuleProperties" hash="88pt1l4vfj4usmsonr9hh1pv2jdhgam">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="5582028874769201297" name="reduce_CallActionExpression" hash="tu102i25hjr5umo2ijd0ev5lnbntwx" />
+  <source id="5582028874769203950" name="reduce_ModuleProperties" hash="88pt1l4vfj4usmsonr9hh1pv2jdhgam" />
   <source id="5582028874769203973" name="reduce_ModelProperties" hash="eolejzsvtec3bx0eaq28ydtlclypqrm" />
   <source id="5582028874769273923" name="synonyms" hash="-18h7hp87n2ap4yn1izc5vk1ctajxlib" />
   <source id="5582028874771857716" name="reduce_Make" hash="-nydjpkmnz9ywta60dqacffd1qmz2c" />
