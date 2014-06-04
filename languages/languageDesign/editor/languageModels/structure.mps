@@ -2945,11 +2945,6 @@
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.AggregationConceptLinkDeclaration" typeId="tpce.1105741535888" id="4531786690998812992" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="operationArgumentType" />
-      <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7750832940155868846" nodeInfo="ig" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4531786690998636239" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1197027803184" resolveInfo="IOperation" />
     </node>
