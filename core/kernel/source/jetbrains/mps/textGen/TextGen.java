@@ -59,8 +59,9 @@ public class TextGen {
   }
 
   public static String getFileName(@NotNull SNode node) {
+    String fname = getTextGenForNode(node).getFilename(node);
     String extension = getExtension(node);
-    return (extension == null) ? node.getName() : node.getName() + '.' + extension;
+    return (extension == null) ? fname : fname + '.' + extension;
   }
 
   public static TextGenerationResult generateText(SNode node, boolean failIfNoTextgen, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {

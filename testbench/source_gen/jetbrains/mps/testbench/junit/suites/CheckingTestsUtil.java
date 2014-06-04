@@ -91,7 +91,7 @@ public class CheckingTestsUtil {
   }
 
   public static List<String> checkReferences(SModule module) {
-    Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
+    Collection<SModel> models = new ModelsExtractor(module, true).includingGenerators().getModels();
     return checkModels(models);
   }
 

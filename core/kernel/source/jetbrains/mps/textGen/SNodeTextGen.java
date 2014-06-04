@@ -57,6 +57,10 @@ public abstract class SNodeTextGen {
   protected void doGenerateText(SNode node) {
   }
 
+  public String getFilename(SNode node) {
+    return node.getName();
+  }
+
   public String getExtension(SNode node) {
     return null;
   }

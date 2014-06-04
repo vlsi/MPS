@@ -587,47 +587,46 @@
     <nodeInfo nodeId="8722937377469655135" fileName="CheckBoxCellRenderrer.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckBox" />
     <nodeInfo nodeId="8722937377469655138" fileName="CheckBoxCellRenderrer.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLabel" />
     <nodeInfo nodeId="8722937377469655146" fileName="CheckBoxCellRenderrer.java" startLine="19" startPosition="34" endLine="20" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8722937377469655149" fileName="CheckBoxCellRenderrer.java" startLine="20" startPosition="28" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655154" fileName="CheckBoxCellRenderrer.java" startLine="21" startPosition="36" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655161" fileName="CheckBoxCellRenderrer.java" startLine="22" startPosition="38" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655168" fileName="CheckBoxCellRenderrer.java" startLine="23" startPosition="32" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655175" fileName="CheckBoxCellRenderrer.java" startLine="24" startPosition="44" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655182" fileName="CheckBoxCellRenderrer.java" startLine="25" startPosition="47" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655189" fileName="CheckBoxCellRenderrer.java" startLine="26" startPosition="30" endLine="27" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655216" fileName="CheckBoxCellRenderrer.java" startLine="31" startPosition="154" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8722937377469655223" fileName="CheckBoxCellRenderrer.java" startLine="32" startPosition="47" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655232" fileName="CheckBoxCellRenderrer.java" startLine="33" startPosition="45" endLine="34" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655242" fileName="CheckBoxCellRenderrer.java" startLine="34" startPosition="57" endLine="35" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655251" fileName="CheckBoxCellRenderrer.java" startLine="35" startPosition="50" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8722937377469655256" fileName="CheckBoxCellRenderrer.java" startLine="40" startPosition="39" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8722937377469655264" fileName="CheckBoxCellRenderrer.java" startLine="41" startPosition="63" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8722937377469655272" fileName="CheckBoxCellRenderrer.java" startLine="42" startPosition="57" endLine="43" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8722937377469655294" fileName="CheckBoxCellRenderrer.java" startLine="47" startPosition="26" endLine="48" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8722937377469655302" fileName="CheckBoxCellRenderrer.java" startLine="48" startPosition="63" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8722937377469655310" fileName="CheckBoxCellRenderrer.java" startLine="49" startPosition="57" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8722937377469655322" fileName="CheckBoxCellRenderrer.java" startLine="50" startPosition="69" endLine="51" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655336" fileName="CheckBoxCellRenderrer.java" startLine="51" startPosition="70" endLine="52" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655348" fileName="CheckBoxCellRenderrer.java" startLine="52" startPosition="67" endLine="53" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655364" fileName="CheckBoxCellRenderrer.java" startLine="53" startPosition="80" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655253" fileName="CheckBoxCellRenderrer.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
-    <nodeInfo nodeId="8722937377469655198" fileName="CheckBoxCellRenderrer.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTreeCellRendererComponent#(Ljavax/swing/JTree;Ljava/lang/Object;ZZZIZ)Ljava/awt/Component;" />
-    <nodeInfo nodeId="8722937377469655142" fileName="CheckBoxCellRenderrer.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckBoxCellRenderrer#()V" />
-    <nodeInfo nodeId="8722937377469655290" fileName="CheckBoxCellRenderrer.java" startLine="46" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doLayout#()V" />
-    <scopeInfo nodeId="8722937377469655255" fileName="CheckBoxCellRenderrer.java" startLine="40" startPosition="39" endLine="43" endPosition="108">
+    <nodeInfo nodeId="8722937377469655154" fileName="CheckBoxCellRenderrer.java" startLine="20" startPosition="28" endLine="21" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4267264093022384364" fileName="CheckBoxCellRenderrer.java" startLine="21" startPosition="38" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655161" fileName="CheckBoxCellRenderrer.java" startLine="22" startPosition="62" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655182" fileName="CheckBoxCellRenderrer.java" startLine="23" startPosition="32" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655189" fileName="CheckBoxCellRenderrer.java" startLine="24" startPosition="30" endLine="25" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655216" fileName="CheckBoxCellRenderrer.java" startLine="29" startPosition="154" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8722937377469655223" fileName="CheckBoxCellRenderrer.java" startLine="30" startPosition="47" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655232" fileName="CheckBoxCellRenderrer.java" startLine="31" startPosition="45" endLine="32" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655242" fileName="CheckBoxCellRenderrer.java" startLine="32" startPosition="57" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655251" fileName="CheckBoxCellRenderrer.java" startLine="33" startPosition="50" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469655256" fileName="CheckBoxCellRenderrer.java" startLine="38" startPosition="39" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8722937377469655264" fileName="CheckBoxCellRenderrer.java" startLine="39" startPosition="63" endLine="40" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8722937377469655272" fileName="CheckBoxCellRenderrer.java" startLine="40" startPosition="57" endLine="41" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469655294" fileName="CheckBoxCellRenderrer.java" startLine="45" startPosition="26" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8722937377469655302" fileName="CheckBoxCellRenderrer.java" startLine="46" startPosition="63" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8722937377469655310" fileName="CheckBoxCellRenderrer.java" startLine="47" startPosition="57" endLine="48" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8722937377469655322" fileName="CheckBoxCellRenderrer.java" startLine="48" startPosition="69" endLine="49" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655336" fileName="CheckBoxCellRenderrer.java" startLine="49" startPosition="70" endLine="50" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655348" fileName="CheckBoxCellRenderrer.java" startLine="50" startPosition="67" endLine="51" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655364" fileName="CheckBoxCellRenderrer.java" startLine="51" startPosition="80" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655253" fileName="CheckBoxCellRenderrer.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredSize#()Ljava/awt/Dimension;" />
+    <nodeInfo nodeId="8722937377469655142" fileName="CheckBoxCellRenderrer.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckBoxCellRenderrer#()V" />
+    <nodeInfo nodeId="8722937377469655198" fileName="CheckBoxCellRenderrer.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTreeCellRendererComponent#(Ljavax/swing/JTree;Ljava/lang/Object;ZZZIZ)Ljava/awt/Component;" />
+    <nodeInfo nodeId="8722937377469655290" fileName="CheckBoxCellRenderrer.java" startLine="44" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doLayout#()V" />
+    <scopeInfo nodeId="8722937377469655255" fileName="CheckBoxCellRenderrer.java" startLine="38" startPosition="39" endLine="41" endPosition="108">
       <varInfo nodeId="8722937377469655257" varName="checkBoxDim" />
       <varInfo nodeId="8722937377469655265" varName="labelDim" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469655215" fileName="CheckBoxCellRenderrer.java" startLine="31" startPosition="154" endLine="36" endPosition="16">
+    <scopeInfo nodeId="8722937377469655215" fileName="CheckBoxCellRenderrer.java" startLine="29" startPosition="154" endLine="34" endPosition="16">
       <varInfo nodeId="8722937377469655217" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469655253" fileName="CheckBoxCellRenderrer.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="8722937377469655293" fileName="CheckBoxCellRenderrer.java" startLine="47" startPosition="26" endLine="54" endPosition="58">
+    <scopeInfo nodeId="8722937377469655145" fileName="CheckBoxCellRenderrer.java" startLine="19" startPosition="34" endLine="25" endPosition="27" />
+    <scopeInfo nodeId="8722937377469655253" fileName="CheckBoxCellRenderrer.java" startLine="37" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="8722937377469655293" fileName="CheckBoxCellRenderrer.java" startLine="45" startPosition="26" endLine="52" endPosition="58">
       <varInfo nodeId="8722937377469655311" varName="baseline" />
       <varInfo nodeId="8722937377469655295" varName="checkBoxDim" />
       <varInfo nodeId="8722937377469655303" varName="labelDim" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469655145" fileName="CheckBoxCellRenderrer.java" startLine="19" startPosition="34" endLine="27" endPosition="27" />
-    <scopeInfo nodeId="8722937377469655198" fileName="CheckBoxCellRenderrer.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="8722937377469655142" fileName="CheckBoxCellRenderrer.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8722937377469655198" fileName="CheckBoxCellRenderrer.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="8722937377469655207" varName="expanded" />
       <varInfo nodeId="8722937377469655213" varName="hasFocus" />
       <varInfo nodeId="8722937377469655205" varName="isSelected" />
@@ -636,9 +635,8 @@
       <varInfo nodeId="8722937377469655201" varName="tree" />
       <varInfo nodeId="8722937377469655203" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469655142" fileName="CheckBoxCellRenderrer.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="8722937377469655290" fileName="CheckBoxCellRenderrer.java" startLine="46" startPosition="0" endLine="56" endPosition="0" />
-    <unitInfo nodeId="8722937377469655134" fileName="CheckBoxCellRenderrer.java" startLine="15" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxCellRenderrer" />
+    <scopeInfo nodeId="8722937377469655290" fileName="CheckBoxCellRenderrer.java" startLine="44" startPosition="0" endLine="54" endPosition="0" />
+    <unitInfo nodeId="8722937377469655134" fileName="CheckBoxCellRenderrer.java" startLine="15" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxCellRenderrer" />
   </root>
   <root nodeRef="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)/8722937377469655376">
     <nodeInfo nodeId="8722937377469655382" fileName="CheckBoxNamespaceNode.java" startLine="7" startPosition="52" endLine="8" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="96g5257to4yarllf7b003ay3fpaq0jh">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+<dependencies version="2" modelHash="2u5u6kqaidlrhm6quoeblat84jbuj9s">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="71mhb0v5f0gb4vfw478iy5a4irvpfac" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="9d8mf5fh5uwzzraj3wepjahity3ixrn" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
@@ -36,10 +35,10 @@
     <dep root="1237305491868" />
     <dep root="1237305557638" />
     <dep root="1237306079178" />
+    <dep root="45307784116571022" />
     <dep root="6911933836258445304" />
     <dep root="7166719696753421196" />
     <dep root="8931911391946696733" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -49,7 +48,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1233670071145" name="ConceptTextGenDeclaration" hash="-6n59za6qmd7wuhkfp6vdab9ehotq6eh" />
+  <source id="1233670071145" name="ConceptTextGenDeclaration" hash="7gisn1arlnk2wm49iajtxy6omusesdn" />
   <source id="1233748055915" name="NodeParameter" hash="8hhqsd8pbqx1o6cxe2ko845vzipds9u" />
   <source id="1233749247888" name="GenerateTextDeclaration" hash="-afooaqmw7302fb54nahd30qch4q16u2" />
   <source id="1233751620748" name="SimpleTextGenOperation" hash="-3ltht7gn4jr4shsfh2w8abhvblxdxtl" />
@@ -79,5 +78,6 @@
   <source id="7166719696753421196" name="EncodingLiteral" hash="-4rww7yq9mbe0c3rlw3uhjog6x4fnb1k" />
   <source id="1224137887853744019" name="EncodingDeclaration" hash="-drqzwsrqzd7alxp54xg98o8oyc5vstg" />
   <source id="1224137887853744059" name="EncodingDeclarationBase" hash="-a59vtt1mp0gzb43gijvfxcvh8mwnxb2" />
+  <source id="45307784116571022" name="FilenameFunction" hash="2hneaoz03ugl4targn9v6crgotcfqo" />
 </dependencies>
 

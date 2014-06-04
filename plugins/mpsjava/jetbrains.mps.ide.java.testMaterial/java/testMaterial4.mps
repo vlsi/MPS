@@ -389,9 +389,6 @@
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3249115868572151920" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="OrdinaryClassWithInnerClasses" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3249115868572151921" nodeInfo="nn" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7506742827045679985" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SNodeReference" resolveInfo="SNodeReference" />
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="3249115868572151931" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="myProtected" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="3249115868572151932" nodeInfo="in" />
@@ -436,6 +433,9 @@
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3249115868572151930" nodeInfo="nn" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3249115868572151946" nodeInfo="sn" />
       </node>
+    </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="672802406139663336" nodeInfo="in">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNodePointer" resolveInfo="SNodePointer" />
     </node>
   </root>
 </model>

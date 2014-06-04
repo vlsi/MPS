@@ -59,7 +59,10 @@ public class SuppressErrors_Intention implements IntentionFactory {
       return true;
     }
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    return editorComponent.getErrorReporterFor(editorComponent.getSelectedCell()) != null;
+    if (editorComponent.getErrorReporterFor(editorComponent.getSelectedCell()) != null) {
+      return true;
+    }
+    return false;
   }
 
   public SNodeReference getIntentionNodeReference() {

@@ -17,7 +17,7 @@ public class AuditTypeSystem extends BaseCheckModulesTest {
 
   @Test
   public void checkTypeSystem() {
-    Collection<SModel> models = new ModelsExtractor(myModule, false).getModels();
+    Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
     List<String> errors = CheckingTestsUtil.applyChecker(new TypesystemChecker(), models, BaseCheckModulesTest.getStatistic());
     Assert.assertTrue("Type system errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
