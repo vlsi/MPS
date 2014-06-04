@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4qdi59f0o20v9bakvml5apndaubrwy8">
+<dependencies version="2" modelHash="-7953rdurqz1rogylihzljzmmi0f82mj">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="2mca3ncg6d36jbzt437k417bb81y2d6" />
@@ -36,6 +36,7 @@
     <dep root="1237305491868" />
     <dep root="1237305557638" />
     <dep root="1237306079178" />
+    <dep root="45307784116571022" />
     <dep root="6911933836258445304" />
     <dep root="7166719696753421196" />
     <dep root="8931911391946696733" />
@@ -49,7 +50,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1233670071145" name="ConceptTextGenDeclaration" hash="-6n59za6qmd7wuhkfp6vdab9ehotq6eh" />
+  <source id="1233670071145" name="ConceptTextGenDeclaration" hash="7gisn1arlnk2wm49iajtxy6omusesdn" />
   <source id="1233748055915" name="NodeParameter" hash="8hhqsd8pbqx1o6cxe2ko845vzipds9u" />
   <source id="1233749247888" name="GenerateTextDeclaration" hash="1r53toy6zmwlza8j9fvewlpgxs224kt" />
   <source id="1233751620748" name="SimpleTextGenOperation" hash="-3ltht7gn4jr4shsfh2w8abhvblxdxtl" />
@@ -79,5 +80,6 @@
   <source id="7166719696753421196" name="EncodingLiteral" hash="-4rww7yq9mbe0c3rlw3uhjog6x4fnb1k" />
   <source id="1224137887853744019" name="EncodingDeclaration" hash="8s8s9n2g78tlfgcal36p71y29h01hrh" />
   <source id="1224137887853744059" name="EncodingDeclarationBase" hash="-a59vtt1mp0gzb43gijvfxcvh8mwnxb2" />
+  <source id="45307784116571022" name="FilenameFunction" hash="2hneaoz03ugl4targn9v6crgotcfqo" />
 </dependencies>
 

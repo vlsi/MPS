@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,12 @@ public class SNodeTextGenAdapter implements TextGenDescriptor {
   @Override
   public void doGenerateText(@NotNull SNode node, TextGenBuffer buffer) {
     TextGen.appendNodeText(getInstance(), node, buffer);
+  }
+
+  @NotNull
+  @Override
+  public String getFilename(SNode node) {
+    return String.valueOf(getInstance().getFilename(node));
   }
 
   @Override

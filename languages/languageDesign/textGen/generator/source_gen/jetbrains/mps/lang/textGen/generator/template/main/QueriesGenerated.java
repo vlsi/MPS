@@ -254,6 +254,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "encoding", true), "jetbrains.mps.lang.textGen.structure.EncodingDeclaration") && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "encoding", true), "jetbrains.mps.lang.textGen.structure.EncodingDeclaration"), "body", true), "statement", true)).isNotEmpty();
   }
 
+  public static boolean ifMacro_Condition_6015068814890287150(final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable") && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "filename", true), "body", true), "statement", true)).isNotEmpty();
+  }
+
   public static boolean ifMacro_Condition_1237469368381(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "withIndent");
   }
@@ -267,7 +271,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1408971595082527143(final IfMacroContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true)), _quotation_createNode_x583g4_b0a0a75());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true)), _quotation_createNode_x583g4_b0a0a85());
   }
 
   public static boolean ifMacro_Condition_1237469899006(final IfMacroContext _context) {
@@ -295,7 +299,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_881552451426154564(final IfMacroContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true)), _quotation_createNode_x583g4_b0a0a46());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true)), _quotation_createNode_x583g4_b0a0a56());
   }
 
   public static boolean ifMacro_Condition_1237470933865(final IfMacroContext _context) {
@@ -366,6 +370,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "encoding", true), "jetbrains.mps.lang.textGen.structure.EncodingDeclaration"), "body", true), "statement", true);
   }
 
+  public static Iterable<SNode> sourceNodesQuery_6015068814890427215(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "filename", true), "body", true), "statement", true);
+  }
+
   public static Iterable<SNode> sourceNodesQuery_1237473044242(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
@@ -418,14 +426,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "list", true), "statement", true);
   }
 
-  private static SNode _quotation_createNode_x583g4_b0a0a75() {
+  private static SNode _quotation_createNode_x583g4_b0a0a85() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_x583g4_b0a0a46() {
+  private static SNode _quotation_createNode_x583g4_b0a0a56() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);

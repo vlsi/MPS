@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,15 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class DefaultTextGenDescriptor implements TextGenDescriptor {
   @Override
-  public void doGenerateText(@NotNull SNode node, TextGenBuffer buffer) {
+  public void doGenerateText(@NotNull SNode node, @NotNull TextGenBuffer buffer) {
     buffer.append("<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>");
     buffer.foundError("No textgen for " + node.getConcept().getQualifiedName() + " in " + SNodeUtil.getDebugText(node), node, null);
+  }
+
+  @NotNull
+  @Override
+  public String getFilename(SNode node) {
+    return String.valueOf(node.getName());
   }
 
   @Override
