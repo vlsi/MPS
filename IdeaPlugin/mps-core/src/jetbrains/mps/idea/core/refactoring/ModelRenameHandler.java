@@ -39,10 +39,10 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +59,7 @@ public class ModelRenameHandler implements RenameHandler {
     IFile modelFile = getModelFile(dataContext);
     if (modelFile == null) return false;
     SModel descriptor = SModelFileTracker.getInstance().findModel(modelFile);
-    return (descriptor instanceof EditableSModelDescriptor);
+    return (descriptor instanceof EditableSModel);
   }
 
   @Override
@@ -78,9 +78,9 @@ public class ModelRenameHandler implements RenameHandler {
     if (modelFile == null) return;
 
     SModel descriptor = SModelFileTracker.getInstance().findModel(modelFile);
-    if (!(descriptor instanceof EditableSModelDescriptor)) return;
+    if (!(descriptor instanceof EditableSModel)) return;
 
-    final EditableSModelDescriptor modelDescriptor = (EditableSModelDescriptor) descriptor;
+    final EditableSModel modelDescriptor = (EditableSModel) descriptor;
     final AtomicReference<String> targetFqName = new AtomicReference<String>(null);
 
     Pair<String, Boolean> result = Messages.showInputDialogWithCheckBox(
@@ -207,11 +207,11 @@ public class ModelRenameHandler implements RenameHandler {
   }
 
   private static class ModelRenamer {
-    private EditableSModelDescriptor myModelDescriptor;
+    private EditableSModel myModelDescriptor;
     private String myNewName;
     private boolean myLazy;
 
-    public ModelRenamer(EditableSModelDescriptor modelDescriptor, String fqName, boolean lazy) {
+    public ModelRenamer(EditableSModel modelDescriptor, String fqName, boolean lazy) {
       myModelDescriptor = modelDescriptor;
       myNewName = fqName;
       myLazy = lazy;

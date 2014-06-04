@@ -23,10 +23,11 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.ResolverComponent;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import javax.swing.SwingUtilities;
 import java.util.List;
@@ -39,9 +40,9 @@ import java.util.Set;
 public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runnable {
   private Project myProject;
   private SModel myModel;
-  private EditableSModelDescriptor myModelDescriptor;
+  private EditableSModel myModelDescriptor;
 
-  public SNodePasteProvider(SModel sModel, Project project, EditableSModelDescriptor modelDescriptor) {
+  public SNodePasteProvider(SModel sModel, Project project, EditableSModel modelDescriptor) {
     myProject = project;
     myModel = sModel;
     myModelDescriptor = modelDescriptor;

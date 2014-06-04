@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -48,7 +47,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * evgeny, 11/21/12
  */
-public abstract class EditableSModelBase extends ReloadableSModelBase implements EditableSModel, EditableSModelDescriptor {
+public abstract class EditableSModelBase extends ReloadableSModelBase implements EditableSModel {
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditableSModelBase.class));
 

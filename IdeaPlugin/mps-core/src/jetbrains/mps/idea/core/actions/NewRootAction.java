@@ -55,7 +55,6 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
@@ -247,7 +246,7 @@ public class NewRootAction extends AnAction {
         if (path.startsWith(sourceRoot)) {
           Solution solution = mpsFacet.getSolution();
           myOperationContext = new ModuleContext(solution, mpsProject);
-          myModelDescriptor = (EditableSModelDescriptor) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
+          myModelDescriptor = (EditableSModel) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
           if (myModelDescriptor != null) {
             ModelAccess.instance().runReadAction(new Runnable() {
               @Override
