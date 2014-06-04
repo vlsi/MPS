@@ -313,10 +313,6 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="sax" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="value" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="3465552206661911465" nodeInfo="ig">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StringType" typeId="tpee.1225271177708" id="3465552206661911466" nodeInfo="in" />
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3465552206661911172" nodeInfo="ig">
     <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="text value" />
@@ -325,10 +321,6 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="sax" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="value" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="3465552206661911449" nodeInfo="ig">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.StringType" typeId="tpee.1225271177708" id="3465552206661911450" nodeInfo="in" />
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="980633948634473453" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="sax" />
