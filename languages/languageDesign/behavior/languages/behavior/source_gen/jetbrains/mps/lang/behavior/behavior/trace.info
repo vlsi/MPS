@@ -321,7 +321,10 @@
   </root>
   <root nodeRef="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)/1225196403919">
     <nodeInfo nodeId="1225196403923" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225196403923" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233076518799" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1233076518799" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225196403938" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="21" startPosition="70" endLine="22" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225196403938" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="21" startPosition="70" endLine="22" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225196403919" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1225196403919" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedName_1225196403920#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />

@@ -227,10 +227,16 @@
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1234282173078">
     <nodeInfo nodeId="1234784593196" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234784593196" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234781461974" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234781461974" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="19" startPosition="90" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="24" startPosition="74" endLine="25" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="29" startPosition="107" endLine="30" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="34" startPosition="87" endLine="35" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="39" startPosition="120" endLine="40" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1234282173078" fileName="AbstractTextGenDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTextGenNode_1234784577703#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -399,6 +405,7 @@
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1236188786888">
     <nodeInfo nodeId="1236188788772" fileName="WithIndentOperation_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1236188788772" fileName="WithIndentOperation_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1236188786888" fileName="WithIndentOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1236188786888" fileName="WithIndentOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_inLangConcept_1236188788769#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="1236188786890" fileName="WithIndentOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -413,7 +420,10 @@
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1237466285808">
     <nodeInfo nodeId="1237466305519" fileName="AbstractAppendPart_Behavior.java" startLine="14" startPosition="74" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237466305519" fileName="AbstractAppendPart_Behavior.java" startLine="14" startPosition="74" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237466285808" fileName="AbstractAppendPart_Behavior.java" startLine="19" startPosition="71" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237466285808" fileName="AbstractAppendPart_Behavior.java" startLine="19" startPosition="71" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237466285808" fileName="AbstractAppendPart_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237466285808" fileName="AbstractAppendPart_Behavior.java" startLine="24" startPosition="104" endLine="25" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237466285808" fileName="AbstractAppendPart_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1237466285808" fileName="AbstractAppendPart_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_withIndent_1237466287046#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -440,6 +450,7 @@
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1237466317880">
     <nodeInfo nodeId="1237466323388" fileName="ConstantStringAppendPart_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237466323388" fileName="ConstantStringAppendPart_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237466317880" fileName="ConstantStringAppendPart_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1237466317880" fileName="ConstantStringAppendPart_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_withIndent_1237466287046#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="1237466317882" fileName="ConstantStringAppendPart_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
@@ -453,6 +464,7 @@
     <unitInfo nodeId="1237466317880" fileName="ConstantStringAppendPart_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart_Behavior" />
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1237466334490">
+    <nodeInfo nodeId="1237466339357" fileName="NodeAppendPart_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237466339357" fileName="NodeAppendPart_Behavior.java" startLine="12" startPosition="74" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237466334490" fileName="NodeAppendPart_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1237466334490" fileName="NodeAppendPart_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_withIndent_1237466287046#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -475,6 +487,7 @@
     <unitInfo nodeId="1237983962448" fileName="CollectionAppendPart_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart_Behavior" />
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1260930188116560108">
+    <nodeInfo nodeId="1260930188116560117" fileName="UtilityMethodCall_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1260930188116560117" fileName="UtilityMethodCall_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1260930188116560108" fileName="UtilityMethodCall_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1260930188116560108" fileName="UtilityMethodCall_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />

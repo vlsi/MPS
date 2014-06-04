@@ -47,6 +47,8 @@
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/1616228152992024986">
     <nodeInfo nodeId="1616228152992024997" fileName="CommandPartLengthOperation_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1616228152992024997" fileName="CommandPartLengthOperation_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647041" fileName="CommandPartLengthOperation_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647041" fileName="CommandPartLengthOperation_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1616228152992024986" fileName="CommandPartLengthOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1616228152992024986" fileName="CommandPartLengthOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isDotExpressionLegalAsStatement_1239212437413#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -66,6 +68,7 @@
     <unitInfo nodeId="1616228152992024986" fileName="CommandPartLengthOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.CommandPartLengthOperation_Behavior" />
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/3474133302907912062">
+    <nodeInfo nodeId="3474133302907962778" fileName="RedirectOutputExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3474133302907962778" fileName="RedirectOutputExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3474133302907912062" fileName="RedirectOutputExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3474133302907912062" fileName="RedirectOutputExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -301,6 +304,8 @@
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/8234001627573935256">
     <nodeInfo nodeId="8234001627573935267" fileName="CommandPartToListOperation_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8234001627573935267" fileName="CommandPartToListOperation_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741638328" fileName="CommandPartToListOperation_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741638328" fileName="CommandPartToListOperation_Behavior.java" startLine="16" startPosition="90" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8234001627573935256" fileName="CommandPartToListOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8234001627573935256" fileName="CommandPartToListOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isDotExpressionLegalAsStatement_1239212437413#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -342,6 +347,7 @@
     <unitInfo nodeId="8478830098674460032" fileName="DebuggerSettingsCommandParameterDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.DebuggerSettingsCommandParameterDeclaration_Behavior" />
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941281983">
+    <nodeInfo nodeId="856705193941281986" fileName="CommandType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281986" fileName="CommandType_Behavior.java" startLine="14" startPosition="97" endLine="15" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941281983" fileName="CommandType_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="856705193941281983" fileName="CommandType_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getMembers_1213877402148#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
@@ -607,8 +613,12 @@
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/856705193941282161">
     <nodeInfo nodeId="856705193941282167" fileName="CommandBuilderExpression_Behavior.java" startLine="14" startPosition="82" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="856705193941282167" fileName="CommandBuilderExpression_Behavior.java" startLine="14" startPosition="82" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4945938494951487546" fileName="CommandBuilderExpression_Behavior.java" startLine="18" startPosition="86" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4945938494951487546" fileName="CommandBuilderExpression_Behavior.java" startLine="18" startPosition="86" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941282161" fileName="CommandBuilderExpression_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="856705193941282161" fileName="CommandBuilderExpression_Behavior.java" startLine="23" startPosition="84" endLine="24" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="856705193941282161" fileName="CommandBuilderExpression_Behavior.java" startLine="28" startPosition="117" endLine="29" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941282161" fileName="CommandBuilderExpression_Behavior.java" startLine="28" startPosition="117" endLine="29" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="856705193941282161" fileName="CommandBuilderExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="856705193941282161" fileName="CommandBuilderExpression_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -750,7 +760,10 @@
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/889694274151974335">
     <nodeInfo nodeId="889694274152042464" fileName="NewProcessBuilderExpression_Behavior.java" startLine="14" startPosition="82" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274152042464" fileName="NewProcessBuilderExpression_Behavior.java" startLine="14" startPosition="82" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExpression_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExpression_Behavior.java" startLine="19" startPosition="84" endLine="20" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExpression_Behavior.java" startLine="24" startPosition="117" endLine="25" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExpression_Behavior.java" startLine="24" startPosition="117" endLine="25" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="889694274151974335" fileName="NewProcessBuilderExpression_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
