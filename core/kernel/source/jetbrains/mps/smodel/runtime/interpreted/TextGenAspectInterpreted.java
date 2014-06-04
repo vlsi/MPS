@@ -17,9 +17,14 @@ package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.structure.DescriptorUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
@@ -32,41 +37,31 @@ import org.jetbrains.annotations.NotNull;
 public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
   private static final Logger LOG = LogManager.getLogger(TextGenAspectInterpreted.class);
 
-  private static final TextGenAspectInterpreted INSTANCE = new TextGenAspectInterpreted();
-
-  private TextGenAspectInterpreted() {
+  public TextGenAspectInterpreted() {
   }
 
-  public static TextGenAspectDescriptor getInstance() {
-    return INSTANCE;
+  @Nullable
+  @Override
+  public TextGenDescriptor getDescriptor(@NotNull SConcept concept) {
+    SConcept baseConcept = SConceptRepository.getInstance().getInstanceConcept(SNodeUtil.concept_BaseConcept);
+    SConcept c = concept;
+    while(c != null && !c.equals(baseConcept)) {
+      String languageName = c.getLanguage().getQualifiedName();
+      Language l = ModuleRepositoryFacade.getInstance().getModule(languageName, Language.class);
+      String className = c.getName();
+      String textgenClassname = languageName + ".textGen." + className + "_TextGen";
+      Class textgenClass = DescriptorUtils.getClassFromLanguage(textgenClassname, l);
+      if (textgenClass != null) {
+        return new SNodeTextGenAdapter(c.getQualifiedName(), textgenClass);
+      }
+      c = c.getSuperConcept();
+    }
+    return null;
   }
 
   @Override
   public TextGenDescriptor getDescriptor(@NotNull String conceptFqName) {
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
-    if (concept == null) {
-      LOG.error("Can't find concept node for concept: " + conceptFqName);
-      return new DefaultTextGenDescriptor();
-    }
-
-    SNode baseConcept = SModelUtil.getBaseConcept();
-    while (concept != baseConcept) {
-      Language l = SModelUtil.getDeclaringLanguage(concept);
-
-      String packageName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
-      String className = concept.getName();
-      String textgenClassname = packageName + ".textGen." + className + "_TextGen";
-      Class textgenClass = ClassLoaderManager.getInstance().getClass(l, textgenClassname);
-      if (textgenClass != null) {
-        return new SNodeTextGenAdapter(conceptFqName, textgenClass);
-      }
-
-      concept = SNodeUtil.getConceptDeclaration_Extends(concept);
-      if (concept == null) {
-        concept = baseConcept;
-      }
-    }
-
-    return new DefaultTextGenDescriptor();
+    SConcept c = SConceptRepository.getInstance().getInstanceConcept(conceptFqName);
+    return getDescriptor(c);
   }
 }

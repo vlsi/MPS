@@ -207,6 +207,6 @@ public abstract class SNodeTextGen {
 
   @NotNull
   private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
-    return ConceptRegistry.getInstance().getTextGenDescriptor(node.getConcept().getQualifiedName());
+    return ConceptRegistry.getInstance().getTextGenDescriptor(node);
   }
 }

@@ -20,6 +20,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.*;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
@@ -212,15 +214,33 @@ public class ConceptRegistry implements CoreComponent {
   }
 
   @NotNull
+  public TextGenDescriptor getTextGenDescriptor(@Nullable SNode node) {
+    if (node == null) {
+      return new DefaultTextGenDescriptor();
+    }
+    return getTextGenDescriptor(node.getConcept());
+  }
+
+  /**
+   * @deprecated use {@link #getTextGenDescriptor(org.jetbrains.mps.openapi.model.SNode)}
+   */
+  @NotNull
+  @Deprecated
   public TextGenDescriptor getTextGenDescriptor(@Nullable String fqName) {
+    if (fqName == null) {
+      return new DefaultTextGenDescriptor();
+    }
+    SConcept c = SConceptRepository.getInstance().getInstanceConcept(fqName);
+    return getTextGenDescriptor(c);
+  }
+
+  private TextGenDescriptor getTextGenDescriptor(SConcept concept) {
+    final String fqName = concept.getQualifiedName();
+
     TextGenDescriptor descriptor = textGenDescriptors.get(fqName);
 
     if (descriptor != null) {
       return descriptor;
-    }
-
-    if (fqName == null) {
-      return new DefaultTextGenDescriptor();
     }
 
     if (!startLoad(fqName, LanguageAspect.TEXT_GEN)) {
@@ -228,20 +248,16 @@ public class ConceptRegistry implements CoreComponent {
     }
 
     try {
-      try {
-        LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
-        TextGenAspectDescriptor textGenAspectDescriptor;
-        if (languageRuntime == null) {
-          // Then language was just renamed and was not re-generated then it can happen that it has no
-          LOG.warn("No language for: " + fqName + ", while looking for constraints descriptor.", new Throwable());
-          textGenAspectDescriptor = TextGenAspectInterpreted.getInstance();
-        } else {
-          textGenAspectDescriptor = languageRuntime.getTextGenAspectDescriptor();
-        }
-        descriptor = textGenAspectDescriptor.getDescriptor(fqName);
-      } catch (Throwable e) {
-        LOG.warn("Exception while constraints descriptor creating", e);
+      LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(concept.getLanguage().getQualifiedName());
+      TextGenAspectDescriptor textGenAspectDescriptor;
+      if (languageRuntime == null) {
+        // Then language was just renamed and was not re-generated then it can happen that it has no
+        LOG.warn(String.format("No language for concept %s, while looking for textgen descriptor.", fqName), new Throwable());
+        textGenAspectDescriptor = new TextGenAspectInterpreted();
+      } else {
+        textGenAspectDescriptor = languageRuntime.getTextGenAspectDescriptor();
       }
+      descriptor = textGenAspectDescriptor.getDescriptor(concept);
 
       if (descriptor == null) {
         descriptor = new DefaultTextGenDescriptor();
