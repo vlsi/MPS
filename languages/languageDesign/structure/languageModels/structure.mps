@@ -243,6 +243,7 @@
       <property name="sourceCardinality" nameId="1071599893252" value="1" />
       <link role="target" roleId="1071599976176" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="1224240836180" id="5452844340285798834" nodeInfo="ig" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="1071489090640" id="1105736674127" nodeInfo="ig">
     <property name="abstract" nameId="4628067390765956802" value="true" />
@@ -282,6 +283,7 @@
     <property name="name" nameId="tpck.1169194664001" value="AggregationConceptLinkDeclaration" />
     <property name="conceptAlias" nameId="5092175715804935370" value="aggregation" />
     <link role="extends" roleId="1071489389519" targetNodeId="1105736576531" resolveInfo="ConceptLinkDeclaration" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="1224240836180" id="5452844340285798653" nodeInfo="ig" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="1071489090640" id="1169125787135" nodeInfo="ig">
     <property name="abstract" nameId="4628067390765956802" value="true" />
