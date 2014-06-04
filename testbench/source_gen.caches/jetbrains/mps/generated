@@ -16,10 +16,10 @@
   </source>
   <source id="694564436393193873" name="WorkbenchMpsTest" hash="9oza5j78b92n4l0bsnz8rt9auppltie">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="WorkbenchMpsTest.java" />
   </source>
   <source id="694564436393184888" name="CoreMpsTest" hash="4o0e0gz7z6497cmnd3jnzyday8dy9le">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CoreMpsTest.java" />
   </source>

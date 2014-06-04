@@ -4,9 +4,14 @@ package jetbrains.mps.make.script.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class InputResourcesParameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public InputResourcesParameter_BehaviorDescriptor() {
+  }
+
+  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
+    return InputResourcesParameter_Behavior.virtual_getType_2443692612523876968(thisNode);
   }
 
   @Override

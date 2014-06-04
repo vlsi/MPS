@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class OverloadedOperatorTypeFunction_Behavior {
   public static void init(SNode thisNode) {
@@ -19,5 +21,16 @@ public class OverloadedOperatorTypeFunction_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)", "1236083209648"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)", "1236083248858"));
     return result;
+  }
+
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return _quotation_createNode_z3evm9_a0a1();
+  }
+
+  private static SNode _quotation_createNode_z3evm9_a0a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
+    return quotedNode_1;
   }
 }

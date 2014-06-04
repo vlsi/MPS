@@ -15,6 +15,10 @@ public class QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor
     return QueryFunction_ParameterizedSideTransform_Handler_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return QueryFunction_ParameterizedSideTransform_Handler_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return QueryFunction_ParameterizedSideTransform_Handler_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
   }

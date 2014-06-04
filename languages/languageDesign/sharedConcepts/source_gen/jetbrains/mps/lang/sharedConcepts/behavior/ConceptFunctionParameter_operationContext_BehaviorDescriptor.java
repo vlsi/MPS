@@ -14,6 +14,10 @@ public class ConceptFunctionParameter_operationContext_BehaviorDescriptor extend
     return ConceptFunctionParameter_operationContext_Behavior.virtual_getFromParameterObject_1213877522908(thisNode);
   }
 
+  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
+    return ConceptFunctionParameter_operationContext_Behavior.virtual_getType_2443692612523876968(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext";

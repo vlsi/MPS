@@ -5,7 +5,7 @@
   <unitInfo fileName="CheckProperitesOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CheckProperitesOperation_BehaviorDescriptor" />
   <unitInfo fileName="CheckProperties_Function_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CheckProperties_Function_BehaviorDescriptor" />
   <unitInfo fileName="Configuration_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Configuration_Parameter_BehaviorDescriptor" />
-  <unitInfo fileName="CreateEditor_Function_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_BehaviorDescriptor" />
+  <unitInfo fileName="CreateEditor_Function_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_BehaviorDescriptor" />
   <unitInfo fileName="DeprecatedAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.DeprecatedAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="Dispose_Function_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Dispose_Function_BehaviorDescriptor" />
   <unitInfo fileName="EditorExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorExpression_BehaviorDescriptor" />
@@ -337,56 +337,76 @@
     <unitInfo nodeId="946964771156066386" fileName="PersistentConfiguration_Behavior.java" startLine="24" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior" />
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066803">
-    <nodeInfo nodeId="946964771156066807" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="203908296139519703" fileName="CreateEditor_Function_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741646613" fileName="CreateEditor_Function_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="28" startPosition="77" endLine="29" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="33" startPosition="110" endLine="34" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="43" startPosition="116" endLine="44" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getJavaMethod_946964771156066804#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066804#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519699#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPublicJavaMethod_203908296139519699#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="946964771156066812" fileName="CreateEditor_Function_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="946964771156066806" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="113" />
-    <scopeInfo nodeId="203908296139519701" fileName="CreateEditor_Function_Behavior.java" startLine="19" startPosition="86" endLine="20" endPosition="113" />
-    <scopeInfo nodeId="1262430001741646612" fileName="CreateEditor_Function_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="28" startPosition="77" endLine="29" endPosition="153" />
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="33" startPosition="110" endLine="34" endPosition="299" />
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="159" />
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="43" startPosition="116" endLine="44" endPosition="305" />
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+    <nodeInfo nodeId="946964771156066807" fileName="CreateEditor_Function_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="203908296139519703" fileName="CreateEditor_Function_Behavior.java" startLine="22" startPosition="86" endLine="23" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646613" fileName="CreateEditor_Function_Behavior.java" startLine="26" startPosition="92" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682016305" fileName="CreateEditor_Function_Behavior.java" startLine="30" startPosition="83" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="35" startPosition="77" endLine="36" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="40" startPosition="110" endLine="41" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="45" startPosition="83" endLine="46" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="50" startPosition="116" endLine="51" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="54" startPosition="60" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="55" startPosition="63" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="56" startPosition="30" endLine="57" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="57" startPosition="138" endLine="58" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="58" startPosition="247" endLine="59" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="56" startPosition="30" endLine="58" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="56" startPosition="30" endLine="58" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getJavaMethod_946964771156066804#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getJavaMethod_946964771156066804#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPublicJavaMethod_203908296139519699#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getPublicJavaMethod_203908296139519699#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ajrw81_a0a3#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="946964771156066812" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="946964771156066806" fileName="CreateEditor_Function_Behavior.java" startLine="18" startPosition="80" endLine="19" endPosition="113" />
+    <scopeInfo nodeId="203908296139519701" fileName="CreateEditor_Function_Behavior.java" startLine="22" startPosition="86" endLine="23" endPosition="113" />
+    <scopeInfo nodeId="1262430001741646612" fileName="CreateEditor_Function_Behavior.java" startLine="26" startPosition="92" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="658365993682016304" fileName="CreateEditor_Function_Behavior.java" startLine="30" startPosition="83" endLine="31" endPosition="47" />
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="35" startPosition="77" endLine="36" endPosition="153" />
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="40" startPosition="110" endLine="41" endPosition="299" />
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="45" startPosition="83" endLine="46" endPosition="159" />
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="50" startPosition="116" endLine="51" endPosition="305" />
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="56" startPosition="30" endLine="58" endPosition="247" />
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="946964771156066803" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="946964771156066803" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="946964771156066803" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="946964771156066803" varName="callerConceptFqName" />
       <varInfo nodeId="946964771156066803" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_Behavior" />
+    <scopeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="54" startPosition="60" endLine="59" endPosition="24">
+      <varInfo nodeId="658365993681975735" varName="facade" />
+      <varInfo nodeId="658365993681975735" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="658365993681975735" fileName="CreateEditor_Function_Behavior.java" startLine="54" startPosition="0" endLine="61" endPosition="0" />
+    <unitInfo nodeId="946964771156066803" fileName="CreateEditor_Function_Behavior.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_Behavior" />
   </root>
   <root nodeRef="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)/946964771156066813">
     <nodeInfo nodeId="946964771156066817" fileName="Dispose_Function_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

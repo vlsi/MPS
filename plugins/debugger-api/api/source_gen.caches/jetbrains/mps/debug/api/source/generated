@@ -33,7 +33,6 @@
     <file name="NodeSourcePosition.java" />
   </source>
   <source id="4701043456212926071" name="TextSourcePosition" hash="dyauxeccq3qdsnyj8weh3vzsxn9h2fa">
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TextSourcePosition.java" />
   </source>

@@ -15,6 +15,10 @@ public class MigrationScriptPart_Instance_Predicate_BehaviorDescriptor extends C
     return MigrationScriptPart_Instance_Predicate_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return MigrationScriptPart_Instance_Predicate_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate";

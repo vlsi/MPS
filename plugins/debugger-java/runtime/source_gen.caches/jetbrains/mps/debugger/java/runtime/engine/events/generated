@@ -88,6 +88,7 @@
     <file name="Context.java" />
   </source>
   <source id="613652663728232607" name="UserContext" hash="-5cksvtmuteng280obapgtxq9zle4f9i">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="UserContext.java" />
   </source>
 </dependencies>

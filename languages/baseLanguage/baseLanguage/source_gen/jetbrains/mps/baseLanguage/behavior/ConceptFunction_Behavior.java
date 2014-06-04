@@ -7,10 +7,10 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -28,11 +28,11 @@ public class ConceptFunction_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionReturnType")).first();
+    return null;
   }
 
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
-    return SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType");
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public static boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child) {
@@ -103,10 +103,10 @@ public class ConceptFunction_Behavior {
     } else {
       result.append(BehaviorReflection.invokeVirtual(String.class, expectedReturnType, "virtual_getPresentation_1213877396640", new Object[]{}));
     }
-    if (ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType")).isNotEmpty()) {
+    if (ListSequence.fromList(IMethodLike_Behavior.call_getThrowableTypes_6204026822016975623(thisNode)).isNotEmpty()) {
       result.append(" throws ");
       boolean isFirstThrowable = true;
-      for (SNode throwableType : SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType")) {
+      for (SNode throwableType : IMethodLike_Behavior.call_getThrowableTypes_6204026822016975623(thisNode)) {
         if (!(isFirstThrowable)) {
           result.append(", ");
         }
@@ -162,6 +162,16 @@ public class ConceptFunction_Behavior {
   @Deprecated
   public static SNode callSuper_getExpectedReturnType_1213877374441(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}, new Object[]{});
+  }
+
+  @Deprecated
+  public static List<SNode> call_getThrowableTypes_6204026822017039280(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getThrowableTypes_6204026822016975623", new Object[]{});
+  }
+
+  @Deprecated
+  public static List<SNode> callSuper_getThrowableTypes_6204026822017039280(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated

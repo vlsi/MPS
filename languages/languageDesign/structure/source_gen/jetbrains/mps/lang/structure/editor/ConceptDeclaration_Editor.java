@@ -407,6 +407,8 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ueqr71_n1c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ueqr71_o1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ueqr71_p1c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ueqr71_q1c0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ueqr71_r1c0(editorContext, node));
     return editorCell;
   }
 
@@ -814,6 +816,22 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "new reference";
     }
+  }
+
+  private EditorCell createConstant_ueqr71_q1c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_ueqr71_q1c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createComponent_ueqr71_r1c0(EditorContext editorContext, SNode node) {
+    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.structure.editor.AbstractConceptDeclaration_deprecatedStuff");
+    return editorCell;
   }
 
   private EditorCell createCollection_ueqr71_a_0(EditorContext editorContext, SNode node) {

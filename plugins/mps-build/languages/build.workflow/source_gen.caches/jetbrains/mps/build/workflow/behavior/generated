@@ -95,7 +95,6 @@
   </source>
   <source id="3961775458390497598" name="BwfSubTask_Behavior" hash="863tll352qck32j6lzcqr4hevpn0g94">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <file name="BwfSubTask_Behavior.java" />
   </source>

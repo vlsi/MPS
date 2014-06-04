@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5cghbantaw3qjdxwh4n973rnyfagi4f">
+<dependencies version="2" modelHash="9mjzjea7kuw7o37gv4ahqkf1m1ij86j">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6coyx9cq8icm86dy9j1trq5a7ubwr79" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="2rnsukeaoekb324wbbx6a2bi8ccu9xr" />
   <dep model="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" hash="-a2nz0gm463vmm7lau3hm4i58tpcqpka" />
@@ -40,6 +41,7 @@
     <dep root="946964771156066621" />
     <dep root="946964771156067216" />
     <dep root="946964771156905617" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -56,7 +58,7 @@
   <source id="946964771156066557" name="TemplatePersistentConfigurationType" hash="633me4orvi9wbqo5juyo550anddwee" />
   <source id="946964771156066561" name="TemplateParameterReference" hash="6zwwc85vqz6otgxvvp82ntsr24u5cal" />
   <source id="946964771156066563" name="ReportConfigurationErrorStatement" hash="zqr1a7h87w6ev8py0y2as5watpbhlm" />
-  <source id="946964771156066566" name="CreateEditor_Function" hash="2cfh6qvvx5cjfpysxdz03jcht30bty0" />
+  <source id="946964771156066566" name="CreateEditor_Function" hash="-cd3jmjtziiabh7eghy4tqfyry5q27zs" />
   <source id="946964771156066571" name="Dispose_Function" hash="n7lo379zoh3zdaf7ujubh4vlhr3ses" />
   <source id="946964771156066574" name="PersistentPropertyReferenceOperation" hash="71pypaop736953bpwku2jcwfj70m4gd" />
   <source id="946964771156066579" name="PersistentConfigurationTemplate" hash="cncm7yfy1h0oz416rflwmgrifkhjxb4" />
@@ -81,6 +83,7 @@
   <source id="2722628536111969416" name="GridBagConstraints" hash="brefuzdupgdzjtjlljdmcfruizsbztk" />
   <source id="2722628536111969417" name="GridBagConstraintsKind" hash="1o1w0qmxm374jgne62hd3pxwfhof22k">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="GridBagConstraintsKind_PropertySupport.java" />
   </source>
   <source id="9191251033651632153" name="DeprecatedAnnotation" hash="-8xfdsgpus0jqj1nbreuktrao700rmvw" />

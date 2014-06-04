@@ -17,7 +17,6 @@
     <file name="BoundListPanel.java" />
   </source>
   <source id="1560298786499497595" name="BoundTablePanel" hash="-5fzusngygzmz22bxvd1kvk0rdfwbvl3">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="BoundTablePanel.java" />
   </source>
 </dependencies>

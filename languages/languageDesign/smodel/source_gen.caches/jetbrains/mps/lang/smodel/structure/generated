@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="35ptrnff0azptlr3ag3o7yc0jy6qe4t">
+<dependencies version="2" modelHash="kgc3l2gv9hsv3l18n5ihspk0l2nybo">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6coyx9cq8icm86dy9j1trq5a7ubwr79" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-i5oe5ax91p271i0f9us1edf1fuz99x" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
@@ -150,6 +151,7 @@
     <dep root="8758390115028452779" />
     <dep root="8758390115029295477" />
     <dep root="8866923313515890008" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -214,7 +216,7 @@
   <source id="1172420572800" name="SConceptType" hash="-a2n4mja4mkwqt64w3jf69n0lcmxm7jp" />
   <source id="1172424058054" name="ConceptRefExpression" hash="16wfqtxkpbmmk6ou2py72isjg82o8a3" />
   <source id="1173122760281" name="Node_GetAncestorsOperation" hash="aibbc3j740t9c6ctv5lu18exgfq98tq" />
-  <source id="1175618182947" name="SConceptLinkAccess" hash="-c9da3q2rharsy10s16tjicdcnp2bdnz" />
+  <source id="1175618182947" name="SConceptLinkAccess" hash="-8tqpkm5bl66rf6mw2omuojjd21ccgjd" />
   <source id="1176109685393" name="Model_RootsIncludingImportedOperation" hash="32gpyrpcdmd7tpl1kw4fqosr51pwfqm" />
   <source id="1177026924588" name="RefConcept_Reference" hash="-4yeu4d816rp4tutf39gzv7ds59dg6ry" />
   <source id="1179168000618" name="Node_GetIndexInParentOperation" hash="bw1d604f0dejaf6k6gjuxrp3qjycr06" />

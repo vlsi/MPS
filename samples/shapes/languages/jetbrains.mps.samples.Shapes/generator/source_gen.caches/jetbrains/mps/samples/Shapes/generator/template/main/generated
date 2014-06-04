@@ -28,8 +28,11 @@
   </source>
   <source id="5898776707557581754" name="MyCanvas" hash="-9xfdntqvxxb6rp98ta34tunylkugyw">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5898776707557827968" name="reduce_Circle" hash="a9owfcx7y8w9zydegkbb40r9t4ppwpz" />
+  <source id="5898776707557827968" name="reduce_Circle" hash="a9owfcx7y8w9zydegkbb40r9t4ppwpz">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="5898776707558022696" name="reduce_Square" hash="-4bmar6jv6f605a95obr3yigr70u4p91" />
 </dependencies>
 
