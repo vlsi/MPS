@@ -138,6 +138,8 @@
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3002373989556540709">
     <nodeInfo nodeId="7455880135461190242" fileName="CommandHolder_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7455880135461190242" fileName="CommandHolder_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="691634242167797091" fileName="CommandHolder_Behavior.java" startLine="14" startPosition="83" endLine="15" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="691634242167797091" fileName="CommandHolder_Behavior.java" startLine="14" startPosition="83" endLine="15" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="3002373989556540709" fileName="CommandHolder_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCommandToEdit_691634242167796942#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -188,6 +190,8 @@
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3894227536041770958">
     <nodeInfo nodeId="3894227536041771148" fileName="NodeWithClosure_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3894227536041771148" fileName="NodeWithClosure_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3894227536041771148" fileName="NodeWithClosure_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="497034489490439351" fileName="NodeWithClosure_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="497034489490439351" fileName="NodeWithClosure_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="497034489490439351" fileName="NodeWithClosure_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3894227536041770958" fileName="NodeWithClosure_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -532,6 +536,7 @@
     <unitInfo nodeId="6854397602732226001" fileName="Command_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.base.behavior.Command_Behavior" />
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/691634242167805890">
+    <nodeInfo nodeId="5802999594247387275" fileName="ModifiedCommandHistoryItem_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5802999594247387275" fileName="ModifiedCommandHistoryItem_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="691634242167805890" fileName="ModifiedCommandHistoryItem_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="691634242167805890" fileName="ModifiedCommandHistoryItem_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCommandToEdit_691634242167796942#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />

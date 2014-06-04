@@ -37,9 +37,12 @@
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/4001135958235787086">
     <nodeInfo nodeId="4001135958235787616" fileName="StockSymbol_Behavior.java" startLine="13" startPosition="51" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958235787616" fileName="StockSymbol_Behavior.java" startLine="13" startPosition="51" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958235787616" fileName="StockSymbol_Behavior.java" startLine="13" startPosition="51" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958235787621" fileName="StockSymbol_Behavior.java" startLine="15" startPosition="5" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958235787621" fileName="StockSymbol_Behavior.java" startLine="15" startPosition="5" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958235787621" fileName="StockSymbol_Behavior.java" startLine="15" startPosition="5" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958235787086" fileName="StockSymbol_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4001135958235787614" fileName="StockSymbol_Behavior.java" startLine="12" startPosition="95" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4001135958235787614" fileName="StockSymbol_Behavior.java" startLine="12" startPosition="95" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4001135958235787614" fileName="StockSymbol_Behavior.java" startLine="12" startPosition="95" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4001135958235787086" fileName="StockSymbol_Behavior.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isValidSymbol_4001135958235787610#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
@@ -56,6 +59,7 @@
     <unitInfo nodeId="4001135958235787086" fileName="StockSymbol_Behavior.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="org.jetbrains.mps.samples.Money.behavior.StockSymbol_Behavior" />
   </root>
   <root nodeRef="r:66ae1c00-8213-4a4f-b278-da47b00dec95(org.jetbrains.mps.samples.Money.behavior)/4001135958235925005">
+    <nodeInfo nodeId="4001135958236072964" fileName="MovingAverage_Behavior.java" startLine="12" startPosition="89" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958236072964" fileName="MovingAverage_Behavior.java" startLine="12" startPosition="89" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958236072964" fileName="MovingAverage_Behavior.java" startLine="12" startPosition="89" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958235925005" fileName="MovingAverage_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
