@@ -11,6 +11,7 @@
     <file name="EditableStringDescriptor.java" />
   </source>
   <source id="1560298786499491464" name="StringPathDescriptor" hash="-byqhkg3y2qyaervkcw01rhffdzrnq9q">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StringPathDescriptor.java" />
   </source>
   <source id="1560298786499491489" name="BooleanDescriptor" hash="-ao4h2bjwf3tcpfhgf78mc2yj47ofuo3">

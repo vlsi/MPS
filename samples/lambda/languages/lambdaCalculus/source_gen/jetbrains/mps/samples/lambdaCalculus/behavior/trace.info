@@ -103,7 +103,6 @@
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/2985097847315904384">
     <nodeInfo nodeId="2985097847315904393" fileName="FunctionType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="345" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2985097847315904393" fileName="FunctionType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="345" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2985097847315904384" fileName="FunctionType_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2985097847315904384" fileName="FunctionType_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="2985097847315904386" fileName="FunctionType_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
@@ -217,13 +216,7 @@
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/5400493247431796468">
     <nodeInfo nodeId="8981808925914844611" fileName="LetExpression_Behavior.java" startLine="15" startPosition="86" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8981808925914844611" fileName="LetExpression_Behavior.java" startLine="15" startPosition="86" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8981808925914844611" fileName="LetExpression_Behavior.java" startLine="15" startPosition="86" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8981808925914844617" fileName="LetExpression_Behavior.java" startLine="16" startPosition="48" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8981808925914844617" fileName="LetExpression_Behavior.java" startLine="16" startPosition="48" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8981808925914844617" fileName="LetExpression_Behavior.java" startLine="16" startPosition="48" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8981808925914844624" fileName="LetExpression_Behavior.java" startLine="17" startPosition="100" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8981808925914844624" fileName="LetExpression_Behavior.java" startLine="17" startPosition="100" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8981808925914844624" fileName="LetExpression_Behavior.java" startLine="17" startPosition="100" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5400493247431796468" fileName="LetExpression_Behavior.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVariables_8981808925914841576#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
@@ -241,21 +234,13 @@
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/926857988255581399">
     <nodeInfo nodeId="926857988255582853" fileName="LetRef_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="926857988255582853" fileName="LetRef_Behavior.java" startLine="16" startPosition="86" endLine="17" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="926857988255582862" fileName="LetRef_Behavior.java" startLine="17" startPosition="48" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="926857988255582862" fileName="LetRef_Behavior.java" startLine="17" startPosition="48" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="926857988255582897" fileName="LetRef_Behavior.java" startLine="19" startPosition="163" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="926857988255582897" fileName="LetRef_Behavior.java" startLine="19" startPosition="163" endLine="20" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="926857988255582961" fileName="LetRef_Behavior.java" startLine="23" startPosition="123" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="926857988255582961" fileName="LetRef_Behavior.java" startLine="23" startPosition="123" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="926857988255582975" fileName="LetRef_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="926857988255582975" fileName="LetRef_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="926857988255581399" fileName="LetRef_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="926857988255582871" fileName="LetRef_Behavior.java" startLine="18" startPosition="26" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="926857988255582871" fileName="LetRef_Behavior.java" startLine="18" startPosition="26" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="926857988255582942" fileName="LetRef_Behavior.java" startLine="22" startPosition="143" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="926857988255582942" fileName="LetRef_Behavior.java" startLine="22" startPosition="143" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="926857988255582921" fileName="LetRef_Behavior.java" startLine="21" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="926857988255582921" fileName="LetRef_Behavior.java" startLine="21" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="926857988255581399" fileName="LetRef_Behavior.java" startLine="16" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getAllReferences_926857988255581402#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="926857988255581401" fileName="LetRef_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />

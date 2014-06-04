@@ -8,12 +8,12 @@
   </common>
   <source id="3432969378036014056" name="JavaWatchable" hash="-4kg6fw73fzh5smimys13dvwbncaczik">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaWatchable.java" />
   </source>
   <source id="3432969378036014277" name="JavaThisObject" hash="-7dtbidyvsqhmi0tvx323v5b2o078r4h">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaThisObject.java" />
   </source>
   <source id="3432969378036015831" name="CustomJavaWatchable" hash="luns7zgnikk8xhv2ppfouueom1foy8">

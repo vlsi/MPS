@@ -101,6 +101,7 @@
   <source id="111677556049506422" name="ActionStatement_Behavior" hash="-87zrrxfg8vhjlu79mrflld6cbe8521p">
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ActionStatement_Behavior.java" />
   </source>
   <source id="1262430001741639271" name="Pattern_Behavior" hash="25ft0xy671i1911boua4bxdp4swqtfu">

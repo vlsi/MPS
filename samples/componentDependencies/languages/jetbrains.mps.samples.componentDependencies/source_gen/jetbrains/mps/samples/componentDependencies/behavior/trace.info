@@ -37,8 +37,6 @@
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365530118209">
     <nodeInfo nodeId="650270285023760663" fileName="Component_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="650270285023760663" fileName="Component_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="650270285023765500" fileName="Component_Behavior.java" startLine="10" startPosition="55" endLine="11" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="650270285023765500" fileName="Component_Behavior.java" startLine="10" startPosition="55" endLine="11" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9095678365530118209" fileName="Component_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="9095678365530118211" fileName="Component_Behavior.java" startLine="9" startPosition="43" endLine="11" endPosition="55" />

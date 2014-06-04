@@ -72,8 +72,6 @@
   </root>
   <root nodeRef="r:afdbc9d4-5f41-49d5-9022-ed168658fbf0(jetbrains.mps.lang.behavior.test.behavior)/4731970554577185774">
     <nodeInfo nodeId="4731970554577186935" fileName="I_Behavior.java" startLine="11" startPosition="118" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4731970554577186935" fileName="I_Behavior.java" startLine="11" startPosition="118" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4731970554577187089" fileName="I_Behavior.java" startLine="15" startPosition="107" endLine="16" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4731970554577187089" fileName="I_Behavior.java" startLine="15" startPosition="107" endLine="16" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4731970554577185774" fileName="I_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4731970554577185774" fileName="I_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_nonVirtualFromInterfaceConcept_4731970554577186854#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Ljava/lang/String;" />

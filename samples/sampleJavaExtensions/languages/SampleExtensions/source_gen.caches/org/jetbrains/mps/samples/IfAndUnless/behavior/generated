@@ -43,6 +43,7 @@
   <source id="1262430001741702961" name="TrueFlow_Behavior" hash="3xf6y3vlbi0wnci05p8p8y5afi2fr11">
     <dep root="1262430001741498059" />
     <dep model="r:47174b35-df1c-485d-9362-8e3256f44aca(org.jetbrains.mps.samples.IfAndUnless.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TrueFlow_Behavior.java" />
   </source>
   <source id="1262430001741703052" name="FalseFlow_Behavior" hash="8cn4tflwa6shon24y2v2o65cxz2hgef">

@@ -36,8 +36,6 @@
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/2721285250110256912">
     <nodeInfo nodeId="2721285250110311444" fileName="MappingConfigRefBase_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2721285250110311444" fileName="MappingConfigRefBase_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2721285250110311444" fileName="MappingConfigRefBase_Behavior.java" startLine="11" startPosition="80" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2721285250110256912" fileName="MappingConfigRefBase_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2721285250110256912" fileName="MappingConfigRefBase_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isComplete_2721285250110257005#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="2721285250110256914" fileName="MappingConfigRefBase_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
@@ -102,7 +100,6 @@
     <unitInfo nodeId="2721285250110400380" fileName="MappingConfigNormalRef_Behavior.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_Behavior" />
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/2721285250110400486">
-    <nodeInfo nodeId="2721285250110400540" fileName="MappingConfigExternalRef_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2721285250110400540" fileName="MappingConfigExternalRef_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2721285250110400486" fileName="MappingConfigExternalRef_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2721285250110400486" fileName="MappingConfigExternalRef_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isComplete_2721285250110257005#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />

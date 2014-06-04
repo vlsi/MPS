@@ -57,7 +57,6 @@
   </source>
   <source id="8829647120617318761" name="InternalMode_Behavior" hash="-77rv50ea5mlrwu0yalffkvn8q6n6q1b">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" />
     <file name="InternalMode_Behavior.java" />

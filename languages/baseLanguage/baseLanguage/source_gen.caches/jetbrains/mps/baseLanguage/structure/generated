@@ -301,7 +301,6 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
@@ -360,6 +359,7 @@
   <source id="1082485599095" name="BlockStatement" hash="5ze0inu30oyzonibnxkw97032ef4ffr" />
   <source id="1083065718921" name="_Identifier_String" hash="332rwj27ao6jyebu99tk3edk2470gn1">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_Identifier_String_PropertySupport.java" />
   </source>
   <source id="1083245097125" name="EnumClass" hash="-8bllqnjcehe1q34uqk7k9ofgi9hw8rz" />
@@ -375,8 +375,6 @@
   <source id="1109279851642" name="GenericDeclaration" hash="-acei81qy9lz4p5sdos10qjrl4wl63my" />
   <source id="1109283449304" name="TypeVariableReference" hash="dta21wyhhzajkymh408aqlj121v6fva" />
   <source id="1113006251687" name="_FPNumber_String" hash="-an4hjzmlbbtqai8f0qlsr6wd9qcwe54">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_FPNumber_String_PropertySupport.java" />
   </source>
   <source id="1116615150612" name="ClassifierClassExpression" hash="aabb26s397wephah2yftkpb7izqmwvn" />

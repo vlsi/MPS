@@ -81,10 +81,10 @@
   <source id="2133624044438029119" name="XmlExternalId" hash="-ehn287dqos7b25vgbnxbca1kdbygxid" />
   <source id="3374336260035925079" name="xmlEncoding" hash="48vsyqc98d8dv5963wbkdyn0ifplrcg">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="xmlEncoding_PropertySupport.java" />
   </source>
   <source id="3374336260035925081" name="yesNoString" hash="e578p1v8sr0srx9comuxz17gh1ynbs2">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="yesNoString_PropertySupport.java" />
   </source>
 </dependencies>
