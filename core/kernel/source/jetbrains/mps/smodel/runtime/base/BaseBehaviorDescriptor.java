@@ -143,20 +143,4 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
       }
     });
   }
-
-  @Deprecated
-  @Override
-  public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    if (node == null) {
-      return BehaviorReflection.defaultValue(returnType);
-    } else {
-      return (T) invoke(node, methodName, parameters);
-    }
-  }
-
-  @Deprecated
-  @Override
-  public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    return BehaviorManager.getInstance().invokeSuper(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);
-  }
 }

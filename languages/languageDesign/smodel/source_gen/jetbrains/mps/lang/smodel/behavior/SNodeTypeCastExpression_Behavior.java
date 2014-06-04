@@ -6,9 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -23,16 +20,6 @@ public class SNodeTypeCastExpression_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return (SPropertyOperations.getBoolean(thisNode, "asCast") ? "as" : ":");
-  }
-
-  @Deprecated
-  public static String call_getPresentation_2749027262099690841(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getPresentation_2749027262099690841(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), callerConceptFqName, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_cjhknp_b0a0b0a() {

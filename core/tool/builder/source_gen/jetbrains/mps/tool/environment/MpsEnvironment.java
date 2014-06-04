@@ -14,7 +14,7 @@ import org.apache.log4j.SimpleLayout;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.MpsPlatform;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import java.util.Map;
@@ -50,7 +50,7 @@ public class MpsEnvironment implements Environment {
 
     MpsPlatform.init();
     // todo: =( 
-    MPSCore.getInstance().setTestMode();
+    RuntimeFlags.setTestMode(true);
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 
     try {

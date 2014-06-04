@@ -73,8 +73,8 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
   }
 
   @Override
-  public void dispose() {
-    super.dispose();
+  public void detach() {
+    super.detach();
     myDataSource.removeListener(this);
   }
 

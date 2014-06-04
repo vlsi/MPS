@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.MethodSignature;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InstanceMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -101,46 +100,6 @@ public class InstanceMethodDeclaration_Behavior {
 
   public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Interface"));
-  }
-
-  @Deprecated
-  public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Icon.class, thisNode, "virtual_getAdditionalIcon_5017341185733863694", new Object[]{});
-  }
-
-  @Deprecated
-  public static Icon callSuper_getAdditionalIcon_8884554759541381512(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Icon.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459792(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459792(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getImplementedInterfaceMethod_8302934035201331324(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getImplementedInterfaceMethod_8302934035201331324", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getImplementedInterfaceMethod_8302934035201331324(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getImplementedInterfaceMethod_8302934035201331324", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getNearestOverriddenMethod_5014346297260520665(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getNearestOverriddenMethod_5014346297260520665(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static boolean eq_4b3xw6_a0a0a0d0h(Object a, Object b) {

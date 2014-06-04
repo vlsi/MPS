@@ -41,7 +41,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -63,7 +63,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * @author Kostik
@@ -146,7 +145,7 @@ public class CreateRootNodeGroup extends BaseGroup {
         modelLanguages.remove(ref);
 
         for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
-          if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor)) {
+          if (ModelConstraints.canBeRoot(NameUtil.nodeFQName(conceptDeclaration), modelDescriptor, null)) {
             add(new NewRootNodeAction(new jetbrains.mps.smodel.SNodePointer(conceptDeclaration), modelDescriptor));
           }
         }
@@ -162,7 +161,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
       if (lang != null) {
         for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
-          if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor)) {
+          if (ModelConstraints.canBeRoot(NameUtil.nodeFQName(conceptDeclaration), modelDescriptor, null)) {
             languagesWithRoots.add(lang);
             break;
           }
@@ -185,7 +184,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
 
       for (SNode conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor)) {
+        if (ModelConstraints.canBeRoot(NameUtil.nodeFQName(conceptDeclaration), modelDescriptor, null)) {
           langRootsGroup.add(new NewRootNodeAction(new jetbrains.mps.smodel.SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }

@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.reloading.ReflectionUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class DotExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -62,15 +61,5 @@ public class DotExpression_Behavior {
 
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
-  }
-
-  @Deprecated
-  public static boolean call_allowsNullOperand_4585239809762176541(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_allowsNullOperand_4585239809762176541", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_allowsNullOperand_4585239809762176541(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), callerConceptFqName, "virtual_allowsNullOperand_4585239809762176541", new Class[]{SNode.class}, new Object[]{});
   }
 }

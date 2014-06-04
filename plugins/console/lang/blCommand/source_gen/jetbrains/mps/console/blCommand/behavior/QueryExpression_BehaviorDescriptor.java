@@ -20,7 +20,7 @@ public abstract class QueryExpression_BehaviorDescriptor extends Expression_Beha
   }
 
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
-    return ConsoleHelpProvider_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
+    return QueryExpression_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }
 
   public String virtual_getKind_7006261637493126084(SConcept thisConcept) {

@@ -19,7 +19,8 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -30,6 +31,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.util.Condition;
@@ -78,7 +80,7 @@ public class MappingDialog extends DialogWrapper {
           @Override
           public void run() {
             SNode node = treeNode.getSNode();
-            if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel() == null) {
+            if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
               return;
             }
             // TODO: use node pointers here 

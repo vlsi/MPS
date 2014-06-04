@@ -5,7 +5,8 @@ package jetbrains.mps.traceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Map;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.template.TracingUtil;
@@ -35,7 +36,7 @@ public class DebugInfoBuilder {
     for (SNode varNode : varMap.keySet()) {
       SNode originalVar = getOriginalInputNodeForNearestParent(varNode);
       VarInfo varInfo = varMap.get(varNode);
-      if (originalVar != null && !((SNodeOperations.isDisposed(originalVar)))) {
+      if (originalVar != null && SNodeUtil.isAccessible(originalVar, MPSModuleRepository.getInstance())) {
         varInfo.setNodeId(originalVar.getNodeId().toString());
       } else {
         positionInfo.removeVarInfo(varInfo);
@@ -48,7 +49,7 @@ public class DebugInfoBuilder {
   public void addUnitPosition(SNode inputNode, SModel inputModel, String fileName, UnitPositionInfo positionInfo) {
     positionInfo.setFileName(fileName);
     SNode topmostAncestor = null;
-    if (inputNode != null && !((SNodeOperations.isDisposed(inputNode)))) {
+    if (inputNode != null && SNodeUtil.isAccessible(inputNode, MPSModuleRepository.getInstance())) {
       positionInfo.setNodeId(inputNode.getNodeId().toString());
       topmostAncestor = inputNode.getContainingRoot();
     }
@@ -66,7 +67,7 @@ public class DebugInfoBuilder {
     if (positions != null) {
       for (SNode out : MapSequence.fromMap(positions).keySet()) {
         SNode input = getOriginalInputNodeForNearestParent(out);
-        if (input != null && !((SNodeOperations.isDisposed(input)))) {
+        if (input != null && SNodeUtil.isAccessible(input, MPSModuleRepository.getInstance())) {
           addTraceablePosition(input, originalInputModel, fileName, MapSequence.fromMap(positions).get(out));
         }
       }
@@ -74,7 +75,7 @@ public class DebugInfoBuilder {
     if (scopePositions != null) {
       for (SNode out : MapSequence.fromMap(scopePositions).keySet()) {
         SNode input = getOriginalInputNodeForNearestParent(out);
-        if (input != null && !((SNodeOperations.isDisposed(input)))) {
+        if (input != null && SNodeUtil.isAccessible(input, MPSModuleRepository.getInstance())) {
           addScopePosition(input, originalInputModel, fileName, MapSequence.fromMap(scopePositions).get(out));
         }
       }
@@ -90,7 +91,7 @@ public class DebugInfoBuilder {
   private static SNode getOriginalInputNodeForNearestParent(SNode output) {
     while (output != null) {
       SNode input = output;
-      while (input != null && !((SNodeOperations.isDisposed(input))) && (input.getModel().getModule() instanceof TransientModelsModule)) {
+      while (input != null && SNodeUtil.isAccessible(input, MPSModuleRepository.getInstance()) && (input.getModel().getModule() instanceof TransientModelsModule)) {
         input = TracingUtil.getInputNode(input);
       }
       SNode node = input;

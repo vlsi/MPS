@@ -21,7 +21,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileEditor.FileDocumentManagerAdapter;
 import com.intellij.util.messages.MessageBusConnection;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.IMakeService;
@@ -47,7 +47,7 @@ public class MPSFilesSaver implements ApplicationComponent {
     myMessageBusConnection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, new FileDocumentManagerAdapter() {
       @Override
       public void beforeAllDocumentsSaving() {
-        if (MPSCore.getInstance().isTestMode()) return;
+        if (RuntimeFlags.isTestMode()) return;
         ThreadUtils.assertEDT();
 
         Runnable saveAllRunnable = new Runnable() {

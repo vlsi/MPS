@@ -91,9 +91,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="3595702787188034883" name="main" hash="eeepm74474pzg83j4isaa3izzsew8fw">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="3595702787188034883" name="main" hash="eeepm74474pzg83j4isaa3izzsew8fw" />
   <source id="3595702787188038546" name="build" hash="-c8s1zstpjj6p1h7dx9fnxohm20j8qgy">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>

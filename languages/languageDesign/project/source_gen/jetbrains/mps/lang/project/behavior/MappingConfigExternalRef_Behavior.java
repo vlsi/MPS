@@ -5,8 +5,6 @@ package jetbrains.mps.lang.project.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MappingConfigExternalRef_Behavior {
   public static void init(SNode thisNode) {
@@ -14,15 +12,5 @@ public class MappingConfigExternalRef_Behavior {
 
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "generator", true) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "innerRef", true), "virtual_isComplete_2721285250110257005", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isComplete_2721285250110400531(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isComplete_2721285250110257005", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isComplete_2721285250110400531(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigExternalRef"), callerConceptFqName, "virtual_isComplete_2721285250110257005", new Class[]{SNode.class}, new Object[]{});
   }
 }

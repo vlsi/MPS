@@ -30,16 +30,10 @@ public interface SModelInternal {
 
   void removeModelListener(@NotNull SModelListener listener);
 
-  @Deprecated
-  //use SNodeUtil.isAccessible for nodes or write a custom check for the fact this model is in repository
-  boolean isDisposed();
-
   //todo cast if can be
   StackTraceElement[] getDisposedStacktrace();
 
   boolean canFireEvent();
-
-  void dispose();
 
   //todo this is an external functionality. Should be implemented externally
   FastNodeFinder getFastNodeFinder();

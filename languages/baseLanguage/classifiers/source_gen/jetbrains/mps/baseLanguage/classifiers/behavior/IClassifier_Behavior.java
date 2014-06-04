@@ -17,7 +17,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IClassifier_Behavior {
   public static void init(SNode thisNode) {
@@ -104,55 +103,5 @@ public class IClassifier_Behavior {
       return classifier;
     }
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", true, false), "virtual_getMainClassifier_1213877255428", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_createType_1213877527970(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_createType_1213877527970(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_createSuperType_1217433657148(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createSuperType_1217433657148", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_createSuperType_1217433657148(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_createSuperType_1217433657148", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getParts_1213877527988(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParts_1213877527988", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getParts_1213877527988(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_getParts_1213877527988", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877528020", new Object[]{contextNode});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getMembers_1213877528020(SNode thisNode, String callerConceptFqName, SNode contextNode) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_getMembers_1213877528020", new Class[]{SNode.class, SNode.class}, new Object[]{contextNode});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getMembers_1213877528124(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877528124", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getMembers_1213877528124(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_getMembers_1213877528124", new Class[]{SNode.class}, new Object[]{});
   }
 }

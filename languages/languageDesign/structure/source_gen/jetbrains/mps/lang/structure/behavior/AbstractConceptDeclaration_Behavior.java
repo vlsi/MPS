@@ -31,7 +31,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.Pair;
 import java.util.HashSet;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractConceptDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -305,7 +304,7 @@ public class AbstractConceptDeclaration_Behavior {
       return result;
     }
 
-    for (SNode superconcept : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(thisNode)).where(new IWhereFilter<SNode>() {
+    for (SNode superconcept : ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (it != null);
       }
@@ -324,7 +323,7 @@ public class AbstractConceptDeclaration_Behavior {
     Set<SNode> inLanguageAncestors = SetSequence.fromSet(new HashSet<SNode>());
     Set<SNode> notInLanguageAncestors = SetSequence.fromSet(new HashSet<SNode>());
 
-    for (SNode superconcept : AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(thisNode)) {
+    for (SNode superconcept : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{})) {
       if ((superconcept != null)) {
         if (SNodeOperations.getModel(superconcept) == SNodeOperations.getModel(thisNode)) {
           Pair<Set<SNode>, Set<SNode>> superconceptResult = AbstractConceptDeclaration_Behavior.call_getInLanguageAndNotInLanguageAncestors_5846203010383875248(superconcept);
@@ -340,15 +339,5 @@ public class AbstractConceptDeclaration_Behavior {
     }
 
     return new Pair(inLanguageAncestors, notInLanguageAncestors);
-  }
-
-  @Deprecated
-  public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getImmediateSuperconcepts_1222430305282(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", new Class[]{SNode.class}, new Object[]{});
   }
 }

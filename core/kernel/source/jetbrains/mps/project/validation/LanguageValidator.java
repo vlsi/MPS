@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -60,7 +60,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
 
   public static void checkBehaviorAspectPresence(Language lang, List<String> errors) {
     for (Language language : LanguageDependenciesManager.getAllExtendedLanguages(lang)) {
-      EditableSModel descriptor = LanguageAspect.BEHAVIOR.get(language);
+      SModel descriptor = LanguageAspect.BEHAVIOR.get(language);
       if (descriptor == null) {
         if (lang == language)
           errors.add("Behavior aspect is absent");

@@ -5,9 +5,6 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MPSActionReference_Behavior {
   public static void init(SNode thisNode) {
@@ -15,15 +12,5 @@ public class MPSActionReference_Behavior {
 
   public static String virtual_getActionId_1101347953350122762(SNode thisNode) {
     return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(thisNode, "action", false));
-  }
-
-  @Deprecated
-  public static String call_getActionId_4239542196496960975(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getActionId_1101347953350122762", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getActionId_4239542196496960975(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.MPSActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -5,34 +5,12 @@ package jetbrains.mps.build.mps.tests.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildMpsLayout_TestModules_Content_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static boolean virtual_contains_4560297596904469640(SNode thisNode, SNode module) {
-    return Sequence.fromIterable(BuildMpsLayout_TestModules_Content_Behavior.call_getModules_4560297596904469651(thisNode)).contains(module);
-  }
-
-  @Deprecated
-  public static boolean call_contains_4560297596904469640(SNode thisNode, SNode module) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_contains_4560297596904469640", new Object[]{module});
-  }
-
-  @Deprecated
-  public static boolean callSuper_contains_4560297596904469640(SNode thisNode, String callerConceptFqName, SNode module) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"), callerConceptFqName, "virtual_contains_4560297596904469640", new Class[]{SNode.class, SNode.class}, new Object[]{module});
-  }
-
-  @Deprecated
-  public static Iterable<SNode> call_getModules_4560297596904469651(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getModules_4560297596904469651", new Object[]{});
-  }
-
-  @Deprecated
-  public static Iterable<SNode> callSuper_getModules_4560297596904469651(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"), callerConceptFqName, "virtual_getModules_4560297596904469651", new Class[]{SNode.class}, new Object[]{});
+    return Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getModules_4560297596904469651", new Object[]{})).contains(module);
   }
 }

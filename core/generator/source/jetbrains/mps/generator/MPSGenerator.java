@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.generator.impl.RootTemplateAnnotator;
@@ -42,8 +41,7 @@ public class MPSGenerator extends ComponentPlugin {
   @Override
   public void init() {
     super.init();
-    final SModelRepository modelRepository = MPSCore.getInstance().getModelRepository();
-    final GlobalSModelEventsManager globalSModelEventsManager = MPSCore.getInstance().getGlobalSModelEventsManager();
+    final SModelRepository modelRepository = SModelRepository.getInstance();
     final ClassLoaderManager classLoaderManager = ClassLoaderManager.getInstance();
 
     init(new GeneratorsManager(classLoaderManager));
@@ -51,7 +49,7 @@ public class MPSGenerator extends ComponentPlugin {
     init(new GenerationDependenciesCache(modelRepository));
     init(new GeneratorPathsComponent());
     init(new ModelGenerationStatusManager());
-    init(new RootTemplateAnnotator(globalSModelEventsManager));
+    init(new RootTemplateAnnotator(GlobalSModelEventsManager.getInstance()));
     init(new GenerationSettingsProvider());
   }
 }

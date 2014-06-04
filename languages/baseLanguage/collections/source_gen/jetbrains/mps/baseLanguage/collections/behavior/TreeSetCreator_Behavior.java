@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -37,16 +36,6 @@ public class TreeSetCreator_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1240247491866"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1151689724996"));
     return result;
-  }
-
-  @Deprecated
-  public static boolean call_canHaveParameter_2261417478150191164(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canHaveParameter_2261417478150191157", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_canHaveParameter_2261417478150191164(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_529210_a0a0(Object parameter_1) {

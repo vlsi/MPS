@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -130,7 +132,7 @@ public class LanguageErrorsComponent {
   private Set<SNode> getDependenciesToInvalidate(SModel model) {
     Set<SNode> result = new HashSet<SNode>();
     for (SNode dependency : MapSequence.fromMap(myDependenciesToNodes).keySet()) {
-      if (jetbrains.mps.util.SNodeOperations.isDisposed(dependency) || SNodeOperations.getModel(dependency) == model) {
+      if (!(SNodeUtil.isAccessible(dependency, MPSModuleRepository.getInstance())) || SNodeOperations.getModel(dependency) == model) {
         SetSequence.fromSet(result).addElement(dependency);
       }
     }

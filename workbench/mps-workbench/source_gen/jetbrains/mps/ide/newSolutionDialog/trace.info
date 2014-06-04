@@ -90,11 +90,11 @@
     <nodeInfo nodeId="2273513587775220707" fileName="NewModuleUtil.java" startLine="223" startPosition="71" endLine="224" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6179168321913755161" fileName="NewModuleUtil.java" startLine="224" startPosition="81" endLine="225" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8784082215665658450" fileName="NewModuleUtil.java" startLine="230" startPosition="86" endLine="231" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="5154621356648268596" fileName="NewModuleUtil.java" startLine="231" startPosition="57" endLine="232" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5154621356648268602" fileName="NewModuleUtil.java" startLine="232" startPosition="56" endLine="233" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5154621356648268608" fileName="NewModuleUtil.java" startLine="233" startPosition="53" endLine="234" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8507913872068564036" fileName="NewModuleUtil.java" startLine="234" startPosition="58" endLine="235" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5154621356648268614" fileName="NewModuleUtil.java" startLine="235" startPosition="55" endLine="236" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3925387791298987986" fileName="NewModuleUtil.java" startLine="231" startPosition="57" endLine="232" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3925387791298990792" fileName="NewModuleUtil.java" startLine="232" startPosition="75" endLine="233" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3925387791298990914" fileName="NewModuleUtil.java" startLine="233" startPosition="72" endLine="234" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3925387791298991043" fileName="NewModuleUtil.java" startLine="234" startPosition="77" endLine="235" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3925387791298991179" fileName="NewModuleUtil.java" startLine="235" startPosition="74" endLine="236" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8784082215664440717" fileName="NewModuleUtil.java" startLine="242" startPosition="112" endLine="243" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460423591" fileName="NewModuleUtil.java" startLine="248" startPosition="229" endLine="249" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4543209876460423606" fileName="NewModuleUtil.java" startLine="249" startPosition="87" endLine="250" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -280,7 +280,7 @@
     <scopeInfo nodeId="1613125646032873268" fileName="NewModuleUtil.java" startLine="194" startPosition="45" endLine="200" endPosition="5">
       <varInfo nodeId="1613125646032873272" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="8784082215664449141" fileName="NewModuleUtil.java" startLine="230" startPosition="86" endLine="236" endPosition="57" />
+    <scopeInfo nodeId="8784082215664449141" fileName="NewModuleUtil.java" startLine="230" startPosition="86" endLine="236" endPosition="76" />
     <scopeInfo nodeId="7078490058112055376" fileName="NewModuleUtil.java" startLine="271" startPosition="14" endLine="277" endPosition="11" />
     <scopeInfo nodeId="2273513587775220664" fileName="NewModuleUtil.java" startLine="305" startPosition="0" endLine="311" endPosition="0">
       <varInfo nodeId="2273513587775220667" varName="namespace" />

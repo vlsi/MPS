@@ -8,8 +8,6 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class EditorOperationDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -21,25 +19,5 @@ public class EditorOperationDeclaration_Behavior {
         return SPropertyOperations.getString(it, "name").equals(name);
       }
     });
-  }
-
-  @Deprecated
-  public static SNode call_getJavaMethod_946964771156066991(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaMethod_946964771156066991", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getJavaMethod_946964771156066991(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getPublicJavaMethod_203908296139519011(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getPublicJavaMethod_203908296139519011(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", new Class[]{SNode.class}, new Object[]{});
   }
 }

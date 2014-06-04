@@ -31,11 +31,6 @@ public class ModelRenamer {
     myLazy = lazy;
   }
 
-  @Deprecated
-  public ModelRenamer(EditableSModelDescriptor modelDescriptor, SModelFqName fqName, boolean lazy) {
-    this(modelDescriptor, fqName.toString(), lazy);
-  }
-
   public void rename() {
     myModelDescriptor.rename(myModelName, true);
   }

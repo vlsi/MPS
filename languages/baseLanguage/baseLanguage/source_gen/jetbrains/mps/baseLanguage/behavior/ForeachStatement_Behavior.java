@@ -7,9 +7,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ForeachStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -17,15 +14,5 @@ public class ForeachStatement_Behavior {
 
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "variable", true));
-  }
-
-  @Deprecated
-  public static List<SNode> call_getScopeVariables_2496361171403550949(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getScopeVariables_2496361171403550949(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
   }
 }

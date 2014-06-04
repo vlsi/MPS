@@ -21,6 +21,8 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
@@ -176,7 +178,7 @@ public class CopyPasteUtil {
         } else {
           String resolveInfo = (oldTargetNode == null ? ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() : oldTargetNode.getName());
           if (resolveInfo != null) {
-            if (oldTargetNode != null && !(SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
+            if (oldTargetNode != null && SNodeUtil.isAccessible(oldTargetNode, MPSModuleRepository.getInstance())) {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId(), resolveInfo);
             } else {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);

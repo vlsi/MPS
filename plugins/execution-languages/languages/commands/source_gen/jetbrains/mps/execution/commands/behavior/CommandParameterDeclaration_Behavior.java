@@ -11,8 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CommandParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -48,15 +46,5 @@ public class CommandParameterDeclaration_Behavior {
 
   public static String call_getUpperCaseName_7327337331549086070(SAbstractConcept thisConcept, String name) {
     return name.substring(0, 1).toUpperCase() + name.substring(1);
-  }
-
-  @Deprecated
-  public static boolean call_generateField_8478830098674441876(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_generateField_8478830098674441876", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_generateField_8478830098674441876(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), callerConceptFqName, "virtual_generateField_8478830098674441876", new Class[]{SNode.class}, new Object[]{});
   }
 }

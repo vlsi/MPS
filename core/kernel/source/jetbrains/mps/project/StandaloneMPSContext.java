@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.IOperationContext;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
 
   @Override
   public boolean isTestMode() {
-    return MPSCore.getInstance().isTestMode();
+    return RuntimeFlags.isTestMode();
   }
 
   @Override

@@ -3837,6 +3837,7 @@
         </node>
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="488943251837618336" nodeInfo="ngu" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="9170334376388144573" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="buildModule" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />

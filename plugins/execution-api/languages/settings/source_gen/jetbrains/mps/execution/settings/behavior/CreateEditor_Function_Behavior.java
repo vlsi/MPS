@@ -4,9 +4,6 @@ package jetbrains.mps.execution.settings.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CreateEditor_Function_Behavior {
   public static void init(SNode thisNode) {
@@ -22,25 +19,5 @@ public class CreateEditor_Function_Behavior {
 
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
-  }
-
-  @Deprecated
-  public static SNode call_getJavaMethod_946964771156066804(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaMethod_946964771156066991", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getJavaMethod_946964771156066804(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getPublicJavaMethod_203908296139519699(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getPublicJavaMethod_203908296139519699(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", new Class[]{SNode.class}, new Object[]{});
   }
 }

@@ -2165,6 +2165,9 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8617875044994065501" nodeInfo="nn">
                 <property name="value" nameId="tpee.1070475926801" value="smodel" />
               </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5235759077673214217" nodeInfo="nn">
+                <property name="value" nameId="tpee.1070475926801" value="mps-core" />
+              </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7211226859971706400" nodeInfo="nn">
                 <property name="value" nameId="tpee.1070475926801" value="make-runtime" />
               </node>

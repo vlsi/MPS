@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class UnrestrictedFunctionType_Behavior {
   public static void init(SNode thisNode) {
@@ -57,15 +56,5 @@ public class UnrestrictedFunctionType_Behavior {
       tt = ListSequence.fromList(args).getElement(0);
     }
     return ((tt != null) && !(SNodeOperations.isInstanceOf(tt, "jetbrains.mps.baseLanguage.structure.VoidType")) ? tt : null);
-  }
-
-  @Deprecated
-  public static String call_getRuntimeSignature_3841277577642912754(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getRuntimeSignature_3841277577642912754(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), callerConceptFqName, "virtual_getRuntimeSignature_1213877404927", new Class[]{SNode.class}, new Object[]{});
   }
 }

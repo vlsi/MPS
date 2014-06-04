@@ -9,6 +9,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Map;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.scopes.MethodResolveUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -18,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class InstanceMethodCallOperation_Behavior {
@@ -46,7 +46,7 @@ public class InstanceMethodCallOperation_Behavior {
   }
 
   public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
-    SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
+    SNode instanceType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInstanceType_8008512149545154471", new Object[]{});
     if ((SLinkOperations.getTarget(instanceType, "classifier", false) == null)) {
       return Collections.emptyMap();
     }
@@ -54,7 +54,7 @@ public class InstanceMethodCallOperation_Behavior {
   }
 
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
-    return Sequence.fromIterable(Members.visibleInstanceMethods(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode), thisNode)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInstanceType_8008512149545154471", new Object[]{}), thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_xykbjj_a0a0a0a0a0a0a4(SPropertyOperations.getString(it, "name"), methodName);
       }

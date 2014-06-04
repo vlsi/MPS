@@ -17,12 +17,9 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.DisposedRepository;
-import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -40,7 +37,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
@@ -59,8 +55,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   private final Object REPO_LOCK = new Object();
   private SModule myModule;
   private volatile SRepository myRepository = null;
-
-  private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
 
   protected SModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
@@ -82,22 +76,18 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     if (myRepository == repo) return;
     synchronized (REPO_LOCK) {
       if (myRepository == repo) return;
-      //assert myModule != null && myModule.getRepository() != null;
+      if (myRepository != null) {
+        throw new IllegalStateException("trying to attach a node from a repository to some other repository");
+      }
       myRepository = repo;
     }
   }
 
-  @Override
-  public void dispose() {
+  public void detach() {
     ModelAccess.assertLegalWrite();
     synchronized (REPO_LOCK) {
-      // TODO isLoaded is not enough
-      if (isLoaded()) {
-        for (SNode node : getRootNodes()) {
-          ((SNodeBase) node).detach();
-        }
-      }
-      myRepository = DisposedRepository.INSTANCE;
+      getSModelInternal().detachRoots();
+      myRepository = null;
     }
   }
 
@@ -339,50 +329,20 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   protected void assertCanRead() {
 //    if (myRepository == null) return;
-//    if (myRepository instanceof DisposedRepository) {
-//      showDisposedMessage();
-//      return;
-//    }
-//
 //    synchronized (REPO_LOCK) {
 //      if (myRepository == null) return;
-//      if (myRepository instanceof DisposedRepository) {
-//        showDisposedMessage();
-//        return;
-//      }
 //      myRepository.getModelAccess().checkReadAccess();
 //    }
   }
 
   protected void assertCanChange() {
 //    if (myRepository == null) return;
-//    if (myRepository instanceof DisposedRepository) {
-//      showDisposedMessage();
-//      return;
-//    }
-//
 //    synchronized (REPO_LOCK) {
 //      if (myRepository == null) return;
-//      if (myRepository instanceof DisposedRepository) {
-//        showDisposedMessage();
-//        return;
-//      }
 //      myRepository.getModelAccess().checkWriteAccess();
 //      if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
 //        throw new IllegalModelChangeError("registered model can only be modified inside undoable command");
 //      }
 //    }
-  }
-
-  private void showDisposedMessage() {
-    String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(this);
-    if (ourErroredModels.add(modelName)) {
-      LOG.error(new IllegalModelAccessError("Accessing disposed model " + modelName));
-    }
-  }
-
-  @Override
-  public final boolean isDisposed() {
-    return myRepository instanceof DisposedRepository;
   }
 }

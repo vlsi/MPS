@@ -10,9 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -38,7 +36,7 @@ public class BTestCase_Behavior {
   }
 
   public static String virtual_getClassName_1216136193905(SNode thisNode) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(thisNode);
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
@@ -76,15 +74,5 @@ public class BTestCase_Behavior {
 
   public static String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name");
-  }
-
-  @Deprecated
-  public static String call_getSimpleClassName_4520990320128651400(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSimpleClassName_1229278847513", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getSimpleClassName_4520990320128651400(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), callerConceptFqName, "virtual_getSimpleClassName_1229278847513", new Class[]{SNode.class}, new Object[]{});
   }
 }

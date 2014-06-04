@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.SModuleBase;
@@ -45,7 +44,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class MPSModuleRepository extends SRepositoryBase implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSModuleRepository.class));
+  private static MPSModuleRepository ourInstance;
+
   private final MPSModuleRepository.GlobalModelAccess myGlobalModelAccess;
+
   private final ModelAccessListener myCommandListener = new ModelAccessListener() {
     @Override
     public void commandStarted() {
@@ -57,14 +59,13 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       fireCommandFinished();
     }
   };
-
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
   private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
   private Map<SModuleId, SModule> myIdToModuleMap = new ConcurrentHashMap<SModuleId, SModule>();
   private ManyToManyMap<SModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<SModule, MPSModuleOwner>();
 
   public static MPSModuleRepository getInstance() {
-    return MPSCore.getInstance().getModuleRepository();
+    return ourInstance;
   }
 
   public MPSModuleRepository() {
@@ -74,12 +75,17 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   @Override
   public void init() {
     super.init();
+    if (ourInstance != null) {
+      throw new IllegalStateException("already initialized");
+    }
+    ourInstance = this;
     ModelAccess.instance().addCommandListener(myCommandListener);
   }
 
   @Override
   public void dispose() {
     ModelAccess.instance().removeCommandListener(myCommandListener);
+    ourInstance = null;
     super.dispose();
   }
 

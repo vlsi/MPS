@@ -32,6 +32,8 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -43,7 +45,6 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private static boolean DISABLED = false;
@@ -145,7 +146,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
           public void run() {
             for (SNode methodCall : reResolvedTargets.keySet()) {
               SNode referent = reResolvedTargets.get(methodCall);
-              if (referent != null && !(jetbrains.mps.util.SNodeOperations.isDisposed(referent))) {
+              if (referent != null && SNodeUtil.isAccessible(referent, MPSModuleRepository.getInstance())) {
                 SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", referent, false);
               }
             }

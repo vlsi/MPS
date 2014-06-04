@@ -32,6 +32,8 @@ import javax.swing.Action;
 import jetbrains.mps.ide.icons.IconManager;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class GoToRulesHelper {
   public GoToRulesHelper() {
@@ -158,7 +160,7 @@ public class GoToRulesHelper {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
               @Override
               public void run() {
-                if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel() == null) {
+                if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
                   return;
                 }
                 // TODO: use node pointers here 

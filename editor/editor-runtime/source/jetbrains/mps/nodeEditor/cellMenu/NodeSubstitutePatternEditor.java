@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -139,7 +139,7 @@ public class NodeSubstitutePatternEditor {
       myEditorWindow.setMinimalSize(size);
       myEditorWindow.myTextLine.setText(myCachedText);
       myEditorWindow.myTextLine.setCaretPosition(myCachedCaretPosition);
-      if (!(MPSCore.getInstance().isTestMode())) {
+      if (!RuntimeFlags.isTestMode()) {
         myEditorWindow.relayout();
         myEditorWindow.setVisible(true);
       }

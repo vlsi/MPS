@@ -18,7 +18,6 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -102,16 +101,6 @@ public class NamedTupleDeclaration_Behavior {
 
   public static String virtual_getRightBracket_1262430001741498115(SAbstractConcept thisConcept) {
     return ")";
-  }
-
-  @Deprecated
-  public static SNode call_getThisType_6742265879766289824(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_3305065273710880775", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getThisType_6742265879766289824(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"), callerConceptFqName, "virtual_getThisType_3305065273710880775", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_ds5lpv_a0a0a0a3(Object parameter_1) {

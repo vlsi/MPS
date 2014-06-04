@@ -15,14 +15,18 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Represents a dependency between modules. It points to the target module, can be of several kinds and may declare re-export.
  */
 public interface SDependency {
 
+  @NotNull
   SDependencyScope getScope();
 
   boolean isReexport();
 
+  @NotNull
   SModule getTarget();
 }

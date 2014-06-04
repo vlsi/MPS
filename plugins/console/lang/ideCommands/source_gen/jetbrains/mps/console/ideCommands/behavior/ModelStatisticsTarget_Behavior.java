@@ -5,6 +5,7 @@ package jetbrains.mps.console.ideCommands.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.console.tool.ConsoleContext;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
@@ -22,7 +23,7 @@ public class ModelStatisticsTarget_Behavior {
   public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     int references = 0;
     int properties = 0;
-    for (SNode node : INodeSetReference_Behavior.call_getNodes_5207260697411458163(thisNode, context)) {
+    for (SNode node : BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getNodes_5207260697411458163", new Object[]{context})) {
       references += IterableUtil.asCollection(node.getReferences()).size();
       properties += SNodeOperations.getProperties(node).keySet().size();
     }

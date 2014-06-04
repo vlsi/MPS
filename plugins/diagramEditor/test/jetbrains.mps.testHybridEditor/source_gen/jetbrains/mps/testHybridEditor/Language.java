@@ -9,7 +9,6 @@ import jetbrains.mps.testHybridEditor.typesystem.TypesystemDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 
@@ -44,7 +43,7 @@ public class Language extends LanguageRuntime {
 
   @Override
   public Collection<TemplateModule> getGenerators() {
-    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "205c6cf5-1586-4334-86b6-b7bf867d05d5(jetbrains.mps.testHybridEditor#7298117218431479848)"));
+    return null;
   }
 
   @Override

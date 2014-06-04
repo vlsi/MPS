@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -284,8 +283,8 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
         BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
         for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
-          final EditableSModelDescriptor aspModel = aspect.get(myModule);
-          if (aspModel != null && !aspModel.isChanged() && aspModel instanceof GeneratableSModel) {
+          final SModel aspModel = aspect.get(myModule);
+          if (aspModel instanceof EditableSModel && !((EditableSModel) aspModel).isChanged() && aspModel instanceof GeneratableSModel) {
             modelHash = modelHash.xor(new BigInteger(((GeneratableSModel) aspModel).getModelHash(), Character.MAX_RADIX));
           }
         }

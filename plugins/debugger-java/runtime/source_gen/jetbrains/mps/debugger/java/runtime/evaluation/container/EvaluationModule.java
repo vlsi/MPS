@@ -21,8 +21,8 @@ import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.SDependencyAdapter;
-import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.module.SDependencyImpl;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Collection;
 import jetbrains.mps.smodel.Language;
@@ -85,7 +85,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
     Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
     return Sequence.fromIterable(modules).select(new ISelector<SModule, SDependency>() {
       public SDependency select(SModule it) {
-        return ((SDependency) new SDependencyAdapter(new Dependency(it.getModuleReference(), false)));
+        return ((SDependency) new SDependencyImpl(it, SDependencyScope.DEFAULT, false));
       }
     });
   }

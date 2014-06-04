@@ -5,8 +5,6 @@ package jetbrains.mps.lang.refactoring.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -21,16 +19,6 @@ public class NodesOperation_Behavior {
       return _quotation_createNode_b95jz1_a0a1a0(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(refactoringNode, "target", true), "jetbrains.mps.lang.refactoring.structure.NodeTarget"), "concept", false));
     }
     return _quotation_createNode_b95jz1_a2a0();
-  }
-
-  @Deprecated
-  public static SNode call_createType_7012097027058652513(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_7012097027058652452", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_createType_7012097027058652513(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.NodesOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_b95jz1_a0a1a0(Object parameter_1) {

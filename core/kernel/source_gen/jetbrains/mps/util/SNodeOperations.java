@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -31,7 +32,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class SNodeOperations {
@@ -177,7 +177,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static boolean isDisposed(SNode node) {
-    return ((jetbrains.mps.smodel.SNode) node).isDisposed();
+    return !(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()));
   }
 
   /**
@@ -267,7 +267,7 @@ public class SNodeOperations {
   }
 
   public static boolean isModelDisposed(SModel model) {
-    return ((SModelInternal) model).isDisposed();
+    return ((SModelInternal) model).getDisposedStacktrace() != null;
   }
 
   public static FastNodeFinder getModelFastFinder(SModel model) {
@@ -279,7 +279,7 @@ public class SNodeOperations {
   }
 
   public static boolean isRegistered(SModel model) {
-    return !(model.getRepository() == null || ((SModelBase) model).isDisposed());
+    return model.getRepository() != null;
   }
 
   public static boolean isGeneratable(SModel model) {

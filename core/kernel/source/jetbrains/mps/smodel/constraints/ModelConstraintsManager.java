@@ -27,54 +27,12 @@ import org.jetbrains.annotations.Nullable;
 @ToRemove(version = 3.0)
 // remove after 3.0
 public class ModelConstraintsManager {
-  private static ModelConstraintsManager INSTANCE = new ModelConstraintsManager();
-
-  public static ModelConstraintsManager getInstance() {
-    return INSTANCE;
-  }
-
   private ModelConstraintsManager() {
   }
 
+  //in use from RefScopeChecker. Can't figure out how to deal with package access to OkReferenceDescriptor
   @Nullable
   public static ReferenceScopeProvider getNodeReferentSearchScopeProvider(SNode nodeConcept, String referentRole) {
     return OkReferenceDescriptor.getScopeProvider(nodeConcept, referentRole);
-  }
-
-  public static String getDefaultConcreteConceptFqName(String fqName) {
-    return ModelConstraints.getDefaultConcreteConceptFqName(fqName);
-  }
-
-  // canBeASomething section
-  public static boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
-    return ModelConstraints.canBeAncestor(node, childConcept, childConcept, checkingNodeContext);
-  }
-
-  public static boolean canBeAncestor(SNode node, SNode childConcept, IOperationContext context) {
-    return ModelConstraints.canBeAncestor(node, null, childConcept, null);
-  }
-
-  public static boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
-    return ModelConstraints.canBeParent(parentNode, childConcept, link, null, null);
-  }
-
-  public static boolean canBeParent(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, SNode parentNode, SNode childConcept, SNode link, IOperationContext context, @Nullable SNode childNode, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
-    return ModelConstraints.canBeParent(parentNode, childConcept, link, childNode, checkingNodeContext);
-  }
-
-  public static boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
-   return ModelConstraints.canBeChild(fqName, parentNode, link, null, null);
-  }
-
-  public static boolean canBeChild(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, String fqName, IOperationContext context, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
-    return ModelConstraints.canBeChild(fqName, parentNode, link, childNode,checkingNodeContext);
-  }
-
-  public static boolean canBeRoot(IOperationContext context, String conceptFqName, SModel model) {
-    return ModelConstraints.canBeRoot(conceptFqName, model, null);
-  }
-
-  public static boolean canBeRoot(jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor, IOperationContext context, String conceptFqName, SModel model, @Nullable jetbrains.mps.smodel.runtime.CheckingNodeContext checkingNodeContext) {
-    return ModelConstraints.canBeRoot(conceptFqName, model, checkingNodeContext);
   }
 }

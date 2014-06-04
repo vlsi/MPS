@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModelReference;
-
-import jetbrains.mps.MPSCore;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;
 
 //final used by find usages
 public final class StaticReference extends SReferenceBase {
@@ -138,7 +137,7 @@ public final class StaticReference extends SReferenceBase {
     SModel modelDescriptor = null;
     if (current != null && current.getModule()!=null) {
       modelDescriptor = current.getModule().resolveInDependencies(targetModelReference.getModelId());
-    } else if (!MPSCore.getInstance().isMergeDriverMode()) {
+    } else if (!RuntimeFlags.isMergeDriverMode()) {
       modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
     }
 
