@@ -4,6 +4,8 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class BuildGroupBlock_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +13,16 @@ public class BuildGroupBlock_Behavior {
 
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
+  }
+
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return _quotation_createNode_2divt6_a0a1();
+  }
+
+  private static SNode _quotation_createNode_2divt6_a0a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
+    return quotedNode_1;
   }
 }

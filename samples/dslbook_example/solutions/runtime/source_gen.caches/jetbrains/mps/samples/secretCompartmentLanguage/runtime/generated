@@ -17,6 +17,7 @@
     <file name="CommandChannel.java" />
   </source>
   <source id="6877931680625740260" name="AbstractEvent" hash="cjwqhvgkc8jxprfrsac71useaa7f05o">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="AbstractEvent.java" />
   </source>
   <source id="6877931680625740350" name="Event" hash="e4ndt6jjfre1yl11ake1nz1m27sokmu">

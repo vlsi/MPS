@@ -4,7 +4,7 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7neey8gwdgps1wtoun755h16yrzazrm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6coyx9cq8icm86dy9j1trq5a7ubwr79" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="4tmj3zixaqhl1oajtzxj0wek5mvwt8h" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-43ufz5s8wlb1b2u3nch8m3bnosgxrth" />
@@ -39,7 +39,9 @@
   <source id="1205839086351" name="reduce_DefaultClassifierMethodDeclaration" hash="dfhkj1lxfx7g91rled61512aqx3uphb">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1213999885532" name="reduce_DefaultClassifierFieldDeclaration" hash="-1xenzg0epvrt0xuji0igixd0pc4x335" />
+  <source id="1213999885532" name="reduce_DefaultClassifierFieldDeclaration" hash="-1xenzg0epvrt0xuji0igixd0pc4x335">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1029302639053435662" name="reduce_DefaultClassifier" hash="-9t0w28durj6azf4xnatfyzp19fwknmx" />
   <source id="1029302639053561714" name="reduce_DefaultClassifierFieldAccessOperation" hash="7x24k9wd5czyxe0mvf11nkosh8maz85" />
   <source id="1029302639053561739" name="reduce_DefaultClassifierMethodCall" hash="5v9cfirmu6l1h3l7su277ppdttx4b7z" />

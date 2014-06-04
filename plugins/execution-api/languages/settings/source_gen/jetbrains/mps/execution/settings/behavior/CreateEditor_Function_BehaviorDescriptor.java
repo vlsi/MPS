@@ -9,6 +9,10 @@ public class CreateEditor_Function_BehaviorDescriptor extends EditorOperationDec
   public CreateEditor_Function_BehaviorDescriptor() {
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return CreateEditor_Function_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   public SNode virtual_getJavaMethod_946964771156066991(SNode thisNode) {
     return CreateEditor_Function_Behavior.virtual_getJavaMethod_946964771156066991(thisNode);
   }

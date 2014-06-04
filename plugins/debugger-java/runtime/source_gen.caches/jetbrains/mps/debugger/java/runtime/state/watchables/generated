@@ -21,7 +21,6 @@
     <file name="JavaReturnWatchable.java" />
   </source>
   <source id="3187167456722650243" name="JavaMethodWatchable" hash="c7mlq9q414iwybfd0wzo5xshiheo1wq">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="JavaMethodWatchable.java" />
   </source>
   <source id="3187167456722650363" name="JavaExceptionWatchable" hash="-4wa9bek880hpw39rbpxewdnr7j3z1xj">

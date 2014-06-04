@@ -15,6 +15,10 @@ public class BuilderBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDes
     return BuilderBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return BuilderBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return BuilderBlock_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
   }

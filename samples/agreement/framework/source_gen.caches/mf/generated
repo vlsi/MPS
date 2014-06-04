@@ -21,6 +21,7 @@
     <file name="Money.java" />
   </source>
   <source id="6531435794299650588" name="DoubleRangeTester" hash="-62n8ppd9o5kvqf30hzlxqt8f0veh0rp">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DoubleRangeTester.java" />
   </source>
   <source id="6531435794299651063" name="MfTester" hash="-bvbfis06jzze2vg5d9htb0dmypabe1f">

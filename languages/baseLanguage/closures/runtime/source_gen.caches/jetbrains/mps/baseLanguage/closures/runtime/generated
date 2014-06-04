@@ -28,10 +28,11 @@
     <file name="DelayedException.java" />
   </source>
   <source id="3812443517665722916" name="YieldingIterator" hash="85xc6fylxjupm5tvtu3rk9m4am5brej">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="YieldingIterator.java" />
   </source>
   <source id="4914003190800642467" name="Result" hash="7qceq1s5hc6oenpu6lenv5iib4e4s1l">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Result.java" />
   </source>
   <source id="5571879668402581510" name="_FunctionTypes" hash="-rf62m0rz4cxwkj82w3iwc2qg8t2jml">

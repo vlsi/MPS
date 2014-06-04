@@ -1,92 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ApplicationPluginDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ApplicationPluginDisposeBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock_BehaviorDescriptor" />
-  <unitInfo fileName="ApplicationPluginInitBlock_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ApplicationPluginDisposeBlock_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ApplicationPluginInitBlock_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock_BehaviorDescriptor" />
   <unitInfo fileName="ApplicationPluginType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginType_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="GetPreferencesComponentInProjectOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.GetPreferencesComponentInProjectOperation_BehaviorDescriptor" />
   <unitInfo fileName="GetToolInProjectOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.GetToolInProjectOperation_BehaviorDescriptor" />
   <unitInfo fileName="ProjectPluginDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="ProjectPluginDisposeBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock_BehaviorDescriptor" />
-  <unitInfo fileName="ProjectPluginInitBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ProjectPluginDisposeBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock_BehaviorDescriptor" />
+  <unitInfo fileName="ProjectPluginInitBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock_BehaviorDescriptor" />
   <unitInfo fileName="ProjectPluginType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginType_BehaviorDescriptor" />
   <unitInfo fileName="StandalonePluginDescriptor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.StandalonePluginDescriptor_BehaviorDescriptor" />
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/1262430001741703666">
-    <nodeInfo nodeId="1262430001741703664" fileName="ProjectPluginInitBlock_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914726610" fileName="ProjectPluginInitBlock_Behavior.java" startLine="20" startPosition="125" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914726625" fileName="ProjectPluginInitBlock_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914726629" fileName="ProjectPluginInitBlock_Behavior.java" startLine="22" startPosition="166" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <nodeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741703668" fileName="ProjectPluginInitBlock_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741703663" fileName="ProjectPluginInitBlock_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1262430001741703664" fileName="ProjectPluginInitBlock_Behavior.java" startLine="18" startPosition="92" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914726610" fileName="ProjectPluginInitBlock_Behavior.java" startLine="22" startPosition="125" endLine="23" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914726625" fileName="ProjectPluginInitBlock_Behavior.java" startLine="23" startPosition="261" endLine="24" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914726629" fileName="ProjectPluginInitBlock_Behavior.java" startLine="24" startPosition="166" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682019586" fileName="ProjectPluginInitBlock_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="32" startPosition="60" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="33" startPosition="63" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="35" startPosition="132" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+    <nodeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_v3kvkw_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="1262430001741703668" fileName="ProjectPluginInitBlock_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1262430001741703663" fileName="ProjectPluginInitBlock_Behavior.java" startLine="18" startPosition="92" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="658365993682019585" fileName="ProjectPluginInitBlock_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="47" />
+    <scopeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" />
+    <scopeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1262430001741703666" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1262430001741703666" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914726609" fileName="ProjectPluginInitBlock_Behavior.java" startLine="20" startPosition="125" endLine="23" endPosition="18">
+    <scopeInfo nodeId="3044950653914726609" fileName="ProjectPluginInitBlock_Behavior.java" startLine="22" startPosition="125" endLine="25" endPosition="18">
       <varInfo nodeId="3044950653914726611" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1262430001741703666" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="32" startPosition="60" endLine="36" endPosition="24">
+      <varInfo nodeId="658365993682019582" varName="facade" />
+      <varInfo nodeId="658365993682019582" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1262430001741703666" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock_Behavior" />
+    <scopeInfo nodeId="658365993682019582" fileName="ProjectPluginInitBlock_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="1262430001741703666" fileName="ProjectPluginInitBlock_Behavior.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock_Behavior" />
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/1262430001741719813">
-    <nodeInfo nodeId="1262430001741719811" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <scopeInfo nodeId="1262430001741719815" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741719810" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="1262430001741719811" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="14" startPosition="92" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682019640" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="22" startPosition="60" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="23" startPosition="63" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="25" startPosition="132" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+    <nodeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_io2bgw_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="1262430001741719815" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="1262430001741719810" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="14" startPosition="92" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="658365993682019639" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="47" />
+    <scopeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="132" />
+    <scopeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="1262430001741719813" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1262430001741719813" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock_Behavior" />
+    <scopeInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1262430001741719813" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="22" startPosition="60" endLine="26" endPosition="24">
+      <varInfo nodeId="658365993682019636" varName="facade" />
+      <varInfo nodeId="658365993682019636" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="658365993682019636" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
+    <unitInfo nodeId="1262430001741719813" fileName="ApplicationPluginDisposeBlock_Behavior.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock_Behavior" />
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/1262430001741720051">
-    <nodeInfo nodeId="1262430001741720049" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914719912" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="20" startPosition="125" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914719927" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719931" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="22" startPosition="166" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <nodeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741720053" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741720048" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1262430001741720049" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="18" startPosition="92" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914719912" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="22" startPosition="125" endLine="23" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914719927" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="23" startPosition="261" endLine="24" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914719931" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="24" startPosition="166" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682020105" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="32" startPosition="60" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="33" startPosition="63" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="35" startPosition="132" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+    <nodeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ox0ixn_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="1262430001741720053" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="1262430001741720048" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="18" startPosition="92" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="658365993682020104" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="47" />
+    <scopeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" />
+    <scopeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1262430001741720051" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1262430001741720051" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914719911" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="20" startPosition="125" endLine="23" endPosition="18">
+    <scopeInfo nodeId="3044950653914719911" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="22" startPosition="125" endLine="25" endPosition="18">
       <varInfo nodeId="3044950653914719913" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1262430001741720051" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="32" startPosition="60" endLine="36" endPosition="24">
+      <varInfo nodeId="658365993682020101" varName="facade" />
+      <varInfo nodeId="658365993682020101" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1262430001741720051" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock_Behavior" />
+    <scopeInfo nodeId="658365993682020101" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="1262430001741720051" fileName="ProjectPluginDisposeBlock_Behavior.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock_Behavior" />
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/1262430001741720257">
-    <nodeInfo nodeId="1262430001741720255" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <scopeInfo nodeId="1262430001741720259" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741720254" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="1262430001741720255" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="14" startPosition="92" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682017037" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="22" startPosition="60" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="23" startPosition="63" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="25" startPosition="132" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+    <nodeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_9sgprv_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="1262430001741720259" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="1262430001741720254" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="14" startPosition="92" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="658365993682017036" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="47" />
+    <scopeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="24" startPosition="30" endLine="25" endPosition="132" />
+    <scopeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="1262430001741720257" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1262430001741720257" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock_Behavior" />
+    <scopeInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="1262430001741720257" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="22" startPosition="60" endLine="26" endPosition="24">
+      <varInfo nodeId="658365993682016833" varName="facade" />
+      <varInfo nodeId="658365993682016833" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="658365993682016833" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
+    <unitInfo nodeId="1262430001741720257" fileName="ApplicationPluginInitBlock_Behavior.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock_Behavior" />
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/481983775135178933">
     <nodeInfo nodeId="481983775135178939" fileName="ProjectPluginDeclaration_Behavior.java" startLine="16" startPosition="81" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

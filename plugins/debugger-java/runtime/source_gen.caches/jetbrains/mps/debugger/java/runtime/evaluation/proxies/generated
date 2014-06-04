@@ -13,6 +13,7 @@
     <file name="ObjectValueProxy.java" />
   </source>
   <source id="3102837338444216799" name="NullValueProxy" hash="-9kslnqifu4uet8p7tt2os5cbr2c8uqo">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NullValueProxy.java" />
   </source>
   <source id="3102837338444216936" name="ArrayValueProxy" hash="dko9gf6v2bivpr2n2xxl3n8ndyupz4e">

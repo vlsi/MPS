@@ -114,12 +114,6 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="editor" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="create" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="946964771156066605" resolveInfo="EditorOperationDeclaration" />
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="946964771156066567" nodeInfo="ig">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="946964771156066568" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JComponent" resolveInfo="JComponent" />
-      </node>
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="946964771156066571" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />

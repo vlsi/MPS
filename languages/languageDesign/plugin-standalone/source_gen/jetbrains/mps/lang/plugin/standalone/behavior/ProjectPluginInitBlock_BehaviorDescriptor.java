@@ -15,6 +15,10 @@ public class ProjectPluginInitBlock_BehaviorDescriptor extends ConceptFunction_B
     return ProjectPluginInitBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return ProjectPluginInitBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return ProjectPluginInitBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
