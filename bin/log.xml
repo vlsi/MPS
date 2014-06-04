@@ -52,8 +52,6 @@
         </layout>
     </appender>
 
-    <appender name="MPS" class="jetbrains.mps.logging.MPSAppender"/>
-
     <category name="jetbrains.mps.vcs" additivity="false">
         <priority value="DEBUG"/>
         <appender-ref ref="FILE-VCS"/>

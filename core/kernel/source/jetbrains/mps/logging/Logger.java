@@ -45,24 +45,6 @@ public abstract class Logger {
   }
 
   /**
-   * Use log4j appenders
-   */
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static void addLoggingHandler(ILoggingHandler lh) {
-    MPSAppender.getInstance().addAppender(lh);
-  }
-
-  /**
-   * Use log4j appenders
-   */
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static void removeLoggingHandler(ILoggingHandler lh) {
-    MPSAppender.getInstance().removeAppender(lh);
-  }
-
-  /**
    * @param "OFF", "FATAL", "ERROR", "WARN" ...
    */
   public static String setThreshold(String threshold) {
