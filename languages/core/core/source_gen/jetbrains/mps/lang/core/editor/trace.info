@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.core.editor.EditorAspectDescriptorImpl" />
+  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.core.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/2565736246230036155">
     <nodeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2565736246230036155" fileName="ExportScopePublic_Editor.java" startLine="22" startPosition="89" endLine="23" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -461,6 +461,31 @@
     </scopeInfo>
     <unitInfo nodeId="6639471181490599638" fileName="ShortDescriptionEditorComponent.java" startLine="29" startPosition="83" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent$1" />
     <unitInfo nodeId="6639471181490591356" fileName="ShortDescriptionEditorComponent.java" startLine="19" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/672802406138530983">
+    <nodeInfo nodeId="672802406138530983" fileName="SuppressErrorsAnnotation_Editor.java" startLine="14" startPosition="79" endLine="15" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="672802406138535747" fileName="SuppressErrorsAnnotation_Editor.java" startLine="18" startPosition="97" endLine="19" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="672802406138535747" fileName="SuppressErrorsAnnotation_Editor.java" startLine="19" startPosition="70" endLine="20" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="672802406138535747" fileName="SuppressErrorsAnnotation_Editor.java" startLine="20" startPosition="76" endLine="21" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="672802406138535747" fileName="SuppressErrorsAnnotation_Editor.java" startLine="21" startPosition="95" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="672802406138535747" fileName="SuppressErrorsAnnotation_Editor.java" startLine="22" startPosition="28" endLine="23" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="672802406138530983" fileName="SuppressErrorsAnnotation_Editor.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="672802406138535747" fileName="SuppressErrorsAnnotation_Editor.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAttributedNodeCell_tmyyum_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <scopeInfo nodeId="672802406138530983" fileName="SuppressErrorsAnnotation_Editor.java" startLine="14" startPosition="79" endLine="15" endPosition="71" />
+    <scopeInfo nodeId="672802406138530983" fileName="SuppressErrorsAnnotation_Editor.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+      <varInfo nodeId="672802406138530983" varName="editorContext" />
+      <varInfo nodeId="672802406138530983" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="672802406138535747" fileName="SuppressErrorsAnnotation_Editor.java" startLine="18" startPosition="97" endLine="23" endPosition="22">
+      <varInfo nodeId="672802406138535747" varName="editorCell" />
+      <varInfo nodeId="672802406138535747" varName="manager" />
+      <varInfo nodeId="672802406138535747" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="672802406138535747" fileName="SuppressErrorsAnnotation_Editor.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="672802406138535747" varName="editorContext" />
+      <varInfo nodeId="672802406138535747" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="672802406138530983" fileName="SuppressErrorsAnnotation_Editor.java" startLine="13" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.editor.SuppressErrorsAnnotation_Editor" />
   </root>
 </debugInfo>
 

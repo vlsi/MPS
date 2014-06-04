@@ -17,7 +17,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
 
   @Test
   public void checkConstraints() {
-    Collection<SModel> models = new ModelsExtractor(myModule, false).getModels();
+    Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
     List<String> errors = CheckingTestsUtil.applyChecker(new LanguageChecker(), models, BaseCheckModulesTest.getStatistic());
     Assert.assertTrue("Constraints and scopes errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }

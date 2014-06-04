@@ -62,7 +62,7 @@
   <unitInfo fileName="VectorType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.VectorType_BehaviorDescriptor" />
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1236440389435">
     <nodeInfo nodeId="1236440451754" fileName="MathSymbol_Behavior.java" startLine="17" startPosition="110" endLine="18" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1236440632562" fileName="MathSymbol_Behavior.java" startLine="19" startPosition="208" endLine="20" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1236440632562" fileName="MathSymbol_Behavior.java" startLine="19" startPosition="65" endLine="20" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1236440647503" fileName="MathSymbol_Behavior.java" startLine="21" startPosition="5" endLine="22" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1236440685960" fileName="MathSymbol_Behavior.java" startLine="23" startPosition="21" endLine="24" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237828408196" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -74,7 +74,7 @@
     <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpName_1262430001741497894#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <nodeInfo nodeId="1236440389435" fileName="MathSymbol_Behavior.java" startLine="17" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getVisibleIndices_1236440390782#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
     <scopeInfo nodeId="1236440389437" fileName="MathSymbol_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1236440595177" fileName="MathSymbol_Behavior.java" startLine="19" startPosition="208" endLine="20" endPosition="181" />
+    <scopeInfo nodeId="1236440595177" fileName="MathSymbol_Behavior.java" startLine="19" startPosition="65" endLine="20" endPosition="98" />
     <scopeInfo nodeId="1236440677386" fileName="MathSymbol_Behavior.java" startLine="23" startPosition="21" endLine="24" endPosition="86" />
     <scopeInfo nodeId="1237828382994" fileName="MathSymbol_Behavior.java" startLine="28" startPosition="82" endLine="29" endPosition="34" />
     <scopeInfo nodeId="1262430001741497896" fileName="MathSymbol_Behavior.java" startLine="32" startPosition="92" endLine="33" endPosition="16" />

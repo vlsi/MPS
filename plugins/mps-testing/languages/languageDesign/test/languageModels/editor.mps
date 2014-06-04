@@ -146,7 +146,7 @@
         <property name="style" nameId="tpc2.1186403771423" value="BOLD" />
       </node>
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="8625360827008187895" nodeInfo="nn">
-        <property name="color" nameId="tpc2.1186403713874" value="red" />
+        <property name="color" nameId="tpc2.1186403713874" value="darkGray" />
       </node>
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="1227190782920" nodeInfo="ng">

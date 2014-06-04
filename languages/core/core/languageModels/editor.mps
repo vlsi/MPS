@@ -204,5 +204,10 @@
       </node>
     </node>
   </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="672802406138530983" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpck.4222318806802425298" resolveInfo="SuppressErrorsAnnotation" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_AttributedNodeCell" typeId="tpc2.1149850725784" id="672802406138535747" nodeInfo="ng" />
+  </root>
 </model>
 

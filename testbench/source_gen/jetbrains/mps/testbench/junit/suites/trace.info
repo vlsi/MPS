@@ -529,8 +529,8 @@
     <nodeInfo nodeId="2050748146933621371" fileName="CheckingTestsUtil.java" startLine="82" startPosition="28" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2050748146933621417" fileName="CheckingTestsUtil.java" startLine="86" startPosition="162" endLine="87" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2050748146933621422" fileName="CheckingTestsUtil.java" startLine="89" startPosition="5" endLine="90" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9170334376386466288" fileName="CheckingTestsUtil.java" startLine="93" startPosition="62" endLine="94" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9170334376386466298" fileName="CheckingTestsUtil.java" startLine="94" startPosition="101" endLine="95" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9170334376386466288" fileName="CheckingTestsUtil.java" startLine="93" startPosition="62" endLine="94" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9170334376386466298" fileName="CheckingTestsUtil.java" startLine="94" startPosition="100" endLine="95" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9170334376386466309" fileName="CheckingTestsUtil.java" startLine="98" startPosition="61" endLine="99" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9170334376386466319" fileName="CheckingTestsUtil.java" startLine="99" startPosition="100" endLine="100" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9170334376386466330" fileName="CheckingTestsUtil.java" startLine="103" startPosition="68" endLine="104" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -966,8 +966,8 @@
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/9170334376387736840">
     <nodeInfo nodeId="9170334376387736890" fileName="AuditTypeSystem.java" startLine="14" startPosition="42" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="9170334376387736856" fileName="AuditTypeSystem.java" startLine="19" startPosition="33" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9170334376387736865" fileName="AuditTypeSystem.java" startLine="20" startPosition="81" endLine="21" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9170334376387736856" fileName="AuditTypeSystem.java" startLine="19" startPosition="33" endLine="20" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9170334376387736865" fileName="AuditTypeSystem.java" startLine="20" startPosition="80" endLine="21" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9170334376387736872" fileName="AuditTypeSystem.java" startLine="21" startPosition="127" endLine="22" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9170334376387736844" fileName="AuditTypeSystem.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AuditTypeSystem#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
     <nodeInfo nodeId="9170334376387736852" fileName="AuditTypeSystem.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkTypeSystem#()V" />
@@ -984,8 +984,8 @@
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/9170334376387816357">
     <nodeInfo nodeId="9170334376387816407" fileName="AuditConstraints.java" startLine="14" startPosition="43" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="9170334376387816373" fileName="AuditConstraints.java" startLine="19" startPosition="34" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9170334376387816382" fileName="AuditConstraints.java" startLine="20" startPosition="81" endLine="21" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9170334376387816373" fileName="AuditConstraints.java" startLine="19" startPosition="34" endLine="20" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9170334376387816382" fileName="AuditConstraints.java" startLine="20" startPosition="80" endLine="21" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9170334376387816389" fileName="AuditConstraints.java" startLine="21" startPosition="125" endLine="22" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9170334376387816361" fileName="AuditConstraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AuditConstraints#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
     <nodeInfo nodeId="9170334376387816369" fileName="AuditConstraints.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkConstraints#()V" />
