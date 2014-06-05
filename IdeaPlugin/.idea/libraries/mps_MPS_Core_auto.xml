@@ -41,6 +41,8 @@
       <root url="file://$PROJECT_DIR$/../core/kernel/stubUtils/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/refactoring-runtime/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/openapi/source" />
+      <root url="file://$PROJECT_DIR$/../core/project/source" />
+      <root url="file://$PROJECT_DIR$/../core/textgen/source" />
       <root url="file://$PROJECT_DIR$/../core/migration/source" />
       <root url="file://$PROJECT_DIR$/../core/persistence/source" />
       <root url="file://$PROJECT_DIR$/../core/persistence/source_gen" />
