@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <root nodeRef="r:a2ca46a2-8624-46b0-b4e7-377810fc3ad8(jetbrains.mps.ide.mpsmigration.migration30)/6856864117646528335">
-    <unitInfo nodeId="6856864117646528335" fileName="Migration30Actions.xml" startLine="1" startPosition="0" endLine="7" endPosition="13" unitName="jetbrains.mps.ide.mpsmigration.migration30.Migration30Actions" />
-  </root>
-</debugInfo>
-

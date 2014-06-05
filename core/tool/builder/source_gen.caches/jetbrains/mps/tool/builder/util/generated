@@ -10,11 +10,12 @@
     <file name="PathManager.java" />
   </source>
   <source id="5900076103425047615" name="MapPathMacrosProvider" hash="45ujam7cqefxpsq8plmc9csddn31sou">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="MapPathMacrosProvider.java" />
   </source>
   <source id="5900076103425675110" name="SetLibraryContributor" hash="6xyo8v8nhu2tijcj8v1w4k370rsyjh0">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SetLibraryContributor.java" />
   </source>

@@ -17,15 +17,12 @@ package jetbrains.mps.ide.ui.tree.smodel;
 
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import jetbrains.mps.icons.MPSIcons.ProjectPane;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.ErrorState;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.util.NodeAttributesUtil;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNodeOperations;
-import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -110,7 +107,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       setIcon(IconManager.getIconFor(myNode));
     }
 
-    if (SNodeOperations.isUnknown(myNode)) {
+    if (jetbrains.mps.util.SNodeOperations.isUnknown(myNode)) {
       setErrorState(ErrorState.ERROR);
     }
     if (NodeAttributesUtil.isDeprecatedNode(myNode)) {

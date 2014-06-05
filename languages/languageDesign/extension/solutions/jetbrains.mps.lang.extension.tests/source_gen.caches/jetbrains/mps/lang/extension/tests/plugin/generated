@@ -46,7 +46,6 @@
   <source id="4451661519483734255" name="multiExtensionPoint" hash="-a54q86xvnryz4t55vlu2zfnk6su0sg4" />
   <source id="4451661519483734260" name="multiExtensionPoint_extension" hash="1uvuauxp7fnatj06iggqa4fgik8k0el">
     <dep root="4451661519483734255" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Extension_multiExtensionPoint4451661519483734260_.java" />
   </source>
   <source id="4451661519483734265" name="multiExtensionPoint_extension" hash="-bg902z8t7i1mt8eoenq2u6vubh89tqq">

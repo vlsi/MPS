@@ -19,7 +19,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 
@@ -33,7 +32,7 @@ public class PresentationManager {
       return (type).getName();
     }
 
-    if (SNodeOperations.isUnknown(type)) {
+    if (jetbrains.mps.util.SNodeOperations.isUnknown(type)) {
       String persistentName = type.getName();
       if (persistentName == null) {
         return "?" + NameUtil.shortNameFromLongName(type.getConcept().getQualifiedName()) + "?";

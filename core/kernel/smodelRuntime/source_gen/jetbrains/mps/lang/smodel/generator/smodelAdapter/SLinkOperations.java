@@ -138,13 +138,6 @@ public class SLinkOperations {
     return IterableUtil.asList(children);
   }
 
-  public static List<SNode> getConceptLinkTargets(SNode node, String linkName) {
-    if (node == null) {
-      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
-    }
-    return jetbrains.mps.smodel.SNodeOperations.getConceptLinkTargets(node, linkName, true);
-  }
-
   public static SNode findLinkDeclaration(SReference reference) {
     if (reference == null) {
       return null;

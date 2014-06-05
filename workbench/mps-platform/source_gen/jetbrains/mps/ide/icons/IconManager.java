@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -109,14 +109,14 @@ public class IconManager {
           }
         }
         if (mainIcon == null) {
-          if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
+          if (SNodeOperations.isRoot(node)) {
             return IdeIcons.DEFAULT_ROOT_ICON;
           } else {
             return IdeIcons.DEFAULT_NODE_ICON;
           }
         }
         SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
-        if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
+        if (model == null || SNodeOperations.isModelDisposed(model)) {
           return mainIcon;
         }
         if (!(SModelStereotype.isUserModel(model)) || model instanceof EditableSModel && model.isReadOnly()) {
@@ -175,7 +175,7 @@ public class IconManager {
       icon = getIconForConcept(cd);
     }
     if (icon == null) {
-      if (cd != null && jetbrains.mps.util.SNodeOperations.isRoot(cd)) {
+      if (cd != null && SNodeOperations.isRoot(cd)) {
         return IdeIcons.DEFAULT_ROOT_ICON;
       } else {
         return IdeIcons.DEFAULT_NODE_ICON;

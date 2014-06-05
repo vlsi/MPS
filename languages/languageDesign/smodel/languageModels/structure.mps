@@ -731,18 +731,6 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ancestors" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
   </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1175618182947" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="SConceptLinkAccess" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.featureAccess" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1175618223511" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="conceptLinkDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1105736576531" resolveInfo="ConceptLinkDeclaration" />
-    </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5562717155104563233" nodeInfo="ig" />
-  </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176109685393" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
     <property name="final" nameId="tpce.4628067390765956807" value="false" />

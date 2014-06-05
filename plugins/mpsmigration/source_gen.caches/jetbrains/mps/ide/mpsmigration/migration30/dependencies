@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.mpsmigration.migration30.Migration30Actions" file="Migration30Actions.xml" />
-</dependenciesRoot>
-

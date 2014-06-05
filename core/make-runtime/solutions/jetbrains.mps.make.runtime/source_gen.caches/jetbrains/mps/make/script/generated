@@ -33,6 +33,8 @@
     <file name="IScript.java" />
   </source>
   <source id="6168415856807657250" name="IJobMonitor" hash="-1gkinefpz4x0mhpog1bhutce5ixap0p">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="IJobMonitor.java" />
   </source>
   <source id="1291978361072214397" name="IResult" hash="-4bz9guezt1tmue60617n4n384aop0jg">

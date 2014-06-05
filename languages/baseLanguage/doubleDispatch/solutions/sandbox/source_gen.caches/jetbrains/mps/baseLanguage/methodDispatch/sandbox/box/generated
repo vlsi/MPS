@@ -34,6 +34,7 @@
     <file name="Descendant.java" />
   </source>
   <source id="2323553266850069117" name="Arg1" hash="1lq7etww1b4z6vt88eg30uxgbn5zy4c">
+    <dep model="r:9b747d6a-23f3-4201-9cdb-823e3b205a27(jetbrains.mps.baseLanguage.doubleDispatch.generator.template.main@generator)" />
     <file name="Arg1.java" />
   </source>
   <source id="2323553266850069150" name="Arg2" hash="-bpzumit7l6ribqn53s5q2vbewzprq6b">

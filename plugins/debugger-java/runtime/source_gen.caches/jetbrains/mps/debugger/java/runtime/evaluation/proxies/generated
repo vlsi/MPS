@@ -16,6 +16,7 @@
     <file name="NullValueProxy.java" />
   </source>
   <source id="3102837338444216936" name="ArrayValueProxy" hash="dko9gf6v2bivpr2n2xxl3n8ndyupz4e">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ArrayValueProxy.java" />
   </source>
   <source id="3102837338444217168" name="MirrorUtilImpl" hash="820mvpcbkg71wj14i5tyxx82ru58lyt">
