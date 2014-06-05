@@ -29,16 +29,16 @@
       <node id="2546981710035458903" at="39,0,40,0" concept="6" trace="myDescriptor" />
       <node id="2546981710035458910" at="41,36,42,12" concept="17" />
       <node id="2546981710035458911" at="42,12,43,25" concept="5" />
-      <node id="2546981710035458920" at="47,27,48,38" concept="12" />
-      <node id="2546981710035458928" at="52,31,53,26" concept="5" />
-      <node id="2546981710035458935" at="57,31,58,26" concept="5" />
-      <node id="2546981710035458947" at="63,43,64,16" concept="12" />
-      <node id="2546981710035458953" at="68,25,69,20" concept="5" />
-      <node id="2546981710035458966" at="72,25,73,79" concept="5" />
-      <node id="2546981710035458972" at="73,79,74,84" concept="5" />
-      <node id="2546981710035458977" at="74,84,75,47" concept="5" />
-      <node id="724465314173949365" at="75,47,76,33" concept="13" />
-      <node id="724465314174003017" at="76,33,77,79" concept="5" />
+      <node id="6540133642296920501" at="47,27,48,40" concept="11" />
+      <node id="6540133642296937382" at="48,40,49,31" concept="0" />
+      <node id="2546981710035458920" at="49,31,50,33" concept="12" />
+      <node id="2546981710035458928" at="54,31,55,26" concept="5" />
+      <node id="2546981710035458935" at="59,31,60,26" concept="5" />
+      <node id="2546981710035458947" at="65,43,66,16" concept="12" />
+      <node id="2546981710035458953" at="70,25,71,20" concept="5" />
+      <node id="2546981710035458966" at="74,25,75,79" concept="5" />
+      <node id="2546981710035458972" at="75,79,76,84" concept="5" />
+      <node id="2546981710035458977" at="76,84,77,47" concept="5" />
       <node id="2546981710035459007" at="82,73,83,20" concept="5" />
       <node id="2546981710035459011" at="83,20,84,23" concept="13" />
       <node id="2546981710035459013" at="84,23,85,66" concept="11" />
@@ -120,27 +120,27 @@
       <node id="2546981710035459551" at="227,0,230,0" concept="10" trace="getModules#()Ljava/util/List;" />
       <node id="2546981710035459559" at="231,0,234,0" concept="10" trace="addModule#(Ljetbrains/mps/project/structure/project/Path;)V" />
       <node id="2546981710035458906" at="41,0,45,0" concept="3" trace="FileMPSProject#(Ljava/io/File;)V" />
-      <node id="2546981710035458916" at="46,0,50,0" concept="10" trace="getName#()Ljava/lang/String;" />
-      <node id="2546981710035458924" at="51,0,55,0" concept="10" trace="projectOpened#()V" />
-      <node id="2546981710035458931" at="56,0,60,0" concept="10" trace="projectClosed#()V" />
+      <node id="2546981710035458924" at="53,0,57,0" concept="10" trace="projectOpened#()V" />
+      <node id="2546981710035458931" at="58,0,62,0" concept="10" trace="projectClosed#()V" />
       <node id="2546981710035459199" at="141,0,145,0" concept="10" trace="getWatchedModulesPaths#()Ljava/util/List;" />
       <node id="7820132854312472281" at="180,59,184,13" concept="9" />
-      <node id="2546981710035458938" at="61,0,66,0" concept="10" trace="getComponent#(Ljava/lang/Class;)null" />
+      <node id="2546981710035458938" at="63,0,68,0" concept="10" trace="getComponent#(Ljava/lang/Class;)null" />
       <node id="2546981710035459120" at="110,35,115,5" concept="9" />
       <node id="7820132854312472250" at="170,31,175,7" concept="21" />
+      <node id="2546981710035458916" at="46,0,52,0" concept="10" trace="getName#()Ljava/lang/String;" />
+      <node id="2546981710035458962" at="73,0,79,0" concept="10" trace="run#()V" />
       <node id="7820132854312623329" at="157,7,163,7" concept="9" />
       <node id="7820132854312472279" at="179,47,185,11" concept="8" />
-      <node id="2546981710035458962" at="71,0,79,0" concept="10" trace="run#()V" />
+      <node id="2546981710035458955" at="71,20,79,7" concept="5" />
       <node id="2546981710035459114" at="110,0,118,0" concept="10" trace="error#(Ljava/lang/String;)V" />
       <node id="2546981710035459172" at="126,0,134,0" concept="10" trace="run#()V" />
       <node id="7820132854312472277" at="178,49,186,9" concept="9" />
-      <node id="2546981710035458955" at="69,20,79,7" concept="5" />
       <node id="2546981710035459061" at="90,102,100,9" concept="9" />
       <node id="2546981710035459165" at="124,27,134,7" concept="5" />
       <node id="2546981710035459395" at="206,152,216,7" concept="8" />
       <node id="2546981710035459234" at="154,0,165,0" concept="10" trace="load#(Ljava/io/File;)V" />
       <node id="7820132854312472269" at="176,36,187,7" concept="9" />
-      <node id="2546981710035458949" at="67,0,81,0" concept="10" trace="dispose#()V" />
+      <node id="2546981710035458949" at="69,0,81,0" concept="10" trace="dispose#()V" />
       <node id="2546981710035459038" at="88,74,103,7" concept="9" />
       <node id="2546981710035459144" at="119,0,136,0" concept="10" trace="init#(Ljetbrains/mps/tool/builder/FileMPSProject/ProjectDescriptor;)V" />
       <node id="2546981710035459018" at="85,66,104,5" concept="8" />
@@ -155,10 +155,9 @@
         <var name="ex" id="7820132854312472262" />
       </scope>
       <scope id="7820132854312472264" at="174,32,174,32" />
-      <scope id="2546981710035458919" at="47,27,48,38" />
-      <scope id="2546981710035458927" at="52,31,53,26" />
-      <scope id="2546981710035458934" at="57,31,58,26" />
-      <scope id="2546981710035458946" at="63,43,64,16" />
+      <scope id="2546981710035458927" at="54,31,55,26" />
+      <scope id="2546981710035458934" at="59,31,60,26" />
+      <scope id="2546981710035458946" at="65,43,66,16" />
       <scope id="2546981710035459102" at="95,59,96,45" />
       <scope id="2546981710035459066" at="98,16,99,94" />
       <scope id="2546981710035459043" at="101,14,102,93" />
@@ -183,6 +182,10 @@
       <scope id="2546981710035458909" at="41,36,43,25" />
       <scope id="7820132854312710254" at="160,14,162,31" />
       <scope id="7820132854312472282" at="181,105,183,20" />
+      <scope id="2546981710035458919" at="47,27,50,33">
+        <var name="projectFile" id="6540133642296920502" />
+      </scope>
+      <scope id="2546981710035458965" at="74,25,77,47" />
       <scope id="2546981710035459106" at="104,5,107,5">
         <var name="ref" id="2546981710035459108" />
       </scope>
@@ -204,16 +207,16 @@
       <scope id="2546981710035458906" at="41,0,45,0">
         <var name="file" id="2546981710035458914" />
       </scope>
-      <scope id="2546981710035458916" at="46,0,50,0" />
-      <scope id="2546981710035458924" at="51,0,55,0" />
-      <scope id="2546981710035458931" at="56,0,60,0" />
+      <scope id="2546981710035458924" at="53,0,57,0" />
+      <scope id="2546981710035458931" at="58,0,62,0" />
       <scope id="2546981710035459199" at="141,0,145,0" />
       <scope id="7820132854312472280" at="180,59,184,13" />
-      <scope id="2546981710035458938" at="61,0,66,0">
+      <scope id="2546981710035458938" at="63,0,68,0">
         <var name="cls" id="2546981710035458942" />
       </scope>
-      <scope id="2546981710035458965" at="72,25,77,79" />
       <scope id="2546981710035459175" at="127,25,132,9" />
+      <scope id="2546981710035458916" at="46,0,52,0" />
+      <scope id="2546981710035458962" at="73,0,79,0" />
       <scope id="2546981710035459076" at="91,33,97,11">
         <var name="m" id="2546981710035459085" />
         <var name="moduleHandle" id="2546981710035459078" />
@@ -224,7 +227,6 @@
       <scope id="7820132854312472279" at="179,47,185,11">
         <var name="ch" id="7820132854312472304" />
       </scope>
-      <scope id="2546981710035458962" at="71,0,79,0" />
       <scope id="2546981710035459114" at="110,0,118,0">
         <var name="text" id="2546981710035459117" />
       </scope>
@@ -235,6 +237,7 @@
         <var name="result_dkknya_a1a9a0a5o" id="2546981710035459398" />
         <var name="result_dkknya_a2a1a9a0a5o" id="2546981710035459398" />
       </scope>
+      <scope id="2546981710035458952" at="70,25,79,7" />
       <scope id="2546981710035459239" at="154,37,163,7" />
       <scope id="7820132854312472270" at="177,29,186,9">
         <var name="root" id="7820132854312472272" />
@@ -242,14 +245,13 @@
       <scope id="2546981710035459395" at="206,152,216,7">
         <var name="moduleElement" id="2546981710035459396" />
       </scope>
-      <scope id="2546981710035458952" at="68,25,79,7" />
       <scope id="2546981710035459053" at="89,36,100,9">
         <var name="descriptor" id="2546981710035459055" />
       </scope>
       <scope id="2546981710035459234" at="154,0,165,0">
         <var name="project" id="2546981710035459235" />
       </scope>
-      <scope id="2546981710035458949" at="67,0,81,0" />
+      <scope id="2546981710035458949" at="69,0,81,0" />
       <scope id="2546981710035459149" at="119,59,134,7" />
       <scope id="2546981710035459024" at="86,51,103,7">
         <var name="descriptorFile" id="2546981710035459032" />
@@ -284,7 +286,7 @@
       <scope id="2546981710035459001" at="82,0,109,0">
         <var name="projDesc" id="2546981710035459002" />
       </scope>
-      <unit id="2546981710035458961" at="70,46,79,5" name="jetbrains.mps.tool.builder.FileMPSProject$1" />
+      <unit id="2546981710035458961" at="72,46,79,5" name="jetbrains.mps.tool.builder.FileMPSProject$1" />
       <unit id="2546981710035459171" at="125,46,134,5" name="jetbrains.mps.tool.builder.FileMPSProject$2" />
       <unit id="2546981710035459206" at="146,0,235,0" name="jetbrains.mps.tool.builder.FileMPSProject$ProjectDescriptor" />
       <unit id="2546981710035458892" at="36,0,236,0" name="jetbrains.mps.tool.builder.FileMPSProject" />

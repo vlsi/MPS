@@ -30,31 +30,23 @@ import java.util.Set;
 public class ModuleClassLoaderSupport {
   private final SModule module;
   private final IClassPathItem classPathItem;
-  private final Set<SModule> compileDependencies;
+  private final Collection<SModule> compileDependencies;
 
   private ModuleClassLoaderSupport(SModule module) {
-    // ModuleClassLoaders should be created all canCreate()-able modules!
     assert canCreate(module);
-
     this.module = module;
-
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    //noinspection ConstantConditions
     classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
-
     compileDependencies = collectCompileDependencies(module);
   }
 
-  private static Set<SModule> collectCompileDependencies(SModule module) {
-    Set<SModule> compileDependencies = new HashSet<SModule>();
-    for (SModule dependency : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
-      compileDependencies.add(dependency);
-    }
-    return compileDependencies;
+  private static Collection<SModule> collectCompileDependencies(SModule module) {
+    return new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE);
   }
 
   // ext point possible here
   public static boolean canCreate(SModule module) {
-    // todo: + check is module compiled?
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     return facet != null && facet.isCompileInMps() && module.getFacet(CustomClassLoadingFacet.class) == null;
   }

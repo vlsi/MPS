@@ -232,8 +232,8 @@ public class ImportHelper {
             }
           }
           if (reload) {
-            ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myContextModule), new EmptyProgressMonitor());
-            ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
+            Set<SModule> unloadedClasses = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myContextModule), new EmptyProgressMonitor());
+            ClassLoaderManager.getInstance().loadClasses(unloadedClasses, new EmptyProgressMonitor());
           }
         }
       });
@@ -354,8 +354,7 @@ public class ImportHelper {
                 ((AbstractModule) myModule).addUsedLanguage(module[0]);
                 ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(module[0]);
               }
-              ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myModule), new EmptyProgressMonitor());
-              ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
+              ClassLoaderManager.getInstance().reloadClasses(Arrays.asList(myModule), new EmptyProgressMonitor());
             }
           });
         }

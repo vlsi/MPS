@@ -15,23 +15,15 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.ClasspathReader;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
@@ -48,7 +40,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
@@ -220,42 +211,6 @@ public class SModuleOperations {
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }
-  }
-
-  // deprecated methods
-  @Deprecated
-  public static void reloadFromDisk(AbstractModule module, boolean reloadClasses) {
-    reloadFromDisk(module);
-    if (reloadClasses) {
-      ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
-    }
-  }
-
-  @Deprecated
-  public static IClassPathItem getModuleWithDependenciesClassPathItem(SModule module) {
-    return getDependenciesClasspath(Collections.singleton(module), false);
-  }
-
-  @Deprecated
-  public static IClassPathItem getDependenciesClasspath(Set<SModule> modules, boolean includeStubSolutions) {
-    Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
-
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    result.add(JavaModuleOperations.createClassPathItem(classpath, SModuleOperations.class.getName()));
-    if (includeStubSolutions) {
-      //this is needed because we can use this class before these stub solutions are loaded
-      result.add(CommonPaths.getJDKClassPath());
-      result.add(CommonPaths.getMPSClassPath());
-      for (String s : CommonPaths.getMPSPaths(ClasspathReader.ClassType.TEST)) {
-        try {
-          result.add(ClassPathFactory.getInstance().createFromPath(s, null));
-        } catch (IOException e) {
-          // LOG?
-        }
-      }
-    }
-
-    return result;
   }
 
   // helpers

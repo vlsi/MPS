@@ -45,7 +45,9 @@ public class FileMPSProject extends Project {
 
   @Override
   public String getName() {
-    return getProjectFile().getName();
+    File projectFile = getProjectFile();
+    assert projectFile != null;
+    return projectFile.getName();
   }
 
   @Override
@@ -73,8 +75,6 @@ public class FileMPSProject extends Project {
         ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
         ModuleRepositoryFacade.getInstance().unregisterModules(FileMPSProject.this);
         CleanupManager.getInstance().cleanup();
-        // todo: why we need it? 
-        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
       }
     });
   }
