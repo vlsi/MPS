@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="dataflow-rt" />
     <orderEntry type="module" module-name="debuginfo-api" />
+    <orderEntry type="module" module-name="findUsages-runtime" />
   </component>
 </module>
 
