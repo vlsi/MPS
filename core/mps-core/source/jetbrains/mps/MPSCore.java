@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,16 +60,20 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 /**
  * Evgeny Gryaznov, Sep 1, 2010
  */
-public class MPSCore extends ComponentPlugin {
+public final class MPSCore extends ComponentPlugin {
 
-  private static MPSCore ourInstance = new MPSCore();
-
-  private MPSCore() {
-
+  public MPSCore() {
   }
 
+  /**
+   * @deprecated MPSCore instance is kept by initialization code (which activates the environment)
+   * and should not be accessed unless initialization code passes it anywhere
+   * @return new, not initialized instance
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static MPSCore getInstance() {
-    return ourInstance;
+    return new MPSCore();
   }
 
   @Override

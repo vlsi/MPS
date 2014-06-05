@@ -8,23 +8,30 @@ import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 
-public class MpsPlatform {
-  private MpsPlatform() {
+public final class MpsPlatform {
+  private MPSCore myMPSCore;
+  private MPSPersistence myMPSPersistence;
+
+  public MpsPlatform() {
   }
 
-  public static void init() {
-    MPSCore.getInstance().init();
-    MPSPersistence.getInstance().init();
+  public void init() {
+    myMPSCore = new MPSCore();
+    myMPSCore.init();
+    myMPSPersistence = new MPSPersistence();
+    myMPSPersistence.init();
     MPSTypesystem.getInstance().init();
     MPSGenerator.getInstance().init();
     MPSBaseLanguage.getInstance().init();
   }
 
-  public static void dispose() {
+  public void dispose() {
     MPSBaseLanguage.getInstance().dispose();
     MPSGenerator.getInstance().dispose();
     MPSTypesystem.getInstance().dispose();
-    MPSPersistence.getInstance().dispose();
-    MPSCore.getInstance().dispose();
+    myMPSPersistence.dispose();
+    myMPSPersistence = null;
+    myMPSCore.dispose();
+    myMPSCore = null;
   }
 }

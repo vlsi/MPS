@@ -22,8 +22,10 @@ public class ConvertToBinaryWorker {
   }
 
   public void convert(Map<String, String> map, Boolean stripImplementation) {
-    MPSCore.getInstance().init();
-    MPSPersistence.getInstance().init();
+    final MPSCore mpsCore = new MPSCore();
+    mpsCore.init();
+    final MPSPersistence mpsPersistence = new MPSPersistence();
+    mpsPersistence.init();
     RuntimeFlags.setMergeDriverMode(true);
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
     System.setProperty("mps.playRefactorings", "false");
@@ -35,8 +37,8 @@ public class ConvertToBinaryWorker {
       throw new RuntimeException(ex);
     } finally {
       PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
-      MPSPersistence.getInstance().dispose();
-      MPSCore.getInstance().dispose();
+      mpsPersistence.dispose();
+      mpsCore.dispose();
     }
   }
 

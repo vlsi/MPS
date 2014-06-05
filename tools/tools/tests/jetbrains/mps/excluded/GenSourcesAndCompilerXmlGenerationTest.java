@@ -1,5 +1,5 @@
 /*
-* Copyright 2003-2012 JetBrains s.r.o.
+* Copyright 2003-2014 JetBrains s.r.o.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -40,17 +40,20 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 public class GenSourcesAndCompilerXmlGenerationTest {
+  private static MPSCore ourMPSCore;
 
   @BeforeClass
   public static void init() {
     assertNull(PersistenceFacade.getInstance());
-    MPSCore.getInstance().init();
+    ourMPSCore = new MPSCore();
+    ourMPSCore.init();
   }
 
   @AfterClass
   public static void dispose() {
     assertNotNull(PersistenceFacade.getInstance());
-    MPSCore.getInstance().dispose();
+    ourMPSCore.dispose();
+    ourMPSCore = null;
     assertNull(PersistenceFacade.getInstance());
   }
 

@@ -8,12 +8,12 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
 import jetbrains.mps.library.contributor.LibraryContributor;
+import jetbrains.mps.tool.builder.util.MpsPlatform;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.SimpleLayout;
 import org.apache.log4j.Logger;
 import org.apache.log4j.Level;
-import jetbrains.mps.tool.builder.util.MpsPlatform;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
@@ -35,6 +35,7 @@ public class MpsEnvironment implements Environment {
 
   private final MapPathMacrosProvider macroProvider;
   private final Iterable<LibraryContributor> libContributors;
+  private MpsPlatform myPlatformLoader;
 
 
   public MpsEnvironment(EnvironmentConfig config) {
@@ -48,7 +49,8 @@ public class MpsEnvironment implements Environment {
     BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
     Logger.getRootLogger().setLevel(Level.INFO);
 
-    MpsPlatform.init();
+    myPlatformLoader = new MpsPlatform();
+    myPlatformLoader.init();
     // todo: =( 
     RuntimeFlags.setTestMode(true);
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
@@ -134,7 +136,8 @@ public class MpsEnvironment implements Environment {
       LibraryInitializer.getInstance().removeContributor(libContributor);
     }
 
-    MpsPlatform.dispose();
+    myPlatformLoader.dispose();
+    myPlatformLoader = null;
 
     ActiveEnvironment.deactivateEnvironment(this);
   }

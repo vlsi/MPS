@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ import org.jetbrains.annotations.NotNull;
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class MPSCoreComponents implements ApplicationComponent {
+  private MPSCore myMPSCore;
+  private MPSPersistence myMPSPersistence;
 
   public MPSCoreComponents(FileSystemProviderComponent fsProvider) {
   }
@@ -57,8 +59,10 @@ public class MPSCoreComponents implements ApplicationComponent {
     ModelAccess.setInstance(new WorkbenchModelAccess());
 
     // setup MPS.Core
-    MPSCore.getInstance().init();
-    MPSPersistence.getInstance().init();
+    myMPSCore = new MPSCore();
+    myMPSCore.init();
+    myMPSPersistence = new MPSPersistence();
+    myMPSPersistence.init();
     MPSTypesystem.getInstance().init();
     MPSGenerator.getInstance().init();
     MPSFindUsages.getInstance().init();
@@ -82,8 +86,10 @@ public class MPSCoreComponents implements ApplicationComponent {
     MPSFindUsages.getInstance().dispose();
     MPSGenerator.getInstance().dispose();
     MPSTypesystem.getInstance().dispose();
-    MPSPersistence.getInstance().dispose();
-    MPSCore.getInstance().dispose();
+    myMPSPersistence.dispose();
+    myMPSPersistence = null;
+    myMPSCore.dispose();
+    myMPSCore = null;
 
     // cleanup
     ModelAccess.instance().dispose();
