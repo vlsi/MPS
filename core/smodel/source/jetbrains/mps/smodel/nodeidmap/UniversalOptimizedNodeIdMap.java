@@ -17,14 +17,14 @@ package jetbrains.mps.smodel.nodeidmap;
 
 import gnu.trove.THashMap;
 import gnu.trove.TLongObjectHashMap;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
-import jetbrains.mps.util.iterable.MergeIterator;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
+import java.util.Collection;
 
 public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
@@ -83,9 +83,10 @@ public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
 
   @Override
   public Iterable<SNode> values() {
-    Iterator<SNode> regular = ((Iterable) Arrays.asList(myRegularMap.getValues())).iterator();
-    Iterator<SNode> foreign = myForeignMap.values().iterator();
-    Iterator<SNode> other = myOtherMap.values().iterator();
-    return new MergeIterator<SNode>(regular, new MergeIterator<SNode>(foreign, other));
+    ArrayList<SNode> rv = new ArrayList<SNode>(myRegularMap.size() + myForeignMap.size() + myOtherMap.size());
+    rv.addAll((Collection) Arrays.asList(myRegularMap.getValues()));
+    rv.addAll(myForeignMap.values());
+    rv.addAll(myOtherMap.values());
+    return rv;
   }
 }
