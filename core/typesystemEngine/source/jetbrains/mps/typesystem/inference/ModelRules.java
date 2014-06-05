@@ -35,6 +35,7 @@ import java.util.Set;
 
 public class ModelRules {
   public static final Object RULES_LOCK = new Object();
+  private final LanguageRegistry myLanguageRegistry;
 
   private Set<String> myLoadedLanguages = new THashSet<String>();
   private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
@@ -49,7 +50,8 @@ public class ModelRules {
   private OverloadedOperationsManager myOverloadedOperationsManager;
   private static final Logger LOG = LogManager.getLogger(RulesManager.class);
 
-  public ModelRules(SModel model) {
+  public ModelRules(SModel model, LanguageRegistry languageRegistry) {
+    myLanguageRegistry = languageRegistry;
     List<Language> languages = SModelOperations.getLanguages(model);
     for (Language language : languages) {
       loadLanguage(language.getModuleName());
@@ -71,12 +73,12 @@ public class ModelRules {
   }
 
   //todo: we should not change language models while loading language
-  public boolean loadLanguage(final String languageNamespace) {
+  private boolean loadLanguage(final String languageNamespace) {
     synchronized (RULES_LOCK) {
       if (myLoadedLanguages.contains(languageNamespace)) {
         return true;
       }
-      LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(languageNamespace);
+      LanguageRuntime language = myLanguageRegistry.getLanguage(languageNamespace);
       if (language == null) return false;
       IHelginsDescriptor typeSystemDescriptor = null;
       try {

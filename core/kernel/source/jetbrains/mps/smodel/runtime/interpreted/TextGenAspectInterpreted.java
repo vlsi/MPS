@@ -15,27 +15,19 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.structure.DescriptorUtils;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
-import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.SNodeTextGenAdapter;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.structure.DescriptorUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
-  private static final Logger LOG = LogManager.getLogger(TextGenAspectInterpreted.class);
 
   public TextGenAspectInterpreted() {
   }

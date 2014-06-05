@@ -113,6 +113,10 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     myRulesManager.unloadLanguages(languages);
   }
 
+  /*package*/ LanguageRegistry getLanguageRegistry() {
+    return myLanguageRegistry;
+  }
+
   public static TypeChecker getInstance() {
     return INSTANCE;
   }

@@ -99,11 +99,11 @@ public class MPSCore extends ComponentPlugin {
     init(new ImmatureReferences(modelRepository));
 
     init(new QueryMethodGenerated(classLoaderManager));
-    ConceptRegistry conceptRegistry = init(new ConceptRegistry());
-    init(new LanguageRegistry(classLoaderManager, conceptRegistry));
+    LanguageRegistry languageRegistry = init(new LanguageRegistry(classLoaderManager));
+    init(new ConceptRegistry(languageRegistry));
     init(new ExtensionRegistry(classLoaderManager, moduleRepository));
     init(new LanguageHierarchyCache(moduleRepository));
-    init(new ConceptDescendantsCache(moduleRepository, LanguageRegistry.getInstance()));
+    init(new ConceptDescendantsCache(moduleRepository, languageRegistry));
     init(new StructureAspectInterpreted());
     init(new SModelUtil_new(classLoaderManager, globalSModelEventsManager));
     init(new CachesManager(classLoaderManager, modelRepository));

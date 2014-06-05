@@ -146,7 +146,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
   }
 
   private void load() {
-    Collection<LanguageRuntime> availableLanguages = LanguageRegistry.getInstance().getAvailableLanguages();
+    Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();
     if (availableLanguages == null) {
       return;
     }

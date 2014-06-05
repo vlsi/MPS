@@ -201,7 +201,7 @@
     <nodeInfo nodeId="8739959356373799582" fileName="EvaluationModule.java" startLine="84" startPosition="58" endLine="85" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8739959356373913627" fileName="EvaluationModule.java" startLine="87" startPosition="45" endLine="88" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8739959356374103477" fileName="EvaluationModule.java" startLine="94" startPosition="44" endLine="95" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8739959356374152690" fileName="EvaluationModule.java" startLine="97" startPosition="44" endLine="98" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8739959356374152690" fileName="EvaluationModule.java" startLine="97" startPosition="44" endLine="98" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4987818059123844494" fileName="EvaluationModule.java" startLine="62" startPosition="12" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1247371618987947299" fileName="EvaluationModule.java" startLine="73" startPosition="10" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8739959356373909116" fileName="EvaluationModule.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SDependency;" />
@@ -223,7 +223,7 @@
     <scopeInfo nodeId="4987818059123844495" fileName="EvaluationModule.java" startLine="62" startPosition="14" endLine="63" endPosition="112" />
     <scopeInfo nodeId="1247371618987947306" fileName="EvaluationModule.java" startLine="71" startPosition="59" endLine="72" endPosition="18" />
     <scopeInfo nodeId="8739959356373909117" fileName="EvaluationModule.java" startLine="87" startPosition="45" endLine="88" endPosition="88" />
-    <scopeInfo nodeId="8739959356374146790" fileName="EvaluationModule.java" startLine="97" startPosition="44" endLine="98" endPosition="70" />
+    <scopeInfo nodeId="8739959356374146790" fileName="EvaluationModule.java" startLine="97" startPosition="44" endLine="98" endPosition="80" />
     <scopeInfo nodeId="4987818059123790946" fileName="EvaluationModule.java" startLine="59" startPosition="52" endLine="61" endPosition="88" />
     <scopeInfo nodeId="1247371618987947300" fileName="EvaluationModule.java" startLine="73" startPosition="12" endLine="75" endPosition="58" />
     <scopeInfo nodeId="846214144107996108" fileName="EvaluationModule.java" startLine="38" startPosition="29" endLine="41" endPosition="42">

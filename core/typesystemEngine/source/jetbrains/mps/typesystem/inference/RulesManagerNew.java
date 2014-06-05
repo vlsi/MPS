@@ -53,7 +53,7 @@ public class RulesManagerNew {
     SModel model = node.getModel();
     ModelRules result = myModelsToRules.get(model);
     if (result == null) {
-      result = new ModelRules(model);
+      result = new ModelRules(model, myTypeChecker.getLanguageRegistry());
       myModelsToRules.put(model, result);
     }
     return result;
