@@ -17,6 +17,7 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="dataflow-rt" />
+    <orderEntry type="module" module-name="project" />
     <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>

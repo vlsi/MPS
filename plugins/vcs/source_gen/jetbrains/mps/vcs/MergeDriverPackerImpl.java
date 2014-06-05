@@ -34,7 +34,7 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
       }
     }));
 
-    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "openapi", "smodel", "mps-core", "make-runtime", "kernel" + fsep + "dataFlowRuntime", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence");
+    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "openapi", "smodel", "mps-core", "make-runtime", "kernel" + fsep + "dataFlowRuntime", "project", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence");
     String homePath = PathManager.getHomePath();
     final String corePath = homePath + fsep + "core";
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(CLASSPATHS).select(new ISelector<String, String>() {
