@@ -64,7 +64,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
       binaryModelHeader = BinaryPersistence.readHeader(source);
     } catch (ModelReadException e) {
       LOG.debug(e.getMessageEx());
-      return null;
+      throw new RuntimeException(e);
     }
     return new BinarySModelDescriptor(source, binaryModelHeader);
   }
