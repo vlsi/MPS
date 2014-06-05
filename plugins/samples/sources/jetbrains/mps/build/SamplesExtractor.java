@@ -29,7 +29,6 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.build.SamplesExtractor.MyState;
 import jetbrains.mps.samples.SamplesInfo;
-import jetbrains.mps.samples.SamplesManager;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.apache.log4j.LogManager;
@@ -52,7 +51,6 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private static final Logger LOG = LogManager.getLogger(SamplesExtractor.class);
 
   private static final String SAMPLES_IN_MPS_HOME_DIR = "samples";
-  private static final String MPS = "MPS";
 
   public static SamplesExtractor getInstance() {
     return ((SamplesExtractor) ApplicationManager.getApplication().getComponent(SamplesInfo.class));
@@ -72,8 +70,6 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   public void initComponent() {
-    SamplesManager.getInstance().registerSamplesInfo(this);
-
     if (myState == null) {
       myState = new MyState();
     }
