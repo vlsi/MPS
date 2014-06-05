@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.core.mergedriver;
 
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
@@ -39,7 +39,7 @@ import org.apache.log4j.LogManager;
   @Nullable
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
     System.setProperty("mps.playRefactorings", "false");
-    MPSCore.getInstance().setMergeDriverMode(true);
+    RuntimeFlags.setMergeDriverMode(true);
     LightModelEnvironmentInfoImpl persistenceEnv = new LightModelEnvironmentInfoImpl();
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(persistenceEnv);
 

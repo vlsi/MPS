@@ -4,30 +4,18 @@ package jetbrains.mps.lang.scopes.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.scopes.runtime.ScopeProviderContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.scopes.runtime.ScopeProviderContext;
 
 public class UniformScopeProvider_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode context) {
-    return UniformScopeProvider_Behavior.call_getScope_2995585510566823862(thisNode, kind, ScopeProviderContext.childContext(context));
+    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_2995585510566823862", new Object[]{kind, ScopeProviderContext.childContext(context)});
   }
 
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return UniformScopeProvider_Behavior.call_getScope_2995585510566823862(thisNode, kind, ScopeProviderContext.rolePlusIndexContext(role, index));
-  }
-
-  @Deprecated
-  public static Scope call_getScope_2995585510566823862(SNode thisNode, SNode kind, ScopeProviderContext context) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_2995585510566823862", new Object[]{kind, context});
-  }
-
-  @Deprecated
-  public static Scope callSuper_getScope_2995585510566823862(SNode thisNode, String callerConceptFqName, SNode kind, ScopeProviderContext context) {
-    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"), callerConceptFqName, "virtual_getScope_2995585510566823862", new Class[]{SNode.class, SNode.class, ScopeProviderContext.class}, new Object[]{kind, context});
+    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_2995585510566823862", new Object[]{kind, ScopeProviderContext.rolePlusIndexContext(role, index)});
   }
 }

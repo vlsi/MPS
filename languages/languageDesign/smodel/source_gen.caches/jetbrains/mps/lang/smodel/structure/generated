@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="kgc3l2gv9hsv3l18n5ihspk0l2nybo">
+<dependencies version="2" modelHash="cfkehdscc9r0or3ls2dv3cgcd8pk59c">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6coyx9cq8icm86dy9j1trq5a7ubwr79" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-i5oe5ax91p271i0f9us1edf1fuz99x" />
@@ -83,7 +83,6 @@
     <dep root="1204848879094" />
     <dep root="1204851882688" />
     <dep root="1205861725686" />
-    <dep root="1206019730951" />
     <dep root="1206482823744" />
     <dep root="1206659704055" />
     <dep root="1212008292747" />
@@ -302,6 +301,5 @@
   <source id="597763930871270009" name="ChildNodeRefExpression" hash="-587ja2lxqqiyzeaxgm2aj88i13yb1mw" />
   <source id="6955116391921790598" name="CheckedModuleQualifiedName" hash="-243yt55qd1o0xmj5yy6vu3kqm0snocg" />
   <source id="4693937538533521280" name="OfConceptOperation" hash="-52o5s14tafev4fbku1mclx2uh21zndd" />
-  <source id="1206019730951" name="StaticConceptMethodCall" hash="36obm99hr34lv099itwq1tctugodclx" />
 </dependencies>
 

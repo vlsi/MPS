@@ -5,9 +5,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class UnicodeCharacterRegexp_Behavior {
   public static void init(SNode thisNode) {
@@ -15,15 +12,5 @@ public class UnicodeCharacterRegexp_Behavior {
 
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return "\\u" + SPropertyOperations.getString(thisNode, "code");
-  }
-
-  @Deprecated
-  public static String call_getString_1222433041600(SNode thisNode, List<SNode> vars) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{vars});
-  }
-
-  @Deprecated
-  public static String callSuper_getString_1222433041600(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp"), callerConceptFqName, "virtual_getString_1222432436326", new Class[]{SNode.class, List.class}, new Object[]{vars});
   }
 }

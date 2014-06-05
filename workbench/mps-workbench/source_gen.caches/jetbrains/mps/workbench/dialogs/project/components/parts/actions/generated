@@ -13,12 +13,9 @@
     <file name="ListAddAction.java" />
   </source>
   <source id="1560298786499490464" name="BaseAddAction" hash="9c8p985v8km0nbmmihchthy152zg8r5">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="BaseAddAction.java" />
   </source>
   <source id="1560298786499493326" name="TableAddAction" hash="clushkuoy3xoewnmdceb0wp7js3gyqd">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="TableAddAction.java" />
   </source>
   <source id="1560298786499493338" name="ListRemoveAction" hash="azrp5emn4pzsj4a8jamtfk2yok0vtxm">

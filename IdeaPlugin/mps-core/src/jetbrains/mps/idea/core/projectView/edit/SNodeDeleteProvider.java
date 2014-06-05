@@ -21,7 +21,6 @@ import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -40,9 +39,9 @@ public class SNodeDeleteProvider implements DeleteProvider {
 
   private Collection<SNodeReference> mySelectedNodes;
   private Project myProject;
-  private EditableSModelDescriptor myModelDescriptor;
+  private EditableSModel myModelDescriptor;
 
-  public SNodeDeleteProvider(Collection<SNodeReference> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, @NotNull Project project) {
+  public SNodeDeleteProvider(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, @NotNull Project project) {
     mySelectedNodes = selectedNodes;
     myProject = project;
     myModelDescriptor = modelDescriptor;

@@ -24,7 +24,6 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -52,7 +51,7 @@ public class BaseMethodDeclaration_Behavior {
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     SNode expectedRetType = SLinkOperations.getTarget(thisNode, "returnType", true);
-    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || BaseMethodDeclaration_Behavior.call_isReturnsVoid_1234359555698(thisNode)) {
+    if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReturnsVoid_1234359555698", new Object[]{})) {
       // actually - no return type 
       expectedRetType = null;
     }
@@ -144,7 +143,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static SNode call_getBaseMethod_5014346297260519893(SNode thisNode) {
-    SNode result = BaseMethodDeclaration_Behavior.call_getNearestOverriddenMethod_5358895268254685434(thisNode);
+    SNode result = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
     if ((result == null)) {
       return null;
     }
@@ -237,7 +236,7 @@ public class BaseMethodDeclaration_Behavior {
 
   @Nullable
   public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "name") + "#" + BaseMethodDeclaration_Behavior.call_jniSignature_8847328628797656446(thisNode);
+    return SPropertyOperations.getString(thisNode, "name") + "#" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_jniSignature_8847328628797656446", new Object[]{});
   }
 
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
@@ -308,96 +307,6 @@ public class BaseMethodDeclaration_Behavior {
       }
     }).toListSequence();
     return ListSequence.fromList(returnTypeVars).subtract(ListSequence.fromList(boundTypeVars)).toListSequence();
-  }
-
-  @Deprecated
-  public static List<Icon> call_getMarkIcons_5039675756633081786(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<Icon> callSuper_getMarkIcons_5039675756633081786(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isDataFlowChecked_1227714048980(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isDataFlowChecked_1227714048980", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isDataFlowChecked_1227714048980(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isDataFlowChecked_1227714048980", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isReturnsVoid_1234359555698(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReturnsVoid_1234359555698", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isReturnsVoid_1234359555698(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isReturnsVoid_1234359555698", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getNearestOverriddenMethod_5358895268254685434(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getNearestOverriddenMethod_5358895268254685434", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean call_isAbstract_1232982539764(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isAbstract_1232982539764", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isAbstract_1232982539764(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isAbstract_1232982539764", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_jniSignature_8847328628797656446(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_jniSignature_8847328628797656446", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_jniSignature_8847328628797656446(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_jniSignature_8847328628797656446", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getTraceableProperty_2496361171403550883(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getTraceableProperty_2496361171403550883(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getScopeVariables_2496361171403550901(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getScopeVariables_5067982036267369894", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getScopeVariables_2496361171403550901(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SModule check_tq0gdw_a0a0k(SModel checkedDotOperand) {

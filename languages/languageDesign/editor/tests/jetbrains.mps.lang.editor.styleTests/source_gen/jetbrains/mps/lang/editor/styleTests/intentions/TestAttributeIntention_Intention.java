@@ -73,7 +73,7 @@ public class TestAttributeIntention_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "replace ConceptWithStyleAttributes with BooleanConstant";
+      return "Replace ConceptWithStyleAttributes with BooleanConstant";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
@@ -82,24 +82,52 @@ public class TestAttributeIntention_Intention implements IntentionFactory {
       EditorCell_Collection remiCollection = as_3rumhz_a0a2a2m(bigCollection.getCellAt(1), EditorCell_Collection.class);
       EditorCell reCell = remiCollection.getCellAt(0);
       EditorCell miCell = remiCollection.getCellAt(1);
+      EditorCell_Collection fasolCollection = as_3rumhz_a0a5a2m(remiCollection.getCellAt(2), EditorCell_Collection.class);
+      EditorCell faCell = fasolCollection.getCellAt(0);
+      EditorCell solCell = fasolCollection.getCellAt(1);
+      EditorCell_Collection latiCollection = as_3rumhz_a0a8a2m(fasolCollection.getCellAt(2), EditorCell_Collection.class);
+      EditorCell laCell = latiCollection.getCellAt(0);
+      EditorCell tiCell = latiCollection.getCellAt(1);
+
 
       boolean ok = true;
-      ok &= eq_3rumhz_a0a7a2m(bigCollection.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Hey!");
+      ok &= eq_3rumhz_a0a41a2m(bigCollection.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Hey!");
       ok &= bigCollection.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
 
-      ok &= eq_3rumhz_a0a01a2m(doCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Hey!");
+      ok &= eq_3rumhz_a0a71a2m(doCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Hey!");
       ok &= doCell.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
 
-      ok &= eq_3rumhz_a0a31a2m(remiCollection.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Bye!");
+      ok &= eq_3rumhz_a0a02a2m(remiCollection.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Bye!");
       ok &= remiCollection.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
 
-      ok &= eq_3rumhz_a0a61a2m(reCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Yeah!");
+      ok &= eq_3rumhz_a0a32a2m(reCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Yeah!");
       ok &= reCell.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == false;
 
-      ok &= eq_3rumhz_a0a91a2m(miCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Bye!");
+      ok &= eq_3rumhz_a0a62a2m(miCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Bye!");
       ok &= miCell.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
 
-      SNodeOperations.replaceWithAnother(node, createBooleanConstant_x6194x_a0a22a0(ok));
+      ok &= eq_3rumhz_a0a92a2m(fasolCollection.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Priority");
+      ok &= fasolCollection.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
+
+      ok &= eq_3rumhz_a0a23a2m(faCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Priority");
+      ok &= faCell.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
+
+      ok &= eq_3rumhz_a0a53a2m(solCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Huge");
+      ok &= solCell.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
+
+      ok &= eq_3rumhz_a0a83a2m(latiCollection.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Bye!");
+      ok &= latiCollection.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
+
+      /*
+        ok &= eq_3rumhz_a0a0pb0c21(laCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Bye!");
+        ok &= laCell.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
+
+        ok &= eq_3rumhz_a0a3pb0c21(tiCell.getStyle().get(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute")), "Bye!");
+        ok &= tiCell.getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")) == true;
+      */
+
+
+      SNodeOperations.replaceWithAnother(node, createBooleanConstant_x6194x_a0a44a0(ok));
     }
 
     public IntentionDescriptor getDescriptor() {
@@ -107,7 +135,7 @@ public class TestAttributeIntention_Intention implements IntentionFactory {
     }
   }
 
-  private static SNode createBooleanConstant_x6194x_a0a22a0(Object p0) {
+  private static SNode createBooleanConstant_x6194x_a0a44a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, false);
     n1.setProperty("value", String.valueOf(p0));
@@ -122,23 +150,55 @@ public class TestAttributeIntention_Intention implements IntentionFactory {
     return (type.isInstance(o) ? (T) o : null);
   }
 
-  private static boolean eq_3rumhz_a0a7a2m(Object a, Object b) {
+  private static <T> T as_3rumhz_a0a5a2m(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+
+  private static <T> T as_3rumhz_a0a8a2m(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+
+  private static boolean eq_3rumhz_a0a41a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_3rumhz_a0a01a2m(Object a, Object b) {
+  private static boolean eq_3rumhz_a0a71a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_3rumhz_a0a31a2m(Object a, Object b) {
+  private static boolean eq_3rumhz_a0a02a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_3rumhz_a0a61a2m(Object a, Object b) {
+  private static boolean eq_3rumhz_a0a32a2m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_3rumhz_a0a91a2m(Object a, Object b) {
+  private static boolean eq_3rumhz_a0a62a2m(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_3rumhz_a0a92a2m(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_3rumhz_a0a23a2m(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_3rumhz_a0a53a2m(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_3rumhz_a0a83a2m(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_3rumhz_a0a0pb0c21(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+
+  private static boolean eq_3rumhz_a0a3pb0c21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

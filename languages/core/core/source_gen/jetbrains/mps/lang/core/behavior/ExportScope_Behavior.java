@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
@@ -64,16 +63,6 @@ public class ExportScope_Behavior {
       module = ((Generator) module).getSourceLanguage();
     }
     return check_ogf5a0_a2a4(check_ogf5a0_a0c0e(((AbstractModule) module)));
-  }
-
-  @Deprecated
-  public static boolean call_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_checkExport_2565736246230026584", new Object[]{sourceNamespace, targetNode});
-  }
-
-  @Deprecated
-  public static boolean callSuper_checkExport_2565736246230026584(SNode thisNode, String callerConceptFqName, String sourceNamespace, SNode targetNode) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), callerConceptFqName, "virtual_checkExport_2565736246230026584", new Class[]{SNode.class, String.class, SNode.class}, new Object[]{sourceNamespace, targetNode});
   }
 
   private static SModule check_ogf5a0_a0a0e(SModel checkedDotOperand) {

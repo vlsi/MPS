@@ -31,7 +31,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -138,8 +139,8 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 SModel md = null;
-                if (!(SNodeOperations.isDisposed(root) || SNodeOperations.isModelDisposed(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root)))) {
-                  md = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root);
+                if (SNodeUtil.isAccessible(root, MPSModuleRepository.getInstance())) {
+                  md = SNodeOperations.getModel(root);
                 }
                 if (md instanceof EditableSModel && !(md.isReadOnly())) {
                   myRegistry.getCurrentDifference((EditableSModel) md).setEnabled(true);

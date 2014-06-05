@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.Language;
@@ -86,7 +85,7 @@ public abstract class LanguageRuntime {
     }
   }
 
-  public BaseFindUsagesDescriptor getFindUsages() {
+  public FindUsageDescriptor getFindUsages() {
     return null;
   }
 
@@ -158,7 +157,7 @@ public abstract class LanguageRuntime {
 
   public TextGenAspectDescriptor getTextGenAspectDescriptor() {
     if (myTextGenDescriptor == null) {
-      myTextGenDescriptor = TextGenAspectInterpreted.getInstance();
+      myTextGenDescriptor = new TextGenAspectInterpreted();
     }
     return myTextGenDescriptor;
   }

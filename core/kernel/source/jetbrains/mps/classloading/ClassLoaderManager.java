@@ -40,6 +40,7 @@ import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -80,23 +81,29 @@ public class ClassLoaderManager implements CoreComponent {
   // todo: move to a new class or remove at all
   private final Map<String, SModuleReference> myLoadedClasses = new THashMap<String, SModuleReference>();
 
+  private final SRepository myRepository;
+
   // reload handlers
   private List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
 
   // listening for module adding/removing
-  private SRepositoryListener myRepositoryListener = new ClassLoaderManagerRepositoryListener(this);
+  private final SRepositoryListener myRepositoryListener = new ClassLoaderManagerRepositoryListener(this);
 
   // temporary stuff for profiling
   private Map<String, Long> actionToTime = new HashMap<String, Long>();
 
+  public ClassLoaderManager(@NotNull SRepository repository) {
+    myRepository = repository;
+  }
+
   @Override
   public void init() {
     if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
+      throw new IllegalStateException("already initialized");
     }
     INSTANCE = this;
     addClassesHandler(SModelRootClassesListener.INSTANCE);
-    MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
+    myRepository.addRepositoryListener(myRepositoryListener);
     FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
       @Override
       public SModuleFacet create() {
@@ -110,10 +117,10 @@ public class ClassLoaderManager implements CoreComponent {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        unloadClasses(MPSModuleRepository.getInstance().getModules(), new EmptyProgressMonitor());
+        unloadClasses(myRepository.getModules(), new EmptyProgressMonitor());
       }
     });
-    MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
+    myRepository.removeRepositoryListener(myRepositoryListener);
     INSTANCE = null;
   }
 
@@ -323,7 +330,7 @@ public class ClassLoaderManager implements CoreComponent {
   // todo: review all usages
   public void loadAllPossibleClasses(@NotNull ProgressMonitor monitor) {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
-    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+    for (SModule module : myRepository.getModules()) {
       if (!myClassLoaders.containsKey(module) && ModuleClassLoaderSupport.canCreate(module)) {
         modulesToLoad.add(module);
       }
@@ -439,13 +446,13 @@ public class ClassLoaderManager implements CoreComponent {
   @Deprecated
   @ToRemove(version = 3.2)
   public void reloadAll(@NotNull ProgressMonitor monitor) {
-    reloadClasses(MPSModuleRepository.getInstance().getModules(), monitor);
+    reloadClasses(myRepository.getModules(), monitor);
   }
 
   @Deprecated
   @ToRemove(version = 3.2)
   public void unloadAll(@NotNull ProgressMonitor monitor) {
-    unloadClasses(MPSModuleRepository.getInstance().getModules(), monitor);
+    unloadClasses(myRepository.getModules(), monitor);
   }
 
   @Deprecated

@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MoveNodesExecute {
@@ -40,11 +41,11 @@ public class MoveNodesExecute {
       @Override
       public void run() {
         for (SNode node : ListSequence.fromList(target)) {
-          if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
+          if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
             return;
           }
         }
-        if (newLocation instanceof SNode && (!(((SNode) newLocation).getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) newLocation)))) {
+        if (newLocation instanceof SNode && !(SNodeUtil.isAccessible(((SNode) newLocation), MPSModuleRepository.getInstance()))) {
           return;
         }
 

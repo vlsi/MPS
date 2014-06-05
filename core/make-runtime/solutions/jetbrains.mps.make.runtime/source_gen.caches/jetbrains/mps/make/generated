@@ -12,7 +12,6 @@
     <file name="IMakeService.java" />
   </source>
   <source id="8695426379435232461" name="MakeSession" hash="-afxyo4qr2t15zzjc16fma7j24708p97">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MakeSession.java" />
   </source>
   <source id="8464977774479999203" name="MakeNotification" hash="cvzpuyhe3lid8t68ss2cqgsotyq2ppn">

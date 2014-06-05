@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptFunction_Behavior {
   public static void init(SNode thisNode) {
@@ -40,7 +39,7 @@ public class ConceptFunction_Behavior {
   }
 
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(thisNode);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
   }
 
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
@@ -75,7 +74,7 @@ public class ConceptFunction_Behavior {
     // if you need presentation like alias(...)->.. 
     // then use the ConceptFunctionAliased_Component 
     if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_showName_1262430001741498082", new Object[]{})) {
-      result.append(ConceptFunction_Behavior.call_getName_1216468837268(thisNode));
+      result.append(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1216468837268", new Object[]{}));
     }
     return ConceptFunction_Behavior.call_appendHeader_2866018809101869378(thisNode, result);
   }
@@ -87,7 +86,7 @@ public class ConceptFunction_Behavior {
 
   public static String call_appendHeader_2866018809101869378(SNode thisNode, StringBuilder result) {
     result.append("(");
-    List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1213877374450(thisNode);
+    List<SNode> parameters = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
     boolean isFirst = true;
     for (SNode cfp : parameters) {
       if (!(isFirst)) {
@@ -97,16 +96,16 @@ public class ConceptFunction_Behavior {
       result.append(SPropertyOperations.getString(cfp, "conceptAlias"));
     }
     result.append(")->");
-    SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(thisNode);
+    SNode expectedReturnType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     if (expectedReturnType == null) {
       result.append("void");
     } else {
       result.append(BehaviorReflection.invokeVirtual(String.class, expectedReturnType, "virtual_getPresentation_1213877396640", new Object[]{}));
     }
-    if (ListSequence.fromList(IMethodLike_Behavior.call_getThrowableTypes_6204026822016975623(thisNode)).isNotEmpty()) {
+    if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getThrowableTypes_6204026822016975623", new Object[]{})).isNotEmpty()) {
       result.append(" throws ");
       boolean isFirstThrowable = true;
-      for (SNode throwableType : IMethodLike_Behavior.call_getThrowableTypes_6204026822016975623(thisNode)) {
+      for (SNode throwableType : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getThrowableTypes_6204026822016975623", new Object[]{})) {
         if (!(isFirstThrowable)) {
           result.append(", ");
         }
@@ -142,55 +141,5 @@ public class ConceptFunction_Behavior {
 
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     return ListSequence.fromList(new ArrayList<SNode>());
-  }
-
-  @Deprecated
-  public static boolean call_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_usesParameterObjectFor_1213877374432", new Object[]{parameter});
-  }
-
-  @Deprecated
-  public static boolean callSuper_usesParameterObjectFor_1213877374432(SNode thisNode, String callerConceptFqName, SNode parameter) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_usesParameterObjectFor_1213877374432", new Class[]{SNode.class, SNode.class}, new Object[]{parameter});
-  }
-
-  @Deprecated
-  public static SNode call_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getExpectedReturnType_1213877374441(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getThrowableTypes_6204026822017039280(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getThrowableTypes_6204026822016975623", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getThrowableTypes_6204026822017039280(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getParameters_1213877374450(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getParameters_1213877374450(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getParameters_1213877374450", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static String call_getName_1216468837268(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1216468837268", new Object[]{});
-  }
-
-  @Deprecated
-  public static String callSuper_getName_1216468837268(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getName_1216468837268", new Class[]{SNode.class}, new Object[]{});
   }
 }

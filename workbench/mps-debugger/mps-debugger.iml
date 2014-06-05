@@ -10,14 +10,15 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="editor-runtime" />
-    <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="mps-platform" />
+    <orderEntry type="module" module-name="debuginfo-api" />
   </component>
 </module>
 

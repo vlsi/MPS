@@ -21,14 +21,14 @@ import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.SDependencyAdapter;
-import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.module.SDependencyImpl;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Collection;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.smodel.adapter.SLanguageAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
@@ -85,7 +85,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
     Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
     return Sequence.fromIterable(modules).select(new ISelector<SModule, SDependency>() {
       public SDependency select(SModule it) {
-        return ((SDependency) new SDependencyAdapter(new Dependency(it.getModuleReference(), false)));
+        return ((SDependency) new SDependencyImpl(it, SDependencyScope.DEFAULT, false));
       }
     });
   }
@@ -95,7 +95,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
     Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
     return SetSequence.fromSetWithValues(new HashSet<SLanguage>(), CollectionSequence.fromCollection(languages).select(new ISelector<Language, SLanguage>() {
       public SLanguage select(Language it) {
-        return ((SLanguage) new SLanguageAdapter(it.getModuleName()));
+        return SConceptRepository.getInstance().getLanguage(it.getModuleName());
       }
     }));
   }

@@ -54,8 +54,12 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1228678752590" name="include_ComponentProperties" hash="-dmfy6o40qlbnk3azq21wyi6c8q48giu" />
-  <source id="1228678752673" name="main" hash="cd3mkjiyyyc6zbt3aponcrj63jegrv9" />
+  <source id="1228678752590" name="include_ComponentProperties" hash="-dmfy6o40qlbnk3azq21wyi6c8q48giu">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1228678752673" name="main" hash="cd3mkjiyyyc6zbt3aponcrj63jegrv9">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1228678752726" name="insert_Button" hash="1dozb4bcu8qytzcy9tb4ayzaxzt0vxl" />
   <source id="1228678752843" name="insert_Label" hash="4rkj3vaszodavjos1sobk9h1mxkmgc5" />
   <source id="1228679651596" name="insert_Panel" hash="-hksf5rp94of7inrs6x42myxex4spkh" />

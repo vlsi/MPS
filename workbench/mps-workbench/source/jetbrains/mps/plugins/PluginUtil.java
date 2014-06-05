@@ -15,23 +15,23 @@
  */
 package jetbrains.mps.plugins;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.ModuleNameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -56,7 +56,7 @@ public class PluginUtil {
       if (kind == SolutionKind.NONE) {
         return false;
       }
-      if (kind == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode() && IdeMain.getTestMode() != TestMode.UI_TEST) {
+      if (kind == SolutionKind.PLUGIN_OTHER && RuntimeFlags.isTestMode() && IdeMain.getTestMode() != TestMode.UI_TEST) {
         return false;
       }
       return true;

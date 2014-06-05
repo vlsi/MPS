@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 
 // TODO get rid of
 public class IdeMain {
@@ -28,7 +28,7 @@ public class IdeMain {
   public static void setTestMode(TestMode testMode) {
     ourTestMode = testMode;
     if (testMode == TestMode.CORE_TEST || testMode == TestMode.UI_TEST) {
-      MPSCore.getInstance().setTestMode();
+      RuntimeFlags.setTestMode(true);
     }
   }
 

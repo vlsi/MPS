@@ -109,7 +109,6 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch(Throwable th) {
-      generator.getLogger().handleException(th);
       generator.getLogger().error(getMappingNode(), "error executing condition (see exception)");
       throw new GenerationFailureException(th);
     }

@@ -73,9 +73,9 @@ public abstract class ReloadableSModelBase extends SModelBase {
   }
 
   @Override
-  public void dispose() {
+  public void detach() {
     getSource().removeListener(mySourceListener);
-    super.dispose();
+    super.detach();
     fireBeforeModelDisposed(this);
     jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
     if (model != null) {

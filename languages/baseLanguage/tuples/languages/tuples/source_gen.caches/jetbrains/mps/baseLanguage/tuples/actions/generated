@@ -74,11 +74,15 @@
   <source id="1239567468054" name="tupleLiteral_init" hash="19r4dse7z0b60x8saijndfqunviefdz">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1240401088026" name="NTCD_add_final" hash="57bcau1kdda2wg1rd47imcv3jt3ogpf" />
+  <source id="1240401088026" name="NTCD_add_final" hash="57bcau1kdda2wg1rd47imcv3jt3ogpf">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1240500073033" name="namedTupleDeclaration_extends" hash="-7jbw9v3kuxqyfdeubh9d4bbzmbcof0">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6880792723344871638" name="NamedTupleLiteral" hash="-82c88r177sso34fa83r8rr4507o1j8u" />
+  <source id="6880792723344871638" name="NamedTupleLiteral" hash="-82c88r177sso34fa83r8rr4507o1j8u">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="6880792723345030574" name="NamedTupleType" hash="3dwl2llqvhknocyak8v0znvam8j0f56" />
 </dependencies>
 

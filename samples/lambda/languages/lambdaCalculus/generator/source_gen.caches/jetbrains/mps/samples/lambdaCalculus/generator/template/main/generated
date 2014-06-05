@@ -59,9 +59,7 @@
   <source id="391739495267619080" name="Program" hash="-chrvidlv4nvjjic6d8dy04n0q84zbjo">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="3851847705188030114" name="ReduceApplication" hash="-90y0pswehmgakje6p8c5beoztbauy4k">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="3851847705188030114" name="ReduceApplication" hash="-90y0pswehmgakje6p8c5beoztbauy4k" />
   <source id="3462251258151435853" name="ReduceLet" hash="do71zb4kb66mf2a92yjphif3g0thumm" />
   <source id="1745225562807890265" name="ReduceLetRef" hash="79a72hagrxgr297tyn3xlozf3q4nuod" />
   <source id="8899433705216086386" name="ReduceFunctionType" hash="6d1j1j6ea6ifub1cpf4fxcx4duzrzev" />

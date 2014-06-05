@@ -17,7 +17,6 @@ package jetbrains.mps.extapi.module;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.DisposedRepository;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -89,10 +88,10 @@ public abstract class SModuleBase implements SModule {
       assertCanChange();
 
       for (SModelBase m : myModels) {
-        m.dispose();
+        m.detach();
       }
       myModels.clear();
-      myRepository = DisposedRepository.INSTANCE;
+      myRepository = null;
     }
   }
 
@@ -228,7 +227,7 @@ public abstract class SModuleBase implements SModule {
     synchronized (LOCK) {
       myIdToModelMap.remove(reference.getModelId());
       myModels.remove(model);
-      model.dispose();
+      model.detach();
 
     }
     fireModelRemoved(reference);

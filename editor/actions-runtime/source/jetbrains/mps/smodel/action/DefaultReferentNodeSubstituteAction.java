@@ -21,8 +21,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.constraints.IReferencePresentation;
+import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -35,15 +36,15 @@ import java.util.HashMap;
  * Mar 29, 2005
  */
 public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteAction {
-  private SNode myCurrentReferent;
-  private SNode myLinkDeclaration;
-  private IReferencePresentation myPresentation;
+  private final SNode myCurrentReferent;
+  private final SNode myLinkDeclaration;
+  private final ReferenceDescriptor myRefDescriptor;
 
-  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IReferencePresentation presentation) {
+  public DefaultReferentNodeSubstituteAction(SNode parameterNode, SNode referenceNode, SNode currentReferent, SNode linkDeclaration, @NotNull ReferenceDescriptor descriptor) {
     super(null, parameterNode, referenceNode);
     myCurrentReferent = currentReferent;
     myLinkDeclaration = linkDeclaration;
-    myPresentation = presentation;
+    myRefDescriptor = descriptor;
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     if (!SNodeUtil.getLinkDeclaration_IsReference(genuineLinkDeclaration)) {
       throw new RuntimeException("Only reference links are allowed here.");
@@ -52,8 +53,9 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
 
   @Override
   public String getMatchingText(String pattern) {
-    if (myPresentation != null) {
-      return myPresentation.getText((SNode) getParameterObject(), false, false, false);
+    final String text = myRefDescriptor.getReferencePresentation((SNode) getParameterObject(), false, false, false);
+    if (text != null) {
+      return text;
     }
 
     return getMatchingText(pattern, true, false);
@@ -61,8 +63,9 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
 
   @Override
   public String getVisibleMatchingText(String pattern) {
-    if (myPresentation != null) {
-      return myPresentation.getText((SNode) getParameterObject(), true, false, false);
+    final String text = myRefDescriptor.getReferencePresentation((SNode) getParameterObject(), true, false, false);
+    if (text != null) {
+      return text;
     }
 
     return getMatchingText(pattern, true, true);

@@ -11,15 +11,14 @@
   </source>
   <source id="5294483648489411798" name="DelegatingRunNotifier" hash="-e921y2fj0xtzj66n0m67mhxel0jruqd">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DelegatingRunNotifier.java" />
   </source>
   <source id="5294483648489411978" name="ExpectLogEvent" hash="-d80ibxdr60mp36y7zuf9rbcvitfujeq">
     <file name="ExpectLogEvent.java" />
   </source>
   <source id="5294483648489412039" name="OrderComparator" hash="5mswvo1x2629llxl8doirl913hmhg3l">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="OrderComparator.java" />
   </source>
   <source id="5294483648489412205" name="WatchingRunNotifier" hash="eg1tdky6skg5lijhrg4awttkzjkrwpn">

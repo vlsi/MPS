@@ -43,9 +43,7 @@
   <source id="5447719361346500113" name="reduce_MoneyLiteral" hash="8mrqyh2wyakezbfqhalyyljjdi80ee4">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5447719361346518908" name="reduce_MoneyType" hash="c59zx2f52w22qbssmn9il2094kfw9kh">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="5447719361346518908" name="reduce_MoneyType" hash="c59zx2f52w22qbssmn9il2094kfw9kh" />
   <source id="5447719361346553551" name="reduce_PlusExpression" hash="1izwghmt0snkqare8u5zhef7vet5nbm" />
   <source id="5447719361346553568" name="reduce_MinusExpression" hash="-2p564fhe1444wtpcha24xjhwahyrk0" />
   <source id="5447719361346555637" name="reduce_GetAmount" hash="drvv14y2ocaxnwuv8a4vze8xr67q46q" />

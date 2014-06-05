@@ -15,18 +15,16 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -37,9 +35,10 @@ import java.util.List;
 
 public class GlobalSModelEventsManager implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(GlobalSModelEventsManager.class);
+  private static GlobalSModelEventsManager ourInstance;
 
   public static GlobalSModelEventsManager getInstance() {
-    return MPSCore.getInstance().getGlobalSModelEventsManager();
+    return ourInstance;
   }
 
   private SModelRepository mySModelRepository;
@@ -62,6 +61,10 @@ public class GlobalSModelEventsManager implements CoreComponent {
 
   @Override
   public void init() {
+    if (ourInstance != null) {
+      throw new IllegalStateException("already initialized");
+    }
+    ourInstance = this;
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -86,6 +89,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
 
   @Override
   public void dispose() {
+    ourInstance = null;
   }
 
   private void addListeners(SModel sm) {

@@ -45,9 +45,7 @@
   <source id="4496691318496554848" name="StripDispatchModifier" hash="-emnzmfmf76vtz4ls0vyo4kscemh2duh">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2379134940425841696" name="InsertDispatcherCode" hash="-ej7yu1bjpd39pcv316khdxn3k5wavvj">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="2379134940425841696" name="InsertDispatcherCode" hash="-ej7yu1bjpd39pcv316khdxn3k5wavvj" />
   <source id="143681448798968860" name="MakeConcreteCall" hash="-97tscsz4xfk145912b1g9dzpmw8lx6b" />
 </dependencies>
 

@@ -24,6 +24,7 @@
     <file name="DefaultProcessHandler.java" />
   </source>
   <source id="3908032508224771401" name="OutputRedirector" hash="6oag73g5rv89gnr9qdg284v7jh6wttq">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="OutputRedirector.java" />
   </source>
   <source id="3908032508224771422" name="ProcessHandlerBuilder" hash="e0rsxnnqohrzsby52sw3g1519cozlvf">

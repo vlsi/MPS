@@ -4,20 +4,9 @@
     <output url="file://$MODULE_DIR$/classes" />
     <output-test url="file://$MODULE_DIR$/testclasses" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/dataFlowRuntime">
-      <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/dataFlowRuntime/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/jetbrains.mps.debug.api.info">
-      <sourceFolder url="file://$MODULE_DIR$/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/patternRuntime">
       <sourceFolder url="file://$MODULE_DIR$/patternRuntime/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/patternRuntime/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/resources">
-      <sourceFolder url="file://$MODULE_DIR$/resources/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/smodelRuntime">
       <sourceFolder url="file://$MODULE_DIR$/smodelRuntime/source_gen" isTestSource="false" />
@@ -41,12 +30,9 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="typesystemEngine" />
-    <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="migration" />
-    <orderEntry type="module" module-name="make-facets" />
+    <orderEntry type="module" module-name="testbench" scope="TEST" />
+    <orderEntry type="module" module-name="mps-platform" scope="TEST" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" exported="" name="Log4j" level="project" />
@@ -55,11 +41,13 @@
     <orderEntry type="library" name="ASM" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />
     <orderEntry type="library" scope="TEST" name="JMock" level="project" />
-    <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
-    <orderEntry type="module" module-name="mps-platform" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Idea-plaform" level="project" />
-    <orderEntry type="module" module-name="mps-ant" />
+    <orderEntry type="module" module-name="textgen" />
+    <orderEntry type="module" module-name="typesystemEngine" />
+    <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="make-runtime" />
   </component>
 </module>
 

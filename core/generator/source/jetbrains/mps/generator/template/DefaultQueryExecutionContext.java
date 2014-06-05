@@ -111,7 +111,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
           new MapSrcMacroContext(context, parentOutputNode, mapSrcNodeOrListMacro.getReference()),
           mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
-      getLog().handleException(t);
       getLog().error(mapSrcNodeOrListMacro.getReference(), "cannot evaluate macro: mapping func failed, exception was thrown", GeneratorUtil.describeInput(
           context));
       throw new GenerationFailureException(t);
@@ -132,7 +131,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
           new MapSrcMacroPostProcContext(context, outputNode, mapSrcNodeOrListMacro.getReference()),
           mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
-      getLog().handleException(t);
       getLog().error(mapSrcNodeOrListMacro.getReference(), "cannot evaluate macro: post-processing failed, exception was thrown",
           GeneratorUtil.describeIfExists(inputNode, "input node"));
       throw new GenerationFailureException(t);
@@ -153,7 +151,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      getLog().handleException(t);
       getLog().error(propertyMacro.getReference(), "cannot evaluate property macro, exception was thrown", GeneratorUtil.describeInput(context));
       throw new GenerationFailureException(t);
     }
@@ -349,7 +346,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationException ex) {
       throw ex;
     } catch (Throwable t) {
-      env.getLogger().handleException(t);
       env.getLogger().error(rule.getRuleNode(), "error executing pattern/condition (see exception)");
       throw new GenerationFailureException(t);
     }
@@ -368,7 +364,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      environment.getLogger().handleException(t);
       environment.getLogger().error(rule.getRuleNode(), "error executing condition (see exception)");
       throw new GenerationFailureException(t);
     }
@@ -391,7 +386,6 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable e) {
-      environment.getLogger().handleException(e);
       environment.getLogger().error(rule.getRuleNode(), "cannot evaluate rule context query ", GeneratorUtil.describeInput(context));
       throw new GenerationFailureException(e);
     }

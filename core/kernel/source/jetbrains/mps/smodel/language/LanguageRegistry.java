@@ -50,14 +50,11 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   private Map<String, LanguageRuntime> myLanguages = new HashMap<String, LanguageRuntime>();
 
-  private final ConceptRegistry myConceptRegistry;
-
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<LanguageRegistryListener>();
 
   private final ClassLoaderManager myClassLoaderManager;
 
-  public LanguageRegistry(ClassLoaderManager loaderManager, ConceptRegistry registry) {
-    myConceptRegistry = registry;
+  public LanguageRegistry(ClassLoaderManager loaderManager) {
     myClassLoaderManager = loaderManager;
   }
 
@@ -93,13 +90,11 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
         LOG.error(format("Exception on language unloading; languages: %s; listener: %s", languages, l), ex);
       }
     }
-    myConceptRegistry.languagesUnloaded(languages);
   }
 
   private void notifyLoad(Collection<LanguageRuntime> languages) {
     if (languages.isEmpty()) return;
 
-    myConceptRegistry.languagesLoaded(languages);
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
         l.afterLanguagesLoaded(languages);

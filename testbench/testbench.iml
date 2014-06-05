@@ -24,16 +24,6 @@
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="miscTests" />
     <orderEntry type="module" module-name="typesystemUi" />
-    <orderEntry type="library" name="PicoContainer" level="project" />
-    <orderEntry type="library" name="Log4j" level="project" />
-    <orderEntry type="library" name="XmlRpc" level="project" />
-    <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="library" name="Trove" level="project" />
-    <orderEntry type="library" name="JMock" level="project" />
-    <orderEntry type="library" name="Ant" level="project" />
-    <orderEntry type="library" name="Diff-utils" level="project" />
-    <orderEntry type="library" name="JUnit4" level="project" />
-    <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="findUsages-runtime" />
@@ -48,20 +38,31 @@
     <orderEntry type="module" module-name="debugger-api-runtime" scope="RUNTIME" />
     <orderEntry type="module" module-name="debugger-java-runtime" scope="RUNTIME" />
     <orderEntry type="module" module-name="execution-impl" scope="RUNTIME" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
-    <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="resources_en" />
     <orderEntry type="module" module-name="persistence" scope="TEST" />
     <orderEntry type="module" module-name="mpsjava" scope="RUNTIME" />
-    <orderEntry type="library" scope="RUNTIME" name="IDEA runtime jars" level="project" />
     <orderEntry type="module" module-name="mps-ant" exported="" />
     <orderEntry type="module" module-name="ant-mps" />
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="environment" />
-    <orderEntry type="library" name="Tools" level="project" />
-    <orderEntry type="library" name="Commons-httpclient" level="project" />
     <orderEntry type="module" module-name="editorlang-runtime" scope="TEST" />
+    <orderEntry type="module" module-name="kernel-resources" />
+    <orderEntry type="library" name="PicoContainer" level="project" />
+    <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="library" name="XmlRpc" level="project" />
+    <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="library" name="Trove" level="project" />
+    <orderEntry type="library" name="JMock" level="project" />
+    <orderEntry type="library" name="Ant" level="project" />
+    <orderEntry type="library" name="Diff-utils" level="project" />
+    <orderEntry type="library" name="JUnit4" level="project" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="library" name="Tools" level="project" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Annotations" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="IDEA runtime jars" level="project" />
+    <orderEntry type="library" name="Commons-httpclient" level="project" />
   </component>
 </module>
 

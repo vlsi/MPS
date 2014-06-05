@@ -47,12 +47,8 @@
   <source id="2087237500476328199" name="NodeStatisticsTarget_Setup" hash="-114donq6bq0sm0i68iwp9hsdrrg8c3v">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6961633949328001911" name="PasterNodeRef_wrappers" hash="-a1z12iantuz1dr65waupy2c9jikr5sh">
-    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-  </source>
-  <source id="5308946314782063423" name="MakeFactories" hash="-27t7gv4959ct2i094bzpzsk6f8gd9z2">
-    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="6961633949328001911" name="PasterNodeRef_wrappers" hash="-a1z12iantuz1dr65waupy2c9jikr5sh" />
+  <source id="5308946314782063423" name="MakeFactories" hash="-27t7gv4959ct2i094bzpzsk6f8gd9z2" />
   <source id="5932042262275855252" hash="6vh93gcvfrh67mnvp8hq7grnpyc9t5r">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>

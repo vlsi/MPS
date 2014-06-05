@@ -47,6 +47,7 @@
   </source>
   <source id="5499565529811338419" name="TPrimArrayListDecorator" hash="d0s0yi8s1zl01137n7ik7tbvsgcx3cy">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="4737294400113444012" name="primType_to_serialVersionUID" hash="-d9cxsvkhijvmh53xppu2v9g63ub5mbx" />
 </dependencies>

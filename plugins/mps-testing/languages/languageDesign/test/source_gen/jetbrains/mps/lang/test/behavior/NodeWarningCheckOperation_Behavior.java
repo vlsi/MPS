@@ -4,6 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -16,7 +17,7 @@ public class NodeWarningCheckOperation_Behavior {
   }
 
   public static void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
-    assert IReferenceAttachable_Behavior.call_canAttachReference_2893471348147804024(thisNode, reference);
+    assert BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canAttachReference_2893471348147804024", new Object[]{reference});
     SLinkOperations.setTarget(thisNode, "warningRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.WarningStatementReference", null), true);
     SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "warningRef", true), "declaration", SNodeOperations.cast(reference, "jetbrains.mps.lang.typesystem.structure.WarningStatement"), false);
   }

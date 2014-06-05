@@ -67,8 +67,12 @@
   <source id="1174510749043" name="main" hash="33wvgff8wiod7ybpokhgd0g4ol9di8w">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1174510782150" name="reduce_InlineRegexp" hash="-baiqb6v0y3t7go4yxpksd4uyplwxcnf" />
-  <source id="1174512791870" name="reduce_MatchRegexp" hash="dq7b319v7h05goxzsw7ohaatayo8yg2" />
+  <source id="1174510782150" name="reduce_InlineRegexp" hash="-baiqb6v0y3t7go4yxpksd4uyplwxcnf">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1174512791870" name="reduce_MatchRegexp" hash="dq7b319v7h05goxzsw7ohaatayo8yg2">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1174657156447" name="reduce_ReplaceWithRegexp" hash="-2oz9gnl7959yhnudv1eaof6sg1lhx3k" />
   <source id="1174658244528" name="ReplacerTemplate" hash="-4ulqv6lokyfzyh05repo856bdv2a0kd">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />

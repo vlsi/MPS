@@ -31,6 +31,7 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.messages.MessageList.MessageListState;
 import jetbrains.mps.ide.messages.MessagesViewTool.MessageViewToolState;
 import jetbrains.mps.messages.IMessage;
@@ -290,7 +291,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     @Override
     public void createContent() {
-      if (MPSCore.getInstance().isTestMode()) return;
+      if (RuntimeFlags.isTestMode()) return;
 
       final MessageView service = getMessagesService();
       service.runWhenInitialized(new Runnable() {
@@ -343,7 +344,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     @Override
     public void createContent() {
-      if (MPSCore.getInstance().isTestMode()) return;
+      if (RuntimeFlags.isTestMode()) return;
 
       SwingUtilities.invokeLater(new Runnable() {
         @Override

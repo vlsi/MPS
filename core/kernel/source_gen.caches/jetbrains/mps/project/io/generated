@@ -21,7 +21,6 @@
     <file name="StandardDescriptorIOProvider.java" />
   </source>
   <source id="3323419009397486857" name="IdeaDescriptorIOProvider" hash="2d1bi9hzng6xj15fm7pr6d4cptfwn6o">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="IdeaDescriptorIOProvider.java" />
   </source>
   <source id="9081946191808704816" name="DescriptorIOException" hash="-2wup1nghbhwi0xrl9cylaoywq7bn2rb">

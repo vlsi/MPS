@@ -32,13 +32,13 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="6225815798156427147" name="main" hash="97xjiqaswu3jirucvumv5l12pzarfjf">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="6225815798156427147" name="main" hash="97xjiqaswu3jirucvumv5l12pzarfjf" />
   <source id="6225815798156758144" name="ExtensionMethodCallImpl" hash="9fr3agjb38lzil62079r22txww19nbf">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="328127298621285767" name="reduce_ThisExtention" hash="8dexwgv1dbgjdrsbd8zc5lwpd164i3c" />
+  <source id="328127298621285767" name="reduce_ThisExtention" hash="8dexwgv1dbgjdrsbd8zc5lwpd164i3c">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="2870858475498606561" name="reduce_ExtensionMethodReference" hash="yapu753s7leximkttpnp4omptelopc" />
   <source id="8022092943110544334" name="BaseExtensionMethodContainerImpl" hash="4ccwac8frhe2aofc94qfejro52w63vk">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />

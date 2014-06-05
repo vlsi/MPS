@@ -18,18 +18,21 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.NodeFactoryUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.util.InternUtil;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +73,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     }
     SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false);
     if (newNode == null) return null;
-    BehaviorManager.getInstance().initNode(newNode);
+    BehaviorReflection.initNode(newNode);
     if (sampleNode != null) {
       sampleNode = CopyUtil.copy(sampleNode);
     }

@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
 import java.rmi.RemoteException;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import java.rmi.NoSuchObjectException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -51,7 +51,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   @Override
   public void projectOpened() {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (RuntimeFlags.isTestMode()) {
       return;
     }
     new Thread() {
@@ -72,7 +72,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   @Override
   public void projectClosed() {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (RuntimeFlags.isTestMode()) {
       return;
     }
     new Thread() {

@@ -1210,205 +1210,205 @@
     <unitInfo nodeId="4835974019530166876" fileName="TraceablePositionInfo.java" startLine="11" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.traceInfo.TraceablePositionInfo" />
   </root>
   <root nodeRef="r:48edee5d-2586-4224-ae5d-181c80fe8d51(jetbrains.mps.traceInfo)/5066864551128496266">
-    <nodeInfo nodeId="5066864551128496440" fileName="DebugInfoBuilder.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugInfo" />
-    <nodeInfo nodeId="5066864551128497663" fileName="DebugInfoBuilder.java" startLine="24" startPosition="125" endLine="25" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128497698" fileName="DebugInfoBuilder.java" startLine="25" startPosition="61" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128497703" fileName="DebugInfoBuilder.java" startLine="26" startPosition="39" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5066864551128497709" fileName="DebugInfoBuilder.java" startLine="27" startPosition="58" endLine="28" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128497903" fileName="DebugInfoBuilder.java" startLine="31" startPosition="117" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128497944" fileName="DebugInfoBuilder.java" startLine="32" startPosition="61" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128497949" fileName="DebugInfoBuilder.java" startLine="33" startPosition="39" endLine="34" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5066864551128497964" fileName="DebugInfoBuilder.java" startLine="35" startPosition="43" endLine="36" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5066864551128497969" fileName="DebugInfoBuilder.java" startLine="36" startPosition="72" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5066864551128498000" fileName="DebugInfoBuilder.java" startLine="38" startPosition="80" endLine="39" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128497988" fileName="DebugInfoBuilder.java" startLine="40" startPosition="14" endLine="41" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128498025" fileName="DebugInfoBuilder.java" startLine="43" startPosition="5" endLine="44" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128498029" fileName="DebugInfoBuilder.java" startLine="44" startPosition="39" endLine="45" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128498188" fileName="DebugInfoBuilder.java" startLine="48" startPosition="115" endLine="49" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3007625104554388205" fileName="DebugInfoBuilder.java" startLine="49" startPosition="39" endLine="50" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5066864551128498212" fileName="DebugInfoBuilder.java" startLine="51" startPosition="74" endLine="52" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3007625104554388219" fileName="DebugInfoBuilder.java" startLine="52" startPosition="63" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128498257" fileName="DebugInfoBuilder.java" startLine="54" startPosition="5" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128497660" fileName="DebugInfoBuilder.java" startLine="58" startPosition="35" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2522627450234088576" fileName="DebugInfoBuilder.java" startLine="63" startPosition="79" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2522627450234088589" fileName="DebugInfoBuilder.java" startLine="67" startPosition="65" endLine="68" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2522627450234094004" fileName="DebugInfoBuilder.java" startLine="69" startPosition="70" endLine="70" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2522627450234088683" fileName="DebugInfoBuilder.java" startLine="75" startPosition="70" endLine="76" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2522627450234097389" fileName="DebugInfoBuilder.java" startLine="77" startPosition="70" endLine="78" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2522627450234088859" fileName="DebugInfoBuilder.java" startLine="83" startPosition="69" endLine="84" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2522627450234098211" fileName="DebugInfoBuilder.java" startLine="84" startPosition="64" endLine="85" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2522627450234091255" fileName="DebugInfoBuilder.java" startLine="91" startPosition="28" endLine="92" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2522627450234091277" fileName="DebugInfoBuilder.java" startLine="93" startPosition="138" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2522627450234091284" fileName="DebugInfoBuilder.java" startLine="95" startPosition="7" endLine="96" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2522627450234091293" fileName="DebugInfoBuilder.java" startLine="97" startPosition="25" endLine="98" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2522627450234091295" fileName="DebugInfoBuilder.java" startLine="99" startPosition="7" endLine="100" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2522627450234091301" fileName="DebugInfoBuilder.java" startLine="101" startPosition="5" endLine="102" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7186895126144928569" fileName="DebugInfoBuilder.java" startLine="105" startPosition="157" endLine="106" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7186895126144664558" fileName="DebugInfoBuilder.java" startLine="107" startPosition="88" endLine="108" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4915376354193851912" fileName="DebugInfoBuilder.java" startLine="108" startPosition="92" endLine="109" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7186895126144675602" fileName="DebugInfoBuilder.java" startLine="110" startPosition="34" endLine="111" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4915376354193854018" fileName="DebugInfoBuilder.java" startLine="111" startPosition="67" endLine="112" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7186895126144923059" fileName="DebugInfoBuilder.java" startLine="115" startPosition="74" endLine="116" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7186895126145018020" fileName="DebugInfoBuilder.java" startLine="120" startPosition="74" endLine="121" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7186895126145019604" fileName="DebugInfoBuilder.java" startLine="125" startPosition="74" endLine="126" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4915376354193912943" fileName="DebugInfoBuilder.java" startLine="129" startPosition="25" endLine="130" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4915376354193913695" fileName="DebugInfoBuilder.java" startLine="130" startPosition="107" endLine="131" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4915376354193914451" fileName="DebugInfoBuilder.java" startLine="131" startPosition="112" endLine="132" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4915376354193875140" fileName="DebugInfoBuilder.java" startLine="132" startPosition="89" endLine="133" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7186895126145043792" fileName="DebugInfoBuilder.java" startLine="134" startPosition="28" endLine="135" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5066864551128496268" fileName="DebugInfoBuilder.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugInfoBuilder#()V" />
-    <nodeInfo nodeId="5066864551128497986" fileName="DebugInfoBuilder.java" startLine="40" startPosition="12" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5066864551128497646" fileName="DebugInfoBuilder.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugInfo#()Ljetbrains/mps/traceInfo/DebugInfo;" />
-    <nodeInfo nodeId="2522627450234088563" fileName="DebugInfoBuilder.java" startLine="62" startPosition="208" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2522627450234088598" fileName="DebugInfoBuilder.java" startLine="68" startPosition="64" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2522627450234088692" fileName="DebugInfoBuilder.java" startLine="76" startPosition="64" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2522627450234091259" fileName="DebugInfoBuilder.java" startLine="92" startPosition="27" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2522627450234091288" fileName="DebugInfoBuilder.java" startLine="96" startPosition="25" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7186895126144896464" fileName="DebugInfoBuilder.java" startLine="114" startPosition="93" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7186895126145018012" fileName="DebugInfoBuilder.java" startLine="119" startPosition="94" endLine="122" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7186895126145019596" fileName="DebugInfoBuilder.java" startLine="124" startPosition="92" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4915376354193910922" fileName="DebugInfoBuilder.java" startLine="133" startPosition="242" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5066864551128498201" fileName="DebugInfoBuilder.java" startLine="50" startPosition="33" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2522627450234088852" fileName="DebugInfoBuilder.java" startLine="82" startPosition="32" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7186895126144667941" fileName="DebugInfoBuilder.java" startLine="109" startPosition="35" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5066864551128497976" fileName="DebugInfoBuilder.java" startLine="37" startPosition="44" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7186895126144687447" fileName="DebugInfoBuilder.java" startLine="113" startPosition="7" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7186895126145018006" fileName="DebugInfoBuilder.java" startLine="118" startPosition="7" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7186895126145019590" fileName="DebugInfoBuilder.java" startLine="123" startPosition="7" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5066864551128496282" fileName="DebugInfoBuilder.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTraceablePosition#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Ljetbrains/mps/traceInfo/TraceablePositionInfo;)V" />
-    <nodeInfo nodeId="2522627450234088582" fileName="DebugInfoBuilder.java" startLine="66" startPosition="28" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2522627450234088676" fileName="DebugInfoBuilder.java" startLine="74" startPosition="33" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2522627450234088847" fileName="DebugInfoBuilder.java" startLine="81" startPosition="5" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2522627450234088577" fileName="DebugInfoBuilder.java" startLine="65" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2522627450234088671" fileName="DebugInfoBuilder.java" startLine="73" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5066864551128497957" fileName="DebugInfoBuilder.java" startLine="34" startPosition="66" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5066864551128496366" fileName="DebugInfoBuilder.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addUnitPosition#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Ljetbrains/mps/traceInfo/UnitPositionInfo;)V" />
-    <nodeInfo nodeId="4915376354193857104" fileName="DebugInfoBuilder.java" startLine="128" startPosition="7" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2522627450234091250" fileName="DebugInfoBuilder.java" startLine="90" startPosition="75" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2522627450234091244" fileName="DebugInfoBuilder.java" startLine="90" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOriginalInputNodeForNearestParent#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5066864551128496324" fileName="DebugInfoBuilder.java" startLine="31" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addScopePosition#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Ljetbrains/mps/traceInfo/ScopePositionInfo;)V" />
-    <nodeInfo nodeId="2522627450234088526" fileName="DebugInfoBuilder.java" startLine="62" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillDebugInfo#(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="7186895126144474731" fileName="DebugInfoBuilder.java" startLine="106" startPosition="93" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6204170386629146196" fileName="DebugInfoBuilder.java" startLine="105" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="completeDebugInfoFromCache#(Ljetbrains/mps/traceInfo/DebugInfo;Ljetbrains/mps/traceInfo/DebugInfo;Ljava/lang/Iterable;)V" />
-    <scopeInfo nodeId="5066864551128496271" fileName="DebugInfoBuilder.java" startLine="21" startPosition="29" endLine="21" endPosition="29" />
-    <scopeInfo nodeId="5066864551128497993" fileName="DebugInfoBuilder.java" startLine="38" startPosition="80" endLine="39" endPosition="62" />
-    <scopeInfo nodeId="5066864551128497987" fileName="DebugInfoBuilder.java" startLine="40" startPosition="14" endLine="41" endPosition="44" />
-    <scopeInfo nodeId="5066864551128497649" fileName="DebugInfoBuilder.java" startLine="58" startPosition="35" endLine="59" endPosition="23" />
-    <scopeInfo nodeId="2522627450234088575" fileName="DebugInfoBuilder.java" startLine="63" startPosition="79" endLine="64" endPosition="13" />
-    <scopeInfo nodeId="2522627450234088608" fileName="DebugInfoBuilder.java" startLine="69" startPosition="70" endLine="70" endPosition="109" />
-    <scopeInfo nodeId="2522627450234088702" fileName="DebugInfoBuilder.java" startLine="77" startPosition="70" endLine="78" endPosition="110" />
-    <scopeInfo nodeId="2522627450234091276" fileName="DebugInfoBuilder.java" startLine="93" startPosition="138" endLine="94" endPosition="48" />
-    <scopeInfo nodeId="2522627450234091292" fileName="DebugInfoBuilder.java" startLine="97" startPosition="25" endLine="98" endPosition="20" />
-    <scopeInfo nodeId="7186895126144896466" fileName="DebugInfoBuilder.java" startLine="115" startPosition="74" endLine="116" endPosition="46" />
-    <scopeInfo nodeId="7186895126145018019" fileName="DebugInfoBuilder.java" startLine="120" startPosition="74" endLine="121" endPosition="51" />
-    <scopeInfo nodeId="7186895126145019603" fileName="DebugInfoBuilder.java" startLine="125" startPosition="74" endLine="126" endPosition="50" />
-    <scopeInfo nodeId="4915376354193910925" fileName="DebugInfoBuilder.java" startLine="134" startPosition="28" endLine="135" endPosition="56" />
-    <scopeInfo nodeId="5066864551128496268" fileName="DebugInfoBuilder.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="5066864551128498211" fileName="DebugInfoBuilder.java" startLine="51" startPosition="74" endLine="53" endPosition="54" />
-    <scopeInfo nodeId="2522627450234088858" fileName="DebugInfoBuilder.java" startLine="83" startPosition="69" endLine="85" endPosition="106">
+    <nodeInfo nodeId="5066864551128496440" fileName="DebugInfoBuilder.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugInfo" />
+    <nodeInfo nodeId="5066864551128497663" fileName="DebugInfoBuilder.java" startLine="25" startPosition="125" endLine="26" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128497698" fileName="DebugInfoBuilder.java" startLine="26" startPosition="61" endLine="27" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128497703" fileName="DebugInfoBuilder.java" startLine="27" startPosition="39" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5066864551128497709" fileName="DebugInfoBuilder.java" startLine="28" startPosition="58" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128497903" fileName="DebugInfoBuilder.java" startLine="32" startPosition="117" endLine="33" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128497944" fileName="DebugInfoBuilder.java" startLine="33" startPosition="61" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128497949" fileName="DebugInfoBuilder.java" startLine="34" startPosition="39" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5066864551128497964" fileName="DebugInfoBuilder.java" startLine="36" startPosition="43" endLine="37" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5066864551128497969" fileName="DebugInfoBuilder.java" startLine="37" startPosition="72" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5066864551128498000" fileName="DebugInfoBuilder.java" startLine="39" startPosition="106" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128497988" fileName="DebugInfoBuilder.java" startLine="41" startPosition="14" endLine="42" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128498025" fileName="DebugInfoBuilder.java" startLine="44" startPosition="5" endLine="45" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128498029" fileName="DebugInfoBuilder.java" startLine="45" startPosition="39" endLine="46" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128498188" fileName="DebugInfoBuilder.java" startLine="49" startPosition="115" endLine="50" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3007625104554388205" fileName="DebugInfoBuilder.java" startLine="50" startPosition="39" endLine="51" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5066864551128498212" fileName="DebugInfoBuilder.java" startLine="52" startPosition="100" endLine="53" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3007625104554388219" fileName="DebugInfoBuilder.java" startLine="53" startPosition="63" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128498257" fileName="DebugInfoBuilder.java" startLine="55" startPosition="5" endLine="56" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128497660" fileName="DebugInfoBuilder.java" startLine="59" startPosition="35" endLine="60" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2522627450234088576" fileName="DebugInfoBuilder.java" startLine="64" startPosition="79" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2522627450234088589" fileName="DebugInfoBuilder.java" startLine="68" startPosition="65" endLine="69" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2522627450234094004" fileName="DebugInfoBuilder.java" startLine="70" startPosition="96" endLine="71" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2522627450234088683" fileName="DebugInfoBuilder.java" startLine="76" startPosition="70" endLine="77" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2522627450234097389" fileName="DebugInfoBuilder.java" startLine="78" startPosition="96" endLine="79" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2522627450234088859" fileName="DebugInfoBuilder.java" startLine="84" startPosition="69" endLine="85" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2522627450234098211" fileName="DebugInfoBuilder.java" startLine="85" startPosition="64" endLine="86" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2522627450234091255" fileName="DebugInfoBuilder.java" startLine="92" startPosition="28" endLine="93" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2522627450234091277" fileName="DebugInfoBuilder.java" startLine="94" startPosition="164" endLine="95" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2522627450234091284" fileName="DebugInfoBuilder.java" startLine="96" startPosition="7" endLine="97" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2522627450234091293" fileName="DebugInfoBuilder.java" startLine="98" startPosition="25" endLine="99" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2522627450234091295" fileName="DebugInfoBuilder.java" startLine="100" startPosition="7" endLine="101" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2522627450234091301" fileName="DebugInfoBuilder.java" startLine="102" startPosition="5" endLine="103" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7186895126144928569" fileName="DebugInfoBuilder.java" startLine="106" startPosition="157" endLine="107" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7186895126144664558" fileName="DebugInfoBuilder.java" startLine="108" startPosition="88" endLine="109" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4915376354193851912" fileName="DebugInfoBuilder.java" startLine="109" startPosition="92" endLine="110" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7186895126144675602" fileName="DebugInfoBuilder.java" startLine="111" startPosition="34" endLine="112" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4915376354193854018" fileName="DebugInfoBuilder.java" startLine="112" startPosition="67" endLine="113" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7186895126144923059" fileName="DebugInfoBuilder.java" startLine="116" startPosition="74" endLine="117" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7186895126145018020" fileName="DebugInfoBuilder.java" startLine="121" startPosition="74" endLine="122" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7186895126145019604" fileName="DebugInfoBuilder.java" startLine="126" startPosition="74" endLine="127" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4915376354193912943" fileName="DebugInfoBuilder.java" startLine="130" startPosition="25" endLine="131" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4915376354193913695" fileName="DebugInfoBuilder.java" startLine="131" startPosition="107" endLine="132" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4915376354193914451" fileName="DebugInfoBuilder.java" startLine="132" startPosition="112" endLine="133" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4915376354193875140" fileName="DebugInfoBuilder.java" startLine="133" startPosition="89" endLine="134" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7186895126145043792" fileName="DebugInfoBuilder.java" startLine="135" startPosition="28" endLine="136" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5066864551128496268" fileName="DebugInfoBuilder.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugInfoBuilder#()V" />
+    <nodeInfo nodeId="5066864551128497986" fileName="DebugInfoBuilder.java" startLine="41" startPosition="12" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5066864551128497646" fileName="DebugInfoBuilder.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugInfo#()Ljetbrains/mps/traceInfo/DebugInfo;" />
+    <nodeInfo nodeId="2522627450234088563" fileName="DebugInfoBuilder.java" startLine="63" startPosition="208" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2522627450234088598" fileName="DebugInfoBuilder.java" startLine="69" startPosition="64" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2522627450234088692" fileName="DebugInfoBuilder.java" startLine="77" startPosition="64" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2522627450234091259" fileName="DebugInfoBuilder.java" startLine="93" startPosition="27" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2522627450234091288" fileName="DebugInfoBuilder.java" startLine="97" startPosition="25" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7186895126144896464" fileName="DebugInfoBuilder.java" startLine="115" startPosition="93" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7186895126145018012" fileName="DebugInfoBuilder.java" startLine="120" startPosition="94" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7186895126145019596" fileName="DebugInfoBuilder.java" startLine="125" startPosition="92" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4915376354193910922" fileName="DebugInfoBuilder.java" startLine="134" startPosition="242" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5066864551128498201" fileName="DebugInfoBuilder.java" startLine="51" startPosition="33" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2522627450234088852" fileName="DebugInfoBuilder.java" startLine="83" startPosition="32" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7186895126144667941" fileName="DebugInfoBuilder.java" startLine="110" startPosition="35" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5066864551128497976" fileName="DebugInfoBuilder.java" startLine="38" startPosition="44" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7186895126144687447" fileName="DebugInfoBuilder.java" startLine="114" startPosition="7" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7186895126145018006" fileName="DebugInfoBuilder.java" startLine="119" startPosition="7" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7186895126145019590" fileName="DebugInfoBuilder.java" startLine="124" startPosition="7" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5066864551128496282" fileName="DebugInfoBuilder.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTraceablePosition#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Ljetbrains/mps/traceInfo/TraceablePositionInfo;)V" />
+    <nodeInfo nodeId="2522627450234088582" fileName="DebugInfoBuilder.java" startLine="67" startPosition="28" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2522627450234088676" fileName="DebugInfoBuilder.java" startLine="75" startPosition="33" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2522627450234088847" fileName="DebugInfoBuilder.java" startLine="82" startPosition="5" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2522627450234088577" fileName="DebugInfoBuilder.java" startLine="66" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2522627450234088671" fileName="DebugInfoBuilder.java" startLine="74" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5066864551128497957" fileName="DebugInfoBuilder.java" startLine="35" startPosition="66" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5066864551128496366" fileName="DebugInfoBuilder.java" startLine="49" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addUnitPosition#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Ljetbrains/mps/traceInfo/UnitPositionInfo;)V" />
+    <nodeInfo nodeId="4915376354193857104" fileName="DebugInfoBuilder.java" startLine="129" startPosition="7" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2522627450234091250" fileName="DebugInfoBuilder.java" startLine="91" startPosition="75" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2522627450234091244" fileName="DebugInfoBuilder.java" startLine="91" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOriginalInputNodeForNearestParent#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5066864551128496324" fileName="DebugInfoBuilder.java" startLine="32" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addScopePosition#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Ljetbrains/mps/traceInfo/ScopePositionInfo;)V" />
+    <nodeInfo nodeId="2522627450234088526" fileName="DebugInfoBuilder.java" startLine="63" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillDebugInfo#(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="7186895126144474731" fileName="DebugInfoBuilder.java" startLine="107" startPosition="93" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6204170386629146196" fileName="DebugInfoBuilder.java" startLine="106" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="completeDebugInfoFromCache#(Ljetbrains/mps/traceInfo/DebugInfo;Ljetbrains/mps/traceInfo/DebugInfo;Ljava/lang/Iterable;)V" />
+    <scopeInfo nodeId="5066864551128496271" fileName="DebugInfoBuilder.java" startLine="22" startPosition="29" endLine="22" endPosition="29" />
+    <scopeInfo nodeId="5066864551128497993" fileName="DebugInfoBuilder.java" startLine="39" startPosition="106" endLine="40" endPosition="62" />
+    <scopeInfo nodeId="5066864551128497987" fileName="DebugInfoBuilder.java" startLine="41" startPosition="14" endLine="42" endPosition="44" />
+    <scopeInfo nodeId="5066864551128497649" fileName="DebugInfoBuilder.java" startLine="59" startPosition="35" endLine="60" endPosition="23" />
+    <scopeInfo nodeId="2522627450234088575" fileName="DebugInfoBuilder.java" startLine="64" startPosition="79" endLine="65" endPosition="13" />
+    <scopeInfo nodeId="2522627450234088608" fileName="DebugInfoBuilder.java" startLine="70" startPosition="96" endLine="71" endPosition="109" />
+    <scopeInfo nodeId="2522627450234088702" fileName="DebugInfoBuilder.java" startLine="78" startPosition="96" endLine="79" endPosition="110" />
+    <scopeInfo nodeId="2522627450234091276" fileName="DebugInfoBuilder.java" startLine="94" startPosition="164" endLine="95" endPosition="48" />
+    <scopeInfo nodeId="2522627450234091292" fileName="DebugInfoBuilder.java" startLine="98" startPosition="25" endLine="99" endPosition="20" />
+    <scopeInfo nodeId="7186895126144896466" fileName="DebugInfoBuilder.java" startLine="116" startPosition="74" endLine="117" endPosition="46" />
+    <scopeInfo nodeId="7186895126145018019" fileName="DebugInfoBuilder.java" startLine="121" startPosition="74" endLine="122" endPosition="51" />
+    <scopeInfo nodeId="7186895126145019603" fileName="DebugInfoBuilder.java" startLine="126" startPosition="74" endLine="127" endPosition="50" />
+    <scopeInfo nodeId="4915376354193910925" fileName="DebugInfoBuilder.java" startLine="135" startPosition="28" endLine="136" endPosition="56" />
+    <scopeInfo nodeId="5066864551128496268" fileName="DebugInfoBuilder.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="5066864551128498211" fileName="DebugInfoBuilder.java" startLine="52" startPosition="100" endLine="54" endPosition="54" />
+    <scopeInfo nodeId="2522627450234088858" fileName="DebugInfoBuilder.java" startLine="84" startPosition="69" endLine="86" endPosition="106">
       <varInfo nodeId="2522627450234088860" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="7186895126144667943" fileName="DebugInfoBuilder.java" startLine="110" startPosition="34" endLine="112" endPosition="28" />
-    <scopeInfo nodeId="5066864551128497646" fileName="DebugInfoBuilder.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="7186895126144687453" fileName="DebugInfoBuilder.java" startLine="114" startPosition="93" endLine="117" endPosition="9" />
-    <scopeInfo nodeId="7186895126145018011" fileName="DebugInfoBuilder.java" startLine="119" startPosition="94" endLine="122" endPosition="9" />
-    <scopeInfo nodeId="7186895126145019595" fileName="DebugInfoBuilder.java" startLine="124" startPosition="92" endLine="127" endPosition="9" />
-    <scopeInfo nodeId="5066864551128496285" fileName="DebugInfoBuilder.java" startLine="24" startPosition="125" endLine="28" endPosition="59">
+    <scopeInfo nodeId="7186895126144667943" fileName="DebugInfoBuilder.java" startLine="111" startPosition="34" endLine="113" endPosition="28" />
+    <scopeInfo nodeId="5066864551128497646" fileName="DebugInfoBuilder.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="7186895126144687453" fileName="DebugInfoBuilder.java" startLine="115" startPosition="93" endLine="118" endPosition="9" />
+    <scopeInfo nodeId="7186895126145018011" fileName="DebugInfoBuilder.java" startLine="120" startPosition="94" endLine="123" endPosition="9" />
+    <scopeInfo nodeId="7186895126145019595" fileName="DebugInfoBuilder.java" startLine="125" startPosition="92" endLine="128" endPosition="9" />
+    <scopeInfo nodeId="5066864551128496285" fileName="DebugInfoBuilder.java" startLine="25" startPosition="125" endLine="29" endPosition="59">
       <varInfo nodeId="5066864551128497704" varName="topmostAncestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234088588" fileName="DebugInfoBuilder.java" startLine="67" startPosition="65" endLine="71" endPosition="9">
+    <scopeInfo nodeId="2522627450234088588" fileName="DebugInfoBuilder.java" startLine="68" startPosition="65" endLine="72" endPosition="9">
       <varInfo nodeId="2522627450234088590" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234088682" fileName="DebugInfoBuilder.java" startLine="75" startPosition="70" endLine="79" endPosition="9">
+    <scopeInfo nodeId="2522627450234088682" fileName="DebugInfoBuilder.java" startLine="76" startPosition="70" endLine="80" endPosition="9">
       <varInfo nodeId="2522627450234088684" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234088851" fileName="DebugInfoBuilder.java" startLine="82" startPosition="32" endLine="86" endPosition="7" />
-    <scopeInfo nodeId="2522627450234088852" fileName="DebugInfoBuilder.java" startLine="82" startPosition="32" endLine="86" endPosition="7">
+    <scopeInfo nodeId="2522627450234088851" fileName="DebugInfoBuilder.java" startLine="83" startPosition="32" endLine="87" endPosition="7" />
+    <scopeInfo nodeId="2522627450234088852" fileName="DebugInfoBuilder.java" startLine="83" startPosition="32" endLine="87" endPosition="7">
       <varInfo nodeId="2522627450234088856" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="7186895126144687447" fileName="DebugInfoBuilder.java" startLine="113" startPosition="7" endLine="118" endPosition="7">
+    <scopeInfo nodeId="7186895126144687447" fileName="DebugInfoBuilder.java" startLine="114" startPosition="7" endLine="119" endPosition="7">
       <varInfo nodeId="7186895126144687449" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="7186895126145018006" fileName="DebugInfoBuilder.java" startLine="118" startPosition="7" endLine="123" endPosition="7">
+    <scopeInfo nodeId="7186895126145018006" fileName="DebugInfoBuilder.java" startLine="119" startPosition="7" endLine="124" endPosition="7">
       <varInfo nodeId="7186895126145018010" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="7186895126145019590" fileName="DebugInfoBuilder.java" startLine="123" startPosition="7" endLine="128" endPosition="7">
+    <scopeInfo nodeId="7186895126145019590" fileName="DebugInfoBuilder.java" startLine="124" startPosition="7" endLine="129" endPosition="7">
       <varInfo nodeId="7186895126145019594" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="5066864551128496282" fileName="DebugInfoBuilder.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="5066864551128496282" fileName="DebugInfoBuilder.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5066864551128497849" varName="fileName" />
       <varInfo nodeId="5066864551128496411" varName="inputModel" />
       <varInfo nodeId="5066864551128496408" varName="inputNode" />
       <varInfo nodeId="5066864551128496318" varName="positionInfo" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234088581" fileName="DebugInfoBuilder.java" startLine="66" startPosition="28" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="2522627450234088582" fileName="DebugInfoBuilder.java" startLine="66" startPosition="28" endLine="72" endPosition="7">
+    <scopeInfo nodeId="2522627450234088581" fileName="DebugInfoBuilder.java" startLine="67" startPosition="28" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="2522627450234088582" fileName="DebugInfoBuilder.java" startLine="67" startPosition="28" endLine="73" endPosition="7">
       <varInfo nodeId="2522627450234088586" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234088675" fileName="DebugInfoBuilder.java" startLine="74" startPosition="33" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="2522627450234088676" fileName="DebugInfoBuilder.java" startLine="74" startPosition="33" endLine="80" endPosition="7">
+    <scopeInfo nodeId="2522627450234088675" fileName="DebugInfoBuilder.java" startLine="75" startPosition="33" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="2522627450234088676" fileName="DebugInfoBuilder.java" startLine="75" startPosition="33" endLine="81" endPosition="7">
       <varInfo nodeId="2522627450234088680" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="5066864551128497963" fileName="DebugInfoBuilder.java" startLine="35" startPosition="43" endLine="42" endPosition="7">
+    <scopeInfo nodeId="5066864551128497963" fileName="DebugInfoBuilder.java" startLine="36" startPosition="43" endLine="43" endPosition="7">
       <varInfo nodeId="5066864551128497965" varName="originalVar" />
       <varInfo nodeId="5066864551128497970" varName="varInfo" />
     </scopeInfo>
-    <scopeInfo nodeId="5066864551128496369" fileName="DebugInfoBuilder.java" startLine="48" startPosition="115" endLine="55" endPosition="63">
+    <scopeInfo nodeId="5066864551128496369" fileName="DebugInfoBuilder.java" startLine="49" startPosition="115" endLine="56" endPosition="63">
       <varInfo nodeId="3007625104554388206" varName="topmostAncestor" />
     </scopeInfo>
-    <scopeInfo nodeId="4915376354193857107" fileName="DebugInfoBuilder.java" startLine="129" startPosition="25" endLine="136" endPosition="9">
+    <scopeInfo nodeId="4915376354193857107" fileName="DebugInfoBuilder.java" startLine="130" startPosition="25" endLine="137" endPosition="9">
       <varInfo nodeId="4915376354193848628" varName="gotCachedData" />
     </scopeInfo>
-    <scopeInfo nodeId="5066864551128497957" fileName="DebugInfoBuilder.java" startLine="34" startPosition="66" endLine="43" endPosition="5">
+    <scopeInfo nodeId="5066864551128497957" fileName="DebugInfoBuilder.java" startLine="35" startPosition="66" endLine="44" endPosition="5">
       <varInfo nodeId="5066864551128497961" varName="varNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5066864551128496366" fileName="DebugInfoBuilder.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="5066864551128496366" fileName="DebugInfoBuilder.java" startLine="49" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="5066864551128498267" varName="fileName" />
       <varInfo nodeId="5066864551128496425" varName="inputModel" />
       <varInfo nodeId="5066864551128496422" varName="inputNode" />
       <varInfo nodeId="5066864551128496402" varName="positionInfo" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234091254" fileName="DebugInfoBuilder.java" startLine="91" startPosition="28" endLine="100" endPosition="34">
+    <scopeInfo nodeId="2522627450234091254" fileName="DebugInfoBuilder.java" startLine="92" startPosition="28" endLine="101" endPosition="34">
       <varInfo nodeId="2522627450234091256" varName="input" />
       <varInfo nodeId="2522627450234091285" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234091249" fileName="DebugInfoBuilder.java" startLine="90" startPosition="75" endLine="102" endPosition="16" />
-    <scopeInfo nodeId="5066864551128496327" fileName="DebugInfoBuilder.java" startLine="31" startPosition="117" endLine="45" endPosition="78">
+    <scopeInfo nodeId="2522627450234091249" fileName="DebugInfoBuilder.java" startLine="91" startPosition="75" endLine="103" endPosition="16" />
+    <scopeInfo nodeId="5066864551128496327" fileName="DebugInfoBuilder.java" startLine="32" startPosition="117" endLine="46" endPosition="78">
       <varInfo nodeId="5066864551128497950" varName="varMap" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234091244" fileName="DebugInfoBuilder.java" startLine="90" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="2522627450234091244" fileName="DebugInfoBuilder.java" startLine="91" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="2522627450234091247" varName="output" />
     </scopeInfo>
-    <scopeInfo nodeId="5066864551128496324" fileName="DebugInfoBuilder.java" startLine="31" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="5066864551128496324" fileName="DebugInfoBuilder.java" startLine="32" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="5066864551128498113" varName="fileName" />
       <varInfo nodeId="5066864551128496419" varName="inputModel" />
       <varInfo nodeId="5066864551128496416" varName="inputNode" />
       <varInfo nodeId="5066864551128496360" varName="positionInfo" />
     </scopeInfo>
-    <scopeInfo nodeId="2522627450234088538" fileName="DebugInfoBuilder.java" startLine="62" startPosition="208" endLine="87" endPosition="5" />
-    <scopeInfo nodeId="2522627450234088526" fileName="DebugInfoBuilder.java" startLine="62" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="2522627450234088538" fileName="DebugInfoBuilder.java" startLine="63" startPosition="208" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="2522627450234088526" fileName="DebugInfoBuilder.java" startLine="63" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="2522627450234088532" varName="fileName" />
       <varInfo nodeId="2522627450234088536" varName="originalInputModel" />
       <varInfo nodeId="2522627450234089631" varName="positions" />
       <varInfo nodeId="2522627450234089905" varName="scopePositions" />
       <varInfo nodeId="2522627450234089998" varName="unitPositions" />
     </scopeInfo>
-    <scopeInfo nodeId="7186895126144474737" fileName="DebugInfoBuilder.java" startLine="107" startPosition="88" endLine="137" endPosition="7">
+    <scopeInfo nodeId="7186895126144474737" fileName="DebugInfoBuilder.java" startLine="108" startPosition="88" endLine="138" endPosition="7">
       <varInfo nodeId="7186895126144664559" varName="generatedRoot" />
       <varInfo nodeId="4915376354193851915" varName="newFromCache" />
     </scopeInfo>
-    <scopeInfo nodeId="7186895126144474731" fileName="DebugInfoBuilder.java" startLine="106" startPosition="93" endLine="138" endPosition="5">
+    <scopeInfo nodeId="7186895126144474731" fileName="DebugInfoBuilder.java" startLine="107" startPosition="93" endLine="139" endPosition="5">
       <varInfo nodeId="7186895126144474733" varName="cachedRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="6204170386629146199" fileName="DebugInfoBuilder.java" startLine="105" startPosition="157" endLine="138" endPosition="5">
+    <scopeInfo nodeId="6204170386629146199" fileName="DebugInfoBuilder.java" startLine="106" startPosition="157" endLine="139" endPosition="5">
       <varInfo nodeId="7186895126144928572" varName="files" />
     </scopeInfo>
-    <scopeInfo nodeId="6204170386629146196" fileName="DebugInfoBuilder.java" startLine="105" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="6204170386629146196" fileName="DebugInfoBuilder.java" startLine="106" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="6204170386629146200" varName="cachedDebugInfo" />
       <varInfo nodeId="6204170386629146203" varName="generatedDebugInfo" />
       <varInfo nodeId="6204170386629146216" varName="unchangedFiles" />
     </scopeInfo>
-    <unitInfo nodeId="5066864551128496266" fileName="DebugInfoBuilder.java" startLine="18" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.traceInfo.DebugInfoBuilder" />
+    <unitInfo nodeId="5066864551128496266" fileName="DebugInfoBuilder.java" startLine="19" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.traceInfo.DebugInfoBuilder" />
   </root>
 </debugInfo>
 

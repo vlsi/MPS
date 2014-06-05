@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -23,26 +21,6 @@ public class BeanBuilder_Behavior {
 
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
     return _quotation_createNode_ef9w03_a0a1(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-  }
-
-  @Deprecated
-  public static SNode call_getCreatorExpression_6666322667909649860(SNode thisNode, SNode parentRef) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getCreatorExpression_7057666463730727863", new Object[]{parentRef});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getCreatorExpression_6666322667909649860(SNode thisNode, String callerConceptFqName, SNode parentRef) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", new Class[]{SNode.class, SNode.class}, new Object[]{parentRef});
-  }
-
-  @Deprecated
-  public static SNode call_getResultType_6666322667909649864(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_7057666463730718251", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getResultType_6666322667909649864(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_ef9w03_a0a0(Object parameter_1, Object parameter_2) {

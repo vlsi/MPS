@@ -42,7 +42,9 @@
   <source id="1270798772176052789" name="main" hash="d1b54oha1v8ntinpsl7t6kb0d8zx5sl">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1270798772176197309" name="DebugInfoProvider" hash="-khq8o22yl7tomts46r66vw1fmlmh4g" />
+  <source id="1270798772176197309" name="DebugInfoProvider" hash="-khq8o22yl7tomts46r66vw1fmlmh4g">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="4675583320452238768" name="reduce_DebuggerConfiguration" hash="-50r0npx8il9b1pvl7oy4fo8ljqy6eq3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>

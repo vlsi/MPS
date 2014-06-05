@@ -6,8 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class AbstractRule_Behavior {
   public static void init(SNode thisNode) {
@@ -24,25 +22,5 @@ public class AbstractRule_Behavior {
     SNode conceptReference = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.ConceptReference", null);
     SLinkOperations.setTarget(conceptReference, "concept", baseConcept, false);
     SLinkOperations.setTarget(thisNode, "applicableNode", conceptReference, true);
-  }
-
-  @Deprecated
-  public static SNode call_getBaseConcept_8952337903384866977(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getBaseConcept_8952337903384866977(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_setBaseConcept_6261424444345979630(SNode thisNode, SNode baseConcept) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setBaseConcept_6261424444345963020", new Object[]{baseConcept});
-  }
-
-  @Deprecated
-  public static void callSuper_setBaseConcept_6261424444345979630(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
   }
 }

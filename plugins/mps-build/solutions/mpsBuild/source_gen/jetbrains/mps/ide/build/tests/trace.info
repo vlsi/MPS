@@ -10,10 +10,10 @@
     <unitInfo nodeId="4074183641147971049" fileName="mpsSModel.xml" startLine="1" startPosition="0" endLine="509" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsSModel" />
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/5003005296035786909">
-    <unitInfo nodeId="5003005296035786909" fileName="mpsEditorDiagram.xml" startLine="1" startPosition="0" endLine="618" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsEditorDiagram" />
+    <unitInfo nodeId="5003005296035786909" fileName="mpsEditorDiagram.xml" startLine="1" startPosition="0" endLine="564" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsEditorDiagram" />
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/5833628797344916224">
-    <unitInfo nodeId="5833628797344916224" fileName="mpsEditor.xml" startLine="1" startPosition="0" endLine="1312" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsEditor" />
+    <unitInfo nodeId="5833628797344916224" fileName="mpsEditor.xml" startLine="1" startPosition="0" endLine="1259" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsEditor" />
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/617882099353312053">
     <unitInfo nodeId="617882099353312053" fileName="mpsGenerator.xml" startLine="1" startPosition="0" endLine="759" endPosition="10" unitName="jetbrains.mps.ide.build.tests.mpsGenerator" />

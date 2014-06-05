@@ -54,9 +54,7 @@
   <source id="8923957828369584139" name="reduce_ParallelFor" hash="eg2nmx65koakdld5fyfsdgsnc3357qb">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="8923957828369629354" name="reduce_LocalVariableReference" hash="-8jqa9yz0nw8xz5osdpbz8plxlsk4oj8">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="8923957828369629354" name="reduce_LocalVariableReference" hash="-8jqa9yz0nw8xz5osdpbz8plxlsk4oj8" />
   <source id="633195941006921811" name="reduce_ThreadPool" hash="6ui5bexmbbizuw71z69x9mquqr2fwdt" />
   <source id="7865129668866902787" name="CollectionSwitch" hash="dsbh9kccjtkj1dbubwy78zk0kqbso59" />
 </dependencies>

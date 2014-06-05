@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.refactoring.renameModel;
 
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.ReferenceUpdater;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 
 public class ModelRenamer {
   private EditableSModel myModelDescriptor;
@@ -29,11 +27,6 @@ public class ModelRenamer {
     myModelDescriptor = modelDescriptor;
     myModelName = modelName;
     myLazy = lazy;
-  }
-
-  @Deprecated
-  public ModelRenamer(EditableSModelDescriptor modelDescriptor, SModelFqName fqName, boolean lazy) {
-    this(modelDescriptor, fqName.toString(), lazy);
   }
 
   public void rename() {

@@ -17,8 +17,6 @@ import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.MacroHelper;
 import javax.swing.ImageIcon;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IconResource_Behavior {
   public static void init(SNode thisNode) {
@@ -69,15 +67,5 @@ public class IconResource_Behavior {
   public static String call_getFilename_8974276187400030131(SNode thisNode) {
     String fullPath = SPropertyOperations.getString(thisNode, "path");
     return fullPath.substring(fullPath.lastIndexOf("/") + 1);
-  }
-
-  @Deprecated
-  public static void call_generate_8974276187400029990(SNode thisNode) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_generate_8974276187400030152", new Object[]{});
-  }
-
-  @Deprecated
-  public static void callSuper_generate_8974276187400029990(SNode thisNode, String callerConceptFqName) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.IconResource"), callerConceptFqName, "virtual_generate_8974276187400030152", new Class[]{SNode.class}, new Object[]{});
   }
 }

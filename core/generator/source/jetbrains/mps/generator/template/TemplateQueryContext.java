@@ -167,7 +167,7 @@ public class TemplateQueryContext {
   }
 
   public SNode getOriginalCopiedInputNode(SNode node) {
-    if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return null;
+    if (node == null) return null;
     SNode result = TracingUtil.getInputNode(node);
     return result != null ? result : node;
   }

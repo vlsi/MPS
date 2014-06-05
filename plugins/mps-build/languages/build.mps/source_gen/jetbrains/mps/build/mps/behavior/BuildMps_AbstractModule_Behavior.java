@@ -4,9 +4,6 @@ package jetbrains.mps.build.mps.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildMps_AbstractModule_Behavior {
   public static void init(SNode thisNode) {
@@ -18,15 +15,5 @@ public class BuildMps_AbstractModule_Behavior {
 
   public static String call_getModuleReference_4643216374596368935(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "name") + ")";
-  }
-
-  @Deprecated
-  public static boolean call_isCompact_8369506495128693730(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isCompact_8369506495128693730", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isCompact_8369506495128693730(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), callerConceptFqName, "virtual_isCompact_8369506495128693730", new Class[]{SNode.class}, new Object[]{});
   }
 }

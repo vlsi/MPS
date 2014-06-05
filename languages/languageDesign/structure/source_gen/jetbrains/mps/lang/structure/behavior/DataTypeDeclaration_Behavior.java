@@ -5,8 +5,6 @@ package jetbrains.mps.lang.structure.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -80,16 +78,6 @@ public class DataTypeDeclaration_Behavior {
 
   public static boolean call_isSimpleBooleanOrEnumOfBoolean_1220269039824(SNode thisNode) {
     return DataTypeDeclaration_Behavior.call_isEnumOfBoolean_1220268971570(thisNode) || DataTypeDeclaration_Behavior.call_isSimpleBoolean_1220268891062(thisNode);
-  }
-
-  @Deprecated
-  public static SNode call_toBaseLanguageType_1213877229718(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_toBaseLanguageType_1213877229718(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), callerConceptFqName, "virtual_toBaseLanguageType_1213877229718", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_47r3zh_a0a0() {

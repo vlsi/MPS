@@ -67,9 +67,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1174484726883" name="stringOperations" hash="9vmkolhw7m4eiuz06v9aym8aek984st">
-    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1174484726883" name="stringOperations" hash="9vmkolhw7m4eiuz06v9aym8aek984st" />
   <source id="1177531319455" name="regexps_transform" hash="-5mh1qz0uk8hgdopp9jt9mjruzv2rjtb">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>

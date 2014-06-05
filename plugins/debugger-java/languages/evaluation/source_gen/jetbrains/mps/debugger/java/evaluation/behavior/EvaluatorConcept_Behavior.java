@@ -6,9 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -31,36 +28,6 @@ public class EvaluatorConcept_Behavior {
 
   public static SNode virtual_getCode_317191294093624551(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "evaluatedStatements", true);
-  }
-
-  @Deprecated
-  public static List<SNode> call_getThrowableTypes_5211667636169798157(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getThrowableTypes_6204026822016975623", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getThrowableTypes_5211667636169798157(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getBody_5211667636169798161(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getBody_5211667636169798161(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getBody_1239354440022", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getExpectedRetType_5211667636169798165(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedRetType_1239354342632", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getExpectedRetType_5211667636169798165(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_29c8r0_a0a2() {

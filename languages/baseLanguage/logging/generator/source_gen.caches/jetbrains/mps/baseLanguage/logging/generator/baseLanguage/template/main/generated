@@ -52,9 +52,7 @@
   <source id="1167240601336" name="reduce_LogStatement" hash="-3hzi4isqss91891emcoc517d5bqe3yu">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1168402205215" name="reduce_PrintStatement" hash="cpo360cnoww9zjpyjwxbmkjaowap1y5">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1168402205215" name="reduce_PrintStatement" hash="cpo360cnoww9zjpyjwxbmkjaowap1y5" />
   <source id="1169464243643" name="weave_LogFieldDeclaration" hash="-9nopxv9qjz4hly6sb0u2vjr4o36m7cv" />
   <source id="1210168677734" name="switch_IsEnabled" hash="-epg2l691f4l2dpq40vr5uvd5hyzoc0t" />
 </dependencies>

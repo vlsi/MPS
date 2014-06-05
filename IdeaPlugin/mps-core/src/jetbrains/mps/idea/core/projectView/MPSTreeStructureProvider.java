@@ -50,11 +50,11 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -206,7 +206,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
 
     List<SNodeReference> selectedNodePointers = new ArrayList<SNodeReference>();
     Project project = null;
-    EditableSModelDescriptor modelDescriptor = null;
+    EditableSModel modelDescriptor = null;
 
     for (AbstractTreeNode treeNode : selected) {
       if (!(treeNode instanceof MPSPsiElementTreeNode)) return null; // only root nodes please
@@ -245,7 +245,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (psiModel == null || !psiModel.isValid()) return null;
 
     Project project = treeNode.getProject();
-    EditableSModelDescriptor modelDescriptor = getModel(treeNode);
+    EditableSModel modelDescriptor = getModel(treeNode);
 
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null || modelDescriptor == null) return null;
@@ -310,15 +310,15 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   }
 
   private SModule getModule(AbstractTreeNode selectedNode) {
-    EditableSModelDescriptor contextModel = getContextModel(selectedNode);
+    EditableSModel contextModel = getContextModel(selectedNode);
     return contextModel != null ? contextModel.getModule() : null;
   }
 
-  private EditableSModelDescriptor getModel(AbstractTreeNode selectedNode) {
+  private EditableSModel getModel(AbstractTreeNode selectedNode) {
     return selectedNode instanceof MPSPsiModelTreeNode ? getContextModel(selectedNode) : null;
   }
 
-  private EditableSModelDescriptor getContextModel(AbstractTreeNode selectedNode) {
+  private EditableSModel getContextModel(AbstractTreeNode selectedNode) {
     if (selectedNode instanceof MPSPsiElementTreeNode) {
       MPSPsiNodeBase value = ((MPSPsiElementTreeNode) selectedNode).getValue();
       return getModel(value);
@@ -326,42 +326,42 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     else if (selectedNode instanceof MPSPsiModelTreeNode) {
       MPSPsiModel psiModel = ((MPSPsiModelTreeNode) selectedNode).getModel();
       SModel sModel = psiModel.getSModelReference().resolve(MPSModuleRepository.getInstance());
-      return (EditableSModelDescriptor) sModel;
+      return (EditableSModel) sModel;
     }
     return null;
   }
 
-  private EditableSModelDescriptor getModel(MPSPsiNodeBase mpsPsiNode) {
+  private EditableSModel getModel(MPSPsiNodeBase mpsPsiNode) {
     MPSPsiModel containingModel = mpsPsiNode.getContainingModel();
     SModel sModel = containingModel.getSModelReference().resolve(MPSModuleRepository.getInstance());
-    return (EditableSModelDescriptor) sModel;
+    return (EditableSModel) sModel;
   }
 
   private static interface ProviderFactory<T> {
-    T create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project);
+    T create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project);
   }
 
   private static interface ModelProviderFactory<T> {
-    T create(@NotNull EditableSModelDescriptor modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project);
+    T create(@NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project);
   }
 
   private static ProviderFactory<SNodeCutCopyProvider> CUT_COPY_PROVIDER_FACTORY = new ProviderFactory<SNodeCutCopyProvider>() {
     @Override
-    public SNodeCutCopyProvider create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
+    public SNodeCutCopyProvider create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
       return new SNodeCutCopyProvider(selectedNodes, modelDescriptor, project);
     }
   };
 
   private static ProviderFactory<SNodeDeleteProvider> DELETE_PROVIDER_FACTORY = new ProviderFactory<SNodeDeleteProvider>() {
     @Override
-    public SNodeDeleteProvider create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
+    public SNodeDeleteProvider create(Collection<SNodeReference> selectedNodes, @NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
       return new SNodeDeleteProvider(selectedNodes, modelDescriptor, project);
     }
   };
 
   private static ModelProviderFactory<SNodePasteProvider> PASTE_PROVIDER_FACTORY = new ModelProviderFactory<SNodePasteProvider>() {
     @Override
-    public SNodePasteProvider create(@NotNull EditableSModelDescriptor modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
+    public SNodePasteProvider create(@NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project) {
       return new SNodePasteProvider(sModel, project, modelDescriptor);
     }
   };

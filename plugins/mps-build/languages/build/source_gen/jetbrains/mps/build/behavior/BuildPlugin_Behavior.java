@@ -7,8 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildPlugin_Behavior {
   public static void init(SNode thisNode) {
@@ -28,35 +26,5 @@ public class BuildPlugin_Behavior {
 
   public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     return ListSequence.fromList(new ArrayList<SNode>());
-  }
-
-  @Deprecated
-  public static Scope call_getProjectStructureScope_3734116213129936182(SNode thisNode, SNode kind) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getProjectStructureScope_3734116213129936182", new Object[]{kind});
-  }
-
-  @Deprecated
-  public static Scope callSuper_getProjectStructureScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind) {
-    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getProjectStructureScope_3734116213129936182", new Class[]{SNode.class, SNode.class}, new Object[]{kind});
-  }
-
-  @Deprecated
-  public static Scope call_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
-    return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getLayoutScope_1224588814561807654", new Object[]{kind});
-  }
-
-  @Deprecated
-  public static Scope callSuper_getLayoutScope_1224588814561807654(SNode thisNode, String callerConceptFqName, SNode kind) {
-    return BehaviorManager.getInstance().invokeSuper(Scope.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getLayoutScope_1224588814561807654", new Class[]{SNode.class, SNode.class}, new Object[]{kind});
-  }
-
-  @Deprecated
-  public static Iterable<SNode> call_getImportedLibraries_4101476690142937969(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_getImportedLibraries_4101476690142937969", new Object[]{});
-  }
-
-  @Deprecated
-  public static Iterable<SNode> callSuper_getImportedLibraries_4101476690142937969(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getImportedLibraries_4101476690142937969", new Class[]{SNode.class}, new Object[]{});
   }
 }

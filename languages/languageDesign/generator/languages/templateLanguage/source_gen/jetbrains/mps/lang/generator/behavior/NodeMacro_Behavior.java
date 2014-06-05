@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeMacro_Behavior {
   public static void init(SNode thisNode) {
@@ -75,15 +74,5 @@ public class NodeMacro_Behavior {
     }
     SNode rootAnnotation = AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(thisNode), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
     return SLinkOperations.getTarget(SNodeOperations.cast(rootAnnotation, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
-  }
-
-  @Deprecated
-  public static SNode call_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.NodeMacro"), callerConceptFqName, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Class[]{SNode.class}, new Object[]{});
   }
 }

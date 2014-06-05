@@ -42,7 +42,9 @@
   <source id="1213999885532" name="reduce_DefaultClassifierFieldDeclaration" hash="-1xenzg0epvrt0xuji0igixd0pc4x335">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1029302639053435662" name="reduce_DefaultClassifier" hash="-9t0w28durj6azf4xnatfyzp19fwknmx" />
+  <source id="1029302639053435662" name="reduce_DefaultClassifier" hash="-9t0w28durj6azf4xnatfyzp19fwknmx">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1029302639053561714" name="reduce_DefaultClassifierFieldAccessOperation" hash="7x24k9wd5czyxe0mvf11nkosh8maz85" />
   <source id="1029302639053561739" name="reduce_DefaultClassifierMethodCall" hash="5v9cfirmu6l1h3l7su277ppdttx4b7z" />
 </dependencies>

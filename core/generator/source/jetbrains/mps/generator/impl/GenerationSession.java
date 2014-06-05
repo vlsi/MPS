@@ -265,6 +265,7 @@ class GenerationSession {
         }
         String error = gfe.getMessage() == null ? gfe.toString() : gfe.getMessage();
         String msg = String.format("Generation failed for model '%s': %s. %s", myOriginalInputModel.getReference().getModelName(), error, nestedException);
+        myLogger.handleException(gfe);
         myLogger.error(msg);
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } catch (Exception e) {

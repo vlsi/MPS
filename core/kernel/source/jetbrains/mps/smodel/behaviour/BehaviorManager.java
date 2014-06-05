@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -35,10 +36,15 @@ import java.util.List;
 
 import static jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor.behaviorClassByConceptFqName;
 
+/**
+ * This class is left here for transition period, behavior classes generated with 3.1 use it, and won't compile once
+ * user switches to 3.2
+ * Behaviors in 3.2 don't use this class, and it will be removed once 3.2 is out.
+ * @deprecated use BehaviorReflection instead
+ */
 @Deprecated
+@ToRemove(version = 3.0)
 public final class BehaviorManager {
-  // remove after MPS 3.0
-  // use BehaviorReflection instead
 
   private final static BehaviorManager INSTANCE = new BehaviorManager();
 

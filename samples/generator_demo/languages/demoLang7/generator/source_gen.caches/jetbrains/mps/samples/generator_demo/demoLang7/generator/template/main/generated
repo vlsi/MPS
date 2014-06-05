@@ -59,9 +59,7 @@
   <source id="1228517278170" name="main" hash="-2kmzi4h2xvayglieyy9qp6ovc90io6q">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3771754276239041380" name="weave_Button" hash="bhw12sprt9tt3tjyf0rjsooxzvbblx">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="3771754276239041380" name="weave_Button" hash="bhw12sprt9tt3tjyf0rjsooxzvbblx" />
   <source id="3771754276239408582" name="weave_Label" hash="-7lx60n8k9kopfh9j4ldr89yzdwkatz3" />
 </dependencies>
 

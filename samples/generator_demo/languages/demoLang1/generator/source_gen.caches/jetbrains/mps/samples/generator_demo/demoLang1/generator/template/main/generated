@@ -27,10 +27,7 @@
   </source>
   <source id="1228430739337" name="map_Document" hash="-cgw4fbleivr9x1a060i390vanbd5shi">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1228431323007" name="switch_JComponentByElementName" hash="-q9p2b4larrvi43wy6ygwc9u8zl1x8d">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1228431323007" name="switch_JComponentByElementName" hash="-q9p2b4larrvi43wy6ygwc9u8zl1x8d" />
 </dependencies>
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5xo40eytr1sacqnd7w4vnphe61k90fl">
+<dependencies version="2" modelHash="-q4f190zu8d7sepw484lenwmzcmfhl2">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6coyx9cq8icm86dy9j1trq5a7ubwr79" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-a1p5gm2tk74jwijgkkw53yaon9dv2r7" />
@@ -51,17 +51,17 @@
   </common>
   <source id="5464054275389846505" name="BLCommand" hash="-a6717z4xbacl8dywnzwd4k3rf13w1dh" />
   <source id="6852607286009511388" name="PrintNodeReferenceExpression" hash="-epdoa5ulxzjslbspdxd0g0ill2ffmtl" />
-  <source id="8483375838963816171" name="UsagesExpression" hash="-21uaxj5x7he56g02h9pvjrz8bun6g8q" />
+  <source id="8483375838963816171" name="UsagesExpression" hash="-3cx9s65ti6ug8o9kdwjp77rkq4ojrm7" />
   <source id="8483375838963816351" name="ShowExpression" hash="-c33k487igdygmgsdrt8ve4bkmecsxz1" />
-  <source id="7738379549910147341" name="InstancesExpression" hash="ahk1vnh30vdxjz9pdrvs6m8vuccc25x" />
+  <source id="7738379549910147341" name="InstancesExpression" hash="-a7mi6blivd36vmni7y15ggnw65mhrqw" />
   <source id="752693057587755272" name="ProjectExpression" hash="pdq81ivqklr3k50tpoyus42x3bwbqe" />
   <source id="8365379837260459177" name="PrintTextExpression" hash="-8xyojm3x87exih1bkenwaa59d7e6krp" />
   <source id="5510759644748856153" name="PrintNodeExpression" hash="-d2jk5h0z8oinmtjqi0taq37uccczj4m" />
   <source id="7820875636626932768" name="AbstractPrintExpression" hash="32k4cnytod1oag6gjsi2bp7p26jimvz" />
-  <source id="2822369470875160718" name="NodesExpression" hash="-b95ulqrl5s8p49ujd8iyxsh4lelvlv0" />
-  <source id="6322385757202370749" name="ReferencesExpression" hash="927dsxfh9qxmsklmqhs60s0iaxrmfbb" />
-  <source id="6864030874027862829" name="ModelsExpression" hash="pr5nk3uwr8y078verkx2smgqox0cqa" />
-  <source id="6864030874028745314" name="ModulesExpression" hash="23njvzfq6mrtlsyg4qmi5008vahjgad" />
+  <source id="2822369470875160718" name="NodesExpression" hash="-yzm0ktt7b98x357jvlq6s92liediio" />
+  <source id="6322385757202370749" name="ReferencesExpression" hash="-9ot0vzkjl1xv7ei1x21qjwxv4dvtoni" />
+  <source id="6864030874027862829" name="ModelsExpression" hash="6h0nbudzpme4248f5iyi9frpyi4sae9" />
+  <source id="6864030874028745314" name="ModulesExpression" hash="84j2pjzkn6sntmbbnckyrlc1x69uuer" />
   <source id="6558068108107691796" name="ExceptionHolder" hash="dmf1t187xki53h092wwewmnc3yjk48v" />
   <source id="4307205004131544317" name="QueryExpression" hash="9bbteyzqg06avkcsvc1vvwvnx1c5i3g" />
   <source id="4307205004131544565" name="QueryParameter" hash="-8bpjgk0sykhy1hp8ushe81ehv5yeu0d" />

@@ -71,9 +71,7 @@
   <source id="1237111509389" name="MathSymbolLoopSwitch" hash="-6w1o9thrqr6oxf01orcjhfgnkyrfd56">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1237112408108" name="MathSymbolConditionSwitch" hash="-6ziea0qewro8eydu7pgu7aybpyz3lpe">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1237112408108" name="MathSymbolConditionSwitch" hash="-6ziea0qewro8eydu7pgu7aybpyz3lpe" />
   <source id="1237112552591" name="MathSymbolInitializer" hash="-rx38x3oh26dtiv1n9t2suxpvkl29l7" />
   <source id="1237112574952" name="MathSymbolIterator" hash="-1teic0n97xzn9m6eh0fz69ru0e7856b" />
   <source id="1237113131321" name="MathIndexReference" hash="-7s303m9viiaul6zicdi3defp3a2h2we" />
