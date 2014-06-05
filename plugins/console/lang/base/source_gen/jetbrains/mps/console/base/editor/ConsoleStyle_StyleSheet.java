@@ -6,8 +6,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-public class Console_Styles_StyleSheet {
-  public static void apply_readOnly(Style style, EditorCell editorCell) {
+public class ConsoleStyle_StyleSheet {
+  public static void apply_ReadOnly(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.READ_ONLY, 1, true);
   }
 
