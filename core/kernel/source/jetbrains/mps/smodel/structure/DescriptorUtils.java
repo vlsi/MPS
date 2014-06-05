@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.structure;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -30,12 +31,20 @@ public class DescriptorUtils {
   private static Logger LOG = LogManager.getLogger(DescriptorUtils.class);
 
   @Nullable
-  public static Class<?> getClassFromLanguage(String className, Language language) {
+  public static <T> Class<T> getClassFromLanguage(String className, LanguageRuntime languageRuntime) {
+    if (languageRuntime == null) {
+      return null;
+    }
+    return getClassFromLanguage(className, ModuleRepositoryFacade.getInstance().getModule(languageRuntime.getNamespace(), Language.class));
+  }
+
+    @Nullable
+  public static <T> Class<T> getClassFromLanguage(String className, Language language) {
     if (language == null) {
       return null;
     }
     try {
-      return ClassLoaderManager.getInstance().getClass(language, className);
+      return (Class<T>) ClassLoaderManager.getInstance().getClass(language, className);
     } catch (Throwable e) {
       LOG.debug(String.format("error loading class '%s' from module %s", className, language.getModuleName()), e);
     }

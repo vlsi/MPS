@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,14 @@
 package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.SNodeTextGenAdapter;
 import jetbrains.mps.smodel.structure.DescriptorUtils;
+import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -40,9 +42,8 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
     while(c != null && !c.equals(baseConcept)) {
       String languageName = c.getLanguage().getQualifiedName();
       Language l = ModuleRepositoryFacade.getInstance().getModule(languageName, Language.class);
-      String className = c.getName();
-      String textgenClassname = languageName + ".textGen." + className + "_TextGen";
-      Class textgenClass = DescriptorUtils.getClassFromLanguage(textgenClassname, l);
+      String textgenClassname = LanguageAspect.TEXT_GEN.getAspectQualifiedClassName(c) + "_TextGen";
+      Class<SNodeTextGen> textgenClass = DescriptorUtils.getClassFromLanguage(textgenClassname, l);
       if (textgenClass != null) {
         return new SNodeTextGenAdapter(c.getQualifiedName(), textgenClass);
       }
@@ -52,6 +53,7 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
   }
 
   @Override
+  @Deprecated
   public TextGenDescriptor getDescriptor(@NotNull String conceptFqName) {
     SConcept c = SConceptRepository.getInstance().getInstanceConcept(conceptFqName);
     return getDescriptor(c);

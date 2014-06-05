@@ -16,10 +16,11 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -219,26 +220,32 @@ public enum LanguageAspect {
     myName = name;
   }
 
+  /**
+   * @deprecated use {@link #getAspectQualifiedClassName(org.jetbrains.mps.openapi.language.SAbstractConcept)} instead
+   * NOTE, as it's not an API, might be dropped sooner than end of 3.2 dev cycle
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static String getAspectNodeFqName(@NotNull String conceptFqName, LanguageAspect languageAspect) {
-    String namespace = NameUtil.namespaceFromLongName(conceptFqName);
-    String shortName = NameUtil.shortNameFromLongName(conceptFqName);
-    if (namespace.endsWith("." + STRUCTURE.getName())) {
-      namespace = namespace.substring(0, namespace.length() - ("." + STRUCTURE.getName()).length());
-    } else {
+    SAbstractConcept c = SConceptRepository.getInstance().getConcept(conceptFqName);
+    if (c == null) {
       throw new IllegalArgumentException("Not a concept fq name");
     }
+    return languageAspect.getAspectQualifiedClassName(c);
+  }
 
-    StringBuilder builder = StringBuilderSpinAllocator.alloc();
-    try {
-      builder.append(namespace);
-      builder.append('.');
-      builder.append(languageAspect.getName());
-      builder.append('.');
-      builder.append(shortName);
-      return builder.toString();
-    } finally {
-      StringBuilderSpinAllocator.dispose(builder);
-    }
+  /**
+   * INTERNAL USE ONLY.
+   * Builds a class name of an aspect class according to hardcoded MPS convention.
+   */
+  public String getAspectQualifiedClassName(@NotNull SAbstractConcept concept) {
+    StringBuilder builder = new StringBuilder();
+    builder.append(concept.getLanguage().getQualifiedName());
+    builder.append('.');
+    builder.append(getName());
+    builder.append('.');
+    builder.append(concept.getName());
+    return builder.toString();
   }
 
   public boolean is(SModel sm) {
