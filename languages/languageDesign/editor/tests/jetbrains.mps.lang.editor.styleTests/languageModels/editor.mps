@@ -84,7 +84,7 @@
             <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7571028832046235254" resolveInfo="hugePriorityStyle" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7571028832046341173" nodeInfo="nn">
-            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7571028832047359190" resolveInfo="unapplyPriorityStyle" />
+            <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7571028832047359190" resolveInfo="unapplyPriorityStyleCopy" />
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="7571028832046341175" nodeInfo="nn">
               <property name="flag" nameId="tpc2.1186414551515" value="false" />
             </node>
@@ -145,6 +145,14 @@
       </node>
       <node role="dominates" roleId="tpc2.3383245079137422296" type="tpc2.DominatesRecord" typeId="tpc2.2491174914159318432" id="7571028832046676337" nodeInfo="ng" />
     </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="5446045291972765404" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="priorityStyleCopy" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyleClass" typeId="tpc2.1950447826681509042" id="5446045291972765431" nodeInfo="ng">
+        <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="5446045291972765435" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7571028832046676331" resolveInfo="priorityStyle" />
+        </node>
+      </node>
+    </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="7571028832046235254" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="hugePriorityStyle" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.AttributeStyleClassItem" typeId="tpc2.3982520150122341378" id="7571028832046360135" nodeInfo="ng">
@@ -168,10 +176,10 @@
       </node>
     </node>
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="7571028832047359190" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="unapplyPriorityStyle" />
+      <property name="name" nameId="tpck.1169194664001" value="unapplyPriorityStyleCopy" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.UnapplyStyle" typeId="tpc2.1950447826686048995" id="7571028832047359191" nodeInfo="ng">
-        <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="7571028832047359192" nodeInfo="ng">
-          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7571028832046676331" resolveInfo="priorityStyle" />
+        <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="5446045291972765437" nodeInfo="ng">
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="5446045291972765404" resolveInfo="priorityStyleCopy" />
         </node>
       </node>
     </node>

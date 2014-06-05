@@ -14,15 +14,24 @@ public class TestStylesheet_StyleSheet {
     style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 1, TestStylesheet_StyleSheet._StyleParameter_QueryFunction_mmtlxs_a0c((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
   }
 
-  public static void apply_hugePriorityStyle(Style style, EditorCell editorCell) {
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 2, TestStylesheet_StyleSheet._StyleParameter_QueryFunction_mmtlxs_a0d((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
-  }
-
-  public static void apply_unapplyPriorityStyle(Style style, EditorCell editorCell) {
+  public static void apply_priorityStyleCopy(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
       styleToPut = new StyleImpl();
       TestStylesheet_StyleSheet.apply_priorityStyle(styleToPut, editorCell);
+      style.putAll(styleToPut, 0);
+    }
+  }
+
+  public static void apply_hugePriorityStyle(Style style, EditorCell editorCell) {
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 2, TestStylesheet_StyleSheet._StyleParameter_QueryFunction_mmtlxs_a0e((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+  }
+
+  public static void apply_unapplyPriorityStyleCopy(Style style, EditorCell editorCell) {
+    {
+      Style styleToPut;
+      styleToPut = new StyleImpl();
+      TestStylesheet_StyleSheet.apply_priorityStyleCopy(styleToPut, editorCell);
       style.removeAll(styleToPut);
     }
   }
@@ -33,7 +42,7 @@ public class TestStylesheet_StyleSheet {
     return "Priority";
   }
 
-  private static String _StyleParameter_QueryFunction_mmtlxs_a0d(EditorContext editorContext, SNode node) {
+  private static String _StyleParameter_QueryFunction_mmtlxs_a0e(EditorContext editorContext, SNode node) {
     return "Huge";
   }
 }

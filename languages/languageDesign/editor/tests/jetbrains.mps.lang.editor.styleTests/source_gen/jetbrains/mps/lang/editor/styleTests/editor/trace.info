@@ -76,8 +76,8 @@
     <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="121" startPosition="92" endLine="122" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="122" startPosition="96" endLine="123" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="123" startPosition="51" endLine="124" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="124" startPosition="34" endLine="125" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="125" startPosition="76" endLine="126" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="124" startPosition="34" endLine="125" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="125" startPosition="80" endLine="126" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="126" startPosition="49" endLine="127" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="127" startPosition="40" endLine="128" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6609104295326650827" fileName="TestConceptWithStyleAttributes_Editor.java" startLine="127" startPosition="40" endLine="128" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -236,48 +236,62 @@
   </root>
   <root nodeRef="r:716dc35d-6443-4b45-a1e5-08b46978f63d(jetbrains.mps.lang.editor.styleTests.editor)/6609104295326650955">
     <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="13" startPosition="78" endLine="14" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="17" startPosition="82" endLine="18" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="22" startPosition="5" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="23" startPosition="23" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="24" startPosition="35" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="25" startPosition="76" endLine="26" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7571028832046676335" fileName="TestStylesheet_StyleSheet.java" startLine="32" startPosition="107" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7571028832046360796" fileName="TestStylesheet_StyleSheet.java" startLine="36" startPosition="107" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="18" startPosition="5" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="19" startPosition="23" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="20" startPosition="35" endLine="21" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="21" startPosition="76" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="26" startPosition="82" endLine="27" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="31" startPosition="5" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="32" startPosition="23" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="33" startPosition="35" endLine="34" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="34" startPosition="80" endLine="35" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7571028832046676335" fileName="TestStylesheet_StyleSheet.java" startLine="41" startPosition="107" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7571028832046360796" fileName="TestStylesheet_StyleSheet.java" startLine="45" startPosition="107" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_priorityStyle#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_hugePriorityStyle#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="7571028832046676333" fileName="TestStylesheet_StyleSheet.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_mmtlxs_a0c#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7571028832046360136" fileName="TestStylesheet_StyleSheet.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_mmtlxs_a0d#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="21" startPosition="85" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_unapplyPriorityStyle#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_hugePriorityStyle#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="7571028832046676333" fileName="TestStylesheet_StyleSheet.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_mmtlxs_a0c#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7571028832046360136" fileName="TestStylesheet_StyleSheet.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_StyleParameter_QueryFunction_mmtlxs_a0e#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="17" startPosition="82" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="30" startPosition="89" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_priorityStyleCopy#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+    <nodeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="apply_unapplyPriorityStyleCopy#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
     <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="13" startPosition="78" endLine="14" endPosition="313" />
-    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="17" startPosition="82" endLine="18" endPosition="313" />
-    <scopeInfo nodeId="7571028832046676334" fileName="TestStylesheet_StyleSheet.java" startLine="32" startPosition="107" endLine="33" endPosition="22" />
-    <scopeInfo nodeId="7571028832046360137" fileName="TestStylesheet_StyleSheet.java" startLine="36" startPosition="107" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="26" startPosition="82" endLine="27" endPosition="313" />
+    <scopeInfo nodeId="7571028832046676334" fileName="TestStylesheet_StyleSheet.java" startLine="41" startPosition="107" endLine="42" endPosition="22" />
+    <scopeInfo nodeId="7571028832046360137" fileName="TestStylesheet_StyleSheet.java" startLine="45" startPosition="107" endLine="46" endPosition="18" />
     <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="6609104295326650955" varName="editorCell" />
       <varInfo nodeId="6609104295326650955" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="6609104295326650955" varName="editorCell" />
       <varInfo nodeId="6609104295326650955" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="7571028832046676333" fileName="TestStylesheet_StyleSheet.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="7571028832046676333" fileName="TestStylesheet_StyleSheet.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="7571028832046676333" varName="editorContext" />
       <varInfo nodeId="7571028832046676333" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7571028832046360136" fileName="TestStylesheet_StyleSheet.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="7571028832046360136" fileName="TestStylesheet_StyleSheet.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="7571028832046360136" varName="editorContext" />
       <varInfo nodeId="7571028832046360136" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="22" startPosition="5" endLine="26" endPosition="34">
+    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="18" startPosition="5" endLine="22" endPosition="34">
       <varInfo nodeId="6609104295326650955" varName="styleToPut" />
     </scopeInfo>
-    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="21" startPosition="85" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="31" startPosition="5" endLine="35" endPosition="34">
+      <varInfo nodeId="6609104295326650955" varName="styleToPut" />
+    </scopeInfo>
+    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="17" startPosition="82" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="30" startPosition="89" endLine="36" endPosition="5" />
+    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="6609104295326650955" varName="editorCell" />
       <varInfo nodeId="6609104295326650955" varName="style" />
     </scopeInfo>
-    <unitInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.styleTests.editor.TestStylesheet_StyleSheet" />
+    <scopeInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="6609104295326650955" varName="editorCell" />
+      <varInfo nodeId="6609104295326650955" varName="style" />
+    </scopeInfo>
+    <unitInfo nodeId="6609104295326650955" fileName="TestStylesheet_StyleSheet.java" startLine="12" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.editor.styleTests.editor.TestStylesheet_StyleSheet" />
   </root>
   <root nodeRef="r:716dc35d-6443-4b45-a1e5-08b46978f63d(jetbrains.mps.lang.editor.styleTests.editor)/8422442021223269831">
     <nodeInfo nodeId="8422442021223269831" fileName="NodeContainer_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -122,7 +122,7 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_58m68g_c2b0");
     Style style = new StyleImpl();
-    TestStylesheet_StyleSheet.apply_unapplyPriorityStyle(style, editorCell);
+    TestStylesheet_StyleSheet.apply_unapplyPriorityStyleCopy(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_58m68g_a2c1a(editorContext, node));
