@@ -33,4 +33,24 @@ public class SConceptIdImpl implements SConceptId {
   public int getConceptId() {
     return myConceptId;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    SConceptIdImpl that = (SConceptIdImpl) o;
+
+    if (myConceptId != that.myConceptId) return false;
+    if (myLanguageId != null ? !myLanguageId.equals(that.myLanguageId) : that.myLanguageId != null) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = myLanguageId != null ? myLanguageId.hashCode() : 0;
+    result = 31 * result + myConceptId;
+    return result;
+  }
 }
