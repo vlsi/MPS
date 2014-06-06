@@ -1603,7 +1603,7 @@
     <nodeInfo nodeId="7648411942405232793" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="21" startPosition="122" endLine="22" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1098116234534074047" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="23" startPosition="35" endLine="24" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1098116234534104047" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="27" startPosition="11" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1098116234534104047" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="28" startPosition="64" endLine="29" endPosition="344" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1098116234534104047" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="28" startPosition="64" endLine="29" endPosition="346" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="36" startPosition="46" endLine="37" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="41" startPosition="5" endLine="42" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="42" startPosition="130" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1622,7 +1622,7 @@
     <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="36" startPosition="46" endLine="37" endPosition="62" />
     <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="47" startPosition="30" endLine="48" endPosition="17" />
     <scopeInfo nodeId="7648411942405144477" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1098116234534104047" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="27" startPosition="11" endLine="29" endPosition="344">
+    <scopeInfo nodeId="1098116234534104047" fileName="check_LoopMacro_NonTypesystemRule.java" startLine="27" startPosition="11" endLine="29" endPosition="346">
       <varInfo nodeId="1098116234534104047" varName="_reporter_2309309498" />
       <varInfo nodeId="1098116234534104047" varName="errorTarget" />
     </scopeInfo>

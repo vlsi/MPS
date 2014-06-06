@@ -3098,7 +3098,7 @@
                     <node role="errorString" roleId="tpd4.1175517851849" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1098116234534104060" nodeInfo="nn">
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1098116234534104051" nodeInfo="nn">
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1098116234534104048" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1070475926801" value="Target role for $LOOP$ macro can contain max 1 element (role: " />
+                          <property name="value" nameId="tpee.1070475926801" value="Node under $LOOP$ macro should have multiple cardinality (role: " />
                         </node>
                         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1098116234534104055" nodeInfo="nn">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363096469" nodeInfo="nn">
