@@ -19,14 +19,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -42,9 +36,7 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 // Current workflow: before any actions with module leading to the classes invalidation one should do two things:
 // 1) unload modules and remember successfully unloaded modules (@see unloadClasses)
@@ -72,14 +64,15 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final SRepository myRepository;
 
-  // reload handlers
-  private List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
+  private final ClassLoadingBroadCaster myBroadCaster;
+
 
   // listening for module adding/removing
   private final SRepositoryListener myRepositoryListener = new ClassLoaderManagerRepositoryListener(this);
 
   public ClassLoaderManager(@NotNull SRepository repository) {
     myRepository = repository;
+    myBroadCaster = new ClassLoadingBroadCaster();
     myDependenciesWatcher = new ModuleDependenciesWatcher(this);
     myClassLoadingChecker = new ClassLoadingChecker(this);
   }
@@ -116,21 +109,17 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = null;
   }
 
+  // should get true before calling @loadClasses method
   // todo: should be just MPS_FACET
   public boolean canLoad(SModule module) {
-    if (module instanceof Language || module instanceof Generator) {
-      return true;
-    }
-    if (module.getFacet(JavaModuleFacet.class) == null) {
-      return false;
-    }
-
-    return module instanceof Solution && ((Solution) module).getKind() != SolutionKind.NONE;
+    return ModuleClassLoaderSupport.canCreate(module);
   }
 
+  /**
+   * Contract: if we can get a class loader for this module, we will return the corresponding class to the caller
+   */
   @Nullable
   public Class getClass(SModule module, String classFqName) {
-    if (!canLoad(module)) throw new IllegalArgumentException("Module " + module.getModuleName() + " can't be start point for classes loading");
 
     // todo: hack for stubs. stub classes should not be managed by ClassLoaderManager
     if (module instanceof Language) {
@@ -146,6 +135,7 @@ public class ClassLoaderManager implements CoreComponent {
 
     ClassLoader classLoader = getClassLoader(module);
     if (classLoader == null) {
+      if (!canLoad(module)) throw new IllegalArgumentException("The classes of module " + module.getModuleName() + " are managed neither by MPS nor Idea");
       return null;
     }
     try {
@@ -160,7 +150,6 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  // main internal method. use getClass instead
   @Nullable
   public synchronized ClassLoader getClassLoader(SModule module) {
     return myClassLoadersHolder.getClassLoader(module);
@@ -171,9 +160,9 @@ public class ClassLoaderManager implements CoreComponent {
     LOG.assertLog(ModelAccess.instance().canWrite(), "Should be able to write models");
     Set<SModule> modulesToUnload = new HashSet<SModule>();
     for (SModule module : modules) {
-      if (SModuleOperations.isCompileInMps(module)) {
+//      if (SModuleOperations.isCompileInMps(module)) {
         modulesToUnload.add(module);
-      }
+//      }
     }
 
     monitor.start("Unloading classes...", 2);
@@ -190,7 +179,7 @@ public class ClassLoaderManager implements CoreComponent {
       if (modulesToUnload.isEmpty()) return modulesToUnload;
 
       monitor.step("Disposing old classes...");
-      broadCastUnload(modulesToUnload);
+      myBroadCaster.onUnload(modulesToUnload);
       monitor.advance(1);
 
       monitor.step("Invalidate class loaders...");
@@ -203,25 +192,17 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  private void broadCastUnload(Set<SModule> toUnload) {
-    for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.beforeClassesUnloaded(toUnload);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   public Set<SModule> loadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
-      if (ModuleClassLoaderSupport.canCreate(module)) {
-        if (getClassLoader(module) != null) {
-          LOG.warning("ModuleClassLoader should be unloaded before load for module " + module, new Throwable());
-        }
-        modulesToLoad.add(module);
+      assert (module.getRepository() != null) : "Cannot get class from disposed module";
+      if (getClassLoader(module) != null) {
+        LOG.error("Module " + module + " classes are already being managed by " + getClassLoader(module) + " class loader", new Throwable());
       }
+//      if (ModuleClassLoaderSupport.canCreate(module)) {
+      if (!canLoad(module)) throw new IllegalArgumentException("Contact is broken: @canLoad returned false");
+      modulesToLoad.add(module);
+//      }
     }
 
     if (modulesToLoad.isEmpty()) return modulesToLoad;
@@ -231,7 +212,7 @@ public class ClassLoaderManager implements CoreComponent {
     }
     monitor.start("Load classes...", 1);
     try {
-      broadCastLoad(modulesToLoad);
+      myBroadCaster.onLoad(modulesToLoad);
       monitor.advance(1);
     } finally {
       monitor.done();
@@ -240,21 +221,11 @@ public class ClassLoaderManager implements CoreComponent {
     return modulesToLoad;
   }
 
-  private void broadCastLoad(Set<SModule> modulesToLoad) {
-    for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.afterClassesLoaded(modulesToLoad);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   // todo: review all usages
   public void loadAllPossibleClasses(@NotNull ProgressMonitor monitor) {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
-    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
-      if (!myClassLoadersHolder.isModuleLoaded(module)) {
+    for (SModule module : myRepository.getModules()) {
+      if (!myClassLoadersHolder.isModuleLoaded(module) && canLoad(module)) {
         modulesToLoad.add(module);
       }
     }
@@ -263,20 +234,17 @@ public class ClassLoaderManager implements CoreComponent {
 
   //---------------reload handlers------------------
   public void addClassesHandler(MPSClassesListener handler) {
-    myClassesHandlers.add(handler);
+    myBroadCaster.addClassesHandler(handler);
   }
 
   public void removeClassesHandler(MPSClassesListener handler) {
-    myClassesHandlers.remove(handler);
+    myBroadCaster.removeClassesHandler(handler);
   }
 
   //---------------private part---------------------
   private ModuleClassLoader createClassLoader(SModule module) {
-    assert ModuleClassLoaderSupport.canCreate(module);
-
     ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module);
     ModuleClassLoader classLoader = new ModuleClassLoader(this, support);
-
     myClassLoadersHolder.loadClassLoader(module, classLoader);
     return classLoader;
   }

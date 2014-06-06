@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.console.tool.ConsoleUtil;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import org.apache.log4j.Level;
@@ -34,10 +35,13 @@ public class GeneratedCommand_Behavior {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
                 try {
-                  final ClassLoader loader = ClassLoaderManager.getInstance().getClassLoader(model.getModule());
+                  SModule module = model.getModule();
                   String name = ConsoleUtil.getGeneratedModelName(context);
-
-                  Method[] methods = Class.forName(name, true, loader).getMethods();
+                  Class<?> aClass = ClassLoaderManager.getInstance().getClass(module, name);
+                  if (aClass == null) {
+                    throw new ClassNotFoundException("No class " + name + " for module " + module);
+                  }
+                  Method[] methods = aClass.getMethods();
                   for (Method method : methods) {
                     if (method.getName().equals("execute")) {
                       beforeCallback.run();

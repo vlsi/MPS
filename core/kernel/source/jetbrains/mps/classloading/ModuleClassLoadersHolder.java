@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
@@ -22,6 +23,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.HashMap;
@@ -31,7 +33,7 @@ import java.util.Map;
  * Created by Alex Pyshkin on 6/4/14.
  */
 public class ModuleClassLoadersHolder {
-  private static final Logger LOG = LogManager.getLogger(ClassLoaderManager.class);
+  private static final Logger LOG = LogManager.getLogger(ModuleClassLoadersHolder.class);
   private final Map<SModule, ModuleClassLoader> myClassLoaders = new HashMap<SModule, ModuleClassLoader>();
 
   public void loadClassLoader(SModule module, ModuleClassLoader classLoader) {
@@ -58,6 +60,7 @@ public class ModuleClassLoadersHolder {
       if (customClassLoadingFacet.isValid()) {
         return customClassLoadingFacet.getClassLoader();
       } else {
+//        LOG.warn("CustomClassLoading Facet for module " + module + " is not valid", new Throwable());
         return null;
       }
     }

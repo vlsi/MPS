@@ -24,8 +24,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.net.URL;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 public class ModuleClassLoaderSupport {
   private final SModule module;
@@ -45,8 +43,9 @@ public class ModuleClassLoaderSupport {
     return new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE);
   }
 
+  // "true" means that only MPS manages classes of this module (not idea plugin)
   // ext point possible here
-  public static boolean canCreate(SModule module) {
+  static boolean canCreate(SModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     return facet != null && facet.isCompileInMps() && module.getFacet(CustomClassLoadingFacet.class) == null;
   }

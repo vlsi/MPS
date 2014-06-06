@@ -539,7 +539,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           }
         }));
 
-    // TODO: why java module facet by default?
     types.add(JavaModuleFacet.FACET_TYPE);
   }
 

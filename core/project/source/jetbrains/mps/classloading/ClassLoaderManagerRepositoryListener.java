@@ -51,6 +51,10 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
   @Override
   public void moduleAdded(SModule module) {
     LOG.debug("adding " + module);
+    if (!myClassLoaderManager.canLoad(module)) {
+      LOG.debug("cannot load module within mps " + module);
+      return;
+    }
     final Set<SModule> loadedModules = myClassLoaderManager.loadClasses(Arrays.asList(module), new EmptyProgressMonitor());
     boolean noModuleHasBeenLoaded = (loadedModules.size() == 0);
     if (noModuleHasBeenLoaded) {

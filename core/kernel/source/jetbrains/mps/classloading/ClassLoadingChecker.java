@@ -32,7 +32,7 @@ import java.util.Set;
  * Created by Alex Pyshkin on 6/4/14.
  */
 public class ClassLoadingChecker implements MPSClassesListener {
-  private static final Logger LOG = LogManager.getLogger(ClassLoaderManager.class);
+  private static final Logger LOG = LogManager.getLogger(ClassLoadingChecker.class);
 
   // this field for checking classes loading (double load from different modules)
   private final Map<String, SModuleReference> myLoadedClasses = new THashMap<String, SModuleReference>();
