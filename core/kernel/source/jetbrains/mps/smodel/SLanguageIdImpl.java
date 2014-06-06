@@ -27,4 +27,21 @@ public class SLanguageIdImpl implements SLanguageId {
   public long getId() {
     return myId;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    SLanguageIdImpl that = (SLanguageIdImpl) o;
+
+    if (myId != that.myId) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    return (int) (myId ^ (myId >>> 32));
+  }
 }
