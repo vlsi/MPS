@@ -80,6 +80,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
   private static final JpsMPSRepositoryFacade INSTANCE = new JpsMPSRepositoryFacade();
   public static final UUID JDK_UUID = UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065");
 
+  private MPSCore myMPSCore;
+  private MPSPersistence myMPSPersistence;
   private volatile boolean isInitialized = false;
   private CachedRepositoryData myRepo;
   private Map<JpsModule, JpsSolutionIdea> jpsToMpsModules = new HashMap<JpsModule, JpsSolutionIdea>();
@@ -347,8 +349,10 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
 
   private void initMPS() {
-    MPSCore.getInstance().init();
-    MPSPersistence.getInstance().init();
+    myMPSCore = new MPSCore();
+    myMPSCore.init();
+    myMPSPersistence = new MPSPersistence();
+    myMPSPersistence.init();
     MPSTypesystem.getInstance().init();
     MPSGenerator.getInstance().init();
     MPSBaseLanguage.getInstance().init();
@@ -358,8 +362,10 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
     MPSBaseLanguage.getInstance().dispose();
     MPSGenerator.getInstance().dispose();
     MPSTypesystem.getInstance().dispose();
-    MPSPersistence.getInstance().dispose();
-    MPSCore.getInstance().dispose();
+    myMPSPersistence.dispose();
+    myMPSCore.dispose();
+    myMPSPersistence = null;
+    myMPSCore = null;
   }
 
   @Override
