@@ -230,19 +230,6 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return getTextGenDescriptor(node.getConcept());
   }
 
-  /**
-   * @deprecated use {@link #getTextGenDescriptor(org.jetbrains.mps.openapi.model.SNode)}
-   */
-  @NotNull
-  @Deprecated
-  public TextGenDescriptor getTextGenDescriptor(@Nullable String fqName) {
-    if (fqName == null) {
-      return new DefaultTextGenDescriptor();
-    }
-    SConcept c = SConceptRepository.getInstance().getInstanceConcept(fqName);
-    return getTextGenDescriptor(c);
-  }
-
   private TextGenDescriptor getTextGenDescriptor(SConcept concept) {
     final String fqName = concept.getQualifiedName();
 
