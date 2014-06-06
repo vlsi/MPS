@@ -15,33 +15,20 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
-public final class SLanguageIdImpl implements SLanguageId {
-  private final long myId;
+public class SReferenceLinkIdImpl extends SAbstractLinkIdImpl implements SReferenceLinkId {
+  private final int myRefLinkId;
 
-  public SLanguageIdImpl(long id) {
-    myId = id;
-  }
-
-  public long getId() {
-    return myId;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-
-    SLanguageIdImpl that = (SLanguageIdImpl) o;
-
-    if (myId != that.myId) return false;
-
-    return true;
+  public SReferenceLinkIdImpl(SConceptId conceptId, int refLinkId) {
+    super(conceptId);
+    myRefLinkId = refLinkId;
   }
 
   @Override
-  public int hashCode() {
-    return (int) (myId ^ (myId >>> 32));
+  public int getReferenceLinkId() {
+    return myRefLinkId;
   }
 }

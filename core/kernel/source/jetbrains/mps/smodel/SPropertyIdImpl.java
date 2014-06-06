@@ -16,22 +16,25 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
 
-public final class SConceptIdImpl implements SConceptId {
-  private final SLanguageIdImpl myLanguageId;
-  private final int myConceptId;
+public final class SPropertyIdImpl implements SPropertyId{
+  private final SConceptId myConceptId;
+  private final int myPropertyId;
 
-  public SConceptIdImpl(SLanguageIdImpl languageId, int conceptId) {
+  public SPropertyIdImpl(SConceptId conceptId, int propertyId) {
     myConceptId = conceptId;
-    myLanguageId = languageId;
+    myPropertyId = propertyId;
   }
 
-  public SLanguageIdImpl getLanguageId() {
-    return myLanguageId;
-  }
-
-  public int getConceptId() {
+  @Override
+  public SConceptId getConceptId() {
     return myConceptId;
+  }
+
+  @Override
+  public int getPropertyId() {
+    return myPropertyId;
   }
 
   @Override
@@ -39,18 +42,18 @@ public final class SConceptIdImpl implements SConceptId {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    SConceptIdImpl that = (SConceptIdImpl) o;
+    SPropertyIdImpl that = (SPropertyIdImpl) o;
 
-    if (myConceptId != that.myConceptId) return false;
-    if (myLanguageId != null ? !myLanguageId.equals(that.myLanguageId) : that.myLanguageId != null) return false;
+    if (myPropertyId != that.myPropertyId) return false;
+    if (myConceptId != null ? !myConceptId.equals(that.myConceptId) : that.myConceptId != null) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = myLanguageId != null ? myLanguageId.hashCode() : 0;
-    result = 31 * result + myConceptId;
+    int result = myConceptId != null ? myConceptId.hashCode() : 0;
+    result = 31 * result + myPropertyId;
     return result;
   }
 }
