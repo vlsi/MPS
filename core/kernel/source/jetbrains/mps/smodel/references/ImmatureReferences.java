@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,12 @@ package jetbrains.mps.smodel.references;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SReferenceBase;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.Map.Entry;
@@ -40,23 +41,25 @@ public class ImmatureReferences implements CoreComponent {
   private static ImmatureReferences INSTANCE;
   private final SModelReference myVirtualRef;
 
+  // FIXME shall retrieve instance per SRepository
   public static ImmatureReferences getInstance() {
     return INSTANCE;
   }
 
-  private SModelRepositoryAdapter myReposListener = new MySModelRepositoryAdapter();
+  // seems sufficient to keep immature references per SRepository (unlike SModelRepository, which used to track models from all repositories)
+  // however, shall fix getInstance to respect actual repository
+  private final SRepository myRepository;
+  private final SRepositoryContentAdapter myReposListener = new MyRepositoryAdapter();
 
-  private SModelRepository mySModelRepository;
-
-  private ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, Object>> myReferences =
+  private final ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, Object>> myReferences =
       new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase, Object>>();
 
   private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, Object>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, Object>>();
 
   private boolean myDisabled = true;
 
-  public ImmatureReferences(SModelRepository modelRepository) {
-    mySModelRepository = modelRepository;
+  public ImmatureReferences(SRepository repository) {
+    myRepository = repository;
     for (int i = 0; i < POOL_SIZE; i++) {
       myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, Object>());
     }
@@ -79,13 +82,12 @@ public class ImmatureReferences implements CoreComponent {
     }
 
     INSTANCE = this;
-    mySModelRepository.addModelRepositoryListener(myReposListener);
+    myReposListener.subscribeTo(myRepository);
   }
 
   @Override
   public void dispose() {
-    mySModelRepository.removeModelRepositoryListener(myReposListener);
-
+    myReposListener.unsubscribeFrom(myRepository);
     INSTANCE = null;
   }
 
@@ -134,14 +136,11 @@ public class ImmatureReferences implements CoreComponent {
     return usedSet;
   }
 
-  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
-    public MySModelRepositoryAdapter() {
-      super(SModelRepositoryListenerPriority.PLATFORM);
-    }
-
+  private class MyRepositoryAdapter extends SRepositoryContentAdapter {
     @Override
-    public void modelRemoved(SModel modelDescriptor) {
-      ConcurrentMap<SReferenceBase, Object> refSet = myReferences.remove(modelDescriptor.getReference());
+    public void beforeModelRemoved(SModule module, SModel model) {
+      super.beforeModelRemoved(module, model);
+      ConcurrentMap<SReferenceBase, Object> refSet = myReferences.remove(model.getReference());
       if (refSet != null) {
         refSet.clear();
       }

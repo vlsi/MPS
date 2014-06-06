@@ -100,7 +100,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new PathMacros());
     init(new LibraryInitializer(moduleRepository, classLoaderManager));
     init(new GlobalScope(moduleRepository, modelRepository));
-    init(new ImmatureReferences(modelRepository));
+    init(new ImmatureReferences(moduleRepository));
 
     init(new QueryMethodGenerated(classLoaderManager));
     LanguageRegistry languageRegistry = init(new LanguageRegistry(classLoaderManager));
