@@ -108,12 +108,6 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
 
   public void subscribeTo(SRepository repository) {
     repository.getModelAccess().checkReadAccess();
-
-    SRepository parent = repository.getParent();
-    if (parent != null) {
-      subscribeTo(parent);
-    }
-
     repository.addRepositoryListener(this);
   }
 
@@ -131,13 +125,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
 
   public void unsubscribeFrom(SRepository repository) {
     repository.getModelAccess().checkReadAccess();
-
     repository.removeRepositoryListener(this);
-
-    SRepository parent = repository.getParent();
-    if (parent != null) {
-      unsubscribeFrom(parent);
-    }
   }
 
   public void stopListening(SRepository repository) {

@@ -46,11 +46,7 @@ public class SNodeUtil {
     SRepository mrep = model.getRepository();
     if (mrep == null) return false;
 
-    SRepository repository = inRepository;
-    while (repository != null && repository != mrep) {
-      repository = repository.getParent();
-    }
-    return repository != null;
+    return inRepository != null;
   }
 
   public static boolean isInstanceOf(@Nullable SNode node, @NotNull SAbstractConcept concept) {
