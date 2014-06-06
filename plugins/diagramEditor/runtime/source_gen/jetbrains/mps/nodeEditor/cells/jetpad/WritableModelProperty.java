@@ -7,6 +7,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.jetpad.model.event.EventHandler;
 import jetbrains.jetpad.model.property.PropertyChangeEvent;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 
 public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> implements Property<T> {
   private String myCommandId;
@@ -25,7 +26,7 @@ public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> 
   protected void safeSetModelPropertyValue(final T t) {
     ModelAccess.instance().tryWrite(new Runnable() {
       public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             setModelPropertyValue((t == null ? null : t));
           }

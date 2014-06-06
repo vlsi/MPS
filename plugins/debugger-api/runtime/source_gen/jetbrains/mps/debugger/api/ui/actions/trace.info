@@ -1343,7 +1343,7 @@
       <varInfo nodeId="8643693251546857272" varName="_params" />
       <varInfo nodeId="8643693251546857272" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="4474271214083119037" fileName="GoToSource_Action.java" startLine="69" startPosition="48" endLine="74" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.actions.GoToSource_Action$1" />
+    <unitInfo nodeId="4474271214083119037" fileName="GoToSource_Action.java" startLine="69" startPosition="55" endLine="74" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.actions.GoToSource_Action$1" />
     <unitInfo nodeId="8643693251546857272" fileName="GoToSource_Action.java" startLine="23" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.GoToSource_Action" />
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/9154600507441896288">

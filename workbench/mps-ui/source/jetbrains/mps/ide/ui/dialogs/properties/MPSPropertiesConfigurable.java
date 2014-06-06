@@ -52,6 +52,8 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelCommandProjectExecutor;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -178,7 +180,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
   @Override
   public void apply() throws ConfigurationException {
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
       @Override
       public void run() {
         for (Tab tab : myTabs)

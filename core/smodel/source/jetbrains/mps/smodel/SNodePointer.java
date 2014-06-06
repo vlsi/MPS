@@ -59,7 +59,8 @@ public class SNodePointer implements SNodeReference {
     if (myNodeId == null) return null;
 
     if (myModelReference != null) {
-      SModel model = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+
+      SModel model = myModelReference.resolve(repo);
       if (model != null) {
         SNode node = model.getNode(myNodeId);
         if (node != null) {
@@ -76,8 +77,8 @@ public class SNodePointer implements SNodeReference {
   }
 
   @Override
-  public jetbrains.mps.smodel.SModelReference getModelReference() {
-    return (jetbrains.mps.smodel.SModelReference) myModelReference;
+  public SModelReference getModelReference() {
+    return myModelReference;
   }
 
   public String toString() {
@@ -125,38 +126,10 @@ public class SNodePointer implements SNodeReference {
 
   @Deprecated
   /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SNode getNode() {
-    return resolve(MPSModuleRepository.getInstance());
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public SModel getModel() {
-    if (getModelReference() == null) return null;
-    return SModelRepository.getInstance().getModelDescriptor(getModelReference());
-  }
-
-  @Deprecated
-  /**
    * Was mostly used for serialization and obtaining debug info. Use corresponding methods instead
    * @Deprecated in 3.0
    */
   public SNodeId getNodeId() {
     return myNodeId;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public String getDebugText() {
-    return toString();
   }
 }

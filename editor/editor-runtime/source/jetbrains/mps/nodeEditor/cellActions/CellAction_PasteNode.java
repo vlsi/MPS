@@ -40,6 +40,7 @@ import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -165,7 +166,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
       @Override
       public void run() {
         final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modelToPaste, context.getOperationContext());
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
+        ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
           @Override
           public void run() {
             if (addImportsRunnable != null) {

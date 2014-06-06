@@ -411,7 +411,7 @@
       <varInfo nodeId="4474271214083118913" varName="focus" />
       <varInfo nodeId="4474271214083118915" varName="select" />
     </scopeInfo>
-    <unitInfo nodeId="4474271214083118947" fileName="AbstractWatchableNode.java" startLine="39" startPosition="48" endLine="44" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode$1" />
+    <unitInfo nodeId="4474271214083118947" fileName="AbstractWatchableNode.java" startLine="39" startPosition="55" endLine="44" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode$1" />
     <unitInfo nodeId="4474271214083118844" fileName="AbstractWatchableNode.java" startLine="15" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode" />
   </root>
   <root nodeRef="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)/4474271214083120082">

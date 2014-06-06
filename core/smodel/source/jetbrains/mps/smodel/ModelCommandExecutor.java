@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.concurrent.ConcurrentMap;
 
@@ -62,18 +61,11 @@ public interface ModelCommandExecutor {
     void run(@NotNull ProgressMonitor monitor);
   }
 
-  void runWriteActionWithProgressSynchronously(@NotNull RunnableWithProgress runnable, String progressTitle, boolean canBeCanceled,
-                                               jetbrains.mps.project.Project project);
-
   <T> T runWriteAction(Computable<T> c);
 
   <T> T runReadInWriteAction(Computable<T> c);
 
   void runReadInEDT(Runnable r);
-
-  void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
-
-  void executeCommand(Runnable r, Project project);
 
   /**
    * use runWriteActionInCommand(final Computable<T> c, Project project)
@@ -87,23 +79,7 @@ public interface ModelCommandExecutor {
   @Deprecated
   void runWriteActionInCommand(Runnable r);
 
-  <T> T runWriteActionInCommand(Computable<T> c, Project project);
-
-  <T> T runWriteActionInCommand(Computable<T> c, @Nullable String name, @Nullable Object groupId, boolean requestUndoConfirmation, Project project);
-
-  void runWriteActionInCommand(Runnable r, Project project);
-
-  void runWriteActionInCommand(Runnable r, @Nullable String name, @Nullable Object groupId, boolean requestUndoConfirmation, Project project);
-
-  /**
-   * use runCommandInEDT
-   */
-  @Deprecated
-  void runWriteActionInCommandAsync(Runnable r, Project project);
-
   void runUndoTransparentCommand(Runnable r);
-
-  void runUndoTransparentCommand(Runnable r, Project project);
 
   boolean isInsideCommand();
 
@@ -185,10 +161,6 @@ public interface ModelCommandExecutor {
    * @return
    */
   <T> T requireWrite(Computable<T> c);
-
-  boolean tryWriteInCommand(Runnable r, Project p);
-
-  <T> T tryWriteInCommand(Computable<T> r, Project p);
 
   @Nullable
   public <K, V> ConcurrentMap<K, V> getRepositoryStateCache(String repositoryKey);

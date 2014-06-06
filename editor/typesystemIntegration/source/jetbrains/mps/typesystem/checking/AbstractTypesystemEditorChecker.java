@@ -24,6 +24,7 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
+import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -154,7 +155,7 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
               return;
             }
 
-            ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+            ((ModelCommandProjectExecutor) ModelAccess.instance()).runUndoTransparentCommand(new Runnable() {
               @Override
               public void run() {
                 intention.execute(quickFixNode);

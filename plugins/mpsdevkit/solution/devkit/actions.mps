@@ -6407,7 +6407,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8321617901826002870" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8321617901826002871" nodeInfo="nn">
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8321617901826002873" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~ModelCommandExecutor%drunWriteActionInCommand(jetbrains%dmps%dutil%dComputable,jetbrains%dmps%dproject%dProject)%cjava%dlang%dObject" resolveInfo="runWriteActionInCommand" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~ModelCommandProjectExecutor%drunWriteActionInCommand(jetbrains%dmps%dutil%dComputable,jetbrains%dmps%dproject%dProject)%cjava%dlang%dObject" resolveInfo="runWriteActionInCommand" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8321617901826002874" nodeInfo="nn">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="8321617901826002875" nodeInfo="nn">
                   <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="8321617901826002876" nodeInfo="ig">
@@ -6446,9 +6446,9 @@
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="8321617901826002887" nodeInfo="nn" />
             </node>
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8321617901826002872" nodeInfo="nn">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2d.~ModelAccess" resolveInfo="ModelAccess" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolveInfo="instance" />
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4683714442904176660" nodeInfo="nn">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2d.~ProjectModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelCommandProjectExecutor" resolveInfo="instance" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2d.~ProjectModelAccess" resolveInfo="ProjectModelAccess" />
             </node>
           </node>
         </node>

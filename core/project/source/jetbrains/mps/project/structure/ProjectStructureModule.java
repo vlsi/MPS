@@ -17,7 +17,6 @@ package jetbrains.mps.project.structure;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.generator.TransientModelNodeFinder;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -26,6 +25,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
+import jetbrains.mps.smodel.AbstractFastNodeFinder;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -307,7 +307,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     @Override
     protected FastNodeFinder createFastNodeFinder() {
-      return new TransientModelNodeFinder(this.getModelDescriptor());
+      return new AbstractFastNodeFinder(this.getModelDescriptor()) {
+      };
     }
   }
 }

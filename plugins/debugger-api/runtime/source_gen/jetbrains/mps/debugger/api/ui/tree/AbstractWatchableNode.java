@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.tree.MPSTree;
@@ -36,7 +36,7 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
     final Project project = getProject();
     final IOperationContext context = getOperationContext();
     if (project != null && context != null) {
-      ModelAccess.instance().executeCommand(new Runnable() {
+      ProjectModelAccess.instance().executeCommand(new Runnable() {
         @Override
         public void run() {
           NavigationSupport.getInstance().openNode(context, myNode, focus, select);

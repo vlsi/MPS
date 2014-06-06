@@ -15,7 +15,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import javax.swing.SwingUtilities;
@@ -27,6 +27,7 @@ import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.command.CommandProcessorEx;
@@ -93,7 +94,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
     this.myController = new MigrationScriptsController(myFinder) {
       @Override
       public void runCommand(final Runnable cmd) {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
+        ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
           @Override
           public void run() {
             cmd.run();
@@ -186,7 +187,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
       @Override
       public void run() {
         myController.process(new ProgressMonitorAdapter(myIndicator), aliveIncludedResults);
-        ModelAccess.instance().runCommandInEDT(finishCommand, getMPSProject());
+        ProjectModelAccess.instance().runCommandInEDT(finishCommand, getMPSProject());
         checkMigrationResults();
       }
     };

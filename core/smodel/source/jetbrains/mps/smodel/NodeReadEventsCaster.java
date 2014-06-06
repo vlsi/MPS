@@ -132,7 +132,7 @@ public class NodeReadEventsCaster {
     }
 
     public void fireModelNodesReadAccess(SModel model) {
-      if (myEventsBlocked || !((SModelInternal) model).canFireReadEvent()) return;
+      if (myEventsBlocked) return;
       myListenersStack.peek().modelNodesReadAccess(model);
     }
 

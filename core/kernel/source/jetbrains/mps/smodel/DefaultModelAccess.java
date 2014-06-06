@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
-public class DefaultModelAccess extends ModelAccess {
+public class DefaultModelAccess extends ModelAccess implements ModelCommandProjectExecutor {
 
   public DefaultModelAccess() {
   }

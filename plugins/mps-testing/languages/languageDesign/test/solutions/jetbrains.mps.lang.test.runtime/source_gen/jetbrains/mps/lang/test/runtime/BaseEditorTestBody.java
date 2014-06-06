@@ -13,6 +13,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Map;
@@ -135,7 +136,7 @@ public class BaseEditorTestBody extends BaseTestBody {
   public void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
     ModelAccess.instance().flushEventQueue();
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           try {

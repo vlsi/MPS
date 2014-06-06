@@ -30,6 +30,7 @@ import java.util.Set;
 
 /**
  * Base implementation for FastNodeFinder, thread-aware and map update ready
+ * FIXME consider renaming to BaseFastNodeFinder and make it concrete, ProjectStructureModule might appreciate this.
  * @author Artem Tikhomirov
  */
 public abstract class AbstractFastNodeFinder implements FastNodeFinder {

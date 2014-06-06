@@ -4703,7 +4703,7 @@
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3298791906902366018" nodeInfo="nn" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6786644491744442471" nodeInfo="nn">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6786644491744447377" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelInternal%dgetDisposedStacktrace()%cjava%dlang%dStackTraceElement[]" resolveInfo="getDisposedStacktrace" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ModelWithDisposeInfo%dgetDisposedStacktrace()%cjava%dlang%dStackTraceElement[]" resolveInfo="getDisposedStacktrace" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6786644491744430776" nodeInfo="nn">
                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6786644491744430777" nodeInfo="nn">

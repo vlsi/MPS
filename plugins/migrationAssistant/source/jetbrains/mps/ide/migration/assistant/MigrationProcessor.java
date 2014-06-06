@@ -27,6 +27,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.actions.LabelledAnchor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -129,7 +130,7 @@ public class MigrationProcessor extends AbstractProjectComponent {
   }
 
   private void runCommand(Runnable cmdRunnable) {
-    ModelAccess.instance().runCommandInEDT(cmdRunnable, myProject.getComponent(MPSProject.class));
+    ProjectModelAccess.instance().runCommandInEDT(cmdRunnable, myProject.getComponent(MPSProject.class));
   }
 
   private void init() {

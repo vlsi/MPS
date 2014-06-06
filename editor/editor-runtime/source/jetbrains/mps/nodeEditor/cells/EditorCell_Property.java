@@ -19,8 +19,10 @@ import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -74,7 +76,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     super.setSelected(selected);
     if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
       if (myCommitInCommand) {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
+        ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
           @Override
           public void run() {
             commit();

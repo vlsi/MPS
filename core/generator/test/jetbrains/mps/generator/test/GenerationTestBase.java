@@ -38,6 +38,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
@@ -207,7 +208,7 @@ public class GenerationTestBase {
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
           @Override
           public void run() {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
               @Override
               public void run() {
                 r.run(descr);

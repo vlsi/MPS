@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4m5do8i8nmuj0xl894fovp86qlh686b">
+<dependencies version="2" modelHash="5zbnvf4qg07z6mn0mqehh1ttyf8qj2f">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd(MPS.IDEA/com.intellij.ide.dnd@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.dnd.aware(MPS.IDEA/com.intellij.ide.dnd.aware@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.util.gotoByName(MPS.IDEA/com.intellij.ide.util.gotoByName@java_stub)" />
@@ -126,7 +126,9 @@
     <dep model="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)" />
     <file name="RenameModelDialog.java" />
   </source>
-  <source id="2482360940803573298" name="RenameSolutionDialog" hash="a2fixtwmv57tm3xulhosigiiltw8u3e">
+  <source id="2482360940803573298" name="RenameSolutionDialog" hash="-8lfj7c357z8n7tok98zgk5i3l6xk55m">
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RenameSolutionDialog.java" />
   </source>
   <source id="6188135140808769438" name="NodeHierarchyChooser" hash="5tfdfhk6jnplynj5m3ac41cumsxfkt">

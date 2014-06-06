@@ -190,7 +190,7 @@
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.refactoring.renameSolution.SolutionRenamer" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ProjectModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RenameDialog" />
   </dependency>

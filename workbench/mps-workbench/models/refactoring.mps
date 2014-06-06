@@ -3457,12 +3457,12 @@
             <property name="isFinal" nameId="tpee.1176718929932" value="false" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="100674607554485393" nodeInfo="in" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="100674607554485394" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="100674607554485395" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelAccess" resolveInfo="instance" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~ModelAccess" resolveInfo="ModelAccess" />
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4683714442904661962" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ProjectModelAccess%dinstance()%cjetbrains%dmps%dsmodel%dModelCommandProjectExecutor" resolveInfo="instance" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~ProjectModelAccess" resolveInfo="ProjectModelAccess" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="100674607554485396" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelCommandExecutor%drunWriteActionInCommand(jetbrains%dmps%dutil%dComputable,jetbrains%dmps%dproject%dProject)%cjava%dlang%dObject" resolveInfo="runWriteActionInCommand" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ModelCommandProjectExecutor%drunWriteActionInCommand(jetbrains%dmps%dutil%dComputable,jetbrains%dmps%dproject%dProject)%cjava%dlang%dObject" resolveInfo="runWriteActionInCommand" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="100674607554485397" nodeInfo="nn">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="100674607554485398" nodeInfo="nn">
                     <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="100674607554485399" nodeInfo="ig">

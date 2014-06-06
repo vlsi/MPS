@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -232,7 +233,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     @Override
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
           final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor);

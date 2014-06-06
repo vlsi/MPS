@@ -17,8 +17,6 @@ import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.FileNotFoundException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.IDebugger;
@@ -33,6 +31,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -50,7 +50,6 @@ import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
@@ -160,7 +159,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
-    SModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0a3(((SNodePointer) nodePointer)).resolve(MPSModuleRepository.getInstance()));
+    SModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0d(check_yvpt_a0a0a0a3(nodePointer)));
     if (module == null) {
       final Wrappers._T<String> text = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -362,9 +361,16 @@ public class Java_Command {
     return null;
   }
 
-  private static SModelReference check_yvpt_a0a0a0a3(SNodePointer checkedDotOperand) {
+  private static SModel check_yvpt_a0a0a0d(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelReference();
+      return checkedDotOperand.getModel();
+    }
+    return null;
+  }
+
+  private static SNode check_yvpt_a0a0a0a3(SNodeReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }

@@ -34,6 +34,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -121,7 +122,7 @@ public class ShowImplementationComponent extends JPanel {
       return;
     }
     if (mySelectedIndex == index) return;
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
       @Override
       public void run() {
         myLocationLabel.setText(myImplNodes.get(index).myModuleName);

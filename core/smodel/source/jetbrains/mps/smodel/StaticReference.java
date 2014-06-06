@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.extapi.model.ModelWithDisposeInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.apache.log4j.LogManager;
@@ -25,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 //final used by find usages
 public final class StaticReference extends SReferenceBase {
@@ -86,7 +88,7 @@ public final class StaticReference extends SReferenceBase {
     SModel targetModel = getTargetSModel();
     if (targetModel == null) return null;
 
-    if (jetbrains.mps.util.SNodeOperations.isModelDisposed(targetModel)) {
+    if (targetModel instanceof ModelWithDisposeInfo && ((ModelWithDisposeInfo) targetModel).isDisposed()) {
       Logger log = Logger.wrap(LogManager.getLogger(this.getClass()));
       StringBuilder sb = new StringBuilder();
       sb.append("target model ");
@@ -94,7 +96,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append(" is disposed\n");
       SNode sourceNode = getSourceNode();
       sb.append("source node is: name = ");
-      sb.append(sourceNode.getProperty(SNodeUtil.property_INamedConcept_name));
+      sb.append(sourceNode.getName());
       sb.append(", model = ");
       sb.append(sourceNode.getModel());
       sb.append(", id = ");
@@ -105,7 +107,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append("\ncurrent thread ");
       sb.append(canRead);
       sb.append("\nstack trace of model disposing is: ");
-      for (StackTraceElement ste : ((jetbrains.mps.smodel.SModelInternal) targetModel).getDisposedStacktrace()) {
+      for (StackTraceElement ste : ((ModelWithDisposeInfo) targetModel).getDisposedStacktrace()) {
         sb.append(ste);
         sb.append("\n");
       }
@@ -135,19 +137,15 @@ public final class StaticReference extends SReferenceBase {
     if (targetModelReference == null) return null;
 
     SModel modelDescriptor = null;
-    if (current != null && current.getModule()!=null) {
+    if (current != null && current.getModule() != null) {
       modelDescriptor = current.getModule().resolveInDependencies(targetModelReference.getModelId());
     } else if (!RuntimeFlags.isMergeDriverMode()) {
-      modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
+      // [artem] here comes essential piece of MPS functionality - one can create node hanging in the thin air
+      // set reference using string for model name and node id, and then magically resolve this simply navigating the reference
+      // Why not e.g. nodePointer.resolve(repo) - I have no idea. Try to remove once RuntimeUtils got fixed to see if there are a lot of assumptions like that.
+      modelDescriptor = targetModelReference.resolve(null);
     }
-
-    if (modelDescriptor == null) return null;
-
-    SModel model = modelDescriptor;
-    if (model == null) {
-      error("failed to get model '" + getTargetSModelReference() + "' from model desctiptor");
-    }
-    return model;
+    return modelDescriptor;
   }
 
   @Override

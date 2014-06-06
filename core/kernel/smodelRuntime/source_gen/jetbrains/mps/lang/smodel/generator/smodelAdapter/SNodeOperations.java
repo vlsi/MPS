@@ -19,6 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.scope.Scope;
@@ -594,7 +595,7 @@ public class SNodeOperations {
   }
 
   public static SNode getNode(String modelUID, String nodeID) {
-    return new SNodePointer(modelUID, nodeID).getNode();
+    return new SNodePointer(modelUID, nodeID).resolve(MPSModuleRepository.getInstance());
   }
 
   /**

@@ -116,15 +116,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
    */
   public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
 
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public final SNode getTargetNodeSilently() {
-    return jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(this);
-  }
-
   protected abstract SNode getTargetNode_internal();
 
   @Deprecated
@@ -175,12 +166,21 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     ourLoggingOff = false;
   }
 
+  public static SNode getTargetNodeSilently(org.jetbrains.mps.openapi.model.SReference ref) {
+    try {
+      disableLogging();
+      return ref.getTargetNode();
+    } finally {
+      enableLogging();
+    }
+  }
+
   protected final void error(String message, ProblemDescription... problems) {
     if (ourLoggingOff) return;
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
     SModel model = getSourceNode().getModel();
-    if (model != null && SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model))) return;
+    if (model != null && SModelStereotype.isStubModel(model)) return;
 
     synchronized (ourErrorReportedRefs) {
       if (ourErrorReportedRefs.contains(this)) return;

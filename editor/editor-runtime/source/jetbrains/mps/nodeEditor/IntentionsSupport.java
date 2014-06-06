@@ -47,6 +47,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -275,7 +276,7 @@ public class IntentionsSupport {
     Project project = myEditor.getOperationContext().getProject();
     if (project == null)  return;
 
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ((ModelCommandProjectExecutor) ModelAccess.instance()).runCommandInEDT(new Runnable() {
       @Override
       public void run() {
         intention.execute(node, myEditor.getEditorContext());

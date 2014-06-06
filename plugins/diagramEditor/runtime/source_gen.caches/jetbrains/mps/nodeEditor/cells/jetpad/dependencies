@@ -152,7 +152,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ProjectModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractNodeSubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSetter" />
@@ -220,6 +220,7 @@
     <classNode dependClassName="jetbrains.jetpad.model.property.PropertyChangeEvent" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ProjectModelAccess" />
     <classNode extendsClassName="jetbrains.jetpad.model.property.Property" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" />
   </dependency>

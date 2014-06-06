@@ -19,6 +19,7 @@ import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -60,7 +61,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
 
   @Override
   public final void undo() throws UnexpectedUndoException {
-    ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+    ProjectModelAccess.instance().runUndoTransparentCommand(new Runnable() {
       @Override
       public void run() {
         List<SNodeUndoableAction> rev = new LinkedList<SNodeUndoableAction>(myWrapped);
@@ -74,7 +75,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
 
   @Override
   public final void redo() throws UnexpectedUndoException {
-    ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+    ProjectModelAccess.instance().runUndoTransparentCommand(new Runnable() {
       @Override
       public void run() {
         for (SNodeUndoableAction a : myWrapped) {

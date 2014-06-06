@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -167,7 +168,7 @@ public class GeneratorUIFacade {
     final boolean[] result = new boolean[]{false};
     final DefaultMessageHandler messages = new DefaultMessageHandler(ideaProject);
 
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new RunnableWithProgress() {
+    ProjectModelAccess.instance().runWriteActionWithProgressSynchronously(new RunnableWithProgress() {
       @Override
       public void run(@NotNull ProgressMonitor monitor) {
         // pretty much the same code as in Generate_Facet

@@ -16,6 +16,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import org.junit.Assert;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -108,7 +109,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
 
   private String processFieldNameInModel(final String nameToWrite) {
     final String[] result = new String[1];
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
       @Override
       public void run() {
         if (SModelRepository.getInstance().getModelDescriptor(myModel.getReference()) != null) {
@@ -242,7 +243,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
 
     if (DiskMemoryConflictsTest.Action.SAVE == action) {
       //  save conflicting model 
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
           SModelRepository.getInstance().saveAll();
@@ -304,7 +305,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       });
     } else {
       //  Restore model 
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
           myModel = ((EditableSModel) SModuleOperations.createModelWithAdjustments(PersistenceFacade.getInstance().createModelReference(DiskMemoryConflictsTest.MODEL_UID).getModelName(), myModule.getModelRoots().iterator().next()));

@@ -259,6 +259,11 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   }
 
   @Override
+  public boolean isDisposed() {
+    return getDisposedStacktrace() != null;
+  }
+
+  @Override
   public final StackTraceElement[] getDisposedStacktrace() {
     return getSModelInternal().getDisposedStacktrace();
   }

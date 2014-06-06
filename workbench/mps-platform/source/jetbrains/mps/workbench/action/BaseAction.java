@@ -24,6 +24,7 @@ import gnu.trove.THashMap;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.Nullable;
 
@@ -133,7 +134,7 @@ public abstract class BaseAction extends AnAction {
         collectActionData(event, params);
       }
     });
-    final ModelAccess access = ModelAccess.instance();
+    final ModelCommandProjectExecutor access = (ModelCommandProjectExecutor) ModelAccess.instance();
     if (myExecuteOutsideCommand) {
       doExecute(event, params);
     } else {

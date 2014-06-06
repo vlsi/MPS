@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.ModelWithDisposeInfo;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -24,14 +25,11 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
 
-public interface SModelInternal {
+public interface SModelInternal extends ModelWithDisposeInfo {
 
   void addModelListener(@NotNull SModelListener listener);
 
   void removeModelListener(@NotNull SModelListener listener);
-
-  //todo cast if can be
-  StackTraceElement[] getDisposedStacktrace();
 
   boolean canFireEvent();
 
@@ -80,7 +78,7 @@ public interface SModelInternal {
 
   void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion);
 
-  boolean canFireReadEvent();
+  boolean canFireReadEvent(); // FIXME check if there're uses of the method and drop it, if none
 
   boolean updateSModelReferences();
 

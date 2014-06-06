@@ -13,6 +13,7 @@ import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
@@ -69,7 +70,7 @@ public class OverrideImplementMethodInEnumConstantAction {
     if (dialog.isOK()) {
       final Iterable<SNodeReference> selectedElements = (Iterable<SNodeReference>) dialog.getSelectedElements();
 
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {

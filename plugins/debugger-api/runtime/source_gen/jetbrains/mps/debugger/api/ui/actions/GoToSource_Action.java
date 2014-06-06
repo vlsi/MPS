@@ -11,7 +11,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -66,7 +66,7 @@ public class GoToSource_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModelAccess.instance().executeCommand(new Runnable() {
+      ProjectModelAccess.instance().executeCommand(new Runnable() {
         @Override
         public void run() {
           NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), true, true);

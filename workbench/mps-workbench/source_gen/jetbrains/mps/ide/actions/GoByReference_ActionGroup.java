@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.annotations.Nullable;
 
@@ -69,7 +70,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
           public void run() {
             String text = "Bad reference: [" + finalRef.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) finalRef).getResolveInfo();
 
-            ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+            ProjectModelAccess.instance().runUndoTransparentCommand(new Runnable() {
               @Override
               public void run() {
                 ResolverComponent.getInstance().resolve(finalRef, context.getProject().getRepository());

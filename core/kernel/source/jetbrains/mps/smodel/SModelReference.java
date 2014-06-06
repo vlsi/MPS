@@ -111,7 +111,9 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
   @Override
   public SModel resolve(SRepository repo) {
-    // TODO repo ???
+    // FIXME !!! use supplied SRepository, not global model repo !!!
+    // NOTE, shall tolerate null repo unless every single piece of code that expects StaticReference of a newly created node
+    // hanging in the air to resolve. @see StaticReference#getTargetSModel
     return SModelRepository.getInstance().getModelDescriptor(this);
   }
 

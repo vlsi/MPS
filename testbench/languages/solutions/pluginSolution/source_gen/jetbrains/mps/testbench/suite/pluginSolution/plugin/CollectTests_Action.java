@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -164,7 +165,7 @@ public class CollectTests_Action extends BaseAction {
             public void invoke(final _FunctionTypes._return_P0_E0<? extends SNode> tref) {
               ThreadUtils.runInUIThreadAndWait(new Runnable() {
                 public void run() {
-                  ModelAccess.instance().executeCommand(new Runnable() {
+                  ProjectModelAccess.instance().executeCommand(new Runnable() {
                     public void run() {
                       if (suite.value == null) {
                         suite.value = SModelOperations.createNewRootNode(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite", null);

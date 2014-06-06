@@ -562,7 +562,7 @@
     <nodeInfo nodeId="3719390199793466157" fileName="ModelCheckerExecutor.java" startLine="95" startPosition="56" endLine="96" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3719390199793466185" fileName="ModelCheckerExecutor.java" startLine="98" startPosition="28" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3719390199793466186" fileName="ModelCheckerExecutor.java" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3719390199793466204" fileName="ModelCheckerExecutor.java" startLine="104" startPosition="32" endLine="105" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3719390199793466204" fileName="ModelCheckerExecutor.java" startLine="104" startPosition="32" endLine="105" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199793466198" fileName="ModelCheckerExecutor.java" startLine="106" startPosition="20" endLine="107" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199793466216" fileName="ModelCheckerExecutor.java" startLine="110" startPosition="10" endLine="111" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3719390199793466225" fileName="ModelCheckerExecutor.java" startLine="111" startPosition="61" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -629,7 +629,7 @@
     <scopeInfo nodeId="3719390199793466104" fileName="ModelCheckerExecutor.java" startLine="79" startPosition="65" endLine="80" endPosition="43" />
     <scopeInfo nodeId="3719390199793466170" fileName="ModelCheckerExecutor.java" startLine="91" startPosition="79" endLine="92" endPosition="34" />
     <scopeInfo nodeId="3719390199793466156" fileName="ModelCheckerExecutor.java" startLine="95" startPosition="56" endLine="96" endPosition="81" />
-    <scopeInfo nodeId="3719390199793466203" fileName="ModelCheckerExecutor.java" startLine="104" startPosition="32" endLine="105" endPosition="75" />
+    <scopeInfo nodeId="3719390199793466203" fileName="ModelCheckerExecutor.java" startLine="104" startPosition="32" endLine="105" endPosition="82" />
     <scopeInfo nodeId="3719390199793466197" fileName="ModelCheckerExecutor.java" startLine="106" startPosition="20" endLine="107" endPosition="24" />
     <scopeInfo nodeId="3719390199793466278" fileName="ModelCheckerExecutor.java" startLine="130" startPosition="32" endLine="131" endPosition="33" />
     <scopeInfo nodeId="3719390199793466286" fileName="ModelCheckerExecutor.java" startLine="135" startPosition="37" endLine="136" endPosition="20" />
@@ -733,7 +733,7 @@
     </scopeInfo>
     <unitInfo nodeId="3719390199793466169" fileName="ModelCheckerExecutor.java" startLine="90" startPosition="155" endLine="94" endPosition="9" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor$3" />
     <unitInfo nodeId="3719390199793466155" fileName="ModelCheckerExecutor.java" startLine="94" startPosition="21" endLine="98" endPosition="9" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor$3" />
-    <unitInfo nodeId="3719390199793466057" fileName="ModelCheckerExecutor.java" startLine="62" startPosition="51" endLine="67" endPosition="9" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor$2" />
+    <unitInfo nodeId="3719390199793466057" fileName="ModelCheckerExecutor.java" startLine="62" startPosition="58" endLine="67" endPosition="9" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor$2" />
     <unitInfo nodeId="3719390199793466097" fileName="ModelCheckerExecutor.java" startLine="77" startPosition="68" endLine="82" endPosition="9" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor$3" />
     <unitInfo nodeId="3719390199793466353" fileName="ModelCheckerExecutor.java" startLine="167" startPosition="27" endLine="175" endPosition="5" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor$4" />
     <unitInfo nodeId="3719390199793466191" fileName="ModelCheckerExecutor.java" startLine="101" startPosition="48" endLine="110" endPosition="9" unitName="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerExecutor$3" />

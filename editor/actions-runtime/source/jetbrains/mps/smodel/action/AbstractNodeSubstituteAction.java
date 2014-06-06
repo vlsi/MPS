@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -196,7 +197,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (context != null) {
       context.executeCommand(runnable);
     } else {
-      ModelAccess.instance().executeCommand(runnable, null /* TODO ? */);
+      ((ModelCommandProjectExecutor) ModelAccess.instance()).executeCommand(runnable, null /* TODO ? */);
     }
 
     return newNode[0];

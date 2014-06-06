@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.ThreadUtils;
 import java.awt.Frame;
 import com.intellij.openapi.progress.TaskInfo;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -59,7 +59,7 @@ public class ModelCheckerExecutor {
     Runnable afterFinish = new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
+        ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
           @Override
           public void run() {
             finishCommand(cmd);
@@ -102,7 +102,7 @@ public class ModelCheckerExecutor {
           @Override
           public void runCommand(Runnable cmd) {
             if (spawnCommands) {
-              ModelAccess.instance().runCommandInEDT(cmd, getMPSProject());
+              ProjectModelAccess.instance().runCommandInEDT(cmd, getMPSProject());
             } else {
               cmd.run();
             }

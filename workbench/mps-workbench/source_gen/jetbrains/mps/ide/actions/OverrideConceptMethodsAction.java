@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
@@ -59,7 +60,7 @@ public class OverrideConceptMethodsAction {
     if (dialog.isOK()) {
       final Iterable<SNodeReference> selectedElements = (Iterable<SNodeReference>) dialog.getSelectedElements();
 
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {

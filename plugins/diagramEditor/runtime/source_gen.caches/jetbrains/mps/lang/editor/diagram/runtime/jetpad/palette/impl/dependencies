@@ -39,7 +39,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ProjectModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionWrapper" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -91,7 +91,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ProjectModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionWrapper" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * Igor Alshannikov
@@ -79,7 +80,7 @@ public abstract class SReferenceBase extends SReference {
     if (myImmatureTargetNode != null) {
       return;
     }
-    myImmatureTargetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(this);
+    myImmatureTargetNode = SReference.getTargetNodeSilently(this);
     if (myImmatureTargetNode != null) {
       ImmatureReferences.getInstance().add(this);
     }
@@ -90,7 +91,8 @@ public abstract class SReferenceBase extends SReference {
 
     ImmatureReferences.getInstance().remove(this);
     SNode sourceNode = getSourceNode();
-    if (!org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(sourceNode, MPSModuleRepository.getInstance())) return myImmatureTargetNode == null;
+    SModel sourceModel = sourceNode.getModel();
+    if (sourceModel == null || sourceModel.getRepository() == null) return myImmatureTargetNode == null;
 
     if (sourceNode.getModel() != null && myImmatureTargetNode.getModel() != null) {
       // convert 'young' reference to 'mature'
@@ -118,7 +120,18 @@ public abstract class SReferenceBase extends SReference {
     myImmatureTargetNode = null;
     adjustMature(immatureNode);
     setTargetSModelReference(immatureNode.getModel().getReference());
-    setResolveInfo(jetbrains.mps.util.SNodeOperations.getResolveInfo(immatureNode));
+    setResolveInfo(getResolveInfo(immatureNode));
+  }
+
+  @Nullable
+  protected String getResolveInfo(SNode immatureNode) {
+    // FIXME need a better approach to keep names of predefined attributes;
+    // however, a dependency to generated kernel module is an overkill for the sake of few strings
+    String value = SNodeAccessUtil.getProperty(immatureNode, "resolveInfo");
+    if (value != null) {
+      return value;
+    }
+    return immatureNode.getName();
   }
 
   protected void adjustMature(SNode immatureTarget) {

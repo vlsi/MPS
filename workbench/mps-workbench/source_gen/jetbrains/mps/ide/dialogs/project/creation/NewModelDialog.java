@@ -46,6 +46,7 @@ import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.Iterator;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.SModuleOperations;
@@ -281,7 +282,7 @@ public class NewModelDialog extends DialogWrapper {
       }
     }
 
-    myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+    myResult = ProjectModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
       @Override
       public SModel compute() {
         String fqName = getFqName();

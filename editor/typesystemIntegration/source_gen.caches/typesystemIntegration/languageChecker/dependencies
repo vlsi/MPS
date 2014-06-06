@@ -22,6 +22,7 @@
     <classNode dependClassName="jetbrains.mps.resolve.ReferenceResolverUtils" />
     <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ProjectModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />

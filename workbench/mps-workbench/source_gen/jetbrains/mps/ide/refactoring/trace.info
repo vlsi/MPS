@@ -516,7 +516,7 @@
       <varInfo nodeId="100674607554485392" varName="renamed" />
     </scopeInfo>
     <scopeInfo nodeId="100674607554485383" fileName="RenameSolutionDialog.java" startLine="23" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="100674607554485399" fileName="RenameSolutionDialog.java" startLine="25" startPosition="73" endLine="36" endPosition="5" unitName="jetbrains.mps.ide.refactoring.RenameSolutionDialog$1" />
+    <unitInfo nodeId="100674607554485399" fileName="RenameSolutionDialog.java" startLine="25" startPosition="80" endLine="36" endPosition="5" unitName="jetbrains.mps.ide.refactoring.RenameSolutionDialog$1" />
     <unitInfo nodeId="2482360940803573298" fileName="RenameSolutionDialog.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameSolutionDialog" />
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/2864517217433560582">

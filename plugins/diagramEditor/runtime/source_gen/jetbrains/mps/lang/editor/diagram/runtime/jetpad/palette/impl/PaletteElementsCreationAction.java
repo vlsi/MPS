@@ -15,7 +15,7 @@ import jetbrains.jetpad.projectional.view.ViewEvents;
 import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 
 public class PaletteElementsCreationAction extends AbstractPaletteCreationAction {
   private EditorContext myEditorContext;
@@ -66,7 +66,7 @@ public class PaletteElementsCreationAction extends AbstractPaletteCreationAction
           if (!(result[0])) {
             return;
           }
-          ModelAccess.instance().executeCommand(new Runnable() {
+          ProjectModelAccess.instance().executeCommand(new Runnable() {
             public void run() {
               mySubstituteAction.substitute(myEditorContext, "");
             }

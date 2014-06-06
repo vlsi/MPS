@@ -9,13 +9,14 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.ThreadUtils;
 import java.awt.Frame;
 import com.intellij.openapi.progress.TaskInfo;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
@@ -57,7 +58,7 @@ public class MigrationScriptExecutor {
     Runnable afterFinish = new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
+        ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
           @Override
           public void run() {
             finishCommand(cmd);
@@ -108,7 +109,7 @@ public class MigrationScriptExecutor {
           @Override
           public void runCommand(Runnable cmd) {
             if (spawnCommands) {
-              ModelAccess.instance().runCommandInEDT(cmd, getMPSProject());
+              ProjectModelAccess.instance().runCommandInEDT(cmd, getMPSProject());
             } else {
               cmd.run();
             }

@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -60,7 +61,7 @@ class IntelligentNodeMover {
   }
 
   void move() {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
       @Override
       public void run() {
         if (!findAppropriateNode(myComponent.getSelectedNodes())) {

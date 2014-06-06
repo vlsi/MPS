@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import javax.swing.JOptionPane;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -39,7 +40,7 @@ public class GoToEditorDeclarationHelper {
     if (option != JOptionPane.YES_OPTION) {
       return null;
     }
-    return ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
+    return ProjectModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
       @Override
       public SNode compute() {
         return GoToEditorDeclarationHelper.createEditorDeclaration(concept, languageEditor);

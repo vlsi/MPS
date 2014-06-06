@@ -531,6 +531,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.ProjectModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

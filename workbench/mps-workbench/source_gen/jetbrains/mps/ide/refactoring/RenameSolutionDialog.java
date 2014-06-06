@@ -6,7 +6,7 @@ import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.Solution;
 import com.intellij.openapi.project.Project;
 import java.awt.HeadlessException;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.refactoring.renameSolution.SolutionRenamer;
@@ -22,7 +22,7 @@ public class RenameSolutionDialog extends RenameDialog {
 
   @Override
   protected void doRefactoringAction() {
-    boolean renamed = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
+    boolean renamed = ProjectModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         final String fqName = getCurrentValue();

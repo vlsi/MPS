@@ -42,7 +42,7 @@ import java.awt.event.MouseEvent;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.event.WindowAdapter;
@@ -358,7 +358,7 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
     if (!((breakpoint instanceof ILocationBreakpoint))) {
       return;
     }
-    ModelAccess.instance().executeCommand(new Runnable() {
+    ProjectModelAccess.instance().executeCommand(new Runnable() {
       @Override
       public void run() {
         SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();

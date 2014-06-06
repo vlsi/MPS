@@ -36,9 +36,11 @@ import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
+import jetbrains.mps.smodel.DefaultModelAccess;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -79,6 +81,9 @@ public final class MPSCore extends ComponentPlugin {
   @Override
   public void init() {
     super.init();
+    if (ModelAccess.instance() == null) {
+      ModelAccess.setInstance(new DefaultModelAccess());
+    }
 
     SNodeAccessUtil.setInstance(new SNodeAccessUtilImpl());
     init(new PersistenceRegistry());

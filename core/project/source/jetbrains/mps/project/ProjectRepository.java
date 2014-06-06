@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -116,17 +117,17 @@ public class ProjectRepository extends SRepositoryBase {
 
     @Override
     public void executeCommand(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runWriteActionInCommand(r, project);
+      ((ModelCommandProjectExecutor) jetbrains.mps.smodel.ModelAccess.instance()).runWriteActionInCommand(r, project);
     }
 
     @Override
     public void executeCommandInEDT(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runCommandInEDT(r, project);
+      ((ModelCommandProjectExecutor) jetbrains.mps.smodel.ModelAccess.instance()).runCommandInEDT(r, project);
     }
 
     @Override
     public void executeUndoTransparentCommand(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runUndoTransparentCommand(r, project);
+      ((ModelCommandProjectExecutor) jetbrains.mps.smodel.ModelAccess.instance()).runUndoTransparentCommand(r, project);
     }
 
     @Override
