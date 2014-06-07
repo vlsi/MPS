@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -656,17 +656,6 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
   public void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
     CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), name, groupId,
         requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-  }
-
-  @Override
-  public void runWriteActionInCommandAsync(final Runnable r, final Project project) {
-    // FIXME
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        runWriteActionInCommand(r, project);
-      }
-    });
   }
 
   @Override

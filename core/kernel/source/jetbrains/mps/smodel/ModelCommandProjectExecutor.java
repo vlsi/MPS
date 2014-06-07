@@ -40,12 +40,6 @@ public interface ModelCommandProjectExecutor extends ModelCommandExecutor {
 
   void runWriteActionInCommand(Runnable r, @Nullable String name, @Nullable Object groupId, boolean requestUndoConfirmation, Project project);
 
-  /**
-   * use runCommandInEDT
-   */
-  @Deprecated
-  void runWriteActionInCommandAsync(Runnable r, Project project);
-
   void runUndoTransparentCommand(Runnable r, Project project);
 
 
