@@ -8,11 +8,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SRepository;
-import java.util.Set;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import java.util.Arrays;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -21,6 +16,7 @@ import java.util.ArrayList;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SModelInternal;
@@ -29,6 +25,9 @@ import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import java.util.Arrays;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class MissingDependenciesFixer {
   private static Logger LOG = LogManager.getLogger(MissingDependenciesFixer.class);
@@ -69,8 +68,6 @@ public class MissingDependenciesFixer {
           LOG.error("Repository is null: " + model.getReference().toString());
           return;
         }
-
-        Set<SModule> unloadedModules = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(module), new EmptyProgressMonitor());
 
         SearchScope moduleScope = module.getScope();
         List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
@@ -123,7 +120,7 @@ public class MissingDependenciesFixer {
           module.addUsedDevkit(ref);
         }
 
-        ClassLoaderManager.getInstance().loadClasses(unloadedModules, new EmptyProgressMonitor());
+        ClassLoaderManager.getInstance().reloadModules(Arrays.asList(module), new EmptyProgressMonitor());
       }
     });
   }

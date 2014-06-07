@@ -15,16 +15,11 @@
  */
 package jetbrains.mps.classloading;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -55,6 +50,23 @@ public class ModuleClassLoadersHolder {
 
   @Nullable
   public ClassLoader getClassLoader(SModule module) {
+    try {
+      return getNonReloadableClassLoader(module);
+    } catch (ClassLoaderNotFoundException e) {
+      // do nothing, there is no non-reloadable facet for this module
+    }
+
+    if (!javaIsCompiledInMps(module)) {
+      // core module, nobody manages class loading for it
+      LOG.warn("Module " + module.getModuleName() + " is not compiled in mps and doesn't have non-reloadable facet");
+      return ClassLoaderManager.class.getClassLoader();
+    }
+
+    return getModuleClassLoader(module);
+  }
+
+  @Nullable
+  private ClassLoader getNonReloadableClassLoader(SModule module) throws ClassLoaderNotFoundException {
     CustomClassLoadingFacet customClassLoadingFacet = module.getFacet(CustomClassLoadingFacet.class);
     if (customClassLoadingFacet != null) {
       if (customClassLoadingFacet.isValid()) {
@@ -64,14 +76,20 @@ public class ModuleClassLoadersHolder {
         return null;
       }
     }
+    throw new ClassLoaderNotFoundException();
+  }
 
-    JavaModuleFacet moduleFacet = module.getFacet(JavaModuleFacet.class);
-    if (moduleFacet != null && !moduleFacet.isCompileInMps()) {
-      // core module
-      LOG.warn("Module " + module.getModuleName() + " is not compiled in mps and doesn't have non-reloadable facet");
-      return ClassLoaderManager.class.getClassLoader();
-    }
-
+  @Nullable
+  private ClassLoader getModuleClassLoader(SModule module) {
     return myClassLoaders.get(module);
   }
+
+  private boolean javaIsCompiledInMps(SModule module) {
+    JavaModuleFacet moduleFacet = module.getFacet(JavaModuleFacet.class);
+    if (moduleFacet == null)
+      return true;
+    return moduleFacet.isCompileInMps();
+  }
+
+  private class ClassLoaderNotFoundException extends Exception {}
 }

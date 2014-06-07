@@ -24,6 +24,9 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
@@ -115,6 +118,20 @@ public class SModuleOperations {
   public static boolean isCompileInIdea(SModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     return facet != null && !facet.isCompileInMps();
+  }
+
+  public static boolean isReloadable(SModule module) {
+    if (module instanceof Language)
+      return true;
+    if (module instanceof Generator)
+      return true;
+
+    if (module instanceof Solution) {
+      Solution solution = (Solution) module;
+      if (solution.getKind() != SolutionKind.NONE)
+        return true;
+    }
+    return false;
   }
 
   public static Set<String> getAllSourcePaths(SModule module) {

@@ -44,7 +44,7 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
   @Override
   public void beforeModuleRemoved(SModule module) {
     LOG.debug("removing " + module);
-    final Set<SModule> unloadedModules = myClassLoaderManager.unloadClasses(Arrays.asList(module), new EmptyProgressMonitor());
+    final Set<SModule> unloadedModules = myClassLoaderManager.unloadModules(Arrays.asList(module), new EmptyProgressMonitor());
 //    loadDeps(module, unloadedModules);
   }
 
@@ -55,7 +55,7 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
       LOG.debug("cannot load module within mps " + module);
       return;
     }
-    final Set<SModule> loadedModules = myClassLoaderManager.loadClasses(Arrays.asList(module), new EmptyProgressMonitor());
+    final Set<SModule> loadedModules = myClassLoaderManager.loadModules(Arrays.asList(module), new EmptyProgressMonitor());
     boolean noModuleHasBeenLoaded = (loadedModules.size() == 0);
     if (noModuleHasBeenLoaded) {
       LOG.debug("the module was not loaded so no need to reload dependencies");
@@ -70,13 +70,13 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
     Set<SModule> modulesToReload = new HashSet<SModule>();
     modulesToReload.addAll(unloadedModules);
     modulesToReload.remove(moduleRemoved);
-    myClassLoaderManager.loadClasses(modulesToReload, new EmptyProgressMonitor());
+    myClassLoaderManager.loadModules(modulesToReload, new EmptyProgressMonitor());
   }
 
   private void reloadDeps(SModule module) {
     Set<SModule> backDependencies = collectBackDependencies(module);
-    myClassLoaderManager.unloadClasses(backDependencies, new EmptyProgressMonitor());
-    myClassLoaderManager.loadClasses(backDependencies, new EmptyProgressMonitor());
+    myClassLoaderManager.unloadModules(backDependencies, new EmptyProgressMonitor());
+    myClassLoaderManager.loadModules(backDependencies, new EmptyProgressMonitor());
   }
 
   private Set<SModule> collectBackDependencies(SModule module) {

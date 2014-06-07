@@ -779,7 +779,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // call super.dependenciesChanged() at the end
 
     // todo: as we haven't dependencies listeners...
-    // todo: maybe add ClassLoaderManager.getInstance().unloadClasses(this module) here
+    // todo: maybe add ClassLoaderManager.getInstance().unloadModules(this module) here
 
     myScope.invalidateCaches();
   }

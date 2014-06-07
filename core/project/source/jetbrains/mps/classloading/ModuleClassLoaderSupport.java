@@ -43,7 +43,7 @@ public class ModuleClassLoaderSupport {
     return new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE);
   }
 
-  // "true" means that only MPS manages classes of this module (not idea plugin)
+  // "true" means that only MPS manages classes of this module (not IDEA plugin)
   // ext point possible here
   static boolean canCreate(SModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);

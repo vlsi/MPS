@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -39,9 +40,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 // Current workflow: before any actions with module leading to the classes invalidation one should do two things:
-// 1) unload modules and remember successfully unloaded modules (@see unloadClasses)
+// 1) unload modules and remember successfully unloaded modules (@see unloadModules)
 // 2) change module(s)
-// 3) load all unloaded modules back (@see loadClasses)
+// 3) load all unloaded modules back (@see loadModules)
 // Main point: modules && modules repository knows nothing about class loading
 //
 // Probably it's better to encapsulate the loading/unloading mechanism in this class, so that users of class only need
@@ -102,24 +103,29 @@ public class ClassLoaderManager implements CoreComponent {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        unloadClasses(myRepository.getModules(), new EmptyProgressMonitor());
+        unloadModules(myRepository.getModules(), new EmptyProgressMonitor());
       }
     });
     stopListening();
     INSTANCE = null;
   }
 
-  // should get true before calling @loadClasses method
-  // todo: should be just MPS_FACET
+  /** main api
+   * should get true before calling @getClass method
+   * returns "true" whenever the module's classes can be managed within the MPS class loading system
+   * TODO: should be just MPS_FACET
+   */
   public boolean canLoad(SModule module) {
-    return ModuleClassLoaderSupport.canCreate(module);
+    return SModuleOperations.isReloadable(module) && ModuleClassLoaderSupport.canCreate(module);
   }
 
   /**
-   * Contract: if we can get a class loader for this module, we will return the corresponding class to the caller
+   * Contract: if the module's classes are managed within MPS, then it will return the class you need
+   * So if @canLoad method returned true, you'll get your class
    */
   @Nullable
   public Class getClass(SModule module, String classFqName) {
+    assertCanLoad(module);
 
     // todo: hack for stubs. stub classes should not be managed by ClassLoaderManager
     if (module instanceof Language) {
@@ -135,7 +141,6 @@ public class ClassLoaderManager implements CoreComponent {
 
     ClassLoader classLoader = getClassLoader(module);
     if (classLoader == null) {
-      if (!canLoad(module)) throw new IllegalArgumentException("The classes of module " + module.getModuleName() + " are managed neither by MPS nor Idea");
       return null;
     }
     try {
@@ -150,19 +155,78 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
+  private void assertCanLoad(SModule module) {
+    if (!canLoad(module)) {
+      throw new IllegalArgumentException("Classes of the module " + module.getModuleName() + " are unavailable within the MPS class loading system");
+    }
+  }
+
+  /**
+   * Returns a class loader associated with the module.
+   * Also can return a class loader of the IDEA plugin which manages the module's classes
+   * Use it if you want to get a class from the module with IdeaPluginFacet
+   */
   @Nullable
   public synchronized ClassLoader getClassLoader(SModule module) {
     return myClassLoadersHolder.getClassLoader(module);
   }
 
-  // todo: conceal these two methods (should not be public)
-  public Set<SModule> unloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
-    LOG.assertLog(ModelAccess.instance().canWrite(), "Should be able to write models");
+  @NotNull
+  private ModuleClassLoader createClassLoader(SModule module) {
+    ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module);
+    ModuleClassLoader classLoader = new ModuleClassLoader(this, support);
+    myClassLoadersHolder.loadClassLoader(module, classLoader);
+    return classLoader;
+  }
+
+  // TODO: Conceal these two methods (should not be public)
+  /**
+   * Creates ModuleClassLoaders for all the {@code modules}.
+   * The {@code modules} need to be all manageable within the MPS class loading system
+   * (means {@link #canLoad(SModule)} would return true for each of them)
+   */
+  @NotNull
+  public Set<SModule> loadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+    Set<SModule> modulesToLoad = new HashSet<SModule>();
+    for (SModule module : modules) {
+      assert !(module.getRepository() == null) : "Cannot get class from disposed module";
+      if (getClassLoader(module) != null) {
+        LOG.error("Module " + module + " classes are already being managed by " + getClassLoader(module) + " class loader", new Throwable());
+      }
+//      if (ModuleClassLoaderSupport.canCreate(module)) {
+      if (!canLoad(module)) throw new IllegalArgumentException("Contract is broken: canLoad method returned false");
+      modulesToLoad.add(module);
+//      }
+    }
+
+    if (modulesToLoad.isEmpty()) return modulesToLoad;
+
+    for (SModule module : modulesToLoad) {
+      createClassLoader(module);
+    }
+    monitor.start("Load classes...", 1);
+    try {
+      myBroadCaster.onLoad(modulesToLoad);
+      monitor.advance(1);
+    } finally {
+      monitor.done();
+    }
+
+    return modulesToLoad;
+  }
+
+  /**
+   * Removes ModuleClassLoaders for all the {@code modules}.
+   * The {@code modules} need to be all manageable within the MPS class loading system
+   * (means {@link #canLoad(SModule)} would return true for each of them)
+   */
+  @NotNull
+  public Set<SModule> unloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+    ModelAccess.assertLegalWrite();
     Set<SModule> modulesToUnload = new HashSet<SModule>();
     for (SModule module : modules) {
-//      if (SModuleOperations.isCompileInMps(module)) {
-        modulesToUnload.add(module);
-//      }
+      assertCanLoad(module);
+      modulesToUnload.add(module);
     }
 
     monitor.start("Unloading classes...", 2);
@@ -195,7 +259,7 @@ public class ClassLoaderManager implements CoreComponent {
   public Set<SModule> loadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
-      assert (module.getRepository() != null) : "Cannot get class from disposed module";
+      assert module.getRepository() != null : "Cannot get class from disposed module";
       if (getClassLoader(module) != null) {
         LOG.error("Module " + module + " classes are already being managed by " + getClassLoader(module) + " class loader", new Throwable());
       }
@@ -229,7 +293,7 @@ public class ClassLoaderManager implements CoreComponent {
         modulesToLoad.add(module);
       }
     }
-    loadClasses(modulesToLoad, monitor);
+    loadModules(modulesToLoad, monitor);
   }
 
   //---------------reload handlers------------------
@@ -241,21 +305,21 @@ public class ClassLoaderManager implements CoreComponent {
     myBroadCaster.removeClassesHandler(handler);
   }
 
-  //---------------private part---------------------
-  private ModuleClassLoader createClassLoader(SModule module) {
-    ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module);
-    ModuleClassLoader classLoader = new ModuleClassLoader(this, support);
-    myClassLoadersHolder.loadClassLoader(module, classLoader);
-    return classLoader;
-  }
-
-  // Suggesting that this method should be in the main api of this class. Eager to remove public access to loadClasses/unloadClasses
-  // methods, because it violates the inner organisation of class loading.
-  public void reloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+  /**
+   * Returns modules which were reloaded successfully
+   * AlexP: Suggesting that this method should be in the main api of this class. Eager to remove public access to loadModules/unloadModules
+   * methods, because it violates the inner organisation of class loading.
+   */
+  public Set<SModule> reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     try {
-      monitor.start("Reload classes...", 2);
-      unloadClasses(modules, monitor.subTask(1));
-      loadAllPossibleClasses(monitor.subTask(1));
+      monitor.start("Reloading modules' class loaders...", 2);
+      Set<SModule> modulesToReload = new HashSet<SModule>();
+      for (SModule module : modules) {
+        if (canLoad(module))
+          modulesToReload.add(module);
+      }
+      Set<SModule> unloadedModules = unloadModules(modulesToReload, monitor.subTask(1));
+      return loadModules(unloadedModules, monitor.subTask(1));
     } finally {
       monitor.done();
     }
@@ -271,17 +335,18 @@ public class ClassLoaderManager implements CoreComponent {
 
   //---------------deprecated part------------------
   // TODO: there are many users of this method. It is excessive action in the most of the cases.
-  // Usually reloading only the "dirty" modules is enough. Review usages, replace the calls with the calls of reloadClasses method.
+  // Usually reloading only the "dirty" modules is enough. Review usages, replace the calls with the calls of reloadModules method.
   @Deprecated
   @ToRemove(version = 3.2)
   public void reloadAll(@NotNull ProgressMonitor monitor) {
-    reloadClasses(myRepository.getModules(), monitor);
+    reloadModules(myRepository.getModules(), monitor);
+//    loadAllPossibleClasses(new EmptyProgressMonitor());
   }
 
   @Deprecated
   @ToRemove(version = 3.2)
   public void unloadAll(@NotNull ProgressMonitor monitor) {
-    unloadClasses(myRepository.getModules(), monitor);
+    unloadModules(myRepository.getModules(), monitor);
   }
 
   @Deprecated

@@ -35,7 +35,6 @@ import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
@@ -295,7 +294,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
         final ClassLoaderManager manager = ClassLoaderManager.getInstance();
         manager.stopListening();
         Collection<SModule> projectModules = ModuleRepositoryFacade.getInstance().getModules(StandaloneMPSProject.this, SModule.class);
-        manager.unloadClasses(projectModules, new EmptyProgressMonitor());
+        manager.unloadModules(projectModules, new EmptyProgressMonitor());
         ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
         manager.startListening();
         CleanupManager.getInstance().cleanup();

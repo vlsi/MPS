@@ -61,7 +61,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
   }
 
   public static class Target_reloadClasses implements ITargetEx2 {
-    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.ReloadClasses.reloadClasses");
+    private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.ReloadClasses.reloadModules");
 
     public Target_reloadClasses() {
     }
@@ -83,8 +83,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
               monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
               ModelAccess.instance().requireWrite(new Runnable() {
                 public void run() {
-                  Set<SModule> unloadedClasses = ClassLoaderManager.getInstance().unloadClasses(toReload, new EmptyProgressMonitor());
-                  ClassLoaderManager.getInstance().loadClasses(unloadedClasses, new EmptyProgressMonitor());
+                  ClassLoaderManager.getInstance().reloadModules(toReload, new EmptyProgressMonitor());
                 }
               });
               monitor.currentProgress().advanceWork("Reloading classes", 1);
