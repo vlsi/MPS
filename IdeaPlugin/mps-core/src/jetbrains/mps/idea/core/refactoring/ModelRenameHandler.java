@@ -36,6 +36,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -102,7 +103,7 @@ public class ModelRenameHandler implements RenameHandler {
         }
       });
       final ModelRenamer renamer = new ModelRenamer(modelDescriptor, targetFqName.get(), !(result.getSecond()));
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
         @Override
         public void run() {
           renamer.rename();

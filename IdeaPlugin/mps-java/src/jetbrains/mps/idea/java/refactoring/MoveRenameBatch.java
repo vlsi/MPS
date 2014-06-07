@@ -12,7 +12,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -146,7 +146,7 @@ public class MoveRenameBatch implements ProjectComponent {
     ReloadManager.getInstance().flush();
     UndoManager.getInstance(myProject).undoableActionPerformed(myUndoRedoSupport);
 
-    ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+    ProjectModelAccess.instance().runUndoTransparentCommand(new Runnable() {
       @Override
       public void run() {
 

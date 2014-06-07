@@ -49,6 +49,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelOperations;
@@ -112,7 +113,7 @@ public class NewRootAction extends AnAction {
       @Override
       protected void doOKAction() {
         final SNodeReference conceptPointer = myConceptFqNameToNodePointerMap.get(getKindCombo().getSelectedName());
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
           @Override
           public void run() {
             SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
@@ -148,7 +149,7 @@ public class NewRootAction extends AnAction {
     }
     final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
-    myModelDescriptor = (EditableSModel) ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+    myModelDescriptor = (EditableSModel) ProjectModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
       @Override
       public SModel compute() {
         ModelRoot useModelRoot = null;

@@ -46,6 +46,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
@@ -155,7 +156,7 @@ public class NewModelAction extends AnAction {
           return;
         }
 
-        final SModel newModel = ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+        final SModel newModel = ProjectModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
           @Override
           public SModel compute() {
             // TODO create model in myModelRoot/mySourceRoot, fix literal

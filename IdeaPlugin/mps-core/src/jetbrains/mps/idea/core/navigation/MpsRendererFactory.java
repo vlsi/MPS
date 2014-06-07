@@ -22,7 +22,6 @@ import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
 
@@ -56,7 +55,7 @@ public class MpsRendererFactory extends ModuleRendererFactory {
       final Component component = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
       if (value instanceof BaseNodePointerItem) {
         final BaseNodePointerItem item = (BaseNodePointerItem) value;
-        SModule module = ((SNodePointer) item.getNodePointer()).getModel().getModule();
+        SModule module = item.getNode().getModel().getModule();
         if (module instanceof Solution) {
           setIcon(FileIcons.SOLUTION_ICON);
         } else if (module instanceof Language) {
