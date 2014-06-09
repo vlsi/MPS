@@ -57,13 +57,22 @@ public interface ModelAccess {
 
   /**
    * Modifications to models can only be performed from within managed actions, which hold the appropriate write lock.
-   * The method obtains such a lock and executes the provided action on the EDT UI thread. Inside the action it is safe to
-   * touch any UI elements and perform other EDT-bound actions of the IntelliJ platform.
+   * The method obtains such a lock and executes the provided action <em>asynchronously</em> on the EDT UI thread.
+   * Inside the action it is safe to touch any UI elements and perform other EDT-bound actions of the IntelliJ platform.
    */
   void runWriteInEDT(Runnable r);
 
+  /**
+   * Write action executed with respect to platform undo mechanism.
+   * This method shall be invoked from EDT thread only.
+   * Unlike {@link #executeCommandInEDT(Runnable)}, this method executes synchronously
+   */
   void executeCommand(Runnable r);
 
+  /**
+   * Write action executed with respect to platform undo mechanism, runs asynchronously from EDT thread.
+   * This method may be invoked from any thread.
+   */
   void executeCommandInEDT(Runnable r);
 
   void executeUndoTransparentCommand(Runnable r);

@@ -35,11 +35,37 @@ public interface ModelCommandExecutor {
 
   void checkWriteAccess();
 
+  // read
+
   void runReadAction(Runnable r);
+
+  <T> T runReadAction(Computable<T> c);
+
+  void runReadInEDT(Runnable r);
+
+  // write
 
   void runWriteAction(Runnable r);
 
+  <T> T runWriteAction(Computable<T> c);
+
   void runWriteInEDT(Runnable r);
+
+  <T> T runReadInWriteAction(Computable<T> c);
+
+  void writeFilesInEDT(@NotNull final Runnable action);
+
+  /**
+   * use runWriteActionInCommand(final Computable<T> c, Project project)
+   */
+  @Deprecated
+  <T> T runWriteActionInCommand(Computable<T> c);
+
+  /**
+   * use runWriteActionInCommand(Runnable r, Project project)
+   */
+  @Deprecated
+  void runWriteActionInCommand(Runnable r);
 
   /**
    * Enables canRead() without actually acquiring the read lock (screw you, ReadWriteLock!).
@@ -53,31 +79,11 @@ public interface ModelCommandExecutor {
 
   boolean isInEDT();
 
-  <T> T runReadAction(Computable<T> c);
-
-  void writeFilesInEDT(@NotNull final Runnable action);
-
   public interface RunnableWithProgress {
+
     void run(@NotNull ProgressMonitor monitor);
+
   }
-
-  <T> T runWriteAction(Computable<T> c);
-
-  <T> T runReadInWriteAction(Computable<T> c);
-
-  void runReadInEDT(Runnable r);
-
-  /**
-   * use runWriteActionInCommand(final Computable<T> c, Project project)
-   */
-  @Deprecated
-  <T> T runWriteActionInCommand(Computable<T> c);
-
-  /**
-   * use runWriteActionInCommand(Runnable r, Project project)
-   */
-  @Deprecated
-  void runWriteActionInCommand(Runnable r);
 
   void runUndoTransparentCommand(Runnable r);
 
