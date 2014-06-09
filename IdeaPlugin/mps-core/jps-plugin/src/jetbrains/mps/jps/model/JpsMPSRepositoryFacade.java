@@ -98,11 +98,11 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
     if (isInitialized) {
       return;
     }
+    initMPS();
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
         long start = System.nanoTime();
-        initMPS();
         initRepository(context,
           context.getBuilderParameter(MPSMakeConstants.MPS_LANGUAGES.toString()),
           context.getBuilderParameter(MPSMakeConstants.MPS_REPOSITORY.toString()));
