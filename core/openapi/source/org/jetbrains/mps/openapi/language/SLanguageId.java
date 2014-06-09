@@ -16,5 +16,5 @@
 package org.jetbrains.mps.openapi.language;
 
 public interface SLanguageId {
-  public long getId();
+  public java.util.UUID getId();
 }

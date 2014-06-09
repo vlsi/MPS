@@ -17,14 +17,16 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.language.SLanguageId;
 
-public final class SLanguageIdImpl implements SLanguageId {
-  private final long myId;
+import java.util.UUID;
 
-  public SLanguageIdImpl(long id) {
+public final class SLanguageIdImpl implements SLanguageId {
+  private final UUID myId;
+
+  public SLanguageIdImpl(UUID id) {
     myId = id;
   }
 
-  public long getId() {
+  public UUID getId() {
     return myId;
   }
 
@@ -35,13 +37,13 @@ public final class SLanguageIdImpl implements SLanguageId {
 
     SLanguageIdImpl that = (SLanguageIdImpl) o;
 
-    if (myId != that.myId) return false;
+    if (myId != null ? !myId.equals(that.myId) : that.myId != null) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    return (int) (myId ^ (myId >>> 32));
+    return myId != null ? myId.hashCode() : 0;
   }
 }
