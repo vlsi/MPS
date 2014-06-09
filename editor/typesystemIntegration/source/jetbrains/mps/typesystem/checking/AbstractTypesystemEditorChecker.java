@@ -24,18 +24,16 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
-import jetbrains.mps.smodel.ModelCommandProjectExecutor;
-import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -155,12 +153,12 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
               return;
             }
 
-            ((ModelCommandProjectExecutor) ModelAccess.instance()).runUndoTransparentCommand(new Runnable() {
+            p.getModelAccess().executeUndoTransparentCommand(new Runnable() {
               @Override
               public void run() {
                 intention.execute(quickFixNode);
               }
-            }, p);
+            });
 
             editorContext.flushEvents();
             if (editorContext.getSelectionManager().getSelection() == null) {

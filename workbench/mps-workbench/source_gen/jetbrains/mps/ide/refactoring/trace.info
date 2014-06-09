@@ -483,41 +483,41 @@
     <unitInfo nodeId="2482360940803571985" fileName="RenameModelDialog.java" startLine="24" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameModelDialog" />
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/2482360940803573298">
-    <nodeInfo nodeId="2482360940803573307" fileName="RenameSolutionDialog.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolution" />
-    <nodeInfo nodeId="100674607554478437" fileName="RenameSolutionDialog.java" startLine="17" startPosition="92" endLine="18" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2482360940803573320" fileName="RenameSolutionDialog.java" startLine="18" startPosition="57" endLine="19" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2482360940803573324" fileName="RenameSolutionDialog.java" startLine="19" startPosition="26" endLine="20" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="100674607554485405" fileName="RenameSolutionDialog.java" startLine="27" startPosition="32" endLine="28" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="100674607554485419" fileName="RenameSolutionDialog.java" startLine="29" startPosition="82" endLine="30" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="100674607554485422" fileName="RenameSolutionDialog.java" startLine="30" startPosition="50" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="100674607554485424" fileName="RenameSolutionDialog.java" startLine="32" startPosition="9" endLine="33" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="100674607554485431" fileName="RenameSolutionDialog.java" startLine="33" startPosition="57" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="100674607554485390" fileName="RenameSolutionDialog.java" startLine="36" startPosition="13" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="100674607554485436" fileName="RenameSolutionDialog.java" startLine="37" startPosition="0" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="100674607554485388" fileName="RenameSolutionDialog.java" startLine="39" startPosition="18" endLine="40" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="100674607554485438" fileName="RenameSolutionDialog.java" startLine="38" startPosition="16" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="100674607554485411" fileName="RenameSolutionDialog.java" startLine="28" startPosition="48" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2482360940803573310" fileName="RenameSolutionDialog.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameSolutionDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/project/Solution;)V" />
-    <nodeInfo nodeId="100674607554485401" fileName="RenameSolutionDialog.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="100674607554485391" fileName="RenameSolutionDialog.java" startLine="24" startPosition="40" endLine="36" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="100674607554485383" fileName="RenameSolutionDialog.java" startLine="23" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
-    <scopeInfo nodeId="100674607554485441" fileName="RenameSolutionDialog.java" startLine="39" startPosition="18" endLine="40" endPosition="34" />
-    <scopeInfo nodeId="100674607554485418" fileName="RenameSolutionDialog.java" startLine="29" startPosition="82" endLine="31" endPosition="23" />
-    <scopeInfo nodeId="2482360940803573317" fileName="RenameSolutionDialog.java" startLine="17" startPosition="92" endLine="20" endPosition="32" />
-    <scopeInfo nodeId="2482360940803573310" fileName="RenameSolutionDialog.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
+    <nodeInfo nodeId="2482360940803573307" fileName="RenameSolutionDialog.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolution" />
+    <nodeInfo nodeId="100674607554478437" fileName="RenameSolutionDialog.java" startLine="18" startPosition="92" endLine="19" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2482360940803573320" fileName="RenameSolutionDialog.java" startLine="19" startPosition="57" endLine="20" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2482360940803573324" fileName="RenameSolutionDialog.java" startLine="20" startPosition="26" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="100674607554485405" fileName="RenameSolutionDialog.java" startLine="28" startPosition="32" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="100674607554485419" fileName="RenameSolutionDialog.java" startLine="30" startPosition="82" endLine="31" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="100674607554485422" fileName="RenameSolutionDialog.java" startLine="31" startPosition="50" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="100674607554485424" fileName="RenameSolutionDialog.java" startLine="33" startPosition="9" endLine="34" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="100674607554485431" fileName="RenameSolutionDialog.java" startLine="34" startPosition="57" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="100674607554485390" fileName="RenameSolutionDialog.java" startLine="37" startPosition="7" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="100674607554485436" fileName="RenameSolutionDialog.java" startLine="38" startPosition="0" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="100674607554485388" fileName="RenameSolutionDialog.java" startLine="40" startPosition="18" endLine="41" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="100674607554485438" fileName="RenameSolutionDialog.java" startLine="39" startPosition="16" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="100674607554485411" fileName="RenameSolutionDialog.java" startLine="29" startPosition="48" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2482360940803573310" fileName="RenameSolutionDialog.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameSolutionDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/project/Solution;)V" />
+    <nodeInfo nodeId="100674607554485401" fileName="RenameSolutionDialog.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="100674607554485391" fileName="RenameSolutionDialog.java" startLine="25" startPosition="40" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="100674607554485383" fileName="RenameSolutionDialog.java" startLine="24" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRefactoringAction#()V" />
+    <scopeInfo nodeId="100674607554485441" fileName="RenameSolutionDialog.java" startLine="40" startPosition="18" endLine="41" endPosition="34" />
+    <scopeInfo nodeId="100674607554485418" fileName="RenameSolutionDialog.java" startLine="30" startPosition="82" endLine="32" endPosition="23" />
+    <scopeInfo nodeId="2482360940803573317" fileName="RenameSolutionDialog.java" startLine="18" startPosition="92" endLine="21" endPosition="32" />
+    <scopeInfo nodeId="2482360940803573310" fileName="RenameSolutionDialog.java" startLine="18" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="5768510246901631387" varName="project" />
       <varInfo nodeId="2482360940803573315" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="100674607554485404" fileName="RenameSolutionDialog.java" startLine="27" startPosition="32" endLine="34" endPosition="20">
+    <scopeInfo nodeId="100674607554485404" fileName="RenameSolutionDialog.java" startLine="28" startPosition="32" endLine="35" endPosition="20">
       <varInfo nodeId="100674607554485406" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="100674607554485401" fileName="RenameSolutionDialog.java" startLine="26" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="100674607554485386" fileName="RenameSolutionDialog.java" startLine="24" startPosition="40" endLine="41" endPosition="5">
+    <scopeInfo nodeId="100674607554485401" fileName="RenameSolutionDialog.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="100674607554485386" fileName="RenameSolutionDialog.java" startLine="25" startPosition="40" endLine="42" endPosition="5">
       <varInfo nodeId="100674607554485392" varName="renamed" />
     </scopeInfo>
-    <scopeInfo nodeId="100674607554485383" fileName="RenameSolutionDialog.java" startLine="23" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="100674607554485399" fileName="RenameSolutionDialog.java" startLine="25" startPosition="80" endLine="36" endPosition="5" unitName="jetbrains.mps.ide.refactoring.RenameSolutionDialog$1" />
-    <unitInfo nodeId="2482360940803573298" fileName="RenameSolutionDialog.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameSolutionDialog" />
+    <scopeInfo nodeId="100674607554485383" fileName="RenameSolutionDialog.java" startLine="24" startPosition="0" endLine="44" endPosition="0" />
+    <unitInfo nodeId="100674607554485399" fileName="RenameSolutionDialog.java" startLine="26" startPosition="107" endLine="37" endPosition="5" unitName="jetbrains.mps.ide.refactoring.RenameSolutionDialog$1" />
+    <unitInfo nodeId="2482360940803573298" fileName="RenameSolutionDialog.java" startLine="15" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.refactoring.RenameSolutionDialog" />
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/2864517217433560582">
     <nodeInfo nodeId="790150688982649126" fileName="SModelReferenceDialog.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFACTORING_NAME" />

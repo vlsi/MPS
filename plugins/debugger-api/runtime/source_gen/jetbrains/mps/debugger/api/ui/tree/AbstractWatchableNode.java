@@ -7,9 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.ProjectModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 
 /*package*/ abstract class AbstractWatchableNode extends MPSTreeNode {
@@ -36,12 +35,13 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
     final Project project = getProject();
     final IOperationContext context = getOperationContext();
     if (project != null && context != null) {
-      ProjectModelAccess.instance().executeCommand(new Runnable() {
+      // [artem] why does it open node with a command?! 
+      ProjectHelper.getModelAccess(project).executeCommand(new Runnable() {
         @Override
         public void run() {
           NavigationSupport.getInstance().openNode(context, myNode, focus, select);
         }
-      }, project.getComponent(MPSProject.class));
+      });
     }
   }
 

@@ -38,6 +38,7 @@ import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelCommandProjectExecutor;
+import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
@@ -461,7 +462,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
           return getCellId() + "_" + getSNode().getNodeId().toString();
         }
       });
-      ((ModelCommandProjectExecutor) ModelAccess.instance()).runWriteActionInCommand(new Runnable() {
+      ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
         @Override
         public void run() {
           if (processMutableKeyTyped(keyEvent, allowErrors)) {

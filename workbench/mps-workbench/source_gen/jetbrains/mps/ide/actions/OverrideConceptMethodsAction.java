@@ -7,12 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
@@ -39,7 +37,7 @@ public class OverrideConceptMethodsAction {
     final Wrappers._T<SNode> contextMethod = new Wrappers._T<SNode>();
     final Wrappers._T<SNodeReference[]> methods = new Wrappers._T<SNodeReference[]>();
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         contextClass.value = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
         contextMethod.value = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", true, false);
@@ -60,7 +58,7 @@ public class OverrideConceptMethodsAction {
     if (dialog.isOK()) {
       final Iterable<SNodeReference> selectedElements = (Iterable<SNodeReference>) dialog.getSelectedElements();
 
-      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+      myProject.getModelAccess().executeCommandInEDT(new Runnable() {
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {
@@ -85,7 +83,7 @@ public class OverrideConceptMethodsAction {
           myEditorContext.flushEvents();
           myEditorContext.getSelectionManager().setSelection(nodeToSelect);
         }
-      }, myProject);
+      });
     }
   }
 }

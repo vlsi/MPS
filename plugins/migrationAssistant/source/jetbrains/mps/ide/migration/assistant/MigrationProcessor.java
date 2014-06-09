@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,8 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.actions.LabelledAnchor;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -98,7 +96,7 @@ public class MigrationProcessor extends AbstractProjectComponent {
                 if (cmd) {
                   cmdRunnable.run();
                 } else {
-                  ModelAccess.instance().runWriteActionInCommand(cmdRunnable);
+                  ProjectHelper.getModelAccess(myProject).executeCommand(cmdRunnable);
                 }
               }
             });
@@ -111,7 +109,7 @@ public class MigrationProcessor extends AbstractProjectComponent {
         }
       }
     } finally {
-      runCommand(new Runnable() {
+      ProjectHelper.getModelAccess(myProject).executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
           myFinished.set(true);
@@ -127,10 +125,6 @@ public class MigrationProcessor extends AbstractProjectComponent {
 
   public void removeCallback(Callback callback) {
     myCallbacks.remove(callback);
-  }
-
-  private void runCommand(Runnable cmdRunnable) {
-    ProjectModelAccess.instance().runCommandInEDT(cmdRunnable, myProject.getComponent(MPSProject.class));
   }
 
   private void init() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,21 +30,17 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -56,7 +52,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import javax.swing.tree.TreeNode;
@@ -147,7 +145,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
         for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
           if (ModelConstraints.canBeRoot(NameUtil.nodeFQName(conceptDeclaration), modelDescriptor, null)) {
-            add(new NewRootNodeAction(new jetbrains.mps.smodel.SNodePointer(conceptDeclaration), modelDescriptor));
+            add(new NewRootNodeAction(conceptDeclaration, modelDescriptor));
           }
         }
 
@@ -186,7 +184,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       for (SNode conceptDeclaration : language.getConceptDeclarations()) {
         if (ModelConstraints.canBeRoot(NameUtil.nodeFQName(conceptDeclaration), modelDescriptor, null)) {
-          langRootsGroup.add(new NewRootNodeAction(new jetbrains.mps.smodel.SNodePointer(conceptDeclaration), modelDescriptor));
+          langRootsGroup.add(new NewRootNodeAction(conceptDeclaration, modelDescriptor));
         }
       }
       if (!plain) {
@@ -208,16 +206,11 @@ public class CreateRootNodeGroup extends BaseGroup {
     private final SNodeReference myNodeConcept;
     private final SModel myModelDescriptor;
 
-    public NewRootNodeAction(final SNodeReference nodeConcept, SModel modelDescriptor) {
-      super(NodePresentationUtil.matchingText(nodeConcept.resolve(MPSModuleRepository.getInstance())));
-      myNodeConcept = nodeConcept;
+    public NewRootNodeAction(final SNode nodeConcept, SModel modelDescriptor) {
+      super(NodePresentationUtil.matchingText(nodeConcept));
+      myNodeConcept = nodeConcept.getReference();
       myModelDescriptor = modelDescriptor;
-      Icon icon = ModelAccess.instance().runReadAction(new Computable<Icon>() {
-        @Override
-        public Icon compute() {
-          return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.resolve(MPSModuleRepository.getInstance())));
-        }
-      });
+      Icon icon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept));
       getTemplatePresentation().setIcon(icon);
       setExecuteOutsideCommand(true);
     }
@@ -233,18 +226,21 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     @Override
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+      final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+      final SRepository projectRepo = mpsProject.getRepository();
+      final ModelAccess modelAccess = projectRepo.getModelAccess();
+      modelAccess.executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor);
+          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(projectRepo), null, null, myModelDescriptor);
           SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myPackage);
           myModelDescriptor.addRootNode(node);
 
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
+          modelAccess.runWriteInEDT(new Runnable() {
             @Override
             public void run() {
               if (!trySelectInCurrentPane(node)) {
-                ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
+                ProjectOperationContext context = new ProjectOperationContext(mpsProject);
                 NavigationSupport.getInstance().selectInTree(context, node, false);
               }
 
@@ -252,7 +248,7 @@ public class CreateRootNodeGroup extends BaseGroup {
             }
           });
         }
-      }, myProject.getComponent(MPSProject.class));
+      });
     }
 
     private boolean trySelectInCurrentPane(final SNode node) {
@@ -264,13 +260,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       SelectInTarget target = selectedPane.createSelectInTarget();
       if (target == null) return false;
 
-      SNodeReference pointer = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
-        @Override
-        public SNodeReference compute() {
-          return new jetbrains.mps.smodel.SNodePointer(node);
-        }
-      });
-      MySelectInContext context = new MySelectInContext(pointer);
+      MySelectInContext context = new MySelectInContext(node.getReference());
       if (!target.canSelect(context)) return false;
 
       target.selectIn(context, false);

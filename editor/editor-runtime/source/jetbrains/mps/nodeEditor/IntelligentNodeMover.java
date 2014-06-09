@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -61,7 +58,7 @@ class IntelligentNodeMover {
   }
 
   void move() {
-    ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myComponent.getEditorContext().executeCommand(new Runnable() {
       @Override
       public void run() {
         if (!findAppropriateNode(myComponent.getSelectedNodes())) {
@@ -72,9 +69,9 @@ class IntelligentNodeMover {
 
         doMove();
       }
-    }, ProjectHelper.getProject(myComponent.getEditorContext().getRepository()));
+    });
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         if (myNodes.size() == 1) {

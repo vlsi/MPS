@@ -15,7 +15,6 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import javax.swing.SwingUtilities;
@@ -27,7 +26,7 @@ import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.command.CommandProcessorEx;
@@ -94,12 +93,12 @@ public abstract class MigrationScriptsView implements ResultsListener {
     this.myController = new MigrationScriptsController(myFinder) {
       @Override
       public void runCommand(final Runnable cmd) {
-        ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+        getMPSProject().getModelAccess().executeCommandInEDT(new Runnable() {
           @Override
           public void run() {
             cmd.run();
           }
-        }, getMPSProject());
+        });
       }
     };
   }
@@ -162,7 +161,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
   private void applyMigrations() {
     ThreadUtils.assertEDT();
 
-    final Collection<SearchResult<SNode>> aliveIncludedResults = ModelAccess.instance().runReadAction(new Computable<Collection<SearchResult<SNode>>>() {
+    final Collection<SearchResult<SNode>> aliveIncludedResults = new ModelAccessHelper(getMPSProject().getModelAccess()).runReadAction(new Computable<Collection<SearchResult<SNode>>>() {
       public Collection<SearchResult<SNode>> compute() {
         return myController.computeAliveIncludedResults(myUsagesView.getIncludedResultNodes());
       }
@@ -187,7 +186,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
       @Override
       public void run() {
         myController.process(new ProgressMonitorAdapter(myIndicator), aliveIncludedResults);
-        ProjectModelAccess.instance().runCommandInEDT(finishCommand, getMPSProject());
+        getMPSProject().getModelAccess().executeCommandInEDT(finishCommand);
         checkMigrationResults();
       }
     };
@@ -197,7 +196,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
 
   private void checkMigrationResults() {
     final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts(), myFinder.getOperationContext());
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    getMPSProject().getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(myTool.getProject(), "Searching", true) {

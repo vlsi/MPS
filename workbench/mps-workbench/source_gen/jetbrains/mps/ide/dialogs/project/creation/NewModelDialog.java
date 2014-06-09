@@ -43,10 +43,9 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import java.io.File;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.Iterator;
-import jetbrains.mps.smodel.ProjectModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.SModuleOperations;
@@ -256,7 +255,7 @@ public class NewModelDialog extends DialogWrapper {
       newModelRoot.save(memento);
       final ModelRootDescriptor newModelRootDescriptor = new ModelRootDescriptor(newModelRoot.getType(), memento);
 
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      myProject.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
           final LanguageDescriptor languageDescriptor = ((Language) myModule).getModuleDescriptor();
@@ -282,7 +281,7 @@ public class NewModelDialog extends DialogWrapper {
       }
     }
 
-    myResult = ProjectModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+    myResult = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<SModel>() {
       @Override
       public SModel compute() {
         String fqName = getFqName();
@@ -314,7 +313,7 @@ public class NewModelDialog extends DialogWrapper {
 
         return result;
       }
-    }, myProject);
+    });
 
     assert myResult != null;
 

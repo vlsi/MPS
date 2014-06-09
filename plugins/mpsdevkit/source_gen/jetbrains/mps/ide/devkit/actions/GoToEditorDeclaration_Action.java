@@ -113,12 +113,12 @@ public class GoToEditorDeclaration_Action extends BaseAction {
         }
       });
       SNode conceptDeclaration = cd[0];
-      SModel editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l, conceptDeclaration);
+      SModel editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(((MPSProject) MapSequence.fromMap(_params).get("project")), l, conceptDeclaration);
       if (editorModel == null) {
         return;
       }
 
-      final SNode editorNode = GoToEditorDeclarationHelper.getOrCreateEditorForConcept(editorModel, conceptDeclaration, ((SNode) MapSequence.fromMap(_params).get("node")));
+      final SNode editorNode = GoToEditorDeclarationHelper.getOrCreateEditorForConcept(((MPSProject) MapSequence.fromMap(_params).get("project")), editorModel, conceptDeclaration, ((SNode) MapSequence.fromMap(_params).get("node")));
       if (editorNode == null) {
         return;
       }

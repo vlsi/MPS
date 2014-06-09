@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,8 +39,6 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -166,7 +164,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
       @Override
       public void run() {
         final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modelToPaste, context.getOperationContext());
-        ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+        context.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
           @Override
           public void run() {
             if (addImportsRunnable != null) {
@@ -224,7 +222,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
             SNode lastNode = pasteNodes.get(pasteNodes.size() - 1);
             editorComponent.getSelectionManager().setSelection(lastNode, SelectionManager.LAST_CELL, -1);
           }
-        }, context.getOperationContext().getProject());
+        });
 
       }
     });

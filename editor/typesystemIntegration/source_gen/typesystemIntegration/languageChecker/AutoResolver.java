@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.HashSet;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
@@ -72,7 +71,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        ProjectModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+        project.getModelAccess().executeUndoTransparentCommand(new Runnable() {
           @Override
           public void run() {
             // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
@@ -125,7 +124,7 @@ public class AutoResolver extends EditorCheckerAdapter {
               myForceAutofix = true;
             }
           }
-        }, project);
+        });
       }
     });
   }

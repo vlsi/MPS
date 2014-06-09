@@ -9,14 +9,12 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.ThreadUtils;
 import java.awt.Frame;
 import com.intellij.openapi.progress.TaskInfo;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
@@ -51,6 +49,7 @@ public class MigrationScriptExecutor {
   }
 
   public void execAsCommand(Frame frame) {
+    // FIXME pretty much identical to ModelCheckerExecutor - cries out loud for refactoring 
     ThreadUtils.assertEDT();
     TaskInfo task = createTaskInfo();
     final Object cmd = startCommand(task);
@@ -58,12 +57,12 @@ public class MigrationScriptExecutor {
     Runnable afterFinish = new Runnable() {
       @Override
       public void run() {
-        ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+        getMPSProject().getModelAccess().executeCommandInEDT(new Runnable() {
           @Override
           public void run() {
             finishCommand(cmd);
           }
-        }, getMPSProject());
+        });
       }
     };
     primExec(task, process, afterFinish, frame);
@@ -109,7 +108,7 @@ public class MigrationScriptExecutor {
           @Override
           public void runCommand(Runnable cmd) {
             if (spawnCommands) {
-              ProjectModelAccess.instance().runCommandInEDT(cmd, getMPSProject());
+              getMPSProject().getModelAccess().executeCommandInEDT(cmd);
             } else {
               cmd.run();
             }
@@ -120,7 +119,7 @@ public class MigrationScriptExecutor {
 
         final List<SearchResult<SNode>>[] searchResults = ((List<SearchResult<SNode>>[]) new List[1]);
         // can this be done? 
-        ModelAccess.instance().runReadAction(new Runnable() {
+        getMPSProject().getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             SearchResults results = finder.find(new SearchQuery(AbstractMigrationScriptHelper.createMigrationScope(getMPSProject())), promon.subTask(100));

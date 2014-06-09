@@ -13,10 +13,8 @@ import org.junit.Test;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import org.junit.Assert;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -32,12 +30,11 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
 import jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener;
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
-import javax.swing.SwingUtilities;
-import java.lang.reflect.InvocationTargetException;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.SModuleOperations;
 import java.io.IOException;
 import jetbrains.mps.ide.ThreadUtils;
@@ -76,7 +73,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
           myProject = project;
           myModel = (EditableSModel) SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(DiskMemoryConflictsTest.MODEL_UID));
           myModule = (Solution) myModel.getModule();
-          ModelAccess.instance().runReadAction(new Runnable() {
+          myProject.getModelAccess().runReadAction(new Runnable() {
             @Override
             public void run() {
               myNodeBackup = CopyUtil.copyAndPreserveId(myModel.getRootNodes().iterator().next());
@@ -109,7 +106,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
 
   private String processFieldNameInModel(final String nameToWrite) {
     final String[] result = new String[1];
-    ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
         if (SModelRepository.getInstance().getModelDescriptor(myModel.getReference()) != null) {
@@ -127,7 +124,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
           }
         }
       }
-    }, myProject);
+    });
     DiskMemoryConflictsTest.waitEDT();
     return result[0];
   }
@@ -243,31 +240,22 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
 
     if (DiskMemoryConflictsTest.Action.SAVE == action) {
       //  save conflicting model 
-      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+      myProject.getModelAccess().executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
           SModelRepository.getInstance().saveAll();
         }
-      }, myProject);
+      });
     } else {
       //  reload conflict 
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+      myProject.getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           ((ReloadableSModelBase) myModel).reloadFromDiskSafe();
         }
       });
     }
-    ModelAccess.instance().flushEventQueue();
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-        }
-      });
-    } catch (InterruptedException e) {
-    } catch (InvocationTargetException e) {
-    }
+    waitEDT();
     Assert.assertTrue(dialogWasInvoked[0]);
     String expectedFieldName;
     if (DiskMemoryConflictsTest.VersionToChoose.MEMORY == versionToChoose) {
@@ -305,14 +293,14 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       });
     } else {
       //  Restore model 
-      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+      myProject.getModelAccess().executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
           myModel = ((EditableSModel) SModuleOperations.createModelWithAdjustments(PersistenceFacade.getInstance().createModelReference(DiskMemoryConflictsTest.MODEL_UID).getModelName(), myModule.getModelRoots().iterator().next()));
           myModel.addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModel.save();
         }
-      }, myProject);
+      });
       DiskMemoryConflictsTest.waitEDT();
     }
     checkInitialState();

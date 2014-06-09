@@ -38,4 +38,15 @@ public final class ModelAccessHelper {
     myModelAccess.runReadAction(r);
     return r.getResult();
   }
+
+  /**
+   * Handy wrapper for {@link org.jetbrains.mps.openapi.module.ModelAccess#executeCommand(Runnable) executeCommand(new ComputeRunnable(computable))}.
+   * Shall be invoked from EDT thread.
+   */
+  public <T> T executeCommand(final Computable<T> c) {
+    final ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    myModelAccess.executeCommand(r);
+    return r.getResult();
+  }
+
 }

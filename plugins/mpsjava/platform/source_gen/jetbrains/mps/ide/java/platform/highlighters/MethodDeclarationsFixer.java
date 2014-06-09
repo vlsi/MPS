@@ -31,7 +31,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -142,7 +141,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
           return;
         }
 
-        ProjectModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+        p.getModelAccess().executeUndoTransparentCommand(new Runnable() {
           public void run() {
             for (SNode methodCall : reResolvedTargets.keySet()) {
               SNode referent = reResolvedTargets.get(methodCall);
@@ -151,7 +150,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
               }
             }
           }
-        }, p);
+        });
       }
     });
     return new HashSet<EditorMessage>();

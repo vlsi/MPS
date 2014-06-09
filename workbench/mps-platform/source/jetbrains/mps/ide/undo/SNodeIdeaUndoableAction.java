@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,11 @@ package jetbrains.mps.ide.undo;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ProjectModelAccess;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
@@ -33,9 +33,11 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   private boolean myIsGlobal;
   private DocumentReference[] myAffectedDocuments;
 
+  private final Project myProject;
   private List<SNodeUndoableAction> myWrapped;
 
-  SNodeIdeaUndoableAction(List<SNodeUndoableAction> wrapped) {
+  SNodeIdeaUndoableAction(@NotNull Project project, List<SNodeUndoableAction> wrapped) {
+    myProject = project;
     myWrapped = wrapped;
     List<DocumentReference> affected = new LinkedList<DocumentReference>();
 
@@ -61,7 +63,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
 
   @Override
   public final void undo() throws UnexpectedUndoException {
-    ProjectModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+    myProject.getModelAccess().executeUndoTransparentCommand(new Runnable() {
       @Override
       public void run() {
         List<SNodeUndoableAction> rev = new LinkedList<SNodeUndoableAction>(myWrapped);
@@ -70,19 +72,19 @@ class SNodeIdeaUndoableAction implements UndoableAction {
           a.undo();
         }
       }
-    }, null);
+    });
   }
 
   @Override
   public final void redo() throws UnexpectedUndoException {
-    ProjectModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+    myProject.getModelAccess().executeUndoTransparentCommand(new Runnable() {
       @Override
       public void run() {
         for (SNodeUndoableAction a : myWrapped) {
           a.redo();
         }
       }
-    }, null);
+    });
   }
 
   @Override

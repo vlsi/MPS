@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -60,6 +61,15 @@ public abstract class Project implements MPSModuleOwner {
 
   public SRepository getRepository() {
     return myRepository;
+  }
+
+  /**
+   * Shorthand for <code>getRepository().getModelAccess()</code>
+   * @return access facility to models coming from a {@link #getRepository() repository} associated with this project.
+   */
+  @NotNull
+  public ModelAccess getModelAccess() {
+    return myRepository.getModelAccess();
   }
 
   @NotNull

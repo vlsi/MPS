@@ -8,7 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
@@ -35,11 +34,11 @@ public class CreatePort_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("2278461409093572745", "2278461409093572838");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+      editorComponent.getOperationContext().getProject().getModelAccess().executeCommandInEDT(new Runnable() {
         public void run() {
           SNodeFactoryOperations.addNewChild(SNodeOperations.cast(TestBody.this.getNodeById("2278461409093572746"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts"), "outputs", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort");
         }
-      }, editorComponent.getOperationContext().getProject());
+      });
       ModelAccess.instance().flushEventQueue();
       {
         int x_rszpwe_c0 = 87;

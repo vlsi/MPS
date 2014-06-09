@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,6 +134,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
@@ -2628,12 +2629,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     myInsideOfCommand = true;
     try {
-      getModelAccess().executeCommand(new Runnable() {
-        @Override
-        public void run() {
-          r.run();
-        }
-      });
+      getModelAccess().executeCommand(r);
     } finally {
       myInsideOfCommand = false;
     }
@@ -2645,19 +2641,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myInsideOfCommand) {
       return c.compute();
     }
-    myInsideOfCommand = true;
-    try {
-      final Object[] result = new Object[1];
-      getModelAccess().executeCommand(new Runnable() {
-        @Override
-        public void run() {
-          result[0] = c.compute();
-        }
-      });
-      return (T) result[0];
-    } finally {
-      myInsideOfCommand = false;
-    }
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    executeCommand(r);
+    return r.getResult();
   }
 
   <T> T runRead(final Computable<T> c) {

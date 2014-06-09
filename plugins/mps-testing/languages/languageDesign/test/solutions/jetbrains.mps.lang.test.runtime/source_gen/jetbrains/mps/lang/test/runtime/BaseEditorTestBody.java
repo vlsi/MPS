@@ -7,13 +7,12 @@ import com.intellij.ide.impl.DataManagerImpl;
 import jetbrains.mps.openapi.editor.Editor;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ProjectModelAccess;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Map;
@@ -99,7 +98,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     if (!(after.equals(""))) {
       this.addNodeById(after);
     }
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         BaseEditorTestBody.this.myBefore = BaseEditorTestBody.this.getNodeById(before);
         BaseEditorTestBody.this.myStart = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(before));
@@ -136,7 +135,7 @@ public class BaseEditorTestBody extends BaseTestBody {
   public void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
     ModelAccess.instance().flushEventQueue();
-    ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           try {
@@ -151,7 +150,7 @@ public class BaseEditorTestBody extends BaseTestBody {
           }
         }
       }
-    }, myEditor.getOperationContext().getProject());
+    });
     ModelAccess.instance().flushEventQueue();
     if (throwable.value != null) {
       throw throwable.value;
@@ -185,8 +184,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
-        org.jetbrains.mps.openapi.module.ModelAccess modelAccess = editor.getEditorContext().getRepository().getModelAccess();
-        modelAccess.executeCommand(new Runnable() {
+        editor.getEditorContext().executeCommand(new Runnable() {
           public void run() {
             editor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();

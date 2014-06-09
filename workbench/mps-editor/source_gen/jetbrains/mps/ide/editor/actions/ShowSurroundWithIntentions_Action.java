@@ -30,7 +30,6 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Comparator;
 import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.SurroundWithIntention;
@@ -145,12 +144,12 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
       actionGroup.add(new AnAction(ShowSurroundWithIntentions_Action.this.getDescriptior(pair, _params)) {
         @Override
         public void actionPerformed(AnActionEvent event) {
-          ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+          ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().executeCommandInEDT(new Runnable() {
             @Override
             public void run() {
               finalPair.o1.execute(finalPair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
             }
-          }, ((MPSProject) MapSequence.fromMap(_params).get("project")));
+          });
         }
       });
     }

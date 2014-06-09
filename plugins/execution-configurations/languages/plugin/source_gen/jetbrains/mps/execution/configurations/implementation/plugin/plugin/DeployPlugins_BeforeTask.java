@@ -12,7 +12,6 @@ import com.intellij.execution.runners.ExecutionEnvironment;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.execution.ui.ConsoleView;
@@ -84,11 +83,11 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
 
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {
-          ProjectModelAccess.instance().executeCommand(new Runnable() {
+          ProjectHelper.getModelAccess(projectFinal).executeCommand(new Runnable() {
             public void run() {
               script.value = new DeployScript(projectFinal, myPlugins);
             }
-          }, ProjectHelper.toMPSProject(projectFinal));
+          });
         }
       }, ModalityState.NON_MODAL);
 

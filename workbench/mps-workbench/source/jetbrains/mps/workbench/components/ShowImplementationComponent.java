@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,15 @@ package jetbrains.mps.workbench.components;
 
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.CommonShortcuts;
+import com.intellij.openapi.actionSystem.CompositeShortcutSet;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.ui.CollectionComboBoxModel;
@@ -34,12 +42,22 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
@@ -86,7 +104,7 @@ public class ShowImplementationComponent extends JPanel {
 
   private boolean isDisposed = false;
   public void dispose() {
-    if(isDisposed == true) return;
+    if(isDisposed) return;
     isDisposed = true;
     for (ImplementationNode node : myImplNodes) {
       node.dispose();
@@ -122,7 +140,7 @@ public class ShowImplementationComponent extends JPanel {
       return;
     }
     if (mySelectedIndex == index) return;
-    ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
         myLocationLabel.setText(myImplNodes.get(index).myModuleName);
@@ -134,7 +152,7 @@ public class ShowImplementationComponent extends JPanel {
         myEditor.repaint();
         myNodeChooser.updateUI();
       }
-    }, myProject);
+    });
   }
 
   private void init() {
@@ -257,7 +275,7 @@ public class ShowImplementationComponent extends JPanel {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+      myProject.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           int selectedIndex = myNodeChooser.getSelectedIndex();

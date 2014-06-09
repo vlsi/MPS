@@ -30,12 +30,18 @@ public interface ModelCommandProjectExecutor extends ModelCommandExecutor {
 
   void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
 
+  /**
+   * Is equivalent to {@link #runWriteActionInCommand(Runnable, jetbrains.mps.project.Project)}
+   */
   void executeCommand(Runnable r, Project project);
 
   <T> T runWriteActionInCommand(Computable<T> c, Project project);
 
   <T> T runWriteActionInCommand(Computable<T> c, @Nullable String name, @Nullable Object groupId, boolean requestUndoConfirmation, Project project);
 
+  /**
+   * Is equivalent to {@link #executeCommand(java.lang.Runnable, jetbrains.mps.project.Project)}
+   */
   void runWriteActionInCommand(Runnable r, Project project);
 
   void runWriteActionInCommand(Runnable r, @Nullable String name, @Nullable Object groupId, boolean requestUndoConfirmation, Project project);

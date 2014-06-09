@@ -24,19 +24,17 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.util.SNodeOperations;
@@ -125,7 +123,7 @@ public class CollectTests_Action extends BaseAction {
     final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc"));
     final Wrappers._T<List<SModuleReference>> solutions = new Wrappers._T<List<SModuleReference>>();
     final Wrappers._T<List<SModuleReference>> existing = new Wrappers._T<List<SModuleReference>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ProjectHelper.getModelAccess(((Project) MapSequence.fromMap(_params).get("project"))).runReadAction(new Runnable() {
       public void run() {
         solutions.value = CollectTests_Action.this.allSolutions(_params);
         existing.value = CollectTests_Action.this.existingSolutions(model, _params);
@@ -142,30 +140,17 @@ public class CollectTests_Action extends BaseAction {
       final SModule module = MPSModuleRepository.getInstance().getModule(mref);
       if (module != null) {
         final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
-        for (final SModel smd : module.getModels()) {
-          if (!(CollectTests_Action.this.isUserEditableGeneratableModel(smd, _params))) {
+        for (final SModel smodel : module.getModels()) {
+          if (!(CollectTests_Action.this.isUserEditableGeneratableModel(smodel, _params))) {
             continue;
           }
 
-          final Wrappers._T<SModel> smodel = new Wrappers._T<SModel>();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              try {
-                smodel.value = smd;
-              } catch (RuntimeException ex) {
-                LOG.error(null, ex);
-              }
-            }
-          });
-          if (smodel.value == null) {
-            continue;
-          }
 
-          if (new TestCollector().collectTests(smodel.value, new _FunctionTypes._void_P1_E0<_FunctionTypes._return_P0_E0<? extends SNode>>() {
+          if (new TestCollector().collectTests(smodel, new _FunctionTypes._void_P1_E0<_FunctionTypes._return_P0_E0<? extends SNode>>() {
             public void invoke(final _FunctionTypes._return_P0_E0<? extends SNode> tref) {
               ThreadUtils.runInUIThreadAndWait(new Runnable() {
                 public void run() {
-                  ProjectModelAccess.instance().executeCommand(new Runnable() {
+                  ProjectHelper.getModelAccess(((Project) MapSequence.fromMap(_params).get("project"))).executeCommand(new Runnable() {
                     public void run() {
                       if (suite.value == null) {
                         suite.value = SModelOperations.createNewRootNode(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite", null);
@@ -175,10 +160,10 @@ public class CollectTests_Action extends BaseAction {
                         SPropertyOperations.set(sref, "moduleID", mref.getModuleId().toString());
                       }
                       ListSequence.fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());
-                      ((SModelInternal) model).addModelImport(smd.getReference(), false);
+                      ((SModelInternal) model).addModelImport(smodel.getReference(), false);
                       ((AbstractModule) ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getModule()).addDependency(module.getModuleReference(), false);
                     }
-                  }, ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class));
+                  });
                 }
               });
             }

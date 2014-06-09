@@ -16,7 +16,7 @@ import jetbrains.jetpad.projectional.view.ViewEventHandler;
 import jetbrains.jetpad.event.MouseEvent;
 import jetbrains.jetpad.projectional.view.View;
 import jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils;
-import jetbrains.mps.smodel.ProjectModelAccess;
+import jetbrains.mps.util.Computable;
 
 public class PaletteConnectorCreationAction extends AbstractPaletteCreationAction {
   private _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> myCanCreateConnectorCallback;
@@ -88,11 +88,11 @@ public class PaletteConnectorCreationAction extends AbstractPaletteCreationActio
           if (!(result[0])) {
             return;
           }
-          ProjectModelAccess.instance().executeCommand(new Runnable() {
-            public void run() {
-              mySubstituteAction.substitute(myEditorContext, "");
+          myEditorContext.executeCommand(new Computable<SNode>() {
+            public SNode compute() {
+              return mySubstituteAction.substitute(myEditorContext, "");
             }
-          }, myEditorContext.getOperationContext().getProject());
+          });
           event.consume();
 
         }
