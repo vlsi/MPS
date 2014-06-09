@@ -37,9 +37,9 @@ import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -167,7 +167,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
         }
       }
     };
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (isInEDT()) {
       try {
         myWritesScheduled.incrementAndGet();
         ApplicationManager.getApplication().runWriteAction(runnable);
@@ -200,7 +200,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
         }
       }
     };
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (isInEDT()) {
       try {
         myWritesScheduled.incrementAndGet();
         return ApplicationManager.getApplication().runWriteAction(computable);
@@ -417,38 +417,15 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
       r.run();
       return true;
     }
-
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      return false;
-    }
-
-    com.intellij.openapi.util.Computable<Boolean> computable = new com.intellij.openapi.util.Computable<Boolean>() {
+    Computable<Boolean> c = new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        try {
-          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-            try {
-              clearRepositoryStateCaches();
-              r.run();
-            } finally {
-              getWriteLock().unlock();
-            }
-            return true;
-          } else {
-            return false;
-          }
-        } catch (InterruptedException e) {
-          return false;
-        }
+        r.run();
+        return true;
       }
     };
-
-    if (ThreadUtils.isEventDispatchThread()) {
-      Boolean res = new TryWriteActionComputable<Boolean>(computable).compute();
-      return res != null ? res : false;
-    } else {
-      return ApplicationManager.getApplication().runReadAction(computable);
-    }
+    Boolean res = tryWrite(c);
+    return res != null ? res : false;
   }
 
 
@@ -462,6 +439,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
       return null;
     }
 
+    // idea.Computable, not mps.Computable to facilitate direct Application.runReadAction call below
     com.intellij.openapi.util.Computable<T> computable = new com.intellij.openapi.util.Computable<T>() {
       @Override
       public T compute() {
@@ -482,9 +460,10 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
       }
     };
 
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (isInEDT()) {
       return new TryWriteActionComputable<T>(computable).compute();
     } else {
+      // [artem] Why on earth do we run read action without acquiring a read lock???
       return ApplicationManager.getApplication().runReadAction(computable);
     }
   }
@@ -572,38 +551,10 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
   }
 
   @Override
-  public <T> T tryWriteInCommand(final Computable<T> r, Project p) {
-    if (myDistributedLocksMode) {
-      return null;
-    }
-    ApplicationManager.getApplication().assertIsDispatchThread();
-
-    final T[] res = (T[]) new Object[]{null};
-
-    final Project project = p != null ? p : CurrentProjectAccessUtil.getMPSProjectFromUI();
-    Runnable commandRunnable = new Runnable() {
-      @Override
-      public void run() {
-        try {
-          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-            try {
-              clearRepositoryStateCaches();
-              res[0] = new CommandComputable<T>(r, project).compute();
-            } finally {
-              getWriteLock().unlock();
-            }
-          }
-        } catch (InterruptedException ignore) {
-        }
-      }
-    };
-
-    CommandProcessor.getInstance().executeCommand(
-        ProjectHelper.toIdeaProject(project),
-        new TryWriteActionRunnable(commandRunnable),
-        "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-
-    return res[0];
+  public <T> T tryWriteInCommand(final Computable<T> c, Project p) {
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    boolean success = tryWriteInCommand(r, p);
+    return success ? r.getResult() : null;
   }
 
   @Override
@@ -611,8 +562,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
     if (project == null) {
       project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), "", null,
-        UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    runWriteActionInCommand(r, "", null, false, project);
   }
 
   @Override
@@ -630,15 +580,10 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
   }
 
   @Override
-  public <T> T runWriteActionInCommand(final Computable<T> c, String name, Object groupId, final boolean requestUndoConfirmation, final Project project) {
-    final Object[] result = new Object[1];
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new Runnable() {
-      @Override
-      public void run() {
-        result[0] = new CommandComputable(c, project).compute();
-      }
-    }, name, null, requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-    return (T) result[0];
+  public <T> T runWriteActionInCommand(Computable<T> c, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
+    final ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    runWriteActionInCommand(r, name, groupId, requestUndoConfirmation, project);
+    return r.getResult();
   }
 
   @Override
@@ -660,17 +605,7 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
 
   @Override
   public void runUndoTransparentCommand(Runnable r) {
-    if (myCommandLevel > 0) {
-      throw new IllegalStateException("undo transparent action cannot be invoked in a command");
-    }
-
-    int cmd = myCommandLevel;
-    try {
-      myCommandLevel = 0;
-      CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, CurrentProjectAccessUtil.getMPSProjectFromUI()));
-    } finally {
-      myCommandLevel = cmd;
-    }
+    runUndoTransparentCommand(r, CurrentProjectAccessUtil.getMPSProjectFromUI());
   }
 
   @Override
@@ -846,33 +781,6 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
           } finally {
             decCommandLevel(myProject);
           }
-        }
-      });
-    }
-  }
-
-  private class CommandComputable<T> implements Computable<T> {
-    private final Computable<T> myComputable;
-    private final Project myProject;
-
-    public CommandComputable(Computable<T> c, Project project) {
-      myComputable = c;
-      myProject = project;
-    }
-
-    @Override
-    public T compute() {
-      return runWriteAction(new Computable<T>() {
-        @Override
-        public T compute() {
-          incCommandLevel();
-          T result = null;
-          try {
-            result = myComputable.compute();
-          } finally {
-            decCommandLevel(myProject);
-          }
-          return result;
         }
       });
     }
