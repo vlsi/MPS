@@ -133,17 +133,9 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
     if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
       throw new IllegalStateException("deadlock prevention: do not start read action in EDT, use tryRead");
     }
-    return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<T>() {
-      @Override
-      public T compute() {
-        getReadLock().lock();
-        try {
-          return c.compute();
-        } finally {
-          getReadLock().unlock();
-        }
-      }
-    });
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    runReadAction(r);
+    return r.getResult();
   }
 
   @Override
@@ -189,29 +181,9 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
     if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
       throw new IllegalStateException("deadlock prevention: do not start write action in EDT, use tryWrite");
     }
-    com.intellij.openapi.util.Computable<T> computable = new com.intellij.openapi.util.Computable<T>() {
-      @Override
-      public T compute() {
-        getWriteLock().lock();
-        try {
-          clearRepositoryStateCaches();
-          return c.compute();
-        } finally {
-          getWriteLock().unlock();
-        }
-      }
-    };
-    if (isInEDT()) {
-      try {
-        myWritesScheduled.incrementAndGet();
-        return ApplicationManager.getApplication().runWriteAction(computable);
-      }
-      finally {
-        myWritesScheduled.decrementAndGet();
-      }
-    } else {
-      return ApplicationManager.getApplication().runReadAction(computable);
-    }
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    runWriteAction(r);
+    return r.getResult();
   }
 
   @Override
@@ -348,24 +320,11 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
       return c.compute();
     }
 
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      return null;
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    if (tryRead(r)) {
+      return r.getResult();
     }
-
-    return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<T>() {
-      @Override
-      public T compute() {
-        if (getReadLock().tryLock()) {
-          try {
-            return c.compute();
-          } finally {
-            getReadLock().unlock();
-          }
-        } else {
-          return null;
-        }
-      }
-    });
+    return null;
   }
 
   @Override
@@ -391,25 +350,9 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
 
   @Override
   public <T> T requireRead(Computable<T> c) {
-    T result = null;
-    int i;
-    long start;
-    long waited;
-    do {
-      start = System.currentTimeMillis();
-      for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryRead(c)) == null; ++i) {
-        try {
-          Thread.sleep((1 << i) * 100);
-        } catch (InterruptedException ignore) {
-        }
-      }
-      waited = System.currentTimeMillis() - start;
-    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
-
-    if (i >= REQUIRE_MAX_TRIES) {
-      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for " + waited + "ms");
-    }
-    return result;
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    requireRead(r);
+    return r.getResult();
   }
 
   @Override
@@ -492,25 +435,9 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
 
   @Override
   public <T> T requireWrite(Computable<T> c) {
-    T result = null;
-    int i;
-    long start;
-    long waited;
-    do {
-      start = System.currentTimeMillis();
-      for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryWrite(c)) == null; ++i) {
-        try {
-          Thread.sleep((1 << i) * 100);
-        } catch (InterruptedException ignore) {
-        }
-      }
-      waited = System.currentTimeMillis() - start;
-    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
-
-    if (i >= REQUIRE_MAX_TRIES) {
-      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for " + waited + "ms");
-    }
-    return result;
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    requireWrite(r);
+    return r.getResult();
   }
 
   @Override
