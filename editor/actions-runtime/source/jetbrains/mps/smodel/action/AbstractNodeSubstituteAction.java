@@ -46,17 +46,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   protected SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-    return doSubstitute(pattern);
-  }
-
-  /**
-   * @deprecated Since MPS 3.0 was replaced by:
-   *             <code>doSubstitute(@Nullable final EditorContext editorContext, String pattern)</code>
-   *             <p/>
-   *             Was left for compatibility with generated code. Later should be removed.
-   */
-  @Deprecated
-  protected SNode doSubstitute(String pattern) {
     throw new UnsupportedOperationException();
   }
 
@@ -198,7 +187,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (context != null) {
       context.executeCommand(runnable);
     } else {
-      ProjectModelAccess.instance().executeCommand(runnable, null /* TODO ? */);
+      runnable.run();
     }
 
     return newNode[0];
