@@ -41,6 +41,9 @@ public interface ModelCommandExecutor {
 
   <T> T runReadAction(Computable<T> c);
 
+  /**
+   * Run read asynchronously, in EDT thread
+   */
   void runReadInEDT(Runnable r);
 
   // write
@@ -49,6 +52,9 @@ public interface ModelCommandExecutor {
 
   <T> T runWriteAction(Computable<T> c);
 
+  /**
+   * Run write asynchronously, in EDT thread
+   */
   void runWriteInEDT(Runnable r);
 
   <T> T runReadInWriteAction(Computable<T> c);
