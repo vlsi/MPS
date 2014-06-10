@@ -55,7 +55,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
-public class WorkbenchModelAccess extends ModelAccess implements ModelCommandProjectExecutor {
+public class WorkbenchModelAccess extends ModelAccess {
 
   public static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
   private final AtomicInteger myWritesScheduled = new AtomicInteger();

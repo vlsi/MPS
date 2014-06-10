@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 //final used by find usages
 public final class StaticReference extends SReferenceBase {
@@ -103,9 +102,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append(sourceNode.getNodeId().toString());
       sb.append("\ntarget node id = ");
       sb.append(targetNodeId);
-      String canRead = ModelAccess.instance().canRead() ? "can read" : "can not read";
-      sb.append("\ncurrent thread ");
-      sb.append(canRead);
+      // sourceNode.getName() above ensures ModelAccess.instance().canRead() == true
       sb.append("\nstack trace of model disposing is: ");
       for (StackTraceElement ste : ((ModelWithDisposeInfo) targetModel).getDisposedStacktrace()) {
         sb.append(ste);

@@ -117,17 +117,17 @@ public class ProjectRepository extends SRepositoryBase {
 
     @Override
     public void executeCommand(Runnable r) {
-      ((ModelCommandProjectExecutor) jetbrains.mps.smodel.ModelAccess.instance()).runWriteActionInCommand(r, project);
+      jetbrains.mps.smodel.ModelAccess.instance().runWriteActionInCommand(r, project);
     }
 
     @Override
     public void executeCommandInEDT(Runnable r) {
-      ((ModelCommandProjectExecutor) jetbrains.mps.smodel.ModelAccess.instance()).runCommandInEDT(r, project);
+      jetbrains.mps.smodel.ModelAccess.instance().runCommandInEDT(r, project);
     }
 
     @Override
     public void executeUndoTransparentCommand(Runnable r) {
-      ((ModelCommandProjectExecutor) jetbrains.mps.smodel.ModelAccess.instance()).runUndoTransparentCommand(r, project);
+      jetbrains.mps.smodel.ModelAccess.instance().runUndoTransparentCommand(r, project);
     }
 
     @Override
