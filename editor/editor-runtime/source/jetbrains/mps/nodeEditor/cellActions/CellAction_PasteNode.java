@@ -39,6 +39,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -124,7 +125,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
   @Override
   public void execute(final EditorContext context) {
-    LOG.assertInCommand();
+    LOG.assertLog(context.getRepository().getModelAccess().isCommandAction(), "This action must be performed in command");
     final EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     final Selection selection = editorComponent.getSelectionManager().getSelection();
     final List<SNode> selectedNodes = selection.getSelectedNodes();

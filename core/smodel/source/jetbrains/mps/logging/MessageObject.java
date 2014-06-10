@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,20 @@
  */
 package jetbrains.mps.logging;
 
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
-public class MessageObject {
+@Immutable
+public final class MessageObject {
   private final String myMessage;
   private final Object myHintObject;
 
   public MessageObject(String message, Object hintObject) {
     myMessage = message;
-    myHintObject = hintObject;
+    myHintObject = hintObject instanceof SNode ? ((SNode) hintObject).getReference() : hintObject;
   }
 
   public String getMessage() {
@@ -43,13 +44,10 @@ public class MessageObject {
       return myMessage;
     }
     String hint = "";
-    if (myHintObject instanceof SNode) {
-      String nodePresentation = ModelAccess.instance().runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return ((SNode) myHintObject).getPresentation();
-        }
-      });
+    if (myHintObject instanceof SNodeReference) {
+      // XXX we might try to resolve node reference here to get more descriptive text for the node (e.g. with snode.getPresentation())
+      // but is there any real need to do that?
+      String nodePresentation = myHintObject.toString();
       hint = "[node " + nodePresentation + "]";
     } else if (myHintObject instanceof SModel) {
       hint = "[model " + ((SModel) myHintObject).getReference() + "]";

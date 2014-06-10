@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.logging;
 
-import jetbrains.mps.smodel.ModelAccess;
-import org.apache.log4j.Level;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 
-/*
-If one has log4j logger he can still use extended functionality of our Logger using this class.
+/**
+ * If one has log4j logger he can still use extended functionality of our Logger using this class.
  */
 public class Log4jUtil {
 
@@ -59,33 +57,10 @@ public class Log4jUtil {
     fatal(logger, message, null, hintObject);
   }
 
-  public static void assertCanRead(org.apache.log4j.Logger logger) {
-    assertLog(logger, ModelAccess.instance().canRead(), "Should be able to read models");
-  }
-
-  public static void assertCanWrite(org.apache.log4j.Logger logger) {
-    assertLog(logger, ModelAccess.instance().canWrite(), "Should be able to write models");
-  }
-
-  public static void assertInCommand(org.apache.log4j.Logger logger) {
-    assertLog(logger, ModelAccess.instance().isInsideCommand(), "This action must be performed in command");
-  }
-
   public static void assertLog(org.apache.log4j.Logger logger, boolean condition, String message) {
     if (!condition) {
       errorWithTrace(logger, message);
     }
-  }
-
-  /**
-   * @param "OFF", "FATAL", "ERROR", "WARN" ...
-   */
-  public static String setThreshold(String threshhold) {
-    Level wasThresholdLevel = org.apache.log4j.Logger.getRootLogger().getLoggerRepository().getThreshold();
-    String wasThreshhold = wasThresholdLevel.toString();
-    Level newThreshholdLevel = Level.toLevel(threshhold);
-    org.apache.log4j.Logger.getRootLogger().getLoggerRepository().setThreshold(newThreshholdLevel);
-    return wasThreshhold;
   }
 
   public static void error(org.apache.log4j.Logger logger, String message, Throwable t, Object hintObject) {

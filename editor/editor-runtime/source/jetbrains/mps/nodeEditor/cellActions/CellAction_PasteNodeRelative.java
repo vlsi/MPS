@@ -28,6 +28,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.resolve.ResolverComponent;
+import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -69,7 +70,7 @@ public class CellAction_PasteNodeRelative extends AbstractCellAction {
 
   @Override
   public void execute(EditorContext context) {
-    LOG.assertInCommand();
+    LOG.assertLog(ModelAccess.instance().isInsideCommand(), "This action must be performed in command");
     EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     EditorCell selectedCell = editorComponent.getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();

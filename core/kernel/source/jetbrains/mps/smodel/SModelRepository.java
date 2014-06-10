@@ -186,6 +186,9 @@ public class SModelRepository implements CoreComponent {
     return modelsToSave;
   }
 
+  /**
+   * Requires write access to model
+   */
   public void saveAll() {
     ModelAccess.assertLegalWrite();
 

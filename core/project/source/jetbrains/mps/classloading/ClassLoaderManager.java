@@ -198,7 +198,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   // todo: conceal these two methods (should not be public)
   public Set<SModule> unloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
-    LOG.assertCanWrite();
+    LOG.assertLog(ModelAccess.instance().canWrite(), "Should be able to write models");
 
     /*
     ** todo: move this hack to make facets (create new facet?).

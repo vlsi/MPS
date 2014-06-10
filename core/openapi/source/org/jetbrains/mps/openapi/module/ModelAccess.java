@@ -77,5 +77,8 @@ public interface ModelAccess {
 
   void executeUndoTransparentCommand(Runnable r);
 
+  /**
+   * @return <code>true</code> if there's a command (either with {@link #executeCommand(Runnable)} or {@link #executeCommandInEDT(Runnable)}) being executed
+   */
   boolean isCommandAction();
 }

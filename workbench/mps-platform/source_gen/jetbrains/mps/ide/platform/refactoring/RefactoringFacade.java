@@ -9,7 +9,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -64,7 +63,7 @@ public class RefactoringFacade {
     ThreadUtils.assertEDT();
     final IRefactoring refactoring = context.getRefactoring();
     List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, context);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    context.getSelectedProject().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         try {
           refactoring.refactor(context);
@@ -87,7 +86,7 @@ public class RefactoringFacade {
     try {
       refactoring.doWhenDone(context);
     } catch (Throwable t) {
-      myLog.error("An error occurred in doWhenDone(), refactoring: " + refactoring.getUserFriendlyName(), t);
+      myLog.error("An error occurred in dgoWhenDone(), refactoring: " + refactoring.getUserFriendlyName(), t);
     }
   }
 
@@ -114,7 +113,7 @@ public class RefactoringFacade {
 
   public void execute(final RefactoringContext refactoringContext) {
     ThreadUtils.assertEDT();
-    ModelAccess.assertLegalRead();
+    myLog.assertLog(refactoringContext.getSelectedProject().getModelAccess().canRead(), "Read access");
     boolean success = refactoringContext.getRefactoring().init(refactoringContext);
     if (success) {
       findUsagesAndRun(refactoringContext);
@@ -141,7 +140,7 @@ public class RefactoringFacade {
 
   private SearchResults findUsagesSimple(final RefactoringContext refactoringContext) {
     final Wrappers._T<SearchResults> result = new Wrappers._T<SearchResults>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    refactoringContext.getSelectedProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         try {
           Project project = refactoringContext.getSelectedProject();
@@ -176,7 +175,7 @@ public class RefactoringFacade {
   }
 
   private void executeInUI(final SearchResults usages, final RefactoringContext refactoringContext) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    refactoringContext.getSelectedProject().getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
         refactoringContext.setUsages(usages);
@@ -193,7 +192,7 @@ public class RefactoringFacade {
     RefactoringViewAction okAction = new RefactoringViewAction() {
       @Override
       public void performAction(final RefactoringViewItem refactoringViewItem) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+        refactoringContext.getSelectedProject().getModelAccess().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
             executeSimple(refactoringContext);
@@ -297,7 +296,7 @@ public class RefactoringFacade {
     if (sourceModels.isEmpty()) {
       return;
     }
-    final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
+    final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier(context.getSelectedProject());
     final List<SModel> descriptors = new ArrayList<SModel>();
     SModelRepository.getInstance().saveAll();
     //  save all before launching make 

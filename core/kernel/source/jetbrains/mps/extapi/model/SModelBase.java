@@ -16,10 +16,11 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -40,7 +41,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
-  private static Logger LOG = Logger.getLogger(SModelBase.class);
+  private static Logger LOG = LogManager.getLogger(SModelBase.class);
 
   private final List<SModelAccessListener> myAccessListeners = new CopyOnWriteArrayList<SModelAccessListener>();
   private final List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();

@@ -12,6 +12,7 @@ import java.util.Set;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.Project;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.refactoring.StructureModificationData;
@@ -31,30 +32,33 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   private Set<Pair<String, String>> myAbsentPropertyNames = new HashSet<Pair<String, String>>();
   private Set<SModel> myModifiableModels = new HashSet<SModel>();
   private Set<String> myOldNames = SetSequence.fromSet(new HashSet<String>());
+  private Project myProject;
 
-  public RefactoringNodeMembersAccessModifier() {
+
+  public RefactoringNodeMembersAccessModifier(Project project) {
+    this.myProject = project;
   }
 
   @Override
   public void addModelsToModify(Collection<SModel> models) {
-    LOG.assertCanRead();
+    LOG.assertLog(myProject.getModelAccess().canRead());
     myModifiableModels.addAll(models);
   }
 
   public void addChildRoleChange(String conceptFQName, String oldRole, String newRole) {
-    LOG.assertCanWrite();
+    LOG.assertLog(myProject.getModelAccess().canWrite());
     myChildrenRolesMap.put(new Pair<String, String>(conceptFQName, oldRole), newRole);
     SetSequence.fromSet(myOldNames).addElement(oldRole);
   }
 
   public void addReferentRoleChange(String conceptFQName, String oldRole, String newRole) {
-    LOG.assertCanWrite();
+    LOG.assertLog(myProject.getModelAccess().canWrite());
     myReferencesRolesMap.put(new Pair<String, String>(conceptFQName, oldRole), newRole);
     SetSequence.fromSet(myOldNames).addElement(oldRole);
   }
 
   public void addPropertyNameChange(String conceptFQName, String oldName, String newName) {
-    LOG.assertCanWrite();
+    LOG.assertLog(myProject.getModelAccess().canWrite());
     myPropertiesNamesMap.put(new Pair<String, String>(conceptFQName, oldName), newName);
     SetSequence.fromSet(myOldNames).addElement(oldName);
   }

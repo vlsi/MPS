@@ -15,40 +15,16 @@
  */
 package jetbrains.mps.logging;
 
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
-
+/**
+ * log4j logger augmented with hint object
+ */
 public abstract class Logger {
 
   /**
-   * Use constructor from org.apache.log4j.Logger
+   * Adapts log4j logger to our extended facility
    */
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static synchronized Logger getLogger(Class cls) {
-    return getLogger(cls.getName());
-  }
-
-
-  /**
-   * Use constructor from org.apache.log4j.Logger
-   */
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static synchronized Logger getLogger(String name) {
-    return wrap(LogManager.getLogger(name));
-  }
-
-  public static synchronized Logger wrap(org.apache.log4j.Logger logger) {
+  public static Logger wrap(org.apache.log4j.Logger logger) {
     return new Log4jLogger(logger);
-  }
-
-  /**
-   * @param "OFF", "FATAL", "ERROR", "WARN" ...
-   */
-  public static String setThreshold(String threshold) {
-    return Log4jUtil.setThreshold(threshold);
   }
 
   //--------------------------
@@ -146,17 +122,5 @@ public abstract class Logger {
   }
 
   public abstract void assertLog(boolean condition, String message);
-
-  public void assertCanRead() {
-    assertLog(ModelAccess.instance().canRead(), "Should be able to read models");
-  }
-
-  public void assertCanWrite() {
-    assertLog(ModelAccess.instance().canWrite(), "Should be able to write models");
-  }
-
-  public void assertInCommand() {
-    assertLog(ModelAccess.instance().isInsideCommand(), "This action must be performed in command");
-  }
 }
 

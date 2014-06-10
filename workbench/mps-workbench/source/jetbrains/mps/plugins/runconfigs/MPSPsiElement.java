@@ -2,33 +2,32 @@ package jetbrains.mps.plugins.runconfigs;
 
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Mapper;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MPSPsiElement<T> extends FakePsiElement {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSPsiElement.class));
 
   private Object myItem;
 
   public MPSPsiElement(SNode node) {
-    LOG.assertCanRead();
     myItem = new jetbrains.mps.smodel.SNodePointer(node);
   }
 
   public MPSPsiElement(List<SNode> nodes) {
-    LOG.assertCanRead();
     myItem = map(nodes, new Mapper<SNode, SNodeReference>() {
       @Override
       public SNodeReference value(SNode key) {
@@ -38,17 +37,14 @@ public class MPSPsiElement<T> extends FakePsiElement {
   }
 
   public MPSPsiElement(SModel model) {
-    LOG.assertCanRead();
     myItem = model.getReference();
   }
 
   public MPSPsiElement(SModule module) {
-    LOG.assertCanRead();
     myItem = module.getModuleReference();
   }
 
   public MPSPsiElement(MPSProject project) {
-    LOG.assertCanRead();
     myItem = project;
   }
 
@@ -115,7 +111,6 @@ public class MPSPsiElement<T> extends FakePsiElement {
   }
 
   public static MPSPsiElement createFor(Object o) {
-    LOG.assertCanRead();
     if (o instanceof SNode) {
       return new MPSPsiElement((SNode) o);
     }
