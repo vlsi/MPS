@@ -43,15 +43,12 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;

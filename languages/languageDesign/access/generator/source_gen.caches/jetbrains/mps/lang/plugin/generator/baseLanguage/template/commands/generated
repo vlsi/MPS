@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5jxu59kqilzyaa9xowq1qa5bh6bkwr8">
+<dependencies version="2" modelHash="ekng9ol6mddcjw56c7woj3r0ohrev1a">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
@@ -30,7 +30,9 @@
   <source id="1225441503876" name="reduce_ExecuteCommand" hash="1afg98l7btql7huh86nkbcmmq4tlaad">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1225441503896" name="reduce_ExecuteCommandInEDTStatement" hash="-954vjpqeh0ily6nbouwjw7wz2q6r8wi" />
+  <source id="1225441503896" name="reduce_ExecuteCommandInEDTStatement" hash="8mrfm6643fnry61oicluap1hfkiai0m">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1225441503916" name="reduce_ExecuteEDTCommand" hash="-57y7loi43z0vlkj5ve0w57cabqnqdrf" />
   <source id="1225441503936" name="reduce_ExecuteLightweightCommand" hash="-4iz7dn3unp9g4okoskucx71sho1a09r" />
   <source id="1225441503956" name="reduce_ExecuteWriteAction" hash="-dg131l3ie7pfl2jhxq8r1bl3u6ahr28" />

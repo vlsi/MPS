@@ -46,8 +46,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ProjectModelAccess;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -156,7 +155,7 @@ public class NewModelAction extends AnAction {
           return;
         }
 
-        final SModel newModel = ProjectModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+        final SModel newModel = new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<SModel>() {
           @Override
           public SModel compute() {
             // TODO create model in myModelRoot/mySourceRoot, fix literal
@@ -200,7 +199,7 @@ public class NewModelAction extends AnAction {
 
             return model;
           }
-        }, ProjectHelper.toMPSProject(myProject));
+        });
         if (newModel == null) {
           return;
         }
@@ -211,7 +210,7 @@ public class NewModelAction extends AnAction {
         }
 
         //Hack for update ProjectView
-        ModelAccess.instance().runWriteAction(new Runnable() {
+        ProjectHelper.getModelAccess(myProject).runWriteAction(new Runnable() {
           @Override
           public void run() {
             ((EditableSModel)newModel).save();

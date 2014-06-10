@@ -4,7 +4,6 @@ package jetbrains.mps.idea.java.psiStubs;
 
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.idea.java.psi.JavaPsiListener;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.module.Module;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -29,7 +28,6 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import com.intellij.psi.PsiFileSystemItem;
 
 public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListener {
-  private static Logger LOG = Logger.getLogger(PsiJavaStubModelRoot.class);
   private static final String TYPE = "JavaPsiStubs";
 
   @NotNull

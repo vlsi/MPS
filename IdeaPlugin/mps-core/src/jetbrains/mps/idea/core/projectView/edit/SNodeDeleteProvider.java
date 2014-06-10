@@ -20,7 +20,6 @@ import com.intellij.ide.DeleteProvider;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -49,7 +48,7 @@ public class SNodeDeleteProvider implements DeleteProvider {
 
   @Override
   public void deleteElement(@NotNull DataContext dataContext) {
-    ProjectModelAccess.instance().runCommandInEDT(new Runnable() {
+    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
         Set<EditableSModel> modelsToSave = new HashSet<EditableSModel>();
@@ -67,7 +66,7 @@ public class SNodeDeleteProvider implements DeleteProvider {
           sModelDescriptor.save();
         }
       }
-    }, myProject);
+    });
   }
 
   @Override

@@ -49,8 +49,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ProjectModelAccess;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -113,7 +112,7 @@ public class NewRootAction extends AnAction {
       @Override
       protected void doOKAction() {
         final SNodeReference conceptPointer = myConceptFqNameToNodePointerMap.get(getKindCombo().getSelectedName());
-        ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        myOperationContext.getProject().getModelAccess().executeCommand(new Runnable() {
           @Override
           public void run() {
             SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
@@ -123,12 +122,12 @@ public class NewRootAction extends AnAction {
             model.addRootNode(newNode);
             myModelDescriptor.save();
           }
-        }, myOperationContext.getProject());
+        });
         super.doOKAction();
       }
     };
     dialog.setTitle(MPSBundle.message("create.new.root.dialog.title"));
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myOperationContext.getProject().getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         for (Map.Entry<String, SNodeReference> entry : myConceptFqNameToNodePointerMap.entrySet()) {
@@ -149,9 +148,9 @@ public class NewRootAction extends AnAction {
     }
     final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
-    myModelDescriptor = (EditableSModel) ProjectModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+    myModelDescriptor = new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<EditableSModel>() {
       @Override
-      public SModel compute() {
+      public EditableSModel compute() {
         ModelRoot useModelRoot = null;
         String useSourceRoot = null;
         for (ModelRoot root : myOperationContext.getModule().getModelRoots()) {
@@ -186,7 +185,7 @@ public class NewRootAction extends AnAction {
 
         return model;
       }
-    }, ProjectHelper.toMPSProject(myProject));
+    });
     return false;
   }
 
@@ -249,7 +248,7 @@ public class NewRootAction extends AnAction {
           myOperationContext = new ModuleContext(solution, mpsProject);
           myModelDescriptor = (EditableSModel) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
           if (myModelDescriptor != null) {
-            ModelAccess.instance().runReadAction(new Runnable() {
+            mpsProject.getModelAccess().runReadAction(new Runnable() {
               @Override
               public void run() {
                 SModel model = myModelDescriptor;

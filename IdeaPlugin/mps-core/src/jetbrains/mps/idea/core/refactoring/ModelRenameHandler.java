@@ -36,8 +36,6 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.ProjectModelAccess;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -103,20 +101,19 @@ public class ModelRenameHandler implements RenameHandler {
         }
       });
       final ModelRenamer renamer = new ModelRenamer(modelDescriptor, targetFqName.get(), !(result.getSecond()));
-      ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      ProjectHelper.getModelAccess(project).executeCommand(new Runnable() {
         @Override
         public void run() {
           renamer.rename();
         }
-      },
-        ProjectHelper.toMPSProject(project));
+      });
       ProgressManager.getInstance().run(new Task.Modal(project, "Updating model usages...", false) {
         @Override
         public void run(@NotNull ProgressIndicator indicator) {
           indicator.pushState();
           indicator.setIndeterminate(true);
           try {
-            ModelAccess.instance().runWriteAction(new Runnable() {
+            ProjectHelper.getModelAccess(project).runWriteAction(new Runnable() {
               public void run() {
                 renamer.updateReferencesIfNeeded();
               }

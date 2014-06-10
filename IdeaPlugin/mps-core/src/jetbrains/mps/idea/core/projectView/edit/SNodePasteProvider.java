@@ -24,7 +24,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ProjectModelAccess;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -53,7 +52,7 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
 
   @Override
   public void performPaste(@NotNull DataContext dataContext) {
-    ModelAccess.instance().runReadInEDT(this);
+    myProject.getModelAccess().runReadInEDT(this);
   }
 
   @Override
@@ -80,7 +79,7 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
       @Override
       public void run() {
         Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(nodeData, myModel, operationContext);
-        ProjectModelAccess.instance().runCommandInEDT(getPasteRunnable(nodeData, addImportsRunnable), myProject);
+        myProject.getModelAccess().executeCommandInEDT(getPasteRunnable(nodeData, addImportsRunnable));
       }
     };
   }
