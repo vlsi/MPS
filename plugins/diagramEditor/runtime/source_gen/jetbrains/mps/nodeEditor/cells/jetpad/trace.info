@@ -284,45 +284,40 @@
     <unitInfo nodeId="5374841768509702453" fileName="AbstractJetpadCell.java" startLine="36" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/5374841768510233685">
-    <nodeInfo nodeId="5374841768510407270" fileName="WritableModelProperty.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandId" />
-    <nodeInfo nodeId="5374841768510476739" fileName="WritableModelProperty.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="5374841768510416246" fileName="WritableModelProperty.java" startLine="16" startPosition="67" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5374841768510486269" fileName="WritableModelProperty.java" startLine="17" startPosition="28" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1755573558917482497" fileName="WritableModelProperty.java" startLine="20" startPosition="57" endLine="21" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5374841768510277806" fileName="WritableModelProperty.java" startLine="30" startPosition="29" endLine="31" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5374841768510277826" fileName="WritableModelProperty.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValue#(null)V" />
-    <nodeInfo nodeId="1755573558917291243" fileName="WritableModelProperty.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
-    <nodeInfo nodeId="5374841768510277804" fileName="WritableModelProperty.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1755573558917262126" fileName="WritableModelProperty.java" startLine="18" startPosition="24" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5374841768510277800" fileName="WritableModelProperty.java" startLine="28" startPosition="25" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5374841768510277798" fileName="WritableModelProperty.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5374841768510376467" fileName="WritableModelProperty.java" startLine="16" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WritableModelProperty#(Ljava/lang/String;Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="5374841768510277794" fileName="WritableModelProperty.java" startLine="26" startPosition="55" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5374841768510277788" fileName="WritableModelProperty.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="safeSetModelPropertyValue#(null)V" />
-    <scopeInfo nodeId="1755573558917291249" fileName="WritableModelProperty.java" startLine="20" startPosition="57" endLine="21" endPosition="55" />
-    <scopeInfo nodeId="5374841768510277805" fileName="WritableModelProperty.java" startLine="30" startPosition="29" endLine="31" endPosition="58" />
-    <scopeInfo nodeId="5374841768510277826" fileName="WritableModelProperty.java" startLine="38" startPosition="0" endLine="39" endPosition="0">
+    <nodeInfo nodeId="5374841768510407270" fileName="WritableModelProperty.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandId" />
+    <nodeInfo nodeId="5374841768510476739" fileName="WritableModelProperty.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="5374841768510416246" fileName="WritableModelProperty.java" startLine="15" startPosition="67" endLine="16" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768510486269" fileName="WritableModelProperty.java" startLine="16" startPosition="28" endLine="17" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1755573558917482497" fileName="WritableModelProperty.java" startLine="19" startPosition="57" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837398282091107545" fileName="WritableModelProperty.java" startLine="27" startPosition="25" endLine="28" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768510277826" fileName="WritableModelProperty.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setModelPropertyValue#(null)V" />
+    <nodeInfo nodeId="1755573558917291243" fileName="WritableModelProperty.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+    <nodeInfo nodeId="2837398282091105944" fileName="WritableModelProperty.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1755573558917262126" fileName="WritableModelProperty.java" startLine="17" startPosition="24" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2837398282090980629" fileName="WritableModelProperty.java" startLine="25" startPosition="55" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5374841768510277788" fileName="WritableModelProperty.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="safeSetModelPropertyValue#(null)V" />
+    <nodeInfo nodeId="5374841768510376467" fileName="WritableModelProperty.java" startLine="15" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WritableModelProperty#(Ljava/lang/String;Ljetbrains/mps/project/Project;)V" />
+    <scopeInfo nodeId="1755573558917291249" fileName="WritableModelProperty.java" startLine="19" startPosition="57" endLine="20" endPosition="55" />
+    <scopeInfo nodeId="2837398282091105948" fileName="WritableModelProperty.java" startLine="27" startPosition="25" endLine="28" endPosition="33" />
+    <scopeInfo nodeId="5374841768510277826" fileName="WritableModelProperty.java" startLine="33" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="5374841768510277827" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1755573558917291243" fileName="WritableModelProperty.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1755573558917291243" fileName="WritableModelProperty.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1755573558917291246" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5374841768510277804" fileName="WritableModelProperty.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5374841768510277799" fileName="WritableModelProperty.java" startLine="28" startPosition="25" endLine="33" endPosition="48" />
-    <scopeInfo nodeId="5374841768510376471" fileName="WritableModelProperty.java" startLine="16" startPosition="67" endLine="23" endPosition="7" />
-    <scopeInfo nodeId="5374841768510277798" fileName="WritableModelProperty.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="5374841768510376467" fileName="WritableModelProperty.java" startLine="16" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="2837398282091105944" fileName="WritableModelProperty.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="5374841768510277793" fileName="WritableModelProperty.java" startLine="25" startPosition="55" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="5374841768510376471" fileName="WritableModelProperty.java" startLine="15" startPosition="67" endLine="22" endPosition="7" />
+    <scopeInfo nodeId="5374841768510277788" fileName="WritableModelProperty.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="5374841768510277791" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="5374841768510376467" fileName="WritableModelProperty.java" startLine="15" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="5374841768510385418" varName="commandId" />
       <varInfo nodeId="5374841768510449927" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5374841768510277793" fileName="WritableModelProperty.java" startLine="26" startPosition="55" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="5374841768510277788" fileName="WritableModelProperty.java" startLine="26" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="5374841768510277791" varName="t" />
-    </scopeInfo>
-    <unitInfo nodeId="1755573558917291241" fileName="WritableModelProperty.java" startLine="19" startPosition="19" endLine="23" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$1" />
-    <unitInfo nodeId="5374841768510277804" fileName="WritableModelProperty.java" startLine="29" startPosition="66" endLine="33" endPosition="9" unitName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$3" />
-    <unitInfo nodeId="5374841768510277798" fileName="WritableModelProperty.java" startLine="27" startPosition="40" endLine="35" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$2" />
-    <unitInfo nodeId="5374841768510233685" fileName="WritableModelProperty.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
+    <unitInfo nodeId="1755573558917291241" fileName="WritableModelProperty.java" startLine="18" startPosition="19" endLine="22" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$1" />
+    <unitInfo nodeId="2837398282091105942" fileName="WritableModelProperty.java" startLine="26" startPosition="50" endLine="30" endPosition="5" unitName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty$2" />
+    <unitInfo nodeId="5374841768510233685" fileName="WritableModelProperty.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.nodeEditor.cells.jetpad.WritableModelProperty" />
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6277411742335784369">
     <nodeInfo nodeId="718530200791455140" fileName="JetpadUtils.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOURCE" />

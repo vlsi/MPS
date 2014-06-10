@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.ModelAccessListener;
 import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
@@ -562,7 +563,13 @@ public class WorkbenchModelAccess extends ModelAccess implements ModelCommandPro
     if (project == null) {
       project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }
-    runWriteActionInCommand(r, "", null, false, project);
+    String name = "", groupId = null;
+    if (r instanceof UndoRunnable) {
+      UndoRunnable ur = (UndoRunnable) r;
+      name = ur.getName();
+      groupId = ur.getGroupId();
+    }
+    runWriteActionInCommand(r, name, groupId, false, project);
   }
 
   @Override

@@ -36,17 +36,17 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelCommandProjectExecutor;
-import jetbrains.mps.smodel.ProjectModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -454,15 +454,16 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     myCaretIsVisible = true;
 
 
+    ModelAccess modelAccess = getContext().getRepository().getModelAccess();
     if (isEditable()) {
       final boolean result[] = new boolean[1];
-      String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
+      String groupId = new ModelAccessHelper(modelAccess).runReadAction(new Computable<String>() {
         @Override
         public String compute() {
           return getCellId() + "_" + getSNode().getNodeId().toString();
         }
       });
-      ProjectModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      modelAccess.executeCommand(new UndoRunnable.Base(null, groupId) {
         @Override
         public void run() {
           if (processMutableKeyTyped(keyEvent, allowErrors)) {
@@ -480,14 +481,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
             result[0] = true;
           }
         }
-      }, null, groupId, false, getOperationContext().getProject());
+      });
       getEditor().relayout();
       if (result[0]) {
         return true;
       }
     }
     if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {
-      String pattern = ModelAccess.instance().runReadAction(new Computable<String>() {
+      String pattern = new ModelAccessHelper(modelAccess).runReadAction(new Computable<String>() {
         @Override
         public String compute() {
           return getRenderedTextOn(keyEvent);

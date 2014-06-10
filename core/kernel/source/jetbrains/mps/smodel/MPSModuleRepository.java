@@ -368,6 +368,11 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
     @Override
     public void executeCommand(Runnable r) {
+      // FIXME: CommandProcessor tolerates null project, why don't we support commands from this ModelAccessor?
+      // e.g. there are actions that run without a project (like New Project action), and they could benefit from
+      // same command execution approach. OTOH, this might be defect in the actions, as most actions that run without
+      // project have executeOutsideCommand = true. This is not true for some vcs commands, though, the question is whether
+      // it's legitimate to execute commands when there's no project (even though CommandProcessor allows that).
       throw new UnsupportedOperationException();
     }
 
