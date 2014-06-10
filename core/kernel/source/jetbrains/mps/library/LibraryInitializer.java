@@ -127,7 +127,7 @@ public class LibraryInitializer implements CoreComponent {
     if (toUnload.isEmpty() && toLoad.isEmpty()) return;
 
     CleanupManager.getInstance().cleanup();
-//    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
   //----------bootstrap modules
