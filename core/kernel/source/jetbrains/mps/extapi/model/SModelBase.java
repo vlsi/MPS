@@ -121,6 +121,9 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @NotNull
   public SModelReference getReference() {
     assertCanRead();
+    if (myModule == null) {
+      LOG.error("Module of model `" + getModelName() + "' is not set. Trying to get model reference of model outside module.", new Throwable());
+    }
     return myModelReference;
   }
 

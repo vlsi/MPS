@@ -220,7 +220,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   public LanguageModelDescriptor createModel(Language module) {
     LanguageModelDescriptor result = new LanguageModelDescriptor(getSModelReference(module), module);
 
-    myModels.put(result.getReference(), result);
+    myModels.put(getSModelReference(module), result);
     module.registerModel(result);
     return result;
   }

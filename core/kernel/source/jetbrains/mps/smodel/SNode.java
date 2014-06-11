@@ -1207,9 +1207,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (myModel == null) return;
 
     if (!myModel.isUpdateMode()) {
-      UnregisteredNodes.instance().put(this);
-      for (SReference ref : myReferences) {
-        ref.makeDirect();
+      if (myRepository != null) {
+        UnregisteredNodes.instance().put(this);
+        for (SReference ref : myReferences) {
+          ref.makeDirect();
+        }
       }
     }
 

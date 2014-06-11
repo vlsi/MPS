@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -33,6 +34,8 @@ import java.util.Set;
  * evgeny, 10/23/12
  */
 public abstract class ModelRootBase implements ModelRoot {
+
+  private static Logger LOG = Logger.getLogger(ModelRootBase.class);
 
   private SModule myModule;
   private volatile SRepository myRepository;
@@ -109,6 +112,8 @@ public abstract class ModelRootBase implements ModelRoot {
     if (module.getModel(model.getModelId()) == null) {
       module.registerModel((SModelBase) model);
       myModels.add(model);
+    } else {
+      LOG.error("Model `" + model.getModelName() + "' already presents in module `" + module.getModuleName() + "'.", new Throwable());
     }
   }
 
@@ -119,6 +124,8 @@ public abstract class ModelRootBase implements ModelRoot {
     if (module.getModel(model.getModelId()) != null) {
       module.unregisterModel((SModelBase) model);
       myModels.remove(model);
+    } else {
+      LOG.error("Model `" + model.getModelName() + "' is not registered in module `" + module.getModuleName() + "'.", new Throwable());
     }
   }
 
@@ -129,8 +136,14 @@ public abstract class ModelRootBase implements ModelRoot {
 
     Set<org.jetbrains.mps.openapi.model.SModelReference> loaded = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
     for (SModel model : loadModels()) {
+      //todo: check if model already registered
+      if (module.getModel(model.getModelId()) != model) {
+        register(model);
+      }
+      //if (model.getRepository() != null) {
+      //  register(model);
+      //}
       loaded.add(model.getReference());
-      register(model);
     }
     Iterator<SModel> it = myModels.iterator();
     while (it.hasNext()) {

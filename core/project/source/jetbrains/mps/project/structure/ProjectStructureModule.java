@@ -193,7 +193,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   public ProjectStructureSModelDescriptor createModel(SModule module) {
     ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(getSModelReference(module), module);
-    myModels.put(result.getReference().getModelId(), result);
+    myModels.put(getSModelReference(module).getModelId(), result);
     registerModel(result);
     return result;
   }
