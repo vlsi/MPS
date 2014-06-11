@@ -117,7 +117,7 @@ public class ProjectRepository extends SRepositoryBase {
 
     @Override
     public void executeCommand(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runWriteActionInCommand(r, project);
+      jetbrains.mps.smodel.ModelAccess.instance().executeCommand(r, project);
     }
 
     @Override

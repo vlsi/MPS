@@ -528,7 +528,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void runWriteActionInCommand(Runnable r, Project project) {
-    runWriteActionInCommand(r, null, null, false, project);
+    executeCommand(r, project);
   }
 
   @Override
