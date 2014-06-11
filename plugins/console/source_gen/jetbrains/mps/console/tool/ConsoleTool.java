@@ -83,7 +83,6 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
     addTab(tab, title, icon, new IComponentDisposer<BaseConsoleTab>() {
       public void disposeComponent(BaseConsoleTab ct) {
         ListSequence.fromList(myTabs).removeElement(ct);
-        ct.disposeConsoleTab();
       }
     }, openTool);
     return tab;
