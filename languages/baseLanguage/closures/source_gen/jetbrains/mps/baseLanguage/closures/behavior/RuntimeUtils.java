@@ -6,7 +6,6 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -15,11 +14,9 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SReference;
 
 public class RuntimeUtils {
   private static Map<String, SNode> RUNTIME_CLASSIFIERS = null;
@@ -29,11 +26,11 @@ public class RuntimeUtils {
   }
 
   public static SModel getRuntimeModel() {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_hadnfw_a0a0a3(), "classifier", false));
+    return SNodeOperations.getModel(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_UnrestrictedClosures"));
   }
 
   public static SModel getStaticRuntimeModel() {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_hadnfw_a0a0a4(), "classifier", false));
+    return SNodeOperations.getModel(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_FunctionTypes"));
   }
 
   public static Map<String, SNode> getRuntimeClassifiersMap() {
@@ -88,21 +85,5 @@ public class RuntimeUtils {
       }
     }
     return STATIC_RUNTIME_CLASSIFIERS;
-  }
-
-  private static SNode _quotation_createNode_hadnfw_a0a0a3() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), facade.createNodeId("~_UnrestrictedClosures")));
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_hadnfw_a0a0a4() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), facade.createNodeId("~_FunctionTypes")));
-    return quotedNode_1;
   }
 }
