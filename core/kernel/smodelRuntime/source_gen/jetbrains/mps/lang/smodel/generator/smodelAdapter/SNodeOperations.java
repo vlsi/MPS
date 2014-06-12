@@ -31,6 +31,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class SNodeOperations {
@@ -633,9 +634,6 @@ public class SNodeOperations {
   }
 
   public static SNode as(SNode node, String castTo) {
-    if (node == null) {
-      return null;
-    }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
       return null;
     }
@@ -683,14 +681,14 @@ public class SNodeOperations {
     if (childNode == null) {
       return null;
     }
-    return ((SNode) childNode).getRoleInParent();
+    return childNode.getRoleInParent();
   }
 
   public static List<SReference> getReferences(SNode node) {
     if (node == null) {
       return new EmptyList<SReference>("Attempt to add reference to unexistent parent. Reference: %s");
     }
-    return ((List) IterableUtil.asList(node.getReferences()));
+    return IterableUtil.asList(node.getReferences());
   }
 
   public static SReference getReference(SNode node, SNode linkDeclaration) {
@@ -701,10 +699,14 @@ public class SNodeOperations {
     return node.getReference(SPropertyOperations.getString(linkDeclaration, "role"));
   }
 
-  public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, final String conceptName) {
+  public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, String conceptName) {
+    if (conceptName == null) {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
+    final InstanceOfCondition condition = new InstanceOfCondition(conceptName);
     return Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, conceptName);
+        return it != null && condition.met(it);
       }
     });
   }
