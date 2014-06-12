@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationParametersProvider;
@@ -45,8 +46,9 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
@@ -85,7 +87,7 @@ import java.util.Map;
 class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModel myOriginalInputModel;
-  private final IOperationContext myInvokeContext; // initial context the session was initiated within
+  private final Project myProject;
   private GenerationPlan myGenerationPlan;
 
   private final GenerationTrace myNewTrace;
@@ -104,7 +106,7 @@ class GenerationSession {
   private final GenerationOptions myGenerationOptions;
   private final List<SModel> myTransientModelsToRecycle = new ArrayList<SModel>();
 
-  GenerationSession(@NotNull SModel inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
+  GenerationSession(@NotNull SModel inputModel, @NotNull Project project, ITaskPoolProvider taskPoolProvider,
       GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
       IPerformanceTracer tracer, GenerationOptions generationOptions, GenerationTrace genTrace) {
     myTaskPoolProvider = taskPoolProvider;
@@ -114,8 +116,8 @@ class GenerationSession {
     myLogger = new GenerationSessionLogger(logger, myLogRecorder);
     ttrace = tracer;
     myGenerationOptions = generationOptions;
-    myInvokeContext = invocationContext;
-    mySessionContext = new GenerationSessionContext(invocationContext, generationOptions, myLogger, transientModelsModule, myOriginalInputModel, tracer);
+    myProject = project;
+    mySessionContext = new GenerationSessionContext(project, generationOptions, myLogger, transientModelsModule, myOriginalInputModel, tracer);
   }
 
   GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
@@ -150,7 +152,7 @@ class GenerationSession {
         generationParameters = null;
       }
 
-      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myInvokeContext,
+      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, new ProjectOperationContext(myProject),
           myGenerationOptions, myGenerationPlan.getSignature(), generationParameters, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
@@ -163,7 +165,7 @@ class GenerationSession {
           myLogger.info("generated files are up-to-date");
           ttrace.pop();
           return new GenerationStatus(myOriginalInputModel, null,
-              myDependenciesBuilder.getResult(myInvokeContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
+              myDependenciesBuilder.getResult(new ProjectOperationContext(myProject), myGenerationOptions.getIncrementalStrategy()), false, false, false);
         }
 
         if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
@@ -250,7 +252,7 @@ class GenerationSession {
         }
 
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
-            myDependenciesBuilder.getResult(myInvokeContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
+            myDependenciesBuilder.getResult(new ProjectOperationContext(myProject), myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
             myLogger.getWarningCount() > 0, false);
         success = generationStatus.isOk();
         return generationStatus;
@@ -705,7 +707,7 @@ class GenerationSession {
   }
 
   private boolean keepTransientForMessageNavigation() {
-    return !myInvokeContext.isTestMode();
+    return !RuntimeFlags.isTestMode();
   }
 
   public MPSAppenderBase getLoggingHandler() {
