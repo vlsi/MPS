@@ -758,7 +758,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6632570505820995656" resolveInfo="LOG" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6632570505821318734" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~Logger%derror(java%dlang%dString,java%dlang%dThrowable)%cvoid" resolveInfo="error" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~Category%derror(java%dlang%dObject,java%dlang%dThrowable)%cvoid" resolveInfo="error" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6632570505821326984" nodeInfo="nn">
                       <property name="value" nameId="tpee.1070475926801" value="could not build stub model for code PSI: you may not be able to reference java code from MPS" />
                     </node>
