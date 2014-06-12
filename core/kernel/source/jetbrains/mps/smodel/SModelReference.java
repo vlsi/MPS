@@ -79,7 +79,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     SModelReference that = (SModelReference) o;
 
     if (!myModelId.equals(that.myModelId)) return false;
-    if (myModuleReference != null ? !myModuleReference.equals(that.myModuleReference) : that.myModuleReference != null) return false;
+    if (myModuleReference != null && that.myModuleReference != null && !myModuleReference.equals(that.myModuleReference)) return false;
+    if (myModuleReference == null || that.myModuleReference == null) return myModelId.isGloballyUnique() && that.myModelId.isGloballyUnique();
 
     return true;
   }
@@ -87,7 +88,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Override
   public int hashCode() {
     int result = myModelId.hashCode();
-    result = 31 * result + (myModuleReference != null ? myModuleReference.hashCode() : 0);
+    result = 31 * result + (myModelId.isGloballyUnique() ? 0 : myModuleReference.hashCode());
     return result;
   }
 

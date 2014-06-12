@@ -121,9 +121,9 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @NotNull
   public SModelReference getReference() {
     assertCanRead();
-    if (myModule == null) {
-      LOG.error("Module of model `" + getModelName() + "' is not set. Trying to get model reference of model outside module.", new Throwable());
-    }
+    //if (myModule == null) {
+    //  LOG.error("Module of model `" + getModelName() + "' is not set. Trying to get model reference of model outside module.", new Throwable());
+    //}
     return myModelReference;
   }
 
@@ -150,6 +150,13 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public void setModule(SModule module) {
     assertCanRead();
     myModule = module;
+    if (myModelReference.getModuleReference() == null) {
+      jetbrains.mps.smodel.SModelReference newModelReference = new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), this.getModelId(), this.getModelName());
+      if (!newModelReference.equals(myModelReference)) {
+        LOG.error("new model reference should be equal to old");
+      }
+      changeModelReference(newModelReference);
+    }
   }
 
   /**
