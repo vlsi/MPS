@@ -28,7 +28,7 @@ public class ConvertToBinaryWorker {
     mpsPersistence.init();
     RuntimeFlags.setMergeDriverMode(true);
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
-    System.setProperty("mps.playRefactorings", "false");
+    RuntimeFlags.setPlayRefactoringsMode(false);
     try {
       for (Map.Entry<String, String> entry : map.entrySet()) {
         convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);

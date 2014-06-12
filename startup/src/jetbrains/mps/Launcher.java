@@ -29,8 +29,7 @@ import java.util.Scanner;
 
 public class Launcher {
   public static void main(String[] args) throws Exception {
-    String mpsInternal = System.getProperty("mps.internal");
-    System.setProperty("idea.is.internal", mpsInternal != null ? mpsInternal : "false");
+    System.setProperty("idea.is.internal", String.valueOf(InternalFlag.isInternalMode()));
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", "true");
 

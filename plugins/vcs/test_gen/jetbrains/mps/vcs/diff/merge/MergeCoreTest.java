@@ -23,9 +23,8 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 @RunWith(Parameterized.class)
 public class MergeCoreTest extends WorkbenchMpsTest {
   private static final File TESTDATA_HOME = new File("testbench/modules/merge");
-  private static String ourPlayRefactoringWas;
+  private static boolean ourPlayRefactoringWas;
   private static boolean ourMergeDriverModeWas;
-  private static final String PLAY_REFACTORINGS_PROPERTY = "mps.playRefactorings";
   private String myZipName;
 
   public MergeCoreTest(String testName, String zipName) {
@@ -61,10 +60,10 @@ public class MergeCoreTest extends WorkbenchMpsTest {
 
   @BeforeClass
   public static void setUpClass() {
-    ourPlayRefactoringWas = System.getProperty(PLAY_REFACTORINGS_PROPERTY);
+    ourPlayRefactoringWas = RuntimeFlags.isPlayRefactoringsMode();
     ourMergeDriverModeWas = RuntimeFlags.isMergeDriverMode();
 
-    System.setProperty(PLAY_REFACTORINGS_PROPERTY, "false");
+    RuntimeFlags.setPlayRefactoringsMode(false);
     RuntimeFlags.setMergeDriverMode(true);
 
     Properties p = new Properties();
@@ -78,11 +77,7 @@ public class MergeCoreTest extends WorkbenchMpsTest {
 
   @AfterClass
   public static void tearDownClass() {
-    if (ourPlayRefactoringWas == null) {
-      System.getProperties().remove(PLAY_REFACTORINGS_PROPERTY);
-    } else {
-      System.setProperty(PLAY_REFACTORINGS_PROPERTY, ourPlayRefactoringWas);
-    }
+    RuntimeFlags.setPlayRefactoringsMode(ourPlayRefactoringWas);
     RuntimeFlags.setMergeDriverMode(ourMergeDriverModeWas);
   }
 

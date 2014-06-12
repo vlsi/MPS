@@ -405,8 +405,8 @@
     <nodeInfo nodeId="3342666646761698168" fileName="ModelMerger.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelName" />
     <nodeInfo nodeId="8704175735083455777" fileName="ModelMerger.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExtension" />
     <nodeInfo nodeId="8704175735083508921" fileName="ModelMerger.java" startLine="34" startPosition="40" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698191" fileName="ModelMerger.java" startLine="40" startPosition="129" endLine="41" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698195" fileName="ModelMerger.java" startLine="41" startPosition="56" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="130791456002385509" fileName="ModelMerger.java" startLine="40" startPosition="129" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761698195" fileName="ModelMerger.java" startLine="41" startPosition="48" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761698200" fileName="ModelMerger.java" startLine="42" startPosition="42" endLine="43" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3161737310434644238" fileName="ModelMerger.java" startLine="43" startPosition="87" endLine="44" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761698208" fileName="ModelMerger.java" startLine="44" startPosition="78" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

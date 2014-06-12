@@ -23,6 +23,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Level;
+import jetbrains.mps.RuntimeFlags;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -156,7 +157,7 @@ lfind:
   }
 
   public static boolean refactoringsPlaybackEnabled() {
-    return !("false".equals(System.getProperty("mps.playRefactorings")));
+    return RuntimeFlags.isPlayRefactoringsMode();
   }
 
   protected static Logger LOG = LogManager.getLogger(StructureModificationProcessor.class);

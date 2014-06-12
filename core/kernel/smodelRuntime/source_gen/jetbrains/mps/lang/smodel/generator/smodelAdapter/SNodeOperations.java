@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.RuntimeFlags;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
@@ -34,7 +35,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class SNodeOperations {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeOperations.class));
-  private static boolean ourCastsEnabled = !(("true".equals(System.getProperty("mps.disableNodeCastExceptions"))));
+  private static boolean ourCastExceptionsEnabled = RuntimeFlags.isExceptionOnBadCast();
   /**
    * Empty list of nodes that can't be modified helps to detect otherwise hard to catch
    * errors when role of non-existent parent is modified.
@@ -622,7 +623,7 @@ public class SNodeOperations {
     }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
       String message = "Can't cast node: " + node.getNodeId().toString() + ", concept: " + node.getConcept().getQualifiedName() + " to concept: " + castTo;
-      if (ourCastsEnabled) {
+      if (ourCastExceptionsEnabled) {
         throw new NodeCastException(message);
       } else {
         LOG.warning(message);
@@ -647,7 +648,7 @@ public class SNodeOperations {
     }
     if (!(SModelUtil.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
       String message = "Can't cast concept: " + node.getNodeId().toString() + ", FQName: " + NameUtil.nodeFQName(node) + " to concept: " + castTo;
-      if (ourCastsEnabled) {
+      if (ourCastExceptionsEnabled) {
         throw new NodeCastException(message);
       } else {
         LOG.warning(message);

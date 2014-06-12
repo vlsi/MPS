@@ -38,7 +38,7 @@ import org.apache.log4j.LogManager;
   @Override
   @Nullable
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
-    System.setProperty("mps.playRefactorings", "false");
+    RuntimeFlags.setPlayRefactoringsMode(false);
     RuntimeFlags.setMergeDriverMode(true);
     LightModelEnvironmentInfoImpl persistenceEnv = new LightModelEnvironmentInfoImpl();
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(persistenceEnv);
