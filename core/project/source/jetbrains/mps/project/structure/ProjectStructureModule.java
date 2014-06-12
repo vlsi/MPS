@@ -198,10 +198,10 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return result;
   }
 
-  private static SModelReference getSModelReference(SModule module) {
+  private SModelReference getSModelReference(SModule module) {
     SModuleId moduleId = module.getModuleReference().getModuleId();
     SModelId id = moduleId != null ? jetbrains.mps.smodel.SModelId.foreign("project", moduleId.toString()) : null;
-    return new jetbrains.mps.smodel.SModelReference(module.getModuleReference(), id,
+    return new jetbrains.mps.smodel.SModelReference(this.getModuleReference(), id,
         "module." + module.getModuleName() + "@" + SModelStereotype.getStubStereotypeForId("project"));
   }
 
