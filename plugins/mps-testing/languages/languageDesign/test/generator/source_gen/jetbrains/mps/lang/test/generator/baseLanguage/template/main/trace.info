@@ -156,8 +156,8 @@
     </scopeInfo>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)/1225991336264">
-    <nodeInfo nodeId="1225992661387" fileName="QueriesGenerated.java" startLine="174" startPosition="106" endLine="175" endPosition="342" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1225991473952" fileName="QueriesGenerated.java" startLine="174" startPosition="106" endLine="175" endPosition="342" />
+    <nodeInfo nodeId="3485705737562158825" fileName="QueriesGenerated.java" startLine="174" startPosition="112" endLine="175" endPosition="342" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="3485705737562158824" fileName="QueriesGenerated.java" startLine="174" startPosition="112" endLine="175" endPosition="342" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)/1229198536781">
     <nodeInfo nodeId="1229198713497" fileName="QueriesGenerated.java" startLine="178" startPosition="106" endLine="179" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

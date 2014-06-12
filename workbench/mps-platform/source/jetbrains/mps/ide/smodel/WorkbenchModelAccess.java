@@ -33,7 +33,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessListener;
-import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable;

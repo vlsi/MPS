@@ -29,7 +29,7 @@ public class AddPropertyAttribute_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("7548887999679381427", "7548887999679381441");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeIntention("testDefaultEditor.intentions.AddDefaultPropertyAttribute_Intention", editor, this.myStart.getNode());
+      invokeIntention("testDefaultEditor.intentions.AddDefaultPropertyAttribute_Intention", editor, myStart.getNode());
     }
   }
 }

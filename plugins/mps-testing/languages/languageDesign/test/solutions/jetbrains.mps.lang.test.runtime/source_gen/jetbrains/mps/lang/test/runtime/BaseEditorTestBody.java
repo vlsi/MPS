@@ -180,11 +180,11 @@ public class BaseEditorTestBody extends BaseTestBody {
 
 
 
-  public static void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
+  public void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
-        editor.getEditorContext().executeCommand(new Runnable() {
+        myProject.getModelAccess().executeCommand(new Runnable() {
           public void run() {
             editor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();

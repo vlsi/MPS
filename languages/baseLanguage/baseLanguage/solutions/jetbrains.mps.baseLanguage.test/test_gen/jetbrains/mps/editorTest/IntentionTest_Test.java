@@ -29,7 +29,7 @@ public class IntentionTest_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("1230132506154", "1230132540710");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeIntention("jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention", editor, this.myStart.getNode());
+      invokeIntention("jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention", editor, myStart.getNode());
     }
   }
 }

@@ -29,7 +29,7 @@ public class AddNodeAttribute_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("2870455723671260727", "2870455723671261234");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeIntention("testDefaultEditor.intentions.AddDefaultNodeAttribute_Intention", editor, this.myStart.getNode());
+      invokeIntention("testDefaultEditor.intentions.AddDefaultNodeAttribute_Intention", editor, myStart.getNode());
     }
   }
 }

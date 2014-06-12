@@ -29,7 +29,7 @@ public class StyleAttributeTest_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("8422442021223409310", "8422442021223410181");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeIntention("jetbrains.mps.lang.editor.styleTests.intentions.TestAttributeIntention_Intention", editor, this.myStart.getNode());
+      invokeIntention("jetbrains.mps.lang.editor.styleTests.intentions.TestAttributeIntention_Intention", editor, myStart.getNode());
     }
   }
 }

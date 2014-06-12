@@ -29,7 +29,7 @@ public class AddPropertyAttribute_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("3447504547919025661", "3447504547919025665");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeIntention("jetbrains.mps.lang.editor.editorTest.intentions.AddSimplePropertyAttribute_Intention", editor, this.myStart.getNode());
+      invokeIntention("jetbrains.mps.lang.editor.editorTest.intentions.AddSimplePropertyAttribute_Intention", editor, myStart.getNode());
     }
   }
 }
