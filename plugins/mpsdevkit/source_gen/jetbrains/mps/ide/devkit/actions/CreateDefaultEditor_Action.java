@@ -106,6 +106,8 @@ public class CreateDefaultEditor_Action extends BaseAction {
     try {
       SNode conceptDeclaration = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
       SNode editorDeclaration = SNodeOperations.cast(ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, conceptDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
+      assert BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}) != null;
+      assert eq_e50aup_a0d0a0g(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), conceptDeclaration);
       if (SPropertyOperations.getString(conceptDeclaration, "virtualPackage") != null) {
         SPropertyOperations.set(editorDeclaration, "virtualPackage", SPropertyOperations.getString(conceptDeclaration, "virtualPackage"));
       }
@@ -119,4 +121,8 @@ public class CreateDefaultEditor_Action extends BaseAction {
   }
 
   protected static Logger LOG = LogManager.getLogger(CreateDefaultEditor_Action.class);
+
+  private static boolean eq_e50aup_a0d0a0g(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
 }

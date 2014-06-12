@@ -45,7 +45,7 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
   public void beforeModuleRemoved(SModule module) {
     LOG.debug("removing " + module);
     final Set<SModule> unloadedModules = myClassLoaderManager.unloadClasses(Arrays.asList(module), new EmptyProgressMonitor());
-    loadDeps(module, unloadedModules);
+//    loadDeps(module, unloadedModules);
   }
 
   @Override
@@ -57,7 +57,7 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
       LOG.debug("the module was not loaded so no need to reload dependencies");
       return;
     }
-    reloadDeps(module);
+//    reloadDeps(module);
 
     LOG.debug("after adding " + module);
   }
