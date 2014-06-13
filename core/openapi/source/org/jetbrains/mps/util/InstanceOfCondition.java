@@ -28,10 +28,23 @@ import java.util.ArrayList;
  */
 public final class InstanceOfCondition implements Condition<SNode> {
   private final SConcept[] myConcepts;
+  private boolean myTolerateNull = false;
 
   public InstanceOfCondition(@NotNull String conceptQualifiedName) {
     myConcepts = new SConcept[1];
     myConcepts[0] = SConceptRepository.getInstance().getInstanceConcept(conceptQualifiedName);
+  }
+
+  /**
+   * Generally, condition doesn't expect null values to come to {@link #met(org.jetbrains.mps.openapi.model.SNode)}, as
+   * it's likely a programming error, and there's little reason to hide such.
+   *    * However, if input sequence might legally contain <code>null</code> values, use this method
+   * to switch tolerance to <code>null</code> on - condition simply is not met in this case.
+   * @return <code>this</code> for convenience
+   */
+  public InstanceOfCondition tolerateNulls() {
+    myTolerateNull = true;
+    return this;
   }
   public InstanceOfCondition(@NotNull String[] conceptQualifiedNames) {
     ArrayList<SConcept> a = new ArrayList<SConcept>(conceptQualifiedNames.length);
@@ -45,6 +58,12 @@ public final class InstanceOfCondition implements Condition<SNode> {
 
   @Override
   public boolean met(SNode node) {
+    if (node == null) {
+      if (myTolerateNull) {
+        return false;
+      }
+      throw new NullPointerException();
+    }
     for (SConcept c : myConcepts) {
       if (node.getConcept().isSubConceptOf(c)) {
         return true;

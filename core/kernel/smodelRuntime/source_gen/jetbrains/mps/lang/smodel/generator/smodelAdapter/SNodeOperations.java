@@ -32,7 +32,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.ConditionalIterable;
 
 public class SNodeOperations {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeOperations.class));
@@ -703,11 +703,8 @@ public class SNodeOperations {
     if (conceptName == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
-    final InstanceOfCondition condition = new InstanceOfCondition(conceptName);
-    return Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return it != null && condition.met(it);
-      }
-    });
+    InstanceOfCondition condition = new InstanceOfCondition(conceptName).tolerateNulls();
+    Iterable<SNode> rv = new ConditionalIterable<SNode>(nodes, condition);
+    return rv;
   }
 }
