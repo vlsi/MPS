@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,7 +87,9 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   public void detach() {
     ModelAccess.assertLegalWrite();
     synchronized (REPO_LOCK) {
-      getSModelInternal().detachRoots();
+      if (getLoadingState() != ModelLoadingState.NOT_LOADED) {
+        getSModelInternal().detachRoots();
+      }
       myRepository = null;
     }
   }

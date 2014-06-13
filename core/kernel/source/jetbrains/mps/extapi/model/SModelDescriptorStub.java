@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,9 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
 
   private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
-  private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
+  private final List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
+
+  private ModelLoadingState myModelLoadState = ModelLoadingState.NOT_LOADED;
 
   /**
    * Migration to 3.0. Loads and returns model data.
@@ -80,8 +82,9 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
     myModelListeners.clear();
   }
 
-  public boolean isGeneratable() {
-    return false;
+  @NotNull
+  protected ModelLoadingState getLoadingState() {
+    return myModelLoadState;
   }
 
   protected void notifyModelReplaced(jetbrains.mps.smodel.SModel oldSModel) {
@@ -133,6 +136,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   }
 
   protected void fireModelStateChanged(ModelLoadingState newState) {
+    myModelLoadState = newState;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.modelLoadingStateChanged(this, newState);
