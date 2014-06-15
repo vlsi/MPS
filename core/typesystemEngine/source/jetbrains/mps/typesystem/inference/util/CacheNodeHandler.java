@@ -53,7 +53,6 @@ public class CacheNodeHandler {
   }
 
   protected SNode getNode() {
-    SNode sn = myNodeRef.get();
-    return sn != null && SNodeUtil.isAccessible(sn, MPSModuleRepository.getInstance()) ? sn : null;
+    return myNodeRef.get();
   }
 }
