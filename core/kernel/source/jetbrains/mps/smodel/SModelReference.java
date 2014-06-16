@@ -157,21 +157,21 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   public String toString() {
     StringBuilder sb = new StringBuilder();
 
-    if (myModuleReference != null && myModuleReference.getModuleId() != null) {
-      sb.append(StringUtil.escapeRefChars(myModuleReference.getModuleId().toString()));
+    if (getModuleReference() != null && getModuleReference().getModuleId() != null) {
+      sb.append(StringUtil.escapeRefChars(getModuleReference().getModuleId().toString()));
       sb.append("/");
     }
 
     String modelId = myModelId instanceof ModelNameSModelId ? myModelId.getModelName() : myModelId.toString();
     sb.append(StringUtil.escapeRefChars(modelId));
 
-    if (myModuleReference == null && myModelName.equals(myModelId.getModelName())) {
+    if (getModuleReference() == null && myModelName.equals(myModelId.getModelName())) {
       return sb.toString();
     }
 
     sb.append("(");
-    if (myModuleReference != null && myModuleReference.getModuleName() != null) {
-      sb.append(StringUtil.escapeRefChars(myModuleReference.getModuleName()));
+    if (getModuleReference() != null && getModuleReference().getModuleName() != null) {
+      sb.append(StringUtil.escapeRefChars(getModuleReference().getModuleName()));
       sb.append("/");
     }
     sb.append(StringUtil.escapeRefChars(myModelName));
