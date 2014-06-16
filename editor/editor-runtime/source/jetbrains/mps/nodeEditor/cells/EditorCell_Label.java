@@ -201,7 +201,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   public void home() {
     if (isFirstPositionAllowed()) {
       setCaretPosition(0);
-    } else {
+    } else if (getText().length() > 0) {
       setCaretPosition(1);
     }
   }
@@ -210,7 +210,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   public void end() {
     if (isLastPositionAllowed()) {
       setCaretPosition(getText().length());
-    } else {
+    } else if (getText().length() > 0) {
       setCaretPosition(getText().length() - 1);
     }
   }
