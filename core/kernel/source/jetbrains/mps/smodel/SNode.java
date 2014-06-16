@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
@@ -318,7 +317,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private boolean needFireEvent() {
-    return myModel != null && myModel.getModelDescriptor() != null && ModelChange.needFireEvents(getModel(), this);
+    return myModel != null && myModel.getModelDescriptor() != null && myModel.canFireEvent();
   }
 
   /**
@@ -734,9 +733,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     };
   }
 
-  //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
   @Override
-  public Set<String> getPropertyNames() {
+  public Iterable<String> getPropertyNames() {
     nodeRead();
 
     fireNodeReadAccess();

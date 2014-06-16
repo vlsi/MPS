@@ -273,11 +273,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   }
 
   @Override
-  public final boolean canFireEvent() {
-    return getSModelInternal().canFireEvent();
-  }
-
-  @Override
   public final FastNodeFinder getFastNodeFinder() {
     return getSModelInternal().getFastNodeFinder();
   }
@@ -300,11 +295,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   @Override
   public final boolean updateModuleReferences() {
     return getSModelInternal().updateModuleReferences();
-  }
-
-  @Override
-  public final boolean canFireReadEvent() {
-    return getSModelInternal().canFireReadEvent();
   }
 
   @Override

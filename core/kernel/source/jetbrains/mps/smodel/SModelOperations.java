@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,10 +58,10 @@ public class SModelOperations {
     return model.isReadOnly();
   }
 
-  public static void validateLanguagesAndImports(SModel model, boolean respectModulesScopes, boolean firstVersion) {
-    ModelChange.assertLegalChange(model);
+  public static void validateLanguagesAndImports(@NotNull SModel model, boolean respectModulesScopes, boolean firstVersion) {
+    ModelChange.assertLegalChange_new(model);
 
-    final SModule module = model == null ? null : model.getModule();
+    final SModule module = model.getModule();
     final Collection<SModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
     Set<SModuleReference> usedLanguages = getAllImportedLanguages(model);
@@ -380,9 +380,9 @@ public class SModelOperations {
   }
 
   public static void validateLanguagesAndImports(jetbrains.mps.smodel.SModel model, boolean respectModulesScopes, boolean firstVersion) {
-    @Nullable SModelBase realDescriptor = model.getModelDescriptor();
+    SModelBase realDescriptor = model.getModelDescriptor();
     if (realDescriptor != null) {
-      ModelChange.assertLegalChange(realDescriptor);
+      ModelChange.assertLegalChange(model);
     }
 
     final SModule module = realDescriptor == null ? null : realDescriptor.getModule();

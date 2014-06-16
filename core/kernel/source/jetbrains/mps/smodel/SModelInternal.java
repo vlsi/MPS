@@ -31,8 +31,6 @@ public interface SModelInternal extends ModelWithDisposeInfo {
 
   void removeModelListener(@NotNull SModelListener listener);
 
-  boolean canFireEvent();
-
   //todo this is an external functionality. Should be implemented externally
   FastNodeFinder getFastNodeFinder();
 
@@ -77,8 +75,6 @@ public interface SModelInternal extends ModelWithDisposeInfo {
   void setVersion(int version);
 
   void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion);
-
-  boolean canFireReadEvent(); // FIXME check if there're uses of the method and drop it, if none
 
   boolean updateSModelReferences();
 
