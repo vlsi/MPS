@@ -16,7 +16,9 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -37,6 +39,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -101,6 +104,12 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     conceptsInLoading.get().remove(new Pair<String, LanguageAspect>(fqName, aspect));
   }
 
+  @NotNull
+  public ConceptDescriptor getConceptDescriptor(@Nullable SConceptId id) {
+    return getConceptDescriptor(MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(id));
+  }
+
+  @Deprecated
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@Nullable String fqName) {
     ConceptDescriptor descriptor = conceptDescriptors.get(fqName);
