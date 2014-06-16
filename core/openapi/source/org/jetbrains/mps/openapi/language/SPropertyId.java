@@ -16,4 +16,7 @@
 package org.jetbrains.mps.openapi.language;
 
 public interface SPropertyId {
+  public SConceptId getConceptId();
+
+  public int getPropertyId();
 }

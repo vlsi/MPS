@@ -16,4 +16,5 @@
 package org.jetbrains.mps.openapi.language;
 
 public interface SReferenceLinkId extends SAbstractLinkId {
+  public int getReferenceLinkId();
 }

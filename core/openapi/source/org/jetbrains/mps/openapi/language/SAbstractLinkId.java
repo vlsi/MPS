@@ -16,4 +16,5 @@
 package org.jetbrains.mps.openapi.language;
 
 public interface SAbstractLinkId {
+  public SConceptId getConceptId();
 }

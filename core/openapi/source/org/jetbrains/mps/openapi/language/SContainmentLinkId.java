@@ -16,5 +16,5 @@
 package org.jetbrains.mps.openapi.language;
 
 public interface SContainmentLinkId extends SAbstractLinkId {
-
+  public int getContainmentLinkId();
 }
