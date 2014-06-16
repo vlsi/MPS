@@ -15,14 +15,20 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.model.SModelId;
 
 public interface DebugRegistry {
   String getModelName(SModelId modelId);
 
   String getModuleName(SModuleId moduleId);
+
+  String getPropertyName(SPropertyId propertyId);
+
+  String getLinkName(SAbstractLinkId linkId);
 
   String getConceptName(SConceptId conceptId);
 
@@ -31,6 +37,10 @@ public interface DebugRegistry {
   void addModelName(SModelId modelId, String name);
 
   void addModuleName(SModuleId moduleId, String name);
+
+  void addPropertyName(SPropertyId propertyId, String name);
+
+  void addLinkName(SAbstractLinkId linkId, String name);
 
   void addConceptName(SConceptId conceptId, String name);
 
