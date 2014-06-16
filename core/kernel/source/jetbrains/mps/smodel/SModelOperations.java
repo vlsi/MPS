@@ -160,25 +160,14 @@ public class SModelOperations {
   //todo rewrite using iterators
   public static List<SModel> allImportedModels(SModel model) {
     Set<SModel> result = new LinkedHashSet<SModel>();
-    LinkedHashSet<SModel> allAccessoryModels = new LinkedHashSet<SModel>(); // linked merely to keep order the way it used to be
+    result.addAll(importedModels(model));
+
     for (Language language : getLanguages(model)) {
       List<SModel> accessoryModels = language.getAccessoryModels();
-      allAccessoryModels.addAll(accessoryModels);
-      for (SModel am : accessoryModels) {
-        if (am != model) {
-          SModel scopeModelDescriptor = am.getReference().resolve(MPSModuleRepository.getInstance());
-          if (scopeModelDescriptor != null) {
-            result.add(scopeModelDescriptor);
-          }
-        }
-      }
+      result.addAll(accessoryModels);
     }
 
-    for (SModel importedModel : importedModels(model, allAccessoryModels)) {
-      if (importedModel != model) {
-        result.add(importedModel);
-      }
-    }
+    result.remove(model);
 
     return new ArrayList<SModel>(result);
   }
@@ -230,22 +219,12 @@ public class SModelOperations {
     return importElement.getUsedVersion();
   }
 
-  //todo rewrite using iterators
   @NotNull
-  private static List<SModel> importedModels(final SModel model, Iterable<SModel> accessoryModelsFromUsedLanguages) {
+  private static List<SModel> importedModels(final SModel model) {
     List<SModel> modelsList = new ArrayList<SModel>();
     for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) model).importedModels()) {
       SModelReference modelReference = importElement.getModelReference();
       SModel modelDescriptor = modelReference.resolve(MPSModuleRepository.getInstance());
-
-      if (modelDescriptor == null) {
-        for (SModel accessory : accessoryModelsFromUsedLanguages) {
-          if (modelReference.equals(accessory.getReference())) {
-            modelDescriptor = accessory;
-            break;
-          }
-        }
-      }
 
       if (modelDescriptor != null) {
         modelsList.add(modelDescriptor);
