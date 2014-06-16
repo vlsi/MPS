@@ -18,8 +18,10 @@ package jetbrains.mps.smodel.persistence.def.v4;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelOperations;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.StaticReference;
@@ -131,7 +133,7 @@ public class ReferencePersister4 implements IReferencePersister {
       if (myNotImported) {
         importedModelReference = visibleModelElements.getModelUID(getImportIndex());
       } else {
-        importedModelReference = SModelOperations.getImportedModelUID(model.getModelDescriptor(), getImportIndex());
+        importedModelReference = getImportedModelUID(model, getImportIndex());
       }
       if (importedModelReference == null) {
         LOG.error("couldn't create reference '" + this.getRole() + "' from " + SNodeUtil.getDebugText(
@@ -158,6 +160,16 @@ public class ReferencePersister4 implements IReferencePersister {
         importedModelReference,
         jetbrains.mps.smodel.SNodeId.fromString(this.getTargetId()),
         this.getResolveInfo());
+  }
+
+  @Nullable
+  private static SModelReference getImportedModelUID(SModel sModel, int referenceID) {
+    for (ImportElement importElement : sModel.importedModels()) {
+      if (importElement.getReferenceID() == referenceID) {
+        return importElement.getModelReference();
+      }
+    }
+    return null;
   }
 
   @Override

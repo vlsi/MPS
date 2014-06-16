@@ -218,16 +218,6 @@ public class SModelOperations {
     return result;
   }
 
-  @Nullable
-  public static SModelReference getImportedModelUID(SModel sModel, int referenceID) {
-    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) sModel).importedModels()) {
-      if (importElement.getReferenceID() == referenceID) {
-        return importElement.getModelReference();
-      }
-    }
-    return null;
-  }
-
   public static int getUsedVersion(SModel sModel, SModelReference sModelReference) {
     ImportElement importElement = getImportElement(sModel, sModelReference);
     if (importElement == null) return getLanguageAspectModelVersion(sModel, sModelReference);
@@ -267,11 +257,11 @@ public class SModelOperations {
   //-----------------------------------------------------
 
   /*
-   * Todo this is a duplication occured because of the fact we don't have model dependencies API. Should be removed ASAP
+   * Todo this is a duplication occurred because of the fact we don't have model dependencies API. Should be removed ASAP
    */
 
   @Nullable
-  public static ImportElement getAdditionalModelElement(jetbrains.mps.smodel.SModel sModel,@NotNull SModelReference modelReference) {
+  /*package*/ static ImportElement getAdditionalModelElement(jetbrains.mps.smodel.SModel sModel,@NotNull SModelReference modelReference) {
     for (ImportElement importElement : sModel.getAdditionalModelVersions()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
@@ -282,7 +272,7 @@ public class SModelOperations {
 
   @Deprecated
   @Nullable
-  public static ImportElement getAdditionalModelElement(SModel sModel, @NotNull SModelReference modelReference) {
+  private static ImportElement getAdditionalModelElement(SModel sModel, @NotNull SModelReference modelReference) {
     for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) sModel).getAdditionalModelVersions()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
@@ -293,23 +283,15 @@ public class SModelOperations {
 
   @NotNull
   public static List<ImportElement> getAllImportElements(jetbrains.mps.smodel.SModel model) {
+    // there are uses of the method in RefactoringFacade in MsiingDependenciesFixed, but otherwise this method shall be package-local
     List<ImportElement> result = new ArrayList<ImportElement>();
     result.addAll(model.importedModels());
     result.addAll(model.getAdditionalModelVersions());
     return result;
   }
 
-  @NotNull
-  public static List<SModelReference> getImportedModelUIDs(jetbrains.mps.smodel.SModel sModel) {
-    List<SModelReference> references = new ArrayList<SModelReference>();
-    for (ImportElement importElement : sModel.importedModels()) {
-      references.add(importElement.getModelReference());
-    }
-    return Collections.unmodifiableList(references);
-  }
-
   @Nullable
-  public static ImportElement getImportElement(jetbrains.mps.smodel.SModel model, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
+  /*package*/ static ImportElement getImportElement(jetbrains.mps.smodel.SModel model, @NotNull SModelReference modelReference) {
     for (ImportElement importElement : model.importedModels()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
