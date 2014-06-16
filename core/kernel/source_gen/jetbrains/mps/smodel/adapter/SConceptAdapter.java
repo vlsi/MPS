@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import java.util.List;
@@ -14,13 +15,18 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
+  public SConceptAdapter(@NotNull SConceptId id) {
+    super(id);
+  }
+
+  @Deprecated
   public SConceptAdapter(@NotNull String concept) {
     super(concept);
   }
 
   @Override
   public SConcept getSuperConcept() {
-    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor d = myConceptName==null?ConceptRegistry.getInstance().getConceptDescriptor(myConceptId):ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return null;
@@ -32,7 +38,7 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor d = myConceptName==null?ConceptRegistry.getInstance().getConceptDescriptor(myConceptId):ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return null;
