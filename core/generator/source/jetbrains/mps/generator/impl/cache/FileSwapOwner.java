@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,7 +40,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -118,8 +117,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       }
 
       ArrayList<SNode> roots = new ArrayList<SNode>();
-      for (Iterator<SNode> it = model.getRootNodes().iterator(); it.hasNext(); ) {
-        roots.add(it.next());
+      for (SNode next : model.getRootNodes()) {
+        roots.add(next);
       }
       ModelOutputStream mos = null;
       IOException ioex = null;
@@ -173,7 +172,6 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         if (!swapFile.delete()) {
           LOG.error("Couldn't delete swap file");
         }
-        ;
       }
     }
 
@@ -232,8 +230,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     ModelOutputStream mos = new ModelOutputStream(os);
 
     ArrayList<SNode> roots = new ArrayList<SNode>();
-    for (Iterator<SNode> it = model.getRootNodes().iterator(); it.hasNext(); ) {
-      roots.add(it.next());
+    for (SNode next : model.getRootNodes()) {
+      roots.add(next);
     }
     mos.writeInt(44);
     new NodesWriter(model.getReference(), null).writeNodes(roots, mos);
@@ -254,8 +252,6 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       resultModel.addRootNode(root.o2);
     }
 
-    SModelOperations.validateLanguagesAndImports(resultModel, false, false);
-
     SModelBase result = new SModelBase(resultModel.getReference(), new NullDataSource()) {
       @Override
       public jetbrains.mps.smodel.SModel getSModelInternal() {
@@ -274,6 +270,9 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     };
 
     resultModel.setModelDescriptor(result);
+
+    SModelOperations.validateLanguagesAndImports(result, false, false);
+
     return result;
   }
 }

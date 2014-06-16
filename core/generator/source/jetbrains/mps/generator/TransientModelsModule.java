@@ -250,7 +250,7 @@ public class TransientModelsModule extends AbstractModule {
     ((TransientSModelDescriptor) transientModel).changeModelReference(newRef);
   }
 
-  public class TransientSModelDescriptor extends EditableSModelBase {
+  public final class TransientSModelDescriptor extends EditableSModelBase {
     protected volatile jetbrains.mps.smodel.SModel mySModel;
     private boolean wasUnloaded = false;
 
@@ -272,6 +272,10 @@ public class TransientModelsModule extends AbstractModule {
         if (mySModel == null) {
           mySModel = createModel();
           mySModel.setModelDescriptor(this);
+          if (wasUnloaded) {
+            // ensure imports are back
+            SModelOperations.validateLanguagesAndImports(this, false, false);
+          }
           fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
         }
       }
@@ -283,7 +287,7 @@ public class TransientModelsModule extends AbstractModule {
       return mySModel != null;
     }
 
-    protected jetbrains.mps.smodel.SModel createModel() {
+    private jetbrains.mps.smodel.SModel createModel() {
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getReference());
 
@@ -292,8 +296,6 @@ public class TransientModelsModule extends AbstractModule {
 
         TransientSModel m = swap.restoreFromSwap(getReference(), new TransientSModel(getReference()));
         if (m != null) {
-          // ensure imports are back
-          SModelOperations.validateLanguagesAndImports(m, false, false);
           return m;
         }
 

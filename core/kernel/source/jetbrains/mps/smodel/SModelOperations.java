@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -377,63 +376,6 @@ public class SModelOperations {
       }
     }
     return result;
-  }
-
-  public static void validateLanguagesAndImports(jetbrains.mps.smodel.SModel model, boolean respectModulesScopes, boolean firstVersion) {
-    SModelBase realDescriptor = model.getModelDescriptor();
-    if (realDescriptor != null) {
-      ModelChange.assertLegalChange(model);
-    }
-
-    final SModule module = realDescriptor == null ? null : realDescriptor.getModule();
-    final Collection<SModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
-    final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
-    Set<SModuleReference> usedLanguages = getAllImportedLanguages(model);
-
-    Set<SModelReference> importedModels = new HashSet<SModelReference>();
-    for (SModel sm : allImportedModels(model)) {
-      importedModels.add(sm.getReference());
-    }
-
-    for (SNode root : model.getRootNodes()) {
-      for (SNode node : SNodeUtil.getDescendants(root)) {
-        Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
-        if (lang == null) {
-          LOG.error("Can't find language " + node.getConcept().getLanguage().getQualifiedName());
-          continue;
-        }
-        SModuleReference ref = lang.getModuleReference();
-        if (!usedLanguages.contains(ref)) {
-          if (module != null) {
-            if (respectModulesScopes && !declaredUsedLanguages.contains(lang)) {
-              ((AbstractModule) module).addUsedLanguage(ref);
-            }
-          }
-
-          usedLanguages.add(ref);
-          model.addLanguage(ref);
-        }
-
-        for (SReference reference : node.getReferences()) {
-          boolean internal = model.getReference().equals(reference.getTargetSModelReference());
-          if (internal) continue;
-
-          SModelReference targetModelReference = reference.getTargetSModelReference();
-          if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
-            if (respectModulesScopes && module != null) {
-              SModel targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
-              SModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
-              if (targetModule != null && !declaredDependencies.contains(targetModule)) {
-                ((AbstractModule) module).addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
-              }
-            }
-            (model).addModelImport(targetModelReference, firstVersion);
-            importedModels.add(targetModelReference);
-          }
-        }
-      }
-    }
-    importedModels.clear();
   }
 
   @Deprecated
