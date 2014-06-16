@@ -19,6 +19,7 @@ package org.jetbrains.mps.openapi.language;
  * Represents a concept property
  */
 public interface SProperty {
+  SPropertyId getId();
 
   String getName();
 
