@@ -17,33 +17,51 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 @ImmutableObject
 public final class SModelReference implements org.jetbrains.mps.openapi.model.SModelReference {
+
+  public static boolean replaceModuleReferences = false;
+  private static long thrownWarnings = 0;
+  private static Logger LOG = Logger.getLogger(SModelReference.class);
+
   @NotNull
   private final SModelId myModelId;
   @NotNull
   private final String myModelName;
   @Nullable
-  private final SModuleReference myModuleReference;
+  public final SModuleReference myModuleReference;
 
   public SModelReference(@Nullable SModuleReference module, @NotNull SModelId modelId, @NotNull String modelName) {
-    if (module == null && !modelId.isGloballyUnique()) {
-      throw new IllegalArgumentException();
-    }
-    myModuleReference = module;
     myModelId = modelId;
     myModelName = modelName;
+    if (module == null) {
+      if (!modelId.isGloballyUnique()) {
+        throw new IllegalArgumentException();
+      }
+      //todo: uncomment after MPS migration
+      /*if (InternalFlag.isInternalMode()) {
+        throw new IllegalArgumentException("Creating model reference without module reference.");
+      } else {
+        if (thrownWarnings < 10) {
+          LOG.warn("Creating model reference without module reference.", new Throwable());
+          thrownWarnings ++;
+        }
+      }*/
+    }
+    myModuleReference = replaceModuleReferences ? calculateModuleReference(module) : module;
   }
 
   @NotNull
@@ -60,7 +78,36 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
   @Override
   public SModuleReference getModuleReference() {
+    if (replaceModuleReferences) {
+      return calculateModuleReference(myModuleReference);
+    }
     return myModuleReference;
+  }
+
+  private SModuleReference calculateModuleReference(SModuleReference moduleReference) {
+    if (moduleReference == null) {
+      SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelId);
+      if (modelDescriptor != null) {
+        return modelDescriptor.getModule().getModuleReference();
+      } else {
+        return null;
+        //can be for deleted models when references to them still exist
+        //throw new IllegalStateException("Could not replace module reference");
+      }
+    }
+    SModuleId moduleId = moduleReference.getModuleId();
+    String moduleName = moduleReference.getModuleName();
+    SModule module = null;
+    if (moduleId == null && moduleName != null) {
+      module = MPSModuleRepository.getInstance().getModuleByFqName(moduleName);
+    } else if (moduleId != null && moduleName == null) {
+      module = MPSModuleRepository.getInstance().getModule(moduleId);
+    }
+    if (module != null) {
+      return module.getModuleReference();
+    } else {
+      return moduleReference;
+    }
   }
 
   @Override
@@ -79,8 +126,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     SModelReference that = (SModelReference) o;
 
     if (!myModelId.equals(that.myModelId)) return false;
-    if (myModuleReference != null && that.myModuleReference != null && !myModuleReference.equals(that.myModuleReference)) return false;
-    if (myModuleReference == null || that.myModuleReference == null) return myModelId.isGloballyUnique() && that.myModelId.isGloballyUnique();
+    if (getModuleReference() != null && that.getModuleReference() != null && !getModuleReference().equals(that.getModuleReference())) return false;
+    if (getModuleReference() == null || that.getModuleReference() == null) return myModelId.isGloballyUnique() && that.myModelId.isGloballyUnique();
 
     return true;
   }
@@ -111,7 +158,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       throw new IllegalArgumentException("parentheses do not match in: `" + s + "'");
     }
 
-    ModuleId moduleId = null;
+    SModuleId moduleId = null;
     int slash = s.indexOf('/');
     if (slash >= 0) {
       moduleId = ModuleId.fromString(StringUtil.unescapeRefChars(s.substring(0, slash)));
