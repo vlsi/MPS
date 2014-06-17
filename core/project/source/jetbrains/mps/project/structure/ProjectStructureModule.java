@@ -25,7 +25,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import jetbrains.mps.smodel.AbstractFastNodeFinder;
+import jetbrains.mps.smodel.BaseFastNodeFinder;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -306,9 +306,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     @Override
-    protected FastNodeFinder createFastNodeFinder() {
-      return new AbstractFastNodeFinder(this.getModelDescriptor()) {
-      };
+    public FastNodeFinder createFastNodeFinder() {
+      return new BaseFastNodeFinder(getModelDescriptor());
     }
   }
 }

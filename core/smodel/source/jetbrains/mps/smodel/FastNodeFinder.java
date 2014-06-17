@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -30,26 +31,13 @@ public interface FastNodeFinder {
 
   void dispose();
 
-
   /**
-   * TRANSITION: provider of FNF until all uses move to factory and factory controls FNF instantiation
+   * Interface models can implement if they'd like to supply own <code>FastNodeFinder</code> implementation
+   * In general, there should be an alternative mechanism to obtain factories, other than model implementing
+   * the interface (something more extension-friendly, e.g. Adaptable-like), this is the reason for model argument.
    */
-  interface Source {
-    //todo this is an external functionality. Should be implemented externally
-    FastNodeFinder getFastNodeFinder();
-
-    //todo this is an external functionality. Should be implemented externally
-    void disposeFastNodeFinder();
-  }
-
-  public static final class Factory {
-    @NotNull
-    public static FastNodeFinder get(SModel model) {
-      return ((FastNodeFinder.Source) model).getFastNodeFinder();
-    }
-
-    public static void dispose(SModel model) {
-      ((FastNodeFinder.Source) model).disposeFastNodeFinder();
-    }
+  interface Factory {
+    @Nullable
+    FastNodeFinder createNodeFinder(@NotNull SModel model);
   }
 }

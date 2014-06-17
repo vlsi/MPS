@@ -16,7 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
-import jetbrains.mps.smodel.AbstractFastNodeFinder;
+import jetbrains.mps.smodel.BaseFastNodeFinder;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 /**
  * Evgeny Gryaznov, Mar 1, 2010
  */
-public class TransientModelNodeFinder extends AbstractFastNodeFinder {
+public class TransientModelNodeFinder extends BaseFastNodeFinder {
 
   private final SModelChangeListener myChangeListener = new SModelChangeListener() {
     @Override

@@ -18,7 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -67,9 +66,6 @@ public class SModel implements SModelData {
   private SModelReference myReference;
 
   private boolean myDisposed;
-
-  private final Object FAST_FINDER_LOCK = new Object();
-  private FastNodeFinder myFastNodeFinder;
 
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
@@ -281,8 +277,13 @@ public class SModel implements SModelData {
     if (myDisposed) return;
 
     myDisposed = true;
+    SModelBase modelBase = getModelDescriptor();
+    if (modelBase != null) {
+      // Quick hack unless FNFM implements model listener to get notified about models disposed,
+      // or there's better alternative how to keep FNFM up-to-date.
+      FastNodeFinderManager.dispose(modelBase);
+    }
     myDisposedStacktrace = new Throwable().getStackTrace();
-    disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
     if (myModelDependenciesManager != null) {
@@ -490,29 +491,8 @@ public class SModel implements SModelData {
 
   //---------fast node finder--------
 
-  //todo this is an external functionality. Should be implemented externally
-  public final FastNodeFinder getFastNodeFinder() {
-    synchronized (FAST_FINDER_LOCK) {
-      if (myFastNodeFinder == null) {
-        myFastNodeFinder = createFastNodeFinder();
-      }
-      fireModelNodesReadAccess();
-      return myFastNodeFinder;
-    }
-  }
-
-  protected FastNodeFinder createFastNodeFinder() {
+  public FastNodeFinder createFastNodeFinder() {
     return new DefaultFastNodeFinder(getModelDescriptor());
-  }
-
-  //todo this is an external functionality. Should be implemented externally
-  public void disposeFastNodeFinder() {
-    synchronized (FAST_FINDER_LOCK) {
-      if (myFastNodeFinder != null) {
-        myFastNodeFinder.dispose();
-        myFastNodeFinder = null;
-      }
-    }
   }
 
   //---------node id--------

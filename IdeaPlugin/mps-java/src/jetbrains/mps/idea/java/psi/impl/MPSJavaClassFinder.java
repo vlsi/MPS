@@ -41,9 +41,9 @@ import jetbrains.mps.idea.java.index.MPSJavaPackageIndex;
 import jetbrains.mps.idea.java.util.ClassUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
@@ -186,7 +186,7 @@ public class MPSJavaClassFinder extends PsiElementFinder {
       }
     }
 
-    FastNodeFinder fastFinder = ((SModelInternal) model).getFastNodeFinder();
+    FastNodeFinder fastFinder = FastNodeFinderManager.get(model);
     List<SNode> classes = fastFinder.getNodes(ConceptNames.Classifier, true);
     if (classes.isEmpty()) return;
 

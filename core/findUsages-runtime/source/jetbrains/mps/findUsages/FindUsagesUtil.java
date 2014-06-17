@@ -17,7 +17,7 @@ package jetbrains.mps.findUsages;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
@@ -56,7 +56,7 @@ public class FindUsagesUtil {
    */
   public static void collectInstances(SModel model, Collection<SAbstractConcept> concepts, Consumer<SNode> consumer) {
     for (SAbstractConcept concept : concepts) {
-      for (SNode instance : FastNodeFinder.Factory.get(model).getNodes(concept.getQualifiedName(), false)) {
+      for (SNode instance : FastNodeFinderManager.get(model).getNodes(concept.getQualifiedName(), false)) {
         consumer.consume(instance);
       }
     }

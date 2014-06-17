@@ -24,7 +24,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -71,7 +71,7 @@ public class GenerationFacade {
     List<SModel> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
     for (SModel templateModel : list) {
-      mappings.addAll(FastNodeFinder.Factory.get(templateModel).getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true));
+      mappings.addAll(FastNodeFinderManager.get(templateModel).getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true));
     }
     return mappings;
   }

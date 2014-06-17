@@ -38,7 +38,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * TODO move listeners to openapi
  */
-public abstract class SModelDescriptorStub implements SModelInternal, SModel {
+public abstract class SModelDescriptorStub implements SModelInternal, SModel, FastNodeFinder.Factory {
 
   private static final Logger LOG = LogManager.getLogger(SModelDescriptorStub.class);
 
@@ -273,13 +273,9 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   }
 
   @Override
-  public final FastNodeFinder getFastNodeFinder() {
-    return getSModelInternal().getFastNodeFinder();
-  }
-
-  @Override
-  public final void disposeFastNodeFinder() {
-    getSModelInternal().disposeFastNodeFinder();
+  public FastNodeFinder createNodeFinder(SModel model) {
+    assert model == this;
+    return getSModel().createFastNodeFinder();
   }
 
   @Override

@@ -944,10 +944,10 @@
     <nodeInfo nodeId="3902406419449997626" fileName="SModelOperations.java" startLine="96" startPosition="38" endLine="97" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3902406419449999765" fileName="SModelOperations.java" startLine="98" startPosition="28" endLine="99" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1749812756079526418" fileName="SModelOperations.java" startLine="102" startPosition="43" endLine="103" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3902406419449999811" fileName="SModelOperations.java" startLine="106" startPosition="14" endLine="107" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3902406419449999811" fileName="SModelOperations.java" startLine="106" startPosition="14" endLine="107" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6599163591527280710" fileName="SModelOperations.java" startLine="109" startPosition="5" endLine="110" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6599163591527280792" fileName="SModelOperations.java" startLine="114" startPosition="24" endLine="115" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6599163591527280801" fileName="SModelOperations.java" startLine="117" startPosition="32" endLine="118" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6599163591527280801" fileName="SModelOperations.java" startLine="117" startPosition="32" endLine="118" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6599163591527280809" fileName="SModelOperations.java" startLine="119" startPosition="5" endLine="120" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6599163591527280823" fileName="SModelOperations.java" startLine="121" startPosition="56" endLine="122" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6599163591527280828" fileName="SModelOperations.java" startLine="123" startPosition="5" endLine="124" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1040,9 +1040,9 @@
     <scopeInfo nodeId="6599163591527280669" fileName="SModelOperations.java" startLine="92" startPosition="48" endLine="93" endPosition="33" />
     <scopeInfo nodeId="3902406419449999744" fileName="SModelOperations.java" startLine="98" startPosition="28" endLine="99" endPosition="55" />
     <scopeInfo nodeId="1749812756079522522" fileName="SModelOperations.java" startLine="102" startPosition="43" endLine="103" endPosition="142" />
-    <scopeInfo nodeId="3902406419449999834" fileName="SModelOperations.java" startLine="106" startPosition="14" endLine="107" endPosition="129" />
+    <scopeInfo nodeId="3902406419449999834" fileName="SModelOperations.java" startLine="106" startPosition="14" endLine="107" endPosition="128" />
     <scopeInfo nodeId="6599163591527280791" fileName="SModelOperations.java" startLine="114" startPosition="24" endLine="115" endPosition="36" />
-    <scopeInfo nodeId="6599163591527280800" fileName="SModelOperations.java" startLine="117" startPosition="32" endLine="118" endPosition="77" />
+    <scopeInfo nodeId="6599163591527280800" fileName="SModelOperations.java" startLine="117" startPosition="32" endLine="118" endPosition="76" />
     <scopeInfo nodeId="6599163591527280822" fileName="SModelOperations.java" startLine="121" startPosition="56" endLine="122" endPosition="23" />
     <scopeInfo nodeId="6599163591527280837" fileName="SModelOperations.java" startLine="127" startPosition="73" endLine="128" endPosition="53" />
     <scopeInfo nodeId="161004399424360451" fileName="SModelOperations.java" startLine="132" startPosition="32" endLine="133" endPosition="18" />

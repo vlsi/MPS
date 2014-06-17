@@ -48,10 +48,9 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
@@ -423,7 +422,7 @@ class GenerationSession {
       if (realOutputModel == currentOutputModel) { // 'honest' transformation, not in-place
         recycleWasteModel(currentInputModel, cloneInputModel); // we can (or even shall, if it's a clone) forget about former input model here
         currentInputModel = currentOutputModel;
-        FastNodeFinder.Factory.dispose(currentInputModel); // why?!
+        FastNodeFinderManager.dispose(currentInputModel); // why?!
       } else {
         assert currentInputModel == realOutputModel;
         myDependenciesBuilder.dropModel();
@@ -570,7 +569,7 @@ class GenerationSession {
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getPostProcessScripts().getScripts());
       myNewTrace.nextStep(currentModel.getReference(), currentModel.getReference());
       // just in case post-script modifies model a lot, and we've got FNF there, prevent it being updated - it's cheaper to create new one at the next step
-      FastNodeFinder.Factory.dispose(currentModel);
+      FastNodeFinderManager.dispose(currentModel);
     }
 
     // FIXME I don't need ruleManager, nor even DependencyManager to execute a script. Refactor QueryExecutionContext
@@ -631,7 +630,7 @@ class GenerationSession {
    */
   private void recycleWasteModel(@NotNull SModel model, boolean force) {
     assert (model.getModule() instanceof TransientModelsModule);
-    FastNodeFinder.Factory.dispose(model);
+    FastNodeFinderManager.dispose(model);
     if (force) {
       mySessionContext.getModule().removeModel(model);
     } else {

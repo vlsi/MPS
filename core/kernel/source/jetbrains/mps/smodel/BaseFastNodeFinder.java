@@ -29,15 +29,15 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Base implementation for FastNodeFinder, thread-aware and map update ready
- * FIXME consider renaming to BaseFastNodeFinder and make it concrete, ProjectStructureModule might appreciate this.
+ * Base implementation for FastNodeFinder, thread-aware and map update ready.
+ * Doesn't track model changes. Model implementation agnostic, doesn't rely on internal SModel implementation
  * @author Artem Tikhomirov
  */
-public abstract class AbstractFastNodeFinder implements FastNodeFinder {
+public class BaseFastNodeFinder implements FastNodeFinder {
   protected final SModel myModel;
   private final ConceptNodeMap myNodeMap = new ConceptNodeMap();
 
-  protected AbstractFastNodeFinder(SModel model) {
+  public BaseFastNodeFinder(SModel model) {
     myModel = model;
   }
 

@@ -51,7 +51,7 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -332,7 +332,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return;
     }
     boolean includeInheritors = rule.applyToInheritors();
-    Iterable<SNode> inputNodes = FastNodeFinder.Factory.get(myInputModel).getNodes(applicableConcept, includeInheritors);
+    Iterable<SNode> inputNodes = FastNodeFinderManager.get(myInputModel).getNodes(applicableConcept, includeInheritors);
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)

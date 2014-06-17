@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
 
-public interface SModelInternal extends ModelWithDisposeInfo, FastNodeFinder.Source {
+public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void addModelListener(@NotNull SModelListener listener);
 

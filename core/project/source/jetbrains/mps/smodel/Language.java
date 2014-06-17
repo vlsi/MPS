@@ -277,7 +277,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public List<SNode> getConceptDeclarations() {
     SModel structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();
-    return FastNodeFinder.Factory.get(structureModel).getNodes(SNodeUtil.concept_ConceptDeclaration, true);
+    return FastNodeFinderManager.get(structureModel).getNodes(SNodeUtil.concept_ConceptDeclaration, true);
   }
 
   public List<SModel> getUtilModels() {

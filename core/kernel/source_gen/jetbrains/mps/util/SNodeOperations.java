@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class SNodeOperations {
@@ -282,7 +283,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static FastNodeFinder getModelFastFinder(SModel model) {
-    return FastNodeFinder.Factory.get(model);
+    return FastNodeFinderManager.get(model);
   }
 
   public static int nodesCount(SModel model) {

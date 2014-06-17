@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -104,7 +104,7 @@ public class SModelOperations {
           }
         }));
       } else {
-        resultNodes.addAll(IterableUtil.asList(FastNodeFinder.Factory.get(aModel).getNodes(NameUtil.nodeFQName(concept), true)));
+        resultNodes.addAll(IterableUtil.asList(FastNodeFinderManager.get(aModel).getNodes(NameUtil.nodeFQName(concept), true)));
       }
     }
     return resultNodes;
@@ -115,7 +115,7 @@ public class SModelOperations {
       return new ArrayList<SNode>();
     }
     if (conceptFqName != null) {
-      return FastNodeFinder.Factory.get(model).getNodes(conceptFqName, true);
+      return FastNodeFinderManager.get(model).getNodes(conceptFqName, true);
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : SNodeUtil.getDescendants(model)) {

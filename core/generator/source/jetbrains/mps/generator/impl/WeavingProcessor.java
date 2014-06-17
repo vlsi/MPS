@@ -25,6 +25,7 @@ import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -47,7 +48,7 @@ public class WeavingProcessor {
   public void prepareWeavingRules(SModel inputModel, Iterable<TemplateWeavingRule> rules) throws GenerationCanceledException, GenerationFailureException {
     myReadyRules.clear();
     final BlockedReductionsData ruleBlocks = myGenerator.getBlockedReductionsData();
-    final FastNodeFinder nodeFinder = FastNodeFinder.Factory.get(inputModel);
+    final FastNodeFinder nodeFinder = FastNodeFinderManager.get(inputModel);
     for (TemplateWeavingRule rule : rules) {
       String applicableConcept = rule.getApplicableConcept();
       if (applicableConcept == null) {

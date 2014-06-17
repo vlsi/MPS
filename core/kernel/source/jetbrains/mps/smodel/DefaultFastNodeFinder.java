@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Set;
 
 
-public class DefaultFastNodeFinder extends AbstractFastNodeFinder implements StructureAspectChangeTracker.ModuleListener {
+public class DefaultFastNodeFinder extends BaseFastNodeFinder implements StructureAspectChangeTracker.ModuleListener {
   private final SModelAdapter myListener = new MySModelAdapter();
   private final StructureAspectChangeTracker myDependencyListener;
   private final NodeByIdComparator myComparator = new NodeByIdComparator();
