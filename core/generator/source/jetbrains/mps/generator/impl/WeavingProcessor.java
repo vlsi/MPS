@@ -47,7 +47,7 @@ public class WeavingProcessor {
   public void prepareWeavingRules(SModel inputModel, Iterable<TemplateWeavingRule> rules) throws GenerationCanceledException, GenerationFailureException {
     myReadyRules.clear();
     final BlockedReductionsData ruleBlocks = myGenerator.getBlockedReductionsData();
-    final FastNodeFinder nodeFinder = ((jetbrains.mps.smodel.SModelInternal) inputModel).getFastNodeFinder();
+    final FastNodeFinder nodeFinder = FastNodeFinder.Factory.get(inputModel);
     for (TemplateWeavingRule rule : rules) {
       String applicableConcept = rule.getApplicableConcept();
       if (applicableConcept == null) {

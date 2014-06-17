@@ -276,8 +276,13 @@ public class SNodeOperations {
     return ((SModelInternal) model).getDisposedStacktrace() != null;
   }
 
+  /**
+   * @deprecated FNF is implementation aspect. Either use directly (if you're in MPS core), 
+   * or use SModelOperations.getNodes(model, string)
+   */
+  @Deprecated
   public static FastNodeFinder getModelFastFinder(SModel model) {
-    return ((SModelInternal) model).getFastNodeFinder();
+    return FastNodeFinder.Factory.get(model);
   }
 
   public static int nodesCount(SModel model) {

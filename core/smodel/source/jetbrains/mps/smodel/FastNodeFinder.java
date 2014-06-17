@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -27,4 +29,27 @@ public interface FastNodeFinder {
   List<SNode> getNodes(String conceptFqName, boolean includeInherited);
 
   void dispose();
+
+
+  /**
+   * TRANSITION: provider of FNF until all uses move to factory and factory controls FNF instantiation
+   */
+  interface Source {
+    //todo this is an external functionality. Should be implemented externally
+    FastNodeFinder getFastNodeFinder();
+
+    //todo this is an external functionality. Should be implemented externally
+    void disposeFastNodeFinder();
+  }
+
+  public static final class Factory {
+    @NotNull
+    public static FastNodeFinder get(SModel model) {
+      return ((FastNodeFinder.Source) model).getFastNodeFinder();
+    }
+
+    public static void dispose(SModel model) {
+      ((FastNodeFinder.Source) model).disposeFastNodeFinder();
+    }
+  }
 }
