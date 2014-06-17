@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class PasteExpressionInsteadAnother_Test extends BaseTransformationTest4 {
-  public PasteExpressionInsteadAnother_Test() {
+public class PasteExpressionAfterStatement_Test extends BaseTransformationTest4 {
+  public PasteExpressionAfterStatement_Test() {
   }
 
   @Test
-  public void test_PasteExpressionInsteadAnother() throws Throwable {
+  public void test_PasteExpressionAfterStatement() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.PasteExpressionInsteadAnother_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.PasteExpressionAfterStatement_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -27,12 +27,13 @@ public class PasteExpressionInsteadAnother_Test extends BaseTransformationTest4 
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7311202892961627934", "7311202892961643010");
+      final Editor editor = TestBody.this.initEditor("7591654183801421706", "7591654183801421719");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.End_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Home_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveRight_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
   }

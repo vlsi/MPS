@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class PasteExpressionText_Test extends BaseTransformationTest4 {
-  public PasteExpressionText_Test() {
+public class PasteTextToLabelEnd_Test extends BaseTransformationTest4 {
+  public PasteTextToLabelEnd_Test() {
   }
 
   @Test
-  public void test_PasteExpressionText() throws Throwable {
+  public void test_PasteTextToLabelEnd() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.PasteExpressionText_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.PasteTextToLabelEnd_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -27,11 +27,11 @@ public class PasteExpressionText_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7311202892961738469", "7311202892961738482");
+      final Editor editor = TestBody.this.initEditor("7591654183801450341", "7591654183801450354");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.Home_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.End_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
