@@ -22,10 +22,15 @@ package org.jetbrains.mps.openapi.language;
  * note: the relationship between SNode and SConcept is analogical to the relationship between an object and its Class in Java
  */
 public interface SAbstractConcept {
+  /**
+   * Uniquely identifies this concept in its concept repository.
+   */
+  SConceptId getId();
 
   /**
-   * The qualified name of the concept. Uniquely identifies this concept in its concept repository.
+   * The qualified name of the concept.
    */
+  @Deprecated
   String getQualifiedName();
 
   /**
@@ -41,7 +46,7 @@ public interface SAbstractConcept {
   /**
    * Retrieves an associated link identified by the given role.
    */
-  SAbstractLink getLink(String role);
+  SAbstractLink getLink(SAbstractLinkId id);
 
   /**
    * Retrieves all links associated with the concept.
@@ -51,7 +56,7 @@ public interface SAbstractConcept {
   /**
    * Finds a concept's property by name
    */
-  SProperty getProperty(String name);
+  SProperty getProperty(SPropertyId id);
 
   /**
    * All properties
@@ -62,4 +67,13 @@ public interface SAbstractConcept {
    * Either implementing or extending the supplied concept
    */
   boolean isSubConceptOf(SAbstractConcept concept);
+
+  //----------deprecated------------
+
+  @Deprecated
+  SProperty getProperty(String name);
+
+  @Deprecated
+  SAbstractLink getLink(String role);
+
 }
