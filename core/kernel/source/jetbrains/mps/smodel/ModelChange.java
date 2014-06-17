@@ -44,7 +44,7 @@ class ModelChange {
    */
   static void assertLegalChange_new(org.jetbrains.mps.openapi.model.SModel model) {
     SRepository repo = model.getRepository();
-    if (repo != null && !repo.getModelAccess().canWrite()) {
+    if (repo != null && model.isLoaded() && !repo.getModelAccess().canWrite()) {
       throw new IllegalModelChangeError("You can change model only inside write actions");
     }
   }

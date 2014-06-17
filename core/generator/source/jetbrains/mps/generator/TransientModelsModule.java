@@ -148,7 +148,7 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   private void unloadModel(TransientSModelDescriptor model) {
-    if (model.unloadModel()) {
+    if (model.unloadModel(true)) {
       if (myPublished.contains(model)) {
 //            SModelRepository.getInstance().removeModelDescriptor(model);
       }
@@ -284,7 +284,7 @@ public class TransientModelsModule extends AbstractModule {
 
     @Override
     public boolean isLoaded() {
-      return mySModel != null;
+      return mySModel != null && getLoadingState() == ModelLoadingState.FULLY_LOADED;
     }
 
     private jetbrains.mps.smodel.SModel createModel() {
@@ -307,10 +307,10 @@ public class TransientModelsModule extends AbstractModule {
 
     @Override
     protected void doUnload() {
-      unloadModel();
+      unloadModel(false);
     }
 
-    private boolean unloadModel() {
+    private boolean unloadModel(boolean fireLoadStateChange) {
       if (!wasUnloaded) {
         LOG.debug("Un-loading " + getReference());
 
@@ -320,6 +320,10 @@ public class TransientModelsModule extends AbstractModule {
         }
 
         dropModel();
+
+        if (fireLoadStateChange) {
+          fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+        }
 
         wasUnloaded = true;
       }
