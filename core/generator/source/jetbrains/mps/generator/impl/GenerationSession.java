@@ -605,7 +605,7 @@ class GenerationSession {
     TransientModelsModule module = mySessionContext.getModule();
     String longName = SNodeOperations.getModelLongName(myOriginalInputModel);
     final String transientModelName = longName + '@' + stereotype;
-    final SModelReference mr = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), transientModelName);
+    final SModelReference mr = PersistenceFacade.getInstance().createModelReference(module.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName);
     return module.createTransientModel(mr);
   }
 
