@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -34,6 +35,7 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SPropertyId;
 
 public class ConceptRepository extends SConceptRepository implements CoreComponent {
 
@@ -92,6 +94,11 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     }
 
     @Override
+    public SConceptId getId() {
+      return target.getId();
+    }
+
+    @Override
     public String getQualifiedName() {
       return target.getQualifiedName();
     }
@@ -107,6 +114,11 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     }
 
     @Override
+    public SAbstractLink getLink(SAbstractLinkId id) {
+      return target.getLink(id);
+    }
+
+    @Override
     public SAbstractLink getLink(String role) {
       return target.getLink(role);
     }
@@ -114,6 +126,11 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     @Override
     public Iterable<SAbstractLink> getLinks() {
       return target.getLinks();
+    }
+
+    @Override
+    public SProperty getProperty(SPropertyId id) {
+      return target.getProperty(id);
     }
 
     @Override
