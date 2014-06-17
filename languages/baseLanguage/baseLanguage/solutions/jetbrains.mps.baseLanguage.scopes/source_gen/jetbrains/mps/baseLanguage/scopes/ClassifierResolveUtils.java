@@ -340,7 +340,7 @@ public class ClassifierResolveUtils {
         }
       }));
 
-      ListSequence.fromList(javaImportedThings).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")));
+      ListSequence.fromList(javaImportedThings).addElement(SModelRepository.getInstance().getModelDescriptor("java.lang@java_stub"));
 
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
