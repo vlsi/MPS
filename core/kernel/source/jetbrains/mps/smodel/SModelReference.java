@@ -237,10 +237,9 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   }
 
   public boolean differs(SModelReference that) {
-    if (!myModelId.equals(that.myModelId)) return true;
+    if (replaceModuleReferences) return true;
+    if (!this.equals(that)) return true;
     if (!myModelName.equals(that.myModelName)) return true;
-    // TODO add
-    //if (myModuleReference != null ? !myModuleReference.equals(that.myModuleReference) : that.myModuleReference != null) return true;
     return false;
   }
 }
