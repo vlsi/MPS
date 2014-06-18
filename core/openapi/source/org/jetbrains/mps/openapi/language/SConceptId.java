@@ -51,4 +51,15 @@ public final class SConceptId {
     result = 31 * result + myConceptId;
     return result;
   }
+
+  public String serialize() {
+    return myLanguageId.toString() + "/" + myConceptId;
+  }
+
+  public static SConceptId deserialize(String s) {
+    int split = s.lastIndexOf("/");
+    SLanguageId lang = SLanguageId.deserialize(s.substring(0, split));
+    int concept = Integer.parseInt(s.substring(split + 1));
+    return new SConceptId(lang, concept);
+  }
 }

@@ -51,4 +51,15 @@ public final class SPropertyId {
     result = 31 * result + myPropertyId;
     return result;
   }
+
+  public String serialize() {
+    return myConceptId.toString() + "/" + myPropertyId;
+  }
+
+  public static SPropertyId deserialize(String s) {
+    int split = s.lastIndexOf("/");
+    SConceptId concept = SConceptId.deserialize(s.substring(0, split));
+    int prop = Integer.parseInt(s.substring(split + 1));
+    return new SPropertyId(concept, prop);
+  }
 }

@@ -26,4 +26,15 @@ public final class SReferenceLinkId extends SAbstractLinkId {
   public int getReferenceLinkId() {
     return myRefLinkId;
   }
+
+  public String serialize() {
+    return myConceptId.toString() + "/" + myRefLinkId;
+  }
+
+  public static SReferenceLinkId deserialize(String s) {
+    int split = s.lastIndexOf("/");
+    SConceptId concept = SConceptId.deserialize(s.substring(0, split));
+    int ref = Integer.parseInt(s.substring(split + 1));
+    return new SReferenceLinkId(concept, ref);
+  }
 }

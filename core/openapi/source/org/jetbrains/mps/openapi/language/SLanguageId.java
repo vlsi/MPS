@@ -44,4 +44,12 @@ public final class SLanguageId {
   public int hashCode() {
     return myId != null ? myId.hashCode() : 0;
   }
+
+  public String serialize(){
+    return myId.toString();
+  }
+
+  public static SLanguageId deserialize(String s){
+    return new SLanguageId(UUID.fromString(s));
+  }
 }
