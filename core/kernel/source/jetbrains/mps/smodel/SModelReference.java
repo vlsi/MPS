@@ -61,7 +61,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
         }
       }*/
     }
-    myModuleReference = replaceModuleReferences ? calculateModuleReference(module) : module;
+    myModuleReference = replaceModuleReferences ? calculateModuleReference() : module;
   }
 
   @NotNull
@@ -79,34 +79,20 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Override
   public SModuleReference getModuleReference() {
     if (replaceModuleReferences) {
-      return calculateModuleReference(myModuleReference);
+      return calculateModuleReference();
     }
     return myModuleReference;
   }
 
-  private SModuleReference calculateModuleReference(SModuleReference moduleReference) {
-    if (moduleReference == null) {
-      SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelId);
-      if (modelDescriptor != null) {
-        return modelDescriptor.getModule().getModuleReference();
-      } else {
-        return null;
-        //can be for deleted models when references to them still exist
-        //throw new IllegalStateException("Could not replace module reference");
-      }
-    }
-    SModuleId moduleId = moduleReference.getModuleId();
-    String moduleName = moduleReference.getModuleName();
-    SModule module = null;
-    if (moduleId == null && moduleName != null) {
-      module = MPSModuleRepository.getInstance().getModuleByFqName(moduleName);
-    } else if (moduleId != null && moduleName == null) {
-      module = MPSModuleRepository.getInstance().getModule(moduleId);
-    }
-    if (module != null) {
-      return module.getModuleReference();
+  //remove after MPS 3.2
+  private SModuleReference calculateModuleReference() {
+    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelId);
+    if (modelDescriptor != null) {
+      return modelDescriptor.getModule().getModuleReference();
     } else {
-      return moduleReference;
+      return null;
+      //can be for deleted models when references to them still exist
+      //throw new IllegalStateException("Could not replace module reference");
     }
   }
 
