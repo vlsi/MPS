@@ -335,6 +335,12 @@ with_targets:
               monit.reportFeedback(new IFeedback.ERROR("Exception executing target " + trg.getName(), rex));
               results.addResult(trg.getName(), new IResult.FAILURE(null));
               return;
+            } catch (Throwable th) {
+              String msg = String.format("Exception %s while executing target %s", th.getClass().getName(), trg.getName());
+              LOG.error(msg, th);
+              monit.reportFeedback(new IFeedback.ERROR(msg));
+              results.addResult(trg.getName(), new IResult.FAILURE(null));
+              return;
             }
           }
         } finally {

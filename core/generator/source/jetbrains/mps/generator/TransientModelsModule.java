@@ -275,6 +275,7 @@ public class TransientModelsModule extends AbstractModule {
           if (wasUnloaded) {
             // ensure imports are back
             SModelOperations.validateLanguagesAndImports(this, false, false);
+            wasUnloaded = false;
           }
           fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
         }
@@ -295,11 +296,11 @@ public class TransientModelsModule extends AbstractModule {
         if (swap == null) throw new IllegalStateException("no swap space");
 
         TransientSModel m = swap.restoreFromSwap(getReference(), new TransientSModel(getReference()));
-        if (m != null) {
-          return m;
-        }
 
-        throw new IllegalStateException("lost swapped out model");
+        if (m == null) {
+          throw new IllegalStateException("lost swapped out model");
+        }
+        return m;
       } else {
         return new TransientSModel(getReference());
       }
