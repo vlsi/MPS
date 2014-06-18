@@ -48,9 +48,6 @@ public class DefaultFastNodeFinder extends BaseFastNodeFinder {
 
   @Override
   public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
-    // pre-loading model to avoid deadlock (model loading process requires a lock)
-    // model cannot be unloaded afterwards, because we have model read access
-    myModel.load();
     List<SNode> rv = super.getNodes(conceptFqName, includeInherited);
     // sorting is switched off as it gives different ordering of generated methods
     // when either regular SModel or transient SModel comes as an input to a generator.
