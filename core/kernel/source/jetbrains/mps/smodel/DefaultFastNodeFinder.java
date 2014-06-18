@@ -31,28 +31,17 @@ import java.util.List;
 import java.util.Set;
 
 
-public class DefaultFastNodeFinder extends BaseFastNodeFinder implements StructureAspectChangeTracker.ModuleListener {
+public class DefaultFastNodeFinder extends BaseFastNodeFinder {
   private final SModelAdapter myListener = new MySModelAdapter();
-  private final StructureAspectChangeTracker myDependencyListener;
   private final NodeByIdComparator myComparator = new NodeByIdComparator();
-  private final ModelDependenciesManager myDepTracker;
-  private final SRepository myRepository;
 
   public DefaultFastNodeFinder(SModel model) {
     super(model);
     ((SModelInternal) model).addModelListener(myListener);
-    myRepository = model.getRepository();
-    myDepTracker = new ModelDependenciesManager(model).trackModelChanges().trackRepositoryChanges(myRepository);
-    // Next code is superfluous in end-user environment with fixed languages (they don't change), but there's no way to tell
-    // this kind of environment.
-    myDependencyListener = new StructureAspectChangeTracker(null, this);
-    myDependencyListener.attachTo(myRepository);
   }
 
   @Override
   public void dispose() {
-    myDependencyListener.detachFrom(myRepository);
-    myDepTracker.dispose();
     ((SModelInternal) myModel).removeModelListener(myListener);
     super.dispose();
   }
@@ -80,16 +69,6 @@ public class DefaultFastNodeFinder extends BaseFastNodeFinder implements Structu
   @Override
   protected ConceptInstanceMap build(Computable<ConceptInstanceMap> b) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(b);
-  }
-
-  @Override
-  public void structureAspectChanged(Set<SModuleReference> changedLanguages) {
-    for (SModuleReference importedLang : myDepTracker.getAllImportedLanguages()) {
-      if (changedLanguages.contains(importedLang)) {
-        reset();
-        return;
-      }
-    }
   }
 
   private class MySModelAdapter extends SModelAdapter {

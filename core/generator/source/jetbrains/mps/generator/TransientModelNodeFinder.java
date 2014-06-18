@@ -45,7 +45,7 @@ public class TransientModelNodeFinder extends BaseFastNodeFinder {
 
     @Override
     public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
-      // n-op, FNF doesn't depend on references, structure only
+      // no-op, FNF doesn't depend on references, structure only
     }
   };
 

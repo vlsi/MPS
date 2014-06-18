@@ -15,28 +15,48 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.impl.StructureAspectChangeTracker;
+import jetbrains.mps.smodel.impl.StructureAspectChangeTracker.ModuleListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.ArrayList;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Entry point to access {@link jetbrains.mps.smodel.FastNodeFinder} instance for a class.
  *
- * Likely to become {@link jetbrains.mps.components.CoreComponent}
+ * Likely to become {@link jetbrains.mps.components.CoreComponent}, then static fields would become instance fields
+ * and it would be caller's responsibility to obtain instance of this class.
  *
  * XXX lives in kernel as it depends now from classes that require kernel classes. Consider refactoring and relocating to smodel module.
  * @author Artem Tikhomirov
  */
 public class FastNodeFinderManager {
   private static final ConcurrentHashMap<SModelReference, FastNodeFinder> ourFinders = new ConcurrentHashMap<SModelReference, FastNodeFinder>();
+  private static final ConcurrentHashMap<SRepository, StructureAspectChangeTracker> ourRepoTrackers = new ConcurrentHashMap<SRepository, StructureAspectChangeTracker>();
+  private static final ModuleListener ourStructureAspectListener = new ModuleListener() {
+    @Override
+    public void structureAspectChanged(Set<SModuleReference> changedModules) {
+      // forget all finders, as it seems cheaper to re-create than to figure out their inter-dependencies
+      ArrayList<FastNodeFinder> finders = new ArrayList<FastNodeFinder>(ourFinders.values());
+      ourFinders.clear();
+      for (FastNodeFinder finder : finders) {
+        finder.dispose();
+      }
+    }
+  };
 
   @NotNull
   public static FastNodeFinder get(SModel model) {
     SModelReference mr = model.getReference();
     FastNodeFinder finder = ourFinders.get(mr);
     if (finder == null) {
+      track(model.getRepository());
       if (model instanceof FastNodeFinder.Factory) {
         finder = ((FastNodeFinder.Factory) model).createNodeFinder(model);
       }
@@ -55,6 +75,22 @@ public class FastNodeFinderManager {
     FastNodeFinder finder = ourFinders.remove(mr);
     if (finder != null) {
       finder.dispose();
+    }
+  }
+
+  /*
+   * Repository tracking is superfluous in end-user environment with fixed languages (their structure aspects never change),
+   * but there's no way to tell this kind of environment.
+   */
+  private static void track(SRepository repo) {
+    if (repo == null || ourRepoTrackers.containsKey(repo)) {
+      return;
+    }
+    StructureAspectChangeTracker tracker = new StructureAspectChangeTracker(null, ourStructureAspectListener);
+    ourRepoTrackers.putIfAbsent(repo, tracker);
+    if (tracker == ourRepoTrackers.get(repo)) {
+      // if another thread got luck, we don't need to attach tracker to the repo
+      tracker.attachTo(repo);
     }
   }
 }
