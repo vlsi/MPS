@@ -34215,7 +34215,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="120896515006355039" nodeInfo="nn" />
         <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="34717573732768586" nodeInfo="nn">
           <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="34717573732768588" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="module" />
+            <property name="name" nameId="tpck.1169194664001" value="language" />
           </node>
           <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="34717573732855453" nodeInfo="nn">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="34717573732853839" nodeInfo="nn">
@@ -34228,10 +34228,35 @@
             </node>
           </node>
           <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="34717573732768592" nodeInfo="sn">
+            <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="5803775621331854962" nodeInfo="nn">
+              <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="5803775621331854964" nodeInfo="nr">
+                <property name="name" nameId="tpck.1169194664001" value="generator" />
+              </node>
+              <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="5803775621331854968" nodeInfo="sn">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5803775621331859171" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5803775621331859427" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="5803775621331859170" nodeInfo="nn">
+                      <link role="variable" roleId="tp2q.1153944258490" targetNodeId="5803775621331854964" resolveInfo="generator" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5803775621331871533" nodeInfo="nn">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dupdateModuleReferences()%cvoid" resolveInfo="updateModuleReferences" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5803775621331834206" nodeInfo="nn">
+                <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="5803775621331833633" nodeInfo="nn">
+                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="34717573732768588" resolveInfo="language" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5803775621331848431" nodeInfo="nn">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetGenerators()%cjava%dutil%dCollection" resolveInfo="getGenerators" />
+                </node>
+              </node>
+            </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="34717573732794597" nodeInfo="nn">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="34717573732796771" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="34717573732794596" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="34717573732768588" resolveInfo="module" />
+                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="34717573732768588" resolveInfo="language" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="34717573732805910" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dsave()%cvoid" resolveInfo="save" />
