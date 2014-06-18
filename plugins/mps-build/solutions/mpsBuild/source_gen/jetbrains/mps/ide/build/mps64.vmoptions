@@ -8,4 +8,4 @@
 -Xverify:none
 -Dfile.encoding=UTF-8
 -Dapple.awt.graphics.UseQuartz=true
--Didea.paths.selector=MPS31
+-Didea.paths.selector=MPS32

@@ -1,5 +1,5 @@
 <component>
-  <version codename="MPS" major="3" minor="1" eap="true" update-channel="MPS31"/>
+  <version codename="MPS" major="3" minor="2" eap="true" update-channel="MPS32"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <!--TODO: add and adjust progress bar? -->
   <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387" /><!--progressColor="f49514" progressY="298"-->

@@ -14011,7 +14011,7 @@
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="mpsBuild" />
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Branding" typeId="kdzh.7753544965996377997" id="7753544965996546378" nodeInfo="ng">
-      <property name="minor" nameId="kdzh.3497141547781541445" value="1" />
+      <property name="minor" nameId="kdzh.3497141547781541445" value="2" />
       <property name="name" nameId="tpck.1169194664001" value="MPS" />
       <property name="major" nameId="kdzh.3497141547781541444" value="3" />
       <property name="eap" nameId="kdzh.3497141547781541446" value="true" />
@@ -14071,7 +14071,7 @@
         </node>
         <node role="updateChannel" roleId="kdzh.8795525031433091059" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7753544965996568508" nodeInfo="ng">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568509" nodeInfo="ng">
-            <property name="text" nameId="3ior.4903714810883755350" value="MPS31" />
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS32" />
           </node>
         </node>
       </node>
@@ -14276,7 +14276,7 @@
       <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7230385212464648576" nodeInfo="ng">
         <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7230385212464648577" nodeInfo="ng">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7230385212464648578" nodeInfo="ng">
-            <property name="text" nameId="3ior.4903714810883755350" value="MPS-135.SNAPSHOT" />
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS-136.SNAPSHOT" />
           </node>
         </node>
       </node>
@@ -22344,7 +22344,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.data" />
     <property name="startupFolder" nameId="s7om.3885435385580582155" value="bin" />
     <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="2693344784284678846" nodeInfo="ng">
-      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS31" />
+      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS32" />
     </node>
     <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="2693344784284678847" nodeInfo="ng">
       <property name="commented" nameId="s7om.5842819808956906658" value="true" />
@@ -22378,7 +22378,7 @@
       <property name="path" nameId="s7om.3885435385580582154" value="lib/trove4j.jar" />
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903723" nodeInfo="ng">
-      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx950m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS31" />
+      <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx950m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS32" />
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903724" nodeInfo="ng">
       <property name="commented" nameId="s7om.5842819808956906658" value="true" />
