@@ -55,12 +55,6 @@
               <property name="text" nameId="iuxj.6666499814681541920" value="129.1" />
             </node>
           </node>
-          <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="748890476343596820" nodeInfo="ng">
-            <property name="attrName" nameId="iuxj.6666499814681447926" value="until-build" />
-            <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="748890476343596824" nodeInfo="ng">
-              <property name="text" nameId="iuxj.6666499814681541920" value="136.1" />
-            </node>
-          </node>
         </node>
         <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="9212378209272342786" nodeInfo="nn" />
         <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="9212378209272342823" nodeInfo="ng">

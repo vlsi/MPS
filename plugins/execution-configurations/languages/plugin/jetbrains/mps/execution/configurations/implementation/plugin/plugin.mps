@@ -188,7 +188,7 @@
     <property name="name" nameId="tpck.1169194664001" value="Execution Configurations" />
     <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="129.1" />
     <property name="loadModules" nameId="tp4k.8842945788826116904" value="true" />
-    <property name="version" nameId="tp4k.5023285075122009369" value="3.1" />
+    <property name="version" nameId="tp4k.5023285075122009369" value="3.2" />
     <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.MPSPluginDependency" typeId="tp4k.203415309825565488" id="6863272677075183722" nodeInfo="ng">
       <link role="plugin" roleId="tp4k.203415309825565489" targetNodeId="4dtg.6863272677075182370" resolveInfo="Execution Languages" />
     </node>
