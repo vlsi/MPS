@@ -114,33 +114,33 @@ public class DebugRegistryImpl implements DebugRegistry {
     return ids.get(0);
   }
 
-  public SPropertyIdImpl getPropertyId(SConceptId conceptId, String name) {
+  public SPropertyId getPropertyId(SConceptId conceptId, String name) {
     List<SPropertyId> ids = myProperties.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     for (SPropertyId id:ids){
-      if (id.getConceptId().equals(conceptId)) return (SPropertyIdImpl) id;
+      if (id.getConceptId().equals(conceptId)) return (SPropertyId) id;
     }
     return null;
   }
 
-  public SAbstractLinkIdImpl getLinkId(SConceptId conceptId, String name) {
+  public SAbstractLinkId getLinkId(SConceptId conceptId, String name) {
     List<SAbstractLinkId> ids = myLinks.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     for (SAbstractLinkId id:ids){
-      if (id.getConceptId().equals(conceptId)) return (SAbstractLinkIdImpl) id;
+      if (id.getConceptId().equals(conceptId)) return (SAbstractLinkId) id;
     }
     return null;
   }
 
-  public SConceptIdImpl getConceptId(String name) {
+  public SConceptId getConceptId(String name) {
     List<SConceptId> ids = myConcepts.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
-    return (SConceptIdImpl) ids.get(0);
+    return (SConceptId) ids.get(0);
   }
 
-  public SLanguageIdImpl getLanguageId(String name) {
+  public SLanguageId getLanguageId(String name) {
     List<SLanguageId> ids = myLanguages.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
-    return (SLanguageIdImpl) ids.get(0);
+    return (SLanguageId) ids.get(0);
   }
 }

@@ -6,7 +6,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SPropertyIdImpl;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.mps.openapi.language.SDataType;
@@ -16,7 +15,7 @@ import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SPropertyAdapter implements SProperty {
-  private SPropertyIdImpl myPropertyId;
+  private SPropertyId myPropertyId;
   private String conceptName;
   private String propertyName;
 
@@ -28,7 +27,7 @@ public class SPropertyAdapter implements SProperty {
   }
 
 
-  public SPropertyAdapter(SPropertyIdImpl propertyId) {
+  public SPropertyAdapter(SPropertyId propertyId) {
     this.myPropertyId = propertyId;
   }
 

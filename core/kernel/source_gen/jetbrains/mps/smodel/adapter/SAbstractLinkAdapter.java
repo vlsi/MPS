@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SAbstractLinkIdImpl;
 import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.NameUtil;
@@ -18,7 +17,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SAbstractLinkAdapter implements SAbstractLink {
-  protected SAbstractLinkIdImpl roleId;
+  protected SAbstractLinkId roleId;
   protected String conceptName;
   protected String role;
 
@@ -29,7 +28,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
   }
 
 
-  public SAbstractLinkAdapter(SAbstractLinkIdImpl roleId) {
+  public SAbstractLinkAdapter(SAbstractLinkId roleId) {
     this.roleId = roleId;
   }
 

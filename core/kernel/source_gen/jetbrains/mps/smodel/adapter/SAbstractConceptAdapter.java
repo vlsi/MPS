@@ -4,8 +4,6 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SAbstractLinkIdImpl;
-import jetbrains.mps.smodel.SPropertyIdImpl;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.NameUtil;
@@ -69,7 +67,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       return null;
     }
 
-    SAbstractLinkIdImpl id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, role);
+    SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, role);
     if (d.hasChild(role)) {
       return myConceptName==null?new SContainmentLinkAdapter(id):new SContainmentLinkAdapter(myConceptName, role);
     } else if (d.hasReference(role)) {
@@ -88,9 +86,9 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
     String role = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkName(id);
     if (d.hasChild(role)) {
-      return new SContainmentLinkAdapter(((SAbstractLinkIdImpl) id));
+      return new SContainmentLinkAdapter(((SAbstractLinkId) id));
     } else if (d.hasReference(role)) {
-      return new SReferenceLinkAdapter(((SAbstractLinkIdImpl) id));
+      return new SReferenceLinkAdapter(((SAbstractLinkId) id));
     }
     return null;
   }
@@ -108,7 +106,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     Iterable<SAbstractLink> seq = SetSequence.fromSet(((Set<String>) d.getChildrenNames())).select(new ISelector<String, SAbstractLink>() {
       public SAbstractLink select(String it) {
         if (myConceptName==null) {
-          SAbstractLinkIdImpl id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
+          SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
           return (SAbstractLink) new SContainmentLinkAdapter(id);
         } else{
           return (SAbstractLink) (new SContainmentLinkAdapter(myConceptName, it));
@@ -118,7 +116,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return Sequence.fromIterable(seq).concat(SetSequence.fromSet(((Set<String>) d.getReferenceNames())).select(new ISelector<String, SReferenceLinkAdapter>() {
       public SReferenceLinkAdapter select(String it) {
         if (myConceptName==null) {
-          SAbstractLinkIdImpl id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
+          SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
           return new SReferenceLinkAdapter(id);
         } else{
           return new SReferenceLinkAdapter(myConceptName, it);
@@ -138,7 +136,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
 
     String name = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyName(id);
-    return (d.hasProperty(name) ? new SPropertyAdapter(((SPropertyIdImpl) id)) : null);
+    return (d.hasProperty(name) ? new SPropertyAdapter(((SPropertyId) id)) : null);
   }
 
   @Override
@@ -151,7 +149,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
 
     if (myConceptName==null) {
-      SPropertyIdImpl pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, name);
+      SPropertyId pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, name);
       return (d.hasProperty(name) ? new SPropertyAdapter(pid) : null);
     } else{
       return (d.hasProperty(name) ? new SPropertyAdapter(myConceptName, name) : null);
@@ -171,7 +169,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return SetSequence.fromSet(((Set<String>) d.getPropertyNames())).select(new ISelector<String, SProperty>() {
       public SProperty select(String it) {
         if (myConceptName==null) {
-          SPropertyIdImpl id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, it);
+          SPropertyId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, it);
           return (SProperty) new SPropertyAdapter(id);
         } else{
           return (SProperty) (new SPropertyAdapter(myConceptName, it));

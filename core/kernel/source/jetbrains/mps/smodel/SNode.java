@@ -35,6 +35,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -67,7 +68,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private volatile Object[] myUserObjects; // key,value,key,value ; copy-on-write (!)
 
-  private final SConceptIdImpl myConceptId;
+  private final SConceptId myConceptId;
   private String myConceptFqName;
 
 
@@ -83,7 +84,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     myId = SModel.generateUniqueId();
   }
 
-  public SNode(@NotNull SConceptIdImpl conceptId) {
+  public SNode(@NotNull SConceptId conceptId) {
     myConceptId = conceptId;
     myId = SModel.generateUniqueId();
   }

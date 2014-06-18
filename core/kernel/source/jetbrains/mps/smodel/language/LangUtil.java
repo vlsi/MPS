@@ -17,25 +17,25 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SConceptIdImpl;
-import jetbrains.mps.smodel.SLanguageIdImpl;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModuleId;
 
 //for migration purposes in 3.2
 public abstract class LangUtil {
-  public static SLanguageIdImpl getLanguageId(Language l) {
+  public static SLanguageId getLanguageId(Language l) {
     SModuleId moduleId = l.getModuleReference().getModuleId();
     assert moduleId instanceof Regular;
-    return new SLanguageIdImpl(((Regular) moduleId).getUUID());
+    return new SLanguageId(((Regular) moduleId).getUUID());
   }
 
   //node must be a concept
-  public static SConceptIdImpl getConceptId(SNode c) {
+  public static SConceptId getConceptId(SNode c) {
     SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof Regular;
-    return new SConceptIdImpl(LangUtil.getLanguageId(((Language) c.getModel().getModule())),
+    return new SConceptId(LangUtil.getLanguageId(((Language) c.getModel().getModule())),
         ((int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId()));
   }
 }

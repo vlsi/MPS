@@ -4,7 +4,6 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SAbstractLinkIdImpl;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -36,7 +35,7 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
   public SAbstractLink getLink(String role) {
     // TODO fix all usages remove this hack 
     if (SNodeUtil.link_BaseConcept_smodelAttribute.equals(role)) {
-      SAbstractLinkIdImpl id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, role);
+      SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, role);
       return new SContainmentLinkAdapter(id);
     }
     return super.getLink(role);
@@ -46,7 +45,7 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
   public SAbstractLink getLink(SAbstractLinkId id) {
     String name = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkName(id);
     if (SNodeUtil.link_BaseConcept_smodelAttribute.equals(name)) {
-      return new SContainmentLinkAdapter(((SAbstractLinkIdImpl) id));
+      return new SContainmentLinkAdapter(((SAbstractLinkId) id));
     }
     return super.getLink(id);
   }
