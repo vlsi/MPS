@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.ArrayList;
@@ -50,10 +51,10 @@ public class ModelsScope extends Scope {
         nodes = model.getRootNodes();
         conceptToCheck = myTargetConcept;
       } else if (myTargetConcept != null) {
-        nodes = SNodeOperations.getModelFastFinder(model).getNodes(myTargetConcept, true);
+        nodes = SModelOperations.getNodes(model, myTargetConcept);
         conceptToCheck = null;
       } else {
-        nodes = ((Iterable) SNodeUtil.getDescendants(model));
+        nodes = SNodeUtil.getDescendants(model);
         conceptToCheck = null;
       }
 
@@ -91,10 +92,10 @@ public class ModelsScope extends Scope {
         nodes = model.getRootNodes();
         conceptToCheck = myTargetConcept;
       } else if (myTargetConcept != null) {
-        nodes = SNodeOperations.getModelFastFinder(model).getNodes(myTargetConcept, true);
+        nodes = SModelOperations.getNodes(model, myTargetConcept);
         conceptToCheck = null;
       } else {
-        nodes = ((Iterable) SNodeUtil.getDescendants(model));
+        nodes = SNodeUtil.getDescendants(model);
         conceptToCheck = null;
       }
 

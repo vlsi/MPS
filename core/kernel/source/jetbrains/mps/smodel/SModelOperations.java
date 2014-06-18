@@ -52,6 +52,19 @@ public class SModelOperations {
     return null;
   }
 
+  /**
+   * Plain code (i.e. BaseLanguage and SModel) counterpart for model.nodes(Concept) (i.e. from smodel language) which is translated into
+   * {@link jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations#getNodes(org.jetbrains.mps.openapi.model.SModel, String)}
+   *
+   * Primary purpose of this method is to prevent using of FastNodeFinderManager from BL code.
+   */
+  public static List<SNode> getNodes(SModel model, @NotNull String conceptFqName) {
+    if (model == null) {
+      return Collections.emptyList();
+    }
+    return FastNodeFinderManager.get(model).getNodes(conceptFqName, true);
+  }
+
   public static boolean isReadOnly(SModel model) {
     return model.isReadOnly();
   }

@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.StringTokenizer;
@@ -208,8 +209,7 @@ public class ClassifierResolveUtils {
   }
 
   private static Iterable<SNode> getClassifiersInModel(SModel model) {
-    Iterable<SNode> classifiers = jetbrains.mps.util.SNodeOperations.getModelFastFinder(model).getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
-    return (Iterable<SNode>) Sequence.fromIterable(classifiers).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.Classifier")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
       }

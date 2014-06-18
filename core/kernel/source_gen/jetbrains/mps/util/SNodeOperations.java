@@ -32,8 +32,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class SNodeOperations {
@@ -275,15 +273,6 @@ public class SNodeOperations {
 
   public static boolean isModelDisposed(SModel model) {
     return ((SModelInternal) model).getDisposedStacktrace() != null;
-  }
-
-  /**
-   * @deprecated FNF is implementation aspect. Either use directly (if you're in MPS core), 
-   * or use SModelOperations.getNodes(model, string)
-   */
-  @Deprecated
-  public static FastNodeFinder getModelFastFinder(SModel model) {
-    return FastNodeFinderManager.get(model);
   }
 
   public static int nodesCount(SModel model) {

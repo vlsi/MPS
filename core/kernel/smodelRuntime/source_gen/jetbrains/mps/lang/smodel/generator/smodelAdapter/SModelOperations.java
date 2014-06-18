@@ -115,7 +115,7 @@ public class SModelOperations {
       return new ArrayList<SNode>();
     }
     if (conceptFqName != null) {
-      return FastNodeFinderManager.get(model).getNodes(conceptFqName, true);
+      return jetbrains.mps.smodel.SModelOperations.getNodes(model, conceptFqName);
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : SNodeUtil.getDescendants(model)) {
