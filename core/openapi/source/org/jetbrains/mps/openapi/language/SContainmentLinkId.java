@@ -15,6 +15,32 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface SContainmentLinkId extends SAbstractLinkId {
-  public int getContainmentLinkId();
+public final class SContainmentLinkId extends SAbstractLinkId {
+  private final int myLinkId;
+
+  public SContainmentLinkId(SConceptId conceptId, int linkId) {
+    super(conceptId);
+    myLinkId = linkId;
+  }
+
+  public int getContainmentLinkId() {
+    return myLinkId;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    SContainmentLinkId that = (SContainmentLinkId) o;
+
+    if (myLinkId != that.myLinkId) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    return myLinkId;
+  }
 }

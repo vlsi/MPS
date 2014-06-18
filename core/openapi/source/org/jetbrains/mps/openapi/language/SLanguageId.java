@@ -15,6 +15,33 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface SLanguageId {
-  public java.util.UUID getId();
+import java.util.UUID;
+
+public final class SLanguageId {
+  private final UUID myId;
+
+  public SLanguageId(UUID id) {
+    myId = id;
+  }
+
+  public UUID getId() {
+    return myId;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    SLanguageId that = (SLanguageId) o;
+
+    if (myId != null ? !myId.equals(that.myId) : that.myId != null) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    return myId != null ? myId.hashCode() : 0;
+  }
 }

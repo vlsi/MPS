@@ -15,6 +15,14 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface SAbstractLinkId {
-  public SConceptId getConceptId();
+public abstract class SAbstractLinkId {
+  protected final SConceptId myConceptId;
+
+  public SAbstractLinkId(SConceptId conceptId) {
+    myConceptId = conceptId;
+  }
+
+  public SConceptId getConceptId() {
+    return myConceptId;
+  }
 }
