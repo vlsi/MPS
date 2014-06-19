@@ -4536,6 +4536,119 @@
     <unitInfo nodeId="7301049412170069060" fileName="RestoreCellSelection_Test.java" startLine="25" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.editorTest.RestoreCellSelection_Test$TestBody" />
     <unitInfo nodeId="7301049412170069060" fileName="RestoreCellSelection_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.RestoreCellSelection_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7311202892961620570">
+    <nodeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="18" startPosition="69" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7311202892961690208" fileName="PasteExpressionInsteadAnother_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961690775" fileName="PasteExpressionInsteadAnother_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8016871088916713564" fileName="PasteExpressionInsteadAnother_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961690786" fileName="PasteExpressionInsteadAnother_Test.java" startLine="34" startPosition="102" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961690794" fileName="PasteExpressionInsteadAnother_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteExpressionInsteadAnother_Test#()V" />
+    <nodeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PasteExpressionInsteadAnother#()V" />
+    <nodeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="14" startPosition="47" endLine="14" endPosition="47" />
+    <scopeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="18" startPosition="69" endLine="20" endPosition="110" />
+    <scopeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="29" startPosition="51" endLine="36" endPosition="65">
+      <varInfo nodeId="7311202892961620570" varName="editor" />
+      <varInfo nodeId="7311202892961620570" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="23" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionInsteadAnother_Test$TestBody" />
+    <unitInfo nodeId="7311202892961620570" fileName="PasteExpressionInsteadAnother_Test.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionInsteadAnother_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7311202892961738468">
+    <nodeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="18" startPosition="61" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7311202892961738498" fileName="PasteExpressionAsText_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961738500" fileName="PasteExpressionAsText_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801074520" fileName="PasteExpressionAsText_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961741497" fileName="PasteExpressionAsText_Test.java" startLine="34" startPosition="102" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8016871088917067515" fileName="PasteExpressionAsText_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8016871088917067537" fileName="PasteExpressionAsText_Test.java" startLine="36" startPosition="107" endLine="37" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961738504" fileName="PasteExpressionAsText_Test.java" startLine="37" startPosition="107" endLine="38" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteExpressionAsText_Test#()V" />
+    <nodeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PasteExpressionAsText#()V" />
+    <nodeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="28" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="14" startPosition="39" endLine="14" endPosition="39" />
+    <scopeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="18" startPosition="61" endLine="20" endPosition="102" />
+    <scopeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="29" startPosition="51" endLine="38" endPosition="65">
+      <varInfo nodeId="7311202892961738468" varName="editor" />
+      <varInfo nodeId="7311202892961738468" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="28" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="23" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionAsText_Test$TestBody" />
+    <unitInfo nodeId="7311202892961738468" fileName="PasteExpressionAsText_Test.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionAsText_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7311202892961745669">
+    <nodeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="18" startPosition="70" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7311202892961753127" fileName="PasteExpressionBeforeStatement_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961753129" fileName="PasteExpressionBeforeStatement_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961753131" fileName="PasteExpressionBeforeStatement_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961753135" fileName="PasteExpressionBeforeStatement_Test.java" startLine="34" startPosition="103" endLine="35" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteExpressionBeforeStatement_Test#()V" />
+    <nodeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PasteExpressionBeforeStatement#()V" />
+    <nodeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="14" startPosition="48" endLine="14" endPosition="48" />
+    <scopeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="18" startPosition="70" endLine="20" endPosition="111" />
+    <scopeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="65">
+      <varInfo nodeId="7311202892961745669" varName="editor" />
+      <varInfo nodeId="7311202892961745669" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionBeforeStatement_Test$TestBody" />
+    <unitInfo nodeId="7311202892961745669" fileName="PasteExpressionBeforeStatement_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionBeforeStatement_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7311202892961766807">
+    <nodeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="18" startPosition="66" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7311202892961766835" fileName="PasteExpressionToFullyText_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961766837" fileName="PasteExpressionToFullyText_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961766839" fileName="PasteExpressionToFullyText_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961766841" fileName="PasteExpressionToFullyText_Test.java" startLine="34" startPosition="103" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961766843" fileName="PasteExpressionToFullyText_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteExpressionToFullyText_Test#()V" />
+    <nodeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PasteExpressionToFullyText#()V" />
+    <nodeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="14" startPosition="44" endLine="14" endPosition="44" />
+    <scopeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="18" startPosition="66" endLine="20" endPosition="107" />
+    <scopeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="29" startPosition="51" endLine="36" endPosition="65">
+      <varInfo nodeId="7311202892961766807" varName="editor" />
+      <varInfo nodeId="7311202892961766807" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="23" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionToFullyText_Test$TestBody" />
+    <unitInfo nodeId="7311202892961766807" fileName="PasteExpressionToFullyText_Test.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionToFullyText_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/738178674097913525">
     <nodeInfo nodeId="738178674097913525" fileName="LT_PlusExpressionRArgument_with_Assignment_Test.java" startLine="18" startPosition="82" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="738178674097913525" fileName="LT_PlusExpressionRArgument_with_Assignment_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4727,6 +4840,150 @@
     <scopeInfo nodeId="7548887999679237080" fileName="AddReferenceAttribute_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <unitInfo nodeId="7548887999679237080" fileName="AddReferenceAttribute_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddReferenceAttribute_Test$TestBody" />
     <unitInfo nodeId="7548887999679237080" fileName="AddReferenceAttribute_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddReferenceAttribute_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7591654183801421705">
+    <nodeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="18" startPosition="69" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801421737" fileName="PasteExpressionAfterStatement_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801421741" fileName="PasteExpressionAfterStatement_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801428632" fileName="PasteExpressionAfterStatement_Test.java" startLine="33" startPosition="103" endLine="34" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801428634" fileName="PasteExpressionAfterStatement_Test.java" startLine="34" startPosition="108" endLine="35" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801428636" fileName="PasteExpressionAfterStatement_Test.java" startLine="35" startPosition="108" endLine="36" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801421743" fileName="PasteExpressionAfterStatement_Test.java" startLine="36" startPosition="108" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteExpressionAfterStatement_Test#()V" />
+    <nodeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PasteExpressionAfterStatement#()V" />
+    <nodeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="14" startPosition="47" endLine="14" endPosition="47" />
+    <scopeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="18" startPosition="69" endLine="20" endPosition="110" />
+    <scopeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="29" startPosition="51" endLine="37" endPosition="65">
+      <varInfo nodeId="7591654183801421705" varName="editor" />
+      <varInfo nodeId="7591654183801421705" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="23" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionAfterStatement_Test$TestBody" />
+    <unitInfo nodeId="7591654183801421705" fileName="PasteExpressionAfterStatement_Test.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.PasteExpressionAfterStatement_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7591654183801450340">
+    <nodeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="18" startPosition="59" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801450372" fileName="PasteTextToLabelEnd_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801450376" fileName="PasteTextToLabelEnd_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801452716" fileName="PasteTextToLabelEnd_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801450378" fileName="PasteTextToLabelEnd_Test.java" startLine="34" startPosition="102" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801450382" fileName="PasteTextToLabelEnd_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteTextToLabelEnd_Test#()V" />
+    <nodeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PasteTextToLabelEnd#()V" />
+    <nodeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="14" startPosition="37" endLine="14" endPosition="37" />
+    <scopeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="18" startPosition="59" endLine="20" endPosition="100" />
+    <scopeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="29" startPosition="51" endLine="36" endPosition="65">
+      <varInfo nodeId="7591654183801450340" varName="editor" />
+      <varInfo nodeId="7591654183801450340" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="23" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.PasteTextToLabelEnd_Test$TestBody" />
+    <unitInfo nodeId="7591654183801450340" fileName="PasteTextToLabelEnd_Test.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.PasteTextToLabelEnd_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7591654183801452939">
+    <nodeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="18" startPosition="61" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801452959" fileName="PasteTextToLabelStart_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801452961" fileName="PasteTextToLabelStart_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801452963" fileName="PasteTextToLabelStart_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801452965" fileName="PasteTextToLabelStart_Test.java" startLine="34" startPosition="102" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453037" fileName="PasteTextToLabelStart_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453051" fileName="PasteTextToLabelStart_Test.java" startLine="36" startPosition="107" endLine="37" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453067" fileName="PasteTextToLabelStart_Test.java" startLine="37" startPosition="107" endLine="38" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801452967" fileName="PasteTextToLabelStart_Test.java" startLine="38" startPosition="107" endLine="39" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteTextToLabelStart_Test#()V" />
+    <nodeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PasteTextToLabelStart#()V" />
+    <nodeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="28" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="14" startPosition="39" endLine="14" endPosition="39" />
+    <scopeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="18" startPosition="61" endLine="20" endPosition="102" />
+    <scopeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="29" startPosition="51" endLine="39" endPosition="65">
+      <varInfo nodeId="7591654183801452939" varName="editor" />
+      <varInfo nodeId="7591654183801452939" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="28" startPosition="0" endLine="41" endPosition="0" />
+    <unitInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="23" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.editorTest.PasteTextToLabelStart_Test$TestBody" />
+    <unitInfo nodeId="7591654183801452939" fileName="PasteTextToLabelStart_Test.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.editorTest.PasteTextToLabelStart_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7591654183801453229">
+    <nodeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="18" startPosition="61" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801453249" fileName="PasteTextToWholeLabel_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453251" fileName="PasteTextToWholeLabel_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453253" fileName="PasteTextToWholeLabel_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453255" fileName="PasteTextToWholeLabel_Test.java" startLine="34" startPosition="102" endLine="35" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453257" fileName="PasteTextToWholeLabel_Test.java" startLine="35" startPosition="107" endLine="36" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453263" fileName="PasteTextToWholeLabel_Test.java" startLine="36" startPosition="107" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteTextToWholeLabel_Test#()V" />
+    <nodeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PasteTextToWholeLabel#()V" />
+    <nodeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="14" startPosition="39" endLine="14" endPosition="39" />
+    <scopeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="18" startPosition="61" endLine="20" endPosition="102" />
+    <scopeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="29" startPosition="51" endLine="37" endPosition="65">
+      <varInfo nodeId="7591654183801453229" varName="editor" />
+      <varInfo nodeId="7591654183801453229" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="23" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.PasteTextToWholeLabel_Test$TestBody" />
+    <unitInfo nodeId="7591654183801453229" fileName="PasteTextToWholeLabel_Test.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.editorTest.PasteTextToWholeLabel_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7591654183801453439">
+    <nodeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="18" startPosition="60" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7591654183801453459" fileName="PasteTextToEndOfLine_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453461" fileName="PasteTextToEndOfLine_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453463" fileName="PasteTextToEndOfLine_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453469" fileName="PasteTextToEndOfLine_Test.java" startLine="34" startPosition="102" endLine="35" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PasteTextToEndOfLine_Test#()V" />
+    <nodeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_PasteTextToEndOfLine#()V" />
+    <nodeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="14" startPosition="38" endLine="14" endPosition="38" />
+    <scopeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="18" startPosition="60" endLine="20" endPosition="101" />
+    <scopeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="65">
+      <varInfo nodeId="7591654183801453439" varName="editor" />
+      <varInfo nodeId="7591654183801453439" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.editorTest.PasteTextToEndOfLine_Test$TestBody" />
+    <unitInfo nodeId="7591654183801453439" fileName="PasteTextToEndOfLine_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.PasteTextToEndOfLine_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7704251192656077259">
     <nodeInfo nodeId="7704251192656077259" fileName="TestAutoresolve_Test.java" startLine="18" startPosition="55" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
