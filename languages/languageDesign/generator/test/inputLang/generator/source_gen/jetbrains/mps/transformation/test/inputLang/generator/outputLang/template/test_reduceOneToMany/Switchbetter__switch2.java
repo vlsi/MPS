@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 @Generated
@@ -34,22 +33,14 @@ public class Switchbetter__switch2 implements TemplateSwitchMapping {
   }
 
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    environment.getTracer().pushRuleConsequence(conseq_r4cs19_a0a0a4);
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.NullLiteral");
     try {
-      environment.getTracer().pushTemplateNode(templateNode_r4cs19_a0a0a2a4);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/8371596541809075903");
-
     } finally {
-      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-      environment.getTracer().closeTemplateNode(templateNode_r4cs19_a0a0a2a4);
     }
     return TemplateUtil.singletonList(tnode1);
   }
 
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
-
-  private static SNodePointer conseq_r4cs19_a0a0a4 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075901");
-  private static SNodePointer templateNode_r4cs19_a0a0a2a4 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075903");
 }

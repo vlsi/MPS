@@ -14,7 +14,6 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
 
 @Generated
@@ -29,13 +28,9 @@ public class Templateweave__InputNode__A implements TemplateDeclarationWeavingAw
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
-      environment.getTracer().pushTemplateNode(templateNode_nu2nvy_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218740073391");
-      SNodeAccessUtil.setProperty(tnode1, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(new PropertyMacroContext(context, "_text_", propertyMacro_nu2nvy_c0a0c0c0b0c))));
-
+      SNodeAccessUtil.setProperty(tnode1, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(new PropertyMacroContext(context, "_text_", propertyMacro_nu2nvy_c0a0c0b0b0c))));
     } finally {
-      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-      environment.getTracer().closeTemplateNode(templateNode_nu2nvy_a0a0a1a2);
     }
     return tnode1;
   }
@@ -51,7 +46,6 @@ public class Templateweave__InputNode__A implements TemplateDeclarationWeavingAw
     return TemplateUtil.singletonList(tnodepart0);
   }
 
-  private static SNodePointer templateNode_nu2nvy_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740073391");
-  private static SNodePointer propertyMacro_nu2nvy_c0a0c0c0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740165111");
+  private static SNodePointer propertyMacro_nu2nvy_c0a0c0b0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740165111");
   private static SNodePointer weaveTfConst_nu2nvy_a0b0e = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218740112298");
 }

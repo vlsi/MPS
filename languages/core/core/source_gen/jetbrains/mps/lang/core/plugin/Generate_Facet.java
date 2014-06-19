@@ -40,7 +40,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.generator.IGenerationTracer;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
@@ -521,12 +520,6 @@ public class Generate_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               boolean generationOk = false;
-              if (!(Generate_Facet.Target_configure.vars(pa.global()).saveTransient())) {
-                IGenerationTracer tracer = Generate_Facet.Target_checkParameters.vars(pa.global()).project().getComponent(IGenerationTracer.class);
-                if (tracer != null) {
-                  tracer.discardTracing();
-                }
-              }
               final Wrappers._T<Map<SModule, Iterable<SModel>>> retainedModels = new Wrappers._T<Map<SModule, Iterable<SModel>>>();
 
               ModelAccess.instance().runReadAction(new Runnable() {

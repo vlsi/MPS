@@ -12,7 +12,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -32,19 +31,13 @@ public class TemplateRootCustom implements TemplateDeclaration {
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
-      environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412775");
       SNodeAccessUtil.setProperty(tnode1, "name", "RootCustom");
-
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
-          environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412776");
-
         } finally {
-          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
-          environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a4a1a2);
         }
         if (tnode2 != null) {
           tnode1.addChild("visibility", tnode2);
@@ -54,19 +47,13 @@ public class TemplateRootCustom implements TemplateDeclaration {
       {
         final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         try {
-          environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761135");
           SNodeAccessUtil.setProperty(tnode3, "name", "q");
-
           {
             final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility");
             try {
-              environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a5a1a2);
               environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761136");
-
             } finally {
-              environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));
-              environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a4a1a5a1a2);
             }
             if (tnode4 != null) {
               tnode3.addChild("visibility", tnode4);
@@ -76,12 +63,8 @@ public class TemplateRootCustom implements TemplateDeclaration {
           {
             final SNode tnode5 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
             try {
-              environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a1a5a1a2);
               environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761138");
-
             } finally {
-              environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode5));
-              environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a5a1a5a1a2);
             }
             if (tnode5 != null) {
               tnode3.addChild("type", tnode5);
@@ -89,8 +72,6 @@ public class TemplateRootCustom implements TemplateDeclaration {
             // TODO validate child 
           }
         } finally {
-          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
-          environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a5a1a2);
         }
         if (tnode3 != null) {
           tnode1.addChild("member", tnode3);
@@ -100,18 +81,12 @@ public class TemplateRootCustom implements TemplateDeclaration {
       {
         final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
         try {
-          environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a6a1a2);
           environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412777");
-
           {
             final SNode tnode7 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
             try {
-              environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a3a1a6a1a2);
               environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412778");
-
             } finally {
-              environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));
-              environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a3a1a6a1a2);
             }
             if (tnode7 != null) {
               tnode6.addChild("returnType", tnode7);
@@ -121,12 +96,8 @@ public class TemplateRootCustom implements TemplateDeclaration {
           {
             final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
             try {
-              environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a6a1a2);
               environment.nodeCopied(context, tnode8, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412779");
-
             } finally {
-              environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode8));
-              environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a4a1a6a1a2);
             }
             if (tnode8 != null) {
               tnode6.addChild("visibility", tnode8);
@@ -136,74 +107,51 @@ public class TemplateRootCustom implements TemplateDeclaration {
           {
             final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StatementList");
             try {
-              environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a1a6a1a2);
               environment.nodeCopied(context, tnode9, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412780");
-
               {
                 final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
                 try {
-                  environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a3a1a5a1a6a1a2);
                   environment.nodeCopied(context, tnode10, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761102");
-
                   {
                     Collection<SNode> tlist11 = null;
+                    final Object varValue11 = QueriesGenerated.insertMacro_varValue_5015072279636761109(new TemplateVarContext(context, varMacroRef_kyghau_b0a0a1a1a1a1a1a3a1a4a1a2));
+                    TemplateContext context11 = context.subContext(Collections.<String,Object>singletonMap("var:var1", varValue11));
+                    final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
                     try {
-                      environment.getTracer().pushMacro(varMacroRef_kyghau_a0a0a1a3a1a3a1a5a1a6a1a2);
-                      final Object varValue11 = QueriesGenerated.insertMacro_varValue_5015072279636761109(new TemplateVarContext(context, varMacroRef_kyghau_a0a0a1a3a1a3a1a5a1a6a1a2));
-                      TemplateContext context11 = context.subContext(Collections.<String,Object>singletonMap("var:var1", varValue11));
-                      final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-                      try {
-                        environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a4a1a3a1a3a1a5a1a6a1a2);
-                        environment.nodeCopied(context11, tnode12, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103");
-                        SNodeAccessUtil.setProperty(tnode12, "name", "i");
-
-                        {
-                          final SNode tnode13 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
-                          try {
-                            environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a4a1a3a1a3a1a5a1a6a1a2);
-                            environment.nodeCopied(context11, tnode13, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761104");
-
-                          } finally {
-                            environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode13));
-                            environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a4a4a1a3a1a3a1a5a1a6a1a2);
-                          }
-                          if (tnode13 != null) {
-                            tnode12.addChild("type", tnode13);
-                          }
-                          // TODO validate child 
+                      environment.nodeCopied(context11, tnode12, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103");
+                      SNodeAccessUtil.setProperty(tnode12, "name", "i");
+                      {
+                        final SNode tnode13 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerType");
+                        try {
+                          environment.nodeCopied(context11, tnode13, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761104");
+                        } finally {
                         }
-                        {
-                          final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
-                          try {
-                            environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a4a1a3a1a3a1a5a1a6a1a2);
-                            environment.nodeCopied(context11, tnode14, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761106");
-                            SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2721957369897795324(new PropertyMacroContext(context11, "0", propertyMacro_kyghau_c0a0c0c0b0f0e0b0d0b0d0b0f0b0g0b0c))));
-
-                          } finally {
-                            environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode14));
-                            environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a5a4a1a3a1a3a1a5a1a6a1a2);
-                          }
-                          if (tnode14 != null) {
-                            tnode12.addChild("initializer", tnode14);
-                          }
-                          // TODO validate child 
+                        if (tnode13 != null) {
+                          tnode12.addChild("type", tnode13);
                         }
-                      } finally {
-                        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode12));
-                        environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a4a1a3a1a3a1a5a1a6a1a2);
+                        // TODO validate child 
                       }
-                      tlist11 = TemplateUtil.singletonList(tnode12);
+                      {
+                        final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+                        try {
+                          environment.nodeCopied(context11, tnode14, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761106");
+                          SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2721957369897795324(new PropertyMacroContext(context11, "0", propertyMacro_kyghau_c0a0c0b0b0d0e0b0b0b0b0d0b0e0b0c))));
+                        } finally {
+                        }
+                        if (tnode14 != null) {
+                          tnode12.addChild("initializer", tnode14);
+                        }
+                        // TODO validate child 
+                      }
                     } finally {
-                      environment.getTracer().closeMacro(varMacroRef_kyghau_a0a0a1a3a1a3a1a5a1a6a1a2);
                     }
+                    tlist11 = TemplateUtil.singletonList(tnode12);
                     for (SNode child15 : TemplateUtil.asNotNull(tlist11)) {
                       tnode10.addChild("localVariableDeclaration", child15);
                     }
                     // TODO validate child 
                   }
                 } finally {
-                  environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode10));
-                  environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a3a1a5a1a6a1a2);
                 }
                 if (tnode10 != null) {
                   tnode9.addChild("statement", tnode10);
@@ -213,25 +161,17 @@ public class TemplateRootCustom implements TemplateDeclaration {
               {
                 final SNode tnode16 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
                 try {
-                  environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a5a1a6a1a2);
                   environment.nodeCopied(context, tnode16, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761140");
-
                   {
                     final SNode tnode17 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression");
                     try {
-                      environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a3a1a4a1a5a1a6a1a2);
                       environment.nodeCopied(context, tnode17, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761142");
-
                       {
                         final SNode tnode18 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                         try {
-                          environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a3a1a3a1a4a1a5a1a6a1a2);
                           environment.nodeCopied(context, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/3021153905120210705");
-                          environment.resolveInTemplateLater(tnode18, "variableDeclaration", templateNode_kyghau_a0a0a1a3a1a3a1a4a1a5a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761135", "q", context);
-
+                          environment.resolveInTemplateLater(tnode18, "variableDeclaration", templateNode_kyghau_c0a1a1a1a1a1a1a2a1a3a1a4a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761135", "q", context);
                         } finally {
-                          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode18));
-                          environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a3a1a3a1a4a1a5a1a6a1a2);
                         }
                         if (tnode18 != null) {
                           tnode17.addChild("lValue", tnode18);
@@ -241,13 +181,9 @@ public class TemplateRootCustom implements TemplateDeclaration {
                       {
                         final SNode tnode19 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                         try {
-                          environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a3a1a4a1a5a1a6a1a2);
                           environment.nodeCopied(context, tnode19, "tpl/r:00000000-0000-4000-0000-011c89590606/4265636116363088829");
-                          environment.resolveInTemplateLater(tnode19, "variableDeclaration", templateNode_kyghau_a0a0a1a4a1a3a1a4a1a5a1a6a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103", "i", context);
-
+                          environment.resolveInTemplateLater(tnode19, "variableDeclaration", templateNode_kyghau_c0a1a1a2a1a1a1a2a1a3a1a4a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103", "i", context);
                         } finally {
-                          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode19));
-                          environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a4a1a3a1a4a1a5a1a6a1a2);
                         }
                         if (tnode19 != null) {
                           tnode17.addChild("rValue", tnode19);
@@ -255,8 +191,6 @@ public class TemplateRootCustom implements TemplateDeclaration {
                         // TODO validate child 
                       }
                     } finally {
-                      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode17));
-                      environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a3a1a4a1a5a1a6a1a2);
                     }
                     if (tnode17 != null) {
                       tnode16.addChild("expression", tnode17);
@@ -264,8 +198,6 @@ public class TemplateRootCustom implements TemplateDeclaration {
                     // TODO validate child 
                   }
                 } finally {
-                  environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode16));
-                  environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a4a1a5a1a6a1a2);
                 }
                 if (tnode16 != null) {
                   tnode9.addChild("statement", tnode16);
@@ -273,8 +205,6 @@ public class TemplateRootCustom implements TemplateDeclaration {
                 // TODO validate child 
               }
             } finally {
-              environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode9));
-              environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a5a1a6a1a2);
             }
             if (tnode9 != null) {
               tnode6.addChild("body", tnode9);
@@ -282,8 +212,6 @@ public class TemplateRootCustom implements TemplateDeclaration {
             // TODO validate child 
           }
         } finally {
-          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode6));
-          environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a6a1a2);
         }
         if (tnode6 != null) {
           tnode1.addChild("member", tnode6);
@@ -293,19 +221,13 @@ public class TemplateRootCustom implements TemplateDeclaration {
       {
         final SNode tnode20 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         try {
-          environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a7a1a2);
           environment.nodeCopied(context, tnode20, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412782");
           SNodeAccessUtil.setProperty(tnode20, "name", "main");
-
           {
             final SNode tnode21 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
             try {
-              environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a7a1a2);
               environment.nodeCopied(context, tnode21, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412783");
-
             } finally {
-              environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode21));
-              environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a4a1a7a1a2);
             }
             if (tnode21 != null) {
               tnode20.addChild("returnType", tnode21);
@@ -315,12 +237,8 @@ public class TemplateRootCustom implements TemplateDeclaration {
           {
             final SNode tnode22 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
             try {
-              environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a1a7a1a2);
               environment.nodeCopied(context, tnode22, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412784");
-
             } finally {
-              environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode22));
-              environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a5a1a7a1a2);
             }
             if (tnode22 != null) {
               tnode20.addChild("visibility", tnode22);
@@ -329,21 +247,14 @@ public class TemplateRootCustom implements TemplateDeclaration {
           }
           {
             Collection<SNode> tlist23 = null;
-            try {
-              environment.getTracer().pushMacro(copySrcMacro_kyghau_a0a0a1a6a1a7a1a2);
-              final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_4146564171992412788(new SourceSubstituteMacroNodeContext(context, copySrcMacro_kyghau_a0a0a1a6a1a7a1a2));
-              tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_kyghau_a0a0a1a6a1a7a1a2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412785", context);
-            } finally {
-              environment.getTracer().closeMacro(copySrcMacro_kyghau_a0a0a1a6a1a7a1a2);
-            }
+            final SNode copySrcInput23 = QueriesGenerated.sourceNodeQuery_4146564171992412788(new SourceSubstituteMacroNodeContext(context, copySrcMacro_kyghau_b0a0c0e0b0f0b0c));
+            tlist23 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput23), copySrcMacro_kyghau_b0a0c0e0b0f0b0c, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412785", context);
             for (SNode child24 : TemplateUtil.asNotNull(tlist23)) {
               tnode20.addChild("body", child24);
             }
             // TODO validate child 
           }
         } finally {
-          environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode20));
-          environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a7a1a2);
         }
         if (tnode20 != null) {
           tnode1.addChild("member", tnode20);
@@ -351,34 +262,14 @@ public class TemplateRootCustom implements TemplateDeclaration {
         // TODO validate child 
       }
     } finally {
-      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-      environment.getTracer().closeTemplateNode(templateNode_kyghau_a0a0a1a2);
     }
     return TemplateUtil.singletonList(tnode1);
   }
 
   private static SNodePointer template_kyghau_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412775");
-  private static SNodePointer templateNode_kyghau_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412775");
-  private static SNodePointer templateNode_kyghau_a0a0a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412776");
-  private static SNodePointer templateNode_kyghau_a0a0a1a5a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761135");
-  private static SNodePointer templateNode_kyghau_a0a0a1a4a1a5a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761136");
-  private static SNodePointer templateNode_kyghau_a0a0a1a5a1a5a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761138");
-  private static SNodePointer templateNode_kyghau_a0a0a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412777");
-  private static SNodePointer templateNode_kyghau_a0a0a1a3a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412778");
-  private static SNodePointer templateNode_kyghau_a0a0a1a4a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412779");
-  private static SNodePointer templateNode_kyghau_a0a0a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412780");
-  private static SNodePointer templateNode_kyghau_a0a0a1a3a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761102");
-  private static SNodePointer varMacroRef_kyghau_a0a0a1a3a1a3a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761108");
-  private static SNodePointer templateNode_kyghau_a0a0a4a1a3a1a3a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761103");
-  private static SNodePointer templateNode_kyghau_a0a0a1a4a4a1a3a1a3a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761104");
-  private static SNodePointer templateNode_kyghau_a0a0a1a5a4a1a3a1a3a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761106");
-  private static SNodePointer propertyMacro_kyghau_c0a0c0c0b0f0e0b0d0b0d0b0f0b0g0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2721957369897795323");
-  private static SNodePointer templateNode_kyghau_a0a0a1a4a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761140");
-  private static SNodePointer templateNode_kyghau_a0a0a1a3a1a4a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761142");
-  private static SNodePointer templateNode_kyghau_a0a0a1a3a1a3a1a4a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3021153905120210705");
-  private static SNodePointer templateNode_kyghau_a0a0a1a4a1a3a1a4a1a5a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4265636116363088829");
-  private static SNodePointer templateNode_kyghau_a0a0a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412782");
-  private static SNodePointer templateNode_kyghau_a0a0a1a4a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412783");
-  private static SNodePointer templateNode_kyghau_a0a0a1a5a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412784");
-  private static SNodePointer copySrcMacro_kyghau_a0a0a1a6a1a7a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412787");
+  private static SNodePointer varMacroRef_kyghau_b0a0a1a1a1a1a1a3a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761108");
+  private static SNodePointer propertyMacro_kyghau_c0a0c0b0b0d0e0b0b0b0b0d0b0e0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2721957369897795323");
+  private static SNodePointer templateNode_kyghau_c0a1a1a1a1a1a1a2a1a3a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3021153905120210705");
+  private static SNodePointer templateNode_kyghau_c0a1a1a2a1a1a1a2a1a3a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4265636116363088829");
+  private static SNodePointer copySrcMacro_kyghau_b0a0c0e0b0f0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412787");
 }

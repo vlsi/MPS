@@ -90,11 +90,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
-      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a1a1p);
       Collection<SNode> tlist1 = new Templatestring_x0020switch_x0020template().apply(environment, context);
       return tlist1;
     }
   }
-
-  private static SNodePointer conseq_417xrn_a0a1a1p = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550420131");
 }

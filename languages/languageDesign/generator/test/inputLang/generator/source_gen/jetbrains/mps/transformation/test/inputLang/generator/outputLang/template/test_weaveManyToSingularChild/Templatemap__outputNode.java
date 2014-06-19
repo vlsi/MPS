@@ -12,7 +12,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -27,46 +26,30 @@ public class Templatemap__outputNode implements TemplateDeclaration {
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
+    TemplateContext context1 = context.subContext("generated_root");
+    final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
-      environment.getTracer().pushMacro(nodeMacroRef_wi2k8y_a0a0a1a2);
-      TemplateContext context1 = context.subContext("generated_root");
-      final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
-      try {
-        environment.getTracer().pushTemplateNode(templateNode_wi2k8y_a0a0a3a1a2);
-        environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738789586");
-        SNodeAccessUtil.setProperty(tnode2, "name", "map_outputNode");
-        SNodeAccessUtil.setProperty(tnode2, "text", "output root");
-
-        {
-          final SNode tnode3 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
-          try {
-            environment.getTracer().pushTemplateNode(templateNode_wi2k8y_a0a0a1a5a3a1a2);
-            environment.nodeCopied(context1, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738814182");
-            SNodeAccessUtil.setProperty(tnode3, "text", "this is 'special child' in root template");
-
-          } finally {
-            environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
-            environment.getTracer().closeTemplateNode(templateNode_wi2k8y_a0a0a1a5a3a1a2);
-          }
-          if (tnode3 != null) {
-            tnode2.addChild("specialChild", tnode3);
-          }
-          // TODO validate child 
+      environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738789586");
+      SNodeAccessUtil.setProperty(tnode2, "name", "map_outputNode");
+      SNodeAccessUtil.setProperty(tnode2, "text", "output root");
+      {
+        final SNode tnode3 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+        try {
+          environment.nodeCopied(context1, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738814182");
+          SNodeAccessUtil.setProperty(tnode3, "text", "this is 'special child' in root template");
+        } finally {
         }
-      } finally {
-        environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
-        environment.getTracer().closeTemplateNode(templateNode_wi2k8y_a0a0a3a1a2);
+        if (tnode3 != null) {
+          tnode2.addChild("specialChild", tnode3);
+        }
+        // TODO validate child 
       }
-      tlist1 = TemplateUtil.singletonList(tnode2);
-      environment.registerLabel(context.getInput(), tnode2, "generated_root");
     } finally {
-      environment.getTracer().closeMacro(nodeMacroRef_wi2k8y_a0a0a1a2);
     }
+    tlist1 = TemplateUtil.singletonList(tnode2);
+    environment.registerLabel(context.getInput(), tnode2, "generated_root");
     return tlist1;
   }
 
   private static SNodePointer template_wi2k8y_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738789586");
-  private static SNodePointer nodeMacroRef_wi2k8y_a0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "4684453936266155603");
-  private static SNodePointer templateNode_wi2k8y_a0a0a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738789586");
-  private static SNodePointer templateNode_wi2k8y_a0a0a1a5a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738814182");
 }

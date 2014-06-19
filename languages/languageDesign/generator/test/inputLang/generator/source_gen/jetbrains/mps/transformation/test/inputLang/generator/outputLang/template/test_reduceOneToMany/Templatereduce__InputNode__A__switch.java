@@ -12,7 +12,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
@@ -28,13 +27,9 @@ public class Templatereduce__InputNode__A__switch implements TemplateDeclaration
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
-      environment.getTracer().pushTemplateNode(templateNode_mkvwhw_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311958");
       SNodeAccessUtil.setProperty(tnode1, "text", "child switch #1");
-
     } finally {
-      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-      environment.getTracer().closeTemplateNode(templateNode_mkvwhw_a0a0a1a2);
     }
     return tnode1;
   }
@@ -42,13 +37,9 @@ public class Templatereduce__InputNode__A__switch implements TemplateDeclaration
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
-      environment.getTracer().pushTemplateNode(templateNode_mkvwhw_a0a0a1a3);
       environment.nodeCopied(context, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311960");
       SNodeAccessUtil.setProperty(tnode2, "text", "child switch #2");
-
     } finally {
-      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
-      environment.getTracer().closeTemplateNode(templateNode_mkvwhw_a0a0a1a3);
     }
     return tnode2;
   }
@@ -67,8 +58,6 @@ public class Templatereduce__InputNode__A__switch implements TemplateDeclaration
     return TemplateUtil.asList(tnodepart0, tnodepart1);
   }
 
-  private static SNodePointer templateNode_mkvwhw_a0a0a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311958");
-  private static SNodePointer templateNode_mkvwhw_a0a0a1a3 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311960");
   private static SNodePointer weaveTfConst_mkvwhw_a0b0f = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311959");
   private static SNodePointer weaveTfConst_mkvwhw_a0e0f = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480311961");
 }
