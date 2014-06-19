@@ -37,7 +37,6 @@ import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
@@ -425,7 +424,7 @@ public class Generate_Facet extends IFacet.Stub {
               Sequence.fromIterable(input).visitAll(new IVisitor<MResource>() {
                 public void visit(final MResource mod) {
                   monitor.currentProgress().advanceWork("Pre-loading models", 100);
-                  ModelAccess.instance().runReadAction(new Runnable() {
+                  Generate_Facet.Target_checkParameters.vars(pa.global()).project().getModelAccess().runReadAction(new Runnable() {
                     public void run() {
                       Sequence.fromIterable(mod.models()).visitAll(new IVisitor<SModel>() {
                         public void visit(SModel m) {
@@ -522,7 +521,7 @@ public class Generate_Facet extends IFacet.Stub {
               boolean generationOk = false;
               final Wrappers._T<Map<SModule, Iterable<SModel>>> retainedModels = new Wrappers._T<Map<SModule, Iterable<SModel>>>();
 
-              ModelAccess.instance().runReadAction(new Runnable() {
+              Generate_Facet.Target_checkParameters.vars(pa.global()).project().getModelAccess().runReadAction(new Runnable() {
                 public void run() {
                   retainedModels.value = RetainedUtil.collectModelsToRetain(input);
                 }
