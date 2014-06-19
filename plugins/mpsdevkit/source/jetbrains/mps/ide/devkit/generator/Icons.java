@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.devkit.generator.icons;
+package jetbrains.mps.ide.devkit.generator;
 
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.icons.AllIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Generator;
-import jetbrains.mps.ide.devkit.generator.TracerNode;
-import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
+import jetbrains.mps.ide.devkit.generator.TraceNodeUI.Kind;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
@@ -32,26 +31,20 @@ import javax.swing.Icon;
 import java.awt.Component;
 import java.awt.Graphics;
 
-public class Icons {
+/*package*/final class Icons {
   // view
   public static final Icon CLOSE = Actions.Cancel;
   public static final Icon AUTOSCROLL_TO_SOURCE = General.AutoscrollToSource;
 
   public static final Icon COLLECTION = Nodes.Folder;
 
-  public static Icon getIcon(TracerNode tracerNode) {
-    Icon mainIcon = getMainIcon(tracerNode.getNodePointer());
-    Icon kindIcon = getKindIcon(tracerNode.getKind());
-    return new CompositeIcon(mainIcon, kindIcon);
-  }
-
-  public static Icon getIcon(@Nullable Kind kind, @Nullable SNodeReference nodeRef) {
+  /*package*/ static Icon getIcon(@Nullable Kind kind, @Nullable SNodeReference nodeRef) {
     Icon mainIcon = getMainIcon(nodeRef);
     Icon kindIcon = kind == null ? null : getKindIcon(kind);
     return new CompositeIcon(mainIcon, kindIcon);
   }
 
-  public static Icon getIcon(@Nullable Kind kind, @NotNull SNode node) {
+  /*package*/ static Icon getIcon(@Nullable Kind kind, @NotNull SNode node) {
     Icon mainIcon = getNodeIcon(node);
     if (kind == null) {
       return mainIcon;

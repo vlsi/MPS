@@ -58,6 +58,12 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   @NotNull
   GenerationTrace getTrace();
 
+  /**
+   * @deprecated use new trace mechanism instead
+   * @return always NullGenerationTracer
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   IGenerationTracer getTracer();
 
   IGeneratorLogger getLogger();

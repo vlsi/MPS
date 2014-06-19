@@ -16,8 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationTracerUtil;
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
@@ -61,14 +59,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class TemplateProcessor implements ITemplateProcessor {
   private final TemplateGenerator myGenerator;
   private final SModel myOutputModel;
-  private final IGenerationTracer myTracer;
   private final MacroImplFactory myImplFactory;
   private final Map<SNode, TemplateNode> myTemplateRuntimeMap = new ConcurrentHashMap<SNode, TemplateNode>();
 
   public TemplateProcessor(@NotNull TemplateGenerator generator) {
     myGenerator = generator;
     myOutputModel = myGenerator.getOutputModel();
-    myTracer = generator.getGenerationTracer();
     myImplFactory = new MacroImplFactory(this);
   }
 
@@ -106,19 +102,13 @@ public final class TemplateProcessor implements ITemplateProcessor {
   /*package*/List<SNode> applyMacro(@NotNull MacroNode rtMacro, @NotNull TemplateContext context)
       throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
-    myTracer.pushMacro(rtMacro.getMacroNodeRef());
-    try {
-      return rtMacro.apply(context.subContext(rtMacro.getMappingLabel()));
-    } finally {
-      myTracer.closeMacro(rtMacro.getMacroNodeRef());
-    }
+    return rtMacro.apply(context.subContext(rtMacro.getMappingLabel()));
   }
 
   @NotNull
   /*package*/List<SNode> applyTemplate(@NotNull TemplateNode rtTemplateNode, @NotNull TemplateContext context)
       throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
-    myTracer.pushTemplateNode(rtTemplateNode.getTemplateNodeReference());
     // XXX same code is in TEE.createNode. If, however, primary use for TEE is
     // generated code (as opposed to 'apply templates to root' context), it's unreasonable(?)
     // to expect SConcept to get passed to TEE.createNode() (generated templates are likely to know
@@ -133,38 +123,33 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
     // process children
     context = context.subContext(); // drop label
-    try {
-      for (SNode templateChildNode : rtTemplateNode.getChildTemplates()) {
-        TemplateNode rtTemplateChildNode = getTemplateNodeRuntime(templateChildNode);
-        final List<SNode> outputChildNodes;
-        if(rtTemplateChildNode.getFirstMacro() != null) {
-          outputChildNodes = applyMacro(rtTemplateChildNode.getFirstMacro(), context);
-        } else {
-          outputChildNodes = applyTemplate(rtTemplateChildNode, context);
-        }
-        SConcept originalConcept = rtTemplateChildNode.getConcept();
-        String role = rtTemplateChildNode.getRoleInParent();
-        RoleValidator validator = myGenerator.getChildRoleValidator(outputNode, role);
-        for (SNode outputChildNode : outputChildNodes) {
-          // returned node is subconcept of template node => fine
-          final boolean notSubConcept = !(outputChildNode.getConcept().isSubConceptOf(originalConcept));
-          if (notSubConcept) {
-            // check child
-            Status status = validator.validate(outputChildNode);
-            if (status != null) {
-              myGenerator.getLogger().warning(rtTemplateChildNode.getTemplateNodeReference(), status.getMessage("apply template"), status.describe(
-                  GeneratorUtil.describe(context.getInput(), "input"),
-                  GeneratorUtil.describe(outputNode, "output"),
-                  GeneratorUtil.describe(rtTemplateNode.getTemplateNodeReference(), "template node")
-              ));
-            }
-          }
-          outputNode.addChild(role, outputChildNode);
-        }
+    for (SNode templateChildNode : rtTemplateNode.getChildTemplates()) {
+      TemplateNode rtTemplateChildNode = getTemplateNodeRuntime(templateChildNode);
+      final List<SNode> outputChildNodes;
+      if(rtTemplateChildNode.getFirstMacro() != null) {
+        outputChildNodes = applyMacro(rtTemplateChildNode.getFirstMacro(), context);
+      } else {
+        outputChildNodes = applyTemplate(rtTemplateChildNode, context);
       }
-    } finally {
-      myTracer.pushOutputNode(GenerationTracerUtil.getSNodePointer(myOutputModel, outputNode));
-      myTracer.closeTemplateNode(rtTemplateNode.getTemplateNodeReference());
+      SConcept originalConcept = rtTemplateChildNode.getConcept();
+      String role = rtTemplateChildNode.getRoleInParent();
+      RoleValidator validator = myGenerator.getChildRoleValidator(outputNode, role);
+      for (SNode outputChildNode : outputChildNodes) {
+        // returned node is subconcept of template node => fine
+        final boolean notSubConcept = !(outputChildNode.getConcept().isSubConceptOf(originalConcept));
+        if (notSubConcept) {
+          // check child
+          Status status = validator.validate(outputChildNode);
+          if (status != null) {
+            myGenerator.getLogger().warning(rtTemplateChildNode.getTemplateNodeReference(), status.getMessage("apply template"), status.describe(
+                GeneratorUtil.describe(context.getInput(), "input"),
+                GeneratorUtil.describe(outputNode, "output"),
+                GeneratorUtil.describe(rtTemplateNode.getTemplateNodeReference(), "template node")
+            ));
+          }
+        }
+        outputNode.addChild(role, outputChildNode);
+      }
     }
     return Collections.singletonList(outputNode);
   }
@@ -238,7 +223,6 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   private static abstract class MacroImpl implements MacroNode {
     protected final TemplateProcessor myTemplateProcessor; // XXX now, with macro and tn as fields, perhaps shall pass TP as an argument to apply?
-    protected final IGenerationTracer myTracer;
     protected final SNode macro;
     protected final TemplateNode templateNode;
     private final SNodeReference myMacroNodeRef;
@@ -250,7 +234,6 @@ public final class TemplateProcessor implements ITemplateProcessor {
       this.templateNode = templateNode;
       myNextMacro = next;
       myTemplateProcessor = templateProcessor;
-      myTracer = myTemplateProcessor.myTracer;
       myMacroNodeRef = new SNodePointer(macro);
       myMappingLabel = GeneratorUtilEx.getMappingName_NodeMacro(macro, null);
     }
@@ -390,18 +373,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
       ArrayList<SNode> outputNodes = new ArrayList<SNode>();
       for (SNode newInputNode : newInputNodes) {
-        boolean inputChanged = (newInputNode != templateContext.getInput());
-        if (inputChanged) {
-          myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
-        }
-        try {
-          List<SNode> _outputNodes = nextMacro(templateContext.subContext(newInputNode));
-          outputNodes.addAll(_outputNodes);
-        } finally {
-          if (inputChanged) {
-            myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
-          }
-        }
+        List<SNode> _outputNodes = nextMacro(templateContext.subContext(newInputNode));
+        outputNodes.addAll(_outputNodes);
       }
       return outputNodes;
     }
@@ -503,14 +476,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
       SNode contextNode = _outputNodes.get(0);
       for (SNode node : getNewInputNodes(templateContext)) {
-        try {
-          myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(node));
-          myTracer.pushRuleConsequence(new jetbrains.mps.smodel.SNodePointer(macro));
-
-          wtc.apply(contextNode, templateContext.subContext(node));
-        } finally {
-          myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(node));
-        }
+        wtc.apply(contextNode, templateContext.subContext(node));
       }
       return _outputNodes;
     }
@@ -613,30 +579,20 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
       ArrayList<SNode> outputNodes = new ArrayList<SNode>(newInputNodes.size());
       for (SNode newInputNode : newInputNodes) {
-        boolean inputChanged = (newInputNode != templateContext.getInput());
-        if (inputChanged) {
-          myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
-        }
-        try {
-          TemplateContext newcontext = templateContext.subContext(newInputNode);
-          final TemplateExecutionEnvironment env = templateContext.getEnvironment();
-          if (macro_mapperFunction != null) {
-            SNode childToReplaceLater = myTemplateProcessor.myOutputModel.createNode(templateNode.getConcept());
-            myTracer.pushOutputNodeToReplaceLater(childToReplaceLater);
-            outputNodes.add(childToReplaceLater);
-            // execute the 'mapper' function later
-            myTemplateProcessor.getGenerator().getDelayedChanges().addExecuteMapSrcNodeMacroChange(macro, childToReplaceLater, newcontext, env.getQueryExecutor());
-          } else {
-            List<SNode> _outputNodes = nextMacro(newcontext);
-            outputNodes.addAll(_outputNodes);
-            // do post-processing here (it's not really a post-processing because model is not completed yet - output nodes are not added to parent node).
-            for (SNode outputNode : _outputNodes) {
-              myTemplateProcessor.getGenerator().getDelayedChanges().addExecuteMapSrcNodeMacroPostProcChange(macro, outputNode, newcontext, env.getQueryExecutor());
-            }
-          }
-        } finally {
-          if (inputChanged) {
-            myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
+
+        TemplateContext newcontext = templateContext.subContext(newInputNode);
+        final TemplateExecutionEnvironment env = templateContext.getEnvironment();
+        if (macro_mapperFunction != null) {
+          SNode childToReplaceLater = myTemplateProcessor.myOutputModel.createNode(templateNode.getConcept());
+          outputNodes.add(childToReplaceLater);
+          // execute the 'mapper' function later
+          myTemplateProcessor.getGenerator().getDelayedChanges().addExecuteMapSrcNodeMacroChange(macro, childToReplaceLater, newcontext, env.getQueryExecutor());
+        } else {
+          List<SNode> _outputNodes = nextMacro(newcontext);
+          outputNodes.addAll(_outputNodes);
+          // do post-processing here (it's not really a post-processing because model is not completed yet - output nodes are not added to parent node).
+          for (SNode outputNode : _outputNodes) {
+            myTemplateProcessor.getGenerator().getDelayedChanges().addExecuteMapSrcNodeMacroPostProcChange(macro, outputNode, newcontext, env.getQueryExecutor());
           }
         }
       }
@@ -677,36 +633,27 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
 
       boolean inputChanged = (newInputNode != templateContext.getInput());
-      if (inputChanged) {
-        myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
-      }
-      myTracer.pushSwitch(new jetbrains.mps.smodel.SNodePointer(templateSwitch));
-      try {
-        final TemplateContext switchContext = prepareContext(templateContext).subContext(newInputNode);
 
-        Collection<SNode> collection = null;
-        try {
-          collection = templateContext.getEnvironment().trySwitch(switchPtr, switchContext);
-        } catch (GenerationCanceledException e) {
-          throw e;
-        } catch (GenerationFailureException e) {
-          throw e;
-        } catch (DismissTopMappingRuleException e) {
-          throw e;
-        } catch (GenerationException e) {
-          getLogger().error(switchPtr, "internal error in switch.applyDefault: " + e.toString(), GeneratorUtil.describe(macro, "macro"));
-        }
-        if (collection == null) {
-          // no switch-case found for the inputNode - continue with templateNode under the $switch$
-          // use initial context, not the one prepared (could be filled with switch arguments)
-          collection = nextMacro(templateContext.subContext(newInputNode));
-        }
-        return new ArrayList<SNode>(collection);
-      } finally {
-        if (inputChanged) {
-          myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
-        }
+      final TemplateContext switchContext = prepareContext(templateContext).subContext(newInputNode);
+
+      Collection<SNode> collection = null;
+      try {
+        collection = templateContext.getEnvironment().trySwitch(switchPtr, switchContext);
+      } catch (GenerationCanceledException e) {
+        throw e;
+      } catch (GenerationFailureException e) {
+        throw e;
+      } catch (DismissTopMappingRuleException e) {
+        throw e;
+      } catch (GenerationException e) {
+        getLogger().error(switchPtr, "internal error in switch.applyDefault: " + e.toString(), GeneratorUtil.describe(macro, "macro"));
       }
+      if (collection == null) {
+        // no switch-case found for the inputNode - continue with templateNode under the $switch$
+        // use initial context, not the one prepared (could be filled with switch arguments)
+        collection = nextMacro(templateContext.subContext(newInputNode));
+      }
+      return new ArrayList<SNode>(collection);
     }
   }
 
@@ -784,22 +731,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
 
       final TemplateContainer tc = getTemplates();
-
-      boolean inputChanged = (newInputNode != templateContext.getInput());
-      if (inputChanged) {
-        myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
-      }
-      final SNodePointer invokedTemplateRef = new SNodePointer(invokedTemplate);
-      myTracer.pushTemplateNode(invokedTemplateRef);
-
-      try {
-        return tc.processRuleConsequence(newcontext);
-      } finally {
-        myTracer.closeTemplateNode(invokedTemplateRef);
-        if (inputChanged) {
-          myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
-        }
-      }
+      return tc.processRuleConsequence(newcontext);
     }
   }
 
@@ -895,18 +827,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
       ArrayList<SNode> outputNodes = new ArrayList<SNode>();
       for (SNode newInputNode : newInputNodes) {
-        boolean inputChanged = (newInputNode != templateContext.getInput());
-        if (inputChanged) {
-          myTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
-        }
-        try {
-          List<SNode> _outputNodes = nextMacro(templateContext.subContext(newInputNode));
-          outputNodes.addAll(_outputNodes);
-        } finally {
-          if (inputChanged) {
-            myTracer.closeInputNode(GenerationTracerUtil.getSNodePointer(newInputNode));
-          }
-        }
+        List<SNode> _outputNodes = nextMacro(templateContext.subContext(newInputNode));
+        outputNodes.addAll(_outputNodes);
       }
       return outputNodes;
     }

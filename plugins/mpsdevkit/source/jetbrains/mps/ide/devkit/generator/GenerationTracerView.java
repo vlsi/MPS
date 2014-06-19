@@ -27,7 +27,6 @@ import com.intellij.openapi.actionSystem.PopupAction;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
-import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.MPSModuleRepository;

@@ -53,7 +53,6 @@
     <classNode dependClassName="jetbrains.mps.generator.IGenerationTracer" />
     <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
-    <classNode dependClassName="jetbrains.mps.generator.NullGenerationTracer" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsProvider" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.generator.impl.DefaultIncrementalStrategy" />

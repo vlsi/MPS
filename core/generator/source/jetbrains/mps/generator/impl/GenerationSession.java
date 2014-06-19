@@ -352,7 +352,6 @@ class GenerationSession {
 
   private SModel executeMajorStepInternal(SModel inputModel, RuleManager ruleManager, ProgressMonitor progress) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
-    final IGenerationTracer tracer = mySessionContext.getGenerationTracer();
     final boolean cloneInputModel = myGenerationOptions.isSaveTransientModels() && myGenerationOptions.applyTransformationsInplace();
 
     // -----------------------
@@ -376,7 +375,6 @@ class GenerationSession {
         myLogger.info(String.format("next minor step '%s' --> '%s'",
             SModelStereotype.getStereotype(currentInputModel), SModelStereotype.getStereotype(currentOutputModel)));
       }
-      tracer.startTracing(currentInputModel, currentOutputModel);
       myNewTrace.nextStep(currentInputModel.getReference(), currentOutputModel.getReference());
 
       final SModel intactInputModelClone = cloneInputModel ? cloneTransientModel(currentInputModel) : null;
@@ -387,7 +385,6 @@ class GenerationSession {
       if (!somethingHasBeenGenerated) {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
-        tracer.discardTracing(currentInputModel, currentOutputModel);
         myNewTrace.dropStep(currentInputModel.getReference(), currentOutputModel.getReference());
         recycleWasteModel(currentOutputModel, true);
         if (!isPrimary) {
@@ -510,7 +507,6 @@ class GenerationSession {
       new CloneUtil(currentInputModel, currentInputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getPreProcessScripts().getScripts());
       myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel_clone.getReference());
 
       // probably we can forget about former input model here
@@ -518,7 +514,6 @@ class GenerationSession {
       currentInputModel = currentInputModel_clone;
       myDependenciesBuilder.scriptApplied(currentInputModel); // scriptApplied for a blank copy to record old root to new root mapping
     } else {
-      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel, ruleManager.getPreProcessScripts().getScripts());
       myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel.getReference());
     }
 
@@ -560,13 +555,11 @@ class GenerationSession {
       new CloneUtil(currentModel, currentOutputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getPostProcessScripts().getScripts());
       myNewTrace.nextStep(currentModel.getReference(), currentOutputModel_clone.getReference());
       toRecycle = currentModel;
       currentModel = currentOutputModel_clone;
       myDependenciesBuilder.scriptApplied(currentModel);
     } else {
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getPostProcessScripts().getScripts());
       myNewTrace.nextStep(currentModel.getReference(), currentModel.getReference());
       // just in case post-script modifies model a lot, and we've got FNF there, prevent it being updated - it's cheaper to create new one at the next step
       FastNodeFinderManager.dispose(currentModel);

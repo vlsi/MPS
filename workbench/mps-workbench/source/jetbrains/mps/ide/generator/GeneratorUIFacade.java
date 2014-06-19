@@ -187,17 +187,6 @@ public class GeneratorUIFacade {
           options.incremental(new DefaultNonIncrementalStrategy());
         }
 
-        if (GenerationFacade.isLegacyGenTraceEnabled()) {
-          IGenerationTracer tracer = ideaProject.getComponent(IGenerationTracer.class);
-          if (!settings.isSaveTransientModels() && tracer != null) {
-            tracer.discardTracing();
-          }
-          if (settings.isSaveTransientModels() && tracer == null) {
-            tracer = new NullGenerationTracer();
-          }
-          options.tracing(settings.getPerformanceTracingLevel(), tracer);
-        }
-
         final TransientModelsComponent tmc = ideaProject.getComponent(TransientModelsComponent.class);
         // XXX note, this code used to run with both idea and mps write locks. I'm pretty sure idea write lock was an overkill,
         // as only generationHandler might need a write access; but MPS write access (effectively exclusive read) might come handy here.

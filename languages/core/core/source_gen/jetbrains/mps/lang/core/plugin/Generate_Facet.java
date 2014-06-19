@@ -32,9 +32,6 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
-import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.generator.IGenerationTracer;
-import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
@@ -43,6 +40,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.generator.IGenerationTracer;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
@@ -53,6 +51,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.make.delta.IInternalDelta;
@@ -258,12 +257,7 @@ public class Generate_Facet extends IFacet.Stub {
                 incrementalStrategy = new DefaultNonIncrementalStrategy();
               }
               vars(pa.global()).generationOptions().incremental(incrementalStrategy);
-              if (GenerationFacade.isLegacyGenTraceEnabled()) {
-                IGenerationTracer tracer = (vars(pa.global()).saveTransient() ? Generate_Facet.Target_checkParameters.vars(pa.global()).project().getComponent(IGenerationTracer.class) : new NullGenerationTracer());
-                vars(pa.global()).generationOptions().tracing(settings.getPerformanceTracingLevel(), tracer);
-              } else {
-                vars(pa.global()).generationOptions().tracing(settings.getPerformanceTracingLevel());
-              }
+              vars(pa.global()).generationOptions().tracing(settings.getPerformanceTracingLevel());
               vars(pa.global()).generationOptions().saveTransientModels(vars(pa.global()).saveTransient()).rebuildAll(Generate_Facet.Target_checkParameters.vars(pa.global()).cleanMake()).keepOutputModel(true);
               vars(pa.global()).parametersProvider(new DefaultGenerationParametersProvider());
               vars(pa.global()).generationOptions().parameters(vars(pa.global()).parametersProvider());

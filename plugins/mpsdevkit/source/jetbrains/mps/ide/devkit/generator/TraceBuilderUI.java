@@ -17,8 +17,6 @@ package jetbrains.mps.ide.devkit.generator;
 
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
-import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
-import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
@@ -105,7 +103,7 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
 
   @Override
   public void change(@NotNull SNodeReference input, @NotNull SNodeReference output, SNodeReference template) {
-    myGroupedChanges.putValue(new Pair<SNodeReference, SNodeReference>(input, output), new TraceNodeUI(Kind.TEMPLATE, template));
+    myGroupedChanges.putValue(new Pair<SNodeReference, SNodeReference>(input, output), new TraceNodeUI(TraceNodeUI.Kind.TEMPLATE, template));
   }
 
   private void closeStepNode() {
@@ -113,8 +111,8 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
       return;
     }
     for (Pair<SNodeReference,SNodeReference> p : myGroupedChanges.keySet()) {
-      TraceNodeUI in = new TraceNodeUI(Kind.INPUT, p.o1);
-      TraceNodeUI out = new TraceNodeUI(Kind.OUTPUT, p.o2);
+      TraceNodeUI in = new TraceNodeUI(TraceNodeUI.Kind.INPUT, p.o1);
+      TraceNodeUI out = new TraceNodeUI(TraceNodeUI.Kind.OUTPUT, p.o2);
       for (TraceNodeUI templates : compactTemplates(myGroupedChanges.get(p))) {
         out.addChild(templates);
       }

@@ -56,12 +56,10 @@ public class GenerationOptions {
 
   private final boolean myDebugIncrementalDependencies;
 
-  private IGenerationTracer myGenerationTracer;
-
   private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean useInplaceTransformations,
                             boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
-                            @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy,
+                            IncrementalGenerationStrategy incrementalStrategy,
                             GenerationParametersProvider parametersProvider, boolean keepOutputModel, boolean showBadChildWarning,
                             Map<SModel, ModelGenerationPlan> customPlans,
                             boolean debugIncrementalDependencies) {
@@ -76,7 +74,6 @@ public class GenerationOptions {
     myShowInfo = showInfo;
     myShowWarnings = showWarnings;
     myKeepModelsWithWarnings = keepModelsWithWarnings;
-    myGenerationTracer = generationTracer;
     myIncrementalStrategy = incrementalStrategy;
     myParametersProvider = parametersProvider;
     myKeepOutputModel = keepOutputModel;
@@ -90,7 +87,7 @@ public class GenerationOptions {
   }
 
   public boolean isGenerateInParallel() {
-    return myGenerateInParallel && myStrictMode && !myGenerationTracer.isTracing();
+    return myGenerateInParallel && myStrictMode;
   }
 
   public boolean isStrictMode() {
@@ -101,16 +98,8 @@ public class GenerationOptions {
     return myRebuildAll;
   }
 
-  public boolean isShowErrorsOnly() {
-    return !myShowInfo && !myShowWarnings;
-  }
-
   public IncrementalGenerationStrategy getIncrementalStrategy() {
     return myIncrementalStrategy;
-  }
-
-  public IGenerationTracer getGenerationTracer() {
-    return myGenerationTracer;
   }
 
   public int getNumberOfThreads() {
@@ -203,8 +192,6 @@ public class GenerationOptions {
 
     private GenerationParametersProvider myParametersProvider = null;
 
-    private IGenerationTracer myGenerationTracer = null;
-
     private boolean myKeepOutputModel;
     private boolean myDebugIncrementalDependencies = false;
     private boolean myUseInplace;
@@ -220,7 +207,6 @@ public class GenerationOptions {
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll, myUseInplace,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep,
-        myGenerationTracer == null ? new NullGenerationTracer() : myGenerationTracer,
         myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning,
         myCustomPlans, myDebugIncrementalDependencies);
     }
@@ -279,10 +265,6 @@ public class GenerationOptions {
       return this;
     }
 
-    public OptionsBuilder tracing(int tracingMode, IGenerationTracer generationTracer) {
-      myGenerationTracer = generationTracer;
-      return tracing(tracingMode);
-    }
     public OptionsBuilder tracing(int tracingMode) {
       myTracingMode = tracingMode;
       return this;

@@ -25,6 +25,7 @@ import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -54,7 +55,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   private final SModel myOriginalInputModel;
 
   private final Project myProject;
-  private final IGenerationTracer myGenerationTracer;
   private final TransientModelsModule myTransientModule;
   private final GenerationPlan myGenerationPlan;
   private final Map<String, Object> myParameters;
@@ -98,7 +98,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
     myProject = project;
     myGenerationOptions = generationOptions;
-    myGenerationTracer = generationOptions.getGenerationTracer();
     myTransientModule = transientModule;
     myOriginalInputModel = inputModel;
     myPerfTrace = performanceTracer;
@@ -118,7 +117,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan, @Nullable Map<String, Object> parameters) {
     myProject = prevContext.myProject;
     myGenerationOptions = prevContext.myGenerationOptions;
-    myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
     myPerfTrace = prevContext.myPerfTrace;
@@ -141,7 +139,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext) {
     myProject = prevContext.myProject;
     myGenerationOptions = prevContext.myGenerationOptions;
-    myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
     myPerfTrace = prevContext.myPerfTrace;
@@ -342,8 +339,14 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return set;
   }
 
+  /**
+   * @deprecated
+   * @return always NullGenerationTracer
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public IGenerationTracer getGenerationTracer() {
-    return myGenerationTracer;
+    return new NullGenerationTracer();
   }
 
   public void disposeQueryProvider() {

@@ -20,6 +20,7 @@ import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
@@ -110,7 +111,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public IGenerationTracer getTracer() {
-    return generator.getGenerationTracer();
+    return new NullGenerationTracer();
   }
 
   @Override
@@ -288,7 +289,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
     SNode childToReplaceLater = createOutputNode(mapper.getConceptFqName());
-    getTracer().pushOutputNodeToReplaceLater(childToReplaceLater);
     generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, getQueryExecutor());
     return childToReplaceLater;
   }

@@ -103,7 +103,6 @@ public class WeavingProcessor {
     }
 
     public boolean apply() throws GenerationFailureException, GenerationCanceledException {
-      final IGenerationTracer tracer = myEnv.getTracer();
       try {
         DefaultTemplateContext context = new DefaultTemplateContext(myEnv, myApplicableNode, null);
         SNode outputContextNode = myEnv.getQueryExecutor().getContextNode(myRule, myEnv, context);
@@ -111,22 +110,13 @@ public class WeavingProcessor {
           return false;
         }
 
-        boolean someOutputGenerated = true;
-        tracer.pushInputNode(GenerationTracerUtil.getSNodePointer(myApplicableNode));
-        tracer.pushRule(myRule.getRuleNode());
         try {
-          someOutputGenerated = myRule.apply(myEnv, context, outputContextNode);
+          myRule.apply(myEnv, context, outputContextNode);
 
         } catch (DismissTopMappingRuleException e) {
           myEnv.getLogger().error(myRule.getRuleNode(), "wrong template: dismiss in weaving rule is not supported", GeneratorUtil.describeInput(context));
         } catch (TemplateProcessingFailureException e) {
           myEnv.getLogger().error(myRule.getRuleNode(), "weaving rule: error processing template fragment", GeneratorUtil.describeInput(context));
-        } finally {
-          if (someOutputGenerated) {
-           tracer.closeInputNode(GenerationTracerUtil.getSNodePointer(myApplicableNode));
-          } else {
-            tracer.popInputNode(GenerationTracerUtil.getSNodePointer(myApplicableNode));
-          }
         }
       } catch (GenerationCanceledException ex) {
         throw ex;
