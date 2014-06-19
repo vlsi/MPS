@@ -42,6 +42,7 @@ public final class ModuleReference implements SModuleReference {
   private final String myModuleName;
   private final SModuleId myModuleId;
 
+  @Deprecated
   public ModuleReference(String moduleName) {
     this(moduleName, (SModuleId) null);
   }
@@ -72,7 +73,7 @@ public final class ModuleReference implements SModuleReference {
   }
 
   public int hashCode() {
-    if (myModuleId != null) return myModuleId.hashCode();
+    if (myModuleId != null && myModuleName == null) return myModuleId.hashCode();
     return myModuleName.hashCode();
   }
 
@@ -80,7 +81,7 @@ public final class ModuleReference implements SModuleReference {
     if (!(obj instanceof SModuleReference)) return false;
     SModuleReference p = (SModuleReference) obj;
 
-    if (myModuleId == null && p.getModuleId() == null) return myModuleName.equals(p.getModuleName());
+    if (myModuleId == null || p.getModuleId() == null) return myModuleName.equals(p.getModuleName());
     return EqualUtil.equals(myModuleId, p.getModuleId());
   }
 
