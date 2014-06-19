@@ -74,16 +74,6 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
     return null;
   }
 
-  /**
-   * Returns true iff this cache should be stored in source_gen.caches
-   * @deprecated cache file location is controlled from outside now, appropriately configured
-   * StreamHandler is passed to saveCache(). This method will be removed after MPS 3.1.
-   */
-  @Deprecated
-  protected boolean isCache() {
-    return true;
-  }
-
   protected T load(InputStream is) throws IOException {
     try {
       Document doc = JDOMUtil.loadDocument(is);

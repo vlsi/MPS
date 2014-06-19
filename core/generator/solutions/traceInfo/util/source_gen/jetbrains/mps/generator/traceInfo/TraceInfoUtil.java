@@ -22,7 +22,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.traceInfo.PositionInfo;
@@ -114,19 +113,9 @@ public class TraceInfoUtil {
     return null;
   }
 
-  /**
-   * Use TraceDown.unitNames(node)
-   */
-  @Deprecated
-  @ToRemove(version = 3.0)
-  @Nullable
-  public static String getUnitName(SNode node) {
-    return check_4iwlxm_a0a7(TraceDown.unitNames((SNode) node));
-  }
-
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
-    return check_4iwlxm_a0a8(getAllTraceableNodes(className, file, position));
+    return check_4iwlxm_a0a7(getAllTraceableNodes(className, file, position));
   }
 
   /**
@@ -345,14 +334,7 @@ public class TraceInfoUtil {
     return null;
   }
 
-  private static String check_4iwlxm_a0a7(Iterable<String> checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return Sequence.fromIterable(checkedDotOperand).first();
-    }
-    return null;
-  }
-
-  private static SNode check_4iwlxm_a0a8(List<SNode> checkedDotOperand) {
+  private static SNode check_4iwlxm_a0a7(List<SNode> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return ListSequence.fromList(checkedDotOperand).first();
     }

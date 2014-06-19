@@ -19,22 +19,22 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.util.containers.BidirectionalMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.List;
-import java.util.Map;
-import java.util.WeakHashMap;
+import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 public abstract class BaseModelCache<T> implements CoreComponent {
 
-  protected final Map<SModel, T> myCache = new WeakHashMap<SModel, T>();
-  protected final BidirectionalMap<IFile, SModel> myFilesToModels = new BidirectionalMap<IFile, SModel>();
+  protected final ConcurrentMap<SModelReference, T> myCache = new ConcurrentHashMap<SModelReference, T>();
+  protected final ConcurrentMap<IFile, SModelReference> myFilesToModels = new ConcurrentHashMap<IFile, SModelReference>();
   private final SModelRepository myModelRepository;
   private final SModelRepositoryAdapter myModelRepositoryListener = new MyModelRepositoryListener();
 
@@ -62,62 +62,84 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   }
 
   @Nullable
-  public T get(@NotNull SModel modelDescriptor) {
-    synchronized (myCache) {
-      if (myCache.containsKey(modelDescriptor)) {
-        return myCache.get(modelDescriptor);
-      }
-
-      IFile cacheFile = getCacheFile(modelDescriptor);
-      if (cacheFile == null) {
-        return null;
-      }
-      myFilesToModels.put(cacheFile, modelDescriptor);
-      T cache = readCache(modelDescriptor);
-      myCache.put(modelDescriptor, cache);
-
-      return cache;
+  public T get(@NotNull SModel model) {
+    final SModelReference mr = model.getReference();
+    T rv = myCache.get(mr);
+    if (rv != null) {
+      return rv;
     }
+    IFile cacheFile = getCacheFile(model);
+    if (cacheFile == null) {
+      return null;
+    }
+    return readAndUpdateCache(cacheFile, model);
   }
 
   @Nullable
   public final T lookup(@NotNull IFile cacheFile) {
+    // XXX this bloody code is to collect generated files in Make's FilesDelta. I'm not sure it's nice idea
+    // to (a) force any model cache to be IFile-backed (traceinfo's URL violates that anyway)
+    // (b) expose IFile along with SModel, and to synchronize both of them as valid keys to cached data
+    if (!cacheFile.exists()) {
+      return null;
+    }
+    SModelReference mr = myFilesToModels.get(cacheFile);
+    if (mr == null) {
+      return null;
+    }
+    T rv = myCache.get(mr);
+    if (rv != null) {
+      return rv;
+    }
+    SModel model = myModelRepository.getModelDescriptor(mr);
+    if (model == null) {
+      return null;
+    }
+    return readAndUpdateCache(cacheFile, model);
+  }
+
+  private T readAndUpdateCache(IFile cacheFile, SModel model) {
+    final SModelReference mr = model.getReference();
+    T cache = readCache(model);
+    if (cache == null) {
+      return null;
+    }
     synchronized (myCache) {
-      if (!cacheFile.exists()) {
-        return null;
+      T rv = myCache.get(mr);
+      if (rv != null) {
+        return rv;
       }
-      SModel modelDescriptor = myFilesToModels.get(cacheFile);
-      if (modelDescriptor == null) {
-        return null;
-      }
-      if (myCache.containsKey(modelDescriptor)) {
-        return myCache.get(modelDescriptor);
-      }
-      T cache = readCache(modelDescriptor);
-      myCache.put(modelDescriptor, cache);
+      myFilesToModels.put(cacheFile, mr);
+      myCache.put(mr, cache);
       return cache;
     }
   }
 
   public SModel invalidateCacheForFile(IFile file) {
-    SModel md;
-    synchronized (myCache) {
-      md = myFilesToModels.get(file);
-      if (md != null) {
-        myCache.remove(md);
-        myFilesToModels.remove(file);
-      }
+    SModelReference mr = myFilesToModels.get(file);
+    if (mr == null) {
+      return null;
     }
-    return md;
+    synchronized (myCache) {
+      myCache.remove(mr);
+      myFilesToModels.remove(file);
+    }
+    return myModelRepository.getModelDescriptor(mr);
   }
 
   private void invalidateCacheForModel(SModel md) {
-    synchronized (myCache) {
-      List<IFile> file = myFilesToModels.getKeysByValue(md);
-      if (file != null && file.size() != 0) {
-        assert file.size() == 1;
-        invalidateCacheForFile(file.get(0));
+    final SModelReference mr = md.getReference();
+    if (!myCache.containsKey(mr)) {
+      return;
+    }
+    IFile f = null;
+    for (Entry<IFile, SModelReference> e : myFilesToModels.entrySet()) {
+      if (mr.equals(e.getValue())) {
+        f = e.getKey();
       }
+    }
+    if (f != null) {
+      invalidateCacheForFile(f);
     }
   }
 
@@ -139,7 +161,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
    */
   protected final void update(SModel model, T cache) {
     synchronized (myCache) {
-      myCache.put(model, cache);
+      myCache.put(model.getReference(), cache);
     }
   }
 
@@ -151,7 +173,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
 
   public final void clean(SModel model) {
     synchronized (myCache) {
-      myCache.remove(model);
+      myCache.remove(model.getReference());
     }
   }
 

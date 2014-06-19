@@ -7,20 +7,18 @@ import jetbrains.mps.traceInfo.DebugInfo;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.cleanup.CleanupListener;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.apache.log4j.Level;
+import org.jetbrains.annotations.Nullable;
 import java.net.URL;
-import jetbrains.mps.vfs.IFile;
 import java.io.InputStream;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
 import org.jdom.JDOMException;
+import org.apache.log4j.Level;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
@@ -38,7 +36,6 @@ import org.apache.log4j.LogManager;
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
   private static TraceInfoCache INSTANCE;
-  private static final Object INSTANCE_LOCK = new Object();
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
   private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
 
@@ -48,19 +45,11 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Override
   public void init() {
-    synchronized (INSTANCE_LOCK) {
-      if (INSTANCE != null) {
-        throw new IllegalStateException("double initialization");
-      }
-      INSTANCE = this;
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
     }
+    INSTANCE = this;
     super.init();
-    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
-      @Override
-      public void performCleanup() {
-        cleanup();
-      }
-    });
     // todo: move (but remember that java provider is used in idea plugin as well) 
     myProviders.add(myJavaTraceInfoProvider);
   }
@@ -69,9 +58,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public void dispose() {
     myProviders.remove(myJavaTraceInfoProvider);
     super.dispose();
-    synchronized (INSTANCE_LOCK) {
-      INSTANCE = null;
-    }
+    INSTANCE = null;
   }
 
   @NotNull
@@ -80,32 +67,9 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     return TRACE_FILE_NAME;
   }
 
-  @Nullable
-  @Override
-  public DebugInfo get(@NotNull SModel model) {
-    //  we do not want to acquire myModelsLock inside of myCache lock, so we get module here 
-    //  see MPS-13899 
-    final SModule module = model.getModule();
-    synchronized (myCache) {
-      if (myCache.containsKey(model)) {
-        return myCache.get(model);
-      }
-      DebugInfo cache = readCache(model, module);
-      myCache.put(model, cache);
-      return cache;
-    }
-  }
-
   @Override
   protected DebugInfo readCache(SModel sm) {
-    if (LOG.isEnabledFor(Level.WARN)) {
-      LOG.warn("Should not use readCache method since it may cause a deadlock.\nSee MPS-13899", new RuntimeException());
-    }
-    return readCache(sm, sm.getModule());
-  }
-
-  protected DebugInfo readCache(SModel sm, SModule module) {
-    return loadCacheFromUrl(getCacheUrl(sm, module), sm);
+    return loadCacheFromUrl(getCacheUrl(sm, sm.getModule()), sm);
   }
 
   @Nullable
@@ -113,16 +77,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     if (url == null) {
       return null;
     }
-    IFile file = TraceInfoCache.getFileByURL(url);
 
-    // This block is synchronized because it can be executed from different threads simultaneously and use not thread-safe myFilesToModels map 
-    // All myFilesToModels map usages should be synchronized by myCache 
-    // Multi-thread call usage: loadCacheFromUrl called from getLastGeneratedDebugInfo called from fillDebugInfo in TextGenerator which executed concurrently 
-    synchronized (myCache) {
-      if (file != null) {
-        myFilesToModels.put(file, sm);
-      }
-    }
     InputStream stream = null;
     try {
       stream = url.openStream();
@@ -207,11 +162,6 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   @Override
-  protected boolean isCache() {
-    return false;
-  }
-
-  @Override
   protected DebugInfo fromXml(Element e) {
     throw new UnsupportedOperationException();
   }
@@ -225,9 +175,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   public static TraceInfoCache getInstance() {
-    synchronized (INSTANCE_LOCK) {
-      return INSTANCE;
-    }
+    return INSTANCE;
   }
 
   @Nullable
