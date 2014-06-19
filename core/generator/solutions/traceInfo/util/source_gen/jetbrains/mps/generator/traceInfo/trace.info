@@ -146,7 +146,7 @@
     <nodeInfo nodeId="7521671656020564917" fileName="TraceInfoCache.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
     <nodeInfo nodeId="2835818332993426822" fileName="TraceInfoCache.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProviders" />
     <nodeInfo nodeId="3483822302719522674" fileName="TraceInfoCache.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaTraceInfoProvider" />
-    <nodeInfo nodeId="7521671656020564932" fileName="TraceInfoCache.java" startLine="42" startPosition="59" endLine="43" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7521671656020564932" fileName="TraceInfoCache.java" startLine="42" startPosition="49" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7521671656020564943" fileName="TraceInfoCache.java" startLine="48" startPosition="27" endLine="49" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="7521671656020564947" fileName="TraceInfoCache.java" startLine="50" startPosition="5" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7521671656020564951" fileName="TraceInfoCache.java" startLine="51" startPosition="20" endLine="52" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -213,7 +213,7 @@
     <nodeInfo nodeId="4101850974334003508" fileName="TraceInfoCache.java" startLine="222" startPosition="9" endLine="223" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4101850974334003513" fileName="TraceInfoCache.java" startLine="224" startPosition="7" endLine="225" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7521671656020564904" fileName="TraceInfoCache.java" startLine="230" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="7521671656020564926" fileName="TraceInfoCache.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceInfoCache#(Ljetbrains/mps/smodel/SModelRepository;)V" />
+    <nodeInfo nodeId="7521671656020564926" fileName="TraceInfoCache.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceInfoCache#(Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
     <nodeInfo nodeId="7521671656020564938" fileName="TraceInfoCache.java" startLine="47" startPosition="22" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7521671656020565078" fileName="TraceInfoCache.java" startLine="76" startPosition="77" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7521671656020565140" fileName="TraceInfoCache.java" startLine="83" startPosition="32" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -253,7 +253,7 @@
     <nodeInfo nodeId="4101850974334003462" fileName="TraceInfoCache.java" startLine="210" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateUnchanged#(Ljetbrains/mps/generator/GenerationStatus;)Ljetbrains/mps/traceInfo/DebugInfo;" />
     <nodeInfo nodeId="7521671656020565105" fileName="TraceInfoCache.java" startLine="81" startPosition="30" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="7521671656020565068" fileName="TraceInfoCache.java" startLine="75" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadCacheFromUrl#(Ljava/net/URL;Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/traceInfo/DebugInfo;" />
-    <scopeInfo nodeId="7521671656020564931" fileName="TraceInfoCache.java" startLine="42" startPosition="59" endLine="43" endPosition="27" />
+    <scopeInfo nodeId="7521671656020564931" fileName="TraceInfoCache.java" startLine="42" startPosition="49" endLine="43" endPosition="22" />
     <scopeInfo nodeId="7521671656020564942" fileName="TraceInfoCache.java" startLine="48" startPosition="27" endLine="49" endPosition="63" />
     <scopeInfo nodeId="7521671656020564978" fileName="TraceInfoCache.java" startLine="66" startPosition="36" endLine="67" endPosition="27" />
     <scopeInfo nodeId="7521671656020565039" fileName="TraceInfoCache.java" startLine="71" startPosition="44" endLine="72" endPosition="65" />
@@ -297,7 +297,7 @@
       <varInfo nodeId="7756417352594935125" varName="url" />
     </scopeInfo>
     <scopeInfo nodeId="7521671656020564926" fileName="TraceInfoCache.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="7521671656020564929" varName="modelRepository" />
+      <varInfo nodeId="4168582098933278325" varName="repository" />
     </scopeInfo>
     <scopeInfo nodeId="7521671656020564967" fileName="TraceInfoCache.java" startLine="58" startPosition="25" endLine="61" endPosition="20" />
     <scopeInfo nodeId="7521671656020565123" fileName="TraceInfoCache.java" startLine="94" startPosition="11" endLine="97" endPosition="9" />

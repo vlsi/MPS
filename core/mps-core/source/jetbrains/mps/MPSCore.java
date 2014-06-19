@@ -92,7 +92,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new FindUsagesManager());
 
     // repositories
-    init(new SRepositoryRegistry());
+    final SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
     SModelRepository modelRepository = init(new SModelRepository());
     MPSModuleRepository moduleRepository = init(new MPSModuleRepository());
     GlobalSModelEventsManager globalSModelEventsManager = init(new GlobalSModelEventsManager(modelRepository));
@@ -120,7 +120,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new ProjectStructureModule(moduleRepository, modelRepository));
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
-    init(new BLDependenciesCache(modelRepository));
+    init(new BLDependenciesCache(moduleRepository));
     init(new DataFlowManager(classLoaderManager, moduleRepository));
 
     init(new ResolverComponent());

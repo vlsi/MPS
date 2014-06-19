@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.make.java;
 
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
@@ -26,6 +27,7 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 
@@ -42,8 +44,8 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
     return INSTANCE;
   }
 
-  public BLDependenciesCache(SModelRepository modelRepository) {
-    super(modelRepository);
+  public BLDependenciesCache(SRepository repository) {
+    super(repository);
   }
 
   @Override

@@ -94,7 +94,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
           break;
         }
       }
-      cell = (EditorCell) cell.getParent();
+      cell = cell.getParent();
     }
     return cell;
   }

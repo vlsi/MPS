@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.dependencies;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.cache.CacheGenerator;
@@ -29,6 +30,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -47,8 +49,8 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
 
   private List<CachePathRedirect> myCachePathRedirects = Collections.synchronizedList(new ArrayList<CachePathRedirect>());
 
-  public GenerationDependenciesCache(SModelRepository modelRepository) {
-    super(modelRepository);
+  public GenerationDependenciesCache(SRepository repository) {
+    super(repository);
   }
 
   @Override
@@ -59,12 +61,6 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
 
     INSTANCE = this;
     super.init();
-    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
-      @Override
-      public void performCleanup() {
-        cleanup();
-      }
-    });
   }
 
   @Override

@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.generator.cache;
 
+import jetbrains.mps.cleanup.CleanupListener;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -26,17 +27,23 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-public abstract class BaseModelCache<T> implements CoreComponent {
+/**
+ * Per-repository, model-associated caches.
+ */
+public abstract class BaseModelCache<T> implements CoreComponent, CleanupListener {
 
-  protected final ConcurrentMap<SModelReference, T> myCache = new ConcurrentHashMap<SModelReference, T>();
-  protected final ConcurrentMap<IFile, SModelReference> myFilesToModels = new ConcurrentHashMap<IFile, SModelReference>();
-  private final SModelRepository myModelRepository;
-  private final SModelRepositoryAdapter myModelRepositoryListener = new MyModelRepositoryListener();
+  // absence of model in the cache means we have no idea about present cache state.
+  // if model is in the cache, we do know both IFile and cached object
+  private final ConcurrentMap<SModelReference, Pair<IFile, T>> myCache = new ConcurrentHashMap<SModelReference, Pair<IFile, T>>();
+  private final SRepository myRepository;
+  private final SRepositoryContentAdapter myRepoListener = new MyRepositoryListener();
 
   @Nullable
   protected abstract T readCache(SModel model);
@@ -47,26 +54,30 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   @Nullable
   public abstract IFile getCacheFile(SModel modelDescriptor);
 
-  protected BaseModelCache(SModelRepository modelRepository) {
-    myModelRepository = modelRepository;
+  protected BaseModelCache(SRepository repository) {
+    myRepository = repository;
   }
 
   @Override
   public void init() {
-    myModelRepository.addModelRepositoryListener(myModelRepositoryListener);
+    myRepository.addRepositoryListener(myRepoListener);
+    // FIXME CleanupManager shall be explicit depdendency, rather than getInstance access -
+    // otherwise it's pure assumption CleanupManager has been initialized already.
+    CleanupManager.getInstance().addCleanupListener(this);
   }
 
   @Override
   public void dispose() {
-    myModelRepository.removeModelRepositoryListener(myModelRepositoryListener);
+    CleanupManager.getInstance().removeCleanupListener(this);
+    myRepository.removeRepositoryListener(myRepoListener);
   }
 
   @Nullable
   public T get(@NotNull SModel model) {
     final SModelReference mr = model.getReference();
-    T rv = myCache.get(mr);
+    Pair<IFile, T> rv = myCache.get(mr);
     if (rv != null) {
-      return rv;
+      return rv.o2;
     }
     IFile cacheFile = getCacheFile(model);
     if (cacheFile == null) {
@@ -83,19 +94,12 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     if (!cacheFile.exists()) {
       return null;
     }
-    SModelReference mr = myFilesToModels.get(cacheFile);
-    if (mr == null) {
-      return null;
+    for (Entry<SModelReference, Pair<IFile, T>> entry : myCache.entrySet()) {
+      if (cacheFile.equals(entry.getValue().o1)) {
+        return entry.getValue().o2;
+      }
     }
-    T rv = myCache.get(mr);
-    if (rv != null) {
-      return rv;
-    }
-    SModel model = myModelRepository.getModelDescriptor(mr);
-    if (model == null) {
-      return null;
-    }
-    return readAndUpdateCache(cacheFile, model);
+    return null;
   }
 
   private T readAndUpdateCache(IFile cacheFile, SModel model) {
@@ -104,43 +108,27 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     if (cache == null) {
       return null;
     }
-    synchronized (myCache) {
-      T rv = myCache.get(mr);
-      if (rv != null) {
-        return rv;
-      }
-      myFilesToModels.put(cacheFile, mr);
-      myCache.put(mr, cache);
-      return cache;
+    final Pair<IFile, T> entry = new Pair<IFile, T>(cacheFile, cache);
+    Pair<IFile, T> existing = myCache.putIfAbsent(mr, entry);
+    if (existing != null) {
+      return existing.o2;
     }
+    return cache;
   }
 
-  public SModel invalidateCacheForFile(IFile file) {
-    SModelReference mr = myFilesToModels.get(file);
+  public SModel invalidateCacheForFile(IFile cacheFile) {
+    SModelReference mr = null;
+    for (Entry<SModelReference, Pair<IFile, T>> entry : myCache.entrySet()) {
+      if (cacheFile.equals(entry.getValue().o1)) {
+        mr = entry.getKey();
+        break;
+      }
+    }
     if (mr == null) {
       return null;
     }
-    synchronized (myCache) {
-      myCache.remove(mr);
-      myFilesToModels.remove(file);
-    }
-    return myModelRepository.getModelDescriptor(mr);
-  }
-
-  private void invalidateCacheForModel(SModel md) {
-    final SModelReference mr = md.getReference();
-    if (!myCache.containsKey(mr)) {
-      return;
-    }
-    IFile f = null;
-    for (Entry<IFile, SModelReference> e : myFilesToModels.entrySet()) {
-      if (mr.equals(e.getValue())) {
-        f = e.getKey();
-      }
-    }
-    if (f != null) {
-      invalidateCacheForFile(f);
-    }
+    myCache.remove(mr);
+    return mr.resolve(myRepository);
   }
 
   @Nullable
@@ -160,42 +148,43 @@ public abstract class BaseModelCache<T> implements CoreComponent {
    * Invoke to set new cached value
    */
   protected final void update(SModel model, T cache) {
-    synchronized (myCache) {
-      myCache.put(model.getReference(), cache);
-    }
-  }
-
-  protected void cleanup() {
-    synchronized (myCache) {
-      myCache.clear();
+    final SModelReference mr = model.getReference();
+    Pair<IFile, T> entry = myCache.remove(mr);
+    if (entry != null) {
+      // decided not to update with incomplete entry, although perhaps it won't hurt (file == null))
+      myCache.put(mr, new Pair<IFile, T>(entry.o1, cache));
     }
   }
 
   public final void clean(SModel model) {
-    synchronized (myCache) {
-      myCache.remove(model.getReference());
-    }
+    myCache.remove(model.getReference());
   }
 
-  private class MyModelRepositoryListener extends SModelRepositoryAdapter {
+  @Override
+  public void performCleanup() {
+    myCache.clear();
+  }
 
-    public MyModelRepositoryListener() {
-      super(SModelRepositoryListenerPriority.PLATFORM);
+  private class MyRepositoryListener extends SRepositoryContentAdapter {
+
+    @Override
+    public void beforeModelRemoved(SModule module, SModel model) {
+      clean(model);
     }
 
     @Override
-    public void beforeModelRemoved(SModel modelDescriptor) {
-      invalidateCacheForModel(modelDescriptor);
+    public void modelAdded(SModule module, SModel model) {
+      clean(model);
     }
 
     @Override
-    public void modelAdded(SModel modelDescriptor) {
-      invalidateCacheForModel(modelDescriptor);
+    public void modelRenamed(SModule module, SModel model, SModelReference oldRef) {
+      clean(model);
     }
 
     @Override
-    public void modelRenamed(SModel modelDescriptor) {
-      invalidateCacheForModel(modelDescriptor);
+    public void modelReplaced(SModel model) {
+      clean(model);
     }
   }
 }

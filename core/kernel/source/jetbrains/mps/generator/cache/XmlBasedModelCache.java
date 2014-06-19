@@ -17,7 +17,6 @@ package jetbrains.mps.generator.cache;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -29,6 +28,7 @@ import org.jdom.input.JDOMParseException;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.xml.sax.SAXParseException;
 
 import java.io.FileNotFoundException;
@@ -38,8 +38,8 @@ import java.io.InputStream;
 public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   private static final Logger LOG = LogManager.getLogger(XmlBasedModelCache.class);
 
-  protected XmlBasedModelCache(SModelRepository modelRepository) {
-    super(modelRepository);
+  protected XmlBasedModelCache(SRepository repository) {
+    super(repository);
   }
 
   protected abstract T fromXml(Element e);

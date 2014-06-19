@@ -17,12 +17,15 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.impl.RootTemplateAnnotator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * evgeny, 10/14/11
@@ -41,12 +44,13 @@ public class MPSGenerator extends ComponentPlugin {
   @Override
   public void init() {
     super.init();
-    final SModelRepository modelRepository = SModelRepository.getInstance();
+    // XXX revisit once we got honest per-project repositories. It's not clear which project to take here
+    SRepository repository = MPSModuleRepository.getInstance();
     final ClassLoaderManager classLoaderManager = ClassLoaderManager.getInstance();
 
     init(new GeneratorsManager(classLoaderManager));
-    init(new TraceInfoCache(modelRepository));
-    init(new GenerationDependenciesCache(modelRepository));
+    init(new TraceInfoCache(repository));
+    init(new GenerationDependenciesCache(repository));
     init(new GeneratorPathsComponent());
     init(new ModelGenerationStatusManager());
     init(new RootTemplateAnnotator(GlobalSModelEventsManager.getInstance()));

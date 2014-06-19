@@ -6,7 +6,7 @@ import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.traceInfo.DebugInfo;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -39,8 +39,8 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
   private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
 
-  public TraceInfoCache(SModelRepository modelRepository) {
-    super(modelRepository);
+  public TraceInfoCache(SRepository repository) {
+    super(repository);
   }
 
   @Override
