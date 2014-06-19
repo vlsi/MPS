@@ -90,6 +90,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     if (modelDescriptor != null) {
       return modelDescriptor.getModule().getModuleReference();
     } else {
+      LOG.error("Could not resolve model `" + myModelName + "'. While migrating all models should be available.");
       return null;
       //can be for deleted models when references to them still exist
       //throw new IllegalStateException("Could not replace module reference");
