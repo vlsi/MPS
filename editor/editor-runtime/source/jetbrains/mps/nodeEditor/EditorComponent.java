@@ -50,7 +50,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.extapi.model.SModelDescriptorStub;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -1552,8 +1551,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && SNodeUtil.isAccessible(myNode, myRepository) && ((jetbrains.mps.smodel.SModel) myNode.getModel()).canFireReadEvent() &&
-        !mySModelsWithListener.contains(myNode.getModel())) {
+    if (myNode != null && SNodeUtil.isAccessible(myNode, myRepository) && !mySModelsWithListener.contains(myNode.getModel())) {
       String message = "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
       message += "\n modelId: " + myNode.getModel().getModelId().toString();
       message += "\n" + "models with listeners:";
