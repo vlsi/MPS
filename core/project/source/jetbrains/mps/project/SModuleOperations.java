@@ -86,14 +86,24 @@ public class SModuleOperations {
 
   public static String getOutputPathFor(SModel model) {
     // todo: move to SModelOperations?
-    SModule module = model.getModule();
-    IFile outputDir;
-    if (SModelStereotype.isTestModel(model) && module.getFacet(TestsFacet.class) != null) {
-      outputDir = module.getFacet(TestsFacet.class).getTestsOutputPath();
-    } else {
-      outputDir = ((AbstractModule) module).getOutputPath();
-    }
+    IFile outputDir = getOutputRoot(model);
     return outputDir != null ? outputDir.getPath() : null;
+  }
+
+  /**
+   * Filesystem location for all output of the model's module.
+   * Unlike {@link #getOutputPathFor(org.jetbrains.mps.openapi.model.SModel)} doesn't
+   * translate IFile to String.
+   *
+   * @return module's output path, or null if unknown
+   */
+  public static IFile getOutputRoot(@NotNull SModel model) {
+    SModule module = model.getModule();
+    if (SModelStereotype.isTestModel(model) && module.getFacet(TestsFacet.class) != null) {
+      return module.getFacet(TestsFacet.class).getTestsOutputPath();
+    } else {
+      return ((AbstractModule) module).getOutputPath();
+    }
   }
 
   @NotNull

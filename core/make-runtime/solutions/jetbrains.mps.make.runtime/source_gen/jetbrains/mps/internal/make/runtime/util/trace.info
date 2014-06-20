@@ -671,7 +671,7 @@
     <nodeInfo nodeId="3227965627236270953" fileName="FilesDelta.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="505174985642740316" fileName="FilesDelta.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="files" />
     <nodeInfo nodeId="3461159877638393285" fileName="FilesDelta.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="key" />
-    <nodeInfo nodeId="3461159877638393288" fileName="FilesDelta.java" startLine="21" startPosition="32" endLine="22" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3461159877638393288" fileName="FilesDelta.java" startLine="21" startPosition="32" endLine="22" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3461159877638393521" fileName="FilesDelta.java" startLine="25" startPosition="43" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3251655328354164382" fileName="FilesDelta.java" startLine="26" startPosition="28" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="505174985642740344" fileName="FilesDelta.java" startLine="30" startPosition="35" endLine="31" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -742,7 +742,7 @@
     <nodeInfo nodeId="505174985642750439" fileName="FilesDelta.java" startLine="98" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copy#(Ljetbrains/mps/internal/make/runtime/util/FilesDelta;)Ljetbrains/mps/internal/make/runtime/util/FilesDelta;" />
     <scopeInfo nodeId="7471912399447707920" fileName="FilesDelta.java" startLine="131" startPosition="22" endLine="131" endPosition="22" />
     <scopeInfo nodeId="1268765481875666725" fileName="FilesDelta.java" startLine="158" startPosition="14" endLine="158" endPosition="14" />
-    <scopeInfo nodeId="505174985642693153" fileName="FilesDelta.java" startLine="21" startPosition="32" endLine="22" endPosition="103" />
+    <scopeInfo nodeId="505174985642693153" fileName="FilesDelta.java" startLine="21" startPosition="32" endLine="22" endPosition="95" />
     <scopeInfo nodeId="505174985642693160" fileName="FilesDelta.java" startLine="30" startPosition="35" endLine="31" endPosition="68" />
     <scopeInfo nodeId="505174985642693173" fileName="FilesDelta.java" startLine="34" startPosition="32" endLine="35" endPosition="65" />
     <scopeInfo nodeId="505174985642693167" fileName="FilesDelta.java" startLine="38" startPosition="35" endLine="39" endPosition="68" />

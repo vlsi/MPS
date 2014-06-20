@@ -19,7 +19,7 @@ public class FilesDelta implements IDelta {
   private String key;
 
   public FilesDelta(IFile dir) {
-    this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getAbsolutePath())));
+    this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getPath())));
   }
 
   private FilesDelta(FilesDelta copyFrom) {

@@ -39,7 +39,6 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
@@ -194,10 +193,8 @@ public class TextGen_Facet extends IFacet.Stub {
 
                     ModelAccess.instance().runReadAction(new Runnable() {
                       public void run() {
-                        String output = SModuleOperations.getOutputPathFor(inputResource.model());
-
-                        final IFile javaOutputDir = TextGenUtil.getOutputDir(Target_make.vars(pa.global()).pathToFile().invoke(output), inputResource.model(), TextGenUtil.getOverriddenOutputDir(inputResource.model()));
-                        final IFile cacheOutputDir = TextGenUtil.getOutputDir(Target_make.vars(pa.global()).pathToFile().invoke(FileGenerationUtil.getCachesPath(output)), inputResource.model(), null);
+                        final IFile javaOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(TextGenUtil.getOutputDir(inputResource.model()).getPath());
+                        final IFile cacheOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(TextGenUtil.getCachesDir(inputResource.model()).getPath());
                         FilesDelta d1 = new FilesDelta(javaOutputDir);
                         FilesDelta d2 = new FilesDelta(cacheOutputDir);
                         StaleFilesCollector staleFileCollector = new StaleFilesCollector(javaOutputDir);
