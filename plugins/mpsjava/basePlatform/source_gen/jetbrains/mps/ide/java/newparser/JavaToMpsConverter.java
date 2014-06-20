@@ -1090,6 +1090,7 @@ public class JavaToMpsConverter {
         FilePerRootDataSource ds = new FilePerRootDataSource(pkgDir, modelRoot);
         Map<String, String> options = MapSequence.fromMap(new HashMap<String, String>());
         MapSequence.fromMap(options).put(ModelFactory.OPTION_MODELNAME, pkgFqName);
+        MapSequence.fromMap(options).put(ModelFactory.OPTION_MODULEREF, myModule.getModuleReference().toString());
         modelDescr = PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID).create(ds, options);
         ((SModelBase) modelDescr).setModelRoot(modelRoot);
 

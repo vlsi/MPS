@@ -113,8 +113,12 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
+    String modulRef = options.get(OPTION_MODULEREF);
+    if (modulRef == null) {
+      throw new IOException("moduleRef is not provided");
+    }
 
-    SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
+    SModelReference ref = PersistenceFacade.getInstance().createModelReference(PersistenceFacade.getInstance().createModuleReference(modulRef), jetbrains.mps.smodel.SModelId.generate(), modelName);
     return new FilePerRootSModel((MultiStreamDataSource) dataSource, ref, new SModelHeader());
   }
 
@@ -201,6 +205,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   @Override
   public DataSource createNewSource(FileBasedModelRoot modelRoot, String sourceRoot, String modelName, Map<String, String> options) throws IOException {
     options.put(ModelFactory.OPTION_MODELNAME, modelName);
+    options.put(ModelFactory.OPTION_MODULEREF, modelRoot.getModule().getModuleReference().toString());
 
     Collection<String> sourceRoots = new LinkedHashSet<String>(modelRoot.getFiles(FileBasedModelRoot.SOURCE_ROOTS));
     if (sourceRoots.isEmpty()) {
