@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SPropertyId;
 
 /**
  * NODE STATES
@@ -206,16 +207,31 @@ public interface SNode {
 
   // props
 
+  @Deprecated
   boolean hasProperty(String propertyName);
 
+  @Deprecated
   String getProperty(String propertyName);
 
+  @Deprecated
   void setProperty(String propertyName, String propertyValue);
 
   /**
    * Retrieves keys of all properties. The returned collection is immutable.
    */
+  @Deprecated
   Iterable<String> getPropertyNames();
+
+  /**
+   * Retrieves keys of all properties. The returned collection is immutable.
+   */
+  Iterable<SPropertyId> getPropertyIds();
+
+  boolean hasProperty(SPropertyId property);
+
+  String getProperty(SPropertyId property);
+
+  void setProperty(SPropertyId property, String propertyValue);
 
   // user objects
 
