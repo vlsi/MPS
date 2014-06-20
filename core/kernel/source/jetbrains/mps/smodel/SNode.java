@@ -453,22 +453,106 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public void setReferenceTarget(SReferenceLinkId role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    123
+    assertCanChange();
+
+    String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(role);
+
+    if (target == null) {
+      if (myReferences == null) return;
+
+      for (SReference reference : myReferences) {
+        if (!reference.getRoleId().equals(role)) continue;
+        removeReferenceInternal(reference);
+        referenceChanged(name, reference, null);
+        return;
+      }
+      return;
+    }
+
+    // remove old references
+    SReference toDelete = null;
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (!reference.getRoleId().equals(role)) continue;
+
+        toDelete = reference;
+        break;
+      }
+    }
+
+    SReference newValue = SReference.create(role, this, target);
+
+    if (toDelete != null) {
+      removeReferenceInternal(toDelete);
+    }
+    addReferenceInternal(newValue);
+    referenceChanged(name, toDelete, newValue);
   }
 
   @Override
   public org.jetbrains.mps.openapi.model.SNode getReferenceTarget(SReferenceLinkId role) {
-    return ;
+    assertCanRead();
+
+    String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(role);
+    referenceRead(name);
+
+    SReference reference = getReference(role);
+    SNode result = reference == null ? null : (SNode) reference.getTargetNode();
+    if (result != null) {
+      fireNodeReferentReadAccess(name, result);
+    }
+    return result;
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SReference getReference(SReferenceLinkId role) {
-    return ;
+  public SReference getReference(SReferenceLinkId role) {
+    assertCanRead();
+
+    String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(role);
+    referenceRead(name);
+
+    fireNodeReadAccess();
+    SReference result = null;
+    int count = 0; // paranoid check
+    for (SReference reference : myReferences) {
+      if (reference.getRoleId().equals(role)) {
+        result = reference;
+        count++;
+      }
+    }
+
+    if (count > 1) {
+      String msg = String.format("ERROR: %d referents for role '%s' in %s", count, role, org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      LOG.error(msg, new Throwable(msg), getReference());
+    }
+
+    fireNodeReferentReadAccess(name, null);
+    return result;
   }
 
   @Override
   public void setReference(SReferenceLinkId role, org.jetbrains.mps.openapi.model.SReference reference) {
-123
+    assertCanChange();
+
+    String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(role);
+
+    SReference toRemove = null;
+    for (SReference r : myReferences) {
+      if (!r.getRoleId().equals(role)) continue;
+      toRemove = r;
+      break;
+    }
+
+    if (toRemove != null) {
+      removeReferenceInternal(toRemove);
+    }
+
+    if (reference != null) {
+      assert reference.getSourceNode() == this;
+      addReferenceInternal((SReference) reference);
+    }
+
+    referenceChanged(name, toRemove, reference);
   }
 
   @Override
