@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -39,6 +40,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
 
   private String myRole;
+  private SReferenceLinkId myRoleId;
   protected final SNode mySourceNode; // made protected only for assert in DynamicReference
 
   private volatile String myResolveInfo;
@@ -46,14 +48,29 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   /**
    * role must be "genuine", interned
    */
+  @Deprecated
   protected SReference(String role, SNode sourceNode) {
     myRole = role;
+    mySourceNode = sourceNode;
+  }
+
+  /**
+   * role must be "genuine", interned
+   */
+  @Deprecated
+  protected SReference(SReferenceLinkId role, SNode sourceNode) {
+    myRoleId = role;
     mySourceNode = sourceNode;
   }
 
   @Override
   public String getRole() {
     return myRole;
+  }
+
+  @Override
+  public SReferenceLinkId getRoleId() {
+    return myRoleId;
   }
 
   @Override
@@ -126,6 +143,14 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public abstract boolean isExternal();
 
   //-------- factory methods -----------
+
+  public static SReference create(SReferenceLinkId id, SNode sourceNode, SNode targetNode) {
+    if (sourceNode.getModel() != null && targetNode.getModel() != null) {
+      // 'mature' reference
+      return new StaticReference(id, sourceNode, targetNode.getModel().getReference(), targetNode.getNodeId(), targetNode.getName());
+    }
+    return new StaticReference(id, sourceNode, targetNode);
+  }
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
