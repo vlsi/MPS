@@ -25,15 +25,14 @@ import java.util.HashSet;
 public class StaleFilesCollector {
   private IFile rootDir;
   private Map<IFile, List<IFile>> generatedChildren = MapSequence.fromMap(new HashMap<IFile, List<IFile>>());
-  private String[] pathsToKeep;
 
 
   public StaleFilesCollector(IFile rootDir) {
     this.rootDir = rootDir;
   }
 
-  private void setPathsToKeep(Iterable<IFile> filesToKeep) {
-    pathsToKeep = Sequence.fromIterable(filesToKeep).select(new ISelector<IFile, String>() {
+  private List<IFile> collectFilesToDelete(Iterable<IFile> filesToKeep) {
+    String[] pathsToKeep = Sequence.fromIterable(filesToKeep).select(new ISelector<IFile, String>() {
       public String select(IFile f) {
         return (f.isDirectory() ? DirUtil.normalizeAsDir(f.getPath()) : DirUtil.normalize(f.getPath()));
       }
@@ -42,9 +41,7 @@ public class StaleFilesCollector {
         return p;
       }
     }, true).toListSequence().toGenericArray(String.class);
-  }
 
-  private List<IFile> collectFilesToDelete() {
     List<IFile> filesToDelete = ListSequence.fromList(new ArrayList<IFile>());
 
     Queue<IFile> dirQueue = QueueSequence.fromQueueAndArray(new LinkedList<IFile>(), rootDir);
@@ -121,8 +118,7 @@ public class StaleFilesCollector {
         return true;
       }
     });
-    setPathsToKeep(filesToKeep);
-    for (IFile f : collectFilesToDelete()) {
+    for (IFile f : collectFilesToDelete(filesToKeep)) {
       delta.stale(f);
     }
   }

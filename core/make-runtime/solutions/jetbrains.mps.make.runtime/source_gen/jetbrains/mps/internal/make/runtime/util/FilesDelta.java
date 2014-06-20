@@ -12,6 +12,9 @@ import java.util.HashMap;
 import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 
 public class FilesDelta implements IDelta {
   private static Logger LOG = LogManager.getLogger(FilesDelta.class);
@@ -103,6 +106,7 @@ public class FilesDelta implements IDelta {
     } else if (!(DirUtil.startsWith(that.key, this.key))) {
       throw new IllegalArgumentException();
     }
+    Set<IFile> newlyTouchedDirs = SetSequence.fromSet(new HashSet<IFile>());
     // copy all but stale values, stale entries shall not override explicitly set 
     for (IFile file : MapSequence.fromMap(that.files).keySet()) {
       FilesDelta.Status newStatus = MapSequence.fromMap(that.files).get(file);
@@ -110,6 +114,20 @@ public class FilesDelta implements IDelta {
         continue;
       } else {
         MapSequence.fromMap(files).put(file, newStatus);
+      }
+      SetSequence.fromSet(newlyTouchedDirs).addElement((file.isDirectory() ? file : file.getParent()));
+    }
+    // in case we've got stale directory, check if any updates from that didn't touch it 
+    for (IFile file : MapSequence.fromMap(files).keySet()) {
+      if (MapSequence.fromMap(files).get(file) == FilesDelta.Status.STALE && file.isDirectory()) {
+        String staleDir = file.getPath();
+        for (IFile touchDir : newlyTouchedDirs) {
+          // if staleDir is parent of any newly touched directories, it's not stale any more 
+          if (DirUtil.startsWith(touchDir.getPath(), staleDir)) {
+            MapSequence.fromMap(files).put(file, FilesDelta.Status.KEPT);
+            break;
+          }
+        }
       }
     }
     return this;
