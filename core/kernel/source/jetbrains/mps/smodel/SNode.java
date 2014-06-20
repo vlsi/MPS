@@ -37,10 +37,13 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
@@ -63,6 +66,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private jetbrains.mps.smodel.SReference[] myReferences = jetbrains.mps.smodel.SReference.EMPTY_ARRAY;
 
   private String[] myProperties = null;
+  private Object[] myNewProperties = null;
 
   private SNodeId myId;
 
@@ -161,6 +165,97 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public String getName() {
     return SNodeAccessUtil.getProperty(this, SNodeUtil.property_INamedConcept_name);
+  }
+
+  @Override
+  public Iterable<SPropertyId> getPropertyIds() {
+    nodeRead();
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+    List<SPropertyId> result = new ArrayList<SPropertyId>(5);
+    if (myNewProperties == null) return result;
+    for (int i = 0; i < myNewProperties.length; i += 2) {
+      result.add((SPropertyId) myNewProperties[i]);
+    }
+    return result;
+  }
+
+  @Override
+  public boolean hasProperty(SPropertyId property) {
+    String name = MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(property);
+    propertyRead(name);
+
+    firePropertyReadAccessInEditor(name, true);
+    String val = getProperty(property);
+    return !SModelUtil_new.isEmptyPropertyValue(val);
+  }
+
+  @Override
+  public String getProperty(SPropertyId property) {
+    String name = MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(property);
+    propertyRead(name);
+
+    firePropertyReadAccessInEditor(name, false);
+
+    String propertyValue = null;
+    if (myNewProperties != null) {
+      int index = getPropertyIndex(property);
+      if (index != -1) {
+        propertyValue = (String) myNewProperties[index + 1];
+      }
+    }
+    fireNodePropertyReadAccess(name, propertyValue);
+    return propertyValue;
+  }
+
+  @Override
+  public void setProperty(SPropertyId property, String propertyValue) {
+    assertCanChange();
+
+    String name = MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(property);
+    if (name==null){
+      name = property.toString();
+    }
+
+    propertyValue = InternUtil.intern(propertyValue);
+    int index = getPropertyIndex(property);
+    final String oldValue = index == -1 ? null : (String) myNewProperties[index + 1];
+    if (EqualUtil.equals(oldValue, propertyValue)) return;
+
+    if (propertyValue == null) {
+      Object[] oldProperties = myNewProperties;
+      int newLength = oldProperties.length - 2;
+      if (newLength == 0) {
+        myNewProperties = null;
+      } else {
+        myNewProperties = new String[newLength];
+        System.arraycopy(oldProperties, 0, myNewProperties, 0, index);
+        System.arraycopy(oldProperties, index + 2, myNewProperties, index, newLength - index);
+      }
+    } else if (oldValue == null) {
+      Object[] oldProperties = myNewProperties == null ? EMPTY_ARRAY : myNewProperties;
+      myNewProperties = new String[oldProperties.length + 2];
+      System.arraycopy(oldProperties, 0, myNewProperties, 0, oldProperties.length);
+      myNewProperties[myNewProperties.length - 2] = name;
+      myNewProperties[myNewProperties.length - 1] = propertyValue;
+    } else {
+      myNewProperties[index + 1] = propertyValue;
+    }
+
+    final String finalPropertyValue = propertyValue;
+    final String finalPropertyName = name;
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
+      @Override
+      public SNodeUndoableAction compute() {
+        return new PropertyChangeUndoableAction(SNode.this, finalPropertyName, oldValue, finalPropertyValue);
+      }
+    });
+
+    if (needFireEvent()) {
+      myModel.firePropertyChangedEvent(this, name, oldValue, propertyValue);
+    }
+    propertyChanged(name, oldValue, propertyValue);
   }
 
   @Override
@@ -354,6 +449,26 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     } else if (myModel != null) {
       myModel.getModelDescriptor().removeRootNode(this);
     }
+  }
+
+  @Override
+  public void setReferenceTarget(SReferenceLinkId role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+    123
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getReferenceTarget(SReferenceLinkId role) {
+    return ;
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SReference getReference(SReferenceLinkId role) {
+    return ;
+  }
+
+  @Override
+  public void setReference(SReferenceLinkId role, org.jetbrains.mps.openapi.model.SReference reference) {
+123
   }
 
   @Override
@@ -973,6 +1088,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     for (SNode child : getChildren()) {
       child.clearModel();
     }
+  }
+
+  private int getPropertyIndex(SPropertyId id) {
+    if (myNewProperties == null) return -1;
+    for (int i = 0; i < myNewProperties.length; i += 2) {
+      if (EqualUtil.equals(myNewProperties[i], id)) return i;
+    }
+    return -1;
   }
 
   private int getPropertyIndex(String propertyName) {
