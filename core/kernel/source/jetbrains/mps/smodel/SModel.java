@@ -21,7 +21,10 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -40,6 +43,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -619,6 +623,7 @@ public class SModel implements SModelData {
     }
   }
 
+  @Deprecated
   public void addLanguage(SModuleReference ref) {
     if (myModelDescriptor != null) {
       ModelChange.assertLegalChange(myModelDescriptor);
@@ -633,6 +638,25 @@ public class SModel implements SModelData {
     if (myLanguages.add(ref)) {
       invalidateModelDepsManager();
       fireLanguageAddedEvent(ref);
+      markChanged();
+    }
+  }
+
+  public void addLanguage(SLanguageId ref) {
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
+
+    if (importedLanguages().contains(ref)) return;
+
+    if (ref.getId() == null) {
+      LOG.warn("Attempt to add language reference to a language without id in model " + getReference().getModelName() + ". Language = " + ref);
+    }
+
+    SModuleReference converted = convertLanguageRef(ref);
+    if (myLanguages.add(converted)) {
+      invalidateModelDepsManager();
+      fireLanguageAddedEvent(converted);
       markChanged();
     }
   }
@@ -794,6 +818,7 @@ public class SModel implements SModelData {
     }
   }
 
+  @Deprecated
   public void addEngagedOnGenerationLanguage(SModuleReference ref) {
     if (myModelDescriptor != null) {
       ModelChange.assertLegalChange(myModelDescriptor);
@@ -806,6 +831,26 @@ public class SModel implements SModelData {
         markChanged();
       }
     }
+  }
+
+  public void addEngagedOnGenerationLanguage(SLanguageId ref) {
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
+
+    SModuleReference converted = convertLanguageRef(ref);
+
+    if (!myLanguagesEngagedOnGeneration.contains(converted)) {
+      myLanguagesEngagedOnGeneration.add(converted);
+      // don't send event but mark model as changed
+      if (canFireEvent()) {
+        markChanged();
+      }
+    }
+  }
+
+  private ModuleReference convertLanguageRef(SLanguageId ref) {
+    return new ModuleReference(MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(ref), ModuleId.regular(ref.getId()));
   }
 
   public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
