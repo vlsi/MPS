@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
@@ -103,6 +104,17 @@ public interface SNode {
    * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
    *               a new child is inserted as a last child
    */
+  void insertChildBefore(SContainmentLinkId role, SNode child, @Nullable SNode anchor);
+
+  /**
+   * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
+   *
+   * @param role   a role to insert new child into
+   * @param child  a node to insert
+   * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
+   *               a new child is inserted as a last child
+   */
+  @Deprecated
   void insertChildBefore(String role, SNode child, @Nullable SNode anchor);
 
   /**
@@ -139,6 +151,12 @@ public interface SNode {
   /**
    * Returns role of this node in parent node
    */
+  SContainmentLinkId getRoleInParentId();
+
+  /**
+   * Returns role of this node in parent node
+   */
+  @Deprecated
   String getRoleInParent();
 
   SNode getFirstChild();

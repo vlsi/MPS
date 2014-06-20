@@ -37,6 +37,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -63,6 +64,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private String myRoleInParent;
+  private SContainmentLinkId myRoleInParentId;
   private jetbrains.mps.smodel.SReference[] myReferences = jetbrains.mps.smodel.SReference.EMPTY_ARRAY;
 
   private String[] myProperties = null;
@@ -417,6 +419,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     children_remove(wasChild);
     wasChild.myRoleInParent = null;
+    wasChild.myRoleInParentId = null;
     wasChild.unRegisterFromModel();
 
     performUndoableAction(new Computable<SNodeUndoableAction>() {
@@ -700,6 +703,67 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return s;
   }
 
+  public void insertChildBefore(@NotNull SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child,
+      @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
+    assertCanChange();
+
+    final String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(role);
+
+    final SNode schild = (SNode) child;
+    SNode parentOfChild = schild.getParent();
+    if (parentOfChild != null) {
+      throw new RuntimeException(
+          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              parentOfChild) + "\n" +
+              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+      );
+    }
+
+    if (getContainingRoot() == child) {
+      throw new RuntimeException("Trying to create a cyclic tree");
+    }
+
+    if (anchor != null) {
+      if (anchor.getParent() != this) {
+        throw new RuntimeException(
+            "anchor is not a child of this node" + " | " +
+                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
+                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
+        );
+      }
+    }
+
+    children_insertBefore(((SNode) anchor), schild);
+    schild.myRoleInParentId = role;
+
+    //if child is in unregistered nodes, add this one too to track undo for it
+    UnregisteredNodes un = UnregisteredNodes.instance();
+    if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
+      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
+    }
+
+    if (myModel == null) {
+      if (schild.myModel != null) {
+        schild.clearModel();
+      }
+    } else {
+      schild.registerInModel(myModel);
+    }
+
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
+      @Override
+      public SNodeUndoableAction compute() {
+        return new InsertChildAtUndoableAction(SNode.this, anchor, name, schild);
+      }
+    });
+
+    if (needFireEvent()) {
+      myModel.fireChildAddedEvent(this, name, schild, ((SNode) anchor));
+    }
+    nodeAdded(name, child);
+  }
+
   public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
@@ -875,6 +939,19 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     return Arrays.asList(myReferences);
+  }
+
+  @Override
+  public SContainmentLinkId getRoleInParentId() {
+    nodeRead();
+
+    if (getParent() == null) {
+      if (!EqualUtil.equals(myRoleInParentId, getUserObject("roleId"))) {
+        LOG.error(new IllegalStateException());
+      }
+      return null;
+    }
+    return myRoleInParentId;
   }
 
   @Override
