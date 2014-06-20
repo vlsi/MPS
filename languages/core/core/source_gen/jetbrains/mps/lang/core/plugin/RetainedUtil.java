@@ -93,21 +93,17 @@ public class RetainedUtil {
     return retainedModels;
   }
 
-  public static Iterable<IDelta> retainedFilesDelta(Iterable<SModel> smd, SModule mod, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-    return new RetainedUtil.RetainedFilesDelta(mod, getFile).deltas(smd);
-  }
-
-  public static Iterable<IDelta> retainedCachesDelta(Iterable<SModel> smd, SModule mod, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-    return new RetainedUtil.RetainedCachesDelta(mod, getFile).deltas(smd);
+  public static Iterable<IDelta> retainedDeltas(Iterable<SModel> smd, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
+    // FIXME odd to have two classes just to collect two locations per model (output and caches dirs) 
+    // rather shall spit out strings for these locations, and make shall translate them to IFile and IDelta itself. 
+    return Sequence.fromIterable(new RetainedUtil.RetainedFilesDelta(getFile).deltas(smd)).concat(Sequence.fromIterable(new RetainedUtil.RetainedCachesDelta(getFile).deltas(smd)));
   }
 
   /*package*/ static class RetainedFilesDelta {
-    private SModule module;
     protected Map<String, FilesDelta> dir2delta = MapSequence.fromMap(new HashMap<String, FilesDelta>());
     protected _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile;
 
-    public RetainedFilesDelta(SModule module, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-      this.module = module;
+    public RetainedFilesDelta(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
       this.getFile = getFile;
     }
 
@@ -142,8 +138,8 @@ public class RetainedUtil {
   }
 
   /*package*/ static class RetainedCachesDelta extends RetainedUtil.RetainedFilesDelta {
-    public RetainedCachesDelta(SModule mod, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-      super(mod, getFile);
+    public RetainedCachesDelta(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
+      super(getFile);
     }
 
     @Override

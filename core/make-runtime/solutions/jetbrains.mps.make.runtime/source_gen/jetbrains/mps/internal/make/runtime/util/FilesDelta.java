@@ -5,64 +5,44 @@ package jetbrains.mps.internal.make.runtime.util;
 import jetbrains.mps.make.delta.IDelta;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.vfs.IFile;
 import java.util.Map;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import java.util.List;
 import jetbrains.mps.make.delta.IDeltaVisitor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.ArrayList;
-import java.util.Queue;
-import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import java.util.Arrays;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.generator.info.GeneratorPathsComponent;
 
 public class FilesDelta implements IDelta {
   private static Logger LOG = LogManager.getLogger(FilesDelta.class);
-  private IFile rootDir;
   private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
-  private Map<IFile, List<IFile>> generatedChildren = MapSequence.fromMap(new HashMap<IFile, List<IFile>>());
   private String key;
 
   public FilesDelta(IFile dir) {
-    this.rootDir = dir;
     this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getAbsolutePath())));
-  }
-
-  public FilesDelta(IFile dir, IFile cachesDir) {
-    this.rootDir = dir;
-    this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getAbsolutePath())));
-    cacheGenChildren(dir, cachesDir);
   }
 
   private FilesDelta(FilesDelta copyFrom) {
-    this.rootDir = copyFrom.rootDir;
     this.key = copyFrom.key;
-    copy(copyFrom);
+    MapSequence.fromMap(this.files).putAll(copyFrom.files);
   }
 
   public void written(IFile file) {
-    LOG.debug("Written " + file);
     MapSequence.fromMap(files).put(file, FilesDelta.Status.WRITTEN);
   }
 
   public void kept(IFile file) {
-    LOG.debug("Kept " + file);
     MapSequence.fromMap(files).put(file, FilesDelta.Status.KEPT);
   }
 
   public void deleted(IFile file) {
-    LOG.debug("Deleted " + file);
     MapSequence.fromMap(files).put(file, FilesDelta.Status.DELETED);
+  }
+
+  public void stale(IFile file) {
+    if (!(MapSequence.fromMap(files).containsKey(file))) {
+      MapSequence.fromMap(files).put(file, FilesDelta.Status.STALE);
+    }
   }
 
   @Override
@@ -97,108 +77,41 @@ public class FilesDelta implements IDelta {
     if (!(this.contains(toMerge))) {
       throw new IllegalArgumentException();
     }
-    return new FilesDelta((FilesDelta) this).copy((FilesDelta) toMerge);
+    return new FilesDelta(this).copy((FilesDelta) toMerge);
   }
 
   private boolean acceptFilesVisitor(final FilesDelta.Visitor visitor) {
-    visitor.acceptRoot(rootDir);
     MapSequence.fromMap(files).visitAll(new IVisitor<IMapping<IFile, FilesDelta.Status>>() {
       public void visit(IMapping<IFile, FilesDelta.Status> m) {
         if (m.value() == FilesDelta.Status.KEPT && !(m.key().isDirectory())) {
           visitor.acceptKept(m.key());
         } else if (m.value() == FilesDelta.Status.WRITTEN) {
           visitor.acceptWritten(m.key());
+        } else if (m.value() == FilesDelta.Status.DELETED || m.value() == FilesDelta.Status.STALE) {
+          visitor.acceptDeleted(m.key());
         }
-      }
-    });
-    ListSequence.fromList(this.collectFilesToDelete()).visitAll(new IVisitor<IFile>() {
-      public void visit(IFile f) {
-        visitor.acceptDeleted(f);
       }
     });
     return true;
   }
 
-  private List<IFile> collectFilesToDelete() {
-    String[] pathsToKeep = MapSequence.fromMap(files).where(new IWhereFilter<IMapping<IFile, FilesDelta.Status>>() {
-      public boolean accept(IMapping<IFile, FilesDelta.Status> f) {
-        return f.value() != FilesDelta.Status.DELETED;
-      }
-    }).select(new ISelector<IMapping<IFile, FilesDelta.Status>, String>() {
-      public String select(IMapping<IFile, FilesDelta.Status> f) {
-        return (f.key().isDirectory() ? DirUtil.normalizeAsDir(f.key().getPath()) : DirUtil.normalize(f.key().getPath()));
-      }
-    }).sort(new ISelector<String, String>() {
-      public String select(String p) {
-        return p;
-      }
-    }, true).toListSequence().toGenericArray(String.class);
-
-    List<IFile> filesToDelete = ListSequence.fromList(new ArrayList<IFile>());
-
-    Queue<IFile> dirQueue = QueueSequence.fromQueueAndArray(new LinkedList<IFile>(), rootDir);
-    while (QueueSequence.fromQueue(dirQueue).isNotEmpty()) {
-      IFile dir = QueueSequence.fromQueue(dirQueue).removeFirstElement();
-      String dirpath = DirUtil.normalizeAsDir(dir.getPath());
-      int diridx = Arrays.binarySearch(pathsToKeep, dirpath);
-
-      for (Tuples._2<IFile, String> fileAndPath : Sequence.fromIterable(getChildren(dir)).select(new ISelector<IFile, Tuples._2<IFile, String>>() {
-        public Tuples._2<IFile, String> select(IFile f) {
-          return MultiTuple.<IFile,String>from(f, DirUtil.normalize(f.getPath()));
-        }
-      }).sort(new ISelector<Tuples._2<IFile, String>, String>() {
-        public String select(Tuples._2<IFile, String> t) {
-          return t._1();
-        }
-      }, true)) {
-        if (fileAndPath._0().isDirectory()) {
-          int fidx = Arrays.binarySearch(pathsToKeep, DirUtil.normalizeAsDir(fileAndPath._1()));
-          fidx = (fidx < 0 ? -1 - fidx : fidx);
-          if (fidx >= pathsToKeep.length || !(DirUtil.startsWith(pathsToKeep[fidx], fileAndPath._1()))) {
-            ListSequence.fromList(filesToDelete).addElement(fileAndPath._0());
-            if (fidx >= pathsToKeep.length) {
-              break;
-            }
-          } else if (fidx < pathsToKeep.length) {
-            QueueSequence.fromQueue(dirQueue).addLastElement(fileAndPath._0());
-          }
-        } else {
-          int fidx = Arrays.binarySearch(pathsToKeep, fileAndPath._1());
-          if (fidx < 0 && diridx < 0) {
-            ListSequence.fromList(filesToDelete).addElement(fileAndPath._0());
-          }
-        }
-      }
-    }
-
-    return filesToDelete;
-  }
-
-  private void cacheGenChildren(IFile dir, IFile cachesDir) {
-    List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(dir, cachesDir);
-    if (ListSequence.fromList(genChildren).isNotEmpty()) {
-      MapSequence.fromMap(generatedChildren).put(dir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
-    }
-  }
-
-  private Iterable<IFile> getChildren(IFile dir) {
-    Iterable<IFile> realChilren = (Iterable<IFile>) dir.getChildren();
-    if (GeneratorPathsComponent.getInstance().isForeign(dir)) {
-      List<IFile> genChildren = MapSequence.fromMap(generatedChildren).get(dir);
-      return ListSequence.fromList(genChildren).intersect(Sequence.fromIterable(realChilren));
-    }
-    return realChilren;
-  }
-
   private FilesDelta copy(FilesDelta that) {
+    // provided there's this.contains(that) call before copy() 
+    // DirUtil.startsWith(that, this) == true 
     if (DirUtil.startsWith(this.key, that.key)) {
       this.key = that.key;
-      this.rootDir = that.rootDir;
     } else if (!(DirUtil.startsWith(that.key, this.key))) {
       throw new IllegalArgumentException();
     }
-    MapSequence.fromMap(files).putAll(that.files);
-    MapSequence.fromMap(generatedChildren).putAll(that.generatedChildren);
+    // copy all but stale values, stale entries shall not override explicitly set 
+    for (IFile file : MapSequence.fromMap(that.files).keySet()) {
+      FilesDelta.Status newStatus = MapSequence.fromMap(that.files).get(file);
+      if (newStatus == FilesDelta.Status.STALE && MapSequence.fromMap(files).containsKey(file)) {
+        continue;
+      } else {
+        MapSequence.fromMap(files).put(file, newStatus);
+      }
+    }
     return this;
   }
 
@@ -218,10 +131,6 @@ public class FilesDelta implements IDelta {
     public Visitor() {
     }
 
-    public boolean acceptRoot(IFile root) {
-      return true;
-    }
-
     public boolean acceptWritten(IFile file) {
       return true;
     }
@@ -235,10 +144,16 @@ public class FilesDelta implements IDelta {
     }
   }
 
-  public static   enum Status {
+  public   /**
+   * DELETED are files explicitly requested to be removed
+   * STALE are files that are likely to need removal, unless there's another subsequent 
+   * delta that bring them back to life.
+   */
+static   enum Status {
     WRITTEN(),
     KEPT(),
-    DELETED();
+    DELETED(),
+    STALE();
 
     Status() {
     }

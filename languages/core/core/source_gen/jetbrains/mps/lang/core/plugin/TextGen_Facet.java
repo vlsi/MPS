@@ -41,6 +41,7 @@ import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -170,17 +171,12 @@ public class TextGen_Facet extends IFacet.Stub {
 
                   //  prepare  
                   for (GResource resource : ListSequence.fromList(currentInput)) {
-                    Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
+                    Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedDeltas(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
                       public boolean accept(SModel smd) {
                         return GenerationFacade.canGenerate(smd);
                       }
-                    }), resource.module(), Target_make.vars(pa.global()).pathToFile());
-                    Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
-                      public boolean accept(SModel smd) {
-                        return GenerationFacade.canGenerate(smd);
-                      }
-                    }), resource.module(), Target_make.vars(pa.global()).pathToFile());
-                    MapSequence.fromMap(deltas).put(resource, ListSequence.fromListWithValues(new ArrayList<IDelta>(), Sequence.fromIterable(retainedCachesDelta).concat(Sequence.fromIterable(retainedFilesDelta))));
+                    }), Target_make.vars(pa.global()).pathToFile());
+                    MapSequence.fromMap(deltas).put(resource, ListSequence.fromListWithValues(new ArrayList<IDelta>(), retainedFilesDelta));
                   }
 
                   // textgen 
@@ -202,8 +198,10 @@ public class TextGen_Facet extends IFacet.Stub {
 
                         final IFile javaOutputDir = TextGenUtil.getOutputDir(Target_make.vars(pa.global()).pathToFile().invoke(output), inputResource.model(), TextGenUtil.getOverriddenOutputDir(inputResource.model()));
                         final IFile cacheOutputDir = TextGenUtil.getOutputDir(Target_make.vars(pa.global()).pathToFile().invoke(FileGenerationUtil.getCachesPath(output)), inputResource.model(), null);
-                        FilesDelta d1 = new FilesDelta(javaOutputDir, cacheOutputDir);
+                        FilesDelta d1 = new FilesDelta(javaOutputDir);
                         FilesDelta d2 = new FilesDelta(cacheOutputDir);
+                        StaleFilesCollector staleFileCollector = new StaleFilesCollector(javaOutputDir);
+                        staleFileCollector.recordGeneratedChildren(cacheOutputDir);
                         FileProcessor fp = new FileProcessor();
                         ListSequence.fromList(fileProcessors).addElement(fp);
                         FileDeltaCollector javaSourcesLoc = new FileDeltaCollector(javaOutputDir, d1, fp);
@@ -216,6 +214,8 @@ public class TextGen_Facet extends IFacet.Stub {
                           cgl.register(javaSourcesLoc, TraceInfoCache.getInstance().getGenerator());
                         }
                         tf.serializeCaches(cgl);
+                        staleFileCollector.updateDelta(d1);
+                        new StaleFilesCollector(cacheOutputDir).updateDelta(d2);
                         ListSequence.fromList(errors).addSequence(ListSequence.fromList(tf.getErrors()));
                         ListSequence.fromList(MapSequence.fromMap(deltas).get(inputResource)).addElement(d1);
                         ListSequence.fromList(MapSequence.fromMap(deltas).get(inputResource)).addElement(d2);
