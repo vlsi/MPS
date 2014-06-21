@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.util.StringUtil;
@@ -51,15 +52,14 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       if (!modelId.isGloballyUnique()) {
         throw new IllegalArgumentException();
       }
-      //todo: uncomment after MPS migration
-      /*if (InternalFlag.isInternalMode()) {
-        throw new IllegalArgumentException("Creating model reference without module reference.");
-      } else {
-        if (thrownWarnings < 10) {
+      if (thrownWarnings < 10) {
+        if (InternalFlag.isInternalMode()) {
+          LOG.error("Creating model reference without module reference.", new Throwable());
+        } else {
           LOG.warn("Creating model reference without module reference.", new Throwable());
-          thrownWarnings ++;
         }
-      }*/
+        thrownWarnings ++;
+      }
     }
     myModuleReference = replaceModuleReferences ? calculateModuleReference() : module;
   }
@@ -90,7 +90,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     if (modelDescriptor != null) {
       return modelDescriptor.getModule().getModuleReference();
     } else {
-      LOG.error("Could not resolve model `" + myModelName + "'. While migrating all models should be available.");
+      LOG.error("Could not resolve model `" + myModelName + "'. While migrating all models should be available.", new Throwable());
       return null;
       //can be for deleted models when references to them still exist
       //throw new IllegalStateException("Could not replace module reference");
