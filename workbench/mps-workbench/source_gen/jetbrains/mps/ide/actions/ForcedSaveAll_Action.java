@@ -78,6 +78,7 @@ public class ForcedSaveAll_Action extends BaseAction {
         for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
           generator.updateModuleReferences();
         }
+        language.updateSModelReferences();
         language.save();
       }
 
