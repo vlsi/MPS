@@ -19,6 +19,7 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.ModelGenerationStatusManager.ModelHashSource;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
@@ -37,7 +38,7 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, May 14, 2010
  */
-public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDependencies> implements ModelGenerationStatusListener {
+public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDependencies> implements ModelGenerationStatusListener, ModelHashSource {
 
   private static GenerationDependenciesCache INSTANCE;
   private final ModelGenerationStatusManager myGenStatusManager;
@@ -126,6 +127,12 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   @Override
   public void generatedFilesChanged(SModel sm) {
     clean(sm);
+  }
+
+  @Override
+  public Object getModelHash(SModel model) {
+    final GenerationDependencies dependencies = get(model);
+    return dependencies == null ? null : dependencies.getModelHash();
   }
 
   public static interface CachePathRedirect {

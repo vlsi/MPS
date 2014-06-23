@@ -16,14 +16,12 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.components.CoreComponent;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.ArrayList;
@@ -41,6 +39,8 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   private final List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
+  private ModelHashSource myModelHashSource;
+
   private final SModelRepositoryAdapter mySmodelReloadListener = new SModelRepositoryAdapter() {
     @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
@@ -56,6 +56,13 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   public ModelGenerationStatusManager() {
 
+  }
+
+  /*
+   * Now there could be only one source of model hashes at a time.
+   */
+  public void setModelHashSource(@NotNull ModelHashSource source) {
+    myModelHashSource = source;
   }
 
   @Override
@@ -106,7 +113,6 @@ public class ModelGenerationStatusManager implements CoreComponent {
       copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
     }
     for (SModel model : models) {
-      GenerationDependenciesCache.getInstance().clean(model);
       for (ModelGenerationStatusListener l : copy) {
         l.generatedFilesChanged(model);
       }
@@ -149,9 +155,13 @@ public class ModelGenerationStatusManager implements CoreComponent {
   }
 
   public static String getLastGenerationHash(GeneratableSModel sm) {
-    GenerationDependencies generationDependencies = GenerationDependenciesCache.getInstance().get(sm);
-    if (generationDependencies == null) return null;
+    return String.valueOf(getInstance().myModelHashSource.getModelHash(sm));
+  }
 
-    return generationDependencies.getModelHash();
+  /**
+   * PROVISIONAL, don't want a String as model hash, rather need a class.
+   */
+  public interface ModelHashSource {
+    Object getModelHash(SModel model);
   }
 }
