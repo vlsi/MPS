@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d8vb4wh933fzryv3jaymgnwiljxix7e">
+<dependencies version="2" modelHash="-dv68mnkwoft03r7mf4n4cq18fshdga3">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="219tabpheulilqu7z9l8hty48ifdqbo" dependsOnNodes="true">
+  <common hash="bku3ehdt3n7yp2uspcqrts4latz7999" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="3432969378036014056" name="JavaWatchable" hash="-4kg6fw73fzh5smimys13dvwbncaczik">
@@ -14,7 +14,6 @@
   <source id="3432969378036014277" name="JavaThisObject" hash="-7dtbidyvsqhmi0tvx323v5b2o078r4h">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaThisObject.java" />
   </source>
   <source id="3432969378036015831" name="CustomJavaWatchable" hash="luns7zgnikk8xhv2ppfouueom1foy8">
@@ -32,7 +31,7 @@
   <source id="3432969378036017747" name="CalculatedWatchable" hash="a2arjs0hqs2k5l9g03l4xoi48ltslfw">
     <file name="CalculatedWatchable.java" />
   </source>
-  <source id="4352118152439509012" name="JavaWatchablesCategory" hash="84381vyqt3lrwt3ag9067edggrctr9b">
+  <source id="4352118152439509012" name="JavaWatchablesCategory" hash="-bezlp8zxcn6g1yo0b11k65n44wtfmib">
     <file name="JavaWatchablesCategory.java" />
   </source>
 </dependencies>

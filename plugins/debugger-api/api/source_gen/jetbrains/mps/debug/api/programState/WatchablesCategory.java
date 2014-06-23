@@ -16,6 +16,22 @@ public class WatchablesCategory implements Comparable<WatchablesCategory> {
   }
 
   @Override
+  public int hashCode() {
+    return this.getCategoryName().hashCode();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    return this.getCategoryName().equals(((WatchablesCategory) o).getCategoryName());
+  }
+
+  @Override
   public int compareTo(WatchablesCategory o) {
     return this.getCategoryName().compareTo(o.getCategoryName());
   }
