@@ -40,7 +40,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -87,7 +86,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
   private final SAbstractConcept myNamedConcept;
   private final SNodeReference myFakeNameTopContextNode = new SNodePointer((SModelReference) null, null);
-  private final Map<SNode, String> topToSuffix = new WeakHashMap<SNode, String>();
+  private final Map<SNode, String> topToSuffix = new ConcurrentHashMap<SNode, String>();
 
   public GenerationSessionContext(Project project,
                                   GenerationOptions generationOptions,
