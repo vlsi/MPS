@@ -18,18 +18,19 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.ide.findusages.MPSFindUsages;
 import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
-import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.persistence.MPSPersistence;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.typesystem.MPSTypesystem;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -73,12 +74,6 @@ public class MPSCoreComponents implements ApplicationComponent {
 
   @Override
   public void disposeComponent() {
-    // set IoFileSystem
-    if (FileSystem.getInstance().getFileSystemProvider() instanceof IdeaFileSystemProvider) {
-      ((IdeaFileSystemProvider) FileSystem.getInstance().getFileSystemProvider()).dispose();
-      FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
-    }
-
     // dispose BaseLanguage
     MPSBaseLanguage.getInstance().dispose();
 

@@ -27,6 +27,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -62,6 +63,12 @@ public class IdeaFileSystemProvider extends FileSystemProviderComponent implemen
   public void removeListener(FileSystemListener listener) {
     myListeners.removeListener(listener);
 
+  }
+
+  @Override
+  public void disposeComponent() {
+    super.disposeComponent();
+    FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
   }
 
   public FileSystemListenersContainer getListenersContainer() {
@@ -119,9 +126,6 @@ public class IdeaFileSystemProvider extends FileSystemProviderComponent implemen
         ModelAccess.instance().requireWrite(r);
       }
     });
-  }
-
-  public void dispose() {
   }
 
   @NotNull
