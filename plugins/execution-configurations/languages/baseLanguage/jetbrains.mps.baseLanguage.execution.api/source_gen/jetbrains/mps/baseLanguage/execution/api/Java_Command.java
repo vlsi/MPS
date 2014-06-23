@@ -23,12 +23,10 @@ import jetbrains.mps.debug.api.IDebugger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import org.apache.log4j.Level;
-import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNodePointer;
@@ -189,14 +187,13 @@ public class Java_Command {
     if (model == null) {
       return null;
     }
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
-    if (debugInfo == null) {
+    if (TraceInfo.hasTrace(model)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
       }
       return null;
     } else {
-      Iterable<String> unitNames = (Iterable<String>) TraceDown.unitNames(node);
+      Iterable<String> unitNames = TraceInfo.unitNames(node);
       if (Sequence.fromIterable(unitNames).isEmpty()) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
@@ -205,9 +202,9 @@ public class Java_Command {
       } else if (Sequence.fromIterable(unitNames).count() == 1) {
         return Sequence.fromIterable(unitNames).first();
       } else {
-        return TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {
-          public Boolean invoke(TraceablePositionInfo position) {
-            return (eq_kk96hj_a0a0a0a0a1a0a0b0a3a22(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0b0a3a22_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, _quotation_createNode_yvpt_a0a0a0a1a0a0b0a3a1(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
+        return TraceInfo.unitNameWithPosition(node, new Condition<TraceablePositionInfo>() {
+          public boolean met(TraceablePositionInfo position) {
+            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, _quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
           }
         });
       }
@@ -410,7 +407,7 @@ public class Java_Command {
     return null;
   }
 
-  private static SNode _quotation_createNode_yvpt_a0a0a0a1a0a0b0a3a1() {
+  private static SNode _quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -446,11 +443,11 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a3a22(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a3a22_0(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

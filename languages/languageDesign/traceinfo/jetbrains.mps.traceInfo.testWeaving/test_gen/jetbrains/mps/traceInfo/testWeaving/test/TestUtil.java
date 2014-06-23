@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ArrayList;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.generator.traceInfo.TraceDown;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
@@ -25,7 +25,7 @@ public class TestUtil {
       public void visit(SNode it) {
         {
           List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), it);
-          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceDown.anyUnitName(root), SPropertyOperations.getString(root, "name") + ".java", line.value));
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceInfo.unitNames(root).get(0), SPropertyOperations.getString(root, "name") + ".java", line.value));
           Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
         }
         line.value += delta;
@@ -42,7 +42,7 @@ public class TestUtil {
         for (int i = 0; i < howMany; i++) {
           {
             List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), it);
-            List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceDown.anyUnitName(root), SPropertyOperations.getString(root, "name") + ".java", line.value));
+            List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) TraceInfoUtil.getNode(TraceInfo.unitNames(root).get(0), SPropertyOperations.getString(root, "name") + ".java", line.value));
             Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
           }
           line.value += delta;

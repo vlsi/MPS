@@ -23,123 +23,123 @@
     <unitInfo nodeId="3483822302719455901" fileName="JavaTraceInfoResourceProvider.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.JavaTraceInfoResourceProvider" />
   </root>
   <root nodeRef="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)/5111910545577563820">
-    <nodeInfo nodeId="5111910545577563832" fileName="TraceDown.java" startLine="27" startPosition="56" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5111910545577563838" fileName="TraceDown.java" startLine="28" startPosition="35" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5111910545577563852" fileName="TraceDown.java" startLine="30" startPosition="28" endLine="31" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5111910545577580219" fileName="TraceDown.java" startLine="34" startPosition="49" endLine="35" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6270620316295462490" fileName="TraceDown.java" startLine="40" startPosition="48" endLine="41" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6270620316295462525" fileName="TraceDown.java" startLine="42" startPosition="53" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6270620316295462448" fileName="TraceDown.java" startLine="44" startPosition="5" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5111910545577580475" fileName="TraceDown.java" startLine="48" startPosition="153" endLine="49" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5111910545577580482" fileName="TraceDown.java" startLine="49" startPosition="35" endLine="50" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5111910545577580496" fileName="TraceDown.java" startLine="51" startPosition="28" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5111910545577580502" fileName="TraceDown.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5111910545577580596" fileName="TraceDown.java" startLine="54" startPosition="0" endLine="55" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5111910545577580561" fileName="TraceDown.java" startLine="55" startPosition="74" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8475766493858861656" fileName="TraceDown.java" startLine="56" startPosition="0" endLine="57" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8475766493858863831" fileName="TraceDown.java" startLine="61" startPosition="54" endLine="62" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5111910545577612722" fileName="TraceDown.java" startLine="65" startPosition="27" endLine="66" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5111910545577612726" fileName="TraceDown.java" startLine="69" startPosition="5" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5288964220667812561" fileName="TraceDown.java" startLine="73" startPosition="89" endLine="74" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5288964220667812601" fileName="TraceDown.java" startLine="75" startPosition="27" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5288964220667812428" fileName="TraceDown.java" startLine="79" startPosition="55" endLine="80" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5288964220667812449" fileName="TraceDown.java" startLine="85" startPosition="58" endLine="86" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5288964220667812581" fileName="TraceDown.java" startLine="87" startPosition="23" endLine="88" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5288964220667812585" fileName="TraceDown.java" startLine="89" startPosition="5" endLine="90" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5288964220667812429" fileName="TraceDown.java" startLine="93" startPosition="71" endLine="94" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5111910545577563822" fileName="TraceDown.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceDown#()V" />
-    <nodeInfo nodeId="5111910545577563847" fileName="TraceDown.java" startLine="29" startPosition="66" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5111910545577580215" fileName="TraceDown.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/traceInfo/UnitPositionInfo;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6270620316295462486" fileName="TraceDown.java" startLine="41" startPosition="49" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5111910545577580491" fileName="TraceDown.java" startLine="50" startPosition="66" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8475766493858863829" fileName="TraceDown.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/traceInfo/UnitPositionInfo;)Z" />
-    <nodeInfo nodeId="8475766493858863845" fileName="TraceDown.java" startLine="64" startPosition="11" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5288964220667812592" fileName="TraceDown.java" startLine="74" startPosition="87" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5288964220667812426" fileName="TraceDown.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/traceInfo/TraceablePositionInfo;)Z" />
-    <nodeInfo nodeId="5288964220667812572" fileName="TraceDown.java" startLine="86" startPosition="86" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5288964220667812429" fileName="TraceDown.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_mk0t6b_a0a0a0a0a0a2a4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5111910545577563872" fileName="TraceDown.java" startLine="32" startPosition="5" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8475766493858863823" fileName="TraceDown.java" startLine="59" startPosition="45" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5288964220667812413" fileName="TraceDown.java" startLine="77" startPosition="5" endLine="82" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6270620316295462441" fileName="TraceDown.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="anyUnitName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5288964220667812410" fileName="TraceDown.java" startLine="85" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isTraceable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8475766493858861749" fileName="TraceDown.java" startLine="58" startPosition="95" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5288964220667811775" fileName="TraceDown.java" startLine="73" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isTraceable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/traceInfo/DebugInfo;)Z" />
-    <nodeInfo nodeId="8475766493858861670" fileName="TraceDown.java" startLine="57" startPosition="92" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5111910545577563826" fileName="TraceDown.java" startLine="26" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="unitNames#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5111910545577580327" fileName="TraceDown.java" startLine="48" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="unitNameWithPosition#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/String;" />
-    <scopeInfo nodeId="5111910545577563825" fileName="TraceDown.java" startLine="23" startPosition="22" endLine="23" endPosition="22" />
-    <scopeInfo nodeId="5111910545577563851" fileName="TraceDown.java" startLine="30" startPosition="28" endLine="31" endPosition="68" />
-    <scopeInfo nodeId="5111910545577580216" fileName="TraceDown.java" startLine="34" startPosition="49" endLine="35" endPosition="32" />
-    <scopeInfo nodeId="6270620316295462487" fileName="TraceDown.java" startLine="42" startPosition="53" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="5111910545577580495" fileName="TraceDown.java" startLine="51" startPosition="28" endLine="52" endPosition="18" />
-    <scopeInfo nodeId="8475766493858863830" fileName="TraceDown.java" startLine="61" startPosition="54" endLine="62" endPosition="80" />
-    <scopeInfo nodeId="8475766493858863846" fileName="TraceDown.java" startLine="65" startPosition="27" endLine="66" endPosition="36" />
-    <scopeInfo nodeId="5288964220667812593" fileName="TraceDown.java" startLine="75" startPosition="27" endLine="76" endPosition="19" />
-    <scopeInfo nodeId="5288964220667812427" fileName="TraceDown.java" startLine="79" startPosition="55" endLine="80" endPosition="85" />
-    <scopeInfo nodeId="5288964220667812573" fileName="TraceDown.java" startLine="87" startPosition="23" endLine="88" endPosition="19" />
-    <scopeInfo nodeId="5288964220667812429" fileName="TraceDown.java" startLine="93" startPosition="71" endLine="94" endPosition="46" />
-    <scopeInfo nodeId="5111910545577563822" fileName="TraceDown.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="5111910545577580215" fileName="TraceDown.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <nodeInfo nodeId="5111910545577563832" fileName="TraceDown.java" startLine="34" startPosition="56" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5111910545577563838" fileName="TraceDown.java" startLine="35" startPosition="35" endLine="36" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5111910545577563852" fileName="TraceDown.java" startLine="37" startPosition="28" endLine="38" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5111910545577580219" fileName="TraceDown.java" startLine="41" startPosition="49" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6270620316295462490" fileName="TraceDown.java" startLine="47" startPosition="48" endLine="48" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6270620316295462525" fileName="TraceDown.java" startLine="49" startPosition="53" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6270620316295462448" fileName="TraceDown.java" startLine="51" startPosition="5" endLine="52" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5111910545577580475" fileName="TraceDown.java" startLine="55" startPosition="153" endLine="56" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5111910545577580482" fileName="TraceDown.java" startLine="56" startPosition="35" endLine="57" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5111910545577580496" fileName="TraceDown.java" startLine="58" startPosition="28" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5111910545577580502" fileName="TraceDown.java" startLine="60" startPosition="5" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5111910545577580596" fileName="TraceDown.java" startLine="61" startPosition="0" endLine="62" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5111910545577580561" fileName="TraceDown.java" startLine="62" startPosition="74" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8475766493858861656" fileName="TraceDown.java" startLine="63" startPosition="0" endLine="64" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8475766493858863831" fileName="TraceDown.java" startLine="68" startPosition="54" endLine="69" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5111910545577612722" fileName="TraceDown.java" startLine="72" startPosition="27" endLine="73" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5111910545577612726" fileName="TraceDown.java" startLine="76" startPosition="5" endLine="77" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5288964220667812561" fileName="TraceDown.java" startLine="80" startPosition="89" endLine="81" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5288964220667812601" fileName="TraceDown.java" startLine="82" startPosition="27" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5288964220667812428" fileName="TraceDown.java" startLine="86" startPosition="55" endLine="87" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5288964220667812449" fileName="TraceDown.java" startLine="92" startPosition="58" endLine="93" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5288964220667812581" fileName="TraceDown.java" startLine="94" startPosition="23" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5288964220667812585" fileName="TraceDown.java" startLine="96" startPosition="5" endLine="97" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5288964220667812429" fileName="TraceDown.java" startLine="100" startPosition="71" endLine="101" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5111910545577563822" fileName="TraceDown.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceDown#()V" />
+    <nodeInfo nodeId="5111910545577563847" fileName="TraceDown.java" startLine="36" startPosition="66" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5111910545577580215" fileName="TraceDown.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/traceInfo/UnitPositionInfo;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6270620316295462486" fileName="TraceDown.java" startLine="48" startPosition="49" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5111910545577580491" fileName="TraceDown.java" startLine="57" startPosition="66" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8475766493858863829" fileName="TraceDown.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/traceInfo/UnitPositionInfo;)Z" />
+    <nodeInfo nodeId="8475766493858863845" fileName="TraceDown.java" startLine="71" startPosition="11" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5288964220667812592" fileName="TraceDown.java" startLine="81" startPosition="87" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5288964220667812426" fileName="TraceDown.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/traceInfo/TraceablePositionInfo;)Z" />
+    <nodeInfo nodeId="5288964220667812572" fileName="TraceDown.java" startLine="93" startPosition="86" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5288964220667812429" fileName="TraceDown.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_mk0t6b_a0a0a0a0a0a2a4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5111910545577563872" fileName="TraceDown.java" startLine="39" startPosition="5" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8475766493858863823" fileName="TraceDown.java" startLine="66" startPosition="45" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5288964220667812413" fileName="TraceDown.java" startLine="84" startPosition="5" endLine="89" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6270620316295462441" fileName="TraceDown.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="anyUnitName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5288964220667812410" fileName="TraceDown.java" startLine="92" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isTraceable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8475766493858861749" fileName="TraceDown.java" startLine="65" startPosition="95" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5288964220667811775" fileName="TraceDown.java" startLine="80" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isTraceable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/traceInfo/DebugInfo;)Z" />
+    <nodeInfo nodeId="8475766493858861670" fileName="TraceDown.java" startLine="64" startPosition="92" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5111910545577563826" fileName="TraceDown.java" startLine="33" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="unitNames#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5111910545577580327" fileName="TraceDown.java" startLine="55" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="unitNameWithPosition#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/String;" />
+    <scopeInfo nodeId="5111910545577563825" fileName="TraceDown.java" startLine="30" startPosition="22" endLine="30" endPosition="22" />
+    <scopeInfo nodeId="5111910545577563851" fileName="TraceDown.java" startLine="37" startPosition="28" endLine="38" endPosition="68" />
+    <scopeInfo nodeId="5111910545577580216" fileName="TraceDown.java" startLine="41" startPosition="49" endLine="42" endPosition="32" />
+    <scopeInfo nodeId="6270620316295462487" fileName="TraceDown.java" startLine="49" startPosition="53" endLine="50" endPosition="18" />
+    <scopeInfo nodeId="5111910545577580495" fileName="TraceDown.java" startLine="58" startPosition="28" endLine="59" endPosition="18" />
+    <scopeInfo nodeId="8475766493858863830" fileName="TraceDown.java" startLine="68" startPosition="54" endLine="69" endPosition="80" />
+    <scopeInfo nodeId="8475766493858863846" fileName="TraceDown.java" startLine="72" startPosition="27" endLine="73" endPosition="36" />
+    <scopeInfo nodeId="5288964220667812593" fileName="TraceDown.java" startLine="82" startPosition="27" endLine="83" endPosition="19" />
+    <scopeInfo nodeId="5288964220667812427" fileName="TraceDown.java" startLine="86" startPosition="55" endLine="87" endPosition="85" />
+    <scopeInfo nodeId="5288964220667812573" fileName="TraceDown.java" startLine="94" startPosition="23" endLine="95" endPosition="19" />
+    <scopeInfo nodeId="5288964220667812429" fileName="TraceDown.java" startLine="100" startPosition="71" endLine="101" endPosition="46" />
+    <scopeInfo nodeId="5111910545577563822" fileName="TraceDown.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="5111910545577580215" fileName="TraceDown.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="5111910545577580215" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8475766493858863829" fileName="TraceDown.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="8475766493858863829" fileName="TraceDown.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="8475766493858863829" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5288964220667812426" fileName="TraceDown.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
+    <scopeInfo nodeId="5288964220667812426" fileName="TraceDown.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="5288964220667812426" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5288964220667812429" fileName="TraceDown.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="5288964220667812429" fileName="TraceDown.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="5288964220667812429" varName="a" />
       <varInfo nodeId="5288964220667812429" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6270620316295462444" fileName="TraceDown.java" startLine="40" startPosition="48" endLine="45" endPosition="52">
+    <scopeInfo nodeId="6270620316295462444" fileName="TraceDown.java" startLine="47" startPosition="48" endLine="52" endPosition="52">
       <varInfo nodeId="6270620316295462491" varName="unitNames" />
     </scopeInfo>
-    <scopeInfo nodeId="5288964220667812412" fileName="TraceDown.java" startLine="85" startPosition="58" endLine="90" endPosition="35">
+    <scopeInfo nodeId="5288964220667812412" fileName="TraceDown.java" startLine="92" startPosition="58" endLine="97" endPosition="35">
       <varInfo nodeId="5288964220667812450" varName="info" />
     </scopeInfo>
-    <scopeInfo nodeId="6270620316295462441" fileName="TraceDown.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="6270620316295462441" fileName="TraceDown.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="6270620316295462446" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5288964220667812410" fileName="TraceDown.java" startLine="85" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="5288964220667812410" fileName="TraceDown.java" startLine="92" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="5288964220667812440" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8475766493858861751" fileName="TraceDown.java" startLine="59" startPosition="45" endLine="67" endPosition="9">
+    <scopeInfo nodeId="8475766493858861751" fileName="TraceDown.java" startLine="66" startPosition="45" endLine="74" endPosition="9">
       <varInfo nodeId="8475766493858863824" varName="unit" />
     </scopeInfo>
-    <scopeInfo nodeId="5288964220667811778" fileName="TraceDown.java" startLine="73" startPosition="89" endLine="82" endPosition="15">
+    <scopeInfo nodeId="5288964220667811778" fileName="TraceDown.java" startLine="80" startPosition="89" endLine="89" endPosition="15">
       <varInfo nodeId="5288964220667812562" varName="rootInfo" />
     </scopeInfo>
-    <scopeInfo nodeId="5111910545577563829" fileName="TraceDown.java" startLine="27" startPosition="56" endLine="37" endPosition="7">
+    <scopeInfo nodeId="5111910545577563829" fileName="TraceDown.java" startLine="34" startPosition="56" endLine="44" endPosition="7">
       <varInfo nodeId="5111910545577563839" varName="debugInfo" />
       <varInfo nodeId="5111910545577563833" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="8475766493858861673" fileName="TraceDown.java" startLine="58" startPosition="95" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="5288964220667811775" fileName="TraceDown.java" startLine="73" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="8475766493858861673" fileName="TraceDown.java" startLine="65" startPosition="95" endLine="75" endPosition="7" />
+    <scopeInfo nodeId="5288964220667811775" fileName="TraceDown.java" startLine="80" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="5288964220667811783" varName="info" />
       <varInfo nodeId="5288964220667811780" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8475766493858861670" fileName="TraceDown.java" startLine="57" startPosition="92" endLine="69" endPosition="5">
+    <scopeInfo nodeId="8475766493858861670" fileName="TraceDown.java" startLine="64" startPosition="92" endLine="76" endPosition="5">
       <varInfo nodeId="8475766493858861671" varName="position" />
     </scopeInfo>
-    <scopeInfo nodeId="5111910545577563826" fileName="TraceDown.java" startLine="26" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="5111910545577563826" fileName="TraceDown.java" startLine="33" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="5111910545577563830" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5111910545577580330" fileName="TraceDown.java" startLine="48" startPosition="153" endLine="70" endPosition="16">
+    <scopeInfo nodeId="5111910545577580330" fileName="TraceDown.java" startLine="55" startPosition="153" endLine="77" endPosition="16">
       <varInfo nodeId="5111910545577580483" varName="debugInfo" />
       <varInfo nodeId="8475766493858861657" varName="infoRoot" />
       <varInfo nodeId="5111910545577580476" varName="model" />
       <varInfo nodeId="5111910545577580597" varName="unitsForNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5111910545577580327" fileName="TraceDown.java" startLine="48" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="5111910545577580327" fileName="TraceDown.java" startLine="55" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="5111910545577580332" varName="node" />
       <varInfo nodeId="5111910545577580335" varName="positionMatcher" />
     </scopeInfo>
-    <unitInfo nodeId="5111910545577580215" fileName="TraceDown.java" startLine="33" startPosition="77" endLine="37" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceDown$1" />
-    <unitInfo nodeId="8475766493858863829" fileName="TraceDown.java" startLine="60" startPosition="82" endLine="64" endPosition="9" unitName="jetbrains.mps.generator.traceInfo.TraceDown$2" />
-    <unitInfo nodeId="5288964220667812426" fileName="TraceDown.java" startLine="78" startPosition="70" endLine="82" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceDown$3" />
-    <unitInfo nodeId="5111910545577563820" fileName="TraceDown.java" startLine="22" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceDown" />
+    <unitInfo nodeId="5111910545577580215" fileName="TraceDown.java" startLine="40" startPosition="77" endLine="44" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceDown$1" />
+    <unitInfo nodeId="8475766493858863829" fileName="TraceDown.java" startLine="67" startPosition="82" endLine="71" endPosition="9" unitName="jetbrains.mps.generator.traceInfo.TraceDown$2" />
+    <unitInfo nodeId="5288964220667812426" fileName="TraceDown.java" startLine="85" startPosition="70" endLine="89" endPosition="5" unitName="jetbrains.mps.generator.traceInfo.TraceDown$3" />
+    <unitInfo nodeId="5111910545577563820" fileName="TraceDown.java" startLine="23" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.generator.traceInfo.TraceDown" />
   </root>
   <root nodeRef="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)/7521671656020564904">
     <nodeInfo nodeId="7521671656020564913" fileName="TraceInfoCache.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TRACE_FILE_NAME" />

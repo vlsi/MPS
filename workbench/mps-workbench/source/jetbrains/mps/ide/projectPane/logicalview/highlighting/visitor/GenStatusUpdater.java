@@ -65,6 +65,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
         if (isTimeToRelax()) {
           return;
         }
+        System.out.println("GenStatusUpdater for " + modelNode.getNodeIdentifier());
 
         SModel md = modelNode.getModel();
         if (!(md instanceof EditableSModel)) {

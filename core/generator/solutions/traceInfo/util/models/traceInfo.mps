@@ -34,6 +34,7 @@
   <import index="lom1" modelUID="r:41bf31ae-8e87-4132-b404-f244ad8a3001(jetbrains.mps.generator.traceInfo)" version="-1" />
   <import index="wmh4" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.generationTypes(MPS.Core/jetbrains.mps.generator.generationTypes@java_stub)" version="-1" />
   <import index="zoxq" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.impl.dependencies(MPS.Core/jetbrains.mps.generator.impl.dependencies@java_stub)" version="-1" />
+  <import index="ierg" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textgen.trace(MPS.Core/jetbrains.mps.textgen.trace@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
@@ -3755,6 +3756,7 @@
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5111910545577563820" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="TraceDown" />
+    <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5111910545577563821" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5111910545577563822" nodeInfo="igu">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5111910545577563823" nodeInfo="in" />
@@ -4308,6 +4310,36 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5288964220667812441" nodeInfo="in" />
         <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="5288964220667812442" nodeInfo="nn">
           <link role="annotation" roleId="tpee.1188208074048" targetNodeId="as9o.~NotNull" resolveInfo="NotNull" />
+        </node>
+      </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="5618154074607713281" nodeInfo="nn">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="5618154074607801135" nodeInfo="nn">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="eunx.~ToRemove" resolveInfo="ToRemove" />
+      <node role="value" roleId="tpee.1188214630783" type="tpee.AnnotationInstanceValue" typeId="tpee.1188214545140" id="5618154074607801484" nodeInfo="ng">
+        <link role="key" roleId="tpee.1188214555875" targetNodeId="eunx.~ToRemove%dversion()" resolveInfo="version" />
+        <node role="value" roleId="tpee.1188214607812" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="5618154074607801696" nodeInfo="nn">
+          <property name="value" nameId="tpee.1113006610751" value="3.2" />
+        </node>
+      </node>
+    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="m373.ClassifierDocComment" typeId="m373.2068944020170241612" id="5618154074607730652" nodeInfo="ng">
+      <node role="body" roleId="m373.8465538089690331502" type="m373.CommentLine" typeId="m373.8465538089690331500" id="5618154074607730653" nodeInfo="ng">
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="5618154074607730654" nodeInfo="ng">
+          <property name="text" nameId="m373.8970989240999019144" value="@deprecated Use " />
+        </node>
+        <node role="part" roleId="m373.8970989240999019149" type="m373.InlineTagCommentLinePart" typeId="m373.8970989240999019145" id="5618154074607731296" nodeInfo="ng">
+          <node role="tag" roleId="m373.6962838954693749192" type="m373.LinkInlineDocTag" typeId="m373.2546654756694997551" id="5618154074607731302" nodeInfo="ng">
+            <node role="line" roleId="m373.3106559687488913694" type="m373.CommentLine" typeId="m373.8465538089690331500" id="5618154074607731304" nodeInfo="ng" />
+            <node role="reference" roleId="m373.2546654756694997556" type="m373.ClassifierDocReference" typeId="m373.2217234381367530212" id="5618154074607799941" nodeInfo="ng">
+              <link role="classifier" roleId="m373.2217234381367530213" targetNodeId="ierg.~TraceInfo" resolveInfo="TraceInfo" />
+            </node>
+          </node>
+        </node>
+        <node role="part" roleId="m373.8970989240999019149" type="m373.TextCommentLinePart" typeId="m373.8970989240999019143" id="5618154074607731295" nodeInfo="ng">
+          <property name="text" nameId="m373.8970989240999019144" value=" instead" />
         </node>
       </node>
     </node>
