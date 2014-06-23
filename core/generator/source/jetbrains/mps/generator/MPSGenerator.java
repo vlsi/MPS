@@ -17,14 +17,12 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.components.ComponentPlugin;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.impl.RootTemplateAnnotator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
