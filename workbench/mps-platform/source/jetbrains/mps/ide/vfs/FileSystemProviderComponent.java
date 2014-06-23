@@ -14,7 +14,7 @@ abstract public class FileSystemProviderComponent implements ApplicationComponen
   // component stuff
   @Override
   public void initComponent() {
-    boolean useIoFile = RuntimeFlags.isTestMode() && "true".equals(System.getProperty("mps.vfs.useIoFile"));
+    boolean useIoFile = RuntimeFlags.isTestMode() && RuntimeFlags.isUseIOFile();
     if (!useIoFile) {
       // setup filesystem provider
       FileSystem.getInstance().setFileSystemProvider(this);
