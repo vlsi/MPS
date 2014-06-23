@@ -48,9 +48,9 @@ public class MPSGenerator extends ComponentPlugin {
 
     init(new GeneratorsManager(classLoaderManager));
     init(new TraceInfoCache(repository));
-    init(new GenerationDependenciesCache(repository));
+    final ModelGenerationStatusManager mgsm = init(new ModelGenerationStatusManager());
+    init(new GenerationDependenciesCache(repository, mgsm));
     init(new GeneratorPathsComponent());
-    init(new ModelGenerationStatusManager());
     init(new RootTemplateAnnotator(GlobalSModelEventsManager.getInstance()));
     init(new GenerationSettingsProvider());
   }

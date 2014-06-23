@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,17 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.cleanup.CleanupListener;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -39,9 +37,10 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, May 14, 2010
  */
-public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDependencies> {
+public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDependencies> implements ModelGenerationStatusListener {
 
   private static GenerationDependenciesCache INSTANCE;
+  private final ModelGenerationStatusManager myGenStatusManager;
 
   public static GenerationDependenciesCache getInstance() {
     return INSTANCE;
@@ -49,8 +48,9 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
 
   private List<CachePathRedirect> myCachePathRedirects = Collections.synchronizedList(new ArrayList<CachePathRedirect>());
 
-  public GenerationDependenciesCache(SRepository repository) {
+  public GenerationDependenciesCache(SRepository repository, ModelGenerationStatusManager genStatusManager) {
     super(repository);
+    myGenStatusManager = genStatusManager;
   }
 
   @Override
@@ -61,10 +61,12 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
 
     INSTANCE = this;
     super.init();
+    myGenStatusManager.addGenerationStatusListener(this);
   }
 
   @Override
   public void dispose() {
+    myGenStatusManager.removeGenerationStatusListener(this);
     super.dispose();
     INSTANCE = null;
   }
@@ -89,12 +91,12 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
   }
 
   @Override
-  public SModel invalidateCacheForFile(IFile file) {
-    SModel md = super.invalidateCacheForFile(file);
-    if (md != null && md.getModule() != null) {
-      ModelGenerationStatusManager.getInstance().invalidateData(Collections.singleton(md));
+  public void invalidateCacheForFile(IFile file) {
+    SModelReference mr = findCachedModelForFile(file);
+    super.invalidateCacheForFile(file);
+    if (mr != null) {
+      myGenStatusManager.invalidate(Collections.singleton(mr));
     }
-    return md;
   }
 
   public CacheGenerator getGenerator() {
@@ -119,6 +121,11 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     }
     IFile redir = findCachesPathRedirect(cachesPath);
     return redir != null ? redir : cachesPath;
+  }
+
+  @Override
+  public void generatedFilesChanged(SModel sm) {
+    clean(sm);
   }
 
   public static interface CachePathRedirect {

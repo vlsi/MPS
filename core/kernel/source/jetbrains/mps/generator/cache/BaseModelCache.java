@@ -101,19 +101,22 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
     return cache;
   }
 
-  public SModel invalidateCacheForFile(IFile cacheFile) {
-    SModelReference mr = null;
-    for (Entry<SModelReference, Pair<IFile, T>> entry : myCache.entrySet()) {
-      if (cacheFile.equals(entry.getValue().o1)) {
-        mr = entry.getKey();
-        break;
-      }
-    }
+  public void invalidateCacheForFile(IFile cacheFile) {
+    SModelReference mr = findCachedModelForFile(cacheFile);
     if (mr == null) {
-      return null;
+      return;
     }
     myCache.remove(mr);
-    return mr.resolve(myRepository);
+  }
+
+  @Nullable
+  protected SModelReference findCachedModelForFile(IFile cacheFile) {
+    for (Entry<SModelReference, Pair<IFile, T>> entry : myCache.entrySet()) {
+      if (cacheFile.equals(entry.getValue().o1)) {
+        return entry.getKey();
+      }
+    }
+    return null;
   }
 
   @Nullable

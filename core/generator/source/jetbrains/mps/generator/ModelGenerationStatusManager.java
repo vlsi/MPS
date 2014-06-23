@@ -24,8 +24,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -107,6 +109,29 @@ public class ModelGenerationStatusManager implements CoreComponent {
       GenerationDependenciesCache.getInstance().clean(model);
       for (ModelGenerationStatusListener l : copy) {
         l.generatedFilesChanged(model);
+      }
+    }
+  }
+
+  /*
+   * PROVISIONAL: when a file get changed, we have to update all model instances in all repositories (i.e. if the same model is loaded
+   * into few). Hence, we can't rely on SModel. Either we shall make MGSM per-project (and use SModel then), or keep it application-wide
+   * and then track all repositories and reload given model in every repository. However, the only ModelGenerationStatusListener we've got so far
+   * is project-specific (project pane), and it might be reasonable to pass SModelReference right up to listener so it can decide what to do
+   */
+  public void invalidate(Collection<SModelReference> models) {
+    ModelGenerationStatusListener[] copy;
+    synchronized (myListeners) {
+      copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
+    }
+    for (SModelReference mr : models) {
+      // XXX temp solution until I decide whether to iterate over all SRepositories or pass SModelReference to the listener
+      SModel m = SModelRepository.getInstance().getModelDescriptor(mr);
+      if (m == null) {
+        continue;
+      }
+      for (ModelGenerationStatusListener l : copy) {
+        l.generatedFilesChanged(m);
       }
     }
   }
