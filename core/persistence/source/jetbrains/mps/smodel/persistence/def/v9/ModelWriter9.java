@@ -19,27 +19,37 @@ import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.adapter.SConceptAdapter;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectConsumer;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class ModelWriter9 implements IModelWriter {
   public static final int VERSION = 9;
@@ -52,7 +62,7 @@ public class ModelWriter9 implements IModelWriter {
 
     // root element
     Element rootElement = new Element(ModelPersistence.MODEL);
-    rootElement.setAttribute(ModelPersistence9.ID, sourceModel.getReference().toString());
+    rootElement.setAttribute(ModelPersistence9.REF, sourceModel.getReference().toString());
 
     //all model props common to one-file and per-root persistence
     saveModelProperties(sourceModel, rootElement);
@@ -94,9 +104,46 @@ public class ModelWriter9 implements IModelWriter {
 
   private void saveDebugInfo(Element debugInfoElement, SModel sourceModel) {
     //save used languages info
+    for (SLanguageId id: sourceModel.usedLanguages()){
+            Language lang = new SLanguageAdapter(id).getSourceModule();
+      String name = lang!=null?lang.getModuleName(): MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(id);
+
+      Element langElement = new Element(ModelPersistence9.DEBUG_INFO_LANG);
+      langElement.setAttribute(ModelPersistence9.ID,id.serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, name);
+      debugInfoElement.addContent(langElement);
+    }
+
+    //  devkits??
 
     //save used models info
+    for (ImportElement ie: sourceModel.importedModels()){
+      SModelReference ref = ie.getModelReference();
+      org.jetbrains.mps.openapi.model.SModel model = ref.resolve(MPSModuleRepository.getInstance());
+      String name = model!=null?model.getModelName(): MPSModuleRepository.getInstance().getDebugRegistry().getModelName(ref.getModelId());
+
+      Element langElement = new Element(ModelPersistence9.DEBUG_INFO_MODEL);
+      langElement.setAttribute(ModelPersistence9.REF, ref.toString());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, name);
+      debugInfoElement.addContent(langElement);
+    }
+
     //save concepts info
+    Map<SConceptId, String> ids  = new HashMap<SConceptId, String>();
+    for (SNode root:sourceModel.getRootNodes()){
+      for (SNode n: SNodeUtil.getDescendants(root)){
+        SConceptId id = n.getConcept().getId();
+        SNode concept = new SConceptAdapter(id).getConceptDeclarationNode();
+        String name = concept!=null?concept.getProperty("name"):MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(id);
+        ids.put(id, name);
+      }
+    }
+    for (Entry<SConceptId,String> e:ids.entrySet()){
+      Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CONCEPT);
+      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
+      debugInfoElement.addContent(langElement);
+    }
   }
 
   private void saveAdditionalProps(SModel sourceModel, Element rootElement) {

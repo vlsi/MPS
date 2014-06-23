@@ -21,6 +21,7 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -35,9 +36,11 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -606,6 +609,25 @@ public class SModel implements SModelData {
 
   //language
 
+  public Iterable<SLanguageId> allUsedLanguages() {
+    Set<SLanguageId> result = ((Set<SLanguageId>) usedLanguages());
+    for (SModuleReference dk : myDevKits) {
+      DevKit devKit = ((DevKit) dk.resolve(MPSModuleRepository.getInstance()));
+      if (devKit == null) continue;
+      result.addAll(IterableUtil.asCollection(devKit.getAllExportedLanguageIds()));
+    }
+    return result;
+  }
+
+  public Iterable<SLanguageId> usedLanguages() {
+    Set<SLanguageId> result = new HashSet<SLanguageId>();
+    for (SModuleReference ref:myLanguages){
+      result.add(LangUtil.getLanguageId(ref.getModuleId()));
+    }
+    return result;
+  }
+
+  @Deprecated
   public List<SModuleReference> importedLanguages() {
     return Collections.unmodifiableList(myLanguages);
   }

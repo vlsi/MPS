@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
@@ -36,6 +37,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConceptRepository extends SConceptRepository implements CoreComponent {
 
@@ -146,6 +148,12 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     @Override
     public boolean isSubConceptOf(SAbstractConcept concept) {
       return target.isSubConceptOf(concept);
+    }
+
+    @Nullable
+    @Override
+    public SNode getConceptDeclarationNode() {
+      return target.getConceptDeclarationNode();
     }
 
     @Override

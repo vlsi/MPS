@@ -32,19 +32,21 @@ import org.jetbrains.mps.openapi.util.Consumer;
 import java.util.List;
 
 public class ModelPersistence9 implements IModelPersistence {
-  //model properties
+  //common
+  public static final String REF = "ref";
+  public static final String ID = "id";
+  // model properties
   public static final String DEBUG_INFO = "debugInfo";
   public static final String LANGUAGES = "languages";
   public static final String USED_LANGUAGE = "use";
   public static final String ENGAGED_ON_GENERATION_LANGUAGE = "generationPart";
   public static final String IMPORTS = "importedModels";
   public static final String CONTENTS = "contents";
-  public static final String ID = "id";
   public static final String IMPORT_ELEMENT = "import";
   public static final String MODEL_IMPORT_INDEX = "index";
   public static final String IMPLICIT = "implicit";
   public static final String DEVKIT = "devkit";
-  //nodes
+  // nodes
   public static final String NODE = "node";
   public static final String CONCEPT_ID = "conceptId";
   public static final String PROPERTY = "property";
@@ -54,8 +56,13 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String TARGET_NODE_ID = "targetNodeId";
   public static final String NODE_INFO = "info";
-  //per-root
+  // per-root
   public static final String FILE_CONTENT = "content";
+  // debug info
+  public static final String DEBUG_INFO_LANG = "lang";
+  public static final String DEBUG_INFO_NAME = "name";
+  public static final String DEBUG_INFO_MODEL = "model";
+  public static final String DEBUG_INFO_CONCEPT = "concept";
 
 
   @Override
