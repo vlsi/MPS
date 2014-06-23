@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+
 /**
  * A descriptor of a concept. Concepts define categories for AST nodes.
  * The descriptor is read-only, so it is not possible to change the concept through its descriptor.
@@ -67,6 +70,9 @@ public interface SAbstractConcept {
    * Either implementing or extending the supplied concept
    */
   boolean isSubConceptOf(SAbstractConcept concept);
+
+  @Nullable
+  SNode getConceptDeclarationNode();
 
   //----------deprecated------------
 

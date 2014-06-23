@@ -17,9 +17,9 @@ package org.jetbrains.mps.openapi.language;
 
 public final class SConceptId {
   private final SLanguageId myLanguageId;
-  private final int myConceptId;
+  private final long myConceptId;
 
-  public SConceptId(SLanguageId languageId, int conceptId) {
+  public SConceptId(SLanguageId languageId, long conceptId) {
     myConceptId = conceptId;
     myLanguageId = languageId;
   }
@@ -28,7 +28,7 @@ public final class SConceptId {
     return myLanguageId;
   }
 
-  public int getConceptId() {
+  public long getConceptId() {
     return myConceptId;
   }
 
@@ -47,9 +47,9 @@ public final class SConceptId {
 
   @Override
   public int hashCode() {
-    int result = myLanguageId != null ? myLanguageId.hashCode() : 0;
+    long result = myLanguageId != null ? myLanguageId.hashCode() : 0;
     result = 31 * result + myConceptId;
-    return result;
+    return (int) result;
   }
 
   public String serialize() {

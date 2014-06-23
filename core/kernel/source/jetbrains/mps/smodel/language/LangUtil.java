@@ -15,20 +15,31 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.ModuleId.Regular;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 //for migration purposes in 3.2
 public abstract class LangUtil {
   public static SLanguageId getLanguageId(Language l) {
     SModuleId moduleId = l.getModuleReference().getModuleId();
+    return getLanguageId(moduleId);
+  }
+
+  public static SLanguageId getLanguageId(SModuleId moduleId) {
     assert moduleId instanceof Regular;
     return new SLanguageId(((Regular) moduleId).getUUID());
+  }
+
+  public static SModuleReference getModuleReference(SLanguageId id){
+    return new ModuleReference(null, ModuleId.regular(id.getId()));
   }
 
   //node must be a concept
