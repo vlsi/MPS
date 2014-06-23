@@ -385,161 +385,152 @@
     <unitInfo nodeId="315679020132025010" fileName="FqName.java" startLine="8" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.FqName" />
   </root>
   <root nodeRef="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)/3251655328352589723">
-    <nodeInfo nodeId="3251655328352878911" fileName="StaleFilesCollector.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rootDir" />
-    <nodeInfo nodeId="6144857275938713766" fileName="StaleFilesCollector.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="generatedChildren" />
-    <nodeInfo nodeId="3251655328352878940" fileName="StaleFilesCollector.java" startLine="30" startPosition="45" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328352893898" fileName="StaleFilesCollector.java" startLine="36" startPosition="37" endLine="37" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3251655328352893922" fileName="StaleFilesCollector.java" startLine="40" startPosition="38" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="739009749240678900" fileName="StaleFilesCollector.java" startLine="43" startPosition="59" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3251655328352893932" fileName="StaleFilesCollector.java" startLine="44" startPosition="0" endLine="45" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352893939" fileName="StaleFilesCollector.java" startLine="45" startPosition="78" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3251655328352893940" fileName="StaleFilesCollector.java" startLine="46" startPosition="0" endLine="47" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352893953" fileName="StaleFilesCollector.java" startLine="48" startPosition="60" endLine="49" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352893959" fileName="StaleFilesCollector.java" startLine="49" startPosition="73" endLine="50" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352893966" fileName="StaleFilesCollector.java" startLine="50" startPosition="61" endLine="51" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352893972" fileName="StaleFilesCollector.java" startLine="51" startPosition="61" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3251655328352894084" fileName="StaleFilesCollector.java" startLine="54" startPosition="57" endLine="55" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3251655328352894096" fileName="StaleFilesCollector.java" startLine="58" startPosition="58" endLine="59" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3251655328352893977" fileName="StaleFilesCollector.java" startLine="62" startPosition="45" endLine="63" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352893986" fileName="StaleFilesCollector.java" startLine="63" startPosition="96" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328352893999" fileName="StaleFilesCollector.java" startLine="65" startPosition="105" endLine="66" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328352894008" fileName="StaleFilesCollector.java" startLine="67" startPosition="45" endLine="68" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3251655328352894030" fileName="StaleFilesCollector.java" startLine="70" startPosition="49" endLine="71" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328352894049" fileName="StaleFilesCollector.java" startLine="73" startPosition="16" endLine="74" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352894059" fileName="StaleFilesCollector.java" startLine="75" startPosition="39" endLine="76" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328352894103" fileName="StaleFilesCollector.java" startLine="80" startPosition="5" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3251655328352894104" fileName="StaleFilesCollector.java" startLine="81" startPosition="0" endLine="82" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3251655328354383748" fileName="StaleFilesCollector.java" startLine="90" startPosition="56" endLine="91" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3251655328354389337" fileName="StaleFilesCollector.java" startLine="91" startPosition="115" endLine="92" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3251655328354395595" fileName="StaleFilesCollector.java" startLine="92" startPosition="106" endLine="93" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3251655328354399997" fileName="StaleFilesCollector.java" startLine="93" startPosition="107" endLine="94" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3251655328354403740" fileName="StaleFilesCollector.java" startLine="94" startPosition="119" endLine="95" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3251655328354422471" fileName="StaleFilesCollector.java" startLine="95" startPosition="105" endLine="96" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3251655328354433034" fileName="StaleFilesCollector.java" startLine="96" startPosition="107" endLine="97" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3251655328354438345" fileName="StaleFilesCollector.java" startLine="97" startPosition="106" endLine="98" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3251655328354445147" fileName="StaleFilesCollector.java" startLine="98" startPosition="107" endLine="99" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3251655328352949369" fileName="StaleFilesCollector.java" startLine="99" startPosition="45" endLine="100" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352949380" fileName="StaleFilesCollector.java" startLine="101" startPosition="58" endLine="102" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328353812539" fileName="StaleFilesCollector.java" startLine="106" startPosition="45" endLine="107" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328353817250" fileName="StaleFilesCollector.java" startLine="110" startPosition="48" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328353822806" fileName="StaleFilesCollector.java" startLine="111" startPosition="58" endLine="112" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3251655328353825683" fileName="StaleFilesCollector.java" startLine="116" startPosition="45" endLine="117" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328353832000" fileName="StaleFilesCollector.java" startLine="117" startPosition="58" endLine="118" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3251655328353881660" fileName="StaleFilesCollector.java" startLine="121" startPosition="55" endLine="122" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328352949401" fileName="StaleFilesCollector.java" startLine="126" startPosition="50" endLine="127" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352949413" fileName="StaleFilesCollector.java" startLine="128" startPosition="63" endLine="129" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328352949420" fileName="StaleFilesCollector.java" startLine="129" startPosition="80" endLine="130" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3251655328352949429" fileName="StaleFilesCollector.java" startLine="131" startPosition="5" endLine="132" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3251655328352866388" fileName="StaleFilesCollector.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StaleFilesCollector#(Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="3251655328352893896" fileName="StaleFilesCollector.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3251655328352893920" fileName="StaleFilesCollector.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3251655328352894082" fileName="StaleFilesCollector.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <nodeInfo nodeId="3251655328352894094" fileName="StaleFilesCollector.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3251655328352894006" fileName="StaleFilesCollector.java" startLine="66" startPosition="78" endLine="69" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3251655328352894057" fileName="StaleFilesCollector.java" startLine="74" startPosition="72" endLine="77" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3251655328352949378" fileName="StaleFilesCollector.java" startLine="100" startPosition="109" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3251655328353875444" fileName="StaleFilesCollector.java" startLine="120" startPosition="7" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3251655328352949411" fileName="StaleFilesCollector.java" startLine="127" startPosition="70" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3251655328352894047" fileName="StaleFilesCollector.java" startLine="73" startPosition="14" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3251655328353807911" fileName="StaleFilesCollector.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptWritten#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <nodeInfo nodeId="3251655328353807925" fileName="StaleFilesCollector.java" startLine="115" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptKept#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <nodeInfo nodeId="3251655328352893997" fileName="StaleFilesCollector.java" startLine="64" startPosition="47" endLine="72" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3251655328352949396" fileName="StaleFilesCollector.java" startLine="126" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="739009749240709688" fileName="StaleFilesCollector.java" startLine="34" startPosition="73" endLine="43" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3251655328353801882" fileName="StaleFilesCollector.java" startLine="107" startPosition="77" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3251655328352893975" fileName="StaleFilesCollector.java" startLine="61" startPosition="17" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3251655328352949365" fileName="StaleFilesCollector.java" startLine="87" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="recordGeneratedChildren#(Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="3251655328353894818" fileName="StaleFilesCollector.java" startLine="106" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateDelta#(Ljetbrains/mps/internal/make/runtime/util/FilesDelta;)V" />
-    <nodeInfo nodeId="3251655328352893973" fileName="StaleFilesCollector.java" startLine="52" startPosition="0" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3251655328352893948" fileName="StaleFilesCollector.java" startLine="47" startPosition="94" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3251655328352893871" fileName="StaleFilesCollector.java" startLine="34" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectFilesToDelete#(Ljava/lang/Iterable;)Ljava/util/List;" />
-    <scopeInfo nodeId="3251655328352866392" fileName="StaleFilesCollector.java" startLine="30" startPosition="45" endLine="31" endPosition="27" />
-    <scopeInfo nodeId="3251655328352893897" fileName="StaleFilesCollector.java" startLine="36" startPosition="37" endLine="37" endPosition="104" />
-    <scopeInfo nodeId="3251655328352893921" fileName="StaleFilesCollector.java" startLine="40" startPosition="38" endLine="41" endPosition="17" />
-    <scopeInfo nodeId="3251655328352894083" fileName="StaleFilesCollector.java" startLine="54" startPosition="57" endLine="55" endPosition="82" />
-    <scopeInfo nodeId="3251655328352894095" fileName="StaleFilesCollector.java" startLine="58" startPosition="58" endLine="59" endPosition="24" />
-    <scopeInfo nodeId="3251655328352894007" fileName="StaleFilesCollector.java" startLine="67" startPosition="45" endLine="68" endPosition="20" />
-    <scopeInfo nodeId="3251655328352894029" fileName="StaleFilesCollector.java" startLine="70" startPosition="49" endLine="71" endPosition="79" />
-    <scopeInfo nodeId="3251655328352894058" fileName="StaleFilesCollector.java" startLine="75" startPosition="39" endLine="76" endPosition="78" />
-    <scopeInfo nodeId="3251655328352949379" fileName="StaleFilesCollector.java" startLine="101" startPosition="58" endLine="102" endPosition="128" />
-    <scopeInfo nodeId="3251655328353875445" fileName="StaleFilesCollector.java" startLine="121" startPosition="55" endLine="122" endPosition="21" />
-    <scopeInfo nodeId="3251655328353807920" fileName="StaleFilesCollector.java" startLine="110" startPosition="48" endLine="112" endPosition="20" />
-    <scopeInfo nodeId="3251655328353807934" fileName="StaleFilesCollector.java" startLine="116" startPosition="45" endLine="118" endPosition="20" />
-    <scopeInfo nodeId="3251655328352949412" fileName="StaleFilesCollector.java" startLine="128" startPosition="63" endLine="130" endPosition="94">
+    <nodeInfo nodeId="3251655328352878911" fileName="StaleFilesCollector.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rootDir" />
+    <nodeInfo nodeId="6144857275938713766" fileName="StaleFilesCollector.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="generatedChildren" />
+    <nodeInfo nodeId="3251655328352878940" fileName="StaleFilesCollector.java" startLine="31" startPosition="45" endLine="32" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328352893898" fileName="StaleFilesCollector.java" startLine="37" startPosition="37" endLine="38" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3251655328352893922" fileName="StaleFilesCollector.java" startLine="41" startPosition="38" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="739009749240678900" fileName="StaleFilesCollector.java" startLine="44" startPosition="59" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3251655328352893932" fileName="StaleFilesCollector.java" startLine="45" startPosition="0" endLine="46" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352893939" fileName="StaleFilesCollector.java" startLine="46" startPosition="78" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3251655328352893940" fileName="StaleFilesCollector.java" startLine="47" startPosition="0" endLine="48" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352893953" fileName="StaleFilesCollector.java" startLine="49" startPosition="60" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352893959" fileName="StaleFilesCollector.java" startLine="50" startPosition="73" endLine="51" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352893966" fileName="StaleFilesCollector.java" startLine="51" startPosition="61" endLine="52" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352893972" fileName="StaleFilesCollector.java" startLine="52" startPosition="61" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3251655328352894084" fileName="StaleFilesCollector.java" startLine="55" startPosition="57" endLine="56" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3251655328352894096" fileName="StaleFilesCollector.java" startLine="59" startPosition="58" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3251655328352893977" fileName="StaleFilesCollector.java" startLine="63" startPosition="45" endLine="64" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352893986" fileName="StaleFilesCollector.java" startLine="64" startPosition="96" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328352893999" fileName="StaleFilesCollector.java" startLine="66" startPosition="105" endLine="67" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328352894008" fileName="StaleFilesCollector.java" startLine="68" startPosition="45" endLine="69" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3251655328352894030" fileName="StaleFilesCollector.java" startLine="71" startPosition="49" endLine="72" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328352894049" fileName="StaleFilesCollector.java" startLine="74" startPosition="16" endLine="75" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352894059" fileName="StaleFilesCollector.java" startLine="76" startPosition="39" endLine="77" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328352894103" fileName="StaleFilesCollector.java" startLine="81" startPosition="5" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3251655328352894104" fileName="StaleFilesCollector.java" startLine="82" startPosition="0" endLine="83" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3251655328352949369" fileName="StaleFilesCollector.java" startLine="96" startPosition="53" endLine="97" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352949380" fileName="StaleFilesCollector.java" startLine="98" startPosition="58" endLine="99" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328353812539" fileName="StaleFilesCollector.java" startLine="103" startPosition="45" endLine="104" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328353817250" fileName="StaleFilesCollector.java" startLine="107" startPosition="48" endLine="108" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328353822806" fileName="StaleFilesCollector.java" startLine="108" startPosition="58" endLine="109" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3251655328353825683" fileName="StaleFilesCollector.java" startLine="113" startPosition="45" endLine="114" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328353832000" fileName="StaleFilesCollector.java" startLine="114" startPosition="58" endLine="115" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3251655328353881660" fileName="StaleFilesCollector.java" startLine="118" startPosition="55" endLine="119" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328352949401" fileName="StaleFilesCollector.java" startLine="123" startPosition="50" endLine="124" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352949413" fileName="StaleFilesCollector.java" startLine="125" startPosition="63" endLine="126" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328352949420" fileName="StaleFilesCollector.java" startLine="126" startPosition="80" endLine="127" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3251655328352949429" fileName="StaleFilesCollector.java" startLine="128" startPosition="5" endLine="129" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3251655328352866388" fileName="StaleFilesCollector.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StaleFilesCollector#(Ljetbrains/mps/vfs/IFile;)V" />
+    <nodeInfo nodeId="3251655328352893896" fileName="StaleFilesCollector.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3251655328352893920" fileName="StaleFilesCollector.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3251655328352894082" fileName="StaleFilesCollector.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="3251655328352894094" fileName="StaleFilesCollector.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3251655328352894006" fileName="StaleFilesCollector.java" startLine="67" startPosition="78" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3251655328352894057" fileName="StaleFilesCollector.java" startLine="75" startPosition="72" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3251655328352949378" fileName="StaleFilesCollector.java" startLine="97" startPosition="105" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3251655328353875444" fileName="StaleFilesCollector.java" startLine="117" startPosition="7" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3251655328352949411" fileName="StaleFilesCollector.java" startLine="124" startPosition="70" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3251655328352894047" fileName="StaleFilesCollector.java" startLine="74" startPosition="14" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3251655328353807911" fileName="StaleFilesCollector.java" startLine="106" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptWritten#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="3251655328353807925" fileName="StaleFilesCollector.java" startLine="112" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptKept#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="3251655328352893997" fileName="StaleFilesCollector.java" startLine="65" startPosition="47" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3251655328352949396" fileName="StaleFilesCollector.java" startLine="123" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildren#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="739009749240709688" fileName="StaleFilesCollector.java" startLine="35" startPosition="73" endLine="44" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3251655328353801882" fileName="StaleFilesCollector.java" startLine="104" startPosition="77" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3251655328352949365" fileName="StaleFilesCollector.java" startLine="88" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="recordGeneratedChildren#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="3251655328352893975" fileName="StaleFilesCollector.java" startLine="62" startPosition="17" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3251655328353894818" fileName="StaleFilesCollector.java" startLine="103" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateDelta#(Ljetbrains/mps/internal/make/runtime/util/FilesDelta;)V" />
+    <nodeInfo nodeId="3251655328352893973" fileName="StaleFilesCollector.java" startLine="53" startPosition="0" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3251655328352893948" fileName="StaleFilesCollector.java" startLine="48" startPosition="94" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3251655328352893871" fileName="StaleFilesCollector.java" startLine="35" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectFilesToDelete#(Ljava/lang/Iterable;)Ljava/util/List;" />
+    <scopeInfo nodeId="3251655328352866392" fileName="StaleFilesCollector.java" startLine="31" startPosition="45" endLine="32" endPosition="27" />
+    <scopeInfo nodeId="3251655328352893897" fileName="StaleFilesCollector.java" startLine="37" startPosition="37" endLine="38" endPosition="104" />
+    <scopeInfo nodeId="3251655328352893921" fileName="StaleFilesCollector.java" startLine="41" startPosition="38" endLine="42" endPosition="17" />
+    <scopeInfo nodeId="3251655328352894083" fileName="StaleFilesCollector.java" startLine="55" startPosition="57" endLine="56" endPosition="82" />
+    <scopeInfo nodeId="3251655328352894095" fileName="StaleFilesCollector.java" startLine="59" startPosition="58" endLine="60" endPosition="24" />
+    <scopeInfo nodeId="3251655328352894007" fileName="StaleFilesCollector.java" startLine="68" startPosition="45" endLine="69" endPosition="20" />
+    <scopeInfo nodeId="3251655328352894029" fileName="StaleFilesCollector.java" startLine="71" startPosition="49" endLine="72" endPosition="79" />
+    <scopeInfo nodeId="3251655328352894058" fileName="StaleFilesCollector.java" startLine="76" startPosition="39" endLine="77" endPosition="78" />
+    <scopeInfo nodeId="3251655328352949379" fileName="StaleFilesCollector.java" startLine="98" startPosition="58" endLine="99" endPosition="128" />
+    <scopeInfo nodeId="3251655328353875445" fileName="StaleFilesCollector.java" startLine="118" startPosition="55" endLine="119" endPosition="21" />
+    <scopeInfo nodeId="3251655328353807920" fileName="StaleFilesCollector.java" startLine="107" startPosition="48" endLine="109" endPosition="20" />
+    <scopeInfo nodeId="3251655328353807934" fileName="StaleFilesCollector.java" startLine="113" startPosition="45" endLine="115" endPosition="20" />
+    <scopeInfo nodeId="3251655328352949412" fileName="StaleFilesCollector.java" startLine="125" startPosition="63" endLine="127" endPosition="94">
       <varInfo nodeId="3251655328352949414" varName="genChildren" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352866388" fileName="StaleFilesCollector.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="3251655328352866388" fileName="StaleFilesCollector.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="3251655328352866400" varName="rootDir" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352893896" fileName="StaleFilesCollector.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="3251655328352893896" fileName="StaleFilesCollector.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="3251655328352893896" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352893920" fileName="StaleFilesCollector.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="3251655328352893920" fileName="StaleFilesCollector.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="3251655328352893920" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352894082" fileName="StaleFilesCollector.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="3251655328352894082" fileName="StaleFilesCollector.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="3251655328352894082" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352894094" fileName="StaleFilesCollector.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="3251655328352894094" fileName="StaleFilesCollector.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="3251655328352894094" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328353875444" fileName="StaleFilesCollector.java" startLine="120" startPosition="7" endLine="123" endPosition="5">
+    <scopeInfo nodeId="3251655328353875444" fileName="StaleFilesCollector.java" startLine="117" startPosition="7" endLine="120" endPosition="5">
       <varInfo nodeId="3251655328353875448" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352893998" fileName="StaleFilesCollector.java" startLine="65" startPosition="105" endLine="69" endPosition="13" />
-    <scopeInfo nodeId="3251655328352894048" fileName="StaleFilesCollector.java" startLine="73" startPosition="16" endLine="77" endPosition="11">
+    <scopeInfo nodeId="3251655328352893998" fileName="StaleFilesCollector.java" startLine="66" startPosition="105" endLine="70" endPosition="13" />
+    <scopeInfo nodeId="3251655328352894048" fileName="StaleFilesCollector.java" startLine="74" startPosition="16" endLine="78" endPosition="11">
       <varInfo nodeId="3251655328352894050" varName="fidx" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328353807911" fileName="StaleFilesCollector.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="3251655328353807917" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="3251655328353807925" fileName="StaleFilesCollector.java" startLine="115" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="3251655328353807926" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="3251655328352949400" fileName="StaleFilesCollector.java" startLine="126" startPosition="50" endLine="132" endPosition="23">
-      <varInfo nodeId="3251655328352949402" varName="realChilren" />
-    </scopeInfo>
-    <scopeInfo nodeId="3251655328352949396" fileName="StaleFilesCollector.java" startLine="126" startPosition="0" endLine="134" endPosition="0">
-      <varInfo nodeId="3251655328352949431" varName="dir" />
-    </scopeInfo>
-    <scopeInfo nodeId="3251655328352893976" fileName="StaleFilesCollector.java" startLine="62" startPosition="45" endLine="72" endPosition="11">
-      <varInfo nodeId="3251655328352893978" varName="fidx" />
-    </scopeInfo>
-    <scopeInfo nodeId="3251655328352949368" fileName="StaleFilesCollector.java" startLine="90" startPosition="56" endLine="103" endPosition="5">
+    <scopeInfo nodeId="3251655328352949368" fileName="StaleFilesCollector.java" startLine="96" startPosition="53" endLine="100" endPosition="5">
       <varInfo nodeId="3251655328352949370" varName="genChildren" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352893974" fileName="StaleFilesCollector.java" startLine="61" startPosition="17" endLine="78" endPosition="9" />
-    <scopeInfo nodeId="3251655328353894822" fileName="StaleFilesCollector.java" startLine="106" startPosition="45" endLine="123" endPosition="5">
+    <scopeInfo nodeId="3251655328353807911" fileName="StaleFilesCollector.java" startLine="106" startPosition="0" endLine="111" endPosition="0">
+      <varInfo nodeId="3251655328353807917" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="3251655328353807925" fileName="StaleFilesCollector.java" startLine="112" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="3251655328353807926" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="3251655328352949400" fileName="StaleFilesCollector.java" startLine="123" startPosition="50" endLine="129" endPosition="23">
+      <varInfo nodeId="3251655328352949402" varName="realChilren" />
+    </scopeInfo>
+    <scopeInfo nodeId="3251655328352949396" fileName="StaleFilesCollector.java" startLine="123" startPosition="0" endLine="131" endPosition="0">
+      <varInfo nodeId="3251655328352949431" varName="dir" />
+    </scopeInfo>
+    <scopeInfo nodeId="3251655328352893976" fileName="StaleFilesCollector.java" startLine="63" startPosition="45" endLine="73" endPosition="11">
+      <varInfo nodeId="3251655328352893978" varName="fidx" />
+    </scopeInfo>
+    <scopeInfo nodeId="3251655328352949365" fileName="StaleFilesCollector.java" startLine="88" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="8189487761991961872" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="3251655328352893974" fileName="StaleFilesCollector.java" startLine="62" startPosition="17" endLine="79" endPosition="9" />
+    <scopeInfo nodeId="3251655328353894822" fileName="StaleFilesCollector.java" startLine="103" startPosition="45" endLine="120" endPosition="5">
       <varInfo nodeId="3251655328353812542" varName="filesToKeep" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352949365" fileName="StaleFilesCollector.java" startLine="87" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="3251655328352949394" varName="cachesDir" />
-    </scopeInfo>
-    <scopeInfo nodeId="3251655328353894818" fileName="StaleFilesCollector.java" startLine="106" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="3251655328353894818" fileName="StaleFilesCollector.java" startLine="103" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="3251655328353993031" varName="delta" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352893973" fileName="StaleFilesCollector.java" startLine="52" startPosition="0" endLine="79" endPosition="7">
+    <scopeInfo nodeId="3251655328352893973" fileName="StaleFilesCollector.java" startLine="53" startPosition="0" endLine="80" endPosition="7">
       <varInfo nodeId="3251655328352894073" varName="fileAndPath" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352893952" fileName="StaleFilesCollector.java" startLine="48" startPosition="60" endLine="79" endPosition="7">
+    <scopeInfo nodeId="3251655328352893952" fileName="StaleFilesCollector.java" startLine="49" startPosition="60" endLine="80" endPosition="7">
       <varInfo nodeId="3251655328352893954" varName="dir" />
       <varInfo nodeId="3251655328352893967" varName="diridx" />
       <varInfo nodeId="3251655328352893960" varName="dirpath" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352893875" fileName="StaleFilesCollector.java" startLine="34" startPosition="73" endLine="82" endPosition="25">
+    <scopeInfo nodeId="3251655328352893875" fileName="StaleFilesCollector.java" startLine="35" startPosition="73" endLine="83" endPosition="25">
       <varInfo nodeId="3251655328352893941" varName="dirQueue" />
       <varInfo nodeId="3251655328352893933" varName="filesToDelete" />
       <varInfo nodeId="739009749240709691" varName="pathsToKeep" />
     </scopeInfo>
-    <scopeInfo nodeId="3251655328352893871" fileName="StaleFilesCollector.java" startLine="34" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="3251655328352893871" fileName="StaleFilesCollector.java" startLine="35" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="3251655328353159307" varName="filesToKeep" />
     </scopeInfo>
-    <unitInfo nodeId="3251655328352893896" fileName="StaleFilesCollector.java" startLine="35" startPosition="73" endLine="39" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$1" />
-    <unitInfo nodeId="3251655328352893920" fileName="StaleFilesCollector.java" startLine="39" startPosition="16" endLine="43" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$2" />
-    <unitInfo nodeId="3251655328352894082" fileName="StaleFilesCollector.java" startLine="53" startPosition="101" endLine="57" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$3" />
-    <unitInfo nodeId="3251655328352894094" fileName="StaleFilesCollector.java" startLine="57" startPosition="18" endLine="61" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$4" />
-    <unitInfo nodeId="3251655328353807743" fileName="StaleFilesCollector.java" startLine="108" startPosition="28" endLine="120" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$5" />
-    <unitInfo nodeId="3251655328352589723" fileName="StaleFilesCollector.java" startLine="25" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector" />
+    <unitInfo nodeId="3251655328352893896" fileName="StaleFilesCollector.java" startLine="36" startPosition="73" endLine="40" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$1" />
+    <unitInfo nodeId="3251655328352893920" fileName="StaleFilesCollector.java" startLine="40" startPosition="16" endLine="44" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$2" />
+    <unitInfo nodeId="3251655328352894082" fileName="StaleFilesCollector.java" startLine="54" startPosition="101" endLine="58" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$3" />
+    <unitInfo nodeId="3251655328352894094" fileName="StaleFilesCollector.java" startLine="58" startPosition="18" endLine="62" endPosition="7" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$4" />
+    <unitInfo nodeId="3251655328353807743" fileName="StaleFilesCollector.java" startLine="105" startPosition="28" endLine="117" endPosition="5" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector$5" />
+    <unitInfo nodeId="3251655328352589723" fileName="StaleFilesCollector.java" startLine="26" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.util.StaleFilesCollector" />
   </root>
   <root nodeRef="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)/505174985642691359">
     <nodeInfo nodeId="5675045708290411509" fileName="DeltaReconciler.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="topContainer" />

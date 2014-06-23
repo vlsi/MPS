@@ -119,6 +119,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DirUtil" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
 </dependenciesRoot>
 

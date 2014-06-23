@@ -54,6 +54,7 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   @Nullable
   public abstract IFile getCacheFile(SModel modelDescriptor);
 
+  // In fact, can be application-wide if we use compound key (repo+modelref)
   protected BaseModelCache(SRepository repository) {
     myRepository = repository;
   }
@@ -61,7 +62,7 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   @Override
   public void init() {
     myRepository.addRepositoryListener(myRepoListener);
-    // FIXME CleanupManager shall be explicit depdendency, rather than getInstance access -
+    // FIXME CleanupManager shall be explicit dependency, rather than getInstance access -
     // otherwise it's pure assumption CleanupManager has been initialized already.
     CleanupManager.getInstance().addCleanupListener(this);
   }
@@ -84,22 +85,6 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
       return null;
     }
     return readAndUpdateCache(cacheFile, model);
-  }
-
-  @Nullable
-  public final T lookup(@NotNull IFile cacheFile) {
-    // XXX this bloody code is to collect generated files in Make's FilesDelta. I'm not sure it's nice idea
-    // to (a) force any model cache to be IFile-backed (traceinfo's URL violates that anyway)
-    // (b) expose IFile along with SModel, and to synchronize both of them as valid keys to cached data
-    if (!cacheFile.exists()) {
-      return null;
-    }
-    for (Entry<SModelReference, Pair<IFile, T>> entry : myCache.entrySet()) {
-      if (cacheFile.equals(entry.getValue().o1)) {
-        return entry.getValue().o2;
-      }
-    }
-    return null;
   }
 
   private T readAndUpdateCache(IFile cacheFile, SModel model) {

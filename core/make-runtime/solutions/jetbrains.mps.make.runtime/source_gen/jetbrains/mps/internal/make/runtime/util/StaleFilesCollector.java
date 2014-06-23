@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -85,19 +86,15 @@ public class StaleFilesCollector {
 
 
   /**
-   * Read cached state of generated files from cachesDir, assuming files were generated under rootDir
+   * Read cached state of generated files, if any, assuming files were generated under rootDir.
+   * 
+   * The code is intended to handle case when we generate into a root with foreign files we shall keep.
+   * Generally, all the files under rootDir might need deletion (except those explicitly written/kept).
+   * Files left after excluding those touched are additionally filtered through 'foreign' roots in a way
+   * that we consider only generated files under output root (intersect in getChildren).
    */
-  public void recordGeneratedChildren(IFile cachesDir) {
-    // The code seems to be indended to handle case when we generate into a root with foreign files we shall keep. 
-    // Generally, all the files under rootDir might need deletion (except those explicitly written/kept). 
-    // Files left after excluding those touched are additionally filtered through 'foreign' roots in a way 
-    // that we consider only generated files under output root (intersect in getChildren). However, there seems to be  
-    // a defects in this approach: generatedChildren has an entry for output root only (thus once we get 
-    // any lever deeper and isForeign(dir) == true, generatedChildren[dir] would yield null), and even if  
-    // our output root is foreign and we get a list of files, intersect would likely give empty set, e.g. 
-    // with generatedChildren == { /root/a/file1, /root/a/file2} and getChildren(/root/), intersection of  
-    // {a/} with generatedChildren is empty. 
-    List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(rootDir, cachesDir);
+  public void recordGeneratedChildren(SModel model) {
+    List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(rootDir, model);
     if (ListSequence.fromList(genChildren).isNotEmpty()) {
       MapSequence.fromMap(generatedChildren).put(rootDir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
     }

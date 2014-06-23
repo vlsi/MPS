@@ -55,26 +55,18 @@ public class GeneratorPathsComponent implements CoreComponent {
     return false;
   }
 
-  public List<IFile> getGeneratedChildren(final IFile path, IFile cachesDir) {
-    GenerationDependencies gd = lookupCacheInfo(cachesDir);
+  public List<IFile> getGeneratedChildren(final IFile root, SModel model) {
+    GenerationDependencies gd = GenerationDependenciesCache.getInstance().get(model);
     if (gd == null) {
       return Collections.emptyList();
     }
     ArrayList<IFile> rv = new ArrayList<IFile>();
     for (GenerationRootDependencies grd : gd.getRootDependencies()) {
       for (String file : grd.getFiles()) {
-        rv.add(path.getDescendant(file));
+        rv.add(root.getDescendant(file));
       }
     }
     return rv;
-  }
-
-  private GenerationDependencies lookupCacheInfo(IFile cachesOutputDir) {
-    IFile redir = GenerationDependenciesCache.getInstance().findCachesPathRedirect(cachesOutputDir);
-    IFile cachesDir = (redir != null ? redir : cachesOutputDir);
-    IFile generatedCache = cachesDir.getDescendant(GenerationDependenciesCache.getInstance().getCacheFileName());
-
-    return  GenerationDependenciesCache.getInstance().lookup(generatedCache);
   }
 
   public void registerForeignPathsProvider(ForeignPathsProvider provider) {

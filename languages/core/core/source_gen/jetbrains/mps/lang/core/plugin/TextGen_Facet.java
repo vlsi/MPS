@@ -198,7 +198,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         FilesDelta d1 = new FilesDelta(javaOutputDir);
                         FilesDelta d2 = new FilesDelta(cacheOutputDir);
                         StaleFilesCollector staleFileCollector = new StaleFilesCollector(javaOutputDir);
-                        staleFileCollector.recordGeneratedChildren(cacheOutputDir);
+                        staleFileCollector.recordGeneratedChildren(inputResource.model());
                         FileProcessor fp = new FileProcessor();
                         ListSequence.fromList(fileProcessors).addElement(fp);
                         FileDeltaCollector javaSourcesLoc = new FileDeltaCollector(javaOutputDir, d1, fp);
