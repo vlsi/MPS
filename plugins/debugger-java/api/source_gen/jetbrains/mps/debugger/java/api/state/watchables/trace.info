@@ -304,22 +304,38 @@
     <nodeInfo nodeId="4352118152439509070" fileName="JavaWatchablesCategory.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOrder" />
     <nodeInfo nodeId="4352118152439509081" fileName="JavaWatchablesCategory.java" startLine="18" startPosition="65" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4352118152439509083" fileName="JavaWatchablesCategory.java" startLine="19" startPosition="24" endLine="20" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439509100" fileName="JavaWatchablesCategory.java" startLine="25" startPosition="51" endLine="26" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439509102" fileName="JavaWatchablesCategory.java" startLine="27" startPosition="5" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439509093" fileName="JavaWatchablesCategory.java" startLine="24" startPosition="46" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1313140913811955001" fileName="JavaWatchablesCategory.java" startLine="24" startPosition="25" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1313140913811922629" fileName="JavaWatchablesCategory.java" startLine="30" startPosition="20" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1313140913811928975" fileName="JavaWatchablesCategory.java" startLine="33" startPosition="50" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1313140913811986382" fileName="JavaWatchablesCategory.java" startLine="35" startPosition="5" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439509100" fileName="JavaWatchablesCategory.java" startLine="41" startPosition="49" endLine="42" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4352118152439509102" fileName="JavaWatchablesCategory.java" startLine="43" startPosition="5" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1313140913811921188" fileName="JavaWatchablesCategory.java" startLine="29" startPosition="35" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1313140913811925023" fileName="JavaWatchablesCategory.java" startLine="32" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4352118152439509093" fileName="JavaWatchablesCategory.java" startLine="40" startPosition="46" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4352118152439509073" fileName="JavaWatchablesCategory.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaWatchablesCategory#(Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="4352118152439509087" fileName="JavaWatchablesCategory.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljetbrains/mps/debug/api/programState/WatchablesCategory;)I" />
-    <scopeInfo nodeId="4352118152439509099" fileName="JavaWatchablesCategory.java" startLine="25" startPosition="51" endLine="26" endPosition="15" />
+    <nodeInfo nodeId="1313140913811949466" fileName="JavaWatchablesCategory.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
+    <nodeInfo nodeId="4352118152439509087" fileName="JavaWatchablesCategory.java" startLine="39" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljetbrains/mps/debug/api/programState/WatchablesCategory;)I" />
+    <nodeInfo nodeId="1313140913811949480" fileName="JavaWatchablesCategory.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <scopeInfo nodeId="1313140913811949477" fileName="JavaWatchablesCategory.java" startLine="24" startPosition="25" endLine="25" endPosition="19" />
+    <scopeInfo nodeId="1313140913811921191" fileName="JavaWatchablesCategory.java" startLine="30" startPosition="20" endLine="31" endPosition="18" />
+    <scopeInfo nodeId="1313140913811925026" fileName="JavaWatchablesCategory.java" startLine="33" startPosition="50" endLine="34" endPosition="19" />
+    <scopeInfo nodeId="4352118152439509099" fileName="JavaWatchablesCategory.java" startLine="41" startPosition="49" endLine="42" endPosition="15" />
     <scopeInfo nodeId="4352118152439509080" fileName="JavaWatchablesCategory.java" startLine="18" startPosition="65" endLine="20" endPosition="20" />
     <scopeInfo nodeId="4352118152439509073" fileName="JavaWatchablesCategory.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="4352118152439509076" varName="categoryName" />
       <varInfo nodeId="4352118152439509078" varName="order" />
     </scopeInfo>
-    <scopeInfo nodeId="4352118152439509092" fileName="JavaWatchablesCategory.java" startLine="24" startPosition="46" endLine="28" endPosition="58" />
-    <scopeInfo nodeId="4352118152439509087" fileName="JavaWatchablesCategory.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1313140913811949466" fileName="JavaWatchablesCategory.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4352118152439509092" fileName="JavaWatchablesCategory.java" startLine="40" startPosition="46" endLine="44" endPosition="58" />
+    <scopeInfo nodeId="1313140913811949519" fileName="JavaWatchablesCategory.java" startLine="29" startPosition="35" endLine="36" endPosition="59" />
+    <scopeInfo nodeId="4352118152439509087" fileName="JavaWatchablesCategory.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="4352118152439509090" varName="o" />
     </scopeInfo>
-    <unitInfo nodeId="4352118152439509012" fileName="JavaWatchablesCategory.java" startLine="7" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory" />
+    <scopeInfo nodeId="1313140913811949480" fileName="JavaWatchablesCategory.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1313140913811949483" varName="o" />
+    </scopeInfo>
+    <unitInfo nodeId="4352118152439509012" fileName="JavaWatchablesCategory.java" startLine="7" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.watchables.JavaWatchablesCategory" />
   </root>
 </debugInfo>
 
