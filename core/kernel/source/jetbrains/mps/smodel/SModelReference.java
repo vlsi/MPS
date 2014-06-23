@@ -220,7 +220,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   public SModelReference update() {
     SModel sm = SModelRepository.getInstance().getModelDescriptor(this);
     if (sm == null) return this;
-    return (SModelReference) sm.getReference();
+    SModelReference reference = (SModelReference) sm.getReference();
+    return new SModelReference(reference.getModuleReference(), reference.getModelId(), reference.getModelName());
   }
 
   public boolean differs(SModelReference that) {
