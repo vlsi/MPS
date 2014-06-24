@@ -147,7 +147,9 @@ public class EditorManager {
     Object bigCellContext = cell.getUserObject(BIG_CELL_CONTEXT);
     if (bigCellContext instanceof ReferencedNodeContext) {
       ReferencedNodeContext refContext = (ReferencedNodeContext) bigCellContext;
-      map.put(refContext, cell);
+      if (!map.containsKey(refContext)) {
+        map.put(refContext, cell);
+      }
       // Don't go deeper if this cell represents normal node.
       //
       // Go deeper if this cell represents attribute node
@@ -314,7 +316,7 @@ public class EditorManager {
       Map<ReferencedNodeContext, EditorCell> childContextToCellMap = null;
       EditorCell oldCell = null;
       if (modifications != null) {
-        oldCell = myContextToOldCellMap.peek().get(refContext);
+        oldCell = myContextToOldCellMap.peek().remove(refContext);
         boolean nodeChanged = isNodeChanged(modifications, nodeEditorComponent, oldCell, context.getCellFactory().getCellContext());
 
         if (!nodeChanged) {
