@@ -855,7 +855,6 @@ public class SModel implements SModelData {
     }
   }
 
-  @Deprecated
   public void addEngagedOnGenerationLanguage(SModuleReference ref) {
     if (myModelDescriptor != null) {
       ModelChange.assertLegalChange(myModelDescriptor);
@@ -863,22 +862,6 @@ public class SModel implements SModelData {
 
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.add(ref);
-      // don't send event but mark model as changed
-      if (canFireEvent()) {
-        markChanged();
-      }
-    }
-  }
-
-  public void addEngagedOnGenerationLanguage(SLanguageId ref) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
-
-    SModuleReference converted = convertLanguageRef(ref);
-
-    if (!myLanguagesEngagedOnGeneration.contains(converted)) {
-      myLanguagesEngagedOnGeneration.add(converted);
       // don't send event but mark model as changed
       if (canFireEvent()) {
         markChanged();
