@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.generator.cache;
 
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -27,7 +25,6 @@ import org.jdom.JDOMException;
 import org.jdom.input.JDOMParseException;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.xml.sax.SAXParseException;
 
@@ -81,17 +78,5 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
     } catch (JDOMException e) {
       throw new IOException(e);
     }
-  }
-
-  @Override
-  @Nullable
-  public IFile getCacheFile(SModel modelDescriptor) {
-    SModule m = modelDescriptor.getModule();
-    IFile cachesModuleDir = getCachesDirInternal(m, SModuleOperations.getOutputPathFor(modelDescriptor));
-    if (cachesModuleDir == null) return null;
-    IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, cachesModuleDir);
-    if (cachesDir == null) return null;
-
-    return cachesDir.getDescendant(getCacheFileName());
   }
 }

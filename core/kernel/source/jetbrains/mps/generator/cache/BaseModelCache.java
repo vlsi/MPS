@@ -19,6 +19,7 @@ import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -52,7 +53,15 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   public abstract String getCacheFileName();
 
   @Nullable
-  public abstract IFile getCacheFile(SModel modelDescriptor);
+  protected IFile getCacheFile(SModel modelDescriptor) {
+    SModule m = modelDescriptor.getModule();
+    IFile cachesModuleDir = getCachesDirInternal(m, SModuleOperations.getOutputPathFor(modelDescriptor));
+    if (cachesModuleDir == null) return null;
+    IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, cachesModuleDir);
+    if (cachesDir == null) return null;
+
+    return cachesDir.getDescendant(getCacheFileName());
+  }
 
   // In fact, can be application-wide if we use compound key (repo+modelref)
   protected BaseModelCache(SRepository repository) {
@@ -121,11 +130,6 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
 
   @Nullable
   protected IFile getCachesDirInternal(SModule module, String outputPath) {
-    return getCachesDir(module, outputPath);
-  }
-
-  @Nullable
-  public static IFile getCachesDir(SModule module, String outputPath) {
     if (outputPath == null) return null;
 
     // output path should be from module sources?
@@ -144,8 +148,26 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
     }
   }
 
-  public final void clean(SModel model) {
+  /**
+   * Forget cached state, if any; unlike {@link #discard(org.jetbrains.mps.openapi.model.SModel)} does not touch persisted/serialized state.
+   */
+  public final void clean(@NotNull SModel model) {
     myCache.remove(model.getReference());
+  }
+
+  /**
+   * Forget cached state and scrap any persisted/serialized state. Does its best to ensure serialized state got discarded, but doesn't guarantee that.
+   */
+  public void discard(@NotNull SModel model) {
+    final Pair<IFile, T> removed = myCache.remove(model);
+    IFile cachedFile = removed == null ? null : removed.o1;
+    IFile actualCacheFile = getCacheFile(model);
+    if (actualCacheFile != null) {
+      actualCacheFile.delete();
+    }
+    if (cachedFile != null && cachedFile != actualCacheFile) {
+      cachedFile.delete();
+    }
   }
 
   @Override

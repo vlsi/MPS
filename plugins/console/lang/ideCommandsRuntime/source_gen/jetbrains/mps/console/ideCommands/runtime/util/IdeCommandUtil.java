@@ -23,10 +23,10 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -122,8 +122,7 @@ public class IdeCommandUtil {
       }
     }).visitAll(new IVisitor<SModel>() {
       public void visit(SModel it) {
-        IFile generatedFile = GenerationDependenciesCache.getInstance().getCacheFile(it);
-        generatedFile.delete();
+        GenerationDependenciesCache.getInstance().discard(it);
       }
     });
   }
