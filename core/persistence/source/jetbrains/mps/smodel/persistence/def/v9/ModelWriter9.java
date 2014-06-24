@@ -239,17 +239,17 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private void saveDevkits(Element rootElement, SModel sourceModel) {
-    for (SModuleReference devkitNamespace : sourceModel.importedDevkits()) {
+    for (SModuleReference ref : sourceModel.importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence9.DEVKIT);
-      devkitElem.setAttribute(ModelPersistence9.ID, devkitNamespace.toString());
+      devkitElem.setAttribute(ModelPersistence9.REF, ref.toString());
       rootElement.addContent(devkitElem);
     }
   }
 
   private void saveEngagedLanguages(Element rootElement, SModel sourceModel) {
-    for (SModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
+    for (SModuleReference ref : sourceModel.engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence9.ENGAGED_ON_GENERATION_LANGUAGE);
-      languageElem.setAttribute(ModelPersistence9.ID, languageNamespace.toString());
+      languageElem.setAttribute(ModelPersistence9.REF, ref.toString());
       rootElement.addContent(languageElem);
     }
   }
