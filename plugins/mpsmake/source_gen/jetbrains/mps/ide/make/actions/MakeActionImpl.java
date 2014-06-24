@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.resources.MResource;
@@ -33,7 +32,7 @@ public class MakeActionImpl {
 
     // save all before launching make 
     final Project project = context.getProject();
-    project.getRepository().getModelAccess().executeCommand(new Runnable() {
+    project.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         project.getRepository().saveAll();
       }
@@ -56,12 +55,6 @@ public class MakeActionImpl {
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
       IMakeService.INSTANCE.get().make(session, inputRes);
     }
-    // Although both make-runtime.FileProcessor and ModelCacheReloader take care to invalidate MGSM on 'generated' file change, 
-    // GenStatusUpdater is picky not to perform any updates while make session is active. Either GenStatusUpdater need change to  
-    // ignore make in progress, or we shall fire changes once again here (outside of make session). Drawback of approach chosen here is  
-    // that we don't invalidate any models not explicitly selected for make. OTOH, UI updates during make (if GSU stops respecting active make) 
-    // are not good. Perhaps, GSU could have collected and postponed updates while in make, but there's no event 'make completed' to fire them then. 
-    ModelGenerationStatusManager.getInstance().invalidateData(models);
   }
 
   private Iterable<SModel> selectModels(Iterable<? extends IResource> inputRes) {
