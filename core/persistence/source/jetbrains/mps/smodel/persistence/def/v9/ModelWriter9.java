@@ -270,9 +270,9 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   protected void saveNode(Element nodeElement, SNode node, boolean saveChildren) {
-    DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE, myHelper.getNodeRoleIndex(node.getRoleInParentId()));
     nodeElement.setAttribute(ModelPersistence9.CONCEPT_ID, myHelper.getConceptIndex(node.getConcept().getId()));
     nodeElement.setAttribute(ModelPersistence9.ID, node.getNodeId().toString());
+    DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE, myHelper.getNodeRoleIndex(node.getRoleInParentId()));
     String info = Util9.genNodeInfo(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), node);
     DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.NODE_INFO, info);
 
