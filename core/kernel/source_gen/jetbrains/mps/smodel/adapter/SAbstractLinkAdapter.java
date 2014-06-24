@@ -93,7 +93,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     }
   }
 
-  protected final SNode getLinkNode() {
+  public final SNode getLinkNode() {
     String cname;
     String linkRole;
     if (conceptName == null) {

@@ -25,27 +25,31 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
+import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectConsumer;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -103,13 +107,15 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private void saveDebugInfo(Element debugInfoElement, SModel sourceModel) {
+    DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
+
     //save used languages info
-    for (SLanguageId id: sourceModel.usedLanguages()){
-            Language lang = new SLanguageAdapter(id).getSourceModule();
-      String name = lang!=null?lang.getModuleName(): MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(id);
+    for (SLanguageId id : sourceModel.usedLanguages()) {
+      Language lang = new SLanguageAdapter(id).getSourceModule();
+      String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(id);
 
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_LANG);
-      langElement.setAttribute(ModelPersistence9.ID,id.serialize());
+      langElement.setAttribute(ModelPersistence9.ID, id.serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, name);
       debugInfoElement.addContent(langElement);
     }
@@ -117,10 +123,10 @@ public class ModelWriter9 implements IModelWriter {
     //  devkits??
 
     //save used models info
-    for (ImportElement ie: sourceModel.importedModels()){
+    for (ImportElement ie : sourceModel.importedModels()) {
       SModelReference ref = ie.getModelReference();
       org.jetbrains.mps.openapi.model.SModel model = ref.resolve(MPSModuleRepository.getInstance());
-      String name = model!=null?model.getModelName(): MPSModuleRepository.getInstance().getDebugRegistry().getModelName(ref);
+      String name = model != null ? model.getModelName() : debugRegistry.getModelName(ref);
 
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_MODEL);
       langElement.setAttribute(ModelPersistence9.REF, ref.toString());
@@ -128,18 +134,71 @@ public class ModelWriter9 implements IModelWriter {
       debugInfoElement.addContent(langElement);
     }
 
+    //collect all language-level info
+
     //save concepts info
-    Map<SConceptId, String> ids  = new HashMap<SConceptId, String>();
-    for (SNode root:sourceModel.getRootNodes()){
-      for (SNode n: SNodeUtil.getDescendants(root)){
-        SConceptId id = n.getConcept().getId();
-        SNode concept = new SConceptAdapter(id).getConceptDeclarationNode();
-        String name = concept!=null?concept.getProperty("name"):MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(id);
-        ids.put(id, name);
+    Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
+    Map<SPropertyId, String> propIds = new HashMap<SPropertyId, String>();
+    Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
+    Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
+
+    for (SNode root : sourceModel.getRootNodes()) {
+      for (SNode n : SNodeUtil.getDescendants(root)) {
+        SConceptId conceptId = n.getConcept().getId();
+        SNode conceptNode = new SConceptAdapter(conceptId).getConceptDeclarationNode();
+        String conceptName = conceptNode != null ? conceptNode.getName() : debugRegistry.getConceptName(conceptId);
+        conceptIds.put(conceptId, conceptName);
+
+        SContainmentLinkId roleId = n.getRoleInParentId();
+        SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
+        SNode roleNode = role.getLinkNode();
+        String roleName = roleNode != null ? roleNode.getName() : debugRegistry.getLinkName(roleId);
+        roleIds.put(roleId, roleName);
+
+        for (SPropertyId pid : root.getPropertyIds()) {
+          SPropertyAdapter propId = new SPropertyAdapter(pid);
+          SNode propNode = propId.getPropNode();
+          String propName = propNode != null ? propNode.getName() : debugRegistry.getPropertyName(pid);
+          propIds.put(pid, propName);
+        }
+
+        for (SReference ref : root.getReferences()) {
+          SReferenceLinkId refId = ref.getRoleId();
+          SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
+          SNode refNode = refRole.getLinkNode();
+          String refName = refNode != null ? refNode.getName() : debugRegistry.getLinkName(roleId);
+          refIds.put(refId, refName);
+        }
       }
     }
-    for (Entry<SConceptId,String> e:ids.entrySet()){
+
+    // write concepts
+    for (Entry<SConceptId, String> e : conceptIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CONCEPT);
+      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
+      debugInfoElement.addContent(langElement);
+    }
+
+    // write properties
+    for (Entry<SPropertyId, String> e : propIds.entrySet()) {
+      Element langElement = new Element(ModelPersistence9.DEBUG_INFO_PROP);
+      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
+      debugInfoElement.addContent(langElement);
+    }
+
+    // write reference roles
+    for (Entry<SReferenceLinkId, String> e : refIds.entrySet()) {
+      Element langElement = new Element(ModelPersistence9.DEBUG_INFO_REF_ROLE);
+      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
+      debugInfoElement.addContent(langElement);
+    }
+
+    // write child roles
+    for (Entry<SContainmentLinkId, String> e : roleIds.entrySet()) {
+      Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CHILD_ROLE);
       langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
       debugInfoElement.addContent(langElement);
@@ -179,7 +238,7 @@ public class ModelWriter9 implements IModelWriter {
     }
   }
 
-  private void saveDevkits(Element rootElement,SModel sourceModel) {
+  private void saveDevkits(Element rootElement, SModel sourceModel) {
     for (SModuleReference devkitNamespace : sourceModel.importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence9.DEVKIT);
       devkitElem.setAttribute(ModelPersistence9.ID, devkitNamespace.toString());

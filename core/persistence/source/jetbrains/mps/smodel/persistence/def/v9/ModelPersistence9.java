@@ -63,7 +63,9 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String DEBUG_INFO_NAME = "name";
   public static final String DEBUG_INFO_MODEL = "model";
   public static final String DEBUG_INFO_CONCEPT = "concept";
-
+  public static final String DEBUG_INFO_PROP = "property";
+  public static final String DEBUG_INFO_REF_ROLE = "refRole";
+  public static final String DEBUG_INFO_CHILD_ROLE = "childRole";
 
   @Override
   public int getVersion() {

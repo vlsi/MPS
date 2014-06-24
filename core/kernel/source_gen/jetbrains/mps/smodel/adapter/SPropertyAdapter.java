@@ -90,4 +90,20 @@ public class SPropertyAdapter implements SProperty {
   }
 
 
+  public SNode getPropNode() {
+    String cname;
+    String propName;
+    if (conceptName == null) {
+      cname = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(myPropertyId.getConceptId());
+      propName = getName();
+    } else {
+      cname = conceptName;
+      propName = this.propertyName;
+    }
+    SNode concept = SModelUtil.findConceptDeclaration(cname);
+    if ((concept == null)) {
+      return null;
+    }
+    return (SNode) new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propName);
+  }
 }
