@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// FIXME revisit public constants with user objects instead of named accessors, really?!
 public class TraceInfoGenerationUtil {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(TraceInfoGenerationUtil.class));
   public static final String POSITION_INFO = "POSITION_INFO";
