@@ -21,15 +21,9 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 /**
  * evgeny, 10/14/11
  */
-public class MPSFindUsages extends ComponentPlugin {
+public final class MPSFindUsages extends ComponentPlugin {
 
-  private static MPSFindUsages ourInstance = new MPSFindUsages();
-
-  public static MPSFindUsages getInstance() {
-    return ourInstance;
-  }
-
-  private MPSFindUsages() {
+  public MPSFindUsages() {
   }
 
   @Override

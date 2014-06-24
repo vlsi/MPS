@@ -39,6 +39,10 @@ import org.jetbrains.annotations.NotNull;
 public class MPSCoreComponents implements ApplicationComponent {
   private MPSCore myMPSCore;
   private MPSPersistence myMPSPersistence;
+  private MPSGenerator myMPSGenerator;
+  private MPSTypesystem myMPSTypesystem;
+  private MPSFindUsages myMPSFindUsages;
+  private MPSBaseLanguage myMPSBaseLanguage;
 
   public MPSCoreComponents(FileSystemProviderComponent fsProvider) {
   }
@@ -61,29 +65,37 @@ public class MPSCoreComponents implements ApplicationComponent {
 
     // setup MPS.Core
     myMPSCore = new MPSCore();
-    myMPSCore.init();
     myMPSPersistence = new MPSPersistence();
+    myMPSTypesystem = new MPSTypesystem();
+    myMPSGenerator = new MPSGenerator();
+    myMPSFindUsages = new MPSFindUsages();
+    myMPSCore.init();
     myMPSPersistence.init();
-    MPSTypesystem.getInstance().init();
-    MPSGenerator.getInstance().init();
-    MPSFindUsages.getInstance().init();
+    myMPSTypesystem.init();
+    myMPSGenerator.init();
+    myMPSFindUsages.init();
 
     // setup BaseLanguage
-    MPSBaseLanguage.getInstance().init();
+    myMPSBaseLanguage = new MPSBaseLanguage();
+    myMPSBaseLanguage.init();
   }
 
   @Override
   public void disposeComponent() {
     // dispose BaseLanguage
-    MPSBaseLanguage.getInstance().dispose();
+    myMPSBaseLanguage.dispose();
+    myMPSBaseLanguage = null;
 
     // dispose Core
-    MPSFindUsages.getInstance().dispose();
-    MPSGenerator.getInstance().dispose();
-    MPSTypesystem.getInstance().dispose();
+    myMPSFindUsages.dispose();
+    myMPSGenerator.dispose();
+    myMPSTypesystem.dispose();
     myMPSPersistence.dispose();
-    myMPSPersistence = null;
     myMPSCore.dispose();
+    myMPSFindUsages = null;
+    myMPSGenerator = null;
+    myMPSTypesystem = null;
+    myMPSPersistence = null;
     myMPSCore = null;
 
     // cleanup

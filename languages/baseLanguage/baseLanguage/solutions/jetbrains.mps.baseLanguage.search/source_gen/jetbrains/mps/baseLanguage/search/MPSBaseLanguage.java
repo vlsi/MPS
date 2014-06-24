@@ -4,20 +4,13 @@ package jetbrains.mps.baseLanguage.search;
 
 import jetbrains.mps.components.ComponentPlugin;
 
-public class MPSBaseLanguage extends ComponentPlugin {
-  private static MPSBaseLanguage ourInstance = new MPSBaseLanguage();
-
-
-  private MPSBaseLanguage() {
+public final class MPSBaseLanguage extends ComponentPlugin {
+  public MPSBaseLanguage() {
   }
 
   @Override
   public void init() {
     super.init();
     init(new ClassifierSuccessors());
-  }
-
-  public static MPSBaseLanguage getInstance() {
-    return ourInstance;
   }
 }

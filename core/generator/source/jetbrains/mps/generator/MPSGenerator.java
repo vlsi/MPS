@@ -28,15 +28,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
 /**
  * evgeny, 10/14/11
  */
-public class MPSGenerator extends ComponentPlugin {
+public final class MPSGenerator extends ComponentPlugin {
 
-  private static MPSGenerator ourInstance = new MPSGenerator();
-
-  public static MPSGenerator getInstance() {
-    return ourInstance;
-  }
-
-  private MPSGenerator() {
+  public MPSGenerator() {
   }
 
   @Override

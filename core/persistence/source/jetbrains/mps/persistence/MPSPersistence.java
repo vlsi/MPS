@@ -23,15 +23,6 @@ import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
  */
 public final class MPSPersistence extends ComponentPlugin {
 
-  /**
-   * @deprecated Platform initialization code shall keep reference to the instance, if needed
-   * @return new, not initialized instance
-   */
-  @Deprecated
-  public static MPSPersistence getInstance() {
-    return new MPSPersistence();
-  }
-
   public MPSPersistence() {
   }
 

@@ -82,6 +82,9 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
   private MPSCore myMPSCore;
   private MPSPersistence myMPSPersistence;
+  private MPSGenerator myMPSGenerator;
+  private MPSTypesystem myMPSTypesystem;
+  private MPSBaseLanguage myMPSBaseLanguage;
   private volatile boolean isInitialized = false;
   private CachedRepositoryData myRepo;
   private Map<JpsModule, JpsSolutionIdea> jpsToMpsModules = new HashMap<JpsModule, JpsSolutionIdea>();
@@ -350,20 +353,28 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
   private void initMPS() {
     myMPSCore = new MPSCore();
-    myMPSCore.init();
     myMPSPersistence = new MPSPersistence();
+    myMPSTypesystem = new MPSTypesystem();
+    myMPSGenerator = new MPSGenerator();
+    myMPSCore.init();
     myMPSPersistence.init();
-    MPSTypesystem.getInstance().init();
-    MPSGenerator.getInstance().init();
-    MPSBaseLanguage.getInstance().init();
+    myMPSTypesystem.init();
+    myMPSGenerator.init();
+
+    myMPSBaseLanguage = new MPSBaseLanguage();
+    myMPSBaseLanguage.init();
   }
 
   private void disposeMPS() {
-    MPSBaseLanguage.getInstance().dispose();
-    MPSGenerator.getInstance().dispose();
-    MPSTypesystem.getInstance().dispose();
+    myMPSBaseLanguage.dispose();
+    myMPSBaseLanguage = null;
+
+    myMPSGenerator.dispose();
+    myMPSTypesystem.dispose();
     myMPSPersistence.dispose();
     myMPSCore.dispose();
+    myMPSGenerator = null;
+    myMPSTypesystem = null;
     myMPSPersistence = null;
     myMPSCore = null;
   }
