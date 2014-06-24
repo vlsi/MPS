@@ -40,9 +40,9 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String LANGUAGES = "languages";
   public static final String USED_LANGUAGE = "use";
   public static final String ENGAGED_ON_GENERATION_LANGUAGE = "generationPart";
-  public static final String IMPORTS = "importedModels";
+  public static final String IMPORTS = "imports";
   public static final String CONTENTS = "contents";
-  public static final String IMPORT_ELEMENT = "import";
+  public static final String MODEL_IMPORT = "model";
   public static final String MODEL_IMPORT_INDEX = "index";
   public static final String IMPLICIT = "implicit";
   public static final String DEVKIT = "devkit";

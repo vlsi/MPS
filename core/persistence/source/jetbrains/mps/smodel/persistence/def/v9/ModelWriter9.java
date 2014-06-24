@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -222,7 +221,7 @@ public class ModelWriter9 implements IModelWriter {
     for (ImportElement importElement : sourceModel.importedModels()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
-      Element elem = new Element(ModelPersistence9.IMPORT_ELEMENT);
+      Element elem = new Element(ModelPersistence9.MODEL_IMPORT);
       elem.setAttribute(ModelPersistence9.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
       elem.setAttribute(ModelPersistence9.ID, modelRef.toString());
       rootElement.addContent(elem);
@@ -230,7 +229,7 @@ public class ModelWriter9 implements IModelWriter {
     for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
-      Element elem = new Element(ModelPersistence9.IMPORT_ELEMENT);
+      Element elem = new Element(ModelPersistence9.MODEL_IMPORT);
       elem.setAttribute(ModelPersistence9.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
       elem.setAttribute(ModelPersistence9.ID, modelRef.toString());
       elem.setAttribute(ModelPersistence9.IMPLICIT, "yes");
@@ -332,7 +331,7 @@ public class ModelWriter9 implements IModelWriter {
       ((MultiStreamStorageIndexHelper9) myHelper).setUsedImportsListener(null);
 
       for (SModelReference modelRef : usedImports.getResult()) {
-        Element elem = new Element(ModelPersistence9.IMPORT_ELEMENT);
+        Element elem = new Element(ModelPersistence9.MODEL_IMPORT);
         elem.setAttribute(ModelPersistence9.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
         elem.setAttribute(ModelPersistence9.ID, modelRef.toString());
         elem.setAttribute(ModelPersistence9.IMPLICIT, "yes");
