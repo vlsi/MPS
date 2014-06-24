@@ -120,7 +120,7 @@ public class ModelWriter9 implements IModelWriter {
     for (ImportElement ie: sourceModel.importedModels()){
       SModelReference ref = ie.getModelReference();
       org.jetbrains.mps.openapi.model.SModel model = ref.resolve(MPSModuleRepository.getInstance());
-      String name = model!=null?model.getModelName(): MPSModuleRepository.getInstance().getDebugRegistry().getModelName(ref.getModelId());
+      String name = model!=null?model.getModelName(): MPSModuleRepository.getInstance().getDebugRegistry().getModelName(ref);
 
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_MODEL);
       langElement.setAttribute(ModelPersistence9.REF, ref.toString());

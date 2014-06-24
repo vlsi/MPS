@@ -20,11 +20,12 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public interface DebugRegistry {
-  String getModelName(SModelId modelId);
+  String getModelName(SModelReference model);
 
-  String getModuleName(SModuleId moduleId);
+  String getModuleName(SModuleReference module);
 
   String getPropertyName(SPropertyId propertyId);
 
@@ -34,9 +35,9 @@ public interface DebugRegistry {
 
   String getLanguageName(SLanguageId languageId);
 
-  void addModelName(SModelId modelId, String name);
+  void addModelName(SModelReference model, String name);
 
-  void addModuleName(SModuleId moduleId, String name);
+  void addModuleName(SModuleReference module, String name);
 
   void addPropertyName(SPropertyId propertyId, String name);
 
