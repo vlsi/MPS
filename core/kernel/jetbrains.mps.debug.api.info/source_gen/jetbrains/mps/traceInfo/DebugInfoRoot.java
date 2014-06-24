@@ -32,17 +32,17 @@ public class DebugInfoRoot {
     myNodeRef = ref;
   }
 
-  /*package*/ void addPosition(TraceablePositionInfo position) {
+  public void addPosition(TraceablePositionInfo position) {
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myPositions).addElement(position);
   }
 
-  /*package*/ void addScopePosition(ScopePositionInfo position) {
+  public void addScopePosition(ScopePositionInfo position) {
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myScopePositions).addElement(position);
   }
 
-  /*package*/ void addUnitPosition(UnitPositionInfo unitPosition) {
+  public void addUnitPosition(UnitPositionInfo unitPosition) {
     SetSequence.fromSet(myFileNames).addElement(unitPosition.getFileName());
     SetSequence.fromSet(myUnitPositions).addElement(unitPosition);
   }

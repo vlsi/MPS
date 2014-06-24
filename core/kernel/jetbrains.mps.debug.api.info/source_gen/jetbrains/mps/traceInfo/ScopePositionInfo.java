@@ -13,6 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
 import org.jetbrains.annotations.Nls;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Arrays;
 import org.apache.log4j.Level;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -31,8 +34,7 @@ public class ScopePositionInfo extends PositionInfo {
     super(element);
     for (Object varInfoElement_ : element.getChildren(ScopePositionInfo.VAR_INFO)) {
       Element varInfoElement = (Element) varInfoElement_;
-      VarInfo varInfo = new VarInfo(varInfoElement);
-      SortedMapSequence.fromMap(myNamesToVars).put(varInfo.getVarName(), varInfo);
+      addVarInfo(new VarInfo(varInfoElement));
     }
   }
 
@@ -49,6 +51,16 @@ public class ScopePositionInfo extends PositionInfo {
   @Nls
   public String getVarId(String varName) {
     return check_azb46d_a0a6(SortedMapSequence.fromMap(myNamesToVars).get(varName));
+  }
+
+  public Collection<String> getVarNames() {
+    String[] names = SetSequence.fromSet(SortedMapSequence.fromMap(myNamesToVars).keySet()).toGenericArray(String.class);
+    Arrays.sort(names);
+    return Arrays.asList(names);
+  }
+
+  public void addVarInfo(@NotNull VarInfo varInfo) {
+    SortedMapSequence.fromMap(myNamesToVars).put(varInfo.getVarName(), varInfo);
   }
 
   public void addVarInfo(@NotNull SNode node) {

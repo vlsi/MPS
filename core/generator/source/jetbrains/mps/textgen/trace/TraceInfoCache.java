@@ -15,36 +15,37 @@
  */
 package jetbrains.mps.textgen.trace;
 
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
+import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.traceInfo.DebugInfoBuilder;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.annotations.Nullable;
-import java.net.URL;
-import java.io.InputStream;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
-import java.io.IOException;
-import org.jdom.JDOMException;
-import org.apache.log4j.Level;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.vfs.FileSystem;
-import java.io.File;
-import java.net.MalformedURLException;
-import jetbrains.mps.generator.cache.CacheGenerator;
-import org.jdom.Element;
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.generationTypes.StreamHandler;
-import java.util.ArrayList;
-import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
-import jetbrains.mps.traceInfo.DebugInfoBuilder;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
@@ -109,8 +110,9 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
           stream.close();
         }
       } catch (IOException e) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("", e);
+        Logger logger = LogManager.getLogger(TraceInfoCache.class);
+        if (logger.isEnabledFor(Level.ERROR)) {
+          logger.error("", e);
         }
       }
     }
@@ -218,6 +220,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       }
       update(status.getOriginalInputModel(), cache);
       handler.saveStream(getCacheFileName(), cache.toXml());
+//      handler.saveStream(getCacheFileName() + ".new", SerializeSupport.serialize(cache));
     }
 
     private DebugInfo updateUnchanged(GenerationStatus genStatus) {
@@ -238,7 +241,4 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       return generatedDebugInfo;
     }
   }
-
-
-  protected static Logger LOG = LogManager.getLogger(TraceInfoCache.class);
 }

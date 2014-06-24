@@ -8,21 +8,20 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import java.util.HashSet;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.LinkedHashMap;
 import org.jdom.Element;
 import jetbrains.mps.smodel.SNodePointer;
@@ -35,7 +34,7 @@ public class DebugInfo {
   private static final String NODE_REF_ATTR = "nodeRef";
   private Map<SNodeReference, DebugInfoRoot> myRoots = MapSequence.fromMap(new HashMap<SNodeReference, DebugInfoRoot>());
 
-  /*package*/ DebugInfo() {
+  public DebugInfo() {
   }
 
   private DebugInfoRoot getOrCreateDebugInfoRoot(SNode rootNode) {
@@ -72,28 +71,8 @@ public class DebugInfo {
     return MapSequence.fromMap(myRoots).get(root);
   }
 
-  /*package*/ void putRootInfo(DebugInfoRoot root) {
+  public void putRootInfo(DebugInfoRoot root) {
     MapSequence.fromMap(myRoots).put(root.getNodeRef(), root);
-  }
-
-  /**
-   * Use method getPositionForNode(node): we can not identify a node by id only anymore.
-   */
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public TraceablePositionInfo getPositionForNode(String nodeId) {
-    // used in mbeddr 
-    for (TraceablePositionInfo element : Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, TraceablePositionInfo>() {
-      public Iterable<TraceablePositionInfo> translate(DebugInfoRoot it) {
-        return it.getPositions();
-      }
-    })) {
-      if (eq_exfyrk_a0a0b0n(element.getNodeId(), nodeId)) {
-        return element;
-      }
-    }
-    return null;
   }
 
   @Nullable
@@ -105,27 +84,9 @@ public class DebugInfo {
     }
     return SetSequence.fromSet(root.getPositions()).findFirst(new IWhereFilter<TraceablePositionInfo>() {
       public boolean accept(TraceablePositionInfo it) {
-        return eq_exfyrk_a0a0a0a0a0d0o(it.getNodeId(), node.getNodeId().toString());
+        return eq_exfyrk_a0a0a0a0a0d0n(it.getNodeId(), node.getNodeId().toString());
       }
     });
-  }
-
-  /**
-   * Its impossible to identify node only by id, since there are nodes from other models here => need model id as well
-   */
-  @Deprecated
-  @NotNull
-  public Set<TraceablePositionInfo> getPositions(final SNodeReference rootRef) {
-    // for mbeddr 
-    return SetSequence.fromSetWithValues(new HashSet<TraceablePositionInfo>(), SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).where(new IWhereFilter<SNodeReference>() {
-      public boolean accept(SNodeReference it) {
-        return eq_exfyrk_a0a0a0a0a0b0b0p(it, rootRef);
-      }
-    }).translate(new ITranslator2<SNodeReference, TraceablePositionInfo>() {
-      public Iterable<TraceablePositionInfo> translate(SNodeReference it) {
-        return MapSequence.fromMap(myRoots).get(it).getPositions();
-      }
-    }));
   }
 
   public Set<TraceablePositionInfo> getPositions(SNode rootNode) {
@@ -149,7 +110,7 @@ public class DebugInfo {
         }
       }, false).where(new IWhereFilter<UnitPositionInfo>() {
         public boolean accept(UnitPositionInfo it) {
-          return eq_exfyrk_a0a0a0a0a0a0a2a71(it.getNodeId(), id.toString());
+          return eq_exfyrk_a0a0a0a0a0a0a2a51(it.getNodeId(), id.toString());
         }
       }).toListSequence();
     }
@@ -235,7 +196,7 @@ public class DebugInfo {
     });
   }
 
-  /*package*/ Iterable<DebugInfoRoot> getRoots() {
+  public Iterable<DebugInfoRoot> getRoots() {
     return MapSequence.fromMap(myRoots).values();
   }
 
@@ -244,7 +205,7 @@ public class DebugInfo {
     if (myRoots != null) {
       Iterable<SNodeReference> sorted = SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).sort(new ISelector<SNodeReference, String>() {
         public String select(SNodeReference it) {
-          return SNodePointer.serialize(((SNodePointer) it));
+          return SNodePointer.serialize(it);
         }
       }, true);
       for (SNodeReference id : sorted) {
@@ -253,7 +214,7 @@ public class DebugInfo {
           dir.toXml(element);
         } else {
           Element e = new Element(DebugInfo.ROOT);
-          e.setAttribute(DebugInfo.NODE_REF_ATTR, SNodePointer.serialize(((SNodePointer) id)));
+          e.setAttribute(DebugInfo.NODE_REF_ATTR, SNodePointer.serialize(id));
           dir.toXml(e);
           element.addContent(e);
         }
@@ -289,19 +250,11 @@ public class DebugInfo {
     return info;
   }
 
-  private static boolean eq_exfyrk_a0a0b0n(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0a0a0d0n(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
-  private static boolean eq_exfyrk_a0a0a0a0a0d0o(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_exfyrk_a0a0a0a0a0b0b0p(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_exfyrk_a0a0a0a0a0a0a2a71(Object a, Object b) {
+  private static boolean eq_exfyrk_a0a0a0a0a0a0a2a51(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
