@@ -17,7 +17,7 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;

@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.generator.traceInfo.JavaTraceInfoResourceProvider" file="JavaTraceInfoResourceProvider.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.net.URL" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
-    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
-    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
-    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleOperations" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
-    <classNode dependClassName="jetbrains.mps.reloading.CommonPaths" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="jetbrains.mps.generator.traceInfo.TraceInfoResourceProvider" />
-  </dependency>
   <dependency className="jetbrains.mps.generator.traceInfo.TraceDown" file="TraceDown.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -23,7 +9,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
+    <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfoCache" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -39,43 +25,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.generator.traceInfo.TraceInfoCache" file="TraceInfoCache.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="java.net.MalformedURLException" />
-    <classNode dependClassName="java.net.URL" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.concurrent.CopyOnWriteArrayList" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
-    <classNode dependClassName="jetbrains.mps.generator.generationTypes.StreamHandler" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.JavaTraceInfoResourceProvider" />
-    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
-    <classNode dependClassName="jetbrains.mps.traceInfo.DebugInfo" />
-    <classNode dependClassName="jetbrains.mps.traceInfo.DebugInfoBuilder" />
-    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jdom.Document" />
-    <classNode dependClassName="org.jdom.Element" />
-    <classNode dependClassName="org.jdom.JDOMException" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode extendsClassName="jetbrains.mps.generator.cache.CacheGenerator" />
-    <classNode extendsClassName="jetbrains.mps.generator.cache.XmlBasedModelCache" />
-  </dependency>
   <dependency className="jetbrains.mps.generator.traceInfo.TraceInfoUtil" file="TraceInfoUtil.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -87,7 +36,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
+    <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfoCache" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

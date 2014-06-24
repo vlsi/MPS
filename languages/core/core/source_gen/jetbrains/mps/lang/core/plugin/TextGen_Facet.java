@@ -45,7 +45,7 @@ import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import java.util.Iterator;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.generator.TransientModelsModule;

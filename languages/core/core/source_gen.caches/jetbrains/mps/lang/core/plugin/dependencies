@@ -181,7 +181,6 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.textgen.TextFacility" />
     <classNode dependClassName="jetbrains.mps.generator.template.TracingUtil" />
     <classNode dependClassName="jetbrains.mps.generator.textGen.TextGeneratorEngine" />
-    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -216,6 +215,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.TResource" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGen" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenerationResult" />
+    <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfoCache" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />

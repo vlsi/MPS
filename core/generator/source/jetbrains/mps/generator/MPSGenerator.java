@@ -20,7 +20,7 @@ import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.generator.impl.RootTemplateAnnotator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SRepository;

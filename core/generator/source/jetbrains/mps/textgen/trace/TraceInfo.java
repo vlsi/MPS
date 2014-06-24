@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.DebugInfoRoot;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;

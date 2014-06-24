@@ -9,7 +9,7 @@ import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import org.jetbrains.annotations.NonNls;
