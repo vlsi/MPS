@@ -48,13 +48,13 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String DEVKIT = "devkit";
   // nodes
   public static final String NODE = "node";
-  public static final String CONCEPT_ID = "conceptId";
+  public static final String CONCEPT_ID = "concept";
   public static final String PROPERTY = "property";
   public static final String REFERENCE = "reference";
   public static final String ROLE = "role";
   public static final String VALUE = "value";
   public static final String RESOLVE_INFO = "resolveInfo";
-  public static final String TARGET_NODE_ID = "targetNodeId";
+  public static final String TARGET_NODE_ID = "targetId";
   public static final String NODE_INFO = "info";
   // per-root
   public static final String FILE_CONTENT = "content";
