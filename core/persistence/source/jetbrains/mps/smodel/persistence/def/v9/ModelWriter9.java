@@ -223,7 +223,7 @@ public class ModelWriter9 implements IModelWriter {
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence9.MODEL_IMPORT);
       elem.setAttribute(ModelPersistence9.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
-      elem.setAttribute(ModelPersistence9.ID, modelRef.toString());
+      elem.setAttribute(ModelPersistence9.REF, modelRef.toString());
       rootElement.addContent(elem);
     }
     for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
@@ -231,8 +231,8 @@ public class ModelWriter9 implements IModelWriter {
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence9.MODEL_IMPORT);
       elem.setAttribute(ModelPersistence9.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
-      elem.setAttribute(ModelPersistence9.ID, modelRef.toString());
-      elem.setAttribute(ModelPersistence9.IMPLICIT, "yes");
+      elem.setAttribute(ModelPersistence9.REF, modelRef.toString());
+      elem.setAttribute(ModelPersistence9.IMPLICIT, "true");
       rootElement.addContent(elem);
     }
   }
