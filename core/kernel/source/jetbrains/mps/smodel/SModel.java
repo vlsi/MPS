@@ -46,6 +46,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -80,6 +81,9 @@ public class SModel implements SModelData {
 
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
+
+  private List<SLanguageId> myLanguagesIds = new ArrayList<SLanguageId>();
+
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
@@ -610,7 +614,7 @@ public class SModel implements SModelData {
   //language
 
   public Iterable<SLanguageId> allUsedLanguages() {
-    Set<SLanguageId> result = ((Set<SLanguageId>) usedLanguages());
+    Set<SLanguageId> result = new HashSet<SLanguageId>(IterableUtil.asCollection(usedLanguages()));
     for (SModuleReference dk : myDevKits) {
       DevKit devKit = ((DevKit) dk.resolve(MPSModuleRepository.getInstance()));
       if (devKit == null) continue;
@@ -620,11 +624,7 @@ public class SModel implements SModelData {
   }
 
   public Iterable<SLanguageId> usedLanguages() {
-    Set<SLanguageId> result = new HashSet<SLanguageId>();
-    for (SModuleReference ref:myLanguages){
-      result.add(LangUtil.getLanguageId(ref.getModuleId()));
-    }
-    return result;
+    return Collections.unmodifiableList(myLanguagesIds);
   }
 
   @Deprecated
@@ -641,6 +641,20 @@ public class SModel implements SModelData {
       //calculateImplicitImports();
       invalidateModelDepsManager();
       fireLanguageRemovedEvent(ref);
+      markChanged();
+    }
+
+    deleteLanguage(LangUtil.getLanguageId(ref.getModuleId()));
+  }
+
+  public void deleteLanguage(@NotNull SLanguageId id) {
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
+
+    if (myLanguagesIds.remove(id)) {
+      invalidateModelDepsManager();
+      fireLanguageRemovedEvent(convertLanguageRef(id));
       markChanged();
     }
   }
@@ -662,23 +676,24 @@ public class SModel implements SModelData {
       fireLanguageAddedEvent(ref);
       markChanged();
     }
+
+    addLanguage(LangUtil.getLanguageId(ref.getModuleId()));
   }
 
-  public void addLanguage(SLanguageId ref) {
+  public void addLanguage(SLanguageId id) {
     if (myModelDescriptor != null) {
       ModelChange.assertLegalChange(myModelDescriptor);
     }
 
-    if (importedLanguages().contains(ref)) return;
+    if (importedLanguages().contains(id)) return;
 
-    if (ref.getId() == null) {
-      LOG.warn("Attempt to add language reference to a language without id in model " + getReference().getModelName() + ". Language = " + ref);
+    if (id.getId() == null) {
+      LOG.warn("Attempt to add language reference to a language without id in model " + getReference().getModelName() + ". Language = " + id);
     }
 
-    SModuleReference converted = convertLanguageRef(ref);
-    if (myLanguages.add(converted)) {
+    if (myLanguagesIds.add(id)) {
       invalidateModelDepsManager();
-      fireLanguageAddedEvent(converted);
+      fireLanguageAddedEvent(convertLanguageRef(id));
       markChanged();
     }
   }
