@@ -27,7 +27,7 @@ import jetbrains.mps.textgen.trace.TraceInfo;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;

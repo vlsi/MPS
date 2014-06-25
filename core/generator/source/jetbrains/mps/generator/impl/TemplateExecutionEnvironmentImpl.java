@@ -42,7 +42,7 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.generator.template.TracingUtil;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;

@@ -21,8 +21,6 @@ import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.traceInfo.DebugInfoBuilder;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;

@@ -17,9 +17,9 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.messages.IMessage;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.traceInfo.ScopePositionInfo;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
+import jetbrains.mps.textgen.trace.ScopePositionInfo;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

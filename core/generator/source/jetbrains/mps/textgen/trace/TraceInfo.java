@@ -15,10 +15,6 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.traceInfo.DebugInfoRoot;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;

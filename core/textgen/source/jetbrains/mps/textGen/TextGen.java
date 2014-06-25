@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
-import jetbrains.mps.traceInfo.PositionInfo;
-import jetbrains.mps.traceInfo.ScopePositionInfo;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
+import jetbrains.mps.textgen.trace.PositionInfo;
+import jetbrains.mps.textgen.trace.ScopePositionInfo;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -74,8 +73,8 @@ public class TextGen {
     } else if (failIfNoTextgen) {
       String error = "Can't generate text from " + node;
       Message m = new Message(MessageKind.ERROR, error);
-      if (node != null && node.getModel() != null && !(node.getModel() .getModule() instanceof TransientModelsModule)) {
-        m.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
+      if (node != null) {
+        m.setHintObject(node.getReference());
       }
       return new TextGenerationResult(node, NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);
     } else {

@@ -32,7 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.generator.template.TracingUtil;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -511,7 +511,7 @@ public class QueriesGenerated {
         referenceNode.setProperty("targetModel", TracingUtil.getInput(targetNode).getModelReference().toString());
         targetNode = TracingUtil.getInputNode(targetNode);
       } else {
-        referenceNode.setProperty("targetModel", ((SModelReference) ((jetbrains.mps.smodel.SReference) ref).getTargetSModelReference()).update().toString());
+        referenceNode.setProperty("targetModel", ((SModelReference) ref.getTargetSModelReference()).update().toString());
       }
       if (targetNode != null) {
         referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());

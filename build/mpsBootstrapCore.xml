@@ -133,9 +133,6 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-kernel-patternRuntime-models">
       <fileset dir="${mps_home}/core/kernel/patternRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-kernel-jetbrains.mps.debug.api.info-jetbrains">
-      <fileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-generator-solutions-traceInfo-util-models">
       <fileset dir="${mps_home}/core/generator/solutions/traceInfo/util/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -194,9 +191,6 @@
       <zipfileset file="${mps_home}/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/patternRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-kernel-patternRuntime-models" prefix="modules/jetbrains.mps.lang.pattern.runtime/models" />
-      <zipfileset file="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.traceInfo.msd" prefix="modules/jetbrains.mps.traceInfo" />
-      <zipfileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-kernel-jetbrains.mps.debug.api.info-jetbrains" prefix="modules/jetbrains.mps.traceInfo/jetbrains" />
       <zipfileset file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" prefix="modules/jetbrains.mps.traceInfo.cache" />
       <zipfileset dir="${mps_home}/core/generator/solutions/traceInfo/util" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo.cache" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-generator-solutions-traceInfo-util-models" prefix="modules/jetbrains.mps.traceInfo.cache/models" />
@@ -2939,7 +2933,6 @@
         <module file="${mps_home}/core/tool/builder/jetbrains.mps.tool.builder.msd" />
         <module file="${mps_home}/core/tool/common/jetbrains.mps.tool.common.msd" />
         <module file="${mps_home}/languages/languageDesign/make/languages/gentest/jetbrains.mps.tool.gentest.mpl" />
-        <module file="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.traceInfo.msd" />
         <module file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" />
       </chunk>
       <chunk />
@@ -3066,7 +3059,7 @@
         <pathelement path="${mps_home}/core/kernel/resources/source_gen" />
         <pathelement path="${mps_home}/core/kernel/smodelRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/stubUtils/source_gen" />
-        <pathelement path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" />
+        <pathelement path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" />
@@ -3116,7 +3109,7 @@
         <pathelement path="${mps_home}/core/kernel/resources/source_gen" />
         <pathelement path="${mps_home}/core/kernel/smodelRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/stubUtils/source_gen" />
-        <pathelement path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" />
+        <pathelement path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" />
@@ -3160,7 +3153,7 @@
       <fileset dir="${mps_home}/core/kernel/resources/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/kernel/smodelRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/kernel/stubUtils/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -8391,7 +8384,6 @@
     <delete dir="${mps_home}/core/tool/builder/source_gen" />
     <delete dir="${mps_home}/core/tool/common/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/make/languages/gentest/source_gen" />
-    <delete dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" />
     <delete dir="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/generator/source_gen" />
   </target>

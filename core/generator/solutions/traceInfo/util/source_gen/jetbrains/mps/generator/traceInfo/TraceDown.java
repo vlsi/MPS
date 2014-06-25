@@ -5,20 +5,19 @@ package jetbrains.mps.generator.traceInfo;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.textgen.trace.TraceInfoCache;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import java.util.List;
-import jetbrains.mps.traceInfo.DebugInfoRoot;
+import jetbrains.mps.textgen.trace.TraceInfo;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
+import jetbrains.mps.textgen.trace.UnitPositionInfo;
+import jetbrains.mps.textgen.trace.DebugInfoRoot;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 /**
@@ -33,16 +32,8 @@ public class TraceDown {
 
   @NotNull
   public static Iterable<String> unitNames(SNode node) {
-    SModel model = node.getModel();
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
-    if (debugInfo == null) {
-      return Sequence.fromIterable(Collections.<String>emptyList());
-    }
-    return ListSequence.fromList(debugInfo.getUnitsForNode(node)).select(new ISelector<UnitPositionInfo, String>() {
-      public String select(UnitPositionInfo it) {
-        return it.getUnitName();
-      }
-    });
+    List<String> unitNames = TraceInfo.unitNames(node);
+    return unitNames;
   }
 
   public static String anyUnitName(SNode node) {
@@ -78,27 +69,7 @@ public class TraceDown {
     return null;
   }
 
-  public static boolean isTraceable(@NotNull final SNode node, @NotNull DebugInfo info) {
-    DebugInfoRoot rootInfo = info.getRootInfo(SNodeOperations.getContainingRoot(node));
-    if (rootInfo == null) {
-      return false;
-    }
-    return SetSequence.fromSet(rootInfo.getPositions()).findFirst(new IWhereFilter<TraceablePositionInfo>() {
-      public boolean accept(TraceablePositionInfo it) {
-        return eq_mk0t6b_a0a0a0a0a0a2a4(it.getNodeId(), node.getNodeId().toString());
-      }
-    }) != null;
-  }
-
   public static boolean isTraceable(@NotNull SNode node) {
-    DebugInfo info = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node));
-    if (info == null) {
-      return false;
-    }
-    return isTraceable(node, info);
-  }
-
-  private static boolean eq_mk0t6b_a0a0a0a0a0a2a4(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+    return TraceInfo.getPositionForNode(node) != null;
   }
 }

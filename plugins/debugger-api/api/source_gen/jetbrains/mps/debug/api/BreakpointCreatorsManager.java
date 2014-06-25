@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.TraceInfo;
 import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Logger;

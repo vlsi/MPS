@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.template.TracingUtil;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelInternal;
 import org.apache.log4j.LogManager;

@@ -16,13 +16,6 @@
 package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.traceInfo.DebugInfoRoot;
-import jetbrains.mps.traceInfo.PositionInfo;
-import jetbrains.mps.traceInfo.ScopePositionInfo;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
-import jetbrains.mps.traceInfo.VarInfo;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jdom.Element;
