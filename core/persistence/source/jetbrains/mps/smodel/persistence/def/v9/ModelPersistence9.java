@@ -89,16 +89,12 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
-    //TODO
-    return null;
-    //return new ModelReader9Handler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
+    return new ModelReader9Handler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
   }
 
   @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
-    //TODO
-    return null;
-    //return new LineToContentMapReader9Handler();
+    return new AnnotationInfoReader9Handler();
   }
 
   @Override
