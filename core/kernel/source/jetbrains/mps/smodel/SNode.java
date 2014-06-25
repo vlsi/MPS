@@ -373,6 +373,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
+  public void addChild(SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child) {
+    insertChildBefore(role, child, null);
+  }
+
+  @Override
   public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
     insertChildBefore(role, child, null);
   }

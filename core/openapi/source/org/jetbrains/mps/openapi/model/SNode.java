@@ -94,6 +94,9 @@ public interface SNode {
 
   // tree operation
 
+  void addChild(SContainmentLinkId role, SNode child);
+
+  @Deprecated
   void addChild(String role, SNode child);
 
   /**
