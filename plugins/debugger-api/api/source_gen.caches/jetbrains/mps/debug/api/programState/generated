@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d4g9w22wtsqry49vlflzsiuejr40jf">
+<dependencies version="2" modelHash="-epkhi0oxnwy8bh2mzewzvhsm9d0r1hu">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="cvil8r0ft5eka0cmo8v0polulnsmrzt" dependsOnNodes="true">
+  <common hash="-4gcgc68ucnzg4xt1hgpntwf18e4jci4" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="4474271214082913243" name="IThread" hash="-17do2ndujk5d44g3p1n3wea8l4yfma9">
@@ -13,7 +13,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NullLocation.java" />
   </source>
-  <source id="4474271214082913394" name="WatchablesCategory" hash="4menku82ys5kvhs3cfwhbmb20ixrps8">
+  <source id="4474271214082913394" name="WatchablesCategory" hash="-84id4c80s22e8a485dmi3p2bfm9vplh">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="WatchablesCategory.java" />
