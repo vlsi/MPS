@@ -1255,7 +1255,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7167172773708890742" nodeInfo="nn">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7167172773708890743" nodeInfo="nn">
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7167172773708890744" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~InterfaceSNode%dskipRole(java%dlang%dString)%cvoid" resolveInfo="skipRole" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~InterfaceSNode%dskipRole(org%djetbrains%dmps%dopenapi%dlanguage%dSContainmentLinkId)%cvoid" resolveInfo="skipRole" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="7167172773708890745" nodeInfo="nn">
                         <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7167172773708890746" nodeInfo="nn">
                           <property name="value" nameId="tpee.1068580320021" value="0" />
@@ -1728,7 +1728,7 @@
     </node>
   </root>
   <root type="nv7r.XMLSAXParser" typeId="nv7r.2264311582634140417" id="7167172773708891006" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="LineToContentMapReader9" />
+    <property name="name" nameId="tpck.1169194664001" value="AnnotationInfoReader9" />
     <link role="root" roleId="nv7r.2264311582634140419" targetNodeId="7167172773708891009" resolveInfo="model" />
     <node role="fields" roleId="nv7r.2264311582634140421" type="nv7r.XMLSAXFieldDeclaration" typeId="nv7r.2264311582634140381" id="7167172773708891007" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="accumulator" />
@@ -1739,29 +1739,9 @@
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="7167172773708891009" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="model" />
       <property name="tagName" nameId="nv7r.2264311582634140409" value="model" />
-      <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="7167172773708891010" nodeInfo="ng">
-        <property name="tagName" nameId="nv7r.2264311582634140378" value="persistence" />
-        <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="7167172773708891098" resolveInfo="null" />
-      </node>
-      <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="7167172773708891011" nodeInfo="ng">
-        <property name="tagName" nameId="nv7r.2264311582634140378" value="language" />
-        <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="7167172773708891098" resolveInfo="null" />
-      </node>
-      <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="7167172773708891012" nodeInfo="ng">
-        <property name="tagName" nameId="nv7r.2264311582634140378" value="language-engaged-on-generation" />
-        <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="7167172773708891098" resolveInfo="null" />
-      </node>
-      <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="7167172773708891013" nodeInfo="ng">
-        <property name="tagName" nameId="nv7r.2264311582634140378" value="devkit" />
-        <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="7167172773708891098" resolveInfo="null" />
-      </node>
-      <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="7167172773708891014" nodeInfo="ng">
-        <property name="tagName" nameId="nv7r.2264311582634140378" value="import" />
-        <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="7167172773708891098" resolveInfo="null" />
-      </node>
       <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="7167172773708891015" nodeInfo="ng">
         <property name="overrideTag" nameId="nv7r.2264311582634140379" value="true" />
-        <property name="tagName" nameId="nv7r.2264311582634140378" value="root" />
+        <property name="tagName" nameId="nv7r.2264311582634140378" value="node" />
         <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="7167172773708891036" resolveInfo="node" />
         <node role="handler" roleId="nv7r.2264311582634140377" type="nv7r.XMLSAXChildHandler" typeId="nv7r.2264311582634140370" id="7167172773708891016" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7167172773708891017" nodeInfo="sn">
@@ -1920,14 +1900,14 @@
       <property name="tagName" nameId="nv7r.2264311582634140409" value="property" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="7167172773708891085" nodeInfo="ng">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="name" />
+        <property name="name" nameId="tpck.1169194664001" value="id" />
       </node>
       <node role="type" roleId="nv7r.2264311582634140403" type="tpee.StringType" typeId="tpee.1225271177708" id="7167172773708891086" nodeInfo="in" />
       <node role="creator" roleId="nv7r.2264311582634140407" type="nv7r.XMLSAXNodeCreator" typeId="nv7r.2264311582634140399" id="7167172773708891087" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7167172773708891088" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7167172773708891089" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068580123156" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="7167172773708891090" nodeInfo="nn">
-              <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708891085" resolveInfo="name" />
+              <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708891085" resolveInfo="id" />
             </node>
           </node>
         </node>
@@ -1939,14 +1919,14 @@
       <property name="tagName" nameId="nv7r.2264311582634140409" value="link" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="7167172773708891092" nodeInfo="ng">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="role" />
+        <property name="name" nameId="tpck.1169194664001" value="id" />
       </node>
       <node role="type" roleId="nv7r.2264311582634140403" type="tpee.StringType" typeId="tpee.1225271177708" id="7167172773708891093" nodeInfo="in" />
       <node role="creator" roleId="nv7r.2264311582634140407" type="nv7r.XMLSAXNodeCreator" typeId="nv7r.2264311582634140399" id="7167172773708891094" nodeInfo="nn">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7167172773708891095" nodeInfo="sn">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7167172773708891096" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068581517676" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="7167172773708891097" nodeInfo="nn">
-              <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708891092" resolveInfo="role" />
+              <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708891092" resolveInfo="id" />
             </node>
           </node>
         </node>
