@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.Language;
@@ -89,7 +88,7 @@ public abstract class LanguageRuntime {
     return null;
   }
 
-  public abstract Collection<TemplateModule> getGenerators();
+  public abstract Collection<? extends GeneratorRuntime> getGenerators();
 
   @Deprecated
   private <T> DescriptorProvider<T> getDescriptorProvider(String aspectName, DescriptorProvider<T> defaultProvider) {

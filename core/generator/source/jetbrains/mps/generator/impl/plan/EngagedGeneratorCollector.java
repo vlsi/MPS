@@ -19,6 +19,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
@@ -184,7 +185,7 @@ final class EngagedGeneratorCollector {
   }
 
   private List<TemplateModule> collectLanguagesFromGenerators(LanguageRuntime language, Set<String> targetLanguages, Set<String> moreLanguages) {
-    Collection<TemplateModule> generators = language.getGenerators();
+    Collection<? extends  GeneratorRuntime> generators = language.getGenerators();
     if (generators == null) {
       return Collections.emptyList();
     }
@@ -193,10 +194,11 @@ final class EngagedGeneratorCollector {
 
 
     // collect extra languages from generator module description
-    for (TemplateModule generator : generators) {
-      if (generator == null) {
+    for (GeneratorRuntime gr : generators) {
+      if (false == gr instanceof TemplateModule) {
         continue;
       }
+      final TemplateModule generator = (TemplateModule) gr;
       langGenerators.add(generator);
 
       // handle Used languages

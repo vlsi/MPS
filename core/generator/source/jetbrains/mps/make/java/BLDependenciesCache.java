@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.make.java;
 
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
