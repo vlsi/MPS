@@ -124,7 +124,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
 
   @Override
   public int getVersion() {
-    return 6;
+    return 7;
   }
 
   @Override
