@@ -29,8 +29,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 //for migration purposes in 3.2
 public abstract class LangUtil {
   public static SLanguageId getLanguageId(Language l) {
-    SModuleId moduleId = l.getModuleReference().getModuleId();
-    return getLanguageId(moduleId);
+    return getLanguageId(l.getModuleReference().getModuleId());
   }
 
   public static SLanguageId getLanguageId(SModuleId moduleId) {
@@ -45,7 +44,7 @@ public abstract class LangUtil {
   //node must be a concept
   public static SConceptId getConceptId(SNode c) {
     SNodeId nodeId = c.getNodeId();
-    assert nodeId instanceof Regular;
+    assert nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular;
     return new SConceptId(LangUtil.getLanguageId(((Language) c.getModel().getModule())),
         ((int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId()));
   }
