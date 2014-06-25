@@ -315,10 +315,6 @@
           <property name="relativePath" nameId="3ior.2754769020641429191" value="stubUtils/source_gen" />
           <property name="kind" nameId="3ior.5248329904288265467" value="source" />
         </node>
-        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1930569293341276868" nodeInfo="ng">
-          <property name="relativePath" nameId="3ior.2754769020641429191" value="jetbrains.mps.debug.api.info/source" />
-          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
-        </node>
       </node>
       <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="1930569293341276869" nodeInfo="ng">
         <node role="basePath" roleId="3ior.7389400916848073811" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1930569293341276871" nodeInfo="ng">
@@ -343,29 +339,6 @@
         </node>
         <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="6657714989930320983" nodeInfo="ng">
           <property name="relativePath" nameId="3ior.2754769020641429191" value="jetbrains.mps.make.facets/source_gen" />
-          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
-        </node>
-      </node>
-      <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="1930569293341276876" nodeInfo="ng">
-        <node role="basePath" roleId="3ior.7389400916848073811" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1930569293341276878" nodeInfo="ng">
-          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1930569293341276879" nodeInfo="nn">
-            <property name="head" nameId="3ior.8618885170173601779" value="core" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7507666976389112480" nodeInfo="nn">
-              <property name="head" nameId="3ior.8618885170173601779" value="generator" />
-            </node>
-          </node>
-        </node>
-        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1930569293341276880" nodeInfo="ng">
-          <property name="relativePath" nameId="3ior.2754769020641429191" value="solutions/traceInfo/util/source_gen" />
-          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
-        </node>
-        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1930569293341276882" nodeInfo="ng">
-          <property name="relativePath" nameId="3ior.2754769020641429191" value="source" />
-          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
-        </node>
-        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1930569293341276883" nodeInfo="ng">
-          <property name="relativePath" nameId="3ior.2754769020641429191" value="source_gen" />
           <property name="kind" nameId="3ior.5248329904288265467" value="source" />
         </node>
       </node>
@@ -543,6 +516,59 @@
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="3698852471281794066" nodeInfo="ng">
         <property name="reexport" nameId="3ior.7259033139236507306" value="false" />
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="3698852471281781478" resolveInfo="mps-persistence" />
+      </node>
+    </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="8176176308084648881" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="mps-debuginfo-api" />
+      <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="8176176308084671863" nodeInfo="ng">
+        <node role="basePath" roleId="3ior.7389400916848073811" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="8176176308084671864" nodeInfo="ng">
+          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8176176308084671865" nodeInfo="nn">
+            <property name="head" nameId="3ior.8618885170173601779" value="core" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8176176308084671866" nodeInfo="nn">
+              <property name="head" nameId="3ior.8618885170173601779" value="kernel" />
+            </node>
+          </node>
+        </node>
+        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="8176176308084671876" nodeInfo="ng">
+          <property name="relativePath" nameId="3ior.2754769020641429191" value="jetbrains.mps.debug.api.info/source" />
+          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
+        </node>
+      </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="8176176308084664405" nodeInfo="ng">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="4660799357014784658" resolveInfo="mps-smodel" />
+      </node>
+    </node>
+    <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="8176176308084566910" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="mps-generator" />
+      <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="1930569293341276876" nodeInfo="ng">
+        <node role="basePath" roleId="3ior.7389400916848073811" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1930569293341276878" nodeInfo="ng">
+          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="1930569293341276879" nodeInfo="nn">
+            <property name="head" nameId="3ior.8618885170173601779" value="core" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7507666976389112480" nodeInfo="nn">
+              <property name="head" nameId="3ior.8618885170173601779" value="generator" />
+            </node>
+          </node>
+        </node>
+        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1930569293341276880" nodeInfo="ng">
+          <property name="relativePath" nameId="3ior.2754769020641429191" value="solutions/traceInfo/util/source_gen" />
+          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
+        </node>
+        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1930569293341276882" nodeInfo="ng">
+          <property name="relativePath" nameId="3ior.2754769020641429191" value="source" />
+          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
+        </node>
+        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1930569293341276883" nodeInfo="ng">
+          <property name="relativePath" nameId="3ior.2754769020641429191" value="source_gen" />
+          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
+        </node>
+      </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="8176176308084606030" nodeInfo="ng">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="4660799357014784658" resolveInfo="mps-smodel" />
+      </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="8176176308084629655" nodeInfo="ng">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="8176176308084648881" resolveInfo="mps-debuginfo-api" />
       </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="4660799357014784658" nodeInfo="ng">
@@ -820,6 +846,9 @@
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="1277685309310599413" nodeInfo="ng">
       <property name="name" nameId="tpck.1169194664001" value="mps-platform" />
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="8176176308084701063" nodeInfo="ng">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="8176176308084566910" resolveInfo="mps-generator" />
+      </node>
       <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="1277685309310599414" nodeInfo="ng">
         <node role="basePath" roleId="3ior.7389400916848073811" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="1277685309310599416" nodeInfo="ng">
           <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
@@ -1249,6 +1278,12 @@
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="4660799357014863530" nodeInfo="ng">
             <link role="module" roleId="3ior.2591537044435828006" targetNodeId="4660799357014784658" resolveInfo="mps-smodel" />
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="8176176308084720995" nodeInfo="ng">
+            <link role="module" roleId="3ior.2591537044435828006" targetNodeId="8176176308084566910" resolveInfo="mps-generator" />
+          </node>
+          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="8176176308084728451" nodeInfo="ng">
+            <link role="module" roleId="3ior.2591537044435828006" targetNodeId="8176176308084648881" resolveInfo="mps-debuginfo-api" />
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="8654221991637339949" nodeInfo="ng">
             <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="8654221991637339950" nodeInfo="ng">
