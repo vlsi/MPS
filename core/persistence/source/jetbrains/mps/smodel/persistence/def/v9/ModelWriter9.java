@@ -221,16 +221,16 @@ public class ModelWriter9 implements IModelWriter {
     for (ImportElement importElement : sourceModel.importedModels()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
-      Element elem = new Element(ModelPersistence9.MODEL_IMPORT);
-      elem.setAttribute(ModelPersistence9.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
+      Element elem = new Element(ModelPersistence9.IMPORT);
+      elem.setAttribute(ModelPersistence9.IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
       elem.setAttribute(ModelPersistence9.REF, modelRef.toString());
       rootElement.addContent(elem);
     }
     for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
-      Element elem = new Element(ModelPersistence9.MODEL_IMPORT);
-      elem.setAttribute(ModelPersistence9.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
+      Element elem = new Element(ModelPersistence9.IMPORT);
+      elem.setAttribute(ModelPersistence9.IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
       elem.setAttribute(ModelPersistence9.REF, modelRef.toString());
       elem.setAttribute(ModelPersistence9.IMPLICIT, "true");
       rootElement.addContent(elem);
@@ -272,20 +272,20 @@ public class ModelWriter9 implements IModelWriter {
   protected void saveNode(Element nodeElement, SNode node, boolean saveChildren) {
     nodeElement.setAttribute(ModelPersistence9.CONCEPT_ID, myHelper.getConceptIndex(node.getConcept().getId()));
     nodeElement.setAttribute(ModelPersistence9.ID, node.getNodeId().toString());
-    DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE, myHelper.getNodeRoleIndex(node.getRoleInParentId()));
+    DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, myHelper.getNodeRoleIndex(node.getRoleInParentId()));
     String info = Util9.genNodeInfo(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), node);
     DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.NODE_INFO, info);
 
     for (SPropertyId pid : node.getPropertyIds()) {
       Element propertyElement = new Element(ModelPersistence9.PROPERTY);
-      propertyElement.setAttribute(ModelPersistence9.ID, myHelper.getPropertyIndex(pid));
+      propertyElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getPropertyIndex(pid));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence9.VALUE, node.getProperty(pid));
       nodeElement.addContent(propertyElement);
     }
 
     for (SReference reference : node.getReferences()) {
       Element linkElement = new Element(ModelPersistence9.REFERENCE);
-      linkElement.setAttribute(ModelPersistence9.ID, myHelper.getReferenceRoleIndex(reference.getRoleId()));
+      linkElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getReferenceRoleIndex(reference.getRoleId()));
       linkElement.setAttribute(ModelPersistence9.TARGET_NODE_ID, myHelper.getRefTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence9.RESOLVE_INFO, Util9.genResolveInfo(reference));
       nodeElement.addContent(linkElement);
@@ -331,8 +331,8 @@ public class ModelWriter9 implements IModelWriter {
       ((MultiStreamStorageIndexHelper9) myHelper).setUsedImportsListener(null);
 
       for (SModelReference modelRef : usedImports.getResult()) {
-        Element elem = new Element(ModelPersistence9.MODEL_IMPORT);
-        elem.setAttribute(ModelPersistence9.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
+        Element elem = new Element(ModelPersistence9.IMPORT);
+        elem.setAttribute(ModelPersistence9.IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
         elem.setAttribute(ModelPersistence9.ID, modelRef.toString());
         elem.setAttribute(ModelPersistence9.IMPLICIT, "yes");
         rootElement.addContent(elem);

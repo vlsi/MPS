@@ -713,6 +713,7 @@
       <property name="name" nameId="tpck.1169194664001" value="imports" />
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="false" />
       <node role="children" roleId="nv7r.2264311582634140405" type="nv7r.XMLSAXChildRule" typeId="nv7r.2264311582634140376" id="7167172773708890308" nodeInfo="ng">
+        <property name="tagName" nameId="nv7r.2264311582634140378" value="import" />
         <link role="rule" roleId="nv7r.2264311582634140380" targetNodeId="7167172773708890489" resolveInfo="model_import" />
         <node role="handler" roleId="nv7r.2264311582634140377" type="nv7r.XMLSAXChildHandler" typeId="nv7r.2264311582634140370" id="7167172773708890309" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7167172773708890310" nodeInfo="sn">
@@ -755,7 +756,6 @@
     <node role="nodes" roleId="nv7r.2264311582634140420" type="nv7r.XMLSAXNodeRule" typeId="nv7r.2264311582634140402" id="7167172773708890489" nodeInfo="ng">
       <property name="isCompact" nameId="nv7r.2264311582634140410" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="model_import" />
-      <property name="tagName" nameId="nv7r.2264311582634140409" value="import" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="7167172773708890490" nodeInfo="ng">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="index" />
@@ -1537,7 +1537,7 @@
       <property name="name" nameId="tpck.1169194664001" value="property" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="7167172773708890934" nodeInfo="ng">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="id" />
+        <property name="name" nameId="tpck.1169194664001" value="role" />
       </node>
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="7167172773708890944" nodeInfo="ng">
         <property name="name" nameId="tpck.1169194664001" value="value" />
@@ -1561,7 +1561,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4072482659875175202" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4072482659873620263" resolveInfo="readPropId" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="4072482659875175897" nodeInfo="nn">
-                    <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890934" resolveInfo="id" />
+                    <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890934" resolveInfo="role" />
                   </node>
                 </node>
               </node>
@@ -1578,7 +1578,7 @@
       <property name="name" nameId="tpck.1169194664001" value="reference" />
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="7167172773708890969" nodeInfo="ng">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="id" />
+        <property name="name" nameId="tpck.1169194664001" value="role" />
       </node>
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="7167172773708890979" nodeInfo="ng">
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
@@ -1623,7 +1623,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4072482659875290092" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4072482659875236138" resolveInfo="readRefRole" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="4072482659875291470" nodeInfo="nn">
-                    <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890969" resolveInfo="id" />
+                    <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890969" resolveInfo="role" />
                   </node>
                 </node>
               </node>

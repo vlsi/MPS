@@ -781,14 +781,14 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class PropertyElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"id"};
+    private String[] requiredAttributes = new String[]{"role"};
 
     public PropertyElementHandler() {
     }
 
     @Override
     protected Tuples._2<SPropertyId, String> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SPropertyId,String>from(fieldhelper.readPropId(attrs.getValue("id")), attrs.getValue("value"));
+      return MultiTuple.<SPropertyId,String>from(fieldhelper.readPropId(attrs.getValue("role")), attrs.getValue("value"));
     }
 
     @Override
@@ -799,7 +799,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Tuples._2<SPropertyId, String> result = (Tuples._2<SPropertyId, String>) resultObject;
-      if ("id".equals(name)) {
+      if ("role".equals(name)) {
         return;
       }
       if ("value".equals(name)) {
@@ -810,7 +810,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class ReferenceElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"id", "target"};
+    private String[] requiredAttributes = new String[]{"role", "target"};
 
     public ReferenceElementHandler() {
     }
@@ -818,7 +818,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     @Override
     protected Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String> createObject(Attributes attrs) throws SAXException {
       Pair<Boolean, SNodePointer> linkInfo = fieldhelper.readLink(attrs.getValue("target"));
-      return MultiTuple.<SReferenceLinkId,SNodePointer,Boolean,String>from(fieldhelper.readRefRole(attrs.getValue("id")), linkInfo.o2, linkInfo.o1, attrs.getValue("resolveInfo"));
+      return MultiTuple.<SReferenceLinkId,SNodePointer,Boolean,String>from(fieldhelper.readRefRole(attrs.getValue("role")), linkInfo.o2, linkInfo.o1, attrs.getValue("resolveInfo"));
     }
 
     @Override
@@ -829,7 +829,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String> result = (Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String>) resultObject;
-      if ("id".equals(name)) {
+      if ("role".equals(name)) {
         return;
       }
       if ("target".equals(name)) {
