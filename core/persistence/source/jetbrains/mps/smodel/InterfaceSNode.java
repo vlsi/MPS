@@ -18,16 +18,15 @@ package jetbrains.mps.smodel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * evgeny, 5/2/13
- */
 public class InterfaceSNode extends SNode {
 
   private Set<String> skippedRoles;
+  private Set<SContainmentLinkId> skippedRolesIds;
 
   public InterfaceSNode(@NotNull SConceptId concept) {
     super(concept);
@@ -39,7 +38,7 @@ public class InterfaceSNode extends SNode {
 
   @Override
   protected SNode firstChild() {
-    if (skippedRoles != null) {
+    if (skippedRoles != null || skippedRolesIds != null) {
       enforceModelLoad();
     }
     return super.firstChild();
@@ -55,12 +54,23 @@ public class InterfaceSNode extends SNode {
 
   @Override
   public void insertChildBefore(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    if (skippedRoles != null) {
+    if (skippedRoles != null || skippedRolesIds != null) {
       enforceModelLoad();
     }
     super.insertChildBefore(role, child, anchor);
   }
 
+  public void skipRole(SContainmentLinkId role) {
+    if (myModel != null) {
+      throw new IllegalStateException();
+    }
+    if (skippedRolesIds == null) {
+      skippedRolesIds = new HashSet<SContainmentLinkId>();
+    }
+    skippedRolesIds.add(role);
+  }
+
+  @Deprecated
   public void skipRole(String role) {
     if (myModel != null) {
       throw new IllegalStateException();
@@ -72,7 +82,7 @@ public class InterfaceSNode extends SNode {
   }
 
   public boolean hasSkippedChildren() {
-    return skippedRoles != null;
+    return skippedRoles != null || skippedRolesIds!=null;
   }
 
   public void cleanSkippedRoles() {
@@ -80,6 +90,7 @@ public class InterfaceSNode extends SNode {
       throw new IllegalStateException();
     }
     skippedRoles = null;
+    skippedRolesIds = null;
   }
 
   private void enforceModelLoad() {

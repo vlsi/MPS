@@ -933,10 +933,17 @@ public class SModel implements SModelData {
       this(modelReference, referenceID, -1);
     }
 
+    @Deprecated
     public ImportElement(SModelReference modelReference, int referenceID, int usedVersion) {
       myModelReference = modelReference;
       myReferenceID = referenceID;
       myUsedVersion = usedVersion;
+    }
+
+    public ImportElement(SModelReference modelReference) {
+      myModelReference = modelReference;
+      myReferenceID = 0;
+      myUsedVersion = -1;
     }
 
     public SModelReference getModelReference() {
