@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.textgen.trace.DebugInfoRoot;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -65,7 +67,8 @@ public class TraceInfoUtil {
         if (unitInfo == null) {
           return null;
         }
-        return unitInfo._1().findNode(unitInfo._0());
+        final String model = unitInfo._1().getNodeRef().getModelReference().toString();
+        return new SNodePointer(model, unitInfo._0().getNodeId()).resolve(MPSModuleRepository.getInstance());
       }
     });
   }
@@ -158,6 +161,8 @@ public class TraceInfoUtil {
           if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == lineNumber && firstPositionInfo.getLineDistance() > 0) {
             result = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1);
           }
+          // FIXME ugly code follows. Whole TraceInfo story needs re-write to accomodate SRepository 
+          final String model = root.getNodeRef().getModelReference().toString();
           // here we have another example of how not to write code 
           // this is a hack fixing MPS-8644 
           // the problem is with the BlockStatement which sometimes generates to nothing, but is still present in .debug 
@@ -176,12 +181,12 @@ public class TraceInfoUtil {
               }
             });
             if (Sequence.fromIterable(sameSpacePositions).count() > 1) {
-              SNode currentNode = root.findNode(firstPositionInfo);
+              SNode currentNode = new SNodePointer(model, firstPositionInfo.getNodeId()).resolve(MPSModuleRepository.getInstance());
               boolean finished = false;
               while (!(finished)) {
                 finished = true;
                 for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
-                  SNode otherNode = root.findNode(otherPos);
+                  SNode otherNode = new SNodePointer(model, otherPos.getNodeId()).resolve(MPSModuleRepository.getInstance());
                   if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getAncestors(otherNode, null, false)).contains(currentNode)) {
                     currentNode = otherNode;
                     finished = false;
@@ -192,7 +197,7 @@ public class TraceInfoUtil {
               return currentNode;
             }
           }
-          return root.findNode(result);
+          return new SNodePointer(model, result.getNodeId()).resolve(MPSModuleRepository.getInstance());
         }
         return null;
       }
@@ -220,7 +225,8 @@ public class TraceInfoUtil {
           for (ScopePositionInfo scopeInfo : sorted) {
             String varInfo = scopeInfo.getVarId(varName);
             if ((varInfo != null && varInfo.length() > 0)) {
-              return root.findNode(varInfo);
+              final String model = root.getNodeRef().getModelReference().toString();
+              return new SNodePointer(model, varInfo).resolve(MPSModuleRepository.getInstance());
             }
           }
         }
@@ -306,8 +312,9 @@ public class TraceInfoUtil {
           return null;
         }
         for (IMapping<DebugInfoRoot, List<T>> rootToInfo : MapSequence.fromMap(infoForPosition)) {
+          final String model = rootToInfo.key().getNodeRef().getModelReference().toString();
           for (T info : ListSequence.fromList(rootToInfo.value())) {
-            SNode node = rootToInfo.key().findNode(info);
+            SNode node = new SNodePointer(model, info.getNodeId()).resolve(MPSModuleRepository.getInstance());
             if (node != null) {
               nodes.add(node);
             }

@@ -15,14 +15,8 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.DataConversionException;
 import org.jdom.Element;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -79,19 +73,6 @@ public class DebugInfoRoot {
 
   public Set<String> getFileNames() {
     return myFileNames;
-  }
-
-  @Nullable
-  public SNode findNode(@NotNull PositionInfo info) {
-    String nodeId = info.getNodeId();
-    if ((nodeId == null || nodeId.length() == 0)) {
-      return null;
-    }
-    return findNode(nodeId);
-  }
-
-  public SNode findNode(@NonNls String nodeId) {
-    return new SNodePointer(myNodeRef.getModelReference().toString(), nodeId).resolve(MPSModuleRepository.getInstance());
   }
 
   /*package*/ void toXml(Element container) {
