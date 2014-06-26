@@ -169,7 +169,7 @@ public class TemplateQueryContext {
 
   public SNode getOriginalCopiedInputNode(SNode node) {
     if (node == null) return null;
-    SNode result = TracingUtil.getInputNode(node);
+    SNode result = TracingUtil.getInputNode(node, MPSModuleRepository.getInstance());
     return result != null ? result : node;
   }
 
