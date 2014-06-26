@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@ import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
@@ -271,13 +270,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
           ((AbstractModule.ModuleScope) moduleScope).invalidateCaches();
         }
         SModelUtil.clearCaches();
-
-        // FIXME temporary workaround: modelReplaced event is delivered in EDT, so Language caches are not cleared properly
-        for (SModule m : getModules()) {
-          if (m instanceof Language) {
-            ((Language) m).invalidateConceptDeclarationsCache();
-          }
-        }
       }
     });
   }

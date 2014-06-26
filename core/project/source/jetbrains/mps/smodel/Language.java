@@ -32,19 +32,13 @@ import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
-import jetbrains.mps.util.containers.ConcurrentHashSet;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -63,7 +57,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class Language extends AbstractModule implements MPSModuleOwner {
 
@@ -75,23 +68,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   private LanguageDescriptor myLanguageDescriptor;
 
-  private ConcurrentHashMap<String, SNode> myNameToConceptCache = new ConcurrentHashMap<String, SNode>();
-  //the following is needed because we can't store null values in myNameToConceptCache, as long as it's a ConcurrentHashMap
-  private ConcurrentHashSet<String> myNamesWithNoConcepts = new ConcurrentHashSet<String>(1);
-
-  private ModelLoadingState myNamesLoadingState = ModelLoadingState.NOT_LOADED;
-
-  private CachesInvalidator myCachesInvalidator;
-  private SModelRepositoryListener mySModelRepositoryListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
-    @Override
-    public void modelsReplaced(Set<SModel> replacedModels) {
-      if (replacedModels.contains(getStructureModelDescriptor())) {
-        invalidateConceptDeclarationsCache();
-      }
-    }
-  };
-
-
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
   private ClassLoader myStubsLoader = new MyClassLoader();
 
@@ -99,7 +75,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     super(file);
     myLanguageDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
-    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
   }
 
   @Override
@@ -214,7 +189,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Override
   public void dispose() {
     super.dispose();
-    SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
 
@@ -247,11 +221,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
 
     MPSModuleRepository.getInstance().invalidateCaches();
-
-    if (getStructureModelDescriptor() != null && myCachesInvalidator == null) {
-      SModelListener listener = myCachesInvalidator = new CachesInvalidator();
-      ((SModelInternal) getStructureModelDescriptor()).addModelListener(listener);
-    }
 
     dependenciesChanged();
   }
@@ -304,58 +273,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return myStubsLoader;
   }
 
+  /**
+   * @deprecated  Either switch to SConcept, or use {@link jetbrains.mps.smodel.ConceptDeclarationLookup} in case concept's SNode is what you truly need.
+   */
   @Deprecated
-  public IClassPathItem getLanguageRuntimeClasspath() {
-    return new CompositeClassPathItem();
-  }
-
-  public void invalidateConceptDeclarationsCache() {
-    myNameToConceptCache.clear();
-    myNamesWithNoConcepts.clear();
-  }
-
+  @ToRemove(version = 3.2)
   public SNode findConceptDeclaration(@NotNull final String conceptName) {
-    if (myNamesLoadingState == ModelLoadingState.FULLY_LOADED) return myNameToConceptCache.get(conceptName);
-    if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
-    if (myNamesWithNoConcepts.contains(conceptName)) return null;
-
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
-      @Override
-      public SNode compute() {
-        SModel structureModelDescriptor = getStructureModelDescriptor();
-        if (structureModelDescriptor == null) return null;
-        SModel structureModel = structureModelDescriptor;
-
-        //if not all the model is loaded, we try to look up the given concept only between root nodes first
-        if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
-          for (SNode root : structureModel.getRootNodes()) {
-            String name = getConceptName(root);
-            if (name == null) continue;
-            myNameToConceptCache.putIfAbsent(name, root);
-          }
-          if (myNameToConceptCache.containsKey(conceptName)) return myNameToConceptCache.get(conceptName);
-        }
-
-        //if we haven't found a root concept, then try to find in any node in the model
-        for (SNode node : org.jetbrains.mps.openapi.model.SNodeUtil.getDescendants(structureModel)) {
-          String name = getConceptName(node);
-          if (name == null) continue;
-          myNameToConceptCache.putIfAbsent(name, node);
-        }
-
-        SNode result = myNameToConceptCache.get(conceptName);
-        if (result == null) {
-          myNamesWithNoConcepts.add(conceptName);
-        }
-
-        return result;
-      }
-    });
-  }
-
-  private String getConceptName(SNode node) {
-    if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(node))) return null;
-    return node.getProperty(SNodeUtil.property_INamedConcept_name);
+    return new ConceptDeclarationLookup(this).findConceptDeclaration(conceptName);
   }
 
   @Override
@@ -450,22 +374,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Override
   public boolean isHidden() {
     return false;
-  }
-
-  private class CachesInvalidator extends SModelAdapter {
-    public CachesInvalidator() {
-      super(SModelListenerPriority.PLATFORM);
-    }
-
-    @Override
-    public void modelChanged(SModel model) {
-      invalidateConceptDeclarationsCache();
-    }
-
-    @Override
-    public void modelChangedDramatically(SModel model) {
-      invalidateConceptDeclarationsCache();
-    }
   }
 
   private class MyClassLoader extends ClassLoader {

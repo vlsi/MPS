@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.ConceptDeclarationLookup;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -91,7 +92,7 @@ public class SModelUtil {
           return null;
         }
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
-        SNode result = (SNode) language.findConceptDeclaration(conceptName);
+        SNode result = (SNode) new ConceptDeclarationLookup(language).findConceptDeclaration(conceptName);
         if (result != null) {
           SModelUtil.myFQNameToConcepDecl.putIfAbsent(InternUtil.intern(conceptFQName), result);
         }

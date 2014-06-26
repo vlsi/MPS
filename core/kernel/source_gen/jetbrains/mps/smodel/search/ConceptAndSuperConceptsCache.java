@@ -14,9 +14,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.HashSet;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 
 /**
@@ -58,14 +57,8 @@ import java.util.List;
   private String getAssertionMessage(Object element, SNode concept) {
     String conceptFQName = NameUtil.nodeFQName(concept);
     SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName);
-    String languageFqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
-    String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
-    Language language = ((Language) new ModuleReference(languageFqName).resolve(MPSModuleRepository.getInstance()));
-    SNode conceptFromScope = null;
-    if (language != null) {
-      conceptFromScope = language.findConceptDeclaration(conceptName);
-    }
-    return "Model descriptor is null for concept: " + concept + "(" + System.identityHashCode(concept) + ")  same concept from SModelUtil_new: " + conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + ") same concept from Scope:" + conceptFromScope + "(" + System.identityHashCode(conceptFromScope) + "), element: " + element + "(" + System.identityHashCode(element) + "), myTopConcept: " + myTopConcept + "(" + System.identityHashCode(element) + ")";
+    SAbstractConcept sconcept = SConceptRepository.getInstance().getConcept(conceptFQName);
+    return "Model descriptor is null for concept: " + concept + "(" + System.identityHashCode(concept) + ")  same concept from SModelUtil: " + conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + ") same concept from SConceptRepository:" + sconcept + "(" + System.identityHashCode(sconcept) + "), element: " + element + "(" + System.identityHashCode(element) + "), myTopConcept: " + myTopConcept + "(" + System.identityHashCode(myTopConcept) + ")";
   }
 
   @NotNull
