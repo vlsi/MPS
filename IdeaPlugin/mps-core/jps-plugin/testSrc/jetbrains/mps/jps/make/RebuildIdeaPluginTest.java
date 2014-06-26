@@ -30,8 +30,11 @@ import org.jetbrains.jps.util.JpsPathUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.NumberFormatException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * danilla 11/29/13
@@ -78,8 +81,12 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
     loadProject(projectDir, buildParams);
 
     JpsTypedLibrary<JpsSdk<JpsDummyElement>> jdk = myModel.getGlobal().addSdk("1.6", javaHome, "1.6", JpsJavaSdkType.INSTANCE);
-    jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/jre/lib/rt.jar"), JpsOrderRootType.COMPILED);
-    jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/lib/tools.jar"), JpsOrderRootType.COMPILED);
+    if (isAppleJDK()) {
+      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "../Classes/classes.jar"), JpsOrderRootType.COMPILED);
+    } else {
+      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/jre/lib/rt.jar"), JpsOrderRootType.COMPILED);
+      jdk.addRoot(JpsPathUtil.pathToUrl(javaHome + "/lib/tools.jar"), JpsOrderRootType.COMPILED);
+    }
 
     JpsSimpleElement<JpsIdeaSdkProperties> props = new JpsSimpleElementImpl<JpsIdeaSdkProperties>(new JpsIdeaSdkProperties(ideaHome, "1.6"));
     JpsTypedLibrary<JpsSdk<JpsSimpleElement<JpsIdeaSdkProperties>>> ideaSdk = myModel.getGlobal().addSdk("IDEA IC", ideaHome, "1.6", JpsIdeaSdkType.INSTANCE, props);
@@ -91,5 +98,21 @@ public class RebuildIdeaPluginTest extends MpsJpsBuildTestCase {
 
     getBuilderParams().put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
     rebuildAll();
+  }
+
+  private boolean isAppleJDK() {
+    if (!System.getProperty("os.name").toLowerCase().startsWith("mac")) {
+      return false;
+    }
+    String javaVersion = System.getProperty("java.version").toLowerCase();
+    Pattern pattern = Pattern.compile("\\d\\.(\\d+)(\\..*)?");
+    Matcher matcher = pattern.matcher(javaVersion);
+    if (matcher.matches()) {
+      try {
+        return Integer.parseInt(matcher.group(1)) < 7;
+      } catch (NumberFormatException e) {
+      }
+    }
+    return false;
   }
 }

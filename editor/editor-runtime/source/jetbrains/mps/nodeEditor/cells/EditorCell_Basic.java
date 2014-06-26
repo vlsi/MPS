@@ -1162,7 +1162,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     int index = myParent.indexOf(this);
     if (index + 1 < myParent.getChildCount()) {
-      return myParent.getChildAt(index + 1);
+      EditorCell nextChild = myParent.getChildAt(index + 1);
+      assert nextChild.getParent() == myParent;
+      return nextChild;
     }
     return null;
   }
@@ -1186,7 +1188,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     int index = myParent.indexOf(this);
     if (index > 0) {
-      return myParent.getChildAt(index - 1);
+      EditorCell prevChild = myParent.getChildAt(index - 1);
+      assert prevChild.getParent() == myParent;
+      return prevChild;
     }
     return null;
   }
