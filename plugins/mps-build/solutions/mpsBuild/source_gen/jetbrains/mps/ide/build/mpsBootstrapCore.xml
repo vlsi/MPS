@@ -3048,7 +3048,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.java.modules.cycle.1" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-generator, fetchDependencies">
+  <target name="java.compile.java.modules.cycle.1" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-debuginfo-api, fetchDependencies">
     <mkdir dir="${build.tmp}/java.modules.cycle.1" />
     <javac destdir="${build.tmp}/java.modules.cycle.1" fork="true" memorymaximumsize="1024m" nowarn="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -3076,6 +3076,10 @@
         <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" />
         <pathelement path="${mps_home}/core/textgen/source" />
         <pathelement path="${mps_home}/core/mps-core/source" />
+        <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
+        <pathelement path="${mps_home}/core/generator/source" />
+        <pathelement path="${mps_home}/core/generator/source_gen" />
+        <pathelement path="${mps_home}/core/project/source" />
         <path location="${mps_home}/core/persistence/source" />
         <path location="${mps_home}/core/persistence/source_gen" />
       </src>
@@ -3089,7 +3093,7 @@
         <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <pathelement path="${build.tmp}/java/out/mps-smodel" />
-        <pathelement path="${build.tmp}/java/out/mps-generator" />
+        <pathelement path="${build.tmp}/java/out/mps-debuginfo-api" />
       </classpath>
     </javac>
   </target>
@@ -3187,7 +3191,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-generator" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-debuginfo-api, fetchDependencies">
+  <target name="java.compile.mps-generator" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-debuginfo-api, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-generator" />
     <javac2 destdir="${build.tmp}/java/out/mps-generator" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -3207,6 +3211,7 @@
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.core-libraries" />
+        <pathelement path="${build.tmp}/java.modules.cycle.1" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -3217,18 +3222,17 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-project" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.mps-generator, java.compile.java.modules.cycle.1, fetchDependencies">
+  <target name="java.compile.mps-project" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-smodel, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-project" />
     <javac2 destdir="${build.tmp}/java/out/mps-project" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src />
+      <src path="${mps_home}/core/project/source" />
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
         <pathelement path="${build.tmp}/java/out/mps-collections" />
         <pathelement path="${build.tmp}/java/out/mps-tuples" />
         <pathelement path="${build.tmp}/java/out/mps-smodel" />
-        <pathelement path="${build.tmp}/java/out/mps-generator" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
         <path refid="path.java.library.log4j-lib" />
@@ -3237,6 +3241,9 @@
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
+    <copy todir="${build.tmp}/java/out/mps-project">
+      <fileset dir="${mps_home}/core/project/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
   </target>
   
   <target name="java.compile.mps-smodel" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, fetchDependencies">
