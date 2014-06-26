@@ -9,8 +9,9 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -40,7 +41,7 @@ public class TaskLibrariesHelper {
     closure(libsSet);
     List<SNode> libs = new ArrayList<SNode>(libsSet);
     for (SNode lib : libs) {
-      for (SNode n : SNodeOperations.getDescendants(lib, null, true)) {
+      for (SNode n : SNodeUtil.getDescendants(lib)) {
         for (SReference ref : SNodeOperations.getReferences(n)) {
           SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
           if (targetNode == null) {
@@ -59,7 +60,7 @@ public class TaskLibrariesHelper {
     Map<SNode, SNode> map = new HashMap<SNode, SNode>();
     parts = (List<SNode>) CopyUtil.copy((List<SNode>) parts, map);
     ListSequence.fromList(SLinkOperations.getTargets(project, "imports", true)).clear();
-    for (SNode n : SNodeOperations.getDescendants(project, null, true)) {
+    for (SNode n : SNodeUtil.getDescendants(project)) {
       for (SReference ref : n.getReferences()) {
         SNode targetNode = SNodeOperations.getTargetNodeSilently(ref);
         if (map.containsKey(targetNode)) {

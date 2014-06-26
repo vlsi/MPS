@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -41,7 +42,7 @@ public class check_BuildProject_unusedModules_NonTypesystemRule extends Abstract
 
     SNode layout = SLinkOperations.getTarget(buildProject, "layout", true);
     if (layout != null) {
-      for (SNode node : jetbrains.mps.util.SNodeOperations.getDescendants(layout, null, false)) {
+      for (SNode node : SNodeUtil.getDescendants(layout, null, false)) {
         for (SReference ref : jetbrains.mps.util.SNodeOperations.getReferences(node)) {
           SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
           modules.remove(targetNode);

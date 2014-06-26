@@ -42,10 +42,10 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache" />
-    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
@@ -135,7 +135,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.ModelNodesSearchScope" file="ModelNodesSearchScope.java">
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

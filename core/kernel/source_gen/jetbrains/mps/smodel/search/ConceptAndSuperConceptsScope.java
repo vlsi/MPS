@@ -10,7 +10,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
   private SNode myTopConcept;
@@ -73,7 +73,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
       if (node == null) {
         continue;
       }
-      for (SNode n : SNodeOperations.getDescendants(node, condition, true)) {
+      for (SNode n : SNodeUtil.getDescendants(node, condition, true)) {
         result.add(n);
       }
     }
