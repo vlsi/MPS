@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -127,13 +125,8 @@ public final class TextGenBuffer {
 
   private Message prepare(MessageKind kind, String text, @Nullable SNode node) {
     Message message = new Message(kind, text);
-    if (node != null && node.getModel() != null && node.getModel() != null) {
-      SModule module = node.getModel().getModule();
-      if (!(module instanceof TransientModelsModule) ||
-          module.getModel(node.getModel().getModelId()) != null) {
-        message.setHintObject(node.getReference());
-      }
-
+    if (node != null) {
+      message.setHintObject(node.getReference());
     }
     return message;
   }

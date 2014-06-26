@@ -9,9 +9,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="debuginfo-api" />
+    <orderEntry type="module" module-name="kernel" />
     <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>
