@@ -25,6 +25,7 @@ import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -143,12 +144,12 @@ public class TransientModelsModule extends AbstractModule {
       unregisterModel((SModelBase) md);
     }
     if (md instanceof TransientSModelDescriptor) {
-      ((TransientSModelDescriptor) md).dropModel();
+      ((TransientSModelDescriptor) md).dispose();
     }
   }
 
   private void unloadModel(TransientSModelDescriptor model) {
-    if (model.unloadModel()) {
+    if (model.swapModel()) {
       if (myPublished.contains(model)) {
 //            SModelRepository.getInstance().removeModelDescriptor(model);
       }
@@ -180,7 +181,6 @@ public class TransientModelsModule extends AbstractModule {
 
   public SModel createTransientModel(SModelReference modelReference) {
     TransientSModelDescriptor result = new TransientSModelDescriptor(modelReference);
-    result.load();
 
     myModelVault.add(result);
 
@@ -255,10 +255,11 @@ public class TransientModelsModule extends AbstractModule {
 
   public class TransientSModelDescriptor extends EditableSModelBase {
     protected volatile jetbrains.mps.smodel.SModel mySModel;
-    private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(@NotNull SModelReference modelRef) {
       super(modelRef, new NullDataSource());
+      mySModel = new TransientSModel(getReference());
+      mySModel.setModelDescriptor(this);
     }
 
     @Override
@@ -273,8 +274,7 @@ public class TransientModelsModule extends AbstractModule {
       }
       synchronized (this) {
         if (mySModel == null) {
-          mySModel = createModel();
-          mySModel.setModelDescriptor(this);
+          mySModel = loadFromSwap();
           fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
         }
       }
@@ -282,28 +282,36 @@ public class TransientModelsModule extends AbstractModule {
     }
 
     @Override
+    public void dispose() {
+      if (getRepository() == null) {
+        if (mySModel != null) {
+          mySModel.dispose();
+        }
+      } else {
+        super.dispose();
+      }
+    }
+
+    @Override
     public boolean isLoaded() {
       return mySModel != null;
     }
 
-    protected jetbrains.mps.smodel.SModel createModel() {
-      if (wasUnloaded) {
-        LOG.debug("Re-loading " + getReference());
+    protected jetbrains.mps.smodel.SModel loadFromSwap() {
+      LOG.debug("Re-loading " + getReference());
 
-        TransientSwapSpace swap = myComponent.getTransientSwapSpace();
-        if (swap == null) throw new IllegalStateException("no swap space");
+      TransientSwapSpace swap = myComponent.getTransientSwapSpace();
+      if (swap == null) throw new IllegalStateException("no swap space");
 
-        TransientSModel m = swap.restoreFromSwap(getReference(), new TransientSModel(getReference()));
-        if (m != null) {
-          // ensure imports are back
-          SModelOperations.validateLanguagesAndImports(m, false, false);
-          return m;
-        }
-
-        throw new IllegalStateException("lost swapped out model");
-      } else {
-        return new TransientSModel(getReference());
+      TransientSModel m = swap.restoreFromSwap(getReference(), new TransientSModel(getReference()));
+      if (m != null) {
+        // ensure imports are back
+        SModelOperations.validateLanguagesAndImports(m, false, false);
+        m.setModelDescriptor(this);
+        return m;
       }
+
+      throw new IllegalStateException("lost swapped out model");
     }
 
     @Override
@@ -311,20 +319,30 @@ public class TransientModelsModule extends AbstractModule {
       unloadModel();
     }
 
-    private boolean unloadModel() {
-      if (!wasUnloaded) {
-        LOG.debug("Un-loading " + getReference());
-
-        TransientSwapSpace swap = myComponent.getTransientSwapSpace();
-        if (swap == null || !swap.swapOut(mySModel)) {
-          return false;
-        }
-
-        dropModel();
-
-        wasUnloaded = true;
+    protected boolean swapModel() {
+      boolean result = unloadModel();
+      if (result) {
+        fireModelStateChanged(ModelLoadingState.NOT_LOADED);
       }
-      return false;
+      return result;
+    }
+
+    private boolean unloadModel() {
+      if (mySModel == null) {
+        return false;
+      }
+      LOG.debug("Un-loading " + getReference());
+      synchronized (this) {
+        if (mySModel != null) {
+          TransientSwapSpace swap = myComponent.getTransientSwapSpace();
+          if (swap == null || !swap.swapOut(mySModel)) {
+            return false;
+          }
+
+          dropModel();
+        }
+      }
+      return true;
     }
 
     private void dropModel() {
