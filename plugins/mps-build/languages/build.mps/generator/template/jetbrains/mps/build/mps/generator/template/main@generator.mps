@@ -9845,6 +9845,46 @@
                     </node>
                   </node>
                 </node>
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7870577846655812359" nodeInfo="ng">
+                  <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                  <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+                  <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7870577846655812360" nodeInfo="ng">
+                    <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+                    <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7870577846655812361" nodeInfo="ng">
+                      <property name="text" nameId="iuxj.6666499814681541920" value="${build.tmp}/java/out/mps-project" />
+                    </node>
+                  </node>
+                </node>
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7870577846657341375" nodeInfo="ng">
+                  <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                  <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+                  <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7870577846657341376" nodeInfo="ng">
+                    <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+                    <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7870577846657341377" nodeInfo="ng">
+                      <property name="text" nameId="iuxj.6666499814681541920" value="${build.tmp}/java/out/mps-debuginfo-api" />
+                    </node>
+                  </node>
+                </node>
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7870577846657341357" nodeInfo="ng">
+                  <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                  <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+                  <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7870577846657341358" nodeInfo="ng">
+                    <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+                    <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7870577846657341359" nodeInfo="ng">
+                      <property name="text" nameId="iuxj.6666499814681541920" value="${build.tmp}/java/out/mps-generator" />
+                    </node>
+                  </node>
+                </node>
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="7870577846657369474" nodeInfo="ng">
+                  <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+                  <property name="tagName" nameId="iuxj.6666499814681415862" value="fileset" />
+                  <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="7870577846657369475" nodeInfo="ng">
+                    <property name="attrName" nameId="iuxj.6666499814681447926" value="dir" />
+                    <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="7870577846657369476" nodeInfo="ng">
+                      <property name="text" nameId="iuxj.6666499814681541920" value="${build.tmp}/java/out/mps-textgen" />
+                    </node>
+                  </node>
+                </node>
                 <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="6170363239198717186" nodeInfo="ng">
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="destfile" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="6170363239198717187" nodeInfo="ng">
