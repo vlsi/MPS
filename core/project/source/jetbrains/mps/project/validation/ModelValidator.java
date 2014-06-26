@@ -15,12 +15,15 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.model.TransientSModel;
+import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -30,7 +33,7 @@ import java.util.List;
 public class ModelValidator {
   private SModel myModel;
 
-  public ModelValidator(org.jetbrains.mps.openapi.model.SModel model) {
+  public ModelValidator(SModel model) {
     myModel = model;
   }
 
@@ -38,7 +41,7 @@ public class ModelValidator {
     ModelAccess.assertLegalRead();
 
     List<String> errors = new ArrayList<String>();
-    if (myModel.getModule() instanceof TransientModelsModule || myModel.getModule() == null) {
+    if (myModel instanceof TransientSModel || myModel.getModule() == null) {
       return errors;
     }
     if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {

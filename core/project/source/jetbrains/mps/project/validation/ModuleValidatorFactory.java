@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.ProjectStructureModule;
@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 public class ModuleValidatorFactory {
   public static ModuleValidator createValidator(SModule m) {
-    if (m instanceof TransientModelsModule) {
+    if (m instanceof TransientSModule) {
       return new EmptyValidator();
     } else if (m instanceof Language) {
       return new LanguageValidator((Language) m);

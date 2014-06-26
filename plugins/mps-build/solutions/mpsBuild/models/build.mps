@@ -855,6 +855,9 @@
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="9223360384502506580" nodeInfo="ng">
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="3698852471281781478" resolveInfo="mps-persistence" />
       </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="5810038245347910408" nodeInfo="ng">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="8176176308084566910" resolveInfo="mps-generator" />
+      </node>
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyLibrary" typeId="3ior.4993211115183250894" id="1930569293341277379" nodeInfo="ng">
         <property name="reexport" nameId="3ior.5979287180587196968" value="true" />
         <link role="library" roleId="3ior.4993211115183250895" targetNodeId="1930569293341277368" resolveInfo="idea-ant" />
@@ -992,6 +995,9 @@
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="8938069739433496890" nodeInfo="ng">
         <property name="reexport" nameId="3ior.7259033139236507306" value="true" />
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="1277685309310599413" resolveInfo="mps-platform" />
+      </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="5810038245348251471" nodeInfo="ng">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="8176176308084566910" resolveInfo="mps-generator" />
       </node>
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="9006263159271689125" nodeInfo="ng">
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="3685693563424711955" resolveInfo="mps-editor-api" />

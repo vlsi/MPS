@@ -22,10 +22,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
@@ -133,7 +134,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     jetbrains.mps.smodel.SReference.disableLogging();
     try {
       Set<SReference> result = SetSequence.fromSet(new LinkedHashSet<SReference>());
-      for (SNode node : jetbrains.mps.util.SNodeOperations.getDescendants(cellNode, null, true)) {
+      for (SNode node : SNodeUtil.getDescendants(cellNode)) {
         for (SReference ref : SNodeOperations.getReferences(node)) {
           if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
             SetSequence.fromSet(result).addElement(ref);
@@ -147,7 +148,7 @@ public class AutoResolver extends EditorCheckerAdapter {
   }
 
   private boolean isAutofix(SModel model, SRepository repository) {
-    return model instanceof EditableSModel && !(model.getModule() instanceof TransientModelsModule) && ReferenceResolverUtils.canExecuteImmediately(model, repository) && (EditorSettings.getInstance().isAutoQuickFix() || myForceAutofix);
+    return model instanceof EditableSModel && !(model instanceof TransientSModel) && ReferenceResolverUtils.canExecuteImmediately(model, repository) && (EditorSettings.getInstance().isAutoQuickFix() || myForceAutofix);
   }
 
   @Override

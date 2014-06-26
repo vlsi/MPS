@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.model.TransientSModel;
+import jetbrains.mps.extapi.module.TransientSModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -30,11 +31,11 @@ public class GlobalScopeMinusTransient extends FilteredScope {
 
   @Override
   protected boolean acceptModule(SModule module) {
-    return !(module instanceof TransientModelsModule);
+    return !(module instanceof TransientSModule);
   }
 
   @Override
   protected boolean acceptModel(SModel model) {
-    return acceptModule(model.getModule());
+    return !(model instanceof TransientSModel) && acceptModule(model.getModule());
   }
 }

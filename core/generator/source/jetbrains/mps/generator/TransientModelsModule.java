@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.impl.ModelVault;
 import jetbrains.mps.module.SDependencyImpl;
@@ -54,7 +55,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TransientModelsModule extends AbstractModule {
+public class TransientModelsModule extends AbstractModule implements TransientSModule {
   private static final Logger LOG = LogManager.getLogger(TransientModelsModule.class);
 
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
@@ -250,7 +251,7 @@ public class TransientModelsModule extends AbstractModule {
     ((TransientSModelDescriptor) transientModel).changeModelReference(newRef);
   }
 
-  public final class TransientSModelDescriptor extends EditableSModelBase {
+  public final class TransientSModelDescriptor extends EditableSModelBase implements jetbrains.mps.extapi.model.TransientSModel {
     protected volatile jetbrains.mps.smodel.SModel mySModel;
     private boolean wasUnloaded = false;
 

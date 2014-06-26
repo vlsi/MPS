@@ -49,7 +49,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -311,7 +311,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   }
 
   private boolean shouldRunQuickFixs(SModel model, boolean inspector) {
-    if (inspector || !(model instanceof EditableSModel) || model.getModule() instanceof TransientModelsModule) {
+    if (inspector || !(model instanceof EditableSModel) || model instanceof TransientSModel) {
       return false;
     }
     return EditorSettings.getInstance().isAutoQuickFix() || myForceRunQuickFixes;
