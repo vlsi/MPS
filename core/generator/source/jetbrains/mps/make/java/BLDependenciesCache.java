@@ -16,25 +16,28 @@
 package jetbrains.mps.make.java;
 
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.generator.cache.ParseFacility;
+import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
-import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXParseException;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
+public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
 
   private static BLDependenciesCache INSTANCE;
 
@@ -68,31 +71,14 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
     return "dependencies";
   }
 
-  @Override
-  protected ModelDependencies fromXml(Element e) {
-    return ModelDependencies.fromXml(e);
-  }
-
   public CacheGenerator getGenerator() {
     return new CacheGen();
   }
 
+  @Nullable
   @Override
-  protected ModelDependencies load(InputStream is) throws IOException {
-    try {
-      SAXParser saxParser = JDOMUtil.createSAXParser();
-      BLDependenciesHandler handler = new BLDependenciesHandler();
-      saxParser.parse(new InputSource(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)), handler);
-      ModelDependencies dependencies = handler.getResult();
-      if (dependencies != null) {
-        return dependencies;
-      }
-      throw new IOException("empty result");
-    } catch (SAXParseException ex) {
-      throw new IOException(ex);
-    } catch (Exception ex) {
-      throw new IOException(ex);
-    }
+  protected ModelDependencies readCache(SModel sm) {
+    return new ParseFacility<ModelDependencies>(getClass(), new CacheParser()).input(getCacheFile(sm)).parseSilently();
   }
 
   private class CacheGen implements CacheGenerator {
@@ -132,6 +118,26 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
         }
       }
       return newDeps;
+    }
+  }
+
+  private static class CacheParser implements Parser<ModelDependencies> {
+    @Override
+    public ModelDependencies load(InputStream is) throws IOException {
+      try {
+        SAXParser saxParser = JDOMUtil.createSAXParser();
+        BLDependenciesHandler handler = new BLDependenciesHandler();
+        saxParser.parse(new InputSource(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)), handler);
+        ModelDependencies dependencies = handler.getResult();
+        if (dependencies != null) {
+          return dependencies;
+        }
+        throw new IOException("empty result");
+      } catch (SAXException ex) {
+        throw new IOException(ex);
+      } catch (ParserConfigurationException ex) {
+        throw new IOException(ex);
+      }
     }
   }
 }

@@ -16,19 +16,17 @@
 package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.generator.cache.ParseFacility;
+import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.apache.log4j.Level;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jdom.Document;
-import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -45,7 +43,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
+public class TraceInfoCache extends BaseModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
   private static TraceInfoCache INSTANCE;
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
@@ -80,49 +78,17 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   @Override
-  protected DebugInfo readCache(SModel sm) {
-    return loadCacheFromUrl(getCacheUrl(sm, sm.getModule()), sm);
+  protected DebugInfo readCache(final SModel sm) {
+    return loadCacheFromUrl(getCacheUrl(sm), sm);
+  }
+
+  private DebugInfo loadCacheFromUrl(URL url, SModel sm) {
+    return new ParseFacility<DebugInfo>(getClass(), new CacheParser(sm)).input(url).parseSilently();
   }
 
   @Nullable
-  private DebugInfo loadCacheFromUrl(@Nullable URL url, @NotNull SModel sm) {
-    if (url == null) {
-      return null;
-    }
-
-    InputStream stream = null;
-    try {
-      stream = url.openStream();
-      if (stream == null) {
-        return null;
-      }
-      Document doc = JDOMUtil.loadDocument(stream);
-      return DebugInfo.fromXml(doc.getRootElement(), sm);
-    } catch (IOException e) {
-      return null;
-    } catch (JDOMException e) {
-      return null;
-    } finally {
-      try {
-        if (stream != null) {
-          stream.close();
-        }
-      } catch (IOException e) {
-        Logger logger = LogManager.getLogger(TraceInfoCache.class);
-        if (logger.isEnabledFor(Level.ERROR)) {
-          logger.error("", e);
-        }
-      }
-    }
-  }
-
-  @Override
-  protected DebugInfo load(InputStream stream) throws IOException {
-    throw new UnsupportedOperationException();
-  }
-
-  @Nullable
-  private URL getCacheUrl(@NotNull SModel sm, SModule module) {
+  private URL getCacheUrl(@NotNull SModel sm) {
+    final SModule module = sm.getModule();
     String resourceName = traceInfoResourceName(sm);
     for (TraceInfoCache.TraceInfoResourceProvider provider : myProviders) {
       URL url = provider.getResource(module, resourceName);
@@ -136,11 +102,8 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   @Override
   @Nullable
   public IFile getCacheFile(@NotNull SModel modelDescriptor) {
-    URL cacheUrl = getCacheUrl(modelDescriptor, modelDescriptor.getModule());
-    if (cacheUrl == null) {
-      return null;
-    }
-    return TraceInfoCache.getFileByURL(cacheUrl);
+    URL cacheUrl = getCacheUrl(modelDescriptor);
+    return cacheUrl == null ? null : TraceInfoCache.getFileByURL(cacheUrl);
   }
 
   private String traceInfoResourceName(SModel sm) {
@@ -172,11 +135,6 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   public CacheGenerator getGenerator() {
     return new TraceInfoCache.CacheGen();
-  }
-
-  @Override
-  protected DebugInfo fromXml(Element e) {
-    throw new UnsupportedOperationException();
   }
 
   public void addResourceProvider(TraceInfoCache.TraceInfoResourceProvider provider) {
@@ -237,6 +195,23 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
         DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedFiles);
       }
       return generatedDebugInfo;
+    }
+  }
+
+  private static class CacheParser implements Parser<DebugInfo> {
+    private final SModel myModel;
+
+    CacheParser(SModel model) {
+      myModel = model;
+    }
+    @Override
+    public DebugInfo load(InputStream is) throws IOException {
+      try {
+        Document doc = JDOMUtil.loadDocument(is);
+        return DebugInfo.fromXml(doc.getRootElement(), myModel);
+      } catch (JDOMException ex) {
+        throw new IOException(ex);
+      }
     }
   }
 }

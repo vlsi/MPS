@@ -20,17 +20,24 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager.ModelHashSource;
+import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.generator.cache.ParseFacility;
+import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
-import org.jdom.Element;
+import org.jdom.Document;
+import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -38,7 +45,8 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, May 14, 2010
  */
-public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDependencies> implements ModelGenerationStatusListener, ModelHashSource {
+public class GenerationDependenciesCache extends BaseModelCache<GenerationDependencies>
+    implements ModelGenerationStatusListener, ModelHashSource {
 
   private static GenerationDependenciesCache INSTANCE;
   private final ModelGenerationStatusManager myGenStatusManager;
@@ -86,9 +94,10 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     myCachePathRedirects.remove(cdl);
   }
 
+  @Nullable
   @Override
-  protected GenerationDependencies fromXml(Element e) {
-    return GenerationDependencies.fromXml(e);
+  protected GenerationDependencies readCache(SModel sm) {
+    return new ParseFacility<GenerationDependencies>(getClass(), new CacheParser()).input(getCacheFile(sm)).parseSilently();
   }
 
   @Override
@@ -156,6 +165,18 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
         if (trace != null) {
           handler.saveStream(getCacheFileName() + ".trace", trace);
         }
+      }
+    }
+  }
+
+  private static class CacheParser implements Parser<GenerationDependencies> {
+    @Override
+    public GenerationDependencies load(InputStream is) throws IOException {
+      try {
+        Document doc = JDOMUtil.loadDocument(is);
+        return GenerationDependencies.fromXml(doc.getRootElement());
+      } catch (JDOMException e) {
+        throw new IOException(e);
       }
     }
   }
