@@ -16,25 +16,13 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Evgeny Gryaznov, 12/21/10
  */
 public class TemplateArgumentContext extends TemplateQueryContext {
-
-  /**
-   * @deprecated use {@link #TemplateArgumentContext(TemplateContext, SNodeReference)} instead. This constructor
-   * will be removed after 3.1
-   */
-  @Deprecated
-  @ToRemove(version=3.1)
-  public TemplateArgumentContext(SNode inputNode, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
-    super(templateNode, context.subContext(inputNode), generator);
-  }
 
   /**
    * @since 3.1

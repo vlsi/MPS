@@ -132,7 +132,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myDelayedChanges = new DelayedChanges();
     myDependenciesBuilder = stepArgs.dependenciesBuilder;
     myOutputRoots = new ArrayList<SNode>();
-    DefaultQueryExecutionContext ctx = new DefaultQueryExecutionContext(this, operationContext);
+    DefaultQueryExecutionContext ctx = new DefaultQueryExecutionContext(this);
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
       ? new QueryExecutionContextWithTracing(ctx, operationContext.getPerformanceTracer())
       : ctx;

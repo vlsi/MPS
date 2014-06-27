@@ -16,32 +16,12 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class TemplateFragmentContext extends TemplateQueryContextWithMacro {
   private SNode myMainContextNode;
-
-  /**
-   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public TemplateFragmentContext(SNode mainContextNode, SNode tfMacro, @NotNull TemplateContext context, ITemplateGenerator generator) {
-    this(mainContextNode, tfMacro.getReference(), context, generator);
-  }
-
-  /**
-   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public TemplateFragmentContext(SNode mainContextNode, @NotNull SNodeReference tfMacro, @NotNull TemplateContext context, @NotNull ITemplateGenerator generator) {
-    super(context, tfMacro);
-    myMainContextNode = mainContextNode;
-  }
 
   /**
    * @since 3.1

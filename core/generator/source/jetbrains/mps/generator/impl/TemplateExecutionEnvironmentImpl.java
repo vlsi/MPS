@@ -27,7 +27,6 @@ import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateParent;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
@@ -42,8 +41,8 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -121,13 +120,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @NotNull
   @Override
-  public ReductionContext getReductionContext() {
-    // this method is not used
-    return new ReductionContext();
-  }
-
-  @NotNull
-  @Override
   public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
     return generator.getQuerySource().getQueryProvider(ruleNode);
   }
@@ -144,19 +136,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return myTemplateProcessor;
   }
 
-  @Override
-  public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule) {
-    return this;
-  }
-
-  @Override
-  public Collection<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateId, String mappingName, TemplateContext templateContext)
-      throws GenerationCanceledException, GenerationFailureException {
-    // earlier approach to mappingName here used to hide mappingName from the context (null down to generator.copySrc => no mapping label
-    // however, interpreted templates keep context mappingName (common approach for all node macros - ctx.subContext(newNameOrNullIfNone))
-    // hence here's the same code to ensure mappingName propagation is the same either for interpreted or generated.
-    return copyNodes(inputNodes, templateNode, templateId, templateContext.subContext(mappingName));
-  }
 
   @Override
   @NotNull
@@ -174,11 +153,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     ChildAdopter a = new ChildAdopter(generator);
     a.checkIsExpectedLanguage(Collections.singletonList(child), templateNode, templateContext);
     return a.adopt(child, templateContext);
-  }
-
-  @Override
-  public Collection<SNode> trySwitch(SNodeReference switch_, String mappingName, TemplateContext context) throws GenerationException {
-    return trySwitch(switch_, context.subContext(mappingName));
   }
 
   @Nullable
@@ -250,18 +224,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     for (SNode outputNode : outputNodes) {
       generator.registerMappingLabel(inputNode, mappingLabel, outputNode);
     }
-  }
-
-  @Override
-  public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
-    ReferenceInfo_TemplateParent refInfo = new ReferenceInfo_TemplateParent(
-      outputNode,
-      role,
-      sourceNode,
-      parentIndex,
-      resolveInfo,
-      context);
-    generator.register(new PostponedReference(refInfo)).setReferenceInOutputSourceNode();
   }
 
   @Override

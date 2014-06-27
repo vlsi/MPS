@@ -31,34 +31,16 @@ public interface IGeneratorLogger {
 
   boolean needsWarnings();
 
-  /**
-   * @deprecated use {@link #info(org.jetbrains.mps.openapi.model.SNodeReference, String)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  void info(SNode node, String message);
   void info(@Nullable SNodeReference node, @NotNull String message);
 
   void info(String message);
 
   void warning(String message);
 
-  /**
-   * @deprecated use {@link #warning(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  void warning(SNode node, String message, ProblemDescription... descriptions);
   void warning(@Nullable SNodeReference node, @NotNull String message, @Nullable ProblemDescription... descriptions);
 
   void error(String message);
 
-  /**
-   * @deprecated use {@link #error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  void error(SNode node, String message, ProblemDescription... descriptions);
   void error(@Nullable SNodeReference node, @NotNull String message, @Nullable ProblemDescription... descriptions);
 
   void handleException(Throwable t);

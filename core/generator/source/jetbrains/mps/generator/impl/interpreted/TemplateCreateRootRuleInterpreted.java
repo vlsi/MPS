@@ -50,7 +50,7 @@ public class TemplateCreateRootRuleInterpreted implements TemplateCreateRootRule
     if (myCondition == null) {
       myCondition = environment.getQueryProvider(getRuleNode()).getCreateRootRuleCondition(myRuleNode);
     }
-    return myCondition.check(new CreateRootRuleContext(myRuleNode, environment.getGenerator()));
+    return myCondition.check(new CreateRootRuleContext(context, getRuleNode()));
   }
 
   @Override

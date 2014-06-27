@@ -261,7 +261,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         public void run() {
                           if (!(Boolean.TRUE.equals(Generate_Facet.Target_configure.vars(pa.global()).saveTransient()))) {
                             for (GResource resource : ListSequence.fromList(currentInput)) {
-                              SModel outputMD = resource.status().getOutputModelDescriptor();
+                              SModel outputMD = resource.status().getOutputModel();
                               if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
                                 ((TransientModelsModule) outputMD.getModule()).removeModel(outputMD);
                               }

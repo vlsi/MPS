@@ -6,9 +6,7 @@
     <buildFile url="file://$PROJECT_DIR$/build/getIdeaPlatform.xml" />
     <buildFile url="file://$PROJECT_DIR$/build/test.xml" />
     <buildFile url="file://$PROJECT_DIR$/build/jetpad/build.xml" />
-    <buildFile url="file://$PROJECT_DIR$/build/ideaPlatform.xml">
-      <executeOn event="beforeCompilation" target="default" />
-    </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/build/ideaPlatform.xml" />
   </component>
 </project>
 

@@ -26,6 +26,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * FIXME this has nothing to do with generator, nor it's in use anywhere but in debugger-java
+ */
 public class JavaModelUtil_new {
   private static final Logger LOG = LogManager.getLogger(JavaModelUtil_new.class);
 

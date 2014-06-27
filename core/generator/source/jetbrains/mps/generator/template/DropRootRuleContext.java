@@ -16,31 +16,10 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class DropRootRuleContext extends TemplateQueryContextWithRule {
-
-  /**
-   * @deprecated Use alternative with SNodeReference, without explicit input node and ITemplateGenerator
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public DropRootRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
-    super(inputNode, ruleNode, generator);
-  }
-
-  /**
-   * @deprecated Use alternative with SNodeReference, without explicit input node and ITemplateGenerator
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public DropRootRuleContext(SNode inputNode, @NotNull SNodeReference ruleNode, @NotNull ITemplateGenerator generator) {
-    super(inputNode, ruleNode, generator);
-  }
-
   /**
    * @since 3.1
    */

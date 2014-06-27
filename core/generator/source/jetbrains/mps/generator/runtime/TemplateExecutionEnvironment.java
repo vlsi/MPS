@@ -71,33 +71,10 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   @NotNull
   QueryExecutionContext getQueryExecutor();
 
-  /**
-   * ReductionContext is implementation aspect, shall be accessible from TemplateExecutionEnvironmentImpl only
-   * @deprecated clients are not expected to care about this method
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  @NotNull
-  ReductionContext getReductionContext();
-
   @NotNull
   ITemplateProcessor getTemplateProcessor();
 
-  /**
-   * @deprecated this is a no-op operation now
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule);
-
   // FIXME remove mappingName parameter where TemlateContext is available
-
-  /**
-   * @deprecated use {@link #copyNodes(Iterable, org.jetbrains.mps.openapi.model.SNodeReference, String, TemplateContext)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  Collection<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateNodeId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
   /**
    * Copies nodes from input model, trying to apply reduction rules
@@ -112,13 +89,6 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   SNode insertNode(SNode node, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
-  /**
-   * @deprecated use {@link #trySwitch(org.jetbrains.mps.openapi.model.SNodeReference, TemplateContext)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  Collection<SNode> trySwitch(SNodeReference _switch, String mappingName, TemplateContext context) throws GenerationException;
-
   @Nullable
   Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException;
 
@@ -131,15 +101,6 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel);
 
   void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel);
-
-  /**
-   * The method is a shortcut when target template node is parent of the one being generated.
-   * There's assumption hierarchy in output model match that in template model, so that implementation can walk up parentIndex levels in output model
-   * to get node matching reference's target from template model
-   * @deprecated use {@link #resolveInTemplateLater(org.jetbrains.mps.openapi.model.SNode, String, org.jetbrains.mps.openapi.model.SNodeReference, String, String, TemplateContext)} instead
-   */
-  @Deprecated
-  void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference templateSourceNode, int parentIndex, String resolveInfo, TemplateContext context);
 
   void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference templateSourceNode, String templateTargetNodeId, @Nullable String resolveInfo, TemplateContext context);
 

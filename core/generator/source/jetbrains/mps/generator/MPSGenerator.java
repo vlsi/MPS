@@ -40,7 +40,6 @@ public final class MPSGenerator extends ComponentPlugin {
     SRepository repository = MPSModuleRepository.getInstance();
     final ClassLoaderManager classLoaderManager = ClassLoaderManager.getInstance();
 
-    init(new GeneratorsManager(classLoaderManager));
     init(new TraceInfoCache(repository));
     final ModelGenerationStatusManager mgsm = init(new ModelGenerationStatusManager());
     final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(repository, mgsm));
