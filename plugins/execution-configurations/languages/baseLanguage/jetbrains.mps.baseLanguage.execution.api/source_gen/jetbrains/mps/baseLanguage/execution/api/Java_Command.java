@@ -187,7 +187,7 @@ public class Java_Command {
     if (model == null) {
       return null;
     }
-    if (TraceInfo.hasTrace(model)) {
+    if (!(TraceInfo.hasTrace(model))) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
       }

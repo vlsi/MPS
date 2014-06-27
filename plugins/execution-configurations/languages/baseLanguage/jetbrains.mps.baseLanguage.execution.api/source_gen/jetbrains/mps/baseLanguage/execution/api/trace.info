@@ -172,8 +172,8 @@
     <nodeInfo nodeId="1240470842553275009" fileName="Java_Command.java" startLine="177" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
     <nodeInfo nodeId="1240470842553275009" fileName="Java_Command.java" startLine="181" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isUnitNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="3066236890327707786" fileName="Java_Command.java" startLine="186" startPosition="50" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8475766493858788059" fileName="Java_Command.java" startLine="190" startPosition="36" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8475766493858788059" fileName="Java_Command.java" startLine="190" startPosition="36" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8475766493858788059" fileName="Java_Command.java" startLine="190" startPosition="39" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8475766493858788059" fileName="Java_Command.java" startLine="190" startPosition="39" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8475766493858788116" fileName="Java_Command.java" startLine="197" startPosition="55" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8475766493858788116" fileName="Java_Command.java" startLine="197" startPosition="55" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5618154074607255340" fileName="Java_Command.java" startLine="206" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/textgen/trace/TraceablePositionInfo;)Z" />
@@ -347,7 +347,7 @@
     <scopeInfo nodeId="1240470842553275009" fileName="Java_Command.java" startLine="181" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="1240470842553275435" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8475766493858788059" fileName="Java_Command.java" startLine="190" startPosition="36" endLine="193" endPosition="7" />
+    <scopeInfo nodeId="8475766493858788059" fileName="Java_Command.java" startLine="190" startPosition="39" endLine="193" endPosition="7" />
     <scopeInfo nodeId="8475766493858788116" fileName="Java_Command.java" startLine="197" startPosition="55" endLine="200" endPosition="9" />
     <scopeInfo nodeId="5618154074607255340" fileName="Java_Command.java" startLine="206" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="5618154074607255344" varName="position" />
@@ -384,7 +384,7 @@
     <scopeInfo nodeId="1240470842553275009" fileName="Java_Command.java" startLine="102" startPosition="75" endLine="106" endPosition="16" />
     <scopeInfo nodeId="1240470842553275009" fileName="Java_Command.java" startLine="109" startPosition="113" endLine="113" endPosition="16" />
     <scopeInfo nodeId="1240470842553275053" fileName="Java_Command.java" startLine="118" startPosition="37" endLine="122" endPosition="28" />
-    <scopeInfo nodeId="8475766493858788047" fileName="Java_Command.java" startLine="190" startPosition="36" endLine="194" endPosition="18" />
+    <scopeInfo nodeId="8475766493858788047" fileName="Java_Command.java" startLine="190" startPosition="39" endLine="194" endPosition="18" />
     <scopeInfo nodeId="8475766493858788103" fileName="Java_Command.java" startLine="197" startPosition="55" endLine="201" endPosition="20" />
     <scopeInfo nodeId="2034046503361582606" fileName="Java_Command.java" startLine="217" startPosition="25" endLine="221" endPosition="9">
       <varInfo nodeId="2034046503361582608" varName="resolve" />
