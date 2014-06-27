@@ -15,21 +15,13 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import org.jdom.DataConversionException;
-import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class DebugInfoRoot {
-  private static final String NODE_INFO = "nodeInfo";
-  private static final String SCOPE_INFO = "scopeInfo";
-  private static final String UNIT_INFO = "unitInfo";
   private final Set<TraceablePositionInfo> myPositions = new TreeSet<TraceablePositionInfo>();
   private final Set<ScopePositionInfo> myScopePositions = new TreeSet<ScopePositionInfo>();
   private final Set<UnitPositionInfo> myUnitPositions = new TreeSet<UnitPositionInfo>();
@@ -73,44 +65,5 @@ public class DebugInfoRoot {
 
   public Set<String> getFileNames() {
     return myFileNames;
-  }
-
-  /*package*/ void toXml(Element container) {
-    for (PositionInfo position : sort(myPositions)) {
-      Element e = new Element(DebugInfoRoot.NODE_INFO);
-      position.saveTo(e);
-      container.addContent(e);
-    }
-    for (ScopePositionInfo position : sort(myScopePositions)) {
-      Element e = new Element(DebugInfoRoot.SCOPE_INFO);
-      position.saveTo(e);
-      container.addContent(e);
-    }
-    for (UnitPositionInfo position : sort(myUnitPositions)) {
-      Element e = new Element(DebugInfoRoot.UNIT_INFO);
-      position.saveTo(e);
-      container.addContent(e);
-    }
-  }
-
-  private <T extends PositionInfo> Collection<T> sort(Set<T> positions) {
-    ArrayList<T> rv = new ArrayList<T>(positions);
-    Collections.sort(rv);
-    return rv;
-  }
-
-  /*package*/ static DebugInfoRoot fromXml(Element element, SNodeReference ref) throws DataConversionException {
-    Element root = element;
-    DebugInfoRoot result = new DebugInfoRoot(ref);
-    for (Element e : root.getChildren(DebugInfoRoot.NODE_INFO)) {
-      result.addPosition(new TraceablePositionInfo(e));
-    }
-    for (Element e : root.getChildren(DebugInfoRoot.SCOPE_INFO)) {
-      result.addScopePosition(new ScopePositionInfo(e));
-    }
-    for (Element e : root.getChildren(DebugInfoRoot.UNIT_INFO)) {
-      result.addUnitPosition(new UnitPositionInfo(e));
-    }
-    return result;
   }
 }

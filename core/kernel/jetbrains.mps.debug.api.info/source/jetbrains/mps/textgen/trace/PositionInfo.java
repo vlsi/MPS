@@ -15,23 +15,12 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
-import org.jdom.Element;
-import org.jdom.DataConversionException;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NonNls;
-import org.jdom.Attribute;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class PositionInfo implements Comparable<PositionInfo> {
-  private static String FILE_NAME = "fileName";
-  private static String START_LINE = "startLine";
-  private static String START_POSITION = "startPosition";
-  private static String END_LINE = "endLine";
-  private static String END_POSITION = "endPosition";
-  private static String NODE_ID = "nodeId";
   private String myFileName;
-  @Nullable
   private String myNodeId;
   private int myStartLine;
   private int myStartPosition;
@@ -39,15 +28,6 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   private int myEndPosition;
 
   public PositionInfo() {
-  }
-
-  public PositionInfo(@NotNull Element element) throws DataConversionException {
-    myNodeId = InternUtil.intern(check_1myh1n_a0a0a31(element.getAttribute(NODE_ID)));
-    myFileName = InternUtil.intern(check_1myh1n_a0a1a31(element.getAttribute(FILE_NAME)));
-    myStartLine = element.getAttribute(PositionInfo.START_LINE).getIntValue();
-    myStartPosition = element.getAttribute(PositionInfo.START_POSITION).getIntValue();
-    myEndLine = element.getAttribute(PositionInfo.END_LINE).getIntValue();
-    myEndPosition = element.getAttribute(PositionInfo.END_POSITION).getIntValue();
   }
 
   @Nullable
@@ -104,17 +84,6 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     return myEndLine - myStartLine;
   }
 
-  protected void saveTo(Element element) {
-    if (myNodeId != null) {
-      element.setAttribute(PositionInfo.NODE_ID, myNodeId);
-    }
-    element.setAttribute(PositionInfo.FILE_NAME, myFileName);
-    element.setAttribute(PositionInfo.START_LINE, Integer.toString(myStartLine));
-    element.setAttribute(PositionInfo.START_POSITION, Integer.toString(myStartPosition));
-    element.setAttribute(PositionInfo.END_LINE, Integer.toString(myEndLine));
-    element.setAttribute(PositionInfo.END_POSITION, Integer.toString(myEndPosition));
-  }
-
   @Override
   public String toString() {
     return myFileName + "(" + myStartLine + ":" + myStartPosition + " " + myEndLine + ":" + myEndPosition + ")";
@@ -164,7 +133,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public boolean isOccupyTheSameSpace(PositionInfo p) {
-    return (eq_1myh1n_a0a0a0a0eb(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0eb_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a03(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0eb(myEndPosition, p.myEndPosition));
+    return (myStartLine == p.myStartLine) && (myEndLine == p.myEndLine) && (myStartPosition == p.myStartPosition) && (myEndPosition == p.myEndPosition);
   }
 
   public boolean contains(String file, int line) {
@@ -198,36 +167,6 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     myStartPosition = position.myStartPosition;
     myEndLine = position.myEndLine;
     myEndPosition = position.myEndPosition;
-  }
-
-  private static String check_1myh1n_a0a0a31(Attribute checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getValue();
-    }
-    return null;
-  }
-
-  private static String check_1myh1n_a0a1a31(Attribute checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getValue();
-    }
-    return null;
-  }
-
-  private static boolean eq_1myh1n_a0a0a0a0eb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_1myh1n_a0a0a0a0eb_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_1myh1n_a0a0a0a03(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_1myh1n_a0a0a0eb(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_1myh1n_a0a0a0fb(Object a, Object b) {

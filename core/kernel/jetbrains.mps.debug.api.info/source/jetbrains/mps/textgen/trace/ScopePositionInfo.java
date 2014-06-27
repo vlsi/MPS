@@ -16,8 +16,6 @@
 package jetbrains.mps.textgen.trace;
 
 import org.apache.log4j.LogManager;
-import org.jdom.DataConversionException;
-import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -32,29 +30,10 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class ScopePositionInfo extends PositionInfo {
-  private static String VAR_INFO = "varInfo";
   private final SortedMap<String, VarInfo> myNamesToVars = new TreeMap<String, VarInfo>();
   private final Map<SNode, VarInfo> myTempNodeToVarMap = new HashMap<SNode, VarInfo>();
 
   public ScopePositionInfo() {
-  }
-
-  public ScopePositionInfo(@NotNull Element element) throws DataConversionException {
-    super(element);
-    for (Object varInfoElement_ : element.getChildren(ScopePositionInfo.VAR_INFO)) {
-      Element varInfoElement = (Element) varInfoElement_;
-      addVarInfo(new VarInfo(varInfoElement));
-    }
-  }
-
-  @Override
-  protected void saveTo(Element element) {
-    super.saveTo(element);
-    for (VarInfo varInfo : myNamesToVars.values()) {
-      Element child = new Element(ScopePositionInfo.VAR_INFO);
-      varInfo.saveTo(child);
-      element.addContent(child);
-    }
   }
 
   @Nls

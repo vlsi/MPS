@@ -27,6 +27,7 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
+import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -79,11 +80,11 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
 
   @Override
   protected DebugInfo readCache(final SModel sm) {
-    return loadCacheFromUrl(getCacheUrl(sm), sm);
+    return loadCacheFromUrl(getCacheUrl(sm));
   }
 
-  private DebugInfo loadCacheFromUrl(URL url, SModel sm) {
-    return new ParseFacility<DebugInfo>(getClass(), new CacheParser(sm)).input(url).parseSilently();
+  private DebugInfo loadCacheFromUrl(URL url) {
+    return new ParseFacility<DebugInfo>(getClass(), new CacheParser()).input(url).parseSilently();
   }
 
   @Nullable
@@ -115,6 +116,7 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
     return longName.replace(".", "/") + "/" + TRACE_FILE_NAME;
   }
 
+  // XXX revisit. IFAIU, this method to get locally-generated trace.info, not the one bundled. Although the approach is questionable
   @Nullable
   public DebugInfo getLastGeneratedDebugInfo(@NotNull SModel model) {
     String generatorOutputPath = SModuleOperations.getOutputPathFor(model);
@@ -127,7 +129,7 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
     }
     try {
       URL url = new File(traceInfoFile.getPath().replace("/", File.separator)).toURI().toURL();
-      return loadCacheFromUrl(url, model);
+      return loadCacheFromUrl(url);
     } catch (MalformedURLException e) {
       return null;
     }
@@ -175,8 +177,7 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
         return;
       }
       update(status.getOriginalInputModel(), cache);
-      handler.saveStream(getCacheFileName(), cache.toXml());
-//      handler.saveStream(getCacheFileName() + ".new", SerializeSupport.serialize(cache));
+      handler.saveStream(getCacheFileName(), SerializeSupport.serialize(cache));
     }
 
     private DebugInfo updateUnchanged(GenerationStatus genStatus) {
@@ -199,16 +200,12 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
   }
 
   private static class CacheParser implements Parser<DebugInfo> {
-    private final SModel myModel;
-
-    CacheParser(SModel model) {
-      myModel = model;
-    }
     @Override
     public DebugInfo load(InputStream is) throws IOException {
       try {
         Document doc = JDOMUtil.loadDocument(is);
-        return DebugInfo.fromXml(doc.getRootElement(), myModel);
+        final Element rootElement = doc.getRootElement();
+        return SerializeSupport.restore(rootElement);
       } catch (JDOMException ex) {
         throw new IOException(ex);
       }

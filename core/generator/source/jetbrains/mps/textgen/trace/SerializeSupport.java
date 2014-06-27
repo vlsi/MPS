@@ -16,8 +16,11 @@
 package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.MultiMap;
+import org.jdom.DataConversionException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -36,7 +39,7 @@ import java.util.TreeSet;
  * @author Artem Tikhomirov
  */
 final class SerializeSupport {
-  private static final String ELEMENT_DEBUG_INFO = "debugInfo";
+  private static final String ELEMENT_DEBUG_INFO = "debug-info";
   private static final String ELEMENT_ROOT = "root";
   private static final String ELEMENT_FILE = "file";
   private static final String ELEMENT_NODE_INFO = "node";
@@ -78,6 +81,9 @@ final class SerializeSupport {
 
   @NotNull
   public static DebugInfo restore(@NotNull Element top) {
+    if (!ELEMENT_DEBUG_INFO.equals(top.getName())) {
+      return restoreLegacy(top);
+    }
     DebugInfo rv = new DebugInfo();
     int i = 0;
     HashMap<Integer, String> conceptsOrder = new HashMap<Integer, String>();
@@ -228,5 +234,68 @@ final class SerializeSupport {
         }
       }
     }
+  }
+
+  /**
+   * @deprecated left for compatibility during transition period
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  private static DebugInfo restoreLegacy(Element root) {
+    DebugInfo info = new DebugInfo();
+    try {
+      DebugInfoRoot unspecified = DebugInfoRoot_fromXml(root, null);
+      if (unspecified != null) {
+        info.putRootInfo(unspecified);
+      }
+      for (Element re : root.getChildren("root")) {
+        String rootId = re.getAttributeValue("nodeRef");
+        SNodeReference rootRef = null;
+        if (rootId != null) {
+          rootRef = SNodePointer.deserialize(rootId);
+        }
+        info.putRootInfo(DebugInfoRoot_fromXml(re, rootRef));
+      }
+    } catch (DataConversionException e) {
+      throw new RuntimeException(e);
+    }
+    return info;
+  }
+  private static DebugInfoRoot DebugInfoRoot_fromXml(Element root, SNodeReference ref) throws DataConversionException {
+    DebugInfoRoot result = new DebugInfoRoot(ref);
+    for (Element e : root.getChildren("nodeInfo")) {
+      final TraceablePositionInfo pi = new TraceablePositionInfo();
+      PositionInfo_fromXml(e, pi);
+      pi.setConceptFqName(InternUtil.intern(e.getAttributeValue("conceptFqName")));
+      pi.setPropertyString(e.getAttributeValue("propertyString"));
+      result.addPosition(pi);
+    }
+    for (Element e : root.getChildren("scopeInfo")) {
+      final ScopePositionInfo pi = new ScopePositionInfo();
+      PositionInfo_fromXml(e, pi);
+      for (Element varInfoElement : e.getChildren("varInfo")) {
+        VarInfo vi = new VarInfo();
+        vi.setNodeId(varInfoElement.getAttributeValue("nodeId"));
+        vi.setVarName(varInfoElement.getAttributeValue("varName"));
+        pi.addVarInfo(vi);
+      }
+      result.addScopePosition(pi);
+    }
+    for (Element e : root.getChildren("unitInfo")) {
+      final UnitPositionInfo pi = new UnitPositionInfo();
+      PositionInfo_fromXml(e, pi);
+      pi.setUnitName(e.getAttributeValue("unitName"));
+      result.addUnitPosition(pi);
+    }
+    return result;
+  }
+
+  private static void PositionInfo_fromXml(Element element, PositionInfo pi) throws DataConversionException {
+    pi.setNodeId(InternUtil.intern(element.getAttributeValue("nodeId")));
+    pi.setFileName(InternUtil.intern(element.getAttributeValue("fileName")));
+    pi.setStartLine(element.getAttribute("startLine").getIntValue());
+    pi.setStartPosition(element.getAttribute("startPosition").getIntValue());
+    pi.setEndLine(element.getAttribute("endLine").getIntValue());
+    pi.setEndPosition(element.getAttribute("endPosition").getIntValue());
   }
 }

@@ -15,21 +15,9 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import org.jdom.Element;
-
 public class VarInfo {
-  private static String VAR_NAME = "varName";
-  private static String NODE_ID = "nodeId";
   private String myVarName;
   private String myNodeId;
-
-  public VarInfo() {
-  }
-
-  public VarInfo(Element element) {
-    myNodeId = element.getAttribute(VarInfo.NODE_ID).getValue();
-    myVarName = element.getAttribute(VarInfo.VAR_NAME).getValue();
-  }
 
   public String getNodeId() {
     return myNodeId;
@@ -45,10 +33,5 @@ public class VarInfo {
 
   public void setNodeId(String nodeId) {
     myNodeId = nodeId;
-  }
-
-  public void saveTo(Element element) {
-    element.setAttribute(VarInfo.NODE_ID, myNodeId);
-    element.setAttribute(VarInfo.VAR_NAME, myVarName);
   }
 }

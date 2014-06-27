@@ -15,28 +15,10 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import org.jdom.DataConversionException;
-import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
-
 public class UnitPositionInfo extends PositionInfo {
-  private static final String UNIT_NAME = "unitName";
   private String myUnitName;
 
   public UnitPositionInfo() {
-  }
-
-  public UnitPositionInfo(@NotNull Element element) throws DataConversionException {
-    super(element);
-    myUnitName = element.getAttributeValue(UnitPositionInfo.UNIT_NAME);
-  }
-
-  @Override
-  public void saveTo(Element element) {
-    super.saveTo(element);
-    if (myUnitName != null) {
-      element.setAttribute(UNIT_NAME, myUnitName);
-    }
   }
 
   public String getUnitName() {

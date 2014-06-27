@@ -16,35 +16,13 @@
 package jetbrains.mps.textgen.trace;
 
 import jetbrains.mps.util.InternUtil;
-import org.jdom.DataConversionException;
-import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
 public class TraceablePositionInfo extends PositionInfo {
-  private static String CONCEPT_FQ_NAME = "conceptFqName";
-  private static String PROPERTY_STRING = "propertyString";
   private String myConceptFqName;
   private String myPropertyString;
 
   public TraceablePositionInfo() {
-  }
-
-  public TraceablePositionInfo(Element element) throws DataConversionException {
-    super(element);
-    myConceptFqName = InternUtil.intern(element.getAttributeValue(CONCEPT_FQ_NAME));
-    myPropertyString = element.getAttributeValue(PROPERTY_STRING);
-  }
-
-  @Override
-  public void saveTo(Element element) {
-    super.saveTo(element);
-    if (myConceptFqName != null) {
-      element.setAttribute(CONCEPT_FQ_NAME, myConceptFqName);
-    }
-    if (myPropertyString != null) {
-      element.setAttribute(PROPERTY_STRING, myPropertyString);
-    }
-
   }
 
   @Nullable

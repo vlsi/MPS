@@ -23,17 +23,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jdom.DataConversionException;
-import org.jdom.Element;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -42,20 +40,17 @@ import java.util.Map;
 import java.util.Set;
 
 public class DebugInfo {
-  private static final String ROOT = "root";
-  private static final String DEBUG_INFO = "debugInfo";
-  private static final String NODE_REF_ATTR = "nodeRef";
-  private Map<SNodeReference, DebugInfoRoot> myRoots = MapSequence.fromMap(new HashMap<SNodeReference, DebugInfoRoot>());
+  private final Map<SNodeReference, DebugInfoRoot> myRoots = new HashMap<SNodeReference, DebugInfoRoot>();
 
   public DebugInfo() {
   }
 
   private DebugInfoRoot getOrCreateDebugInfoRoot(SNode rootNode) {
     SNodeReference ref = getRef(rootNode);
-    DebugInfoRoot infoRoot = MapSequence.fromMap(myRoots).get(ref);
+    DebugInfoRoot infoRoot = myRoots.get(ref);
     if (infoRoot == null) {
       infoRoot = new DebugInfoRoot(ref);
-      MapSequence.fromMap(myRoots).put(ref, infoRoot);
+      myRoots.put(ref, infoRoot);
     }
     return infoRoot;
   }
@@ -77,29 +72,30 @@ public class DebugInfo {
   }
 
   public DebugInfoRoot getRootInfo(@Nullable SNode root) {
-    return MapSequence.fromMap(myRoots).get(getRef(root));
+    return myRoots.get(getRef(root));
   }
 
   public DebugInfoRoot getRootInfo(@Nullable SNodeReference root) {
-    return MapSequence.fromMap(myRoots).get(root);
+    return myRoots.get(root);
   }
 
   public void putRootInfo(DebugInfoRoot root) {
-    MapSequence.fromMap(myRoots).put(root.getNodeRef(), root);
+    myRoots.put(root.getNodeRef(), root);
   }
 
   @Nullable
   public TraceablePositionInfo getPositionForNode(final SNode node) {
     // used in mbeddr 
-    DebugInfoRoot root = MapSequence.fromMap(myRoots).get(getRef(node.getContainingRoot()));
+    DebugInfoRoot root = myRoots.get(getRef(node.getContainingRoot()));
     if (root == null) {
       return null;
     }
-    return SetSequence.fromSet(root.getPositions()).findFirst(new IWhereFilter<TraceablePositionInfo>() {
-      public boolean accept(TraceablePositionInfo it) {
-        return eq_exfyrk_a0a0a0a0a0d0n(it.getNodeId(), node.getNodeId().toString());
+    for (TraceablePositionInfo pi : root.getPositions()) {
+      if (EqualUtil.equals(pi.getNodeId(), node.getNodeId().toString())) {
+        return pi;
       }
-    });
+    }
+    return null;
   }
 
   public Set<TraceablePositionInfo> getPositions(SNode rootNode) {
@@ -115,7 +111,7 @@ public class DebugInfo {
   @NotNull
   public List<UnitPositionInfo> getUnitsForNode(SNode node) {
     final SNodeId id = node.getNodeId();
-    DebugInfoRoot debugInfoRoot = MapSequence.fromMap(myRoots).get(getRef(node.getContainingRoot()));
+    DebugInfoRoot debugInfoRoot = myRoots.get(getRef(node.getContainingRoot()));
     if (debugInfoRoot != null) {
       return SetSequence.fromSet(debugInfoRoot.getUnitPositions()).sort(new ISelector<UnitPositionInfo, Integer>() {
         public Integer select(UnitPositionInfo position) {
@@ -127,7 +123,7 @@ public class DebugInfo {
         }
       }).toListSequence();
     }
-    return ListSequence.fromList(new ArrayList<UnitPositionInfo>());
+    return Collections.emptyList();
   }
 
   @NotNull
@@ -211,60 +207,6 @@ public class DebugInfo {
 
   public Iterable<DebugInfoRoot> getRoots() {
     return MapSequence.fromMap(myRoots).values();
-  }
-
-  public Element toXml() {
-    Element element = new Element(DebugInfo.DEBUG_INFO);
-    if (myRoots != null) {
-      Iterable<SNodeReference> sorted = SetSequence.fromSet(MapSequence.fromMap(myRoots).keySet()).sort(new ISelector<SNodeReference, String>() {
-        public String select(SNodeReference it) {
-          return SNodePointer.serialize(it);
-        }
-      }, true);
-      for (SNodeReference id : sorted) {
-        DebugInfoRoot dir = MapSequence.fromMap(myRoots).get(id);
-        if (id == null) {
-          dir.toXml(element);
-        } else {
-          Element e = new Element(DebugInfo.ROOT);
-          e.setAttribute(DebugInfo.NODE_REF_ATTR, SNodePointer.serialize(id));
-          dir.toXml(e);
-          element.addContent(e);
-        }
-      }
-    }
-    return element;
-  }
-
-  public static DebugInfo fromXml(Element root, SModel model) {
-    DebugInfo info = new DebugInfo();
-    try {
-      DebugInfoRoot unspecified = DebugInfoRoot.fromXml(root, null);
-      if (unspecified != null) {
-        MapSequence.fromMap(info.myRoots).put(null, unspecified);
-      }
-
-      for (Element re : root.getChildren(DebugInfo.ROOT)) {
-        String rootId = re.getAttributeValue(DebugInfo.NODE_REF_ATTR);
-        SNodeReference rootRef;
-        if (rootId != null) {
-          rootRef = SNodePointer.deserialize(rootId);
-        } else {
-          String nodeId = re.getAttributeValue("nodeId");
-          String modelId = re.getAttributeValue("modelId");
-          rootRef = new SNodePointer(modelId, nodeId);
-        }
-
-        MapSequence.fromMap(info.myRoots).put(rootRef, DebugInfoRoot.fromXml(re, rootRef));
-      }
-    } catch (DataConversionException e) {
-      throw new RuntimeException(e);
-    }
-    return info;
-  }
-
-  private static boolean eq_exfyrk_a0a0a0a0a0d0n(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 
   private static boolean eq_exfyrk_a0a0a0a0a0a0a2a51(Object a, Object b) {
