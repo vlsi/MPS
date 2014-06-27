@@ -50,6 +50,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
@@ -199,7 +200,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       MPSNodeVirtualFile file = editor.getFile();
       node = file != null && file.isValid() ? file.getNode() : null;
     }
-    if (node == null) return;
+    if (node == null || !SNodeUtil.isAccessible(node, ProjectHelper.getProjectRepository(myProject))) return;
 
     EditorWarningsProvider[] providers = Extensions.getExtensions(EditorWarningsProvider.EP_NAME);
 
