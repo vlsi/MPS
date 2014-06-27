@@ -34,18 +34,18 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -96,27 +96,37 @@ public class EditorManager {
     for (SModelEvent event : events) {
       SNode eventNode;
       if (event instanceof SModelChildEvent) {
-        eventNode = ((SModelChildEvent) event).getParent();
+        SModelChildEvent childEvent = (SModelChildEvent) event;
+        eventNode = childEvent.getParent();
+        if (childEvent.isRemoved()) {
+          SNode removedChild = childEvent.getChild();
+          result.add(new Pair<SNode, SNodeReference>(removedChild, new CachingSNodePointer(event.getModel().getReference(), removedChild.getNodeId())));
+        }
       } else if (event instanceof SModelReferenceEvent) {
         eventNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
       } else if (event instanceof SModelPropertyEvent) {
         eventNode = ((SModelPropertyEvent) event).getNode();
       } else continue;
-      result.add(new Pair<SNode, SNodeReference>(eventNode,
-          new jetbrains.mps.smodel.SNodePointer((SModelReference) event.getModel().getReference(), eventNode.getNodeId()) {
-            int myHashCode = -1;
-
-            @Override
-            public int hashCode() {
-              if (myHashCode == -1) {
-                myHashCode = super.hashCode();
-              }
-              return myHashCode;
-            }
-          }
-      ));
+      result.add(new Pair<SNode, SNodeReference>(eventNode, new CachingSNodePointer(event.getModel().getReference(), eventNode.getNodeId())));
     }
     return new ArrayList<Pair<SNode, SNodeReference>>(result);
+  }
+
+  // TODO: move this logic to SNodePointer? Ask MMuhin.
+  static class CachingSNodePointer extends SNodePointer {
+    private int myHashCode = -1;
+
+    public CachingSNodePointer(@Nullable SModelReference modelReference, @Nullable SNodeId nodeId) {
+      super(modelReference, nodeId);
+    }
+
+    @Override
+    public int hashCode() {
+      if (myHashCode == -1) {
+        myHashCode = super.hashCode();
+      }
+      return myHashCode;
+    }
   }
 
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
